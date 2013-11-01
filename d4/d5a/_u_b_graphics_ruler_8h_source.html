@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/tools/UBGraphicsRuler.h Source File</title>
+<title>Open-Sankoré: UBGraphicsRuler.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -177,36 +177,36 @@ $(document).ready(function(){initNavTree('d4/d5a/_u_b_graphics_ruler_8h_source.h
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">bool</span> mResizing;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">bool</span> mRotating;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a81d553b96ae430c26b4c7a2dbcc8e1c9">   74</a></span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a81d553b96ae430c26b4c7a2dbcc8e1c9">mResizing</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a802b3a3d41f5b6004c4928ea6e3656bc">   75</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a802b3a3d41f5b6004c4928ea6e3656bc">mRotating</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// Helpers</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span>    fillBackground(QPainter *painter);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span>    paintRotationCenter(QPainter *painter);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span>    rotateAroundCenter(qreal angle);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span>    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a8a8467ea84fbf31542cf0e1210a265d8">fillBackground</a>(QPainter *painter);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span>    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#aa1e07fd44e925e9d98df96608fa9355e">paintRotationCenter</a>(QPainter *painter);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span>    <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a51f35dbcf81383b38300ff3de1be25f4">rotateAroundCenter</a>(qreal angle);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                QGraphicsSvgItem* mRotateSvgItem;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                QGraphicsSvgItem* mResizeSvgItem;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ae3a4cfb05b5bbba3d1f6ddf2430d32b0">   83</a></span>&#160;                QGraphicsSvgItem* <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ae3a4cfb05b5bbba3d1f6ddf2430d32b0">mRotateSvgItem</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a7cc9b090bdfb13c5557a13b765b7c8be">   84</a></span>&#160;                QGraphicsSvgItem* <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a7cc9b090bdfb13c5557a13b765b7c8be">mResizeSvgItem</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordtype">void</span> updateResizeCursor();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                QCursor resizeCursor()<span class="keyword"> const</span>{<span class="keywordflow">return</span> mResizeCursor;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac351fb0081a75a243f3e059fb9686dd4">updateResizeCursor</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#aaadd62faaac34bbebf9bf7078544f422">   87</a></span>&#160;                QCursor <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#aaadd62faaac34bbebf9bf7078544f422">resizeCursor</a>()<span class="keyword"> const</span>{<span class="keywordflow">return</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a51b17c352207eb97f4899510e263f221">mResizeCursor</a>;}</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">virtual</span> QPointF             rotationCenter() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">virtual</span> QRectF           resizeButtonRect() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">virtual</span> QRectF            closeButtonRect() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">virtual</span> QRectF           rotateButtonRect() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*            scene() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">virtual</span> QPointF             <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac2162f4d98b12ef60b5a405384c0900a">rotationCenter</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">virtual</span> QRectF           <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#ac1b79d2b2a3a7821123813f0529694c4">resizeButtonRect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">virtual</span> QRectF            <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a3d1ee68b136e04b60ffc25f28f6948b9">closeButtonRect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">virtual</span> QRectF           <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a7bda2775d3b854224e354482a0ae0775">rotateButtonRect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*            <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#aa47cc19d05fdf2cd45e341fccd7d491f">scene</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                QCursor mResizeCursor;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a51b17c352207eb97f4899510e263f221">   95</a></span>&#160;                QCursor <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a51b17c352207eb97f4899510e263f221">mResizeCursor</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordtype">int</span> drawLineDirection;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a0f415bc0d7d59e4479bdeba0b48875ff">   97</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a0f415bc0d7d59e4479bdeba0b48875ff">drawLineDirection</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> QRect               sDefaultRect;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a1cbf60e0763f487e7aa8ac48cc605313">  100</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> QRect               <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a1cbf60e0763f487e7aa8ac48cc605313">sDefaultRect</a>;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>        sMinLength = 150;   <span class="comment">// 3sm</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>        sMaxLength = 35000; <span class="comment">// 700sm</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a73cb59961e9ae4e5ddc0a06ae9994555">  102</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>        <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a73cb59961e9ae4e5ddc0a06ae9994555">sMinLength</a> = 150;   <span class="comment">// 3sm</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a41052c1dc9a0954c0dc0074afbc5d7b6">  103</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span>        <a class="code" href="../../db/dd7/class_u_b_graphics_ruler.html#a41052c1dc9a0954c0dc0074afbc5d7b6">sMaxLength</a> = 35000; <span class="comment">// 700sm</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UBGRAPHICSRULER_H_ */</span><span class="preprocessor"></span></div>
@@ -215,8 +215,8 @@ $(document).ready(function(){initNavTree('d4/d5a/_u_b_graphics_ruler_8h_source.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ed8013f237dc461738538501041f195e.html">tools</a></li><li class="navelem"><a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h.html">UBGraphicsRuler.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8097888bca2a2152ba8496d074c7e0f3.html">tools</a></li><li class="navelem"><a class="el" href="../../d4/d5a/_u_b_graphics_ruler_8h.html">UBGraphicsRuler.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

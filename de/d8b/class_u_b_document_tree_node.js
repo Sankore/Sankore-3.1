@@ -22,5 +22,11 @@ var class_u_b_document_tree_node =
     [ "proxyData", "de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f", null ],
     [ "removeChild", "de/d8b/class_u_b_document_tree_node.html#a37320f5b69863f36bc246e1117fa6988", null ],
     [ "setNodeName", "de/d8b/class_u_b_document_tree_node.html#afd9356b58412d6df1852ba9676415799", null ],
-    [ "UBDocumentTreeModel", "de/d8b/class_u_b_document_tree_node.html#a67c37643a244d3a945253d93304fb8ff", null ]
+    [ "UBDocumentTreeModel", "de/d8b/class_u_b_document_tree_node.html#a67c37643a244d3a945253d93304fb8ff", null ],
+    [ "mChildren", "de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad", null ],
+    [ "mDisplayName", "de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3", null ],
+    [ "mName", "de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de", null ],
+    [ "mParent", "de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e", null ],
+    [ "mProxy", "de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa", null ],
+    [ "mType", "de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355", null ]
 ];

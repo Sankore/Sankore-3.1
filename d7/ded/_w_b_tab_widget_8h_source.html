@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/web/browser/WBTabWidget.h Source File</title>
+<title>Open-Sankoré: WBTabWidget.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -183,10 +183,10 @@ $(document).ready(function(){initNavTree('d7/ded/_w_b_tab_widget_8h_source.html'
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    signals:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a845c426f236cbd3bb419fed27aad66a6">newTab</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#acaabb7c80840e36cad8f716d4a865419">cloneTab</a>(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a96559d2e7ede50a3a99fce8f8b80f362">closeTab</a>(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#af37300f578c8205d5023e249ef9a1b16">closeOtherTabs</a>(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#af906dd4066f408675f087f126b63c23c">reloadTab</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a655f9bc950435775e49bd604a09e586f">cloneTab</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a2bbec06145b9ab481e461c4fd05b87be">closeTab</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#ae0c875e05ffecdfb2069bf4e8b7e8cf0">closeOtherTabs</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#adae9c2f3145a1b801f1c0048adb38692">reloadTab</a>(<span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#aaceefa56d0cdda0cf37a72a61e200057">reloadAllTabs</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a3c083bd648084eca614c6ae9d27d9e0a">tabMoveRequested</a>(<span class="keywordtype">int</span> fromIndex, <span class="keywordtype">int</span> toIndex);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
@@ -198,18 +198,18 @@ $(document).ready(function(){initNavTree('d7/ded/_w_b_tab_widget_8h_source.html'
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a3a93f6d91f44c09c70323d0b85ad5e8d">mouseMoveEvent</a>(QMouseEvent* event);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> selectTabAction();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> cloneTab();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> closeTab();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> closeOtherTabs();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> reloadTab();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> contextMenuRequested(<span class="keyword">const</span> QPoint &amp;position);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a98cdbdc8e668461e38c5348e01e32173">selectTabAction</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a655f9bc950435775e49bd604a09e586f">cloneTab</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a2bbec06145b9ab481e461c4fd05b87be">closeTab</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#ae0c875e05ffecdfb2069bf4e8b7e8cf0">closeOtherTabs</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#adae9c2f3145a1b801f1c0048adb38692">reloadTab</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a44af771c72ac4535e7190726aa258d45">contextMenuRequested</a>(<span class="keyword">const</span> QPoint &amp;position);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        QList&lt;QShortcut*&gt; mTabShortcuts;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="../../df/d78/class_w_b_tab_bar.html#a58b28ab137c40aabd05c53f1806e8cc4">  103</a></span>&#160;        QList&lt;QShortcut*&gt; <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a58b28ab137c40aabd05c53f1806e8cc4">mTabShortcuts</a>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="../../df/d78/class_w_b_tab_bar.html#abff7b061276b5d2a7cdd9019d925059b">  104</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../de/dc7/class_w_b_tab_widget.html" title="TabWidget that contains WebViews and a stack widget of associated line edits.">WBTabWidget</a>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        QPoint mDragStartPos;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">  106</a></span>&#160;        QPoint <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a>;</div>
@@ -224,15 +224,15 @@ $(document).ready(function(){initNavTree('d7/ded/_w_b_tab_widget_8h_source.html'
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a6ab4f245f921fa06f9d8d419a4bd5b52">updateCurrent</a>(QWebPage *currentParent);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">void</span> rootTriggered();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">void</span> childChanged();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">void</span> rootDestroyed();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">void</span> currentDestroyed();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a599b2ac78c7143689cf483dc127768de">rootTriggered</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a090c311a8917e0bd33cab5ee543d1bb2">childChanged</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ab11e2d6bc15d8d01ca742802f9f20f2a">rootDestroyed</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a84ee99c8824bc48101effd98bfa2c3d5">currentDestroyed</a>();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        QWebPage *mCurrentParent;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        QAction *mRootAction;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        QWebPage::WebAction mWebAction;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">  134</a></span>&#160;        QWebPage *<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">  135</a></span>&#160;        QAction *<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">  136</a></span>&#160;        QWebPage::WebAction <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">mWebAction</a>;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
@@ -272,10 +272,10 @@ $(document).ready(function(){initNavTree('d7/ded/_w_b_tab_widget_8h_source.html'
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        QByteArray <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ab8f02948b84cce3f93dccfe19332fe8a">saveState</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a28bf3c95a61c4899051a1b16aeaec96c">restoreState</a>(<span class="keyword">const</span> QByteArray &amp;state);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a1ee59dff3bdb9eda443650a3a04e565d">  182</a></span>&#160;        <a class="code" href="../../df/d78/class_w_b_tab_bar.html">WBTabBar</a>* <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a1ee59dff3bdb9eda443650a3a04e565d">tabBar</a>() { <span class="keywordflow">return</span> mTabBar; }</div>
-<div class="line"><a name="l00183"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a27a23dcc9554dab115bf35367b47feca">  183</a></span>&#160;        QStackedWidget* <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a27a23dcc9554dab115bf35367b47feca">lineEdits</a>() { <span class="keywordflow">return</span> mLineEdits; }</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a1ee59dff3bdb9eda443650a3a04e565d">  182</a></span>&#160;        <a class="code" href="../../df/d78/class_w_b_tab_bar.html">WBTabBar</a>* <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a1ee59dff3bdb9eda443650a3a04e565d">tabBar</a>() { <span class="keywordflow">return</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ab782e78dd3eea463c88db59c5742a651">mTabBar</a>; }</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a27a23dcc9554dab115bf35367b47feca">  183</a></span>&#160;        QStackedWidget* <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a27a23dcc9554dab115bf35367b47feca">lineEdits</a>() { <span class="keywordflow">return</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a0ddd685685f135ad0ba406b91ff06b3b">mLineEdits</a>; }</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aafdd076c051a8500ed84333cc4b3b8f5">  185</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aafdd076c051a8500ed84333cc4b3b8f5">setLineEditStackVisible</a>(<span class="keywordtype">bool</span> visible) {mLineEdits-&gt;setVisible(visible);mLineEdits-&gt;hide();}</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aafdd076c051a8500ed84333cc4b3b8f5">  185</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aafdd076c051a8500ed84333cc4b3b8f5">setLineEditStackVisible</a>(<span class="keywordtype">bool</span> visible) {<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a0ddd685685f135ad0ba406b91ff06b3b">mLineEdits</a>-&gt;setVisible(visible);<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a0ddd685685f135ad0ba406b91ff06b3b">mLineEdits</a>-&gt;hide();}</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aef36e37fae0d215a4ab56ce740b15786">mouseDoubleClickEvent</a>(QMouseEvent *event);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aed8f0d2224446c52e02a822dc8267bc5">contextMenuEvent</a>(QContextMenuEvent *event);</div>
@@ -294,29 +294,29 @@ $(document).ready(function(){initNavTree('d7/ded/_w_b_tab_widget_8h_source.html'
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#adac63a0e9c9fdb68cce4d93a5904e9a0">previousTab</a>();</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordtype">void</span> currentChanged(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordtype">void</span> aboutToShowRecentTabsMenu();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordtype">void</span> aboutToShowRecentTriggeredAction(QAction *action);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">void</span> webViewLoadStarted();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">void</span> webViewIconChanged();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordtype">void</span> webViewTitleChanged(<span class="keyword">const</span> QString &amp;title);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">void</span> webViewUrlChanged(<span class="keyword">const</span> QUrl &amp;url);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordtype">void</span> lineEditReturnPressed();</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordtype">void</span> windowCloseRequested();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">void</span> moveTab(<span class="keywordtype">int</span> fromIndex, <span class="keywordtype">int</span> toIndex);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a0ba06761b82d395106a3fd9421534a0b">currentChanged</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a02b36d3f01fab5b3224b89e10c315acd">aboutToShowRecentTabsMenu</a>();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ac13e3480eb515ce4e64814001ea0059f">aboutToShowRecentTriggeredAction</a>(QAction *action);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a35140b29ceda730afea8bc6a08bdb84e">webViewLoadStarted</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aeb0f89d9eb5ed26ba6169999c2b3e46d">webViewIconChanged</a>();</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a324b22e078d4d7e3732c564c7e96435d">webViewTitleChanged</a>(<span class="keyword">const</span> QString &amp;title);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a13215280d8436d6cdbab4d65ae54f7cb">webViewUrlChanged</a>(<span class="keyword">const</span> QUrl &amp;url);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ac2e1c3863c4401cb41da911925784172">lineEditReturnPressed</a>();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a8a30c3090c7d913a572173dcd2f60e57">windowCloseRequested</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ada6530c6e078d2d6faeac0cdc0bbd0ef">moveTab</a>(<span class="keywordtype">int</span> fromIndex, <span class="keywordtype">int</span> toIndex);</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        QAction *mRecentlyClosedTabsAction;</div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ab13427c2f97b7b50baa6589c1d77fb40">  216</a></span>&#160;        QAction *<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ab13427c2f97b7b50baa6589c1d77fb40">mRecentlyClosedTabsAction</a>;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        QMenu *mRecentlyClosedTabsMenu;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> sRecentlyClosedTabsSize = 10;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        QList&lt;QUrl&gt; mRecentlyClosedTabs;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        QList&lt;WBWebActionMapper*&gt; mWebActions;</div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aa12b32a1cc61f1ea8b5306b2af7484b2">  218</a></span>&#160;        QMenu *<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aa12b32a1cc61f1ea8b5306b2af7484b2">mRecentlyClosedTabsMenu</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a12bf6337b959772290e8768113ab93c4">  219</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a12bf6337b959772290e8768113ab93c4">sRecentlyClosedTabsSize</a> = 10;</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a73259435e4cd2b4091db90493c364d16">  220</a></span>&#160;        QList&lt;QUrl&gt; <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a73259435e4cd2b4091db90493c364d16">mRecentlyClosedTabs</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a32fb5e4481eaedd200d1f810eafdd460">  221</a></span>&#160;        QList&lt;WBWebActionMapper*&gt; <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a32fb5e4481eaedd200d1f810eafdd460">mWebActions</a>;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        QCompleter *mLineEditCompleter;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        QStackedWidget *mLineEdits;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="../../df/d78/class_w_b_tab_bar.html">WBTabBar</a> *mTabBar;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        QPixmap mAddTabIcon;</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aa7a0771f947e4376f351a3be33cc72f5">  223</a></span>&#160;        QCompleter *<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#aa7a0771f947e4376f351a3be33cc72f5">mLineEditCompleter</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a0ddd685685f135ad0ba406b91ff06b3b">  224</a></span>&#160;        QStackedWidget *<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a0ddd685685f135ad0ba406b91ff06b3b">mLineEdits</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ab782e78dd3eea463c88db59c5742a651">  225</a></span>&#160;        <a class="code" href="../../df/d78/class_w_b_tab_bar.html">WBTabBar</a> *<a class="code" href="../../de/dc7/class_w_b_tab_widget.html#ab782e78dd3eea463c88db59c5742a651">mTabBar</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a56aa1adec5d9de965942ba1b0f7da71f">  226</a></span>&#160;        QPixmap <a class="code" href="../../de/dc7/class_w_b_tab_widget.html#a56aa1adec5d9de965942ba1b0f7da71f">mAddTabIcon</a>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif // WBTABWIDGET_H</span></div>
@@ -326,8 +326,8 @@ $(document).ready(function(){initNavTree('d7/ded/_w_b_tab_widget_8h_source.html'
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../d7/ded/_w_b_tab_widget_8h.html">WBTabWidget.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_c5d8e5d1a9c4329f04300c8019051d02.html">web</a></li><li class="navelem"><a class="el" href="../../dir_30ba88fccd588e82598a3ea37e3e2e52.html">browser</a></li><li class="navelem"><a class="el" href="../../d7/ded/_w_b_tab_widget_8h.html">WBTabWidget.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

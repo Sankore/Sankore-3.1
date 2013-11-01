@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('d7/de0/class_u_b_rubber_band.html','..
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/d8d/class_u_b_rubber_band-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBRubberBand Class Reference</div>  </div>
@@ -116,14 +119,101 @@ $(document).ready(function(){initNavTree('d7/de0/class_u_b_rubber_band.html','..
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d6c/class_u_b_rubber_band__coll__graph.svg" width="152" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d6c/class_u_b_rubber_band__coll__graph.svg" width="190" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b4bbf8c97ab5f5fbd492156de817aa5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a2b4bbf8c97ab5f5fbd492156de817aa5">UBRubberBand</a> (Shape s, QWidget *p=0)</td></tr>
 <tr class="memitem:a99163e48ee409106cb0928d625609676"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a99163e48ee409106cb0928d625609676">~UBRubberBand</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a089e134071ca496f8f77a815bdac7672"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">enm_resizingMode</a> { <br/>
+&#160;&#160;<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>, 
+<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a312d1fc9d3a3f1b6ca0436af0580b684">Top</a>, 
+<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49db2f6dd604610ac9d4c23ea3f33d9a">TopLeft</a>, 
+<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ae0ab5e11cf000f1c84997cb60a921db8">TopRight</a>, 
+<br/>
+&#160;&#160;<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aaf0eacea549956bf376b87da840ce310">Bottom</a>, 
+<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a8377c83e846daec0a476ef6ae73da554">BottomLeft</a>, 
+<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ac5841e105d3ec4bbf92c13e036bfdbf3">BottomRight</a>, 
+<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ad48c3ce0d48d4652fbd99b7ad030a0b4">Left</a>, 
+<br/>
+&#160;&#160;<a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aeec3943117668c030a38ccb9b25de768">Right</a>
+<br/>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8c8c34ee2bf7a75bd4f62fd88c877caf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">enm_resizingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a8c8c34ee2bf7a75bd4f62fd88c877caf">determineResizingMode</a> (QPoint pos)</td></tr>
+<tr class="memitem:a74346661fa4a504701192ffe92536bd9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a74346661fa4a504701192ffe92536bd9">mousePressEvent</a> (QMouseEvent *event)</td></tr>
+<tr class="memitem:aa474f81675a4c91939b275d349d27660"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#aa474f81675a4c91939b275d349d27660">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+<tr class="memitem:acfcaf629a4610c46fcfcf7929db2b9b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#acfcaf629a4610c46fcfcf7929db2b9b2">mouseReleaseEvent</a> (QMouseEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a49137d40b645aa5db92cb13579df23c7"><td class="memItemLeft" align="right" valign="top">QStyle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a></td></tr>
+<tr class="memitem:afa4cbfa89310361d986055315200ab25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">enm_resizingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a></td></tr>
+<tr class="memitem:a2b0a40ddeb1bdb5e69d2ff69d0d1b361"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a></td></tr>
+<tr class="memitem:a2d421a381dac3a7e275dc35fc008515f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a></td></tr>
+<tr class="memitem:a89293edb5f82bde68c52111bf3fabb3d"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a89293edb5f82bde68c52111bf3fabb3d">mLastPressedPoint</a></td></tr>
+<tr class="memitem:af617e161de7fe8c8bb9b38d52528ee72"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#af617e161de7fe8c8bb9b38d52528ee72">mLastMousePos</a></td></tr>
 </table>
+<h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a089e134071ca496f8f77a815bdac7672"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">UBRubberBand::enm_resizingMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93"></a>None</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672a312d1fc9d3a3f1b6ca0436af0580b684"></a>Top</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672a49db2f6dd604610ac9d4c23ea3f33d9a"></a>TopLeft</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672ae0ab5e11cf000f1c84997cb60a921db8"></a>TopRight</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672aaf0eacea549956bf376b87da840ce310"></a>Bottom</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672a8377c83e846daec0a476ef6ae73da554"></a>BottomLeft</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672ac5841e105d3ec4bbf92c13e036bfdbf3"></a>BottomRight</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672ad48c3ce0d48d4652fbd99b7ad030a0b4"></a>Left</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a089e134071ca496f8f77a815bdac7672aeec3943117668c030a38ccb9b25de768"></a>Right</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+<div class="fragment"><div class="line">        {</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a312d1fc9d3a3f1b6ca0436af0580b684">Top</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49db2f6dd604610ac9d4c23ea3f33d9a">TopLeft</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ae0ab5e11cf000f1c84997cb60a921db8">TopRight</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aaf0eacea549956bf376b87da840ce310">Bottom</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a8377c83e846daec0a476ef6ae73da554">BottomLeft</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ac5841e105d3ec4bbf92c13e036bfdbf3">BottomRight</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ad48c3ce0d48d4652fbd99b7ad030a0b4">Left</a>,</div>
+<div class="line">            <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aeec3943117668c030a38ccb9b25de768">Right</a></div>
+<div class="line">        };</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2b4bbf8c97ab5f5fbd492156de817aa5"></a>
 <div class="memitem">
@@ -149,23 +239,23 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QRubberBand(s, p)</div>
-<div class="line">    , mResizingMode(None)</div>
-<div class="line">    , mResizingBorderHeight(20)</div>
-<div class="line">    , mMouseIsPressed(<span class="keyword">false</span>)</div>
-<div class="line">    , mLastPressedPoint(QPoint())</div>
+<div class="line">    , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a>(<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>)</div>
+<div class="line">    , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>(20)</div>
+<div class="line">    , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a89293edb5f82bde68c52111bf3fabb3d">mLastPressedPoint</a>(QPoint())</div>
 <div class="line">{</div>
-<div class="line">    customStyle = NULL;</div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a> = NULL;</div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#ifdef Q_WS_WIN</span></div>
-<div class="line"><span class="preprocessor"></span>    customStyle = <span class="keyword">new</span> QWindowsXPStyle();</div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a> = <span class="keyword">new</span> QWindowsXPStyle();</div>
 <div class="line"><span class="preprocessor">#elif defined(Q_WS_MAC)</span></div>
-<div class="line"><span class="preprocessor"></span>    customStyle = <span class="keyword">new</span> QMacStyle();</div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a> = <span class="keyword">new</span> QMacStyle();</div>
 <div class="line"><span class="preprocessor">#elif defined(Q_WS_X11)</span></div>
-<div class="line"><span class="preprocessor"></span>    customStyle = QStyleFactory::create(<span class="stringliteral">&quot;oxygen&quot;</span>);</div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a> = QStyleFactory::create(<span class="stringliteral">&quot;oxygen&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line">    <span class="keywordflow">if</span> (customStyle)</div>
-<div class="line">        QRubberBand::setStyle(customStyle);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a>)</div>
+<div class="line">        QRubberBand::setStyle(<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a>);</div>
 <div class="line"></div>
 <div class="line">    setAttribute(Qt::WA_TransparentForMouseEvents, <span class="keyword">false</span>);</div>
 <div class="line">    setMouseTracking(<span class="keyword">true</span>);</div>
@@ -194,15 +284,441 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (customStyle)</div>
-<div class="line">        <span class="keyword">delete</span> customStyle;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a>)</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a49137d40b645aa5db92cb13579df23c7">customStyle</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a8c8c34ee2bf7a75bd4f62fd88c877caf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">UBRubberBand::enm_resizingMode</a> UBRubberBand::determineResizingMode </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a>)</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a>;</div>
+<div class="line">    </div>
+<div class="line">    QRect resizerTop    (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>               , 0                             , rect().width()-2*<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>                    );</div>
+<div class="line">    QRect resizerBottom (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>               , rect().height() - <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, rect().width()-2*<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>                    );</div>
+<div class="line">    QRect resizerLeft   (0                          , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>                  , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>                 , rect().height() - 2*<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>);</div>
+<div class="line">    QRect resizerRight  (rect().width()-<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>                  , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>                 , rect().height() - 2*<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>);</div>
+<div class="line"></div>
+<div class="line">    QRect resizerTopLeft    (0                          , 0                             , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>);</div>
+<div class="line">    QRect resizerTopRight   (rect().width()-<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, 0                             , <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>);</div>
+<div class="line">    QRect resizerBottomLeft (0                          , rect().height() - <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>);</div>
+<div class="line">    QRect resizerBottomRight(rect().width()-<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, rect().height() - <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>, <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2b0a40ddeb1bdb5e69d2ff69d0d1b361">mResizingBorderHeight</a>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">enm_resizingMode</a> resizingMode;</div>
+<div class="line">    </div>
+<div class="line">    QTransform cursorTransrofm;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerTop.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a312d1fc9d3a3f1b6ca0436af0580b684">Top</a>;</div>
+<div class="line">        cursorTransrofm.rotate(90);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerBottom.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aaf0eacea549956bf376b87da840ce310">Bottom</a>;</div>
+<div class="line">        cursorTransrofm.rotate(90);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerLeft.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ad48c3ce0d48d4652fbd99b7ad030a0b4">Left</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerRight.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aeec3943117668c030a38ccb9b25de768">Right</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerTopLeft.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49db2f6dd604610ac9d4c23ea3f33d9a">TopLeft</a>;</div>
+<div class="line">        cursorTransrofm.rotate(45);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerTopRight.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ae0ab5e11cf000f1c84997cb60a921db8">TopRight</a>;</div>
+<div class="line">        cursorTransrofm.rotate(-45);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerBottomLeft.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a8377c83e846daec0a476ef6ae73da554">BottomLeft</a>;</div>
+<div class="line">        cursorTransrofm.rotate(-45);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (resizerBottomRight.contains(pos))</div>
+<div class="line">    {</div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ac5841e105d3ec4bbf92c13e036bfdbf3">BottomRight</a>;</div>
+<div class="line">        cursorTransrofm.rotate(45);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        resizingMode = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a> != resizingMode)</div>
+<div class="line">    {</div>
+<div class="line">        QPixmap pix(<span class="stringliteral">&quot;:/images/cursors/resize.png&quot;</span>);</div>
+<div class="line">        QCursor resizeCursor  = QCursor(pix.transformed(cursorTransrofm, Qt::SmoothTransformation), pix.width() / 2,  pix.height() / 2);</div>
+<div class="line">        setCursor(resizeCursor);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        unsetCursor();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> resizingMode;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/de0/class_u_b_rubber_band_a8c8c34ee2bf7a75bd4f62fd88c877caf_icgraph.svg" width="547" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa474f81675a4c91939b275d349d27660"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBRubberBand::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a8c8c34ee2bf7a75bd4f62fd88c877caf">determineResizingMode</a>(event-&gt;pos());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a> *view = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>();</div>
+<div class="line">        QRect currentGeometry = geometry();</div>
+<div class="line"></div>
+<div class="line">        QPoint pressPoint(event-&gt;pos());</div>
+<div class="line">        QPoint pressPointGlobal(view-&gt;mapToGlobal(pressPoint));</div>
+<div class="line">        QPoint prevPressPointGlobal(view-&gt;mapToGlobal(<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a89293edb5f82bde68c52111bf3fabb3d">mLastPressedPoint</a>));</div>
+<div class="line">        QPoint movePointGlogal = (view-&gt;mapToGlobal(<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#af617e161de7fe8c8bb9b38d52528ee72">mLastMousePos</a>));</div>
+<div class="line"></div>
+<div class="line">        QPoint topLeftResizeVector(pressPointGlobal - prevPressPointGlobal);</div>
+<div class="line">        QPoint rightBottomResizeVector(pressPointGlobal - movePointGlogal);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">bool</span> bGeometryChange = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">switch</span>(<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a>)</div>
+<div class="line">        {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a>:</div>
+<div class="line">            {</div>
+<div class="line">                QPointF itemsMoveVector(view-&gt;mapToScene(pressPointGlobal) - view-&gt;mapToScene(prevPressPointGlobal));</div>
+<div class="line"></div>
+<div class="line">                move(pos()+pressPointGlobal - prevPressPointGlobal);</div>
+<div class="line">                view-&gt;<a class="code" href="../../d1/d78/class_u_b_board_view.html#a712b3d478ccea75d1adf746ad44ea64b">moveRubberedItems</a>(itemsMoveVector);</div>
+<div class="line"></div>
+<div class="line">                bGeometryChange = <span class="keyword">false</span>;</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a312d1fc9d3a3f1b6ca0436af0580b684">Top</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setY(currentGeometry.y()+topLeftResizeVector.y());</div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aaf0eacea549956bf376b87da840ce310">Bottom</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setHeight(currentGeometry.height()+rightBottomResizeVector.y());</div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ad48c3ce0d48d4652fbd99b7ad030a0b4">Left</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setX(currentGeometry.x()+topLeftResizeVector.x());</div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672aeec3943117668c030a38ccb9b25de768">Right</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setWidth(currentGeometry.width()+rightBottomResizeVector.x());</div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49db2f6dd604610ac9d4c23ea3f33d9a">TopLeft</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setX(currentGeometry.x()+topLeftResizeVector.x());  </div>
+<div class="line">                currentGeometry.setY(currentGeometry.y()+topLeftResizeVector.y());</div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ae0ab5e11cf000f1c84997cb60a921db8">TopRight</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setY(currentGeometry.y()+topLeftResizeVector.y());  </div>
+<div class="line">                currentGeometry.setWidth(currentGeometry.width()+rightBottomResizeVector.x());                </div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a8377c83e846daec0a476ef6ae73da554">BottomLeft</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setX(currentGeometry.x()+topLeftResizeVector.x());</div>
+<div class="line">                currentGeometry.setHeight(currentGeometry.height()+rightBottomResizeVector.y());  </div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672ac5841e105d3ec4bbf92c13e036bfdbf3">BottomRight</a>:</div>
+<div class="line">            {</div>
+<div class="line">                currentGeometry.setWidth(currentGeometry.width()+rightBottomResizeVector.x());</div>
+<div class="line">                currentGeometry.setHeight(currentGeometry.height()+rightBottomResizeVector.y());        </div>
+<div class="line">            }<span class="keywordflow">break</span>;</div>
+<div class="line">        </div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(bGeometryChange)</div>
+<div class="line">        {   </div>
+<div class="line">            setGeometry(currentGeometry);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#af617e161de7fe8c8bb9b38d52528ee72">mLastMousePos</a> = <span class="keyword">event</span>-&gt;pos();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#aa474f81675a4c91939b275d349d27660">QRubberBand::mouseMoveEvent</a>(event);</div>
+<div class="line">} </div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/de0/class_u_b_rubber_band_aa474f81675a4c91939b275d349d27660_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a74346661fa4a504701192ffe92536bd9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBRubberBand::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a> = <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a8c8c34ee2bf7a75bd4f62fd88c877caf">determineResizingMode</a>(event-&gt;pos());</div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a> = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a89293edb5f82bde68c52111bf3fabb3d">mLastPressedPoint</a> = <span class="keyword">event</span>-&gt;pos();</div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#af617e161de7fe8c8bb9b38d52528ee72">mLastMousePos</a> = <span class="keyword">event</span>-&gt;pos();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672a49b3f5266917165a1f3641eadb033d93">None</a> == <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#afa4cbfa89310361d986055315200ab25">mResizingMode</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;<a class="code" href="../../d1/d78/class_u_b_board_view.html#a8f77b8aadcbfb88f92362906960bea89">rubberItems</a>();</div>
+<div class="line">        setCursor(QCursor(Qt::SizeAllCursor));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/de0/class_u_b_rubber_band_a74346661fa4a504701192ffe92536bd9_cgraph.svg" width="515" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acfcaf629a4610c46fcfcf7929db2b9b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBRubberBand::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(event);</div>
+<div class="line">    <a class="code" href="../../d7/de0/class_u_b_rubber_band.html#a2d421a381dac3a7e275dc35fc008515f">mMouseIsPressed</a> = <span class="keyword">false</span>;</div>
+<div class="line">    unsetCursor();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a49137d40b645aa5db92cb13579df23c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStyle* UBRubberBand::customStyle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af617e161de7fe8c8bb9b38d52528ee72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint UBRubberBand::mLastMousePos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89293edb5f82bde68c52111bf3fabb3d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint UBRubberBand::mLastPressedPoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d421a381dac3a7e275dc35fc008515f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBRubberBand::mMouseIsPressed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b0a40ddeb1bdb5e69d2ff69d0d1b361"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBRubberBand::mResizingBorderHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afa4cbfa89310361d986055315200ab25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html#a089e134071ca496f8f77a815bdac7672">enm_resizingMode</a> UBRubberBand::mResizingMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp.html">UBRubberBand.cpp</a></li>
+<li><a class="el" href="../../df/dc3/_u_b_rubber_band_8h_source.html">UBRubberBand.h</a></li>
+<li><a class="el" href="../../d9/d18/_u_b_rubber_band_8cpp.html">UBRubberBand.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -210,7 +726,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/de0/class_u_b_rubber_band.html">UBRubberBand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

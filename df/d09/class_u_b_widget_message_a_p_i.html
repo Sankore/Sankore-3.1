@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('df/d09/class_u_b_widget_message_a_p_i.
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/df5/class_u_b_widget_message_a_p_i-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWidgetMessageAPI Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('df/d09/class_u_b_widget_message_a_p_i.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/da8/class_u_b_widget_message_a_p_i__coll__graph.svg" width="195" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/da8/class_u_b_widget_message_a_p_i__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -130,6 +132,15 @@ Public Slots</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1497bd6a02aed1fbe8299903af73450b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a1497bd6a02aed1fbe8299903af73450b">UBWidgetMessageAPI</a> (<a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a> *graphicsWidgetItem, QObject *parent=0)</td></tr>
 <tr class="memitem:af047cb11849fe33f642093620b6e413d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af047cb11849fe33f642093620b6e413d">~UBWidgetMessageAPI</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:af1dc22ac7d5ead2309f8801c1d1efc2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af1dc22ac7d5ead2309f8801c1d1efc2c">onNewMessage</a> (const QString &amp;pTopicName, const QString &amp;pMessage)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac4fad81b7d28445fdd10c827deaa87c9"><td class="memItemLeft" align="right" valign="top">QSet&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a></td></tr>
+<tr class="memitem:a777c64bc9195690f2a552c1a627d3aef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1497bd6a02aed1fbe8299903af73450b"></a>
@@ -156,9 +167,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(parent)</div>
-<div class="line">    , mGraphicsWidgetItem(graphicsWidgetItem)</div>
+<div class="line">    , <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>(graphicsWidgetItem)</div>
 <div class="line">{</div>
-<div class="line">    connect(<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">UBWidgetAPIMessageBroker::instance</a>(), SIGNAL(newMessage(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(onNewMessage(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), Qt::QueuedConnection);</div>
+<div class="line">    connect(<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">UBWidgetAPIMessageBroker::instance</a>(), SIGNAL(newMessage(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af1dc22ac7d5ead2309f8801c1d1efc2c">onNewMessage</a>(<span class="keyword">const</span> QString&amp;, <span class="keyword">const</span> QString&amp;)), Qt::QueuedConnection);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -166,7 +177,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d09/class_u_b_widget_message_a_p_i_a1497bd6a02aed1fbe8299903af73450b_cgraph.svg" width="419" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d09/class_u_b_widget_message_a_p_i_a1497bd6a02aed1fbe8299903af73450b_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -199,6 +210,66 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="af1dc22ac7d5ead2309f8801c1d1efc2c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWidgetMessageAPI::onNewMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pTopicName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pMessage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a>.contains(pTopicName))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a> &amp;&amp; <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>-&gt;page() &amp;&amp; <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>-&gt;page()-&gt;mainFrame())</div>
+<div class="line">        {</div>
+<div class="line"></div>
+<div class="line">            QString js;</div>
+<div class="line">            js += <span class="stringliteral">&quot;if(widget &amp;&amp; widget.messages &amp;&amp; widget.messages.onmessage)&quot;</span>;</div>
+<div class="line">            js += <span class="stringliteral">&quot;{widget.messages.onmessage(&#39;&quot;</span>;</div>
+<div class="line">            js += pMessage + <span class="stringliteral">&quot;&#39;, &#39;&quot;</span> + pTopicName + <span class="stringliteral">&quot;&#39;)}&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>-&gt;page()-&gt;</div>
+<div class="line">                mainFrame()-&gt;evaluateJavaScript(js);</div>
+<div class="line"></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d09/class_u_b_widget_message_a_p_i_af1dc22ac7d5ead2309f8801c1d1efc2c_icgraph.svg" width="382" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="af106f68de4e0ac7a6f7928080b24abe3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -234,12 +305,12 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">UBWidgetAPIMessageBroker::instance</a>()-&gt;<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#abcefec69dc208159e89a6f53b834ad54">sendMessage</a>(pTopicName, pMessage);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d09/class_u_b_widget_message_a_p_i_af106f68de4e0ac7a6f7928080b24abe3_cgraph.svg" width="654" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d09/class_u_b_widget_message_a_p_i_af106f68de4e0ac7a6f7928080b24abe3_cgraph.svg" width="662" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -267,7 +338,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mSubscribedTopics &lt;&lt; pTopicName;</div>
+<div class="line">            <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a> &lt;&lt; pTopicName;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -294,14 +365,55 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mSubscribedTopics.remove(pTopicName);</div>
+<div class="line">            <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a>.remove(pTopicName);</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a777c64bc9195690f2a552c1a627d3aef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a>* UBWidgetMessageAPI::mGraphicsWidgetItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac4fad81b7d28445fdd10c827deaa87c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSet&lt;QString&gt; UBWidgetMessageAPI::mSubscribedTopics</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/api/<a class="el" href="../../d2/d61/_u_b_widget_message_a_p_i_8h_source.html">UBWidgetMessageAPI.h</a></li>
-<li>Sankore-3.1/src/api/<a class="el" href="../../dc/d22/_u_b_widget_message_a_p_i_8cpp.html">UBWidgetMessageAPI.cpp</a></li>
+<li><a class="el" href="../../d2/d61/_u_b_widget_message_a_p_i_8h_source.html">UBWidgetMessageAPI.h</a></li>
+<li><a class="el" href="../../dc/d22/_u_b_widget_message_a_p_i_8cpp.html">UBWidgetMessageAPI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -309,7 +421,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d09/class_u_b_widget_message_a_p_i.html">UBWidgetMessageAPI</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

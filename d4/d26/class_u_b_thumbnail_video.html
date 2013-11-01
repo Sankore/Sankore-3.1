@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d4/d26/class_u_b_thumbnail_video.html'
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d62/class_u_b_thumbnail_video-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBThumbnailVideo Class Reference</div>  </div>
@@ -149,6 +150,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a84ed4fea9e8596864ea91e44ef2b554c inherit pub_methods_class_u_b_thumbnail"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a84ed4fea9e8596864ea91e44ef2b554c">row</a> ()</td></tr>
 <tr class="memitem:ae5f3a2b52f87e1e3c3ed51ce4a045912 inherit pub_methods_class_u_b_thumbnail"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#ae5f3a2b52f87e1e3c3ed51ce4a045912">setRow</a> (int <a class="el" href="../../de/d65/class_u_b_thumbnail.html#a84ed4fea9e8596864ea91e44ef2b554c">row</a>)</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a792f77eed6834eeece377ec3586d4e20"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/class_u_b_thumbnail_video.html#a792f77eed6834eeece377ec3586d4e20">mPath</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_u_b_thumbnail"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_u_b_thumbnail')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../de/d65/class_u_b_thumbnail.html">UBThumbnail</a></td></tr>
@@ -177,7 +182,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">            : <a class="code" href="../../dd/d35/class_u_b_thumbnail_pixmap.html#ae05b732b7257234c13b08042843e5439">UBThumbnailPixmap</a>(QPixmap(<span class="stringliteral">&quot;:/images/movie.svg&quot;</span>))</div>
-<div class="line">            , mPath(<a class="code" href="../../d4/d26/class_u_b_thumbnail_video.html#a81c5439b23d8a4cd9c505c5094638ab8">path</a>)</div>
+<div class="line">            , <a class="code" href="../../d4/d26/class_u_b_thumbnail_video.html#a792f77eed6834eeece377ec3586d4e20">mPath</a>(<a class="code" href="../../d4/d26/class_u_b_thumbnail_video.html#a81c5439b23d8a4cd9c505c5094638ab8">path</a>)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">// NOOP</span></div>
 <div class="line">        }</div>
@@ -232,13 +237,34 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mPath;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d4/d26/class_u_b_thumbnail_video.html#a792f77eed6834eeece377ec3586d4e20">mPath</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a792f77eed6834eeece377ec3586d4e20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUrl UBThumbnailVideo::mPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
+<li><a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -246,7 +272,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/class_u_b_thumbnail_video.html">UBThumbnailVideo</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

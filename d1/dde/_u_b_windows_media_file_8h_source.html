@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/podcast/windowsmedia/UBWindowsMediaFile.h Source File</title>
+<title>Open-Sankoré: UBWindowsMediaFile.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('d1/dde/_u_b_windows_media_file_8h_sour
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9c25699961d8f7d0437a740ea8b513a6">   50</a></span>&#160;        QString <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9c25699961d8f7d0437a740ea8b513a6">lastErrorMessage</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">public</span> slots:</div>
@@ -164,42 +164,42 @@ $(document).ready(function(){initNavTree('d1/dde/_u_b_windows_media_file_8h_sour
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">bool</span> initVideoStream(<span class="keywordtype">int</span> pixelWidth, <span class="keywordtype">int</span> pixelHeight, <span class="keywordtype">int</span> bitsPerPixel);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae31d1fe781748605d4f0bbf3603f3791">initVideoStream</a>(<span class="keywordtype">int</span> pixelWidth, <span class="keywordtype">int</span> pixelHeight, <span class="keywordtype">int</span> bitsPerPixel);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> setLastErrorMessage(<span class="keyword">const</span> QString&amp; error);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="keyword">const</span> QString&amp; error);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> releaseWMObjects();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a47a56804c3125ba397d29ab7baf1c3b8">releaseWMObjects</a>();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        QWORD msToSampleTime(<span class="keywordtype">long</span> ms)</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1">   67</a></span>&#160;        QWORD <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1">msToSampleTime</a>(<span class="keywordtype">long</span> ms)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            QWORD qwordMs = ms;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> (qwordMs * 10000);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        IWMProfile *mWMProfile;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        IWMWriter *mWMWriter;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        IWMWriterPushSink *mPushSink;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">   73</a></span>&#160;        IWMProfile *<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">   74</a></span>&#160;        IWMWriter *<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">   75</a></span>&#160;        IWMWriterPushSink *<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        IWMInputMediaProps *mWMInputVideoProps;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        IWMInputMediaProps *mWMInputAudioProps;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        IWMProfileManager *mWMProfileManager;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">   77</a></span>&#160;        IWMInputMediaProps *<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">   78</a></span>&#160;        IWMInputMediaProps *<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">   79</a></span>&#160;        IWMProfileManager *<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        HDC mWMhDC;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        DWORD mVideoInputIndex;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        DWORD mAudioInputIndex;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        DWORD mFramesPerSecond;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">   81</a></span>&#160;        HDC <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">   82</a></span>&#160;        DWORD <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">mVideoInputIndex</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae6f6a5b5e16496b3379c9f4e3e8a77e1">   83</a></span>&#160;        DWORD <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae6f6a5b5e16496b3379c9f4e3e8a77e1">mAudioInputIndex</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">   84</a></span>&#160;        DWORD <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QString mLastErrorMessage;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">   86</a></span>&#160;        QString <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">struct </span>MarkerInfo</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html">   88</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html">MarkerInfo</a></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            QString label;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">long</span> timestamp;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html#a2301714b1c5ab060b41233b4d98fe1be">   90</a></span>&#160;            QString <a class="code" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html#a2301714b1c5ab060b41233b4d98fe1be">label</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html#aad37e0d8550169cd8d422aeaa3f063c8">   91</a></span>&#160;            <span class="keywordtype">long</span> <a class="code" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html#aad37e0d8550169cd8d422aeaa3f063c8">timestamp</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        };</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        QList&lt;MarkerInfo&gt; mChapters;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">   94</a></span>&#160;        QList&lt;MarkerInfo&gt; <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">mChapters</a>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        QString mVideoFileName;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">   96</a></span>&#160;        QString <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">mVideoFileName</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
@@ -209,8 +209,8 @@ $(document).ready(function(){initNavTree('d1/dde/_u_b_windows_media_file_8h_sour
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_0d766fe769df0b6d000126e79f34734f.html">windowsmedia</a></li><li class="navelem"><a class="el" href="../../d1/dde/_u_b_windows_media_file_8h.html">UBWindowsMediaFile.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_de91351bf1172a20a1f8b279a638efc6.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_ee11115e0b545f542283f357e2530994.html">windowsmedia</a></li><li class="navelem"><a class="el" href="../../d1/dde/_u_b_windows_media_file_8h.html">UBWindowsMediaFile.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

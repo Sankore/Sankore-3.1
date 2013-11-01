@@ -1,6 +1,8 @@
 var class_u_b_tools_manager =
 [
     [ "UBToolDescriptor", "d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html", "d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor" ],
+    [ "UBToolsManager", "df/d8e/class_u_b_tools_manager.html#ae77093006c5aa21be9c55d9fdf219dc0", null ],
+    [ "~UBToolsManager", "df/d8e/class_u_b_tools_manager.html#ac44f2f1f48947fae7a39b440a20b2686", null ],
     [ "allToolIDs", "df/d8e/class_u_b_tools_manager.html#a09df4696600759b5042bc889ac92b480", null ],
     [ "allTools", "df/d8e/class_u_b_tools_manager.html#aa7f4696ab8d5212f3901f3ccc2e1c571", null ],
     [ "destroy", "df/d8e/class_u_b_tools_manager.html#a5ee2b3b460c81f93fe6fe6e9aff724a3", null ],
@@ -12,7 +14,10 @@ var class_u_b_tools_manager =
     [ "compass", "df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9", null ],
     [ "magnifier", "df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb", null ],
     [ "mask", "df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5", null ],
+    [ "mDescriptors", "df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa", null ],
+    [ "mToolsIcon", "df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57", null ],
     [ "protractor", "df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890", null ],
     [ "ruler", "df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233", null ],
+    [ "sManager", "df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58", null ],
     [ "triangle", "df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c", null ]
 ];

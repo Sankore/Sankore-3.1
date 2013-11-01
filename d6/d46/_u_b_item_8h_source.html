@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/domain/UBItem.h Source File</title>
+<title>Open-Sankoré: UBItem.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -205,18 +205,18 @@ $(document).ready(function(){initNavTree('d6/d46/_u_b_item_8h_source.html','../.
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">  102</a></span>&#160;    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">UBGraphicsItem</a>() : mDelegate(NULL)</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">  102</a></span>&#160;    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">UBGraphicsItem</a>() : <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>(NULL)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// NOOP</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#aa2118a97c39bafd7610dcb91fc1bba38">~UBGraphicsItem</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a>* mDelegate);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a>* <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#acab0781401cac08c9ad99b0cd0fa8480">type</a>() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">  113</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mDelegate; }</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">  113</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>; }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#af0b4688328f6b7c06e2f8e2ca5f80805">assignZValue</a>(QGraphicsItem*, qreal value);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a042f9b2d376404863cc0c5a0bece8a91">isRotatable</a>(QGraphicsItem *item);</div>
@@ -233,7 +233,7 @@ $(document).ready(function(){initNavTree('d6/d46/_u_b_item_8h_source.html','../.
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a83e8d1b8f4bbbc024a15f645a39d6e49">  127</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a83e8d1b8f4bbbc024a15f645a39d6e49">clearSource</a>(){}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a>* mDelegate;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">  130</a></span>&#160;    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a>* <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif // UBITEM_H</span></div>
@@ -242,8 +242,8 @@ $(document).ready(function(){initNavTree('d6/d46/_u_b_item_8h_source.html','../.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../d6/d46/_u_b_item_8h.html">UBItem.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_db673584cccf74eb7dc72eb65f8cf944.html">domain</a></li><li class="navelem"><a class="el" href="../../d6/d46/_u_b_item_8h.html">UBItem.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

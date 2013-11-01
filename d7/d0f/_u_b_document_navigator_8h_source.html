@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBDocumentNavigator.h Source File</title>
+<title>Open-Sankoré: UBDocumentNavigator.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -166,16 +166,16 @@ $(document).ready(function(){initNavTree('d7/d0f/_u_b_document_navigator_8h_sour
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> refreshScene();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> border();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a88253965624244b8880b1db9658b87e0" title="Put the element in the right place in the scene.">refreshScene</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a1d6d66c644db9fa32857daa3c7cf5f66" title="Get the border size.">border</a>();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    QGraphicsScene* mScene;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a5217c01649dc4bf012da729b494108f3">   68</a></span>&#160;    QGraphicsScene* <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a5217c01649dc4bf012da729b494108f3">mScene</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//UBSceneThumbnailNavigPixmap* mCrntItem;</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"></span>        QList&lt;UBImgTextThumbnailElement&gt; mThumbsWithLabels;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> mNbColumns;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> mThumbnailWidth;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> mThumbnailMinWidth;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a4f8fca9914a9dab609a0d8f2911be336">   72</a></span>&#160;<span class="comment"></span>        QList&lt;UBImgTextThumbnailElement&gt; <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a4f8fca9914a9dab609a0d8f2911be336">mThumbsWithLabels</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#aa148a4ed817eb26b209ab3f3ab2155a0">   74</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#aa148a4ed817eb26b209ab3f3ab2155a0">mNbColumns</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a7da43ee19c717f7ec1c1a106d1b68d70">   76</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a7da43ee19c717f7ec1c1a106d1b68d70">mThumbnailWidth</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a1da861aeaf4119c67012265bd22eccb8">   78</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html#a1da861aeaf4119c67012265bd22eccb8">mThumbnailMinWidth</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // UBDOCUMENTNAVIGATOR_H</span></div>
@@ -184,8 +184,8 @@ $(document).ready(function(){initNavTree('d7/d0f/_u_b_document_navigator_8h_sour
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d0f/_u_b_document_navigator_8h.html">UBDocumentNavigator.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d0f/_u_b_document_navigator_8h.html">UBDocumentNavigator.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

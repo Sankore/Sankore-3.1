@@ -7,5 +7,6 @@ var class_u_b_w3_c_widget_preference_a_p_i =
     [ "key", "d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe", null ],
     [ "length", "d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a393e0a3fc696898a3981882296f59ef7", null ],
     [ "removeItem", "d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a9e85a7a02209b15ebe7d18eff2d2939a", null ],
-    [ "setItem", "d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a3f3d1495163d732c5cf22aa3425a9cf2", null ]
+    [ "setItem", "d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a3f3d1495163d732c5cf22aa3425a9cf2", null ],
+    [ "mGraphicsW3CWidget", "d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac", null ]
 ];

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/tools/UBToolsManager.h Source File</title>
+<title>Open-Sankoré: UBToolsManager.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('da/d5b/_u_b_tools_manager_8h_source.ht
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aa7f4696ab8d5212f3901f3ccc2e1c571">   52</a></span>&#160;        QList&lt;UBToolDescriptor&gt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aa7f4696ab8d5212f3901f3ccc2e1c571">allTools</a>()</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;             <span class="keywordflow">return</span> mDescriptors;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;             <span class="keywordflow">return</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a09df4696600759b5042bc889ac92b480">   57</a></span>&#160;        QStringList <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a09df4696600759b5042bc889ac92b480">allToolIDs</a>()</div>
@@ -192,17 +192,17 @@ $(document).ready(function(){initNavTree('da/d5b/_u_b_tools_manager_8h_source.ht
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">   86</a></span>&#160;        <a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a8032199deee15348df96fe28ac9aa06e">   87</a></span>&#160;        <a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a8032199deee15348df96fe28ac9aa06e">aristo</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ac00f40af7c81f9b9ea4d2984bb018a52">   89</a></span>&#160;        QString <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ac00f40af7c81f9b9ea4d2984bb018a52">iconFromToolId</a>(QString <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> mToolsIcon.value(<span class="keywordtype">id</span>);}</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ac00f40af7c81f9b9ea4d2984bb018a52">   89</a></span>&#160;        QString <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ac00f40af7c81f9b9ea4d2984bb018a52">iconFromToolId</a>(QString <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.value(<span class="keywordtype">id</span>);}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a>(QObject *parent = 0);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae77093006c5aa21be9c55d9fdf219dc0">UBToolsManager</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ac44f2f1f48947fae7a39b440a20b2686">~UBToolsManager</a>();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a>* sManager;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">   95</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a>* <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        QList&lt;UBToolDescriptor&gt; mDescriptors;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">   97</a></span>&#160;        QList&lt;UBToolDescriptor&gt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        QMap&lt;QString ,QString&gt; mToolsIcon;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">   99</a></span>&#160;        QMap&lt;QString ,QString&gt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
@@ -212,8 +212,8 @@ $(document).ready(function(){initNavTree('da/d5b/_u_b_tools_manager_8h_source.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ed8013f237dc461738538501041f195e.html">tools</a></li><li class="navelem"><a class="el" href="../../da/d5b/_u_b_tools_manager_8h.html">UBToolsManager.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8097888bca2a2152ba8496d074c7e0f3.html">tools</a></li><li class="navelem"><a class="el" href="../../da/d5b/_u_b_tools_manager_8h.html">UBToolsManager.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

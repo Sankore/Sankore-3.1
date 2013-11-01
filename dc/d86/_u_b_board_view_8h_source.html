@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/board/UBBoardView.h Source File</title>
+<title>Open-Sankoré: UBBoardView.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('dc/d86/_u_b_board_view_8h_source.html'
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a712b3d478ccea75d1adf746ad44ea64b">moveRubberedItems</a>(QPointF movingVector);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#abb4c24e88d8f141448c0fc69849d97b9">setMultiselection</a>(<span class="keywordtype">bool</span> enable);</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ab75675b9d680aa0990d99bf75a2a98b5">   56</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#ab75675b9d680aa0990d99bf75a2a98b5">isMultipleSelectionEnabled</a>() { <span class="keywordflow">return</span> mMultipleSelectionIsEnabled; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ab75675b9d680aa0990d99bf75a2a98b5">   56</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#ab75675b9d680aa0990d99bf75a2a98b5">isMultipleSelectionEnabled</a>() { <span class="keywordflow">return</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2925793cf65457195f0169c476b8cceb">mMultipleSelectionIsEnabled</a>; }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// work around for handling tablet events on MAC OS with Qt 4.8.0 and above</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#if defined(Q_WS_MACX)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span>        <span class="keywordtype">bool</span> directTabletEvent(QEvent *<a class="code" href="../../d1/d78/class_u_b_board_view.html#a9052cd8486cf023aaff430a859f2f4af">event</a>);</div>
@@ -218,69 +218,69 @@ $(document).ready(function(){initNavTree('dc/d86/_u_b_board_view_8h_source.html'
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">void</span> init();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a120782652468e816808e30598b6d5021">init</a>();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> shouldDisplayItem(QGraphicsItem *item)</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a2d552535dd7afe219fab7a30ab29dbbd">  117</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2d552535dd7afe219fab7a30ab29dbbd">shouldDisplayItem</a>(QGraphicsItem *item)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordtype">bool</span> ok;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="../../dc/d14/structitem_layer_type.html">itemLayerType</a> = item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>).toInt(&amp;ok);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">return</span> (ok &amp;&amp; (itemLayerType &gt;= mStartLayer &amp;&amp; itemLayerType &lt;= mEndLayer));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">return</span> (ok &amp;&amp; (itemLayerType &gt;= <a class="code" href="../../d1/d78/class_u_b_board_view.html#aac4f548b1028f4e30d9fea5bdc979861">mStartLayer</a> &amp;&amp; itemLayerType &lt;= <a class="code" href="../../d1/d78/class_u_b_board_view.html#ac9be0163bcfcebb015faf976b51287ba">mEndLayer</a>));</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        QList&lt;QUrl&gt; processMimeData(<span class="keyword">const</span> QMimeData* pMimeData);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        QList&lt;QUrl&gt; <a class="code" href="../../d1/d78/class_u_b_board_view.html#a9a4ccd2d20611d937e9fbe9739b87356">processMimeData</a>(<span class="keyword">const</span> QMimeData* pMimeData);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../d7/d62/class_u_b_board_controller.html">UBBoardController</a>* mController;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a971cf606a20eb17ac9a3f93fc84c7fe3">  126</a></span>&#160;        <a class="code" href="../../d7/d62/class_u_b_board_controller.html">UBBoardController</a>* <a class="code" href="../../d1/d78/class_u_b_board_view.html#a971cf606a20eb17ac9a3f93fc84c7fe3">mController</a>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">int</span> mStartLayer, mEndLayer;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">bool</span> mFilterZIndex;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#aac4f548b1028f4e30d9fea5bdc979861">  128</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#aac4f548b1028f4e30d9fea5bdc979861">mStartLayer</a>, <a class="code" href="../../d1/d78/class_u_b_board_view.html#ac9be0163bcfcebb015faf976b51287ba">mEndLayer</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#aca25fa1effe164810f4b75d8b6ad6a1f">  129</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#aca25fa1effe164810f4b75d8b6ad6a1f">mFilterZIndex</a>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">bool</span> mTabletStylusIsPressed;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">bool</span> mUsingTabletEraser;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a2644ff57d4a0328a5025207a05cd29e5">  131</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2644ff57d4a0328a5025207a05cd29e5">mTabletStylusIsPressed</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ad3a3ddc2f125bb1476a5c479234e5de1">  132</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#ad3a3ddc2f125bb1476a5c479234e5de1">mUsingTabletEraser</a>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordtype">bool</span> mPendingStylusReleaseEvent;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a5d09a72d85bedf954551aba30e67a138">  134</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a5d09a72d85bedf954551aba30e67a138">mPendingStylusReleaseEvent</a>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">bool</span> mMouseButtonIsPressed;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        QPointF mPreviousPoint;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        QPoint mMouseDownPos;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a46780033fa6c82b291e3c9c3d7a0ab96">  136</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a46780033fa6c82b291e3c9c3d7a0ab96">mMouseButtonIsPressed</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a75963ab580c47197cd0564a1470fffdc">  137</a></span>&#160;        QPointF <a class="code" href="../../d1/d78/class_u_b_board_view.html#a75963ab580c47197cd0564a1470fffdc">mPreviousPoint</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ae04645303cc19ed098ca9d282917aa61">  138</a></span>&#160;        QPoint <a class="code" href="../../d1/d78/class_u_b_board_view.html#ae04645303cc19ed098ca9d282917aa61">mMouseDownPos</a>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">bool</span> mPenPressureSensitive;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordtype">bool</span> mMarkerPressureSensitive;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">bool</span> mUseHighResTabletEvent;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a524c20634acc11d8feac3a13f9220c1a">  140</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a524c20634acc11d8feac3a13f9220c1a">mPenPressureSensitive</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a08b924de78d2a371b46979cfc9dc245e">  141</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a08b924de78d2a371b46979cfc9dc245e">mMarkerPressureSensitive</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a2bbfa53a24c205ed741830990051b258">  142</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2bbfa53a24c205ed741830990051b258">mUseHighResTabletEvent</a>;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        QRubberBand *mRubberBand;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">bool</span> mIsCreatingTextZone;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">bool</span> mIsCreatingSceneGrabZone;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#afb351b698b63c8ebb899d9cbea6becf1">  144</a></span>&#160;        QRubberBand *<a class="code" href="../../d1/d78/class_u_b_board_view.html#afb351b698b63c8ebb899d9cbea6becf1">mRubberBand</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a526af1d6f5a4202e31de678adb3660c3">  145</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a526af1d6f5a4202e31de678adb3660c3">mIsCreatingTextZone</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#af0c81f8257b9d34ac2f4ea5a8cfbecdc">  146</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#af0c81f8257b9d34ac2f4ea5a8cfbecdc">mIsCreatingSceneGrabZone</a>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">bool</span> isAbsurdPoint(QPoint point);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#ad6a684bf04dac6316ab7ce3b2f282070">isAbsurdPoint</a>(QPoint point);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">bool</span> mVirtualKeyboardActive;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">bool</span> mOkOnWidget;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a3fe810edd6f1b7c3e8bf3a517d0b36b3">  150</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a3fe810edd6f1b7c3e8bf3a517d0b36b3">mVirtualKeyboardActive</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a65b604c320f558f21c87af87aa29833d">  151</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a65b604c320f558f21c87af87aa29833d">mOkOnWidget</a>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">bool</span> mWidgetMoved;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        QPointF mLastPressedMousePos;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        QGraphicsItem *movingItem;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        QMouseEvent *suspendedMousePressEvent;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a39f14fbab26e7a24fe52bd70198e91c7">  153</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a39f14fbab26e7a24fe52bd70198e91c7">mWidgetMoved</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ad456e440f056e88646e6ad0a4285dbbf">  154</a></span>&#160;        QPointF <a class="code" href="../../d1/d78/class_u_b_board_view.html#ad456e440f056e88646e6ad0a4285dbbf">mLastPressedMousePos</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ae59a8cf8a3c54e2f23679adc5247a127">  155</a></span>&#160;        QGraphicsItem *<a class="code" href="../../d1/d78/class_u_b_board_view.html#ae59a8cf8a3c54e2f23679adc5247a127">movingItem</a>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#aae7e4f76f22a41be049e59c4c22f5791">  156</a></span>&#160;        QMouseEvent *<a class="code" href="../../d1/d78/class_u_b_board_view.html#aae7e4f76f22a41be049e59c4c22f5791">suspendedMousePressEvent</a>;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">bool</span> moveRubberBand;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="../../d7/de0/class_u_b_rubber_band.html">UBRubberBand</a> *mUBRubberBand;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a9803fe233fde42ebe85989b2a709a034">  158</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a9803fe233fde42ebe85989b2a709a034">moveRubberBand</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#af36a91a16085808d3a5afb242774daf0">  159</a></span>&#160;        <a class="code" href="../../d7/de0/class_u_b_rubber_band.html">UBRubberBand</a> *<a class="code" href="../../d1/d78/class_u_b_board_view.html#af36a91a16085808d3a5afb242774daf0">mUBRubberBand</a>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        QList&lt;QGraphicsItem *&gt; mRubberedItems;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        QSet&lt;QGraphicsItem*&gt; mJustSelectedItems;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#ac9f9dd1808c627c7adfb082c43ae82c1">  161</a></span>&#160;        QList&lt;QGraphicsItem *&gt; <a class="code" href="../../d1/d78/class_u_b_board_view.html#ac9f9dd1808c627c7adfb082c43ae82c1">mRubberedItems</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#adaa2c5dc6ffa4d89ccf162c58fcf912f">  162</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d1/d78/class_u_b_board_view.html#adaa2c5dc6ffa4d89ccf162c58fcf912f">mJustSelectedItems</a>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">int</span> mLongPressInterval;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        QTimer mLongPressTimer;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a1681d018c7b4468c13a6af8362781869">  164</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a1681d018c7b4468c13a6af8362781869">mLongPressInterval</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a54c4838df6ca5708750961f2c37f0347">  165</a></span>&#160;        QTimer <a class="code" href="../../d1/d78/class_u_b_board_view.html#a54c4838df6ca5708750961f2c37f0347">mLongPressTimer</a>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">bool</span> mIsDragInProgress;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordtype">bool</span> mMultipleSelectionIsEnabled;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordtype">bool</span> bIsControl;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordtype">bool</span> bIsDesktop;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">bool</span> mRubberBandInPlayMode;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a93466f9bf73cce786c694159a583da52">  167</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a93466f9bf73cce786c694159a583da52">mIsDragInProgress</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a2925793cf65457195f0169c476b8cceb">  168</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a2925793cf65457195f0169c476b8cceb">mMultipleSelectionIsEnabled</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#afef87917cfce8c28417ac4134adf41fa">  169</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#afef87917cfce8c28417ac4134adf41fa">bIsControl</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a0f5311c997cc86b8d253a2a34daae3c8">  170</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a0f5311c997cc86b8d253a2a34daae3c8">bIsDesktop</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="../../d1/d78/class_u_b_board_view.html#a70d0e91d4eb9ea2ed7cf430ef71bf4a4">  171</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#a70d0e91d4eb9ea2ed7cf430ef71bf4a4">mRubberBandInPlayMode</a>;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> hasSelectedParents(QGraphicsItem * item);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#aeca336e68d7efe98cf17c5db9871ae7e">hasSelectedParents</a>(QGraphicsItem * item);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">private</span> slots:</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">void</span> settingChanged(QVariant newValue);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d78/class_u_b_board_view.html#af407ceeadef1bb77f84d3fe6afbf98f4">settingChanged</a>(QVariant newValue);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">public</span> slots:</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
@@ -295,8 +295,8 @@ $(document).ready(function(){initNavTree('dc/d86/_u_b_board_view_8h_source.html'
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7fe1c7b98da3fc0ec4355570b26fa0a9.html">board</a></li><li class="navelem"><a class="el" href="../../dc/d86/_u_b_board_view_8h.html">UBBoardView.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_21ae343ca4b836b1b9ba61c19408c2b0.html">board</a></li><li class="navelem"><a class="el" href="../../dc/d86/_u_b_board_view_8h.html">UBBoardView.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

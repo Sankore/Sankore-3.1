@@ -4,11 +4,13 @@ var searchData=
   ['icrosssize',['iCrossSize',['../d4/d4e/_u_b_c_f_f_constants_8h.html#ac0dee4faf3348dfc6c7f7087fd0acaab',1,'UBCFFConstants.h']]],
   ['icrosswidth',['iCrossWidth',['../d4/d4e/_u_b_c_f_f_constants_8h.html#ad3e473f7d1e0ac86078d3515ab14651e',1,'UBCFFConstants.h']]],
   ['id',['id',['../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f',1,'sDownloadFileDesc::id()'],['../d2/dea/class_u_b_graphics_w3_c_widget_item_1_1_metadata.html#aa71a03b257d8af4470bc35ddd16282c8',1,'UBGraphicsW3CWidgetItem::Metadata::id()'],['../d3/d63/class_u_b_keyboard_locale.html#a53ed8afa7b75cf945a31239d93493610',1,'UBKeyboardLocale::id()'],['../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea',1,'UBToolsManager::UBToolDescriptor::id()']]],
+  ['image',['image',['../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a1ebacd89ef326c837d0420c9e1aa1faf',1,'UBQuickTimeVideoEncoder::ImageFrame']]],
   ['imagealias',['imageAlias',['../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a57660732bda113a1a5c182d8d77200d3',1,'UBWidgetUniboardAPI.cpp']]],
   ['imagealiascap',['imageAliasCap',['../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#a3bf5d58e8404ee513fab8703701eee2e',1,'UBWidgetUniboardAPI.cpp']]],
   ['imagedirectory',['imageDirectory',['../d0/dd5/class_u_b_persistence_manager.html#afc92c7516c08081b8443076d1554e471',1,'UBPersistenceManager']]],
   ['imageextentions',['imageExtentions',['../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html#ab2bec949e1c5f3788f79708a7b18a04a',1,'UBWidgetUniboardAPI.cpp']]],
   ['imagefileextensions',['imageFileExtensions',['../db/d66/class_u_b_settings.html#aafb3902650405393aa5b1fee66a59159',1,'UBSettings']]],
+  ['imagegatherer',['imageGatherer',['../d5/d85/class_u_b_features_widget.html#aa492be1726df26209e24392b8c182f6c',1,'UBFeaturesWidget']]],
   ['imagethumbnailwidth',['imageThumbnailWidth',['../db/d66/class_u_b_settings.html#a0b93ca2ce7cf596982b1611393fd900f',1,'UBSettings']]],
   ['imgcontent',['imgContent',['../d2/d05/class_u_b_keyboard_button.html#a72d0a599d85f6cb818ff818fd101afbb',1,'UBKeyboardButton']]],
   ['inchsize',['inchSize',['../d3/dff/class_u_b_geometry_utils.html#a1f5d4e8f0ad9766ef4325e41562b5d33',1,'UBGeometryUtils']]],
@@ -20,6 +22,10 @@ var searchData=
   ['isbackground',['isBackground',['../d5/d15/structs_download_file_desc.html#ad945d24ca6d26c992c66e95c0447f165',1,'sDownloadFileDesc']]],
   ['iscusrsoralreadystored',['isCusrsorAlreadyStored',['../d4/d9d/class_u_b_magnifier.html#a26a82499d8b3bae09816e2f516226d43',1,'UBMagnifier']]],
   ['isfirstresized',['isFirstResized',['../df/d5a/_u_b_board_palette_manager_8cpp.html#acd6e7dc9d862934bd40312dc0e1b0418',1,'UBBoardPaletteManager.cpp']]],
-  ['iwbns',['iwbNS',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a77a806a22c9e1b069f67fa000427bf50',1,'UBCFFConstants.h']]],
-  ['iwbnsprefix',['iwbNsPrefix',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a5df3733d7b37374ebadf5a7d17d0efe0',1,'UBCFFConstants.h']]]
+  ['isnoupdatedisplayed',['isNoUpdateDisplayed',['../da/d14/class_u_b_application_controller.html#adf7f6aa5380f166ed961000cb3bed6a1',1,'UBApplicationController']]],
+  ['itemdelegate',['itemDelegate',['../d8/d33/class_u_b_features_controller.html#adf3049dd53e4eb9c2ed735732dd8d292',1,'UBFeaturesController']]],
+  ['itemsboundingrect',['itemsBoundingRect',['../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb',1,'UBGraphicsGroupContainerItem']]],
+  ['iwbns',['iwbNS',['../d5/d61/_u_b_c_f_f_subset_adaptor_8cpp.html#a9ef88ae6baeb5889ff45b9490daf42d0',1,'iwbNS():&#160;UBCFFSubsetAdaptor.cpp'],['../d4/d4e/_u_b_c_f_f_constants_8h.html#a77a806a22c9e1b069f67fa000427bf50',1,'iwbNS():&#160;UBCFFConstants.h']]],
+  ['iwbnsprefix',['iwbNsPrefix',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a5df3733d7b37374ebadf5a7d17d0efe0',1,'UBCFFConstants.h']]],
+  ['iwbsvgitemsattributes',['iwbSVGItemsAttributes',['../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a14727ca59f7201836021c9d4e258cfc8',1,'UBCFFAdaptor::UBToCFFConverter']]]
 ];

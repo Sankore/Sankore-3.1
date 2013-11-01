@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('dd/d3b/class_u_b_auto_saver.html','../
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d8c/class_u_b_auto_saver-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBAutoSaver Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('dd/d3b/class_u_b_auto_saver.html','../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d95/class_u_b_auto_saver__coll__graph.svg" width="158" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d95/class_u_b_auto_saver__coll__graph.svg" width="158" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -134,6 +135,11 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac8075c3307a9c465da38c2d9b70dbf65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html#ac8075c3307a9c465da38c2d9b70dbf65">timerEvent</a> (QTimerEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a312644b8fa6c23cc5becf83d6f0c820d"><td class="memItemLeft" align="right" valign="top">QBasicTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a></td></tr>
+<tr class="memitem:a0eb6bcb7bdbee1b27fc42d7efbffaf6e"><td class="memItemLeft" align="right" valign="top">QTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a45686ca32c187b91b9e9fb79a23a6ae9"></a>
@@ -169,7 +175,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mTimer.isActive())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.isActive())</div>
 <div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;AutoSaver: still active when destroyed, changes not saved.&quot;</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -197,14 +203,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mFirstChange.isNull())</div>
-<div class="line">        mFirstChange.start();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a>.isNull())</div>
+<div class="line">        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a>.start();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mFirstChange.elapsed() &gt; <a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#a26c50ab923a8c13c3c032940dfbde38f">MAXWAIT</a>)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a>.elapsed() &gt; <a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#a26c50ab923a8c13c3c032940dfbde38f">MAXWAIT</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        mTimer.start(<a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#ae9d8b569014bf7c467f90fe98a0f844b">AUTOSAVE_IN</a>, <span class="keyword">this</span>);</div>
+<div class="line">        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.start(<a class="code" href="../../d9/d23/_u_b_auto_saver_8cpp.html#ae9d8b569014bf7c467f90fe98a0f844b">AUTOSAVE_IN</a>, <span class="keyword">this</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -241,11 +247,11 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mTimer.isActive())</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.isActive())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
-<div class="line">    mTimer.stop();</div>
-<div class="line">    mFirstChange = QTime();</div>
+<div class="line">    <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.stop();</div>
+<div class="line">    <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a0eb6bcb7bdbee1b27fc42d7efbffaf6e">mFirstChange</a> = QTime();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (!QMetaObject::invokeMethod(parent(), <span class="stringliteral">&quot;save&quot;</span>, Qt::DirectConnection))</div>
 <div class="line">    {</div>
@@ -286,7 +292,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (event-&gt;timerId() == mTimer.timerId())</div>
+<div class="line">    <span class="keywordflow">if</span> (event-&gt;timerId() == <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a312644b8fa6c23cc5becf83d6f0c820d">mTimer</a>.timerId())</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line">    }</div>
@@ -307,9 +313,50 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a0eb6bcb7bdbee1b27fc42d7efbffaf6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTime UBAutoSaver::mFirstChange</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a312644b8fa6c23cc5becf83d6f0c820d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QBasicTimer UBAutoSaver::mTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/network/<a class="el" href="../../de/db2/_u_b_auto_saver_8h_source.html">UBAutoSaver.h</a></li>
-<li>Sankore-3.1/src/network/<a class="el" href="../../d9/d23/_u_b_auto_saver_8cpp.html">UBAutoSaver.cpp</a></li>
+<li><a class="el" href="../../de/db2/_u_b_auto_saver_8h_source.html">UBAutoSaver.h</a></li>
+<li><a class="el" href="../../d9/d23/_u_b_auto_saver_8cpp.html">UBAutoSaver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -317,7 +364,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:55 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

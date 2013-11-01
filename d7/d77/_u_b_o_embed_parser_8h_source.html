@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/web/UBOEmbedParser.h Source File</title>
+<title>Open-Sankoré: UBOEmbedParser.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -192,16 +192,16 @@ $(document).ready(function(){initNavTree('d7/d77/_u_b_o_embed_parser_8h_source.h
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ab0c16446cc9f72b15801af51fd3c64aa">oembedParsed</a>(QVector&lt;sOEmbedContent&gt; contents);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> onFinished(QNetworkReply* reply);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> onParseContent(QString url);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa660d2db5e69ecbb3f2e073d51298a0e">onFinished</a>(QNetworkReply* reply);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#abd73dc88356ddb46ed264d745bb5e34d">onParseContent</a>(QString url);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> getJSONInfos(<span class="keyword">const</span> QString&amp; json);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> getXMLInfos(<span class="keyword">const</span> QString&amp; xml);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    QVector&lt;sOEmbedContent&gt; mContents;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QVector&lt;QString&gt; mParsedTitles;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    QNetworkAccessManager* mpNam;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> mPending;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a3dabfb4b9aedc6ab48fdfe569b6b8cac">getJSONInfos</a>(<span class="keyword">const</span> QString&amp; json);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ae94b07856dfe1b7277c4f557875fd217">getXMLInfos</a>(<span class="keyword">const</span> QString&amp; xml);</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">   95</a></span>&#160;    QVector&lt;sOEmbedContent&gt; <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">mContents</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a918203a4d721b96d0bae4bfd4e1ba258">   96</a></span>&#160;    QVector&lt;QString&gt; <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a918203a4d721b96d0bae4bfd4e1ba258">mParsedTitles</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">   97</a></span>&#160;    QNetworkAccessManager* <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">mpNam</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">   98</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">mPending</a>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif // UBOEMBEDPARSER_H</span></div>
@@ -210,8 +210,8 @@ $(document).ready(function(){initNavTree('d7/d77/_u_b_o_embed_parser_8h_source.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../d7/d77/_u_b_o_embed_parser_8h.html">UBOEmbedParser.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_c5d8e5d1a9c4329f04300c8019051d02.html">web</a></li><li class="navelem"><a class="el" href="../../d7/d77/_u_b_o_embed_parser_8h.html">UBOEmbedParser.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d4/da1/class_u_b_document_tree_item_de
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d7/d70/class_u_b_document_tree_item_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentTreeItemDelegate Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('d4/da1/class_u_b_document_tree_item_de
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/db8/class_u_b_document_tree_item_delegate__coll__graph.svg" width="235" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/db8/class_u_b_document_tree_item_delegate__coll__graph.svg" width="235" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -130,6 +132,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af827bfc3a01e7c880b449708e5cd2541"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#af827bfc3a01e7c880b449708e5cd2541">setEditorData</a> (QWidget *editor, const QModelIndex &amp;index) const </td></tr>
 <tr class="memitem:a0cef5aa74a95087a9684a4a7133b72eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a0cef5aa74a95087a9684a4a7133b72eb">setModelData</a> (QWidget *editor, QAbstractItemModel *model, const QModelIndex &amp;index) const </td></tr>
 <tr class="memitem:a8882e5eda4234dbf6ec7903324059058"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a8882e5eda4234dbf6ec7903324059058">paint</a> (QPainter *painter, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:adb096e797de01ca2b0198af7fb7a6bb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#adb096e797de01ca2b0198af7fb7a6bb4">commitAndCloseEditor</a> ()</td></tr>
+<tr class="memitem:a15906b75797cda206e35499df048a8ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a15906b75797cda206e35499df048a8ad">processChangedText</a> (const QString &amp;str) const </td></tr>
+<tr class="memitem:ac47d1e77f639ef03ba6f1cc38dcf6983"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#ac47d1e77f639ef03ba6f1cc38dcf6983">validateString</a> (const QString &amp;str) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a592fee720a025e032e4d2d1835802048"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a592fee720a025e032e4d2d1835802048">mExistingFileNames</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac8548c29cd459a9d0542fea7c335fa92"></a>
@@ -153,6 +165,45 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="adb096e797de01ca2b0198af7fb7a6bb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeItemDelegate::commitAndCloseEditor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QLineEdit *lineEditor = qobject_cast&lt;QLineEdit*&gt;(sender());</div>
+<div class="line">    <span class="keywordflow">if</span> (lineEditor) {</div>
+<div class="line">        emit commitData(lineEditor);</div>
+<div class="line">        emit closeEditor(lineEditor);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_adb096e797de01ca2b0198af7fb7a6bb4_icgraph.svg" width="470" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a4d927840f53427e1ec1c04ba17855f0c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -194,25 +245,25 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    Q_UNUSED(option);</div>
 <div class="line">    Q_UNUSED(index);</div>
 <div class="line"></div>
-<div class="line">    mExistingFileNames.clear();</div>
+<div class="line">    <a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a592fee720a025e032e4d2d1835802048">mExistingFileNames</a>.clear();</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *indexModel = qobject_cast&lt;<span class="keyword">const</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>*&gt;(index.model());</div>
 <div class="line">    <span class="keywordflow">if</span> (indexModel) {</div>
-<div class="line">        mExistingFileNames = indexModel-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ab750c5efca6d80e87c6e831a96a6fc8a">nodeNameList</a>(index.parent());</div>
-<div class="line">        mExistingFileNames.removeOne(index.data().toString());</div>
+<div class="line">        <a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a592fee720a025e032e4d2d1835802048">mExistingFileNames</a> = indexModel-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ab750c5efca6d80e87c6e831a96a6fc8a">nodeNameList</a>(index.parent());</div>
+<div class="line">        <a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a592fee720a025e032e4d2d1835802048">mExistingFileNames</a>.removeOne(index.data().toString());</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    QLineEdit *nameEditor = <span class="keyword">new</span> QLineEdit(parent);</div>
-<div class="line">    connect(nameEditor, SIGNAL(editingFinished()), <span class="keyword">this</span>, SLOT(commitAndCloseEditor()));</div>
-<div class="line">    connect(nameEditor, SIGNAL(textChanged(QString)), <span class="keyword">this</span>, SLOT(processChangedText(QString)));</div>
+<div class="line">    connect(nameEditor, SIGNAL(editingFinished()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#adb096e797de01ca2b0198af7fb7a6bb4">commitAndCloseEditor</a>()));</div>
+<div class="line">    connect(nameEditor, SIGNAL(textChanged(QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a15906b75797cda206e35499df048a8ad">processChangedText</a>(QString)));</div>
 <div class="line">    <span class="keywordflow">return</span> nameEditor;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_a4d927840f53427e1ec1c04ba17855f0c_cgraph.svg" width="638" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_a4d927840f53427e1ec1c04ba17855f0c_cgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -259,6 +310,60 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a8882e5eda4234dbf6ec7903324059058">QStyledItemDelegate::paint</a>(painter, option, index);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a15906b75797cda206e35499df048a8ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeItemDelegate::processChangedText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QLineEdit *editor = qobject_cast&lt;QLineEdit*&gt;(sender());</div>
+<div class="line">    <span class="keywordflow">if</span> (!editor) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#ac47d1e77f639ef03ba6f1cc38dcf6983">validateString</a>(str)) {</div>
+<div class="line">        editor-&gt;setStyleSheet(<span class="stringliteral">&quot;background-color: #FFB3C8;&quot;</span>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        editor-&gt;setStyleSheet(<span class="stringliteral">&quot;background-color: #FFFFFF;&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_a15906b75797cda206e35499df048a8ad_cgraph.svg" width="470" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_a15906b75797cda206e35499df048a8ad_icgraph.svg" width="470" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="af827bfc3a01e7c880b449708e5cd2541"></a>
@@ -341,16 +446,84 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QLineEdit *lineEditor = qobject_cast&lt;QLineEdit*&gt;(editor);</div>
-<div class="line">    <span class="keywordflow">if</span> (validateString(lineEditor-&gt;text())) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#ac47d1e77f639ef03ba6f1cc38dcf6983">validateString</a>(lineEditor-&gt;text())) {</div>
 <div class="line">        model-&gt;setData(index, lineEditor-&gt;text());</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_a0cef5aa74a95087a9684a4a7133b72eb_cgraph.svg" width="470" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac47d1e77f639ef03ba6f1cc38dcf6983"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDocumentTreeItemDelegate::validateString </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> QRegExp(<span class="stringliteral">&quot;[^\\/\\:\\?\\*\\|\\&lt;\\&gt;\\\&quot;]{1,}&quot;</span>).exactMatch(str)</div>
+<div class="line">            &amp;&amp; !<a class="code" href="../../d4/da1/class_u_b_document_tree_item_delegate.html#a592fee720a025e032e4d2d1835802048">mExistingFileNames</a>.contains(str);</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/da1/class_u_b_document_tree_item_delegate_ac47d1e77f639ef03ba6f1cc38dcf6983_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a592fee720a025e032e4d2d1835802048"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList UBDocumentTreeItemDelegate::mExistingFileNames</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -358,7 +531,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/da1/class_u_b_document_tree_item_delegate.html">UBDocumentTreeItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

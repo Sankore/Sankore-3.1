@@ -21,6 +21,7 @@ var class_u_b_main_window =
     [ "yesNoQuestion", "d8/d9e/class_u_b_main_window.html#a4e2df10066f36d2040fca0feb192a5d8", null ],
     [ "mBoardWidget", "d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb", null ],
     [ "mDocumentsWidget", "d8/d9e/class_u_b_main_window.html#ab0686e7ba525d0d7dc7fb86b707ac363", null ],
+    [ "mpDownloadWidget", "d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478", null ],
     [ "mStackedLayout", "d8/d9e/class_u_b_main_window.html#a2c37b6336535a741661bbeb7e1375d8e", null ],
     [ "mWebWidget", "d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea", null ]
 ];

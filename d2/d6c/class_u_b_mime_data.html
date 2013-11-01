@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d2/d6c/class_u_b_mime_data.html','../.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/dda/class_u_b_mime_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBMimeData Class Reference</div>  </div>
@@ -124,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d5c5484930804a1ac82bfac93081fb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_u_b_mime_data.html#a1d5c5484930804a1ac82bfac93081fb4">UBMimeData</a> (const QList&lt; <a class="el" href="../../da/dba/struct_u_b_mime_data_item.html">UBMimeDataItem</a> &gt; &amp;<a class="el" href="../../d2/d6c/class_u_b_mime_data.html#a19ae9a5d22b796a976ddeabfa7a2e8c1">items</a>)</td></tr>
 <tr class="memitem:ab8f621d9898fccd39a558f3479f01284"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_u_b_mime_data.html#ab8f621d9898fccd39a558f3479f01284">~UBMimeData</a> ()</td></tr>
 <tr class="memitem:a19ae9a5d22b796a976ddeabfa7a2e8c1"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../da/dba/struct_u_b_mime_data_item.html">UBMimeDataItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_u_b_mime_data.html#a19ae9a5d22b796a976ddeabfa7a2e8c1">items</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aff92aafd364d2e85d5ec7bd4524d19d5"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../da/dba/struct_u_b_mime_data_item.html">UBMimeDataItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_u_b_mime_data.html#aff92aafd364d2e85d5ec7bd4524d19d5">mItems</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1d5c5484930804a1ac82bfac93081fb4"></a>
@@ -140,7 +145,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QMimeData()</div>
-<div class="line">    , mItems(<a class="code" href="../../d2/d6c/class_u_b_mime_data.html#a19ae9a5d22b796a976ddeabfa7a2e8c1">items</a>)</div>
+<div class="line">    , <a class="code" href="../../d2/d6c/class_u_b_mime_data.html#aff92aafd364d2e85d5ec7bd4524d19d5">mItems</a>(<a class="code" href="../../d2/d6c/class_u_b_mime_data.html#a19ae9a5d22b796a976ddeabfa7a2e8c1">items</a>)</div>
 <div class="line">{</div>
 <div class="line">    setData(<a class="code" href="../../d8/d81/class_u_b_application.html#ad4f533c7971ce1c441b13a1b61e17525">UBApplication::mimeTypeUniboardPage</a>, QByteArray());</div>
 <div class="line">}</div>
@@ -194,7 +199,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mItems; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d2/d6c/class_u_b_mime_data.html#aff92aafd364d2e85d5ec7bd4524d19d5">mItems</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -207,9 +212,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aff92aafd364d2e85d5ec7bd4524d19d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../da/dba/struct_u_b_mime_data_item.html">UBMimeDataItem</a>&gt; UBMimeData::mItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp.html">UBMimeData.cpp</a></li>
+<li><a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a></li>
+<li><a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp.html">UBMimeData.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -217,7 +243,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d6c/class_u_b_mime_data.html">UBMimeData</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -14,8 +14,14 @@ var class_delegate_media_control =
     [ "update", "df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1", null ],
     [ "updateTicker", "df/d0d/class_delegate_media_control.html#a463f01b70494794b7e54b273a1d0a412", null ],
     [ "used", "df/d0d/class_delegate_media_control.html#a750d5874b4b76748e648fa7a433a87e1", null ],
+    [ "lcdTimer", "df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970", null ],
     [ "mCurrentTimeInMs", "df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae", null ],
     [ "mDelegate", "df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097", null ],
     [ "mDisplayCurrentTime", "df/d0d/class_delegate_media_control.html#a06fd542ee0278e369a39b9158f0acb35", null ],
+    [ "mDisplayFormat", "df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f", null ],
+    [ "mLCDTimerArea", "df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3", null ],
+    [ "mSeecArea", "df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc", null ],
+    [ "mSeecAreaBorderHeight", "df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74", null ],
+    [ "mStartWidth", "df/d0d/class_delegate_media_control.html#a96a1dbce725000a79fb362dee01cfc78", null ],
     [ "mTotalTimeInMs", "df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392", null ]
 ];

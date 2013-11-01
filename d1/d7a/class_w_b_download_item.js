@@ -1,10 +1,27 @@
 var class_w_b_download_item =
 [
     [ "WBDownloadItem", "d1/d7a/class_w_b_download_item.html#ae98363fcd3077100e78b528eb931efbf", null ],
+    [ "dataString", "d1/d7a/class_w_b_download_item.html#a947347b47d4a9145e7399ed70b39e562", null ],
     [ "downloadedSuccessfully", "d1/d7a/class_w_b_download_item.html#aceb7546f21a0887150bc21d20b3a45f8", null ],
     [ "downloading", "d1/d7a/class_w_b_download_item.html#a8fabeb71f2281ea7853f9b814a830650", null ],
+    [ "downloadProgress", "d1/d7a/class_w_b_download_item.html#a37337b7ebe1fcb3ee704b9fc6c183c99", null ],
+    [ "downloadReadyRead", "d1/d7a/class_w_b_download_item.html#a7c21a7fc1d34664f463ada469af79b5e", null ],
+    [ "error", "d1/d7a/class_w_b_download_item.html#a76eb610dcfe22374ee593da985a4729b", null ],
+    [ "finished", "d1/d7a/class_w_b_download_item.html#ac1f4b8b240c7de1805c0dfc849af03b0", null ],
+    [ "getFileName", "d1/d7a/class_w_b_download_item.html#a5f5ae02c23c5f3f76633c0f388327299", null ],
+    [ "init", "d1/d7a/class_w_b_download_item.html#a95ff2128c63f2086b0f01bbe366c6406", null ],
+    [ "metaDataChanged", "d1/d7a/class_w_b_download_item.html#afd834b8a8e7e1f494c119bda5b09e26b", null ],
+    [ "open", "d1/d7a/class_w_b_download_item.html#ac226081b65f5fe5e08094a3c1476f7ec", null ],
+    [ "saveFileName", "d1/d7a/class_w_b_download_item.html#adb442e85e19fc6ec128608af9c7b7046", null ],
     [ "statusChanged", "d1/d7a/class_w_b_download_item.html#a01e7e68de330f4d2621ebfd709800072", null ],
+    [ "stop", "d1/d7a/class_w_b_download_item.html#ab53ba9f6f09bb4c9efa6bca942864e49", null ],
+    [ "tryAgain", "d1/d7a/class_w_b_download_item.html#af037613a6a3e8e6abaf9e3ca8a172f6b", null ],
+    [ "updateInfoLabel", "d1/d7a/class_w_b_download_item.html#a83ca723bb6ec4e8df65b72b7a923de4e", null ],
     [ "m_output", "d1/d7a/class_w_b_download_item.html#a1694a95d565679f7d12285b697ccf839", null ],
     [ "m_reply", "d1/d7a/class_w_b_download_item.html#a2c41d2e38b2be81d4cb4d6565a339fda", null ],
-    [ "m_url", "d1/d7a/class_w_b_download_item.html#ac9f3934c2505e3ceb68fb330a8702493", null ]
+    [ "m_url", "d1/d7a/class_w_b_download_item.html#ac9f3934c2505e3ceb68fb330a8702493", null ],
+    [ "mBytesReceived", "d1/d7a/class_w_b_download_item.html#a2c86dbdf335a9058bd2f361fbc894981", null ],
+    [ "mCustomDownloadPath", "d1/d7a/class_w_b_download_item.html#afe5a6d4c558d077007cd5e1aa253cd88", null ],
+    [ "mDownloadTime", "d1/d7a/class_w_b_download_item.html#aea0a0db930b3957c1b2fe23ca32cdea7", null ],
+    [ "mRequestFileName", "d1/d7a/class_w_b_download_item.html#a57bd92aee1df165f1f0526b8c10b4613", null ]
 ];

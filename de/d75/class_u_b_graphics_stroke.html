@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('de/d75/class_u_b_graphics_stroke.html'
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d7/dfa/class_u_b_graphics_stroke-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -136,6 +137,10 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a76ff6a3c17efa506459591785d749f47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d75/class_u_b_graphics_stroke.html#a76ff6a3c17efa506459591785d749f47">addPolygon</a> (<a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a> *pol)</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abf90fb7bc5ee5e3efad2e6eb3850df48"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:aec6ebbda09c500f9f324b3881394977b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d75/class_u_b_graphics_stroke.html#aec6ebbda09c500f9f324b3881394977b">UBGraphicsPolygonItem</a></td></tr>
@@ -162,7 +167,8 @@ Friends</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a6b553a3cafb85f50607229b5430f9316_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a6b553a3cafb85f50607229b5430f9316_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -218,7 +224,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">remove</span>(pol);</div>
-<div class="line">    mPolygons &lt;&lt; pol;</div>
+<div class="line">    <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a> &lt;&lt; pol;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -226,7 +232,8 @@ Friends</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a76ff6a3c17efa506459591785d749f47_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a76ff6a3c17efa506459591785d749f47_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -245,8 +252,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(!mPolygons.empty()){</div>
-<div class="line">        mPolygons.clear();</div>
+<div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.empty()){</div>
+<div class="line">        <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.clear();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -285,7 +292,8 @@ Friends</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_adf2fb7f966fc2565bc4f37e67f8d93e7_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_adf2fb7f966fc2565bc4f37e67f8d93e7_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -304,7 +312,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mPolygons.length() &gt; 0 &amp;&amp; mPolygons.at(0)-&gt;color().alphaF() != 1.0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.length() &gt; 0 &amp;&amp; <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.at(0)-&gt;color().alphaF() != 1.0)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">    }</div>
@@ -329,11 +337,11 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mPolygons.count() &gt; 2)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.count() &gt; 2)</div>
 <div class="line">    {</div>
-<div class="line">        qreal nominalWidth = mPolygons.at(0)-&gt;originalWidth();</div>
+<div class="line">        qreal nominalWidth = <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.at(0)-&gt;originalWidth();</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">foreach</span>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* pol, mPolygons)</div>
+<div class="line">        <span class="keywordflow">foreach</span>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>* pol, <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (!pol-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a7132e5315a262757037e72e5fa379d5d">isNominalLine</a>() || pol-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#aacda0659f1614f24634e4f7276ff1618">originalWidth</a>() != nominalWidth)</div>
 <div class="line">                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -352,6 +360,16 @@ Friends</h2></td></tr>
 </div>
 </p>
 
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a391767e8456dbee54956d48709dccf70_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a19d0be99f5ef2ac596e13ef018ec1d77"></a>
@@ -367,15 +385,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mPolygons;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a19d0be99f5ef2ac596e13ef018ec1d77_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_a19d0be99f5ef2ac596e13ef018ec1d77_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -395,17 +414,18 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordtype">int</span> n = mPolygons.indexOf(polygonItem);</div>
+<div class="line">    <span class="keywordtype">int</span> n = <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.indexOf(polygonItem);</div>
 <div class="line">    <span class="keywordflow">if</span> (n&gt;=0)</div>
-<div class="line">        mPolygons.removeAt(n);</div>
+<div class="line">        <a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48">mPolygons</a>.removeAt(n);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_aeecdbfc012ba82636e96ffe0d9d13846_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d75/class_u_b_graphics_stroke_aeecdbfc012ba82636e96ffe0d9d13846_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -432,9 +452,30 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="abf90fb7bc5ee5e3efad2e6eb3850df48"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>*&gt; UBGraphicsStroke::mPolygons</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../da/d5f/_u_b_graphics_stroke_8h_source.html">UBGraphicsStroke.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d9/da7/_u_b_graphics_stroke_8cpp.html">UBGraphicsStroke.cpp</a></li>
+<li><a class="el" href="../../da/d5f/_u_b_graphics_stroke_8h_source.html">UBGraphicsStroke.h</a></li>
+<li><a class="el" href="../../d9/da7/_u_b_graphics_stroke_8cpp.html">UBGraphicsStroke.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -442,7 +483,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:56 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:04 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

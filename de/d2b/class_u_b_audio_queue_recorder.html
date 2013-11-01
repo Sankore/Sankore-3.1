@@ -106,6 +106,10 @@ $(document).ready(function(){initNavTree('de/d2b/class_u_b_audio_queue_recorder.
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d7/d74/class_u_b_audio_queue_recorder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBAudioQueueRecorder Class Reference</div>  </div>
@@ -118,7 +122,7 @@ $(document).ready(function(){initNavTree('de/d2b/class_u_b_audio_queue_recorder.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d60/class_u_b_audio_queue_recorder__coll__graph.svg" width="211" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d60/class_u_b_audio_queue_recorder__coll__graph.svg" width="211" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -143,6 +147,31 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a67ef65275e545d178369a82cf5782159"><td class="memItemLeft" align="right" valign="top">static QList&lt; AudioDeviceID &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a67ef65275e545d178369a82cf5782159">inputDeviceIDs</a> ()</td></tr>
 <tr class="memitem:adf7c2bcd72393cb8b5949094084f3d87"><td class="memItemLeft" align="right" valign="top">static AudioDeviceID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#adf7c2bcd72393cb8b5949094084f3d87">defaultInputDeviceID</a> ()</td></tr>
 <tr class="memitem:a6c1c163c2243fe2edbe584118f586539"><td class="memItemLeft" align="right" valign="top">static AudioStreamBasicDescription&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a6c1c163c2243fe2edbe584118f586539">audioFormat</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad249b6e2dfce2f10e093ae5a7cbde0af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad249b6e2dfce2f10e093ae5a7cbde0af">emitNewWaveBuffer</a> (AudioQueueBufferRef pBuffer, int inNumberPacketDescriptions, const AudioStreamPacketDescription *inPacketDescs)</td></tr>
+<tr class="memitem:a243f1d0de0227c7172e2bb21866e8d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a243f1d0de0227c7172e2bb21866e8d39">emitAudioLevelChanged</a> (quint8 level)</td></tr>
+<tr class="memitem:a3843206adfbbaad0677dfe36b5134186"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a> (const QString &amp;pLastErrorMessage)</td></tr>
+<tr class="memitem:a3dc9dc46c6359f9a3dc42832cb3894a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3dc9dc46c6359f9a3dc42832cb3894a9">isRecording</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a44801bf6a2710136c3d85901e25d9357"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a44801bf6a2710136c3d85901e25d9357">audioQueueInputCallback</a> (void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer, const AudioTimeStamp *inStartTime, UInt32 inNumberPacketDescriptions, const AudioStreamPacketDescription *inPacketDescs)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2d540dccec21a8c296ead00431eba37f"><td class="memItemLeft" align="right" valign="top">AudioQueueRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a></td></tr>
+<tr class="memitem:a95da8a8969b3a67ac0df813e2961773a"><td class="memItemLeft" align="right" valign="top">QList&lt; AudioQueueBufferRef &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a></td></tr>
+<tr class="memitem:a0ffc6629c0b94af6941a5f14449195b8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a></td></tr>
+<tr class="memitem:afd4b97415b4db8886865916ba4ec2e42"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a></td></tr>
+<tr class="memitem:a27e849d26428409c1bcad840b5491a27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a27e849d26428409c1bcad840b5491a27">mBufferLengthInMs</a></td></tr>
+<tr class="memitem:abf89b298b514cfa80ec103e7e687969c"><td class="memItemLeft" align="right" valign="top">volatile long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#abf89b298b514cfa80ec103e7e687969c">mMsTimeStamp</a></td></tr>
+<tr class="memitem:a0b3e2025fd2d1b36c47cc9efcba966cf"><td class="memItemLeft" align="right" valign="top">UInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">mSampleBufferSize</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ac35a79581d9f457a18cc571a38f9b88b"><td class="memItemLeft" align="right" valign="top">static AudioStreamBasicDescription&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad20c5f3b3053c2a94f079cc777038567"></a>
@@ -159,19 +188,19 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
-<div class="line">    , mQueue(0)</div>
-<div class="line">    , mIsRecording(<span class="keyword">false</span>)</div>
-<div class="line">    , mBufferLengthInMs(500)</div>
+<div class="line">    , <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>(0)</div>
+<div class="line">    , <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a27e849d26428409c1bcad840b5491a27">mBufferLengthInMs</a>(500)</div>
 <div class="line">{</div>
-<div class="line">    sAudioFormat.mSampleRate = 44100.0;</div>
-<div class="line">    sAudioFormat.mFormatID = kAudioFormatMPEG4AAC;</div>
-<div class="line">    sAudioFormat.mChannelsPerFrame = 2;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mSampleRate = 44100.0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mFormatID = kAudioFormatMPEG4AAC;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mChannelsPerFrame = 2;</div>
 <div class="line"></div>
-<div class="line">    sAudioFormat.mBytesPerFrame = 0;</div>
-<div class="line">    sAudioFormat.mBitsPerChannel = 0;</div>
-<div class="line">    sAudioFormat.mBytesPerPacket = 0;</div>
-<div class="line">    sAudioFormat.mFramesPerPacket = 0;</div>
-<div class="line">    sAudioFormat.mFormatFlags = 0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mBytesPerFrame = 0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mBitsPerChannel = 0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mBytesPerPacket = 0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mFramesPerPacket = 0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mFormatFlags = 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -224,9 +253,18 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> sAudioFormat;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a6c1c163c2243fe2edbe584118f586539_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a0090a62acc8663b85529126fc632bee5"></a>
@@ -251,6 +289,108 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a0090a62acc8663b85529126fc632bee5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a44801bf6a2710136c3d85901e25d9357"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBAudioQueueRecorder::audioQueueInputCallback </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>inUserData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AudioQueueRef&#160;</td>
+          <td class="paramname"><em>inAQ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AudioQueueBufferRef&#160;</td>
+          <td class="paramname"><em>inBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AudioTimeStamp *&#160;</td>
+          <td class="paramname"><em>inStartTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UInt32&#160;</td>
+          <td class="paramname"><em>inNumberPacketDescriptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AudioStreamPacketDescription *&#160;</td>
+          <td class="paramname"><em>inPacketDescs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(inAQ);</div>
+<div class="line">    Q_UNUSED(inStartTime)</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html">UBAudioQueueRecorder</a>* recorder = (<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html">UBAudioQueueRecorder</a>*)inUserData;</div>
+<div class="line"></div>
+<div class="line">    if(recorder &amp;&amp; recorder-&gt;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3dc9dc46c6359f9a3dc42832cb3894a9">isRecording</a>() &amp;&amp; inBuffer)</div>
+<div class="line">    {</div>
+<div class="line">        recorder-&gt;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad249b6e2dfce2f10e093ae5a7cbde0af">emitNewWaveBuffer</a>(inBuffer, inNumberPacketDescriptions, inPacketDescs);</div>
+<div class="line"></div>
+<div class="line">        OSStatus err = AudioQueueEnqueueBuffer(recorder-&gt;mQueue, inBuffer, 0, 0);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(err)</div>
+<div class="line">        {</div>
+<div class="line">            recorder-&gt;setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot reenqueue buffer %1&quot;</span>).arg(err));</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a44801bf6a2710136c3d85901e25d9357_cgraph.svg" width="616" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a44801bf6a2710136c3d85901e25d9357_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a1ca07dcb45228c7c4112089f7241deaa"></a>
@@ -266,44 +406,53 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mIsRecording)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mIsRecording = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
-<div class="line">        OSStatus err = AudioQueueStop(mQueue, <span class="keyword">true</span>);</div>
+<div class="line">        OSStatus err = AudioQueueStop(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, <span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span>(err)</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot stop audio queue %1&quot;</span>).arg(err));</div>
+<div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot stop audio queue %1&quot;</span>).arg(err));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, mBuffers)</div>
+<div class="line">    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a>)</div>
 <div class="line">    {</div>
-<div class="line">        OSStatus err = AudioQueueFreeBuffer(mQueue, buffer);</div>
+<div class="line">        OSStatus err = AudioQueueFreeBuffer(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, buffer);</div>
 <div class="line">        <span class="keywordflow">if</span> (err)</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot free audio buffer %1&quot;</span>).arg(err));</div>
+<div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot free audio buffer %1&quot;</span>).arg(err));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    OSStatus err = AudioQueueDispose(mQueue, <span class="keyword">true</span>);</div>
-<div class="line">    mQueue = 0;</div>
+<div class="line">    OSStatus err = AudioQueueDispose(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, <span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a> = 0;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span>(err)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot dispose audio queue %1&quot;</span>).arg(err));</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot dispose audio queue %1&quot;</span>).arg(err));</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a1ca07dcb45228c7c4112089f7241deaa_cgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a1ca07dcb45228c7c4112089f7241deaa_icgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -383,20 +532,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a48b8fe4e81655b7dd2a3300e190e3dec_cgraph.svg" width="438" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a48b8fe4e81655b7dd2a3300e190e3dec_icgraph.svg" width="414" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -443,11 +592,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_ac3e3bbaf74904b77908fe405e4f546c7_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -498,12 +647,123 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> uid;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a49d2aec69e262d202e9fff287168ef92_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a243f1d0de0227c7172e2bb21866e8d39"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBAudioQueueRecorder::emitAudioLevelChanged </td>
+          <td>(</td>
+          <td class="paramtype">quint8&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad249b6e2dfce2f10e093ae5a7cbde0af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBAudioQueueRecorder::emitNewWaveBuffer </td>
+          <td>(</td>
+          <td class="paramtype">AudioQueueBufferRef&#160;</td>
+          <td class="paramname"><em>pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inNumberPacketDescriptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AudioStreamPacketDescription *&#160;</td>
+          <td class="paramname"><em>inPacketDescs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    AudioStreamPacketDescription* tmpPackages = (AudioStreamPacketDescription*)malloc(inNumberPacketDescriptions *<span class="keyword">sizeof</span>(AudioStreamPacketDescription));</div>
+<div class="line">    memcpy(tmpPackages,inPacketDescs,inNumberPacketDescriptions * <span class="keyword">sizeof</span>(AudioStreamPacketDescription));</div>
+<div class="line"></div>
+<div class="line">    emit <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a059864bee688ab31715d3f8a59393df9">newWaveBuffer</a>(pBuffer-&gt;mAudioData, pBuffer-&gt;mAudioDataByteSize, inNumberPacketDescriptions, tmpPackages);</div>
+<div class="line"></div>
+<div class="line">    qreal level = 0;</div>
+<div class="line">    UInt32 size;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (noErr == AudioQueueGetPropertySize (<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_CurrentLevelMeter, &amp;size))</div>
+<div class="line">    {</div>
+<div class="line">        AudioQueueLevelMeterState levels[size / <span class="keyword">sizeof</span>(AudioQueueLevelMeterState)];</div>
+<div class="line">        size = <span class="keyword">sizeof</span>(levels);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (noErr == AudioQueueGetProperty(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_CurrentLevelMeter, &amp;levels, &amp;size))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (size == 1)</div>
+<div class="line">                level = levels[0].mAveragePower;</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (size &gt;= 2)</div>
+<div class="line">                level = (levels[0].mAveragePower + levels[1].mAveragePower) / 2;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;cannot retreive audio level&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    emit <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0090a62acc8663b85529126fc632bee5">audioLevelChanged</a>(level * 255);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_ad249b6e2dfce2f10e093ae5a7cbde0af_cgraph.svg" width="390" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_ad249b6e2dfce2f10e093ae5a7cbde0af_icgraph.svg" width="616" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -523,19 +783,19 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mIsRecording)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Already recording ...&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(<span class="stringliteral">&quot;Already recording ...&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    OSStatus err = AudioQueueNewInput (&amp;sAudioFormat, UBAudioQueueRecorder::audioQueueInputCallback,</div>
-<div class="line">                    <span class="keyword">this</span>, 0, 0, 0, &amp;mQueue);</div>
+<div class="line">    OSStatus err = AudioQueueNewInput (&amp;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a44801bf6a2710136c3d85901e25d9357">UBAudioQueueRecorder::audioQueueInputCallback</a>,</div>
+<div class="line">                    <span class="keyword">this</span>, 0, 0, 0, &amp;<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (err)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot acquire audio input %1&quot;</span>).arg(err));</div>
-<div class="line">        mQueue = 0;</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot acquire audio input %1&quot;</span>).arg(err));</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a> = 0;</div>
 <div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
@@ -553,10 +813,10 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">            {</div>
 <div class="line">                CFStringRef sr = CFStringCreateWithCString(0, deviceUID.toUtf8().constData(), kCFStringEncodingUTF8);</div>
 <div class="line"></div>
-<div class="line">                err = AudioQueueSetProperty(mQueue, kAudioQueueProperty_CurrentDevice, &amp;sr, <span class="keyword">sizeof</span>(CFStringRef));</div>
+<div class="line">                err = AudioQueueSetProperty(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_CurrentDevice, &amp;sr, <span class="keyword">sizeof</span>(CFStringRef));</div>
 <div class="line">                <span class="keywordflow">if</span> (err)</div>
 <div class="line">                {</div>
-<div class="line">                    setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot set audio input %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
+<div class="line">                    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot set audio input %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
 <div class="line">                }</div>
 <div class="line">                <span class="keywordflow">else</span></div>
 <div class="line">                {</div>
@@ -565,76 +825,76 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">else</span></div>
 <div class="line">            {</div>
-<div class="line">                setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot find audio input device UID with ID %1 (%2)&quot;</span>).arg(deviceID).arg(err));</div>
+<div class="line">                <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot find audio input device UID with ID %1 (%2)&quot;</span>).arg(deviceID).arg(err));</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot find audio input with name %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
+<div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot find audio input with name %1 (%2)&quot;</span>).arg(waveInDeviceName).arg(err));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    UInt32 monitor = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    err = AudioQueueSetProperty(mQueue, kAudioQueueProperty_EnableLevelMetering , &amp;monitor, <span class="keyword">sizeof</span>(UInt32));</div>
+<div class="line">    err = AudioQueueSetProperty(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, kAudioQueueProperty_EnableLevelMetering , &amp;monitor, <span class="keyword">sizeof</span>(UInt32));</div>
 <div class="line">    <span class="keywordflow">if</span> (err)</div>
 <div class="line">    {</div>
 <div class="line">        qWarning() &lt;&lt; QString(<span class="stringliteral">&quot;Cannot set recording level monitoring %1&quot;</span>).arg(err);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> nbBuffers = 6;</div>
-<div class="line">    mSampleBufferSize = sAudioFormat.mSampleRate *  sAudioFormat.mChannelsPerFrame</div>
-<div class="line">                * 2 * mBufferLengthInMs / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">mSampleBufferSize</a> = <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mSampleRate *  <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>.mChannelsPerFrame</div>
+<div class="line">                * 2 * <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a27e849d26428409c1bcad840b5491a27">mBufferLengthInMs</a> / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nbBuffers; i++)</div>
 <div class="line">    {</div>
 <div class="line">        AudioQueueBufferRef outBuffer;</div>
-<div class="line">        err = AudioQueueAllocateBuffer(mQueue, mSampleBufferSize, &amp;outBuffer);</div>
+<div class="line">        err = AudioQueueAllocateBuffer(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">mSampleBufferSize</a>, &amp;outBuffer);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (err)</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot allocate audio buffer %1&quot;</span>).arg(err));</div>
+<div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot allocate audio buffer %1&quot;</span>).arg(err));</div>
 <div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mBuffers &lt;&lt; outBuffer;</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a> &lt;&lt; outBuffer;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, mBuffers)</div>
+<div class="line">    <span class="keywordflow">foreach</span>(AudioQueueBufferRef buffer, <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a>)</div>
 <div class="line">    {</div>
-<div class="line">        err = AudioQueueEnqueueBuffer(mQueue, buffer, 0, 0);</div>
+<div class="line">        err = AudioQueueEnqueueBuffer(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, buffer, 0, 0);</div>
 <div class="line">        <span class="keywordflow">if</span> (err)</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot enqueue audio buffer %1&quot;</span>).arg(err));</div>
+<div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot enqueue audio buffer %1&quot;</span>).arg(err));</div>
 <div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mMsTimeStamp = 0;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#abf89b298b514cfa80ec103e7e687969c">mMsTimeStamp</a> = 0;</div>
 <div class="line"></div>
-<div class="line">    err = AudioQueueStart(mQueue, 0);</div>
+<div class="line">    err = AudioQueueStart(<a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>, 0);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (err)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(QString(<span class="stringliteral">&quot;Cannot starting audio queue %1&quot;</span>).arg(err));</div>
+<div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(QString(<span class="stringliteral">&quot;Cannot starting audio queue %1&quot;</span>).arg(err));</div>
 <div class="line">        <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a1ca07dcb45228c7c4112089f7241deaa">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mIsRecording = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a2af0edbe33f6bb239f4df5e1318b56b4_cgraph.svg" width="651" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a2af0edbe33f6bb239f4df5e1318b56b4_cgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -693,12 +953,47 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a67ef65275e545d178369a82cf5782159">inputDeviceIDs</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a67ef65275e545d178369a82cf5782159_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3dc9dc46c6359f9a3dc42832cb3894a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBAudioQueueRecorder::isRecording </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>;</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a3dc9dc46c6359f9a3dc42832cb3894a9_icgraph.svg" width="616" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -725,7 +1020,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -774,6 +1069,52 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a059864bee688ab31715d3f8a59393df9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3843206adfbbaad0677dfe36b5134186"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBAudioQueueRecorder::setLastErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pLastErrorMessage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">        {</div>
+<div class="line">            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a> = pLastErrorMessage;</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;UBAudioQueueRecorder error:&quot;</span> &lt;&lt; <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a>;</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a3843206adfbbaad0677dfe36b5134186_icgraph.svg" width="616" height="146"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a3aefba29bf7b27d3fc8acbf116d24f42"></a>
@@ -811,29 +1152,190 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> deviceNames;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a3aefba29bf7b27d3fc8acbf116d24f42_cgraph.svg" width="414" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2b/class_u_b_audio_queue_recorder_a3aefba29bf7b27d3fc8acbf116d24f42_icgraph.svg" width="654" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a27e849d26428409c1bcad840b5491a27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBAudioQueueRecorder::mBufferLengthInMs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a95da8a8969b3a67ac0df813e2961773a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;AudioQueueBufferRef&gt; UBAudioQueueRecorder::mBuffers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd4b97415b4db8886865916ba4ec2e42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool UBAudioQueueRecorder::mIsRecording</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0ffc6629c0b94af6941a5f14449195b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBAudioQueueRecorder::mLastErrorMessage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abf89b298b514cfa80ec103e7e687969c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile long UBAudioQueueRecorder::mMsTimeStamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d540dccec21a8c296ead00431eba37f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioQueueRef UBAudioQueueRecorder::mQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0b3e2025fd2d1b36c47cc9efcba966cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UInt32 UBAudioQueueRecorder::mSampleBufferSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac35a79581d9f457a18cc571a38f9b88b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioStreamBasicDescription UBAudioQueueRecorder::sAudioFormat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../dc/dca/_u_b_audio_queue_recorder_8h_source.html">UBAudioQueueRecorder.h</a></li>
-<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../df/d7b/_u_b_audio_queue_recorder_8cpp.html">UBAudioQueueRecorder.cpp</a></li>
+<li><a class="el" href="../../dc/dca/_u_b_audio_queue_recorder_8h_source.html">UBAudioQueueRecorder.h</a></li>
+<li><a class="el" href="../../df/d7b/_u_b_audio_queue_recorder_8cpp.html">UBAudioQueueRecorder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -841,7 +1343,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d2b/class_u_b_audio_queue_recorder.html">UBAudioQueueRecorder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:55 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

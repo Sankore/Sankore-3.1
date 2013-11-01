@@ -8,5 +8,7 @@ var class_u_b_core_graphics_scene =
     [ "isModified", "d3/db1/class_u_b_core_graphics_scene.html#a401164930b6963b7ec2f1d157f9dca4b", null ],
     [ "removeItem", "d3/db1/class_u_b_core_graphics_scene.html#a73c3f6532917e3ccb189f3cdeae989bb", null ],
     [ "removeItemFromDeletion", "d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f", null ],
-    [ "setModified", "d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783", null ]
+    [ "setModified", "d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783", null ],
+    [ "mIsModified", "d3/db1/class_u_b_core_graphics_scene.html#ab9f6a39823bb322e2e4f8ffb7bbc4311", null ],
+    [ "mItemsToDelete", "d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d", null ]
 ];

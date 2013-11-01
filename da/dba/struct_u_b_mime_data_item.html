@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('da/dba/struct_u_b_mime_data_item.html'
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/dc3/struct_u_b_mime_data_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBMimeDataItem Struct Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('da/dba/struct_u_b_mime_data_item.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/de7/struct_u_b_mime_data_item__coll__graph.svg" width="166" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/de7/struct_u_b_mime_data_item__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -125,6 +126,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab796bfdf114d7e05d185bd3ba00e13f8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#ab796bfdf114d7e05d185bd3ba00e13f8">~UBMimeDataItem</a> ()</td></tr>
 <tr class="memitem:af9a2e323ca859f1313a79a048327de7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#af9a2e323ca859f1313a79a048327de7a">documentProxy</a> () const </td></tr>
 <tr class="memitem:a1c596d4dd198c6c454b40a4ad10cf7fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#a1c596d4dd198c6c454b40a4ad10cf7fd">sceneIndex</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5b8b921c96e50bf08b4937aacda53327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#a5b8b921c96e50bf08b4937aacda53327">mProxy</a></td></tr>
+<tr class="memitem:a14a52c7e42ed2bd6340e699b6d4b2d19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#a14a52c7e42ed2bd6340e699b6d4b2d19">mSceneIndex</a></td></tr>
+<tr class="memitem:ab95ec0afb1cb0375d6728484c217cd70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html#ab95ec0afb1cb0375d6728484c217cd70">mTargetProxy</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4c73b9bcfee2addad5874563154ef90c"></a>
@@ -156,9 +163,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mProxy(proxy)</div>
-<div class="line">    , mSceneIndex(<a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a1c596d4dd198c6c454b40a4ad10cf7fd">sceneIndex</a>)</div>
-<div class="line">    , mTargetProxy(targetProxy)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a5b8b921c96e50bf08b4937aacda53327">mProxy</a>(proxy)</div>
+<div class="line">    , <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a14a52c7e42ed2bd6340e699b6d4b2d19">mSceneIndex</a>(<a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a1c596d4dd198c6c454b40a4ad10cf7fd">sceneIndex</a>)</div>
+<div class="line">    , <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#ab95ec0afb1cb0375d6728484c217cd70">mTargetProxy</a>(targetProxy)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -212,7 +219,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mProxy; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a5b8b921c96e50bf08b4937aacda53327">mProxy</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -245,7 +252,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mSceneIndex; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../da/dba/struct_u_b_mime_data_item.html#a14a52c7e42ed2bd6340e699b6d4b2d19">mSceneIndex</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -258,9 +265,70 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a5b8b921c96e50bf08b4937aacda53327"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* UBMimeDataItem::mProxy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14a52c7e42ed2bd6340e699b6d4b2d19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBMimeDataItem::mSceneIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab95ec0afb1cb0375d6728484c217cd70"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* UBMimeDataItem::mTargetProxy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp.html">UBMimeData.cpp</a></li>
+<li><a class="el" href="../../d7/d95/_u_b_mime_data_8h_source.html">UBMimeData.h</a></li>
+<li><a class="el" href="../../d5/dd1/_u_b_mime_data_8cpp.html">UBMimeData.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -268,7 +336,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/dba/struct_u_b_mime_data_item.html">UBMimeDataItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

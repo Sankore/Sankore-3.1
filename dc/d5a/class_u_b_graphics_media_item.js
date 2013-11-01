@@ -29,9 +29,21 @@ var class_u_b_graphics_media_item =
     [ "toggleMute", "dc/d5a/class_u_b_graphics_media_item.html#a9b73c3e29fe1c5ed124439c3dab5abb9", null ],
     [ "type", "dc/d5a/class_u_b_graphics_media_item.html#a81a76ca0d217448f2b55ff72328b093c", null ],
     [ "videoWidget", "dc/d5a/class_u_b_graphics_media_item.html#a6a0b789cc622eaf3bbe25a2d29547172", null ],
+    [ "haveLinkedImage", "dc/d5a/class_u_b_graphics_media_item.html#a8706263c70167e95467de8b81493e23b", null ],
     [ "mAudioOutput", "dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc", null ],
     [ "mAudioWidget", "dc/d5a/class_u_b_graphics_media_item.html#aedab2a57e159cbc15e470614b0ef2f2c", null ],
+    [ "mInitialPos", "dc/d5a/class_u_b_graphics_media_item.html#a8299db13f77eea3de94c2a8a52d6862c", null ],
+    [ "mLinkedImage", "dc/d5a/class_u_b_graphics_media_item.html#a5b13d7f39141b4630fe8db03e4c2400d", null ],
+    [ "mMediaFileUrl", "dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69", null ],
     [ "mMediaObject", "dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9", null ],
+    [ "mMediaSource", "dc/d5a/class_u_b_graphics_media_item.html#a8bb8df61b35611500cc451e106307b66", null ],
+    [ "mMediaType", "dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03", null ],
+    [ "mMouseMovePos", "dc/d5a/class_u_b_graphics_media_item.html#a361990c6c99c20c6c61a3d74e36bf8e0", null ],
+    [ "mMousePressPos", "dc/d5a/class_u_b_graphics_media_item.html#afc2b0d579ec3276223cfc4c8fe76545e", null ],
+    [ "mMuted", "dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2", null ],
+    [ "mMutedByUserAction", "dc/d5a/class_u_b_graphics_media_item.html#a29b7e7e96d4c71604af46e9c1b96f7f2", null ],
+    [ "mShouldMove", "dc/d5a/class_u_b_graphics_media_item.html#a80b9f74b7a414e84d4a8c841406ec555", null ],
     [ "mSource", "dc/d5a/class_u_b_graphics_media_item.html#a949d95040d1999f123f94c06c0e35ffd", null ],
-    [ "mVideoWidget", "dc/d5a/class_u_b_graphics_media_item.html#aa64eaf00cd632a1d8eca70ccd6a61029", null ]
+    [ "mVideoWidget", "dc/d5a/class_u_b_graphics_media_item.html#aa64eaf00cd632a1d8eca70ccd6a61029", null ],
+    [ "sIsMutedByDefault", "dc/d5a/class_u_b_graphics_media_item.html#a5c1afe20995f1287f4f720a008945552", null ]
 ];

@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d9/d29/class_u_b_features_mime_data.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/dba/class_u_b_features_mime_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesMimeData Class Reference</div>  </div>
@@ -124,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a976809258ff4e08646c310e35752e1"><td class="memItemLeft" align="right" valign="top">virtual QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/class_u_b_features_mime_data.html#a1a976809258ff4e08646c310e35752e1">formats</a> () const </td></tr>
 <tr class="memitem:a4d755ceb10b1e9b239001fbe1e8b4c21"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/class_u_b_features_mime_data.html#a4d755ceb10b1e9b239001fbe1e8b4c21">features</a> () const </td></tr>
 <tr class="memitem:a1319851bb37d9c6ee49d62a67cb73e9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/class_u_b_features_mime_data.html#a1319851bb37d9c6ee49d62a67cb73e9f">setFeatures</a> (const QList&lt; <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &gt; &amp;fList)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad4490144b2c76bc6172d8652f372c65d"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d29/class_u_b_features_mime_data.html#ad4490144b2c76bc6172d8652f372c65d">mFeatures</a></td></tr>
 </table>
 <h2>Member Function Documentation</h2>
 <a class="anchor" id="a4d755ceb10b1e9b239001fbe1e8b4c21"></a>
@@ -146,14 +151,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mFeatures;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html#ad4490144b2c76bc6172d8652f372c65d">mFeatures</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d29/class_u_b_features_mime_data_a4d755ceb10b1e9b239001fbe1e8b4c21_icgraph.svg" width="630" height="230"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d29/class_u_b_features_mime_data_a4d755ceb10b1e9b239001fbe1e8b4c21_icgraph.svg" width="100%" height="524"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -206,7 +211,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mFeatures = fList;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../d9/d29/class_u_b_features_mime_data.html#ad4490144b2c76bc6172d8652f372c65d">mFeatures</a> = fList;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -219,9 +224,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ad4490144b2c76bc6172d8652f372c65d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a>&gt; UBFeaturesMimeData::mFeatures</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -229,7 +255,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

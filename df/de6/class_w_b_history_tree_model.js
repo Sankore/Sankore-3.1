@@ -12,5 +12,10 @@ var class_w_b_history_tree_model =
     [ "parent", "df/de6/class_w_b_history_tree_model.html#a89c9b830b439c0c9f93d0d8368705171", null ],
     [ "removeRows", "df/de6/class_w_b_history_tree_model.html#a94096a71669af8bb604d4e12ee113b47", null ],
     [ "rowCount", "df/de6/class_w_b_history_tree_model.html#ac5cf4ae4eedb64e2240158fc8f92a7b9", null ],
-    [ "setSourceModel", "df/de6/class_w_b_history_tree_model.html#a94f2891195b053381a3587a790509266", null ]
+    [ "setSourceModel", "df/de6/class_w_b_history_tree_model.html#a94f2891195b053381a3587a790509266", null ],
+    [ "sourceDateRow", "df/de6/class_w_b_history_tree_model.html#a0c061aee7f71d62161a4ca4f4c0c8f0f", null ],
+    [ "sourceReset", "df/de6/class_w_b_history_tree_model.html#afca6ed9bcc01b7c9e2f7c00d14c3f594", null ],
+    [ "sourceRowsInserted", "df/de6/class_w_b_history_tree_model.html#af2e7b9a946246741af5fbb52e9d04354", null ],
+    [ "sourceRowsRemoved", "df/de6/class_w_b_history_tree_model.html#a5482665e8fd4e2a903f98b552d21cdf2", null ],
+    [ "m_sourceRowCache", "df/de6/class_w_b_history_tree_model.html#ab443312246abb2d4c774f3ff2827a00f", null ]
 ];

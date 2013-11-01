@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('da/dd6/class_u_b_library_a_p_i.html','
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/d93/class_u_b_library_a_p_i-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBLibraryAPI Class Reference</div>  </div>
@@ -135,6 +136,10 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a10894c4bb6d59d99e6ad18eed63bb14e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd6/class_u_b_library_a_p_i.html#a10894c4bb6d59d99e6ad18eed63bb14e">UBLibraryAPI</a> (QWebView *pWebView=0)</td></tr>
 <tr class="memitem:a127759b556b8947f7a9cd4884008704c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd6/class_u_b_library_a_p_i.html#a127759b556b8947f7a9cd4884008704c">~UBLibraryAPI</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab5f6cca80910b2137c50352f86adba38"><td class="memItemLeft" align="right" valign="top">QWebView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd6/class_u_b_library_a_p_i.html#ab5f6cca80910b2137c50352f86adba38">mWebView</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a10894c4bb6d59d99e6ad18eed63bb14e"></a>
@@ -151,7 +156,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pWebView)</div>
-<div class="line">    , mWebView(pWebView)</div>
+<div class="line">    , <a class="code" href="../../da/dd6/class_u_b_library_a_p_i.html#ab5f6cca80910b2137c50352f86adba38">mWebView</a>(pWebView)</div>
 <div class="line">{</div>
 <div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../da/dd6/class_u_b_library_a_p_i.html#a1ef8bf95667c801852e58a57925e192b">downloadTriggered</a>(<span class="keyword">const</span> QUrl&amp;, <span class="keyword">const</span> QPointF&amp;, <span class="keyword">const</span> QSize&amp;, <span class="keywordtype">bool</span>)),</div>
 <div class="line">            <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>, SLOT(downloadURL(<span class="keyword">const</span> QUrl&amp;, <span class="keyword">const</span> QPointF&amp;, <span class="keyword">const</span> QSize&amp;, <span class="keywordtype">bool</span>)),</div>
@@ -403,7 +408,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>trigger a drag &amp; drop of the given url content </p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QDrag *drag = <span class="keyword">new</span> QDrag(mWebView);</div>
+<div class="line">    QDrag *drag = <span class="keyword">new</span> QDrag(<a class="code" href="../../da/dd6/class_u_b_library_a_p_i.html#ab5f6cca80910b2137c50352f86adba38">mWebView</a>);</div>
 <div class="line">    QMimeData *mimeData = <span class="keyword">new</span> QMimeData;</div>
 <div class="line"></div>
 <div class="line">    QList&lt;QUrl&gt; urls;</div>
@@ -418,9 +423,30 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ab5f6cca80910b2137c50352f86adba38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebView* UBLibraryAPI::mWebView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/api/<a class="el" href="../../df/d99/_u_b_library_a_p_i_8h_source.html">UBLibraryAPI.h</a></li>
-<li>Sankore-3.1/src/api/<a class="el" href="../../dc/d24/_u_b_library_a_p_i_8cpp.html">UBLibraryAPI.cpp</a></li>
+<li><a class="el" href="../../df/d99/_u_b_library_a_p_i_8h_source.html">UBLibraryAPI.h</a></li>
+<li><a class="el" href="../../dc/d24/_u_b_library_a_p_i_8cpp.html">UBLibraryAPI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -428,7 +454,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/dd6/class_u_b_library_a_p_i.html">UBLibraryAPI</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf/XPDFRenderer.h Source File</title>
+<title>Open-Sankoré: XPDFRenderer.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -133,14 +133,14 @@ $(document).ready(function(){initNavTree('d1/d65/_x_p_d_f_renderer_8h_source.htm
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/db4/_p_d_f_renderer_8h.html">PDFRenderer.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;splash/SplashBitmap.h&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html">globals/UBGlobals.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html">globals/UBGlobals.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a4ba5672b438cccbfbd7afb2dc4e1492f">THIRD_PARTY_WARNINGS_DISABLE</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a4ba5672b438cccbfbd7afb2dc4e1492f">THIRD_PARTY_WARNINGS_DISABLE</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;xpdf/Object.h&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;xpdf/GlobalParams.h&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;xpdf/SplashOutputDev.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;xpdf/PDFDoc.h&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a0894cd93d9a4f6a440afefa239d280b8">THIRD_PARTY_WARNINGS_ENABLE</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a0894cd93d9a4f6a440afefa239d280b8">THIRD_PARTY_WARNINGS_ENABLE</a></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span>PDFDoc;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
@@ -166,16 +166,16 @@ $(document).ready(function(){initNavTree('d1/d65/_x_p_d_f_renderer_8h_source.htm
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aac80147a1471e9dee2bc1529c2a99731">render</a>(QPainter *p, <span class="keywordtype">int</span> pageNumber, <span class="keyword">const</span> QRectF &amp;bounds = QRectF());</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        QImage* createPDFImage(<span class="keywordtype">int</span> pageNumber, qreal xscale = 0.5, qreal yscale = 0.5, <span class="keyword">const</span> QRectF &amp;bounds = QRectF());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a81dc089d445330bf7d88671b4fdc60f5">init</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        QImage* <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#abd75fa41c1789ac7778612925e59643a">createPDFImage</a>(<span class="keywordtype">int</span> pageNumber, qreal xscale = 0.5, qreal yscale = 0.5, <span class="keyword">const</span> QRectF &amp;bounds = QRectF());</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        PDFDoc *mDocument;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">static</span> QAtomicInt sInstancesCount;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        qreal mSliceX;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        qreal mSliceY;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">   66</a></span>&#160;        PDFDoc *<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a592aa14fdf0f4418c29a69cedb13c3f8">   67</a></span>&#160;        <span class="keyword">static</span> QAtomicInt <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a592aa14fdf0f4418c29a69cedb13c3f8">sInstancesCount</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">   68</a></span>&#160;        qreal <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">mSliceX</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">   69</a></span>&#160;        qreal <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">mSliceY</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        SplashBitmap* mpSplashBitmap;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        SplashOutputDev* mSplash;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">   71</a></span>&#160;        SplashBitmap* <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">   72</a></span>&#160;        SplashOutputDev* <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // XPDFRENDERER_H</span></div>
@@ -184,8 +184,8 @@ $(document).ready(function(){initNavTree('d1/d65/_x_p_d_f_renderer_8h_source.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7f6d512a7332dec562dc3b7208d48031.html">pdf</a></li><li class="navelem"><a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h.html">XPDFRenderer.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_0a4587ebfeeb5b9e4d002d9481198da3.html">pdf</a></li><li class="navelem"><a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h.html">XPDFRenderer.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

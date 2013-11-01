@@ -4,6 +4,7 @@ var searchData=
   ['cacheitemtype',['cacheItemType',['../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a6451bcee28bc3998f10870c9231f4701',1,'UBGraphicsItemType']]],
   ['capture',['Capture',['../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a585c78bf85d6c66b5c16ca36f29b7c7f',1,'UBStylusTool']]],
   ['catalog',['Catalog',['../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e',1,'UBDocumentTreeNode']]],
+  ['changesize',['changeSize',['../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682',1,'UBGraphicsTextItemDelegate']]],
   ['circular',['circular',['../d4/d9d/class_u_b_magnifier.html#a6c6c18c690a2b5951c96834210a48d91a6a8030c25128ae93617471dc82f09230',1,'UBMagnifier']]],
   ['clearannotations',['clearAnnotations',['../dc/db2/class_u_b_graphics_scene.html#a35c5d1a0571964d92e864db92e29d5bdacb981f9a21d9fe0d25a36bf87f65fdbd',1,'UBGraphicsScene']]],
   ['clearbackground',['clearBackground',['../dc/db2/class_u_b_graphics_scene.html#a35c5d1a0571964d92e864db92e29d5bda7cbc0b3bd2370d97d8f6fd57de2ddea5',1,'UBGraphicsScene']]],

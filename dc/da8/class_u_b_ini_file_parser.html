@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dc/da8/class_u_b_ini_file_parser.html'
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/d31/class_u_b_ini_file_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBIniFileParser Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('dc/da8/class_u_b_ini_file_parser.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d56/class_u_b_ini_file_parser__coll__graph.svg" width="152" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d56/class_u_b_ini_file_parser__coll__graph.svg" width="152" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -124,6 +126,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab158c1724d29fc3fb438a515f343172a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_u_b_ini_file_parser.html#ab158c1724d29fc3fb438a515f343172a">UBIniFileParser</a> (const QString &amp;pFile)</td></tr>
 <tr class="memitem:a09ef69b576ede891f7294edae93f752d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_u_b_ini_file_parser.html#a09ef69b576ede891f7294edae93f752d">~UBIniFileParser</a> ()</td></tr>
 <tr class="memitem:a905c8af9638101278b995a67fdb98d0a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_u_b_ini_file_parser.html#a905c8af9638101278b995a67fdb98d0a">getStringValue</a> (const QString &amp;pSection, const QString &amp;pKey)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a49a973b261b698d39e923746c45e9755"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_u_b_ini_file_parser.html#a49a973b261b698d39e923746c45e9755">readLine</a> (const QString &amp;pLine, const QString &amp;catName)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad2f20fe3918e7095c7b1b087d89d5647"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, QHash&lt; QString, <br class="typebreak"/>
+QString &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>This class can parse a ini file format. </p>
@@ -151,7 +162,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">while</span> (!reader.atEnd())</div>
 <div class="line">        {</div>
 <div class="line">            QString line = reader.readLine();</div>
-<div class="line">            catName = readLine(line, catName);</div>
+<div class="line">            catName = <a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#a49a973b261b698d39e923746c45e9755">readLine</a>(line, catName);</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        file.close();</div>
@@ -159,6 +170,15 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/da8/class_u_b_ini_file_parser_ab158c1724d29fc3fb438a515f343172a_cgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a09ef69b576ede891f7294edae93f752d"></a>
@@ -182,9 +202,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">foreach</span>(QString key, mIniDico.keys())</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QString key, <a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a>.keys())</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mIniDico[key];</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a>[key];</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -216,18 +236,101 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>return the value for pKey in pSection. pSection is the group in which the key must be search (section are defined in [] in the ini file) </p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mIniDico[pSection])</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a>[pSection])</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">return</span> mIniDico[pSection]-&gt;value(pKey);</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a>[pSection]-&gt;value(pKey);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a49a973b261b698d39e923746c45e9755"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBIniFileParser::readLine </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pLine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>catName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (pLine.indexOf(QChar(<span class="charliteral">&#39;[&#39;</span>)) == 0)</div>
+<div class="line">    {</div>
+<div class="line">        QString cat = pLine.mid(1,pLine.indexOf(QChar(<span class="charliteral">&#39;]&#39;</span>)) -1);</div>
+<div class="line">        <a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a>[cat] = <span class="keyword">new</span> QHash&lt;QString, QString&gt;;</div>
+<div class="line">        <span class="keywordflow">return</span> cat;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordtype">int</span> equalIndex = pLine.indexOf(QChar(<span class="charliteral">&#39;=&#39;</span>));</div>
+<div class="line">        <span class="keywordflow">if</span> (equalIndex &gt; 0)</div>
+<div class="line">        {</div>
+<div class="line">            QString key = pLine.left(equalIndex);</div>
+<div class="line">            QString value = pLine.mid(equalIndex+1, pLine.length()-1);</div>
+<div class="line">            <a class="code" href="../../dc/da8/class_u_b_ini_file_parser.html#ad2f20fe3918e7095c7b1b087d89d5647">mIniDico</a>[pCatName]-&gt;insert(key, value);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> pCatName;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/da8/class_u_b_ini_file_parser_a49a973b261b698d39e923746c45e9755_icgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ad2f20fe3918e7095c7b1b087d89d5647"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, QHash&lt;QString, QString&gt;*&gt; UBIniFileParser::mIniDico</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../dd/d97/_u_b_ini_file_parser_8h_source.html">UBIniFileParser.h</a></li>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d0/dab/_u_b_ini_file_parser_8cpp.html">UBIniFileParser.cpp</a></li>
+<li><a class="el" href="../../dd/d97/_u_b_ini_file_parser_8h_source.html">UBIniFileParser.h</a></li>
+<li><a class="el" href="../../d0/dab/_u_b_ini_file_parser_8cpp.html">UBIniFileParser.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -235,7 +338,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/da8/class_u_b_ini_file_parser.html">UBIniFileParser</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d5/d04/class_u_b_vu_meter.html','../..
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/d33/class_u_b_vu_meter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBVuMeter Class Reference</div>  </div>
@@ -129,6 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2beb2169c4b26fa2c8d78edc713135e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d04/class_u_b_vu_meter.html#a2beb2169c4b26fa2c8d78edc713135e6">paintEvent</a> (QPaintEvent *e)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8960e0f92b1000c1db65f2012abda3a8"><td class="memItemLeft" align="right" valign="top">quint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d04/class_u_b_vu_meter.html#a8960e0f92b1000c1db65f2012abda3a8">mVolume</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a13db7347b4fb3c7181471ef098eb4611"></a>
@@ -145,7 +150,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(pParent)</div>
-<div class="line">    , mVolume(0)</div>
+<div class="line">    , <a class="code" href="../../d5/d04/class_u_b_vu_meter.html#a8960e0f92b1000c1db65f2012abda3a8">mVolume</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -205,7 +210,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> h = (height() - 8) * mVolume / 255;</div>
+<div class="line">    <span class="keywordtype">int</span> h = (height() - 8) * <a class="code" href="../../d5/d04/class_u_b_vu_meter.html#a8960e0f92b1000c1db65f2012abda3a8">mVolume</a> / 255;</div>
 <div class="line">    QRectF rect(0, height() - 4 - h, width(), h);</div>
 <div class="line"></div>
 <div class="line">    painter.fillRect(rect, <a class="code" href="../../db/d66/class_u_b_settings.html#add3118144065710146552c7f61fdf491">UBSettings::documentViewLightColor</a>);</div>
@@ -227,9 +232,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mVolume != pVolume)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d04/class_u_b_vu_meter.html#a8960e0f92b1000c1db65f2012abda3a8">mVolume</a> != pVolume)</div>
 <div class="line">    {</div>
-<div class="line">        mVolume = pVolume;</div>
+<div class="line">        <a class="code" href="../../d5/d04/class_u_b_vu_meter.html#a8960e0f92b1000c1db65f2012abda3a8">mVolume</a> = pVolume;</div>
 <div class="line">        update();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -245,9 +250,30 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a8960e0f92b1000c1db65f2012abda3a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint8 UBVuMeter::mVolume</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/<a class="el" href="../../de/ddb/_u_b_podcast_recording_palette_8h_source.html">UBPodcastRecordingPalette.h</a></li>
-<li>Sankore-3.1/src/podcast/<a class="el" href="../../de/db4/_u_b_podcast_recording_palette_8cpp.html">UBPodcastRecordingPalette.cpp</a></li>
+<li><a class="el" href="../../de/ddb/_u_b_podcast_recording_palette_8h_source.html">UBPodcastRecordingPalette.h</a></li>
+<li><a class="el" href="../../de/db4/_u_b_podcast_recording_palette_8cpp.html">UBPodcastRecordingPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -255,7 +281,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d04/class_u_b_vu_meter.html">UBVuMeter</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

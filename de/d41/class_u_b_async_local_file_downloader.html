@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('de/d41/class_u_b_async_local_file_down
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d0/dbe/class_u_b_async_local_file_downloader-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBAsyncLocalFileDownloader Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('de/d41/class_u_b_async_local_file_down
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d89/class_u_b_async_local_file_downloader__coll__graph.svg" width="230" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d89/class_u_b_async_local_file_downloader__coll__graph.svg" width="230" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -131,6 +132,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a062ea63c2e94e990281c44e4c9644067"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#a062ea63c2e94e990281c44e4c9644067">download</a> ()</td></tr>
 <tr class="memitem:a44ea40c0b8421713cebe98cfacd2e02d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#a44ea40c0b8421713cebe98cfacd2e02d">run</a> ()</td></tr>
 <tr class="memitem:a083f79b69abcbd9a8830a866c390f888"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#a083f79b69abcbd9a8830a866c390f888">abort</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa19b8a3609e8265b638f811ceadd9c24"><td class="memItemLeft" align="right" valign="top">QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#aa19b8a3609e8265b638f811ceadd9c24">mMutex</a></td></tr>
+<tr class="memitem:af1f2bc6f6398455e5113fd68f5232a03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#af1f2bc6f6398455e5113fd68f5232a03">mDesc</a></td></tr>
+<tr class="memitem:af45ee38fa98deb24eeaef29d35bee3d6"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#af45ee38fa98deb24eeaef29d35bee3d6">mData</a></td></tr>
+<tr class="memitem:ad75046e430fe5c88b441c2b6443e3786"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#ad75046e430fe5c88b441c2b6443e3786">m_bAborting</a></td></tr>
+<tr class="memitem:aff36aa45604cb96f005b6860991d1f7b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#aff36aa45604cb96f005b6860991d1f7b">mFrom</a></td></tr>
+<tr class="memitem:a3df76ebb1a88ce91c209c3c3faedf07b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa478d28188280404ab6efd50d1e65215"></a>
@@ -163,9 +173,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">: QThread(parent)</div>
-<div class="line">, mDesc(desc)</div>
-<div class="line">, mData(data)</div>
-<div class="line">, m_bAborting(<span class="keyword">false</span>)</div>
+<div class="line">, <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af1f2bc6f6398455e5113fd68f5232a03">mDesc</a>(desc)</div>
+<div class="line">, <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af45ee38fa98deb24eeaef29d35bee3d6">mData</a>(data)</div>
+<div class="line">, <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ad75046e430fe5c88b441c2b6443e3786">m_bAborting</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -186,7 +196,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    m_bAborting = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ad75046e430fe5c88b441c2b6443e3786">m_bAborting</a> = <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -194,7 +204,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d41/class_u_b_async_local_file_downloader_a083f79b69abcbd9a8830a866c390f888_icgraph.svg" width="414" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d41/class_u_b_async_local_file_downloader_a083f79b69abcbd9a8830a866c390f888_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -217,6 +228,16 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d41/class_u_b_async_local_file_downloader_a062ea63c2e94e990281c44e4c9644067_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a7ea4bc0224f0d53a5d6a4094a98816b2"></a>
@@ -266,9 +287,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mMutex.lock();</div>
-<div class="line">    <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> descriptor = mDesc;</div>
-<div class="line">    mMutex.unlock();</div>
+<div class="line">    <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#aa19b8a3609e8265b638f811ceadd9c24">mMutex</a>.lock();</div>
+<div class="line">    <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> descriptor = <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af1f2bc6f6398455e5113fd68f5232a03">mDesc</a>;</div>
+<div class="line">    <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#aa19b8a3609e8265b638f811ceadd9c24">mMutex</a>.unlock();</div>
 <div class="line"></div>
 <div class="line">    descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a> = QUrl::fromUserInput(descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a>).toLocalFile();</div>
 <div class="line"></div>
@@ -296,24 +317,25 @@ Public Member Functions</h2></td></tr>
 <div class="line">                                                                  descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a>,</div>
 <div class="line">                                                                  destDirectory,</div>
 <div class="line">                                                                  uuid,</div>
-<div class="line">                                                                  mTo,</div>
+<div class="line">                                                                  <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a>,</div>
 <div class="line">                                                                  NULL);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (m_bAborting)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ad75046e430fe5c88b441c2b6443e3786">m_bAborting</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (QFile::exists(mTo))</div>
-<div class="line">            QFile::remove(mTo);</div>
+<div class="line">        <span class="keywordflow">if</span> (QFile::exists(<a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a>))</div>
+<div class="line">            QFile::remove(<a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a>);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">        emit <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ab35449afc5e3fb50f3e0cd22aff89293">signal_asyncCopyFinished</a>(descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a1b6e4c982c432d3db9339e2eab20ab81">originalSrcUrl</a>), <span class="stringliteral">&quot;&quot;</span>, NULL, descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a187d0504d19892e2d483f47a349b6194">pos</a>, descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aff74b0da56f2a5921847c1ab5c013476">size</a>, descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ad945d24ca6d26c992c66e95c0447f165">isBackground</a>);</div>
+<div class="line">        emit <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ab35449afc5e3fb50f3e0cd22aff89293">signal_asyncCopyFinished</a>(descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>, !<a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a>.isEmpty(), QUrl::fromLocalFile(<a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a>), QUrl(descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a1b6e4c982c432d3db9339e2eab20ab81">originalSrcUrl</a>), <span class="stringliteral">&quot;&quot;</span>, NULL, descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a187d0504d19892e2d483f47a349b6194">pos</a>, descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aff74b0da56f2a5921847c1ab5c013476">size</a>, descriptor.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ad945d24ca6d26c992c66e95c0447f165">isBackground</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d41/class_u_b_async_local_file_downloader_a44ea40c0b8421713cebe98cfacd2e02d_cgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d41/class_u_b_async_local_file_downloader_a44ea40c0b8421713cebe98cfacd2e02d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -393,20 +415,141 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d41/class_u_b_async_local_file_downloader_ab35449afc5e3fb50f3e0cd22aff89293_icgraph.svg" width="486" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ad75046e430fe5c88b441c2b6443e3786"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBAsyncLocalFileDownloader::m_bAborting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af45ee38fa98deb24eeaef29d35bee3d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray UBAsyncLocalFileDownloader::mData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1f2bc6f6398455e5113fd68f5232a03"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> UBAsyncLocalFileDownloader::mDesc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff36aa45604cb96f005b6860991d1f7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBAsyncLocalFileDownloader::mFrom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa19b8a3609e8265b638f811ceadd9c24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex UBAsyncLocalFileDownloader::mMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3df76ebb1a88ce91c209c3c3faedf07b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBAsyncLocalFileDownloader::mTo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d6/d34/_u_b_download_manager_8h_source.html">UBDownloadManager.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../dc/da9/_u_b_download_manager_8cpp.html">UBDownloadManager.cpp</a></li>
+<li><a class="el" href="../../d6/d34/_u_b_download_manager_8h_source.html">UBDownloadManager.h</a></li>
+<li><a class="el" href="../../dc/da9/_u_b_download_manager_8cpp.html">UBDownloadManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -414,7 +557,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:55 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/core/UBDownloadThread.h Source File</title>
+<title>Open-Sankoré: UBDownloadThread.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -152,15 +152,15 @@ $(document).ready(function(){initNavTree('d6/d9a/_u_b_download_thread_8h_source.
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a271efdb9cf3c72c44f929d70c0cf3181" title="Run the thread.">run</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> onDownloadProgress(qint64 received, qint64 total);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> onDownloadFinished();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#ae8dbfdeb8693be4a8bbc23bbd2a7470f" title="Notify the download progression.">onDownloadProgress</a>(qint64 received, qint64 total);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#ab5935ffa341a238dd0c466d121d61f98" title="Notify the end of the download.">onDownloadFinished</a>();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> mbRun;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> mID;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QString mUrl;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    QNetworkAccessManager* mpNam;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    QNetworkReply* mpReply;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a5021d477ab31f375567b05d06d65fd23">   54</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a5021d477ab31f375567b05d06d65fd23">mbRun</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d4/dd6/class_u_b_download_thread.html#af7028c700372334dd5948df9d01b3ea3">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#af7028c700372334dd5948df9d01b3ea3">mID</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d4/dd6/class_u_b_download_thread.html#ad296c57193a6f1e61fdd78c6a598f3ce">   58</a></span>&#160;    QString <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#ad296c57193a6f1e61fdd78c6a598f3ce">mUrl</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a4ef93195dfab629fb5235b770e619436">   60</a></span>&#160;    QNetworkAccessManager* <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a4ef93195dfab629fb5235b770e619436">mpNam</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a1dc6325152e0e6f31c3f56322d28dc23">   62</a></span>&#160;    QNetworkReply* <a class="code" href="../../d4/dd6/class_u_b_download_thread.html#a1dc6325152e0e6f31c3f56322d28dc23">mpReply</a>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif // UBDOWNLOADTHREAD_H</span></div>
@@ -169,8 +169,8 @@ $(document).ready(function(){initNavTree('d6/d9a/_u_b_download_thread_8h_source.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d6/d9a/_u_b_download_thread_8h.html">UBDownloadThread.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_55aa7dff72311e91c90ae626074ddca7.html">core</a></li><li class="navelem"><a class="el" href="../../d6/d9a/_u_b_download_thread_8h.html">UBDownloadThread.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

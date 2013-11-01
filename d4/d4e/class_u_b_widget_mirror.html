@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d4/d4e/class_u_b_widget_mirror.html','
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/d82/class_u_b_widget_mirror-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWidgetMirror Class Reference</div>  </div>
@@ -134,6 +135,10 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0d41f586be4e742d778b6d93850e4c0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4e/class_u_b_widget_mirror.html#a0d41f586be4e742d778b6d93850e4c0d">eventFilter</a> (QObject *obj, QEvent *event)</td></tr>
 <tr class="memitem:a458ab3122ec725a77abeb2ecd53d5798"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4e/class_u_b_widget_mirror.html#a458ab3122ec725a77abeb2ecd53d5798">paintEvent</a> (QPaintEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7c09319aa96b6210481aa2b1c05f15fe"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a138e00a6d349320ba8de04cba2b4c0af"></a>
@@ -160,9 +165,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(parent, 0)</div>
-<div class="line">    , mSourceWidget(sourceWidget)</div>
+<div class="line">    , <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>(sourceWidget)</div>
 <div class="line">{</div>
-<div class="line">    mSourceWidget-&gt;installEventFilter(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -228,7 +233,7 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a0d41f586be4e742d778b6d93850e4c0d">QObject::eventFilter</a>(obj, event);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (event-&gt;type() == QEvent::Paint &amp;&amp; obj == mSourceWidget)</div>
+<div class="line">    <span class="keywordflow">if</span> (event-&gt;type() == QEvent::Paint &amp;&amp; obj == <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>)</div>
 <div class="line">    {</div>
 <div class="line">        QPaintEvent *<a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a458ab3122ec725a77abeb2ecd53d5798">paintEvent</a> = <span class="keyword">static_cast&lt;</span>QPaintEvent *<span class="keyword">&gt;</span>(event);</div>
 <div class="line">        update(paintEvent-&gt;rect());</div>
@@ -275,7 +280,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    painter.setBackgroundMode(Qt::OpaqueMode);</div>
 <div class="line">    painter.setBackground(Qt::black);</div>
 <div class="line"></div>
-<div class="line">    mSourceWidget-&gt;render(&amp;painter, event-&gt;rect().topLeft(), QRegion(event-&gt;rect()));</div>
+<div class="line">    <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>-&gt;render(&amp;painter, event-&gt;rect().topLeft(), QRegion(event-&gt;rect()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -311,23 +316,44 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mSourceWidget)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mSourceWidget-&gt;removeEventFilter(<span class="keyword">this</span>);</div>
+<div class="line">        <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>-&gt;removeEventFilter(<span class="keyword">this</span>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mSourceWidget = sourceWidget;</div>
+<div class="line">    <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a> = sourceWidget;</div>
 <div class="line"></div>
-<div class="line">    mSourceWidget-&gt;installEventFilter(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d4/d4e/class_u_b_widget_mirror.html#a7c09319aa96b6210481aa2b1c05f15fe">mSourceWidget</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a7c09319aa96b6210481aa2b1c05f15fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* UBWidgetMirror::mSourceWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d4/d71/_u_b_widget_mirror_8h_source.html">UBWidgetMirror.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../db/dfb/_u_b_widget_mirror_8cpp.html">UBWidgetMirror.cpp</a></li>
+<li><a class="el" href="../../d4/d71/_u_b_widget_mirror_8h_source.html">UBWidgetMirror.h</a></li>
+<li><a class="el" href="../../db/dfb/_u_b_widget_mirror_8cpp.html">UBWidgetMirror.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -335,7 +361,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d4e/class_u_b_widget_mirror.html">UBWidgetMirror</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

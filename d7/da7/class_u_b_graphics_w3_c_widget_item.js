@@ -12,8 +12,16 @@ var class_u_b_graphics_w3_c_widget_item =
     [ "freezedWidgetFilePath", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#adc5e2a6da0f030dbcf3b1fe0b4f1cfd6", null ],
     [ "freezedWidgetPage", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a3ceef81617879b75ed7444a9046f4970", null ],
     [ "hasNPAPIWrapper", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#ab7c1b71b5a368d121c32d3351b6d1fc4", null ],
+    [ "javaScriptWindowObjectCleared", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#ad2934385a149d795eebc6862a626a9c5", null ],
+    [ "loadNPAPIWrappersTemplates", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#adb8f2721eb1ff24197d84924f5457627", null ],
     [ "metadatas", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a980ba9ab61504d20883ebb176fd5d5cc", null ],
     [ "preferences", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13", null ],
     [ "setUuid", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#ab094d8bf072b39d5c9bc8e9c82a07787", null ],
-    [ "mMetadatas", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a284f897d34b6a692ad2f774a6fb4acdf", null ]
+    [ "textForSubElementByLocale", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a95d633876571e28ce1c59951821badc2", null ],
+    [ "mMetadatas", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a284f897d34b6a692ad2f774a6fb4acdf", null ],
+    [ "mPreferences", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#aba0b04d51d749565a44cc49dff589093", null ],
+    [ "mW3CWidgetAPI", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a35e49855162b779baa6bf3f8e5366ade", null ],
+    [ "sNPAPIWrapperTemplates", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a5e3e37337ae0dbf5a54a5c28c90dafc6", null ],
+    [ "sNPAPIWrappperConfigTemplate", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#a108444c12904c2763c1744ca1062542e", null ],
+    [ "sTemplateLoaded", "d7/da7/class_u_b_graphics_w3_c_widget_item.html#aa4155e80e91d490352681cca707f98f3", null ]
 ];

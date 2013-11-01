@@ -1,5 +1,8 @@
 var class_u_b_drawing_controller =
 [
+    [ "UBDrawingController", "d0/d58/class_u_b_drawing_controller.html#a381f5fe1a1745d30bc1abb102ebb3c15", null ],
+    [ "~UBDrawingController", "d0/d58/class_u_b_drawing_controller.html#a852d945c07808d707e564a5b42c925aa", null ],
+    [ "captureToolSelected", "d0/d58/class_u_b_drawing_controller.html#a6746622a5b605c5de8e3d5bdabf05aee", null ],
     [ "colorIndexChanged", "d0/d58/class_u_b_drawing_controller.html#a42605540fe8451289997d9b61a89e642", null ],
     [ "colorPaletteChanged", "d0/d58/class_u_b_drawing_controller.html#a6f11f789e8f99d826910541657502b35", null ],
     [ "currentToolColor", "d0/d58/class_u_b_drawing_controller.html#abf7c58880089c0cced9c2b91ff98314c", null ],
@@ -8,10 +11,18 @@ var class_u_b_drawing_controller =
     [ "currentToolWidthIndex", "d0/d58/class_u_b_drawing_controller.html#a1e50d02c857b27ea14a59c6d74536376", null ],
     [ "destroy", "d0/d58/class_u_b_drawing_controller.html#ac05daba2d9c39c5bacdd7e63b6e1ab39", null ],
     [ "drawingController", "d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3", null ],
+    [ "eraserToolSelected", "d0/d58/class_u_b_drawing_controller.html#ac9bd7039ea57fe9a8162b31ed4758148", null ],
+    [ "handToolSelected", "d0/d58/class_u_b_drawing_controller.html#af8d76f9b5b29b793a0b2b710cd7a970b", null ],
     [ "isDrawingTool", "d0/d58/class_u_b_drawing_controller.html#a524a00e4ea813998e0e99ecf9e20e193", null ],
     [ "isInDesktopMode", "d0/d58/class_u_b_drawing_controller.html#ae78d73edf7b585f742229d5766f83efc", null ],
     [ "latestDrawingTool", "d0/d58/class_u_b_drawing_controller.html#a38e9144276adfeee7177dc63f9984970", null ],
+    [ "lineToolSelected", "d0/d58/class_u_b_drawing_controller.html#a2cbdc9d4445dd8abcc4a59b2a6d28c0d", null ],
     [ "lineWidthIndexChanged", "d0/d58/class_u_b_drawing_controller.html#a02acf3adbfc4a9aa14da3efd01b7a530", null ],
+    [ "markerToolSelected", "d0/d58/class_u_b_drawing_controller.html#ac4008b36aa26e54eb31c34525eda6b7b", null ],
+    [ "penToolSelected", "d0/d58/class_u_b_drawing_controller.html#ac50b8d2611584f1b6ce34246bcd89ec6", null ],
+    [ "playToolSelected", "d0/d58/class_u_b_drawing_controller.html#a684d708764de024a6ef0b77d14b7f0e3", null ],
+    [ "pointerToolSelected", "d0/d58/class_u_b_drawing_controller.html#a9ba30f83d57b0caab30ae82bc8f1e1ee", null ],
+    [ "selectorToolSelected", "d0/d58/class_u_b_drawing_controller.html#a26cd871f064f2f1949bd3b46982b7c18", null ],
     [ "setColorIndex", "d0/d58/class_u_b_drawing_controller.html#a51849b177dc6bed87fd110056627ae94", null ],
     [ "setEraserWidthIndex", "d0/d58/class_u_b_drawing_controller.html#a1766da224301caab1dab69127e28c28c", null ],
     [ "setInDestopMode", "d0/d58/class_u_b_drawing_controller.html#a3e260cf4d46a9fbefadb3fcd5b68f214", null ],
@@ -22,6 +33,13 @@ var class_u_b_drawing_controller =
     [ "setStylusTool", "d0/d58/class_u_b_drawing_controller.html#ac5790e8e77299a58ba6f2692133b7009", null ],
     [ "stylusTool", "d0/d58/class_u_b_drawing_controller.html#a244d6a9a4638309428bcf0c29531b872", null ],
     [ "stylusToolChanged", "d0/d58/class_u_b_drawing_controller.html#ae9ae9cf749d8ce65205cf8c50df67502", null ],
+    [ "textToolSelected", "d0/d58/class_u_b_drawing_controller.html#aec62d39119a747c11bf8b46f9e19b7ca", null ],
     [ "toolColor", "d0/d58/class_u_b_drawing_controller.html#afae64ee4b072bcc20b5234eec4dc5f56", null ],
-    [ "mActiveRuler", "d0/d58/class_u_b_drawing_controller.html#a08b17daa8e837ad621058156d633c518", null ]
+    [ "zoomInToolSelected", "d0/d58/class_u_b_drawing_controller.html#afb286643f18871b50ebd9421ca692914", null ],
+    [ "zoomOutToolSelected", "d0/d58/class_u_b_drawing_controller.html#a767b7c2868c614a0905cb9951ed11672", null ],
+    [ "mActiveRuler", "d0/d58/class_u_b_drawing_controller.html#a08b17daa8e837ad621058156d633c518", null ],
+    [ "mIsDesktopMode", "d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34", null ],
+    [ "mLatestDrawingTool", "d0/d58/class_u_b_drawing_controller.html#a18a3b27b7b2845a4a4d38d8c0eb1199a", null ],
+    [ "mStylusTool", "d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6", null ],
+    [ "sDrawingController", "d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1", null ]
 ];

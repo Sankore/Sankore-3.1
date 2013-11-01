@@ -10,5 +10,9 @@ var class_u_b_thumbnail =
     [ "setColumn", "de/d65/class_u_b_thumbnail.html#aea15e8dae40d0ff2f309ea79560f2a0d", null ],
     [ "setLabel", "de/d65/class_u_b_thumbnail.html#a0ff204ad591df994cadf60bf9fe24db3", null ],
     [ "setRow", "de/d65/class_u_b_thumbnail.html#ae5f3a2b52f87e1e3c3ed51ce4a045912", null ],
+    [ "mAddedToScene", "de/d65/class_u_b_thumbnail.html#a7dee276e1e0f3e16a2bc0480e5bb8669", null ],
+    [ "mColumn", "de/d65/class_u_b_thumbnail.html#a59c060694a0bef5e93d4fe77ff97e9fa", null ],
+    [ "mLabel", "de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a", null ],
+    [ "mRow", "de/d65/class_u_b_thumbnail.html#a5e5c2d13f202de080f17449a5dfc0908", null ],
     [ "mSelectionItem", "de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049", null ]
 ];

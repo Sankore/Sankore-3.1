@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('db/d45/class_u_b_color_picker.html','.
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../da/d41/class_u_b_color_picker-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBColorPicker Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('db/d45/class_u_b_color_picker.html','.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/dbc/class_u_b_color_picker__coll__graph.svg" width="184" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/dbc/class_u_b_color_picker__coll__graph.svg" width="184" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -139,6 +140,11 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae6d1f461011861c1f9ce2d35040026aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d45/class_u_b_color_picker.html#ae6d1f461011861c1f9ce2d35040026aa">paintEvent</a> (QPaintEvent *event)</td></tr>
 <tr class="memitem:afcafdc6bdca8156205047a8531fc14c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d45/class_u_b_color_picker.html#afcafdc6bdca8156205047a8531fc14c7">mousePressEvent</a> (QMouseEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aeddf828b1787cc9aec44dab8a899d2ba"><td class="memItemLeft" align="right" valign="top">QList&lt; QColor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a></td></tr>
+<tr class="memitem:a7234c66e7245944f1e1a392a7e732f16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2dbc9471827225551cb646c1e3b6766f"></a>
@@ -155,7 +161,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QFrame(parent)</div>
-<div class="line">    , mSelectedColorIndex(0)</div>
+<div class="line">    , <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -192,8 +198,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QFrame(parent)</div>
-<div class="line">    , mColors(colors)</div>
-<div class="line">    , mSelectedColorIndex(pSelectedColorIndex)</div>
+<div class="line">    , <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>(colors)</div>
+<div class="line">    , <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>(pSelectedColorIndex)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -281,7 +287,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mColors;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -310,14 +316,14 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton)</div>
 <div class="line">    {</div>
-<div class="line">        mSelectedColorIndex++;</div>
+<div class="line">        <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>++;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (mSelectedColorIndex &gt;= mColors.size())</div>
-<div class="line">            mSelectedColorIndex = 0;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> &gt;= <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.size())</div>
+<div class="line">            <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> = 0;</div>
 <div class="line"></div>
 <div class="line">        repaint();</div>
 <div class="line"></div>
-<div class="line">        emit <a class="code" href="../../db/d45/class_u_b_color_picker.html#afea88024868ef4f0208dc318284170ee">colorSelected</a>(mColors.at(mSelectedColorIndex));</div>
+<div class="line">        emit <a class="code" href="../../db/d45/class_u_b_color_picker.html#afea88024868ef4f0208dc318284170ee">colorSelected</a>(<a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.at(<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>));</div>
 <div class="line"></div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -359,11 +365,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mSelectedColorIndex &lt; mColors.size())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> &lt; <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.size())</div>
 <div class="line">    {</div>
 <div class="line">        painter.setRenderHint(QPainter::Antialiasing);</div>
 <div class="line"></div>
-<div class="line">        painter.setBrush(mColors.at(mSelectedColorIndex));</div>
+<div class="line">        painter.setBrush(<a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>.at(<a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>));</div>
 <div class="line"></div>
 <div class="line">        painter.drawRect(0, 0, width(), height());</div>
 <div class="line">    }</div>
@@ -393,7 +399,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mSelectedColorIndex;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -420,7 +426,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mColors = pColors;</div>
+<div class="line">            <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a> = pColors;</div>
 <div class="line">            repaint();</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
@@ -457,7 +463,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mSelectedColorIndex = pSelectedColorIndex;</div>
+<div class="line">            <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> = pSelectedColorIndex;</div>
 <div class="line">            repaint();</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
@@ -472,9 +478,50 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aeddf828b1787cc9aec44dab8a899d2ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QColor&gt; UBColorPicker::mColors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7234c66e7245944f1e1a392a7e732f16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBColorPicker::mSelectedColorIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d25/_u_b_color_picker_8h_source.html">UBColorPicker.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../dc/d85/_u_b_color_picker_8cpp.html">UBColorPicker.cpp</a></li>
+<li><a class="el" href="../../d9/d25/_u_b_color_picker_8h_source.html">UBColorPicker.h</a></li>
+<li><a class="el" href="../../dc/d85/_u_b_color_picker_8cpp.html">UBColorPicker.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -482,7 +529,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d45/class_u_b_color_picker.html">UBColorPicker</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

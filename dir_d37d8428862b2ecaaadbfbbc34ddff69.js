@@ -11,6 +11,7 @@ var dir_d37d8428862b2ecaaadbfbbc34ddff69 =
     ] ],
     [ "UBQuickTimeVideoEncoder.cpp", "d0/db4/_u_b_quick_time_video_encoder_8cpp.html", null ],
     [ "UBQuickTimeVideoEncoder.h", "d3/d9a/_u_b_quick_time_video_encoder_8h.html", [
-      [ "UBQuickTimeVideoEncoder", "d1/dae/class_u_b_quick_time_video_encoder.html", "d1/dae/class_u_b_quick_time_video_encoder" ]
+      [ "UBQuickTimeVideoEncoder", "d1/dae/class_u_b_quick_time_video_encoder.html", "d1/dae/class_u_b_quick_time_video_encoder" ],
+      [ "ImageFrame", "d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html", "d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame" ]
     ] ]
 ];

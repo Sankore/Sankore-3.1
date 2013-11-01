@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d3/dbd/class_u_b_graphics_item.html','
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d83/class_u_b_graphics_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsItem Class Reference</div>  </div>
@@ -125,7 +126,7 @@ $(document).ready(function(){initNavTree('d3/dbd/class_u_b_graphics_item.html','
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/db3/class_u_b_graphics_item__coll__graph.svg" width="158" height="323"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/db3/class_u_b_graphics_item__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -149,7 +150,11 @@ Static Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae96f88cb9995d8da67e7b72f273c471b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">UBGraphicsItem</a> ()</td></tr>
 <tr class="memitem:aa2118a97c39bafd7610dcb91fc1bba38"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#aa2118a97c39bafd7610dcb91fc1bba38">~UBGraphicsItem</a> ()</td></tr>
-<tr class="memitem:ad3dd5cd27bf33d67937f3e75e8e73904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a> (<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *mDelegate)</td></tr>
+<tr class="memitem:ad3dd5cd27bf33d67937f3e75e8e73904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a> (<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *<a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9c053737a51aebd0c4a5c501ced828a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae96f88cb9995d8da67e7b72f273c471b"></a>
@@ -172,7 +177,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">                     : mDelegate(NULL)</div>
+<div class="fragment"><div class="line">                     : <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>(NULL)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// NOOP</span></div>
 <div class="line">    }</div>
@@ -200,8 +205,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mDelegate!=NULL)</div>
-<div class="line">        <span class="keyword">delete</span> mDelegate;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>!=NULL)</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -248,7 +253,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_af0b4688328f6b7c06e2f8e2ca5f80805_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_af0b4688328f6b7c06e2f8e2ca5f80805_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -283,7 +289,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_a83e8d1b8f4bbbc024a15f645a39d6e49_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_a83e8d1b8f4bbbc024a15f645a39d6e49_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -309,7 +316,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mDelegate; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -400,7 +407,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_a2713cca20df6a94a8d19ce17a342534d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_a2713cca20df6a94a8d19ce17a342534d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -472,7 +480,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_afa477f8a912ae563482a227555fc9ac6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_afa477f8a912ae563482a227555fc9ac6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -508,7 +517,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_ad63fbb8693d958ddb764de33ddc251bd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_ad63fbb8693d958ddb764de33ddc251bd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -544,7 +554,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_a042f9b2d376404863cc0c5a0bece8a91_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_a042f9b2d376404863cc0c5a0bece8a91_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -582,7 +593,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_afddba655f7a4db42baf53bc797bc6ab9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_afddba655f7a4db42baf53bc797bc6ab9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -619,7 +631,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_ad3dd5cd27bf33d67937f3e75e8e73904_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_ad3dd5cd27bf33d67937f3e75e8e73904_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -653,15 +666,37 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_acab0781401cac08c9ad99b0cd0fa8480_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/dbd/class_u_b_graphics_item_acab0781401cac08c9ad99b0cd0fa8480_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a9c053737a51aebd0c4a5c501ced828a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a>* UBGraphicsItem::mDelegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../dd/d2b/_u_b_item_8cpp.html">UBItem.cpp</a></li>
+<li><a class="el" href="../../d6/d46/_u_b_item_8h_source.html">UBItem.h</a></li>
+<li><a class="el" href="../../dd/d2b/_u_b_item_8cpp.html">UBItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -669,7 +704,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

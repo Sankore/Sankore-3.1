@@ -1,8 +1,10 @@
 var searchData=
 [
+  ['w1',['W1',['../da/dd0/class_u_b_graphics_triangle.html#a87c3eff781fd4b8a06ac08781a3cfd9d',1,'UBGraphicsTriangle']]],
   ['webaddbookmarkurl',['webAddBookmarkUrl',['../db/d66/class_u_b_settings.html#aa3b76ba241083298570f0aa7891cd1f3',1,'UBSettings']]],
   ['webbookmarkspage',['webBookmarksPage',['../db/d66/class_u_b_settings.html#ac95325200a02330d13b31458916a2d4a',1,'UBSettings']]],
   ['webcontroller',['webController',['../d8/d81/class_u_b_application.html#a69b7fb1f61b12d6d98ea689e4073d809',1,'UBApplication']]],
+  ['webdownloadids',['webDownloadIds',['../d5/d2b/class_u_b_widget_uniboard_a_p_i.html#a1a5ee641c0a54a091cb8d278d0f25b40',1,'UBWidgetUniboardAPI']]],
   ['webfolderdata',['webFolderData',['../d8/d33/class_u_b_features_controller.html#aa1716f370611e4e5de267ed6d0d6f0fd',1,'UBFeaturesController']]],
   ['webhomepage',['webHomePage',['../db/d66/class_u_b_settings.html#a81373d964e3fa4a318429ff86ba291ae',1,'UBSettings']]],
   ['websearchdata',['webSearchData',['../d8/d33/class_u_b_features_controller.html#a9f8defc86c89aed213113200a3dc37a6',1,'UBFeaturesController']]],

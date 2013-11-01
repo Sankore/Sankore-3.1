@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf-merger/LZWDecode.h Source File</title>
+<title>Open-Sankoré: LZWDecode.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -147,22 +147,22 @@ $(document).ready(function(){initNavTree('de/de1/_l_z_w_decode_8h_source.html','
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6008185d012afcaf7a73b3070afef4ea">initialize</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * objectWithStram);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a> *_predict;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">   44</a></span>&#160;      <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a> *<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a53b3c17960570f2bebf562a7020a9b6c">_predict</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">void</span> clearTable();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">int</span> getCode();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#adaa4dcf4db4a4ded09111841d9fc2167">clearTable</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6cf0b21c2af0d4c9a1c4b285b51d6573">getCode</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      std::string _dummy;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      std::string &amp;_encoded;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">size_t</span> _curSymbolIndex;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a12bccee69ee5d276ae0ec946730ef720">   49</a></span>&#160;      std::string <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a12bccee69ee5d276ae0ec946730ef720">_dummy</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a74ac13e1f3a105cdc28af148d238929e">   50</a></span>&#160;      std::string &amp;<a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a74ac13e1f3a105cdc28af148d238929e">_encoded</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a00063343f79462b05c78c6bbd8d45a2a">   51</a></span>&#160;      <span class="keywordtype">size_t</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a00063343f79462b05c78c6bbd8d45a2a">_curSymbolIndex</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">int</span> _earlyChange; <span class="comment">// early parameter</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordtype">int</span> _readBuf;        </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordtype">int</span> _readBits;       </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordtype">int</span> _nextCode;     </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordtype">int</span> _bitsToRead;     </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordtype">bool</span> _first;            </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordtype">int</span> _curSequenceLength;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aaadd22c587791a262f0c3304c186a2f6">   53</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aaadd22c587791a262f0c3304c186a2f6">_earlyChange</a>; <span class="comment">// early parameter</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ad749cc6fb08a2c9881a25d81f0b870ee">   54</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#ad749cc6fb08a2c9881a25d81f0b870ee">_readBuf</a>;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">   55</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#aab00e5959ccaf5683fb36d8149dccd29">_readBits</a>;       </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">   56</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a0d851abb8c39ac2f673eb6a51a53a70d">_nextCode</a>;     </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">   57</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a6774c1481577a83dd8bb4484e3e59fb0">_bitsToRead</a>;     </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a3a922ad3cf0e4f6d73a7c27b930da7fa">   58</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a3a922ad3cf0e4f6d73a7c27b930da7fa">_first</a>;            </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">   59</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d9/d70/classmerge__lib_1_1_l_z_w_decode.html#a75db62ce1f5926139fd7267f7d58bd18">_curSequenceLength</a>;    </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   };</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
@@ -173,8 +173,8 @@ $(document).ready(function(){initNavTree('de/de1/_l_z_w_decode_8h_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../de/de1/_l_z_w_decode_8h.html">LZWDecode.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bef69977bf836bcacc75baf7cc647ec1.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../de/de1/_l_z_w_decode_8h.html">LZWDecode.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

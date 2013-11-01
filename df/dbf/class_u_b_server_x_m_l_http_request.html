@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('df/dbf/class_u_b_server_x_m_l_http_req
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/d66/class_u_b_server_x_m_l_http_request-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBServerXMLHttpRequest Class Reference</div>  </div>
@@ -117,7 +120,7 @@ $(document).ready(function(){initNavTree('df/dbf/class_u_b_server_x_m_l_http_req
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/db6/class_u_b_server_x_m_l_http_request__coll__graph.svg" width="222" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/db6/class_u_b_server_x_m_l_http_request__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -135,6 +138,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8dd68f1d947a38d3159a09ea80b451a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8dd68f1d947a38d3159a09ea80b451a0">syntheticRubyOnRailsDelete</a> (const QUrl &amp;pUrl)</td></tr>
 <tr class="memitem:a3eeea30fb3afc00305f0b050e64db1aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3eeea30fb3afc00305f0b050e64db1aa">addHeader</a> (const QString &amp;, const QString &amp;)</td></tr>
 <tr class="memitem:a6bc3fcbabc21855cd7ca127bee77fb5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a6bc3fcbabc21855cd7ca127bee77fb5d">setVerbose</a> (bool pVerbose)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a72f0aeb1159a7a53dd2a77d6e206a10e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a72f0aeb1159a7a53dd2a77d6e206a10e">downloadProgress</a> (qint64 bytesReceived, qint64 bytesTotal)</td></tr>
+<tr class="memitem:a8dc0a181b87d3b8c28aeec80f2d6387b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8dc0a181b87d3b8c28aeec80f2d6387b">error</a> (QNetworkReply::NetworkError code)</td></tr>
+<tr class="memitem:a3e574cff5d52e12290a792420d6908cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3e574cff5d52e12290a792420d6908cf">finished</a> ()</td></tr>
+<tr class="memitem:a59224bab1a661d7b894e6372e88e7960"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a59224bab1a661d7b894e6372e88e7960">uploadProgress</a> (qint64 bytesSent, qint64 bytesTotal)</td></tr>
+<tr class="memitem:a3ed7ab9d035c9ecce2271717a2126b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ed7ab9d035c9ecce2271717a2126b69">readyRead</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8d6f7f68875ccef20ab849437161555d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8d6f7f68875ccef20ab849437161555d">connectReply</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa938627c3847a052276eb223ed382c38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a></td></tr>
+<tr class="memitem:a3ff97fdd9036c0fe5e034250d03fe05a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a></td></tr>
+<tr class="memitem:a93a1febe1ed6f93653863da55fb2ec47"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">mContentType</a></td></tr>
+<tr class="memitem:a26399ab9228f9befd3f74494f6c4b2ef"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a></td></tr>
+<tr class="memitem:a4f3c890176b46795b78381621f8a3ef0"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a></td></tr>
+<tr class="memitem:a443b9cdb49f1734883511c772d782055"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a></td></tr>
+<tr class="memitem:a4ccc8f73a82b55619d31e340f45b852c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a></td></tr>
+<tr class="memitem:a49330cf194ea0058bd1faa9f78ecce0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a></td></tr>
+<tr class="memitem:abc34950a217b5005baf041c9f1b63fc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">mRedirectionCount</a></td></tr>
+<tr class="memitem:ac54f3bee90ebdd645b5d199e7293ad4d"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ac54f3bee90ebdd645b5d199e7293ad4d">mPutPayload</a></td></tr>
+<tr class="memitem:a5408feacd8be10eb07a64022c1136340"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a5408feacd8be10eb07a64022c1136340">mPostPayload</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0fd99f0fbcd42473bf5b04c695586472"></a>
@@ -161,13 +190,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pNam)</div>
-<div class="line">    , mHasError(<span class="keyword">false</span>)</div>
-<div class="line">    , mIsRunning(<span class="keyword">false</span>)</div>
-<div class="line">    , mContentType(contentType)</div>
-<div class="line">    , mReply(0)</div>
-<div class="line">    , mNam(pNam)</div>
-<div class="line">    , mIsVerbose(<span class="keyword">false</span>)</div>
-<div class="line">    , mRedirectionCount(0)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">mContentType</a>(contentType)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>(0)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a>(pNam)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">mRedirectionCount</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -195,7 +224,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keyword">delete</span> mReply;</div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -225,9 +254,262 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mExtraHeaders.insert(key, value);</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.insert(key, value);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a3eeea30fb3afc00305f0b050e64db1aa_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8d6f7f68875ccef20ab849437161555d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBServerXMLHttpRequest::connectReply </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>)</div>
+<div class="line">    {</div>
+<div class="line">        connect(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>, SIGNAL(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3e574cff5d52e12290a792420d6908cf">finished</a> ()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3e574cff5d52e12290a792420d6908cf">finished</a> ()));</div>
+<div class="line">        connect(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>, SIGNAL(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8dc0a181b87d3b8c28aeec80f2d6387b">error</a> ( QNetworkReply::NetworkError )), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8dc0a181b87d3b8c28aeec80f2d6387b">error</a> ( QNetworkReply::NetworkError)));</div>
+<div class="line">        connect(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>, SIGNAL(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a72f0aeb1159a7a53dd2a77d6e206a10e">downloadProgress</a> ( qint64 , qint64  )), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a72f0aeb1159a7a53dd2a77d6e206a10e">downloadProgress</a> ( qint64 , qint64  )));</div>
+<div class="line">        connect(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>, SIGNAL(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a59224bab1a661d7b894e6372e88e7960">uploadProgress</a> ( qint64 , qint64  )), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a59224bab1a661d7b894e6372e88e7960">uploadProgress</a> ( qint64 , qint64  )));</div>
+<div class="line">        connect(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>, SIGNAL(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ed7ab9d035c9ecce2271717a2126b69">readyRead</a> (   )), <span class="keyword">this</span>, SLOT( <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ed7ab9d035c9ecce2271717a2126b69">readyRead</a>( )));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a8d6f7f68875ccef20ab849437161555d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a8d6f7f68875ccef20ab849437161555d_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a72f0aeb1159a7a53dd2a77d6e206a10e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBServerXMLHttpRequest::downloadProgress </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesReceived</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesTotal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a> &amp;&amp; bytesTotal &gt; 1024)</div>
+<div class="line">    {</div>
+<div class="line">        qDebug () &lt;&lt; <span class="stringliteral">&quot;downloadProgress&quot;</span> &lt;&lt; (bytesReceived * 100 / bytesTotal)</div>
+<div class="line">            &lt;&lt; <span class="stringliteral">&quot;% (&quot;</span> &lt;&lt; bytesReceived / 1024 &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; bytesTotal / 1024 &lt;&lt; <span class="stringliteral">&quot;KB)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    emit <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aff370dce4474dc4353f699a0bbb037af">progress</a>(bytesReceived, bytesTotal);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a72f0aeb1159a7a53dd2a77d6e206a10e_cgraph.svg" width="422" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a72f0aeb1159a7a53dd2a77d6e206a10e_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8dc0a181b87d3b8c28aeec80f2d6387b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBServerXMLHttpRequest::error </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply::NetworkError&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
+<div class="line">    {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;receive error&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (code != QNetworkReply::NoError)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">//qDebug() &lt;&lt; &quot;error code: &quot; &lt;&lt; code;</span></div>
+<div class="line">        <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a> = <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a8dc0a181b87d3b8c28aeec80f2d6387b_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e574cff5d52e12290a792420d6908cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBServerXMLHttpRequest::finished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.length() &lt; 1024)</div>
+<div class="line">            qDebug() &lt;&lt; <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;processed&quot;</span> &lt;&lt; <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.length() / 1024 &lt;&lt; <span class="stringliteral">&quot;KB&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;header(QNetworkRequest::LocationHeader).isValid() &amp;&amp; <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">mRedirectionCount</a> &lt; 10)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">mRedirectionCount</a>++;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;operation() == QNetworkAccessManager::GetOperation)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keyword">get</span>(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;header(QNetworkRequest::LocationHeader).toUrl());</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;operation() == QNetworkAccessManager::PutOperation)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ae49f19360175e085bdd6b2469381fd36">put</a>(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;header(QNetworkRequest::LocationHeader).toUrl(), <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ac54f3bee90ebdd645b5d199e7293ad4d">mPutPayload</a>);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;operation() == QNetworkAccessManager::PostOperation)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ae3b7956d7cbf7f8bf391813a301c1079">post</a>(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;header(QNetworkRequest::LocationHeader).toUrl(), <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a5408feacd8be10eb07a64022c1136340">mPostPayload</a>);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;operation() == QNetworkAccessManager::HeadOperation)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">//TODO UB 4.x</span></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">mRedirectionCount</a> = 0;</div>
+<div class="line"></div>
+<div class="line">    emit <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3e574cff5d52e12290a792420d6908cf">finished</a>(!<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a>, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;deleteLater();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a> = 0;</div>
+<div class="line"></div>
+<div class="line">    deleteLater();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a3e574cff5d52e12290a792420d6908cf_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a3e574cff5d52e12290a792420d6908cf_icgraph.svg" width="100%" height="519"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a81ac4224b727ccb9fcb091c0ea533fa4"></a>
@@ -278,40 +560,40 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mIsRunning)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;already running ...&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mIsRunning = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    mReplyContent.clear();</div>
-<div class="line">    mHasError = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.clear();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    QNetworkRequest request(pUrl);</div>
 <div class="line"></div>
 <div class="line">    request.setRawHeader(<span class="stringliteral">&quot;ACCEPT&quot;</span>, <span class="stringliteral">&quot;application/xml&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(QString key, mExtraHeaders.keys())</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QString key, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.keys())</div>
 <div class="line">    {</div>
-<div class="line">        request.setRawHeader(key.toUtf8(), mExtraHeaders.value(key).toUtf8());</div>
+<div class="line">        request.setRawHeader(key.toUtf8(), <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.value(key).toUtf8());</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mIsVerbose)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;getting from&quot;</span> &lt;&lt; pUrl;</div>
 <div class="line"></div>
-<div class="line">    mReply = mNam-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(request); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a> = <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a>-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(request); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
 <div class="line"></div>
-<div class="line">    connectReply();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8d6f7f68875ccef20ab849437161555d">connectReply</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a113f3c231a3e1661d6ddf81e02f23c98_cgraph.svg" width="478" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a113f3c231a3e1661d6ddf81e02f23c98_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -341,32 +623,32 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mIsRunning)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;already running ...&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mIsRunning = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    mReplyContent.clear();</div>
-<div class="line">    mHasError = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.clear();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    QNetworkRequest request(pUrl);</div>
 <div class="line"></div>
-<div class="line">    request.setHeader(QNetworkRequest::ContentTypeHeader, mContentType);</div>
+<div class="line">    request.setHeader(QNetworkRequest::ContentTypeHeader, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">mContentType</a>);</div>
 <div class="line">    <span class="comment">//request.setRawHeader(&quot;ACCEPT&quot;, &quot;application/xml&quot;);</span></div>
 <div class="line">    request.setHeader(QNetworkRequest::ContentLengthHeader, payload.length());</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(QString key, mExtraHeaders.keys())</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QString key, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.keys())</div>
 <div class="line">    {</div>
-<div class="line">        request.setRawHeader(key.toUtf8(), mExtraHeaders.value(key).toUtf8());</div>
+<div class="line">        request.setRawHeader(key.toUtf8(), <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.value(key).toUtf8());</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (mIsVerbose)</div>
-<div class="line">            qDebug() &lt;&lt; (key  + <span class="stringliteral">&quot;:&quot;</span> + mExtraHeaders.value(key));</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
+<div class="line">            qDebug() &lt;&lt; (key  + <span class="stringliteral">&quot;:&quot;</span> + <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.value(key));</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mIsVerbose)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;posting&quot;</span> &lt;&lt; payload.length() / 1024 &lt;&lt; <span class="stringliteral">&quot;KB of data to &quot;</span> &lt;&lt; pUrl;</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;posting&quot;</span> &lt;&lt; payload.length() &lt;&lt; <span class="stringliteral">&quot;B of data to &quot;</span> &lt;&lt; pUrl;</div>
@@ -374,24 +656,34 @@ Public Member Functions</h2></td></tr>
 <div class="line">        qDebug() &lt;&lt; QString::fromUtf8(payload);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mPostPayload = payload;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a5408feacd8be10eb07a64022c1136340">mPostPayload</a> = payload;</div>
 <div class="line"></div>
-<div class="line">    mReply = mNam-&gt;post(request, payload); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a> = <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a>-&gt;post(request, payload); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mIsVerbose)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;posted --------------------------------------\n&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    connectReply();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8d6f7f68875ccef20ab849437161555d">connectReply</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae3b7956d7cbf7f8bf391813a301c1079_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae3b7956d7cbf7f8bf391813a301c1079_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae3b7956d7cbf7f8bf391813a301c1079_icgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -429,6 +721,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_aff370dce4474dc4353f699a0bbb037af_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae49f19360175e085bdd6b2469381fd36"></a>
@@ -455,38 +757,97 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mIsRunning)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;already running ...&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mIsRunning = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    mReplyContent.clear();</div>
-<div class="line">    mHasError = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.clear();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    QNetworkRequest request(pUrl);</div>
 <div class="line"></div>
-<div class="line">    request.setHeader(QNetworkRequest::ContentTypeHeader, mContentType);</div>
+<div class="line">    request.setHeader(QNetworkRequest::ContentTypeHeader, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">mContentType</a>);</div>
 <div class="line">    request.setRawHeader(<span class="stringliteral">&quot;ACCEPT&quot;</span>, <span class="stringliteral">&quot;application/xml&quot;</span>);</div>
 <div class="line">    request.setHeader(QNetworkRequest::ContentLengthHeader, payload.length());</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(QString key, mExtraHeaders.keys())</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QString key, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.keys())</div>
 <div class="line">    {</div>
-<div class="line">        request.setRawHeader(key.toUtf8(), mExtraHeaders.value(key).toUtf8());</div>
+<div class="line">        request.setRawHeader(key.toUtf8(), <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.value(key).toUtf8());</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mIsVerbose)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;putting&quot;</span> &lt;&lt; payload.length() / 1024 &lt;&lt; <span class="stringliteral">&quot;KB of data to &quot;</span> &lt;&lt; pUrl;</div>
 <div class="line"></div>
-<div class="line">    mPutPayload = payload;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ac54f3bee90ebdd645b5d199e7293ad4d">mPutPayload</a> = payload;</div>
 <div class="line"></div>
-<div class="line">    mReply = mNam-&gt;put(request, payload); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a> = <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a>-&gt;put(request, payload); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
 <div class="line"></div>
-<div class="line">    connectReply();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8d6f7f68875ccef20ab849437161555d">connectReply</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae49f19360175e085bdd6b2469381fd36_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_ae49f19360175e085bdd6b2469381fd36_icgraph.svg" width="100%" height="479"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ed7ab9d035c9ecce2271717a2126b69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBServerXMLHttpRequest::readyRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.append(<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>-&gt;readAll());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;reply has been read&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a3ed7ab9d035c9ecce2271717a2126b69_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a6bc3fcbabc21855cd7ca127bee77fb5d"></a>
@@ -503,15 +864,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mIsVerbose = pVerbose;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a> = pVerbose;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a6bc3fcbabc21855cd7ca127bee77fb5d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a6bc3fcbabc21855cd7ca127bee77fb5d_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -531,45 +892,337 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mIsRunning)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;already running ...&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mIsRunning = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    mReplyContent.clear();</div>
-<div class="line">    mHasError = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>.clear();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    QNetworkRequest request(pUrl);</div>
 <div class="line"></div>
-<div class="line">    request.setHeader(QNetworkRequest::ContentTypeHeader, mContentType);</div>
+<div class="line">    request.setHeader(QNetworkRequest::ContentTypeHeader, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">mContentType</a>);</div>
 <div class="line">    request.setRawHeader(<span class="stringliteral">&quot;ACCEPT&quot;</span>, <span class="stringliteral">&quot;application/xml&quot;</span>);</div>
 <div class="line">    request.setRawHeader(<span class="stringliteral">&quot;X_HTTP_METHOD_OVERRIDE&quot;</span>, <span class="stringliteral">&quot;delete&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(QString key, mExtraHeaders.keys())</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QString key, <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.keys())</div>
 <div class="line">    {</div>
-<div class="line">        request.setRawHeader(key.toUtf8(), mExtraHeaders.value(key).toUtf8());</div>
+<div class="line">        request.setRawHeader(key.toUtf8(), <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>.value(key).toUtf8());</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mIsVerbose)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>)</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;deleting to&quot;</span> &lt;&lt; pUrl;</div>
 <div class="line"></div>
 <div class="line">    QString fakePayload;</div>
 <div class="line">    fakePayload += <span class="stringliteral">&quot;&lt;fake/&gt;&quot;</span>;</div>
 <div class="line"></div>
-<div class="line">    mReply = mNam-&gt;post(request, fakePayload.toUtf8()); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a> = <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a>-&gt;post(request, fakePayload.toUtf8()); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
 <div class="line"></div>
-<div class="line">    connectReply();</div>
+<div class="line">    <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8d6f7f68875ccef20ab849437161555d">connectReply</a>();</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a8dd68f1d947a38d3159a09ea80b451a0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a59224bab1a661d7b894e6372e88e7960"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBServerXMLHttpRequest::uploadProgress </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesSent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesTotal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a> &amp;&amp; bytesTotal &gt; 0)</div>
+<div class="line">    {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;receive data&quot;</span>;</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;uploadProgress&quot;</span> &lt;&lt; (bytesSent * 100 / bytesTotal) &lt;&lt; <span class="stringliteral">&quot;% (&quot;</span> &lt;&lt; bytesSent / 1024 &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; bytesTotal / 1024 &lt;&lt; <span class="stringliteral">&quot;KB)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    emit <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aff370dce4474dc4353f699a0bbb037af">progress</a>(bytesSent, bytesTotal);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a59224bab1a661d7b894e6372e88e7960_cgraph.svg" width="422" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dbf/class_u_b_server_x_m_l_http_request_a59224bab1a661d7b894e6372e88e7960_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a93a1febe1ed6f93653863da55fb2ec47"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBServerXMLHttpRequest::mContentType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a443b9cdb49f1734883511c772d782055"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, QString&gt; UBServerXMLHttpRequest::mExtraHeaders</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa938627c3847a052276eb223ed382c38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBServerXMLHttpRequest::mHasError</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3ff97fdd9036c0fe5e034250d03fe05a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBServerXMLHttpRequest::mIsRunning</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a49330cf194ea0058bd1faa9f78ecce0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBServerXMLHttpRequest::mIsVerbose</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ccc8f73a82b55619d31e340f45b852c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a>* UBServerXMLHttpRequest::mNam</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5408feacd8be10eb07a64022c1136340"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray UBServerXMLHttpRequest::mPostPayload</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac54f3bee90ebdd645b5d199e7293ad4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray UBServerXMLHttpRequest::mPutPayload</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abc34950a217b5005baf041c9f1b63fc7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBServerXMLHttpRequest::mRedirectionCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a26399ab9228f9befd3f74494f6c4b2ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* UBServerXMLHttpRequest::mReply</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f3c890176b46795b78381621f8a3ef0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray UBServerXMLHttpRequest::mReplyContent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/network/<a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a></li>
-<li>Sankore-3.1/src/network/<a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp.html">UBServerXMLHttpRequest.cpp</a></li>
+<li><a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h_source.html">UBServerXMLHttpRequest.h</a></li>
+<li><a class="el" href="../../d3/d12/_u_b_server_x_m_l_http_request_8cpp.html">UBServerXMLHttpRequest.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -577,7 +1230,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

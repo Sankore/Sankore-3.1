@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBDocumentTreeWidget.h Source File</title>
+<title>Open-Sankoré: UBDocumentTreeWidget.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -153,18 +153,18 @@ $(document).ready(function(){initNavTree('d0/d15/_u_b_document_tree_widget_8h_so
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> Qt::DropActions <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0280a3a3593f2ce00794081ef3311472">supportedDropActions</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> documentUpdated(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocument);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a4bbc7152af99944f7274e95f896d9e90">documentUpdated</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocument);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> itemChangedValidation(QTreeWidgetItem * item, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a6ff358c0680f427b13db4a20594ea706">itemChangedValidation</a>(QTreeWidgetItem * item, <span class="keywordtype">int</span> column);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">void</span> autoScroll();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a1751f52ccb9953c854de320f5b3c2a9b">autoScroll</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a> *mSelectedProxyTi;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        QTreeWidgetItem *mDropTargetProxyTi;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        QBrush mBackground;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                QTimer* mScrollTimer;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">int</span> mScrollMagnitude;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">   57</a></span>&#160;        <a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a> *<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">   58</a></span>&#160;        QTreeWidgetItem *<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">   59</a></span>&#160;        QBrush <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">   60</a></span>&#160;                QTimer* <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">   61</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
@@ -203,8 +203,8 @@ $(document).ready(function(){initNavTree('d0/d15/_u_b_document_tree_widget_8h_so
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d0/d15/_u_b_document_tree_widget_8h.html">UBDocumentTreeWidget.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d0/d15/_u_b_document_tree_widget_8h.html">UBDocumentTreeWidget.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

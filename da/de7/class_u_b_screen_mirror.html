@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('da/de7/class_u_b_screen_mirror.html','
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/d36/class_u_b_screen_mirror-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBScreenMirror Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('da/de7/class_u_b_screen_mirror.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d4c/class_u_b_screen_mirror__coll__graph.svg" width="152" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d4c/class_u_b_screen_mirror__coll__graph.svg" width="152" height="304"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -133,6 +135,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3eb29cd94518838d975c9436faf8163e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a3eb29cd94518838d975c9436faf8163e">~UBScreenMirror</a> ()</td></tr>
 <tr class="memitem:a626d318b7ee963c5d864b8fcc9bbfbc4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a626d318b7ee963c5d864b8fcc9bbfbc4">paintEvent</a> (QPaintEvent *event)</td></tr>
 <tr class="memitem:affca4a23d7664f4bf36aa88d43824f25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#affca4a23d7664f4bf36aa88d43824f25">timerEvent</a> (QTimerEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6d71d1113e6172bd8a3ac8e31f4c27a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a6d71d1113e6172bd8a3ac8e31f4c27a1">grabPixmap</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a151b806eb168d4be7bb3c03e8c35bb43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a151b806eb168d4be7bb3c03e8c35bb43">mScreenIndex</a></td></tr>
+<tr class="memitem:a259b8144e556130c8ecec6529ca1125c"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a></td></tr>
+<tr class="memitem:a520bb9433cf9f4d32fd935c533150a1e"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a></td></tr>
+<tr class="memitem:ade1613a0be4327667b75bae046117e52"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a></td></tr>
+<tr class="memitem:a52af0fe6bcd53a69cea7c02e310d0667"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a50bef021111174ae6bdc1a23968511fb"></a>
@@ -149,9 +163,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
-<div class="line">    , mScreenIndex(0)</div>
-<div class="line">    , mSourceWidget(0)</div>
-<div class="line">    , mTimerID(0)</div>
+<div class="line">    , <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a151b806eb168d4be7bb3c03e8c35bb43">mScreenIndex</a>(0)</div>
+<div class="line">    , <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>(0)</div>
+<div class="line">    , <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -185,6 +199,59 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a6d71d1113e6172bd8a3ac8e31f4c27a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBScreenMirror::grabPixmap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>)</div>
+<div class="line">    {</div>
+<div class="line">        QPoint topLeft = <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>-&gt;mapToGlobal(<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>-&gt;geometry().topLeft());</div>
+<div class="line">        QPoint bottomRight = <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>-&gt;mapToGlobal(<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>-&gt;geometry().bottomRight());</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a>.setTopLeft(topLeft);</div>
+<div class="line">        <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a>.setBottomRight(bottomRight);</div>
+<div class="line">        <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a> = QPixmap::grabWidget(<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span>{</div>
+<div class="line">        <span class="comment">// WHY HERE?</span></div>
+<div class="line">        <span class="comment">// this is the case we are showing the desktop but the is no widget and we use the last widget rectagle to know</span></div>
+<div class="line">        <span class="comment">// what we have to grab. Not very good way of doing</span></div>
+<div class="line">        WId windowID = qApp-&gt;desktop()-&gt;screen(<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a151b806eb168d4be7bb3c03e8c35bb43">mScreenIndex</a>)-&gt;winId();</div>
+<div class="line">        <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a> = QPixmap::grabWindow(windowID, <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a>.x(), <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a>.y(), <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a>.width(), <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a>.height());</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a> = <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a>.scaled(width(), height(), Qt::KeepAspectRatio, Qt::SmoothTransformation);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a6d71d1113e6172bd8a3ac8e31f4c27a1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a626d318b7ee963c5d864b8fcc9bbfbc4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,12 +280,12 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    painter.fillRect(0, 0, width(), height(), QBrush(Qt::black));</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!mLastPixmap.isNull())</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a>.isNull())</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordtype">int</span> x = (width() - mLastPixmap.width()) / 2;</div>
-<div class="line">        <span class="keywordtype">int</span> y = (height() - mLastPixmap.height()) / 2;</div>
+<div class="line">        <span class="keywordtype">int</span> x = (width() - <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a>.width()) / 2;</div>
+<div class="line">        <span class="keywordtype">int</span> y = (height() - <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a>.height()) / 2;</div>
 <div class="line"></div>
-<div class="line">        painter.drawPixmap(x, y, mLastPixmap);</div>
+<div class="line">        painter.drawPixmap(x, y, <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#ade1613a0be4327667b75bae046117e52">mLastPixmap</a>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -246,16 +313,17 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mRect = pRect;</div>
-<div class="line">            mSourceWidget = 0;</div>
+<div class="line">            <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a520bb9433cf9f4d32fd935c533150a1e">mRect</a> = pRect;</div>
+<div class="line">            <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a> = 0;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a16cae16aeaafb227510dc8fa67b0f4a2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a16cae16aeaafb227510dc8fa67b0f4a2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -283,21 +351,31 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mSourceWidget = sourceWidget;</div>
+<div class="line">    <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a259b8144e556130c8ecec6529ca1125c">mSourceWidget</a> = sourceWidget;</div>
 <div class="line"></div>
-<div class="line">    mScreenIndex = qApp-&gt;desktop()-&gt;screenNumber(sourceWidget);</div>
+<div class="line">    <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a151b806eb168d4be7bb3c03e8c35bb43">mScreenIndex</a> = qApp-&gt;desktop()-&gt;screenNumber(sourceWidget);</div>
 <div class="line"></div>
-<div class="line">    grabPixmap();</div>
+<div class="line">    <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a6d71d1113e6172bd8a3ac8e31f4c27a1">grabPixmap</a>();</div>
 <div class="line"></div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a4885aebc1ac800284227b8edbc98f213_icgraph.svg" width="646" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a4885aebc1ac800284227b8edbc98f213_cgraph.svg" width="435" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a4885aebc1ac800284227b8edbc98f213_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -326,7 +404,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;mirroring START&quot;</span>;</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a4e526bf1704cc013539413d792c65d6a">freezeW3CWidgets</a>(<span class="keyword">true</span>);</div>
-<div class="line">    <span class="keywordflow">if</span> (mTimerID == 0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a> == 0)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordtype">int</span> ms = 125;</div>
 <div class="line"></div>
@@ -338,7 +416,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">            ms = 1000 / fps;</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mTimerID = startTimer(ms);</div>
+<div class="line">        <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a> = startTimer(ms);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
@@ -346,21 +424,22 @@ Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a4d43e8f04c1e514b3f42d5a06c8391e1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a4d43e8f04c1e514b3f42d5a06c8391e1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a4d43e8f04c1e514b3f42d5a06c8391e1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -389,28 +468,29 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;mirroring STOP&quot;</span>;</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a4e526bf1704cc013539413d792c65d6a">freezeW3CWidgets</a>(<span class="keyword">false</span>);</div>
-<div class="line">    <span class="keywordflow">if</span> (mTimerID != 0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a> != 0)</div>
 <div class="line">    {</div>
-<div class="line">        killTimer(mTimerID);</div>
-<div class="line">        mTimerID = 0;</div>
+<div class="line">        killTimer(<a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a>);</div>
+<div class="line">        <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a52af0fe6bcd53a69cea7c02e310d0667">mTimerID</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a86fde636fadf9a639177c0e8ff76b915_cgraph.svg" width="100%" height="590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a86fde636fadf9a639177c0e8ff76b915_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_a86fde636fadf9a639177c0e8ff76b915_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -440,16 +520,126 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
-<div class="line">    grabPixmap();</div>
+<div class="line">    <a class="code" href="../../da/de7/class_u_b_screen_mirror.html#a6d71d1113e6172bd8a3ac8e31f4c27a1">grabPixmap</a>();</div>
 <div class="line"></div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/de7/class_u_b_screen_mirror_affca4a23d7664f4bf36aa88d43824f25_cgraph.svg" width="438" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ade1613a0be4327667b75bae046117e52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap UBScreenMirror::mLastPixmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a520bb9433cf9f4d32fd935c533150a1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRect UBScreenMirror::mRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a151b806eb168d4be7bb3c03e8c35bb43"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBScreenMirror::mScreenIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a259b8144e556130c8ecec6529ca1125c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* UBScreenMirror::mSourceWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52af0fe6bcd53a69cea7c02e310d0667"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long UBScreenMirror::mTimerID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dd3/_u_b_screen_mirror_8h_source.html">UBScreenMirror.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/dd9/_u_b_screen_mirror_8cpp.html">UBScreenMirror.cpp</a></li>
+<li><a class="el" href="../../de/dd3/_u_b_screen_mirror_8h_source.html">UBScreenMirror.h</a></li>
+<li><a class="el" href="../../dd/dd9/_u_b_screen_mirror_8cpp.html">UBScreenMirror.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -457,7 +647,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/de7/class_u_b_screen_mirror.html">UBScreenMirror</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

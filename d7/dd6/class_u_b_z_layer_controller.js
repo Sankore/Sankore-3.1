@@ -17,5 +17,8 @@ var class_u_b_z_layer_controller =
     [ "getTopLimit", "d7/dd6/class_u_b_z_layer_controller.html#ad8a9e770b878066c4e9dc7bf18d5fda6", null ],
     [ "setLayerType", "d7/dd6/class_u_b_z_layer_controller.html#ad5800f9c85401ba1d5d7a74371170ce5", null ],
     [ "typeForData", "d7/dd6/class_u_b_z_layer_controller.html#a93fe7dc3f86bb3daff7b48a7a8d97ea7", null ],
-    [ "validLayerType", "d7/dd6/class_u_b_z_layer_controller.html#adda3ea374db9b6e353a188b4c9a7b535", null ]
+    [ "validLayerType", "d7/dd6/class_u_b_z_layer_controller.html#adda3ea374db9b6e353a188b4c9a7b535", null ],
+    [ "errorNumber", "d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb", null ],
+    [ "mScene", "d7/dd6/class_u_b_z_layer_controller.html#a18410f6435dcaae333c6ea52d2746081", null ],
+    [ "scopeMap", "d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc", null ]
 ];

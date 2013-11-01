@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d1/d64/class_u_b_scene_thumbnail_pixma
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d7/ddf/class_u_b_scene_thumbnail_pixmap-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBSceneThumbnailPixmap Class Reference</div>  </div>
@@ -150,6 +151,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a84ed4fea9e8596864ea91e44ef2b554c inherit pub_methods_class_u_b_thumbnail"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a84ed4fea9e8596864ea91e44ef2b554c">row</a> ()</td></tr>
 <tr class="memitem:ae5f3a2b52f87e1e3c3ed51ce4a045912 inherit pub_methods_class_u_b_thumbnail"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#ae5f3a2b52f87e1e3c3ed51ce4a045912">setRow</a> (int <a class="el" href="../../de/d65/class_u_b_thumbnail.html#a84ed4fea9e8596864ea91e44ef2b554c">row</a>)</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a063679d052e0f6c560aa8e9b581f6bb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a063679d052e0f6c560aa8e9b581f6bb5">mProxy</a></td></tr>
+<tr class="memitem:a53835b14a03efbf571d1d31ce8bf32fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a53835b14a03efbf571d1d31ce8bf32fb">mSceneIndex</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_u_b_thumbnail"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_u_b_thumbnail')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../de/d65/class_u_b_thumbnail.html">UBThumbnail</a></td></tr>
@@ -194,8 +200,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">            : <a class="code" href="../../dd/d35/class_u_b_thumbnail_pixmap.html#ae05b732b7257234c13b08042843e5439">UBThumbnailPixmap</a>(pix)</div>
-<div class="line">            , mProxy(proxy)</div>
-<div class="line">            , mSceneIndex(pSceneIndex)</div>
+<div class="line">            , <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a063679d052e0f6c560aa8e9b581f6bb5">mProxy</a>(proxy)</div>
+<div class="line">            , <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a53835b14a03efbf571d1d31ce8bf32fb">mSceneIndex</a>(pSceneIndex)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">// NOOP</span></div>
 <div class="line">        }</div>
@@ -250,7 +256,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mProxy;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a063679d052e0f6c560aa8e9b581f6bb5">mProxy</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -258,7 +264,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d64/class_u_b_scene_thumbnail_pixmap_ae7da44d7a27c5ed55eb753200fcd8d2e_icgraph.svg" width="100%" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d64/class_u_b_scene_thumbnail_pixmap_ae7da44d7a27c5ed55eb753200fcd8d2e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -285,7 +291,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mSceneIndex;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html#a53835b14a03efbf571d1d31ce8bf32fb">mSceneIndex</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -293,15 +299,56 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d64/class_u_b_scene_thumbnail_pixmap_a9bc67f587cd73ff2119dd6aa06a07871_icgraph.svg" width="100%" height="543"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d64/class_u_b_scene_thumbnail_pixmap_a9bc67f587cd73ff2119dd6aa06a07871_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a063679d052e0f6c560aa8e9b581f6bb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* UBSceneThumbnailPixmap::mProxy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a53835b14a03efbf571d1d31ce8bf32fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBSceneThumbnailPixmap::mSceneIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp.html">UBThumbnailWidget.cpp</a></li>
+<li><a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
+<li><a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp.html">UBThumbnailWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -309,7 +356,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html">UBSceneThumbnailPixmap</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/podcast/quicktime/UBAudioQueueRecorder.h Source File</title>
+<title>Open-Sankoré: UBAudioQueueRecorder.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -156,12 +156,12 @@ $(document).ready(function(){initNavTree('dc/dca/_u_b_audio_queue_recorder_8h_so
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ae13ff0c925839fb7ee7e7a49cf0d4f07">   51</a></span>&#160;        QString <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ae13ff0c925839fb7ee7e7a49cf0d4f07">lastErrorMessage</a>()</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a6c1c163c2243fe2edbe584118f586539">   56</a></span>&#160;        <span class="keyword">static</span> AudioStreamBasicDescription <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a6c1c163c2243fe2edbe584118f586539">audioFormat</a>()</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> sAudioFormat;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    signals:</div>
@@ -171,34 +171,34 @@ $(document).ready(function(){initNavTree('dc/dca/_u_b_audio_queue_recorder_8h_so
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0090a62acc8663b85529126fc632bee5">audioLevelChanged</a>(quint8 level);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> audioQueueInputCallback (<span class="keywordtype">void</span> *inUserData, AudioQueueRef inAQ,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a44801bf6a2710136c3d85901e25d9357">audioQueueInputCallback</a> (<span class="keywordtype">void</span> *inUserData, AudioQueueRef inAQ,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            AudioQueueBufferRef inBuffer, <span class="keyword">const</span> AudioTimeStamp *inStartTime,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            UInt32 inNumberPacketDescriptions, <span class="keyword">const</span> AudioStreamPacketDescription *inPacketDescs);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> emitNewWaveBuffer(AudioQueueBufferRef pBuffer, <span class="keywordtype">int</span> inNumberPacketDescriptions, <span class="keyword">const</span> AudioStreamPacketDescription *inPacketDescs);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ad249b6e2dfce2f10e093ae5a7cbde0af">emitNewWaveBuffer</a>(AudioQueueBufferRef pBuffer, <span class="keywordtype">int</span> inNumberPacketDescriptions, <span class="keyword">const</span> AudioStreamPacketDescription *inPacketDescs);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> emitAudioLevelChanged(quint8 level);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a243f1d0de0227c7172e2bb21866e8d39">emitAudioLevelChanged</a>(quint8 level);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> setLastErrorMessage(<span class="keyword">const</span> QString&amp; pLastErrorMessage)</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">   76</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3843206adfbbaad0677dfe36b5134186">setLastErrorMessage</a>(<span class="keyword">const</span> QString&amp; pLastErrorMessage)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            mLastErrorMessage = pLastErrorMessage;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            qWarning() &lt;&lt; <span class="stringliteral">&quot;UBAudioQueueRecorder error:&quot;</span> &lt;&lt; mLastErrorMessage;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a> = pLastErrorMessage;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            qWarning() &lt;&lt; <span class="stringliteral">&quot;UBAudioQueueRecorder error:&quot;</span> &lt;&lt; <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> isRecording()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3dc9dc46c6359f9a3dc42832cb3894a9">   82</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a3dc9dc46c6359f9a3dc42832cb3894a9">isRecording</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> mIsRecording;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        AudioQueueRef mQueue;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        QList&lt;AudioQueueBufferRef&gt; mBuffers;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        QString mLastErrorMessage;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span> mIsRecording;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">int</span> mBufferLengthInMs;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">long</span> mMsTimeStamp;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        UInt32 mSampleBufferSize;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">   87</a></span>&#160;        AudioQueueRef <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a2d540dccec21a8c296ead00431eba37f">mQueue</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">   88</a></span>&#160;        QList&lt;AudioQueueBufferRef&gt; <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a95da8a8969b3a67ac0df813e2961773a">mBuffers</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">   89</a></span>&#160;        QString <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0ffc6629c0b94af6941a5f14449195b8">mLastErrorMessage</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">   90</a></span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#afd4b97415b4db8886865916ba4ec2e42">mIsRecording</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a27e849d26428409c1bcad840b5491a27">   91</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a27e849d26428409c1bcad840b5491a27">mBufferLengthInMs</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#abf89b298b514cfa80ec103e7e687969c">   92</a></span>&#160;        <span class="keyword">volatile</span> <span class="keywordtype">long</span> <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#abf89b298b514cfa80ec103e7e687969c">mMsTimeStamp</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">   93</a></span>&#160;        UInt32 <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#a0b3e2025fd2d1b36c47cc9efcba966cf">mSampleBufferSize</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">static</span> AudioStreamBasicDescription sAudioFormat;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">   95</a></span>&#160;        <span class="keyword">static</span> AudioStreamBasicDescription <a class="code" href="../../de/d2b/class_u_b_audio_queue_recorder.html#ac35a79581d9f457a18cc571a38f9b88b">sAudioFormat</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UBAUDIOQUEUERECORDER_H_ */</span><span class="preprocessor"></span></div>
@@ -207,8 +207,8 @@ $(document).ready(function(){initNavTree('dc/dca/_u_b_audio_queue_recorder_8h_so
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_d37d8428862b2ecaaadbfbbc34ddff69.html">quicktime</a></li><li class="navelem"><a class="el" href="../../dc/dca/_u_b_audio_queue_recorder_8h.html">UBAudioQueueRecorder.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_de91351bf1172a20a1f8b279a638efc6.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_84d7bd0b182ac1208e69c8fccd147e6c.html">quicktime</a></li><li class="navelem"><a class="el" href="../../dc/dca/_u_b_audio_queue_recorder_8h.html">UBAudioQueueRecorder.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

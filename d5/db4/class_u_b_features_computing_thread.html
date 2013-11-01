@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('d5/db4/class_u_b_features_computing_th
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d39/class_u_b_features_computing_thread-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesComputingThread Class Reference</div>  </div>
@@ -118,7 +120,7 @@ $(document).ready(function(){initNavTree('d5/db4/class_u_b_features_computing_th
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d36/class_u_b_features_computing_thread__coll__graph.svg" width="232" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d36/class_u_b_features_computing_thread__coll__graph.svg" width="232" height="358"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -140,6 +142,25 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa4d4c918a42582177f8d9b30e07af714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#aa4d4c918a42582177f8d9b30e07af714">run</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adc368636d84290e27b5ef7bc8b1201b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#adc368636d84290e27b5ef7bc8b1201b5">scanFS</a> (const QUrl &amp;currentPath, const QString &amp;currVirtualPath, const QPair&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>, QSet&lt; QUrl &gt; &gt; &amp;pfavoriteInfo, UBFeature::Permissions pPermissions, const QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt; &amp;extData)</td></tr>
+<tr class="memitem:a81ae9e8a075bd208b01a5a7eed2bf076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a81ae9e8a075bd208b01a5a7eed2bf076">scanAll</a> (QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt; pScanningData, const QPair&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>, QSet&lt; QUrl &gt; &gt; &amp;pFavoriteInfo, const QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt; &amp;extData)</td></tr>
+<tr class="memitem:a7c0288c9b7bca5d3d473b4b22d894109"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a7c0288c9b7bca5d3d473b4b22d894109">featuresCount</a> (const QUrl &amp;pPath)</td></tr>
+<tr class="memitem:a49efaf8d694b8c870ccd686728054d81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a49efaf8d694b8c870ccd686728054d81">featuresCountAll</a> (QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt; pScanningData)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3ee0f8d3b9bc4428ac98cf48dd2f1dd0"><td class="memItemLeft" align="right" valign="top">QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a></td></tr>
+<tr class="memitem:afd6bda38dde3721a00913c3fd2593558"><td class="memItemLeft" align="right" valign="top">QWaitCondition&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#afd6bda38dde3721a00913c3fd2593558">mWaitCondition</a></td></tr>
+<tr class="memitem:a0445a2bb7079bfcf5628f240abfa8802"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a0445a2bb7079bfcf5628f240abfa8802">mScanningPath</a></td></tr>
+<tr class="memitem:a2e23e360a0c3e5f7b9c7d6a1f7e20428"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a2e23e360a0c3e5f7b9c7d6a1f7e20428">mScanningVirtualPath</a></td></tr>
+<tr class="memitem:af27b99a15b70fdfd8e68ffc889ec33b2"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#af27b99a15b70fdfd8e68ffc889ec33b2">mScanningData</a></td></tr>
+<tr class="memitem:a0655da0fa2465f5b465239b583d5f5eb"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a0655da0fa2465f5b465239b583d5f5eb">mExceptionData</a></td></tr>
+<tr class="memitem:a4a95131f899ceb2d33fb4e3285f74b21"><td class="memItemLeft" align="right" valign="top">QPair&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>, QSet&lt; QUrl &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a4a95131f899ceb2d33fb4e3285f74b21">mFavoriteInfo</a></td></tr>
+<tr class="memitem:a13fd235c49d20c3744c0f09ab1f0e6f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a13fd235c49d20c3744c0f09ab1f0e6f5">restart</a></td></tr>
+<tr class="memitem:a282e1045cf0c69e75392d3ec973abfa2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a976749036f4e6ddf2a229ff4505bdb31"></a>
@@ -166,8 +187,8 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">                                                                    :</div>
 <div class="line">QThread(parent)</div>
 <div class="line">{</div>
-<div class="line">    restart = <span class="keyword">false</span>;</div>
-<div class="line">    abort = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a13fd235c49d20c3744c0f09ab1f0e6f5">restart</a> = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a> = <span class="keyword">false</span>;</div>
 }</div>
 </div><!-- fragment -->
 </div>
@@ -195,10 +216,10 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line"><span class="comment">//    qDebug() &lt;&lt;  &quot;thread destructor catched&quot;;</span></div>
 <div class="line"></div>
-<div class="line">    mMutex.lock();</div>
-<div class="line">    abort = <span class="keyword">true</span>;</div>
-<div class="line">    mWaitCondition.wakeOne();</div>
-<div class="line">    mMutex.unlock();</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>.lock();</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a> = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#afd6bda38dde3721a00913c3fd2593558">mWaitCondition</a>.wakeOne();</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>.unlock();</div>
 <div class="line"></div>
 <div class="line">    wait();</div>
 <div class="line">}</div>
@@ -236,20 +257,147 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QMutexLocker curLocker(&amp;mMutex);</div>
+<div class="line">    QMutexLocker curLocker(&amp;<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>);</div>
 <div class="line"></div>
-<div class="line">    mScanningData = pcategoryList;</div>
-<div class="line">    mExceptionData = extData;</div>
-<div class="line">    mFavoriteInfo = pFavoriteInfo;</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#af27b99a15b70fdfd8e68ffc889ec33b2">mScanningData</a> = pcategoryList;</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a0655da0fa2465f5b465239b583d5f5eb">mExceptionData</a> = extData;</div>
+<div class="line">    <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a4a95131f899ceb2d33fb4e3285f74b21">mFavoriteInfo</a> = pFavoriteInfo;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (!isRunning()) {</div>
 <div class="line">        start(LowPriority);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        restart = <span class="keyword">true</span>;</div>
-<div class="line">        mWaitCondition.wakeOne();</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a13fd235c49d20c3744c0f09ab1f0e6f5">restart</a> = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#afd6bda38dde3721a00913c3fd2593558">mWaitCondition</a>.wakeOne();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a40d2655a67103d8d90e3b0ccffa8911e_icgraph.svg" width="608" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c0288c9b7bca5d3d473b4b22d894109"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBFeaturesComputingThread::featuresCount </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>pPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> noItems = 0;</div>
+<div class="line"></div>
+<div class="line">    QFileInfoList fileInfoList = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a3292b192159361f21da665022c20ee32">UBFileSystemUtils::allElementsInDirectory</a>(pPath.toLocalFile());</div>
+<div class="line"></div>
+<div class="line">    QFileInfoList::iterator fileInfo;</div>
+<div class="line">    <span class="keywordflow">for</span> ( fileInfo = fileInfoList.begin(); fileInfo != fileInfoList.end(); fileInfo +=  1) {</div>
+<div class="line">        QString fullFileName = fileInfo-&gt;absoluteFilePath();</div>
+<div class="line">        <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674f">UBFeatureElementType</a> featureType = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a37995e9bde0b05ca141651d80b0e9be2">UBFeaturesController::fileTypeFromUrl</a>(fullFileName);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (featureType != <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674facebe4ba7d003ec674f4ea850f265dd28">FEATURE_INVALID</a> &amp;&amp; !fullFileName.contains(<span class="stringliteral">&quot;.thumbnail.&quot;</span>)) {</div>
+<div class="line">            noItems++;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (featureType == <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674fa0392c3a4bd4f52e04de1e0ba3ef540e9">FEATURE_FOLDER</a>) {</div>
+<div class="line">            noItems += <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a7c0288c9b7bca5d3d473b4b22d894109">featuresCount</a>(QUrl::fromLocalFile(fullFileName));</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> noItems;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a7c0288c9b7bca5d3d473b4b22d894109_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a7c0288c9b7bca5d3d473b4b22d894109_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a49efaf8d694b8c870ccd686728054d81"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBFeaturesComputingThread::featuresCountAll </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt;&#160;</td>
+          <td class="paramname"><em>pScanningData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> noItems = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pScanningData.count(); i++) {</div>
+<div class="line">        <a class="code" href="../../d2/d9e/struct_category_data.html">CategoryData</a> curCategoryData = pScanningData.at(i);</div>
+<div class="line">        QMapIterator&lt;CategoryData::pathType, QUrl&gt; pathIterator(curCategoryData.<a class="code" href="../../d2/d9e/struct_category_data.html#ae5da36a3b7327e15fd29b87c20e6ac39">pathData</a>());</div>
+<div class="line">        <span class="keywordflow">while</span> (pathIterator.hasNext()) {</div>
+<div class="line">            pathIterator.next();</div>
+<div class="line">            noItems += <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a7c0288c9b7bca5d3d473b4b22d894109">featuresCount</a>(pathIterator.value());</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> noItems;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a49efaf8d694b8c870ccd686728054d81_cgraph.svg" width="100%" height="408"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a49efaf8d694b8c870ccd686728054d81_icgraph.svg" width="475" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a03e3d3508cc2b93e61522969eb1d16c0"></a>
@@ -272,6 +420,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a03e3d3508cc2b93e61522969eb1d16c0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -297,11 +454,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_ab8feb675f13992b1e38cf190ef0f0e3f_icgraph.svg" width="475" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -332,21 +489,21 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    forever {</div>
 <div class="line"><span class="comment">//        qDebug() &lt;&lt; &quot;Custom thread started execution&quot;;</span></div>
 <div class="line"></div>
-<div class="line">        mMutex.lock();</div>
-<div class="line">        QList&lt;CategoryData&gt; searchData = mScanningData;</div>
-<div class="line">        QList&lt;CategoryData&gt; extData = mExceptionData;</div>
-<div class="line">        QPair&lt;CategoryData, QSet&lt;QUrl&gt; &gt; favoriteInfo = mFavoriteInfo;</div>
-<div class="line">        mMutex.unlock();</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>.lock();</div>
+<div class="line">        QList&lt;CategoryData&gt; searchData = <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#af27b99a15b70fdfd8e68ffc889ec33b2">mScanningData</a>;</div>
+<div class="line">        QList&lt;CategoryData&gt; extData = <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a0655da0fa2465f5b465239b583d5f5eb">mExceptionData</a>;</div>
+<div class="line">        QPair&lt;CategoryData, QSet&lt;QUrl&gt; &gt; favoriteInfo = <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a4a95131f899ceb2d33fb4e3285f74b21">mFavoriteInfo</a>;</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>.unlock();</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (abort) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a>) {</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
 <div class="line">        }</div>
-<div class="line">        <span class="keywordflow">if</span> (restart) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a13fd235c49d20c3744c0f09ab1f0e6f5">restart</a>) {</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line"><span class="comment">//        QTime curTime = Q.Time::currentTime();</span></div>
-<div class="line">        <span class="keywordtype">int</span> fsCnt = featuresCountAll(searchData);</div>
+<div class="line">        <span class="keywordtype">int</span> fsCnt = <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a49efaf8d694b8c870ccd686728054d81">featuresCountAll</a>(searchData);</div>
 <div class="line"><span class="comment">//        int msecsto = curTime.msecsTo(QTime::currentTime());</span></div>
 <div class="line"><span class="comment">//        qDebug() &lt;&lt; &quot;time on evaluation&quot; &lt;&lt; msecsto;</span></div>
 <div class="line"></div>
@@ -354,26 +511,107 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#ac13bf6649253592358c59e707b821cc5">scanStarted</a>();</div>
 <div class="line"></div>
 <div class="line"><span class="comment">//        curTime = QTime::currentTime();</span></div>
-<div class="line">        scanAll(searchData, favoriteInfo, extData);</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a81ae9e8a075bd208b01a5a7eed2bf076">scanAll</a>(searchData, favoriteInfo, extData);</div>
 <div class="line"><span class="comment">//        qDebug() &lt;&lt; &quot;Time on finishing&quot; &lt;&lt; curTime.msecsTo(QTime::currentTime());</span></div>
 <div class="line">        emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#adf7a2677fe2c04c70605a5adf0c820ed">scanFinished</a>();</div>
 <div class="line"></div>
-<div class="line">        mMutex.lock();</div>
-<div class="line">        <span class="keywordflow">if</span> (!abort) {</div>
-<div class="line">            mWaitCondition.wait(&amp;mMutex);</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>.lock();</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a>) {</div>
+<div class="line">            <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#afd6bda38dde3721a00913c3fd2593558">mWaitCondition</a>.wait(&amp;<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>);</div>
 <div class="line">        }</div>
-<div class="line">        restart = <span class="keyword">false</span>;</div>
-<div class="line">        mMutex.unlock();</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a13fd235c49d20c3744c0f09ab1f0e6f5">restart</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3ee0f8d3b9bc4428ac98cf48dd2f1dd0">mMutex</a>.unlock();</div>
 <div class="line"></div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_aa4d4c918a42582177f8d9b30e07af714_cgraph.svg" width="475" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_aa4d4c918a42582177f8d9b30e07af714_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a81ae9e8a075bd208b01a5a7eed2bf076"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesComputingThread::scanAll </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt;&#160;</td>
+          <td class="paramname"><em>pScanningData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPair&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>, QSet&lt; QUrl &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pFavoriteInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>extData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = static_cast&lt;int&gt;(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aacf2d83eb1af825781eb7b471bf6e25b8">CategoryData::Library</a>); n &lt;= static_cast&lt;int&gt;(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aa3c42bc32e8dbf7ba16b44aac0d126478">CategoryData::UserDefined</a>); n++) {</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pScanningData.count(); i++) {</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a>) {</div>
+<div class="line">                <span class="keywordflow">return</span>;</div>
+<div class="line">            }</div>
+<div class="line">            <a class="code" href="../../d2/d9e/struct_category_data.html">CategoryData</a> curData = pScanningData.at(i);</div>
+<div class="line"></div>
+<div class="line">            emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#ac17a85b57f0817af9c0c3733de201c75">scanCategory</a>(curData.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>().<a class="code" href="../../db/d98/class_u_b_feature.html#a54feb7122e56b6bec4f275e9e9cb42cb">getDisplayName</a>());</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030a">CategoryData::pathType</a> pType = <span class="keyword">static_cast&lt;</span><a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030a">CategoryData::pathType</a><span class="keyword">&gt;</span>(n);</div>
+<div class="line">            QList&lt;QUrl&gt; curScanPaths = curData.<a class="code" href="../../d2/d9e/struct_category_data.html#ae5da36a3b7327e15fd29b87c20e6ac39">pathData</a>().values(pType);</div>
+<div class="line">            <span class="keywordflow">foreach</span> (QUrl curUrl, curScanPaths) {</div>
+<div class="line"><span class="comment">//                qDebug() &lt;&lt; &quot;location&quot; &lt;&lt; i &lt;&lt; &quot;is&quot; &lt;&lt; curUrl.toLocalFile();</span></div>
+<div class="line">                <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#adc368636d84290e27b5ef7bc8b1201b5">scanFS</a>(curUrl</div>
+<div class="line">                       , curData.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>().<a class="code" href="../../db/d98/class_u_b_feature.html#a175da54d5e0d135c43b44009601a1380">getFullVirtualPath</a>()</div>
+<div class="line">                       , pFavoriteInfo</div>
+<div class="line">                       , curData.<a class="code" href="../../d2/d9e/struct_category_data.html#ae0b01c9f7beb03243dbe07a9c209e028">subFolderPermissionsForType</a>(pType)</div>
+<div class="line">                       , extData);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a81ae9e8a075bd208b01a5a7eed2bf076_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a81ae9e8a075bd208b01a5a7eed2bf076_icgraph.svg" width="475" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -401,6 +639,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_ac17a85b57f0817af9c0c3733de201c75_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="adf7a2677fe2c04c70605a5adf0c820ed"></a>
@@ -424,12 +671,141 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_adf7a2677fe2c04c70605a5adf0c820ed_icgraph.svg" width="475" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adc368636d84290e27b5ef7bc8b1201b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesComputingThread::scanFS </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>currentPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>currVirtualPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPair&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>, QSet&lt; QUrl &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pfavoriteInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UBFeature::Permissions&#160;</td>
+          <td class="paramname"><em>pPermissions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>extData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_ASSERT(QFileInfo(currentPath.toLocalFile()).exists());</div>
+<div class="line"></div>
+<div class="line">    QFileInfoList fileInfoList = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a3292b192159361f21da665022c20ee32">UBFileSystemUtils::allElementsInDirectory</a>(currentPath.toLocalFile());</div>
+<div class="line"></div>
+<div class="line">    QFileInfoList::iterator fileInfo;</div>
+<div class="line">    <span class="keywordflow">for</span> ( fileInfo = fileInfoList.begin(); fileInfo != fileInfoList.end(); fileInfo +=  1) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a282e1045cf0c69e75392d3ec973abfa2">abort</a>) {</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        QString fullFileName = fileInfo-&gt;absoluteFilePath();</div>
+<div class="line">        <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674f">UBFeatureElementType</a> featureType = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a37995e9bde0b05ca141651d80b0e9be2">UBFeaturesController::fileTypeFromUrl</a>(fullFileName);</div>
+<div class="line">        QString fileName = fileInfo-&gt;fileName();</div>
+<div class="line"></div>
+<div class="line">        QImage icon = <a class="code" href="../../d8/d33/class_u_b_features_controller.html#a321bfa51fce6d90a82e1eba0c37ac205">UBFeaturesController::getIcon</a>(fullFileName, featureType);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ( fullFileName.contains(<span class="stringliteral">&quot;.thumbnail.&quot;</span>))</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//Testing exception permissions</span></div>
+<div class="line">        QString testVirtualPath = currVirtualPath + <span class="stringliteral">&quot;/&quot;</span> + fileName;</div>
+<div class="line">        UBFeature::Permissions testPermissions = pPermissions;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">foreach</span> (<a class="code" href="../../d2/d9e/struct_category_data.html">CategoryData</a> curException, extData) {</div>
+<div class="line">            QString exceptionVirtualPath = curException.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>().<a class="code" href="../../db/d98/class_u_b_feature.html#a175da54d5e0d135c43b44009601a1380">getFullVirtualPath</a>();</div>
+<div class="line">            <span class="keywordflow">if</span> (testVirtualPath.startsWith(exceptionVirtualPath)) {</div>
+<div class="line">                qDebug() &lt;&lt; <span class="stringliteral">&quot;catched&quot;</span>;</div>
+<div class="line">                qDebug() &lt;&lt; <span class="stringliteral">&quot;ext&quot;</span> &lt;&lt; exceptionVirtualPath &lt;&lt; <span class="stringliteral">&quot;test&quot;</span> &lt;&lt; testVirtualPath;</div>
+<div class="line">                <span class="comment">//folder itself</span></div>
+<div class="line">                <span class="keywordflow">if</span> (exceptionVirtualPath.count() == testVirtualPath.count()) {</div>
+<div class="line">                    testPermissions = curException.<a class="code" href="../../d2/d9e/struct_category_data.html#a12f08c37bc3241d3346228a5b262c4fa">categoryFeature</a>().<a class="code" href="../../db/d98/class_u_b_feature.html#afdae8ba02969f87bb67322a609ae4f7d">getPermissions</a>();</div>
+<div class="line">                <span class="comment">//subfolder</span></div>
+<div class="line">                } <span class="keywordflow">else</span> {</div>
+<div class="line">                    testPermissions = curException.<a class="code" href="../../d2/d9e/struct_category_data.html#a9b8921537cdfd9b9523b451b1630fa30">UserSubPermissions</a>();</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> testFeature(testVirtualPath, icon, fileName, QUrl::fromLocalFile(fullFileName), featureType, testPermissions);</div>
+<div class="line"></div>
+<div class="line">        emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a2b061106d73a7810a2b2429b6957096d">sendFeature</a>(testFeature);</div>
+<div class="line">        emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a03e3d3508cc2b93e61522969eb1d16c0">featureSent</a>();</div>
+<div class="line">        emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a3015e0ffcd33006e07a6780f44bf929a">scanPath</a>(fullFileName);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ( pfavoriteInfo.second.find(QUrl::fromLocalFile(fullFileName)) != pfavoriteInfo.second.end()) {</div>
+<div class="line">            emit <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#a2b061106d73a7810a2b2429b6957096d">sendFeature</a>(<a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a>(pfavoriteInfo.first.categoryFeature().getFullVirtualPath() + <span class="stringliteral">&quot;/&quot;</span> + fileName</div>
+<div class="line">                                       , icon</div>
+<div class="line">                                       , fileName</div>
+<div class="line">                                       , QUrl::fromLocalFile(fullFileName)</div>
+<div class="line">                                       , featureType</div>
+<div class="line">                                       , pfavoriteInfo.first.librarySubPermissions())); <span class="comment">//permissions for favorites subfolders</span></div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (featureType == <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674fa0392c3a4bd4f52e04de1e0ba3ef540e9">FEATURE_FOLDER</a>) {</div>
+<div class="line">            <a class="code" href="../../d5/db4/class_u_b_features_computing_thread.html#adc368636d84290e27b5ef7bc8b1201b5">scanFS</a>(QUrl::fromLocalFile(fullFileName), currVirtualPath + <span class="stringliteral">&quot;/&quot;</span> + fileName, pfavoriteInfo, pPermissions, extData);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_adc368636d84290e27b5ef7bc8b1201b5_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_adc368636d84290e27b5ef7bc8b1201b5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -457,6 +833,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a3015e0ffcd33006e07a6780f44bf929a_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ac13bf6649253592358c59e707b821cc5"></a>
@@ -480,11 +865,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_ac13bf6649253592358c59e707b821cc5_icgraph.svg" width="475" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -513,11 +898,201 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db4/class_u_b_features_computing_thread_a2b061106d73a7810a2b2429b6957096d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a282e1045cf0c69e75392d3ec973abfa2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBFeaturesComputingThread::abort</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0655da0fa2465f5b465239b583d5f5eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>&gt; UBFeaturesComputingThread::mExceptionData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4a95131f899ceb2d33fb4e3285f74b21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt;<a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>, QSet&lt;QUrl&gt; &gt; UBFeaturesComputingThread::mFavoriteInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3ee0f8d3b9bc4428ac98cf48dd2f1dd0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex UBFeaturesComputingThread::mMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af27b99a15b70fdfd8e68ffc889ec33b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a>&gt; UBFeaturesComputingThread::mScanningData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0445a2bb7079bfcf5628f240abfa8802"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUrl UBFeaturesComputingThread::mScanningPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e23e360a0c3e5f7b9c7d6a1f7e20428"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBFeaturesComputingThread::mScanningVirtualPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd6bda38dde3721a00913c3fd2593558"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWaitCondition UBFeaturesComputingThread::mWaitCondition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a13fd235c49d20c3744c0f09ab1f0e6f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBFeaturesComputingThread::restart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/board/<a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a></li>
-<li>Sankore-3.1/src/board/<a class="el" href="../../d1/d76/_u_b_features_controller_8cpp.html">UBFeaturesController.cpp</a></li>
+<li><a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a></li>
+<li><a class="el" href="../../d1/d76/_u_b_features_controller_8cpp.html">UBFeaturesController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -525,7 +1100,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/db4/class_u_b_features_computing_thread.html">UBFeaturesComputingThread</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

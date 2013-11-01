@@ -7,5 +7,7 @@ var class_page_parser =
     [ "getPageRefs", "d5/d26/class_page_parser.html#ab0f14670330a152cf33b1240733ba32c", null ],
     [ "merge", "d5/d26/class_page_parser.html#a44dcdcbc2b4deb8f1536c0f1d4febf97", null ],
     [ "recalculateObjectNumbers", "d5/d26/class_page_parser.html#a38fcf8743c96dc101239d9016f085e2e", null ],
-    [ "Parser", "d5/d26/class_page_parser.html#ab80291af9c262f63b83fa9c16f12014d", null ]
+    [ "Parser", "d5/d26/class_page_parser.html#ab80291af9c262f63b83fa9c16f12014d", null ],
+    [ "_pageNumber", "d5/d26/class_page_parser.html#aa45584f9b9f76eb841bffcd886256764", null ],
+    [ "_root", "d5/d26/class_page_parser.html#aa620d9dfe99a26c76d39bc5c8bf47520", null ]
 ];

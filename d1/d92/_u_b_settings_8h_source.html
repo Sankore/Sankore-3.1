@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/core/UBSettings.h Source File</title>
+<title>Open-Sankoré: UBSettings.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -150,9 +150,9 @@ $(document).ready(function(){initNavTree('d1/d92/_u_b_settings_8h_source.html','
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>(QObject *parent = 0);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> cleanNonPersistentSettings();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../db/d66/class_u_b_settings.html#ad703e9b5a7efdb68b9c6ecef0df7cce2">UBSettings</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../db/d66/class_u_b_settings.html#af6ac6181c0ad137f303491717fbd0775">~UBSettings</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a4ba89f331e9c115406ce684f193afb82">cleanNonPersistentSettings</a>();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
@@ -524,19 +524,19 @@ $(document).ready(function(){initNavTree('d1/d92/_u_b_settings_8h_source.html','
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        QSettings* mAppSettings;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        QSettings* mUserSettings;</div>
+<div class="line"><a name="l00421"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">  421</a></span>&#160;        QSettings* <a class="code" href="../../db/d66/class_u_b_settings.html#af2aaf95ad98368284dceb21484740136">mAppSettings</a>;</div>
+<div class="line"><a name="l00422"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">  422</a></span>&#160;        QSettings* <a class="code" href="../../db/d66/class_u_b_settings.html#aa51ee26d2d11e053b2a3c2220f7cf8d1">mUserSettings</a>;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> sDefaultFontPixelSize;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *sDefaultFontFamily;</div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a91ed62418f3551985a117cb42982d641">  424</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d66/class_u_b_settings.html#a91ed62418f3551985a117cb42982d641">sDefaultFontPixelSize</a>;</div>
+<div class="line"><a name="l00425"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a3709371e769f9e1c9326820297b41fdc">  425</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d66/class_u_b_settings.html#a3709371e769f9e1c9326820297b41fdc">sDefaultFontFamily</a>;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keyword">static</span> QSettings* getAppSettings();</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keyword">static</span> QSettings* <a class="code" href="../../db/d66/class_u_b_settings.html#a2d3413f8b25d64a698d6d83e0f18ff39">getAppSettings</a>();</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">static</span> QPointer&lt;QSettings&gt; sAppSettings;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keyword">static</span> QPointer&lt;UBSettings&gt; sSingleton;</div>
+<div class="line"><a name="l00429"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">  429</a></span>&#160;        <span class="keyword">static</span> QPointer&lt;QSettings&gt; <a class="code" href="../../db/d66/class_u_b_settings.html#ae685c97e958d7f8d38b250824435c74f">sAppSettings</a>;</div>
+<div class="line"><a name="l00430"></a><span class="lineno"><a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">  430</a></span>&#160;        <span class="keyword">static</span> QPointer&lt;UBSettings&gt; <a class="code" href="../../db/d66/class_u_b_settings.html#a903a55800cb053ee5d03ca8cc97fe5c7">sSingleton</a>;</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> checkDirectory(QString&amp; dirPath);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keyword">static</span> QString replaceWildcard(QString&amp; path);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../db/d66/class_u_b_settings.html#ac0b3c85870c353e48b7d2cfdff9e0eaa">checkDirectory</a>(QString&amp; dirPath);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keyword">static</span> QString <a class="code" href="../../db/d66/class_u_b_settings.html#aea5fec9db96c03162c2ce1d5d4c41ab0">replaceWildcard</a>(QString&amp; path);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;};</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
@@ -547,8 +547,8 @@ $(document).ready(function(){initNavTree('d1/d92/_u_b_settings_8h_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d1/d92/_u_b_settings_8h.html">UBSettings.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_55aa7dff72311e91c90ae626074ddca7.html">core</a></li><li class="navelem"><a class="el" href="../../d1/d92/_u_b_settings_8h.html">UBSettings.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

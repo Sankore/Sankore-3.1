@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('db/d7c/class_u_b_graphics_item_transfo
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d0/d76/class_u_b_graphics_item_transform_undo_command-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsItemTransformUndoCommand Class Reference</div>  </div>
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('db/d7c/class_u_b_graphics_item_transfo
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d55/class_u_b_graphics_item_transform_undo_command__inherit__graph.svg" width="232" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d55/class_u_b_graphics_item_transform_undo_command__inherit__graph.svg" width="232" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBGraphicsItemTransformUndoCommand:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d24/class_u_b_graphics_item_transform_undo_command__coll__graph.svg" width="232" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d24/class_u_b_graphics_item_transform_undo_command__coll__graph.svg" width="232" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -140,6 +141,18 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae7431f7f332266ab1c706d022e8b98e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ae7431f7f332266ab1c706d022e8b98e6">undo</a> ()</td></tr>
 <tr class="memitem:a617cb2c15030689bb8416c0d83551a75"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a617cb2c15030689bb8416c0d83551a75">redo</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab26afb38fa950c753885a790ddb3262e"><td class="memItemLeft" align="right" valign="top">QGraphicsItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a></td></tr>
+<tr class="memitem:ac605dcee4c71b65a8de06b75e20d5779"><td class="memItemLeft" align="right" valign="top">QTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ac605dcee4c71b65a8de06b75e20d5779">mPreviousTransform</a></td></tr>
+<tr class="memitem:a226c92152d382c8c3d1853b03743847b"><td class="memItemLeft" align="right" valign="top">QTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a226c92152d382c8c3d1853b03743847b">mCurrentTransform</a></td></tr>
+<tr class="memitem:adc25cff380474721c79d48cd571bd96d"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#adc25cff380474721c79d48cd571bd96d">mPreviousPosition</a></td></tr>
+<tr class="memitem:ac842d390c608b2a6e13a82116702bc55"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ac842d390c608b2a6e13a82116702bc55">mCurrentPosition</a></td></tr>
+<tr class="memitem:a8618cf50381d2390efc2409d0c1bf64e"><td class="memItemLeft" align="right" valign="top">QSizeF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a8618cf50381d2390efc2409d0c1bf64e">mPreviousSize</a></td></tr>
+<tr class="memitem:a3bacd9a2ab7ca333b375a7662b3cbcaa"><td class="memItemLeft" align="right" valign="top">QSizeF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a3bacd9a2ab7ca333b375a7662b3cbcaa">mCurrentSize</a></td></tr>
+<tr class="memitem:ad590515ab3725151f6f26fc77bfe5346"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ad590515ab3725151f6f26fc77bfe5346">mPreviousZValue</a></td></tr>
+<tr class="memitem:aea42b4cdec437b60af1001df15e3ed46"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#aea42b4cdec437b60af1001df15e3ed46">mCurrentZValue</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -199,21 +212,21 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mItem = pItem;</div>
-<div class="line">    mPreviousTransform = prevTransform;</div>
-<div class="line">    mCurrentTransform = pItem-&gt;transform();</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a> = pItem;</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ac605dcee4c71b65a8de06b75e20d5779">mPreviousTransform</a> = prevTransform;</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a226c92152d382c8c3d1853b03743847b">mCurrentTransform</a> = pItem-&gt;transform();</div>
 <div class="line"></div>
-<div class="line">    mPreviousPosition = prevPos;</div>
-<div class="line">    mCurrentPosition = pItem-&gt;pos();</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#adc25cff380474721c79d48cd571bd96d">mPreviousPosition</a> = prevPos;</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ac842d390c608b2a6e13a82116702bc55">mCurrentPosition</a> = pItem-&gt;pos();</div>
 <div class="line"></div>
-<div class="line">    mPreviousZValue = prevZValue;</div>
-<div class="line">    mCurrentZValue = pItem-&gt;zValue();</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ad590515ab3725151f6f26fc77bfe5346">mPreviousZValue</a> = prevZValue;</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#aea42b4cdec437b60af1001df15e3ed46">mCurrentZValue</a> = pItem-&gt;zValue();</div>
 <div class="line"></div>
-<div class="line">    mPreviousSize = prevSize;</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a8618cf50381d2390efc2409d0c1bf64e">mPreviousSize</a> = prevSize;</div>
 <div class="line">    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(pItem);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (resizableItem)</div>
-<div class="line">        mCurrentSize = resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a97d0d97df113d870f0e463ace0b050c7">size</a>();</div>
+<div class="line">        <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a3bacd9a2ab7ca333b375a7662b3cbcaa">mCurrentSize</a> = resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a97d0d97df113d870f0e463ace0b050c7">size</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -303,16 +316,16 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a6de13cf6ae729763431413aa39b78e82">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mItem-&gt;setPos(mCurrentPosition);</div>
-<div class="line">    mItem-&gt;setTransform(mCurrentTransform);</div>
-<div class="line">    mItem-&gt;setZValue(mCurrentZValue);</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>-&gt;setPos(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ac842d390c608b2a6e13a82116702bc55">mCurrentPosition</a>);</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>-&gt;setTransform(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a226c92152d382c8c3d1853b03743847b">mCurrentTransform</a>);</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>-&gt;setZValue(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#aea42b4cdec437b60af1001df15e3ed46">mCurrentZValue</a>);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">//    UBGraphicsItem::assignZValue(mItem, /*mCurrentZValue*/mItem-&gt;data(UBGraphicsItemData::ItemOwnZValue).toReal());</span></div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(mItem);</div>
+<div class="line">    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (resizableItem)</div>
-<div class="line">        resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a3d337d44f263b4f811afe848e1f17d26">resize</a>(mCurrentSize);</div>
+<div class="line">        resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a3d337d44f263b4f811afe848e1f17d26">resize</a>(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a3bacd9a2ab7ca333b375a7662b3cbcaa">mCurrentSize</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -349,15 +362,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a91cd202e68ba7cc83f8490a6eec15dcc">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mItem-&gt;setPos(mPreviousPosition);</div>
-<div class="line">    mItem-&gt;setTransform(mPreviousTransform);</div>
-<div class="line">    mItem-&gt;setZValue(mPreviousZValue);</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>-&gt;setPos(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#adc25cff380474721c79d48cd571bd96d">mPreviousPosition</a>);</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>-&gt;setTransform(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ac605dcee4c71b65a8de06b75e20d5779">mPreviousTransform</a>);</div>
+<div class="line">    <a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>-&gt;setZValue(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ad590515ab3725151f6f26fc77bfe5346">mPreviousZValue</a>);</div>
 <div class="line"><span class="comment">//    UBGraphicsItem::assignZValue(mItem, mPreviousZValue);</span></div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(mItem);</div>
+<div class="line">    <a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>* resizableItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html">UBResizableGraphicsItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#ab26afb38fa950c753885a790ddb3262e">mItem</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (resizableItem)</div>
-<div class="line">        resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a3d337d44f263b4f811afe848e1f17d26">resize</a>(mPreviousSize);</div>
+<div class="line">        resizableItem-&gt;<a class="code" href="../../d7/dad/class_u_b_resizable_graphics_item.html#a3d337d44f263b4f811afe848e1f17d26">resize</a>(<a class="code" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html#a8618cf50381d2390efc2409d0c1bf64e">mPreviousSize</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -371,9 +384,190 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ac842d390c608b2a6e13a82116702bc55"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsItemTransformUndoCommand::mCurrentPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bacd9a2ab7ca333b375a7662b3cbcaa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSizeF UBGraphicsItemTransformUndoCommand::mCurrentSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a226c92152d382c8c3d1853b03743847b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTransform UBGraphicsItemTransformUndoCommand::mCurrentTransform</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea42b4cdec437b60af1001df15e3ed46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsItemTransformUndoCommand::mCurrentZValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab26afb38fa950c753885a790ddb3262e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsItem* UBGraphicsItemTransformUndoCommand::mItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc25cff380474721c79d48cd571bd96d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsItemTransformUndoCommand::mPreviousPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8618cf50381d2390efc2409d0c1bf64e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSizeF UBGraphicsItemTransformUndoCommand::mPreviousSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac605dcee4c71b65a8de06b75e20d5779"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTransform UBGraphicsItemTransformUndoCommand::mPreviousTransform</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad590515ab3725151f6f26fc77bfe5346"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsItemTransformUndoCommand::mPreviousZValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d3/dfb/_u_b_graphics_item_transform_undo_command_8h_source.html">UBGraphicsItemTransformUndoCommand.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../db/d87/_u_b_graphics_item_transform_undo_command_8cpp.html">UBGraphicsItemTransformUndoCommand.cpp</a></li>
+<li><a class="el" href="../../d3/dfb/_u_b_graphics_item_transform_undo_command_8h_source.html">UBGraphicsItemTransformUndoCommand.h</a></li>
+<li><a class="el" href="../../db/d87/_u_b_graphics_item_transform_undo_command_8cpp.html">UBGraphicsItemTransformUndoCommand.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -381,7 +575,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d7c/class_u_b_graphics_item_transform_undo_command.html">UBGraphicsItemTransformUndoCommand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

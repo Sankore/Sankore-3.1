@@ -33,5 +33,6 @@ var class_u_b_file_system_utils =
     [ "normalizeFilePath", "d2/d7a/class_u_b_file_system_utils.html#af850f64fdd630fc78510c856f00ffa4f", null ],
     [ "readTextFile", "d2/d7a/class_u_b_file_system_utils.html#a2ac72615beed06db3a4b5bb847a77822", null ],
     [ "removeLocalFilePrefix", "d2/d7a/class_u_b_file_system_utils.html#a91642f5fb7ac65e5528ecb75724ee7d3", null ],
-    [ "thumbnailPath", "d2/d7a/class_u_b_file_system_utils.html#aad4d371b5e6400a42c44bec5f26ec5fd", null ]
+    [ "thumbnailPath", "d2/d7a/class_u_b_file_system_utils.html#aad4d371b5e6400a42c44bec5f26ec5fd", null ],
+    [ "sTempDirToCleanUp", "d2/d7a/class_u_b_file_system_utils.html#a48c5bfe1a46dfb86e099984faae06bad", null ]
 ];

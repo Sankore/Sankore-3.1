@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('db/dbc/class_u_b_zoom_palette.html','.
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/dc3/class_u_b_zoom_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBZoomPalette Class Reference</div>  </div>
@@ -151,6 +153,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb0926b8eb8fa8efe5e5ca05ee20abc6 inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#abb0926b8eb8fa8efe5e5ca05ee20abc6">savePos</a> ()</td></tr>
 <tr class="memitem:a1d84529dc9179497ba4f91d00a86460e inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a1d84529dc9179497ba4f91d00a86460e">restorePos</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a89f265cc2934490399de81977e2ef4f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a89f265cc2934490399de81977e2ef4f6">refreshPalette</a> ()</td></tr>
+<tr class="memitem:a23d5a8fb0ef82af6d8dfbc4add973640"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a23d5a8fb0ef82af6d8dfbc4add973640">showHideExtraButton</a> ()</td></tr>
+<tr class="memitem:a437798f0413c23b772d8d2c164d20593"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a437798f0413c23b772d8d2c164d20593">goHundred</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3ed7bee9d3403d3bdb434964d2a041fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d62/class_u_b_board_controller.html">UBBoardController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a></td></tr>
+<tr class="memitem:a86ca9e0895676e4e3d23cc3a6a78c808"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a></td></tr>
+<tr class="memitem:a8fa28fd15526d1d4545f7c6723264999"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a></td></tr>
+<tr class="memitem:a8dfc40939e781ecd9cc5e49f99ca4c3f"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a8dfc40939e781ecd9cc5e49f99ca4c3f">mShowAllButton</a></td></tr>
+<tr class="memitem:a098b0fa466ab583c1c798b2efe613c13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html#a098b0fa466ab583c1c798b2efe613c13">mIsExpanded</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_u_b_floating_palette"><td colspan="2" onclick="javascript:toggleInherit('signals_class_u_b_floating_palette')"><img src="../../closed.png" alt="-"/>&nbsp;Signals inherited from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html">UBFloatingPalette</a></td></tr>
@@ -193,29 +209,29 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a0f6f20a3b1bb802881b939a19f42fb03">UBFloatingPalette</a>(Qt::BottomRightCorner, parent)</div>
-<div class="line">    , mIsExpanded(1)</div>
+<div class="line">    , <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a098b0fa466ab583c1c798b2efe613c13">mIsExpanded</a>(1)</div>
 <div class="line">{</div>
-<div class="line">    mBoardController = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>;</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a> = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>;</div>
 <div class="line">    QLayout* layout = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line">    mCurrentZoomButton = <span class="keyword">new</span> QPushButton(parent);</div>
-<div class="line">    mCurrentZoomButton-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QPushButton { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
-<div class="line">    mCurrentZoomButton-&gt;setFocusPolicy(Qt::NoFocus);</div>
-<div class="line">    connect(mCurrentZoomButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(showHideExtraButton()));</div>
-<div class="line">    connect(mBoardController, SIGNAL(zoomChanged(qreal)), <span class="keyword">this</span>, SLOT(refreshPalette()));</div>
-<div class="line">    connect(mBoardController, SIGNAL(activeSceneChanged()), <span class="keyword">this</span>, SLOT(refreshPalette()));</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a> = <span class="keyword">new</span> QPushButton(parent);</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QPushButton { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a>-&gt;setFocusPolicy(Qt::NoFocus);</div>
+<div class="line">    connect(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a23d5a8fb0ef82af6d8dfbc4add973640">showHideExtraButton</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a>, SIGNAL(zoomChanged(qreal)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a89f265cc2934490399de81977e2ef4f6">refreshPalette</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a>, SIGNAL(activeSceneChanged()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a89f265cc2934490399de81977e2ef4f6">refreshPalette</a>()));</div>
 <div class="line"></div>
-<div class="line">    mHundredButton = <span class="keyword">new</span> QPushButton(parent);</div>
-<div class="line">    mHundredButton-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QPushButton { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
-<div class="line">    mHundredButton-&gt;setFocusPolicy(Qt::NoFocus);</div>
-<div class="line">    mHundredButton-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/images/stylusPalette/restoreZoom.png&quot;</span>));</div>
-<div class="line">    mHundredButton-&gt;setIconSize(QSize(42,42));</div>
-<div class="line">    connect(mHundredButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(goHundred()));</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a> = <span class="keyword">new</span> QPushButton(parent);</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QPushButton { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>-&gt;setFocusPolicy(Qt::NoFocus);</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/images/stylusPalette/restoreZoom.png&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>-&gt;setIconSize(QSize(42,42));</div>
+<div class="line">    connect(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a437798f0413c23b772d8d2c164d20593">goHundred</a>()));</div>
 <div class="line"></div>
 <div class="line">    layout-&gt;setContentsMargins(<a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 4, <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a225916e149529d6e39a89faf4e49acdf">radius</a>() + 15, 4);</div>
-<div class="line">    layout-&gt;addWidget(mHundredButton);</div>
-<div class="line">    layout-&gt;addWidget(mCurrentZoomButton);</div>
+<div class="line">    layout-&gt;addWidget(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>);</div>
+<div class="line">    layout-&gt;addWidget(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a>);</div>
 <div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#afc19e4c405b1ee8586431342ddce5112">hide</a>();</div>
-<div class="line">    refreshPalette();</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a89f265cc2934490399de81977e2ef4f6">refreshPalette</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -223,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a7f74e9a8df1069509c0ae86bbfec0c57_cgraph.svg" width="606" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a7f74e9a8df1069509c0ae86bbfec0c57_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -250,12 +266,56 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keyword">delete</span> mCurrentZoomButton;</div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a437798f0413c23b772d8d2c164d20593"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBZoomPalette::goHundred </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a0df0eca517bd4e5754f49ce1395ec1b1">zoomRestore</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a437798f0413c23b772d8d2c164d20593_cgraph.svg" width="100%" height="513"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a437798f0413c23b772d8d2c164d20593_icgraph.svg" width="462" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="afc19e4c405b1ee8586431342ddce5112"></a>
 <div class="memitem">
 <div class="memproto">
@@ -277,7 +337,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal currentZoomFactor = mBoardController-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>();</div>
+<div class="line">    qreal currentZoomFactor = <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">bool</span> showAsNoZoom = (currentZoomFactor &gt; 0.9 &amp;&amp; currentZoomFactor &lt; 1.1);</div>
 <div class="line">    <span class="keywordflow">if</span> (showAsNoZoom)</div>
@@ -286,29 +346,248 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_afc19e4c405b1ee8586431342ddce5112_cgraph.svg" width="342" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_afc19e4c405b1ee8586431342ddce5112_icgraph.svg" width="422" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_afc19e4c405b1ee8586431342ddce5112_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a89f265cc2934490399de81977e2ef4f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBZoomPalette::refreshPalette </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    qreal currentZoomFactor = <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a3ed7bee9d3403d3bdb434964d2a041fb">mBoardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>();</div>
+<div class="line">    <span class="keywordtype">bool</span> showAsNoZoom = (currentZoomFactor &gt; 0.9 &amp;&amp; currentZoomFactor &lt; 1.1);</div>
+<div class="line">    <span class="keywordflow">if</span> (showAsNoZoom)</div>
+<div class="line">    {</div>
+<div class="line">        currentZoomFactor = 1;</div>
+<div class="line">    }</div>
+<div class="line">    QString stringFactor = tr(<span class="stringliteral">&quot;%1 x&quot;</span>).arg(currentZoomFactor, 0, <span class="charliteral">&#39;f&#39;</span>, 1);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a86ca9e0895676e4e3d23cc3a6a78c808">mCurrentZoomButton</a>-&gt;setText(stringFactor);</div>
+<div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>(<span class="keyword">true</span>,<span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (showAsNoZoom)</div>
+<div class="line">    {</div>
+<div class="line">        QTimer::singleShot(500, <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#afc19e4c405b1ee8586431342ddce5112">hide</a>()));</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        show();</div>
+<div class="line">        <span class="keyword">raise</span>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a89f265cc2934490399de81977e2ef4f6_cgraph.svg" width="100%" height="564"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a89f265cc2934490399de81977e2ef4f6_icgraph.svg" width="480" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a23d5a8fb0ef82af6d8dfbc4add973640"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBZoomPalette::showHideExtraButton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a098b0fa466ab583c1c798b2efe613c13">mIsExpanded</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">        <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a098b0fa466ab583c1c798b2efe613c13">mIsExpanded</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>(<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a8fa28fd15526d1d4545f7c6723264999">mHundredButton</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../db/dbc/class_u_b_zoom_palette.html#a098b0fa466ab583c1c798b2efe613c13">mIsExpanded</a> = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>(<span class="keyword">true</span>,<span class="keyword">false</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a23d5a8fb0ef82af6d8dfbc4add973640_cgraph.svg" width="100%" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dbc/class_u_b_zoom_palette_a23d5a8fb0ef82af6d8dfbc4add973640_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a3ed7bee9d3403d3bdb434964d2a041fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d62/class_u_b_board_controller.html">UBBoardController</a>* UBZoomPalette::mBoardController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86ca9e0895676e4e3d23cc3a6a78c808"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* UBZoomPalette::mCurrentZoomButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8fa28fd15526d1d4545f7c6723264999"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* UBZoomPalette::mHundredButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a098b0fa466ab583c1c798b2efe613c13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBZoomPalette::mIsExpanded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8dfc40939e781ecd9cc5e49f99ca4c3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* UBZoomPalette::mShowAllButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/d8c/_u_b_zoom_palette_8h_source.html">UBZoomPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../db/da5/_u_b_zoom_palette_8cpp.html">UBZoomPalette.cpp</a></li>
+<li><a class="el" href="../../d3/d8c/_u_b_zoom_palette_8h_source.html">UBZoomPalette.h</a></li>
+<li><a class="el" href="../../db/da5/_u_b_zoom_palette_8cpp.html">UBZoomPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -316,7 +595,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dbc/class_u_b_zoom_palette.html">UBZoomPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

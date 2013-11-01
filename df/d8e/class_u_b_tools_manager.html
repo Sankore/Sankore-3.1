@@ -107,6 +107,9 @@ $(document).ready(function(){initNavTree('df/d8e/class_u_b_tools_manager.html','
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d1/d37/class_u_b_tools_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBToolsManager Class Reference</div>  </div>
@@ -148,7 +151,145 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a471df7ab9140cfa9132d305556a7d7fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a></td></tr>
 <tr class="memitem:aec03d681b2a516439d3fd53835633cb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a></td></tr>
 <tr class="memitem:a8032199deee15348df96fe28ac9aa06e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#a8032199deee15348df96fe28ac9aa06e">aristo</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae77093006c5aa21be9c55d9fdf219dc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#ae77093006c5aa21be9c55d9fdf219dc0">UBToolsManager</a> (QObject *parent=0)</td></tr>
+<tr class="memitem:ac44f2f1f48947fae7a39b440a20b2686"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#ac44f2f1f48947fae7a39b440a20b2686">~UBToolsManager</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aeee8dad988ebec25a42306ac244bd2fa"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a></td></tr>
+<tr class="memitem:a124c394e43736031a272836a55c7df57"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString,QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a64fcadb306db5ca6c08bfe0915dc8e58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a> = 0</td></tr>
 </table>
+<h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae77093006c5aa21be9c55d9fdf219dc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UBToolsManager::UBToolsManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    : QObject(parent)</div>
+<div class="line">{</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5">mask</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/mask&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5">mask</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/maskTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5">mask</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Mask&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5">mask</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5">mask</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>, <span class="stringliteral">&quot;:/images/toolPalette/maskTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aff695a60e371066eb8d00b005bc97dd5">mask</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233">ruler</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/ruler&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233">ruler</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/rulerTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233">ruler</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Ruler&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233">ruler</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233">ruler</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>, <span class="stringliteral">&quot;:/images/toolPalette/rulerTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec086ff9cf2c9f7ad222c78dd8fab233">ruler</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9">compass</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/compass&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9">compass</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/compassTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9">compass</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Compass&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9">compass</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9">compass</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>, <span class="stringliteral">&quot;:/images/toolPalette/compassTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a14bfc0697940f6967dfc5c570d27a7f9">compass</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890">protractor</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/protractor&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890">protractor</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/protractorTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890">protractor</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Protractor&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890">protractor</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890">protractor</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>,<span class="stringliteral">&quot;:/images/toolPalette/protractorTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae9a0724a4de13dca8a73ba67e60e2890">protractor</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c">triangle</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/triangle&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c">triangle</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/triangleTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c">triangle</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Triangle&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c">triangle</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c">triangle</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>,<span class="stringliteral">&quot;:/images/toolPalette/triangleTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a44210809a60383e4a9f42f5c2c89ce6c">triangle</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/magnifier&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/magnifierTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Magnifier&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>,<span class="stringliteral">&quot;:/images/toolPalette/magnifierTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a471df7ab9140cfa9132d305556a7d7fb">magnifier</a>;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">//  --------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="comment">//  DO NOT ERASE THIS COMMENTED CODE! IT WILL BE UNCOMMENTED DURING THE NEXT DAYS!!!</span></div>
+<div class="line"><span class="comment">//  --------------------------------------------------------------------------------</span></div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a> = <span class="stringliteral">&quot;uniboardTool://uniboard.mnemis.com/cache&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a> = QPixmap(<span class="stringliteral">&quot;:/images/toolPalette/cacheTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> = tr(<span class="stringliteral">&quot;Cache&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a> = <span class="stringliteral">&quot;1.0&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.insert(<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>, <span class="stringliteral">&quot;:/images/toolPalette/cacheTool.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a> &lt;&lt; <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aec03d681b2a516439d3fd53835633cb8">cache</a>;</div>
+<div class="line"><span class="comment">//  --------------------------------------------------------------------------------</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//    aristo.id = &quot;uniboardTool://uniboard.mnemis.com/aristo&quot;;</span></div>
+<div class="line"><span class="comment">//    aristo.icon = QPixmap(&quot;:/images/toolPalette/aristoTool.png&quot;);</span></div>
+<div class="line"><span class="comment">//    aristo.label = tr(&quot;Aristo&quot;);</span></div>
+<div class="line"><span class="comment">//    aristo.version = &quot;1.0&quot;;</span></div>
+<div class="line"><span class="comment">//    mToolsIcon.insert(aristo.id, &quot;:/images/toolPalette/aristoTool.png&quot;);</span></div>
+<div class="line"><span class="comment">//    mDescriptors &lt;&lt; aristo;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_ae77093006c5aa21be9c55d9fdf219dc0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac44f2f1f48947fae7a39b440a20b2686"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UBToolsManager::~UBToolsManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">// NOOP</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2>Member Function Documentation</h2>
 <a class="anchor" id="a09df4696600759b5042bc889ac92b480"></a>
 <div class="memitem">
@@ -181,21 +322,22 @@ Public Attributes</h2></td></tr>
 <div class="line">            <span class="keywordflow">return</span> ids;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a09df4696600759b5042bc889ac92b480_cgraph.svg" width="427" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a09df4696600759b5042bc889ac92b480_icgraph.svg" width="414" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a09df4696600759b5042bc889ac92b480_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -222,15 +364,16 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">             <span class="keywordflow">return</span> mDescriptors;</div>
+<div class="line">             <span class="keywordflow">return</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#aeee8dad988ebec25a42306ac244bd2fa">mDescriptors</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_aa7f4696ab8d5212f3901f3ccc2e1c571_icgraph.svg" width="646" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_aa7f4696ab8d5212f3901f3ccc2e1c571_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -257,16 +400,16 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (sManager)</div>
-<div class="line">        <span class="keyword">delete</span> sManager;</div>
-<div class="line">    sManager = NULL;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a>)</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a>;</div>
+<div class="line">    <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a> = NULL;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a5ee2b3b460c81f93fe6fe6e9aff724a3_icgraph.svg" width="440" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -294,7 +437,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mToolsIcon.value(<span class="keywordtype">id</span>);}</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a124c394e43736031a272836a55c7df57">mToolsIcon</a>.value(<span class="keywordtype">id</span>);}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,17 +462,27 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!sManager)</div>
-<div class="line">        sManager = <span class="keyword">new</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#af72d66aadc04a5b23e8ca42c0944273a">UBApplication::staticMemoryCleaner</a>);</div>
-<div class="line">    <span class="keywordflow">return</span> sManager;</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a>)</div>
+<div class="line">        <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a> = <span class="keyword">new</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#ae77093006c5aa21be9c55d9fdf219dc0">UBToolsManager</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#af72d66aadc04a5b23e8ca42c0944273a">UBApplication::staticMemoryCleaner</a>);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../df/d8e/class_u_b_tools_manager.html#a64fcadb306db5ca6c08bfe0915dc8e58">sManager</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a9180b06fd04c30bcbd4cb9e9aedfe80a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a9180b06fd04c30bcbd4cb9e9aedfe80a_cgraph.svg" width="472" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a9180b06fd04c30bcbd4cb9e9aedfe80a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -366,20 +519,20 @@ Public Attributes</h2></td></tr>
 <div class="line">            <span class="keywordflow">return</span> UBToolDescriptor();</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a256995fde4af079fbd0dcfac80165133_cgraph.svg" width="419" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d8e/class_u_b_tools_manager_a256995fde4af079fbd0dcfac80165133_icgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -447,6 +600,46 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aeee8dad988ebec25a42306ac244bd2fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html">UBToolDescriptor</a>&gt; UBToolsManager::mDescriptors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a124c394e43736031a272836a55c7df57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString ,QString&gt; UBToolsManager::mToolsIcon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae9a0724a4de13dca8a73ba67e60e2890"></a>
 <div class="memitem">
 <div class="memproto">
@@ -471,6 +664,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a64fcadb306db5ca6c08bfe0915dc8e58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a> * UBToolsManager::sManager = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a44210809a60383e4a9f42f5c2c89ce6c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -484,8 +697,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/tools/<a class="el" href="../../da/d5b/_u_b_tools_manager_8h_source.html">UBToolsManager.h</a></li>
-<li>Sankore-3.1/src/tools/<a class="el" href="../../d6/dae/_u_b_tools_manager_8cpp.html">UBToolsManager.cpp</a></li>
+<li><a class="el" href="../../da/d5b/_u_b_tools_manager_8h_source.html">UBToolsManager.h</a></li>
+<li><a class="el" href="../../d6/dae/_u_b_tools_manager_8cpp.html">UBToolsManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -493,7 +706,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d8e/class_u_b_tools_manager.html">UBToolsManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

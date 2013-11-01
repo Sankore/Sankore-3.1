@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('dc/d9f/class_u_b_intranet_podcast_publ
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d33/class_u_b_intranet_podcast_publisher-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBIntranetPodcastPublisher Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('dc/d9f/class_u_b_intranet_podcast_publ
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d46/class_u_b_intranet_podcast_publisher__coll__graph.svg" width="230" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/d46/class_u_b_intranet_podcast_publisher__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -131,6 +133,19 @@ Public Slots</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaec30dbc6b258a4d6806fc176dd9456d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaec30dbc6b258a4d6806fc176dd9456d">UBIntranetPodcastPublisher</a> (QObject *pParent=0)</td></tr>
 <tr class="memitem:abb241bc735c9003809da82d7c8508001"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#abb241bc735c9003809da82d7c8508001">~UBIntranetPodcastPublisher</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1f09b2ee4a2d10d22fa15f5de68684b0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a1f09b2ee4a2d10d22fa15f5de68684b0">metadata</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4bb00b5721141d10eb23852c68221624"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a></td></tr>
+<tr class="memitem:a44a379aae578bc17ef2705ab484bbb9d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a44a379aae578bc17ef2705ab484bbb9d">mTitle</a></td></tr>
+<tr class="memitem:ae31dd8fa956e9c73abc119e3289b1c86"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ae31dd8fa956e9c73abc119e3289b1c86">mDescription</a></td></tr>
+<tr class="memitem:aaa22ee2f496e8fd84daae91b75c6edf2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a></td></tr>
+<tr class="memitem:a65fc0813c1968cd48c20c022a6428795"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a65fc0813c1968cd48c20c022a6428795">mVideoDurationInMs</a></td></tr>
+<tr class="memitem:ac9f57991e87ecb96e51178549c3b5793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aaec30dbc6b258a4d6806fc176dd9456d"></a>
@@ -147,7 +162,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
-<div class="line">    , mPublishingRequest(0)</div>
+<div class="line">    , <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -181,6 +196,85 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a1f09b2ee4a2d10d22fa15f5de68684b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBIntranetPodcastPublisher::metadata </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QStringList metadatas;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*</span></div>
+<div class="line"><span class="comment">        &lt;podcast&gt;</span></div>
+<div class="line"><span class="comment">          &lt;title&gt;{title}&lt;/title&gt;</span></div>
+<div class="line"><span class="comment">          &lt;description&gt;{description}&lt;/description&gt;</span></div>
+<div class="line"><span class="comment">          &lt;author&gt;{author}&lt;/author&gt;</span></div>
+<div class="line"><span class="comment">          &lt;pubDate&gt;{publicationISODateTime}&lt;/pubDate&gt;</span></div>
+<div class="line"><span class="comment">          &lt;duration&gt;{duration}&lt;/duration&gt;</span></div>
+<div class="line"><span class="comment">          &lt;fileName&gt;{fileName}&lt;/fileName&gt;</span></div>
+<div class="line"><span class="comment">          &lt;computerName&gt;{computerName}&lt;/computerName&gt;</span></div>
+<div class="line"><span class="comment">          &lt;fileSize&gt;{fileSize}&lt;/fileSize&gt;</span></div>
+<div class="line"><span class="comment">        &lt;/podcast&gt;</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line"></div>
+<div class="line">    QString date = <a class="code" href="../../dc/d4c/class_u_b_string_utils.html#aca5c79d1ca00f4ecbf5e014b7d9810a6">UBStringUtils::toUtcIsoDateTime</a>(QDateTime::currentDateTime());</div>
+<div class="line">    QString duration = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a65fc0813c1968cd48c20c022a6428795">mVideoDurationInMs</a> / 1000) + 1);</div>
+<div class="line"></div>
+<div class="line">    QFileInfo fi(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>);</div>
+<div class="line">    QString fileName = fi.fileName();</div>
+<div class="line">    QString computerName =  <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a6bf71483635b95189385501950c100cf">UBPlatformUtils::computerName</a>();</div>
+<div class="line">    QString fileSize = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(fi.size());</div>
+<div class="line"></div>
+<div class="line">    QString templatePath = <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#ae595b29e794b20564550fd45515fc0a8">UBPlatformUtils::applicationResourcesDirectory</a>() + <span class="stringliteral">&quot;/etc/intranet-podcast-metadata.template&quot;</span>;</div>
+<div class="line">    QString templateContent = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a2ac72615beed06db3a4b5bb847a77822">UBFileSystemUtils::readTextFile</a>(templatePath);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> templateContent.replace(<span class="stringliteral">&quot;{title}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a44a379aae578bc17ef2705ab484bbb9d">mTitle</a>)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{description}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ae31dd8fa956e9c73abc119e3289b1c86">mDescription</a>)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{author}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a>)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{publicationISODateTime}&quot;</span>, date)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{duration}&quot;</span>, duration)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{fileName}&quot;</span>, fileName)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{computerName}&quot;</span>, computerName)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{fileSize}&quot;</span>, fileSize)</div>
+<div class="line">                          .replace(<span class="stringliteral">&quot;{filePath}&quot;</span>, <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>);</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a1f09b2ee4a2d10d22fa15f5de68684b0_cgraph.svg" width="464" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a1f09b2ee4a2d10d22fa15f5de68684b0_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a5bd46ab637671de895e047500f5eb975"></a>
 <div class="memitem">
 <div class="memproto">
@@ -226,35 +320,35 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(<span class="stringliteral">&quot;Publishing video to the intranet&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">    mPublishingRequest = <span class="keyword">new</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a>(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
+<div class="line">    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a> = <span class="keyword">new</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a>(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
 <div class="line"></div>
-<div class="line">    connect(mPublishingRequest, SIGNAL(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)), <span class="keyword">this</span>,  SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)));</div>
-<div class="line">    connect(mPublishingRequest, SIGNAL(finished(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#acf2339af36b92c6d132dd15519c0b056">postVideoPublishingResponse</a>(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)));</div>
+<div class="line">    connect(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>, SIGNAL(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)), <span class="keyword">this</span>,  SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a24244249b2bc37c59c4b72d17b490cf0">progress</a>(qint64, qint64)));</div>
+<div class="line">    connect(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>, SIGNAL(finished(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#acf2339af36b92c6d132dd15519c0b056">postVideoPublishingResponse</a>(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;)));</div>
 <div class="line"></div>
 <div class="line">    QByteArray payload;</div>
 <div class="line"></div>
-<div class="line">    payload.append(metadata().toUtf8());</div>
+<div class="line">    payload.append(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a1f09b2ee4a2d10d22fa15f5de68684b0">metadata</a>().toUtf8());</div>
 <div class="line"></div>
-<div class="line">    mPublishingRequest-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a6bc3fcbabc21855cd7ca127bee77fb5d">setVerbose</a>(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a6bc3fcbabc21855cd7ca127bee77fb5d">setVerbose</a>(<span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">    mPublishingRequest-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ae3b7956d7cbf7f8bf391813a301c1079">post</a>(url, payload);</div>
+<div class="line">    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>-&gt;<a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ae3b7956d7cbf7f8bf391813a301c1079">post</a>(url, payload);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a5bd46ab637671de895e047500f5eb975_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a5bd46ab637671de895e047500f5eb975_icgraph.svg" width="443" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a5bd46ab637671de895e047500f5eb975_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -292,7 +386,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mPublishingRequest-&gt;deleteLater();</div>
+<div class="line">    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ac9f57991e87ecb96e51178549c3b5793">mPublishingRequest</a>-&gt;deleteLater();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span>(success)</div>
 <div class="line">    {</div>
@@ -308,21 +402,21 @@ Public Member Functions</h2></td></tr>
 <div class="line">    deleteLater();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_acf2339af36b92c6d132dd15519c0b056_cgraph.svg" width="100%" height="596"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_acf2339af36b92c6d132dd15519c0b056_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_acf2339af36b92c6d132dd15519c0b056_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_acf2339af36b92c6d132dd15519c0b056_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -365,21 +459,21 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(tr(<span class="stringliteral">&quot;Publishing to Intranet in progress %1 %&quot;</span>).arg(percentage), percentage &lt; 100);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a24244249b2bc37c59c4b72d17b490cf0_cgraph.svg" width="100%" height="596"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a24244249b2bc37c59c4b72d17b490cf0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a24244249b2bc37c59c4b72d17b490cf0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a24244249b2bc37c59c4b72d17b490cf0_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -417,23 +511,23 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mVideoFilePath = videoFilePath;</div>
-<div class="line">    mVideoDurationInMs = durationInMs;</div>
+<div class="line">    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a> = videoFilePath;</div>
+<div class="line">    <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a65fc0813c1968cd48c20c022a6428795">mVideoDurationInMs</a> = durationInMs;</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html">UBIntranetPodcastPublishingDialog</a> pub(mVideoFilePath, <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>);</div>
+<div class="line">    <a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html">UBIntranetPodcastPublishingDialog</a> pub(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>, <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>);</div>
 <div class="line"></div>
-<div class="line">    pub.title-&gt;setText(QFileInfo(mVideoFilePath).completeBaseName());</div>
+<div class="line">    pub.title-&gt;setText(QFileInfo(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a4bb00b5721141d10eb23852c68221624">mVideoFilePath</a>).completeBaseName());</div>
 <div class="line"></div>
 <div class="line">    QString defaultAuthor = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730">intranetPodcastAuthor</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line">    pub.author-&gt;setText(defaultAuthor);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (pub.exec() == QDialog::Accepted)</div>
 <div class="line">    {</div>
-<div class="line">        mTitle = pub.title-&gt;text();</div>
-<div class="line">        mDescription = pub.description-&gt;toPlainText();</div>
-<div class="line">        mAuthor  = pub.author-&gt;text();</div>
+<div class="line">        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a44a379aae578bc17ef2705ab484bbb9d">mTitle</a> = pub.title-&gt;text();</div>
+<div class="line">        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#ae31dd8fa956e9c73abc119e3289b1c86">mDescription</a> = pub.description-&gt;toPlainText();</div>
+<div class="line">        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a>  = pub.author-&gt;text();</div>
 <div class="line"></div>
-<div class="line">        <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730">intranetPodcastAuthor</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(mAuthor);</div>
+<div class="line">        <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a892b406d947337b92a2590fb638f4730">intranetPodcastAuthor</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(<a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#aaa22ee2f496e8fd84daae91b75c6edf2">mAuthor</a>);</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html#a5bd46ab637671de895e047500f5eb975">postVideoPublishingRequest</a>();</div>
 <div class="line">    }</div>
@@ -443,20 +537,150 @@ Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a4965ecc747e29ef3c2a180d4078e1fbd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d9f/class_u_b_intranet_podcast_publisher_a4965ecc747e29ef3c2a180d4078e1fbd_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aaa22ee2f496e8fd84daae91b75c6edf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBIntranetPodcastPublisher::mAuthor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae31dd8fa956e9c73abc119e3289b1c86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBIntranetPodcastPublisher::mDescription</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac9f57991e87ecb96e51178549c3b5793"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html">UBServerXMLHttpRequest</a>* UBIntranetPodcastPublisher::mPublishingRequest</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44a379aae578bc17ef2705ab484bbb9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBIntranetPodcastPublisher::mTitle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a65fc0813c1968cd48c20c022a6428795"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long UBIntranetPodcastPublisher::mVideoDurationInMs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4bb00b5721141d10eb23852c68221624"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBIntranetPodcastPublisher::mVideoFilePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/intranet/<a class="el" href="../../d5/d33/_u_b_intranet_podcast_publisher_8h_source.html">UBIntranetPodcastPublisher.h</a></li>
-<li>Sankore-3.1/src/podcast/intranet/<a class="el" href="../../d5/d24/_u_b_intranet_podcast_publisher_8cpp.html">UBIntranetPodcastPublisher.cpp</a></li>
+<li><a class="el" href="../../d5/d33/_u_b_intranet_podcast_publisher_8h_source.html">UBIntranetPodcastPublisher.h</a></li>
+<li><a class="el" href="../../d5/d24/_u_b_intranet_podcast_publisher_8cpp.html">UBIntranetPodcastPublisher.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -464,7 +688,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d9f/class_u_b_intranet_podcast_publisher.html">UBIntranetPodcastPublisher</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

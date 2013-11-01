@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('db/d0d/class_u_b_you_tube_publishing_d
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../d9/d65/class_u_b_you_tube_publishing_dialog-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBYouTubePublishingDialog Class Reference</div>  </div>
@@ -116,13 +118,23 @@ $(document).ready(function(){initNavTree('db/d0d/class_u_b_you_tube_publishing_d
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/da0/class_u_b_you_tube_publishing_dialog__coll__graph.svg" width="230" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/da0/class_u_b_you_tube_publishing_dialog__coll__graph.svg" width="230" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c5dfc8806dec0c8dc305b66016d4607"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a4c5dfc8806dec0c8dc305b66016d4607">UBYouTubePublishingDialog</a> (const QString &amp;videoFilePath, QWidget *parent=0)</td></tr>
 <tr class="memitem:aaba2cd35a4c148e9a021cbac7e0d8479"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#aaba2cd35a4c148e9a021cbac7e0d8479">~UBYouTubePublishingDialog</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a01b35638e858973c650f79cda0ceec49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a01b35638e858973c650f79cda0ceec49">updateUIState</a> (const QString &amp;=QString(&quot;&quot;))</td></tr>
+<tr class="memitem:adaa217bff698a0135bd72034485d767d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#adaa217bff698a0135bd72034485d767d">updateCredentialPersistenceState</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a787abffefdc87710960180cb5334f3d4"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a787abffefdc87710960180cb5334f3d4">categories</a> ()</td></tr>
+<tr class="memitem:a9efa48215268991d1bedd9bf1a976ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a9efa48215268991d1bedd9bf1a976ef3">updatePersistanceEnableState</a> ()</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4c5dfc8806dec0c8dc305b66016d4607"></a>
@@ -154,7 +166,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    Ui::YouTubePublishingDialog::setupUi(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    QMap&lt;QString, QString&gt; cats = categories();</div>
+<div class="line">    QMap&lt;QString, QString&gt; cats = <a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a787abffefdc87710960180cb5334f3d4">categories</a>();</div>
 <div class="line"></div>
 <div class="line">    category-&gt;clear();</div>
 <div class="line">    <span class="keywordtype">int</span> index = 0;</div>
@@ -170,13 +182,13 @@ Public Member Functions</h2></td></tr>
 <div class="line">    connect(dialogButtons, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
 <div class="line">    connect(dialogButtons, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
 <div class="line"></div>
-<div class="line">    connect(title, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
-<div class="line">    connect(description, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(updateUIState()));</div>
-<div class="line">    connect(keywords, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line">    connect(title, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a01b35638e858973c650f79cda0ceec49">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line">    connect(description, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a01b35638e858973c650f79cda0ceec49">updateUIState</a>()));</div>
+<div class="line">    connect(keywords, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a01b35638e858973c650f79cda0ceec49">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
 <div class="line"></div>
-<div class="line">    connect(email, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
-<div class="line">    connect(password, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
-<div class="line">    connect(youtubeCredentialsPersistence,SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(updateCredentialPersistenceState()));</div>
+<div class="line">    connect(email, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a01b35638e858973c650f79cda0ceec49">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line">    connect(password, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a01b35638e858973c650f79cda0ceec49">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line">    connect(youtubeCredentialsPersistence,SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#adaa217bff698a0135bd72034485d767d">updateCredentialPersistenceState</a>()));</div>
 <div class="line"></div>
 <div class="line">    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line">    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setText(tr(<span class="stringliteral">&quot;Upload&quot;</span>));</div>
@@ -187,7 +199,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">    password-&gt;setText(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a777d499c976f274487411b565b278e16">password</a>(email-&gt;text()));</div>
 <div class="line"></div>
 <div class="line">    youtubeCredentialsPersistence-&gt;setChecked(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;youTubeCredentialsPersistence-&gt;get().toBool());</div>
-<div class="line">    updatePersistanceEnableState();</div>
+<div class="line">    <a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a9efa48215268991d1bedd9bf1a976ef3">updatePersistanceEnableState</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -195,7 +207,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_a4c5dfc8806dec0c8dc305b66016d4607_cgraph.svg" width="100%" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_a4c5dfc8806dec0c8dc305b66016d4607_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -225,9 +237,200 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a787abffefdc87710960180cb5334f3d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; QString, QString &gt; UBYouTubePublishingDialog::categories </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">// TODO UB 4.x download localized list from</span></div>
+<div class="line">    <span class="comment">// http://code.google.com/apis/youtube/2.0/reference.html#Localized_Category_Lists</span></div>
+<div class="line"></div>
+<div class="line">    QMap&lt;QString, QString&gt; cats;</div>
+<div class="line"></div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Autos&quot;</span>, tr(<span class="stringliteral">&quot;Autos &amp; Vehicles&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Music&quot;</span>, tr(<span class="stringliteral">&quot;Music&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Animals&quot;</span>, tr(<span class="stringliteral">&quot;Pets &amp; Animals&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Sports&quot;</span>, tr(<span class="stringliteral">&quot;Sports&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Travel&quot;</span>, tr(<span class="stringliteral">&quot;Travel &amp; Events&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Games&quot;</span>, tr(<span class="stringliteral">&quot;Gaming&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Comedy&quot;</span>, tr(<span class="stringliteral">&quot;Comedy&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;People&quot;</span>, tr(<span class="stringliteral">&quot;People &amp; Blogs&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;News&quot;</span>, tr(<span class="stringliteral">&quot;News &amp; Politics&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Entertainment&quot;</span>, tr(<span class="stringliteral">&quot;Entertainment&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Education&quot;</span>, tr(<span class="stringliteral">&quot;Education&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Howto&quot;</span>, tr(<span class="stringliteral">&quot;Howto &amp; Style&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Nonprofit&quot;</span>, tr(<span class="stringliteral">&quot;Nonprofits &amp; Activism&quot;</span>));</div>
+<div class="line">    cats.insert(<span class="stringliteral">&quot;Tech&quot;</span>, tr(<span class="stringliteral">&quot;Science &amp; Technology&quot;</span>));</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> cats;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_a787abffefdc87710960180cb5334f3d4_icgraph.svg" width="451" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adaa217bff698a0135bd72034485d767d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBYouTubePublishingDialog::updateCredentialPersistenceState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ac1c11264ddacac37cbf0561f195f637b">youTubeCredentialsPersistence</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(QVariant(youtubeCredentialsPersistence-&gt;checkState()));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_adaa217bff698a0135bd72034485d767d_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_adaa217bff698a0135bd72034485d767d_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9efa48215268991d1bedd9bf1a976ef3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBYouTubePublishingDialog::updatePersistanceEnableState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">bool</span> enabled = email-&gt;text().length() || password-&gt;text().length();</div>
+<div class="line">    youtubeCredentialsPersistence-&gt;setEnabled(enabled);</div>
+<div class="line">    youtubeCredentialsPersistence-&gt;setStyleSheet(enabled ? <span class="stringliteral">&quot;color:black;&quot;</span> : <span class="stringliteral">&quot;color : lightgrey;&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_a9efa48215268991d1bedd9bf1a976ef3_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a01b35638e858973c650f79cda0ceec49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBYouTubePublishingDialog::updateUIState </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>string</em> = <code>QString(&quot;&quot;)</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(<span class="keywordtype">string</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">bool</span> ok = title-&gt;text().length() &gt; 0</div>
+<div class="line">            &amp;&amp;  description-&gt;toPlainText().length() &gt; 0</div>
+<div class="line">            &amp;&amp;  keywords-&gt;text().length() &gt; 0</div>
+<div class="line">            &amp;&amp;  email-&gt;text().length() &gt; 0</div>
+<div class="line">            &amp;&amp;  password-&gt;text().length() &gt; 0;</div>
+<div class="line"></div>
+<div class="line">    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(ok);</div>
+<div class="line">    <a class="code" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html#a9efa48215268991d1bedd9bf1a976ef3">updatePersistanceEnableState</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_a01b35638e858973c650f79cda0ceec49_cgraph.svg" width="462" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d0d/class_u_b_you_tube_publishing_dialog_a01b35638e858973c650f79cda0ceec49_icgraph.svg" width="451" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/youtube/<a class="el" href="../../db/dc5/_u_b_you_tube_publisher_8h_source.html">UBYouTubePublisher.h</a></li>
-<li>Sankore-3.1/src/podcast/youtube/<a class="el" href="../../d8/d9b/_u_b_you_tube_publisher_8cpp.html">UBYouTubePublisher.cpp</a></li>
+<li><a class="el" href="../../db/dc5/_u_b_you_tube_publisher_8h_source.html">UBYouTubePublisher.h</a></li>
+<li><a class="el" href="../../d8/d9b/_u_b_you_tube_publisher_8cpp.html">UBYouTubePublisher.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -235,7 +438,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d0d/class_u_b_you_tube_publishing_dialog.html">UBYouTubePublishingDialog</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

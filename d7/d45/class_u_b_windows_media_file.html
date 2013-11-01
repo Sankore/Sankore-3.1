@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('d7/d45/class_u_b_windows_media_file.ht
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d0/d69/class_u_b_windows_media_file-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWindowsMediaFile Class Reference</div>  </div>
@@ -118,12 +120,12 @@ $(document).ready(function(){initNavTree('d7/d45/class_u_b_windows_media_file.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d8b/class_u_b_windows_media_file__coll__graph.svg" width="190" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d8b/class_u_b_windows_media_file__coll__graph.svg" width="190" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>MarkerInfo</b></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html">MarkerInfo</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -138,6 +140,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1254e9626ed2df7ab83b2b570c687fe7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a1254e9626ed2df7ab83b2b570c687fe7">appendVideoFrame</a> (const QImage &amp;pPix, long msTimeStamp)</td></tr>
 <tr class="memitem:aef92398aa853a9cc6999569090c78021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#aef92398aa853a9cc6999569090c78021">startNewChapter</a> (const QString &amp;pLabel, long timestamp)</td></tr>
 <tr class="memitem:a9c25699961d8f7d0437a740ea8b513a6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a9c25699961d8f7d0437a740ea8b513a6">lastErrorMessage</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae31d1fe781748605d4f0bbf3603f3791"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#ae31d1fe781748605d4f0bbf3603f3791">initVideoStream</a> (int pixelWidth, int pixelHeight, int bitsPerPixel)</td></tr>
+<tr class="memitem:ae13f7892a4fc270eea4e7551d7271829"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a> (const QString &amp;error)</td></tr>
+<tr class="memitem:a47a56804c3125ba397d29ab7baf1c3b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a47a56804c3125ba397d29ab7baf1c3b8">releaseWMObjects</a> ()</td></tr>
+<tr class="memitem:a576e77e106b016b2688227103d9560b1"><td class="memItemLeft" align="right" valign="top">QWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1">msToSampleTime</a> (long ms)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a899c5df746a605f56e7e75f7bad18f37"><td class="memItemLeft" align="right" valign="top">IWMProfile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a></td></tr>
+<tr class="memitem:af2a66a76cfb53bbc5d4efa6ac19ad89a"><td class="memItemLeft" align="right" valign="top">IWMWriter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a></td></tr>
+<tr class="memitem:a6592ecffe74c495977de6f856c37e770"><td class="memItemLeft" align="right" valign="top">IWMWriterPushSink *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a></td></tr>
+<tr class="memitem:a36346dbecbe95c597b656026968de6ff"><td class="memItemLeft" align="right" valign="top">IWMInputMediaProps *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a></td></tr>
+<tr class="memitem:a74645a36a2c6f7a344ed00f80c1d22ce"><td class="memItemLeft" align="right" valign="top">IWMInputMediaProps *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a></td></tr>
+<tr class="memitem:a1eff308210a239622b867ce8972bd81e"><td class="memItemLeft" align="right" valign="top">IWMProfileManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a></td></tr>
+<tr class="memitem:a489cd991fb1fc594975edb913a0148e9"><td class="memItemLeft" align="right" valign="top">HDC&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a></td></tr>
+<tr class="memitem:a6be56adc383a876d15704a4f2445f22a"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">mVideoInputIndex</a></td></tr>
+<tr class="memitem:ae6f6a5b5e16496b3379c9f4e3e8a77e1"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#ae6f6a5b5e16496b3379c9f4e3e8a77e1">mAudioInputIndex</a></td></tr>
+<tr class="memitem:a37506a61593ec6d8980a7b0fd5e07e01"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a></td></tr>
+<tr class="memitem:a3b54e7191a8864d6f659dc2866b8db90"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a></td></tr>
+<tr class="memitem:a9963c638b51bd5778c13735f8579eff1"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html">MarkerInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">mChapters</a></td></tr>
+<tr class="memitem:a1c1a12638e8d3da5c55e5fe5f9ce5795"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">mVideoFileName</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7a285d5e38b023d67338b85375554023"></a>
@@ -154,15 +179,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
-<div class="line">    , mWMhDC(0)</div>
-<div class="line">    , mWMWriter(0)</div>
-<div class="line">    , mPushSink(0)</div>
-<div class="line">    , mVideoInputIndex(0)</div>
-<div class="line">    , mWMProfile(0)</div>
-<div class="line">    , mWMInputVideoProps(0)</div>
-<div class="line">    , mWMInputAudioProps(0)</div>
-<div class="line">    , mWMProfileManager(0)</div>
-<div class="line">    , mFramesPerSecond(-1)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">mVideoInputIndex</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a>(-1)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -230,9 +255,9 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    INSSBuffer *sampleBuffer = 0;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;AllocateSample(buffer-&gt;dwBytesRecorded, &amp;sampleBuffer)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;AllocateSample(buffer-&gt;dwBytesRecorded, &amp;sampleBuffer)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to allocate memory for new audio frame&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to allocate memory for new audio frame&quot;</span>);</div>
 <div class="line">        return ;</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -241,30 +266,39 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (FAILED(sampleBuffer-&gt;GetBufferAndLength(&amp;rawBuffer, &amp;rawBufferLength)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to lock audio frame buffer&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to lock audio frame buffer&quot;</span>);</div>
 <div class="line">        sampleBuffer-&gt;Release();</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    memcpy((<span class="keywordtype">void</span>*) rawBuffer, buffer-&gt;lpData, rawBufferLength);</div>
 <div class="line"></div>
-<div class="line">    HRESULT hrWriteSample = mWMWriter-&gt;WriteSample(mAudioInputIndex, msToSampleTime(mstimestamp), 0, sampleBuffer);</div>
+<div class="line">    HRESULT hrWriteSample = <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;WriteSample(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae6f6a5b5e16496b3379c9f4e3e8a77e1">mAudioInputIndex</a>, <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1">msToSampleTime</a>(mstimestamp), 0, sampleBuffer);</div>
 <div class="line"></div>
 <div class="line">    sampleBuffer-&gt;Release();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (FAILED(hrWriteSample))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to write audio buffer&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to write audio buffer&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mLastErrorMessage = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"></div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_a8fb19ef55c2c7b9d7e28b4d6c668100e_cgraph.svg" width="366" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a1254e9626ed2df7ab83b2b570c687fe7"></a>
@@ -295,9 +329,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    INSSBuffer *sampleBuffer = 0;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;AllocateSample(pImage.numBytes(), &amp;sampleBuffer)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;AllocateSample(pImage.numBytes(), &amp;sampleBuffer)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to allocate memory for new video frame&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to allocate memory for new video frame&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -306,7 +340,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (FAILED(sampleBuffer-&gt;GetBufferAndLength(&amp;rawBuffer, &amp;rawBufferLength)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to lock video frame buffer&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to lock video frame buffer&quot;</span>);</div>
 <div class="line">        sampleBuffer-&gt;Release();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
@@ -314,22 +348,31 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keyword">const</span> uchar * imageBuffer = pImage.bits();</div>
 <div class="line">    memcpy((<span class="keywordtype">void</span>*) rawBuffer, imageBuffer, pImage.numBytes());</div>
 <div class="line"></div>
-<div class="line">    HRESULT hrWriteSample = mWMWriter-&gt;WriteSample(mVideoInputIndex, msToSampleTime(mstimestamp), 0, sampleBuffer);</div>
+<div class="line">    HRESULT hrWriteSample = <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;WriteSample(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">mVideoInputIndex</a>, <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1">msToSampleTime</a>(mstimestamp), 0, sampleBuffer);</div>
 <div class="line"></div>
 <div class="line">    sampleBuffer-&gt;Release();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (FAILED(hrWriteSample))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to write video frame&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to write video frame&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mLastErrorMessage = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_a1254e9626ed2df7ab83b2b570c687fe7_cgraph.svg" width="366" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae0c11e225ab7115cd9a73dc1cb7795db"></a>
@@ -347,33 +390,33 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mWMWriter)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;EndWriting()))</div>
+<div class="line">        <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;EndWriting()))</div>
 <div class="line">        {</div>
 <div class="line">            result = <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mPushSink)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mPushSink-&gt;Disconnect();</div>
-<div class="line">        mPushSink-&gt;EndSession();</div>
-<div class="line">        mPushSink-&gt;Release();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a>-&gt;Disconnect();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a>-&gt;EndSession();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770">mPushSink</a>-&gt;Release();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(mChapters.length() &gt; 0)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">mChapters</a>.length() &gt; 0)</div>
 <div class="line">    {</div>
 <div class="line">        IWMMetadataEditor *editor = 0;</div>
 <div class="line">        IWMHeaderInfo     *headerInfo = 0;</div>
 <div class="line"></div>
 <div class="line">        WMCreateEditor(&amp;editor);</div>
-<div class="line">        editor-&gt;Open((LPCTSTR) mVideoFileName.utf16());</div>
+<div class="line">        editor-&gt;Open((LPCTSTR) <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">mVideoFileName</a>.utf16());</div>
 <div class="line">        editor-&gt;QueryInterface(IID_IWMHeaderInfo, (<span class="keywordtype">void</span>**)&amp;headerInfo);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">foreach</span>(MarkerInfo mi, mChapters)</div>
+<div class="line">        <span class="keywordflow">foreach</span>(MarkerInfo mi, <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">mChapters</a>)</div>
 <div class="line">        {</div>
-<div class="line">            headerInfo-&gt;AddMarker((LPWSTR)mi.label.utf16(),  msToSampleTime(mi.timestamp));</div>
+<div class="line">            headerInfo-&gt;AddMarker((LPWSTR)mi.label.utf16(),  <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1">msToSampleTime</a>(mi.timestamp));</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        editor-&gt;Flush();</div>
@@ -382,18 +425,27 @@ Public Member Functions</h2></td></tr>
 <div class="line">        editor-&gt;Release();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    releaseWMObjects();</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a47a56804c3125ba397d29ab7baf1c3b8">releaseWMObjects</a>();</div>
 <div class="line"></div>
 <div class="line">    CoUninitialize();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_ae0c11e225ab7115cd9a73dc1cb7795db_cgraph.svg" width="363" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_ae0c11e225ab7115cd9a73dc1cb7795db_icgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -448,23 +500,23 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mFramesPerSecond = pFramesPerSecond;</div>
-<div class="line">    mVideoFileName = videoFileName;</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a> = pFramesPerSecond;</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795">mVideoFileName</a> = videoFileName;</div>
 <div class="line"></div>
 <div class="line">    CoInitialize(0);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(WMCreateProfileManager(&amp;mWMProfileManager)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(WMCreateProfileManager(&amp;<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to create a WMProfileManager&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to create a WMProfileManager&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    IWMProfileManager2 *wmProfileManager = 0;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMProfileManager-&gt;QueryInterface(IID_IWMProfileManager2, (<span class="keywordtype">void</span>**) &amp;wmProfileManager)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>-&gt;QueryInterface(IID_IWMProfileManager2, (<span class="keywordtype">void</span>**) &amp;wmProfileManager)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to query the WMProfileManager for interface WMProfileManager2&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to query the WMProfileManager for interface WMProfileManager2&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
@@ -474,46 +526,46 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (FAILED(hr))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to set WMProfileManager SystemProfileVersion&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to set WMProfileManager SystemProfileVersion&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMProfileManager-&gt;LoadProfileByData((LPCTSTR) profileData.utf16(), &amp;mWMProfile)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>-&gt;LoadProfileByData((LPCTSTR) profileData.utf16(), &amp;<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to load WMProfileManager custom profile&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to load WMProfileManager custom profile&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    DWORD streamCount = -1;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMProfile-&gt;GetStreamCount(&amp;streamCount)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>-&gt;GetStreamCount(&amp;streamCount)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to read mWMProfile stream count&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to read mWMProfile stream count&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(WMCreateWriter(NULL, &amp;mWMWriter)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(WMCreateWriter(NULL, &amp;<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to create WMMediaWriter Object&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to create WMMediaWriter Object&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;SetProfile(mWMProfile)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;SetProfile(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to set WMWriter system profile&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to set WMWriter system profile&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    DWORD mediaInputCount = 0;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;GetInputCount(&amp;mediaInputCount)))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;GetInputCount(&amp;mediaInputCount)))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to get input count for profile&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to get input count for profile&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
@@ -522,9 +574,9 @@ Public Member Functions</h2></td></tr>
 <div class="line">    {</div>
 <div class="line">        IWMInputMediaProps* wmInoutMediaProps = 0;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;GetInputProps(i, &amp;wmInoutMediaProps)))</div>
+<div class="line">        <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;GetInputProps(i, &amp;wmInoutMediaProps)))</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(<span class="stringliteral">&quot;Unable to get WMWriter input properties&quot;</span>);</div>
+<div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to get WMWriter input properties&quot;</span>);</div>
 <div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
@@ -533,20 +585,20 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (FAILED(wmInoutMediaProps-&gt;GetType(&amp;guidInputType)))</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(<span class="stringliteral">&quot;Unable to get WMWriter input property type&quot;</span>);</div>
+<div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to get WMWriter input property type&quot;</span>);</div>
 <div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (guidInputType == WMMEDIATYPE_Video)</div>
 <div class="line">        {</div>
-<div class="line">            mWMInputVideoProps = wmInoutMediaProps;</div>
-<div class="line">            mVideoInputIndex = i;</div>
+<div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a> = wmInoutMediaProps;</div>
+<div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">mVideoInputIndex</a> = i;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (guidInputType == WMMEDIATYPE_Audio)</div>
 <div class="line">        {</div>
-<div class="line">            mWMInputAudioProps = wmInoutMediaProps;</div>
-<div class="line">            mAudioInputIndex = i;</div>
+<div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a> = wmInoutMediaProps;</div>
+<div class="line">            <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae6f6a5b5e16496b3379c9f4e3e8a77e1">mAudioInputIndex</a> = i;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
@@ -555,48 +607,190 @@ Public Member Functions</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mWMInputVideoProps == 0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a> == 0)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Profile does not accept video input&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Profile does not accept video input&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mWMInputAudioProps == 0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a> == 0)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Profile does not accept audio input&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Profile does not accept audio input&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;SetOutputFilename((LPCTSTR) videoFileName.utf16())))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;SetOutputFilename((LPCTSTR) videoFileName.utf16())))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to set the output filename&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to set the output filename&quot;</span>);</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(!initVideoStream(pixelWidth, pixelHeight, bitsPerPixel))</div>
+<div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae31d1fe781748605d4f0bbf3603f3791">initVideoStream</a>(pixelWidth, pixelHeight, bitsPerPixel))</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db">close</a>();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (FAILED(mWMWriter-&gt;BeginWriting()))</div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;BeginWriting()))</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Unable to initialize video frame writing&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to initialize video frame writing&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_a2ec22f721fb8db66d6a54c0830239dc9_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_a2ec22f721fb8db66d6a54c0830239dc9_cgraph.svg" width="566" height="210"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae31d1fe781748605d4f0bbf3603f3791"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowsMediaFile::initVideoStream </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixelWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixelHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bitsPerPixel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    BITMAPINFO bmpInfo;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a> = CreateCompatibleDC(NULL);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a> == NULL)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to create a device context&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    ZeroMemory(&amp;bmpInfo, <span class="keyword">sizeof</span>(BITMAPINFO));</div>
+<div class="line">    bmpInfo.bmiHeader.biSize = <span class="keyword">sizeof</span>(BITMAPINFOHEADER);</div>
+<div class="line">    bmpInfo.bmiHeader.biBitCount = nBitsPerPixel;</div>
+<div class="line">    bmpInfo.bmiHeader.biWidth = nFrameWidth;</div>
+<div class="line">    bmpInfo.bmiHeader.biHeight = -nFrameHeight;</div>
+<div class="line">    bmpInfo.bmiHeader.biPlanes = 1;</div>
+<div class="line">    bmpInfo.bmiHeader.biSizeImage = nFrameWidth * nFrameHeight * nBitsPerPixel / 8;</div>
+<div class="line">    bmpInfo.bmiHeader.biCompression = BI_RGB;</div>
+<div class="line"></div>
+<div class="line">    WMVIDEOINFOHEADER videoInfo;</div>
+<div class="line">    videoInfo.rcSource.left = 0;</div>
+<div class="line">    videoInfo.rcSource.top = 0;</div>
+<div class="line">    videoInfo.rcSource.right = nFrameWidth;</div>
+<div class="line">    videoInfo.rcSource.bottom = nFrameHeight;</div>
+<div class="line">    videoInfo.rcTarget.left = 0;</div>
+<div class="line">    videoInfo.rcTarget.top = 0;</div>
+<div class="line">    videoInfo.rcTarget.right = nFrameWidth;</div>
+<div class="line">    videoInfo.rcTarget.bottom = nFrameHeight;</div>
+<div class="line">    videoInfo.dwBitRate = (nFrameWidth * nFrameHeight * bmpInfo.bmiHeader.biBitCount * <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a>);</div>
+<div class="line"></div>
+<div class="line">    videoInfo.dwBitErrorRate = 0;</div>
+<div class="line">    videoInfo.AvgTimePerFrame = 10000000 / <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01">mFramesPerSecond</a>;</div>
+<div class="line">    memcpy(&amp;(videoInfo.bmiHeader), &amp;bmpInfo.bmiHeader, <span class="keyword">sizeof</span>(BITMAPINFOHEADER));</div>
+<div class="line"></div>
+<div class="line">    WM_MEDIA_TYPE mt;</div>
+<div class="line">    mt.majortype = WMMEDIATYPE_Video;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (bmpInfo.bmiHeader.biCompression == BI_RGB)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (bmpInfo.bmiHeader.biBitCount == 32)</div>
+<div class="line">        {</div>
+<div class="line">            mt.subtype = WMMEDIASUBTYPE_RGB32;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bmpInfo.bmiHeader.biBitCount == 24)</div>
+<div class="line">        {</div>
+<div class="line">            mt.subtype = WMMEDIASUBTYPE_RGB24;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bmpInfo.bmiHeader.biBitCount == 16)</div>
+<div class="line">        {</div>
+<div class="line">            mt.subtype = WMMEDIASUBTYPE_RGB555;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bmpInfo.bmiHeader.biBitCount == 8)</div>
+<div class="line">        {</div>
+<div class="line">            mt.subtype = WMMEDIASUBTYPE_RGB8;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            mt.subtype = GUID_NULL;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    mt.bFixedSizeSamples = <span class="keyword">false</span>;</div>
+<div class="line">    mt.bTemporalCompression = <span class="keyword">false</span>;</div>
+<div class="line">    mt.lSampleSize = 0;</div>
+<div class="line">    mt.formattype = WMFORMAT_VideoInfo;</div>
+<div class="line">    mt.pUnk = NULL;</div>
+<div class="line">    mt.cbFormat = <span class="keyword">sizeof</span>(WMVIDEOINFOHEADER);</div>
+<div class="line">    mt.pbFormat = (BYTE*) &amp;videoInfo;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>-&gt;SetMediaType(&amp;mt)))</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to set the  video media type&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (FAILED(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;SetInputProps(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a">mVideoInputIndex</a>, <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>)))</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829">setLastErrorMessage</a>(<span class="stringliteral">&quot;Unable to set the input properties for WMMediaWriter&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_ae31d1fe781748605d4f0bbf3603f3791_cgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_ae31d1fe781748605d4f0bbf3603f3791_icgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -623,9 +817,153 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a576e77e106b016b2688227103d9560b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWORD UBWindowsMediaFile::msToSampleTime </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">        {</div>
+<div class="line">            QWORD qwordMs = ms;</div>
+<div class="line">            <span class="keywordflow">return</span> (qwordMs * 10000);</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_a576e77e106b016b2688227103d9560b1_icgraph.svg" width="563" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a47a56804c3125ba397d29ab7baf1c3b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWindowsMediaFile::releaseWMObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a>-&gt;Release();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff">mWMInputVideoProps</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a>-&gt;Release();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce">mWMInputAudioProps</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a>-&gt;Release();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a">mWMWriter</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a>-&gt;Release();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37">mWMProfile</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a>-&gt;Release();</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e">mWMProfileManager</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a>)</div>
+<div class="line">    {</div>
+<div class="line">        DeleteDC(<a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a>);</div>
+<div class="line">        <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9">mWMhDC</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_a47a56804c3125ba397d29ab7baf1c3b8_icgraph.svg" width="563" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae13f7892a4fc270eea4e7551d7271829"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWindowsMediaFile::setLastErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90">mLastErrorMessage</a> = error;</div>
+<div class="line">    qWarning() &lt;&lt; error;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d45/class_u_b_windows_media_file_ae13f7892a4fc270eea4e7551d7271829_icgraph.svg" width="566" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aef92398aa853a9cc6999569090c78021"></a>
@@ -656,14 +994,275 @@ Public Member Functions</h2></td></tr>
 <div class="line">    mi.label = pLabel;</div>
 <div class="line">    mi.timestamp = timestamp;</div>
 <div class="line"></div>
-<div class="line">    mChapters &lt;&lt; mi;</div>
+<div class="line">    <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1">mChapters</a> &lt;&lt; mi;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ae6f6a5b5e16496b3379c9f4e3e8a77e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD UBWindowsMediaFile::mAudioInputIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9963c638b51bd5778c13735f8579eff1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html">MarkerInfo</a>&gt; UBWindowsMediaFile::mChapters</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37506a61593ec6d8980a7b0fd5e07e01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD UBWindowsMediaFile::mFramesPerSecond</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b54e7191a8864d6f659dc2866b8db90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBWindowsMediaFile::mLastErrorMessage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6592ecffe74c495977de6f856c37e770"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IWMWriterPushSink* UBWindowsMediaFile::mPushSink</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c1a12638e8d3da5c55e5fe5f9ce5795"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBWindowsMediaFile::mVideoFileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6be56adc383a876d15704a4f2445f22a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD UBWindowsMediaFile::mVideoInputIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a489cd991fb1fc594975edb913a0148e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HDC UBWindowsMediaFile::mWMhDC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a74645a36a2c6f7a344ed00f80c1d22ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IWMInputMediaProps* UBWindowsMediaFile::mWMInputAudioProps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a36346dbecbe95c597b656026968de6ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IWMInputMediaProps* UBWindowsMediaFile::mWMInputVideoProps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a899c5df746a605f56e7e75f7bad18f37"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IWMProfile* UBWindowsMediaFile::mWMProfile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1eff308210a239622b867ce8972bd81e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IWMProfileManager* UBWindowsMediaFile::mWMProfileManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af2a66a76cfb53bbc5d4efa6ac19ad89a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IWMWriter* UBWindowsMediaFile::mWMWriter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a></li>
-<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp.html">UBWindowsMediaFile.cpp</a></li>
+<li><a class="el" href="../../d1/dde/_u_b_windows_media_file_8h_source.html">UBWindowsMediaFile.h</a></li>
+<li><a class="el" href="../../da/d90/_u_b_windows_media_file_8cpp.html">UBWindowsMediaFile.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -671,7 +1270,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d45/class_u_b_windows_media_file.html">UBWindowsMediaFile</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

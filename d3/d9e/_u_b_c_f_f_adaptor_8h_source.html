@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/plugins/cffadaptor/src/UBCFFAdaptor.h Source File</title>
+<title>Open-Sankoré: UBCFFAdaptor.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('d3/d9e/_u_b_c_f_f_adaptor_8h_source.ht
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span>QuaZipFile;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d84/_u_b_c_f_f_adaptor__global_8h.html#a9027dce387fe025ed92fae08279059cd">UBCFFADAPTORSHARED_EXPORT</a> <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html">UBCFFAdaptor</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">class </span>UBToCFFConverter;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">class </span><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html">UBToCFFConverter</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html">UBCFFAdaptor</a>();</div>
@@ -161,26 +161,26 @@ $(document).ready(function(){initNavTree('d3/d9e/_u_b_c_f_f_adaptor_8h_source.ht
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> freeTmpDirs();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QStringList tmpDirs;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    QList&lt;QString&gt; mConversionMessages;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">   58</a></span>&#160;    QStringList <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">   59</a></span>&#160;    QList&lt;QString&gt; <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">mConversionMessages</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">class </span>UBToCFFConverter {</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html">   63</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html">UBToCFFConverter</a> {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;       <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_LAYER = -100000;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#ace4c460e8bbac92c88e59f6f090dcd74">   65</a></span>&#160;       <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_LAYER = -100000;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        UBToCFFConverter(<span class="keyword">const</span> QString &amp;source, <span class="keyword">const</span> QString &amp;destination);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ~UBToCFFConverter();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html">UBToCFFConverter</a>(<span class="keyword">const</span> QString &amp;source, <span class="keyword">const</span> QString &amp;destination);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ~<a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html">UBToCFFConverter</a>();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">bool</span> isValid() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        QString lastErrStr()<span class="keyword"> const </span>{<span class="keywordflow">return</span> errorStr;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#affc5131dfae420083d2cac9d4dbc1295">   71</a></span>&#160;        QString <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#affc5131dfae420083d2cac9d4dbc1295">lastErrStr</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> errorStr;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">bool</span> parse();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        QList&lt;QString&gt; getMessages() {<span class="keywordflow">return</span> mExportErrorList;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a802229d3cf3a026e233472833186eb6f">   73</a></span>&#160;        QList&lt;QString&gt; <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a802229d3cf3a026e233472833186eb6f">getMessages</a>() {<span class="keywordflow">return</span> mExportErrorList;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> addLastExportError(QString error) {mExportErrorList.append(error);}</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#afa74f089f58c400c73569afe19da2277">   77</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#afa74f089f58c400c73569afe19da2277">addLastExportError</a>(QString error) {mExportErrorList.append(error);}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> fillNamespaces();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
@@ -249,30 +249,30 @@ $(document).ready(function(){initNavTree('d3/d9e/_u_b_c_f_f_adaptor_8h_source.ht
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">inline</span> QRect getViewboxRect(<span class="keyword">const</span> QString &amp;element) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">inline</span> QString rectToIWBAttr(<span class="keyword">const</span> QRect &amp;rect) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">inline</span> QString digitFileFormat(<span class="keywordtype">int</span> num) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> strToBool(<span class="keyword">const</span> QString &amp;in)<span class="keyword"> const </span>{<span class="keywordflow">return</span> in == <span class="stringliteral">&quot;true&quot;</span>;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a5b4ea552c23a4ad46fba5d8bef3a43d6">  146</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a5b4ea552c23a4ad46fba5d8bef3a43d6">strToBool</a>(<span class="keyword">const</span> QString &amp;in)<span class="keyword"> const </span>{<span class="keywordflow">return</span> in == <span class="stringliteral">&quot;true&quot;</span>;}</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        QString contentIWBFileName() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        QList&lt;QString&gt; mExportErrorList;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        QMap&lt;QString, QString&gt; iwbSVGItemsAttributes;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        QDomDocument *mDataModel; <span class="comment">//model for reading indata</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        QXmlStreamWriter *mIWBContentWriter; <span class="comment">//stream to write outdata</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        QSize mSVGSize; <span class="comment">//svg page size</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        QRect mViewbox; <span class="comment">//Main viewbox parameter for CFF</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        QString sourcePath; <span class="comment">// dir with unpacked source data (ubz)</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        QString destinationPath; <span class="comment">//dir with unpacked destination data (iwb)</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        QDomDocument *mDocumentToWrite; <span class="comment">//document for saved QDomElements from mSvgElements and mExtendedElements</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        QMultiMap&lt;int, QDomElement&gt; mSvgElements; <span class="comment">//Saving svg elements to have a sorted by z order list of elements to write;</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        QList&lt;QDomElement&gt; mExtendedElements; <span class="comment">//Saving extended options of elements to be able to add them to the end of result iwb document;</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keyword">mutable</span> QString errorStr; <span class="comment">// last error string message</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a6e25ae1c095eded91dd106ae5a18740b">  150</a></span>&#160;        QList&lt;QString&gt; <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a6e25ae1c095eded91dd106ae5a18740b">mExportErrorList</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a14727ca59f7201836021c9d4e258cfc8">  151</a></span>&#160;        QMap&lt;QString, QString&gt; <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a14727ca59f7201836021c9d4e258cfc8">iwbSVGItemsAttributes</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#ac79987029f48a026d9fb877bc9352c29">  152</a></span>&#160;        QDomDocument *<a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#ac79987029f48a026d9fb877bc9352c29">mDataModel</a>; <span class="comment">//model for reading indata</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a420b77f608c39a724eec4eeb258f1bc9">  153</a></span>&#160;        QXmlStreamWriter *<a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a420b77f608c39a724eec4eeb258f1bc9">mIWBContentWriter</a>; <span class="comment">//stream to write outdata</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a27f2cf025d18e75da1aef3e58feabc1d">  154</a></span>&#160;        QSize <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a27f2cf025d18e75da1aef3e58feabc1d">mSVGSize</a>; <span class="comment">//svg page size</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a9b7db1464f8fa0a58d4df778e5b21c20">  155</a></span>&#160;        QRect <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a9b7db1464f8fa0a58d4df778e5b21c20">mViewbox</a>; <span class="comment">//Main viewbox parameter for CFF</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#aa3d050484d4bf98ebe2ae63b19f020a0">  156</a></span>&#160;        QString <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#aa3d050484d4bf98ebe2ae63b19f020a0">sourcePath</a>; <span class="comment">// dir with unpacked source data (ubz)</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a7c6ca8ff86783a3d455232857597b329">  157</a></span>&#160;        QString <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a7c6ca8ff86783a3d455232857597b329">destinationPath</a>; <span class="comment">//dir with unpacked destination data (iwb)</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a21cab0a21b856a781d840e3f8ab1b2af">  158</a></span>&#160;        QDomDocument *<a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a21cab0a21b856a781d840e3f8ab1b2af">mDocumentToWrite</a>; <span class="comment">//document for saved QDomElements from mSvgElements and mExtendedElements</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#af069e22f923498c2f660882795f34323">  159</a></span>&#160;        QMultiMap&lt;int, QDomElement&gt; <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#af069e22f923498c2f660882795f34323">mSvgElements</a>; <span class="comment">//Saving svg elements to have a sorted by z order list of elements to write;</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a27428eeea2bfc195f50d6b9812e71e70">  160</a></span>&#160;        QList&lt;QDomElement&gt; <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a27428eeea2bfc195f50d6b9812e71e70">mExtendedElements</a>; <span class="comment">//Saving extended options of elements to be able to add them to the end of result iwb document;</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#adf8215b867e017ea7bd405a9c9106475">  161</a></span>&#160;        <span class="keyword">mutable</span> QString <a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#adf8215b867e017ea7bd405a9c9106475">errorStr</a>; <span class="comment">// last error string message</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{<span class="keywordflow">return</span> isValid();}</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="code" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html#a72b01ff3900150df098c3e2a1ba6005e">  164</a></span>&#160;        <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{<span class="keywordflow">return</span> isValid();}</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    };</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">class </span>UBToUBZConverter {</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="../../d8/d2a/class_u_b_c_f_f_adaptor_1_1_u_b_to_u_b_z_converter.html">  167</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d8/d2a/class_u_b_c_f_f_adaptor_1_1_u_b_to_u_b_z_converter.html">UBToUBZConverter</a> {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        UBToUBZConverter();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="../../d8/d2a/class_u_b_c_f_f_adaptor_1_1_u_b_to_u_b_z_converter.html">UBToUBZConverter</a>();</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    };</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
@@ -285,7 +285,7 @@ $(document).ready(function(){initNavTree('d3/d9e/_u_b_c_f_f_adaptor_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_8cd032c85bcb74678b7eb9e0c1adcd86.html">plugins</a></li><li class="navelem"><a class="el" href="../../dir_69f557f71af78100290f34b1a58383d4.html">cffadaptor</a></li><li class="navelem"><a class="el" href="../../dir_991aed496261d5e1d300f4df188fb44f.html">src</a></li><li class="navelem"><a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h.html">UBCFFAdaptor.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

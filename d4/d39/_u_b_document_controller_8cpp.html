@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/document/UBDocumentController.cpp File Reference</title>
+<title>Open-Sankoré: UBDocumentController.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -100,6 +100,8 @@ $(document).ready(function(){initNavTree('d4/d39/_u_b_document_controller_8cpp.h
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentController.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -142,15 +144,98 @@ $(document).ready(function(){initNavTree('d4/d39/_u_b_document_controller_8cpp.h
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d06/_u_b_document_controller_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d06/_u_b_document_controller_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-</div></div><!-- contents -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abe5c384067db6ff52f68fdc974316b54"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html#abe5c384067db6ff52f68fdc974316b54">lessThan</a> (<a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *lValue, <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *rValue)</td></tr>
+</table>
+<h2>Function Documentation</h2>
+<a class="anchor" id="abe5c384067db6ff52f68fdc974316b54"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool lessThan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>lValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>rValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (lValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() == <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (rValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() == <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>) {</div>
+<div class="line">            <span class="keywordflow">return</span> lValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>() &lt; rValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>();</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">if</span> (rValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() == <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>) {</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            Q_ASSERT(lValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
+<div class="line">            Q_ASSERT(rValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
+<div class="line"></div>
+<div class="line">            QDateTime lTime = lValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae6794c66922fe216e4b9b189725c3ad5">documentDate</a>();</div>
+<div class="line">            QDateTime rTime = rValue-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae6794c66922fe216e4b9b189725c3ad5">documentDate</a>();</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">return</span> lTime &gt; rTime;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d39/_u_b_document_controller_8cpp_abe5c384067db6ff52f68fdc974316b54_cgraph.svg" width="614" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/d39/_u_b_document_controller_8cpp_abe5c384067db6ff52f68fdc974316b54_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_48a493f97229efba1272340070031af5.html">document</a></li><li class="navelem"><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:49 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ebdfabc8c524d612380bb6416ad142cb.html">document</a></li><li class="navelem"><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

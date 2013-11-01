@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('d1/dae/class_u_b_quick_time_video_enco
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../da/d10/class_u_b_quick_time_video_encoder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBQuickTimeVideoEncoder Class Reference</div>  </div>
@@ -117,19 +120,19 @@ $(document).ready(function(){initNavTree('d1/dae/class_u_b_quick_time_video_enco
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d75/class_u_b_quick_time_video_encoder__inherit__graph.svg" width="224" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d75/class_u_b_quick_time_video_encoder__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBQuickTimeVideoEncoder:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/de1/class_u_b_quick_time_video_encoder__coll__graph.svg" width="224" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/de1/class_u_b_quick_time_video_encoder__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>ImageFrame</b></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">ImageFrame</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -160,6 +163,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f9a57a0a7afa22d06b5fef2dbb19c6a inherit pub_methods_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f9a57a0a7afa22d06b5fef2dbb19c6a">setAudioRecordingDevice</a> (const QString pAudioRecordingDevice)</td></tr>
 <tr class="memitem:af4bd868b266dbcd3ec158650002598b5 inherit pub_methods_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ab778575112e694444b754846c99fb19c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ab778575112e694444b754846c99fb19c">compressionFinished</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aad8993411ce755ce6f1180c63fc01b99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">encodeFrame</a> (const QImage &amp;image, long timestamp)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3053a87a60f284d5a610f39d15009e74"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">ImageFrame</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a></td></tr>
+<tr class="memitem:abedf896f6822fa305470224c73cd8f72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d83/class_u_b_quick_time_file.html">UBQuickTimeFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a></td></tr>
+<tr class="memitem:a449a3991a7409c76514c71d11e34fb59"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a></td></tr>
+<tr class="memitem:a6f5f0dda1449f86fbd5dd115904efc27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_u_b_abstract_video_encoder"><td colspan="2" onclick="javascript:toggleInherit('signals_class_u_b_abstract_video_encoder')"><img src="../../closed.png" alt="-"/>&nbsp;Signals inherited from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html">UBAbstractVideoEncoder</a></td></tr>
@@ -182,8 +200,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab9656acba80cfe74980b16dc90423b73">UBAbstractVideoEncoder</a>(pParent)</div>
-<div class="line">    , mQuickTimeCompressionSession(0)</div>
-<div class="line">    , mShouldRecordAudio(<span class="keyword">true</span>)</div>
+<div class="line">    , <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a>(<span class="keyword">true</span>)</div>
 <div class="line"></div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
@@ -218,6 +236,144 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ab778575112e694444b754846c99fb19c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBQuickTimeVideoEncoder::compressionFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a> = <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>();</div>
+<div class="line"></div>
+<div class="line">        emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa4e03edd2cb73ad5ccb94daa23268b54">encodingFinished</a>(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a>.length() &gt; 0);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_ab778575112e694444b754846c99fb19c_cgraph.svg" width="430" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_ab778575112e694444b754846c99fb19c_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aad8993411ce755ce6f1180c63fc01b99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBQuickTimeVideoEncoder::encodeFrame </td>
+          <td>(</td>
+          <td class="paramtype">const QImage &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_ASSERT(pImage.format() == QImage::QImage::Format_RGB32);  <span class="comment">// &lt;=&gt; CVPixelBuffers / k32BGRAPixelFormat</span></div>
+<div class="line"></div>
+<div class="line">    CVPixelBufferRef pixelBuffer = <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#aa499bdf13d0882700d43d966fa2115d0">newPixelBuffer</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (!pixelBuffer)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Could not retreive a new pixel buffer&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (CVPixelBufferLockBaseAddress(pixelBuffer, 0) != kCVReturnSuccess)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Could not lock pixel buffer base address&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">void</span> *pixelBufferAddress = CVPixelBufferGetBaseAddress(pixelBuffer);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!pixelBufferAddress)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Could not get pixel buffer base address&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">const</span> uchar* imageBuffer = pImage.bits();</div>
+<div class="line"></div>
+<div class="line">    memcpy((<span class="keywordtype">void</span>*) pixelBufferAddress, imageBuffer, pImage.numBytes());</div>
+<div class="line"></div>
+<div class="line">    CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//qDebug() &lt;&lt; &quot;newVideoFrame - PixelBuffer @&quot; &lt;&lt; pixelBufferAddress &lt;&lt; QTime::currentTime().toString(&quot;ss:zzz&quot;) &lt;&lt; QThread::currentThread();</span></div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../da/df6/struct_u_b_quick_time_file_1_1_video_frame.html">UBQuickTimeFile::VideoFrame</a> videoFrame;</div>
+<div class="line">    videoFrame.<a class="code" href="../../da/df6/struct_u_b_quick_time_file_1_1_video_frame.html#a9c80f2c63f511cf9162e762ca49a4115">buffer</a> = pixelBuffer;</div>
+<div class="line">    videoFrame.<a class="code" href="../../da/df6/struct_u_b_quick_time_file_1_1_video_frame.html#a91f04be8fde673cfe5922bb90784eae2">timestamp</a> = timestamp;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a8179154729e1bfcda66f9c0cd52ec2cb">UBQuickTimeFile::frameQueueMutex</a>.lock();</div>
+<div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a284f54a169c1a7b24b7d0ff7fc907f2d">UBQuickTimeFile::frameQueue</a>.enqueue(videoFrame);</div>
+<div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a8179154729e1bfcda66f9c0cd52ec2cb">UBQuickTimeFile::frameQueueMutex</a>.unlock();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_aad8993411ce755ce6f1180c63fc01b99_cgraph.svg" width="656" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_aad8993411ce755ce6f1180c63fc01b99_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a20cf47e6a5eda4d29d1878f0822f58bd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab3f6d08c89768a4fc724cfd6da53ac16">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -282,19 +438,19 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">        <span class="comment">//qDebug() &lt;&lt; &quot;New Frame at ms&quot; &lt;&lt; timestamp;</span></div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#afd6079763923599898f37a64570442e9">isCompressionSessionRunning</a>())</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#afd6079763923599898f37a64570442e9">isCompressionSessionRunning</a>())</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span>(mPendingImageFrames.length() &gt; 0)</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>.length() &gt; 0)</div>
 <div class="line">        {</div>
-<div class="line">            <span class="keywordflow">foreach</span>(ImageFrame frame, mPendingImageFrames)</div>
+<div class="line">            <span class="keywordflow">foreach</span>(ImageFrame frame, <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>)</div>
 <div class="line">            {</div>
-<div class="line">                    encodeFrame(frame.image, frame.timestamp);</div>
+<div class="line">                    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">encodeFrame</a>(frame.image, frame.timestamp);</div>
 <div class="line">            }</div>
 <div class="line"></div>
-<div class="line">            mPendingImageFrames.clear();</div>
+<div class="line">            <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>.clear();</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        encodeFrame(pImage, timestamp);</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">encodeFrame</a>(pImage, timestamp);</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#adadd465cfdc1fb11d583b56b9b388128">UBQuickTimeFile::frameBufferNotEmpty</a>.wakeAll();</div>
 <div class="line">    }</div>
@@ -306,16 +462,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        frame.image = pImage;</div>
 <div class="line">        frame.timestamp = timestamp;</div>
 <div class="line"></div>
-<div class="line">        mPendingImageFrames &lt;&lt; frame;</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a> &lt;&lt; frame;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_a119172562e5b7c49f920faba76e12563_cgraph.svg" width="467" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_a119172562e5b7c49f920faba76e12563_cgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -344,15 +500,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;UBQuickTimeVideoEncoder :&quot;</span> &lt;&lt; pMessage;</div>
-<div class="line">            mLastErrorMessage = pMessage;</div>
+<div class="line">            <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a> = pMessage;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_a49e2eaf7d2a7d40d9016dbde8f7fc105_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_a49e2eaf7d2a7d40d9016dbde8f7fc105_icgraph.svg" width="667" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -382,7 +538,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab5fae0f75a1993fe478442e0aa9d0c14">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mShouldRecordAudio = pRecordAudio;</div>
+<div class="line">    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a> = pRecordAudio;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -412,26 +568,26 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString quality = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa5f3b00cd5e8136cae4cd294c46f5634">podcastQuickTimeQuality</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toString();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(!mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a71331fb2262b24bd4eb10a7764bfe6cb">init</a>(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>(), quality, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>(), <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>()</div>
-<div class="line">                , mShouldRecordAudio, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()))</div>
+<div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a71331fb2262b24bd4eb10a7764bfe6cb">init</a>(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>(), quality, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>(), <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>()</div>
+<div class="line">                , <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a>, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()))</div>
 <div class="line">    {</div>
-<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot init QT compression session&quot;</span> + mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>());</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot init QT compression session&quot;</span> + <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#af93b4c47885cd60be9732b5916349363">lastErrorMessage</a>());</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    connect(&amp;mQuickTimeCompressionSession, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(compressionFinished()));</div>
-<div class="line">    connect(&amp;mQuickTimeCompressionSession, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)));</div>
+<div class="line">    connect(&amp;<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ab778575112e694444b754846c99fb19c">compressionFinished</a>()));</div>
+<div class="line">    connect(&amp;<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(quint8)));</div>
 <div class="line"></div>
-<div class="line">    mQuickTimeCompressionSession.start();</div>
+<div class="line">    <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.start();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_a0c595b139425a5d9e0d535807946bf68_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -461,9 +617,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a801e301615033b92ead75e531edb9c02">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mQuickTimeCompressionSession.isRunning())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.isRunning())</div>
 <div class="line">    {</div>
-<div class="line">        mQuickTimeCompressionSession.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a30f0b207a0bd98228663be5ee93bfb62">stop</a>();</div>
+<div class="line">        <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>.<a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#a30f0b207a0bd98228663be5ee93bfb62">stop</a>();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html#adadd465cfdc1fb11d583b56b9b388128">UBQuickTimeFile::frameBufferNotEmpty</a>.wakeAll();</div>
@@ -471,11 +627,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/class_u_b_quick_time_video_encoder_aa0151d5ee1872cf9fa863dac08f927b2_cgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -510,9 +666,90 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a449a3991a7409c76514c71d11e34fb59"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBQuickTimeVideoEncoder::mLastErrorMessage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3053a87a60f284d5a610f39d15009e74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">ImageFrame</a>&gt; UBQuickTimeVideoEncoder::mPendingImageFrames</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abedf896f6822fa305470224c73cd8f72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d83/class_u_b_quick_time_file.html">UBQuickTimeFile</a> UBQuickTimeVideoEncoder::mQuickTimeCompressionSession</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6f5f0dda1449f86fbd5dd115904efc27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBQuickTimeVideoEncoder::mShouldRecordAudio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a></li>
-<li>Sankore-3.1/src/podcast/quicktime/<a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp.html">UBQuickTimeVideoEncoder.cpp</a></li>
+<li><a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h_source.html">UBQuickTimeVideoEncoder.h</a></li>
+<li><a class="el" href="../../d0/db4/_u_b_quick_time_video_encoder_8cpp.html">UBQuickTimeVideoEncoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -520,7 +757,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/dae/class_u_b_quick_time_video_encoder.html">UBQuickTimeVideoEncoder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

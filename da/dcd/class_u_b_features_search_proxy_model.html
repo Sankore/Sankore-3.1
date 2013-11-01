@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('da/dcd/class_u_b_features_search_proxy
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/d57/class_u_b_features_search_proxy_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesSearchProxyModel Class Reference</div>  </div>
@@ -129,6 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a27a7dc95b8122cff2d3d58991facb21b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/class_u_b_features_search_proxy_model.html#a27a7dc95b8122cff2d3d58991facb21b">filterAcceptsRow</a> (int sourceRow, const QModelIndex &amp;sourceParent) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a493736450a71c7ceb2cbe591ff62bfe1"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/class_u_b_features_search_proxy_model.html#a493736450a71c7ceb2cbe591ff62bfe1">mFilterPrefix</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1a1995b07d935848814e6be2c603e252"></a>
@@ -152,7 +157,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">: QSortFilterProxyModel(parent), mFilterPrefix() {;}</div>
+<div class="fragment"><div class="line">: QSortFilterProxyModel(parent), <a class="code" href="../../da/dcd/class_u_b_features_search_proxy_model.html#a493736450a71c7ceb2cbe591ff62bfe1">mFilterPrefix</a>() {;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,7 +231,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">            || feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a9e48a4ed3645dd5e1aea16d73ce4feff">getType</a>() == <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674fa3f61b8a51a837a0b6863b027557db07e">FEATURE_IMAGE</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> isFile</div>
-<div class="line">            &amp;&amp; feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a175da54d5e0d135c43b44009601a1380">getFullVirtualPath</a>().contains(mFilterPrefix)</div>
+<div class="line">            &amp;&amp; feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a175da54d5e0d135c43b44009601a1380">getFullVirtualPath</a>().contains(<a class="code" href="../../da/dcd/class_u_b_features_search_proxy_model.html#a493736450a71c7ceb2cbe591ff62bfe1">mFilterPrefix</a>)</div>
 <div class="line">            &amp;&amp; filterRegExp().exactMatch( feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a5f863075343c08c09bd45c230c739ac9">getName</a>() );</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -262,13 +267,34 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mFilterPrefix = newPrefix;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../da/dcd/class_u_b_features_search_proxy_model.html#a493736450a71c7ceb2cbe591ff62bfe1">mFilterPrefix</a> = newPrefix;}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a493736450a71c7ceb2cbe591ff62bfe1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBFeaturesSearchProxyModel::mFilterPrefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -276,7 +302,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/dcd/class_u_b_features_search_proxy_model.html">UBFeaturesSearchProxyModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

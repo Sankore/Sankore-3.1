@@ -9,10 +9,12 @@ var searchData=
   ['objnamefeaturelist',['objNameFeatureList',['../d5/d85/class_u_b_features_widget.html#aeb129068ba72a8bbbf17f36064241be0',1,'UBFeaturesWidget']]],
   ['objnamepathlist',['objNamePathList',['../d5/d85/class_u_b_features_widget.html#aa984f0c0bb6559cce4bb9ae7ebf88b33',1,'UBFeaturesWidget']]],
   ['opaquepalettecolor',['opaquePaletteColor',['../db/d66/class_u_b_settings.html#a3b15f9b10941aad5dcc81472fde33ea3',1,'UBSettings']]],
+  ['originalrect',['originalRect',['../d6/d6e/class_u_b_keyboard_palette.html#ac467a9543cc5794c9f08d295063b0351',1,'UBKeyboardPalette']]],
   ['originalsetsystemuimode',['originalSetSystemUIMode',['../d7/d72/_u_b_platform_utils__mac_8mm.html#a9b48b47aafec0eaa17d1b073e6d85040',1,'UBPlatformUtils_mac.mm']]],
   ['originalsrcurl',['originalSrcUrl',['../d5/d15/structs_download_file_desc.html#a1b6e4c982c432d3db9339e2eab20ab81',1,'sDownloadFileDesc']]],
   ['outpageheight',['outPageHeight',['../d0/dff/structmerge__lib_1_1_merge_page_description.html#a47d237c4b51e371993f1c855a5ba0af6',1,'merge_lib::MergePageDescription']]],
   ['outpagewidth',['outPageWidth',['../d0/dff/structmerge__lib_1_1_merge_page_description.html#ad6b36eb19b4dae99029fcabb092973ee',1,'merge_lib::MergePageDescription']]],
   ['overlaypagenumber',['overlayPageNumber',['../d0/dff/structmerge__lib_1_1_merge_page_description.html#a0de4d9366a467fcac377e8e2bcf8e11f',1,'merge_lib::MergePageDescription']]],
-  ['overlaypagetransformation',['overlayPageTransformation',['../d0/dff/structmerge__lib_1_1_merge_page_description.html#af15089010dfa9f89cdffbae0b99d06f0',1,'merge_lib::MergePageDescription']]]
+  ['overlaypagetransformation',['overlayPageTransformation',['../d0/dff/structmerge__lib_1_1_merge_page_description.html#af15089010dfa9f89cdffbae0b99d06f0',1,'merge_lib::MergePageDescription']]],
+  ['ownfolder',['ownFolder',['../d0/d16/class_u_b_graphics_widget_item.html#a6586d2c71f0fb0a166fe3ef0fe202dba',1,'UBGraphicsWidgetItem']]]
 ];

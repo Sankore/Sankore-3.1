@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/network/UBHttpGet.h Source File</title>
+<title>Open-Sankoré: UBHttpGet.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -156,21 +156,21 @@ $(document).ready(function(){initNavTree('d6/d2f/_u_b_http_get_8h_source.html','
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">private</span> slots:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> readyRead();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> requestFinished();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> downloadProgressed(qint64 bytesReceived, qint64 bytesTotal);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#a8d22352b7bfd77228108394a0f26554e">readyRead</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#abc84821c1ca451f16cc41332664211ef">requestFinished</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#a153cc2cd9e5af8a9645e67281168850a">downloadProgressed</a>(qint64 bytesReceived, qint64 bytesTotal);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        QByteArray mDownloadedBytes;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        QNetworkReply* mReply;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        QPointF mPos;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        QSize mSize;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">   59</a></span>&#160;        QByteArray <a class="code" href="../../de/d40/class_u_b_http_get.html#a8c5659a8830d93ef435460b53576565d">mDownloadedBytes</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">   60</a></span>&#160;        QNetworkReply* <a class="code" href="../../de/d40/class_u_b_http_get.html#adde91597b17201c46eff6eb62d9cf88b">mReply</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a7bf151a00b370356b7c8e5503815f0d1">   61</a></span>&#160;        QPointF <a class="code" href="../../de/d40/class_u_b_http_get.html#a7bf151a00b370356b7c8e5503815f0d1">mPos</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a953b47e3544361a32540da681cdcd085">   62</a></span>&#160;        QSize <a class="code" href="../../de/d40/class_u_b_http_get.html#a953b47e3544361a32540da681cdcd085">mSize</a>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">bool</span> mIsBackground;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">int</span> mRequestID;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">int</span> mRedirectionCount;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">bool</span> mIsSelfAborting;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#afe2752bc3169d40994420104fec2a6b1">   64</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#afe2752bc3169d40994420104fec2a6b1">mIsBackground</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#aab60099f95034d54a1092cfe4e7dd56a">   65</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#aab60099f95034d54a1092cfe4e7dd56a">mRequestID</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#acb8380de29e1bf5532cc9d1d8004e532">   66</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#acb8380de29e1bf5532cc9d1d8004e532">mRedirectionCount</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../de/d40/class_u_b_http_get.html#a087d44971efdce997877ff6e574c49c3">   67</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../de/d40/class_u_b_http_get.html#a087d44971efdce997877ff6e574c49c3">mIsSelfAborting</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//        sDownloadFileDesc mDownloadInfo;</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
@@ -181,8 +181,8 @@ $(document).ready(function(){initNavTree('d6/d2f/_u_b_http_get_8h_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../d6/d2f/_u_b_http_get_8h.html">UBHttpGet.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1b69b9a0ecd21c668fc6a60be75ceac8.html">network</a></li><li class="navelem"><a class="el" href="../../d6/d2f/_u_b_http_get_8h.html">UBHttpGet.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

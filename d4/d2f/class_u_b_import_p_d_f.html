@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d4/d2f/class_u_b_import_p_d_f.html','.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d7/dcb/class_u_b_import_p_d_f-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBImportPDF Class Reference</div>  </div>
@@ -136,6 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0634a56798312ce8f6e7df1792f90b1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2f/class_u_b_import_p_d_f.html#aa0634a56798312ce8f6e7df1792f90b1">placeImportedItemToScene</a> (<a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *scene, <a class="el" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a> *item)</td></tr>
 <tr class="memitem:a41a4202e19a7af2555e36ff59aeda143"><td class="memItemLeft" align="right" valign="top">virtual const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2f/class_u_b_import_p_d_f.html#a41a4202e19a7af2555e36ff59aeda143">folderToCopy</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab266ddd0ca5597b7d59432670f641db5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2f/class_u_b_import_p_d_f.html#ab266ddd0ca5597b7d59432670f641db5">dpi</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_page_based_import_adaptor"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_page_based_import_adaptor')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../d5/d38/class_u_b_page_based_import_adaptor.html">UBPageBasedImportAdaptor</a></td></tr>
@@ -158,7 +163,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">    : <a class="code" href="../../d5/d38/class_u_b_page_based_import_adaptor.html#a969304bb4fbe7e348ce85ac4742d8ff3">UBPageBasedImportAdaptor</a>(parent)</div>
 <div class="line">{</div>
 <div class="line">    QDesktopWidget* desktop = UBApplication::desktop();</div>
-<div class="line">        this-&gt;dpi = (desktop-&gt;physicalDpiX() + desktop-&gt;physicalDpiY()) / 2;</div>
+<div class="line">        this-&gt;<a class="code" href="../../d4/d2f/class_u_b_import_p_d_f.html#ab266ddd0ca5597b7d59432670f641db5">dpi</a> = (desktop-&gt;physicalDpiX() + desktop-&gt;physicalDpiY()) / 2;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -261,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(tr(<span class="stringliteral">&quot;PDF import failed.&quot;</span>));</div>
 <div class="line">        <span class="keywordflow">return</span> result;</div>
 <div class="line">    }</div>
-<div class="line">        pdfRenderer-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a12aa241d086852e8617c89cddaef3585">setDPI</a>(this-&gt;dpi);</div>
+<div class="line">        pdfRenderer-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a12aa241d086852e8617c89cddaef3585">setDPI</a>(this-&gt;<a class="code" href="../../d4/d2f/class_u_b_import_p_d_f.html#ab266ddd0ca5597b7d59432670f641db5">dpi</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> pdfPageCount = pdfRenderer-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#aa952f037d5944d6eb3a06743351be16b">pageCount</a>();</div>
 <div class="line"></div>
@@ -394,9 +399,30 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ab266ddd0ca5597b7d59432670f641db5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBImportPDF::dpi</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d5/dcd/_u_b_import_p_d_f_8h_source.html">UBImportPDF.h</a></li>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d2/d5f/_u_b_import_p_d_f_8cpp.html">UBImportPDF.cpp</a></li>
+<li><a class="el" href="../../d5/dcd/_u_b_import_p_d_f_8h_source.html">UBImportPDF.h</a></li>
+<li><a class="el" href="../../d2/d5f/_u_b_import_p_d_f_8cpp.html">UBImportPDF.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -404,7 +430,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d2f/class_u_b_import_p_d_f.html">UBImportPDF</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

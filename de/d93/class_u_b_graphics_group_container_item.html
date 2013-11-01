@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('de/d93/class_u_b_graphics_group_contai
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/df1/class_u_b_graphics_group_container_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsGroupContainerItem Class Reference</div>  </div>
@@ -180,7 +181,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_graphics_item"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_graphics_item')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a></td></tr>
 <tr class="memitem:ae96f88cb9995d8da67e7b72f273c471b inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">UBGraphicsItem</a> ()</td></tr>
 <tr class="memitem:aa2118a97c39bafd7610dcb91fc1bba38 inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#aa2118a97c39bafd7610dcb91fc1bba38">~UBGraphicsItem</a> ()</td></tr>
-<tr class="memitem:ad3dd5cd27bf33d67937f3e75e8e73904 inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a> (<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *mDelegate)</td></tr>
+<tr class="memitem:ad3dd5cd27bf33d67937f3e75e8e73904 inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a> (<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *<a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a76f5fdb955ea6666929b979055c739bb"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a></td></tr>
+<tr class="memitem:ad2964c4f26ed73f323648f15426bca5a"><td class="memItemLeft" align="right" valign="top">QGraphicsItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -232,7 +238,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QGraphicsItem(parent)</div>
-<div class="line">    , mCurrentItem(NULL)</div>
+<div class="line">    , <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, <a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a86b481353d96038e1b371f5ef6f5e44f">UBItemLayerType::Object</a>);</div>
 <div class="line"></div>
@@ -400,7 +406,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    item-&gt;setTransform(newItemTransform);</div>
 <div class="line">    <span class="comment">//    item-&gt;d_func()-&gt;setIsMemberOfGroup(true);</span></div>
 <div class="line">    prepareGeometryChange();</div>
-<div class="line">    itemsBoundingRect |= itemTransform.mapRect(item-&gt;boundingRect() | item-&gt;childrenBoundingRect());</div>
+<div class="line">    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a> |= itemTransform.mapRect(item-&gt;boundingRect() | item-&gt;childrenBoundingRect());</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -418,7 +424,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_ac5b04f9899f76674245aeb2e8bc73095_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_ac5b04f9899f76674245aeb2e8bc73095_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -437,7 +444,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> itemsBoundingRect;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -591,7 +598,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a5b3ed1dc13045ed21fb5a52cc102f810_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a5b3ed1dc13045ed21fb5a52cc102f810_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -657,24 +665,24 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mCurrentItem)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">switch</span>(mCurrentItem-&gt;type())</div>
+<div class="line">        <span class="keywordflow">switch</span>(<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>-&gt;type())</div>
 <div class="line">        {</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a8c363fe2aad7d560e8132f7b2f551f64a89d6e26f73d521f2aa319b661c5ff01a">UBGraphicsTextItem::Type</a>:</div>
 <div class="line">              {</div>
-<div class="line">                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(mCurrentItem)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
+<div class="line">                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
 <div class="line">              }</div>
 <div class="line">              <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a940b930449b3aaf6cd9be3639d8d19f2a1694a0279d66b57a1604aba2a2921781">UBGraphicsMediaItem::Type</a>:</div>
 <div class="line">              {</div>
-<div class="line">                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>*<span class="keyword">&gt;</span>(mCurrentItem)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
+<div class="line">                  <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>)-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#af64a99fb8ca196adcd2d7c1aacedb562">getToolBarItem</a>()-&gt;hide();</div>
 <div class="line">              }</div>
 <div class="line">              <span class="keywordflow">break</span>;</div>
 <div class="line"></div>
 <div class="line">        }</div>
-<div class="line">        mCurrentItem-&gt;setSelected(<span class="keyword">false</span>);</div>
-<div class="line">        mCurrentItem = NULL;</div>
+<div class="line">        <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>-&gt;setSelected(<span class="keyword">false</span>);</div>
+<div class="line">        <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -692,7 +700,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a162cb637cd3d001612aff2ac301809cb_icgraph.svg" width="459" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a162cb637cd3d001612aff2ac301809cb_icgraph.svg" width="459" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -736,7 +744,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a71bf648d30983ff33b0e94f515268b80_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a71bf648d30983ff33b0e94f515268b80_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -762,14 +771,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mCurrentItem;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a071b128d07bfc63bb5c5e7c23165b525_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a071b128d07bfc63bb5c5e7c23165b525_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1095,7 +1104,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="comment">// ### Quite expensive. But removeFromGroup() isn&#39;t called very often.</span></div>
 <div class="line">    prepareGeometryChange();</div>
-<div class="line">    itemsBoundingRect = childrenBoundingRect();</div>
+<div class="line">    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb">itemsBoundingRect</a> = childrenBoundingRect();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1112,7 +1121,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_ad1e754e3772a1d1b931fc3b29b014ff1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_ad1e754e3772a1d1b931fc3b29b014ff1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1163,7 +1173,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a7da3a6916abfde2a91c77b9ec2ab974c_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_a7da3a6916abfde2a91c77b9ec2ab974c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1190,14 +1201,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mCurrentItem = item;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a">mCurrentItem</a> = item;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_ae52daee7b60e1306eeadf135896a53cc_icgraph.svg" width="398" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d93/class_u_b_graphics_group_container_item_ae52daee7b60e1306eeadf135896a53cc_icgraph.svg" width="398" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1270,9 +1281,50 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a76f5fdb955ea6666929b979055c739bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF UBGraphicsGroupContainerItem::itemsBoundingRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad2964c4f26ed73f323648f15426bca5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsItem* UBGraphicsGroupContainerItem::mCurrentItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d0/d57/_u_b_graphics_group_container_item_8h_source.html">UBGraphicsGroupContainerItem.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d7/d73/_u_b_graphics_group_container_item_8cpp.html">UBGraphicsGroupContainerItem.cpp</a></li>
+<li><a class="el" href="../../d0/d57/_u_b_graphics_group_container_item_8h_source.html">UBGraphicsGroupContainerItem.h</a></li>
+<li><a class="el" href="../../d7/d73/_u_b_graphics_group_container_item_8cpp.html">UBGraphicsGroupContainerItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1280,7 +1332,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['scalesize',['scaleSize',['../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55',1,'UBGraphicsTextItemDelegate']]],
   ['scaling',['Scaling',['../d5/ded/class_u_b_graphics_delegate_frame.html#aa3195d439757dd154944daea507f5b94aa2b91fa8ff5510f3dd719d0a4f3b2e3f',1,'UBGraphicsDelegateFrame']]],
   ['screen',['Screen',['../dc/db2/class_u_b_graphics_scene.html#a58c07654e56235641dd3aeb92ac24130a33eac653fc9ca8bff8f52582adf9950d',1,'UBGraphicsScene']]],
   ['selecteditem',['SelectedItem',['../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dad670c3e12808823a24f9e1bad75572b9',1,'itemLayerType']]],

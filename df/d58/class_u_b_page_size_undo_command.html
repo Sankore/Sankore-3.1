@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('df/d58/class_u_b_page_size_undo_comman
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d1e/class_u_b_page_size_undo_command-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBPageSizeUndoCommand Class Reference</div>  </div>
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('df/d58/class_u_b_page_size_undo_comman
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d7d/class_u_b_page_size_undo_command__inherit__graph.svg" width="227" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d7d/class_u_b_page_size_undo_command__inherit__graph.svg" width="227" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBPageSizeUndoCommand:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d83/class_u_b_page_size_undo_command__coll__graph.svg" width="227" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d83/class_u_b_page_size_undo_command__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -140,6 +141,13 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a94c683dc241bc250649f83de89bdbc7e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html#a94c683dc241bc250649f83de89bdbc7e">undo</a> ()</td></tr>
 <tr class="memitem:ae0410b91c54a382137eb189502c7b765"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html#ae0410b91c54a382137eb189502c7b765">redo</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a747f5138c693f1880739d02274b53ff2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a></td></tr>
+<tr class="memitem:a743a147991205b263660203f31bae910"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html#a743a147991205b263660203f31bae910">mPreviousSize</a></td></tr>
+<tr class="memitem:ab453ed148a9ae110d2adaf6b4e7dc185"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html#ab453ed148a9ae110d2adaf6b4e7dc185">mNewSize</a></td></tr>
+<tr class="memitem:a20e905e2d7a9d1eebd8ad5b4d00ab634"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -186,11 +194,11 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mScene(pScene)</div>
-<div class="line">        , mPreviousSize(previousSize)</div>
-<div class="line">        , mNewSize(newSize)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>(pScene)</div>
+<div class="line">        , <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a743a147991205b263660203f31bae910">mPreviousSize</a>(previousSize)</div>
+<div class="line">        , <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#ab453ed148a9ae110d2adaf6b4e7dc185">mNewSize</a>(newSize)</div>
 <div class="line">{</div>
-<div class="line">    mFirstRedo = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a> = <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -273,19 +281,19 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// the Undo framework calls a redo while appending the undo command.</span></div>
 <div class="line">    <span class="comment">// as we have already plotted the elements, we do not want to do it twice</span></div>
-<div class="line">    <span class="keywordflow">if</span> (!mFirstRedo)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (!mScene){</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>){</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(mNewSize);</div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#ab453ed148a9ae110d2adaf6b4e7dc185">mNewSize</a>);</div>
 <div class="line">        <span class="comment">// force refresh, QT is a bit lazy and take a lot of time (nb item ^2) to trigger repaint</span></div>
-<div class="line">        mScene-&gt;update(mScene-&gt;sceneRect());</div>
+<div class="line">        <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;update(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;sceneRect());</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        mFirstRedo = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a20e905e2d7a9d1eebd8ad5b4d00ab634">mFirstRedo</a> = <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -323,13 +331,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a91cd202e68ba7cc83f8490a6eec15dcc">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mScene){</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>){</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(mPreviousSize);</div>
+<div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ad0826689aa9e177e31aea29fa68eedd9">setPageSize</a>(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a743a147991205b263660203f31bae910">mPreviousSize</a>);</div>
 <div class="line">    <span class="comment">// force refresh, QT is a bit lazy and take a lot of time (nb item ^2 ?) to trigger repaint</span></div>
-<div class="line">    mScene-&gt;update(mScene-&gt;sceneRect());</div>
+<div class="line">    <a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;update(<a class="code" href="../../df/d58/class_u_b_page_size_undo_command.html#a747f5138c693f1880739d02274b53ff2">mScene</a>-&gt;sceneRect());</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -344,9 +352,90 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a20e905e2d7a9d1eebd8ad5b4d00ab634"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBPageSizeUndoCommand::mFirstRedo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab453ed148a9ae110d2adaf6b4e7dc185"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize UBPageSizeUndoCommand::mNewSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a743a147991205b263660203f31bae910"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize UBPageSizeUndoCommand::mPreviousSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a747f5138c693f1880739d02274b53ff2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* UBPageSizeUndoCommand::mScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../df/d1e/_u_b_page_size_undo_command_8h_source.html">UBPageSizeUndoCommand.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d3/d49/_u_b_page_size_undo_command_8cpp.html">UBPageSizeUndoCommand.cpp</a></li>
+<li><a class="el" href="../../df/d1e/_u_b_page_size_undo_command_8h_source.html">UBPageSizeUndoCommand.h</a></li>
+<li><a class="el" href="../../d3/d49/_u_b_page_size_undo_command_8cpp.html">UBPageSizeUndoCommand.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -354,7 +443,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d58/class_u_b_page_size_undo_command.html">UBPageSizeUndoCommand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

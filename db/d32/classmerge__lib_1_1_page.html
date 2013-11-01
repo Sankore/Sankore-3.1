@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('db/d32/classmerge__lib_1_1_page.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d5/d73/classmerge__lib_1_1_page-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('db/d32/classmerge__lib_1_1_page.html',
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/df8/classmerge__lib_1_1_page__coll__graph.svg" width="206" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/df8/classmerge__lib_1_1_page__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -131,6 +133,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a276d1b8ec3698c7e92c6c04614136b28"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a4e1f3bf43d9fc39fea3829f7ae1da4a8">Object::Children</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#a276d1b8ec3698c7e92c6c04614136b28">getPageRefs</a> ()</td></tr>
 <tr class="memitem:a791406130fe3cd5b50923100eca1acf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#a791406130fe3cd5b50923100eca1acf9">pageToXObject</a> (std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;allObjects, std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;annots, bool isCloneNeeded)</td></tr>
 <tr class="memitem:ae68588d9882b3cdec7e46650c0de6111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#ae68588d9882b3cdec7e46650c0de6111">setRotation</a> (int rotation)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7289620cad481fed782f62eb50d88414"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">_pageToXObject</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp;page, std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;annots)</td></tr>
+<tr class="memitem:ae56102e8ba506d0ee2f2b28ad8e2cbdf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#ae56102e8ba506d0ee2f2b28ad8e2cbdf">_getMergedPageContent</a> (unsigned int &amp;contentPosition, unsigned int &amp;parentPosition, unsigned int &amp;originalPage1Position, unsigned int &amp;originalPage2Position, std::pair&lt; unsigned int, unsigned int &gt; originalPageNumbers, const <a class="el" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html">MergePageDescription</a> &amp;description, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *basePage, const std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;annots, std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a61ce4ed189bafe56ea358abdeb25ad54">Object::ChildAndItPositionInContent</a> &gt; &amp;annotsPositions)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4fcd514536caea527b197653e5ac04cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a></td></tr>
+<tr class="memitem:a8cea08954203665f181dbe464fd3ac3d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#a8cea08954203665f181dbe464fd3ac3d">_pageNumber</a></td></tr>
+<tr class="memitem:a8cbb195dbb991cb2fa46c03bd6189f6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -151,7 +164,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">                                 : _root(NULL),_pageNumber(pageNumber), _rotation(0)</div>
+<div class="fragment"><div class="line">                                 : <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>(NULL),<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cea08954203665f181dbe464fd3ac3d">_pageNumber</a>(pageNumber), <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a>(0)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -177,6 +190,266 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ae56102e8ba506d0ee2f2b28ad8e2cbdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Page::_getMergedPageContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>contentPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>parentPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>originalPage1Position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>originalPage2Position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::pair&lt; unsigned int, unsigned int &gt;&#160;</td>
+          <td class="paramname"><em>originalPageNumbers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html">MergePageDescription</a> &amp;&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>basePage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>annots</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a61ce4ed189bafe56ea358abdeb25ad54">Object::ChildAndItPositionInContent</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>annotsPositions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   std::string content(<span class="stringliteral">&quot;&lt;&lt;\n/Type /Page\n&quot;</span>);   </div>
+<div class="line">   content.append(<span class="stringliteral">&quot;/Contents &quot;</span>);</div>
+<div class="line">   contentPosition = content.size();</div>
+<div class="line">   <span class="comment">//object number 1 will be recalculated during serialization</span></div>
+<div class="line">   content.append(<span class="stringliteral">&quot;1 0 R\n&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/MediaBox&quot;</span>);</div>
+<div class="line">   mediaBox.x2 = description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ad6b36eb19b4dae99029fcabb092973ee">outPageWidth</a>;</div>
+<div class="line">   mediaBox.y2 = description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a47d237c4b51e371993f1c855a5ba0af6">outPageHeight</a>;</div>
+<div class="line">   mediaBox.appendRectangleToString(content, <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">   content.append(<span class="stringliteral">&quot;/Parent &quot;</span>);</div>
+<div class="line">   parentPosition = content.size();</div>
+<div class="line">   <span class="comment">//object number 1 will be recalculated during serialization</span></div>
+<div class="line">   content.append(<span class="stringliteral">&quot;1 0 R\n&quot;</span>);   </div>
+<div class="line">   content.append(<span class="stringliteral">&quot;/Resources &lt;&lt;\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;/XObject &lt;&lt;\n&quot;</span>);</div>
+<div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ae09130909c8a12252d4544bfdfea4138">skipOverlayPage</a>)</div>
+<div class="line">   {</div>
+<div class="line">      content.append(<span class="stringliteral">&quot;/OriginalPage1 &quot;</span>);</div>
+<div class="line">      originalPage1Position = content.size();</div>
+<div class="line">      content.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(originalPageNumbers.first));</div>
+<div class="line">      content.append(<span class="stringliteral">&quot; 0 R\n&quot;</span>);</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
+<div class="line">   {</div>
+<div class="line">      content.append(<span class="stringliteral">&quot;/OriginalPage2 &quot;</span>);</div>
+<div class="line">      originalPage2Position = content.size();</div>
+<div class="line">      content.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(originalPageNumbers.second));</div>
+<div class="line">      content.append(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">      content.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(basePage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a63d0ca3a029a3084e66ba862afd690c2">getgenerationNumber</a>()));</div>
+<div class="line">      content.append(<span class="stringliteral">&quot; R\n&quot;</span>);</div>
+<div class="line">   }</div>
+<div class="line">   content.append(<span class="stringliteral">&quot;&gt;&gt;\n&gt;&gt;\n&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">   content.append(<span class="stringliteral">&quot;/Annots [ &quot;</span>);</div>
+<div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> basePageRectangle(<span class="stringliteral">&quot;/BBox&quot;</span>, basePage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; annots.size(); ++i)</div>
+<div class="line">      {</div>
+<div class="line">         <a class="code" href="../../d7/dfc/_page_8cpp.html#a26aba0d283e16a74263236b3db8a19db">_updateAnnotFormColor</a>(annots[i]);</div>
+<div class="line">         <a class="code" href="../../d7/dfc/_page_8cpp.html#ad748c0b63c61b58b3362e53390f7c66d">_recalculateAnnotsCoordinates</a>(annots[i], basePageRectangle, mediaBox, description);</div>
+<div class="line">         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> annotationPosition;</div>
+<div class="line">         annotationPosition.push_back(content.size());</div>
+<div class="line">         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a61ce4ed189bafe56ea358abdeb25ad54">Object::ChildAndItPositionInContent</a> annotAndItPosition(annots[i], annotationPosition);</div>
+<div class="line">         annotsPositions.push_back(annotAndItPosition);</div>
+<div class="line">         content.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(annots[i]-&gt;getObjectNumber()));</div>
+<div class="line">         content.append(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">         content.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(annots[i]-&gt;getgenerationNumber()));</div>
+<div class="line">         content.append(<span class="stringliteral">&quot; R &quot;</span>);</div>
+<div class="line">      }</div>
+<div class="line">   }</div>
+<div class="line">   content.append(<span class="stringliteral">&quot;] \n&gt;&gt;\n&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">return</span> content;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ae56102e8ba506d0ee2f2b28ad8e2cbdf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ae56102e8ba506d0ee2f2b28ad8e2cbdf_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7289620cad481fed782f62eb50d88414"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * Page::_pageToXObject </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp;&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>annots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{   </div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeParent = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Parent&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeBleedBox = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/BleedBox&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeTrimBox = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/TrimBox&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeArtBox = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/ArtBox&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeBoxColorInfo = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/BoxColorInfo&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeRotate = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Rotate&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeThumb = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Thumb&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeB = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/B&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeDur = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Dur&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeTrans = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Trans&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html">AnnotsHandler</a>          * removeAnnots = <span class="keyword">new</span> <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html">AnnotsHandler</a>(page, <span class="stringliteral">&quot;/Annots&quot;</span>, annots);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeAA = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/AA&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeID = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/ID&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removePZ = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/PZ&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeSeparationInfo = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/SeparationInfo&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeTabs = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/Tabs&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeTemplateInstantiated = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/TemplateInstantiated&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removePresSteps = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/PresSteps&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeUserUnit = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/UserUnit&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>   * removeVP = <span class="keyword">new</span> <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a>(page, <span class="stringliteral">&quot;/VP&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html">ContentHandler</a>         * contentHandler = <span class="keyword">new</span> <a class="code" href="../../d5/d06/classmerge__lib_1_1_content_handler.html">ContentHandler</a>(page, <span class="stringliteral">&quot;/Contents&quot;</span>);   </div>
+<div class="line">   <a class="code" href="../../d3/d79/classmerge__lib_1_1_crop_box_element_handler.html">CropBoxElementHandler</a>  * cropBoxElementHandler = <span class="keyword">new</span> <a class="code" href="../../d3/d79/classmerge__lib_1_1_crop_box_element_handler.html">CropBoxElementHandler</a>(page);   </div>
+<div class="line">   <a class="code" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html">MediaBoxElementHandler</a> * mediaBoxElementHandler = <span class="keyword">new</span> <a class="code" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html">MediaBoxElementHandler</a>(page);</div>
+<div class="line">   <a class="code" href="../../d6/d85/classmerge__lib_1_1_type_element_handler.html">TypeElementHandler</a>     * typeElementHandler = <span class="keyword">new</span> <a class="code" href="../../d6/d85/classmerge__lib_1_1_type_element_handler.html">TypeElementHandler</a>(page);</div>
+<div class="line"></div>
+<div class="line">   cropBoxElementHandler-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(mediaBoxElementHandler);</div>
+<div class="line">   mediaBoxElementHandler-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeParent);</div>
+<div class="line">   removeParent-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeBleedBox);</div>
+<div class="line">   removeBleedBox-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeTrimBox);</div>
+<div class="line">   removeTrimBox-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeArtBox);</div>
+<div class="line">   removeArtBox-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeBoxColorInfo);</div>
+<div class="line">   removeBoxColorInfo-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeRotate);</div>
+<div class="line">   removeRotate-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeThumb);</div>
+<div class="line">   removeThumb-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeB);</div>
+<div class="line">   removeB-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeDur);</div>
+<div class="line">   removeDur-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeTrans);</div>
+<div class="line">   removeTrans-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeAnnots);</div>
+<div class="line">   removeAnnots-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeAA);</div>
+<div class="line">   removeAA-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeID);</div>
+<div class="line">   removeID-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removePZ);</div>
+<div class="line">   removePZ-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeSeparationInfo);</div>
+<div class="line">   removeSeparationInfo-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeTabs);</div>
+<div class="line">   removeTabs-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeTemplateInstantiated);</div>
+<div class="line">   removeTemplateInstantiated-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removePresSteps);</div>
+<div class="line">   removePresSteps-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeUserUnit);</div>
+<div class="line">   removeUserUnit-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(removeVP);</div>
+<div class="line">   removeVP-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(typeElementHandler);</div>
+<div class="line">   typeElementHandler-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(contentHandler);   </div>
+<div class="line"></div>
+<div class="line">   cropBoxElementHandler-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a>();</div>
+<div class="line">   cropBoxElementHandler-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a>();</div>
+<div class="line"></div>
+<div class="line">   <span class="keyword">delete</span> cropBoxElementHandler;</div>
+<div class="line">   <span class="keywordflow">return</span> page;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a7289620cad481fed782f62eb50d88414_cgraph.svg" width="100%" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a7289620cad481fed782f62eb50d88414_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a44ee21d43416ffe184aae26532e5fae8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -190,14 +463,14 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a44ee21d43416ffe184aae26532e5fae8_cgraph.svg" width="360" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -225,7 +498,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">      {</div>
-<div class="line">         <span class="keywordflow">return</span> _pageNumber;</div>
+<div class="line">         <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cea08954203665f181dbe464fd3ac3d">_pageNumber</a>;</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
 </div>
@@ -243,14 +516,14 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aab580190b963beb33f2ad2c5241a9605">getChildren</a>();</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aab580190b963beb33f2ad2c5241a9605">getChildren</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a276d1b8ec3698c7e92c6c04614136b28_cgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -301,11 +574,11 @@ Friends</h2></td></tr>
 <div class="line">   {</div>
 <div class="line">      <span class="comment">// Lets recalculate final transformation of overlay page</span></div>
 <div class="line">      <span class="comment">// before it will be places into XObject</span></div>
-<div class="line">      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/MediaBox&quot;</span>,_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
+<div class="line">      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/MediaBox&quot;</span>,<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
 <div class="line">      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#af15089010dfa9f89cdffbae0b99d06f0">overlayPageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#aa3f45594e5ba11d8e6050c6df53cee67">recalculateTranslation</a>(mediaBox.getWidth(),mediaBox.getHeight());</div>
 <div class="line"></div>
 <div class="line">      std::vector&lt;Object *&gt; fake;</div>
-<div class="line">      _pageToXObject(_root, fake);</div>
+<div class="line">      <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">_pageToXObject</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>, fake);</div>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">   std::vector&lt;Object *&gt; toAllObjects;</div>
@@ -313,13 +586,13 @@ Friends</h2></td></tr>
 <div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * sourcePageToXObject = 0;</div>
 <div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
 <div class="line">   {  </div>
-<div class="line">      <a class="code" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html">RotationHandler</a> rotationHandler(sourcePage-&gt;_root, <span class="stringliteral">&quot;/Rotate&quot;</span>, *<span class="keyword">this</span>);</div>
+<div class="line">      <a class="code" href="../../db/d07/classmerge__lib_1_1_rotation_handler.html">RotationHandler</a> rotationHandler(sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>, <span class="stringliteral">&quot;/Rotate&quot;</span>, *<span class="keyword">this</span>);</div>
 <div class="line">      rotationHandler.processObjectContent();</div>
-<div class="line">      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a843e801e2eb4c707bf54ad24e9ab1a15">basePageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a68d44b6cf26f1f689393885bb86395c5">addRotation</a>(_rotation);</div>
+<div class="line">      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a843e801e2eb4c707bf54ad24e9ab1a15">basePageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#a68d44b6cf26f1f689393885bb86395c5">addRotation</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a>);</div>
 <div class="line"></div>
-<div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) sourcePage-&gt;_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>().find(<span class="stringliteral">&quot;/Annots&quot;</span>) != -1 )</div>
+<div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>().find(<span class="stringliteral">&quot;/Annots&quot;</span>) != -1 )</div>
 <div class="line">      {</div>
-<div class="line">         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *crop = sourcePage-&gt;_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a748cda680f3a23133864c0757ad7f058">findPatternInObjOrParents</a>(<span class="stringliteral">&quot;/CropBox&quot;</span>);</div>
+<div class="line">         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *crop = sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a748cda680f3a23133864c0757ad7f058">findPatternInObjOrParents</a>(<span class="stringliteral">&quot;/CropBox&quot;</span>);</div>
 <div class="line">         <span class="keywordflow">if</span>( crop )</div>
 <div class="line">         {</div>
 <div class="line">            <span class="comment">// we need to calculate special compensational shifting</span></div>
@@ -334,7 +607,7 @@ Friends</h2></td></tr>
 <div class="line">            }</div>
 <div class="line">         }</div>
 <div class="line">      }</div>
-<div class="line">      processBasePageResources(sourcePage-&gt;_root);</div>
+<div class="line">      <a class="code" href="../../d7/dfc/_page_8cpp.html#a6c2ce677b35a7a6cf054968df4da42b0">processBasePageResources</a>(sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>);</div>
 <div class="line">      sourcePageToXObject = sourcePage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a791406130fe3cd5b50923100eca1acf9">pageToXObject</a>(toAllObjects, annotations, isPageDuplicated);</div>
 <div class="line">      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a> mediaBox(<span class="stringliteral">&quot;/BBox&quot;</span>, sourcePageToXObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());</div>
 <div class="line">      description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#a843e801e2eb4c707bf54ad24e9ab1a15">basePageTransformation</a>.<a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html#aa3f45594e5ba11d8e6050c6df53cee67">recalculateTranslation</a>(mediaBox.getWidth(),mediaBox.getHeight());      </div>
@@ -348,14 +621,14 @@ Friends</h2></td></tr>
 <div class="line">      error.append(<span class="stringliteral">&quot;There is no object with Kids field&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(error);</div>
 <div class="line">   }</div>
-<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> pagePosition = catalog-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5413e83ed98fbab3a852efac0a1d783f">removeChild</a>(_root);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> pagePosition = catalog-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5413e83ed98fbab3a852efac0a1d783f">removeChild</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>);</div>
 <div class="line">   <span class="comment">//create merged Page</span></div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> contentPosition, parentPosition, originalPage1Position, originalPage2Position;</div>
-<div class="line">   std::pair&lt;unsigned int, unsigned int&gt; originalPageNumbers(_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), 0);</div>
+<div class="line">   std::pair&lt;unsigned int, unsigned int&gt; originalPageNumbers(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), 0);</div>
 <div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
 <div class="line">      originalPageNumbers.second = sourcePageToXObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>();</div>
 <div class="line">   std::vector &lt;Object::ChildAndItPositionInContent&gt; annotsAndItPositions;</div>
-<div class="line">   std::string mergedPageContent = _getMergedPageContent(contentPosition, </div>
+<div class="line">   std::string mergedPageContent = <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ae56102e8ba506d0ee2f2b28ad8e2cbdf">_getMergedPageContent</a>(contentPosition, </div>
 <div class="line">      parentPosition, </div>
 <div class="line">      originalPage1Position, </div>
 <div class="line">      originalPage2Position, </div>
@@ -365,7 +638,7 @@ Friends</h2></td></tr>
 <div class="line">      annotations,</div>
 <div class="line">      annotsAndItPositions</div>
 <div class="line">      );</div>
-<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * mergedPage = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>(_root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a63d0ca3a029a3084e66ba862afd690c2">getgenerationNumber</a>(), mergedPageContent);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * mergedPage = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>(), <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a63d0ca3a029a3084e66ba862afd690c2">getgenerationNumber</a>(), mergedPageContent);</div>
 <div class="line">   toAllObjects.push_back(mergedPage);</div>
 <div class="line">   std::vector &lt; unsigned int &gt; contentPositionVec, parentPositionVec, originalPage1PositionVec, originalPage2PositionVec;</div>
 <div class="line">   contentPositionVec.push_back(contentPosition);</div>
@@ -378,7 +651,7 @@ Friends</h2></td></tr>
 <div class="line">   mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(contentOfMergedPage, contentPositionVec);</div>
 <div class="line">   mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(catalog, parentPositionVec);</div>
 <div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ae09130909c8a12252d4544bfdfea4138">skipOverlayPage</a>)</div>
-<div class="line">      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(_root, originalPage1PositionVec);</div>
+<div class="line">      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>, originalPage1PositionVec);</div>
 <div class="line">   <span class="keywordflow">if</span>(!description.<a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html#ab89027ad68337b8244cccd9aa9d9a38c">skipBasePage</a>)</div>
 <div class="line">      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(sourcePageToXObject, originalPage2PositionVec);</div>
 <div class="line">      <span class="comment">// Annotation parent page should be changed, since we moved old page</span></div>
@@ -387,7 +660,7 @@ Friends</h2></td></tr>
 <div class="line">   {</div>
 <div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt; annotations.size();i++)</div>
 <div class="line">      {</div>
-<div class="line">         _updateAnnotParentPage(annotations[i],mergedPage);</div>
+<div class="line">         <a class="code" href="../../d7/dfc/_page_8cpp.html#ae1d70b77c2d5b60801d4de55ef4dc132">_updateAnnotParentPage</a>(annotations[i],mergedPage);</div>
 <div class="line">      }</div>
 <div class="line">   }</div>
 <div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; annotsAndItPositions.size(); ++i)</div>
@@ -395,24 +668,25 @@ Friends</h2></td></tr>
 <div class="line">      mergedPage-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(annotsAndItPositions[i].first, annotsAndItPositions[i].second);</div>
 <div class="line">   }</div>
 <div class="line">   catalog-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(mergedPage, pagePosition);</div>
-<div class="line">   _root = mergedPage; </div>
+<div class="line">   <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a> = mergedPage; </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ab743f0a5867701d8be79af076f02a6fd_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -448,25 +722,25 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * xObject = (isCloneNeeded) ? _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ae2b09666b49e415642bd168fa5d76ba2">getClone</a>(allObjects) : _root;</div>
-<div class="line">   <span class="keywordflow">return</span> _pageToXObject(xObject, annots);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * xObject = (isCloneNeeded) ? <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ae2b09666b49e415642bd168fa5d76ba2">getClone</a>(allObjects) : <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a7289620cad481fed782f62eb50d88414">_pageToXObject</a>(xObject, annots);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9_cgraph.svg" width="579" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_a791406130fe3cd5b50923100eca1acf9_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -486,15 +760,15 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(newNumber);</div>
+<div class="line">   <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(newNumber);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ad678b5944cf1fc7e59dca7e51f36fe93_cgraph.svg" width="603" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ad678b5944cf1fc7e59dca7e51f36fe93_cgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -522,9 +796,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">      {</div>
-<div class="line">         _rotation = rotation;</div>
+<div class="line">         <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a8cbb195dbb991cb2fa46c03bd6189f6c">_rotation</a> = rotation;</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d32/classmerge__lib_1_1_page_ae68588d9882b3cdec7e46650c0de6111_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <h2>Friends And Related Function Documentation</h2>
@@ -568,9 +851,70 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a8cea08954203665f181dbe464fd3ac3d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::Page::_pageNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4fcd514536caea527b197653e5ac04cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>* merge_lib::Page::_root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8cbb195dbb991cb2fa46c03bd6189f6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::Page::_rotation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d7/dfc/_page_8cpp.html">Page.cpp</a></li>
+<li><a class="el" href="../../db/ded/_page_8h_source.html">Page.h</a></li>
+<li><a class="el" href="../../d7/dfc/_page_8cpp.html">Page.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -578,7 +922,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

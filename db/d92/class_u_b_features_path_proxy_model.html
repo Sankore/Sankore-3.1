@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('db/d92/class_u_b_features_path_proxy_m
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/dde/class_u_b_features_path_proxy_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesPathProxyModel Class Reference</div>  </div>
@@ -129,6 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:afd1ce83e15f4ed5e8ba18f03fcd8ed1e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d92/class_u_b_features_path_proxy_model.html#afd1ce83e15f4ed5e8ba18f03fcd8ed1e">filterAcceptsRow</a> (int sourceRow, const QModelIndex &amp;sourceParent) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acac6b8cd46cb1981a7a933d15ada208e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d92/class_u_b_features_path_proxy_model.html#acac6b8cd46cb1981a7a933d15ada208e">path</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2ebc5eddcc1ad3306593a3a239d9c985"></a>
@@ -216,7 +221,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    QModelIndex index = sourceModel()-&gt;index(sourceRow, 0, sourceParent);</div>
 <div class="line">    <a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> feature = sourceModel()-&gt;data(index, Qt::UserRole + 1).value&lt;<a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a>&gt;();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a4569d58d046487e2c641b775cad183d1">isFolder</a>() &amp;&amp; path.startsWith( feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a175da54d5e0d135c43b44009601a1380">getFullVirtualPath</a>()) ;</div>
+<div class="line">    <span class="keywordflow">return</span> feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a4569d58d046487e2c641b775cad183d1">isFolder</a>() &amp;&amp; <a class="code" href="../../db/d92/class_u_b_features_path_proxy_model.html#acac6b8cd46cb1981a7a933d15ada208e">path</a>.startsWith( feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a175da54d5e0d135c43b44009601a1380">getFullVirtualPath</a>()) ;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -251,22 +256,44 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ path = p; }</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../db/d92/class_u_b_features_path_proxy_model.html#acac6b8cd46cb1981a7a933d15ada208e">path</a> = p; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d92/class_u_b_features_path_proxy_model_aeb39e9a8ac4d6290984ae6678664fc5f_icgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d92/class_u_b_features_path_proxy_model_aeb39e9a8ac4d6290984ae6678664fc5f_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="acac6b8cd46cb1981a7a933d15ada208e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBFeaturesPathProxyModel::path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -274,7 +301,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d92/class_u_b_features_path_proxy_model.html">UBFeaturesPathProxyModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

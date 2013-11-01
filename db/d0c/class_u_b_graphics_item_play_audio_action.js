@@ -9,5 +9,10 @@ var class_u_b_graphics_item_play_audio_action =
     [ "path", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a5110f946bde4e0b42ea77f44d6ccb9dd", null ],
     [ "play", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a6c05f4ede77e8f4e8a34382f4f7795d2", null ],
     [ "save", "db/d0c/class_u_b_graphics_item_play_audio_action.html#ac6546242e1e582801553d6d325c30482", null ],
-    [ "setPath", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a3824db861a7b06327a351955a0276bf9", null ]
+    [ "setPath", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a3824db861a7b06327a351955a0276bf9", null ],
+    [ "mAudioOutput", "db/d0c/class_u_b_graphics_item_play_audio_action.html#af9aee8f3da09507d773494d2fd5bb562", null ],
+    [ "mAudioPath", "db/d0c/class_u_b_graphics_item_play_audio_action.html#ae589530235028546b4eaf1f8dbd90b05", null ],
+    [ "mFullPath", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a3dd07a97dc2c1732324c140e7dbd5109", null ],
+    [ "mIsLoading", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a84d81d7a93c985b53f2c4c5d4049d91a", null ],
+    [ "mMediaObject", "db/d0c/class_u_b_graphics_item_play_audio_action.html#a4139d31fe965ae1b8f6bea44f3dc232c", null ]
 ];

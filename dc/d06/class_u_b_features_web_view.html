@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dc/d06/class_u_b_features_web_view.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/dd5/class_u_b_features_web_view-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesWebView Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('dc/d06/class_u_b_features_web_view.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d14/class_u_b_features_web_view__coll__graph.svg" width="187" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d14/class_u_b_features_web_view__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -124,6 +126,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b49f4c79f98f8255f63b17fa3d23a36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#a8b49f4c79f98f8255f63b17fa3d23a36">UBFeaturesWebView</a> (QWidget *parent=0, const char *name=&quot;UBFeaturesWebView&quot;)</td></tr>
 <tr class="memitem:af642eab099f1931ef8faf1a95501bc55"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#af642eab099f1931ef8faf1a95501bc55">~UBFeaturesWebView</a> ()</td></tr>
 <tr class="memitem:ae38e3e0a72a3cdd25eadb58a83d3543e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#ae38e3e0a72a3cdd25eadb58a83d3543e">showElement</a> (const <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &amp;elem)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a98724912a035042a8461f052e2bc8560"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#a98724912a035042a8461f052e2bc8560">onLoadFinished</a> (bool ok)</td></tr>
+<tr class="memitem:a74ae4ec5278382e71a797b198b3130b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#a74ae4ec5278382e71a797b198b3130b3">javaScriptWindowObjectCleared</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a78142297cb70d33ebc6a09691f33d11d"><td class="memItemLeft" align="right" valign="top">QWebView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a></td></tr>
+<tr class="memitem:ad027e5e6b23c8c648af4832c3a4e482c"><td class="memItemLeft" align="right" valign="top">QWebSettings *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#ad027e5e6b23c8c648af4832c3a4e482c">mpWebSettings</a></td></tr>
+<tr class="memitem:a28e78d5b01f67d84b1164a022ebdec89"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a></td></tr>
+<tr class="memitem:a13a7f5684166e7c7b84e5b41849163e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html">UBWidgetUniboardAPI</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8b49f4c79f98f8255f63b17fa3d23a36"></a>
@@ -150,24 +164,24 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                     :QWidget(parent)</div>
-<div class="line">    , mpView(NULL)</div>
-<div class="line">    , mpWebSettings(NULL)</div>
-<div class="line">    , mpLayout(NULL)</div>
-<div class="line">    , mpSankoreAPI(NULL)</div>
+<div class="line">    , <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#ad027e5e6b23c8c648af4832c3a4e482c">mpWebSettings</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line"></div>
-<div class="line">    mpLayout = <span class="keyword">new</span> QVBoxLayout();</div>
-<div class="line">    setLayout(mpLayout);</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout();</div>
+<div class="line">    setLayout(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a>);</div>
 <div class="line"></div>
-<div class="line">    mpView = <span class="keyword">new</span> QWebView(<span class="keyword">this</span>);</div>
-<div class="line">    mpView-&gt;setObjectName(<span class="stringliteral">&quot;SearchEngineView&quot;</span>);</div>
-<div class="line">    mpSankoreAPI = <span class="keyword">new</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html">UBWidgetUniboardAPI</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene());</div>
-<div class="line">    mpView-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, mpSankoreAPI);</div>
-<div class="line">    connect(mpView-&gt;page()-&gt;mainFrame(), SIGNAL(javaScriptWindowObjectCleared()), <span class="keyword">this</span>, SLOT(javaScriptWindowObjectCleared()));</div>
-<div class="line">    mpWebSettings = QWebSettings::globalSettings();</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a> = <span class="keyword">new</span> QWebView(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>-&gt;setObjectName(<span class="stringliteral">&quot;SearchEngineView&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html">UBWidgetUniboardAPI</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;activeScene());</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a>);</div>
+<div class="line">    connect(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>-&gt;page()-&gt;mainFrame(), SIGNAL(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a74ae4ec5278382e71a797b198b3130b3">javaScriptWindowObjectCleared</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a74ae4ec5278382e71a797b198b3130b3">javaScriptWindowObjectCleared</a>()));</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#ad027e5e6b23c8c648af4832c3a4e482c">mpWebSettings</a> = QWebSettings::globalSettings();</div>
 <div class="line">    mpWebSettings-&gt;setAttribute(QWebSettings::JavaEnabled, <span class="keyword">true</span>);</div>
 <div class="line">    mpWebSettings-&gt;setAttribute(QWebSettings::PluginsEnabled, <span class="keyword">true</span>);</div>
 <div class="line">    mpWebSettings-&gt;setAttribute(QWebSettings::LocalStorageDatabaseEnabled, <span class="keyword">true</span>);</div>
@@ -176,12 +190,21 @@ Public Member Functions</h2></td></tr>
 <div class="line">    mpWebSettings-&gt;setAttribute(QWebSettings::JavascriptCanAccessClipboard, <span class="keyword">true</span>);</div>
 <div class="line">    mpWebSettings-&gt;setAttribute(QWebSettings::DnsPrefetchEnabled, <span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">    mpLayout-&gt;addWidget(mpView);</div>
-<div class="line">    mpLayout-&gt;setMargin(0);</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a>-&gt;addWidget(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>);</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a>-&gt;setMargin(0);</div>
 <div class="line"></div>
-<div class="line">    connect(mpView, SIGNAL(loadFinished(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(onLoadFinished(<span class="keywordtype">bool</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>, SIGNAL(loadFinished(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a98724912a035042a8461f052e2bc8560">onLoadFinished</a>(<span class="keywordtype">bool</span>)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d06/class_u_b_features_web_view_a8b49f4c79f98f8255f63b17fa3d23a36_cgraph.svg" width="427" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="af642eab099f1931ef8faf1a95501bc55"></a>
@@ -205,26 +228,99 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>( NULL != mpSankoreAPI )</div>
+<div class="line">    <span class="keywordflow">if</span>( NULL != <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a> )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpSankoreAPI;</div>
-<div class="line">        mpSankoreAPI = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a>;</div>
+<div class="line">        <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>( NULL != mpView )</div>
+<div class="line">    <span class="keywordflow">if</span>( NULL != <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a> )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpView;</div>
-<div class="line">        mpView = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>;</div>
+<div class="line">        <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>( NULL != mpLayout )</div>
+<div class="line">    <span class="keywordflow">if</span>( NULL != <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a> )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpLayout;</div>
-<div class="line">        mpLayout = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a>;</div>
+<div class="line">        <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a28e78d5b01f67d84b1164a022ebdec89">mpLayout</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a74ae4ec5278382e71a797b198b3130b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesWebView::javaScriptWindowObjectCleared </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d06/class_u_b_features_web_view_a74ae4ec5278382e71a797b198b3130b3_icgraph.svg" width="427" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a98724912a035042a8461f052e2bc8560"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesWebView::onLoadFinished </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ok</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(ok &amp;&amp; NULL != <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a>){</div>
+<div class="line">        <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(<span class="stringliteral">&quot;sankore&quot;</span>, <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a13a7f5684166e7c7b84e5b41849163e7">mpSankoreAPI</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d06/class_u_b_features_web_view_a98724912a035042a8461f052e2bc8560_icgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ae38e3e0a72a3cdd25eadb58a83d3543e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -268,32 +364,113 @@ Public Member Functions</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mpView-&gt;load(QUrl::fromLocalFile(QString(<span class="stringliteral">&quot;%0/%1&quot;</span>).arg(path).arg(qsWidgetName)));</div>
+<div class="line">    <a class="code" href="../../dc/d06/class_u_b_features_web_view.html#a78142297cb70d33ebc6a09691f33d11d">mpView</a>-&gt;load(QUrl::fromLocalFile(QString(<span class="stringliteral">&quot;%0/%1&quot;</span>).arg(path).arg(qsWidgetName)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d06/class_u_b_features_web_view_ae38e3e0a72a3cdd25eadb58a83d3543e_cgraph.svg" width="371" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d06/class_u_b_features_web_view_ae38e3e0a72a3cdd25eadb58a83d3543e_icgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d06/class_u_b_features_web_view_ae38e3e0a72a3cdd25eadb58a83d3543e_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a28e78d5b01f67d84b1164a022ebdec89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* UBFeaturesWebView::mpLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a13a7f5684166e7c7b84e5b41849163e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d2b/class_u_b_widget_uniboard_a_p_i.html">UBWidgetUniboardAPI</a>* UBFeaturesWebView::mpSankoreAPI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78142297cb70d33ebc6a09691f33d11d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebView* UBFeaturesWebView::mpView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad027e5e6b23c8c648af4832c3a4e482c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebSettings* UBFeaturesWebView::mpWebSettings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -301,7 +478,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d06/class_u_b_features_web_view.html">UBFeaturesWebView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

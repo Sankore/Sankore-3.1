@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['textchangemode',['textChangeMode',['../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef',1,'UBGraphicsTextItemDelegate']]],
   ['tool',['Tool',['../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6',1,'UBGraphicsAristo::Tool()'],['../d5/d69/class_u_b_graphics_protractor.html#a69b12b14ced3d244ca3fa13b56061a2a',1,'UBGraphicsProtractor::Tool()']]],
   ['tubtgactionassociateonclickitem',['tUBTGActionAssociateOnClickItem',['../d3/d96/_u_b_teacher_guide_widget_8cpp.html#a3daa2c3636d5bc666c494145415f1f98',1,'UBTeacherGuideWidget.cpp']]],
   ['tubtgtreewidgetitemrole',['tUBTGTreeWidgetItemRole',['../d3/d96/_u_b_teacher_guide_widget_8cpp.html#a3f96cf31635ff727112ea0b7785a4082',1,'UBTeacherGuideWidget.cpp']]],

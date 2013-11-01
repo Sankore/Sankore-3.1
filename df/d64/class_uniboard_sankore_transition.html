@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('df/d64/class_uniboard_sankore_transiti
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/dc4/class_uniboard_sankore_transition-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UniboardSankoreTransition Class Reference</div>  </div>
@@ -118,7 +121,7 @@ $(document).ready(function(){initNavTree('df/d64/class_uniboard_sankore_transiti
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/daf/class_uniboard_sankore_transition__coll__graph.svg" width="216" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/daf/class_uniboard_sankore_transition__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -144,6 +147,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a1d345315b23aecd23f91196c14071457"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html#a1d345315b23aecd23f91196c14071457">mUniboardSourceDirectory</a></td></tr>
 <tr class="memitem:a996150102eb052a27b3b317c8e4813d8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html#a996150102eb052a27b3b317c8e4813d8">mOldSankoreDirectory</a></td></tr>
 <tr class="memitem:ae14a529d4d0ed7a98ef1d3f442b37d18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/db6/class_uniboard_sankore_thread.html">UniboardSankoreThread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ad13a76cb192d9b6027d762ca07edf561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html#ad13a76cb192d9b6027d762ca07edf561">startDocumentTransition</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6e704fed81e6cd095694b43da074a0f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html#a6e704fed81e6cd095694b43da074a0f2">rollbackDocumentsTransition</a> (QFileInfoList &amp;fileInfoList)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a14552e2789a9945d595e42626ea5050d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a85b9cb75da28502ddd305736f8aaeadf"></a>
@@ -169,7 +184,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                    :</div>
 <div class="line">    QObject(parent)</div>
-<div class="line">    , mTransitionDlg(NULL)</div>
+<div class="line">    , <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>(NULL)</div>
 <div class="line">    , <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a996150102eb052a27b3b317c8e4813d8">mOldSankoreDirectory</a> = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#af850f64fdd630fc78510c856f00ffa4f">UBFileSystemUtils::normalizeFilePath</a>(QDesktopServices::storageLocation(QDesktopServices::DataLocation));</div>
@@ -189,7 +204,8 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a85b9cb75da28502ddd305736f8aaeadf_cgraph.svg" width="424" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a85b9cb75da28502ddd305736f8aaeadf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -208,10 +224,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mTransitionDlg)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mTransitionDlg;</div>
-<div class="line">        mTransitionDlg = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>;</div>
+<div class="line">        <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a>){</div>
@@ -258,7 +274,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac4667b0b3762eb566f2d6086e226c14e_icgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac4667b0b3762eb566f2d6086e226c14e_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -315,7 +331,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_afb9af185fb60df8b2faeec763ee7e737_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_afb9af185fb60df8b2faeec763ee7e737_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -389,7 +405,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a283e94bc3dd8e9ac582794e3870def74_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a283e94bc3dd8e9ac582794e3870def74_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -450,10 +466,10 @@ Protected Attributes</h2></td></tr>
 <div class="line">        QString backupDirectoryPath = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#af850f64fdd630fc78510c856f00ffa4f">UBFileSystemUtils::normalizeFilePath</a>(QDesktopServices::storageLocation(QDesktopServices::DesktopLocation));</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (fileInfoList.count() != 0){</div>
-<div class="line">            mTransitionDlg = <span class="keyword">new</span> <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a>(NULL, fileInfoList.count(), backupDirectoryPath);</div>
-<div class="line">            connect(mTransitionDlg, SIGNAL(updateFiles()), <span class="keyword">this</span>, SLOT(startDocumentTransition()));</div>
-<div class="line">            connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a50f8659c57e4989ac789a0c81d7e8509">transitionFinished</a>(<span class="keywordtype">bool</span>)), mTransitionDlg, SLOT(onFilesUpdated(<span class="keywordtype">bool</span>)));</div>
-<div class="line">            mTransitionDlg-&gt;show();</div>
+<div class="line">            <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a>(NULL, fileInfoList.count(), backupDirectoryPath);</div>
+<div class="line">            connect(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>, SIGNAL(updateFiles()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ad13a76cb192d9b6027d762ca07edf561">startDocumentTransition</a>()));</div>
+<div class="line">            connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a50f8659c57e4989ac789a0c81d7e8509">transitionFinished</a>(<span class="keywordtype">bool</span>)), <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>, SLOT(onFilesUpdated(<span class="keywordtype">bool</span>)));</div>
+<div class="line">            <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>-&gt;show();</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span>{</div>
@@ -466,7 +482,17 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac6bb9a331392857b112ddcfb867d99cc_cgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac6bb9a331392857b112ddcfb867d99cc_cgraph.svg" width="100%" height="538"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac6bb9a331392857b112ddcfb867d99cc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -486,7 +512,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line">    QString backupDestinationPath = mTransitionDlg-&gt;<a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a0b0302a432ab7ae868db31f23d3d9da2">backupPath</a>() + <span class="stringliteral">&quot;/OldSankoreAndUniboardVersionsBackup&quot;</span>;</div>
+<div class="line">    QString backupDestinationPath = <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>-&gt;<a class="code" href="../../d0/d4f/class_u_b_update_dlg.html#a0b0302a432ab7ae868db31f23d3d9da2">backupPath</a>() + <span class="stringliteral">&quot;/OldSankoreAndUniboardVersionsBackup&quot;</span>;</div>
 <div class="line">    result = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a1d345315b23aecd23f91196c14071457">mUniboardSourceDirectory</a> + <span class="stringliteral">&quot;/document&quot;</span>, backupDestinationPath);</div>
 <div class="line">    result &amp;= <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a996150102eb052a27b3b317c8e4813d8">mOldSankoreDirectory</a> + <span class="stringliteral">&quot;/document&quot;</span>, backupDestinationPath);</div>
 <div class="line"></div>
@@ -512,7 +538,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (!result){</div>
 <div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;The transition has failed&quot;</span>;</div>
-<div class="line">        rollbackDocumentsTransition(fileInfoList);</div>
+<div class="line">        <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a6e704fed81e6cd095694b43da074a0f2">rollbackDocumentsTransition</a>(fileInfoList);</div>
 <div class="line">        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(backupDestinationPath);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span>{</div>
@@ -523,21 +549,123 @@ Protected Attributes</h2></td></tr>
 <div class="line">    emit <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a50f8659c57e4989ac789a0c81d7e8509">transitionFinished</a>(result);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a9b27fb4acafb20d28b9423bd724cc279_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a9b27fb4acafb20d28b9423bd724cc279_icgraph.svg" width="427" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e704fed81e6cd095694b43da074a0f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UniboardSankoreTransition::rollbackDocumentsTransition </td>
+          <td>(</td>
+          <td class="paramtype">QFileInfoList &amp;&#160;</td>
+          <td class="paramname"><em>fileInfoList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QFileInfoList::iterator fileInfo;</div>
+<div class="line">    <span class="keywordflow">for</span> (fileInfo = fileInfoList.begin(); fileInfo != fileInfoList.end(); fileInfo += 1) {</div>
+<div class="line">        <span class="keywordflow">if</span> (fileInfo-&gt;isDir() &amp;&amp; fileInfo-&gt;fileName().startsWith(<span class="stringliteral">&quot;Uniboard Document &quot;</span>)){</div>
+<div class="line">            QString sankoreDocumentName = fileInfo-&gt;fileName();</div>
+<div class="line">            sankoreDocumentName.replace(<span class="stringliteral">&quot;Uniboard&quot;</span>,<span class="stringliteral">&quot;Sankore&quot;</span>);</div>
+<div class="line">            QString sankoreDocumentDirectoryPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a821fa5f3b3466be6f47c50adb6142c5a">UBSettings::userDocumentDirectory</a>() + <span class="stringliteral">&quot;/&quot;</span> + sankoreDocumentName;</div>
+<div class="line">            <span class="keywordflow">if</span> (QFileInfo(sankoreDocumentDirectoryPath).exists()){</div>
+<div class="line">                <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(sankoreDocumentDirectoryPath);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a6e704fed81e6cd095694b43da074a0f2_cgraph.svg" width="100%" height="505"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a6e704fed81e6cd095694b43da074a0f2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad13a76cb192d9b6027d762ca07edf561"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UniboardSankoreTransition::startDocumentTransition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a> = <span class="keyword">new</span> <a class="code" href="../../d6/db6/class_uniboard_sankore_thread.html">UniboardSankoreThread</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ae14a529d4d0ed7a98ef1d3f442b37d18">mThread</a>-&gt;start();</div>
+<div class="line">    connect(<span class="keyword">this</span>,SIGNAL(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ac85cd549e8ef554a0f29618c5b6de561">transitioningFile</a>(QString)),<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#a14552e2789a9945d595e42626ea5050d">mTransitionDlg</a>,SLOT(<a class="code" href="../../df/d64/class_uniboard_sankore_transition.html#ac85cd549e8ef554a0f29618c5b6de561">transitioningFile</a>(QString)));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ad13a76cb192d9b6027d762ca07edf561_cgraph.svg" width="416" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ad13a76cb192d9b6027d762ca07edf561_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -565,12 +693,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a50f8659c57e4989ac789a0c81d7e8509_icgraph.svg" width="654" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a50f8659c57e4989ac789a0c81d7e8509_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -598,12 +727,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac85cd549e8ef554a0f29618c5b6de561_icgraph.svg" width="654" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_ac85cd549e8ef554a0f29618c5b6de561_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -642,21 +772,21 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_aa510a01b6c46a4c13af58ee8a4f06e06_cgraph.svg" width="416" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_aa510a01b6c46a4c13af58ee8a4f06e06_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_aa510a01b6c46a4c13af58ee8a4f06e06_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -691,21 +821,21 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a79c2c28aa287e2b3cd8832ac5bee8283_cgraph.svg" width="416" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a79c2c28aa287e2b3cd8832ac5bee8283_icgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d64/class_uniboard_sankore_transition_a79c2c28aa287e2b3cd8832ac5bee8283_icgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -752,6 +882,26 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a14552e2789a9945d595e42626ea5050d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d4f/class_u_b_update_dlg.html">UBUpdateDlg</a>* UniboardSankoreTransition::mTransitionDlg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1d345315b23aecd23f91196c14071457"></a>
 <div class="memitem">
 <div class="memproto">
@@ -773,8 +923,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/transition/<a class="el" href="../../d1/d9d/_uniboard_sankore_transition_8h_source.html">UniboardSankoreTransition.h</a></li>
-<li>Sankore-3.1/src/transition/<a class="el" href="../../d1/dad/_uniboard_sankore_transition_8cpp.html">UniboardSankoreTransition.cpp</a></li>
+<li><a class="el" href="../../d1/d9d/_uniboard_sankore_transition_8h_source.html">UniboardSankoreTransition.h</a></li>
+<li><a class="el" href="../../d1/dad/_uniboard_sankore_transition_8cpp.html">UniboardSankoreTransition.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -782,7 +932,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d64/class_uniboard_sankore_transition.html">UniboardSankoreTransition</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

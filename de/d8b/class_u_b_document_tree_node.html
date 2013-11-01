@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('de/d8b/class_u_b_document_tree_node.ht
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d4/d7b/class_u_b_document_tree_node-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('de/d8b/class_u_b_document_tree_node.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d62/class_u_b_document_tree_node__coll__graph.svg" width="198" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d62/class_u_b_document_tree_node__coll__graph.svg" width="275" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
@@ -147,6 +148,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad23306f658b7dd39203d358ab8c288b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#ad23306f658b7dd39203d358ab8c288b0">isTopLevel</a> ()</td></tr>
 <tr class="memitem:a4f1f69c4cc82b3e0edce6a669623b532"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#a4f1f69c4cc82b3e0edce6a669623b532">clone</a> ()</td></tr>
 <tr class="memitem:ae5474ecc93987400a4050aba8cf16cb6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#ae5474ecc93987400a4050aba8cf16cb6">dirPathInHierarchy</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae44d289c425277c8d904ebb38b670355"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823b">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a></td></tr>
+<tr class="memitem:af9d76569104709aa650b69125e7075de"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a></td></tr>
+<tr class="memitem:a3e9de815fc86fd09dfb141846afe11d3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a></td></tr>
+<tr class="memitem:a4860dc34735836f6cde42ce08c8a5d2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a></td></tr>
+<tr class="memitem:ae5126cd41252767ba456e49d02e76aad"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a></td></tr>
+<tr class="memitem:a0f991db229714f5eb5902e9ae009f3aa"><td class="memItemLeft" align="right" valign="top">QPointer&lt; <a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -214,15 +224,15 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                                                              :</div>
-<div class="line">    mType(pType)</div>
-<div class="line">  , mName(pName)</div>
-<div class="line">  , mDisplayName(pDisplayName)</div>
-<div class="line">  , mProxy(pProxy)</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a>(pType)</div>
+<div class="line">  , <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a>(pName)</div>
+<div class="line">  , <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a>(pDisplayName)</div>
+<div class="line">  , <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>(pProxy)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pDisplayName.isEmpty()) {</div>
-<div class="line">        mDisplayName = mName;</div>
+<div class="line">        <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a> = <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a>;</div>
 <div class="line">    }</div>
-<div class="line">    mParent = 0;</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a> = 0;</div>
 }</div>
 </div><!-- fragment -->
 </div>
@@ -247,7 +257,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">: mType(<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">Catalog</a>), mParent(0), mProxy(0) {;}</div>
+<div class="fragment"><div class="line">: <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a>(<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">Catalog</a>), <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>(0), <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>(0) {;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -273,12 +283,12 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curChildren, mChildren) {</div>
+<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curChildren, <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>) {</div>
 <div class="line">        <span class="keyword">delete</span>(curChildren);</div>
 <div class="line">        curChildren = 0;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span> (mProxy)</div>
-<div class="line">        <span class="keyword">delete</span> mProxy;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>)</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -299,8 +309,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pChild) {</div>
-<div class="line">        mChildren += pChild;</div>
-<div class="line">        pChild-&gt;mParent = <span class="keyword">this</span>;</div>
+<div class="line">        <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a> += pChild;</div>
+<div class="line">        pChild-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a> = <span class="keyword">this</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -335,14 +345,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mChildren;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_add8f3447b6f6d02ff78a440386ed89f4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_add8f3447b6f6d02ff78a440386ed89f4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -361,10 +372,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a284c9caa7e634a50c2d321b97658e5b6">UBDocumentTreeNode</a>(this-&gt;mType</div>
-<div class="line">                                  , this-&gt;mName</div>
-<div class="line">                                  , this-&gt;mDisplayName</div>
-<div class="line">                                  , this-&gt;mProxy ? <span class="keyword">new</span> <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>(*this-&gt;mProxy)</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a284c9caa7e634a50c2d321b97658e5b6">UBDocumentTreeNode</a>(this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a></div>
+<div class="line">                                  , this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a></div>
+<div class="line">                                  , this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a></div>
+<div class="line">                                  , this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a> ? <span class="keyword">new</span> <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>(*this-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>)</div>
 <div class="line">                                                 : 0);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -447,7 +458,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mDisplayName;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -485,8 +496,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pChild) {</div>
-<div class="line">        mChildren.insert(pIndex, pChild);</div>
-<div class="line">        pChild-&gt;mParent = <span class="keyword">this</span>;</div>
+<div class="line">        <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.insert(pIndex, pChild);</div>
+<div class="line">        pChild-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a> = <span class="keyword">this</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -495,7 +506,8 @@ Friends</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_ab931d6811df7e247108b3312f4e254c8_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_ab931d6811df7e247108b3312f4e254c8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -521,14 +533,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> !mParent;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> !<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_aadaad2c7879c1efbe8e3752e458ff8ff_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_aadaad2c7879c1efbe8e3752e458ff8ff_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -554,14 +567,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mParent &amp;&amp; !mParent-&gt;mParent;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a> &amp;&amp; !<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_ad23306f658b7dd39203d358ab8c288b0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_ad23306f658b7dd39203d358ab8c288b0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -597,13 +611,13 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordtype">int</span> childIndex = mChildren.indexOf(child);</div>
+<div class="line">    <span class="keywordtype">int</span> childIndex = <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.indexOf(child);</div>
 <div class="line">    <span class="keywordflow">if</span> (childIndex == -1) {</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    newParent-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab931d6811df7e247108b3312f4e254c8">insertChild</a>(index, child);</div>
-<div class="line">    mChildren.removeAt(childIndex);</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.removeAt(childIndex);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -646,14 +660,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mName;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_ab16ac37e87506a868a07eab28e2e572e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_ab16ac37e87506a868a07eab28e2e572e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -679,14 +694,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mType;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae44d289c425277c8d904ebb38b670355">mType</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_a20713ca76afd123a3969933729504bce_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_a20713ca76afd123a3969933729504bce_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -712,7 +728,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mParent;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4860dc34735836f6cde42ce08c8a5d2e">mParent</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -745,14 +761,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mProxy;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a0f991db229714f5eb5902e9ae009f3aa">mProxy</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_a089338d403f60b36f8fc64b8e05f176f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_a089338d403f60b36f8fc64b8e05f176f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -772,16 +789,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (index &lt; 0 || index &gt; mChildren.count() - 1) {</div>
+<div class="line">    <span class="keywordflow">if</span> (index &lt; 0 || index &gt; <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.count() - 1) {</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curChild = mChildren[index];</div>
-<div class="line">    <span class="keywordflow">while</span> (curChild-&gt;mChildren.count()) {</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curChild = <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>[index];</div>
+<div class="line">    <span class="keywordflow">while</span> (curChild-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.count()) {</div>
 <div class="line">        curChild-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a37320f5b69863f36bc246e1117fa6988">removeChild</a>(0);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mChildren.removeAt(index);</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ae5126cd41252767ba456e49d02e76aad">mChildren</a>.removeAt(index);</div>
 <div class="line">    <span class="keyword">delete</span> curChild;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -826,14 +843,14 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mName = str; mDisplayName = str;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#af9d76569104709aa650b69125e7075de">mName</a> = str; <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a3e9de815fc86fd09dfb141846afe11d3">mDisplayName</a> = str;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_afd9356b58412d6df1852ba9676415799_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d8b/class_u_b_document_tree_node_afd9356b58412d6df1852ba9676415799_icgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -860,9 +877,130 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ae5126cd41252767ba456e49d02e76aad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>*&gt; UBDocumentTreeNode::mChildren</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3e9de815fc86fd09dfb141846afe11d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBDocumentTreeNode::mDisplayName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9d76569104709aa650b69125e7075de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBDocumentTreeNode::mName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4860dc34735836f6cde42ce08c8a5d2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>* UBDocumentTreeNode::mParent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f991db229714f5eb5902e9ae009f3aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointer&lt;<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>&gt; UBDocumentTreeNode::mProxy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae44d289c425277c8d904ebb38b670355"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823b">Type</a> UBDocumentTreeNode::mType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -870,7 +1008,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

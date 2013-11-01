@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('da/d91/classmerge__lib_1_1_page_elemen
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../dc/d76/classmerge__lib_1_1_page_element_handler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::PageElementHandler Class Reference</div>  </div>
@@ -125,7 +127,7 @@ $(document).ready(function(){initNavTree('da/d91/classmerge__lib_1_1_page_elemen
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d2c/classmerge__lib_1_1_page_element_handler__coll__graph.svg" width="324" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d2c/classmerge__lib_1_1_page_element_handler__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -148,6 +150,17 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a489f2d42f7bcdae272b81caa93badf14"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a489f2d42f7bcdae272b81caa93badf14">_pageContent</a></td></tr>
 <tr class="memitem:a794f4d90a0b09b60d60b00c0ebde68c6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a></td></tr>
 <tr class="memitem:a3f2f76c9182628763aafd37a2020b6e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html">PageElementHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af26c46d658717b679e79bedce761e3d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#af26c46d658717b679e79bedce761e3d5">_processObjectContent</a> (unsigned int startOfPageElement)</td></tr>
+<tr class="memitem:abc3edcbc6735265a5113d6e982327b3f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#abc3edcbc6735265a5113d6e982327b3f">_changeObjectContent</a> (unsigned int startOfPageElement)=0</td></tr>
+<tr class="memitem:a68a4d12556b2c37bad761e09da88af0d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a68a4d12556b2c37bad761e09da88af0d">_pageElementNotFound</a> ()</td></tr>
+<tr class="memitem:a0c7aab1c82992e27f778983aef6a8a00"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">_findStartOfPageElement</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:afd07e81b4c081eb623241e0f9b41526d"><td class="memItemLeft" align="right" valign="top">static std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ada309a9bc3d0047d0038680cee9ac5be"></a>
@@ -214,6 +227,39 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="abc3edcbc6735265a5113d6e982327b3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void merge_lib::PageElementHandler::_changeObjectContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>startOfPageElement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_abc3edcbc6735265a5113d6e982327b3f_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ad1ea53e426b1cbba56d7c1b1ec475461"></a>
 <div class="memitem">
 <div class="memproto">
@@ -235,56 +281,56 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>(!_allPageFields.empty())</div>
+<div class="line">   <span class="keywordflow">if</span>(!<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.empty())</div>
 <div class="line">      <span class="keywordflow">return</span>;</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Type&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Parent&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;LastModified&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Resources&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;MediaBox&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;CropBox&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;BleedBox&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;TrimBox&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;ArtBox&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;BoxColorInfo&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Contents&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Rotate&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Group&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Thumb&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;B&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Dur&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Trans&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Annots&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;AA&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Metadata&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;PieceInfo&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;StructParents&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;ID&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;PZ&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;SeparationInfo&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Tabs&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;TemplateInstantiated&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;PresSteps&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;UserUnit&quot;</span>));   </div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;VP&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Type&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Parent&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;LastModified&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Resources&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;MediaBox&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;CropBox&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;BleedBox&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;TrimBox&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;ArtBox&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;BoxColorInfo&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Contents&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Rotate&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Group&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Thumb&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;B&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Dur&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Trans&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Annots&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;AA&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Metadata&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;PieceInfo&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;StructParents&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;ID&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;PZ&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;SeparationInfo&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Tabs&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;TemplateInstantiated&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;PresSteps&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;UserUnit&quot;</span>));   </div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;VP&quot;</span>));</div>
 <div class="line">   <span class="comment">//for correct search all fields of XObject should be present to</span></div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Subtype&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;FormType&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;BBox&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Matrix&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Ref&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;StructParent&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;OPI&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;OC&quot;</span>));</div>
-<div class="line">   _allPageFields.insert(std::string(<span class="stringliteral">&quot;Name&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Subtype&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;FormType&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;BBox&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Matrix&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Ref&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;StructParent&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;OPI&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;OC&quot;</span>));</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.insert(std::string(<span class="stringliteral">&quot;Name&quot;</span>));</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_ad1ea53e426b1cbba56d7c1b1ec475461_icgraph.svg" width="480" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -324,7 +370,7 @@ Protected Attributes</h2></td></tr>
 <div class="line">      <span class="keywordflow">else</span> </div>
 <div class="line">         <span class="keywordflow">break</span>;</div>
 <div class="line">      <span class="comment">//is this any page element between &quot;/&quot; and &quot; &quot;</span></div>
-<div class="line">      <span class="keywordflow">if</span>(_allPageFields.count(fieldType))</div>
+<div class="line">      <span class="keywordflow">if</span>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>.count(fieldType))</div>
 <div class="line">      {         </div>
 <div class="line">         <span class="keywordflow">return</span> foundSlash;</div>
 <div class="line">      }</div>
@@ -333,6 +379,128 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a489f2d42f7bcdae272b81caa93badf14">_pageContent</a>.rfind(<span class="stringliteral">&quot;&gt;&gt;&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a2164e57a4264777fa75b091967c2cb23_icgraph.svg" width="478" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c7aab1c82992e27f778983aef6a8a00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::PageElementHandler::_findStartOfPageElement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">      {</div>
+<div class="line">         <span class="keywordflow">return</span> <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a489f2d42f7bcdae272b81caa93badf14">_pageContent</a>,<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a>);</div>
+<div class="line">      }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a0c7aab1c82992e27f778983aef6a8a00_cgraph.svg" width="398" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a0c7aab1c82992e27f778983aef6a8a00_icgraph.svg" width="100%" height="430"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a68a4d12556b2c37bad761e09da88af0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void merge_lib::PageElementHandler::_pageElementNotFound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{};</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a68a4d12556b2c37bad761e09da88af0d_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af26c46d658717b679e79bedce761e3d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageElementHandler::_processObjectContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>startOfPageElement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(startOfPageElement);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_af26c46d658717b679e79bedce761e3d5_icgraph.svg" width="100%" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a814dec7a28f99916d36d0ad3ca41336c"></a>
@@ -360,11 +528,11 @@ Protected Attributes</h2></td></tr>
 <div class="line">         <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a> = handlerName;</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a814dec7a28f99916d36d0ad3ca41336c_icgraph.svg" width="496" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -396,6 +564,15 @@ Protected Attributes</h2></td></tr>
 <div class="line">         <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a> = nextHandler;</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a2f70456aa95c0e2a30c749b5eb7b15a0_icgraph.svg" width="100%" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a3c2f6868b3578e8ee1d5c9f0a37120d3"></a>
@@ -419,30 +596,30 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">      {</div>
-<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = _findStartOfPageElement();</div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">_findStartOfPageElement</a>();</div>
 <div class="line">         <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)startOfPageElement != -1)</div>
-<div class="line">            _changeObjectContent(startOfPageElement);</div>
+<div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#abc3edcbc6735265a5113d6e982327b3f">_changeObjectContent</a>(startOfPageElement);</div>
 <div class="line">         <span class="keywordflow">else</span></div>
-<div class="line">            _pageElementNotFound();</div>
+<div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a68a4d12556b2c37bad761e09da88af0d">_pageElementNotFound</a>();</div>
 <div class="line">         <span class="keywordflow">if</span>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>)</div>
 <div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a>();</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3_cgraph.svg" width="222" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3_cgraph.svg" width="656" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3_icgraph.svg" width="222" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a3c2f6868b3578e8ee1d5c9f0a37120d3_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -469,34 +646,54 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">      {</div>
-<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = _findStartOfPageElement();</div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">_findStartOfPageElement</a>();</div>
 <div class="line">         <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)startOfPageElement != -1)</div>
-<div class="line">            _processObjectContent(startOfPageElement);</div>
+<div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#af26c46d658717b679e79bedce761e3d5">_processObjectContent</a>(startOfPageElement);</div>
 <div class="line">         <span class="keywordflow">if</span>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>)</div>
 <div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a>();</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771_cgraph.svg" width="222" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771_cgraph.svg" width="656" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d91/classmerge__lib_1_1_page_element_handler_a4344983a7b938dc8c29a8ddd319c8771_icgraph.svg" width="100%" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="afd07e81b4c081eb623241e0f9b41526d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::string &gt; PageElementHandler::_allPageFields</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a794f4d90a0b09b60d60b00c0ebde68c6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -578,8 +775,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d0/d9f/_page_element_handler_8h_source.html">PageElementHandler.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../dc/d55/_page_element_handler_8cpp.html">PageElementHandler.cpp</a></li>
+<li><a class="el" href="../../d0/d9f/_page_element_handler_8h_source.html">PageElementHandler.h</a></li>
+<li><a class="el" href="../../dc/d55/_page_element_handler_8cpp.html">PageElementHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -587,7 +784,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html">PageElementHandler</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

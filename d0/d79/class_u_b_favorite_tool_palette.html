@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d0/d79/class_u_b_favorite_tool_palette
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="../../d4/dd1/class_u_b_favorite_tool_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFavoriteToolPalette Class Reference</div>  </div>
@@ -164,6 +165,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5fb44fc1c0c2ccdcd7d4db23680ae3cf inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a5fb44fc1c0c2ccdcd7d4db23680ae3cf">setMinimizePermission</a> (bool permission)</td></tr>
 <tr class="memitem:abb0926b8eb8fa8efe5e5ca05ee20abc6 inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#abb0926b8eb8fa8efe5e5ca05ee20abc6">savePos</a> ()</td></tr>
 <tr class="memitem:a1d84529dc9179497ba4f91d00a86460e inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a1d84529dc9179497ba4f91d00a86460e">restorePos</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a83161cac1258562134412dfcd60aee50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d79/class_u_b_favorite_tool_palette.html#a83161cac1258562134412dfcd60aee50">addFavorite</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -232,7 +237,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            QAction *action = <span class="keyword">new</span> QAction(desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> + <span class="stringliteral">&quot; &quot;</span> + desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a>, <span class="keyword">this</span>);</div>
 <div class="line">            action-&gt;setData(QUrl(desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>));</div>
 <div class="line">            action-&gt;setIcon(desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a>);</div>
-<div class="line">            connect(action, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(addFavorite()));</div>
+<div class="line">            connect(action, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d79/class_u_b_favorite_tool_palette.html#a83161cac1258562134412dfcd60aee50">addFavorite</a>()));</div>
 <div class="line"></div>
 <div class="line">            toolsActions &lt;&lt; action;</div>
 <div class="line">        }</div>
@@ -252,7 +257,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        QAction *action = <span class="keyword">new</span> QAction(<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a4ff59ee71d509e240c1368f21ef6e311">UBGraphicsWidgetItem::widgetName</a>(QUrl::fromLocalFile(widgetPath)), <span class="keyword">this</span>);</div>
 <div class="line">        action-&gt;setData(QUrl::fromLocalFile(widgetPath));</div>
 <div class="line">        action-&gt;setIcon(QIcon(<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a09904301830055140477650fd7215061">UBGraphicsWidgetItem::iconFilePath</a>(QUrl::fromLocalFile(widgetPath))));</div>
-<div class="line">        connect(action, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(addFavorite()));</div>
+<div class="line">        connect(action, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d79/class_u_b_favorite_tool_palette.html#a83161cac1258562134412dfcd60aee50">addFavorite</a>()));</div>
 <div class="line"></div>
 <div class="line">        toolsActions &lt;&lt; action;</div>
 <div class="line">    }</div>
@@ -274,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">                QAction *action = <span class="keyword">new</span> QAction(desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#adefbcf24efe89a56bfc62808d18255a1">label</a> + <span class="stringliteral">&quot; &quot;</span> + desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#afc91af931f9d49b7386c579ec758121f">version</a>, <span class="keyword">this</span>);</div>
 <div class="line">                action-&gt;setData(QUrl(desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#ab638247040d512615c8bded4d5559fea">id</a>));</div>
 <div class="line">                action-&gt;setIcon(desc.<a class="code" href="../../d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html#a2c59dca8e19715a1e987111c27a7548c">icon</a>);</div>
-<div class="line">                connect(action, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(addFavorite()));</div>
+<div class="line">                connect(action, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d79/class_u_b_favorite_tool_palette.html#a83161cac1258562134412dfcd60aee50">addFavorite</a>()));</div>
 <div class="line"></div>
 <div class="line">                toolsActions &lt;&lt; action;</div>
 <div class="line">            }</div>
@@ -335,9 +340,64 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a83161cac1258562134412dfcd60aee50"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFavoriteToolPalette::addFavorite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">// we need the sender :-( hugly ...</span></div>
+<div class="line">    QAction* action = qobject_cast&lt;QAction*&gt;(sender());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(action)</div>
+<div class="line">    {</div>
+<div class="line">        QVariant widgetPathVar = action-&gt;data();</div>
+<div class="line">        <span class="keywordflow">if</span> (!widgetPathVar.isNull())</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a358f3f88d1fa9e41620170d76a806f93">downloadURL</a>(widgetPathVar.toUrl());</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d79/class_u_b_favorite_tool_palette_a83161cac1258562134412dfcd60aee50_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d79/class_u_b_favorite_tool_palette_a83161cac1258562134412dfcd60aee50_icgraph.svg" width="376" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d8/df9/_u_b_favorite_tool_palette_8h_source.html">UBFavoriteToolPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp.html">UBFavoriteToolPalette.cpp</a></li>
+<li><a class="el" href="../../d8/df9/_u_b_favorite_tool_palette_8h_source.html">UBFavoriteToolPalette.h</a></li>
+<li><a class="el" href="../../d1/de2/_u_b_favorite_tool_palette_8cpp.html">UBFavoriteToolPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -345,7 +405,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d79/class_u_b_favorite_tool_palette.html">UBFavoriteToolPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

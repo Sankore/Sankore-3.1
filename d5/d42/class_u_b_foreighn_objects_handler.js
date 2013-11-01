@@ -5,5 +5,6 @@ var class_u_b_foreighn_objects_handler =
     [ "copyPage", "d5/d42/class_u_b_foreighn_objects_handler.html#a00c1daf6a51e30dcb2607f8b83005e25", null ],
     [ "cure", "d5/d42/class_u_b_foreighn_objects_handler.html#ab237668095daf967fe4b749a67a3f7dd", null ],
     [ "cure", "d5/d42/class_u_b_foreighn_objects_handler.html#a37ec4c04bad6f3a5c1259dc6b306f425", null ],
-    [ "UBForeighnObjectsHandlerPrivate", "d5/d42/class_u_b_foreighn_objects_handler.html#a0b2645e0bd54a21d25bbb40327b0edde", null ]
+    [ "UBForeighnObjectsHandlerPrivate", "d5/d42/class_u_b_foreighn_objects_handler.html#a0b2645e0bd54a21d25bbb40327b0edde", null ],
+    [ "d", "d5/d42/class_u_b_foreighn_objects_handler.html#aaf738c47092a70384cf97b2fc8cea300", null ]
 ];

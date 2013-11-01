@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('dd/d7f/class_w_b_search_line_edit.html
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/dc4/class_w_b_search_line_edit-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBSearchLineEdit Class Reference</div>  </div>
@@ -166,6 +168,15 @@ Protected Member Functions</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:a50a8748d17d08f45fbf6fb43b3c5f56d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#a50a8748d17d08f45fbf6fb43b3c5f56d">inactiveText</a></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abda932129a3e3650340c192e20fea3bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#abda932129a3e3650340c192e20fea3bd">updateGeometries</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:afcd0eb9b638a2a43de06e157921cd443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/dc5/class_w_b_search_button.html">WBSearchButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a></td></tr>
+<tr class="memitem:a4c6fbf2d45da3da260a3de76646dc021"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html#a4c6fbf2d45da3da260a3de76646dc021">mInactiveText</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_w_b_ex_line_edit"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_w_b_ex_line_edit')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html">WBExLineEdit</a></td></tr>
@@ -188,12 +199,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a7e84a43757d628a94c07bc48465083e6">WBExLineEdit</a>(parent),</div>
-<div class="line">    mSearchButton(<span class="keyword">new</span> <a class="code" href="../../d9/dc5/class_w_b_search_button.html">WBSearchButton</a>(<span class="keyword">this</span>))</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>(<span class="keyword">new</span> <a class="code" href="../../d9/dc5/class_w_b_search_button.html">WBSearchButton</a>(<span class="keyword">this</span>))</div>
 <div class="line">{</div>
 <div class="line">    connect(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>(), SIGNAL(<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a665cc68b5a39c70d0f371e8f6d8887ff">textChanged</a>(<span class="keyword">const</span> QString &amp;)),</div>
 <div class="line">            <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a665cc68b5a39c70d0f371e8f6d8887ff">textChanged</a>(<span class="keyword">const</span> QString &amp;)));</div>
-<div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a95d98a004872d7ad5feb71601982a51f">setLeftWidget</a>(mSearchButton);</div>
-<div class="line">    mInactiveText = tr(<span class="stringliteral">&quot;Search&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a95d98a004872d7ad5feb71601982a51f">setLeftWidget</a>(<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a4c6fbf2d45da3da260a3de76646dc021">mInactiveText</a> = tr(<span class="stringliteral">&quot;Search&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    setMinimumWidth(150);</div>
 <div class="line"></div>
@@ -241,13 +252,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mSearchButton-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mSearchButton-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a> = <span class="keyword">new</span> QMenu(mSearchButton);</div>
+<div class="line">        <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a> = <span class="keyword">new</span> QMenu(<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (isVisible())</div>
 <div class="line">            (<span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html">WBSearchLineEdit</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>))-&gt;updateGeometries();</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> mSearchButton-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -255,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_a44e00f3dccf769084ebe0b994baab91b_icgraph.svg" width="435" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_a44e00f3dccf769084ebe0b994baab91b_icgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -287,7 +298,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a2912b8499cade9e57fad779b084deb32">WBExLineEdit::paintEvent</a>(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;text().isEmpty() &amp;&amp; !hasFocus() &amp;&amp; !mInactiveText.isEmpty())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;text().isEmpty() &amp;&amp; !hasFocus() &amp;&amp; !<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a4c6fbf2d45da3da260a3de76646dc021">mInactiveText</a>.isEmpty())</div>
 <div class="line">    {</div>
 <div class="line">        QStyleOptionFrameV2 panel;</div>
 <div class="line">        <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a4c9c286ad93cbd2ec4df7de9a13e7cec">initStyleOption</a>(&amp;panel);</div>
@@ -298,7 +309,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">                       r.width() - 2 * horizontalMargin, fm.height());</div>
 <div class="line">        QPainter painter(<span class="keyword">this</span>);</div>
 <div class="line">        painter.setPen(palette().brush(QPalette::Disabled, QPalette::Text).color());</div>
-<div class="line">        painter.drawText(lineRect, Qt::AlignLeft|Qt::AlignVCenter, mInactiveText);</div>
+<div class="line">        painter.drawText(lineRect, Qt::AlignLeft|Qt::AlignVCenter, <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a4c6fbf2d45da3da260a3de76646dc021">mInactiveText</a>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -337,10 +348,19 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab289926953e89e5426d19f50e5db71cd">WBExLineEdit</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    updateGeometries();</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#abda932129a3e3650340c192e20fea3bd">updateGeometries</a>();</div>
 <div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a26254b38cda1c4b20e139b66e31934ee">WBExLineEdit::resizeEvent</a>(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_a26254b38cda1c4b20e139b66e31934ee_cgraph.svg" width="414" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a6a7e5818f01dfbf6c71f38f2d1f80978"></a>
@@ -357,14 +377,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mInactiveText = text;</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a4c6fbf2d45da3da260a3de76646dc021">mInactiveText</a> = text;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_a6a7e5818f01dfbf6c71f38f2d1f80978_icgraph.svg" width="494" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -385,18 +405,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mSearchButton-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>)</div>
-<div class="line">        mSearchButton-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>-&gt;deleteLater();</div>
-<div class="line">    mSearchButton-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a> = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>;</div>
-<div class="line">    updateGeometries();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>)</div>
+<div class="line">        <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>-&gt;deleteLater();</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a> = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>;</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#abda932129a3e3650340c192e20fea3bd">updateGeometries</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_aaf7efc2fb9abf9e8a680bfccfc92316b_cgraph.svg" width="424" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_aaf7efc2fb9abf9e8a680bfccfc92316b_cgraph.svg" width="430" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -419,7 +439,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#ac67aa5012b828c4e29528cfe31eddde2">WBExLineEdit</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#abe9c3dd2ea75106d6288828bd2c4eb35">WBExLineEdit::setVisible</a>(pVisible);</div>
-<div class="line">    mSearchButton-&gt;setVisible(pVisible);</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;setVisible(pVisible);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -446,14 +466,94 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_a665cc68b5a39c70d0f371e8f6d8887ff_icgraph.svg" width="478" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="abda932129a3e3650340c192e20fea3bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBSearchLineEdit::updateGeometries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> menuHeight = height();</div>
+<div class="line">    <span class="keywordtype">int</span> menuWidth = menuHeight + 1;</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;<a class="code" href="../../d9/dc5/class_w_b_search_button.html#a3d610346151c630dd93c4fcdd1f1fe38">m_menu</a>)</div>
+<div class="line">        menuWidth = (menuHeight / 5) * 4;</div>
+<div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443">mSearchButton</a>-&gt;resize(QSize(menuWidth, menuHeight));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_w_b_search_line_edit_abda932129a3e3650340c192e20fea3bd_icgraph.svg" width="430" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a4c6fbf2d45da3da260a3de76646dc021"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString WBSearchLineEdit::mInactiveText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afcd0eb9b638a2a43de06e157921cd443"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/dc5/class_w_b_search_button.html">WBSearchButton</a>* WBSearchLineEdit::mSearchButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -479,8 +579,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d3/d82/_w_b_search_line_edit_8h_source.html">WBSearchLineEdit.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../da/df4/_w_b_search_line_edit_8cpp.html">WBSearchLineEdit.cpp</a></li>
+<li><a class="el" href="../../d3/d82/_w_b_search_line_edit_8h_source.html">WBSearchLineEdit.h</a></li>
+<li><a class="el" href="../../da/df4/_w_b_search_line_edit_8cpp.html">WBSearchLineEdit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -488,7 +588,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html">WBSearchLineEdit</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d4/d7f/class_u_b_idle_timer.html','../
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/d59/class_u_b_idle_timer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBIdleTimer Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('d4/d7f/class_u_b_idle_timer.html','../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d46/class_u_b_idle_timer__coll__graph.svg" width="134" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d46/class_u_b_idle_timer__coll__graph.svg" width="168" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -129,6 +130,11 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8fc66fb14b790902da61f5081d750932"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7f/class_u_b_idle_timer.html#a8fc66fb14b790902da61f5081d750932">eventFilter</a> (QObject *obj, QEvent *event)</td></tr>
 <tr class="memitem:a8573efd947ea486744648085bdd72b65"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7f/class_u_b_idle_timer.html#a8573efd947ea486744648085bdd72b65">timerEvent</a> (QTimerEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8a4a48f45b54d523429a0de1a60f5b70"><td class="memItemLeft" align="right" valign="top">QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7f/class_u_b_idle_timer.html#a8a4a48f45b54d523429a0de1a60f5b70">mLastInputEventTime</a></td></tr>
+<tr class="memitem:a4e94fba880b45cc3db06bea1f41b87f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a230f3cc88ebeb2307fb6015c2fe04c80"></a>
@@ -145,7 +151,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">     : QObject(parent)</div>
-<div class="line">     , mCursorIsHidden(<span class="keyword">false</span>)</div>
+<div class="line">     , <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line">    startTimer(100);</div>
 <div class="line">}</div>
@@ -214,11 +220,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <span class="comment">// if the event is an input event (mouse / tablet / keyboard)</span></div>
 <div class="line">    <span class="keywordflow">if</span> (dynamic_cast&lt;QInputEvent*&gt;(event))</div>
 <div class="line">    {</div>
-<div class="line">        mLastInputEventTime = QDateTime::currentDateTime();</div>
-<div class="line">        <span class="keywordflow">if</span> (mCursorIsHidden)</div>
+<div class="line">        <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a8a4a48f45b54d523429a0de1a60f5b70">mLastInputEventTime</a> = QDateTime::currentDateTime();</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a>)</div>
 <div class="line">        {</div>
 <div class="line">            QApplication::restoreOverrideCursor();</div>
-<div class="line">            mCursorIsHidden = <span class="keyword">false</span>;</div>
+<div class="line">            <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a> = <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -254,15 +260,15 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordtype">bool</span> hasWaitCuror = (UBApplication::overrideCursor() &amp;&amp;</div>
 <div class="line">                (UBApplication::overrideCursor()-&gt;shape() == Qt::WaitCursor));</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!mCursorIsHidden</div>
-<div class="line">            &amp;&amp; (mLastInputEventTime.secsTo(QDateTime::currentDateTime()) &gt;= 2)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a></div>
+<div class="line">            &amp;&amp; (<a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a8a4a48f45b54d523429a0de1a60f5b70">mLastInputEventTime</a>.secsTo(QDateTime::currentDateTime()) &gt;= 2)</div>
 <div class="line">                        &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a></div>
 <div class="line">                        &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;controlView()</div>
 <div class="line">                        &amp;&amp; <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>()-&gt;hasFocus()</div>
 <div class="line">                        &amp;&amp; !hasWaitCuror)</div>
 <div class="line">    {</div>
 <div class="line">        QApplication::setOverrideCursor(QCursor(Qt::BlankCursor));</div>
-<div class="line">        mCursorIsHidden = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d4/d7f/class_u_b_idle_timer.html#a4e94fba880b45cc3db06bea1f41b87f8">mCursorIsHidden</a> = <span class="keyword">true</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -277,9 +283,50 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a4e94fba880b45cc3db06bea1f41b87f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBIdleTimer::mCursorIsHidden</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a4a48f45b54d523429a0de1a60f5b70"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDateTime UBIdleTimer::mLastInputEventTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d5/da0/_u_b_idle_timer_8h_source.html">UBIdleTimer.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../df/ded/_u_b_idle_timer_8cpp.html">UBIdleTimer.cpp</a></li>
+<li><a class="el" href="../../d5/da0/_u_b_idle_timer_8h_source.html">UBIdleTimer.h</a></li>
+<li><a class="el" href="../../df/ded/_u_b_idle_timer_8cpp.html">UBIdleTimer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -287,7 +334,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d7f/class_u_b_idle_timer.html">UBIdleTimer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

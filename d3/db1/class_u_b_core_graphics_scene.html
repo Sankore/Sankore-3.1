@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d3/db1/class_u_b_core_graphics_scene.h
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/db7/class_u_b_core_graphics_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBCoreGraphicsScene Class Reference</div>  </div>
@@ -123,7 +124,7 @@ $(document).ready(function(){initNavTree('d3/db1/class_u_b_core_graphics_scene.h
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d20/class_u_b_core_graphics_scene__coll__graph.svg" width="200" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d20/class_u_b_core_graphics_scene__coll__graph.svg" width="200" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -137,6 +138,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a240a89647f25063e195ceaae23277fbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/class_u_b_core_graphics_scene.html#a240a89647f25063e195ceaae23277fbb">addItemToDeletion</a> (QGraphicsItem *item)</td></tr>
 <tr class="memitem:a401164930b6963b7ec2f1d157f9dca4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/class_u_b_core_graphics_scene.html#a401164930b6963b7ec2f1d157f9dca4b">isModified</a> () const </td></tr>
 <tr class="memitem:ad92b735788dc8e172f091a13e899b783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783">setModified</a> (bool pModified)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aee351a364a30538456794e36ea9a611d"><td class="memItemLeft" align="right" valign="top">QSet&lt; QGraphicsItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a></td></tr>
+<tr class="memitem:ab9f6a39823bb322e2e4f8ffb7bbc4311"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/class_u_b_core_graphics_scene.html#ab9f6a39823bb322e2e4f8ffb7bbc4311">mIsModified</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af9c0bf22cb230f573f3bc44fa5ca6254"></a>
@@ -153,7 +159,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QGraphicsScene ( parent  )</div>
-<div class="line">    , mIsModified(<span class="keyword">true</span>)</div>
+<div class="line">    , <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ab9f6a39823bb322e2e4f8ffb7bbc4311">mIsModified</a>(<span class="keyword">true</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">//NOOP</span></div>
 <div class="line">}</div>
@@ -183,11 +189,11 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">//we must delete removed items that are no more in any scene</span></div>
 <div class="line">    <span class="comment">//at groups deleting some items can be added to mItemsToDelete, so we need to use iterators.</span></div>
-<div class="line">    <span class="keywordflow">foreach</span>(QGraphicsItem* item, mItemsToDelete){</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QGraphicsItem* item, <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>){</div>
 <div class="line">        <span class="keywordflow">if</span> (item &amp;&amp; item-&gt;type() != <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a538c35024d3b2c7152210a70900d669f">UBGraphicsItemType::PolygonItemType</a> &amp;&amp; item-&gt;type() != QGraphicsItem::UserType &amp;&amp; item-&gt;type() != <a class="code" href="../../dd/dd5/struct_u_b_graphics_item_type.html#a1892bf6b1fe9cb0275002ca8648bee28a21415a6f105be70102129f61bd0621fe">UBGraphicsItemType::groupContainerType</a> &amp;&amp; (item-&gt;scene() == NULL || item-&gt;scene() == <span class="keyword">this</span>))</div>
 <div class="line">            <span class="keyword">delete</span> item;</div>
 <div class="line">    }</div>
-<div class="line">    mItemsToDelete.clear();</div>
+<div class="line">    <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.clear();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -266,7 +272,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (item) {</div>
-<div class="line">        mItemsToDelete.insert(item);</div>
+<div class="line">        <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.insert(item);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -275,7 +281,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_a240a89647f25063e195ceaae23277fbb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_a240a89647f25063e195ceaae23277fbb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -303,13 +310,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mItemsToDelete.contains(item))</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.contains(item))</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a> *item_casted = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a> *<span class="keyword">&gt;</span>(item);</div>
 <div class="line">        <span class="keywordflow">if</span> (item_casted != NULL)</div>
 <div class="line">            item_casted-&gt;<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a83e8d1b8f4bbbc024a15f645a39d6e49">clearSource</a>();</div>
 <div class="line"></div>
-<div class="line">        mItemsToDelete.remove(item);</div>
+<div class="line">        <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.remove(item);</div>
 <div class="line">        <span class="keyword">delete</span> item;</div>
 <div class="line">        item = NULL;</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -332,7 +339,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_aa834de4c7e8874b466bdbccda0ef2053_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_aa834de4c7e8874b466bdbccda0ef2053_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -359,7 +367,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mIsModified;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ab9f6a39823bb322e2e4f8ffb7bbc4311">mIsModified</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -367,7 +375,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_a401164930b6963b7ec2f1d157f9dca4b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_a401164930b6963b7ec2f1d157f9dca4b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -449,7 +458,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(NULL != item){</div>
-<div class="line">        mItemsToDelete.remove(item);</div>
+<div class="line">        <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#aee351a364a30538456794e36ea9a611d">mItemsToDelete</a>.remove(item);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -458,7 +467,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_a310c66a09239231971b65da11d89886f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_a310c66a09239231971b65da11d89886f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -486,7 +496,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mIsModified = pModified;</div>
+<div class="line">            <a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ab9f6a39823bb322e2e4f8ffb7bbc4311">mIsModified</a> = pModified;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -494,15 +504,57 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_ad92b735788dc8e172f091a13e899b783_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/db1/class_u_b_core_graphics_scene_ad92b735788dc8e172f091a13e899b783_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ab9f6a39823bb322e2e4f8ffb7bbc4311"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBCoreGraphicsScene::mIsModified</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee351a364a30538456794e36ea9a611d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSet&lt;QGraphicsItem*&gt; UBCoreGraphicsScene::mItemsToDelete</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/frameworks/<a class="el" href="../../db/dce/_u_b_core_graphics_scene_8h_source.html">UBCoreGraphicsScene.h</a></li>
-<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d3/dbe/_u_b_core_graphics_scene_8cpp.html">UBCoreGraphicsScene.cpp</a></li>
+<li><a class="el" href="../../db/dce/_u_b_core_graphics_scene_8h_source.html">UBCoreGraphicsScene.h</a></li>
+<li><a class="el" href="../../d3/dbe/_u_b_core_graphics_scene_8cpp.html">UBCoreGraphicsScene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -510,7 +562,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/db1/class_u_b_core_graphics_scene.html">UBCoreGraphicsScene</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

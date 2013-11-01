@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/tools/UBGraphicsCache.h Source File</title>
+<title>Open-Sankoré: UBGraphicsCache.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -189,31 +189,31 @@ $(document).ready(function(){initNavTree('d8/d96/_u_b_graphics_cache_8h_source.h
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a5452fc56ed8ed91eae21dac7d5e40776">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent *event);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> drawHole(<span class="keywordtype">bool</span> draw);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ab51c8e49d13dae60ad149ef6e4127e43">drawHole</a>(<span class="keywordtype">bool</span> draw);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> QMap&lt;UBGraphicsScene*, UBGraphicsCache*&gt; sInstances;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#afcb7d59f36db52edb948a0f7d077bd78">   89</a></span>&#160;    <span class="keyword">static</span> QMap&lt;UBGraphicsScene*, UBGraphicsCache*&gt; <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#afcb7d59f36db52edb948a0f7d077bd78">sInstances</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QColor mMaskColor;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232">eMaskShape</a> mMaskShape;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> mDrawMask;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QPointF mHolePos;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    QSize mOldShapeSize;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QPointF mOldShapePos;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* mScene;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">bool</span> mShouldDrawAtHoverEnter;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4aa3f52bed120ee657abb679401cc8af">   91</a></span>&#160;    QColor <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4aa3f52bed120ee657abb679401cc8af">mMaskColor</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#af89dac4eebb2c6483e5aaf6d14958d5f">   92</a></span>&#160;    <a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232">eMaskShape</a> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#af89dac4eebb2c6483e5aaf6d14958d5f">mMaskShape</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a88283ca8ae547557220cb2de22a78a56">   93</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a88283ca8ae547557220cb2de22a78a56">mDrawMask</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a9cb1acc1151d2920bcfb6d9a9130fb8d">   94</a></span>&#160;    QPointF <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a9cb1acc1151d2920bcfb6d9a9130fb8d">mHolePos</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a8860ddf69689bad5770e61723fb1de71">   95</a></span>&#160;    QSize <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a8860ddf69689bad5770e61723fb1de71">mOldShapeSize</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a8432b4027bb82497ba68e58dfd529b49">   96</a></span>&#160;    QPointF <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a8432b4027bb82497ba68e58dfd529b49">mOldShapePos</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a2081205dff371c14c3acbd33c9bafed6">   97</a></span>&#160;    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a2081205dff371c14c3acbd33c9bafed6">mScene</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a7d0e32351955d14f46be0f6ee19e8335">   98</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a7d0e32351955d14f46be0f6ee19e8335">mShouldDrawAtHoverEnter</a>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a960329a65b2dc045d3bf3c10511fb2aa">eMode</a> mCurrentMode;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a51337929c1e8e87c79fc2d39be90190c">  100</a></span>&#160;    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a960329a65b2dc045d3bf3c10511fb2aa">eMode</a> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a51337929c1e8e87c79fc2d39be90190c">mCurrentMode</a>;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QSize mHoleSize;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">  102</a></span>&#160;    QSize <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a21db040c682d7fbe202320d930564e9b">mHoleSize</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html">UBGraphicsCache</a>(<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *<a class="code" href="../../d8/d1e/class_u_b_item.html#a3aacc37e7f32b28047f771d0e6abc431">scene</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#ad97f4613cc51cb654e9ff3c6db4fdfd8">UBGraphicsCache</a>(<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *<a class="code" href="../../d8/d1e/class_u_b_item.html#a3aacc37e7f32b28047f771d0e6abc431">scene</a>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QRectF updateRect(QPointF currentPoint);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#aa0d61347cd7a922d1eb8f05281c15ff6">init</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QRectF <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#acc542f786ca35eb568b2ae625bbe9105">updateRect</a>(QPointF currentPoint);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    QCursor mSavedCursor;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    QCursor mCursorForHole;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4eb89febd44bee5c5e4c4b7de53ac25a">  109</a></span>&#160;    QCursor <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a4eb89febd44bee5c5e4c4b7de53ac25a">mSavedCursor</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a3da30c623726c9b86672f8876895e065">  110</a></span>&#160;    QCursor <a class="code" href="../../d4/d5c/class_u_b_graphics_cache.html#a3da30c623726c9b86672f8876895e065">mCursorForHole</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // UBGRAPHICSCACHE_H</span></div>
@@ -222,8 +222,8 @@ $(document).ready(function(){initNavTree('d8/d96/_u_b_graphics_cache_8h_source.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ed8013f237dc461738538501041f195e.html">tools</a></li><li class="navelem"><a class="el" href="../../d8/d96/_u_b_graphics_cache_8h.html">UBGraphicsCache.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8097888bca2a2152ba8496d074c7e0f3.html">tools</a></li><li class="navelem"><a class="el" href="../../d8/d96/_u_b_graphics_cache_8h.html">UBGraphicsCache.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d6/d53/class_u_b_window_capture.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d6d/class_u_b_window_capture-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWindowCapture Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('d6/d53/class_u_b_window_capture.html',
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dbd/class_u_b_window_capture__coll__graph.svg" width="174" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/dbd/class_u_b_window_capture__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -125,6 +126,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acf5f6ffb1502a4239a331d8d93a998de"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d53/class_u_b_window_capture.html#acf5f6ffb1502a4239a331d8d93a998de">~UBWindowCapture</a> ()</td></tr>
 <tr class="memitem:af83cdcf66e9caff28220a11f0c761881"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d53/class_u_b_window_capture.html#af83cdcf66e9caff28220a11f0c761881">execute</a> ()</td></tr>
 <tr class="memitem:ae7ddda0d11b6c3bcd35e0c86d4bce7dd"><td class="memItemLeft" align="right" valign="top">const QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d53/class_u_b_window_capture.html#ae7ddda0d11b6c3bcd35e0c86d4bce7dd">getCapturedWindow</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac7fec0bd9bc9412ff2c4dc360df6311c"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d53/class_u_b_window_capture.html#ac7fec0bd9bc9412ff2c4dc360df6311c">mWindowPixmap</a></td></tr>
+<tr class="memitem:a7a7e0f871fa1bfcd82f8a9b4de167296"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/db7/class_u_b_desktop_annotation_controller.html">UBDesktopAnnotationController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d53/class_u_b_window_capture.html#a7a7e0f871fa1bfcd82f8a9b4de167296">mParent</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0646cd4eff543b445060dcd6746ac2a1"></a>
@@ -141,7 +147,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        : QObject(parent)</div>
-<div class="line">        , mParent(parent)</div>
+<div class="line">        , <a class="code" href="../../d6/d53/class_u_b_window_capture.html#a7a7e0f871fa1bfcd82f8a9b4de167296">mParent</a>(parent)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -217,7 +223,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mWindowPixmap;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d6/d53/class_u_b_window_capture.html#ac7fec0bd9bc9412ff2c4dc360df6311c">mWindowPixmap</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -231,11 +237,52 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a7a7e0f871fa1bfcd82f8a9b4de167296"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/db7/class_u_b_desktop_annotation_controller.html">UBDesktopAnnotationController</a>* UBWindowCapture::mParent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac7fec0bd9bc9412ff2c4dc360df6311c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap UBWindowCapture::mWindowPixmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../d4/d27/_u_b_window_capture_8h_source.html">UBWindowCapture.h</a></li>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../d0/d17/_u_b_window_capture__linux_8cpp.html">UBWindowCapture_linux.cpp</a></li>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../d2/d94/_u_b_window_capture__mac_8mm.html">UBWindowCapture_mac.mm</a></li>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../d7/daa/_u_b_window_capture__win_8cpp.html">UBWindowCapture_win.cpp</a></li>
+<li><a class="el" href="../../d4/d27/_u_b_window_capture_8h_source.html">UBWindowCapture.h</a></li>
+<li><a class="el" href="../../d0/d17/_u_b_window_capture__linux_8cpp.html">UBWindowCapture_linux.cpp</a></li>
+<li><a class="el" href="../../d2/d94/_u_b_window_capture__mac_8mm.html">UBWindowCapture_mac.mm</a></li>
+<li><a class="el" href="../../d7/daa/_u_b_window_capture__win_8cpp.html">UBWindowCapture_win.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -243,7 +290,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d53/class_u_b_window_capture.html">UBWindowCapture</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

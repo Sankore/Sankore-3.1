@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d0/d82/class_u_b_thumbnail_text_item.h
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d9e/class_u_b_thumbnail_text_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBThumbnailTextItem Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('d0/d82/class_u_b_thumbnail_text_item.h
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/dc0/class_u_b_thumbnail_text_item__coll__graph.svg" width="184" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/dc0/class_u_b_thumbnail_text_item__coll__graph.svg" width="184" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -127,6 +128,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a295e0334c3a61fd14efb785a611e76bb"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a295e0334c3a61fd14efb785a611e76bb">width</a> ()</td></tr>
 <tr class="memitem:ac74d81b775c7eaa117bb610af2ed6afc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#ac74d81b775c7eaa117bb610af2ed6afc">highlight</a> (bool enable=true)</td></tr>
 <tr class="memitem:a6c7bd56033a9597bad9acb56e829b4f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a6c7bd56033a9597bad9acb56e829b4f6">computeText</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1c6f529bcb6580e48bd2c7118e9e62b3"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a></td></tr>
+<tr class="memitem:a334622cbcf39c1350a75db15907eb005"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a334622cbcf39c1350a75db15907eb005">mUnelidedText</a></td></tr>
+<tr class="memitem:acf61f1c2d8a172ddd9c4c6580233d2d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa431b21e175c8d2fda6d74e05f18eefd"></a>
@@ -151,8 +158,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">            : QGraphicsTextItem(text)</div>
-<div class="line">            , mUnelidedText(text)</div>
-<div class="line">            , mIsHighlighted(<span class="keyword">true</span>)</div>
+<div class="line">            , <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a334622cbcf39c1350a75db15907eb005">mUnelidedText</a>(text)</div>
+<div class="line">            , <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a>(<span class="keyword">true</span>)</div>
 <div class="line">        {</div>
 <div class="line">            setFlag(QGraphicsItem::ItemSendsGeometryChanges, <span class="keyword">true</span>);</div>
 <div class="line">        }</div>
@@ -180,7 +187,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> QRectF(QPointF(0.0, 0.0), QSize(mWidth, QFontMetricsF(font()).height() + 5));}</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> QRectF(QPointF(0.0, 0.0), QSize(<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a>, QFontMetricsF(font()).height() + 5));}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -206,9 +213,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
 <div class="line">            QFontMetricsF fm(font());</div>
-<div class="line">            QString elidedText = fm.elidedText(mUnelidedText, Qt::ElideRight, mWidth);</div>
+<div class="line">            QString elidedText = fm.elidedText(<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a334622cbcf39c1350a75db15907eb005">mUnelidedText</a>, Qt::ElideRight, <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a>);</div>
 <div class="line"></div>
-<div class="line">            <span class="keywordflow">if</span> (mIsHighlighted)</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a>)</div>
 <div class="line">            {</div>
 <div class="line">                setHtml(<span class="stringliteral">&quot;&lt;span style=\&quot;color: #6682b5\&quot;&gt;&quot;</span> + elidedText + <span class="stringliteral">&quot;&lt;/span&gt;&quot;</span>);</div>
 <div class="line">            }</div>
@@ -223,7 +230,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d82/class_u_b_thumbnail_text_item_a6c7bd56033a9597bad9acb56e829b4f6_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d82/class_u_b_thumbnail_text_item_a6c7bd56033a9597bad9acb56e829b4f6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -251,7 +258,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mIsHighlighted = enable;</div>
+<div class="line">            <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#acf61f1c2d8a172ddd9c4c6580233d2d2">mIsHighlighted</a> = enable;</div>
 <div class="line">            <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a6c7bd56033a9597bad9acb56e829b4f6">computeText</a>();</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
@@ -269,7 +276,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d82/class_u_b_thumbnail_text_item_ac74d81b775c7eaa117bb610af2ed6afc_icgraph.svg" width="643" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d82/class_u_b_thumbnail_text_item_ac74d81b775c7eaa117bb610af2ed6afc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -297,10 +304,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">                <span class="keywordflow">if</span> (mWidth != pWidth)</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a> != pWidth)</div>
 <div class="line">                {</div>
 <div class="line">                        prepareGeometryChange();</div>
-<div class="line">                        mWidth = pWidth;</div>
+<div class="line">                        <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a> = pWidth;</div>
 <div class="line">                        <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a6c7bd56033a9597bad9acb56e829b4f6">computeText</a>();</div>
 <div class="line">                }</div>
 <div class="line">        };</div>
@@ -319,7 +326,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d82/class_u_b_thumbnail_text_item_a4612ee1a3ce50b01ae40c4354c5b78f7_icgraph.svg" width="411" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d82/class_u_b_thumbnail_text_item_a4612ee1a3ce50b01ae40c4354c5b78f7_icgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -345,12 +352,73 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mWidth;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#a1c6f529bcb6580e48bd2c7118e9e62b3">mWidth</a>;}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="acf61f1c2d8a172ddd9c4c6580233d2d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBThumbnailTextItem::mIsHighlighted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a334622cbcf39c1350a75db15907eb005"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBThumbnailTextItem::mUnelidedText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c6f529bcb6580e48bd2c7118e9e62b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBThumbnailTextItem::mWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
+<li><a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -358,7 +426,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html">UBThumbnailTextItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

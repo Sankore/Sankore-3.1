@@ -9,5 +9,11 @@ var classmerge__lib_1_1_transformation_description =
     [ "getCMT", "df/d6f/classmerge__lib_1_1_transformation_description.html#ac52c451791b0ad66e48252e28da04fc5", null ],
     [ "getTransformations", "df/d6f/classmerge__lib_1_1_transformation_description.html#a99d859006aaba9acf0c68720c44102e4", null ],
     [ "operator=", "df/d6f/classmerge__lib_1_1_transformation_description.html#a6afb8d82adf4fa79ea179015472eefd6", null ],
-    [ "recalculateTranslation", "df/d6f/classmerge__lib_1_1_transformation_description.html#aa3f45594e5ba11d8e6050c6df53cee67", null ]
+    [ "recalculateTranslation", "df/d6f/classmerge__lib_1_1_transformation_description.html#aa3f45594e5ba11d8e6050c6df53cee67", null ],
+    [ "_angel", "df/d6f/classmerge__lib_1_1_transformation_description.html#abea475d6a7e49ccd3459ac91e12c5515", null ],
+    [ "_annotsTransforms", "df/d6f/classmerge__lib_1_1_transformation_description.html#a7dd15cc36baeb79df4380d2edb186b6c", null ],
+    [ "_scale", "df/d6f/classmerge__lib_1_1_transformation_description.html#aeca419415dff750bc7e55151a0c3aaee", null ],
+    [ "_transforms", "df/d6f/classmerge__lib_1_1_transformation_description.html#ac9e589397edf27a8fa50755ad1945bfa", null ],
+    [ "_x", "df/d6f/classmerge__lib_1_1_transformation_description.html#a202cc8088a6a05a15546827f29ba6b65", null ],
+    [ "_y", "df/d6f/classmerge__lib_1_1_transformation_description.html#a048fd2ecbce4641109fc4ac413e702d5", null ]
 ];

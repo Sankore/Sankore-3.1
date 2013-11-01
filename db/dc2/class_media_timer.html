@@ -104,6 +104,10 @@ $(document).ready(function(){initNavTree('db/dc2/class_media_timer.html','../../
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../df/df9/class_media_timer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MediaTimer Class Reference</div>  </div>
@@ -116,7 +120,7 @@ $(document).ready(function(){initNavTree('db/dc2/class_media_timer.html','../../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d44/class_media_timer__coll__graph.svg" width="144" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d44/class_media_timer__coll__graph.svg" width="144" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -127,6 +131,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af67c8b1d3b6daccd17b403087e316558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#af67c8b1d3b6daccd17b403087e316558">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
 <tr class="memitem:a035f4771f2d409ccaa3d347f31aa8dfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc">display</a> (const QString &amp;str)</td></tr>
 <tr class="memitem:a2cbb7719237a850fd7a49ea68c24a343"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a> (int nDigits)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a237434492fc9819e9c77e51b72aab48a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">drawString</a> (const QString &amp;s, QPainter &amp;, QBitArray *=0, bool=true)</td></tr>
+<tr class="memitem:a0acead940fc575c655a4775633543206"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a> (const QPoint &amp;, QPainter &amp;, int, char, char= ' ')</td></tr>
+<tr class="memitem:aeb76038909ad9a0419efcc3b3d970085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085">drawSegment</a> (const QPoint &amp;, char, QPainter &amp;, int, bool=false)</td></tr>
+<tr class="memitem:ab2040f17e70afd1479aaa5e6a07254ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#ab2040f17e70afd1479aaa5e6a07254ed">addPoint</a> (QPolygon &amp;, const QPoint &amp;)</td></tr>
+<tr class="memitem:a881c812245c995496527d0d4d3c9fe32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a881c812245c995496527d0d4d3c9fe32">internalSetString</a> (const QString &amp;s)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:aaa143303bfb5a3eab091dc17849e3f41"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41">getSegments</a> (char)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a65636c56e33cbfc44600a5380b2abf90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a></td></tr>
+<tr class="memitem:a414d8f487c2f10ccc99387ea7ffae6dc"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a></td></tr>
+<tr class="memitem:a64de42b8cecc09e3da7653b39f080f4f"><td class="memItemLeft" align="right" valign="top">QBitArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a></td></tr>
+<tr class="memitem:a0e0a018eac2a2984fde7441afbc94773"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a></td></tr>
+<tr class="memitem:afae9cb5fc1ade8009ab4e8f3116a4667"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#afae9cb5fc1ade8009ab4e8f3116a4667">shadow</a>: 1</td></tr>
+<tr class="memitem:a5ab9415e87862e35635a394d22a45adb"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>: 1</td></tr>
+<tr class="memitem:a7c84ee4caebe80bbd2db990d484da3ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a7c84ee4caebe80bbd2db990d484da3ab">digitSpace</a></td></tr>
+<tr class="memitem:af4c4333b8a173643b513dfe411e3d219"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#af4c4333b8a173643b513dfe411e3d219">xSegLen</a></td></tr>
+<tr class="memitem:a4f0b974590f016dfe48074f68c9b9e22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a></td></tr>
+<tr class="memitem:a2700760a94b7626bb90df7681d6ce70b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a></td></tr>
+<tr class="memitem:aa484edaadcecf83362dcc5f7bd471e63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a></td></tr>
+<tr class="memitem:a11fe98f24e5fe64336e650d1ea239f6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a11fe98f24e5fe64336e650d1ea239f6e">xOffset</a></td></tr>
+<tr class="memitem:a9d2dc23b062bdee6ef458035a4d04a72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a9d2dc23b062bdee6ef458035a4d04a72">yOffset</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a549b2cafe7a4d677cf998b32664122da"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a> [][8]</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adad4a492d0515d2623893a60c6a781b6"></a>
@@ -144,8 +180,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                            : QGraphicsRectItem(parent)</div>
 <div class="line">{</div>
-<div class="line">    val        = 0;</div>
-<div class="line">    smallPoint = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a>        = 0;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a> = <span class="keyword">false</span>;</div>
 <div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a>(6);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -177,6 +213,45 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ab2040f17e70afd1479aaa5e6a07254ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediaTimer::addPoint </td>
+          <td>(</td>
+          <td class="paramtype">QPolygon &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    uint n = a.size();</div>
+<div class="line">    a.resize(n + 1);</div>
+<div class="line">    a.setPoint(n, p);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a035f4771f2d409ccaa3d347f31aa8dfc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -191,20 +266,554 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    val = 0;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a> = 0;</div>
 <div class="line">    <span class="keywordtype">bool</span> ok = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordtype">double</span> v = s.toDouble(&amp;ok);</div>
 <div class="line">    <span class="keywordflow">if</span> (ok)</div>
-<div class="line">        val = v;</div>
-<div class="line">    internalSetString(s);</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a0e0a018eac2a2984fde7441afbc94773">val</a> = v;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a881c812245c995496527d0d4d3c9fe32">internalSetString</a>(s);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a035f4771f2d409ccaa3d347f31aa8dfc_cgraph.svg" width="392" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a035f4771f2d409ccaa3d347f31aa8dfc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0acead940fc575c655a4775633543206"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediaTimer::drawDigit </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPainter &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>segLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>newCh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>oldCh</em> = <code>'&#160;'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">     <span class="keywordtype">char</span> updates[18][2];        <span class="comment">// can hold 2 times number of segments, only</span></div>
+<div class="line">                                 <span class="comment">// first 9 used if segment table is correct</span></div>
+<div class="line">     <span class="keywordtype">int</span>  nErases;</div>
+<div class="line">     <span class="keywordtype">int</span>  nUpdates;</div>
+<div class="line">     <span class="keyword">const</span> <span class="keywordtype">char</span> *segs;</div>
+<div class="line">     <span class="keywordtype">int</span>  i,j;</div>
+<div class="line"></div>
+<div class="line">     <span class="keyword">const</span> <span class="keywordtype">char</span> erase      = 0;</div>
+<div class="line">     <span class="keyword">const</span> <span class="keywordtype">char</span> draw       = 1;</div>
+<div class="line">     <span class="keyword">const</span> <span class="keywordtype">char</span> leaveAlone = 2;</div>
+<div class="line"></div>
+<div class="line">     segs = <a class="code" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41">getSegments</a>(oldCh);</div>
+<div class="line">     <span class="keywordflow">for</span> (nErases=0; segs[nErases] != 99; nErases++) {</div>
+<div class="line">         updates[nErases][0] = erase;            <span class="comment">// get segments to erase to</span></div>
+<div class="line">         updates[nErases][1] = segs[nErases];    <span class="comment">// remove old char</span></div>
+<div class="line">     }</div>
+<div class="line">     nUpdates = nErases;</div>
+<div class="line">     segs = <a class="code" href="../../db/dc2/class_media_timer.html#aaa143303bfb5a3eab091dc17849e3f41">getSegments</a>(newCh);</div>
+<div class="line">     <span class="keywordflow">for</span>(i = 0 ; segs[i] != 99 ; i++) {</div>
+<div class="line">         <span class="keywordflow">for</span> (j=0;  j&lt;nErases; j++)</div>
+<div class="line">             <span class="keywordflow">if</span> (segs[i] == updates[j][1]) {   <span class="comment">// same segment ?</span></div>
+<div class="line">                 updates[j][0] = leaveAlone;     <span class="comment">// yes, already on screen</span></div>
+<div class="line">                 <span class="keywordflow">break</span>;</div>
+<div class="line">             }</div>
+<div class="line">         <span class="keywordflow">if</span> (j == nErases) {                   <span class="comment">// if not already on screen</span></div>
+<div class="line">             updates[nUpdates][0] = draw;</div>
+<div class="line">             updates[nUpdates][1] = segs[i];</div>
+<div class="line">             nUpdates++;</div>
+<div class="line">         }</div>
+<div class="line">     }</div>
+<div class="line">     <span class="keywordflow">for</span> (i=0; i&lt;nUpdates; i++) {</div>
+<div class="line">         <span class="keywordflow">if</span> (updates[i][0] == draw)</div>
+<div class="line">             <a class="code" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085">drawSegment</a>(pos, updates[i][1], p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>);</div>
+<div class="line">         <span class="keywordflow">if</span> (updates[i][0] == erase)</div>
+<div class="line">             <a class="code" href="../../db/dc2/class_media_timer.html#aeb76038909ad9a0419efcc3b3d970085">drawSegment</a>(pos, updates[i][1], p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, <span class="keyword">true</span>);</div>
+<div class="line">     }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a0acead940fc575c655a4775633543206_cgraph.svg" width="392" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a0acead940fc575c655a4775633543206_icgraph.svg" width="550" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb76038909ad9a0419efcc3b3d970085"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediaTimer::drawSegment </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>segmentNo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPainter &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>segLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>erase</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(erase);</div>
+<div class="line"></div>
+<div class="line">    QPoint ppt;</div>
+<div class="line">    QPoint pt = pos;</div>
+<div class="line">    <span class="keywordtype">int</span> width = <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/5;</div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#define LINETO(X,Y) addPoint(a, QPoint(pt.x() + (X),pt.y() + (Y)))</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#define LIGHT</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#define DARK</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line">    QPolygon a(0);</div>
+<div class="line">    <span class="keywordflow">switch</span> (segmentNo) {</div>
+<div class="line">    <span class="keywordflow">case</span> 0 :</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 1,0);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 1,width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 1 :</div>
+<div class="line">        pt += QPoint(0 , 1);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width/2 - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 2 :</div>
+<div class="line">        pt += QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 1 , 1);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(-width,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width/2 - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(-width,width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 3 :</div>
+<div class="line">        pt += QPoint(0 , <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,-width/2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 1,-width/2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 1,0);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <span class="keywordflow">if</span> (width &amp; 1) {            <span class="comment">// adjust for integer division error</span></div>
+<div class="line">            <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 3,width/2 + 1);</div>
+<div class="line">            <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width + 2,width/2 + 1);</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 1,width/2);</div>
+<div class="line">            <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,width/2);</div>
+<div class="line">        }</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 4 :</div>
+<div class="line">        pt += QPoint(0 , <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> + 1);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,width/2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 5 :</div>
+<div class="line">        pt += QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 1 , <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> + 1);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(-width,<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(-width,width/2);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 6 :</div>
+<div class="line">        pt += QPoint(0 , <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>*2);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - width - 1,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a> - 1,0);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 7 :</div>
+<div class="line">        pt += QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/2 , <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>*2);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,0);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 8 :</div>
+<div class="line">        pt += QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/2 - width/2 + 1 , <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/2 + width);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,0);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> 9 :</div>
+<div class="line">        pt += QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/2 - width/2 + 1 , 3*<a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/2 + width);</div>
+<div class="line">        ppt = pt;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#afdbac66ae4531cbbf563ef2e4ea46f75">DARK</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,0);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(width,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#abc98e3adbe205cd3ab83d97150d0a845">LIGHT</a>;</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,-width);</div>
+<div class="line">        <a class="code" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html#af54bbb29ce002eac678ce089e3a3ef0d">LINETO</a>(0,0);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span> :</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// End exact copy</span></div>
+<div class="line">    p.setPen(Qt::white);</div>
+<div class="line">    p.setBrush(Qt::white);</div>
+<div class="line">    p.drawPolygon(a);</div>
+<div class="line">    p.setBrush(Qt::NoBrush);</div>
+<div class="line"></div>
+<div class="line">    pt = pos;</div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#undef LINETO</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#undef LIGHT</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#undef DARK</span></div>
+<div class="line"><span class="preprocessor"></span>}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_aeb76038909ad9a0419efcc3b3d970085_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a237434492fc9819e9c77e51b72aab48a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediaTimer::drawString </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPainter &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QBitArray *&#160;</td>
+          <td class="paramname"><em>newPoints</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>newString</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QPoint  pos;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;  i&lt;<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>; i++) {</div>
+<div class="line">        pos = QPoint(<a class="code" href="../../db/dc2/class_media_timer.html#a11fe98f24e5fe64336e650d1ea239f6e">xOffset</a> + <a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a>*i, <a class="code" href="../../db/dc2/class_media_timer.html#a9d2dc23b062bdee6ef458035a4d04a72">yOffset</a>);</div>
+<div class="line">        <span class="keywordflow">if</span> (newString)</div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, s[i].toLatin1(), <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>[i].toLatin1());</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, s[i].toLatin1());</div>
+<div class="line">        <span class="keywordflow">if</span> (newPoints) {</div>
+<div class="line">            <span class="keywordtype">char</span> newPoint = newPoints-&gt;testBit(i) ? <span class="charliteral">&#39;.&#39;</span> : <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line">            <span class="keywordflow">if</span> (newString) {</div>
+<div class="line">                <span class="keywordtype">char</span> oldPoint = <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.testBit(i) ? <span class="charliteral">&#39;.&#39;</span> : <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line">                <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, newPoint, oldPoint);</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                <a class="code" href="../../db/dc2/class_media_timer.html#a0acead940fc575c655a4775633543206">drawDigit</a>(pos, p, <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>, newPoint);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (newString) {</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a> = s;</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.truncate(ndigits);</div>
+<div class="line">        <span class="keywordflow">if</span> (newPoints)</div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a> = *newPoints;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a237434492fc9819e9c77e51b72aab48a_cgraph.svg" width="600" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a237434492fc9819e9c77e51b72aab48a_icgraph.svg" width="347" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa143303bfb5a3eab091dc17849e3f41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * MediaTimer::getSegments </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">     <span class="keywordflow">if</span> (ch &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; ch &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a>[ch - <span class="charliteral">&#39;0&#39;</span>];</div>
+<div class="line">     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;:&#39;</span>)</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a>[10];</div>
+<div class="line">     <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../db/dc2/class_media_timer.html#a549b2cafe7a4d677cf998b32664122da">segments</a>[11];</div>
+<div class="line"></div>
+<div class="line">     <span class="keywordflow">return</span> NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_aaa143303bfb5a3eab091dc17849e3f41_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a881c812245c995496527d0d4d3c9fe32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MediaTimer::internalSetString </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QString buffer;</div>
+<div class="line">    <span class="keywordtype">int</span> i;</div>
+<div class="line">    <span class="keywordtype">int</span> len = s.length();</div>
+<div class="line">    QBitArray newPoints(<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (len == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>)</div>
+<div class="line">            buffer = s;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            buffer = s.right(<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>).rightJustified(<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>, QLatin1Char(<span class="charliteral">&#39; &#39;</span>));</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordtype">int</span>  index = -1;</div>
+<div class="line">        <span class="keywordtype">bool</span> lastWasPoint = <span class="keyword">true</span>;</div>
+<div class="line">        newPoints.clearBit(0);</div>
+<div class="line">        <span class="keywordflow">for</span> (i=0; i&lt;len; i++) {</div>
+<div class="line">            <span class="keywordflow">if</span> (s[i] == QLatin1Char(<span class="charliteral">&#39;.&#39;</span>)) {</div>
+<div class="line">                <span class="keywordflow">if</span> (lastWasPoint) {           <span class="comment">// point already set for digit?</span></div>
+<div class="line">                    <span class="keywordflow">if</span> (index == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - 1) <span class="comment">// no more digits</span></div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    index++;</div>
+<div class="line">                    buffer[index] = QLatin1Char(<span class="charliteral">&#39; &#39;</span>);        <span class="comment">// 2 points in a row, add space</span></div>
+<div class="line">                }</div>
+<div class="line">                newPoints.setBit(index);        <span class="comment">// set decimal point</span></div>
+<div class="line">                lastWasPoint = <span class="keyword">true</span>;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                <span class="keywordflow">if</span> (index == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - 1)</div>
+<div class="line">                    <span class="keywordflow">break</span>;</div>
+<div class="line">                index++;</div>
+<div class="line">                buffer[index] = s[i];</div>
+<div class="line">                newPoints.clearBit(index);      <span class="comment">// decimal point default off</span></div>
+<div class="line">                lastWasPoint = <span class="keyword">false</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (index &lt; ((<span class="keywordtype">int</span>) <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>) - 1) {</div>
+<div class="line">            <span class="keywordflow">for</span>(i=index; i&gt;=0; i--) {</div>
+<div class="line">                buffer[ndigits - 1 - index + i] = buffer[i];</div>
+<div class="line">                newPoints.setBit(ndigits - 1 - index + i,</div>
+<div class="line">                                   newPoints.testBit(i));</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">for</span>(i=0; i&lt;ndigits-index-1; i++) {</div>
+<div class="line">                buffer[i] = QLatin1Char(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">                newPoints.clearBit(i);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (buffer == <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>)</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a> = buffer;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>)</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a> = newPoints;</div>
+<div class="line">    update();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a881c812245c995496527d0d4d3c9fe32_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -243,12 +852,21 @@ Public Member Functions</h2></td></tr>
 <div class="line">    Q_UNUSED(option);</div>
 <div class="line">    Q_UNUSED(widget);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (smallPoint)</div>
-<div class="line">        drawString(digitStr, *p, &amp;points, <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a>)</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">drawString</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>, *p, &amp;<a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>, <span class="keyword">false</span>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">        drawString(digitStr, *p, 0, <span class="keyword">false</span>);</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a237434492fc9819e9c77e51b72aab48a">drawString</a>(<a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>, *p, 0, <span class="keyword">false</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_af67c8b1d3b6daccd17b403087e316558_cgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a27212b4d06275e25e2488f0757cbfbd7"></a>
@@ -264,22 +882,22 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    digitSpace = smallPoint ? 2 : 1;</div>
-<div class="line">    ySegLen    = rect().height()*5/12;</div>
-<div class="line">    xSegLen    = ySegLen*2/3;</div>
-<div class="line">    segLen     = xSegLen;</div>
-<div class="line">    xAdvance   = segLen*(5 + digitSpace)/5;</div>
-<div class="line">    xOffset    = (rect().width() - ndigits*xAdvance + segLen/5)/2;</div>
-<div class="line">    yOffset    = rect().height() - ySegLen*2;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a7c84ee4caebe80bbd2db990d484da3ab">digitSpace</a> = <a class="code" href="../../db/dc2/class_media_timer.html#a5ab9415e87862e35635a394d22a45adb">smallPoint</a> ? 2 : 1;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a>    = rect().height()*5/12;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#af4c4333b8a173643b513dfe411e3d219">xSegLen</a>    = <a class="code" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a>*2/3;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>     = <a class="code" href="../../db/dc2/class_media_timer.html#af4c4333b8a173643b513dfe411e3d219">xSegLen</a>;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a>   = <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>*(5 + <a class="code" href="../../db/dc2/class_media_timer.html#a7c84ee4caebe80bbd2db990d484da3ab">digitSpace</a>)/5;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a11fe98f24e5fe64336e650d1ea239f6e">xOffset</a>    = (rect().width() - <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>*<a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a> + <a class="code" href="../../db/dc2/class_media_timer.html#a2700760a94b7626bb90df7681d6ce70b">segLen</a>/5)/2;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a9d2dc23b062bdee6ef458035a4d04a72">yOffset</a>    = rect().height() - <a class="code" href="../../db/dc2/class_media_timer.html#a4f0b974590f016dfe48074f68c9b9e22">ySegLen</a>*2;</div>
 <div class="line"></div>
-<div class="line">    setRect(rect().x(), rect().y(), xOffset + xAdvance*ndigits, rect().height());</div>
+<div class="line">    setRect(rect().x(), rect().y(), xOffset + <a class="code" href="../../db/dc2/class_media_timer.html#aa484edaadcecf83362dcc5f7bd471e63">xAdvance</a>*<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>, rect().height());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a27212b4d06275e25e2488f0757cbfbd7_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -308,33 +926,33 @@ Public Member Functions</h2></td></tr>
 <div class="line">        qWarning(<span class="stringliteral">&quot;QLCDNumber::setNumDigits: Min 0 digits allowed&quot;</span>);</div>
 <div class="line">        numDigits = 0;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span> (digitStr.isNull()) {                  <span class="comment">// from constructor</span></div>
-<div class="line">        ndigits = numDigits + numDigits/2 - 1;</div>
-<div class="line">        digitStr.fill(QLatin1Char(<span class="charliteral">&#39; &#39;</span>), ndigits);</div>
-<div class="line">        points.fill(0, ndigits);</div>
-<div class="line">        digitStr[ndigits - 1] = QLatin1Char(<span class="charliteral">&#39;0&#39;</span>);            <span class="comment">// &quot;0&quot; is the default number</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.isNull()) {                  <span class="comment">// from constructor</span></div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> = numDigits + numDigits/2 - 1;</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.fill(QLatin1Char(<span class="charliteral">&#39; &#39;</span>), <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>);</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.fill(0, <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>);</div>
+<div class="line">        <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>[<a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a> - 1] = QLatin1Char(<span class="charliteral">&#39;0&#39;</span>);            <span class="comment">// &quot;0&quot; is the default number</span></div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <span class="keywordflow">if</span> (numDigits == ndigits)             <span class="comment">// no change</span></div>
+<div class="line">        <span class="keywordflow">if</span> (numDigits == <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>)             <span class="comment">// no change</span></div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
 <div class="line">        <span class="keyword">register</span> <span class="keywordtype">int</span> i;</div>
 <div class="line">        <span class="keywordtype">int</span> dif;</div>
-<div class="line">        <span class="keywordflow">if</span> (numDigits &gt; ndigits) {            <span class="comment">// expand</span></div>
-<div class="line">            dif = numDigits - ndigits;</div>
+<div class="line">        <span class="keywordflow">if</span> (numDigits &gt; <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>) {            <span class="comment">// expand</span></div>
+<div class="line">            dif = numDigits - <a class="code" href="../../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90">ndigits</a>;</div>
 <div class="line">            QString buf;</div>
 <div class="line">            buf.fill(QLatin1Char(<span class="charliteral">&#39; &#39;</span>), dif);</div>
-<div class="line">            digitStr.insert(0, buf);</div>
-<div class="line">            points.resize(numDigits);</div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.insert(0, buf);</div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.resize(numDigits);</div>
 <div class="line">            <span class="keywordflow">for</span> (i=numDigits-1; i&gt;=dif; i--)</div>
-<div class="line">                points.setBit(i, points.testBit(i-dif));</div>
+<div class="line">                <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.setBit(i, <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.testBit(i-dif));</div>
 <div class="line">            <span class="keywordflow">for</span> (i=0; i&lt;dif; i++)</div>
-<div class="line">                points.clearBit(i);</div>
+<div class="line">                <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.clearBit(i);</div>
 <div class="line">        } <span class="keywordflow">else</span> {                                        <span class="comment">// shrink</span></div>
 <div class="line">            dif = ndigits - numDigits;</div>
-<div class="line">            digitStr = digitStr.right(numDigits);</div>
-<div class="line">            QBitArray tmpPoints = points;</div>
-<div class="line">            points.resize(numDigits);</div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a> = <a class="code" href="../../db/dc2/class_media_timer.html#a414d8f487c2f10ccc99387ea7ffae6dc">digitStr</a>.right(numDigits);</div>
+<div class="line">            QBitArray tmpPoints = <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>;</div>
+<div class="line">            <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.resize(numDigits);</div>
 <div class="line">            <span class="keywordflow">for</span> (i=0; i&lt;(int)numDigits; i++)</div>
-<div class="line">                points.setBit(i, tmpPoints.testBit(i+dif));</div>
+<div class="line">                <a class="code" href="../../db/dc2/class_media_timer.html#a64de42b8cecc09e3da7653b39f080f4f">points</a>.setBit(i, tmpPoints.testBit(i+dif));</div>
 <div class="line">        }</div>
 <div class="line">        ndigits = numDigits;</div>
 <div class="line">        update();</div>
@@ -342,29 +960,325 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">positionHandles</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a2cbb7719237a850fd7a49ea68c24a343_cgraph.svg" width="430" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_media_timer_a2cbb7719237a850fd7a49ea68c24a343_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a7c84ee4caebe80bbd2db990d484da3ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::digitSpace</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a414d8f487c2f10ccc99387ea7ffae6dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MediaTimer::digitStr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a65636c56e33cbfc44600a5380b2abf90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::ndigits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a64de42b8cecc09e3da7653b39f080f4f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QBitArray MediaTimer::points</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2700760a94b7626bb90df7681d6ce70b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::segLen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a549b2cafe7a4d677cf998b32664122da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char MediaTimer::segments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"></div>
+<div class="line">        {</div>
+<div class="line">              { 0, 1, 2, 4, 5, 6,99, 0},             </div>
+<div class="line">              { 2, 5,99, 0, 0, 0, 0, 0},             </div>
+<div class="line">              { 0, 2, 3, 4, 6,99, 0, 0},             </div>
+<div class="line">              { 0, 2, 3, 5, 6,99, 0, 0},             </div>
+<div class="line">              { 1, 2, 3, 5,99, 0, 0, 0},             </div>
+<div class="line">              { 0, 1, 3, 5, 6,99, 0, 0},             </div>
+<div class="line">              { 0, 1, 3, 4, 5, 6,99, 0},             </div>
+<div class="line">              { 0, 2, 5,99, 0, 0, 0, 0},             </div>
+<div class="line">              { 0, 1, 2, 3, 4, 5, 6,99},             </div>
+<div class="line">              { 0, 1, 2, 3, 5, 6,99, 0},             </div>
+<div class="line">              { 8, 9,99, 0, 0, 0, 0, 0},             </div>
+<div class="line">              {99, 0, 0, 0, 0, 0, 0, 0}              </div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afae9cb5fc1ade8009ab4e8f3116a4667"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint MediaTimer::shadow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ab9415e87862e35635a394d22a45adb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint MediaTimer::smallPoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e0a018eac2a2984fde7441afbc94773"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double MediaTimer::val</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa484edaadcecf83362dcc5f7bd471e63"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::xAdvance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a11fe98f24e5fe64336e650d1ea239f6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::xOffset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4c4333b8a173643b513dfe411e3d219"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::xSegLen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d2dc23b062bdee6ef458035a4d04a72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::yOffset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f0b974590f016dfe48074f68c9b9e22"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MediaTimer::ySegLen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
+<li><a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
+<li><a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -372,7 +1286,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dc2/class_media_timer.html">MediaTimer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

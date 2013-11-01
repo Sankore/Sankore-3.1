@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('d9/dd5/classmerge__lib_1_1_annots_hand
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/d98/classmerge__lib_1_1_annots_handler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::AnnotsHandler Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('d9/dd5/classmerge__lib_1_1_annots_hand
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/dae/classmerge__lib_1_1_annots_handler__inherit__graph.svg" width="219" height="571"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/dae/classmerge__lib_1_1_annots_handler__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for merge_lib::AnnotsHandler:</div>
@@ -138,6 +140,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f70456aa95c0e2a30c749b5eb7b15a0 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a> (<a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html">PageElementHandler</a> *nextHandler)</td></tr>
 <tr class="memitem:a4344983a7b938dc8c29a8ddd319c8771 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a> ()</td></tr>
 <tr class="memitem:a3c2f6868b3578e8ee1d5c9f0a37120d3 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa427e3f714337239270d24dda06b25d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#aa427e3f714337239270d24dda06b25d3">_processObjectContent</a> (unsigned int startOfPageElement)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab286a77dc294796a0644f7630eb44103"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -191,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                               : </div>
 <div class="line">                        <a class="code" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html#a1186fc0fd7f6e18bab613b5dd1108d09">RemoveHimselfHandler</a>(page, handlerName),</div>
-<div class="line">                        _annotations(annots)</div>
+<div class="line">                        <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>(annots)</div>
 <div class="line"></div>
 <div class="line">      {</div>
 <div class="line">        <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a814dec7a28f99916d36d0ad3ca41336c">_setHandlerName</a>(handlerName);</div>
@@ -208,9 +218,120 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="aa427e3f714337239270d24dda06b25d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnnotsHandler::_processObjectContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>startOfPageElement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfAnnots = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2164e57a4264777fa75b091967c2cb23">_findEndOfElementContent</a>(startOfPageElement);</div>
+<div class="line">   <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a> = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(startOfPageElement, endOfAnnots);</div>
+<div class="line"></div>
+<div class="line">   <span class="comment">// sometimes annotations array is defined not directly in page object content but </span></div>
+<div class="line">   <span class="comment">// in referred object.</span></div>
+<div class="line">   <span class="comment">// Example:</span></div>
+<div class="line">   <span class="comment">// /Annots 12 0 R</span></div>
+<div class="line">   <span class="comment">// ...</span></div>
+<div class="line">   <span class="comment">// 12 0 obj[ 13 0 R 14 0 R] endobj</span></div>
+<div class="line">   <span class="comment">// So in this case _annotations contains one element which content is array of annotation </span></div>
+<div class="line">   <span class="comment">// references.</span></div>
+<div class="line"></div>
+<div class="line">   <span class="comment">// lets check the content if it is really annotation object</span></div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.size() )</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * child = <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>[0];</div>
+<div class="line">      std::string childContent = child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
+<div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(childContent,<span class="stringliteral">&quot;/Rect&quot;</span>) == -1 &amp;&amp;</div>
+<div class="line">         (<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(childContent,<span class="stringliteral">&quot;/Subtype&quot;</span>) == -1 )</div>
+<div class="line">      {</div>
+<div class="line">         <span class="comment">// this was not Annotation but reference to array </span></div>
+<div class="line">         <span class="comment">// of annotations </span></div>
+<div class="line">         <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.erase(<a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.begin(),<a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a>.end());</div>
+<div class="line">         <span class="keywordtype">size_t</span> begin = 0;</div>
+<div class="line">         <span class="keywordtype">size_t</span> end  = childContent.size()-1;</div>
+<div class="line">         <a class="code" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html#ab286a77dc294796a0644f7630eb44103">_annotations</a> = child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(begin,end);</div>
+<div class="line">         </div>
+<div class="line">         <span class="comment">// lets update the parent in order to skip this intermediate child</span></div>
+<div class="line">         <span class="comment">// For now it seems to be not needed, but code below is working</span></div>
+<div class="line">         <span class="comment">// it is pity to delete</span></div>
+<div class="line">         <span class="comment">/*</span></div>
+<div class="line"><span class="comment">         _page-&gt;removeChild(child);</span></div>
+<div class="line"><span class="comment">         _page-&gt;eraseContent(startOfPageElement,endOfAnnots-startOfPageElement);</span></div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">         std::string annotTag= &quot;/Annots [&quot;;</span></div>
+<div class="line"><span class="comment">         _page-&gt;insertToContent(startOfPageElement,annotTag);</span></div>
+<div class="line"><span class="comment">         size_t pos = startOfPageElement + annotTag.size();</span></div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">         for(size_t i = 0;i&lt;_annotations.size();i++)</span></div>
+<div class="line"><span class="comment">         {</span></div>
+<div class="line"><span class="comment">            std::stringstream newContent;</span></div>
+<div class="line"><span class="comment">            newContent&lt;&lt;_annotations[i]-&gt;getObjectNumber()&lt;&lt;&quot; 0 R &quot;;</span></div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">            std::vector&lt;unsigned int&gt; posVec;</span></div>
+<div class="line"><span class="comment">            posVec.push_back(pos);</span></div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">            _page-&gt;insertToContent(pos,newContent.str());</span></div>
+<div class="line"><span class="comment">            _page-&gt;addChild(_annotations[i],posVec);</span></div>
+<div class="line"><span class="comment">            pos += newContent.str().size();</span></div>
+<div class="line"><span class="comment">         }</span></div>
+<div class="line"><span class="comment">         _page-&gt;insertToContent(pos,&quot; ]\n&quot;);</span></div>
+<div class="line"><span class="comment">         */</span></div>
+<div class="line">      }</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dd5/classmerge__lib_1_1_annots_handler_aa427e3f714337239270d24dda06b25d3_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ab286a77dc294796a0644f7630eb44103"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&gt;&amp; merge_lib::AnnotsHandler::_annotations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../db/dc5/_annots_handler_8h_source.html">AnnotsHandler.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d3/daa/_annots_handler_8cpp.html">AnnotsHandler.cpp</a></li>
+<li><a class="el" href="../../db/dc5/_annots_handler_8h_source.html">AnnotsHandler.h</a></li>
+<li><a class="el" href="../../d3/daa/_annots_handler_8cpp.html">AnnotsHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -218,7 +339,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d9/dd5/classmerge__lib_1_1_annots_handler.html">AnnotsHandler</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

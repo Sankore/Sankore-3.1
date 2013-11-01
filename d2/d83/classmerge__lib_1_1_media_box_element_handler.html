@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d2/d83/classmerge__lib_1_1_media_box_e
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../d8/db0/classmerge__lib_1_1_media_box_element_handler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::MediaBoxElementHandler Class Reference</div>  </div>
@@ -139,6 +140,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f70456aa95c0e2a30c749b5eb7b15a0 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a> (<a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html">PageElementHandler</a> *nextHandler)</td></tr>
 <tr class="memitem:a4344983a7b938dc8c29a8ddd319c8771 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a> ()</td></tr>
 <tr class="memitem:a3c2f6868b3578e8ee1d5c9f0a37120d3 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a94b84738e645010b01e343941bb614a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html#a94b84738e645010b01e343941bb614a1">_changeObjectContent</a> (unsigned int startOfPageElement)</td></tr>
+<tr class="memitem:a34433f526578179120c413e7eaaeb79f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html#a34433f526578179120c413e7eaaeb79f">_pageElementNotFound</a> ()</td></tr>
+<tr class="memitem:a9a74ca39422f92901fbf5f52362474a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html#a9a74ca39422f92901fbf5f52362474a2">_wasCropBoxHandlerCalled</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -213,8 +220,137 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a94b84738e645010b01e343941bb614a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void merge_lib::MediaBoxElementHandler::_changeObjectContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>startOfPageElement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">      {</div>
+<div class="line">         <span class="keywordflow">if</span>(<a class="code" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html#a9a74ca39422f92901fbf5f52362474a2">_wasCropBoxHandlerCalled</a>())</div>
+<div class="line">         {</div>
+<div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#ada309a9bc3d0047d0038680cee9ac5be">PageElementHandler</a> * tempNextHandler = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>;                        </div>
+<div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a> = <span class="keyword">new</span> RemoveHimselfHandler(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>, <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a>);</div>
+<div class="line">            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a>(tempNextHandler);</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a21c04aa4fd032fef003e6aac6ab1212d">eraseContent</a>(startOfPageElement, <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a>.size());</div>
+<div class="line">         <span class="keyword">static</span> std::string bbox(<span class="stringliteral">&quot;/BBox&quot;</span>);</div>
+<div class="line">         <span class="keyword">static</span> std::string matrix(<span class="stringliteral">&quot;/Matrix [ 1 0 0 1 0 0 ]\n&quot;</span>);</div>
+<div class="line">         <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a365bdb9272a41c9f7f5f9525a03b981f">insertToContent</a>(startOfPageElement, bbox);</div>
+<div class="line">         <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a365bdb9272a41c9f7f5f9525a03b981f">insertToContent</a>(startOfPageElement, matrix);</div>
+<div class="line">      }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d83/classmerge__lib_1_1_media_box_element_handler_a94b84738e645010b01e343941bb614a1_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a34433f526578179120c413e7eaaeb79f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_lib::MediaBoxElementHandler::_pageElementNotFound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">      {           </div>
+<div class="line">         <span class="keywordflow">if</span>(<a class="code" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html#a9a74ca39422f92901fbf5f52362474a2">_wasCropBoxHandlerCalled</a>())</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">         <a class="code" href="../../de/dd6/classmerge__lib_1_1_abstract_box_element_handler.html#a81108496088501c1bce82410b94775f0">_retrieveBoxFromParent</a>();</div>
+<div class="line">      }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d83/classmerge__lib_1_1_media_box_element_handler_a34433f526578179120c413e7eaaeb79f_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a74ca39422f92901fbf5f52362474a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool merge_lib::MediaBoxElementHandler::_wasCropBoxHandlerCalled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">      {</div>
+<div class="line">         <span class="keywordflow">return</span> ((<span class="keywordtype">int</span>)<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>().find(<span class="stringliteral">&quot;/BBox&quot;</span>) != -1) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line">      }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d83/classmerge__lib_1_1_media_box_element_handler_a9a74ca39422f92901fbf5f52362474a2_cgraph.svg" width="427" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d83/classmerge__lib_1_1_media_box_element_handler_a9a74ca39422f92901fbf5f52362474a2_icgraph.svg" width="515" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d9/d76/_media_box_element_handler_8h_source.html">MediaBoxElementHandler.h</a></li>
+<li><a class="el" href="../../d9/d76/_media_box_element_handler_8h_source.html">MediaBoxElementHandler.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -222,7 +358,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d2/d83/classmerge__lib_1_1_media_box_element_handler.html">MediaBoxElementHandler</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

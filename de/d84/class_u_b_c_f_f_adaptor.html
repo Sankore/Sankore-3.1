@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('de/d84/class_u_b_c_f_f_adaptor.html','
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d44/class_u_b_c_f_f_adaptor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBCFFAdaptor Class Reference</div>  </div>
@@ -117,13 +119,13 @@ $(document).ready(function(){initNavTree('de/d84/class_u_b_c_f_f_adaptor.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d06/class_u_b_c_f_f_adaptor__coll__graph.svg" width="198" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d06/class_u_b_c_f_f_adaptor__coll__graph.svg" width="198" height="304"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>UBToCFFConverter</b></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>UBToUBZConverter</b></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html">UBToCFFConverter</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d2a/class_u_b_c_f_f_adaptor_1_1_u_b_to_u_b_z_converter.html">UBToUBZConverter</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -132,6 +134,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acdbb00c051955521fd4b5625e93aff69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#acdbb00c051955521fd4b5625e93aff69">convertUBZToIWB</a> (const QString &amp;from, const QString &amp;to)</td></tr>
 <tr class="memitem:ab751ea62bef1e789811699470d0f011b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ab751ea62bef1e789811699470d0f011b">deleteDir</a> (const QString &amp;pDirPath) const </td></tr>
 <tr class="memitem:aef900d57600efe0161ab583f9727f55a"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#aef900d57600efe0161ab583f9727f55a">getConversionMessages</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2064bbc98828bb53f1be5666152b8a20"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a2064bbc98828bb53f1be5666152b8a20">uncompressZip</a> (const QString &amp;zipFile)</td></tr>
+<tr class="memitem:a353f8633315369b724b51a86691e29e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a353f8633315369b724b51a86691e29e3">compressZip</a> (const QString &amp;source, const QString &amp;destination)</td></tr>
+<tr class="memitem:a87deb655a1ad0889f7e848cd0b7748d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a87deb655a1ad0889f7e848cd0b7748d7">compressDir</a> (const QString &amp;dirName, const QString &amp;parentDir, QuaZipFile *outZip)</td></tr>
+<tr class="memitem:a3b433e57c4561ca6f420f69d43b85da7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3b433e57c4561ca6f420f69d43b85da7">compressFile</a> (const QString &amp;fileName, const QString &amp;parentDir, QuaZipFile *outZip)</td></tr>
+<tr class="memitem:aa17599d6b4eb2247fc4b2cbf38d8787c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#aa17599d6b4eb2247fc4b2cbf38d8787c">createNewTmpDir</a> ()</td></tr>
+<tr class="memitem:a033121fe518f5e687f4bf96b1a9c9b88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a033121fe518f5e687f4bf96b1a9c9b88">freeDir</a> (const QString &amp;dir)</td></tr>
+<tr class="memitem:af7d2a4b0e2ea88cc25dd886c7b62ad21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#af7d2a4b0e2ea88cc25dd886c7b62ad21">freeTmpDirs</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ade944442cda0e856ad7d6ee90b8a005c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a></td></tr>
+<tr class="memitem:a3a0c6714c2d4fde28bcaefd1a47587c0"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">mConversionMessages</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a506410a7764fc7485311e9cca7d86c72"></a>
@@ -163,12 +180,265 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    freeTmpDirs();</div>
+<div class="line">    <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#af7d2a4b0e2ea88cc25dd886c7b62ad21">freeTmpDirs</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_ad14b15035a6ddff3f74d3f08865d45b2_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a87deb655a1ad0889f7e848cd0b7748d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBCFFAdaptor::compressDir </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>dirName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>parentDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QuaZipFile *&#160;</td>
+          <td class="paramname"><em>outZip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QFileInfoList dirFiles = QDir(dirName).entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);</div>
+<div class="line">    QListIterator&lt;QFileInfo&gt; iter(dirFiles);</div>
+<div class="line">    <span class="keywordflow">while</span> (iter.hasNext()) {</div>
+<div class="line">        QFileInfo curFile = iter.next();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (curFile.isDir()) {</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a87deb655a1ad0889f7e848cd0b7748d7">compressDir</a>(curFile.absoluteFilePath(), parentDir + curFile.fileName() + <span class="stringliteral">&quot;/&quot;</span>, outZip)) {</div>
+<div class="line">                qDebug() &lt;&lt; <span class="stringliteral">&quot;error at compressing dir&quot;</span> &lt;&lt; curFile.absoluteFilePath();</div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (curFile.isFile()) {</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3b433e57c4561ca6f420f69d43b85da7">compressFile</a>(curFile.absoluteFilePath(), parentDir, outZip)) {</div>
+<div class="line">               <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a87deb655a1ad0889f7e848cd0b7748d7_cgraph.svg" width="454" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a87deb655a1ad0889f7e848cd0b7748d7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b433e57c4561ca6f420f69d43b85da7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBCFFAdaptor::compressFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>parentDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QuaZipFile *&#160;</td>
+          <td class="paramname"><em>outZip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QFile sourceFile(fileName);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(!sourceFile.open(QIODevice::ReadOnly)) {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Compression of file&quot;</span> &lt;&lt; sourceFile.fileName() &lt;&lt; <span class="stringliteral">&quot; failed. Cause: inFile.open(): &quot;</span> &lt;&lt; sourceFile.errorString();</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(!outZip-&gt;open(QIODevice::WriteOnly, QuaZipNewInfo(parentDir + QFileInfo(fileName).fileName(), sourceFile.fileName()))) {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Compression of file&quot;</span> &lt;&lt; sourceFile.fileName() &lt;&lt; <span class="stringliteral">&quot; failed. Cause: outFile.open(): &quot;</span> &lt;&lt; outZip-&gt;getZipError();</div>
+<div class="line">        sourceFile.close();</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    outZip-&gt;write(sourceFile.readAll());</div>
+<div class="line">    <span class="keywordflow">if</span>(outZip-&gt;getZipError() != UNZ_OK) {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Compression of file&quot;</span> &lt;&lt; sourceFile.fileName() &lt;&lt; <span class="stringliteral">&quot; failed. Cause: outFile.write(): &quot;</span> &lt;&lt; outZip-&gt;getZipError();</div>
+<div class="line"></div>
+<div class="line">        sourceFile.close();</div>
+<div class="line">        outZip-&gt;close();</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(outZip-&gt;getZipError() != UNZ_OK)</div>
+<div class="line">    {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Compression of file&quot;</span> &lt;&lt; sourceFile.fileName() &lt;&lt; <span class="stringliteral">&quot; failed. Cause: outFile.close(): &quot;</span> &lt;&lt; outZip-&gt;getZipError();</div>
+<div class="line"></div>
+<div class="line">        sourceFile.close();</div>
+<div class="line">        outZip-&gt;close();</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    outZip-&gt;close();</div>
+<div class="line">    sourceFile.close();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a3b433e57c4561ca6f420f69d43b85da7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a353f8633315369b724b51a86691e29e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBCFFAdaptor::compressZip </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>destination</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QDir toDir = QFileInfo(destination).dir();</div>
+<div class="line">    <span class="keywordflow">if</span> (!toDir.exists())</div>
+<div class="line">        <span class="keywordflow">if</span> (!QDir().mkpath(toDir.absolutePath())) {</div>
+<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t create destination folder to uncompress file&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">    QuaZip zip(destination);</div>
+<div class="line">    zip.setFileNameCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span>(!zip.open(QuaZip::mdCreate)) {</div>
+<div class="line">        qDebug(<span class="stringliteral">&quot;Export failed. Cause: zip.open(): %d&quot;</span>, zip.getZipError());</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QuaZipFile outZip(&amp;zip);</div>
+<div class="line"></div>
+<div class="line">    QFileInfo sourceInfo(source);</div>
+<div class="line">    <span class="keywordflow">if</span> (sourceInfo.isDir()) {</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a87deb655a1ad0889f7e848cd0b7748d7">compressDir</a>(QFileInfo(source).absoluteFilePath(), <span class="stringliteral">&quot;&quot;</span>, &amp;outZip))</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sourceInfo.isFile()) {</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3b433e57c4561ca6f420f69d43b85da7">compressFile</a>(QFileInfo(source).absoluteFilePath(), <span class="stringliteral">&quot;&quot;</span>, &amp;outZip))</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a353f8633315369b724b51a86691e29e3_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a353f8633315369b724b51a86691e29e3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="acdbb00c051955521fd4b5625e93aff69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +470,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;File specified is dir, continuing convertion&quot;</span>;</div>
 <div class="line">        source = from;</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        source = uncompressZip(from);</div>
+<div class="line">        source = <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a2064bbc98828bb53f1be5666152b8a20">uncompressZip</a>(from);</div>
 <div class="line">        <span class="keywordflow">if</span> (!source.isNull()) qDebug() &lt;&lt; <span class="stringliteral">&quot;File specified is zip file. Uncompressed to tmp dir, continuing convertion&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">if</span> (source.isNull()) {</div>
@@ -208,7 +478,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    QString tmpDestination = createNewTmpDir();</div>
+<div class="line">    QString tmpDestination = <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#aa17599d6b4eb2247fc4b2cbf38d8787c">createNewTmpDir</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (tmpDestination.isNull()) {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t create temp destination folder. Stopping parsing...&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -222,32 +492,99 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">bool</span> bParceRes = tmpConvertrer.parse();</div>
 <div class="line"></div>
-<div class="line">    mConversionMessages &lt;&lt; tmpConvertrer.getMessages();</div>
+<div class="line">    <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">mConversionMessages</a> &lt;&lt; tmpConvertrer.getMessages();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (!bParceRes) {</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!compressZip(tmpDestination, to))</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a353f8633315369b724b51a86691e29e3">compressZip</a>(tmpDestination, to))</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;error in compression&quot;</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//Cleanning tmp souces in filesystem</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!QFileInfo(from).isDir())</div>
-<div class="line">    <span class="keywordflow">if</span> (!freeDir(source))</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a033121fe518f5e687f4bf96b1a9c9b88">freeDir</a>(source))</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t delete tmp directory&quot;</span> &lt;&lt; QDir(source).absolutePath() &lt;&lt; <span class="stringliteral">&quot;try to delete them manually&quot;</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!freeDir(tmpDestination))</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a033121fe518f5e687f4bf96b1a9c9b88">freeDir</a>(tmpDestination))</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t delete tmp directory&quot;</span> &lt;&lt; QDir(tmpDestination).absolutePath() &lt;&lt; <span class="stringliteral">&quot;try to delete them manually&quot;</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_acdbb00c051955521fd4b5625e93aff69_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_acdbb00c051955521fd4b5625e93aff69_icgraph.svg" width="443" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa17599d6b4eb2247fc4b2cbf38d8787c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBCFFAdaptor::createNewTmpDir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> tmpNumber = 0;</div>
+<div class="line">    QDir systemTmp = QDir::temp();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line">        QString dirName = QString(<span class="stringliteral">&quot;CFF_adaptor_filedata_store%1.%2&quot;</span>)</div>
+<div class="line">                .arg(QDateTime::currentDateTime().toString(<span class="stringliteral">&quot;dd_MM_yyyy_HH-mm&quot;</span>))</div>
+<div class="line">                .arg(tmpNumber++);</div>
+<div class="line">        <span class="keywordflow">if</span> (!systemTmp.exists(dirName)) {</div>
+<div class="line">            <span class="keywordflow">if</span> (systemTmp.mkdir(dirName)) {</div>
+<div class="line">                QString result = systemTmp.absolutePath() + <span class="stringliteral">&quot;/&quot;</span> + dirName;</div>
+<div class="line">                <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a>.append(result);</div>
+<div class="line">                <span class="keywordflow">return</span> result;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t create temporary dir maybe due to permissions&quot;</span>;</div>
+<div class="line">                <span class="keywordflow">return</span> QString();</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tmpNumber == 10) {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Failed to create temporary file &quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span> QString();</div>
+<div class="line">        }</div>
+<div class="line">        tmpNumber++;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> QString();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_aa17599d6b4eb2247fc4b2cbf38d8787c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -294,6 +631,111 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> dir.rmdir(pDirPath);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_ab751ea62bef1e789811699470d0f011b_icgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a033121fe518f5e687f4bf96b1a9c9b88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBCFFAdaptor::freeDir </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ab751ea62bef1e789811699470d0f011b">deleteDir</a>(dir))</div>
+<div class="line">        result = <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a>.removeAll(QDir(dir).absolutePath());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a033121fe518f5e687f4bf96b1a9c9b88_cgraph.svg" width="392" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a033121fe518f5e687f4bf96b1a9c9b88_icgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af7d2a4b0e2ea88cc25dd886c7b62ad21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBCFFAdaptor::freeTmpDirs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">foreach</span> (QString dir, <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#ade944442cda0e856ad7d6ee90b8a005c">tmpDirs</a>)</div>
+<div class="line">        <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a033121fe518f5e687f4bf96b1a9c9b88">freeDir</a>(dir);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_af7d2a4b0e2ea88cc25dd886c7b62ad21_cgraph.svg" width="632" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_af7d2a4b0e2ea88cc25dd886c7b62ad21_icgraph.svg" width="470" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aef900d57600efe0161ab583f9727f55a"></a>
@@ -309,23 +751,192 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mConversionMessages;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#a3a0c6714c2d4fde28bcaefd1a47587c0">mConversionMessages</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_aef900d57600efe0161ab583f9727f55a_icgraph.svg" width="416" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a2064bbc98828bb53f1be5666152b8a20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBCFFAdaptor::uncompressZip </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>zipFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QuaZip zip(zipFile);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(!zip.open(QuaZip::mdUnzip)) {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause zip.open(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">        <span class="keywordflow">return</span> QString();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    zip.setFileNameCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
+<div class="line">    QuaZipFileInfo info;</div>
+<div class="line">    QuaZipFile file(&amp;zip);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//create unique cff document root fodler</span></div>
+<div class="line">    QString documentRootFolder = <a class="code" href="../../de/d84/class_u_b_c_f_f_adaptor.html#aa17599d6b4eb2247fc4b2cbf38d8787c">createNewTmpDir</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (documentRootFolder.isNull()) {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;can&#39;t create tmp directory for zip file&quot;</span> &lt;&lt; zipFile;</div>
+<div class="line">        <span class="keywordflow">return</span> QString();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QDir rootDir(documentRootFolder);</div>
+<div class="line">    QFile out;</div>
+<div class="line">    <span class="keywordtype">char</span> c;</div>
+<div class="line">    <span class="keywordtype">bool</span> allOk = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">bool</span> more = zip.goToFirstFile(); more; more=zip.goToNextFile()) {</div>
+<div class="line">        <span class="keywordflow">if</span>(!zip.getCurrentFileInfo(&amp;info)) {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: getCurrentFileInfo(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            allOk = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(!file.open(QIODevice::ReadOnly)) {</div>
+<div class="line">            allOk = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(file.getZipError()!= UNZ_OK) {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: file.getFileName(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            allOk = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        QString newFileName = documentRootFolder + <span class="stringliteral">&quot;/&quot;</span> + file.getActualFileName();</div>
+<div class="line"></div>
+<div class="line">        QFileInfo newFileInfo(newFileName);</div>
+<div class="line">        rootDir.mkpath(newFileInfo.absolutePath());</div>
+<div class="line"></div>
+<div class="line">        out.setFileName(newFileName);</div>
+<div class="line">        out.open(QIODevice::WriteOnly);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">while</span>(file.getChar(&amp;c))</div>
+<div class="line">            out.putChar(c);</div>
+<div class="line"></div>
+<div class="line">        out.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(file.getZipError()!=UNZ_OK) {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            allOk = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(!file.atEnd()) {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: read all but not EOF&quot;</span>;</div>
+<div class="line">            allOk = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        file.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(file.getZipError()!=UNZ_OK) {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: file.close(): &quot;</span> &lt;&lt;  file.getZipError();</div>
+<div class="line">            allOk = <span class="keyword">false</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!allOk) {</div>
+<div class="line">        out.close();</div>
+<div class="line">        file.close();</div>
+<div class="line">        zip.close();</div>
+<div class="line">        <span class="keywordflow">return</span> QString();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(zip.getZipError()!=UNZ_OK) {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: zip.close(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">        <span class="keywordflow">return</span> QString();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> documentRootFolder;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a2064bbc98828bb53f1be5666152b8a20_cgraph.svg" width="496" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d84/class_u_b_c_f_f_adaptor_a2064bbc98828bb53f1be5666152b8a20_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a3a0c6714c2d4fde28bcaefd1a47587c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt; UBCFFAdaptor::mConversionMessages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ade944442cda0e856ad7d6ee90b8a005c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList UBCFFAdaptor::tmpDirs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/plugins/cffadaptor/src/<a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a></li>
-<li>Sankore-3.1/plugins/cffadaptor/src/<a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp.html">UBCFFAdaptor.cpp</a></li>
+<li><a class="el" href="../../d3/d9e/_u_b_c_f_f_adaptor_8h_source.html">UBCFFAdaptor.h</a></li>
+<li><a class="el" href="../../d4/d4b/_u_b_c_f_f_adaptor_8cpp.html">UBCFFAdaptor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -333,7 +944,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d84/class_u_b_c_f_f_adaptor.html">UBCFFAdaptor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

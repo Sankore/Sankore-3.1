@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('d8/d9e/class_u_b_main_window.html','..
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/de6/class_u_b_main_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBMainWindow Class Reference</div>  </div>
@@ -120,7 +121,7 @@ $(document).ready(function(){initNavTree('d8/d9e/class_u_b_main_window.html','..
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d4c/class_u_b_main_window__coll__graph.svg" width="214" height="443"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d4c/class_u_b_main_window__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -160,6 +161,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aa64036e9f2bb881efda179dc8456dafb"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb">mBoardWidget</a></td></tr>
 <tr class="memitem:a795096ff1d8e22ced78502c36a540eea"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a></td></tr>
 <tr class="memitem:ab0686e7ba525d0d7dc7fb86b707ac363"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9e/class_u_b_main_window.html#ab0686e7ba525d0d7dc7fb86b707ac363">mDocumentsWidget</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4686d953fa0fccd711181eac75418478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a603814523782399bc82d1c7013c356c9"></a>
@@ -189,12 +194,12 @@ Protected Attributes</h2></td></tr>
 <div class="line">    , <a class="code" href="../../d8/d9e/class_u_b_main_window.html#aa64036e9f2bb881efda179dc8456dafb">mBoardWidget</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a795096ff1d8e22ced78502c36a540eea">mWebWidget</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d8/d9e/class_u_b_main_window.html#ab0686e7ba525d0d7dc7fb86b707ac363">mDocumentsWidget</a>(0)</div>
-<div class="line">    , mpDownloadWidget(NULL)</div>
+<div class="line">    , <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    Ui::MainWindow::setupUi(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    mpDownloadWidget = <span class="keyword">new</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a>();</div>
-<div class="line">    mpDownloadWidget-&gt;setWindowModality(Qt::ApplicationModal);</div>
+<div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a> = <span class="keyword">new</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a>();</div>
+<div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>-&gt;setWindowModality(Qt::ApplicationModal);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//Setting tooltip colors staticly, since they look not quite well on different color themes</span></div>
 <div class="line">    QPalette toolTipPalette;</div>
@@ -241,10 +246,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpDownloadWidget)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpDownloadWidget;</div>
-<div class="line">        mpDownloadWidget = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>;</div>
+<div class="line">        <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -277,7 +282,8 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a811b3f7960316901f2f988fafb96fdc6_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a811b3f7960316901f2f988fafb96fdc6_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -457,12 +463,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpDownloadWidget)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mpDownloadWidget-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>-&gt;hide();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a4b99a4654dccfb65a5599c9fb8d3fb8a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a653d248fb5b159abdf4d30b7cbf6e490"></a>
@@ -492,21 +508,22 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a907ee78e907b30203375117b5af1848f">oneButtonMessageBox</a>(windowTitle, text, QMessageBox::Information);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a653d248fb5b159abdf4d30b7cbf6e490_cgraph.svg" width="507" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a653d248fb5b159abdf4d30b7cbf6e490_icgraph.svg" width="451" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a653d248fb5b159abdf4d30b7cbf6e490_icgraph.svg" width="100%" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -595,12 +612,13 @@ Protected Attributes</h2></td></tr>
 <div class="line">    messageBox.exec();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a907ee78e907b30203375117b5af1848f_icgraph.svg" width="100%" height="399"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a907ee78e907b30203375117b5af1848f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -654,18 +672,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpDownloadWidget)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mpDownloadWidget-&gt;show();</div>
+<div class="line">        <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4686d953fa0fccd711181eac75418478">mpDownloadWidget</a>-&gt;show();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_ae2949414a83e39ea1e86ed36dd875cb8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_ae2949414a83e39ea1e86ed36dd875cb8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -690,12 +709,13 @@ Protected Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a1890407abe5e433cc3c85af0d1db4d23_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a1890407abe5e433cc3c85af0d1db4d23_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -720,12 +740,13 @@ Protected Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_abf3656d99f6c694bd38bb51fe6ee4252_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_abf3656d99f6c694bd38bb51fe6ee4252_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -751,6 +772,16 @@ Protected Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_ac9cca6450d4bb9e206f61305c358a864_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a626ff5fff445ccfd8feffa11390a3963"></a>
@@ -780,12 +811,22 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d8/d9e/class_u_b_main_window.html#a907ee78e907b30203375117b5af1848f">oneButtonMessageBox</a>(windowTitle,text, QMessageBox::Warning);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a626ff5fff445ccfd8feffa11390a3963_cgraph.svg" width="488" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a626ff5fff445ccfd8feffa11390a3963_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -842,11 +883,11 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> messageBox.clickedButton() == yesButton;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d9e/class_u_b_main_window_a4e2df10066f36d2040fca0feb192a5d8_cgraph.svg" width="459" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -894,6 +935,26 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4686d953fa0fccd711181eac75418478"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a>* UBMainWindow::mpDownloadWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a2c37b6336535a741661bbeb7e1375d8e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -935,8 +996,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/d21/_u_b_main_window_8cpp.html">UBMainWindow.cpp</a></li>
+<li><a class="el" href="../../d2/d3c/_u_b_main_window_8h_source.html">UBMainWindow.h</a></li>
+<li><a class="el" href="../../d3/d21/_u_b_main_window_8cpp.html">UBMainWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -944,7 +1005,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d9e/class_u_b_main_window.html">UBMainWindow</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

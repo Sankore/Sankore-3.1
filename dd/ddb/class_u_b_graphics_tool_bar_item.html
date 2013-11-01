@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dd/ddb/class_u_b_graphics_tool_bar_ite
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d4f/class_u_b_graphics_tool_bar_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsToolBarItem Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('dd/ddb/class_u_b_graphics_tool_bar_ite
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d57/class_u_b_graphics_tool_bar_item__coll__graph.svg" width="203" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d57/class_u_b_graphics_tool_bar_item__coll__graph.svg" width="203" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -133,6 +135,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afb333932944e51dd53af4d61f4920d76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#afb333932944e51dd53af4d61f4920d76">positionHandles</a> ()</td></tr>
 <tr class="memitem:a88a96bf42a11d028087d59eb0a897ca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a88a96bf42a11d028087d59eb0a897ca8">update</a> ()</td></tr>
 <tr class="memitem:aa843a17e8ef3518e0e159272a3d2fd89"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#aa843a17e8ef3518e0e159272a3d2fd89">getElementsPadding</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9ac1c69cbf3e44f1608a06481e4d0158"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a9ac1c69cbf3e44f1608a06481e4d0158">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaf33d1922d908a8be6b796578761473f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#aaf33d1922d908a8be6b796578761473f">mShifting</a></td></tr>
+<tr class="memitem:a35a8c2b03d09e0e7f1d95ba4f3b32d00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a35a8c2b03d09e0e7f1d95ba4f3b32d00">mVisible</a></td></tr>
+<tr class="memitem:ad943e764bda90fb1e78433a8565b5491"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad943e764bda90fb1e78433a8565b5491">mMinWidth</a></td></tr>
+<tr class="memitem:a16bd92409c578a01936b5abf2a1d0cc8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a16bd92409c578a01936b5abf2a1d0cc8">mInitialHeight</a></td></tr>
+<tr class="memitem:a037655cbef90769b130792eb1587a2ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a037655cbef90769b130792eb1587a2ab">mElementsPadding</a></td></tr>
+<tr class="memitem:ad17fd3042d9a7140df7c99ed538e6bef"><td class="memItemLeft" align="right" valign="top">QList&lt; QGraphicsItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad17fd3042d9a7140df7c99ed538e6bef">mItemsOnToolBar</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a51e1d0d339367114c70ef2b9cb23eee5"></a>
@@ -150,14 +165,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                   :</div>
 <div class="line">    QGraphicsRectItem(parent),</div>
-<div class="line">    mShifting(<span class="keyword">true</span>),</div>
-<div class="line">    mVisible(<span class="keyword">false</span>),</div>
-<div class="line">    mMinWidth(200),</div>
-<div class="line">    mInitialHeight(26),</div>
-<div class="line">    mElementsPadding(2)</div>
+<div class="line">    <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#aaf33d1922d908a8be6b796578761473f">mShifting</a>(<span class="keyword">true</span>),</div>
+<div class="line">    <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a35a8c2b03d09e0e7f1d95ba4f3b32d00">mVisible</a>(<span class="keyword">false</span>),</div>
+<div class="line">    <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad943e764bda90fb1e78433a8565b5491">mMinWidth</a>(200),</div>
+<div class="line">    <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a16bd92409c578a01936b5abf2a1d0cc8">mInitialHeight</a>(26),</div>
+<div class="line">    <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a037655cbef90769b130792eb1587a2ab">mElementsPadding</a>(2)</div>
 <div class="line">{</div>
 <div class="line">    QRectF rect = this-&gt;rect();</div>
-<div class="line">    rect.setHeight(mInitialHeight);</div>
+<div class="line">    rect.setHeight(<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a16bd92409c578a01936b5abf2a1d0cc8">mInitialHeight</a>);</div>
 <div class="line">    rect.setWidth(parent-&gt;boundingRect().width());</div>
 <div class="line">    this-&gt;setRect(rect);</div>
 <div class="line"></div>
@@ -223,7 +238,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mElementsPadding;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a037655cbef90769b130792eb1587a2ab">mElementsPadding</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -256,14 +271,15 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mShifting; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#aaf33d1922d908a8be6b796578761473f">mShifting</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_ad5c8346dab076b19a05ff0940d945a66_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_ad5c8346dab076b19a05ff0940d945a66_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -289,14 +305,15 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mVisible; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a35a8c2b03d09e0e7f1d95ba4f3b32d00">mVisible</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_a8e37445297c7cb9aa0001554312a001d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_a8e37445297c7cb9aa0001554312a001d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -322,7 +339,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mItemsOnToolBar; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad17fd3042d9a7140df7c99ed538e6bef">mItemsOnToolBar</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -355,7 +372,58 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mMinWidth; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad943e764bda90fb1e78433a8565b5491">mMinWidth</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9ac1c69cbf3e44f1608a06481e4d0158"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsToolBarItem::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(option);</div>
+<div class="line">    Q_UNUSED(widget);</div>
+<div class="line"></div>
+<div class="line">    QPainterPath path;</div>
+<div class="line">    path.addRoundedRect(rect(), 10, 10);</div>
+<div class="line"></div>
+<div class="line">    setBrush(QBrush(<a class="code" href="../../db/d66/class_u_b_settings.html#a625a557a8d25f36ff54fa6c7747cee86">UBSettings::paletteColor</a>));</div>
+<div class="line"></div>
+<div class="line">    painter-&gt;fillPath(path, brush());</div>
+<div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -373,10 +441,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> itemXOffset = 0;</div>
-<div class="line">    <span class="keywordflow">foreach</span> (QGraphicsItem* item, mItemsOnToolBar)</div>
+<div class="line">    <span class="keywordflow">foreach</span> (QGraphicsItem* item, <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad17fd3042d9a7140df7c99ed538e6bef">mItemsOnToolBar</a>)</div>
 <div class="line">    {</div>
 <div class="line">        item-&gt;setPos(itemXOffset, 0);</div>
-<div class="line">        itemXOffset += (item-&gt;boundingRect().width()+mElementsPadding);</div>
+<div class="line">        itemXOffset += (item-&gt;boundingRect().width()+<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a037655cbef90769b130792eb1587a2ab">mElementsPadding</a>);</div>
 <div class="line">        item-&gt;show();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -386,7 +454,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_afb333932944e51dd53af4d61f4920d76_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_afb333932944e51dd53af4d61f4920d76_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -413,7 +482,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ mItemsOnToolBar = <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ae2b5628bfd857db66a18129c8a12f81c">itemsOnToolBar</a>;}</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ad17fd3042d9a7140df7c99ed538e6bef">mItemsOnToolBar</a> = <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ae2b5628bfd857db66a18129c8a12f81c">itemsOnToolBar</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -456,7 +525,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ mShifting = shifting; }</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#aaf33d1922d908a8be6b796578761473f">mShifting</a> = shifting; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -490,7 +559,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ mVisible = visible; }</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a35a8c2b03d09e0e7f1d95ba4f3b32d00">mVisible</a> = visible; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -524,15 +593,137 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_a88a96bf42a11d028087d59eb0a897ca8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/ddb/class_u_b_graphics_tool_bar_item_a88a96bf42a11d028087d59eb0a897ca8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a037655cbef90769b130792eb1587a2ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBGraphicsToolBarItem::mElementsPadding</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16bd92409c578a01936b5abf2a1d0cc8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBGraphicsToolBarItem::mInitialHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad17fd3042d9a7140df7c99ed538e6bef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QGraphicsItem*&gt; UBGraphicsToolBarItem::mItemsOnToolBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad943e764bda90fb1e78433a8565b5491"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBGraphicsToolBarItem::mMinWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf33d1922d908a8be6b796578761473f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsToolBarItem::mShifting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35a8c2b03d09e0e7f1d95ba4f3b32d00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsToolBarItem::mVisible</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
+<li><a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
+<li><a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -540,7 +731,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html">UBGraphicsToolBarItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:56 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:04 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

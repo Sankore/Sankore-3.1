@@ -22,5 +22,7 @@ var class_u_b_document_container =
     [ "selectedDocument", "da/dc6/class_u_b_document_container.html#a859116555c2e46b6949e6e1cc613d754", null ],
     [ "setDocument", "da/dc6/class_u_b_document_container.html#af4ec175500cc0917a65d77f50b2ddca5", null ],
     [ "updatePage", "da/dc6/class_u_b_document_container.html#a79fc0149f295d96c4569bceffc768ccf", null ],
-    [ "updateThumbPage", "da/dc6/class_u_b_document_container.html#a0aa2ce35a38cac3cb81ef41b6e4ac04f", null ]
+    [ "updateThumbPage", "da/dc6/class_u_b_document_container.html#a0aa2ce35a38cac3cb81ef41b6e4ac04f", null ],
+    [ "mCurrentDocument", "da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da", null ],
+    [ "mDocumentThumbs", "da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258", null ]
 ];

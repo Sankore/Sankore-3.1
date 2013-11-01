@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d1/df2/class_u_b_document_tree_widget.
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/d80/class_u_b_document_tree_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentTreeWidget Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('d1/df2/class_u_b_document_tree_widget.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d66/class_u_b_document_tree_widget__coll__graph.svg" width="206" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d66/class_u_b_document_tree_widget__coll__graph.svg" width="226" height="510"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -134,6 +136,20 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6e77aa1c51ee6202da3b857b58c601ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a6e77aa1c51ee6202da3b857b58c601ac">dragMoveEvent</a> (QDragMoveEvent *event)</td></tr>
 <tr class="memitem:aea5c0e521bfb82227c13e32725ec4444"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#aea5c0e521bfb82227c13e32725ec4444">focusInEvent</a> (QFocusEvent *event)</td></tr>
 <tr class="memitem:a0280a3a3593f2ce00794081ef3311472"><td class="memItemLeft" align="right" valign="top">virtual Qt::DropActions&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a0280a3a3593f2ce00794081ef3311472">supportedDropActions</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a4bbc7152af99944f7274e95f896d9e90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a4bbc7152af99944f7274e95f896d9e90">documentUpdated</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocument)</td></tr>
+<tr class="memitem:a6ff358c0680f427b13db4a20594ea706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a6ff358c0680f427b13db4a20594ea706">itemChangedValidation</a> (QTreeWidgetItem *item, int column)</td></tr>
+<tr class="memitem:a1751f52ccb9953c854de320f5b3c2a9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a1751f52ccb9953c854de320f5b3c2a9b">autoScroll</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a78250cafd31405c7987d026b204ff210"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a></td></tr>
+<tr class="memitem:a0f31b9dc424b94c754907ed216e2ab6e"><td class="memItemLeft" align="right" valign="top">QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a></td></tr>
+<tr class="memitem:a7b2c4203f153c49f07f1acda538de172"><td class="memItemLeft" align="right" valign="top">QBrush&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a></td></tr>
+<tr class="memitem:a066760b77af59e4750b46028c11db0c1"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a></td></tr>
+<tr class="memitem:a29f06009b503085cdd39e2e25cf606c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a369cd0216b7f5a36e2c661a34fef7a91"></a>
@@ -150,20 +166,20 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QTreeWidget(parent)</div>
-<div class="line">    , mSelectedProxyTi(0)</div>
-<div class="line">    , mDropTargetProxyTi(0)</div>
+<div class="line">    , <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    setDragDropMode(QAbstractItemView::InternalMove);</div>
 <div class="line">    setAutoScroll(<span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">    mScrollTimer = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
-<div class="line">    connect(<a class="code" href="../../d2/da1/class_u_b_document_manager.html#a76098e4be543e87a5fc05c6d471a2670">UBDocumentManager::documentManager</a>(), SIGNAL(documentUpdated(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>*))</div>
-<div class="line">            , <span class="keyword">this</span>, SLOT(documentUpdated(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>*)));</div>
+<div class="line">    <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a> = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
+<div class="line">    connect(<a class="code" href="../../d2/da1/class_u_b_document_manager.html#a76098e4be543e87a5fc05c6d471a2670">UBDocumentManager::documentManager</a>(), SIGNAL(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a4bbc7152af99944f7274e95f896d9e90">documentUpdated</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>*))</div>
+<div class="line">            , <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a4bbc7152af99944f7274e95f896d9e90">documentUpdated</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>*)));</div>
 <div class="line"></div>
 <div class="line">    connect(<span class="keyword">this</span>, SIGNAL(itemChanged(QTreeWidgetItem *, <span class="keywordtype">int</span>))</div>
-<div class="line">            , <span class="keyword">this</span>,  SLOT(itemChangedValidation(QTreeWidgetItem *, <span class="keywordtype">int</span>)));</div>
-<div class="line">    connect(mScrollTimer, SIGNAL(timeout())</div>
-<div class="line">            , <span class="keyword">this</span>, SLOT(autoScroll()));</div>
+<div class="line">            , <span class="keyword">this</span>,  SLOT(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a6ff358c0680f427b13db4a20594ea706">itemChangedValidation</a>(QTreeWidgetItem *, <span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>, SIGNAL(timeout())</div>
+<div class="line">            , <span class="keyword">this</span>, SLOT(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a1751f52ccb9953c854de320f5b3c2a9b">autoScroll</a>()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -171,7 +187,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/df2/class_u_b_document_tree_widget_a369cd0216b7f5a36e2c661a34fef7a91_cgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/df2/class_u_b_document_tree_widget_a369cd0216b7f5a36e2c661a34fef7a91_cgraph.svg" width="606" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -204,6 +220,104 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a1751f52ccb9953c854de320f5b3c2a9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeWidget::autoScroll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    this-&gt;verticalScrollBar()-&gt;setValue(this-&gt;verticalScrollBar()-&gt;value() + <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/df2/class_u_b_document_tree_widget_a1751f52ccb9953c854de320f5b3c2a9b_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bbc7152af99944f7274e95f896d9e90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeWidget::documentUpdated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td>
+          <td class="paramname"><em>pDocument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line"><span class="comment">//    UBDocumentProxyTreeItem *treeItem = UBApplication::documentController-&gt;findDocument(pDocument);</span></div>
+<div class="line"><span class="comment">//    if (treeItem)</span></div>
+<div class="line"><span class="comment">//    {</span></div>
+<div class="line"><span class="comment">//        QTreeWidgetItem * parent = treeItem-&gt;parent();</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//        if (parent)</span></div>
+<div class="line"><span class="comment">//        {</span></div>
+<div class="line"><span class="comment">//            for (int i = 0; i &lt; parent-&gt;indexOfChild(treeItem); i++)</span></div>
+<div class="line"><span class="comment">//            {</span></div>
+<div class="line"><span class="comment">//                QTreeWidgetItem *ti = parent-&gt;child(i);</span></div>
+<div class="line"><span class="comment">//                UBDocumentProxyTreeItem* pi = dynamic_cast&lt;UBDocumentProxyTreeItem*&gt;(ti);</span></div>
+<div class="line"><span class="comment">//                if (pi)</span></div>
+<div class="line"><span class="comment">//                {</span></div>
+<div class="line"><span class="comment">//                    if (pDocument-&gt;metaData(UBSettings::documentUpdatedAt).toString() &gt;= pi-&gt;proxy()-&gt;metaData(UBSettings::documentUpdatedAt).toString())</span></div>
+<div class="line"><span class="comment">//                    {</span></div>
+<div class="line"><span class="comment">//                        bool selected = treeItem-&gt;isSelected();</span></div>
+<div class="line"><span class="comment">//                        parent-&gt;removeChild(treeItem);</span></div>
+<div class="line"><span class="comment">//                        parent-&gt;insertChild(i, treeItem);</span></div>
+<div class="line"><span class="comment">//                        for (int j = 0; j &lt; selectedItems().count(); j++)</span></div>
+<div class="line"><span class="comment">//                            selectedItems().at(j)-&gt;setSelected(false);</span></div>
+<div class="line"><span class="comment">//                        if (selected)</span></div>
+<div class="line"><span class="comment">//                            treeItem-&gt;setSelected(true);</span></div>
+<div class="line"><span class="comment">//                        break;</span></div>
+<div class="line"><span class="comment">//                    }</span></div>
+<div class="line"><span class="comment">//                }</span></div>
+<div class="line"><span class="comment">//            }</span></div>
+<div class="line"><span class="comment">//        }</span></div>
+<div class="line"><span class="comment">//    }</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/df2/class_u_b_document_tree_widget_a4bbc7152af99944f7274e95f896d9e90_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="aa1bf47bbce3336172d65efb653149385"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,16 +369,16 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mScrollTimer-&gt;isActive())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;isActive())</div>
 <div class="line">    {</div>
-<div class="line">        mScrollMagnitude = 0;</div>
-<div class="line">        mScrollTimer-&gt;stop();</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a> = 0;</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;stop();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mDropTargetProxyTi)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mDropTargetProxyTi-&gt;setBackground(0, mBackground);</div>
-<div class="line">        mDropTargetProxyTi = 0;</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>-&gt;setBackground(0, <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a>);</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -298,18 +412,18 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordtype">int</span> bottomDist = boundingFrame.bottom() - <span class="keyword">event</span>-&gt;pos().y(), topDist = boundingFrame.top() - <span class="keyword">event</span>-&gt;pos().y();</div>
 <div class="line">    <span class="keywordflow">if</span>(qAbs(bottomDist) &lt;= SCROLL_DISTANCE)</div>
 <div class="line">    {</div>
-<div class="line">        mScrollMagnitude = (SCROLL_DISTANCE - bottomDist)*4;</div>
-<div class="line">        <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !mScrollTimer-&gt;isActive()) mScrollTimer-&gt;start(100);</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a> = (SCROLL_DISTANCE - bottomDist)*4;</div>
+<div class="line">        <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;isActive()) <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;start(100);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(qAbs(topDist) &lt;= SCROLL_DISTANCE)</div>
 <div class="line">    {</div>
-<div class="line">        mScrollMagnitude = (- SCROLL_DISTANCE - topDist)*4;</div>
-<div class="line">        <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !mScrollTimer-&gt;isActive()) mScrollTimer-&gt;start(100);</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a> = (- SCROLL_DISTANCE - topDist)*4;</div>
+<div class="line">        <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;isActive()) <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;start(100);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        mScrollMagnitude = 0;</div>
-<div class="line">        mScrollTimer-&gt;stop();</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a29f06009b503085cdd39e2e25cf606c1">mScrollMagnitude</a> = 0;</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a066760b77af59e4750b46028c11db0c1">mScrollTimer</a>-&gt;stop();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line"></div>
@@ -318,7 +432,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;mimeData()-&gt;hasFormat(<a class="code" href="../../d8/d81/class_u_b_application.html#ad4f533c7971ce1c441b13a1b61e17525">UBApplication::mimeTypeUniboardPage</a>))</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a> *targetProxyTreeItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>*<span class="keyword">&gt;</span>(underlyingItem);</div>
-<div class="line">        <span class="keywordflow">if</span> (targetProxyTreeItem &amp;&amp; targetProxyTreeItem != mSelectedProxyTi)</div>
+<div class="line">        <span class="keywordflow">if</span> (targetProxyTreeItem &amp;&amp; targetProxyTreeItem != <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keyword">event</span>-&gt;setDropAction(Qt::CopyAction);</div>
 <div class="line">            <span class="keyword">event</span>-&gt;accept();</div>
@@ -332,7 +446,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a> *groupItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a>*<span class="keyword">&gt;</span>(underlyingItem);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (groupItem &amp;&amp; mSelectedProxyTi &amp;&amp; groupItem != mSelectedProxyTi-&gt;parent())</div>
+<div class="line">        <span class="keywordflow">if</span> (groupItem &amp;&amp; <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a> &amp;&amp; groupItem != <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;parent())</div>
 <div class="line">            event-&gt;acceptProposedAction();</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">            <span class="keyword">event</span>-&gt;ignore();</div>
@@ -340,27 +454,27 @@ Protected Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;isAccepted())</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (mDropTargetProxyTi)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>)</div>
 <div class="line">        {</div>
-<div class="line">            <span class="keywordflow">if</span> (underlyingItem != mDropTargetProxyTi)</div>
+<div class="line">            <span class="keywordflow">if</span> (underlyingItem != <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>)</div>
 <div class="line">            {</div>
-<div class="line">                mBackground = underlyingItem-&gt;background(0);</div>
-<div class="line">                mDropTargetProxyTi-&gt;setBackground(0, mBackground);</div>
-<div class="line">                mDropTargetProxyTi = underlyingItem;</div>
-<div class="line">                mDropTargetProxyTi-&gt;setBackground(0, QBrush(QColor(<span class="stringliteral">&quot;#6682b5&quot;</span>)));</div>
+<div class="line">                <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a> = underlyingItem-&gt;background(0);</div>
+<div class="line">                <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>-&gt;setBackground(0, <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a>);</div>
+<div class="line">                <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a> = underlyingItem;</div>
+<div class="line">                <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>-&gt;setBackground(0, QBrush(QColor(<span class="stringliteral">&quot;#6682b5&quot;</span>)));</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            mBackground = underlyingItem-&gt;background(0);</div>
-<div class="line">            mDropTargetProxyTi = underlyingItem;</div>
-<div class="line">            mDropTargetProxyTi-&gt;setBackground(0, QBrush(QColor(<span class="stringliteral">&quot;#6682b5&quot;</span>)));</div>
+<div class="line">            <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a> = underlyingItem-&gt;background(0);</div>
+<div class="line">            <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a> = underlyingItem;</div>
+<div class="line">            <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>-&gt;setBackground(0, QBrush(QColor(<span class="stringliteral">&quot;#6682b5&quot;</span>)));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mDropTargetProxyTi)</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mDropTargetProxyTi-&gt;setBackground(0, mBackground);</div>
-<div class="line">        mDropTargetProxyTi = 0;</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>-&gt;setBackground(0, <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a>);</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -388,27 +502,27 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mDropTargetProxyTi)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mDropTargetProxyTi-&gt;setBackground(0, mBackground);</div>
-<div class="line">        mDropTargetProxyTi = 0;</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a>-&gt;setBackground(0, <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a7b2c4203f153c49f07f1acda538de172">mBackground</a>);</div>
+<div class="line">        <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a0f31b9dc424b94c754907ed216e2ab6e">mDropTargetProxyTi</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    QTreeWidgetItem* underlyingItem = this-&gt;itemAt(event-&gt;pos());</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a> *groupItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a>*<span class="keyword">&gt;</span>(underlyingItem);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (groupItem &amp;&amp; mSelectedProxyTi &amp;&amp; mSelectedProxyTi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>())</div>
+<div class="line">    <span class="keywordflow">if</span> (groupItem &amp;&amp; <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a> &amp;&amp; <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>())</div>
 <div class="line">    {</div>
-<div class="line">        <a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a> *sourceGroupItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a>*<span class="keyword">&gt;</span>(mSelectedProxyTi-&gt;parent());</div>
+<div class="line">        <a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a> *sourceGroupItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;parent());</div>
 <div class="line">        <span class="keywordtype">bool</span> isTrashItem = sourceGroupItem &amp;&amp; sourceGroupItem-&gt;<a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html#a8099a11f701735707a2fbee80685f02a">isTrashFolder</a>();</div>
 <div class="line">        <span class="keywordflow">if</span> ((isTrashItem &amp;&amp; !groupItem-&gt;isTrashFolder()) ||</div>
-<div class="line">            (!isTrashItem &amp;&amp; mSelectedProxyTi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;groupName() != groupItem-&gt;groupName()))</div>
+<div class="line">            (!isTrashItem &amp;&amp; <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;groupName() != groupItem-&gt;groupName()))</div>
 <div class="line">        {</div>
 <div class="line">            QString groupName;</div>
 <div class="line">            <span class="keywordflow">if</span> (groupItem-&gt;isTrashFolder())</div>
 <div class="line">            {</div>
-<div class="line">                QString oldGroupName = mSelectedProxyTi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#a840d7de55a46ac70210981b48afbea68">UBSettings::documentGroupName</a>).toString();</div>
+<div class="line">                QString oldGroupName = <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#a840d7de55a46ac70210981b48afbea68">UBSettings::documentGroupName</a>).toString();</div>
 <div class="line">                groupName = <a class="code" href="../../db/d66/class_u_b_settings.html#a0e7fcd8a39b252af1670c0a099ad26cc">UBSettings::trashedDocumentGroupNamePrefix</a> + oldGroupName;</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">else</span></div>
@@ -418,10 +532,10 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                <span class="keywordflow">else</span></div>
 <div class="line">                    groupName = groupItem-&gt;groupName();</div>
 <div class="line">            }</div>
-<div class="line">            mSelectedProxyTi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;setMetaData(<a class="code" href="../../db/d66/class_u_b_settings.html#a840d7de55a46ac70210981b48afbea68">UBSettings::documentGroupName</a>, groupName);</div>
-<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab96bfcd20014ff5bb36fede047aef3b2">persistDocumentMetadata</a>(mSelectedProxyTi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>());</div>
+<div class="line">            <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;setMetaData(<a class="code" href="../../db/d66/class_u_b_settings.html#a840d7de55a46ac70210981b48afbea68">UBSettings::documentGroupName</a>, groupName);</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab96bfcd20014ff5bb36fede047aef3b2">persistDocumentMetadata</a>(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>());</div>
 <div class="line"></div>
-<div class="line">            mSelectedProxyTi-&gt;parent()-&gt;removeChild(mSelectedProxyTi);</div>
+<div class="line">            <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;parent()-&gt;removeChild(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>);</div>
 <div class="line"></div>
 <div class="line">            <span class="keywordtype">int</span> i = 0;</div>
 <div class="line">            <span class="keywordflow">for</span> (i = 0; i &lt; groupItem-&gt;childCount(); i++)</div>
@@ -430,28 +544,28 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                <a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>* pi = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>*<span class="keyword">&gt;</span>(ti);</div>
 <div class="line">                <span class="keywordflow">if</span> (pi)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> (mSelectedProxyTi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#aa9801d52a997e3a5f20c6ea533074f94">UBSettings::documentUpdatedAt</a>).toString() &gt;= pi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#aa9801d52a997e3a5f20c6ea533074f94">UBSettings::documentUpdatedAt</a>).toString())</div>
+<div class="line">                    <span class="keywordflow">if</span> (<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#aa9801d52a997e3a5f20c6ea533074f94">UBSettings::documentUpdatedAt</a>).toString() &gt;= pi-&gt;<a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html#a99726e62fcd1c5e3383754903811c00f">proxy</a>()-&gt;metaData(<a class="code" href="../../db/d66/class_u_b_settings.html#aa9801d52a997e3a5f20c6ea533074f94">UBSettings::documentUpdatedAt</a>).toString())</div>
 <div class="line">                    {</div>
 <div class="line">                        <span class="keywordflow">break</span>;</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
-<div class="line">            groupItem-&gt;insertChild(i, mSelectedProxyTi);</div>
+<div class="line">            groupItem-&gt;insertChild(i, <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>);</div>
 <div class="line"></div>
 <div class="line">            <span class="keywordflow">if</span> (isTrashItem)</div>
-<div class="line">                mSelectedProxyTi-&gt;setFlags(mSelectedProxyTi-&gt;flags() | Qt::ItemIsEditable);</div>
+<div class="line">                <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;setFlags(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;flags() | Qt::ItemIsEditable);</div>
 <div class="line"></div>
 <div class="line">            <span class="keywordflow">if</span> (groupItem-&gt;isTrashFolder())</div>
-<div class="line">                mSelectedProxyTi-&gt;setFlags(mSelectedProxyTi-&gt;flags() ^ Qt::ItemIsEditable);</div>
+<div class="line">                <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;setFlags(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;flags() ^ Qt::ItemIsEditable);</div>
 <div class="line"></div>
 <div class="line">            <span class="comment">//clearSelection();</span></div>
 <div class="line">            expandItem(groupItem);</div>
-<div class="line">            scrollToItem(mSelectedProxyTi);</div>
+<div class="line">            scrollToItem(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>);</div>
 <div class="line"></div>
 <div class="line">            <span class="comment">// disabled, as those 2 calls are buggy on windows, the item disappears if we selected them</span></div>
 <div class="line">            <span class="comment">//</span></div>
-<div class="line">            setCurrentItem(mSelectedProxyTi);</div>
-<div class="line">            mSelectedProxyTi-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line">            setCurrentItem(<a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>);</div>
+<div class="line">            <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>-&gt;setSelected(<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">            <span class="keyword">event</span>-&gt;setDropAction(Qt::IgnoreAction);</div>
 <div class="line">            <span class="keyword">event</span>-&gt;accept();</div>
@@ -462,7 +576,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        QTreeWidgetItem* underlyingTreeItem = this-&gt;itemAt(event-&gt;pos());</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a> *targetProxyTreeItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>*<span class="keyword">&gt;</span>(underlyingTreeItem);</div>
-<div class="line">        <span class="keywordflow">if</span> (targetProxyTreeItem &amp;&amp; targetProxyTreeItem != mSelectedProxyTi)</div>
+<div class="line">        <span class="keywordflow">if</span> (targetProxyTreeItem &amp;&amp; targetProxyTreeItem != <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a>)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (event-&gt;mimeData()-&gt;hasFormat(<a class="code" href="../../d8/d81/class_u_b_application.html#ad4f533c7971ce1c441b13a1b61e17525">UBApplication::mimeTypeUniboardPage</a>))</div>
 <div class="line">            {</div>
@@ -529,11 +643,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/df2/class_u_b_document_tree_widget_aa309286550f7287e879b4e21b7036f22_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -572,6 +686,71 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a6ff358c0680f427b13db4a20594ea706"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeWidget::itemChangedValidation </td>
+          <td>(</td>
+          <td class="paramtype">QTreeWidgetItem *&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (column == 0)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a> *group = <span class="keyword">dynamic_cast&lt;</span> <a class="code" href="../../d6/d09/class_u_b_document_group_tree_item.html">UBDocumentGroupTreeItem</a> *<span class="keyword">&gt;</span>(item);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (group)</div>
+<div class="line">        {</div>
+<div class="line">            QString name = group-&gt;text(0);</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; topLevelItemCount (); i++)</div>
+<div class="line">            {</div>
+<div class="line">                QTreeWidgetItem *someTopLevelItem = topLevelItem(i);</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">if</span> (someTopLevelItem != group &amp;&amp;</div>
+<div class="line">                        someTopLevelItem-&gt;text(0) == name)</div>
+<div class="line">                {</div>
+<div class="line">                    group-&gt;setText(0, tr(<span class="stringliteral">&quot;%1 (copy)&quot;</span>).arg(name));</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/df2/class_u_b_document_tree_widget_a6ff358c0680f427b13db4a20594ea706_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a252584c8e56613632f37d182e025fbe1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -596,7 +775,7 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QTreeWidgetItem* twItem = this-&gt;itemAt(event-&gt;pos());</div>
 <div class="line"></div>
-<div class="line">    mSelectedProxyTi = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>*<span class="keyword">&gt;</span>(twItem);</div>
+<div class="line">    <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a78250cafd31405c7987d026b204ff210">mSelectedProxyTi</a> = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>*<span class="keyword">&gt;</span>(twItem);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d1/df2/class_u_b_document_tree_widget.html#a252584c8e56613632f37d182e025fbe1">QTreeWidget::mousePressEvent</a>(event);</div>
 <div class="line">}</div>
@@ -629,9 +808,110 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a7b2c4203f153c49f07f1acda538de172"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QBrush UBDocumentTreeWidget::mBackground</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f31b9dc424b94c754907ed216e2ab6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTreeWidgetItem* UBDocumentTreeWidget::mDropTargetProxyTi</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29f06009b503085cdd39e2e25cf606c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBDocumentTreeWidget::mScrollMagnitude</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a066760b77af59e4750b46028c11db0c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* UBDocumentTreeWidget::mScrollTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78250cafd31405c7987d026b204ff210"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d9e/class_u_b_document_proxy_tree_item.html">UBDocumentProxyTreeItem</a>* UBDocumentTreeWidget::mSelectedProxyTi</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d0/d15/_u_b_document_tree_widget_8h_source.html">UBDocumentTreeWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d6/d3c/_u_b_document_tree_widget_8cpp.html">UBDocumentTreeWidget.cpp</a></li>
+<li><a class="el" href="../../d0/d15/_u_b_document_tree_widget_8h_source.html">UBDocumentTreeWidget.h</a></li>
+<li><a class="el" href="../../d6/d3c/_u_b_document_tree_widget_8cpp.html">UBDocumentTreeWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -639,7 +919,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/df2/class_u_b_document_tree_widget.html">UBDocumentTreeWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

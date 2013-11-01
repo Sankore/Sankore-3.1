@@ -1,15 +1,37 @@
 var class_u_b_trap_web_page_content_controller =
 [
+    [ "importDestination", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b", [
+      [ "library", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5", null ],
+      [ "board", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109", null ]
+    ] ],
     [ "UBTrapWebPageContentController", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a9e6cce9dd3467f7664d4233f2491bcf4", null ],
     [ "~UBTrapWebPageContentController", "d9/d3a/class_u_b_trap_web_page_content_controller.html#afe6b79e5403c83238268af49263449f8", null ],
     [ "addItemToBoard", "d9/d3a/class_u_b_trap_web_page_content_controller.html#aa38367c349014b8a1064f03c1b9dc519", null ],
     [ "addItemToLibrary", "d9/d3a/class_u_b_trap_web_page_content_controller.html#aeeadd8191948869553385407fe108983", null ],
+    [ "addLink", "d9/d3a/class_u_b_trap_web_page_content_controller.html#adc738e0c68ed861cce64a1389d2aee5d", null ],
     [ "addLinkToBoard", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a9e18874e464df8ae3ea8f154334bd758", null ],
     [ "addLinkToLibrary", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a2c3abe64d01d7cc3b5e97e7dbf06cc4b", null ],
+    [ "generateConfig", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a1f31d6825bd7efbca5d30992f76e31bb", null ],
+    [ "generateFullPageHtml", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a192fb52dc51a2b0848ccc518edc515d9", null ],
+    [ "generateIcon", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a3385a6c3ba1b545308d8719cd25f5544", null ],
+    [ "generatePreview", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a20390f95b0ce88112391b87471b2c441", null ],
     [ "hideTrapContent", "d9/d3a/class_u_b_trap_web_page_content_controller.html#ad748a9763752d340c6c6c3138e124ea3", null ],
+    [ "oEmbedRequestFinished", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a3b69a9161ab97471aa39568d6d47a57e", null ],
+    [ "prepareCurrentItemForImport", "d9/d3a/class_u_b_trap_web_page_content_controller.html#af9de8913f2b18f5b310b7ea9a918bc66", null ],
+    [ "selectHtmlObject", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a5ae59b88005d24b9ab9eb701fb133c8a", null ],
     [ "setLastWebHitTestResult", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a9c620d728fe53421fd1eee618c686334", null ],
     [ "showTrapContent", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a6bf16d3424c93377578ab0fb31f97418", null ],
     [ "text_Changed", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a982e0527edb4098108cbee8c490e5fee", null ],
     [ "text_Edited", "d9/d3a/class_u_b_trap_web_page_content_controller.html#ab2dccb1e52a6522aeffec66b9ec165de", null ],
-    [ "updateTrapContentFromPage", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a723c26f80042de25a88dd7eea0783b64", null ]
+    [ "updateListOfContents", "d9/d3a/class_u_b_trap_web_page_content_controller.html#ae05afbe6ad5d4cb0ff5c226fc2ef53df", null ],
+    [ "updateTrapContentFromPage", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a723c26f80042de25a88dd7eea0783b64", null ],
+    [ "widgetNameForUrl", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a2de339c83baff50eb2614a55c2c09888", null ],
+    [ "mAvaliableObjects", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f", null ],
+    [ "mCurrentItemImportDestination", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804", null ],
+    [ "mCurrentItemUrl", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a56605f0821c142ca8c5a0d12eb938410", null ],
+    [ "mCurrentWebFrame", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e", null ],
+    [ "mLastWebHitTestResult", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a718715f63af6664027f780942c9aa65a", null ],
+    [ "mObjectNoToTrapByTrapWebComboboxIndex", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d", null ],
+    [ "mParentWidget", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a0d27218a1036dbcc061148b1a313713f", null ],
+    [ "mTrapWebContentDialog", "d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4", null ]
 ];

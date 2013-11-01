@@ -8,6 +8,12 @@ var class_b_t_n_images =
     [ "m_btnRightActive", "d2/d5c/class_b_t_n_images.html#adec36f3b27903e8eed3a4d93cb93420e", null ],
     [ "m_btnRightPassive", "d2/d5c/class_b_t_n_images.html#af861c1d6ff7832db4c704d4757aa99a6", null ],
     [ "m_height", "d2/d5c/class_b_t_n_images.html#a28feb359bd5ad24d478d7bc69537c0ef", null ],
+    [ "m_strCenterActive", "d2/d5c/class_b_t_n_images.html#a82b7990c3b1fd94c2a05867f004c0be1", null ],
+    [ "m_strCenterPassive", "d2/d5c/class_b_t_n_images.html#a72e30f1731aa8d77acd98415b2202697", null ],
     [ "m_strHeight", "d2/d5c/class_b_t_n_images.html#a681868e8aeff0afb948f9cbc5ad2c598", null ],
+    [ "m_strLeftActive", "d2/d5c/class_b_t_n_images.html#ace6b1de0cc01a525160ff57b4e9f6bb0", null ],
+    [ "m_strLeftPassive", "d2/d5c/class_b_t_n_images.html#afd5be8bc904f5398c7ecf0536f5c6a15", null ],
+    [ "m_strRightActive", "d2/d5c/class_b_t_n_images.html#aafa75a2ca78ab1348df9a77d74fb4e52", null ],
+    [ "m_strRightPassive", "d2/d5c/class_b_t_n_images.html#a014378097ab78bdf147083ba41a8df24", null ],
     [ "m_width", "d2/d5c/class_b_t_n_images.html#a1bca0a9667b862ef43c838987e19962c", null ]
 ];

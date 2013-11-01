@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('de/d65/class_u_b_thumbnail.html','../.
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d5/d8c/class_u_b_thumbnail-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBThumbnail Class Reference</div>  </div>
@@ -124,7 +125,7 @@ $(document).ready(function(){initNavTree('de/d65/class_u_b_thumbnail.html','../.
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d2c/class_u_b_thumbnail__coll__graph.svg" width="150" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d2c/class_u_b_thumbnail__coll__graph.svg" width="184" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -143,6 +144,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a40a2d16aea31b6963a83a32fc282a049"><td class="memItemLeft" align="right" valign="top">QGraphicsRectItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7dee276e1e0f3e16a2bc0480e5bb8669"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a7dee276e1e0f3e16a2bc0480e5bb8669">mAddedToScene</a></td></tr>
+<tr class="memitem:a59c060694a0bef5e93d4fe77ff97e9fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a59c060694a0bef5e93d4fe77ff97e9fa">mColumn</a></td></tr>
+<tr class="memitem:a5e5c2d13f202de080f17449a5dfc0908"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a5e5c2d13f202de080f17449a5dfc0908">mRow</a></td></tr>
+<tr class="memitem:a5eaf1b55c35762434673375e3328294a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html">UBThumbnailTextItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a">mLabel</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a190821218d11d76d6acaadddbcb4c4e4"></a>
@@ -157,8 +165,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mAddedToScene(<span class="keyword">false</span>)</div>
-<div class="line">    , mLabel(NULL)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a7dee276e1e0f3e16a2bc0480e5bb8669">mAddedToScene</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a">mLabel</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a> = <span class="keyword">new</span> QGraphicsRectItem(0, 0, 0, 0);</div>
 <div class="line">    <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a>-&gt;setPen(QPen(<a class="code" href="../../db/d66/class_u_b_settings.html#ac66b5261e771dc368fb2e457d3d988e5">UBSettings::treeViewBackgroundColor</a>, 8));</div>
@@ -188,7 +196,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a> &amp;&amp; !mAddedToScene)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a> &amp;&amp; !<a class="code" href="../../de/d65/class_u_b_thumbnail.html#a7dee276e1e0f3e16a2bc0480e5bb8669">mAddedToScene</a>)</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -215,14 +223,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mColumn; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a59c060694a0bef5e93d4fe77ff97e9fa">mColumn</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_a951ab00bd0f500a4b7ee908de1f14504_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_a951ab00bd0f500a4b7ee908de1f14504_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -280,7 +288,7 @@ Protected Attributes</h2></td></tr>
 <div class="line">                item-&gt;scene()-&gt;addItem(<a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a>);</div>
 <div class="line">                <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a>-&gt;setZValue(item-&gt;zValue() - 1);</div>
 <div class="line">                <span class="comment">//                        UBGraphicsItem::assignZValue(mSelectionItem, item-&gt;zValue() - 1);</span></div>
-<div class="line">                mAddedToScene = <span class="keyword">true</span>;</div>
+<div class="line">                <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a7dee276e1e0f3e16a2bc0480e5bb8669">mAddedToScene</a> = <span class="keyword">true</span>;</div>
 <div class="line">            }</div>
 <div class="line"></div>
 <div class="line">            <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a>-&gt;setRect(</div>
@@ -295,8 +303,8 @@ Protected Attributes</h2></td></tr>
 <div class="line">        {</div>
 <div class="line">            <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a40a2d16aea31b6963a83a32fc282a049">mSelectionItem</a>-&gt;hide();</div>
 <div class="line">        }</div>
-<div class="line">        <span class="keywordflow">if</span> (mLabel)</div>
-<div class="line">            mLabel-&gt;<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#ac74d81b775c7eaa117bb610af2ed6afc">highlight</a>(item-&gt;isSelected());</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a">mLabel</a>)</div>
+<div class="line">            <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a">mLabel</a>-&gt;<a class="code" href="../../d0/d82/class_u_b_thumbnail_text_item.html#ac74d81b775c7eaa117bb610af2ed6afc">highlight</a>(item-&gt;isSelected());</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -331,7 +339,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mLabel;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a">mLabel</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -404,14 +412,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mRow; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5e5c2d13f202de080f17449a5dfc0908">mRow</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_a84ed4fea9e8596864ea91e44ef2b554c_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_a84ed4fea9e8596864ea91e44ef2b554c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -438,7 +446,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ mColumn = <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a951ab00bd0f500a4b7ee908de1f14504">column</a>; }</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a59c060694a0bef5e93d4fe77ff97e9fa">mColumn</a> = <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a951ab00bd0f500a4b7ee908de1f14504">column</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -454,7 +462,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_aea15e8dae40d0ff2f309ea79560f2a0d_icgraph.svg" width="624" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_aea15e8dae40d0ff2f309ea79560f2a0d_icgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -481,7 +489,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mLabel = <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a21a445699f315e12eddc316ee15ca80d">label</a>;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5eaf1b55c35762434673375e3328294a">mLabel</a> = <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a21a445699f315e12eddc316ee15ca80d">label</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -497,7 +505,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_a0ff204ad591df994cadf60bf9fe24db3_icgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_a0ff204ad591df994cadf60bf9fe24db3_icgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -524,7 +532,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ mRow = <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a84ed4fea9e8596864ea91e44ef2b554c">row</a>; }</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a5e5c2d13f202de080f17449a5dfc0908">mRow</a> = <a class="code" href="../../de/d65/class_u_b_thumbnail.html#a84ed4fea9e8596864ea91e44ef2b554c">row</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -540,13 +548,93 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_ae5f3a2b52f87e1e3c3ed51ce4a045912_icgraph.svg" width="606" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d65/class_u_b_thumbnail_ae5f3a2b52f87e1e3c3ed51ce4a045912_icgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="a7dee276e1e0f3e16a2bc0480e5bb8669"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBThumbnail::mAddedToScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a59c060694a0bef5e93d4fe77ff97e9fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBThumbnail::mColumn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5eaf1b55c35762434673375e3328294a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d82/class_u_b_thumbnail_text_item.html">UBThumbnailTextItem</a>* UBThumbnail::mLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e5c2d13f202de080f17449a5dfc0908"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBThumbnail::mRow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a40a2d16aea31b6963a83a32fc282a049"></a>
 <div class="memitem">
 <div class="memproto">
@@ -568,8 +656,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp.html">UBThumbnailWidget.cpp</a></li>
+<li><a class="el" href="../../d5/dab/_u_b_thumbnail_widget_8h_source.html">UBThumbnailWidget.h</a></li>
+<li><a class="el" href="../../de/d9d/_u_b_thumbnail_widget_8cpp.html">UBThumbnailWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -577,7 +665,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d65/class_u_b_thumbnail.html">UBThumbnail</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

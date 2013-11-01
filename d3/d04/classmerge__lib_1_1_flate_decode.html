@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d3/d04/classmerge__lib_1_1_flate_decod
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d2/db0/classmerge__lib_1_1_flate_decode-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::FlateDecode Class Reference</div>  </div>
@@ -123,7 +124,7 @@ $(document).ready(function(){initNavTree('d3/d04/classmerge__lib_1_1_flate_decod
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d3b/classmerge__lib_1_1_flate_decode__coll__graph.svg" width="171" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d3b/classmerge__lib_1_1_flate_decode__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -138,6 +139,10 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_classmerge__lib_1_1_decoder"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmerge__lib_1_1_decoder')"><img src="../../closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="../../d3/dbb/classmerge__lib_1_1_decoder.html">merge_lib::Decoder</a></td></tr>
 <tr class="memitem:abdb43368d06bd682c74262302b83e261 inherit pub_methods_classmerge__lib_1_1_decoder"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/classmerge__lib_1_1_decoder.html#abdb43368d06bd682c74262302b83e261">Decoder</a> ()</td></tr>
 <tr class="memitem:a2672d540986c213dc372d933f1b49774 inherit pub_methods_classmerge__lib_1_1_decoder"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/classmerge__lib_1_1_decoder.html#a2672d540986c213dc372d933f1b49774">~Decoder</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9b905358396c292b88881027ac5e1daa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afc50d24376979061025b8cdc21bc9135"></a>
@@ -152,7 +157,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">                        :_predict(NULL)</div>
+<div class="fragment"><div class="line">                        :<a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -179,9 +184,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>( _predict )</div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a> )</div>
 <div class="line">   {</div>
-<div class="line">      <span class="keyword">delete</span> _predict;</div>
+<div class="line">      <span class="keyword">delete</span> <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a>;</div>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -287,9 +292,9 @@ Public Member Functions</h2></td></tr>
 <div class="line">   free(out_p);</div>
 <div class="line">   <span class="comment">//    trace_hex((char*)encoded.c_str(),encoded.size());</span></div>
 <div class="line">   <span class="comment">// if predictor exists for that object, then lets decode it</span></div>
-<div class="line">   <span class="keywordflow">if</span>( _predict )</div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a> )</div>
 <div class="line">   {</div>
-<div class="line">      _predict-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a1b9360122a5f9ad101a11614029da051">decode</a>(encoded);</div>
+<div class="line">      <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a>-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a1b9360122a5f9ad101a11614029da051">decode</a>(encoded);</div>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -300,7 +305,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d04/classmerge__lib_1_1_flate_decode_af5507b5d8b85879ac21c39abb54c3a13_cgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d04/classmerge__lib_1_1_flate_decode_af5507b5d8b85879ac21c39abb54c3a13_cgraph.svg" width="603" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -405,7 +410,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d04/classmerge__lib_1_1_flate_decode_aa0777e2be94bf83ed3e677bb1ac99133_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d04/classmerge__lib_1_1_flate_decode_aa0777e2be94bf83ed3e677bb1ac99133_icgraph.svg" width="100%" height="431"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -442,8 +448,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) head.find(<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#aa827dbf05230cde8051f66721ee78c47">FilterPredictor::DECODE_PARAM_TOKEN</a>)  != -1 )</div>
 <div class="line">      {</div>
-<div class="line">         _predict = <span class="keyword">new</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a>();</div>
-<div class="line">         _predict-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab45acfb2cd146059037a607f4d008df7">initialize</a>(objectWithStream);</div>
+<div class="line">         <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a>();</div>
+<div class="line">         <a class="code" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html#a9b905358396c292b88881027ac5e1daa">_predict</a>-&gt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab45acfb2cd146059037a607f4d008df7">initialize</a>(objectWithStream);</div>
 <div class="line">      }</div>
 <div class="line"></div>
 <div class="line">   }</div>
@@ -454,15 +460,37 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d04/classmerge__lib_1_1_flate_decode_ae0644a898654752cf5f8cd2d27d806ca_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d04/classmerge__lib_1_1_flate_decode_ae0644a898654752cf5f8cd2d27d806ca_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a9b905358396c292b88881027ac5e1daa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a>* merge_lib::FlateDecode::_predict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d4/d53/_flate_decode_8h_source.html">FlateDecode.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../dc/dba/_flate_decode_8cpp.html">FlateDecode.cpp</a></li>
+<li><a class="el" href="../../d4/d53/_flate_decode_8h_source.html">FlateDecode.h</a></li>
+<li><a class="el" href="../../dc/dba/_flate_decode_8cpp.html">FlateDecode.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -470,7 +498,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d3/d04/classmerge__lib_1_1_flate_decode.html">FlateDecode</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

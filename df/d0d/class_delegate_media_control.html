@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('df/d0d/class_delegate_media_control.ht
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d7a/class_delegate_media_control-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DelegateMediaControl Class Reference</div>  </div>
@@ -151,6 +152,15 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a06fd542ee0278e369a39b9158f0acb35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a06fd542ee0278e369a39b9158f0acb35">mDisplayCurrentTime</a></td></tr>
 <tr class="memitem:a37ede0fb091f0faa6a06f50a7eaf7fae"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a></td></tr>
 <tr class="memitem:a31ae1114209781ed2921257c16219392"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a96a1dbce725000a79fb362dee01cfc78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a96a1dbce725000a79fb362dee01cfc78">mStartWidth</a></td></tr>
+<tr class="memitem:a849cbecc7b0ede8fbcf4bbab00345d74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a></td></tr>
+<tr class="memitem:a4218a9810e70e325f30d56a8381932dc"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a></td></tr>
+<tr class="memitem:a560e77f9249bd18a2041b17ce7bfa4c3"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a></td></tr>
+<tr class="memitem:a0812f091c7e1511f0e13a0d130378970"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/dc2/class_media_timer.html">MediaTimer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a></td></tr>
+<tr class="memitem:ab21a0e9f6a84c0d4d7b7f5cccc66ee8f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a31c53908b3b591beade946286b2cf06d"></a>
@@ -181,15 +191,15 @@ Protected Attributes</h2></td></tr>
 <div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a06fd542ee0278e369a39b9158f0acb35">mDisplayCurrentTime</a>(<span class="keyword">false</span>)</div>
 <div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>(0)</div>
 <div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>(0)</div>
-<div class="line">    , mStartWidth(200)</div>
-<div class="line">    , mSeecAreaBorderHeight(0)</div>
+<div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a96a1dbce725000a79fb362dee01cfc78">mStartWidth</a>(200)</div>
+<div class="line">    , <a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    setAcceptedMouseButtons(Qt::LeftButton);</div>
 <div class="line">    setBrush(QBrush(Qt::white));</div>
 <div class="line">    setPen(Qt::NoPen);</div>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"></div>
-<div class="line">    lcdTimer = <span class="keyword">new</span> <a class="code" href="../../db/dc2/class_media_timer.html">MediaTimer</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a> = <span class="keyword">new</span> <a class="code" href="../../db/dc2/class_media_timer.html">MediaTimer</a>(<span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">update</a>();</div>
 <div class="line">}</div>
@@ -199,7 +209,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a31c53908b3b591beade946286b2cf06d_cgraph.svg" width="558" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a31c53908b3b591beade946286b2cf06d_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -252,7 +262,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mLCDTimerArea.size();}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.size();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -287,7 +297,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal frameWidth = mSeecArea.height() / 2;</div>
+<div class="line">    qreal frameWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height() / 2;</div>
 <div class="line">    <span class="keywordflow">if</span> (boundingRect().contains(event-&gt;pos() - QPointF(frameWidth,0))</div>
 <div class="line">        &amp;&amp; boundingRect().contains(event-&gt;pos() + QPointF(frameWidth,0)))</div>
 <div class="line">    {</div>
@@ -331,7 +341,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   qreal frameWidth =  mSeecArea.height()/2;</div>
+<div class="line">   qreal frameWidth =  <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2;</div>
 <div class="line">    <span class="keywordflow">if</span> (boundingRect().contains(event-&gt;pos() - QPointF(frameWidth,0))</div>
 <div class="line">        &amp;&amp; boundingRect().contains(event-&gt;pos() + QPointF(frameWidth,0)))</div>
 <div class="line">    {</div>
@@ -386,7 +396,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_ae406ff2527a878411d414336f85050dc_cgraph.svg" width="550" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_ae406ff2527a878411d414336f85050dc_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -427,20 +437,20 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">    QPainterPath path;</div>
 <div class="line"></div>
-<div class="line">    path.addRoundedRect(mSeecArea, mSeecArea.height()/2, mSeecArea.height()/2);</div>
+<div class="line">    path.addRoundedRect(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>, <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2, <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2);</div>
 <div class="line">    painter-&gt;fillPath(path, brush());</div>
 <div class="line"></div>
-<div class="line">    qreal frameWidth = mSeecArea.height() / 2;</div>
+<div class="line">    qreal frameWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height() / 2;</div>
 <div class="line">    <span class="keywordtype">int</span> position = frameWidth;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a> &gt; 0)</div>
 <div class="line">    {</div>
-<div class="line">        position = frameWidth + ((mSeecArea.width() - (2 * frameWidth)) / <a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>) * <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>;</div>
+<div class="line">        position = frameWidth + ((<a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - (2 * frameWidth)) / <a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>) * <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> clearance = 2;</div>
 <div class="line">    <span class="keywordtype">int</span> radius = frameWidth-clearance;</div>
-<div class="line">    QRectF r(position - radius, clearance+mSeecAreaBorderHeight, radius * 2, radius * 2);</div>
+<div class="line">    QRectF r(position - radius, clearance+<a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>, radius * 2, radius * 2);</div>
 <div class="line"></div>
 <div class="line">    painter-&gt;setBrush(<a class="code" href="../../db/d66/class_u_b_settings.html#add3118144065710146552c7f61fdf491">UBSettings::documentViewLightColor</a>);</div>
 <div class="line">    painter-&gt;drawEllipse(r);</div>
@@ -468,44 +478,44 @@ Protected Attributes</h2></td></tr>
 <div class="line">    QTime tTotal;</div>
 <div class="line">    tTotal = tTotal.addMSecs(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a>);</div>
 <div class="line"></div>
-<div class="line">    mLCDTimerArea.setHeight(parentItem()-&gt;boundingRect().height());</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.setHeight(parentItem()-&gt;boundingRect().height());</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> digitsCount = 2;</div>
-<div class="line">    <span class="keywordtype">int</span> timerWidth = mLCDTimerArea.height();</div>
+<div class="line">    <span class="keywordtype">int</span> timerWidth = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.height();</div>
 <div class="line"></div>
-<div class="line">    mDisplayFormat = <span class="stringliteral">&quot;ss&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a> = <span class="stringliteral">&quot;ss&quot;</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (tTotal.minute() &gt; 0)</div>
 <div class="line">    {</div>
-<div class="line">        mDisplayFormat = <span class="stringliteral">&quot;mm:&quot;</span> + mDisplayFormat;</div>
+<div class="line">        <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a> = <span class="stringliteral">&quot;mm:&quot;</span> + <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a>;</div>
 <div class="line">        digitsCount += 3;</div>
-<div class="line">        timerWidth += mLCDTimerArea.height()*0.5;</div>
+<div class="line">        timerWidth += <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.height()*0.5;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (tTotal.hour() &gt; 0)</div>
 <div class="line">    {</div>
-<div class="line">        mDisplayFormat = <span class="stringliteral">&quot;hh:&quot;</span> + mDisplayFormat;</div>
+<div class="line">        <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a> = <span class="stringliteral">&quot;hh:&quot;</span> + <a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a>;</div>
 <div class="line">        digitsCount += 3;</div>
-<div class="line">        timerWidth += mLCDTimerArea.height();</div>
+<div class="line">        timerWidth += <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.height();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    lcdTimer-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a>(digitsCount);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a2cbb7719237a850fd7a49ea68c24a343">setNumDigits</a>(digitsCount);</div>
 <div class="line"></div>
-<div class="line">    mLCDTimerArea.setWidth(timerWidth);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.setWidth(timerWidth);</div>
 <div class="line"></div>
-<div class="line">    lcdTimer-&gt;setRect(mLCDTimerArea);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;setRect(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// not the best solution, but it works.</span></div>
-<div class="line">    lcdTimer-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">positionHandles</a>();</div>
-<div class="line">    mLCDTimerArea = lcdTimer-&gt;rect();</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a27212b4d06275e25e2488f0757cbfbd7">positionHandles</a>();</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a> = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;rect();</div>
 <div class="line">    <span class="comment">// -------------------------------------</span></div>
 <div class="line"></div>
-<div class="line">    lcdTimer-&gt;setPos(rect().width() - mLCDTimerArea.width(), 0);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;setPos(rect().width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.width(), 0);</div>
 <div class="line"></div>
-<div class="line">    mSeecAreaBorderHeight = rect().height()/20;</div>
-<div class="line">    mSeecArea.setWidth(rect().width()-mLCDTimerArea.width()-2);</div>
-<div class="line">    mSeecArea.setHeight(rect().height()-2*mSeecAreaBorderHeight);</div>
-<div class="line">    mSeecArea.setY(mSeecAreaBorderHeight);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a> = rect().height()/20;</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.setWidth(rect().width()-<a class="code" href="../../df/d0d/class_delegate_media_control.html#a560e77f9249bd18a2041b17ce7bfa4c3">mLCDTimerArea</a>.width()-2);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.setHeight(rect().height()-2*<a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>);</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.setY(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a849cbecc7b0ede8fbcf4bbab00345d74">mSeecAreaBorderHeight</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -554,11 +564,11 @@ Protected Attributes</h2></td></tr>
 <div class="line">    qreal frameWidth = rect().height() / 2;</div>
 <div class="line"></div>
 <div class="line">    minX = frameWidth;</div>
-<div class="line">    length = mSeecArea.width() - mSeecArea.height();</div>
+<div class="line">    length = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height();</div>
 <div class="line"></div>
 <div class="line">    qreal mouseX = mousePos.x();</div>
-<div class="line">    <span class="keywordflow">if</span> (mouseX &gt;= (mSeecArea.width() - mSeecArea.height()/2))</div>
-<div class="line">        mouseX = mSeecArea.width() - mSeecArea.height()/2;</div>
+<div class="line">    <span class="keywordflow">if</span> (mouseX &gt;= (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2))</div>
+<div class="line">        mouseX = <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.width() - <a class="code" href="../../df/d0d/class_delegate_media_control.html#a4218a9810e70e325f30d56a8381932dc">mSeecArea</a>.height()/2;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d0d/class_delegate_media_control.html#a31ae1114209781ed2921257c16219392">mTotalTimeInMs</a> &gt; 0 &amp;&amp; length &gt; 0 &amp;&amp; <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a></div>
 <div class="line">        &amp;&amp; <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a>-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>() &amp;&amp; <a class="code" href="../../df/d0d/class_delegate_media_control.html#a8a08cfff7b99e4dca1ea7e0cd9f0c097">mDelegate</a>-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acb9624b430d6dcf237200bdb86daf5d4">mediaObject</a>()-&gt;isSeekable())</div>
@@ -639,7 +649,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226_cgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a18566e9073d0e81ed0de968b2511d226_cgraph.svg" width="100%" height="414"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -678,7 +688,7 @@ Protected Attributes</h2></td></tr>
 <div class="line">    QTime tCurrent;</div>
 <div class="line">    tCurrent = tCurrent.addMSecs(<a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a> &lt; 0 ? 0 : <a class="code" href="../../df/d0d/class_delegate_media_control.html#a37ede0fb091f0faa6a06f50a7eaf7fae">mCurrentTimeInMs</a>);</div>
 <div class="line"></div>
-<div class="line">    lcdTimer-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc">display</a>(tCurrent.toString(mDisplayFormat));</div>
+<div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a0812f091c7e1511f0e13a0d130378970">lcdTimer</a>-&gt;<a class="code" href="../../db/dc2/class_media_timer.html#a035f4771f2d409ccaa3d347f31aa8dfc">display</a>(tCurrent.toString(<a class="code" href="../../df/d0d/class_delegate_media_control.html#ab21a0e9f6a84c0d4d7b7f5cccc66ee8f">mDisplayFormat</a>));</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../df/d0d/class_delegate_media_control.html#a94d2f24370dd05a8f479375dee461cd1">QGraphicsRectItem::update</a>();</div>
 <div class="line">}</div>
@@ -688,7 +698,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1_cgraph.svg" width="350" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a94d2f24370dd05a8f479375dee461cd1_cgraph.svg" width="592" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -726,7 +736,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412_cgraph.svg" width="550" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d0d/class_delegate_media_control_a463f01b70494794b7e54b273a1d0a412_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -774,6 +784,26 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="a0812f091c7e1511f0e13a0d130378970"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/dc2/class_media_timer.html">MediaTimer</a>* DelegateMediaControl::lcdTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a37ede0fb091f0faa6a06f50a7eaf7fae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -834,6 +864,106 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab21a0e9f6a84c0d4d7b7f5cccc66ee8f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DelegateMediaControl::mDisplayFormat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a560e77f9249bd18a2041b17ce7bfa4c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF DelegateMediaControl::mLCDTimerArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4218a9810e70e325f30d56a8381932dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF DelegateMediaControl::mSeecArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a849cbecc7b0ede8fbcf4bbab00345d74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DelegateMediaControl::mSeecAreaBorderHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a96a1dbce725000a79fb362dee01cfc78"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DelegateMediaControl::mStartWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a31ae1114209781ed2921257c16219392"></a>
 <div class="memitem">
 <div class="memproto">
@@ -855,8 +985,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
+<li><a class="el" href="../../d0/d4e/_u_b_graphics_item_delegate_8h_source.html">UBGraphicsItemDelegate.h</a></li>
+<li><a class="el" href="../../da/dcc/_u_b_graphics_item_delegate_8cpp.html">UBGraphicsItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -864,7 +994,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d0d/class_delegate_media_control.html">DelegateMediaControl</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -2,6 +2,9 @@ var searchData=
 [
   ['name',['name',['../d5/d15/structs_download_file_desc.html#a77186047aac4272ab2dbfff324911214',1,'sDownloadFileDesc::name()'],['../d2/dea/class_u_b_graphics_w3_c_widget_item_1_1_metadata.html#a0f9a4896e60269923cfb5b7ae57fc7a1',1,'UBGraphicsW3CWidgetItem::Metadata::name()'],['../d3/d63/class_u_b_keyboard_locale.html#a2b0a9e2afe0dff9abdc767ab8d29f59a',1,'UBKeyboardLocale::name()'],['../dc/d4a/structt_u_b_g_e_element_node.html#a889b0141b125b4440cde206ba57d9c8a',1,'tUBGEElementNode::name()'],['../d9/d07/structt_i_data_storage.html#a35e24f4bca7e31200c17e310b1ad1ad2',1,'tIDataStorage::name()']]],
   ['ncurrentlocale',['nCurrentLocale',['../d6/d6e/class_u_b_keyboard_palette.html#a5cc143fd2f778206618afad6f0dcb2b6',1,'UBKeyboardPalette']]],
+  ['ndigits',['ndigits',['../db/dc2/class_media_timer.html#a65636c56e33cbfc44600a5380b2abf90',1,'MediaTimer']]],
+  ['networkaccessmanager',['networkAccessManager',['../da/d14/class_u_b_application_controller.html#a8595db8bd89b28076b35d46e054dfd43',1,'UBApplicationController']]],
+  ['nkeyboardlayouts',['nKeyboardLayouts',['../d4/d99/class_u_b_platform_utils.html#a8dd949296944a2302a62d69c9d59e95c',1,'UBPlatformUtils']]],
   ['nlocalescount',['nLocalesCount',['../d6/d6e/class_u_b_keyboard_palette.html#a8607ac73d82334965befc3e8580fcb4b',1,'UBKeyboardPalette']]],
   ['noerrormsg',['noErrorMsg',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a53f6c83afa1b900f9cea098a09ba0a65',1,'UBCFFConstants.h']]],
   ['nsdc',['nsDc',['../dc/d51/class_u_b_metadata_dc_subset_adaptor.html#ab2fcd74a28b766ed49f99854dde7892d',1,'UBMetadataDcSubsetAdaptor']]],

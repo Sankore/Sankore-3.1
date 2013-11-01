@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBFloatingPalette.h Source File</title>
+<title>Open-Sankoré: UBFloatingPalette.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -191,19 +191,19 @@ $(document).ready(function(){initNavTree('d5/d6f/_u_b_floating_palette_8h_source
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#acf3ead0c3d8a3bde89b934ad208e9f9a">getParentRightOffset</a>();</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a45f8ba7b4a88755089596c30b040b1cc">   92</a></span>&#160;        <a class="code" href="../../d5/d6f/_u_b_floating_palette_8h.html#ac8adc001960a33bd6c76686f775bd7eb">eMinimizedLocation</a> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a45f8ba7b4a88755089596c30b040b1cc">minimizedLocation</a>(){<span class="keywordflow">return</span> mMinimizedLocation;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a45f8ba7b4a88755089596c30b040b1cc">   92</a></span>&#160;        <a class="code" href="../../d5/d6f/_u_b_floating_palette_8h.html#ac8adc001960a33bd6c76686f775bd7eb">eMinimizedLocation</a> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a45f8ba7b4a88755089596c30b040b1cc">minimizedLocation</a>(){<span class="keywordflow">return</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9a18560fab9292060ec15e5f92f2307e">mMinimizedLocation</a>;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> removeAllAssociatedPalette();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> minimizePalette(<span class="keyword">const</span> QPoint&amp; pos);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a4bbccd60531d06896c6d0acd8489dfb1">removeAllAssociatedPalette</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a3f32f9c0ae03d587847f4c922309d2a3">minimizePalette</a>(<span class="keyword">const</span> QPoint&amp; pos);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        QList&lt;UBFloatingPalette*&gt; mAssociatedPalette;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        QPoint mDragPosition;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">bool</span> mCanBeMinimized;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="../../d5/d6f/_u_b_floating_palette_8h.html#ac8adc001960a33bd6c76686f775bd7eb">eMinimizedLocation</a> mMinimizedLocation;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Qt::Corner mDefaultPosition;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a66a111bde796e0b51ee51178f8edac13">   98</a></span>&#160;        QList&lt;UBFloatingPalette*&gt; <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a66a111bde796e0b51ee51178f8edac13">mAssociatedPalette</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a6ceb681461e0590ec25b3da7c7cdb066">   99</a></span>&#160;        QPoint <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a6ceb681461e0590ec25b3da7c7cdb066">mDragPosition</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#af0c44f42e9176f6efd30c3963c259d7a">  100</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#af0c44f42e9176f6efd30c3963c259d7a">mCanBeMinimized</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9a18560fab9292060ec15e5f92f2307e">  101</a></span>&#160;        <a class="code" href="../../d5/d6f/_u_b_floating_palette_8h.html#ac8adc001960a33bd6c76686f775bd7eb">eMinimizedLocation</a> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a9a18560fab9292060ec15e5f92f2307e">mMinimizedLocation</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a6fff6adce97ba3b833d170981ef4c0fe">  102</a></span>&#160;        Qt::Corner <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a6fff6adce97ba3b833d170981ef4c0fe">mDefaultPosition</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        QPoint mOldPos;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a5c39be1c1eca7cede371092d532b6be3">  104</a></span>&#160;        QPoint <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a5c39be1c1eca7cede371092d532b6be3">mOldPos</a>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    signals:</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#a19cc4afd477ddaa4421339056e16c93e">mouseEntered</a>();</div>
@@ -220,8 +220,8 @@ $(document).ready(function(){initNavTree('d5/d6f/_u_b_floating_palette_8h_source
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d5/d6f/_u_b_floating_palette_8h.html">UBFloatingPalette.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d5/d6f/_u_b_floating_palette_8h.html">UBFloatingPalette.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

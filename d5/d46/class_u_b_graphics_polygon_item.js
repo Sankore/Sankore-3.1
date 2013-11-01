@@ -5,6 +5,7 @@ var class_u_b_graphics_polygon_item =
     [ "UBGraphicsPolygonItem", "d5/d46/class_u_b_graphics_polygon_item.html#a6f05fb4bda0b42fb66e96476d13b0f31", null ],
     [ "UBGraphicsPolygonItem", "d5/d46/class_u_b_graphics_polygon_item.html#a8db7d5601dcaa0623d7b4810a2038d05", null ],
     [ "~UBGraphicsPolygonItem", "d5/d46/class_u_b_graphics_polygon_item.html#a8f601cc855d1fd78dce23b99225f4e15", null ],
+    [ "clearStroke", "d5/d46/class_u_b_graphics_polygon_item.html#add8f874d99e40add85275687915d5ba8", null ],
     [ "color", "d5/d46/class_u_b_graphics_polygon_item.html#a9280bf7621aa90fe3f589d061b5a0af3", null ],
     [ "colorOnDarkBackground", "d5/d46/class_u_b_graphics_polygon_item.html#a6526b10cc05fde764a2e11e233fe4318", null ],
     [ "colorOnLightBackground", "d5/d46/class_u_b_graphics_polygon_item.html#a8185c658dcb5920a98f14d4d18e8e060", null ],
@@ -28,5 +29,13 @@ var class_u_b_graphics_polygon_item =
     [ "strokesGroup", "d5/d46/class_u_b_graphics_polygon_item.html#a87013167bd29d82e3b5dd7a40edd0546", null ],
     [ "subtract", "d5/d46/class_u_b_graphics_polygon_item.html#a116ec58a26fc3d1ad0a99671cf00c212", null ],
     [ "subtractIntersecting", "d5/d46/class_u_b_graphics_polygon_item.html#ae42d7228ce873fe2d9c81dd5eac1c78b", null ],
-    [ "type", "d5/d46/class_u_b_graphics_polygon_item.html#a81d6518ecc9021e6f835ef7940ed6729", null ]
+    [ "type", "d5/d46/class_u_b_graphics_polygon_item.html#a81d6518ecc9021e6f835ef7940ed6729", null ],
+    [ "mColorOnDarkBackground", "d5/d46/class_u_b_graphics_polygon_item.html#aa89f42d904b9590b29b86b9b8f339280", null ],
+    [ "mColorOnLightBackground", "d5/d46/class_u_b_graphics_polygon_item.html#a3da626b0ee2f7b917b5343e62bf02976", null ],
+    [ "mHasAlpha", "d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8", null ],
+    [ "mIsNominalLine", "d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2", null ],
+    [ "mOriginalLine", "d5/d46/class_u_b_graphics_polygon_item.html#acbc7b0ec5e8f034f151cb75b1064d4dc", null ],
+    [ "mOriginalWidth", "d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820", null ],
+    [ "mpGroup", "d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4", null ],
+    [ "mStroke", "d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975", null ]
 ];

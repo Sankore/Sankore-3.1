@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d8/d74/class_u_b_w3_c_widget_preferenc
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d0/d21/class_u_b_w3_c_widget_preference_a_p_i-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBW3CWidgetPreferenceAPI Class Reference</div>  </div>
@@ -125,7 +126,7 @@ $(document).ready(function(){initNavTree('d8/d74/class_u_b_w3_c_widget_preferenc
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d9e/class_u_b_w3_c_widget_preference_a_p_i__coll__graph.svg" width="235" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d9e/class_u_b_w3_c_widget_preference_a_p_i__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -153,6 +154,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a393e0a3fc696898a3981882296f59ef7"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a393e0a3fc696898a3981882296f59ef7">length</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a78c55e7c7cdaaaa2e2b8c1298aac4eac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -184,7 +189,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../db/de3/class_u_b_w3_c_web_storage.html#a5d9c9b2b3cac134b3a8da735da91e73e">UBW3CWebStorage</a>(parent)</div>
-<div class="line">    , mGraphicsW3CWidget(graphicsWidget)</div>
+<div class="line">    , <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>(graphicsWidget)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -239,8 +244,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">  <span class="keywordflow">if</span> (mGraphicsW3CWidget)</div>
-<div class="line">    mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a616c8333edae119fd07a95aa5c313c90">removeAllPreferences</a>();</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>)</div>
+<div class="line">    <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a616c8333edae119fd07a95aa5c313c90">removeAllPreferences</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -276,13 +281,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">  <span class="keywordflow">if</span> (mGraphicsW3CWidget) {</div>
-<div class="line">    QMap&lt;QString, QString&gt; docPref = mGraphicsW3CWidget-&gt;UBGraphicsWidgetItem::preferences();</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>) {</div>
+<div class="line">    QMap&lt;QString, QString&gt; docPref = <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;UBGraphicsWidgetItem::preferences();</div>
 <div class="line">    <span class="keywordflow">if</span> (docPref.contains(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>))</div>
 <div class="line">      <span class="keywordflow">return</span> docPref.value(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>);</div>
 <div class="line">  </div>
 <div class="line"></div>
-<div class="line">    QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3cPrefs = mGraphicsW3CWidget-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
+<div class="line">    QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3cPrefs = <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (w3cPrefs.contains(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>)) {</div>
 <div class="line">      <a class="code" href="../../de/ddd/class_u_b_graphics_w3_c_widget_item_1_1_preference_value.html">UBGraphicsW3CWidgetItem::PreferenceValue</a> pref = w3cPrefs.<a class="code" href="../../de/ddd/class_u_b_graphics_w3_c_widget_item_1_1_preference_value.html#ab87f9f4e2ad782d6f0db8a7e4cff42ab">value</a>(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>);</div>
@@ -325,7 +330,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">  QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3CPrefs = mGraphicsW3CWidget-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
+<div class="line">  QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3CPrefs = <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">if</span> (index &lt; w3CPrefs.size())</div>
 <div class="line">    <span class="keywordflow">return</span> w3CPrefs.keys().at(index);</div>
@@ -367,7 +372,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../db/de3/class_u_b_w3_c_web_storage.html#ad49a3b5a204e128457bac7c6620d3ecd">UBW3CWebStorage</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">   QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3cPrefs = mGraphicsW3CWidget-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
+<div class="line">   QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3cPrefs = <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordflow">return</span> w3cPrefs.size();</div>
 <div class="line">}</div>
@@ -405,8 +410,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">  <span class="keywordflow">if</span> (mGraphicsW3CWidget)</div>
-<div class="line">    mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a3a9a8ac964a30eeff16acbb6eea191d6">removePreference</a>(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>);</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>)</div>
+<div class="line">    <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a3a9a8ac964a30eeff16acbb6eea191d6">removePreference</a>(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -452,11 +457,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">  <span class="keywordflow">if</span> (mGraphicsW3CWidget) {</div>
-<div class="line">    QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3cPrefs = mGraphicsW3CWidget-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>) {</div>
+<div class="line">    QMap&lt;QString, UBGraphicsW3CWidgetItem::PreferenceValue&gt; w3cPrefs = <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#a31bef40ae61256f8e1e1896e91de3e13">preferences</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (w3cPrefs.contains(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>) &amp;&amp; !w3cPrefs.value(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>).readonly)</div>
-<div class="line">      mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a52b2fd4a9042146506fd4175de913988">setPreference</a>(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>, value);</div>
+<div class="line">      <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#a78c55e7c7cdaaaa2e2b8c1298aac4eac">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a52b2fd4a9042146506fd4175de913988">setPreference</a>(<a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html#aea6c6ea8bfae6c1024a996aed7a298fe">key</a>, value);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -471,9 +476,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a78c55e7c7cdaaaa2e2b8c1298aac4eac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* UBW3CWidgetPreferenceAPI::mGraphicsW3CWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/api/<a class="el" href="../../da/d32/_u_b_w3_c_widget_a_p_i_8h_source.html">UBW3CWidgetAPI.h</a></li>
-<li>Sankore-3.1/src/api/<a class="el" href="../../da/ddd/_u_b_w3_c_widget_a_p_i_8cpp.html">UBW3CWidgetAPI.cpp</a></li>
+<li><a class="el" href="../../da/d32/_u_b_w3_c_widget_a_p_i_8h_source.html">UBW3CWidgetAPI.h</a></li>
+<li><a class="el" href="../../da/ddd/_u_b_w3_c_widget_a_p_i_8cpp.html">UBW3CWidgetAPI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -481,7 +507,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html">UBW3CWidgetPreferenceAPI</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

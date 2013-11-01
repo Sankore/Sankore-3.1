@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d4/df7/class_u_b_web_plugin_widget.htm
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d1f/class_u_b_web_plugin_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWebPluginWidget Class Reference</div>  </div>
@@ -117,14 +119,14 @@ $(document).ready(function(){initNavTree('d4/df7/class_u_b_web_plugin_widget.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d60/class_u_b_web_plugin_widget__inherit__graph.svg" width="211" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d60/class_u_b_web_plugin_widget__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBWebPluginWidget:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/df5/class_u_b_web_plugin_widget__coll__graph.svg" width="184" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/df5/class_u_b_web_plugin_widget__coll__graph.svg" width="184" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -138,6 +140,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a199cabda58bc1a90f23a8a8ea0d17641"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html#a199cabda58bc1a90f23a8a8ea0d17641">handleFile</a> (const QString &amp;filePath)=0</td></tr>
 <tr class="memitem:abedbe5c9fcfd759a386a6f393188b955"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html#abedbe5c9fcfd759a386a6f393188b955">paintEvent</a> (QPaintEvent *paintEvent)=0</td></tr>
 <tr class="memitem:a33356b69bc403a58d3ac0a62f1a11481"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html#a33356b69bc403a58d3ac0a62f1a11481">resizeEvent</a> (QResizeEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:aed6ec2c5f77a55719fee3f3b1f9c4476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html#aed6ec2c5f77a55719fee3f3b1f9c4476">downloadProgress</a> (qint64 bytesReceived, qint64 bytesTotal)</td></tr>
+<tr class="memitem:a568ad195bee3aff50764680d8d29de66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html#a568ad195bee3aff50764680d8d29de66">downloadFinished</a> (bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa4ecbe6d8fe571d2d2c093c45ba868e1"><td class="memItemLeft" align="right" valign="top">QProgressBar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ada4887db461da595a0e783ed911bb59d"></a>
@@ -164,12 +175,12 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
-<div class="line">    , mLoadingProgressBar(<span class="keyword">this</span>)</div>
+<div class="line">    , <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>(<span class="keyword">this</span>)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/d40/class_u_b_http_get.html">UBHttpGet</a>* httpGet = <span class="keyword">new</span> <a class="code" href="../../de/d40/class_u_b_http_get.html">UBHttpGet</a>(<span class="keyword">this</span>);</div>
 <div class="line">    </div>
-<div class="line">    connect(httpGet, SIGNAL(downloadFinished(<span class="keywordtype">bool</span>, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(downloadFinished(<span class="keywordtype">bool</span>, QUrl, QString, QByteArray)));</div>
-<div class="line">    connect(httpGet, SIGNAL(downloadProgress(qint64, qint64)), <span class="keyword">this</span>, SLOT(downloadProgress(qint64, qint64)));</div>
+<div class="line">    connect(httpGet, SIGNAL(<a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#a568ad195bee3aff50764680d8d29de66">downloadFinished</a>(<span class="keywordtype">bool</span>, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#a568ad195bee3aff50764680d8d29de66">downloadFinished</a>(<span class="keywordtype">bool</span>, QUrl, QString, QByteArray)));</div>
+<div class="line">    connect(httpGet, SIGNAL(<a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aed6ec2c5f77a55719fee3f3b1f9c4476">downloadProgress</a>(qint64, qint64)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aed6ec2c5f77a55719fee3f3b1f9c4476">downloadProgress</a>(qint64, qint64)));</div>
 <div class="line">    </div>
 <div class="line">    httpGet-&gt;<a class="code" href="../../de/d40/class_u_b_http_get.html#a5c25272ca90dfb2d1d42784907d39c41">get</a>(url);</div>
 <div class="line">}</div>
@@ -179,7 +190,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/df7/class_u_b_web_plugin_widget_ada4887db461da595a0e783ed911bb59d_cgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/df7/class_u_b_web_plugin_widget_ada4887db461da595a0e783ed911bb59d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -212,6 +223,138 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a568ad195bee3aff50764680d8d29de66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWebPluginWidget::downloadFinished </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pSuccess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QUrl&#160;</td>
+          <td class="paramname"><em>sourceUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pContentTypeHeader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>pData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(pSuccess);</div>
+<div class="line">    Q_UNUSED(pContentTypeHeader);</div>
+<div class="line"></div>
+<div class="line">    QString tempFile = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aa3c7075cc43aa4b8dcefd7d06fab2d6a">UBFileSystemUtils::createTempDir</a>(<span class="stringliteral">&quot;UBWebPluginTemplate&quot;</span>) + <span class="stringliteral">&quot;/&quot;</span> + QFileInfo(sourceUrl.path()).fileName();</div>
+<div class="line">    QFile pdfFile(tempFile);</div>
+<div class="line">    pdfFile.open(QIODevice::WriteOnly);</div>
+<div class="line">    pdfFile.write(pData);</div>
+<div class="line">    pdfFile.close();</div>
+<div class="line">    <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#a199cabda58bc1a90f23a8a8ea0d17641">handleFile</a>(tempFile);</div>
+<div class="line">    <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.hide();</div>
+<div class="line">    update();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/df7/class_u_b_web_plugin_widget_a568ad195bee3aff50764680d8d29de66_cgraph.svg" width="358" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/df7/class_u_b_web_plugin_widget_a568ad195bee3aff50764680d8d29de66_icgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed6ec2c5f77a55719fee3f3b1f9c4476"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWebPluginWidget::downloadProgress </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesReceived</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesTotal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (bytesTotal == -1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.setMinimum(0);</div>
+<div class="line">        <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.setMaximum(0);</div>
+<div class="line">    } </div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.setMaximum(bytesTotal);</div>
+<div class="line">        <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.setValue(bytesReceived);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/df7/class_u_b_web_plugin_widget_aed6ec2c5f77a55719fee3f3b1f9c4476_icgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a199cabda58bc1a90f23a8a8ea0d17641"></a>
 <div class="memitem">
 <div class="memproto">
@@ -235,6 +378,15 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="../../d8/d85/class_u_b_web_plugin_p_d_f_widget.html#a3ba76be4373e171599b978325de88797">UBWebPluginPDFWidget</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/df7/class_u_b_web_plugin_widget_a199cabda58bc1a90f23a8a8ea0d17641_icgraph.svg" width="555" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -288,7 +440,7 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
-<div class="line">    mLoadingProgressBar.move(geometry().center() - mLoadingProgressBar.geometry().center());</div>
+<div class="line">    <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.move(geometry().center() - <a class="code" href="../../d4/df7/class_u_b_web_plugin_widget.html#aa4ecbe6d8fe571d2d2c093c45ba868e1">mLoadingProgressBar</a>.geometry().center());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -321,9 +473,30 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa4ecbe6d8fe571d2d2c093c45ba868e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QProgressBar UBWebPluginWidget::mLoadingProgressBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/<a class="el" href="../../d2/db6/_u_b_web_plugin_widget_8h_source.html">UBWebPluginWidget.h</a></li>
-<li>Sankore-3.1/src/web/<a class="el" href="../../d4/ddf/_u_b_web_plugin_widget_8cpp.html">UBWebPluginWidget.cpp</a></li>
+<li><a class="el" href="../../d2/db6/_u_b_web_plugin_widget_8h_source.html">UBWebPluginWidget.h</a></li>
+<li><a class="el" href="../../d4/ddf/_u_b_web_plugin_widget_8cpp.html">UBWebPluginWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -331,7 +504,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/df7/class_u_b_web_plugin_widget.html">UBWebPluginWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

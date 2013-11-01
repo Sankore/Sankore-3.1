@@ -9,5 +9,6 @@ var class_u_b_graphics_stroke =
     [ "hasPressure", "de/d75/class_u_b_graphics_stroke.html#a391767e8456dbee54956d48709dccf70", null ],
     [ "polygons", "de/d75/class_u_b_graphics_stroke.html#a19d0be99f5ef2ac596e13ef018ec1d77", null ],
     [ "remove", "de/d75/class_u_b_graphics_stroke.html#aeecdbfc012ba82636e96ffe0d9d13846", null ],
-    [ "UBGraphicsPolygonItem", "de/d75/class_u_b_graphics_stroke.html#aec6ebbda09c500f9f324b3881394977b", null ]
+    [ "UBGraphicsPolygonItem", "de/d75/class_u_b_graphics_stroke.html#aec6ebbda09c500f9f324b3881394977b", null ],
+    [ "mPolygons", "de/d75/class_u_b_graphics_stroke.html#abf90fb7bc5ee5e3efad2e6eb3850df48", null ]
 ];

@@ -9,6 +9,8 @@ var searchData=
   ['uniboardwebemail',['uniboardWebEMail',['../db/d66/class_u_b_settings.html#a6c126b94fae10229b3df238222828ae8',1,'UBSettings']]],
   ['uniboardwebgooglemapapikey',['uniboardWebGoogleMapApiKey',['../db/d66/class_u_b_settings.html#aa52b8e29071c46d7c615b0528003bc4c',1,'UBSettings']]],
   ['untitleddocumentsname',['untitledDocumentsName',['../d0/dd5/class_u_b_persistence_manager.html#a785a394deaab51518902d5afbfcc694b',1,'UBPersistenceManager']]],
+  ['updpointgrab',['updPointGrab',['../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5',1,'UBMagnifier']]],
+  ['updpointmove',['updPointMove',['../d4/d9d/class_u_b_magnifier.html#a7c83c9cc253d51d8810ebb5ecc47b2b5',1,'UBMagnifier']]],
   ['url',['url',['../db/d07/class_w_b_history_item.html#a09a9594a8300aefea4744b04890fb673',1,'WBHistoryItem::url()'],['../d9/d62/structs_o_embed_content.html#a5e8bca648a2390740dbae9cc8d8f0603',1,'sOEmbedContent::url()']]],
   ['usercrossdarkbackground',['userCrossDarkBackground',['../db/d66/class_u_b_settings.html#a05a319676b2f30edc2aef2f80d2b2d37',1,'UBSettings']]],
   ['usercrosslightbackground',['userCrossLightBackground',['../db/d66/class_u_b_settings.html#abb0809c7edab4cf15754a6d185f1fd06',1,'UBSettings']]]

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('dd/df0/class_u_b_web_trap_mouse_event_
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../da/d65/class_u_b_web_trap_mouse_event_mask-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWebTrapMouseEventMask Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('dd/df0/class_u_b_web_trap_mouse_event_
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d54/class_u_b_web_trap_mouse_event_mask__coll__graph.svg" width="238" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d54/class_u_b_web_trap_mouse_event_mask__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -132,6 +133,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a784d9274035e074c6c8f5b78edd79222"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a784d9274035e074c6c8f5b78edd79222">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="memitem:ace359f05c1aa8f4b048c7294b26bbff8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ace359f05c1aa8f4b048c7294b26bbff8">mouseReleaseEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="memitem:a864af1c0701f448dd2fb3a110b5db4cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a864af1c0701f448dd2fb3a110b5db4cc">paintEvent</a> (QPaintEvent *)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac89fe331ee3bcca20b4a0af4b82a56f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d78/class_w_b_web_trap_web_view.html">WBWebTrapWebView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a></td></tr>
+<tr class="memitem:a4f862c81a75810d148f5eab2f6caaef4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html">UBTrapWebPageContentController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a4f862c81a75810d148f5eab2f6caaef4">mTrapController</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac9119adb597aa36e77fec485f994cd16"></a>
@@ -148,8 +154,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(pWebView)</div>
-<div class="line">    , mTrappedWebView(pWebView)</div>
-<div class="line">    , mTrapController(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>(pWebView)</div>
+<div class="line">    , <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a4f862c81a75810d148f5eab2f6caaef4">mTrapController</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -180,8 +186,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(pWebView)</div>
-<div class="line">    , mTrappedWebView(pWebView)</div>
-<div class="line">    , mTrapController(controller)</div>
+<div class="line">    , <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>(pWebView)</div>
+<div class="line">    , <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a4f862c81a75810d148f5eab2f6caaef4">mTrapController</a>(controller)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -237,7 +243,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mTrappedWebView &amp;&amp; !mTrappedWebView-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8">isTrapping</a>())</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a> &amp;&amp; !<a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8">isTrapping</a>())</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a784d9274035e074c6c8f5b78edd79222">QWidget::mouseMoveEvent</a>(event);</div>
 <div class="line">    }</div>
@@ -276,10 +282,10 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mTrappedWebView &amp;&amp; mTrappedWebView-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8">isTrapping</a>())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a> &amp;&amp; <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8">isTrapping</a>())</div>
 <div class="line">    {</div>
-<div class="line">        mTrappedWebView-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a838843164510c7510c16a2d6b72ce043">highliteElementAtPos</a>(event-&gt;pos());</div>
-<div class="line">        mTrappedWebView-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#afdbfd6aac50cad5ac07a465baa7be0b6">trapElementAtPos</a>(event-&gt;pos());</div>
+<div class="line">        <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a838843164510c7510c16a2d6b72ce043">highliteElementAtPos</a>(event-&gt;pos());</div>
+<div class="line">        <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>-&gt;<a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#afdbfd6aac50cad5ac07a465baa7be0b6">trapElementAtPos</a>(event-&gt;pos());</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
@@ -364,9 +370,50 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a4f862c81a75810d148f5eab2f6caaef4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html">UBTrapWebPageContentController</a>* UBWebTrapMouseEventMask::mTrapController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac89fe331ee3bcca20b4a0af4b82a56f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d78/class_w_b_web_trap_web_view.html">WBWebTrapWebView</a>* UBWebTrapMouseEventMask::mTrappedWebView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d9/d82/_w_b_web_trap_web_view_8h_source.html">WBWebTrapWebView.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d6/d2f/_w_b_web_trap_web_view_8cpp.html">WBWebTrapWebView.cpp</a></li>
+<li><a class="el" href="../../d9/d82/_w_b_web_trap_web_view_8h_source.html">WBWebTrapWebView.h</a></li>
+<li><a class="el" href="../../d6/d2f/_w_b_web_trap_web_view_8cpp.html">WBWebTrapWebView.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -374,7 +421,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html">UBWebTrapMouseEventMask</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d2/d05/class_u_b_keyboard_button.html'
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d1f/class_u_b_keyboard_button-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBKeyboardButton Class Reference</div>  </div>
@@ -153,6 +154,11 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a72d0a599d85f6cb818ff818fd101afbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d91/class_content_image.html">ContentImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a72d0a599d85f6cb818ff818fd101afbb">imgContent</a></td></tr>
 <tr class="memitem:af438d7515d8543b827e9ec6d3cf63f09"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#af438d7515d8543b827e9ec6d3cf63f09">m_contentImagePath</a></td></tr>
 <tr class="memitem:a24bb19c40ac54159a6cccac7d2b17202"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d6e/class_u_b_keyboard_palette.html">UBKeyboardPalette</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a300a8dff924d84148b773a3009643a4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a></td></tr>
+<tr class="memitem:aaad1cb9f60abd0e96475209603f99194"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab1f5c4db91f193fdf65402a0a23aa819"></a>
@@ -180,8 +186,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        :QWidget(parent),</div>
 <div class="line">        <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a>(parent),</div>
-<div class="line">        bFocused(<span class="keyword">false</span>),</div>
-<div class="line">        bPressed(<span class="keyword">false</span>)</div>
+<div class="line">        <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a>(<span class="keyword">false</span>),</div>
+<div class="line">        <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a4942440a8d820ed502f2d36f63882d64">m_parent</a> = parent;</div>
 <div class="line"></div>
@@ -238,7 +244,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    bFocused = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a> = <span class="keyword">true</span>;</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -267,7 +273,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../dc/d3d/class_u_b_shift_button.html#a16ce8da99234755369dac01b85912027">UBShiftButton</a>, and <a class="el" href="../../d6/dab/class_u_b_caps_lock_button.html#a446a1e846cff26cf63da26a477744b42">UBCapsLockButton</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> bPressed;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -303,7 +309,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    bFocused = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a300a8dff924d84148b773a3009643a4e">bFocused</a> = <span class="keyword">false</span>;</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -332,7 +338,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
-<div class="line">    bPressed = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a> = <span class="keyword">true</span>;</div>
 <div class="line">    update();</div>
 <div class="line">    this-&gt;<a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aab34537366dea90f113b85dac6da80d9">onPress</a>();</div>
 <div class="line">}</div>
@@ -370,7 +376,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    bPressed = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#aaad1cb9f60abd0e96475209603f99194">bPressed</a> = <span class="keyword">false</span>;</div>
 <div class="line">    update();</div>
 <div class="line">    this-&gt;<a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a92423df2600435a21ae871fca421d4bd">onRelease</a>();</div>
 <div class="line">}</div>
@@ -658,7 +664,7 @@ Protected Attributes</h2></td></tr>
 <div class="line">        <span class="comment">//if (keycode.modifier==6) modifier = 0x6000;</span></div>
 <div class="line">        <span class="comment">//if (keycode.modifier==7) modifier = 0x6001;</span></div>
 <div class="line"></div>
-<div class="line">        <a class="code" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp.html#a2ac77f57504a2222697eb3155ceca563">x11SendKey</a>(display, keycode.<a class="code" href="../../d2/dab/struct_k_e_y_c_o_d_e.html#ad5290fbe104d6c227edbea15304141d8">code</a> + <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a>-&gt;min_keycodes , modifier);</div>
+<div class="line">        <a class="code" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp.html#a2ac77f57504a2222697eb3155ceca563">x11SendKey</a>(display, keycode.<a class="code" href="../../d2/dab/struct_k_e_y_c_o_d_e.html#ad5290fbe104d6c227edbea15304141d8">code</a> + <a class="code" href="../../d2/d05/class_u_b_keyboard_button.html#a24bb19c40ac54159a6cccac7d2b17202">keyboard</a>-&gt;<a class="code" href="../../d6/d6e/class_u_b_keyboard_palette.html#a71d96ddaeb03a3c8e75dec9274210a59">min_keycodes</a> , modifier);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    XCloseDisplay(display);</div>
@@ -669,7 +675,8 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d05/class_u_b_keyboard_button_a7b7c22df6975f5c884549f0b3b0319b7_cgraph.svg" width="574" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d05/class_u_b_keyboard_button_a7b7c22df6975f5c884549f0b3b0319b7_cgraph.svg" width="574" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -685,6 +692,46 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="a300a8dff924d84148b773a3009643a4e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBKeyboardButton::bFocused</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaad1cb9f60abd0e96475209603f99194"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBKeyboardButton::bPressed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a72d0a599d85f6cb818ff818fd101afbb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -766,11 +813,11 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp.html">UBKeyboardPalette_linux.cpp</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp.html">UBKeyboardPalette_mac.cpp</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../da/d7d/_u_b_keyboard_palette__win_8cpp.html">UBKeyboardPalette_win.cpp</a></li>
+<li><a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
+<li><a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
+<li><a class="el" href="../../d1/d7e/_u_b_keyboard_palette__linux_8cpp.html">UBKeyboardPalette_linux.cpp</a></li>
+<li><a class="el" href="../../dd/d68/_u_b_keyboard_palette__mac_8cpp.html">UBKeyboardPalette_mac.cpp</a></li>
+<li><a class="el" href="../../da/d7d/_u_b_keyboard_palette__win_8cpp.html">UBKeyboardPalette_win.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -778,7 +825,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d05/class_u_b_keyboard_button.html">UBKeyboardButton</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

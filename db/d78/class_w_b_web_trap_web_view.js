@@ -12,6 +12,7 @@ var class_w_b_web_trap_web_view =
     [ "embedCodeCaptured", "db/d78/class_w_b_web_trap_web_view.html#ab37566289a6639586c3b0878c6bf7bcc", null ],
     [ "hideEvent", "db/d78/class_w_b_web_trap_web_view.html#a0b5c598bc4422e4718b7d6c203b46ce2", null ],
     [ "highliteElementAtPos", "db/d78/class_w_b_web_trap_web_view.html#a838843164510c7510c16a2d6b72ce043", null ],
+    [ "isFrameContentAtPos", "db/d78/class_w_b_web_trap_web_view.html#a6c1b3fcc01475abac104cde4c1390a6c", null ],
     [ "isTrapping", "db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8", null ],
     [ "mouseMoveEvent", "db/d78/class_w_b_web_trap_web_view.html#a405fcd2faa0d0fef3666cd4e7c5c4600", null ],
     [ "mousePressEvent", "db/d78/class_w_b_web_trap_web_view.html#aee781ab6308411f503aff112b4d5c6c9", null ],
@@ -23,5 +24,13 @@ var class_w_b_web_trap_web_view =
     [ "setIsTrapping", "db/d78/class_w_b_web_trap_web_view.html#a69a4cb6a908c732ba48906d35abea0ea", null ],
     [ "trapContentFromHitTest", "db/d78/class_w_b_web_trap_web_view.html#a2ac308414d18186c9c4fc60bc5f46400", null ],
     [ "trapElementAtPos", "db/d78/class_w_b_web_trap_web_view.html#afdbfd6aac50cad5ac07a465baa7be0b6", null ],
-    [ "webElementCaptured", "db/d78/class_w_b_web_trap_web_view.html#af54b425effeae63730c75cd5eb6f501f", null ]
+    [ "viewLoadFinished", "db/d78/class_w_b_web_trap_web_view.html#a15129781bed27a1feff4e23f264fab97", null ],
+    [ "webElementCaptured", "db/d78/class_w_b_web_trap_web_view.html#af54b425effeae63730c75cd5eb6f501f", null ],
+    [ "m_bContentForTrapSelected", "db/d78/class_w_b_web_trap_web_view.html#a2ee1f4a16729c18eea6880c6c5ea4728", null ],
+    [ "m_bScrollingInProcess", "db/d78/class_w_b_web_trap_web_view.html#ae21033eba18b3dea91c95bcf18d4829b", null ],
+    [ "mCurrentContentType", "db/d78/class_w_b_web_trap_web_view.html#a4fe44719d78a45510c31318fcb481c42", null ],
+    [ "mDomElementRect", "db/d78/class_w_b_web_trap_web_view.html#a1797ce7cd7799a3b4d87699df8179116", null ],
+    [ "mElementQuery", "db/d78/class_w_b_web_trap_web_view.html#a91478433824d9890efbaf5b469dd868e", null ],
+    [ "mIsTrapping", "db/d78/class_w_b_web_trap_web_view.html#a7ab26ae9b1b272bdf5daaa97e9addc7a", null ],
+    [ "mWebViewElementRect", "db/d78/class_w_b_web_trap_web_view.html#ac44986a30426fad5261fe6d43e9041c9", null ]
 ];

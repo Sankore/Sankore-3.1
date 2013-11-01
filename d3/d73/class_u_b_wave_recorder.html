@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('d3/d73/class_u_b_wave_recorder.html','
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/d9d/class_u_b_wave_recorder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWaveRecorder Class Reference</div>  </div>
@@ -118,7 +121,7 @@ $(document).ready(function(){initNavTree('d3/d73/class_u_b_wave_recorder.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/dc9/class_u_b_wave_recorder__coll__graph.svg" width="166" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/dc9/class_u_b_wave_recorder__coll__graph.svg" width="174" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -139,6 +142,29 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a01abc2b5f2cc6cec749f7075944f4b1c"><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a01abc2b5f2cc6cec749f7075944f4b1c">waveInDevices</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0d79f55f2b1403e0a2dc3dd495bc2fb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a0d79f55f2b1403e0a2dc3dd495bc2fb4">emitNewWaveBuffer</a> (WAVEHDR *pBuffer)</td></tr>
+<tr class="memitem:a1b40b030701a293fcb7f7e3c5229d311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a> (QString pLastErrorMessage)</td></tr>
+<tr class="memitem:a156eb0b9e6845214d6bd46829a8f3aa2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a156eb0b9e6845214d6bd46829a8f3aa2">isRecording</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ab2761c0b676e24cffb2ab6bdad9066cf"><td class="memItemLeft" align="right" valign="top">static void CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#ab2761c0b676e24cffb2ab6bdad9066cf">waveInProc</a> (HWAVEIN hwi, UINT uMsg, DWORD_PTR dwInstance, DWORD_PTR dwParam1, DWORD_PTR dwParam2)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab5253b8fa28a913e97558c189ae4a7da"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a></td></tr>
+<tr class="memitem:a493ac5caa2079fc285f087bbf28575b0"><td class="memItemLeft" align="right" valign="top">HWAVEIN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a></td></tr>
+<tr class="memitem:a91b419c3cba7d7f44d607e90f5813060"><td class="memItemLeft" align="right" valign="top">QList&lt; WAVEHDR * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a></td></tr>
+<tr class="memitem:aa7d14bd17c7cc6450288869edde9b1ba"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a></td></tr>
+<tr class="memitem:ade7e6a52b62fdc19b135f9db124b6c06"><td class="memItemLeft" align="right" valign="top">volatile long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a></td></tr>
+<tr class="memitem:a2a255c57c8697a4ed2a81790a76db8de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a2a255c57c8697a4ed2a81790a76db8de">mBufferLengthInMs</a></td></tr>
+<tr class="memitem:a3d68406c2bedf62e0ab86e246d97b21c"><td class="memItemLeft" align="right" valign="top">QTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a3d68406c2bedf62e0ab86e246d97b21c">mRecordingStartTime</a></td></tr>
+<tr class="memitem:a86280ccb944c78baeb84d3772e1b062b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a86280ccb944c78baeb84d3772e1b062b">mNbChannels</a></td></tr>
+<tr class="memitem:a537d2103240b33154a5eb0230f747cbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a></td></tr>
+<tr class="memitem:a6b09ada6f588a0827be7731a2a697849"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6d2a1330302ac010e93b77d4d62737be"></a>
@@ -155,12 +181,12 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
-<div class="line">    , mIsRecording(<span class="keyword">false</span>)</div>
-<div class="line">    , mMsTimeStamp(0)</div>
-<div class="line">    , mBufferLengthInMs(100)</div>
-<div class="line">    , mNbChannels(2)</div>
-<div class="line">    , mSampleRate(44100)</div>
-<div class="line">    , mBitsPerSample(16)</div>
+<div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a2a255c57c8697a4ed2a81790a76db8de">mBufferLengthInMs</a>(100)</div>
+<div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a86280ccb944c78baeb84d3772e1b062b">mNbChannels</a>(2)</div>
+<div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a>(44100)</div>
+<div class="line">    , <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a>(16)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -207,30 +233,91 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (waveInReset(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line">    <span class="keywordflow">if</span> (waveInReset(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Cannot reset wave in device &quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot reset wave in device &quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(WAVEHDR* buffer, mWaveBuffers)</div>
+<div class="line">    <span class="keywordflow">foreach</span>(WAVEHDR* buffer, <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a>)</div>
 <div class="line">    {</div>
-<div class="line">        waveInUnprepareHeader(mWaveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR));</div>
+<div class="line">        waveInUnprepareHeader(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, buffer, <span class="keyword">sizeof</span>(WAVEHDR));</div>
 <div class="line">        <span class="keyword">delete</span> [] buffer-&gt;lpData;</div>
 <div class="line">        <span class="keyword">delete</span> buffer;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mWaveBuffers.clear();</div>
+<div class="line">    <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a>.clear();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (waveInClose(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line">    <span class="keywordflow">if</span> (waveInClose(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Cannot close wave in device &quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot close wave in device &quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a061bf8de2624233eea17b658480b5e05_cgraph.svg" width="435" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d79f55f2b1403e0a2dc3dd495bc2fb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWaveRecorder::emitNewWaveBuffer </td>
+          <td>(</td>
+          <td class="paramtype">WAVEHDR *&#160;</td>
+          <td class="paramname"><em>pBuffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>)</div>
+<div class="line">    {</div>
+<div class="line">        emit <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a4a856b9f77365a638191857455046bf7">newWaveBuffer</a>(pBuffer, <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a>);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">long</span> bufferMs = pBuffer-&gt;dwBytesRecorded / <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a86280ccb944c78baeb84d3772e1b062b">mNbChannels</a> / (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a> / 8) * 1000 / <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a>;</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a> += bufferMs;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a0d79f55f2b1403e0a2dc3dd495bc2fb4_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a0d79f55f2b1403e0a2dc3dd495bc2fb4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="acab7cce9f4a69c6bcbf219e9d7fb6e83"></a>
@@ -272,20 +359,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    WAVEFORMATEX format;</div>
 <div class="line">    format.cbSize = 0;</div>
 <div class="line">    format.wFormatTag = WAVE_FORMAT_PCM;</div>
-<div class="line">    format.nChannels = mNbChannels;</div>
-<div class="line">    format.wBitsPerSample = mBitsPerSample;</div>
-<div class="line">    format.nSamplesPerSec = mSampleRate;</div>
+<div class="line">    format.nChannels = <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a86280ccb944c78baeb84d3772e1b062b">mNbChannels</a>;</div>
+<div class="line">    format.wBitsPerSample = <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a6b09ada6f588a0827be7731a2a697849">mBitsPerSample</a>;</div>
+<div class="line">    format.nSamplesPerSec = <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a537d2103240b33154a5eb0230f747cbd">mSampleRate</a>;</div>
 <div class="line">    format.nBlockAlign = format.nChannels * (format.wBitsPerSample / 8);</div>
 <div class="line">    format.nAvgBytesPerSec = format.nSamplesPerSec * format.nBlockAlign;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (waveInOpen(&amp;mWaveInDevice, deviceID, &amp;format, (DWORD)waveInProc, (DWORD_PTR)<span class="keyword">this</span>, CALLBACK_FUNCTION) != MMSYSERR_NOERROR)</div>
+<div class="line">    <span class="keywordflow">if</span> (waveInOpen(&amp;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, deviceID, &amp;format, (DWORD)<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab2761c0b676e24cffb2ab6bdad9066cf">waveInProc</a>, (DWORD_PTR)<span class="keyword">this</span>, CALLBACK_FUNCTION) != MMSYSERR_NOERROR)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Cannot open wave in device &quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot open wave in device &quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> nbBuffers = 6;</div>
-<div class="line">    <span class="keywordtype">int</span> sampleBufferSize = 44100 *  2 * 2 * mBufferLengthInMs / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
+<div class="line">    <span class="keywordtype">int</span> sampleBufferSize = 44100 *  2 * 2 * <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a2a255c57c8697a4ed2a81790a76db8de">mBufferLengthInMs</a> / 1000; <span class="comment">// 44.1 Khz * stereo * 16bit * buffer length</span></div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nbBuffers; i++)</div>
 <div class="line">    {</div>
@@ -298,24 +385,68 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        buffer-&gt;dwBufferLength = sampleBufferSize;</div>
 <div class="line">        buffer-&gt;dwFlags = 0;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (waveInPrepareHeader(mWaveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
+<div class="line">        <span class="keywordflow">if</span> (waveInPrepareHeader(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(<span class="stringliteral">&quot;Cannot prepare wave header&quot;</span>);</div>
+<div class="line">            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot prepare wave header&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (waveInAddBuffer(mWaveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
+<div class="line">        <span class="keywordflow">if</span> (waveInAddBuffer(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
 <div class="line">        {</div>
-<div class="line">            setLastErrorMessage(<span class="stringliteral">&quot;Cannot add buffer&quot;</span>);</div>
+<div class="line">            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot add buffer&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mWaveBuffers &lt;&lt; buffer;</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a91b419c3cba7d7f44d607e90f5813060">mWaveBuffers</a> &lt;&lt; buffer;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_acab7cce9f4a69c6bcbf219e9d7fb6e83_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a156eb0b9e6845214d6bd46829a8f3aa2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWaveRecorder::isRecording </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>;</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a156eb0b9e6845214d6bd46829a8f3aa2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ad508b294186513b816def5d194d9a5b3"></a>
@@ -339,7 +470,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -365,7 +496,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                          {</div>
-<div class="line">            mMsTimeStamp;</div>
+<div class="line">            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -402,6 +533,52 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a4a856b9f77365a638191857455046bf7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b40b030701a293fcb7f7e3c5229d311"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWaveRecorder::setLastErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pLastErrorMessage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">        {</div>
+<div class="line">            <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a> = pLastErrorMessage;</div>
+<div class="line">            qWarning() &lt;&lt; <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ab5253b8fa28a913e97558c189ae4a7da">mLastErrorMessage</a>;</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a1b40b030701a293fcb7f7e3c5229d311_icgraph.svg" width="100%" height="473"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a77eb735ea7e29eca98dcc509afcaa8b7"></a>
@@ -417,22 +594,31 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mIsRecording)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mRecordingStartTime = QTime::currentTime();</div>
-<div class="line">        mMsTimeStamp = 0;</div>
-<div class="line">        mIsRecording = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a3d68406c2bedf62e0ab86e246d97b21c">mRecordingStartTime</a> = QTime::currentTime();</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#ade7e6a52b62fdc19b135f9db124b6c06">mMsTimeStamp</a> = 0;</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a> = <span class="keyword">true</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (waveInStart(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line">    <span class="keywordflow">if</span> (waveInStart(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Cannot start wave in device &quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot start wave in device &quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a77eb735ea7e29eca98dcc509afcaa8b7_cgraph.svg" width="430" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a2e126369041b1c024b42a040d0d9e01a"></a>
@@ -448,17 +634,26 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mIsRecording = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#aa7d14bd17c7cc6450288869edde9b1ba">mIsRecording</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (waveInStop(mWaveInDevice) != MMSYSERR_NOERROR)</div>
+<div class="line">    <span class="keywordflow">if</span> (waveInStop(<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a493ac5caa2079fc285f087bbf28575b0">mWaveInDevice</a>) != MMSYSERR_NOERROR)</div>
 <div class="line">    {</div>
-<div class="line">        setLastErrorMessage(<span class="stringliteral">&quot;Cannot stop wave in device &quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot stop wave in device &quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a2e126369041b1c024b42a040d0d9e01a_cgraph.svg" width="430" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a01abc2b5f2cc6cec749f7075944f4b1c"></a>
@@ -514,20 +709,318 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> devices;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_a01abc2b5f2cc6cec749f7075944f4b1c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="ab2761c0b676e24cffb2ab6bdad9066cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CALLBACK UBWaveRecorder::waveInProc </td>
+          <td>(</td>
+          <td class="paramtype">HWAVEIN&#160;</td>
+          <td class="paramname"><em>hwi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>uMsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD_PTR&#160;</td>
+          <td class="paramname"><em>dwInstance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD_PTR&#160;</td>
+          <td class="paramname"><em>dwParam1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD_PTR&#160;</td>
+          <td class="paramname"><em>dwParam2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(param2);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (message == WIM_DATA)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">//qDebug() &lt;&lt; &quot;wave in receiving data&quot;;</span></div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>* recorder = (<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>*)instance;</div>
+<div class="line">        WAVEHDR *buffer = (WAVEHDR *)param1;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (recorder &amp;&amp; buffer &amp;&amp; recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a156eb0b9e6845214d6bd46829a8f3aa2">isRecording</a>())</div>
+<div class="line">        {</div>
+<div class="line">                waveInUnprepareHeader(waveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR));</div>
+<div class="line">            recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a0d79f55f2b1403e0a2dc3dd495bc2fb4">emitNewWaveBuffer</a>(buffer);</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">if</span> (waveInPrepareHeader(waveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
+<div class="line">            {</div>
+<div class="line">                recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot recycle wave header&quot;</span>);</div>
+<div class="line">            }</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">if</span> (waveInAddBuffer(waveInDevice, buffer, <span class="keyword">sizeof</span>(WAVEHDR)) != MMSYSERR_NOERROR)</div>
+<div class="line">            {</div>
+<div class="line">                recorder-&gt;<a class="code" href="../../d3/d73/class_u_b_wave_recorder.html#a1b40b030701a293fcb7f7e3c5229d311">setLastErrorMessage</a>(<span class="stringliteral">&quot;Cannot recycle buffer&quot;</span>);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_ab2761c0b676e24cffb2ab6bdad9066cf_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d73/class_u_b_wave_recorder_ab2761c0b676e24cffb2ab6bdad9066cf_icgraph.svg" width="419" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a6b09ada6f588a0827be7731a2a697849"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBWaveRecorder::mBitsPerSample</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2a255c57c8697a4ed2a81790a76db8de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBWaveRecorder::mBufferLengthInMs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa7d14bd17c7cc6450288869edde9b1ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool UBWaveRecorder::mIsRecording</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab5253b8fa28a913e97558c189ae4a7da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBWaveRecorder::mLastErrorMessage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ade7e6a52b62fdc19b135f9db124b6c06"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile long UBWaveRecorder::mMsTimeStamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86280ccb944c78baeb84d3772e1b062b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBWaveRecorder::mNbChannels</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3d68406c2bedf62e0ab86e246d97b21c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTime UBWaveRecorder::mRecordingStartTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a537d2103240b33154a5eb0230f747cbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBWaveRecorder::mSampleRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a91b419c3cba7d7f44d607e90f5813060"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;WAVEHDR*&gt; UBWaveRecorder::mWaveBuffers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a493ac5caa2079fc285f087bbf28575b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HWAVEIN UBWaveRecorder::mWaveInDevice</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a></li>
-<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp.html">UBWaveRecorder.cpp</a></li>
+<li><a class="el" href="../../db/dc4/_u_b_wave_recorder_8h_source.html">UBWaveRecorder.h</a></li>
+<li><a class="el" href="../../d7/d30/_u_b_wave_recorder_8cpp.html">UBWaveRecorder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -535,7 +1028,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

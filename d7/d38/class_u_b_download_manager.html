@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('d7/d38/class_u_b_download_manager.html
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d24/class_u_b_download_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDownloadManager Class Reference</div>  </div>
@@ -118,7 +121,7 @@ $(document).ready(function(){initNavTree('d7/d38/class_u_b_download_manager.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dbf/class_u_b_download_manager__coll__graph.svg" width="187" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dbf/class_u_b_download_manager__coll__graph.svg" width="190" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -155,6 +158,39 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a98ec03d9a74e118191b17197a7b942a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d38/class_u_b_download_manager.html">UBDownloadManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8">downloadManager</a> ()</td></tr>
 <tr class="memdesc:a98ec03d9a74e118191b17197a7b942a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the download manager.  <a href="#a98ec03d9a74e118191b17197a7b942a8"></a><br/></td></tr>
 <tr class="memitem:a6ee82a598099579a2e8b903541c788a6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a6ee82a598099579a2e8b903541c788a6">destroy</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:adf2b12cbfdb5457f3eec6a09b0ec4145"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#adf2b12cbfdb5457f3eec6a09b0ec4145">onUpdateDownloadLists</a> ()</td></tr>
+<tr class="memdesc:adf2b12cbfdb5457f3eec6a09b0ec4145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the download list. If a current download is finished, we take a file from the pending download list and add it to the download list.  <a href="#adf2b12cbfdb5457f3eec6a09b0ec4145"></a><br/></td></tr>
+<tr class="memitem:a77a59012fcfa733fc3a2dbffc1605a55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a77a59012fcfa733fc3a2dbffc1605a55">onDownloadProgress</a> (int id, qint64 received, qint64 total)</td></tr>
+<tr class="memdesc:a77a59012fcfa733fc3a2dbffc1605a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the file transfer information.  <a href="#a77a59012fcfa733fc3a2dbffc1605a55"></a><br/></td></tr>
+<tr class="memitem:a50e08fa88d965346e81a3100bd72f8cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a50e08fa88d965346e81a3100bd72f8cf">onDownloadFinished</a> (int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground)</td></tr>
+<tr class="memdesc:a50e08fa88d965346e81a3100bd72f8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the download of the given file is finished.  <a href="#a50e08fa88d965346e81a3100bd72f8cf"></a><br/></td></tr>
+<tr class="memitem:aa21ea2733f35aa297519ee620a182365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#aa21ea2733f35aa297519ee620a182365">onDownloadError</a> (int id)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a4e4cf467c14617da96e07f91f847a85c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a4e4cf467c14617da96e07f91f847a85c">init</a> ()</td></tr>
+<tr class="memdesc:a4e4cf467c14617da96e07f91f847a85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the download manager.  <a href="#a4e4cf467c14617da96e07f91f847a85c"></a><br/></td></tr>
+<tr class="memitem:ae979b3d627ce5f6d531bcedb58aef010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#ae979b3d627ce5f6d531bcedb58aef010">updateDownloadOrder</a> ()</td></tr>
+<tr class="memdesc:ae979b3d627ce5f6d531bcedb58aef010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the download order. The modal downloads will be put in priority.  <a href="#ae979b3d627ce5f6d531bcedb58aef010"></a><br/></td></tr>
+<tr class="memitem:a713a817fe469e641786c6d8a61778b95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a713a817fe469e641786c6d8a61778b95">updateFileCurrentSize</a> (int id, qint64 received=-1, qint64 total=-1)</td></tr>
+<tr class="memdesc:a713a817fe469e641786c6d8a61778b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the description of the given current downloaded file.  <a href="#a713a817fe469e641786c6d8a61778b95"></a><br/></td></tr>
+<tr class="memitem:aac0b212ca97453fb8d342d110d375f10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#aac0b212ca97453fb8d342d110d375f10">startFileDownload</a> (<a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="el" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a>)</td></tr>
+<tr class="memdesc:aac0b212ca97453fb8d342d110d375f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the download of a file.  <a href="#aac0b212ca97453fb8d342d110d375f10"></a><br/></td></tr>
+<tr class="memitem:a73e2f336b08e0c1805f421567eec26ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a73e2f336b08e0c1805f421567eec26ea">checkIfModalRemains</a> ()</td></tr>
+<tr class="memdesc:a73e2f336b08e0c1805f421567eec26ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify if modal downloads remains and notify everyone if it is not the case.  <a href="#a73e2f336b08e0c1805f421567eec26ea"></a><br/></td></tr>
+<tr class="memitem:aeb9ff1954a7c94d18c7d37f1b1f85729"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#aeb9ff1954a7c94d18c7d37f1b1f85729">finishDownloads</a> (bool cancel=false)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6a117624f78a6779a2c49d441d95ff6d"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a></td></tr>
+<tr class="memitem:a006a58dcf7241750324c83561c1ea6e9"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a></td></tr>
+<tr class="memitem:aac2d61bd8b25bc13bf107976751bf32d"><td class="memItemLeft" align="right" valign="top">QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#aac2d61bd8b25bc13bf107976751bf32d">mMutex</a></td></tr>
+<tr class="memitem:a163aa1d6ee899fb8a5ae2e3c9d9ae56f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a163aa1d6ee899fb8a5ae2e3c9d9ae56f">mLastID</a></td></tr>
+<tr class="memitem:aeaef3b3a3ac29882b16616e9c18aaa4b"><td class="memItemLeft" align="right" valign="top">QVector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a></td></tr>
+<tr class="memitem:a4bc0b2c57c72d0a1619805c534c9a502"><td class="memItemLeft" align="right" valign="top">QMap&lt; int, QObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a692880b623fa16bda278a35de605db8c"></a>
@@ -192,9 +228,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">                                                                     :QObject(parent)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
-<div class="line">    init();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4e4cf467c14617da96e07f91f847a85c" title="Initialize the download manager.">init</a>();</div>
 <div class="line"></div>
-<div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#ab6721a82bf700a33b3801f9b61356123">fileAddedToDownload</a>()), <span class="keyword">this</span>, SLOT(onUpdateDownloadLists()));</div>
+<div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#ab6721a82bf700a33b3801f9b61356123">fileAddedToDownload</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#adf2b12cbfdb5457f3eec6a09b0ec4145" title="Update the download list. If a current download is finished, we take a file from the pending download...">onUpdateDownloadLists</a>()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -202,7 +238,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -211,7 +247,8 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a692880b623fa16bda278a35de605db8c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -312,6 +349,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a7211a4b322171a3d7e714a29ca527432_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a516812f4416db050a3123d91c367bee4"></a>
@@ -364,6 +411,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a516812f4416db050a3123d91c367bee4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a1256f03bf7e614a35236fcd55ebdbdb6"></a>
@@ -389,17 +446,17 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Set the ID for this download</span></div>
-<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a> = mLastID;</div>
-<div class="line">    mLastID++;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a> = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a163aa1d6ee899fb8a5ae2e3c9d9ae56f">mLastID</a>;</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a163aa1d6ee899fb8a5ae2e3c9d9ae56f">mLastID</a>++;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Add the file to the pending download list</span></div>
-<div class="line">    mPendingDL.append(desc);</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.append(desc);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// If the download is modal, show the download dialog</span></div>
 <div class="line">    <span class="keywordflow">if</span>(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#abb72982d76747d63dca453ef483b3a3e">modal</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// Update the download order (priority to modal files)</span></div>
-<div class="line">        updateDownloadOrder();</div>
+<div class="line">        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#ae979b3d627ce5f6d531bcedb58aef010" title="Update the download order. The modal downloads will be put in priority.">updateDownloadOrder</a>();</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;<a class="code" href="../../d8/d9e/class_u_b_main_window.html#ae2949414a83e39ea1e86ed36dd875cb8">showDownloadWidget</a>();</div>
 <div class="line">    }</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ac22e898462f43afb35fd929ef6523bfd">startDownloads</a>();</div>
@@ -409,21 +466,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6_cgraph.svg" width="100%" height="575"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a1256f03bf7e614a35236fcd55ebdbdb6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -450,6 +508,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_ad035f13a1abac13e2f9aa847036bac5f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a8502451de115dfa70d3ca1fad017e4cc"></a>
@@ -473,6 +541,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a8502451de115dfa70d3ca1fad017e4cc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a5425576229c8b6918a72ca6476e2be23"></a>
@@ -489,17 +567,17 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mDownloads.size())</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.size())</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Stop the download</span></div>
 <div class="line"></div>
-<div class="line">    QNetworkReply *pNetworkDownload = <span class="keyword">dynamic_cast&lt;</span>QNetworkReply *<span class="keyword">&gt;</span>(mDownloads[id]);</div>
+<div class="line">    QNetworkReply *pNetworkDownload = <span class="keyword">dynamic_cast&lt;</span>QNetworkReply *<span class="keyword">&gt;</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>[id]);</div>
 <div class="line">    <span class="keywordflow">if</span> (pNetworkDownload)</div>
 <div class="line">        pNetworkDownload-&gt;abort();</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> *pLocalDownload = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> *<span class="keyword">&gt;</span>(mDownloads[id]);</div>
+<div class="line">        <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> *pLocalDownload = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> *<span class="keyword">&gt;</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>[id]);</div>
 <div class="line">        <span class="keywordflow">if</span> (pLocalDownload)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (pLocalDownload-&gt;isRunning())</div>
@@ -507,21 +585,21 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mDownloads.remove(<span class="keywordtype">id</span>);</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.remove(<span class="keywordtype">id</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Remove the canceled download from the download lists</span></div>
 <div class="line">    <span class="keywordtype">bool</span> bFound = <span class="keyword">false</span>;</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;mCrntDL.size(); i++){</div>
-<div class="line">        <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == mCrntDL.at(i).id){</div>
-<div class="line">            mCrntDL.remove(i);</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.size(); i++){</div>
+<div class="line">        <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.at(i).id){</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.remove(i);</div>
 <div class="line">            bFound = <span class="keyword">true</span>;</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">if</span>(!bFound){</div>
-<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;mPendingDL.size(); j++){</div>
-<div class="line">            <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == mPendingDL.at(j).id){</div>
-<div class="line">                mPendingDL.remove(j);</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.size(); j++){</div>
+<div class="line">            <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.at(j).id){</div>
+<div class="line">                <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.remove(j);</div>
 <div class="line">                bFound = <span class="keyword">true</span>;</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            }</div>
@@ -529,33 +607,43 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Free the download slot used by the finished file</span></div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> h=0; h&lt;mDLAvailability.size();h++){</div>
-<div class="line">        <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == mDLAvailability.at(h)){</div>
-<div class="line">            mDLAvailability.remove(h);</div>
-<div class="line">            mDLAvailability.insert(h, -1);</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> h=0; h&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.size();h++){</div>
+<div class="line">        <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.at(h)){</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.remove(h);</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.insert(h, -1);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Here we check if some modal downloads remain</span></div>
-<div class="line">    checkIfModalRemains();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a73e2f336b08e0c1805f421567eec26ea" title="Verify if modal downloads remains and notify everyone if it is not the case.">checkIfModalRemains</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Then we update the list of downloads</span></div>
-<div class="line">    onUpdateDownloadLists();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#adf2b12cbfdb5457f3eec6a09b0ec4145" title="Update the download list. If a current download is finished, we take a file from the pending download...">onUpdateDownloadLists</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Verify if all downloads are finished</span></div>
-<div class="line">    <span class="keywordflow">if</span>(mCrntDL.empty() &amp;&amp; mPendingDL.empty())</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.empty() &amp;&amp; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.empty())</div>
 <div class="line">    {</div>
-<div class="line">        finishDownloads();</div>
+<div class="line">        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeb9ff1954a7c94d18c7d37f1b1f85729">finishDownloads</a>();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23_cgraph.svg" width="414" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a5425576229c8b6918a72ca6476e2be23_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -577,8 +665,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Cancel all downloads. </p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// Stop the current downloads</span></div>
-<div class="line">    QMap&lt;int, QObject*&gt;::iterator it = mDownloads.begin();</div>
-<div class="line">    <span class="keywordflow">for</span>(; it!=mDownloads.end();it++)</div>
+<div class="line">    QMap&lt;int, QObject*&gt;::iterator it = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.begin();</div>
+<div class="line">    <span class="keywordflow">for</span>(; it!=<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.end();it++)</div>
 <div class="line">    {</div>
 <div class="line">        QNetworkReply *netReply = <span class="keyword">dynamic_cast&lt;</span>QNetworkReply*<span class="keyword">&gt;</span>(it.value());</div>
 <div class="line">        <span class="keywordflow">if</span> (netReply)</div>
@@ -592,19 +680,104 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Clear all the lists</span></div>
-<div class="line">    init();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4e4cf467c14617da96e07f91f847a85c" title="Initialize the download manager.">init</a>();</div>
 <div class="line"></div>
-<div class="line">    checkIfModalRemains();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a73e2f336b08e0c1805f421567eec26ea" title="Verify if modal downloads remains and notify everyone if it is not the case.">checkIfModalRemains</a>();</div>
 <div class="line"></div>
-<div class="line">    finishDownloads(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeb9ff1954a7c94d18c7d37f1b1f85729">finishDownloads</a>(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839_cgraph.svg" width="414" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a9ec94b78d3b4eb2d003657590f3a2839_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a73e2f336b08e0c1805f421567eec26ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::checkIfModalRemains </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verify if modal downloads remains and notify everyone if it is not the case. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">bool</span> bModal = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.size();i++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.at(i).modal)</div>
+<div class="line">        {</div>
+<div class="line">            bModal = <span class="keyword">true</span>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(!bModal)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.size(); j++)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.at(j).modal)</div>
+<div class="line">            {</div>
+<div class="line">                bModal = <span class="keyword">true</span>;</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(bModal || (<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.empty() &amp;&amp; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.empty()))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Close the modal window</span></div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;<a class="code" href="../../d8/d9e/class_u_b_main_window.html#a4b99a4654dccfb65a5599c9fb8d3fb8a">hideDownloadWidget</a>();</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// Notify that no modal downloads are pending</span></div>
+<div class="line">        emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a31e9979260c22b0cf1968eea94fd5af7">downloadModalFinished</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a73e2f336b08e0c1805f421567eec26ea_cgraph.svg" width="424" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a73e2f336b08e0c1805f421567eec26ea_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -626,9 +799,18 @@ Static Public Member Functions</h2></td></tr>
 <p>Get the list of the current downloads. </p>
 <dl class="section return"><dt>Returns</dt><dd>a QVector of current downloads </dd></dl>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mCrntDL;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_acefaa070ff6fcbabb908d16e4a807b59_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a6ee82a598099579a2e8b903541c788a6"></a>
@@ -652,18 +834,18 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(pInstance)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/da9/_u_b_download_manager_8cpp.html#a44d0020d78e42642d1e0a0cab05f7707">pInstance</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> pInstance;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dc/da9/_u_b_download_manager_8cpp.html#a44d0020d78e42642d1e0a0cab05f7707">pInstance</a>;</div>
 <div class="line">    }</div>
-<div class="line">    pInstance = NULL;</div>
+<div class="line">    <a class="code" href="../../dc/da9/_u_b_download_manager_8cpp.html#a44d0020d78e42642d1e0a0cab05f7707">pInstance</a> = NULL;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a6ee82a598099579a2e8b903541c788a6_icgraph.svg" width="419" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -691,6 +873,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a12c47cd2fab70aef25ee7896ac8d5fe8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -810,28 +1002,29 @@ Static Public Member Functions</h2></td></tr>
 <p>Get the download manager. </p>
 <dl class="section return"><dt>Returns</dt><dd>a pointer on the download manager </dd></dl>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL == pInstance)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL == <a class="code" href="../../dc/da9/_u_b_download_manager_8cpp.html#a44d0020d78e42642d1e0a0cab05f7707">pInstance</a>)</div>
 <div class="line">    {</div>
-<div class="line">        pInstance = <span class="keyword">new</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a692880b623fa16bda278a35de605db8c" title="Constructor.">UBDownloadManager</a>();</div>
+<div class="line">        <a class="code" href="../../dc/da9/_u_b_download_manager_8cpp.html#a44d0020d78e42642d1e0a0cab05f7707">pInstance</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a692880b623fa16bda278a35de605db8c" title="Constructor.">UBDownloadManager</a>();</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> pInstance;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dc/da9/_u_b_download_manager_8cpp.html#a44d0020d78e42642d1e0a0cab05f7707">pInstance</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8_cgraph.svg" width="571" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a98ec03d9a74e118191b17197a7b942a8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -857,6 +1050,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a31e9979260c22b0cf1968eea94fd5af7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
 
 </div>
 </div>
@@ -898,6 +1101,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_acf269f1cf2f15126043b4b113489c0a7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ab6721a82bf700a33b3801f9b61356123"></a>
@@ -921,12 +1134,512 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_ab6721a82bf700a33b3801f9b61356123_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_ab6721a82bf700a33b3801f9b61356123_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb9ff1954a7c94d18c7d37f1b1f85729"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::finishDownloads </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cancel</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#a9b076bd5e9b0066353797f86bcfe09f8">stopDownloads</a>();</div>
+<div class="line">    <span class="keywordflow">if</span>(cancel){</div>
+<div class="line">        emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a8502451de115dfa70d3ca1fad017e4cc">cancelAllDownloads</a>();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span>{</div>
+<div class="line">        emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#ad035f13a1abac13e2f9aa847036bac5f">allDownloadsFinished</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_aeb9ff1954a7c94d18c7d37f1b1f85729_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_aeb9ff1954a7c94d18c7d37f1b1f85729_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e4cf467c14617da96e07f91f847a85c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the download manager. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.clear();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.clear();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.clear();</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a163aa1d6ee899fb8a5ae2e3c9d9ae56f">mLastID</a> = 1;</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.clear();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d6/d34/_u_b_download_manager_8h.html#a419b3607bafd7d43a7b7ce82982a6ef5">SIMULTANEOUS_DOWNLOAD</a>; i++)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.append(-1);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a4e4cf467c14617da96e07f91f847a85c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa21ea2733f35aa297519ee620a182365"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::onDownloadError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QNetworkReply *pReply = <span class="keyword">dynamic_cast&lt;</span>QNetworkReply *<span class="keyword">&gt;</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.value(<span class="keywordtype">id</span>));</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != pReply)</div>
+<div class="line">    {</div>
+<div class="line">        QString errorString = tr(<span class="stringliteral">&quot;Download failed.&quot;</span>);</div>
+<div class="line">        <span class="comment">// Check which error occured:</span></div>
+<div class="line">        <span class="keywordflow">switch</span>(pReply-&gt;error())</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ConnectionRefusedError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the remote server refused the connection (the server is not accepting requests)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::RemoteHostClosedError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the remote server closed the connection prematurely, before the entire reply was received and processed&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::HostNotFoundError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the remote host name was not found (invalid hostname)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::TimeoutError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the connection to the remote server timed out&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::OperationCanceledError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the operation was canceled via calls to abort() or close() before it was finished.&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::SslHandshakeFailedError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::TemporaryNetworkFailureError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProxyConnectionRefusedError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the connection to the proxy server was refused (the proxy server is not accepting requests)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProxyConnectionClosedError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the proxy server closed the connection prematurely, before the entire reply was received and processed&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProxyNotFoundError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the proxy host name was not found (invalid proxy hostname)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProxyTimeoutError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the connection to the proxy timed out or the proxy did not reply in time to the request sent&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProxyAuthenticationRequiredError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ContentAccessDenied:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the access to the remote content was denied (similar to HTTP error 401)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ContentOperationNotPermittedError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the operation requested on the remote content is not permitted&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ContentNotFoundError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the remote content was not found at the server (similar to HTTP error 404)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::AuthenticationRequiredError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ContentReSendError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the request needed to be sent again, but this failed for example because the upload data could not be read a second time.&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProtocolUnknownError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the Network Access API cannot honor the request because the protocol is not known&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProtocolInvalidOperationError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;the requested operation is invalid for this protocol&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::UnknownNetworkError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;an unknown network-related error was detected&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::UnknownProxyError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;an unknown proxy-related error was detected&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::UnknownContentError:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;an unknown error related to the remote content was detected&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> QNetworkReply::ProtocolFailure:</div>
+<div class="line">                errorString += <span class="stringliteral">&quot; &quot;</span> + (tr(<span class="stringliteral">&quot;a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)&quot;</span>));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">default</span>:</div>
+<div class="line">                <span class="comment">// Check the documentation of QNetworkReply in Qt Assistant for the different error cases</span></div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#afd12508537e75aaa6789431e60b60b44">UBApplication::showMessage</a>(errorString);</div>
+<div class="line">        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a5425576229c8b6918a72ca6476e2be23">cancelDownload</a>(<span class="keywordtype">id</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_aa21ea2733f35aa297519ee620a182365_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_aa21ea2733f35aa297519ee620a182365_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a50e08fa88d965346e81a3100bd72f8cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::onDownloadFinished </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pSuccess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QUrl&#160;</td>
+          <td class="paramname"><em>sourceUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QUrl&#160;</td>
+          <td class="paramname"><em>contentUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pContentTypeHeader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>pData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>pPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QSize&#160;</td>
+          <td class="paramname"><em>pSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isBackground</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called when the download of the given file is finished. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">desc</td><td>as the current downloaded file description </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line"><span class="comment">//    Temporary data for dnd do not delete it please</span></div>
+<div class="line">    Q_UNUSED(pPos)</div>
+<div class="line">    Q_UNUSED(pSize)</div>
+<div class="line">    Q_UNUSED(isBackground)</div>
+<div class="line"></div>
+<div class="line">    for(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.size(); i++)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a> = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.at(i);</div>
+<div class="line">        <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aa28d39c1093b42e10e2c521954178fd3">dest</a> == <a class="code" href="../../d5/d15/structs_download_file_desc.html#ad995f6191451705cb58a55a5dff81967ae864913bd9830ff680cb0ea069586055">sDownloadFileDesc::graphicsWidget</a>) {</div>
+<div class="line">                desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a1c01babcf4424316306f17ed49245aaf">contentTypeHeader</a> = pContentTypeHeader;</div>
+<div class="line">                emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a12c47cd2fab70aef25ee7896ac8d5fe8">downloadFinished</a>(pSuccess, desc, pData);</div>
+<div class="line"></div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aa28d39c1093b42e10e2c521954178fd3">dest</a> == <a class="code" href="../../d5/d15/structs_download_file_desc.html#ad995f6191451705cb58a55a5dff81967a6ef5ab3b2839a0d96153d3c9c51923d3">sDownloadFileDesc::board</a>) {</div>
+<div class="line">                <span class="comment">// The downloaded file is modal so we must put it on the board</span></div>
+<div class="line">                emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a7211a4b322171a3d7e714a29ca527432">addDownloadedFileToBoard</a>(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, <span class="keyword">false</span>, isBackground);</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aa28d39c1093b42e10e2c521954178fd3">dest</a> == <a class="code" href="../../d5/d15/structs_download_file_desc.html#ad995f6191451705cb58a55a5dff81967a806447250426771aa072c85cebddafb2">sDownloadFileDesc::library</a>)</div>
+<div class="line">            {</div>
+<div class="line">                emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a516812f4416db050a3123d91c367bee4">addDownloadedFileToLibrary</a>(pSuccess, sourceUrl, pContentTypeHeader, pData, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a77186047aac4272ab2dbfff324911214">name</a>);</div>
+<div class="line">            }</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Then do this</span></div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a713a817fe469e641786c6d8a61778b95" title="Update the description of the given current downloaded file.">updateFileCurrentSize</a>(<span class="keywordtype">id</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a50e08fa88d965346e81a3100bd72f8cf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a50e08fa88d965346e81a3100bd72f8cf_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a77a59012fcfa733fc3a2dbffc1605a55"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::onDownloadProgress </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>received</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>total</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the file transfer information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">desc</td><td>as the current downloaded file description </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a713a817fe469e641786c6d8a61778b95" title="Update the description of the given current downloaded file.">updateFileCurrentSize</a>(<span class="keywordtype">id</span>, received, total);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a77a59012fcfa733fc3a2dbffc1605a55_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a77a59012fcfa733fc3a2dbffc1605a55_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adf2b12cbfdb5457f3eec6a09b0ec4145"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::onUpdateDownloadLists </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the download list. If a current download is finished, we take a file from the pending download list and add it to the download list. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d6/d34/_u_b_download_manager_8h.html#a419b3607bafd7d43a7b7ce82982a6ef5">SIMULTANEOUS_DOWNLOAD</a>; i++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.empty())</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// If we fall here that means that there is no pending download</span></div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(-1 == <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.at(i))        {</div>
+<div class="line">            <span class="comment">// Pending downloads exist and a download &#39;slot&#39; is available</span></div>
+<div class="line">            <span class="comment">// Let&#39;s move the first pending download to the current download</span></div>
+<div class="line">            <span class="comment">// list and fill the slot</span></div>
+<div class="line">            <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a> = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.at(0);</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.append(desc);</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.remove(0);</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.remove(i);</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.insert(i, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>);</div>
+<div class="line"></div>
+<div class="line">            <span class="comment">// Start the download of this file</span></div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aac0b212ca97453fb8d342d110d375f10" title="Start the download of a file.">startFileDownload</a>(desc);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_adf2b12cbfdb5457f3eec6a09b0ec4145_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_adf2b12cbfdb5457f3eec6a09b0ec4145_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -948,14 +1661,411 @@ Static Public Member Functions</h2></td></tr>
 <p>Get the list of the pending downloads. </p>
 <dl class="section return"><dt>Returns</dt><dd>a QVector of pending downloads </dd></dl>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mPendingDL;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a4beef0fa708d68bcf92f73b029ed9f60_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aac0b212ca97453fb8d342d110d375f10"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::startFileDownload </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>&#160;</td>
+          <td class="paramname"><em>desc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start the download of a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">desc</td><td>as the given file description </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a>.startsWith(<span class="stringliteral">&quot;file://&quot;</span>) || desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a>.startsWith(<span class="stringliteral">&quot;/&quot;</span>))</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> * cpHelper = <span class="keyword">new</span> <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a>(desc, QByteArray(), <span class="keyword">this</span>);</div>
+<div class="line">        connect(cpHelper, SIGNAL(signal_asyncCopyFinished(<span class="keywordtype">int</span>, <span class="keywordtype">bool</span>, QUrl, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a50e08fa88d965346e81a3100bd72f8cf" title="Called when the download of the given file is finished.">onDownloadFinished</a>(<span class="keywordtype">int</span>, <span class="keywordtype">bool</span>, QUrl, QUrl,QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)));</div>
+<div class="line">        QObject *res = <span class="keyword">dynamic_cast&lt;</span>QObject *<span class="keyword">&gt;</span>(cpHelper-&gt;<a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a062ea63c2e94e990281c44e4c9644067">download</a>());</div>
+<div class="line">        <span class="keywordflow">if</span> (!res)</div>
+<div class="line">            <span class="keyword">delete</span> res;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>[desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>] = res;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../da/d3e/class_u_b_download_http_file.html">UBDownloadHttpFile</a>* http = <span class="keyword">new</span> <a class="code" href="../../da/d3e/class_u_b_download_http_file.html">UBDownloadHttpFile</a>(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>, <span class="keyword">this</span>);</div>
+<div class="line">        connect(http, SIGNAL(downloadProgress(<span class="keywordtype">int</span>, qint64,qint64)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a77a59012fcfa733fc3a2dbffc1605a55" title="Update the file transfer information.">onDownloadProgress</a>(<span class="keywordtype">int</span>,qint64,qint64)));</div>
+<div class="line">        connect(http, SIGNAL(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a12c47cd2fab70aef25ee7896ac8d5fe8">downloadFinished</a>(<span class="keywordtype">int</span>, <span class="keywordtype">bool</span>, QUrl, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a50e08fa88d965346e81a3100bd72f8cf" title="Called when the download of the given file is finished.">onDownloadFinished</a>(<span class="keywordtype">int</span>, <span class="keywordtype">bool</span>, QUrl, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)));</div>
+<div class="line">        connect(http, SIGNAL(downloadError(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#aa21ea2733f35aa297519ee620a182365">onDownloadError</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//the desc.srcUrl is encoded. So we have to decode it before.</span></div>
+<div class="line">        QUrl url;</div>
+<div class="line">        url.setEncodedUrl(desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a>.toUtf8());</div>
+<div class="line">        <span class="comment">// We send here the request and store its reply in order to be able to cancel it if needed</span></div>
+<div class="line">        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>[desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a09153ec49d55f18d9ad36aaa57b0e11f">id</a>] = <span class="keyword">dynamic_cast&lt;</span>QObject *<span class="keyword">&gt;</span>(http-&gt;<a class="code" href="../../de/d40/class_u_b_http_get.html#a5c25272ca90dfb2d1d42784907d39c41">get</a>(url, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a187d0504d19892e2d483f47a349b6194">pos</a>, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aff74b0da56f2a5921847c1ab5c013476">size</a>, desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ad945d24ca6d26c992c66e95c0447f165">isBackground</a>));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_aac0b212ca97453fb8d342d110d375f10_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_aac0b212ca97453fb8d342d110d375f10_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae979b3d627ce5f6d531bcedb58aef010"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::updateDownloadOrder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the download order. The modal downloads will be put in priority. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QVector&lt;sDownloadFileDesc&gt; modalFiles;</div>
+<div class="line">    QVector&lt;sDownloadFileDesc&gt; nonModalfiles;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.size(); i++)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> crnt = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.at(i);</div>
+<div class="line">        <span class="keywordflow">if</span>(crnt.<a class="code" href="../../d5/d15/structs_download_file_desc.html#abb72982d76747d63dca453ef483b3a3e">modal</a>)</div>
+<div class="line">        {</div>
+<div class="line">            modalFiles.append(crnt);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            nonModalfiles.append(crnt);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a> = modalFiles + nonModalfiles;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_ae979b3d627ce5f6d531bcedb58aef010_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a713a817fe469e641786c6d8a61778b95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadManager::updateFileCurrentSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>received</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>total</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the description of the given current downloaded file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">desc</td><td>as the current downloaded file description </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.size();i++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.at(i).id == id)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a> = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.at(i);</div>
+<div class="line">            <span class="keywordflow">if</span>(received &gt;= 0 &amp;&amp; total &gt;= 0)</div>
+<div class="line">            {</div>
+<div class="line">                <span class="comment">// -------------------------------------</span></div>
+<div class="line">                <span class="comment">// [=============== x% ====            ]</span></div>
+<div class="line">                <span class="comment">// -------------------------------------</span></div>
+<div class="line">                desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aab346a62032910198e1701d51737d37b">currentSize</a> = received;</div>
+<div class="line">                desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a8edfff7d9fc9da8b982caf2bacbb9819">totalSize</a> = total;</div>
+<div class="line"></div>
+<div class="line">                emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#acf269f1cf2f15126043b4b113489c0a7">downloadUpdated</a>(<span class="keywordtype">id</span>, received, total);</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">                <span class="comment">// -------------------------------------</span></div>
+<div class="line">                <span class="comment">// [=============== 100% ==============]</span></div>
+<div class="line">                <span class="comment">// -------------------------------------</span></div>
+<div class="line">                <span class="comment">// received and total are negative. That means that the download is finished</span></div>
+<div class="line">                desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aab346a62032910198e1701d51737d37b">currentSize</a> = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.at(i).totalSize;</div>
+<div class="line"></div>
+<div class="line">                <span class="comment">// Remove the finished file from the current download list</span></div>
+<div class="line">                <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.remove(i);</div>
+<div class="line"></div>
+<div class="line">                <span class="comment">// Here we don&#39;t forget to remove the reply related to the finished download</span></div>
+<div class="line">                <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>.remove(<span class="keywordtype">id</span>);</div>
+<div class="line"></div>
+<div class="line">                <span class="comment">// Free the download slot used by the finished file</span></div>
+<div class="line">                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.size();j++)</div>
+<div class="line">                {</div>
+<div class="line">                    <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.at(j))</div>
+<div class="line">                    {</div>
+<div class="line">                        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.remove(j);</div>
+<div class="line">                        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>.insert(j, -1);</div>
+<div class="line">                        <span class="keywordflow">break</span>;</div>
+<div class="line">                    }</div>
+<div class="line">                }</div>
+<div class="line"></div>
+<div class="line">                <span class="comment">// Here we check if some modal downloads remain</span></div>
+<div class="line">                <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a73e2f336b08e0c1805f421567eec26ea" title="Verify if modal downloads remains and notify everyone if it is not the case.">checkIfModalRemains</a>();</div>
+<div class="line"></div>
+<div class="line">                <span class="comment">// Then we update the list of downloads</span></div>
+<div class="line">                <a class="code" href="../../d7/d38/class_u_b_download_manager.html#adf2b12cbfdb5457f3eec6a09b0ec4145" title="Update the download list. If a current download is finished, we take a file from the pending download...">onUpdateDownloadLists</a>();</div>
+<div class="line"></div>
+<div class="line">                emit <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a12c47cd2fab70aef25ee7896ac8d5fe8">downloadFinished</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"></div>
+<div class="line">                <span class="comment">// Verify if all downloads are finished</span></div>
+<div class="line">                <span class="keywordflow">if</span>(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.empty() &amp;&amp; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>.empty())</div>
+<div class="line">                {</div>
+<div class="line">                    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeb9ff1954a7c94d18c7d37f1b1f85729">finishDownloads</a>();</div>
+<div class="line">                }</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.remove(i);</div>
+<div class="line">            <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>.insert(i,desc);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a713a817fe469e641786c6d8a61778b95_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/d38/class_u_b_download_manager_a713a817fe469e641786c6d8a61778b95_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a6a117624f78a6779a2c49d441d95ff6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>&gt; UBDownloadManager::mCrntDL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current downloads </p>
+
+</div>
+</div>
+<a class="anchor" id="aeaef3b3a3ac29882b16616e9c18aaa4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;int&gt; UBDownloadManager::mDLAvailability</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current download availability (-1 = free, otherwise the file ID is recorded) </p>
+
+</div>
+</div>
+<a class="anchor" id="a4bc0b2c57c72d0a1619805c534c9a502"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int, QObject*&gt; UBDownloadManager::mDownloads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A map containing the replies of the GET operations </p>
+
+</div>
+</div>
+<a class="anchor" id="a163aa1d6ee899fb8a5ae2e3c9d9ae56f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBDownloadManager::mLastID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The last file ID </p>
+
+</div>
+</div>
+<a class="anchor" id="aac2d61bd8b25bc13bf107976751bf32d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex UBDownloadManager::mMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Pending download mutex </p>
+
+</div>
+</div>
+<a class="anchor" id="a006a58dcf7241750324c83561c1ea6e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a>&gt; UBDownloadManager::mPendingDL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The pending downloads </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d6/d34/_u_b_download_manager_8h_source.html">UBDownloadManager.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../dc/da9/_u_b_download_manager_8cpp.html">UBDownloadManager.cpp</a></li>
+<li><a class="el" href="../../d6/d34/_u_b_download_manager_8h_source.html">UBDownloadManager.h</a></li>
+<li><a class="el" href="../../dc/da9/_u_b_download_manager_8cpp.html">UBDownloadManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -963,7 +2073,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d38/class_u_b_download_manager.html">UBDownloadManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

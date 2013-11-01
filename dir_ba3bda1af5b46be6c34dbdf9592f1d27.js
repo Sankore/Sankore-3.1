@@ -3,7 +3,8 @@ var dir_ba3bda1af5b46be6c34dbdf9592f1d27 =
     [ "publishing", "dir_c2c2062ae07505a994185fba6fade769.html", "dir_c2c2062ae07505a994185fba6fade769" ],
     [ "UBCFFSubsetAdaptor.cpp", "d5/d61/_u_b_c_f_f_subset_adaptor_8cpp.html", "d5/d61/_u_b_c_f_f_subset_adaptor_8cpp" ],
     [ "UBCFFSubsetAdaptor.h", "da/dfb/_u_b_c_f_f_subset_adaptor_8h.html", [
-      [ "UBCFFSubsetAdaptor", "dc/dd6/class_u_b_c_f_f_subset_adaptor.html", "dc/dd6/class_u_b_c_f_f_subset_adaptor" ]
+      [ "UBCFFSubsetAdaptor", "dc/dd6/class_u_b_c_f_f_subset_adaptor.html", "dc/dd6/class_u_b_c_f_f_subset_adaptor" ],
+      [ "UBCFFSubsetReader", "de/d97/class_u_b_c_f_f_subset_adaptor_1_1_u_b_c_f_f_subset_reader.html", "de/d97/class_u_b_c_f_f_subset_adaptor_1_1_u_b_c_f_f_subset_reader" ]
     ] ],
     [ "UBExportAdaptor.cpp", "d7/d7a/_u_b_export_adaptor_8cpp.html", null ],
     [ "UBExportAdaptor.h", "d5/d0b/_u_b_export_adaptor_8h.html", [
@@ -70,7 +71,9 @@ var dir_ba3bda1af5b46be6c34dbdf9592f1d27 =
     ] ],
     [ "UBSvgSubsetAdaptor.cpp", "dd/dc8/_u_b_svg_subset_adaptor_8cpp.html", "dd/dc8/_u_b_svg_subset_adaptor_8cpp" ],
     [ "UBSvgSubsetAdaptor.h", "da/d90/_u_b_svg_subset_adaptor_8h.html", [
-      [ "UBSvgSubsetAdaptor", "d3/df9/class_u_b_svg_subset_adaptor.html", "d3/df9/class_u_b_svg_subset_adaptor" ]
+      [ "UBSvgSubsetAdaptor", "d3/df9/class_u_b_svg_subset_adaptor.html", "d3/df9/class_u_b_svg_subset_adaptor" ],
+      [ "UBSvgSubsetReader", "d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html", "d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader" ],
+      [ "UBSvgSubsetWriter", "d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html", "d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer" ]
     ] ],
     [ "UBThumbnailAdaptor.cpp", "de/d97/_u_b_thumbnail_adaptor_8cpp.html", null ],
     [ "UBThumbnailAdaptor.h", "d0/d61/_u_b_thumbnail_adaptor_8h.html", [

@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d3/d3f/class_w_b_url_icon_label.html',
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/dbd/class_w_b_url_icon_label-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBUrlIconLabel Class Reference</div>  </div>
@@ -131,6 +132,10 @@ Public Attributes</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3dbba0571c012c27ce0bef4ebdf0923b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3f/class_w_b_url_icon_label.html#a3dbba0571c012c27ce0bef4ebdf0923b">mousePressEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="memitem:af39c4346159272dbee233d8de00e70c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3f/class_w_b_url_icon_label.html#af39c4346159272dbee233d8de00e70c0">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:afff70b21b1c2f2788f700efe8317e2ec"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3f/class_w_b_url_icon_label.html#afff70b21b1c2f2788f700efe8317e2ec">m_dragStartPos</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8f59e6d48d3e640d1692c2187c73485b"></a>
@@ -179,7 +184,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;buttons() == Qt::LeftButton</div>
-<div class="line">        &amp;&amp; (<span class="keyword">event</span>-&gt;pos() - m_dragStartPos).manhattanLength() &gt; QApplication::startDragDistance()</div>
+<div class="line">        &amp;&amp; (<span class="keyword">event</span>-&gt;pos() - <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#afff70b21b1c2f2788f700efe8317e2ec">m_dragStartPos</a>).manhattanLength() &gt; QApplication::startDragDistance()</div>
 <div class="line">         &amp;&amp; <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#a355a9c9777d749ef3e43a28202d32dd4">m_webView</a>) {</div>
 <div class="line">        QDrag *drag = <span class="keyword">new</span> QDrag(<span class="keyword">this</span>);</div>
 <div class="line">        QMimeData *mimeData = <span class="keyword">new</span> QMimeData;</div>
@@ -226,13 +231,33 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton)</div>
-<div class="line">        m_dragStartPos = event-&gt;pos();</div>
+<div class="line">        <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#afff70b21b1c2f2788f700efe8317e2ec">m_dragStartPos</a> = event-&gt;pos();</div>
 <div class="line">    <a class="code" href="../../d3/d3f/class_w_b_url_icon_label.html#a3dbba0571c012c27ce0bef4ebdf0923b">QLabel::mousePressEvent</a>(event);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="afff70b21b1c2f2788f700efe8317e2ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint WBUrlIconLabel::m_dragStartPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a355a9c9777d749ef3e43a28202d32dd4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +271,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp.html">WBUrlLineEdit.cpp</a></li>
+<li><a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp.html">WBUrlLineEdit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -254,7 +279,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d3f/class_w_b_url_icon_label.html">WBUrlIconLabel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d9/d24/class_u_b_document_datastore_a_
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d5/dfb/class_u_b_document_datastore_a_p_i-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentDatastoreAPI Class Reference</div>  </div>
@@ -125,7 +126,7 @@ $(document).ready(function(){initNavTree('d9/d24/class_u_b_document_datastore_a_
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d5c/class_u_b_document_datastore_a_p_i__coll__graph.svg" width="219" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d5c/class_u_b_document_datastore_a_p_i__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -154,6 +155,10 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae08fc3972fc708b22d4b5c1611254083"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#ae08fc3972fc708b22d4b5c1611254083">length</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a06546e5fcca8331e15f158861542986a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header properties_class_u_b_w3_c_web_storage"><td colspan="2" onclick="javascript:toggleInherit('properties_class_u_b_w3_c_web_storage')"><img src="../../closed.png" alt="-"/>&nbsp;Properties inherited from <a class="el" href="../../db/de3/class_u_b_w3_c_web_storage.html">UBW3CWebStorage</a></td></tr>
@@ -174,7 +179,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../db/de3/class_u_b_w3_c_web_storage.html#a5d9c9b2b3cac134b3a8da735da91e73e">UBW3CWebStorage</a>(graphicsWidget)</div>
-<div class="line">    , mGraphicsW3CWidget(graphicsWidget)</div>
+<div class="line">    , <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>(graphicsWidget)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -229,7 +234,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a29c5f3e633880d174fc0ba7328b6ca2c">removeAllDatastoreEntries</a>();</div>
+<div class="line">    <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a29c5f3e633880d174fc0ba7328b6ca2c">removeAllDatastoreEntries</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -265,7 +270,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QMap&lt;QString, QString&gt; entries = mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
+<div class="line">    QMap&lt;QString, QString&gt; entries = <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (entries.contains(<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">key</a>))</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">return</span> entries.value(<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">key</a>);</div>
@@ -309,7 +314,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   QMap&lt;QString, QString&gt; entries = mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
+<div class="line">   QMap&lt;QString, QString&gt; entries = <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>();</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordflow">if</span> (index &lt; entries.size())</div>
 <div class="line">       <span class="keywordflow">return</span> entries.keys().at(index);</div>
@@ -352,7 +357,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../db/de3/class_u_b_w3_c_web_storage.html#ad49a3b5a204e128457bac7c6620d3ecd">UBW3CWebStorage</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>().size();</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#a1f4e5293e44ca23e2d323ca6f6e92c74">datastoreEntries</a>().size();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -388,7 +393,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae584a5a79f3b19d3c56505bac2d12098">removeDatastoreEntry</a>(<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">key</a>);</div>
+<div class="line">    <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ae584a5a79f3b19d3c56505bac2d12098">removeDatastoreEntry</a>(<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">key</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -434,9 +439,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mGraphicsW3CWidget)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mGraphicsW3CWidget-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad3ed087bab8549dcd0aedbf369bfad25">setDatastoreEntry</a>(<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">key</a>, value);</div>
+<div class="line">        <a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a">mGraphicsW3CWidget</a>-&gt;<a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html#ad3ed087bab8549dcd0aedbf369bfad25">setDatastoreEntry</a>(<a class="code" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d">key</a>, value);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -451,9 +456,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a06546e5fcca8331e15f158861542986a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* UBDocumentDatastoreAPI::mGraphicsW3CWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/api/<a class="el" href="../../d7/dd5/_u_b_widget_uniboard_a_p_i_8h_source.html">UBWidgetUniboardAPI.h</a></li>
-<li>Sankore-3.1/src/api/<a class="el" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html">UBWidgetUniboardAPI.cpp</a></li>
+<li><a class="el" href="../../d7/dd5/_u_b_widget_uniboard_a_p_i_8h_source.html">UBWidgetUniboardAPI.h</a></li>
+<li><a class="el" href="../../d5/de3/_u_b_widget_uniboard_a_p_i_8cpp.html">UBWidgetUniboardAPI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -461,7 +487,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d24/class_u_b_document_datastore_a_p_i.html">UBDocumentDatastoreAPI</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

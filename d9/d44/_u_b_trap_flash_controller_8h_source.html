@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/web/UBTrapFlashController.h Source File</title>
+<title>Open-Sankoré: UBTrapFlashController.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -144,10 +144,10 @@ $(document).ready(function(){initNavTree('d9/d44/_u_b_trap_flash_controller_8h_s
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">enum</span> importDestination</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">   41</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">importDestination</a></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        library = 0,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        board</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">   43</a></span>&#160;        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">library</a> = 0,</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109">   44</a></span>&#160;        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109">board</a></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
@@ -170,35 +170,35 @@ $(document).ready(function(){initNavTree('d9/d44/_u_b_trap_flash_controller_8h_s
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a9e18874e464df8ae3ea8f154334bd758">addLinkToBoard</a>();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> selectHtmlObject(<span class="keywordtype">int</span> pObjectIndex);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> oEmbedRequestFinished(<span class="keywordtype">bool</span> pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5ae59b88005d24b9ab9eb701fb133c8a">selectHtmlObject</a>(<span class="keywordtype">int</span> pObjectIndex);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a3b69a9161ab97471aa39568d6d47a57e">oEmbedRequestFinished</a>(<span class="keywordtype">bool</span> pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> addLink(<span class="keywordtype">bool</span> isOnLibrary);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> prepareCurrentItemForImport(<span class="keywordtype">bool</span> sendToBoard);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> updateListOfContents(<span class="keyword">const</span> QList&lt;UBWebKitUtils::HtmlObject&gt;&amp; objects);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#adc738e0c68ed861cce64a1389d2aee5d">addLink</a>(<span class="keywordtype">bool</span> isOnLibrary);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#af9de8913f2b18f5b310b7ea9a918bc66">prepareCurrentItemForImport</a>(<span class="keywordtype">bool</span> sendToBoard);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ae05afbe6ad5d4cb0ff5c226fc2ef53df">updateListOfContents</a>(<span class="keyword">const</span> QList&lt;UBWebKitUtils::HtmlObject&gt;&amp; objects);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        QString widgetNameForUrl(QString pObjectUrl);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        QString <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a2de339c83baff50eb2614a55c2c09888">widgetNameForUrl</a>(QString pObjectUrl);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        QString generateFullPageHtml(<span class="keyword">const</span> QUrl &amp;srcUrl);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> generatePreview(<span class="keyword">const</span> <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a>&amp; pObject, <span class="keywordtype">bool</span> bTryToEmbed = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        QString <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a192fb52dc51a2b0848ccc518edc515d9">generateFullPageHtml</a>(<span class="keyword">const</span> QUrl &amp;srcUrl);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a20390f95b0ce88112391b87471b2c441">generatePreview</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a>&amp; pObject, <span class="keywordtype">bool</span> bTryToEmbed = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        QString generateIcon(<span class="keyword">const</span> QString&amp; pDirPath);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        QString <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a3385a6c3ba1b545308d8719cd25f5544">generateIcon</a>(<span class="keyword">const</span> QString&amp; pDirPath);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> generateConfig(<span class="keywordtype">int</span> pWidth, <span class="keywordtype">int</span> pHeight, <span class="keyword">const</span> QString&amp; pDestinationPath);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1f31d6825bd7efbca5d30992f76e31bb">generateConfig</a>(<span class="keywordtype">int</span> pWidth, <span class="keywordtype">int</span> pHeight, <span class="keyword">const</span> QString&amp; pDestinationPath);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QWidget* mParentWidget;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        QWebFrame* mCurrentWebFrame;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        QList&lt;UBWebKitUtils::HtmlObject&gt; mAvaliableObjects;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        QMap&lt;int, int&gt; mObjectNoToTrapByTrapWebComboboxIndex;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0d27218a1036dbcc061148b1a313713f">   86</a></span>&#160;        QWidget* <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0d27218a1036dbcc061148b1a313713f">mParentWidget</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">   87</a></span>&#160;        QWebFrame* <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">   88</a></span>&#160;        QList&lt;UBWebKitUtils::HtmlObject&gt; <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">   89</a></span>&#160;        QMap&lt;int, int&gt; <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html">WBTrapWebPageContentWindow</a> *mTrapWebContentDialog;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        QWebHitTestResult mLastWebHitTestResult;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">   91</a></span>&#160;        <a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html">WBTrapWebPageContentWindow</a> *<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a718715f63af6664027f780942c9aa65a">   92</a></span>&#160;        QWebHitTestResult <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a718715f63af6664027f780942c9aa65a">mLastWebHitTestResult</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        QUrl mCurrentItemUrl;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        importDestination mCurrentItemImportDestination;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a56605f0821c142ca8c5a0d12eb938410">   94</a></span>&#160;        QUrl <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a56605f0821c142ca8c5a0d12eb938410">mCurrentItemUrl</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">   95</a></span>&#160;        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">importDestination</a> <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">mCurrentItemImportDestination</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
@@ -208,8 +208,8 @@ $(document).ready(function(){initNavTree('d9/d44/_u_b_trap_flash_controller_8h_s
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../d9/d44/_u_b_trap_flash_controller_8h.html">UBTrapFlashController.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_c5d8e5d1a9c4329f04300c8019051d02.html">web</a></li><li class="navelem"><a class="el" href="../../d9/d44/_u_b_trap_flash_controller_8h.html">UBTrapFlashController.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

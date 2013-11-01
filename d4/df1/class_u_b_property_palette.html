@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d4/df1/class_u_b_property_palette.html
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="../../db/dbf/class_u_b_property_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBPropertyPalette Class Reference</div>  </div>
@@ -168,6 +169,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5fb44fc1c0c2ccdcd7d4db23680ae3cf inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a5fb44fc1c0c2ccdcd7d4db23680ae3cf">setMinimizePermission</a> (bool permission)</td></tr>
 <tr class="memitem:abb0926b8eb8fa8efe5e5ca05ee20abc6 inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#abb0926b8eb8fa8efe5e5ca05ee20abc6">savePos</a> ()</td></tr>
 <tr class="memitem:a1d84529dc9179497ba4f91d00a86460e inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a1d84529dc9179497ba4f91d00a86460e">restorePos</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ac930bb58899760c0d8a3a95c79a99000"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df1/class_u_b_property_palette.html#ac930bb58899760c0d8a3a95c79a99000">onMouseRelease</a> ()</td></tr>
+<tr class="memdesc:ac930bb58899760c0d8a3a95c79a99000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the mouse release event.  <a href="#ac930bb58899760c0d8a3a95c79a99000"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -300,9 +306,53 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="ac930bb58899760c0d8a3a95c79a99000"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPropertyPalette::onMouseRelease </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the mouse release event. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"><span class="comment">//    qDebug() &lt;&lt; &quot;UBPropertyPalette::onMouseRelease() called (&quot; &lt;&lt; mMousePos.x() &lt;&lt; &quot;,&quot; &lt;&lt; mMousePos.y();</span></div>
+<div class="line"><span class="comment">//    QWidget* pW = NULL;</span></div>
+<div class="line"><span class="comment">//    pW = childAt(mMousePos);</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//    if(NULL != pW)</span></div>
+<div class="line"><span class="comment">//    {</span></div>
+<div class="line"><span class="comment">//        // A widget has been found under the mouse!</span></div>
+<div class="line"><span class="comment">//        UBActionPaletteButton* pButton = dynamic_cast&lt;UBActionPaletteButton*&gt;(pW);</span></div>
+<div class="line"><span class="comment">//        if(NULL != pButton)</span></div>
+<div class="line"><span class="comment">//        {</span></div>
+<div class="line"><span class="comment">//            pButton-&gt;click();</span></div>
+<div class="line"><span class="comment">//        }</span></div>
+<div class="line"><span class="comment">//    }</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//    // Close the palette</span></div>
+<div class="line"><span class="comment">//    close();</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dac/_u_b_property_palette_8h_source.html">UBPropertyPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/d88/_u_b_property_palette_8cpp.html">UBPropertyPalette.cpp</a></li>
+<li><a class="el" href="../../d5/dac/_u_b_property_palette_8h_source.html">UBPropertyPalette.h</a></li>
+<li><a class="el" href="../../d7/d88/_u_b_property_palette_8cpp.html">UBPropertyPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -310,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/df1/class_u_b_property_palette.html">UBPropertyPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

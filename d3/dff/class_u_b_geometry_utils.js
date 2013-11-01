@@ -1,5 +1,7 @@
 var class_u_b_geometry_utils =
 [
+    [ "UBGeometryUtils", "d3/dff/class_u_b_geometry_utils.html#af104cb8007b39306b4515401aaf58727", null ],
+    [ "~UBGeometryUtils", "d3/dff/class_u_b_geometry_utils.html#a4cff84dc31e079acccd23ec3caf41771", null ],
     [ "arcToPolygon", "d3/dff/class_u_b_geometry_utils.html#a12ba7130be2103b70f39138073d3d4ec", null ],
     [ "crashPointList", "d3/dff/class_u_b_geometry_utils.html#a84c18013880b48ced22fd7bf1c91aa2a", null ],
     [ "lineToInnerRect", "d3/dff/class_u_b_geometry_utils.html#a8d1e50c5d7d52bcf01179511b4231356", null ],

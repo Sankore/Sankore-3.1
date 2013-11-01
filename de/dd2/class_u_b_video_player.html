@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('de/dd2/class_u_b_video_player.html','.
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="../../d6/d08/class_u_b_video_player-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBVideoPlayer Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('de/dd2/class_u_b_video_player.html','.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/daf/class_u_b_video_player__coll__graph.svg" width="150" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/daf/class_u_b_video_player__coll__graph.svg" width="166" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -131,6 +132,11 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aebf986633fcfa6964c7b6cc45e691c63"><td class="memItemLeft" align="right" valign="top">Phonon::VideoPlayer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd2/class_u_b_video_player.html#aebf986633fcfa6964c7b6cc45e691c63">mVideoPlayer</a></td></tr>
 <tr class="memitem:a7c84b8b830aa3ca9fc0b72fc7f0d062c"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd2/class_u_b_video_player.html#a7c84b8b830aa3ca9fc0b72fc7f0d062c">mPlayPause</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a533de6c2687bb987e94b9f12e7f5eeb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd2/class_u_b_video_player.html#a533de6c2687bb987e94b9f12e7f5eeb8">mediaStateChanged</a> (Phonon::State newstate, Phonon::State oldstate)</td></tr>
+<tr class="memitem:afeaf96fbf02069a4f53903b838617267"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd2/class_u_b_video_player.html#afeaf96fbf02069a4f53903b838617267">tooglePlayPause</a> ()</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a32e227574bb587a245cbc69033f4e6c3"></a>
@@ -168,13 +174,22 @@ Protected Attributes</h2></td></tr>
 <div class="line">    transportLayout-&gt;addWidget(slider);</div>
 <div class="line"></div>
 <div class="line">    connect(<a class="code" href="../../de/dd2/class_u_b_video_player.html#a7c84b8b830aa3ca9fc0b72fc7f0d062c">mPlayPause</a>, SIGNAL(clicked()),</div>
-<div class="line">            <span class="keyword">this</span>, SLOT(tooglePlayPause()));</div>
+<div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/dd2/class_u_b_video_player.html#afeaf96fbf02069a4f53903b838617267">tooglePlayPause</a>()));</div>
 <div class="line"></div>
 <div class="line">    connect(<a class="code" href="../../de/dd2/class_u_b_video_player.html#aebf986633fcfa6964c7b6cc45e691c63">mVideoPlayer</a>-&gt;mediaObject(), SIGNAL(stateChanged ( Phonon::State, Phonon::State)),</div>
-<div class="line">            <span class="keyword">this</span>, SLOT(mediaStateChanged ( Phonon::State, Phonon::State)));</div>
+<div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../de/dd2/class_u_b_video_player.html#a533de6c2687bb987e94b9f12e7f5eeb8">mediaStateChanged</a> ( Phonon::State, Phonon::State)));</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/dd2/class_u_b_video_player_a32e227574bb587a245cbc69033f4e6c3_cgraph.svg" width="454" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a4350d927c120d9c60fe6d7af43d7585d"></a>
@@ -229,6 +244,104 @@ Protected Attributes</h2></td></tr>
 <div class="line">            <a class="code" href="../../de/dd2/class_u_b_video_player.html#aebf986633fcfa6964c7b6cc45e691c63">mVideoPlayer</a>-&gt;load(Phonon::MediaSource(url));</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a533de6c2687bb987e94b9f12e7f5eeb8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBVideoPlayer::mediaStateChanged </td>
+          <td>(</td>
+          <td class="paramtype">Phonon::State&#160;</td>
+          <td class="paramname"><em>newstate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Phonon::State&#160;</td>
+          <td class="paramname"><em>oldstate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(oldstate);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (newstate == Phonon::PlayingState)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../de/dd2/class_u_b_video_player.html#a7c84b8b830aa3ca9fc0b72fc7f0d062c">mPlayPause</a>-&gt;setIcon(QPixmap(<span class="stringliteral">&quot;:/images/pause.svg&quot;</span>));</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../de/dd2/class_u_b_video_player.html#a7c84b8b830aa3ca9fc0b72fc7f0d062c">mPlayPause</a>-&gt;setIcon(QPixmap(<span class="stringliteral">&quot;:/images/play.svg&quot;</span>));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/dd2/class_u_b_video_player_a533de6c2687bb987e94b9f12e7f5eeb8_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afeaf96fbf02069a4f53903b838617267"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBVideoPlayer::tooglePlayPause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../de/dd2/class_u_b_video_player.html#aebf986633fcfa6964c7b6cc45e691c63">mVideoPlayer</a>-&gt;mediaObject()-&gt;state() == Phonon::PlayingState)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../de/dd2/class_u_b_video_player.html#aebf986633fcfa6964c7b6cc45e691c63">mVideoPlayer</a>-&gt;mediaObject()-&gt;pause();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">         <a class="code" href="../../de/dd2/class_u_b_video_player.html#aebf986633fcfa6964c7b6cc45e691c63">mVideoPlayer</a>-&gt;mediaObject()-&gt;play();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/dd2/class_u_b_video_player_afeaf96fbf02069a4f53903b838617267_icgraph.svg" width="448" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a33e76a6103b1318f6a0e4f2cf03e8e50"></a>
@@ -299,8 +412,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d40/_u_b_video_player_8h_source.html">UBVideoPlayer.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/dad/_u_b_video_player_8cpp.html">UBVideoPlayer.cpp</a></li>
+<li><a class="el" href="../../df/d40/_u_b_video_player_8h_source.html">UBVideoPlayer.h</a></li>
+<li><a class="el" href="../../d9/dad/_u_b_video_player_8cpp.html">UBVideoPlayer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -308,7 +421,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/dd2/class_u_b_video_player.html">UBVideoPlayer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

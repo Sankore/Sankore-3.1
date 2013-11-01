@@ -12,8 +12,10 @@ var class_delegate_video_control =
     [ "totalTimeChanged", "d6/dfb/class_delegate_video_control.html#ac4bd67b8519832ffb357dc95487697d7", null ],
     [ "updateTicker", "d6/dfb/class_delegate_video_control.html#a4041dc437477a46abedbe2f60b372bb9", null ],
     [ "mAntiScale", "d6/dfb/class_delegate_video_control.html#abae4f33c0fbaecbb4d8ac35fb2dfd3a3", null ],
+    [ "mBalloon", "d6/dfb/class_delegate_video_control.html#af2f98e4244bacfbe247585c93d6319cc", null ],
     [ "mCurrentTimeInMs", "d6/dfb/class_delegate_video_control.html#a7eef884befdaa42a32b7efd4fd350b3d", null ],
     [ "mDelegate", "d6/dfb/class_delegate_video_control.html#a93305b12d3555c063827ca7913aaf9a2", null ],
     [ "mDisplayCurrentTime", "d6/dfb/class_delegate_video_control.html#a203df9a0783f9b13b2dbeb3bd36e17c3", null ],
+    [ "mStartWidth", "d6/dfb/class_delegate_video_control.html#adee05b28418b16255cdca518a858837f", null ],
     [ "mTotalTimeInMs", "d6/dfb/class_delegate_video_control.html#aade232616040470361ef28f72e782f67", null ]
 ];

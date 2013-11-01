@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('da/d41/class_w_b_history_completion_mo
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="../../d5/d3c/class_w_b_history_completion_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBHistoryCompletionModel Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('da/d41/class_w_b_history_completion_mo
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d8f/class_w_b_history_completion_model__coll__graph.svg" width="216" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d8f/class_w_b_history_completion_model__coll__graph.svg" width="216" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -130,6 +131,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2da15e5c1fecc1312f58056224b5142"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d41/class_w_b_history_completion_model.html#ac2da15e5c1fecc1312f58056224b5142">index</a> (int, int, const QModelIndex &amp;=QModelIndex()) const </td></tr>
 <tr class="memitem:a4f06d5ece9d8aba9f470137b3d008e2b"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d41/class_w_b_history_completion_model.html#a4f06d5ece9d8aba9f470137b3d008e2b">parent</a> (const QModelIndex &amp;<a class="el" href="../../da/d41/class_w_b_history_completion_model.html#ac2da15e5c1fecc1312f58056224b5142">index</a>=QModelIndex()) const </td></tr>
 <tr class="memitem:a7ea06700bceb5cb04a8a0e740c703eaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d41/class_w_b_history_completion_model.html#a7ea06700bceb5cb04a8a0e740c703eaa">setSourceModel</a> (QAbstractItemModel *sourceModel)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a2d8504b5b207d82a7f8e54f960bcfdc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a> ()</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a835d8ee5c832113ef94805e31ae03e64"></a>
@@ -414,41 +419,87 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (sourceModel())</div>
 <div class="line">    {</div>
-<div class="line">        disconnect(sourceModel(), SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">        disconnect(sourceModel(), SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>()));</div>
 <div class="line">        disconnect(sourceModel(), SIGNAL(rowsInserted(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>()));</div>
 <div class="line">        disconnect(sourceModel(), SIGNAL(rowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>()));</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a7ea06700bceb5cb04a8a0e740c703eaa">QAbstractProxyModel::setSourceModel</a>(newSourceModel);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (newSourceModel)</div>
 <div class="line">    {</div>
-<div class="line">        connect(newSourceModel, SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">        connect(newSourceModel, SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>()));</div>
 <div class="line">        connect(sourceModel(), SIGNAL(rowsInserted(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>()));</div>
 <div class="line">        connect(sourceModel(), SIGNAL(rowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>()));</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    reset();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d41/class_w_b_history_completion_model_a7ea06700bceb5cb04a8a0e740c703eaa_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d41/class_w_b_history_completion_model_a7ea06700bceb5cb04a8a0e740c703eaa_cgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d41/class_w_b_history_completion_model_a7ea06700bceb5cb04a8a0e740c703eaa_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d8504b5b207d82a7f8e54f960bcfdc1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryCompletionModel::sourceReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    reset();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d41/class_w_b_history_completion_model_a2d8504b5b207d82a7f8e54f960bcfdc1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
+<li><a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
+<li><a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -456,7 +507,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d41/class_w_b_history_completion_model.html">WBHistoryCompletionModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d5/d7f/class_u_b_icon_button.html','..
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/ddb/class_u_b_icon_button-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBIconButton Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('d5/d7f/class_u_b_icon_button.html','..
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dc0/class_u_b_icon_button__coll__graph.svg" width="195" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dc0/class_u_b_icon_button__coll__graph.svg" width="195" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -136,6 +137,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8650355c2494ed67cad7cded66fb3ef3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a8650355c2494ed67cad7cded66fb3ef3">mousePressEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="memitem:a465eca5b116c7ddab85a53099bbf4901"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a465eca5b116c7ddab85a53099bbf4901">mouseDoubleClickEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="memitem:a7d584e78eff8326d7a91f9ee21daaaff"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a7d584e78eff8326d7a91f9ee21daaaff">minimumSizeHint</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5ae4c66eff1527c51f88cbdd6f88c398"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a></td></tr>
+<tr class="memitem:a8b678ffd804e56764790e2ddbe6590d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a87f92b0abd00c9b83bc1efc8b50715b3"></a>
@@ -162,11 +168,11 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QAbstractButton(parent)</div>
-<div class="line">    , mToggleable(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line">    setIcon(icon);</div>
 <div class="line">    setCheckable(<span class="keyword">true</span>);</div>
-<div class="line">    mIconSize = icon.actualSize(QSize(128, 128));</div>
+<div class="line">    <a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a> = icon.actualSize(QSize(128, 128));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -225,7 +231,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mIconSize;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -290,7 +296,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mToggleable)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a>)</div>
 <div class="line">        setChecked(<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8650355c2494ed67cad7cded66fb3ef3">QAbstractButton::mousePressEvent</a>(event);</div>
@@ -321,7 +327,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
-<div class="line">    QPixmap pixmap = icon().pixmap(mIconSize, isChecked() ? QIcon::Selected : QIcon::Normal);</div>
+<div class="line">    QPixmap pixmap = icon().pixmap(<a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a5ae4c66eff1527c51f88cbdd6f88c398">mIconSize</a>, isChecked() ? QIcon::Selected : QIcon::Normal);</div>
 <div class="line">    painter.drawPixmap((width() - pixmap.width()) / 2, 0, pixmap);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -348,13 +354,54 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mToggleable = pToggleable;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../d5/d7f/class_u_b_icon_button.html#a8b678ffd804e56764790e2ddbe6590d6">mToggleable</a> = pToggleable;}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a5ae4c66eff1527c51f88cbdd6f88c398"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize UBIconButton::mIconSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b678ffd804e56764790e2ddbe6590d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBIconButton::mToggleable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d0/d62/_u_b_icon_button_8cpp.html">UBIconButton.cpp</a></li>
+<li><a class="el" href="../../d9/d2c/_u_b_icon_button_8h_source.html">UBIconButton.h</a></li>
+<li><a class="el" href="../../d0/d62/_u_b_icon_button_8cpp.html">UBIconButton.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -362,7 +409,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d7f/class_u_b_icon_button.html">UBIconButton</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

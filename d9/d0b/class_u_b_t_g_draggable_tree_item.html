@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d9/d0b/class_u_b_t_g_draggable_tree_it
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../da/db5/class_u_b_t_g_draggable_tree_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBTGDraggableTreeItem Class Reference</div>  </div>
@@ -116,12 +117,16 @@ $(document).ready(function(){initNavTree('d9/d0b/class_u_b_t_g_draggable_tree_it
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dbd/class_u_b_t_g_draggable_tree_item__coll__graph.svg" width="200" height="96"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dbd/class_u_b_t_g_draggable_tree_item__coll__graph.svg" width="200" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a058e955784562b0b5734e1646a18a0ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0b/class_u_b_t_g_draggable_tree_item.html#a058e955784562b0b5734e1646a18a0ed">UBTGDraggableTreeItem</a> (QWidget *parent=0, const char *name=&quot;UBTGDraggableTreeItem&quot;)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a977edfe699db939808cebe43a3b597bb"><td class="memItemLeft" align="right" valign="top">QMimeData *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0b/class_u_b_t_g_draggable_tree_item.html#a977edfe699db939808cebe43a3b597bb">mimeData</a> (const QList&lt; QTreeWidgetItem * &gt; items) const </td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a058e955784562b0b5734e1646a18a0ed"></a>
@@ -154,9 +159,41 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a977edfe699db939808cebe43a3b597bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMimeData * UBTGDraggableTreeItem::mimeData </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QTreeWidgetItem * &gt;&#160;</td>
+          <td class="paramname"><em>items</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QMimeData* result = <span class="keyword">new</span> QMimeData();</div>
+<div class="line">    QList&lt;QUrl&gt; urls;</div>
+<div class="line">    urls &lt;&lt; QUrl(items.at(0)-&gt;data(0,<a class="code" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h.html#aebc4b1381961c7b1b606f462737e113e">TG_USER_ROLE_MIME_TYPE</a>).toString());</div>
+<div class="line">    result-&gt;setUrls(urls);</div>
+<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
+<li><a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
+<li><a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -164,7 +201,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d0b/class_u_b_t_g_draggable_tree_item.html">UBTGDraggableTreeItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

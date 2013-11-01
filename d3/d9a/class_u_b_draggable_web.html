@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('d3/d9a/class_u_b_draggable_web.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/d84/class_u_b_draggable_web-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDraggableWeb Class Reference</div>  </div>
@@ -116,12 +118,24 @@ $(document).ready(function(){initNavTree('d3/d9a/class_u_b_draggable_web.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dc1/class_u_b_draggable_web__coll__graph.svg" width="158" height="96"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dc1/class_u_b_draggable_web__coll__graph.svg" width="168" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a921973cd333546c670f0b035ef5ca1bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#a921973cd333546c670f0b035ef5ca1bd">UBDraggableWeb</a> (QString &amp;relativePath, QWidget *parent=0)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a29c0d4ef81bc96dd0372f2f36cd7da76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#a29c0d4ef81bc96dd0372f2f36cd7da76">mousePressEvent</a> (QMouseEvent *event)</td></tr>
+<tr class="memitem:ae16c3fe41ac04bdc889c6efc5fe78bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#ae16c3fe41ac04bdc889c6efc5fe78bc1">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+<tr class="memitem:a931f5ab5b38091b29f6d5fc8a77d882b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#a931f5ab5b38091b29f6d5fc8a77d882b">mouseReleaseEvent</a> (QMouseEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a860e146a07868eeca2e7009a4f25b47f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#a860e146a07868eeca2e7009a4f25b47f">mRelativePath</a></td></tr>
+<tr class="memitem:a64f25d2e4ae0e56098575848c6f80915"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#a64f25d2e4ae0e56098575848c6f80915">mDragStartPosition</a></td></tr>
+<tr class="memitem:a366bf9003446d6bd65d6401c8e6a9ad7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html#a366bf9003446d6bd65d6401c8e6a9ad7">mDragStarted</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a921973cd333546c670f0b035ef5ca1bd"></a>
@@ -156,22 +170,182 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                    : QWebView(parent)</div>
-<div class="line">  , mDragStartPosition(QPoint(-1,-1))</div>
-<div class="line">  , mDragStarted(<span class="keyword">false</span>)</div>
+<div class="line">  , <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a64f25d2e4ae0e56098575848c6f80915">mDragStartPosition</a>(QPoint(-1,-1))</div>
+<div class="line">  , <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a366bf9003446d6bd65d6401c8e6a9ad7">mDragStarted</a>(<span class="keyword">false</span>)</div>
 <div class="line"></div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(!relativePath.startsWith(<span class="stringliteral">&quot;file://&quot;</span>))</div>
-<div class="line">        mRelativePath = QUrl::fromLocalFile(relativePath).toString();</div>
+<div class="line">        <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a860e146a07868eeca2e7009a4f25b47f">mRelativePath</a> = QUrl::fromLocalFile(relativePath).toString();</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">        mRelativePath = relativePath;</div>
+<div class="line">        <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a860e146a07868eeca2e7009a4f25b47f">mRelativePath</a> = relativePath;</div>
 <div class="line">    <span class="comment">//NOOP</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="ae16c3fe41ac04bdc889c6efc5fe78bc1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDraggableWeb::mouseMoveEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a366bf9003446d6bd65d6401c8e6a9ad7">mDragStarted</a> &amp;&amp; (event-&gt;pos() - <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a64f25d2e4ae0e56098575848c6f80915">mDragStartPosition</a>).manhattanLength() &gt; QApplication::startDragDistance()){</div>
+<div class="line">        QDrag *drag = <span class="keyword">new</span> QDrag(<span class="keyword">this</span>);</div>
+<div class="line">        QMimeData *mimeData = <span class="keyword">new</span> QMimeData;</div>
+<div class="line">        QList&lt;QUrl&gt; urlList;</div>
+<div class="line">        urlList &lt;&lt; QUrl(<a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a860e146a07868eeca2e7009a4f25b47f">mRelativePath</a>);</div>
+<div class="line">        mimeData-&gt;setUrls(urlList);</div>
+<div class="line">        drag-&gt;setMimeData(mimeData);</div>
+<div class="line"></div>
+<div class="line">        drag-&gt;exec();</div>
+<div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
+<div class="line">        <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a366bf9003446d6bd65d6401c8e6a9ad7">mDragStarted</a> = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#ae16c3fe41ac04bdc889c6efc5fe78bc1">QWebView::mouseMoveEvent</a>(event);</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a29c0d4ef81bc96dd0372f2f36cd7da76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDraggableWeb::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a64f25d2e4ae0e56098575848c6f80915">mDragStartPosition</a> = <span class="keyword">event</span>-&gt;pos();</div>
+<div class="line">    <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a366bf9003446d6bd65d6401c8e6a9ad7">mDragStarted</a> = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a29c0d4ef81bc96dd0372f2f36cd7da76">QWebView::mousePressEvent</a>(event);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a931f5ab5b38091b29f6d5fc8a77d882b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDraggableWeb::mouseReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a366bf9003446d6bd65d6401c8e6a9ad7">mDragStarted</a> = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d3/d9a/class_u_b_draggable_web.html#a931f5ab5b38091b29f6d5fc8a77d882b">QWebView::mouseReleaseEvent</a>(event);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a366bf9003446d6bd65d6401c8e6a9ad7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDraggableWeb::mDragStarted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a64f25d2e4ae0e56098575848c6f80915"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint UBDraggableWeb::mDragStartPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a860e146a07868eeca2e7009a4f25b47f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBDraggableWeb::mRelativePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
+<li><a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
+<li><a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -179,7 +353,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d9a/class_u_b_draggable_web.html">UBDraggableWeb</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

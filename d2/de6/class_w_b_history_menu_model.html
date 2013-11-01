@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d2/de6/class_w_b_history_menu_model.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d2/d73/class_w_b_history_menu_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBHistoryMenuModel Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('d2/de6/class_w_b_history_menu_model.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/db0/class_w_b_history_menu_model__coll__graph.svg" width="184" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/db0/class_w_b_history_menu_model__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -129,6 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd393feb20688f50da497bed2c9607f4"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de6/class_w_b_history_menu_model.html#abd393feb20688f50da497bed2c9607f4">index</a> (int, int, const QModelIndex &amp;<a class="el" href="../../d2/de6/class_w_b_history_menu_model.html#a7227782496c8f45c0d6fac8242f118ac">parent</a>=QModelIndex()) const </td></tr>
 <tr class="memitem:a7227782496c8f45c0d6fac8242f118ac"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de6/class_w_b_history_menu_model.html#a7227782496c8f45c0d6fac8242f118ac">parent</a> (const QModelIndex &amp;<a class="el" href="../../d2/de6/class_w_b_history_menu_model.html#abd393feb20688f50da497bed2c9607f4">index</a>=QModelIndex()) const </td></tr>
 <tr class="memitem:a73376f863cf4067e3a023f8ad0bb06dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de6/class_w_b_history_menu_model.html#a73376f863cf4067e3a023f8ad0bb06dd">bumpedRows</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a06aa1635f8cbe58107f988c2a196f285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acc085e54691c957c1385b9a7173a1384"></a>
@@ -155,7 +160,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QAbstractProxyModel(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a7227782496c8f45c0d6fac8242f118ac">parent</a>)</div>
-<div class="line">    , m_treeModel(sourceModel)</div>
+<div class="line">    , <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>(sourceModel)</div>
 <div class="line">{</div>
 <div class="line">    setSourceModel(sourceModel);</div>
 <div class="line">}</div>
@@ -176,10 +181,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QModelIndex first = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0);</div>
+<div class="line">    QModelIndex first = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0);</div>
 <div class="line">    <span class="keywordflow">if</span> (!first.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
-<div class="line">    <span class="keywordflow">return</span> qMin(m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ac5cf4ae4eedb64e2240158fc8f92a7b9">rowCount</a>(first), <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#abe5b397276bfa9dc36e54831bec55ad9">MOVEDROWS</a>);</div>
+<div class="line">    <span class="keywordflow">return</span> qMin(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ac5cf4ae4eedb64e2240158fc8f92a7b9">rowCount</a>(first), <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#abe5b397276bfa9dc36e54831bec55ad9">MOVEDROWS</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -187,7 +192,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_a73376f863cf4067e3a023f8ad0bb06dd_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_a73376f863cf4067e3a023f8ad0bb06dd_cgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -216,7 +221,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a7fdeda2fc11b465e1c6811d6c6df7eeb">columnCount</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#aad8819cb25e3283e30144bf0a5b46768">mapToSource</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a7227782496c8f45c0d6fac8242f118ac">parent</a>));</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a7fdeda2fc11b465e1c6811d6c6df7eeb">columnCount</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#aad8819cb25e3283e30144bf0a5b46768">mapToSource</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a7227782496c8f45c0d6fac8242f118ac">parent</a>));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -279,10 +284,10 @@ Public Member Functions</h2></td></tr>
 <div class="line">    QModelIndex treeIndexParent = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#aad8819cb25e3283e30144bf0a5b46768">mapToSource</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a7227782496c8f45c0d6fac8242f118ac">parent</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> bumpedItems = 0;</div>
-<div class="line">    <span class="keywordflow">if</span> (treeIndexParent == m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0))</div>
+<div class="line">    <span class="keywordflow">if</span> (treeIndexParent == <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0))</div>
 <div class="line">        bumpedItems = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a73376f863cf4067e3a023f8ad0bb06dd">bumpedRows</a>();</div>
-<div class="line">    QModelIndex treeIndex = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(row + bumpedItems, column, treeIndexParent);</div>
-<div class="line">    QModelIndex historyIndex = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ad3cb7e5007ff5f81e5857fb539026aea">mapToSource</a>(treeIndex);</div>
+<div class="line">    QModelIndex treeIndex = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(row + bumpedItems, column, treeIndexParent);</div>
+<div class="line">    QModelIndex historyIndex = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ad3cb7e5007ff5f81e5857fb539026aea">mapToSource</a>(treeIndex);</div>
 <div class="line">    <span class="keywordtype">int</span> historyRow = historyIndex.row();</div>
 <div class="line">    <span class="keywordflow">if</span> (historyRow == -1)</div>
 <div class="line">        historyRow = treeIndex.row();</div>
@@ -294,7 +299,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_abd393feb20688f50da497bed2c9607f4_cgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_abd393feb20688f50da497bed2c9607f4_cgraph.svg" width="100%" height="533"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -325,7 +330,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// currently not used or autotested</span></div>
 <div class="line">    Q_ASSERT(<span class="keyword">false</span>);</div>
-<div class="line">    <span class="keywordtype">int</span> sr = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ad3cb7e5007ff5f81e5857fb539026aea">mapToSource</a>(sourceIndex).row();</div>
+<div class="line">    <span class="keywordtype">int</span> sr = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ad3cb7e5007ff5f81e5857fb539026aea">mapToSource</a>(sourceIndex).row();</div>
 <div class="line">    <span class="keywordflow">return</span> createIndex(sourceIndex.row(), sourceIndex.column(), sr);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -334,7 +339,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_a94841023273c5225c0fe24a2712d9840_cgraph.svg" width="360" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_a94841023273c5225c0fe24a2712d9840_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -361,14 +366,14 @@ Public Member Functions</h2></td></tr>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordtype">int</span> bumpedItems = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a73376f863cf4067e3a023f8ad0bb06dd">bumpedRows</a>();</div>
 <div class="line">        <span class="keywordflow">if</span> (proxyIndex.row() &lt; bumpedItems)</div>
-<div class="line">            <span class="keywordflow">return</span> m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(proxyIndex.row(), proxyIndex.column(), m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0));</div>
-<div class="line">        <span class="keywordflow">if</span> (bumpedItems &lt;= <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#abe5b397276bfa9dc36e54831bec55ad9">MOVEDROWS</a> &amp;&amp; bumpedItems == sourceModel()-&gt;rowCount(m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0)))</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(proxyIndex.row(), proxyIndex.column(), <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0));</div>
+<div class="line">        <span class="keywordflow">if</span> (bumpedItems &lt;= <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#abe5b397276bfa9dc36e54831bec55ad9">MOVEDROWS</a> &amp;&amp; bumpedItems == sourceModel()-&gt;rowCount(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(0, 0)))</div>
 <div class="line">            --bumpedItems;</div>
-<div class="line">        <span class="keywordflow">return</span> m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(proxyIndex.row() - bumpedItems, proxyIndex.column());</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(proxyIndex.row() - bumpedItems, proxyIndex.column());</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    QModelIndex historyIndex = m_treeModel-&gt;sourceModel()-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(proxyIndex.internalId(), proxyIndex.column());</div>
-<div class="line">    QModelIndex treeIndex = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a542b024a863331e31103f9ebfd193d45">mapFromSource</a>(historyIndex);</div>
+<div class="line">    QModelIndex historyIndex = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;sourceModel()-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(proxyIndex.internalId(), proxyIndex.column());</div>
+<div class="line">    QModelIndex treeIndex = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a542b024a863331e31103f9ebfd193d45">mapFromSource</a>(historyIndex);</div>
 <div class="line">    <span class="keywordflow">return</span> treeIndex;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -377,7 +382,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_aad8819cb25e3283e30144bf0a5b46768_cgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_aad8819cb25e3283e30144bf0a5b46768_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -410,11 +415,11 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (offset == -1 || !<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#abd393feb20688f50da497bed2c9607f4">index</a>.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
 <div class="line"></div>
-<div class="line">    QModelIndex historyIndex = m_treeModel-&gt;sourceModel()-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#abd393feb20688f50da497bed2c9607f4">index</a>.internalId(), 0);</div>
-<div class="line">    QModelIndex treeIndex = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a542b024a863331e31103f9ebfd193d45">mapFromSource</a>(historyIndex);</div>
+<div class="line">    QModelIndex historyIndex = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;sourceModel()-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#abaff08dce3fe3a17296825854001bc44">index</a>(<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#abd393feb20688f50da497bed2c9607f4">index</a>.internalId(), 0);</div>
+<div class="line">    QModelIndex treeIndex = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a542b024a863331e31103f9ebfd193d45">mapFromSource</a>(historyIndex);</div>
 <div class="line">    QModelIndex treeIndexParent = treeIndex.parent();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> sr = m_treeModel-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ad3cb7e5007ff5f81e5857fb539026aea">mapToSource</a>(treeIndexParent).row();</div>
+<div class="line">    <span class="keywordtype">int</span> sr = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>-&gt;<a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ad3cb7e5007ff5f81e5857fb539026aea">mapToSource</a>(treeIndexParent).row();</div>
 <div class="line">    <span class="keywordtype">int</span> bumpedItems = <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a73376f863cf4067e3a023f8ad0bb06dd">bumpedRows</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (bumpedItems &lt;= <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#abe5b397276bfa9dc36e54831bec55ad9">MOVEDROWS</a> &amp;&amp; bumpedItems == sourceModel()-&gt;<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a75d85c1443b525666ae80b92e3e13cff">rowCount</a>(sourceModel()-&gt;<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#abd393feb20688f50da497bed2c9607f4">index</a>(0, 0)))</div>
 <div class="line">        --bumpedItems;</div>
@@ -477,7 +482,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_a75d85c1443b525666ae80b92e3e13cff_cgraph.svg" width="100%" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/de6/class_w_b_history_menu_model_a75d85c1443b525666ae80b92e3e13cff_cgraph.svg" width="100%" height="531"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -492,9 +497,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a06aa1635f8cbe58107f988c2a196f285"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a>* WBHistoryMenuModel::m_treeModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
+<li><a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
+<li><a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -502,7 +528,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/de6/class_w_b_history_menu_model.html">WBHistoryMenuModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('d8/d64/class_u_b_http_file_downloader.
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../da/d24/class_u_b_http_file_downloader-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBHttpFileDownloader Class Reference</div>  </div>
@@ -117,7 +120,7 @@ $(document).ready(function(){initNavTree('d8/d64/class_u_b_http_file_downloader.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_u_b_http_file_downloader__coll__graph.svg" width="195" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7f/class_u_b_http_file_downloader__coll__graph.svg" width="195" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -129,6 +132,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aba49d51f4c5a5adce6db82b3399e1439"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#aba49d51f4c5a5adce6db82b3399e1439">UBHttpFileDownloader</a> (QObject *parent=0)</td></tr>
 <tr class="memitem:a46282f8a294404314c47c5c226f1e782"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a46282f8a294404314c47c5c226f1e782">~UBHttpFileDownloader</a> ()</td></tr>
 <tr class="memitem:a36b270df4a29afd0b819ee83912297b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a36b270df4a29afd0b819ee83912297b1">download</a> (const QList&lt; QUrl &gt; &amp;urls, const QList&lt; QFile * &gt; &amp;files)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a924a36e001a2507544e1951e00d4de96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">downloadProgress</a> (qint64 bytesReceived, qint64 bytesTotal)</td></tr>
+<tr class="memitem:a5f03d272353785cc1de12d40e25cd064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">error</a> (QNetworkReply::NetworkError code)</td></tr>
+<tr class="memitem:af3ee6c32fadb6a11ee8efa189f84e164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a> ()</td></tr>
+<tr class="memitem:a8f6fd0b7c6368ac545eb4602181b06ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">readyRead</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a4ee86cfff01e4974a77cb886e2f2b2ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">downloadNext</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac82d64a93e2f3f28e7d2725a251a84f2"><td class="memItemLeft" align="right" valign="top">QList&lt; QUrl &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a></td></tr>
+<tr class="memitem:a4ff0bbdfc3cd4c2db49f9a4906a26905"><td class="memItemLeft" align="right" valign="top">QList&lt; QFile * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a></td></tr>
+<tr class="memitem:a2e401302467a7926d184410943ca7eab"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a></td></tr>
+<tr class="memitem:aa33b431e571095f9f191fc28f4f19664"><td class="memItemLeft" align="right" valign="top">QFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a></td></tr>
+<tr class="memitem:a7d813aa8f119a4a795c461c3aed44b77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aba49d51f4c5a5adce6db82b3399e1439"></a>
@@ -202,14 +224,181 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">        mUrlsToDownload = urls;</div>
-<div class="line">        mFilesToSave = files;</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a> = urls;</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a> = files;</div>
 <div class="line"></div>
-<div class="line">        mSuccess = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">        downloadNext();</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">downloadNext</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_a36b270df4a29afd0b819ee83912297b1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ee86cfff01e4974a77cb886e2f2b2ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBHttpFileDownloader::downloadNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a>.length() &gt; 0 &amp;&amp; <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a>.length() &gt; 0)</div>
+<div class="line">        {</div>
+<div class="line">                QUrl url = <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#ac82d64a93e2f3f28e7d2725a251a84f2">mUrlsToDownload</a>.takeFirst();</div>
+<div class="line">                <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a> = <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ff0bbdfc3cd4c2db49f9a4906a26905">mFilesToSave</a>.takeFirst();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;open(QIODevice::WriteOnly | QIODevice::Truncate))</div>
+<div class="line">        {</div>
+<div class="line">            qCritical() &lt;&lt; <span class="stringliteral">&quot;cannot open &quot;</span> &lt;&lt; <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a> &lt;&lt; <span class="stringliteral">&quot; for writing ...&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">                <a class="code" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a> * nam = <a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>();</div>
+<div class="line">                QNetworkRequest request(url);</div>
+<div class="line">            <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a> = nam-&gt;<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#a4939a9c1018c4cc416db0f1b1dcbe581">get</a>(request); <span class="comment">// UB 4.2 TODO who owns and delete the reply ?</span></div>
+<div class="line"></div>
+<div class="line">            connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a> ()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a> ()));</div>
+<div class="line">                connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">error</a> ( QNetworkReply::NetworkError )),</div>
+<div class="line">                                <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a5f03d272353785cc1de12d40e25cd064">error</a> ( QNetworkReply::NetworkError)));</div>
+<div class="line">                connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">downloadProgress</a> ( qint64 , qint64  )),</div>
+<div class="line">                                <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a924a36e001a2507544e1951e00d4de96">downloadProgress</a>(qint64 , qint64)));</div>
+<div class="line"></div>
+<div class="line">                connect(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>, SIGNAL(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">readyRead</a> ()), <span class="keyword">this</span>, SLOT( <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a8f6fd0b7c6368ac545eb4602181b06ef">readyRead</a>()));</div>
+<div class="line"></div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">                emit <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#af3ee6c32fadb6a11ee8efa189f84e164">finished</a>(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a>);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_a4ee86cfff01e4974a77cb886e2f2b2ba_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_a4ee86cfff01e4974a77cb886e2f2b2ba_icgraph.svg" width="374" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a924a36e001a2507544e1951e00d4de96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBHttpFileDownloader::downloadProgress </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesReceived</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>bytesTotal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(bytesReceived);</div>
+<div class="line">    Q_UNUSED(bytesTotal);</div>
+<div class="line">        <span class="comment">//qDebug() &lt;&lt; bytesReceived &lt;&lt; &quot;/&quot; &lt;&lt; bytesTotal;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_a924a36e001a2507544e1951e00d4de96_icgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f03d272353785cc1de12d40e25cd064"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBHttpFileDownloader::error </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply::NetworkError&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;UBHttpFileDownloader::error : code=&quot;</span> &lt;&lt; code;</div>
+<div class="line">    <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a> = <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a7d813aa8f119a4a795c461c3aed44b77">mSuccess</a> &amp;&amp; (code == QNetworkReply::NoError);</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_a5f03d272353785cc1de12d40e25cd064_icgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a69402d8027c5a439e6565e8ca143e3a4"></a>
@@ -236,9 +425,195 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af3ee6c32fadb6a11ee8efa189f84e164"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBHttpFileDownloader::finished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;flush();</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;close();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>)</div>
+<div class="line">                <span class="keyword">delete</span> <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>;</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a4ee86cfff01e4974a77cb886e2f2b2ba">downloadNext</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_af3ee6c32fadb6a11ee8efa189f84e164_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_af3ee6c32fadb6a11ee8efa189f84e164_icgraph.svg" width="579" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f6fd0b7c6368ac545eb4602181b06ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBHttpFileDownloader::readyRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#aa33b431e571095f9f191fc28f4f19664">mCurrentFile</a>-&gt;write(<a class="code" href="../../d8/d64/class_u_b_http_file_downloader.html#a2e401302467a7926d184410943ca7eab">mReply</a>-&gt;readAll());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d64/class_u_b_http_file_downloader_a8f6fd0b7c6368ac545eb4602181b06ef_icgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa33b431e571095f9f191fc28f4f19664"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFile* UBHttpFileDownloader::mCurrentFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ff0bbdfc3cd4c2db49f9a4906a26905"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QFile*&gt; UBHttpFileDownloader::mFilesToSave</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e401302467a7926d184410943ca7eab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* UBHttpFileDownloader::mReply</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d813aa8f119a4a795c461c3aed44b77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBHttpFileDownloader::mSuccess</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac82d64a93e2f3f28e7d2725a251a84f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QUrl&gt; UBHttpFileDownloader::mUrlsToDownload</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/network/<a class="el" href="../../d3/da4/_u_b_http_file_downloader_8h_source.html">UBHttpFileDownloader.h</a></li>
-<li>Sankore-3.1/src/network/<a class="el" href="../../d3/d2b/_u_b_http_file_downloader_8cpp.html">UBHttpFileDownloader.cpp</a></li>
+<li><a class="el" href="../../d3/da4/_u_b_http_file_downloader_8h_source.html">UBHttpFileDownloader.h</a></li>
+<li><a class="el" href="../../d3/d2b/_u_b_http_file_downloader_8cpp.html">UBHttpFileDownloader.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -246,7 +621,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d64/class_u_b_http_file_downloader.html">UBHttpFileDownloader</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

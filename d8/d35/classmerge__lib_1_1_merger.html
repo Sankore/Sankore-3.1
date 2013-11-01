@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('d8/d35/classmerge__lib_1_1_merger.html
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d7/d9b/classmerge__lib_1_1_merger-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::Merger Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('d8/d35/classmerge__lib_1_1_merger.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/df7/classmerge__lib_1_1_merger__coll__graph.svg" width="206" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/df7/classmerge__lib_1_1_merger__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -127,6 +129,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2fe21c9daf3749cc1a7340146f8442a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html#ad2fe21c9daf3749cc1a7340146f8442a">addOverlayDocument</a> (const char *docName)</td></tr>
 <tr class="memitem:ac76384e07224912ee9c816bc2d89d6f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html#ac76384e07224912ee9c816bc2d89d6f9">saveMergedDocumentsAs</a> (const char *outDocumentName)</td></tr>
 <tr class="memitem:a02c1f126ae84b8c2f00ed7adf411124a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html#a02c1f126ae84b8c2f00ed7adf411124a">merge</a> (const char *overlayDocName, const <a class="el" href="../../d2/d27/namespacemerge__lib.html#a0a9efd2f197f07a92f4879b230a2e0b2">MergeDescription</a> &amp;pagesToMerge)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a839aab816e30feea50bda5a1dc93f979"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a></td></tr>
+<tr class="memitem:a0e51c9f75ec471bc2e96e75a5c509686"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:aeafc35f53860594420d3918f5c05cf57"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">Parser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html#aeafc35f53860594420d3918f5c05cf57">_parser</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa778178338ad58684ad6bd19d26f6ba9"></a>
@@ -141,7 +152,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">              :_baseDocuments(),_overlayDocument(0)</div>
+<div class="fragment"><div class="line">              :<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>(),<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>(0)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -161,17 +172,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   std::map&lt;std::string, Document *&gt;::iterator docIterator = _baseDocuments.begin();</div>
-<div class="line">   <span class="keywordflow">for</span>(; docIterator != _baseDocuments.end(); ++docIterator)</div>
+<div class="line">   std::map&lt;std::string, Document *&gt;::iterator docIterator = <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>.begin();</div>
+<div class="line">   <span class="keywordflow">for</span>(; docIterator != <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>.end(); ++docIterator)</div>
 <div class="line">   {</div>
 <div class="line">      <span class="keyword">delete</span> (*docIterator).second;</div>
 <div class="line">   }</div>
-<div class="line">   <span class="keywordflow">if</span>( _overlayDocument )</div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> )</div>
 <div class="line">   {</div>
-<div class="line">      <span class="keyword">delete</span> _overlayDocument;</div>
-<div class="line">      _overlayDocument = 0;</div>
+<div class="line">      <span class="keyword">delete</span> <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>;</div>
+<div class="line">      <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> = 0;</div>
 <div class="line">   }</div>
-<div class="line">   _baseDocuments.clear();</div>
+<div class="line">   <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>.clear();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -192,10 +203,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="comment">//if docName has been already opened then do nothing</span></div>
-<div class="line">   <span class="keywordflow">if</span>(_baseDocuments.count(docName))</div>
+<div class="line">   <span class="keywordflow">if</span>(<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>.count(docName))</div>
 <div class="line">      <span class="keywordflow">return</span>;</div>
-<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> * newBaseDoc = _parser.<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a5658f9ef56e67d81e135db5b36d2881a">parseDocument</a>(docName);</div>
-<div class="line">   _baseDocuments.insert(std::pair&lt;std::string, Document *&gt;(docName, newBaseDoc));</div>
+<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> * newBaseDoc = <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#aeafc35f53860594420d3918f5c05cf57">_parser</a>.<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a5658f9ef56e67d81e135db5b36d2881a">parseDocument</a>(docName);</div>
+<div class="line">   <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>.insert(std::pair&lt;std::string, Document *&gt;(docName, newBaseDoc));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -212,7 +223,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_a21ec448078eb91834db284b038c0301c_icgraph.svg" width="603" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_a21ec448078eb91834db284b038c0301c_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -232,16 +243,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>( _overlayDocument )</div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> )</div>
 <div class="line">   {</div>
-<div class="line">      <span class="keyword">delete</span> _overlayDocument;</div>
-<div class="line">      _overlayDocument = 0;</div>
+<div class="line">      <span class="keyword">delete</span> <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>;</div>
+<div class="line">      <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> = 0;</div>
 <div class="line">   }</div>
-<div class="line">   <span class="keywordflow">if</span>( !_overlayDocument )</div>
+<div class="line">   <span class="keywordflow">if</span>( !<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> )</div>
 <div class="line">   {</div>
 <div class="line">      <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html">OverlayDocumentParser</a> overlayDocParser;</div>
-<div class="line">      _overlayDocument = overlayDocParser.<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a03f2f36e4e57c5c6cfb37933bc82c801">parseDocument</a>(docName);</div>
-<div class="line">      <span class="keywordflow">if</span>( !_overlayDocument )</div>
+<div class="line">      <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> = overlayDocParser.<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a03f2f36e4e57c5c6cfb37933bc82c801">parseDocument</a>(docName);</div>
+<div class="line">      <span class="keywordflow">if</span>( !<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> )</div>
 <div class="line">      {</div>
 <div class="line">         <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Error loading overlay document!&quot;</span>);</div>
 <div class="line">      }</div>
@@ -262,7 +273,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_ad2fe21c9daf3749cc1a7340146f8442a_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_ad2fe21c9daf3749cc1a7340146f8442a_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -292,10 +304,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>( !_overlayDocument)</div>
+<div class="line">   <span class="keywordflow">if</span>( !<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>)</div>
 <div class="line">   {</div>
 <div class="line">      <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#ad2fe21c9daf3749cc1a7340146f8442a">addOverlayDocument</a>(overlayDocName);</div>
-<div class="line">      <span class="keywordflow">if</span>( !_overlayDocument )</div>
+<div class="line">      <span class="keywordflow">if</span>( !<a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a> )</div>
 <div class="line">      {</div>
 <div class="line">         <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Error loading overlay document!&quot;</span>);</div>
 <div class="line">      }</div>
@@ -303,7 +315,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">   MergeDescription::const_iterator pageIterator = pagesToMerge.begin();</div>
 <div class="line">   <span class="keywordflow">for</span>(; pageIterator != pagesToMerge.end(); ++pageIterator )</div>
 <div class="line">   {            </div>
-<div class="line">      <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a> * destinationPage = _overlayDocument-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6975164cb7c18fc388e6eb6059b2f5c5">getPage</a>( (*pageIterator).overlayPageNumber);</div>
+<div class="line">      <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a> * destinationPage = <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6975164cb7c18fc388e6eb6059b2f5c5">getPage</a>( (*pageIterator).overlayPageNumber);</div>
 <div class="line">      <span class="keywordflow">if</span>( destinationPage == 0 )</div>
 <div class="line">      {</div>
 <div class="line">         std::stringstream error;</div>
@@ -311,7 +323,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">               <span class="stringliteral">&quot; number in &quot;</span> &lt;&lt; overlayDocName;</div>
 <div class="line">         <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(error);</div>
 <div class="line">      }</div>
-<div class="line">      <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> * sourceDocument = _baseDocuments[(*pageIterator).baseDocumentName];</div>
+<div class="line">      <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> * sourceDocument = <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a839aab816e30feea50bda5a1dc93f979">_baseDocuments</a>[(*pageIterator).baseDocumentName];</div>
 <div class="line">      <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a> * sourcePage = (sourceDocument == 0)? 0 : sourceDocument-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6975164cb7c18fc388e6eb6059b2f5c5">getPage</a>((*pageIterator).basePageNumber);</div>
 <div class="line">      <span class="keywordtype">bool</span> isPageDuplicated = <span class="keyword">false</span>;</div>
 <div class="line">      <span class="keywordflow">if</span>( sourcePage )</div>
@@ -327,7 +339,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">         isPageDuplicated = (2 == howManyTimesPageFound) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line">      }</div>
 <div class="line"></div>
-<div class="line">      destinationPage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ab743f0a5867701d8be79af076f02a6fd">merge</a>(sourcePage, _overlayDocument, const_cast&lt;MergePageDescription&amp;&gt;((*pageIterator)), isPageDuplicated);</div>
+<div class="line">      destinationPage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#ab743f0a5867701d8be79af076f02a6fd">merge</a>(sourcePage, <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>, const_cast&lt;MergePageDescription&amp;&gt;((*pageIterator)), isPageDuplicated);</div>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -337,7 +349,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_a02c1f126ae84b8c2f00ed7adf411124a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_a02c1f126ae84b8c2f00ed7adf411124a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -346,7 +359,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_a02c1f126ae84b8c2f00ed7adf411124a_icgraph.svg" width="595" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_a02c1f126ae84b8c2f00ed7adf411124a_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -366,7 +379,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _overlayDocument-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6687738a8f98a95f3cafbfca7dd7c928">saveAs</a>(outDocumentName);</div>
+<div class="line">   <a class="code" href="../../d8/d35/classmerge__lib_1_1_merger.html#a0e51c9f75ec471bc2e96e75a5c509686">_overlayDocument</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6687738a8f98a95f3cafbfca7dd7c928">saveAs</a>(outDocumentName);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -374,7 +387,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_ac76384e07224912ee9c816bc2d89d6f9_cgraph.svg" width="100%" height="556"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_ac76384e07224912ee9c816bc2d89d6f9_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -383,15 +397,76 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_ac76384e07224912ee9c816bc2d89d6f9_icgraph.svg" width="646" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d35/classmerge__lib_1_1_merger_ac76384e07224912ee9c816bc2d89d6f9_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a839aab816e30feea50bda5a1dc93f979"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> * &gt; merge_lib::Merger::_baseDocuments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e51c9f75ec471bc2e96e75a5c509686"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a>* merge_lib::Merger::_overlayDocument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeafc35f53860594420d3918f5c05cf57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">Parser</a> Merger::_parser</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../df/d95/_merger_8h_source.html">Merger.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d6/d69/_merger_8cpp.html">Merger.cpp</a></li>
+<li><a class="el" href="../../df/d95/_merger_8h_source.html">Merger.h</a></li>
+<li><a class="el" href="../../d6/d69/_merger_8cpp.html">Merger.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -399,7 +474,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d8/d35/classmerge__lib_1_1_merger.html">Merger</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

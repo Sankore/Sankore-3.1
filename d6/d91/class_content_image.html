@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d6/d91/class_content_image.html','../.
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../de/dcd/class_content_image-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ContentImage Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('d6/d91/class_content_image.html','../.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d8b/class_content_image__coll__graph.svg" width="134" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d8b/class_content_image__coll__graph.svg" width="134" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -129,6 +130,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4b6af2cc0e1d7cb87f0f3976b2cd2828"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d91/class_content_image.html#a4b6af2cc0e1d7cb87f0f3976b2cd2828">m_strHeight</a></td></tr>
 <tr class="memitem:a4c9b385be7cf07aae5cb3db63ad2fd07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d91/class_content_image.html#a4c9b385be7cf07aae5cb3db63ad2fd07">m_height</a></td></tr>
 <tr class="memitem:ac909e18dddf912ccaa795469718ca55d"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d91/class_content_image.html#ac909e18dddf912ccaa795469718ca55d">m_btnContent</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaf7c89013d95dc56ecfbc36f148f7156"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d91/class_content_image.html#aaf7c89013d95dc56ecfbc36f148f7156">m_strContent</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa873cbf7c839dc9f28aada055ae772a3"></a>
@@ -164,8 +169,8 @@ Public Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d6/d91/class_content_image.html#a4b6af2cc0e1d7cb87f0f3976b2cd2828">m_strHeight</a> = strHeight;</div>
 <div class="line">    <a class="code" href="../../d6/d91/class_content_image.html#a4c9b385be7cf07aae5cb3db63ad2fd07">m_height</a> = height;</div>
 <div class="line"></div>
-<div class="line">    m_strContent = <span class="stringliteral">&quot;:/images/virtual.keyboard/&quot;</span> + strHeight + <span class="stringliteral">&quot;/&quot;</span> + strContentName + <span class="stringliteral">&quot;.png&quot;</span>;</div>
-<div class="line">    <a class="code" href="../../d6/d91/class_content_image.html#ac909e18dddf912ccaa795469718ca55d">m_btnContent</a> = QImage(m_strContent);</div>
+<div class="line">    <a class="code" href="../../d6/d91/class_content_image.html#aaf7c89013d95dc56ecfbc36f148f7156">m_strContent</a> = <span class="stringliteral">&quot;:/images/virtual.keyboard/&quot;</span> + strHeight + <span class="stringliteral">&quot;/&quot;</span> + strContentName + <span class="stringliteral">&quot;.png&quot;</span>;</div>
+<div class="line">    <a class="code" href="../../d6/d91/class_content_image.html#ac909e18dddf912ccaa795469718ca55d">m_btnContent</a> = QImage(<a class="code" href="../../d6/d91/class_content_image.html#aaf7c89013d95dc56ecfbc36f148f7156">m_strContent</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -195,6 +200,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aaf7c89013d95dc56ecfbc36f148f7156"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ContentImage::m_strContent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4b6af2cc0e1d7cb87f0f3976b2cd2828"></a>
 <div class="memitem">
 <div class="memproto">
@@ -208,8 +233,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
+<li><a class="el" href="../../de/d31/_u_b_keyboard_palette_8h_source.html">UBKeyboardPalette.h</a></li>
+<li><a class="el" href="../../df/d3d/_u_b_keyboard_palette_8cpp.html">UBKeyboardPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -217,7 +242,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d91/class_content_image.html">ContentImage</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

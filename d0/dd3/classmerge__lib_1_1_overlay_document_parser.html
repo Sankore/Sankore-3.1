@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('d0/dd3/classmerge__lib_1_1_overlay_doc
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d6/d63/classmerge__lib_1_1_overlay_document_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::OverlayDocumentParser Class Reference</div>  </div>
@@ -117,7 +120,7 @@ $(document).ready(function(){initNavTree('d0/dd3/classmerge__lib_1_1_overlay_doc
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d32/classmerge__lib_1_1_overlay_document_parser__inherit__graph.svg" width="272" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d32/classmerge__lib_1_1_overlay_document_parser__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for merge_lib::OverlayDocumentParser:</div>
@@ -136,13 +139,34 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a15298e8b24e61e870438f2d1ea569025"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a15298e8b24e61e870438f2d1ea569025">_readTrailerAndReturnRoot</a> ()</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9a43ef8096bdef6595f1562fdc4c55e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a9a43ef8096bdef6595f1562fdc4c55e7">_getFileContent</a> (const char *fileName)</td></tr>
+<tr class="memitem:ac229b7812fccde6f5b8ac0a7fcbe22e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#ac229b7812fccde6f5b8ac0a7fcbe22e7">_readXRefAndCreateObjects</a> ()</td></tr>
+<tr class="memitem:a49b51f00263d0afb3924d8a6bd3180b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a49b51f00263d0afb3924d8a6bd3180b0">_readXref</a> (std::map&lt; unsigned int, unsigned long &gt; &amp;objectsAndSizes)</td></tr>
+<tr class="memitem:a7b98716e9fd2e86310b02bfb059618e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a7b98716e9fd2e86310b02bfb059618e4">_getPartOfFileContent</a> (long startOfPart, unsigned int length)</td></tr>
+<tr class="memitem:a57ed82b4a85c8520b2d3e58078e4c9ba"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a57ed82b4a85c8520b2d3e58078e4c9ba">_getStartOfXrefWithRoot</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classmerge__lib_1_1_parser"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmerge__lib_1_1_parser')"><img src="../../closed.png" alt="-"/>&nbsp;Private Member Functions inherited from <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">merge_lib::Parser</a></td></tr>
 <tr class="memitem:a0c16db1ac6d8d9c78fbcf5168fee3db7 inherit pub_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a0c16db1ac6d8d9c78fbcf5168fee3db7">Parser</a> ()</td></tr>
 <tr class="memitem:a5658f9ef56e67d81e135db5b36d2881a inherit pub_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a5658f9ef56e67d81e135db5b36d2881a">parseDocument</a> (const char *fileName)</td></tr>
 <tr class="memitem:a1189d2610c4c3ed58056ce9a0bc504b8 inherit pro_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1189d2610c4c3ed58056ce9a0bc504b8">_getObjectContent</a> (unsigned int objectPosition, unsigned int &amp;objectNumber, unsigned int &amp;generationNumber, std::pair&lt; unsigned int, unsigned int &gt; &amp;, bool &amp;)</td></tr>
 <tr class="memitem:a59d3468e300a02465974908a98150779 inherit pro_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a59d3468e300a02465974908a98150779">_readTrailerAndReturnRoot</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abf8f2df2bd8632846b4b4d46ceefbedd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a491d379de3e6e22f18f7ede746a35f2f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a491d379de3e6e22f18f7ede746a35f2f">DOC_PART_WITH_START_OF_XREF</a> = 30</td></tr>
+<tr class="inherit_header pub_static_attribs_classmerge__lib_1_1_parser"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classmerge__lib_1_1_parser')"><img src="../../closed.png" alt="-"/>&nbsp;Static Private Attributes inherited from <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">merge_lib::Parser</a></td></tr>
+<tr class="memitem:aeae49355a210d0171da32858c4af858b inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a></td></tr>
+<tr class="memitem:af4079dd0bf5d8d17a714b32b6d82a62b inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#af4079dd0bf5d8d17a714b32b6d82a62b">DELIMETERS</a></td></tr>
+<tr class="memitem:a01f083b2ba8adb53f83734343c075458 inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a></td></tr>
+<tr class="memitem:a470d149d6e6683e66d895e4a5afe1ba5 inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a470d149d6e6683e66d895e4a5afe1ba5">WHITESPACES_AND_DELIMETERS</a> = <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">Parser::WHITESPACES</a> + <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#af4079dd0bf5d8d17a714b32b6d82a62b">Parser::DELIMETERS</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classmerge__lib_1_1_parser"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classmerge__lib_1_1_parser')"><img src="../../closed.png" alt="-"/>&nbsp;Static Private Member Functions inherited from <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">merge_lib::Parser</a></td></tr>
 <tr class="memitem:aea1235b1ef3c67048cc9f32ecb30918a inherit pub_static_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#aea1235b1ef3c67048cc9f32ecb30918a">getNextWord</a> (std::string &amp;out, const std::string &amp;in, size_t &amp;nextPosition, size_t *found=NULL)</td></tr>
 <tr class="memdesc:aea1235b1ef3c67048cc9f32ecb30918a inherit pub_static_methods_classmerge__lib_1_1_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">getNextWord  <a href="#aea1235b1ef3c67048cc9f32ecb30918a"></a><br/></td></tr>
@@ -154,11 +178,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1238dc538fd46f2cbd5c14f5d9fc9f86 inherit pub_static_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1238dc538fd46f2cbd5c14f5d9fc9f86">findTokenName</a> (const std::string &amp;content, const std::string &amp;keyword, size_t start=0)</td></tr>
 <tr class="memitem:a9745f8e44623eeb8d93a4a1c0043df33 inherit pub_static_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9745f8e44623eeb8d93a4a1c0043df33">findEndOfElementContent</a> (const std::string &amp;content, unsigned int startOfPageElement)</td></tr>
 <tr class="memitem:a61797498a85480de8552462bde30e29a inherit pub_static_methods_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a61797498a85480de8552462bde30e29a">tokenIsAName</a> (const std::string &amp;content, size_t start)</td></tr>
-<tr class="inherit_header pub_static_attribs_classmerge__lib_1_1_parser"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classmerge__lib_1_1_parser')"><img src="../../closed.png" alt="-"/>&nbsp;Static Private Attributes inherited from <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">merge_lib::Parser</a></td></tr>
-<tr class="memitem:aeae49355a210d0171da32858c4af858b inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a></td></tr>
-<tr class="memitem:af4079dd0bf5d8d17a714b32b6d82a62b inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#af4079dd0bf5d8d17a714b32b6d82a62b">DELIMETERS</a></td></tr>
-<tr class="memitem:a01f083b2ba8adb53f83734343c075458 inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a></td></tr>
-<tr class="memitem:a470d149d6e6683e66d895e4a5afe1ba5 inherit pub_static_attribs_classmerge__lib_1_1_parser"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a470d149d6e6683e66d895e4a5afe1ba5">WHITESPACES_AND_DELIMETERS</a> = <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">Parser::WHITESPACES</a> + <a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#af4079dd0bf5d8d17a714b32b6d82a62b">Parser::DELIMETERS</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0454d77d52b23e0b857d39d4ae6c9da6"></a>
@@ -181,11 +200,117 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">: <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a0c16db1ac6d8d9c78fbcf5168fee3db7">Parser</a>(), _fileName()  {};</div>
+<div class="fragment"><div class="line">: <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a0c16db1ac6d8d9c78fbcf5168fee3db7">Parser</a>(), <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a>()  {};</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a9a43ef8096bdef6595f1562fdc4c55e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OverlayDocumentParser::_getFileContent </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(fileName);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7b98716e9fd2e86310b02bfb059618e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OverlayDocumentParser::_getPartOfFileContent </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>startOfPart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   ifstream pdfFile;</div>
+<div class="line">   pdfFile.open (<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a>.c_str(), ios::binary );</div>
+<div class="line">   <span class="keywordflow">if</span> (pdfFile.fail())</div>
+<div class="line">   {</div>
+<div class="line">      stringstream errorMessage(<span class="stringliteral">&quot;File &quot;</span>);</div>
+<div class="line">      errorMessage &lt;&lt; <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a> &lt;&lt; <span class="stringliteral">&quot; is absent&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(errorMessage);</div>
+<div class="line">   }   </div>
+<div class="line">   ios_base::seekdir dir;</div>
+<div class="line">   <span class="keywordflow">if</span>(startOfPart &gt;= 0)</div>
+<div class="line">      dir = ios_base::beg;</div>
+<div class="line">   <span class="keywordflow">else</span> </div>
+<div class="line">      dir = ios_base::end;</div>
+<div class="line">   pdfFile.seekg (startOfPart, dir);</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.resize(length);</div>
+<div class="line">   pdfFile.read(&amp;<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[0], length);</div>
+<div class="line">   pdfFile.close();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a57ed82b4a85c8520b2d3e58078e4c9ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int OverlayDocumentParser::_getStartOfXrefWithRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a15298e8b24e61e870438f2d1ea569025"></a>
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +332,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _getPartOfFileContent(- (3*DOC_PART_WITH_START_OF_XREF), (3*DOC_PART_WITH_START_OF_XREF));</div>
+<div class="line">   <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a7b98716e9fd2e86310b02bfb059618e4">_getPartOfFileContent</a>(- (3*<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a491d379de3e6e22f18f7ede746a35f2f">DOC_PART_WITH_START_OF_XREF</a>), (3*<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a491d379de3e6e22f18f7ede746a35f2f">DOC_PART_WITH_START_OF_XREF</a>));</div>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a15298e8b24e61e870438f2d1ea569025">Parser::_readTrailerAndReturnRoot</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -217,6 +342,159 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser_a15298e8b24e61e870438f2d1ea569025_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a49b51f00263d0afb3924d8a6bd3180b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OverlayDocumentParser::_readXref </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; unsigned int, unsigned long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectsAndSizes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a7b98716e9fd2e86310b02bfb059618e4">_getPartOfFileContent</a>(- <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a491d379de3e6e22f18f7ede746a35f2f">DOC_PART_WITH_START_OF_XREF</a>, <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a491d379de3e6e22f18f7ede746a35f2f">DOC_PART_WITH_START_OF_XREF</a>);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfStartxref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(<span class="stringliteral">&quot;startxref&quot;</span>);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfNumber = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">Parser::NUMBERS</a>, startOfStartxref);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfNumber = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">Parser::NUMBERS</a>, startOfNumber + 1);</div>
+<div class="line">   std::string startXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.substr(startOfNumber, endOfNumber - startOfNumber);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> strtXref = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(startXref);</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sizeOfXref = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a3fb38a0acb99240682a8b18ba4851be3">Utils::getFileSize</a>(<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a>.c_str()) - strtXref;</div>
+<div class="line">   <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a7b98716e9fd2e86310b02bfb059618e4">_getPartOfFileContent</a>(strtXref, sizeOfXref);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBoundOfObjectNumber = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(<span class="stringliteral">&quot;0 &quot;</span>) + strlen(<span class="stringliteral">&quot;0 &quot;</span>);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rightBoundOfObjectNumber = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">Parser::NUMBERS</a>, leftBoundOfObjectNumber);</div>
+<div class="line">   std::string objectNuberStr = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.substr(leftBoundOfObjectNumber, rightBoundOfObjectNumber - leftBoundOfObjectNumber);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> objectNumber = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(objectNuberStr);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfObjectPosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(<span class="stringliteral">&quot;0000000000 65535 f &quot;</span>) + strlen(<span class="stringliteral">&quot;0000000000 65535 f &quot;</span>);</div>
+<div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 1; i &lt; objectNumber; ++i)</div>
+<div class="line">   {</div>
+<div class="line">      startOfObjectPosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">Parser::NUMBERS</a>, startOfObjectPosition);</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfObjectPostion = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(<span class="stringliteral">&quot; 00000 n&quot;</span>, startOfObjectPosition);</div>
+<div class="line">      std::string objectPostionStr = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.substr(startOfObjectPosition, endOfObjectPostion - startOfObjectPosition);</div>
+<div class="line">      objectsAndSizes[i] = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(objectPostionStr);</div>
+<div class="line">      startOfObjectPosition = endOfObjectPostion + strlen(<span class="stringliteral">&quot; 00000 n&quot;</span>);</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser_a49b51f00263d0afb3924d8a6bd3180b0_cgraph.svg" width="608" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac229b7812fccde6f5b8ac0a7fcbe22e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OverlayDocumentParser::_readXRefAndCreateObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   std::map&lt;unsigned int, unsigned long&gt; objectsAndPositions;</div>
+<div class="line">   <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a49b51f00263d0afb3924d8a6bd3180b0">_readXref</a>(objectsAndPositions);</div>
+<div class="line">   std::map&lt;unsigned int, unsigned long&gt; objectsAndSizes;</div>
+<div class="line">   std::map&lt;unsigned int, unsigned long&gt;::iterator objAndSIter;</div>
+<div class="line">   std::map&lt;unsigned int, unsigned long&gt;::iterator objAndPIter;</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> fileSize = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a3fb38a0acb99240682a8b18ba4851be3">Utils::getFileSize</a>(<a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a>.c_str());</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">for</span>(objAndSIter = objectsAndPositions.begin(); objAndSIter != objectsAndPositions.end(); ++objAndSIter)</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nextPosition = fileSize;</div>
+<div class="line">      <span class="keywordflow">for</span>(objAndPIter = objectsAndPositions.begin(); objAndPIter != objectsAndPositions.end(); ++objAndPIter)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordflow">if</span>((objAndPIter-&gt;second &gt; objAndSIter-&gt;second) &amp;&amp; (objAndPIter-&gt;second &lt; nextPosition))</div>
+<div class="line">            nextPosition = objAndPIter-&gt;second;                 </div>
+<div class="line">      }</div>
+<div class="line">      objectsAndSizes[objAndSIter-&gt;first] = nextPosition - objAndSIter-&gt;second;</div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordtype">bool</span> notEndOfFile = <span class="keyword">true</span>;</div>
+<div class="line">   <span class="keywordflow">do</span></div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> partStart = fileSize;</div>
+<div class="line">      std::map&lt;unsigned int, unsigned long&gt;::iterator objIter;</div>
+<div class="line">      <span class="keywordflow">for</span>(objIter = objectsAndPositions.begin(); objIter != objectsAndPositions.end(); ++objIter)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordflow">if</span>(objIter-&gt;second &lt; partStart)</div>
+<div class="line">            partStart = objIter-&gt;second;</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nextPartStart = partStart + <a class="code" href="../../d3/d82/_overlay_document_parser_8cpp.html#a06987b2d25b1d1ecbc975701f5ab9f4f">partSize</a>;                          </div>
+<div class="line"></div>
+<div class="line">      <span class="keywordflow">if</span>((nextPartStart) &lt; fileSize)</div>
+<div class="line">         <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a7b98716e9fd2e86310b02bfb059618e4">_getPartOfFileContent</a>(partStart, partSize);</div>
+<div class="line">      <span class="keywordflow">else</span></div>
+<div class="line">      {</div>
+<div class="line">         <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a7b98716e9fd2e86310b02bfb059618e4">_getPartOfFileContent</a>(partStart, fileSize - partStart);</div>
+<div class="line">         nextPartStart = fileSize;</div>
+<div class="line">         notEndOfFile = <span class="keyword">false</span>;</div>
+<div class="line">      }</div>
+<div class="line"></div>
+<div class="line">      <span class="keywordflow">for</span>(objIter = objectsAndPositions.begin(); objIter != objectsAndPositions.end(); )</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordflow">if</span>((objectsAndSizes[objIter-&gt;first] +  objIter-&gt;second &lt;= nextPartStart) &amp;&amp; (objIter-&gt;second &gt;= partStart) &amp;&amp; ((objIter-&gt;second &lt; nextPartStart)))</div>
+<div class="line">         {</div>
+<div class="line">            std::pair&lt;unsigned int, unsigned int&gt; streamBounds;</div>
+<div class="line">            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> objectNumber;</div>
+<div class="line">                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> generationNumber;</div>
+<div class="line">            <span class="keywordtype">bool</span> hasObjectStream;</div>
+<div class="line">            <span class="keyword">const</span> std::string content = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1189d2610c4c3ed58056ce9a0bc504b8">_getObjectContent</a>(objIter-&gt;second - partStart, objectNumber, generationNumber, streamBounds, hasObjectStream);</div>
+<div class="line">            streamBounds.first += partStart;</div>
+<div class="line">            streamBounds.second += partStart;</div>
+<div class="line">            <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * newObject = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>(objectNumber, generationNumber, content, <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a2fddd0197ef13b0380b10d578419566b">_documentName</a> ,streamBounds, hasObjectStream);</div>
+<div class="line">            <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>[objectNumber] = newObject;</div>
+<div class="line">            std::map&lt;unsigned int, unsigned long&gt;::iterator temp = objIter;                                </div>
+<div class="line">            ++objIter;</div>
+<div class="line">            objectsAndPositions.erase(temp);</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">         }                                 </div>
+<div class="line">         ++objIter;           </div>
+<div class="line">      }</div>
+<div class="line">      partStart = nextPartStart;</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">while</span>(notEndOfFile);   </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser_ac229b7812fccde6f5b8ac0a7fcbe22e7_cgraph.svg" width="483" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -236,33 +514,75 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _fileName = fileName;</div>
+<div class="line">   <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#abf8f2df2bd8632846b4b4d46ceefbedd">_fileName</a> = fileName;</div>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html#a03f2f36e4e57c5c6cfb37933bc82c801">Parser::parseDocument</a>(fileName);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser_a03f2f36e4e57c5c6cfb37933bc82c801_cgraph.svg" width="379" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser_a03f2f36e4e57c5c6cfb37933bc82c801_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser_a03f2f36e4e57c5c6cfb37933bc82c801_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="abf8f2df2bd8632846b4b4d46ceefbedd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string merge_lib::OverlayDocumentParser::_fileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a491d379de3e6e22f18f7ede746a35f2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OverlayDocumentParser::DOC_PART_WITH_START_OF_XREF = 30</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../de/d0d/_overlay_document_parser_8h_source.html">OverlayDocumentParser.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d3/d82/_overlay_document_parser_8cpp.html">OverlayDocumentParser.cpp</a></li>
+<li><a class="el" href="../../de/d0d/_overlay_document_parser_8h_source.html">OverlayDocumentParser.h</a></li>
+<li><a class="el" href="../../d3/d82/_overlay_document_parser_8cpp.html">OverlayDocumentParser.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -270,7 +590,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d0/dd3/classmerge__lib_1_1_overlay_document_parser.html">OverlayDocumentParser</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

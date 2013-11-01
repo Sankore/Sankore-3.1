@@ -108,6 +108,11 @@ $(document).ready(function(){initNavTree('d0/dd5/class_u_b_persistence_manager.h
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../da/dc9/class_u_b_persistence_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBPersistenceManager Class Reference</div>  </div>
@@ -203,8 +208,108 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:ade8494f17a2732ac48f67f9a64b477c0"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#ade8494f17a2732ac48f67f9a64b477c0">fFolders</a> = &quot;folders.xml&quot;</td></tr>
 <tr class="memitem:a904c350945d0fd7cf109e939822d5fe3"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a904c350945d0fd7cf109e939822d5fe3">tFolder</a> = &quot;folder&quot;</td></tr>
 <tr class="memitem:acec3642d6307c311babc692556ce946e"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#acec3642d6307c311babc692556ce946e">aName</a> = &quot;name&quot;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:abf4abfbc25e3afff83a1e530a94b9f06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#abf4abfbc25e3afff83a1e530a94b9f06">documentRepositoryChanged</a> (const QString &amp;path)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aaf2697e533ca0cd2a5d3eda47b7e1412"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#aaf2697e533ca0cd2a5d3eda47b7e1412">UBPersistenceManager</a> (QObject *pParent=0)</td></tr>
+<tr class="memitem:aa063f52956c73c0aa96f1a88c7059577"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a> (const <a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocumentProxy)</td></tr>
+<tr class="memitem:a892e62d243d7497028a969fa790e3b16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocumentProxy, const int sourceIndex, const int targetIndex)</td></tr>
+<tr class="memitem:a9047ca8f40aab613f39f70dda32fd4d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a9047ca8f40aab613f39f70dda32fd4d5">copyPage</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocumentProxy, const int sourceIndex, const int targetIndex)</td></tr>
+<tr class="memitem:a8c7268d4de06468b4ad502a4a0feb602"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a8c7268d4de06468b4ad502a4a0feb602">generatePathIfNeeded</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocumentProxy)</td></tr>
+<tr class="memitem:a5d300c55983b63ae8d57194291836453"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a> ()</td></tr>
+<tr class="memitem:aed333748fd70e6b810266a59f088e087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#aed333748fd70e6b810266a59f088e087">saveFoldersTreeToXml</a> (QXmlStreamWriter &amp;writer, const QModelIndex &amp;parentIndex)</td></tr>
+<tr class="memitem:a3610c342d70161535e07529c2aefc05e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a3610c342d70161535e07529c2aefc05e">loadFolderTreeFromXml</a> (const QString &amp;path, const QDomElement &amp;element)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a63108d5d7da3795190f35834f4642ef1"><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a63108d5d7da3795190f35834f4642ef1">getSceneFileNames</a> (const QString &amp;folder)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7e66d4e77a4fb68c5aff33f06667564c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a7e66d4e77a4fb68c5aff33f06667564c">xmlFolderStructureFilename</a></td></tr>
+<tr class="memitem:aebc2623e05095535deaa0013b7ecf727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d79/class_u_b_scene_cache.html">UBSceneCache</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a></td></tr>
+<tr class="memitem:a689bb509bd117b50bd890427d4de7755"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a></td></tr>
+<tr class="memitem:af9f4e2ac9ec6a499e6b385515c1cd318"><td class="memItemLeft" align="right" valign="top">QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#af9f4e2ac9ec6a499e6b385515c1cd318">mDeletedListMutex</a></td></tr>
+<tr class="memitem:a35e8a43bb3c37f93909bb9f3892e4a8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a35e8a43bb3c37f93909bb9f3892e4a8b">mHasPurgedDocuments</a></td></tr>
+<tr class="memitem:a91731bac6c3274008915db7389f4ef46"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a></td></tr>
+<tr class="memitem:a7c04e8a911aaf2598f464adaa9f8c278"><td class="memItemLeft" align="right" valign="top">QHash&lt; int, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c04e8a911aaf2598f464adaa9f8c278">teacherBarNodeString</a></td></tr>
+<tr class="memitem:a64f5eeba434f9566970c6186a85ae94a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:abea883ff2e397afa6558dfd40b76b6d7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a> = 0</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aaf2697e533ca0cd2a5d3eda47b7e1412"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UBPersistenceManager::UBPersistenceManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>pParent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    : QObject(pParent)</div>
+<div class="line">    , <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a35e8a43bb3c37f93909bb9f3892e4a8b">mHasPurgedDocuments</a>(<span class="keyword">false</span>)</div>
+<div class="line">{</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7e66d4e77a4fb68c5aff33f06667564c">xmlFolderStructureFilename</a> = <span class="stringliteral">&quot;model&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#afc92c7516c08081b8443076d1554e471">imageDirectory</a>;</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a12dbae5a490687164448695c8e278f35">objectDirectory</a>;</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7c481362bd285b72aa501b9a6f70b314">widgetDirectory</a>;</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a6d2a1dff335f20f14fba15798c778aa7">videoDirectory</a>;</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad68b2f4bbd480f2119432f4b6f4b20d3">audioDirectory</a>;</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7cf10cf338fb0268d89d4b916043da40">teacherGuideDirectory</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a> = <a class="code" href="../../db/d66/class_u_b_settings.html#a821fa5f3b3466be6f47c50adb6142c5a">UBSettings::userDocumentDirectory</a>();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a> =  <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ade8494f17a2732ac48f67f9a64b477c0">fFolders</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a8bc8f263d576ad0d4735bcd09fcff4ad">createDocumentProxiesStructure</a>();</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    emit <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a729bdda358bcfdffa6364d6081291c8b">proxyListChanged</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aaf2697e533ca0cd2a5d3eda47b7e1412_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aaf2697e533ca0cd2a5d3eda47b7e1412_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a2bb60bc321b56117430ab8aeb351d6bb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +360,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QStringList sourceScenes = getSceneFileNames(documentRootFolder);</div>
+<div class="line">    QStringList sourceScenes = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a63108d5d7da3795190f35834f4642ef1">getSceneFileNames</a>(documentRootFolder);</div>
 <div class="line">    <span class="keywordflow">if</span> (sourceScenes.empty())</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"></div>
@@ -276,7 +381,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        thumb.copy(pDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, targetIndex));</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(QString dir, mDocumentSubDirectories)</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QString dir, <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a>)</div>
 <div class="line">    {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;copying &quot;</span> &lt;&lt; documentRootFolder &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; dir &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; pDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> + dir;</div>
 <div class="line"></div>
@@ -286,25 +391,25 @@ Static Public Attributes</h2></td></tr>
 <div class="line">                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    pDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(sceneCount(pDocument));</div>
+<div class="line">    pDocument-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(pDocument));</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0_cgraph.svg" width="100%" height="562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a9d57436055dda09d3096d12039fe89a0_icgraph.svg" width="515" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -408,21 +513,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1_cgraph.svg" width="456" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_acd23e0a499945e39b27cf663f0236ce1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -484,11 +590,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aecba1556fd7a0608c8a183f1104721c2_cgraph.svg" width="515" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -542,12 +648,21 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> destPath;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ac5bb862a97a7da0f0e37c4d24dead09d_cgraph.svg" width="536" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ac5bb862a97a7da0f0e37c4d24dead09d_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -603,12 +718,21 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> destPath;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3370b47b5038c6fe3aa2f82cbac49de4_cgraph.svg" width="539" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3370b47b5038c6fe3aa2f82cbac49de4_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -685,12 +809,12 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> paths;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a6516bded73f27ad772ab3da5c71de270_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a6516bded73f27ad772ab3da5c71de270_cgraph.svg" width="100%" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -773,12 +897,12 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> paths;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a930dab54f70136727669a6affc63d3a4_cgraph.svg" width="651" height="140"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a930dab54f70136727669a6affc63d3a4_cgraph.svg" width="100%" height="493"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -861,21 +985,78 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> paths;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b_icgraph.svg" width="662" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa1084e84e2c19d79154bb425bb38626b_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d300c55983b63ae8d57194291836453"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::checkIfDocumentRepositoryExists </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QDir rp(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!rp.exists())</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// we have lost the document repository ..</span></div>
+<div class="line"></div>
+<div class="line">        QString humanPath = QDir::cleanPath(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a>);</div>
+<div class="line">        humanPath = QDir::toNativeSeparators(humanPath);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;<a class="code" href="../../d8/d9e/class_u_b_main_window.html#a626ff5fff445ccfd8feffa11390a3963">warning</a>(tr(<span class="stringliteral">&quot;Document Repository Loss&quot;</span>),tr(<span class="stringliteral">&quot;Sankore has lost access to the document repository &#39;%1&#39;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.&quot;</span>).arg(humanPath));</div>
+<div class="line"></div>
+<div class="line">        UBApplication::quit();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a5d300c55983b63ae8d57194291836453_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a5d300c55983b63ae8d57194291836453_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -894,32 +1075,42 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QDir rootDir(mDocumentRepositoryPath);</div>
+<div class="line">    QDir rootDir(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a>);</div>
 <div class="line">    rootDir.mkpath(rootDir.path());</div>
 <div class="line"></div>
-<div class="line">    QFile outFile(mFoldersXmlStorageName);</div>
+<div class="line">    QFile outFile(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a>);</div>
 <div class="line">    <span class="keywordflow">if</span> (outFile.open(QIODevice::WriteOnly)) {</div>
 <div class="line">        QXmlStreamWriter writer(&amp;outFile);</div>
 <div class="line">        writer.setAutoFormatting(<span class="keyword">true</span>);</div>
 <div class="line">        writer.writeStartDocument();</div>
 <div class="line">        writer.writeStartElement(<span class="stringliteral">&quot;content&quot;</span>);</div>
-<div class="line">        saveFoldersTreeToXml(writer, QModelIndex());</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aed333748fd70e6b810266a59f088e087">saveFoldersTreeToXml</a>(writer, QModelIndex());</div>
 <div class="line">        writer.writeEndElement();</div>
 <div class="line">        writer.writeEndDocument();</div>
 <div class="line"></div>
 <div class="line">        outFile.close();</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;failed to open document&quot;</span> &lt;&lt;  mFoldersXmlStorageName &lt;&lt; <span class="stringliteral">&quot;for writing&quot;</span> &lt;&lt; endl</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;failed to open document&quot;</span> &lt;&lt;  <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a> &lt;&lt; <span class="stringliteral">&quot;for writing&quot;</span> &lt;&lt; endl</div>
 <div class="line">                 &lt;&lt; <span class="stringliteral">&quot;Error string:&quot;</span> &lt;&lt; outFile.errorString();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2_icgraph.svg" width="587" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_af9c60a1285be9efd821c4603540defa2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -974,11 +1165,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = to-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a464a6a010deaeab87070628041bb7c0e">pageCount</a>(); i &gt; toIndex; i--) {</div>
-<div class="line">        renamePage(to, i - 1, i);</div>
-<div class="line">        mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(to, i - 1, i);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(to, i - 1, i);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(to, i - 1, i);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d5/d42/class_u_b_foreighn_objects_handler.html">UBForeighnObjectsHandler</a> hl;</div>
@@ -1003,21 +1194,89 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="comment">//    emit documentSceneCreated(to, toIndex + 1);</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a02050499f8179287038922f42ddf2e17_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9047ca8f40aab613f39f70dda32fd4d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::copyPage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td>
+          <td class="paramname"><em>pDocumentProxy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>sourceIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>targetIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QFile svg(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,sourceIndex));</div>
+<div class="line">    svg.copy(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, targetIndex));</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a665ab38f71e9d7cfd8ceb868693fb9ca">UBSvgSubsetAdaptor::setSceneUuid</a>(pDocumentProxy, targetIndex, QUuid::createUuid());</div>
+<div class="line"></div>
+<div class="line">    QFile thumb(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, sourceIndex));</div>
+<div class="line">    thumb.copy(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, targetIndex));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a9047ca8f40aab613f39f70dda32fd4d5_cgraph.svg" width="100%" height="546"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a9047ca8f40aab613f39f70dda32fd4d5_icgraph.svg" width="398" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1085,7 +1344,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        doc-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(pageCount);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span>{</div>
-<div class="line">        checkIfDocumentRepositoryExists();</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line">        doc = <span class="keyword">new</span> <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>();</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -1123,21 +1382,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> doc;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3_icgraph.svg" width="100%" height="548"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a47e4dc44bdbeab6ac217d51419000ca3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1199,7 +1459,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* doc = <span class="keyword">new</span> <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>(pDocumentDirectory); <span class="comment">// deleted in UBPersistenceManager::destructor</span></div>
 <div class="line"></div>
@@ -1213,7 +1473,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        doc-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a541c361c5a415640974ecf94147126b1">setMetaData</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac835acad66226a9b63347e2ed55fbd13">UBSettings::documentName</a>, pName);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">if</span>(withEmptyPage) <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a76cf6f2838a93d64153d7eb6e62521ff">createDocumentSceneAt</a>(doc, 0);</div>
-<div class="line">    <span class="keywordflow">if</span>(addTitlePage) <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abc6ab5e964275e015e5da1450c2b8675">persistDocumentScene</a>(doc, mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a74a366b136583e06ee66ac8fa757318a">createScene</a>(doc, 0, <span class="keyword">false</span>), 0);</div>
+<div class="line">    <span class="keywordflow">if</span>(addTitlePage) <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abc6ab5e964275e015e5da1450c2b8675">persistDocumentScene</a>(doc, <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a74a366b136583e06ee66ac8fa757318a">createScene</a>(doc, 0, <span class="keyword">false</span>), 0);</div>
 <div class="line"></div>
 <div class="line">    QMap&lt;QString, QVariant&gt; metadatas = <a class="code" href="../../dc/d51/class_u_b_metadata_dc_subset_adaptor.html#a57db7afe0fcf73b2146e545c0c8360c3">UBMetadataDcSubsetAdaptor::load</a>(pDocumentDirectory);</div>
 <div class="line"></div>
@@ -1223,7 +1483,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    doc-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a029188b2c67889594af3057c06cb5217">setUuid</a>(QUuid::createUuid());</div>
-<div class="line">    doc-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(sceneCount(doc));</div>
+<div class="line">    doc-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(doc));</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../dc/d51/class_u_b_metadata_dc_subset_adaptor.html#a39cfa5435d5166fe515da61200777e45">UBMetadataDcSubsetAdaptor::persist</a>(doc);</div>
 <div class="line"></div>
@@ -1251,20 +1511,20 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> doc;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ac815cff8d53be5e6bb870aa4e83319f7_icgraph.svg" width="435" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1285,17 +1545,17 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mDocumentRepositoryPath = <a class="code" href="../../db/d66/class_u_b_settings.html#a821fa5f3b3466be6f47c50adb6142c5a">UBSettings::userDocumentDirectory</a>();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a> = <a class="code" href="../../db/d66/class_u_b_settings.html#a821fa5f3b3466be6f47c50adb6142c5a">UBSettings::userDocumentDirectory</a>();</div>
 <div class="line"></div>
-<div class="line">    QDir rootDir(mDocumentRepositoryPath);</div>
+<div class="line">    QDir rootDir(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a91731bac6c3274008915db7389f4ef46">mDocumentRepositoryPath</a>);</div>
 <div class="line">    rootDir.mkpath(rootDir.path());</div>
 <div class="line"></div>
 <div class="line">    QFileInfoList contentList = rootDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::Time | QDir::Reversed);</div>
 <div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a8bc8f263d576ad0d4735bcd09fcff4ad">createDocumentProxiesStructure</a>(contentList, interactive);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (QFileInfo(mFoldersXmlStorageName).exists()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (QFileInfo(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a>).exists()) {</div>
 <div class="line">        QDomDocument xmlDom;</div>
-<div class="line">        QFile inFile(mFoldersXmlStorageName);</div>
+<div class="line">        QFile inFile(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (inFile.open(QIODevice::ReadOnly)) {</div>
 <div class="line">            QString domString(inFile.readAll());</div>
 <div class="line"></div>
@@ -1303,36 +1563,38 @@ Static Public Attributes</h2></td></tr>
 <div class="line">            QString errorStr;</div>
 <div class="line"></div>
 <div class="line">            <span class="keywordflow">if</span> (xmlDom.setContent(domString, &amp;errorStr, &amp;errorLine, &amp;errorColumn)) {</div>
-<div class="line">                loadFolderTreeFromXml(<span class="stringliteral">&quot;&quot;</span>, xmlDom.firstChildElement());</div>
+<div class="line">                <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a3610c342d70161535e07529c2aefc05e">loadFolderTreeFromXml</a>(<span class="stringliteral">&quot;&quot;</span>, xmlDom.firstChildElement());</div>
 <div class="line">            } <span class="keywordflow">else</span> {</div>
-<div class="line">                qDebug() &lt;&lt; <span class="stringliteral">&quot;Error reading content of &quot;</span> &lt;&lt; mFoldersXmlStorageName &lt;&lt; endl</div>
+<div class="line">                qDebug() &lt;&lt; <span class="stringliteral">&quot;Error reading content of &quot;</span> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a> &lt;&lt; endl</div>
 <div class="line">                         &lt;&lt; <span class="stringliteral">&quot;Error:&quot;</span> &lt;&lt; inFile.errorString()</div>
 <div class="line">                         &lt;&lt; <span class="stringliteral">&quot;Line:&quot;</span> &lt;&lt; errorLine</div>
 <div class="line">                         &lt;&lt; <span class="stringliteral">&quot;Column:&quot;</span> &lt;&lt; errorColumn;</div>
 <div class="line">            }</div>
 <div class="line">            inFile.close();</div>
 <div class="line">        } <span class="keywordflow">else</span> {</div>
-<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;Error reading&quot;</span> &lt;&lt; mFoldersXmlStorageName &lt;&lt; endl</div>
+<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;Error reading&quot;</span> &lt;&lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a64f5eeba434f9566970c6186a85ae94a">mFoldersXmlStorageName</a> &lt;&lt; endl</div>
 <div class="line">                     &lt;&lt; <span class="stringliteral">&quot;Error:&quot;</span> &lt;&lt; inFile.errorString();</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8bc8f263d576ad0d4735bcd09fcff4ad_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1389,7 +1651,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line">                docProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a541c361c5a415640974ecf94147126b1">setMetaData</a>(key, metadatas.value(key));</div>
 <div class="line">            }</div>
 <div class="line"></div>
-<div class="line">            docProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(sceneCount(docProxy));</div>
+<div class="line">            docProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(docProxy));</div>
 <div class="line">            <span class="keywordtype">bool</span> addDoc = <span class="keyword">false</span>;</div>
 <div class="line">            <span class="keywordflow">if</span> (!interactive) {</div>
 <div class="line">                addDoc = <span class="keyword">true</span>;</div>
@@ -1403,12 +1665,13 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa00b9d2c95e5524c6017f05259cb93dc_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa00b9d2c95e5524c6017f05259cb93dc_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1452,14 +1715,14 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordtype">int</span> count = sceneCount(proxy);</div>
+<div class="line">    <span class="keywordtype">int</span> count = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(proxy);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = count - 1; i &gt;= index; i--)</div>
-<div class="line">        renamePage(proxy, i , i + 1);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(proxy, i , i + 1);</div>
 <div class="line"></div>
-<div class="line">    mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac6b7bce6b0fd6ccbc11245c8c5df9865">shiftUpScenes</a>(proxy, index, count -1);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac6b7bce6b0fd6ccbc11245c8c5df9865">shiftUpScenes</a>(proxy, index, count -1);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *newScene = mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a74a366b136583e06ee66ac8fa757318a">createScene</a>(proxy, index, useUndoRedoStack);</div>
+<div class="line">    <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *newScene = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a74a366b136583e06ee66ac8fa757318a">createScene</a>(proxy, index, useUndoRedoStack);</div>
 <div class="line"></div>
 <div class="line">    newScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ad34fd16dd510a1a28cf2df3227a57a14">setBackground</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;isDarkBackground(),</div>
 <div class="line">            <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a72b8921582b808d3803c663ab43a1bf9">UBSettings::isCrossedBackground</a>());</div>
@@ -1473,21 +1736,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> newScene;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a76cf6f2838a93d64153d7eb6e62521ff_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1557,21 +1821,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> resultDoc;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b_icgraph.svg" width="664" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a0bd236690f1efa4fe856489914a3d92b_icgraph.svg" width="664" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -1599,33 +1864,34 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
 <div class="line">    emit <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a59fea00197400c0b0855c06bdac1160b">documentWillBeDeleted</a>(pDocumentProxy);</div>
 <div class="line"></div>
 <div class="line">    Q_ASSERT(QFileInfo(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>()).exists());</div>
 <div class="line">    <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>());</div>
 <div class="line"></div>
-<div class="line">    mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#abd8f51c78140f742b449f0209d2ddb05">removeAllScenes</a>(pDocumentProxy);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#abd8f51c78140f742b449f0209d2ddb05">removeAllScenes</a>(pDocumentProxy);</div>
 <div class="line"></div>
 <div class="line">    pDocumentProxy-&gt;deleteLater();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e_cgraph.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e_cgraph.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad01510f9b27ebe96e650178a68ea2d0e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1663,9 +1929,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> pageCount = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;sceneCount(proxy);</div>
+<div class="line">    <span class="keywordtype">int</span> pageCount = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(proxy);</div>
 <div class="line"></div>
 <div class="line">    QList&lt;int&gt; compactedIndexes;</div>
 <div class="line"></div>
@@ -1716,7 +1982,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; pageCount; i++)</div>
 <div class="line">    {</div>
-<div class="line">        renamePage(trashDocProxy, i , i - 1);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(trashDocProxy, i , i - 1);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> index, compactedIndexes)</div>
@@ -1729,7 +1995,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">        QFile::remove(thumbFileName);</div>
 <div class="line"></div>
-<div class="line">        mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a4da553675ded30f59bff960dbaab6d71">removeScene</a>(proxy, index);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a4da553675ded30f59bff960dbaab6d71">removeScene</a>(proxy, index);</div>
 <div class="line"></div>
 <div class="line">        proxy-&gt;decPageCount();</div>
 <div class="line"></div>
@@ -1747,29 +2013,29 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            renamePage(proxy, i , i - offset);</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(proxy, i , i - offset);</div>
 <div class="line"></div>
-<div class="line">            mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(proxy, i, i - offset);</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(proxy, i, i - offset);</div>
 <div class="line"></div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-37-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25_icgraph.svg" width="571" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8024bebd59a18f8cefa5f042aa42ed25_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1796,16 +2062,16 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (sSingleton)</div>
-<div class="line">        <span class="keyword">delete</span> sSingleton;</div>
-<div class="line">    sSingleton = NULL;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a>)</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a>;</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a> = NULL;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3a2587297272388d7c63abd7cf237406_icgraph.svg" width="424" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1834,11 +2100,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-40-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-40-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8dd4370a27a8e122031ad9ca23722492_icgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -1867,12 +2133,50 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-41-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa9c4499efd1d6a0b7efaf0aacb856a5c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa9c4499efd1d6a0b7efaf0aacb856a5c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abf4abfbc25e3afff83a1e530a94b9f06"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::documentRepositoryChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(path);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-42-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-42-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_abf4abfbc25e3afff83a1e530a94b9f06_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1910,12 +2214,13 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-43-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a2d8a86cfd7b404f100326f6c6066f6d2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-43-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a2d8a86cfd7b404f100326f6c6066f6d2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1953,11 +2258,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-44-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div id="dynsection-44-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa8d29f9972ca8d523ca994658c481923_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -1985,7 +2290,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mDocumentSubDirectories;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a689bb509bd117b50bd890427d4de7755">mDocumentSubDirectories</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -2012,12 +2317,13 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-45-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a59fea00197400c0b0855c06bdac1160b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-45-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a59fea00197400c0b0855c06bdac1160b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2045,11 +2351,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *copy = <span class="keyword">new</span> <a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>(); <span class="comment">// deleted in UBPersistenceManager::destructor</span></div>
 <div class="line"></div>
-<div class="line">    generatePathIfNeeded(copy);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a8c7268d4de06468b4ad502a4a0feb602">generatePathIfNeeded</a>(copy);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a8289391e8ff8c366727435455aa8a733">UBFileSystemUtils::copyDir</a>(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>(), copy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>());</div>
 <div class="line"></div>
@@ -2071,7 +2377,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab96bfcd20014ff5bb36fede047aef3b2">persistDocumentMetadata</a>(copy);</div>
 <div class="line"></div>
-<div class="line">    copy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(sceneCount(copy));</div>
+<div class="line">    copy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#ae2756a1f873f485576df9a1dae94e94c">setPageCount</a>(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(copy));</div>
 <div class="line"></div>
 <div class="line">    emit <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a729bdda358bcfdffa6364d6081291c8b">proxyListChanged</a>();</div>
 <div class="line"></div>
@@ -2081,20 +2387,20 @@ Static Public Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-46-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div id="dynsection-46-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-47-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div id="dynsection-47-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ac38f7641c3942edd498b39babf860eba_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -2133,31 +2439,81 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> pageCount = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;sceneCount(proxy);</div>
+<div class="line">    <span class="keywordtype">int</span> pageCount = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(proxy);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = pageCount; i &gt; index + 1; i--)</div>
 <div class="line">    {</div>
-<div class="line">        renamePage(proxy, i - 1 , i);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(proxy, i - 1 , i);</div>
 <div class="line"></div>
-<div class="line">        mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(proxy, i - 1, i);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(proxy, i - 1, i);</div>
 <div class="line"></div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    copyPage(proxy, index , index + 1);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a9047ca8f40aab613f39f70dda32fd4d5">copyPage</a>(proxy, index , index + 1);</div>
 <div class="line"></div>
 <div class="line">    proxy-&gt;incPageCount();</div>
 <div class="line"></div>
 <div class="line">    emit <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2d8a86cfd7b404f100326f6c6066f6d2">documentSceneCreated</a>(proxy, index + 1);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-48-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-38-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aba40a98502fd7478221462306c2eb234_cgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aba40a98502fd7478221462306c2eb234_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c7268d4de06468b4ad502a4a0feb602"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::generatePathIfNeeded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td>
+          <td class="paramname"><em>pDocumentProxy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>().length() == 0)</div>
+<div class="line">    {</div>
+<div class="line">        pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a8ea853948b45db40077e4b82791db5cf">setPersistencePath</a>(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a03e1d327109aaa0518419218cce9fbaf">generateUniqueDocumentPath</a>());</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-49-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-49-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8c7268d4de06468b4ad502a4a0feb602_cgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-50-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-50-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8c7268d4de06468b4ad502a4a0feb602_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2179,12 +2535,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a03e1d327109aaa0518419218cce9fbaf">generateUniqueDocumentPath</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a821fa5f3b3466be6f47c50adb6142c5a">UBSettings::userDocumentDirectory</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-51-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-39-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-51-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf_cgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-52-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-52-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a03e1d327109aaa0518419218cce9fbaf_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2243,14 +2609,60 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">value</a>(pDocumentProxy, sceneIndex);}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">value</a>(pDocumentProxy, sceneIndex);}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-40-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-53-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div id="dynsection-53-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a6812070bd7380792fe0ffe0d16a92009_cgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-54" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-54-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-54-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a6812070bd7380792fe0ffe0d16a92009_icgraph.svg" width="379" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a63108d5d7da3795190f35834f4642ef1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList UBPersistenceManager::getSceneFileNames </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>folder</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QDir dir(folder, <span class="stringliteral">&quot;page???.svg&quot;</span>, QDir::Name, QDir::Files);</div>
+<div class="line">    <span class="keywordflow">return</span> dir.entryList();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-55" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-55-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-55-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-55-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a63108d5d7da3795190f35834f4642ef1_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2302,16 +2714,16 @@ Static Public Attributes</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#ab0be6ef8f35c143360e4816cef2ef80a">setDocument</a>(proxy);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> count = sceneCount(proxy);</div>
+<div class="line">    <span class="keywordtype">int</span> count = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aa063f52956c73c0aa96f1a88c7059577">sceneCount</a>(proxy);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = count - 1; i &gt;= index; i--)</div>
 <div class="line">    {</div>
-<div class="line">        renamePage(proxy, i , i + 1);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(proxy, i , i + 1);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac6b7bce6b0fd6ccbc11245c8c5df9865">shiftUpScenes</a>(proxy, index, count -1);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac6b7bce6b0fd6ccbc11245c8c5df9865">shiftUpScenes</a>(proxy, index, count -1);</div>
 <div class="line"></div>
-<div class="line">    mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(proxy, index, scene);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(proxy, index, scene);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (persist) {</div>
 <div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abc6ab5e964275e015e5da1450c2b8675">persistDocumentScene</a>(proxy, scene, index);</div>
@@ -2323,21 +2735,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-41-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-56" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-56-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-56-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div id="dynsection-56-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-42-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-57" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-57-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-57-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-42-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-57-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad2e4eae2155a0ce644d556b658f3229a_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2388,21 +2801,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> empty;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-43-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-58" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-58-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-58-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-43-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4_cgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-58-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4_cgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-44-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-59-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-59-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-44-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4_icgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-59-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aed7b170dda1a9b6a4e29d37e5cd41ce4_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2432,14 +2846,14 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a1554a6fd285fb5a9cf10007f9ac370fc">contains</a>(proxy, index);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a1554a6fd285fb5a9cf10007f9ac370fc">contains</a>(proxy, index);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-45-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-60" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-60-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-60-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-45-content" class="dyncontent" style="display:none;">
+<div id="dynsection-60-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a8fe0be7694e8322dc7234e37bccbc78f_cgraph.svg" width="392" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2478,8 +2892,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a1554a6fd285fb5a9cf10007f9ac370fc">contains</a>(proxy, sceneIndex))</div>
-<div class="line">        <span class="keywordflow">return</span> mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">value</a>(proxy, sceneIndex);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a1554a6fd285fb5a9cf10007f9ac370fc">contains</a>(proxy, sceneIndex))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#ac4c9c227f72baf18cfeee1f8916f787a">value</a>(proxy, sceneIndex);</div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">        <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* scene = <a class="code" href="../../d3/df9/class_u_b_svg_subset_adaptor.html#a5abb38920769f1acbb2cfa21b0c8eb0a">UBSvgSubsetAdaptor::loadScene</a>(proxy, sceneIndex);</div>
 <div class="line">        <span class="keywordflow">if</span>(!scene &amp;&amp; <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;teacherGuidePageZeroActivated-&gt;get().toBool()){</div>
@@ -2488,27 +2902,102 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (scene)</div>
-<div class="line">            mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(proxy, sceneIndex, scene);</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(proxy, sceneIndex, scene);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">return</span> scene;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-46-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-61" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-61-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-61-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-46-content" class="dyncontent" style="display:none;">
+<div id="dynsection-61-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-47-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-62" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-62-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-62-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-47-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-62-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aff136b4bcedbd0af3ee2a6ede8af6f66_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3610c342d70161535e07529c2aefc05e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::loadFolderTreeFromXml </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line"></div>
+<div class="line">    QDomElement iterElement = element.firstChildElement();</div>
+<div class="line">    <span class="keywordflow">while</span>(!iterElement.isNull())</div>
+<div class="line">    {</div>
+<div class="line">        QString leafPath;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a904c350945d0fd7cf109e939822d5fe3">tFolder</a> == iterElement.tagName())</div>
+<div class="line">        {</div>
+<div class="line">            leafPath = iterElement.attribute(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#acec3642d6307c311babc692556ce946e">aName</a>);</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">if</span> (!leafPath.isEmpty())</div>
+<div class="line">            {</div>
+<div class="line">                <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae40c1b98c76d2723d0a503f3b0efd53f">goTo</a>(path + <span class="stringliteral">&quot;/&quot;</span> + leafPath);</div>
+<div class="line">                <span class="keywordflow">if</span> (!iterElement.firstChildElement().isNull())</div>
+<div class="line">                    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a3610c342d70161535e07529c2aefc05e">loadFolderTreeFromXml</a>(path + <span class="stringliteral">&quot;/&quot;</span> +  leafPath, iterElement);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        iterElement = iterElement.nextSiblingElement();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-63" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-63-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-63-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-63-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3610c342d70161535e07529c2aefc05e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-64" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-64-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-64-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-64-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3610c342d70161535e07529c2aefc05e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2533,11 +3022,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> audioDir.exists() &amp;&amp; audioDir.entryInfoList().length() &gt; 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-48-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-65" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-65-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-65-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div id="dynsection-65-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a2024fa073874438098f0a5bd2ba93928_cgraph.svg" width="456" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2566,11 +3055,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> objectDir.exists() &amp;&amp; objectDir.entryInfoList(filters).length() &gt; 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-49-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-66" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-66-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-66-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-49-content" class="dyncontent" style="display:none;">
+<div id="dynsection-66-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a77fb7cc43d3533e558d43bbefe375135_cgraph.svg" width="456" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2599,11 +3088,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> imageDir.exists() &amp;&amp; imageDir.entryInfoList(filters).length() &gt; 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-50-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-67" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-67-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-67-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-50-content" class="dyncontent" style="display:none;">
+<div id="dynsection-67-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ae2a836bf573c4b9d71c0dcdfed20c602_cgraph.svg" width="456" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2629,11 +3118,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> videoDir.exists() &amp;&amp; videoDir.entryInfoList().length() &gt; 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-51-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-68" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-68-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-68-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-51-content" class="dyncontent" style="display:none;">
+<div id="dynsection-68-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa95ab0380bb515e3ab7ef24f4edb7999_cgraph.svg" width="456" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2659,11 +3148,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> widgetDir.exists() &amp;&amp; widgetDir.entryInfoList(QDir::Dirs).length() &gt; 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-52-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-69" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-69-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-69-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-52-content" class="dyncontent" style="display:none;">
+<div id="dynsection-69-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa237811b3805b3e3f7514a8624e439db_cgraph.svg" width="456" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2708,7 +3197,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (source == target)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -2723,14 +3212,14 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = source + 1; i &lt;= target; i++)</div>
 <div class="line">        {</div>
-<div class="line">            renamePage(proxy, i , i - 1);</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(proxy, i , i - 1);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = source - 1; i &gt;= target; i--)</div>
 <div class="line">        {</div>
-<div class="line">            renamePage(proxy, i , i + 1);</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a892e62d243d7497028a969fa790e3b16">renamePage</a>(proxy, i , i + 1);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -2740,24 +3229,24 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    QFile thumb(proxy-&gt;persistencePath() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.tmp&quot;</span>, target));</div>
 <div class="line">    thumb.rename(proxy-&gt;persistencePath() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, target));</div>
 <div class="line"></div>
-<div class="line">    mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(proxy, source, target);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a417ca8e2f9801f0db66759012a266b38">moveScene</a>(proxy, source, target);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-53-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-53-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-70" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-70-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-70-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-53-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda_cgraph.svg" width="100%" height="468"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-70-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda_cgraph.svg" width="100%" height="567"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-54" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-54-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-54-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-71" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-71-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-71-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-54-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-71-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab25757455d7f0dc3a356977e4156acda_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2792,21 +3281,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> pDocumentProxy;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-55" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-55-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-55-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-72" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-72-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-72-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-55-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2_cgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-72-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2_cgraph.svg" width="100%" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-56" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-56-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-56-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-73" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-73-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-73-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-56-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-73-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ab96bfcd20014ff5bb36fede047aef3b2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2850,11 +3340,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    checkIfDocumentRepositoryExists();</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a5d300c55983b63ae8d57194291836453">checkIfDocumentRepositoryExists</a>();</div>
 <div class="line"></div>
 <div class="line">    pScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a6cfc68b3907297af710a1d8d1492d4ea">deselectAllItems</a>();</div>
 <div class="line"></div>
-<div class="line">    generatePathIfNeeded(pDocumentProxy);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a8c7268d4de06468b4ad502a4a0feb602">generatePathIfNeeded</a>(pDocumentProxy);</div>
 <div class="line"></div>
 <div class="line">    QDir dir(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>());</div>
 <div class="line">    dir.mkpath(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>());</div>
@@ -2876,24 +3366,26 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        pScene-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783">setModified</a>(<span class="keyword">false</span>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(pDocumentProxy, pSceneIndex, pScene);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aa3377f2b95c0245c99e6ee6932f78472">insert</a>(pDocumentProxy, pSceneIndex, pScene);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-57" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-57-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-57-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-74" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-74-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-74-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-57-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-74-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-58" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-58-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-58-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-75" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-75-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-75-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-58-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-75-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_abc6ab5e964275e015e5da1450c2b8675_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2920,14 +3412,24 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!sSingleton)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a>)</div>
 <div class="line">    {</div>
-<div class="line">        sSingleton = <span class="keyword">new</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#af72d66aadc04a5b23e8ca42c0944273a">UBApplication::staticMemoryCleaner</a>);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a> = <span class="keyword">new</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aaf2697e533ca0cd2a5d3eda47b7e1412">UBPersistenceManager</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#af72d66aadc04a5b23e8ca42c0944273a">UBApplication::staticMemoryCleaner</a>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> sSingleton;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#abea883ff2e397afa6558dfd40b76b6d7">sSingleton</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-76" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-76-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-76-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-76-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad8b7a880564523143d73c6b86d887769_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ad6d143e614a8c749dd193087b63fb8d0"></a>
@@ -3001,21 +3503,23 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-59-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-59-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-77" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-77-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-77-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-59-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-77-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-60" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-60-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-60-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-78" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-78-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-78-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-60-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-78-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_ad6d143e614a8c749dd193087b63fb8d0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -3042,12 +3546,13 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-61" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-61-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-61-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-79" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-79-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-79-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-61-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a729bdda358bcfdffa6364d6081291c8b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-79-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a729bdda358bcfdffa6364d6081291c8b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -3098,12 +3603,22 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-62" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-62-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-62-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-80" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-80-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-80-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-62-content" class="dyncontent" style="display:none;">
+<div id="dynsection-80-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a2d3ecf90c9dba3cd79c5c36156278b85_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-81" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-81-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-81-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-81-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a2d3ecf90c9dba3cd79c5c36156278b85_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -3133,24 +3648,238 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mSceneCache.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a611e9c996d9e0e4d3e1ead4264070e1d">reassignDocProxy</a>(newDocument, oldDocument);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aebc2623e05095535deaa0013b7ecf727">mSceneCache</a>.<a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a611e9c996d9e0e4d3e1ead4264070e1d">reassignDocProxy</a>(newDocument, oldDocument);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-63" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-63-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-63-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-82" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-82-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-82-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-63-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713_cgraph.svg" width="100%" height="545"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-82-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-64" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-64-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-64-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-83" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-83-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-83-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-64-content" class="dyncontent" style="display:none;">
+<div id="dynsection-83-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a3ae9e5749259cbbde2e4e3ede8b84713_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a892e62d243d7497028a969fa790e3b16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::renamePage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td>
+          <td class="paramname"><em>pDocumentProxy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>sourceIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>targetIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QFile svg(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, sourceIndex));</div>
+<div class="line">    svg.rename(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>,  targetIndex));</div>
+<div class="line"></div>
+<div class="line">    QFile thumb(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, sourceIndex));</div>
+<div class="line">    thumb.rename(pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.thumbnail.jpg&quot;</span>, targetIndex));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-84" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-84-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-84-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-84-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a892e62d243d7497028a969fa790e3b16_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-85" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-85-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-85-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-85-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a892e62d243d7497028a969fa790e3b16_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed333748fd70e6b810266a59f088e087"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPersistenceManager::saveFoldersTreeToXml </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamWriter &amp;&#160;</td>
+          <td class="paramname"><em>writer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parentIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe969ce75dea4388d4d1b56a74d9ab9f">rowCount</a>(parentIndex); i++)</div>
+<div class="line">    {</div>
+<div class="line">        QModelIndex currentIndex = <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(i, 0, parentIndex);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a37960814e9120332dcdd89a88822737f">isCatalog</a>(currentIndex))</div>
+<div class="line">        {</div>
+<div class="line">            writer.writeStartElement(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a904c350945d0fd7cf109e939822d5fe3">tFolder</a>);</div>
+<div class="line">            writer.writeAttribute(<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#acec3642d6307c311babc692556ce946e">aName</a>, <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a2e25c262cc712d327aeb68f40ba8085f">mDocumentTreeStructureModel</a>-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(currentIndex)-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>());</div>
+<div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#aed333748fd70e6b810266a59f088e087">saveFoldersTreeToXml</a>(writer, currentIndex);</div>
+<div class="line">            writer.writeEndElement();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-86" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-86-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-86-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-86-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aed333748fd70e6b810266a59f088e087_cgraph.svg" width="598" height="315"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-87" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-87-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-87-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-87-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aed333748fd70e6b810266a59f088e087_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa063f52956c73c0aa96f1a88c7059577"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBPersistenceManager::sceneCount </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td>
+          <td class="paramname"><em>pDocumentProxy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> QString pPath = proxy-&gt;persistencePath();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">int</span> pageIndex = 0;</div>
+<div class="line">    <span class="keywordtype">bool</span> moreToProcess = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> addedMissingZeroPage = <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span> (moreToProcess)</div>
+<div class="line">    {</div>
+<div class="line">        QString fileName = pPath + <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a9ac90c91a836a34b5ccec620d8e4273a">UBFileSystemUtils::digitFileFormat</a>(<span class="stringliteral">&quot;/page%1.svg&quot;</span>, pageIndex);</div>
+<div class="line"></div>
+<div class="line">        QFile file(fileName);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (file.exists())</div>
+<div class="line">        {</div>
+<div class="line">            pageIndex++;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span>(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ac19853b7eb0ebe29c2f6146a8b92d031">teacherGuidePageZeroActivated</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool() &amp;&amp; pageIndex == 0){</div>
+<div class="line">                <span class="comment">// the document has no zero file but doesn&#39;t means that it hasn&#39;t any file</span></div>
+<div class="line">                <span class="comment">// at all. Just importing a document without the first page using a configuartion</span></div>
+<div class="line">                <span class="comment">// that enables zero page.</span></div>
+<div class="line">                pageIndex++;</div>
+<div class="line">                addedMissingZeroPage = <span class="keyword">true</span>;</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">                moreToProcess = <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(pageIndex == 1 &amp;&amp; addedMissingZeroPage){</div>
+<div class="line">        <span class="comment">// increment is done only to check if there are other pages than the missing zero page</span></div>
+<div class="line">        <span class="comment">// This situation means -&gt; no pages on the document</span></div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> pageIndex;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-88" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-88-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-88-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-88-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa063f52956c73c0aa96f1a88c7059577_cgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-89" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-89-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-89-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-89-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_aa063f52956c73c0aa96f1a88c7059577_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -3173,11 +3902,11 @@ Static Public Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> pDocumentProxy-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a7cf10cf338fb0268d89d4b916043da40">teacherGuideDirectory</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-65" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-65-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-65-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-90" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-90-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-90-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-65-content" class="dyncontent" style="display:none;">
+<div id="dynsection-90-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dd5/class_u_b_persistence_manager_a0d029c2acb9d049c74b13701bb46e234_cgraph.svg" width="520" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -3265,6 +3994,66 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af9f4e2ac9ec6a499e6b385515c1cd318"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex UBPersistenceManager::mDeletedListMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a91731bac6c3274008915db7389f4ef46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBPersistenceManager::mDocumentRepositoryPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a689bb509bd117b50bd890427d4de7755"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList UBPersistenceManager::mDocumentSubDirectories</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac901694c75aea223436f520692703f81"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3289,6 +4078,46 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a64f5eeba434f9566970c6186a85ae94a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBPersistenceManager::mFoldersXmlStorageName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35e8a43bb3c37f93909bb9f3892e4a8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBPersistenceManager::mHasPurgedDocuments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7eaef6e12db76b89277eca477511204e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3303,6 +4132,26 @@ Static Public Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aebc2623e05095535deaa0013b7ecf727"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d79/class_u_b_scene_cache.html">UBSceneCache</a> UBPersistenceManager::mSceneCache</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3343,6 +4192,46 @@ Static Public Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abea883ff2e397afa6558dfd40b76b6d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a> * UBPersistenceManager::sSingleton = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7c04e8a911aaf2598f464adaa9f8c278"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;int,QString&gt; UBPersistenceManager::teacherBarNodeString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3449,9 +4338,29 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7e66d4e77a4fb68c5aff33f06667564c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBPersistenceManager::xmlFolderStructureFilename</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d0/de5/_u_b_persistence_manager_8h_source.html">UBPersistenceManager.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d99/_u_b_persistence_manager_8cpp.html">UBPersistenceManager.cpp</a></li>
+<li><a class="el" href="../../d0/de5/_u_b_persistence_manager_8h_source.html">UBPersistenceManager.h</a></li>
+<li><a class="el" href="../../d7/d99/_u_b_persistence_manager_8cpp.html">UBPersistenceManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -3459,7 +4368,7 @@ Static Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dd5/class_u_b_persistence_manager.html">UBPersistenceManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

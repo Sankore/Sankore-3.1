@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf-merger/Filter.h Source File</title>
+<title>Open-Sankoré: Filter.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -143,9 +143,9 @@ $(document).ready(function(){initNavTree('da/d2d/_filter_8h_source.html','../../
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html">   37</a></span>&#160;   <span class="keyword">class </span><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html">Filter</a></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a063f482489440b2ba689a03da85a21b9">   40</a></span>&#160;      <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a063f482489440b2ba689a03da85a21b9">Filter</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * objectWithStream): _objectWithStream(objectWithStream)</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a063f482489440b2ba689a03da85a21b9">   40</a></span>&#160;      <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a063f482489440b2ba689a03da85a21b9">Filter</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * objectWithStream): <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#ab74c3873c995cde167a4c727ee6931b4">_objectWithStream</a>(objectWithStream)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         _createAllDecodersSet();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a078dd045848dbcaa4f01be468ae840c6">_createAllDecodersSet</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">virtual</span> <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a502ee334d42eac3edbaf32b599f9c35e">~Filter</a>();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="comment">//replace coded stream with decoded</span></div>
@@ -155,12 +155,12 @@ $(document).ready(function(){initNavTree('da/d2d/_filter_8h_source.html','../../
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="comment">//parse object&#39;s content and fill out vector with</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="comment">//necessary decoders</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::vector &lt;Decoder * &gt; _getDecoders();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">void</span> _createAllDecodersSet();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::vector &lt;Decoder * &gt; <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a1bae42086c84061b7e395418640e3f7c">_getDecoders</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a078dd045848dbcaa4f01be468ae840c6">_createAllDecodersSet</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="comment">//members</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * _objectWithStream;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">static</span> std::map&lt;std::string, Decoder *&gt; _allDecoders;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#ab74c3873c995cde167a4c727ee6931b4">   56</a></span>&#160;      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#ab74c3873c995cde167a4c727ee6931b4">_objectWithStream</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">   57</a></span>&#160;      <span class="keyword">static</span> std::map&lt;std::string, Decoder *&gt; <a class="code" href="../../da/d8c/classmerge__lib_1_1_filter.html#a7a05a67aeb5cef253dbb26f0b8e2be3f">_allDecoders</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   };</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -170,8 +170,8 @@ $(document).ready(function(){initNavTree('da/d2d/_filter_8h_source.html','../../
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../da/d2d/_filter_8h.html">Filter.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bef69977bf836bcacc75baf7cc647ec1.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../da/d2d/_filter_8h.html">Filter.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

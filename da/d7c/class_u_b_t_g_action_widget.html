@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('da/d7c/class_u_b_t_g_action_widget.htm
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d7/dc7/class_u_b_t_g_action_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBTGActionWidget Class Reference</div>  </div>
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('da/d7c/class_u_b_t_g_action_widget.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d54/class_u_b_t_g_action_widget__inherit__graph.svg" width="176" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d54/class_u_b_t_g_action_widget__inherit__graph.svg" width="176" height="352"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBTGActionWidget:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/da4/class_u_b_t_g_action_widget__coll__graph.svg" width="176" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/da4/class_u_b_t_g_action_widget__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -138,6 +139,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a086b9638e6e8ef218e96b33bc6a1ebc2"><td class="memItemLeft" align="right" valign="top">QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html#a086b9638e6e8ef218e96b33bc6a1ebc2">mpTreeWidgetItem</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:afa95066abdd791eb4c5475b6794268f1"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a></td></tr>
+<tr class="memitem:a90832256b52d4abff1bc5856d0ae0951"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a></td></tr>
+<tr class="memitem:acea3b4eb9cecaa779e46cb565438b9bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d07/class_u_b_t_g_adaptable_text.html">UBTGAdaptableText</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4208c03d9ae6e8a88c1cfe228985fb76"></a>
@@ -178,26 +185,26 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                             : QWidget(parent)</div>
-<div class="line">  , mpLayout(NULL)</div>
-<div class="line">  , mpOwner(NULL)</div>
-<div class="line">  , mpTask(NULL)</div>
+<div class="line">  , <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>(NULL)</div>
+<div class="line">  , <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>(NULL)</div>
+<div class="line">  , <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
-<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
-<div class="line">    mpLayout = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line">    mpOwner = <span class="keyword">new</span> QComboBox(<span class="keyword">this</span>);</div>
-<div class="line">    mpOwner-&gt;setObjectName(<span class="stringliteral">&quot;DockPaletteWidgetComboBox&quot;</span>);</div>
-<div class="line">    mpOwner-&gt;setMinimumHeight(22);</div>
+<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a> = <span class="keyword">new</span> QComboBox(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;setObjectName(<span class="stringliteral">&quot;DockPaletteWidgetComboBox&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;setMinimumHeight(22);</div>
 <div class="line">    QStringList qslOwner;</div>
 <div class="line">    qslOwner &lt;&lt; tr(<span class="stringliteral">&quot;Teacher&quot;</span>) &lt;&lt; tr(<span class="stringliteral">&quot;Student&quot;</span>);</div>
-<div class="line">    mpOwner-&gt;insertItems(0,qslOwner);</div>
-<div class="line">    mpOwner-&gt;setCurrentIndex(0);</div>
-<div class="line">    mpTask = <span class="keyword">new</span> <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html">UBTGAdaptableText</a>(widget,<span class="keyword">this</span>);</div>
-<div class="line">    mpTask-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a25c1b482d596c31210197ef4d48a48e4">setPlaceHolderText</a>(tr(<span class="stringliteral">&quot;Type task here ...&quot;</span>));</div>
-<div class="line">    mpTask-&gt;setAcceptRichText(<span class="keyword">true</span>);</div>
-<div class="line">    mpTask-&gt;setObjectName(<span class="stringliteral">&quot;ActionWidgetTaskTextEdit&quot;</span>);</div>
-<div class="line">    mpLayout-&gt;addWidget(mpOwner);</div>
-<div class="line">    mpLayout-&gt;addWidget(mpTask);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;insertItems(0,qslOwner);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;setCurrentIndex(0);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html">UBTGAdaptableText</a>(widget,<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a25c1b482d596c31210197ef4d48a48e4">setPlaceHolderText</a>(tr(<span class="stringliteral">&quot;Type task here ...&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>-&gt;setAcceptRichText(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>-&gt;setObjectName(<span class="stringliteral">&quot;ActionWidgetTaskTextEdit&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>-&gt;addWidget(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>);</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>-&gt;addWidget(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -224,9 +231,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(mpOwner);</div>
-<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(mpTask);</div>
-<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(mpLayout);</div>
+<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>);</div>
+<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>);</div>
+<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#ace7c9f4515200d983fd39b538554f73b">DELETEPTR</a>(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#afa95066abdd791eb4c5475b6794268f1">mpLayout</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -246,8 +253,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mpOwner-&gt;setCurrentIndex(element.attribute(<span class="stringliteral">&quot;owner&quot;</span>).toInt());</div>
-<div class="line">    mpTask-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a11880e0e1a770203ba9a4e189e07226d">setInitialText</a>(element.attribute(<span class="stringliteral">&quot;task&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;setCurrentIndex(element.attribute(<span class="stringliteral">&quot;owner&quot;</span>).toInt());</div>
+<div class="line">    <a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#a11880e0e1a770203ba9a4e189e07226d">setInitialText</a>(element.attribute(<span class="stringliteral">&quot;task&quot;</span>));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -264,7 +271,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d7c/class_u_b_t_g_action_widget_a52483fd0d2987ae7257aca6f77ccadc6_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d7c/class_u_b_t_g_action_widget_a52483fd0d2987ae7257aca6f77ccadc6_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -295,8 +302,8 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html">tUBGEElementNode</a>* result = <span class="keyword">new</span> <a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html">tUBGEElementNode</a>();</div>
 <div class="line">    result-&gt;<a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html#a889b0141b125b4440cde206ba57d9c8a">name</a> = <span class="stringliteral">&quot;action&quot;</span>;</div>
-<div class="line">    result-&gt;<a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html#a09864b0527ab656ef8f468aed230aaa8">attributes</a>.insert(<span class="stringliteral">&quot;owner&quot;</span>,QString(<span class="stringliteral">&quot;%0&quot;</span>).arg(mpOwner-&gt;currentIndex()));</div>
-<div class="line">    result-&gt;<a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html#a09864b0527ab656ef8f468aed230aaa8">attributes</a>.insert(<span class="stringliteral">&quot;task&quot;</span>,mpTask-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#abc01215ceb6a24147b846b344b7557ce">text</a>());</div>
+<div class="line">    result-&gt;<a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html#a09864b0527ab656ef8f468aed230aaa8">attributes</a>.insert(<span class="stringliteral">&quot;owner&quot;</span>,QString(<span class="stringliteral">&quot;%0&quot;</span>).arg(<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#a90832256b52d4abff1bc5856d0ae0951">mpOwner</a>-&gt;currentIndex()));</div>
+<div class="line">    result-&gt;<a class="code" href="../../dc/d4a/structt_u_b_g_e_element_node.html#a09864b0527ab656ef8f468aed230aaa8">attributes</a>.insert(<span class="stringliteral">&quot;task&quot;</span>,<a class="code" href="../../da/d7c/class_u_b_t_g_action_widget.html#acea3b4eb9cecaa779e46cb565438b9bd">mpTask</a>-&gt;<a class="code" href="../../d9/d07/class_u_b_t_g_adaptable_text.html#abc01215ceb6a24147b846b344b7557ce">text</a>());</div>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -327,6 +334,66 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="afa95066abdd791eb4c5475b6794268f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* UBTGActionWidget::mpLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a90832256b52d4abff1bc5856d0ae0951"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* UBTGActionWidget::mpOwner</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acea3b4eb9cecaa779e46cb565438b9bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d07/class_u_b_t_g_adaptable_text.html">UBTGAdaptableText</a>* UBTGActionWidget::mpTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a086b9638e6e8ef218e96b33bc6a1ebc2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -348,8 +415,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
+<li><a class="el" href="../../d3/df5/_u_b_teacher_guide_widgets_tools_8h_source.html">UBTeacherGuideWidgetsTools.h</a></li>
+<li><a class="el" href="../../de/dae/_u_b_teacher_guide_widgets_tools_8cpp.html">UBTeacherGuideWidgetsTools.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -357,7 +424,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d7c/class_u_b_t_g_action_widget.html">UBTGActionWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

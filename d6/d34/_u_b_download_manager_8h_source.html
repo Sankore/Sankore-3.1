@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/core/UBDownloadManager.h Source File</title>
+<title>Open-Sankoré: UBDownloadManager.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -195,11 +195,11 @@ $(document).ready(function(){initNavTree('d6/d34/_u_b_download_manager_8h_source
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d3e/class_u_b_download_http_file.html#af8ea0f0a88ff715b70c6463906691fca">downloadError</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> onDownloadFinished(<span class="keywordtype">bool</span> pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d3e/class_u_b_download_http_file.html#a08836bac0076c435654506e837a11f5b" title="Handles the download finished notification.">onDownloadFinished</a>(<span class="keywordtype">bool</span> pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d3e/class_u_b_download_http_file.html#a31ab571304f4b33282996f8ceece8cb1" title="Handles the download progress notification.">onDownloadProgress</a>(qint64 bytesReceived, qint64 bytesTotal);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> mId;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../da/d3e/class_u_b_download_http_file.html#a9f6bb9c926934f9076c143d96b0d716f">   96</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../da/d3e/class_u_b_download_http_file.html#a9f6bb9c926934f9076c143d96b0d716f">mId</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html">UBAsyncLocalFileDownloader</a> : <span class="keyword">public</span> QThread</div>
@@ -218,12 +218,12 @@ $(document).ready(function(){initNavTree('d6/d34/_u_b_download_manager_8h_source
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QMutex mMutex;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> mDesc;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QByteArray mData;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> m_bAborting;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QString mFrom;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    QString mTo;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#aa19b8a3609e8265b638f811ceadd9c24">  115</a></span>&#160;    QMutex <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#aa19b8a3609e8265b638f811ceadd9c24">mMutex</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af1f2bc6f6398455e5113fd68f5232a03">  116</a></span>&#160;    <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af1f2bc6f6398455e5113fd68f5232a03">mDesc</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af45ee38fa98deb24eeaef29d35bee3d6">  117</a></span>&#160;    QByteArray <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#af45ee38fa98deb24eeaef29d35bee3d6">mData</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ad75046e430fe5c88b441c2b6443e3786">  118</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#ad75046e430fe5c88b441c2b6443e3786">m_bAborting</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#aff36aa45604cb96f005b6860991d1f7b">  119</a></span>&#160;    QString <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#aff36aa45604cb96f005b6860991d1f7b">mFrom</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">  120</a></span>&#160;    QString <a class="code" href="../../de/d41/class_u_b_async_local_file_downloader.html#a3df76ebb1a88ce91c209c3c3faedf07b">mTo</a>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html">  123</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d38/class_u_b_download_manager.html">UBDownloadManager</a> : <span class="keyword">public</span> QObject</div>
@@ -254,25 +254,25 @@ $(document).ready(function(){initNavTree('d6/d34/_u_b_download_manager_8h_source
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#ad035f13a1abac13e2f9aa847036bac5f">allDownloadsFinished</a>();</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> onUpdateDownloadLists();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> onDownloadProgress(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, qint64 received, qint64 total);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> onDownloadFinished(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> onDownloadError(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#adf2b12cbfdb5457f3eec6a09b0ec4145" title="Update the download list. If a current download is finished, we take a file from the pending download...">onUpdateDownloadLists</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a77a59012fcfa733fc3a2dbffc1605a55" title="Update the file transfer information.">onDownloadProgress</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, qint64 received, qint64 total);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a50e08fa88d965346e81a3100bd72f8cf" title="Called when the download of the given file is finished.">onDownloadFinished</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, <span class="keywordtype">bool</span> isBackground);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aa21ea2733f35aa297519ee620a182365">onDownloadError</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">void</span> updateDownloadOrder();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> updateFileCurrentSize(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, qint64 received=-1, qint64 total=-1);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> startFileDownload(<a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> desc);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span> checkIfModalRemains();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> finishDownloads(<span class="keywordtype">bool</span> cancel=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4e4cf467c14617da96e07f91f847a85c" title="Initialize the download manager.">init</a>();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#ae979b3d627ce5f6d531bcedb58aef010" title="Update the download order. The modal downloads will be put in priority.">updateDownloadOrder</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a713a817fe469e641786c6d8a61778b95" title="Update the description of the given current downloaded file.">updateFileCurrentSize</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, qint64 received=-1, qint64 total=-1);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aac0b212ca97453fb8d342d110d375f10" title="Start the download of a file.">startFileDownload</a>(<a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> desc);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a73e2f336b08e0c1805f421567eec26ea" title="Verify if modal downloads remains and notify everyone if it is not the case.">checkIfModalRemains</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeb9ff1954a7c94d18c7d37f1b1f85729">finishDownloads</a>(<span class="keywordtype">bool</span> cancel=<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    QVector&lt;sDownloadFileDesc&gt; mCrntDL;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    QVector&lt;sDownloadFileDesc&gt; mPendingDL;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    QMutex mMutex;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">int</span> mLastID;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    QVector&lt;int&gt; mDLAvailability;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    QMap&lt;int, QObject*&gt; mDownloads;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">  165</a></span>&#160;    QVector&lt;sDownloadFileDesc&gt; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a6a117624f78a6779a2c49d441d95ff6d">mCrntDL</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">  167</a></span>&#160;    QVector&lt;sDownloadFileDesc&gt; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a006a58dcf7241750324c83561c1ea6e9">mPendingDL</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html#aac2d61bd8b25bc13bf107976751bf32d">  169</a></span>&#160;    QMutex <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aac2d61bd8b25bc13bf107976751bf32d">mMutex</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html#a163aa1d6ee899fb8a5ae2e3c9d9ae56f">  171</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a163aa1d6ee899fb8a5ae2e3c9d9ae56f">mLastID</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">  173</a></span>&#160;    QVector&lt;int&gt; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#aeaef3b3a3ac29882b16616e9c18aaa4b">mDLAvailability</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">  175</a></span>&#160;    QMap&lt;int, QObject*&gt; <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4bc0b2c57c72d0a1619805c534c9a502">mDownloads</a>;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;};</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif // UBDOWNLOADMANAGER_H</span></div>
@@ -281,8 +281,8 @@ $(document).ready(function(){initNavTree('d6/d34/_u_b_download_manager_8h_source
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d6/d34/_u_b_download_manager_8h.html">UBDownloadManager.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_55aa7dff72311e91c90ae626074ddca7.html">core</a></li><li class="navelem"><a class="el" href="../../d6/d34/_u_b_download_manager_8h.html">UBDownloadManager.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/domain/UBGraphicsItemUndoCommand.h Source File</title>
+<title>Open-Sankoré: UBGraphicsItemUndoCommand.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -151,8 +151,8 @@ $(document).ready(function(){initNavTree('dc/d29/_u_b_graphics_item_undo_command
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a14b7dd11561d819a18fc1b81c67a76f4">~UBGraphicsItemUndoCommand</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aacd0354963a00b0d0528588e5eefbd78">   48</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aacd0354963a00b0d0528588e5eefbd78">GetAddedList</a>() { <span class="keywordflow">return</span> mAddedItems; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a5d60f1df43ac7f7d785117da9d602ffe">   49</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a5d60f1df43ac7f7d785117da9d602ffe">GetRemovedList</a>() { <span class="keywordflow">return</span> mRemovedItems; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aacd0354963a00b0d0528588e5eefbd78">   48</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aacd0354963a00b0d0528588e5eefbd78">GetAddedList</a>() { <span class="keywordflow">return</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a5d60f1df43ac7f7d785117da9d602ffe">   49</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a5d60f1df43ac7f7d785117da9d602ffe">GetRemovedList</a>() { <span class="keywordflow">return</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>; }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aa1bbdd494ad151b48edf59dc1c29d42d">   51</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dd/d07/class_u_b_abstract_undo_command.html#a85016029bd4ceb03a8247b3c01e2bd97">UndoType</a> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aa1bbdd494ad151b48edf59dc1c29d42d">getType</a>() { <span class="keywordflow">return</span> <a class="code" href="../../dd/d07/class_u_b_abstract_undo_command.html#a85016029bd4ceb03a8247b3c01e2bd97ae0e409824d406d86a5cf28d295a37b46">undotype_GRAPHICITEM</a>; }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
@@ -161,12 +161,12 @@ $(document).ready(function(){initNavTree('dc/d29/_u_b_graphics_item_undo_command
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a85f77fad80b241baaf0c35b98ee7de82">redo</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* mScene;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        QSet&lt;QGraphicsItem*&gt; mRemovedItems;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        QSet&lt;QGraphicsItem*&gt; mAddedItems;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4aa053457a498a33bbfef270fbf4608a">GroupDataTable</a> mExcludedFromGroup;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">   58</a></span>&#160;        <a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">   59</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">   60</a></span>&#160;        QSet&lt;QGraphicsItem*&gt; <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7">   61</a></span>&#160;        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4aa053457a498a33bbfef270fbf4608a">GroupDataTable</a> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7">mExcludedFromGroup</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">bool</span> mFirstRedo;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">   63</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">mFirstRedo</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UBGRAPHICSITEMUNDOCOMMAND_H_ */</span><span class="preprocessor"></span></div>
@@ -175,8 +175,8 @@ $(document).ready(function(){initNavTree('dc/d29/_u_b_graphics_item_undo_command
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_f752e5e834af1535a37ad136ee656324.html">domain</a></li><li class="navelem"><a class="el" href="../../dc/d29/_u_b_graphics_item_undo_command_8h.html">UBGraphicsItemUndoCommand.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_db673584cccf74eb7dc72eb65f8cf944.html">domain</a></li><li class="navelem"><a class="el" href="../../dc/d29/_u_b_graphics_item_undo_command_8h.html">UBGraphicsItemUndoCommand.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

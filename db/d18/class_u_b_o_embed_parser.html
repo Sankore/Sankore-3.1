@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('db/d18/class_u_b_o_embed_parser.html',
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/d2e/class_u_b_o_embed_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBOEmbedParser Class Reference</div>  </div>
@@ -117,7 +120,7 @@ $(document).ready(function(){initNavTree('db/d18/class_u_b_o_embed_parser.html',
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d8a/class_u_b_o_embed_parser__coll__graph.svg" width="214" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d8a/class_u_b_o_embed_parser__coll__graph.svg" width="214" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -131,6 +134,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9acc7667a3ffe54fe20b6bbbf56c6d04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#a9acc7667a3ffe54fe20b6bbbf56c6d04">~UBOEmbedParser</a> ()</td></tr>
 <tr class="memitem:a0195b4006db357e86d5d6428eba8a11e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#a0195b4006db357e86d5d6428eba8a11e">parse</a> (const QString &amp;html)</td></tr>
 <tr class="memitem:ac40a71f895c09d2e0f508ae3f54259ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#ac40a71f895c09d2e0f508ae3f54259ab">setNetworkAccessManager</a> (QNetworkAccessManager *nam)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:aa660d2db5e69ecbb3f2e073d51298a0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#aa660d2db5e69ecbb3f2e073d51298a0e">onFinished</a> (QNetworkReply *reply)</td></tr>
+<tr class="memitem:abd73dc88356ddb46ed264d745bb5e34d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#abd73dc88356ddb46ed264d745bb5e34d">onParseContent</a> (QString url)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3dabfb4b9aedc6ab48fdfe569b6b8cac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#a3dabfb4b9aedc6ab48fdfe569b6b8cac">getJSONInfos</a> (const QString &amp;json)</td></tr>
+<tr class="memitem:ae94b07856dfe1b7277c4f557875fd217"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#ae94b07856dfe1b7277c4f557875fd217">getXMLInfos</a> (const QString &amp;xml)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7496d88d0f5c53ffd4f4d0f2e152bcc7"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">mContents</a></td></tr>
+<tr class="memitem:a918203a4d721b96d0bae4bfd4e1ba258"><td class="memItemLeft" align="right" valign="top">QVector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#a918203a4d721b96d0bae4bfd4e1ba258">mParsedTitles</a></td></tr>
+<tr class="memitem:aee0b603ab5a4879cd8710b565b7099de"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">mpNam</a></td></tr>
+<tr class="memitem:aa122bdee8cce5b7dc175289fa748ed5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">mPending</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5a4ed9e5b654b7dc5ec19d6a93a4908e"></a>
@@ -159,8 +179,8 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(parent);</div>
 <div class="line">    setObjectName(name);</div>
-<div class="line">    mParsedTitles.clear();</div>
-<div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ad15610669986881d4c34b3bd2720b71b">parseContent</a>(QString)), <span class="keyword">this</span>, SLOT(onParseContent(QString)));</div>
+<div class="line">    <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a918203a4d721b96d0bae4bfd4e1ba258">mParsedTitles</a>.clear();</div>
+<div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ad15610669986881d4c34b3bd2720b71b">parseContent</a>(QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#abd73dc88356ddb46ed264d745bb5e34d">onParseContent</a>(QString)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -168,7 +188,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_a5a4ed9e5b654b7dc5ec19d6a93a4908e_cgraph.svg" width="483" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_a5a4ed9e5b654b7dc5ec19d6a93a4908e_cgraph.svg" width="499" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -193,6 +213,189 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a3dabfb4b9aedc6ab48fdfe569b6b8cac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> UBOEmbedParser::getJSONInfos </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>json</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>/brief Extract the oembed infos from the JSON </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonUrl</td><td>as the url of the JSON file </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> content;</div>
+<div class="line"></div>
+<div class="line">    QScriptValue scriptValue;</div>
+<div class="line">    QScriptEngine scriptEngine;</div>
+<div class="line">    scriptValue = scriptEngine.evaluate (<span class="stringliteral">&quot;(&quot;</span> + json + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">    QString providerUrl = scriptValue.property(<span class="stringliteral">&quot;provider_url&quot;</span>).toString();</div>
+<div class="line">    QString title = scriptValue.property(<span class="stringliteral">&quot;title&quot;</span>).toString();</div>
+<div class="line">    QString html = scriptValue.property(<span class="stringliteral">&quot;html&quot;</span>).toString();</div>
+<div class="line">    QString authorName = scriptValue.property(<span class="stringliteral">&quot;author_name&quot;</span>).toString();</div>
+<div class="line">    <span class="keywordtype">int</span> height = scriptValue.property(<span class="stringliteral">&quot;height&quot;</span>).toInteger();</div>
+<div class="line">    <span class="keywordtype">int</span> thumbnailWidth = scriptValue.property(<span class="stringliteral">&quot;thumbnail_width&quot;</span>).toInteger();</div>
+<div class="line">    <span class="keywordtype">int</span> width = scriptValue.property(<span class="stringliteral">&quot;width&quot;</span>).toInteger();</div>
+<div class="line">    <span class="keywordtype">float</span> version = scriptValue.property(<span class="stringliteral">&quot;version&quot;</span>).toString().toFloat();</div>
+<div class="line">    QString authorUrl = scriptValue.property(<span class="stringliteral">&quot;author_url&quot;</span>).toString();</div>
+<div class="line">    QString providerName = scriptValue.property(<span class="stringliteral">&quot;provider_name&quot;</span>).toString();</div>
+<div class="line">    QString thumbnailUrl = scriptValue.property(<span class="stringliteral">&quot;thumbnail_url&quot;</span>).toString();</div>
+<div class="line">    QString type = scriptValue.property(<span class="stringliteral">&quot;type&quot;</span>).toString();</div>
+<div class="line">    <span class="keywordtype">int</span> thumbnailHeight = scriptValue.property(<span class="stringliteral">&quot;thumbnail_height&quot;</span>).toInteger();</div>
+<div class="line"></div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#adcee2b69becec892ab8a15ed5b793670">providerUrl</a> = providerUrl;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a99a43aa9bb7239b4fc67200c58b50c28">title</a> = title;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a454a3bb4bd547e3340e25fedc4b46317">html</a> = html;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a8253f0b5e913ae5d6e4609461e2bdf5a">author</a> = authorName;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae8a962d881e0dc5d2d98b1015bece43e">height</a> = height;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a0337e97679d083c49a665101f135b96a">thumbWidth</a> = thumbnailWidth;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a053703ffaa9305e87a159ffea87aaf4a">width</a> = width;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a5df8726e71132a8b084c88b4ee902512">version</a> = version;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a65f2b8e89aff77f4e8f0720b62a911cd">authorUrl</a> = authorUrl;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a2760ef481807be5e5c46451b1d66dddf">providerName</a> = providerName;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#aa8d8b0e958739ccd29f5ad271d87c111">thumbUrl</a> = thumbnailUrl;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae7c0ff53591ca3049ca84a7ee55cd1d7">type</a> = type;</div>
+<div class="line">    content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a41fb9f61f6be269ed883baa1c2bc1180">thumbHeight</a> = thumbnailHeight;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(<span class="stringliteral">&quot;photo&quot;</span> == content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae7c0ff53591ca3049ca84a7ee55cd1d7">type</a>){</div>
+<div class="line">        content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a5e8bca648a2390740dbae9cc8d8f0603">url</a> = scriptValue.property(<span class="stringliteral">&quot;url&quot;</span>).toString();</div>
+<div class="line">    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;video&quot;</span> == content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae7c0ff53591ca3049ca84a7ee55cd1d7">type</a>){</div>
+<div class="line">        QStringList strl = content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a454a3bb4bd547e3340e25fedc4b46317">html</a>.split(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;strl.size(); i++){</div>
+<div class="line">            <span class="keywordflow">if</span>(strl.at(i).endsWith(<span class="stringliteral">&quot;src=&quot;</span>) &amp;&amp; strl.size() &gt; (i+1)){</div>
+<div class="line">                content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a5e8bca648a2390740dbae9cc8d8f0603">url</a> = strl.at(i+1);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> content;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_a3dabfb4b9aedc6ab48fdfe569b6b8cac_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae94b07856dfe1b7277c4f557875fd217"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> UBOEmbedParser::getXMLInfos </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>xml</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>/brief Extract the oembed infos from the XML </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmlUrl</td><td>as the url of the XML file </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> content;</div>
+<div class="line"></div>
+<div class="line">    QDomDocument domDoc;</div>
+<div class="line">    domDoc.setContent(xml);</div>
+<div class="line">    QDomNode oembed = domDoc.documentElement();</div>
+<div class="line"></div>
+<div class="line">    QDomNodeList children = oembed.toElement().childNodes();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;children.size(); i++){</div>
+<div class="line">        QDomNode node = children.at(i);</div>
+<div class="line">        QString tag = node.nodeName();</div>
+<div class="line">        QString value = node.toElement().text();</div>
+<div class="line">        <span class="keywordflow">if</span>(<span class="stringliteral">&quot;provider_url&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#adcee2b69becec892ab8a15ed5b793670">providerUrl</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;title&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a99a43aa9bb7239b4fc67200c58b50c28">title</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;html&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a454a3bb4bd547e3340e25fedc4b46317">html</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;author_name&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a8253f0b5e913ae5d6e4609461e2bdf5a">author</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;height&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae8a962d881e0dc5d2d98b1015bece43e">height</a> = value.toInt();</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;thumbnail_width&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a0337e97679d083c49a665101f135b96a">thumbWidth</a> = value.toInt();</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;width&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a053703ffaa9305e87a159ffea87aaf4a">width</a> = value.toInt();</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;version&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a5df8726e71132a8b084c88b4ee902512">version</a> = value.toFloat();</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;author_url&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a65f2b8e89aff77f4e8f0720b62a911cd">authorUrl</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;provider_name&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a2760ef481807be5e5c46451b1d66dddf">providerName</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;thumbnail_url&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#aa8d8b0e958739ccd29f5ad271d87c111">thumbUrl</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;type&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae7c0ff53591ca3049ca84a7ee55cd1d7">type</a> = value;</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;thumbnail_height&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a41fb9f61f6be269ed883baa1c2bc1180">thumbHeight</a> = value.toInt();</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;url&quot;</span> == tag){</div>
+<div class="line">            content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a5e8bca648a2390740dbae9cc8d8f0603">url</a> = value; <span class="comment">// This case appears only for type = photo</span></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(<span class="stringliteral">&quot;video&quot;</span> == content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#ae7c0ff53591ca3049ca84a7ee55cd1d7">type</a>){</div>
+<div class="line">        QStringList strl = content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a454a3bb4bd547e3340e25fedc4b46317">html</a>.split(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;strl.size(); i++){</div>
+<div class="line">            <span class="keywordflow">if</span>(strl.at(i).endsWith(<span class="stringliteral">&quot;src=&quot;</span>) &amp;&amp; strl.size() &gt; (i+1)){</div>
+<div class="line">                content.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a5e8bca648a2390740dbae9cc8d8f0603">url</a> = strl.at(i+1);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> content;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ae94b07856dfe1b7277c4f557875fd217_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ab0c16446cc9f72b15801af51fd3c64aa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -215,12 +418,130 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ab0c16446cc9f72b15801af51fd3c64aa_icgraph.svg" width="456" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ab0c16446cc9f72b15801af51fd3c64aa_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa660d2db5e69ecbb3f2e073d51298a0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBOEmbedParser::onFinished </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *&#160;</td>
+          <td class="paramname"><em>reply</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(QNetworkReply::NoError == reply-&gt;error()){</div>
+<div class="line">        QString receivedDatas = reply-&gt;readAll().constData();</div>
+<div class="line">        <a class="code" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a> crntContent;</div>
+<div class="line">        <span class="comment">// The received datas can be in two different formats: JSON or XML</span></div>
+<div class="line">        <span class="keywordflow">if</span>(receivedDatas.contains(<span class="stringliteral">&quot;&lt;oembed&gt;&quot;</span>)){</div>
+<div class="line">            <span class="comment">// XML !</span></div>
+<div class="line">            crntContent = <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ae94b07856dfe1b7277c4f557875fd217">getXMLInfos</a>(receivedDatas);</div>
+<div class="line">        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(receivedDatas.contains(<span class="stringliteral">&quot;{\&quot;provider_url&quot;</span>)){</div>
+<div class="line">            <span class="comment">// JSON !</span></div>
+<div class="line">            crntContent = <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a3dabfb4b9aedc6ab48fdfe569b6b8cac">getJSONInfos</a>(receivedDatas);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//  As we don&#39;t want duplicates, we have to check if the content title has already</span></div>
+<div class="line">        <span class="comment">//  been parsed.</span></div>
+<div class="line">        <span class="keywordflow">if</span>(<span class="stringliteral">&quot;&quot;</span> != crntContent.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a99a43aa9bb7239b4fc67200c58b50c28">title</a> &amp;&amp; !<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a918203a4d721b96d0bae4bfd4e1ba258">mParsedTitles</a>.contains(crntContent.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a99a43aa9bb7239b4fc67200c58b50c28">title</a>)){</div>
+<div class="line">            <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a918203a4d721b96d0bae4bfd4e1ba258">mParsedTitles</a> &lt;&lt; crntContent.<a class="code" href="../../d9/d62/structs_o_embed_content.html#a99a43aa9bb7239b4fc67200c58b50c28">title</a>;</div>
+<div class="line">            <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">mContents</a> &lt;&lt; crntContent;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">    }<span class="keywordflow">else</span>{</div>
+<div class="line">        <span class="comment">//  We decided to not handle the error case here. If there is a problem with</span></div>
+<div class="line">        <span class="comment">//  getting the oembed content information, we just don&#39;t handle it: the content</span></div>
+<div class="line">        <span class="comment">//  will not be available for importation.</span></div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Decrement the number of content to analyze</span></div>
+<div class="line">    <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">mPending</a>--;</div>
+<div class="line">    <span class="keywordflow">if</span>(0 == <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">mPending</a>){</div>
+<div class="line">        <span class="comment">//  All the oembed contents have been parsed. We notify it!</span></div>
+<div class="line">        emit <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ab0c16446cc9f72b15801af51fd3c64aa">oembedParsed</a>(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">mContents</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_aa660d2db5e69ecbb3f2e073d51298a0e_cgraph.svg" width="488" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_aa660d2db5e69ecbb3f2e073d51298a0e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abd73dc88356ddb46ed264d745bb5e34d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBOEmbedParser::onParseContent </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QUrl qurl;</div>
+<div class="line">    qurl.setEncodedUrl(url.toAscii());</div>
+<div class="line"></div>
+<div class="line">    QNetworkRequest req;</div>
+<div class="line">    req.setUrl(qurl);</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">mpNam</a>){</div>
+<div class="line">        <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">mpNam</a>-&gt;get(req);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_abd73dc88356ddb46ed264d745bb5e34d_icgraph.svg" width="499" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -240,7 +561,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mContents.clear();</div>
+<div class="line">    <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">mContents</a>.clear();</div>
 <div class="line">    QString query = <span class="stringliteral">&quot;&lt;link([^&gt;]*)&gt;&quot;</span>;</div>
 <div class="line">    QRegExp exp(query);</div>
 <div class="line">    QStringList results;</div>
@@ -278,10 +599,10 @@ Public Member Functions</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mPending = oembedUrls.size();</div>
+<div class="line">    <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">mPending</a> = oembedUrls.size();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(0 == mPending){</div>
-<div class="line">        emit <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ab0c16446cc9f72b15801af51fd3c64aa">oembedParsed</a>(mContents);</div>
+<div class="line">    <span class="keywordflow">if</span>(0 == <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa122bdee8cce5b7dc175289fa748ed5e">mPending</a>){</div>
+<div class="line">        emit <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#ab0c16446cc9f72b15801af51fd3c64aa">oembedParsed</a>(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#a7496d88d0f5c53ffd4f4d0f2e152bcc7">mContents</a>);</div>
 <div class="line">    }<span class="keywordflow">else</span>{</div>
 <div class="line">        <span class="comment">// Here we start the parsing (finally...)!</span></div>
 <div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;oembedUrls.size(); i++){</div>
@@ -290,12 +611,21 @@ Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_a0195b4006db357e86d5d6428eba8a11e_cgraph.svg" width="456" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_a0195b4006db357e86d5d6428eba8a11e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -323,12 +653,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ad15610669986881d4c34b3bd2720b71b_icgraph.svg" width="483" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ad15610669986881d4c34b3bd2720b71b_icgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -348,24 +678,114 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mpNam = nam;</div>
-<div class="line">    connect(mpNam, SIGNAL(finished(QNetworkReply*)), <span class="keyword">this</span>, SLOT(onFinished(QNetworkReply*)));</div>
+<div class="line">    <a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">mpNam</a> = nam;</div>
+<div class="line">    connect(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aee0b603ab5a4879cd8710b565b7099de">mpNam</a>, SIGNAL(finished(QNetworkReply*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d18/class_u_b_o_embed_parser.html#aa660d2db5e69ecbb3f2e073d51298a0e">onFinished</a>(QNetworkReply*)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ac40a71f895c09d2e0f508ae3f54259ab_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d18/class_u_b_o_embed_parser_ac40a71f895c09d2e0f508ae3f54259ab_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a7496d88d0f5c53ffd4f4d0f2e152bcc7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="../../d9/d62/structs_o_embed_content.html">sOEmbedContent</a>&gt; UBOEmbedParser::mContents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a918203a4d721b96d0bae4bfd4e1ba258"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;QString&gt; UBOEmbedParser::mParsedTitles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa122bdee8cce5b7dc175289fa748ed5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBOEmbedParser::mPending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee0b603ab5a4879cd8710b565b7099de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkAccessManager* UBOEmbedParser::mpNam</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/<a class="el" href="../../d7/d77/_u_b_o_embed_parser_8h_source.html">UBOEmbedParser.h</a></li>
-<li>Sankore-3.1/src/web/<a class="el" href="../../d1/d13/_u_b_o_embed_parser_8cpp.html">UBOEmbedParser.cpp</a></li>
+<li><a class="el" href="../../d7/d77/_u_b_o_embed_parser_8h_source.html">UBOEmbedParser.h</a></li>
+<li><a class="el" href="../../d1/d13/_u_b_o_embed_parser_8cpp.html">UBOEmbedParser.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -373,7 +793,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d18/class_u_b_o_embed_parser.html">UBOEmbedParser</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

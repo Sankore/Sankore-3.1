@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('d8/d56/class_u_b_graphics_video_item_d
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d36/class_u_b_graphics_video_item_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsVideoItemDelegate Class Reference</div>  </div>
@@ -203,6 +205,18 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_graphics_item_delegate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_graphics_item_delegate')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a></td></tr>
 <tr class="memitem:a37a264e2942f9d1a2f74fe2dd0d5c9b1 inherit pro_methods_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37a264e2942f9d1a2f74fe2dd0d5c9b1">decorateMenu</a> (QMenu *menu)</td></tr>
 <tr class="memitem:aaac5b391602a6c42ad371a3addf84662 inherit pro_methods_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aaac5b391602a6c42ad371a3addf84662">updateMenuActionState</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8baf05a1be32257d4893c96c5bb7590a"><td class="memItemLeft" align="right" valign="top">UBGraphicsVideoItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#a8baf05a1be32257d4893c96c5bb7590a">delegated</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a674ddd9ebbb4f9004fc84be76fbecda7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#a674ddd9ebbb4f9004fc84be76fbecda7">mPlayPauseButton</a></td></tr>
+<tr class="memitem:a2291e51aa779a6fbdafc07083aafcdef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#a2291e51aa779a6fbdafc07083aafcdef">mStopButton</a></td></tr>
+<tr class="memitem:a34daaa41b679f9e7647c4b851b4eb7b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#a34daaa41b679f9e7647c4b851b4eb7b1">mMuteButton</a></td></tr>
+<tr class="memitem:af24c361aba53a4e8e3dcbad5a0a7023d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/dfb/class_delegate_video_control.html">DelegateVideoControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#af24c361aba53a4e8e3dcbad5a0a7023d">mVideoControl</a></td></tr>
+<tr class="memitem:acd9e86e78bfbaf8102525950e52b506f"><td class="memItemLeft" align="right" valign="top">Phonon::MediaObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html#acd9e86e78bfbaf8102525950e52b506f">mMedia</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -309,6 +323,29 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#afd35164da102e7acbb5d7dd097618a5c">UBGraphicsItemDelegate</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8baf05a1be32257d4893c96c5bb7590a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UBGraphicsVideoItem* UBGraphicsVideoItemDelegate::delegated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -512,8 +549,109 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="acd9e86e78bfbaf8102525950e52b506f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Phonon::MediaObject* UBGraphicsVideoItemDelegate::mMedia</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a34daaa41b679f9e7647c4b851b4eb7b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsVideoItemDelegate::mMuteButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a674ddd9ebbb4f9004fc84be76fbecda7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsVideoItemDelegate::mPlayPauseButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2291e51aa779a6fbdafc07083aafcdef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsVideoItemDelegate::mStopButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af24c361aba53a4e8e3dcbad5a0a7023d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/dfb/class_delegate_video_control.html">DelegateVideoControl</a>* UBGraphicsVideoItemDelegate::mVideoControl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d1/d34/_u_b_graphics_video_item_delegate_8h_source.html">UBGraphicsVideoItemDelegate.h</a></li>
+<li><a class="el" href="../../d1/d34/_u_b_graphics_video_item_delegate_8h_source.html">UBGraphicsVideoItemDelegate.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -521,7 +659,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d56/class_u_b_graphics_video_item_delegate.html">UBGraphicsVideoItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:04 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

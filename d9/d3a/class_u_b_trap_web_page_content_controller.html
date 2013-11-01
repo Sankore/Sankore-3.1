@@ -105,6 +105,10 @@ $(document).ready(function(){initNavTree('d9/d3a/class_u_b_trap_web_page_content
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d0/d35/class_u_b_trap_web_page_content_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBTrapWebPageContentController Class Reference</div>  </div>
@@ -117,7 +121,7 @@ $(document).ready(function(){initNavTree('d9/d3a/class_u_b_trap_web_page_content
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d93/class_u_b_trap_web_page_content_controller__coll__graph.svg" width="264" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d93/class_u_b_trap_web_page_content_controller__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -137,7 +141,73 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6bf16d3424c93377578ab0fb31f97418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a6bf16d3424c93377578ab0fb31f97418">showTrapContent</a> ()</td></tr>
 <tr class="memitem:ad748a9763752d340c6c6c3138e124ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ad748a9763752d340c6c6c3138e124ea3">hideTrapContent</a> ()</td></tr>
 <tr class="memitem:a9c620d728fe53421fd1eee618c686334"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a9c620d728fe53421fd1eee618c686334">setLastWebHitTestResult</a> (const QWebHitTestResult &amp;result)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a5cca51c8e303dac89424f3d43fc3fb1b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">importDestination</a> { <a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">library</a> =  0, 
+<a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109">board</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a5ae59b88005d24b9ab9eb701fb133c8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5ae59b88005d24b9ab9eb701fb133c8a">selectHtmlObject</a> (int pObjectIndex)</td></tr>
+<tr class="memitem:a3b69a9161ab97471aa39568d6d47a57e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a3b69a9161ab97471aa39568d6d47a57e">oEmbedRequestFinished</a> (bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adc738e0c68ed861cce64a1389d2aee5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#adc738e0c68ed861cce64a1389d2aee5d">addLink</a> (bool isOnLibrary)</td></tr>
+<tr class="memitem:af9de8913f2b18f5b310b7ea9a918bc66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#af9de8913f2b18f5b310b7ea9a918bc66">prepareCurrentItemForImport</a> (bool sendToBoard)</td></tr>
+<tr class="memitem:ae05afbe6ad5d4cb0ff5c226fc2ef53df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ae05afbe6ad5d4cb0ff5c226fc2ef53df">updateListOfContents</a> (const QList&lt; <a class="el" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> &gt; &amp;objects)</td></tr>
+<tr class="memitem:a2de339c83baff50eb2614a55c2c09888"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a2de339c83baff50eb2614a55c2c09888">widgetNameForUrl</a> (QString pObjectUrl)</td></tr>
+<tr class="memitem:a192fb52dc51a2b0848ccc518edc515d9"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a192fb52dc51a2b0848ccc518edc515d9">generateFullPageHtml</a> (const QUrl &amp;srcUrl)</td></tr>
+<tr class="memitem:a20390f95b0ce88112391b87471b2c441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a20390f95b0ce88112391b87471b2c441">generatePreview</a> (const <a class="el" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> &amp;pObject, bool bTryToEmbed=false)</td></tr>
+<tr class="memitem:a3385a6c3ba1b545308d8719cd25f5544"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a3385a6c3ba1b545308d8719cd25f5544">generateIcon</a> (const QString &amp;pDirPath)</td></tr>
+<tr class="memitem:a1f31d6825bd7efbca5d30992f76e31bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1f31d6825bd7efbca5d30992f76e31bb">generateConfig</a> (int pWidth, int pHeight, const QString &amp;pDestinationPath)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0d27218a1036dbcc061148b1a313713f"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0d27218a1036dbcc061148b1a313713f">mParentWidget</a></td></tr>
+<tr class="memitem:a73fdaae5eff1938342e2fe85aff5439e"><td class="memItemLeft" align="right" valign="top">QWebFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a></td></tr>
+<tr class="memitem:a1e35e1c0f101299c958e6a4307e1d60f"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a></td></tr>
+<tr class="memitem:a1d0aa5e71991d2ad88b16b5bf1772a9d"><td class="memItemLeft" align="right" valign="top">QMap&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a></td></tr>
+<tr class="memitem:a1918a26ddae8120e725fd643c7baedc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html">WBTrapWebPageContentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a></td></tr>
+<tr class="memitem:a718715f63af6664027f780942c9aa65a"><td class="memItemLeft" align="right" valign="top">QWebHitTestResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a718715f63af6664027f780942c9aa65a">mLastWebHitTestResult</a></td></tr>
+<tr class="memitem:a56605f0821c142ca8c5a0d12eb938410"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a56605f0821c142ca8c5a0d12eb938410">mCurrentItemUrl</a></td></tr>
+<tr class="memitem:a0555d61aba2dcb6a24ed81b360d68804"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">importDestination</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">mCurrentItemImportDestination</a></td></tr>
 </table>
+<h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a5cca51c8e303dac89424f3d43fc3fb1b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">UBTrapWebPageContentController::importDestination</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5"></a>library</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109"></a>board</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+<div class="fragment"><div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">library</a> = 0,</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109">board</a></div>
+<div class="line">    };</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9e6cce9dd3467f7664d4233f2491bcf4"></a>
 <div class="memitem">
@@ -153,9 +223,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(parent)</div>
-<div class="line">    , mParentWidget(parent)</div>
-<div class="line">    , mCurrentWebFrame(0)</div>
-<div class="line">    , mTrapWebContentDialog(NULL)</div>
+<div class="line">    , <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0d27218a1036dbcc061148b1a313713f">mParentWidget</a>(parent)</div>
+<div class="line">    , <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -210,9 +280,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
-<div class="line">    mCurrentItemImportDestination = board;</div>
-<div class="line">    prepareCurrentItemForImport(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">mCurrentItemImportDestination</a> = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109">board</a>;</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#af9de8913f2b18f5b310b7ea9a918bc66">prepareCurrentItemForImport</a>(<span class="keyword">true</span>);</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae4a1adf81a7b5d4f5d6120699833f0bb">showBoard</a>();</div>
 <div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ad748a9763752d340c6c6c3138e124ea3">hideTrapContent</a>();</div>
 <div class="line">}</div>
@@ -249,9 +319,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
-<div class="line">    mCurrentItemImportDestination = library;</div>
-<div class="line">    prepareCurrentItemForImport(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">mCurrentItemImportDestination</a> = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">library</a>;</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#af9de8913f2b18f5b310b7ea9a918bc66">prepareCurrentItemForImport</a>(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae4a1adf81a7b5d4f5d6120699833f0bb">showBoard</a>();</div>
 <div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ad748a9763752d340c6c6c3138e124ea3">hideTrapContent</a>();</div>
 <div class="line">}</div>
@@ -262,6 +332,62 @@ Public Member Functions</h2></td></tr>
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_aeeadd8191948869553385407fe108983_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adc738e0c68ed861cce64a1389d2aee5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::addLink </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isOnLibrary</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> selectedIndex = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af82a9c2247ad960888b30305926610c8">itemsComboBox</a>()-&gt;currentIndex();</div>
+<div class="line">    <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> selectedObject = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a>.at(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.value(selectedIndex));</div>
+<div class="line">    QSize size(selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#aabe5961432321a8beaf2a389652d0436">width</a>,selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab82baf9eefc04b47e2edd5c1bfe23854">height</a>);</div>
+<div class="line">    <span class="keywordflow">if</span>(isOnLibrary)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span>(selectedIndex == 0)</div>
+<div class="line">            <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#aa4f173738cc75b31d7cee042b238e69b">featuresWidget</a>()-&gt;<a class="code" href="../../d5/d85/class_u_b_features_widget.html#af136c56999bd58253550b801bd878861">createBookmark</a>(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;text(),selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#aa4f173738cc75b31d7cee042b238e69b">featuresWidget</a>()-&gt;<a class="code" href="../../d5/d85/class_u_b_features_widget.html#ab83c320466c7891343ffa9d08aa2998d">createLink</a>(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;text(), selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>,size, selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ac53f32b83e74f048835b2723056173c6">objectMimeType</a>, selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a171b1adb8b381699908780195d54418c">embedCode</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a5f701f4cd3173743effca3b3b0bd4615">addLinkToPage</a>(selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>, size, QPointF(), selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a171b1adb8b381699908780195d54418c">embedCode</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_adc738e0c68ed861cce64a1389d2aee5d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_adc738e0c68ed861cce64a1389d2aee5d_icgraph.svg" width="512" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -288,19 +414,19 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
-<div class="line">    mCurrentItemImportDestination = board;</div>
-<div class="line">    addLink(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">mCurrentItemImportDestination</a> = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba901e12aaa9a94620453c88a1fbc50109">board</a>;</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#adc738e0c68ed861cce64a1389d2aee5d">addLink</a>(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae4a1adf81a7b5d4f5d6120699833f0bb">showBoard</a>();</div>
 <div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ad748a9763752d340c6c6c3138e124ea3">hideTrapContent</a>();</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a9e18874e464df8ae3ea8f154334bd758_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -328,21 +454,355 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
-<div class="line">    mCurrentItemImportDestination = library;</div>
-<div class="line">    addLink(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0555d61aba2dcb6a24ed81b360d68804">mCurrentItemImportDestination</a> = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">library</a>;</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#adc738e0c68ed861cce64a1389d2aee5d">addLink</a>(<span class="keyword">true</span>);</div>
 <div class="line">    <a class="code" href="../../d8/d81/class_u_b_application.html#a9ef16693fe3a6bf576b1e86c8fead18e">UBApplication::applicationController</a>-&gt;<a class="code" href="../../da/d14/class_u_b_application_controller.html#ae4a1adf81a7b5d4f5d6120699833f0bb">showBoard</a>();</div>
 <div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ad748a9763752d340c6c6c3138e124ea3">hideTrapContent</a>();</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a2c3abe64d01d7cc3b5e97e7dbf06cc4b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f31d6825bd7efbca5d30992f76e31bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::generateConfig </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pDestinationPath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QFile configFile(pDestinationPath + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;config.xml&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (configFile.exists())</div>
+<div class="line">    {</div>
+<div class="line">        configFile.remove(configFile.fileName());</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!configFile.open(QIODevice::WriteOnly))</div>
+<div class="line">    {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Cannot open file &quot;</span> &lt;&lt; configFile.fileName();</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QTextStream out(&amp;configFile);</div>
+<div class="line">    out.setCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;&lt;widget xmlns=\&quot;http://www.w3.org/ns/widgets\&quot;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;        xmlns:ub=\&quot;http://uniboard.mnemis.com/widgets\&quot;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;        identifier=\&quot;http://uniboard.mnemis.com/&quot;</span> &lt;&lt; <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;text() &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span> &lt;&lt;endl;</div>
+<div class="line"></div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;        version=\&quot;1.0\&quot;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;        width=\&quot;&quot;</span> &lt;&lt; pWidth &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;        height=\&quot;&quot;</span> &lt;&lt; pHeight &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;        ub:resizable=\&quot;true\&quot;&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"></div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;    &lt;name&gt;&quot;</span> &lt;&lt; <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;text() &lt;&lt; <span class="stringliteral">&quot;&lt;/name&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;    &lt;content src=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;text() &lt;&lt; <span class="stringliteral">&quot;.html\&quot;/&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"></div>
+<div class="line">    out &lt;&lt; <span class="stringliteral">&quot;&lt;/widget&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    configFile.close();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a1f31d6825bd7efbca5d30992f76e31bb_cgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a192fb52dc51a2b0848ccc518edc515d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBTrapWebPageContentController::generateFullPageHtml </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>srcUrl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QString htmlContentString;</div>
+<div class="line"></div>
+<div class="line">    htmlContentString = <span class="stringliteral">&quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-//W3C//DTD HTML 4.01//EN\&quot; \&quot;http://www.w3.org/TR/html4/strict.dtd\&quot;&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;&lt;html xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;    &lt;head&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;        &lt;meta http-equiv=\&quot;refresh\&quot; content=\&quot;0; &quot;</span> + srcUrl.toString() + <span class="stringliteral">&quot;\&quot;&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;    &lt;/head&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;    &lt;body&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;        Redirect to target...\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;    &lt;/body&gt;\r\n&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;&lt;/html&gt;\r\n&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> htmlContentString;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a192fb52dc51a2b0848ccc518edc515d9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3385a6c3ba1b545308d8719cd25f5544"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBTrapWebPageContentController::generateIcon </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pDirPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QDesktopWidget* desktop = QApplication::desktop();</div>
+<div class="line">    QPoint webViewPosition = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;mapToGlobal(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;pos());</div>
+<div class="line">    QSize webViewSize = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;size();</div>
+<div class="line">    QPixmap capture = QPixmap::grabWindow(desktop-&gt;winId(), webViewPosition.x(), webViewPosition.y()</div>
+<div class="line">            , webViewSize.width() - 10, webViewSize.height() -10);</div>
+<div class="line"></div>
+<div class="line">    QPixmap widgetIcon(75,75);</div>
+<div class="line">    widgetIcon.fill(Qt::transparent);</div>
+<div class="line"></div>
+<div class="line">    QPainter painter(&amp;widgetIcon);</div>
+<div class="line">    painter.setRenderHint(QPainter::Antialiasing);</div>
+<div class="line">    painter.setBrush(QBrush(QColor(180,180,180)));</div>
+<div class="line">    painter.setPen(Qt::NoPen);</div>
+<div class="line">    painter.drawRoundedRect(0, 0, 75, 75, 10, 10);</div>
+<div class="line">    QPixmap icon = capture.scaled(65, 65);</div>
+<div class="line">    painter.drawPixmap(5,5,icon);</div>
+<div class="line"></div>
+<div class="line">    QString iconFile = pDirPath + <span class="stringliteral">&quot;/icon.png&quot;</span>;</div>
+<div class="line">    widgetIcon.save(iconFile, <span class="stringliteral">&quot;PNG&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> iconFile;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a3385a6c3ba1b545308d8719cd25f5544_cgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a20390f95b0ce88112391b87471b2c441"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::generatePreview </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>pObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bTryToEmbed</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QUrl objectUrl(pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>);</div>
+<div class="line">    QString objectFullUrl = pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>;</div>
+<div class="line">    qDebug() &lt;&lt; objectFullUrl;</div>
+<div class="line">    <span class="keywordflow">if</span> (!objectUrl.isValid())</div>
+<div class="line">    {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;invalid URL &quot;</span> &lt;&lt; pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QString mimeType = (<a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>(objectFullUrl).length() == 0) ? pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ac53f32b83e74f048835b2723056173c6">objectMimeType</a> : <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a272b08b8f8907091333982fb53a7aa2a">UBFileSystemUtils::mimeTypeFromFileName</a>(objectFullUrl);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(mimeType.contains(<span class="stringliteral">&quot;x-shockwave-flash&quot;</span>)){</div>
+<div class="line">        QUrl url = QUrl::fromLocalFile(<a class="code" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html#aa600fe33fda69ff52f6c7b53282841b9">UBGraphicsW3CWidgetItem::createNPAPIWrapperInDir</a>(objectFullUrl, QDir::tempPath(), mimeType, QSize(800,600), QUuid::createUuid().toString()) + <span class="stringliteral">&quot;/index.htm&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;load(url);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QString htmlContentString;</div>
+<div class="line"></div>
+<div class="line">    htmlContentString = <span class="stringliteral">&quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-//W3C//DTD HTML 4.01//EN\&quot; \&quot;http://www.w3.org/TR/html4/strict.dtd\&quot;&gt;&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;&lt;html&gt;&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;    &lt;head&gt;&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;        &lt;meta http-equiv=\&quot;content-type\&quot; content=\&quot;text/html; charset=utf-8\&quot;&gt;&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;    &lt;/head&gt;&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;  &lt;body bgcolor=\&quot;rgb(180,180,180)\&quot;&gt;&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;      &lt;div align=&#39;center&#39;&gt;&quot;</span>;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a171b1adb8b381699908780195d54418c">embedCode</a>.isEmpty())</div>
+<div class="line">    {</div>
+<div class="line">        htmlContentString += pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a171b1adb8b381699908780195d54418c">embedCode</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mimeType.contains(<span class="stringliteral">&quot;image&quot;</span>)){</div>
+<div class="line">        htmlContentString += <span class="stringliteral">&quot;    &lt;img src=\&quot;&quot;</span> + objectFullUrl + <span class="stringliteral">&quot;\&quot;&gt;&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mimeType.contains(<span class="stringliteral">&quot;video&quot;</span>)){</div>
+<div class="line">        htmlContentString += <span class="stringliteral">&quot;    &lt;video src=\&quot;&quot;</span> + objectFullUrl + <span class="stringliteral">&quot;\&quot; controls=\&quot;controls\&quot;&gt;&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mimeType.contains(<span class="stringliteral">&quot;audio&quot;</span>)){</div>
+<div class="line">        htmlContentString += <span class="stringliteral">&quot;    &lt;audio src=\&quot;&quot;</span> + objectFullUrl + <span class="stringliteral">&quot;\&quot; controls=\&quot;controls\&quot;&gt;&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mimeType.contains(<span class="stringliteral">&quot;html&quot;</span>))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (bTryToEmbed)</div>
+<div class="line">        {</div>
+<div class="line">            QString videoId;</div>
+<div class="line">            </div>
+<div class="line">            <span class="keywordtype">int</span> videoIdStartPos = -1;</div>
+<div class="line">            <span class="keywordflow">if</span> (objectFullUrl.contains(<span class="stringliteral">&quot;watch?v=&quot;</span>))</div>
+<div class="line">            {</div>
+<div class="line">                videoIdStartPos = objectFullUrl.indexOf(<span class="stringliteral">&quot;watch?v=&quot;</span>) + QString(<span class="stringliteral">&quot;watch?v=&quot;</span>).size();</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (objectFullUrl.contains(<span class="stringliteral">&quot;/embed/&quot;</span>))</div>
+<div class="line">            {</div>
+<div class="line">                videoIdStartPos = objectFullUrl.indexOf(<span class="stringliteral">&quot;/embed/&quot;</span>) + QString(<span class="stringliteral">&quot;/embed/&quot;</span>).size();</div>
+<div class="line">            }</div>
+<div class="line">            </div>
+<div class="line">            videoId = objectFullUrl.right(objectFullUrl.size() - videoIdStartPos);</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">if</span> (!videoId.isNull())</div>
+<div class="line">            {</div>
+<div class="line">                htmlContentString += <span class="stringliteral">&quot;&lt;iframe width=\&quot;&quot;</span>+QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((640 &gt; pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#aabe5961432321a8beaf2a389652d0436">width</a>) ? 640 : pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#aabe5961432321a8beaf2a389652d0436">width</a>)+<span class="stringliteral">&quot;\&quot; height=\&quot;&quot;</span>+QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((480 &gt; pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#aabe5961432321a8beaf2a389652d0436">width</a>) ? 480 : pObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#aabe5961432321a8beaf2a389652d0436">width</a>)+<span class="stringliteral">&quot;\&quot; src=\&quot;http://www.youtube.com/embed/&quot;</span>+videoId+<span class="stringliteral">&quot;\&quot; frameborder=\&quot;0\&quot; allowfullscreen&gt;&lt;/iframe&gt;&quot;</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            htmlContentString = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a192fb52dc51a2b0848ccc518edc515d9">generateFullPageHtml</a>(objectFullUrl);</div>
+<div class="line">            <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;setHtml(htmlContentString);</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">            <span class="comment">//htmlContentString +=&quot;        &lt;iframe width=\&quot;&quot; + QString(&quot;%1&quot;).arg(mCurrentWebFrame-&gt;geometry().width()) + &quot;\&quot; height=\&quot;&quot; + QString(&quot;%1&quot;).arg(mCurrentWebFrame-&gt;geometry().height()) + &quot;\&quot; frameborder=0 src=\&quot;&quot;+objectFullUrl+&quot;\&quot;&gt;&quot;;</span></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>-&gt;url().toString().contains(<span class="stringliteral">&quot;youtube&quot;</span>)){</div>
+<div class="line">        QVariant res = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>-&gt;evaluateJavaScript(<span class="stringliteral">&quot;window.document.getElementById(&#39;embed_code&#39;).value&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//force windowsless mode</span></div>
+<div class="line"></div>
+<div class="line">        QString s = res.toString();</div>
+<div class="line">        htmlContentString += s.replace(<span class="stringliteral">&quot;&gt;&lt;/embed&gt;&quot;</span>, <span class="stringliteral">&quot; wmode=&#39;opaque&#39;&gt;&lt;/embed&gt;&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;not supported&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;        &lt;/div&gt;&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;&lt;/body&gt;&quot;</span>;</div>
+<div class="line">    htmlContentString += <span class="stringliteral">&quot;&lt;/html&gt;&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    qDebug() &lt;&lt; htmlContentString;</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;setHtml(htmlContentString);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a20390f95b0ce88112391b87471b2c441_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a20390f95b0ce88112391b87471b2c441_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -361,16 +821,246 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mTrapWebContentDialog)</div>
-<div class="line">        mTrapWebContentDialog-&gt;hide();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>)</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;hide();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_ad748a9763752d340c6c6c3138e124ea3_icgraph.svg" width="512" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b69a9161ab97471aa39568d6d47a57e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::oEmbedRequestFinished </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pSuccess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QUrl&#160;</td>
+          <td class="paramname"><em>sourceUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pContentTypeHeader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>pData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>pPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QSize&#160;</td>
+          <td class="paramname"><em>pSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isBackground</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(pContentTypeHeader)</div>
+<div class="line">    Q_UNUSED(pPos)</div>
+<div class="line">    Q_UNUSED(pSize)</div>
+<div class="line">    Q_UNUSED(isBackground)</div>
+<div class="line"></div>
+<div class="line">    if (pSuccess)</div>
+<div class="line">    {</div>
+<div class="line">        QDomDocument response;</div>
+<div class="line">        </div>
+<div class="line">        response.setContent(pData);</div>
+<div class="line"></div>
+<div class="line">        QString sResponse = response.toString();</div>
+<div class="line">        QString sSourceUrl = sourceUrl.toString().remove(<span class="stringliteral">&quot;http://www.youtube.com/oembed?url=&quot;</span>).remove(<span class="stringliteral">&quot;&amp;format=xml&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> obj(sSourceUrl, sResponse);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a> &lt;&lt; obj;</div>
+<div class="line"></div>
+<div class="line">        QComboBox *combobox = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af82a9c2247ad960888b30305926610c8">itemsComboBox</a>();</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.insert(combobox-&gt;count(), <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a>.count()-1);</div>
+<div class="line">        combobox-&gt;addItem(tr(<span class="stringliteral">&quot;Embed &quot;</span>) + obj.objectName);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a3b69a9161ab97471aa39568d6d47a57e_cgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a3b69a9161ab97471aa39568d6d47a57e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af9de8913f2b18f5b310b7ea9a918bc66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::prepareCurrentItemForImport </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>sendToBoard</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> selectedIndex = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af82a9c2247ad960888b30305926610c8">itemsComboBox</a>()-&gt;currentIndex();</div>
+<div class="line">    <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> selectedObject = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a>.at(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.value(selectedIndex));</div>
+<div class="line"></div>
+<div class="line">    QSize currentItemSize(selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#aabe5961432321a8beaf2a389652d0436">width</a>, selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab82baf9eefc04b47e2edd5c1bfe23854">height</a>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d5/d15/structs_download_file_desc.html">sDownloadFileDesc</a> <a class="code" href="../../da/d13/_u_b_http_get_8cpp.html#afde83e8a66b1328a06c071b0cc7e6f36">desc</a>;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#ad945d24ca6d26c992c66e95c0447f165">isBackground</a> = <span class="keyword">false</span>;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#abb72982d76747d63dca453ef483b3a3e">modal</a> = <span class="keyword">false</span>;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aa28d39c1093b42e10e2c521954178fd3">dest</a> = sendToBoard ? <a class="code" href="../../d5/d15/structs_download_file_desc.html#ad995f6191451705cb58a55a5dff81967a6ef5ab3b2839a0d96153d3c9c51923d3">sDownloadFileDesc::board</a> : <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1ba4c07a6766e4f1e02fd678a506fbe3cf5">sDownloadFileDesc::library</a>;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a77186047aac4272ab2dbfff324911214">name</a> = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;text();</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a4a988f6add910812e0b8a5166ecb39d9">srcUrl</a> = selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#aff74b0da56f2a5921847c1ab5c013476">size</a> = currentItemSize;</div>
+<div class="line">    desc.<a class="code" href="../../d5/d15/structs_download_file_desc.html#a1c01babcf4424316306f17ed49245aaf">contentTypeHeader</a> = selectedObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ac53f32b83e74f048835b2723056173c6">objectMimeType</a>;</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a1256f03bf7e614a35236fcd55ebdbdb6" title="Add a file to the download list.">addFileToDownload</a>(desc);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_af9de8913f2b18f5b310b7ea9a918bc66_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_af9de8913f2b18f5b310b7ea9a918bc66_icgraph.svg" width="512" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ae59b88005d24b9ab9eb701fb133c8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::selectHtmlObject </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pObjectIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (pObjectIndex == 0)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;setHtml(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a192fb52dc51a2b0848ccc518edc515d9">generateFullPageHtml</a>(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>-&gt;url()));</div>
+<div class="line">        QVariant res = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>-&gt;evaluateJavaScript(<span class="stringliteral">&quot;window.document.title&quot;</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;setText(res.toString().trimmed());</div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionWebTrapToLibrary-&gt;setDisabled(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionWebTrapToCurrentPage-&gt;setDisabled(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pObjectIndex &gt; 0 &amp;&amp; pObjectIndex &lt;= <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a>.size())</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> currentObject;</div>
+<div class="line"></div>
+<div class="line">        currentObject = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a>.at(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.value(pObjectIndex));</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a20390f95b0ce88112391b87471b2c441">generatePreview</a>(currentObject);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;setText(currentObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a8d8b936f8349cc92419093e6a986a26c">objectName</a>);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionWebTrapToLibrary-&gt;setDisabled(!currentObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a171b1adb8b381699908780195d54418c">embedCode</a>.isEmpty());</div>
+<div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionWebTrapToCurrentPage-&gt;setDisabled(!currentObject.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a171b1adb8b381699908780195d54418c">embedCode</a>.isEmpty());</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a5ae59b88005d24b9ab9eb701fb133c8a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a5ae59b88005d24b9ab9eb701fb133c8a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -390,7 +1080,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mLastWebHitTestResult = result;</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a718715f63af6664027f780942c9aa65a">mLastWebHitTestResult</a> = result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -408,29 +1098,39 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mTrapWebContentDialog)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mTrapWebContentDialog = <span class="keyword">new</span> <a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html">WBTrapWebPageContentWindow</a>(<span class="keyword">this</span>, mParentWidget);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;page()-&gt;setNetworkAccessManager(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::JavaEnabled, <span class="keyword">true</span>);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::PluginsEnabled, <span class="keyword">true</span>);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::LocalStorageDatabaseEnabled, <span class="keyword">true</span>);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, <span class="keyword">true</span>);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, <span class="keyword">true</span>);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::JavascriptCanAccessClipboard, <span class="keyword">true</span>);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::DnsPrefetchEnabled, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a> = <span class="keyword">new</span> <a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html">WBTrapWebPageContentWindow</a>(<span class="keyword">this</span>, <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a0d27218a1036dbcc061148b1a313713f">mParentWidget</a>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;page()-&gt;setNetworkAccessManager(<a class="code" href="../../db/dad/class_u_b_network_access_manager.html#aff17aa07b0b023bbe5f30bd39db43ccb">UBNetworkAccessManager::defaultAccessManager</a>());</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::JavaEnabled, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::PluginsEnabled, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::LocalStorageDatabaseEnabled, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::OfflineWebApplicationCacheEnabled, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::OfflineStorageDatabaseEnabled, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::JavascriptCanAccessClipboard, <span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4d6b01ff7fb31ba3fee342415eb6b88">webView</a>()-&gt;settings()-&gt;setAttribute(QWebSettings::DnsPrefetchEnabled, <span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mTrapWebContentDialog-&gt;show();</div>
-<div class="line">    mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#ae55712be0ce5375e4295fdb8c496c5df">setUrl</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a69b7fb1f61b12d6d98ea689e4073d809">UBApplication::webController</a>-&gt;currentPageUrl());</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;show();</div>
+<div class="line">    <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#ae55712be0ce5375e4295fdb8c496c5df">setUrl</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a69b7fb1f61b12d6d98ea689e4073d809">UBApplication::webController</a>-&gt;currentPageUrl());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a6bf16d3424c93377578ab0fb31f97418_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a6bf16d3424c93377578ab0fb31f97418_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a6bf16d3424c93377578ab0fb31f97418_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -483,16 +1183,16 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span>(new_text.indexOf(regExp) &gt; -1)</div>
 <div class="line">    {</div>
 <div class="line">        new_text.remove(regExp);</div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;setText(new_text);</div>
-<div class="line">        QToolTip::showText(mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;mapToGlobal(QPoint()), <span class="stringliteral">&quot;Application name can`t contain any of the following characters:\r\n&quot;</span>+illegalCharList);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;setText(new_text);</div>
+<div class="line">        QToolTip::showText(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;mapToGlobal(QPoint()), <span class="stringliteral">&quot;Application name can`t contain any of the following characters:\r\n&quot;</span>+illegalCharList);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a982e0527edb4098108cbee8c490e5fee_cgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -526,6 +1226,92 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="ae05afbe6ad5d4cb0ff5c226fc2ef53df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBTrapWebPageContentController::updateListOfContents </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objects</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1e35e1c0f101299c958e6a4307e1d60f">mAvaliableObjects</a> = QList&lt;UBWebKitUtils::HtmlObject&gt;() &lt;&lt; objects;</div>
+<div class="line">        QComboBox *combobox = <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af82a9c2247ad960888b30305926610c8">itemsComboBox</a>();</div>
+<div class="line"></div>
+<div class="line">        disconnect(combobox, SIGNAL(currentIndexChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5ae59b88005d24b9ab9eb701fb133c8a">selectHtmlObject</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.clear();</div>
+<div class="line">        combobox-&gt;clear();</div>
+<div class="line">        combobox-&gt;addItem(tr(<span class="stringliteral">&quot;Whole page&quot;</span>));</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.insert(combobox-&gt;count(), 0);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; objects.count(); i++)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> wrapper = objects.at(i);</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">if</span> (<span class="stringliteral">&quot;separator&quot;</span>== wrapper.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ae5d04882c6f4374569abb0265e993fdd">tagName</a>)</div>
+<div class="line">                combobox-&gt;insertSeparator(combobox-&gt;count());</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">                <span class="keywordflow">if</span> (wrapper.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ac53f32b83e74f048835b2723056173c6">objectMimeType</a>.contains(<span class="stringliteral">&quot;html&quot;</span>))</div>
+<div class="line">                    <span class="keywordflow">continue</span>;</div>
+<div class="line"></div>
+<div class="line">                <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1d0aa5e71991d2ad88b16b5bf1772a9d">mObjectNoToTrapByTrapWebComboboxIndex</a>.insert(combobox-&gt;count(), i);</div>
+<div class="line">                combobox-&gt;addItem(wrapper.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#a8d8b936f8349cc92419093e6a986a26c">objectName</a>);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt;= objects.count(); i++)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a> wrapper = objects.at(i-1);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d8/d81/class_u_b_application.html#a69b7fb1f61b12d6d98ea689e4073d809">UBApplication::webController</a>-&gt;isOEmbedable(QUrl(wrapper.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>)))</div>
+<div class="line">            {</div>
+<div class="line">                <a class="code" href="../../de/d40/class_u_b_http_get.html">UBHttpGet</a> *getEmbed = <span class="keyword">new</span> <a class="code" href="../../de/d40/class_u_b_http_get.html">UBHttpGet</a>(<span class="keyword">this</span>);</div>
+<div class="line">                getEmbed-&gt;<a class="code" href="../../de/d40/class_u_b_http_get.html#a5c25272ca90dfb2d1d42784907d39c41">get</a>(QUrl(<span class="stringliteral">&quot;http://www.youtube.com/oembed?url=&quot;</span>+wrapper.<a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html#ab9e5845849472ea4e82b8a9b685edefb">source</a>+<span class="stringliteral">&quot;&amp;format=xml&quot;</span>));</div>
+<div class="line">                connect(getEmbed, SIGNAL(downloadFinished(<span class="keywordtype">bool</span>, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a3b69a9161ab97471aa39568d6d47a57e">oEmbedRequestFinished</a>(<span class="keywordtype">bool</span>, QUrl, QString, QByteArray, QPointF, QSize, <span class="keywordtype">bool</span>)));</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        connect(combobox, SIGNAL(currentIndexChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5ae59b88005d24b9ab9eb701fb133c8a">selectHtmlObject</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_ae05afbe6ad5d4cb0ff5c226fc2ef53df_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_ae05afbe6ad5d4cb0ff5c226fc2ef53df_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a723c26f80042de25a88dd7eea0783b64"></a>
 <div class="memitem">
 <div class="memproto">
@@ -548,12 +1334,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (pCurrentWebFrame &amp;&amp; (mTrapWebContentDialog &amp;&amp; mTrapWebContentDialog-&gt;isVisible()))</div>
+<div class="line">    <span class="keywordflow">if</span> (pCurrentWebFrame &amp;&amp; (<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a> &amp;&amp; <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;isVisible()))</div>
 <div class="line">    {</div>
 <div class="line">        QList&lt;UBWebKitUtils::HtmlObject&gt; list;</div>
-<div class="line">        <span class="keywordflow">if</span> (mTrapWebContentDialog)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>)</div>
 <div class="line">        {</div>
-<div class="line">            list &lt;&lt; <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a>(pCurrentWebFrame-&gt;baseUrl().toString(), widgetNameForUrl(pCurrentWebFrame-&gt;title()), QString(),<span class="stringliteral">&quot;Whole Page&quot;</span>, 800, 600);</div>
+<div class="line">            list &lt;&lt; <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a>(pCurrentWebFrame-&gt;baseUrl().toString(), <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a2de339c83baff50eb2614a55c2c09888">widgetNameForUrl</a>(pCurrentWebFrame-&gt;title()), QString(),<span class="stringliteral">&quot;Whole Page&quot;</span>, 800, 600);</div>
 <div class="line">            list &lt;&lt; <a class="code" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a>(QString(),QString(),QString(),<span class="stringliteral">&quot;separator&quot;</span>,0,0);</div>
 <div class="line">            <span class="comment">//list &lt;&lt; UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, &quot;object&quot;);</span></div>
 <div class="line">            <span class="comment">//list &lt;&lt; UBWebKitUtils::objectsInFrameByTag(pCurrentWebFrame, &quot;img&quot;);</span></div>
@@ -567,31 +1353,257 @@ Public Member Functions</h2></td></tr>
 <div class="line">            list &lt;&lt; <a class="code" href="../../d7/d97/class_u_b_web_kit_utils.html#a1b70e4faa08389ff3b05f786d342e4b2">UBWebKitUtils::objectsInFrameByTag</a>(pCurrentWebFrame, <span class="stringliteral">&quot;link&quot;</span>);</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mCurrentWebFrame = pCurrentWebFrame;</div>
-<div class="line">        updateListOfContents(list);</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a> = pCurrentWebFrame;</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#ae05afbe6ad5d4cb0ff5c226fc2ef53df">updateListOfContents</a>(list);</div>
 <div class="line"></div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;setText(mCurrentWebFrame-&gt;title());</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#af4b8a9b293b0ef10b4936d871172fcd1">applicationNameLineEdit</a>()-&gt;setText(<a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a73fdaae5eff1938342e2fe85aff5439e">mCurrentWebFrame</a>-&gt;title());</div>
 <div class="line"></div>
-<div class="line">        mTrapWebContentDialog-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(!list.isEmpty());</div>
+<div class="line">        <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a1918a26ddae8120e725fd643c7baedc4">mTrapWebContentDialog</a>-&gt;<a class="code" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html#a6c27c25e166c5b8c67a8e714dafa5c29">setReadyForTrap</a>(!list.isEmpty());</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionWebTrapToLibrary-&gt;setDisabled(<span class="keyword">true</span>);</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionWebTrapToCurrentPage-&gt;setDisabled(<span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a723c26f80042de25a88dd7eea0783b64_cgraph.svg" width="100%" height="538"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a723c26f80042de25a88dd7eea0783b64_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a723c26f80042de25a88dd7eea0783b64_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a2de339c83baff50eb2614a55c2c09888"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBTrapWebPageContentController::widgetNameForUrl </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pObjectUrl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QString url = pObjectUrl;</div>
+<div class="line">    <span class="keywordtype">int</span> parametersIndex = url.indexOf(<span class="stringliteral">&quot;?&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span>(parametersIndex != -1)</div>
+<div class="line">        url = url.left(parametersIndex);</div>
+<div class="line">    <span class="keywordtype">int</span> lastSlashIndex = url.lastIndexOf(<span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">    QString result = url.right(url.length() - lastSlashIndex);</div>
+<div class="line">    result = <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#a19522888b07624d5f7e562be99dd8a80">UBFileSystemUtils::cleanName</a>(result);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a2de339c83baff50eb2614a55c2c09888_cgraph.svg" width="424" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d3a/class_u_b_trap_web_page_content_controller_a2de339c83baff50eb2614a55c2c09888_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a1e35e1c0f101299c958e6a4307e1d60f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../dc/d35/class_u_b_web_kit_utils_1_1_html_object.html">UBWebKitUtils::HtmlObject</a>&gt; UBTrapWebPageContentController::mAvaliableObjects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0555d61aba2dcb6a24ed81b360d68804"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html#a5cca51c8e303dac89424f3d43fc3fb1b">importDestination</a> UBTrapWebPageContentController::mCurrentItemImportDestination</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a56605f0821c142ca8c5a0d12eb938410"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUrl UBTrapWebPageContentController::mCurrentItemUrl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a73fdaae5eff1938342e2fe85aff5439e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebFrame* UBTrapWebPageContentController::mCurrentWebFrame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a718715f63af6664027f780942c9aa65a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebHitTestResult UBTrapWebPageContentController::mLastWebHitTestResult</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d0aa5e71991d2ad88b16b5bf1772a9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int, int&gt; UBTrapWebPageContentController::mObjectNoToTrapByTrapWebComboboxIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0d27218a1036dbcc061148b1a313713f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* UBTrapWebPageContentController::mParentWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1918a26ddae8120e725fd643c7baedc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/dc6/class_w_b_trap_web_page_content_window.html">WBTrapWebPageContentWindow</a>* UBTrapWebPageContentController::mTrapWebContentDialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/<a class="el" href="../../d9/d44/_u_b_trap_flash_controller_8h_source.html">UBTrapFlashController.h</a></li>
-<li>Sankore-3.1/src/web/<a class="el" href="../../db/dd3/_u_b_trap_flash_controller_8cpp.html">UBTrapFlashController.cpp</a></li>
+<li><a class="el" href="../../d9/d44/_u_b_trap_flash_controller_8h_source.html">UBTrapFlashController.h</a></li>
+<li><a class="el" href="../../db/dd3/_u_b_trap_flash_controller_8cpp.html">UBTrapFlashController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -599,7 +1611,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html">UBTrapWebPageContentController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d1/d3c/class_u_b_podcast_recording_pal
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d52/class_u_b_podcast_recording_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBPodcastRecordingPalette Class Reference</div>  </div>
@@ -174,6 +175,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb0926b8eb8fa8efe5e5ca05ee20abc6 inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#abb0926b8eb8fa8efe5e5ca05ee20abc6">savePos</a> ()</td></tr>
 <tr class="memitem:a1d84529dc9179497ba4f91d00a86460e inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a1d84529dc9179497ba4f91d00a86460e">restorePos</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af96738274d0844ec93144b03eef799f8"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#af96738274d0844ec93144b03eef799f8">mTimerLabel</a></td></tr>
+<tr class="memitem:a73dc25f727a2d146633288ab987ec5e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d04/class_u_b_vu_meter.html">UBVuMeter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#a73dc25f727a2d146633288ab987ec5e8">mLevelMeter</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_u_b_action_palette"><td colspan="2" onclick="javascript:toggleInherit('signals_class_u_b_action_palette')"><img src="../../closed.png" alt="-"/>&nbsp;Signals inherited from <a class="el" href="../../de/dc5/class_u_b_action_palette.html">UBActionPalette</a></td></tr>
@@ -221,16 +227,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a116bac7a7085808b3b1c1fd51e124956">addAction</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPodcastRecord);</div>
 <div class="line"></div>
-<div class="line">    mTimerLabel = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line">    mTimerLabel-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel {color: white; font-size: 14px; font-weight: bold; font-family: Arial; background-color: transparent; border: none}&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#af96738274d0844ec93144b03eef799f8">mTimerLabel</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#af96738274d0844ec93144b03eef799f8">mTimerLabel</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel {color: white; font-size: 14px; font-weight: bold; font-family: Arial; background-color: transparent; border: none}&quot;</span>));</div>
 <div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#a61987e20e6243f714fef526ee56ef3a3">recordingProgressChanged</a>(0);</div>
 <div class="line"></div>
-<div class="line">    layout()-&gt;addWidget(mTimerLabel);</div>
+<div class="line">    layout()-&gt;addWidget(<a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#af96738274d0844ec93144b03eef799f8">mTimerLabel</a>);</div>
 <div class="line"></div>
-<div class="line">    mLevelMeter = <span class="keyword">new</span> <a class="code" href="../../d5/d04/class_u_b_vu_meter.html">UBVuMeter</a>(<span class="keyword">this</span>);</div>
-<div class="line">    mLevelMeter-&gt;setMinimumSize(6, 32);</div>
+<div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#a73dc25f727a2d146633288ab987ec5e8">mLevelMeter</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d04/class_u_b_vu_meter.html">UBVuMeter</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#a73dc25f727a2d146633288ab987ec5e8">mLevelMeter</a>-&gt;setMinimumSize(6, 32);</div>
 <div class="line"></div>
-<div class="line">    layout()-&gt;addWidget(mLevelMeter);</div>
+<div class="line">    layout()-&gt;addWidget(<a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#a73dc25f727a2d146633288ab987ec5e8">mLevelMeter</a>);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a116bac7a7085808b3b1c1fd51e124956">addAction</a>(<a class="code" href="../../d8/d81/class_u_b_application.html#a369dfaccbdf3a0089ca67f093a7fd31d">UBApplication::mainWindow</a>-&gt;actionPodcastConfig);</div>
 <div class="line"></div>
@@ -277,7 +283,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d3c/class_u_b_podcast_recording_palette_a18751af92f7c8e5f745c48213a40ae64_cgraph.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d3c/class_u_b_podcast_recording_palette_a18751af92f7c8e5f745c48213a40ae64_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -332,7 +338,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mLevelMeter-&gt;<a class="code" href="../../d5/d04/class_u_b_vu_meter.html#a7c4ac9a80c71b8ac31297cde237eca45">setVolume</a>(level);</div>
+<div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#a73dc25f727a2d146633288ab987ec5e8">mLevelMeter</a>-&gt;<a class="code" href="../../d5/d04/class_u_b_vu_meter.html#a7c4ac9a80c71b8ac31297cde237eca45">setVolume</a>(level);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -371,7 +377,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordtype">int</span> min = ms / 60000;</div>
 <div class="line">    <span class="keywordtype">int</span> seconds = (ms / 1000) % 60;</div>
 <div class="line"></div>
-<div class="line">    mTimerLabel-&gt;setText(QString(<span class="stringliteral">&quot;%1:%2&quot;</span>).arg(min, 3, 10, QChar(<span class="charliteral">&#39; &#39;</span>)).arg(seconds, 2, 10, QChar(<span class="charliteral">&#39;0&#39;</span>)));</div>
+<div class="line">    <a class="code" href="../../d1/d3c/class_u_b_podcast_recording_palette.html#af96738274d0844ec93144b03eef799f8">mTimerLabel</a>-&gt;setText(QString(<span class="stringliteral">&quot;%1:%2&quot;</span>).arg(min, 3, 10, QChar(<span class="charliteral">&#39; &#39;</span>)).arg(seconds, 2, 10, QChar(<span class="charliteral">&#39;0&#39;</span>)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -451,9 +457,50 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a73dc25f727a2d146633288ab987ec5e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d04/class_u_b_vu_meter.html">UBVuMeter</a>* UBPodcastRecordingPalette::mLevelMeter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af96738274d0844ec93144b03eef799f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* UBPodcastRecordingPalette::mTimerLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/<a class="el" href="../../de/ddb/_u_b_podcast_recording_palette_8h_source.html">UBPodcastRecordingPalette.h</a></li>
-<li>Sankore-3.1/src/podcast/<a class="el" href="../../de/db4/_u_b_podcast_recording_palette_8cpp.html">UBPodcastRecordingPalette.cpp</a></li>
+<li><a class="el" href="../../de/ddb/_u_b_podcast_recording_palette_8h_source.html">UBPodcastRecordingPalette.h</a></li>
+<li><a class="el" href="../../de/db4/_u_b_podcast_recording_palette_8cpp.html">UBPodcastRecordingPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -461,7 +508,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d3c/class_u_b_podcast_recording_palette.html">UBPodcastRecordingPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

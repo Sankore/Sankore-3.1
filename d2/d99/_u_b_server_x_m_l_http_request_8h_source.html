@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/network/UBServerXMLHttpRequest.h Source File</title>
+<title>Open-Sankoré: UBServerXMLHttpRequest.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -155,41 +155,41 @@ $(document).ready(function(){initNavTree('d2/d99/_u_b_server_x_m_l_http_request_
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a6bc3fcbabc21855cd7ca127bee77fb5d">setVerbose</a>(<span class="keywordtype">bool</span> pVerbose);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> connectReply();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8d6f7f68875ccef20ab849437161555d">connectReply</a>();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keyword">private</span> slots:</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> downloadProgress (qint64 bytesReceived, qint64 bytesTotal);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> error (QNetworkReply::NetworkError code);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> finished ();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> uploadProgress ( qint64 bytesSent, qint64 bytesTotal );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> readyRead();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a72f0aeb1159a7a53dd2a77d6e206a10e">downloadProgress</a> (qint64 bytesReceived, qint64 bytesTotal);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a8dc0a181b87d3b8c28aeec80f2d6387b">error</a> (QNetworkReply::NetworkError code);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3e574cff5d52e12290a792420d6908cf">finished</a> ();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a59224bab1a661d7b894e6372e88e7960">uploadProgress</a> ( qint64 bytesSent, qint64 bytesTotal );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ed7ab9d035c9ecce2271717a2126b69">readyRead</a>();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    signals:</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> finished(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3e574cff5d52e12290a792420d6908cf">finished</a>(<span class="keywordtype">bool</span>, <span class="keyword">const</span> QByteArray&amp;);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aff370dce4474dc4353f699a0bbb037af">progress</a>(qint64 bytesSent, qint64 bytesTotal);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">bool</span> mHasError;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">bool</span> mIsRunning;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">   69</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#aa938627c3847a052276eb223ed382c38">mHasError</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">   70</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a3ff97fdd9036c0fe5e034250d03fe05a">mIsRunning</a>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        QString mContentType;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        QNetworkReply* mReply;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">   72</a></span>&#160;        QString <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a93a1febe1ed6f93653863da55fb2ec47">mContentType</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">   73</a></span>&#160;        QNetworkReply* <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a26399ab9228f9befd3f74494f6c4b2ef">mReply</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        QByteArray mReplyContent;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">   75</a></span>&#160;        QByteArray <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4f3c890176b46795b78381621f8a3ef0">mReplyContent</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        QMap&lt;QString, QString&gt; mExtraHeaders;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">   77</a></span>&#160;        QMap&lt;QString, QString&gt; <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a443b9cdb49f1734883511c772d782055">mExtraHeaders</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a>* mNam;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">   79</a></span>&#160;        <a class="code" href="../../db/dad/class_u_b_network_access_manager.html">UBNetworkAccessManager</a>* <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a4ccc8f73a82b55619d31e340f45b852c">mNam</a>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">bool</span> mIsVerbose;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">   81</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a49330cf194ea0058bd1faa9f78ecce0e">mIsVerbose</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">int</span> mRedirectionCount;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">   83</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#abc34950a217b5005baf041c9f1b63fc7">mRedirectionCount</a>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        QByteArray mPutPayload;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QByteArray mPostPayload;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ac54f3bee90ebdd645b5d199e7293ad4d">   85</a></span>&#160;        QByteArray <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#ac54f3bee90ebdd645b5d199e7293ad4d">mPutPayload</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a5408feacd8be10eb07a64022c1136340">   86</a></span>&#160;        QByteArray <a class="code" href="../../df/dbf/class_u_b_server_x_m_l_http_request.html#a5408feacd8be10eb07a64022c1136340">mPostPayload</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
@@ -200,8 +200,8 @@ $(document).ready(function(){initNavTree('d2/d99/_u_b_server_x_m_l_http_request_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h.html">UBServerXMLHttpRequest.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1b69b9a0ecd21c668fc6a60be75ceac8.html">network</a></li><li class="navelem"><a class="el" href="../../d2/d99/_u_b_server_x_m_l_http_request_8h.html">UBServerXMLHttpRequest.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

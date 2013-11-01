@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf/PDFRenderer.h Source File</title>
+<title>Open-Sankoré: PDFRenderer.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -161,8 +161,8 @@ $(document).ready(function(){initNavTree('d0/db4/_p_d_f_renderer_8h_source.html'
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a47d8a4732672cce6c9d91527ebca6a9f">attach</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a34c44ce3e92bcd62a97a0d68de320de6">detach</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">   58</a></span>&#160;        QUuid <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mFileUuid; }</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">   59</a></span>&#160;        QByteArray <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> mFileData; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">   58</a></span>&#160;        QUuid <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a0be60264576b6bede3ffcb9198711e87">mFileUuid</a>; }</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">   59</a></span>&#160;        QByteArray <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#aa3f2bca75d2b415cbc6eadca17267dc2">mFileData</a>; }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a12aa241d086852e8617c89cddaef3585">   61</a></span>&#160;                <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a12aa241d086852e8617c89cddaef3585">setDPI</a>(<span class="keywordtype">int</span> desiredDPI) { this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> = desiredDPI; }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
@@ -170,15 +170,15 @@ $(document).ready(function(){initNavTree('d0/db4/_p_d_f_renderer_8h_source.html'
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#ab34077fb1f1e5d94150866ba4df335a7">render</a>(QPainter *p, <span class="keywordtype">int</span> pageNumber, <span class="keyword">const</span> QRectF &amp;bounds = QRectF()) = 0;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        QAtomicInt mRefCount;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        QByteArray mFileData;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        QUuid mFileUuid;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58">   67</a></span>&#160;        QAtomicInt <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58">mRefCount</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#aa3f2bca75d2b415cbc6eadca17267dc2">   68</a></span>&#160;        QByteArray <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#aa3f2bca75d2b415cbc6eadca17267dc2">mFileData</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a0be60264576b6bede3ffcb9198711e87">   69</a></span>&#160;        QUuid <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a0be60264576b6bede3ffcb9198711e87">mFileUuid</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> setRefCount(<span class="keyword">const</span> QAtomicInt &amp;refCount);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> setFileData(<span class="keyword">const</span> QByteArray &amp;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> setFileUuid(<span class="keyword">const</span> QUuid &amp;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a7a40a31cb576210cc5a4a54f2cd9ef13">setRefCount</a>(<span class="keyword">const</span> QAtomicInt &amp;refCount);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a57c13f04b0b2a56d6155bfd2149c578c">setFileData</a>(<span class="keyword">const</span> QByteArray &amp;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a7a1faede58c61c79f1c6ddee4bf9c6bc">setFileUuid</a>(<span class="keyword">const</span> QUuid &amp;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a>);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">static</span> QMap&lt; QUuid, QPointer&lt;PDFRenderer&gt; &gt; sRenderers;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#ab0362104f0a9d7b87afb4af22a5ad65c">   75</a></span>&#160;        <span class="keyword">static</span> QMap&lt; QUuid, QPointer&lt;PDFRenderer&gt; &gt; <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#ab0362104f0a9d7b87afb4af22a5ad65c">sRenderers</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">   78</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a>;</div>
@@ -191,8 +191,8 @@ $(document).ready(function(){initNavTree('d0/db4/_p_d_f_renderer_8h_source.html'
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7f6d512a7332dec562dc3b7208d48031.html">pdf</a></li><li class="navelem"><a class="el" href="../../d0/db4/_p_d_f_renderer_8h.html">PDFRenderer.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_0a4587ebfeeb5b9e4d002d9481198da3.html">pdf</a></li><li class="navelem"><a class="el" href="../../d0/db4/_p_d_f_renderer_8h.html">PDFRenderer.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

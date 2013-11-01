@@ -13,5 +13,6 @@ var class_u_b_graphics_item =
     [ "isRotatable", "d3/dbd/class_u_b_graphics_item.html#a042f9b2d376404863cc0c5a0bece8a91", null ],
     [ "remove", "d3/dbd/class_u_b_graphics_item.html#afddba655f7a4db42baf53bc797bc6ab9", null ],
     [ "setDelegate", "d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904", null ],
-    [ "type", "d3/dbd/class_u_b_graphics_item.html#acab0781401cac08c9ad99b0cd0fa8480", null ]
+    [ "type", "d3/dbd/class_u_b_graphics_item.html#acab0781401cac08c9ad99b0cd0fa8480", null ],
+    [ "mDelegate", "d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0", null ]
 ];

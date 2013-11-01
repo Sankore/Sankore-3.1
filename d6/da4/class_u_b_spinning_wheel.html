@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d6/da4/class_u_b_spinning_wheel.html',
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d1e/class_u_b_spinning_wheel-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBSpinningWheel Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('d6/da4/class_u_b_spinning_wheel.html',
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d59/class_u_b_spinning_wheel__coll__graph.svg" width="166" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d59/class_u_b_spinning_wheel__coll__graph.svg" width="166" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -136,6 +137,11 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3260528612d75f71081155b1ad28813a"><td class="memItemLeft" align="right" valign="top">virtual QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da4/class_u_b_spinning_wheel.html#a3260528612d75f71081155b1ad28813a">sizeHint</a> () const </td></tr>
 <tr class="memitem:aafd20c824e508e48f8d10e17491676ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da4/class_u_b_spinning_wheel.html#aafd20c824e508e48f8d10e17491676ea">timerEvent</a> (QTimerEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adcd4a85ae5e2115d61ad2a8e6c2f3fb5"><td class="memItemLeft" align="right" valign="top">QAtomicInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5">mPosition</a></td></tr>
+<tr class="memitem:a93eb7084795f5d957dfc1e256dbac647"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adc36904b01c2c3c9eb2f52979fe00837"></a>
@@ -152,8 +158,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
-<div class="line">    , mPosition(9)</div>
-<div class="line">    , mTimerID(0)</div>
+<div class="line">    , <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5">mPosition</a>(9)</div>
+<div class="line">    , <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -231,7 +237,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    pen.setCapStyle(Qt::RoundCap);</div>
 <div class="line"></div>
 <div class="line">    painter.setPen(pen);</div>
-<div class="line">    painter.rotate(30 * (mPosition % 12));</div>
+<div class="line">    painter.rotate(30 * (<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5">mPosition</a> % 12));</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 12; i++)</div>
 <div class="line">    {</div>
@@ -293,9 +299,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mTimerID == 0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> == 0)</div>
 <div class="line">    {</div>
-<div class="line">        mTimerID = startTimer(42);</div>
+<div class="line">        <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> = startTimer(42);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -304,7 +310,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/da4/class_u_b_spinning_wheel_acbcc339c4ad8ac331812ef58581e8264_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/da4/class_u_b_spinning_wheel_acbcc339c4ad8ac331812ef58581e8264_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -331,10 +338,10 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mTimerID != 0)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> != 0)</div>
 <div class="line">    {</div>
-<div class="line">        killTimer(mTimerID);</div>
-<div class="line">        mTimerID = 0;</div>
+<div class="line">        killTimer(<a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a>);</div>
+<div class="line">        <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647">mTimerID</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -343,7 +350,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/da4/class_u_b_spinning_wheel_afce6e8912a9ea4ce878ea2a0dcd47d7e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/da4/class_u_b_spinning_wheel_afce6e8912a9ea4ce878ea2a0dcd47d7e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -373,15 +381,56 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
 <div class="line"></div>
-<div class="line">    mPosition.ref();</div>
+<div class="line">    <a class="code" href="../../d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5">mPosition</a>.ref();</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="adcd4a85ae5e2115d61ad2a8e6c2f3fb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAtomicInt UBSpinningWheel::mPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a93eb7084795f5d957dfc1e256dbac647"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBSpinningWheel::mTimerID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../dc/d0f/_u_b_spinning_wheel_8h_source.html">UBSpinningWheel.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d7e/_u_b_spinning_wheel_8cpp.html">UBSpinningWheel.cpp</a></li>
+<li><a class="el" href="../../dc/d0f/_u_b_spinning_wheel_8h_source.html">UBSpinningWheel.h</a></li>
+<li><a class="el" href="../../de/d7e/_u_b_spinning_wheel_8cpp.html">UBSpinningWheel.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -389,7 +438,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/da4/class_u_b_spinning_wheel.html">UBSpinningWheel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:07 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

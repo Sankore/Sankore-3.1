@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBCreateLinkPalette.h Source File</title>
+<title>Open-Sankoré: UBCreateLinkPalette.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('d7/d9e/_u_b_create_link_palette_8h_sou
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#ae4137d2f13768e576ea7cbe826e2f5f3">dragEnterEvent</a>(QDragEnterEvent *event);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#ab1c9f5f5e80ce904019c8f45e792e00b">dragLeaveEvent</a>(QDragLeaveEvent *event);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    QString mInitialText;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e">   57</a></span>&#160;    QString <a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e">mInitialText</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
@@ -182,39 +182,39 @@ $(document).ready(function(){initNavTree('d7/d9e/_u_b_create_link_palette_8h_sou
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a84493dda08b44ff851c683df649acbf1">showEvent</a>(QShowEvent *event);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> close();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> adjustGeometry();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QToolButton* addInitiaWidgetButton(QString textButton, QString iconPath);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QWidget* addBasicFunctionaliltiesToWidget(QWidget* centralWidget);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9c696bcb918c6c98049126055b015ddd">close</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a2d9f0c538dc515da2bc37b7bd269b553">adjustGeometry</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a78fd9be99ef813d640687a84c4983554">init</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QToolButton* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#ad363da8da3b6e80b98207b97cdcffeff">addInitiaWidgetButton</a>(QString textButton, QString iconPath);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QWidget* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a5490bc516963533880e5055ce6cd5795">addBasicFunctionaliltiesToWidget</a>(QWidget* centralWidget);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QVBoxLayout* mLayout;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    QStackedWidget* mStackedWidget;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    QWidget* mInitialWidget;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    QWidget* mAudioWidget;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    QWidget* mPageLinkWidget;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    QWidget* mUrlLinkWidget;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a87d897919c5bceb2dfba4662c2bae5d9">   85</a></span>&#160;    QVBoxLayout* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a87d897919c5bceb2dfba4662c2bae5d9">mLayout</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab0fb70073540dc1f9aba9095fb28fab">   86</a></span>&#160;    QStackedWidget* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab0fb70073540dc1f9aba9095fb28fab">mStackedWidget</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af2737ed4016a51c4fd5179025c1a5536">   87</a></span>&#160;    QWidget* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af2737ed4016a51c4fd5179025c1a5536">mInitialWidget</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a17acf2d4e652dcc7487e9b8cf2f0debe">   88</a></span>&#160;    QWidget* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a17acf2d4e652dcc7487e9b8cf2f0debe">mAudioWidget</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a1ecc4e2e463d52b47ec9807a35204a4c">   89</a></span>&#160;    QWidget* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a1ecc4e2e463d52b47ec9807a35204a4c">mPageLinkWidget</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a695f27c418da9f6f6f92c29cd24de652">   90</a></span>&#160;    QWidget* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a695f27c418da9f6f6f92c29cd24de652">mUrlLinkWidget</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QLineEdit* mUrlLineEdit;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    QButtonGroup* mButtonGroup;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QComboBox* mPageComboBox;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="../../d5/d5d/class_u_b_create_link_label.html">UBCreateLinkLabel</a>* mpAudioLabel;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QString mAudioFilePath;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> mIsFirstTime;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#ab1af1aba8e0f3b1620850827a408ecd1">   92</a></span>&#160;    QLineEdit* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#ab1af1aba8e0f3b1620850827a408ecd1">mUrlLineEdit</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aa21ac3bc88de60712956c72e7e760927">   93</a></span>&#160;    QButtonGroup* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aa21ac3bc88de60712956c72e7e760927">mButtonGroup</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab926c33d571e5c132eba0cab55eb91b">   94</a></span>&#160;    QComboBox* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#aab926c33d571e5c132eba0cab55eb91b">mPageComboBox</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#ab3b2c7de2fefb97c3a3334957527b113">   95</a></span>&#160;    <a class="code" href="../../d5/d5d/class_u_b_create_link_label.html">UBCreateLinkLabel</a>* <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#ab3b2c7de2fefb97c3a3334957527b113">mpAudioLabel</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af4d22d2a7b77820e53e86aaa026c1b04">   96</a></span>&#160;    QString <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af4d22d2a7b77820e53e86aaa026c1b04">mAudioFilePath</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a3c18956d9f14ea15b5ab13760914f156">   97</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a3c18956d9f14ea15b5ab13760914f156">mIsFirstTime</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> onBackButtonClicked();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> onPlayAudioClicked();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> onAddLinkToPageClicked();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> onAddLinkToWebClicked();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a414a4af0d597d2212df8026f10d7929f">onBackButtonClicked</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9c93d1863c395fa2783473d55a017acb">onPlayAudioClicked</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9b42eda327750cd48b08ab61f6aeb074">onAddLinkToPageClicked</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a95d5a50ba6910bac72bd62a9c066369c">onAddLinkToWebClicked</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> onOkAudioClicked();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> onOkLinkToPageClicked();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> onOkLinkToWebClicked();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9a72db493e05746d4e067d7355a98b44">onOkAudioClicked</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a36abd7ee9112bdad77b1606b0bdb9e96">onOkLinkToPageClicked</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#af10c96ca823d9bde25080464de12884a">onOkLinkToWebClicked</a>();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> onPageNumberCheckBoxClicked(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a04f6d7809295ea37fe60913ef2876de7">onPageNumberCheckBoxClicked</a>(<span class="keywordtype">bool</span> checked);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> onDroppedAudioFile(QString&amp; path);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/db9/class_u_b_create_link_palette.html#a9e29fc2db90fd21f61ddcf462431e6bb">onDroppedAudioFile</a>(QString&amp; path);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif // UBCREATELINKPALETTE_H</span></div>
@@ -223,8 +223,8 @@ $(document).ready(function(){initNavTree('d7/d9e/_u_b_create_link_palette_8h_sou
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h.html">UBCreateLinkPalette.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h.html">UBCreateLinkPalette.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

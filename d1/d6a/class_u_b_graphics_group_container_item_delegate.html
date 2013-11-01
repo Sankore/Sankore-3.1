@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d1/d6a/class_u_b_graphics_group_contai
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../de/d49/class_u_b_graphics_group_container_item_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsGroupContainerItemDelegate Class Reference</div>  </div>
@@ -175,6 +177,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_graphics_item_delegate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_graphics_item_delegate')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a></td></tr>
 <tr class="memitem:aaac5b391602a6c42ad371a3addf84662 inherit pro_methods_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aaac5b391602a6c42ad371a3addf84662">updateMenuActionState</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ae20debcaed312dfffb33acb0b4377890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ae20debcaed312dfffb33acb0b4377890">onAddActionClicked</a> ()</td></tr>
+<tr class="memitem:aeeb2c2fd3464c1ee0a6775b530f72d05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aeeb2c2fd3464c1ee0a6775b530f72d05">onRemoveActionClicked</a> ()</td></tr>
+<tr class="memitem:a16a0856608265aefda40b513610ad3b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a16a0856608265aefda40b513610ad3b6">saveAction</a> (<a class="el" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a> *<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aca0f754a4dec127fa233c20c4d4e337a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aca0f754a4dec127fa233c20c4d4e337a">mDestroyGroupButton</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_slots_class_u_b_graphics_item_delegate"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_u_b_graphics_item_delegate')"><img src="../../closed.png" alt="-"/>&nbsp;Public Slots inherited from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a></td></tr>
@@ -239,7 +251,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                                                     :</div>
-<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a78857ae5335c1a31581a38210d8b2e5e">UBGraphicsItemDelegate</a>(pDelegated, parent, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>), mDestroyGroupButton(0)</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a78857ae5335c1a31581a38210d8b2e5e">UBGraphicsItemDelegate</a>(pDelegated, parent, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>), <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aca0f754a4dec127fa233c20c4d4e337a">mDestroyGroupButton</a>(0)</div>
 <div class="line"></div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">//Wrapper function. Use it to set correct data() to QGraphicsItem as well</span></div>
@@ -327,7 +339,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    showIcon.addPixmap(QPixmap(<span class="stringliteral">&quot;:/images/eyeClosed.svg&quot;</span>), QIcon::Normal, QIcon::Off);</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a9b7e283947d4119142569e0cd5d1fcdc">mShowOnDisplayAction</a>-&gt;setIcon(showIcon);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Add an action&quot;</span>),<span class="keyword">this</span>,SLOT(onAddActionClicked()));</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Add an action&quot;</span>),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#ae20debcaed312dfffb33acb0b4377890">onAddActionClicked</a>()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -443,7 +455,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_a0eef4acf8124b18a6f495402188dbefc_cgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_a0eef4acf8124b18a6f495402188dbefc_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -480,6 +492,164 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="ae20debcaed312dfffb33acb0b4377890"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsGroupContainerItemDelegate::onAddActionClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../df/db9/class_u_b_create_link_palette.html">UBCreateLinkPalette</a>* linkPalette = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a536e1388e74f79a2120d0e585b862033">paletteManager</a>()-&gt;<a class="code" href="../../dc/d38/class_u_b_board_palette_manager.html#ad11cb96ff392a1f70ec87784dcd80039">linkPalette</a>();</div>
+<div class="line">    linkPalette-&gt;show();</div>
+<div class="line">    connect(linkPalette,SIGNAL(definedAction(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a16a0856608265aefda40b513610ad3b6">saveAction</a>(<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a>*)));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_ae20debcaed312dfffb33acb0b4377890_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_ae20debcaed312dfffb33acb0b4377890_icgraph.svg" width="478" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeeb2c2fd3464c1ee0a6775b530f72d05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsGroupContainerItemDelegate::onRemoveActionClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>){</div>
+<div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#ac4585fac2807289c85e56c79f0ba6b08">actionRemoved</a>();</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>;</div>
+<div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;removeAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a>);</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_aeeb2c2fd3464c1ee0a6775b530f72d05_cgraph.svg" width="424" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_aeeb2c2fd3464c1ee0a6775b530f72d05_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a16a0856608265aefda40b513610ad3b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsGroupContainerItemDelegate::saveAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a> *&#160;</td>
+          <td class="paramname"><em>action</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#ade01e0b179b501cc1c60451cbba96035">action</a>;</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;removeAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37842d928eafd9c363967046bc144f3c">mShowPanelToAddAnAction</a>);</div>
+<div class="line">    QString actionLabel;</div>
+<div class="line">    <span class="keywordflow">switch</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a>-&gt;<a class="code" href="../../dd/dfb/class_u_b_graphics_item_action.html#a77a5fe1adb68432afba1d5136a10998c">linkType</a>()) {</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#aa31a6f470b9e87919e1a5142f3e70b3fa0fb5bcb2ac4bbfb5a3948ab1a334bcbc">eLinkToAudio</a>:</div>
+<div class="line">        actionLabel= tr(<span class="stringliteral">&quot;Remove link to audio&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#aa31a6f470b9e87919e1a5142f3e70b3fa74f72d2fd99cd5f64a09519dddfa4681">eLinkToPage</a>:</div>
+<div class="line">        actionLabel = tr(<span class="stringliteral">&quot;Remove link to page&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../d1/d45/_u_b_graphics_item_action_8h.html#aa31a6f470b9e87919e1a5142f3e70b3fa267309942d4732e7fc77f2f434da4388">eLinkToWebUrl</a>:</div>
+<div class="line">        actionLabel = tr(<span class="stringliteral">&quot;Remove link to web url&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">default</span>:</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a> = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(actionLabel,<span class="keyword">this</span>,SLOT(<a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#aeeb2c2fd3464c1ee0a6775b530f72d05">onRemoveActionClicked</a>()));</div>
+<div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#abdb23ab4b93f3bc0b28a2329543dd88a">mMenu</a>-&gt;addAction(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aa80345f33555d22acbda9227aa5d001b">mRemoveAnAction</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_a16a0856608265aefda40b513610ad3b6_cgraph.svg" width="656" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_a16a0856608265aefda40b513610ad3b6_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a6cd80c1431c47bd41e8f2c935cd43da7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -499,11 +669,41 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html#a6cd80c1431c47bd41e8f2c935cd43da7">UBGraphicsItemDelegate::setAction</a>(action);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d6a/class_u_b_graphics_group_container_item_delegate_a6cd80c1431c47bd41e8f2c935cd43da7_icgraph.svg" width="398" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aca0f754a4dec127fa233c20c4d4e337a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsGroupContainerItemDelegate::mDestroyGroupButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html">UBGraphicsGroupContainerItemDelegate.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp.html">UBGraphicsGroupContainerItemDelegate.cpp</a></li>
+<li><a class="el" href="../../d8/dd4/_u_b_graphics_group_container_item_delegate_8h_source.html">UBGraphicsGroupContainerItemDelegate.h</a></li>
+<li><a class="el" href="../../df/df9/_u_b_graphics_group_container_item_delegate_8cpp.html">UBGraphicsGroupContainerItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -511,7 +711,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d6a/class_u_b_graphics_group_container_item_delegate.html">UBGraphicsGroupContainerItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

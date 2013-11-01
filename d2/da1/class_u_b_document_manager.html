@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('d2/da1/class_u_b_document_manager.html
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../dd/dd3/class_u_b_document_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentManager Class Reference</div>  </div>
@@ -118,7 +121,7 @@ $(document).ready(function(){initNavTree('d2/da1/class_u_b_document_manager.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7a/class_u_b_document_manager__coll__graph.svg" width="200" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d7a/class_u_b_document_manager__coll__graph.svg" width="346" height="304"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -141,6 +144,19 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a76098e4be543e87a5fc05c6d471a2670"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_document_manager.html#a76098e4be543e87a5fc05c6d471a2670">documentManager</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a727bf8e028b79d7f49e7156a3d4eb1af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_document_manager.html#a727bf8e028b79d7f49e7156a3d4eb1af">UBDocumentManager</a> (QObject *parent=0)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad4e3f6f736d975785619e09e1c37bea9"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html">UBExportAdaptor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a></td></tr>
+<tr class="memitem:a4ec70640a138cc28b94a46c082b7a854"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ae4c7c15a8b6f9017f141909de8cc27e6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_document_manager.html#ae4c7c15a8b6f9017f141909de8cc27e6">sDocumentManager</a> = 0</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a11e474c8d207ed9b623dc547219472d5"></a>
@@ -167,6 +183,73 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a727bf8e028b79d7f49e7156a3d4eb1af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UBDocumentManager::UBDocumentManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    :QObject(parent)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// TODO UB 4.7 string used in document persistence (folder names)</span></div>
+<div class="line">    QString dummyImages = tr(<span class="stringliteral">&quot;images&quot;</span>);</div>
+<div class="line">    QString dummyVideos = tr(<span class="stringliteral">&quot;videos&quot;</span>);</div>
+<div class="line">    QString dummyObjects = tr(<span class="stringliteral">&quot;objects&quot;</span>);</div>
+<div class="line">    QString dummyWidgets = tr(<span class="stringliteral">&quot;widgets&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d8/d52/class_u_b_export_c_f_f.html">UBExportCFF</a>* cffExporter = <span class="keyword">new</span> <a class="code" href="../../d8/d52/class_u_b_export_c_f_f.html">UBExportCFF</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html">UBExportFullPDF</a>* exportFullPdf = <span class="keyword">new</span> <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html">UBExportFullPDF</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d9/d32/class_u_b_export_document.html">UBExportDocument</a>* exportDocument = <span class="keyword">new</span> <a class="code" href="../../d9/d32/class_u_b_export_document.html">UBExportDocument</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../de/d5f/class_u_b_web_publisher.html">UBWebPublisher</a>* webPublished = <span class="keyword">new</span> <a class="code" href="../../de/d5f/class_u_b_web_publisher.html">UBWebPublisher</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dc/d05/class_u_b_export_document_set_adaptor.html">UBExportDocumentSetAdaptor</a> *exportDocumentSet = <span class="keyword">new</span> <a class="code" href="../../dc/d05/class_u_b_export_document_set_adaptor.html">UBExportDocumentSetAdaptor</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a>.append(exportDocument);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a>.append(exportDocumentSet);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a>.append(webPublished);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a>.append(exportFullPdf);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a>.append(cffExporter);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">//     UBExportWeb* exportWeb = new UBExportWeb(this);</span></div>
+<div class="line"><span class="comment">//     mExportAdaptors.append(exportWeb);</span></div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d9/df2/class_u_b_import_document.html">UBImportDocument</a>* documentImport = <span class="keyword">new</span> <a class="code" href="../../d9/df2/class_u_b_import_document.html">UBImportDocument</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>.append(documentImport);</div>
+<div class="line">    <a class="code" href="../../dc/d24/class_u_b_import_document_set_adaptor.html">UBImportDocumentSetAdaptor</a> *documentSetImport = <span class="keyword">new</span> <a class="code" href="../../dc/d24/class_u_b_import_document_set_adaptor.html">UBImportDocumentSetAdaptor</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>.append(documentSetImport);</div>
+<div class="line">    <a class="code" href="../../d4/d2f/class_u_b_import_p_d_f.html">UBImportPDF</a>* pdfImport = <span class="keyword">new</span> <a class="code" href="../../d4/d2f/class_u_b_import_p_d_f.html">UBImportPDF</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>.append(pdfImport);</div>
+<div class="line">    <a class="code" href="../../d1/d23/class_u_b_import_image.html">UBImportImage</a>* imageImport = <span class="keyword">new</span> <a class="code" href="../../d1/d23/class_u_b_import_image.html">UBImportImage</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>.append(imageImport);</div>
+<div class="line">    <a class="code" href="../../db/d5b/class_u_b_import_c_f_f.html">UBImportCFF</a>* cffImport = <span class="keyword">new</span> <a class="code" href="../../db/d5b/class_u_b_import_c_f_f.html">UBImportCFF</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>.append(cffImport);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a727bf8e028b79d7f49e7156a3d4eb1af_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <h2>Member Function Documentation</h2>
@@ -202,7 +285,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        QFile file(fileName);</div>
 <div class="line">        QFileInfo fileInfo(file);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *adaptor, mImportAdaptors)</div>
+<div class="line">        <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *adaptor, <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (adaptor-&gt;<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html#a1267230fb2a55109acc8f891044d0ee8">supportedExtentions</a>().lastIndexOf(fileInfo.suffix().toLower()) != -1)</div>
 <div class="line">            {</div>
@@ -254,21 +337,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> nImportedDocuments;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_abd34b528df41737caedf2dd6e0661dd7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -313,21 +397,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e_icgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a19868e49fb0bb331ba2f26c28f01f02e_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -354,19 +439,29 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!sDocumentManager)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da1/class_u_b_document_manager.html#ae4c7c15a8b6f9017f141909de8cc27e6">sDocumentManager</a>)</div>
 <div class="line">    {</div>
-<div class="line">        sDocumentManager = <span class="keyword">new</span> <a class="code" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a>(qApp);</div>
+<div class="line">        <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ae4c7c15a8b6f9017f141909de8cc27e6">sDocumentManager</a> = <span class="keyword">new</span> <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a727bf8e028b79d7f49e7156a3d4eb1af">UBDocumentManager</a>(qApp);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> sDocumentManager;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ae4c7c15a8b6f9017f141909de8cc27e6">sDocumentManager</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a76098e4be543e87a5fc05c6d471a2670_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -394,12 +489,13 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a0e26ccb4bc2fafa07f56ad5985154fbe_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a0e26ccb4bc2fafa07f56ad5985154fbe_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -422,21 +518,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    emit <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a0e26ccb4bc2fafa07f56ad5985154fbe">documentUpdated</a>(pDocument);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1_cgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_af14733ff65800757f9ce8fcd8ae965b1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -488,11 +585,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> doc;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a591b5c0ee721873fbcca06d26ce4e2fb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -525,7 +622,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QFileInfo fileInfo(pFile);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *adaptor, mImportAdaptors)</div>
+<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *adaptor, <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">if</span> (adaptor-&gt;<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html#a1267230fb2a55109acc8f891044d0ee8">supportedExtentions</a>().lastIndexOf(fileInfo.suffix().toLower()) != -1)</div>
 <div class="line">        {</div>
@@ -591,20 +688,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> NULL;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_aaa0b883c0aa4ae465e63df9af25fed1e_icgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -626,27 +723,27 @@ Static Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QStringList result;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *importAdaptor, mImportAdaptors)</div>
+<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *importAdaptor, <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>)</div>
 <div class="line">    {</div>
 <div class="line">        result &lt;&lt; importAdaptor-&gt;<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html#a1267230fb2a55109acc8f891044d0ee8">supportedExtentions</a>();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373_cgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a1be6b4a8b1a80c9baa4931ff68e50373_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -669,7 +766,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    QString result;</div>
 <div class="line"></div>
 <div class="line">    result += tr(<span class="stringliteral">&quot;All supported files (*.%1)&quot;</span>).arg(<a class="code" href="../../d2/da1/class_u_b_document_manager.html#a1be6b4a8b1a80c9baa4931ff68e50373">importFileExtensions</a>().join(<span class="stringliteral">&quot; *.&quot;</span>));</div>
-<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *importAdaptor, mImportAdaptors)</div>
+<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *importAdaptor, <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">if</span> (importAdaptor-&gt;<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html#a54ba42e79012662f701015c915353a1e">importFileFilter</a>().length() &gt; 0)</div>
 <div class="line">        {</div>
@@ -684,20 +781,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74_cgraph.svg" width="640" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a9dc5642a7235cf9a9222d38a6b496c74_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -729,7 +826,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d24/class_u_b_import_document_set_adaptor.html">UBImportDocumentSetAdaptor</a> *docSetAdaptor;</div>
-<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *curAdaptor, mImportAdaptors) {</div>
+<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a> *curAdaptor, <a class="code" href="../../d2/da1/class_u_b_document_manager.html#a4ec70640a138cc28b94a46c082b7a854">mImportAdaptors</a>) {</div>
 <div class="line">        docSetAdaptor = qobject_cast&lt;<a class="code" href="../../dc/d24/class_u_b_import_document_set_adaptor.html">UBImportDocumentSetAdaptor</a>*&gt;(curAdaptor);</div>
 <div class="line">        <span class="keywordflow">if</span> (docSetAdaptor) {</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -742,20 +839,21 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> docSetAdaptor-&gt;<a class="code" href="../../dc/d24/class_u_b_import_document_set_adaptor.html#a119a7f90a0176d6ee334a505815f1713">importData</a>(Incomingfile, destination);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616_cgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_a4bb8d2901316ff82dbddc600414bd616_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -775,23 +873,85 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mExportAdaptors;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_document_manager.html#ad4e3f6f736d975785619e09e1c37bea9">mExportAdaptors</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_aa3dcc18dae4cb2b64c7af2c7c3122ee5_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_document_manager_aa3dcc18dae4cb2b64c7af2c7c3122ee5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ad4e3f6f736d975785619e09e1c37bea9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html">UBExportAdaptor</a>*&gt; UBDocumentManager::mExportAdaptors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ec70640a138cc28b94a46c082b7a854"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a>*&gt; UBDocumentManager::mImportAdaptors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4c7c15a8b6f9017f141909de8cc27e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a> * UBDocumentManager::sDocumentManager = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d3/d95/_u_b_document_manager_8h_source.html">UBDocumentManager.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d3/d10/_u_b_document_manager_8cpp.html">UBDocumentManager.cpp</a></li>
+<li><a class="el" href="../../d3/d95/_u_b_document_manager_8h_source.html">UBDocumentManager.h</a></li>
+<li><a class="el" href="../../d3/d10/_u_b_document_manager_8cpp.html">UBDocumentManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -799,7 +959,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/da1/class_u_b_document_manager.html">UBDocumentManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

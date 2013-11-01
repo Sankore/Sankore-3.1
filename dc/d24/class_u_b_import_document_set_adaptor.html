@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('dc/d24/class_u_b_import_document_set_a
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../d2/d83/class_u_b_import_document_set_adaptor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBImportDocumentSetAdaptor Class Reference</div>  </div>
@@ -116,14 +117,14 @@ $(document).ready(function(){initNavTree('dc/d24/class_u_b_import_document_set_a
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d8f/class_u_b_import_document_set_adaptor__inherit__graph.svg" width="240" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d8f/class_u_b_import_document_set_adaptor__inherit__graph.svg" width="240" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBImportDocumentSetAdaptor:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/db7/class_u_b_import_document_set_adaptor__coll__graph.svg" width="240" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/db7/class_u_b_import_document_set_adaptor__coll__graph.svg" width="240" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -135,6 +136,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a119a7f90a0176d6ee334a505815f1713"><td class="memItemLeft" align="right" valign="top">QFileInfoList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_import_document_set_adaptor.html#a119a7f90a0176d6ee334a505815f1713">importData</a> (const QString &amp;zipFile, const QString &amp;destination)</td></tr>
 <tr class="inherit_header pub_methods_class_u_b_import_adaptor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_u_b_import_adaptor')"><img src="../../closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="../../d1/da5/class_u_b_import_adaptor.html">UBImportAdaptor</a></td></tr>
 <tr class="memitem:ad9115085b48e521710ed5f5743d38320 inherit pub_methods_class_u_b_import_adaptor"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da5/class_u_b_import_adaptor.html#ad9115085b48e521710ed5f5743d38320">isDocumentBased</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa78cd072dccf210f6c21fe9430ffbdd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_import_document_set_adaptor.html#aa78cd072dccf210f6c21fe9430ffbdd5">extractFileToDir</a> (const QFile &amp;pZipFile, const QString &amp;pDir)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -148,7 +153,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a4ba5672b438cccbfbd7afb2dc4e1492f">THIRD_PARTY_WARNINGS_DISABLE</a> <a class="el" href="../../d8/da7/plugins_2cffadaptor_2src_2_u_b_globals_8h.html#a0894cd93d9a4f6a440afefa239d280b8">THIRD_PARTY_WARNINGS_ENABLE</a> UBImportDocumentSetAdaptor::UBImportDocumentSetAdaptor </td>
+          <td class="memname"><a class="el" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a4ba5672b438cccbfbd7afb2dc4e1492f">THIRD_PARTY_WARNINGS_DISABLE</a> <a class="el" href="../../d0/d8b/_sankore-3_81_2plugins_2cffadaptor_2src_2_u_b_globals_8h.html#a0894cd93d9a4f6a440afefa239d280b8">THIRD_PARTY_WARNINGS_ENABLE</a> UBImportDocumentSetAdaptor::UBImportDocumentSetAdaptor </td>
           <td>(</td>
           <td class="paramtype">QObject *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
@@ -190,6 +195,150 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="aa78cd072dccf210f6c21fe9430ffbdd5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBImportDocumentSetAdaptor::extractFileToDir </td>
+          <td>(</td>
+          <td class="paramtype">const QFile &amp;&#160;</td>
+          <td class="paramname"><em>pZipFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pDir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QDir rootDir(pDir);</div>
+<div class="line">    QuaZip zip(pZipFile.fileName());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(!zip.open(QuaZip::mdUnzip))</div>
+<div class="line">    {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause zip.open(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    zip.setFileNameCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
+<div class="line">    QuaZipFileInfo info;</div>
+<div class="line">    QuaZipFile file(&amp;zip);</div>
+<div class="line"></div>
+<div class="line">    QFile out;</div>
+<div class="line">    <span class="keywordtype">char</span> c;</div>
+<div class="line"></div>
+<div class="line">    QString documentRoot = QFileInfo(pDir).absoluteFilePath();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">bool</span> more=zip.goToFirstFile(); more; more=zip.goToNextFile())</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span>(!zip.getCurrentFileInfo(&amp;info))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">//TOD UB 4.3 O display error to user or use crash reporter</span></div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: getCurrentFileInfo(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(!file.open(QIODevice::ReadOnly))</div>
+<div class="line">        {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: file.open(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(file.getZipError()!= UNZ_OK)</div>
+<div class="line">        {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: file.getFileName(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        QString actFileName = file.getActualFileName();</div>
+<div class="line"><span class="comment">//        int ind = actFileName.indexOf(&quot;/&quot;);</span></div>
+<div class="line"><span class="comment">//        if ( ind!= -1) {</span></div>
+<div class="line"><span class="comment">//            actFileName.remove(0, ind + 1);</span></div>
+<div class="line"><span class="comment">//        }</span></div>
+<div class="line">        QString newFileName = documentRoot + <span class="stringliteral">&quot;/&quot;</span> + actFileName;</div>
+<div class="line">        QFileInfo newFileInfo(newFileName);</div>
+<div class="line">        <span class="keywordflow">if</span> (!rootDir.mkpath(newFileInfo.absolutePath()))</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        out.setFileName(newFileName);</div>
+<div class="line">        <span class="keywordflow">if</span> (!out.open(QIODevice::WriteOnly))</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// Slow like hell (on GNU/Linux at least), but it is not my fault.</span></div>
+<div class="line">        <span class="comment">// Not ZIP/UNZIP package&#39;s fault either.</span></div>
+<div class="line">        <span class="comment">// The slowest thing here is out.putChar(c).</span></div>
+<div class="line">        QByteArray outFileContent = file.readAll();</div>
+<div class="line">        <span class="keywordflow">if</span> (out.write(outFileContent) == -1)</div>
+<div class="line">        {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: Unable to write file&quot;</span>;</div>
+<div class="line">            out.close();</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">while</span>(file.getChar(&amp;c))</div>
+<div class="line">            out.putChar(c);</div>
+<div class="line"></div>
+<div class="line">        out.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(file.getZipError()!=UNZ_OK)</div>
+<div class="line">        {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(!file.atEnd())</div>
+<div class="line">        {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: read all but not EOF&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        file.close();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(file.getZipError()!=UNZ_OK)</div>
+<div class="line">        {</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: file.close(): &quot;</span> &lt;&lt;  file.getZipError();</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    zip.close();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(zip.getZipError()!=UNZ_OK)</div>
+<div class="line">    {</div>
+<div class="line">      qWarning() &lt;&lt; <span class="stringliteral">&quot;Import failed. Cause: zip.close(): &quot;</span> &lt;&lt; zip.getZipError();</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_import_document_set_adaptor_aa78cd072dccf210f6c21fe9430ffbdd5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a119a7f90a0176d6ee334a505815f1713"></a>
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +375,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    QFile fZipFile(zipFile);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!extractFileToDir(fZipFile, tmpDir)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d24/class_u_b_import_document_set_adaptor.html#aa78cd072dccf210f6c21fe9430ffbdd5">extractFileToDir</a>(fZipFile, tmpDir)) {</div>
 <div class="line">        <a class="code" href="../../d2/d7a/class_u_b_file_system_utils.html#aff7b8489683cdec07a5ad696571138f4">UBFileSystemUtils::deleteDir</a>(tmpDir);</div>
 <div class="line">        <span class="keywordflow">return</span> QFileInfoList();</div>
 <div class="line">    }</div>
@@ -249,20 +398,21 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_import_document_set_adaptor_a119a7f90a0176d6ee334a505815f1713_cgraph.svg" width="619" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</p>
-
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_import_document_set_adaptor_a119a7f90a0176d6ee334a505815f1713_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_import_document_set_adaptor_a119a7f90a0176d6ee334a505815f1713_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -326,8 +476,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d8/d00/_u_b_import_document_set_adaptor_8h_source.html">UBImportDocumentSetAdaptor.h</a></li>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../de/d15/_u_b_import_document_set_adaptor_8cpp.html">UBImportDocumentSetAdaptor.cpp</a></li>
+<li><a class="el" href="../../d8/d00/_u_b_import_document_set_adaptor_8h_source.html">UBImportDocumentSetAdaptor.h</a></li>
+<li><a class="el" href="../../de/d15/_u_b_import_document_set_adaptor_8cpp.html">UBImportDocumentSetAdaptor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -335,7 +485,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d24/class_u_b_import_document_set_adaptor.html">UBImportDocumentSetAdaptor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

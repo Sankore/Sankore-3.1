@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d7/df1/classmerge__lib_1_1_object.html
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d9/d8e/classmerge__lib_1_1_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -118,7 +120,7 @@ $(document).ready(function(){initNavTree('d7/df1/classmerge__lib_1_1_object.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d67/classmerge__lib_1_1_object__coll__graph.svg" width="179" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/d67/classmerge__lib_1_1_object__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
@@ -139,7 +141,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5413e83ed98fbab3a852efac0a1d783f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a5413e83ed98fbab3a852efac0a1d783f">removeChild</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *child)</td></tr>
 <tr class="memitem:ad8bd931350556b884d67c7c470a61e99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#ad8bd931350556b884d67c7c470a61e99">forgetAboutChildren</a> (unsigned int leftBound, unsigned int rightBound)</td></tr>
 <tr class="memitem:a224f409e2c575b6688db5585bab59ca5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a224f409e2c575b6688db5585bab59ca5">getChild</a> (unsigned int objectNumber)</td></tr>
-<tr class="memitem:a23bc60e234d95166f9daa4eb0c2235ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a23bc60e234d95166f9daa4eb0c2235ad">findObject</a> (const std::string &amp;token, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp;foundObject, unsigned int &amp;tokenPositionInContent)</td></tr>
+<tr class="memitem:a23bc60e234d95166f9daa4eb0c2235ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a23bc60e234d95166f9daa4eb0c2235ad">findObject</a> (const std::string &amp;<a class="el" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp;foundObject, unsigned int &amp;tokenPositionInContent)</td></tr>
 <tr class="memitem:a5d2c9017437a3c305cf458c859837fa6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a5d2c9017437a3c305cf458c859837fa6">getChildrenByBounds</a> (unsigned int leftBound, unsigned int rightBound)</td></tr>
 <tr class="memitem:a339dbecce58076f95648775141f7757f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a> (unsigned int leftBound, unsigned int rightBound)</td></tr>
 <tr class="memitem:aa894578e1dcaa8644e45c07639979b2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa894578e1dcaa8644e45c07639979b2a">removeChildrenByBounds</a> (unsigned int leftBound, unsigned int rightBound)</td></tr>
@@ -171,6 +173,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac703276c6c64aac17a6eebac1847b42c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#ac703276c6c64aac17a6eebac1847b42c">getChildPosition</a> (const <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *child)</td></tr>
 <tr class="memitem:a9b3e355749987384a93891dbd05e73c1"><td class="memItemLeft" align="right" valign="top">const std::set&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a9b3e355749987384a93891dbd05e73c1">getParents</a> ()</td></tr>
 <tr class="memitem:a748cda680f3a23133864c0757ad7f058"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a748cda680f3a23133864c0757ad7f058">findPatternInObjOrParents</a> (const std::string &amp;pattern)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1357a7773c455ed778a73180ba75a205"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a1357a7773c455ed778a73180ba75a205">Object</a> (const <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> &amp;copy)</td></tr>
+<tr class="memitem:a2f440188ae7c14b4d4d723c1379c3dd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a2f440188ae7c14b4d4d723c1379c3dd3">_getClone</a> (std::map&lt; unsigned int, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;clones)</td></tr>
+<tr class="memitem:acb2b5b79038e6325c8ce4b5e152355c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#acb2b5b79038e6325c8ce4b5e152355c6">_addChild</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *child, const <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> &amp;childPositionsInContent)</td></tr>
+<tr class="memitem:a9a96d26b2a9968ebec1be19d393c651d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a9a96d26b2a9968ebec1be19d393c651d">_setObjectNumber</a> (unsigned int objectNumber)</td></tr>
+<tr class="memitem:a1a0bb9c89feaa71ef0e13ab16787f72a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a1a0bb9c89feaa71ef0e13ab16787f72a">_addParent</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *child)</td></tr>
+<tr class="memitem:ab077d8282ba5725793af06cca42e7ac7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#ab077d8282ba5725793af06cca42e7ac7">_findObject</a> (const std::string &amp;<a class="el" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp;foundObject, unsigned int &amp;tokenPositionInContent)</td></tr>
+<tr class="memitem:a60c4134c5e2c3ac7c7675d049b8fde7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a60c4134c5e2c3ac7c7675d049b8fde7c">_serialize</a> (std::ofstream &amp;out, const std::string &amp;stream)</td></tr>
+<tr class="memitem:a24ca560b6981eeb6de3febaddafdf522"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a24ca560b6981eeb6de3febaddafdf522">_recalculateObjectNumbers</a> (unsigned int &amp;maxNumber)</td></tr>
+<tr class="memitem:aa232aee020ebcf4fb2d7ed533d1f312f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa232aee020ebcf4fb2d7ed533d1f312f">_recalculateReferencePositions</a> (unsigned int changedReference, int displacement)</td></tr>
+<tr class="memitem:a1d6f62cb23b1ea0ff42f57b795c875d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a1d6f62cb23b1ea0ff42f57b795c875d9">_retrieveMaxObjectNumber</a> (unsigned int &amp;maxNumber)</td></tr>
+<tr class="memitem:a7b4822fcff047355bf8f64b3a11d7a93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a7b4822fcff047355bf8f64b3a11d7a93">_serialize</a> (std::ofstream &amp;out, std::map&lt; unsigned int, unsigned long long &gt; &amp;sizes)</td></tr>
+<tr class="memitem:a00ed4b0776c43ff1dbc38f47319edb72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a00ed4b0776c43ff1dbc38f47319edb72">_getStreamFromContent</a> (std::string &amp;stream)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a25df1889ab6e9bae8507bd2d8952260c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a></td></tr>
+<tr class="memitem:a0e3571661a3f1b53a110bf8d8b5aa4fa"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a0e3571661a3f1b53a110bf8d8b5aa4fa">_generationNumber</a></td></tr>
+<tr class="memitem:a3b6d99145a438a0d8536f53467a6b509"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a3b6d99145a438a0d8536f53467a6b509">_oldNumber</a></td></tr>
+<tr class="memitem:ad376fe3a8b85fe4967eb1ead8f6eeb44"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a></td></tr>
+<tr class="memitem:ab4691d60b7523acaa58c996240895b1a"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a></td></tr>
+<tr class="memitem:a381ba3323ae96a52c2f770e646d1c9ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a4e1f3bf43d9fc39fea3829f7ae1da4a8">Children</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a></td></tr>
+<tr class="memitem:a44b40e376bab45a2c16a795a1f69abb5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a></td></tr>
+<tr class="memitem:a047801f0b7a04aad33b0eeebe0046e8b"><td class="memItemLeft" align="right" valign="top">std::pair&lt; unsigned int, <br class="typebreak"/>
+unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a047801f0b7a04aad33b0eeebe0046e8b">_streamBounds</a></td></tr>
+<tr class="memitem:a62552d943b764c2de66f18cc6d7e627a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a62552d943b764c2de66f18cc6d7e627a">_fileName</a></td></tr>
+<tr class="memitem:aa46661d0d71a37dc033fa3c38f1e0587"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a></td></tr>
+<tr class="memitem:acd9f5ed74a7ddc8161baa416b29762b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -270,11 +302,20 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                        :</div>
-<div class="line">           _number(objectNumber), _generationNumber(generationNumber), _oldNumber(objectNumber), _content(objectContent),_parents(),_children(),_isPassed(<span class="keyword">false</span>),</div>
-<div class="line">           _streamBounds(streamBounds), _fileName(fileName), _hasStream(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a42a15267894aa3119b5eb5e389c705fa" title="hasStream">hasStream</a>), _hasStreamInContent(<span class="keyword">false</span>)</div>
+<div class="line">           <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>(objectNumber), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a0e3571661a3f1b53a110bf8d8b5aa4fa">_generationNumber</a>(generationNumber), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a3b6d99145a438a0d8536f53467a6b509">_oldNumber</a>(objectNumber), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>(objectContent),<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>(),<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>(),<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a>(<span class="keyword">false</span>),</div>
+<div class="line">           <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a047801f0b7a04aad33b0eeebe0046e8b">_streamBounds</a>(streamBounds), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a62552d943b764c2de66f18cc6d7e627a">_fileName</a>(fileName), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a42a15267894aa3119b5eb5e389c705fa" title="hasStream">hasStream</a>), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a>(<span class="keyword">false</span>)</div>
 <div class="line">           {</div>
        }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_aee26acdabcb6e697a478b7aea963c91e_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae8f5483f459e46687bd01e6f9977afd3"></a>
@@ -298,14 +339,678 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{       </div>
-<div class="line">   _parents.clear();</div>
-<div class="line">   _children.clear();</div>
-<div class="line">   _content.clear();</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>.clear();</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.clear();</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.clear();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a1357a7773c455ed778a73180ba75a205"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">merge_lib::Object::Object </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> &amp;&#160;</td>
+          <td class="paramname"><em>copy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="acb2b5b79038e6325c8ce4b5e152355c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_addChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>child</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> &amp;&#160;</td>
+          <td class="paramname"><em>childPositionsInContent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a61ce4ed189bafe56ea358abdeb25ad54">ChildAndItPositionInContent</a> childAndItPositions(child, childPositionsInContent);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> childObjectNumber = child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>();</div>
+<div class="line">   <span class="keywordflow">while</span>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.count(childObjectNumber))</div>
+<div class="line">      ++childObjectNumber;</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.insert(std::pair&lt;unsigned int, ChildAndItPositionInContent &gt; (childObjectNumber, childAndItPositions));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_acb2b5b79038e6325c8ce4b5e152355c6_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_acb2b5b79038e6325c8ce4b5e152355c6_icgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a0bb9c89feaa71ef0e13ab16787f72a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_addParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>child</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>.insert(child);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a1a0bb9c89feaa71ef0e13ab16787f72a_icgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab077d8282ba5725793af06cca42e7ac7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Object::_findObject </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&amp;&#160;</td>
+          <td class="paramname"><em>foundObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>tokenPositionInContent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a> = <span class="keyword">true</span>;</div>
+<div class="line">   tokenPositionInContent = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>,<a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)tokenPositionInContent != -1)</div>
+<div class="line">   {</div>
+<div class="line">      foundObject = <span class="keyword">this</span>;</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">   }      </div>
+<div class="line">   <span class="keywordflow">for</span> (Children::iterator  it=<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; it != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++it )</div>
+<div class="line">      <span class="keywordflow">if</span>((!(*it).second.first-&gt;_isPassed) &amp;&amp;</div>
+<div class="line">         ((*it).second.first-&gt;_findObject(<a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>, foundObject, tokenPositionInContent)))</div>
+<div class="line">         <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ab077d8282ba5725793af06cca42e7ac7_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ab077d8282ba5725793af06cca42e7ac7_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f440188ae7c14b4d4d723c1379c3dd3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * Object::_getClone </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; unsigned int, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>clones</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a> = <span class="keyword">true</span>;</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> objectNumber = this-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>();   </div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * clone = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aee26acdabcb6e697a478b7aea963c91e">Object</a>(objectNumber, this-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a0e3571661a3f1b53a110bf8d8b5aa4fa">_generationNumber</a>, this-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>(), <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a62552d943b764c2de66f18cc6d7e627a">_fileName</a>, <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a047801f0b7a04aad33b0eeebe0046e8b">_streamBounds</a>, <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a>);</div>
+<div class="line">   clone-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a> = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a>;</div>
+<div class="line">   clones.insert(std::pair&lt;unsigned int, Object *&gt;(objectNumber, clone));</div>
+<div class="line">   Children::iterator currentChild = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin();</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">for</span>(; currentChild != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++currentChild)</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * currentObject = (*currentChild).second.first;</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> childObjectNumber = currentObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>();</div>
+<div class="line"></div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * cloneOfCurrentChild = 0;</div>
+<div class="line"></div>
+<div class="line">      <span class="keywordflow">if</span>(currentObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5e08d1a187878b9afaad16d0012e692f">isPassed</a>())</div>
+<div class="line">      {</div>
+<div class="line">         cloneOfCurrentChild = clones[childObjectNumber];</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">else</span></div>
+<div class="line">      {</div>
+<div class="line">         cloneOfCurrentChild = currentObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a2f440188ae7c14b4d4d723c1379c3dd3">_getClone</a>(clones);</div>
+<div class="line">      }</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a61ce4ed189bafe56ea358abdeb25ad54">ChildAndItPositionInContent</a> newChild(</div>
+<div class="line">         cloneOfCurrentChild, </div>
+<div class="line">         currentChild-&gt;second.second);</div>
+<div class="line"></div>
+<div class="line">      clone-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.insert(std::pair&lt;unsigned int, ChildAndItPositionInContent&gt;</div>
+<div class="line">         (newChild.first-&gt;getObjectNumber(), newChild)</div>
+<div class="line">         );</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">return</span> clone;</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a2f440188ae7c14b4d4d723c1379c3dd3_cgraph.svg" width="315" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a2f440188ae7c14b4d4d723c1379c3dd3_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a00ed4b0776c43ff1dbc38f47319edb72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Object::_getStreamFromContent </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">size_t</span> stream_begin = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.find(<span class="stringliteral">&quot;stream&quot;</span>);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) stream_begin == -1 )</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordtype">size_t</span> stream_end = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.find(<span class="stringliteral">&quot;endstream&quot;</span>,stream_begin);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) stream_end == -1 )</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">   }</div>
+<div class="line">   stream_begin += strlen(<span class="stringliteral">&quot;stream&quot;</span>);</div>
+<div class="line">   <span class="comment">// need to skip trailing \r</span></div>
+<div class="line">   <span class="keywordflow">while</span>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>[stream_begin] == <span class="charliteral">&#39;\r&#39;</span>)</div>
+<div class="line">   {</div>
+<div class="line">      stream_begin ++;</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>[stream_begin] == <span class="charliteral">&#39;\n&#39;</span>)</div>
+<div class="line">   {</div>
+<div class="line">      stream_begin ++;</div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   stream = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.substr(stream_begin, stream_end - stream_begin);</div>
+<div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a00ed4b0776c43ff1dbc38f47319edb72_icgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a24ca560b6981eeb6de3febaddafdf522"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_recalculateObjectNumbers </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>maxNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{       </div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a9a96d26b2a9968ebec1be19d393c651d">_setObjectNumber</a>(newNumber);</div>
+<div class="line"></div>
+<div class="line">   Children::iterator childIterator;</div>
+<div class="line">   <span class="keywordflow">for</span> ( childIterator = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; childIterator != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++childIterator )</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * currentChild = (*childIterator).second.first;</div>
+<div class="line">      <span class="keywordflow">if</span>(currentChild-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5e08d1a187878b9afaad16d0012e692f">isPassed</a>()) <span class="keywordflow">continue</span>;                </div>
+<div class="line">      currentChild-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a24ca560b6981eeb6de3febaddafdf522">_recalculateObjectNumbers</a>(++newNumber);        </div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   <span class="comment">//recalculate referencies in content</span></div>
+<div class="line">   <span class="keywordflow">for</span> ( childIterator = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; childIterator != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++childIterator)</div>
+<div class="line">   {    </div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * currentChild = (*childIterator).second.first;</div>
+<div class="line">      <span class="comment">//if(currentChild-&gt;getOldNumber() == currentChild-&gt;getObjectNumber()) continue;</span></div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> &amp; refPositionForcurrentChild = (*childIterator).second.second;</div>
+<div class="line">      <span class="keyword">const</span> std::string &amp; oldNumberStr = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(currentChild-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a17910ac5b37657f732f51b1bd312c5e0">getOldNumber</a>());</div>
+<div class="line">      <span class="keyword">const</span> std::string &amp; newNumber = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#aec498be127dfac5839795ea5d07d84c6">Utils::uIntToStr</a>(currentChild-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>());</div>
+<div class="line">      <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> newNumberStringSize = newNumber.size();</div>
+<div class="line">      <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> oldNumberStringSize = oldNumberStr.size();</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> diff = newNumberStringSize;</div>
+<div class="line">      <span class="keywordflow">if</span> (newNumberStringSize &gt; oldNumberStringSize)</div>
+<div class="line">      {</div>
+<div class="line"></div>
+<div class="line">         <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> referencePositionIter(0); referencePositionIter &lt; refPositionForcurrentChild.size(); ++referencePositionIter)               </div>
+<div class="line">         {</div>
+<div class="line">            <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa232aee020ebcf4fb2d7ed533d1f312f">_recalculateReferencePositions</a>(refPositionForcurrentChild[referencePositionIter], newNumberStringSize - oldNumberStringSize);</div>
+<div class="line">            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> referenceStringInter(oldNumberStringSize); referenceStringInter &lt; newNumberStringSize; ++referenceStringInter )  </div>
+<div class="line">               <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.insert(</div>
+<div class="line">               refPositionForcurrentChild[referencePositionIter] + referenceStringInter, </div>
+<div class="line">               1,</div>
+<div class="line">               newNumber[referenceStringInter]);                </div>
+<div class="line">         }</div>
+<div class="line">         diff = oldNumberStringSize;</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">if</span> (newNumberStringSize &lt; oldNumberStringSize)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> referencePositionIter(0); referencePositionIter &lt; refPositionForcurrentChild.size(); ++referencePositionIter)</div>
+<div class="line">         {</div>
+<div class="line">            <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa232aee020ebcf4fb2d7ed533d1f312f">_recalculateReferencePositions</a>(refPositionForcurrentChild[referencePositionIter], newNumberStringSize - oldNumberStringSize);</div>
+<div class="line">            <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.erase(refPositionForcurrentChild[referencePositionIter] + newNumberStringSize, </div>
+<div class="line">               oldNumberStringSize - newNumberStringSize</div>
+<div class="line">               );</div>
+<div class="line">         }</div>
+<div class="line">      }    </div>
+<div class="line"></div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; diff; i++)</div>
+<div class="line">         <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> referencePositionIter(0); referencePositionIter &lt; refPositionForcurrentChild.size(); ++referencePositionIter)            </div>
+<div class="line">            <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>[i + refPositionForcurrentChild[referencePositionIter]] = newNumber[i];</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">   }    </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a24ca560b6981eeb6de3febaddafdf522_cgraph.svg" width="632" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a24ca560b6981eeb6de3febaddafdf522_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa232aee020ebcf4fb2d7ed533d1f312f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_recalculateReferencePositions </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>changedReference</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>displacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   Children::iterator childIterator;</div>
+<div class="line">   <span class="keywordflow">for</span> ( childIterator = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; childIterator != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++childIterator )</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> &amp; refPositionForcurrentChild = (*childIterator).second.second;</div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; refPositionForcurrentChild.size(); ++i)</div>
+<div class="line">         <span class="keywordflow">if</span>(refPositionForcurrentChild[i] &gt; changedReference)</div>
+<div class="line">            refPositionForcurrentChild[i] += displacement;</div>
+<div class="line"></div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_aa232aee020ebcf4fb2d7ed533d1f312f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d6f62cb23b1ea0ff42f57b795c875d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_retrieveMaxObjectNumber </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>maxNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">if</span>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5e08d1a187878b9afaad16d0012e692f">isPassed</a>())  <span class="keywordflow">return</span>;</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a> = <span class="keyword">true</span>;</div>
+<div class="line">   <span class="keywordflow">if</span>(maxNumber &lt; <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>)</div>
+<div class="line">      maxNumber = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>;</div>
+<div class="line">   Children::iterator it;</div>
+<div class="line">   <span class="keywordflow">for</span> ( it=<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; it != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++it )</div>
+<div class="line">      (*it).second.first-&gt;_retrieveMaxObjectNumber(maxNumber);       </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a1d6f62cb23b1ea0ff42f57b795c875d9_cgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a1d6f62cb23b1ea0ff42f57b795c875d9_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a60c4134c5e2c3ac7c7675d049b8fde7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_serialize </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        out &lt;&lt; <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a0e3571661a3f1b53a110bf8d8b5aa4fa">_generationNumber</a> &lt;&lt; <span class="stringliteral">&quot; obj\n&quot;</span> &lt;&lt; <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a> &lt;&lt; stream &lt;&lt; <span class="stringliteral">&quot;endobj\n&quot;</span>;</div>
+<div class="line">   out.flush();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a60c4134c5e2c3ac7c7675d049b8fde7c_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b4822fcff047355bf8f64b3a11d7a93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_lib::Object::_serialize </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; unsigned int, unsigned long long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sizes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9a96d26b2a9968ebec1be19d393c651d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object::_setObjectNumber </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>objectNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordflow">if</span>(!<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5e08d1a187878b9afaad16d0012e692f">isPassed</a>())</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a> = <span class="keyword">true</span>;</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a3b6d99145a438a0d8536f53467a6b509">_oldNumber</a> = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>;</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a> = objectNumber;</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a9a96d26b2a9968ebec1be19d393c651d_cgraph.svg" width="323" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a9a96d26b2a9968ebec1be19d393c651d_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a49aeda4d58d8fa8541e9bc2c609ba5f0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -330,16 +1035,26 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   child-&gt;_addParent(<span class="keyword">this</span>);</div>
-<div class="line">   _addChild(child, childPositionsInContent);</div>
+<div class="line">   child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a1a0bb9c89feaa71ef0e13ab16787f72a">_addParent</a>(<span class="keyword">this</span>);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acb2b5b79038e6325c8ce4b5e152355c6">_addChild</a>(child, childPositionsInContent);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a49aeda4d58d8fa8541e9bc2c609ba5f0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a49aeda4d58d8fa8541e9bc2c609ba5f0_cgraph.svg" width="491" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a49aeda4d58d8fa8541e9bc2c609ba5f0_icgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -375,9 +1090,18 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _content.append(addToContent);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.append(addToContent);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a0d95c2ed2314a0cb1c2d77e90a9f35b5_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a21c04aa4fd032fef003e6aac6ab1212d"></a>
@@ -405,16 +1129,26 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">int</span> iSize = size;</div>
-<div class="line">   _recalculateReferencePositions(from + size, -iSize);</div>
-<div class="line">   _content.erase(from, size);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa232aee020ebcf4fb2d7ed533d1f312f">_recalculateReferencePositions</a>(from + size, -iSize);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.erase(from, size);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a21c04aa4fd032fef003e6aac6ab1212d_icgraph.svg" width="334" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a21c04aa4fd032fef003e6aac6ab1212d_cgraph.svg" width="398" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a21c04aa4fd032fef003e6aac6ab1212d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -450,7 +1184,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordtype">bool</span> result = _findObject(token, foundObject, tokenPositionInContent);</div>
+<div class="line">   <span class="keywordtype">bool</span> result = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab077d8282ba5725793af06cca42e7ac7">_findObject</a>(<a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>, foundObject, tokenPositionInContent);</div>
 <div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ac38e5117070fa0a81c46259e46f0b939">resetIsPassed</a>();</div>
 <div class="line">   <span class="keywordflow">if</span>(result)</div>
 <div class="line">   {    </div>
@@ -459,21 +1193,22 @@ Friends</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a23bc60e234d95166f9daa4eb0c2235ad_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a23bc60e234d95166f9daa4eb0c2235ad_cgraph.svg" width="491" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a23bc60e234d95166f9daa4eb0c2235ad_icgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a23bc60e234d95166f9daa4eb0c2235ad_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -528,21 +1263,22 @@ Friends</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> foundObj;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a748cda680f3a23133864c0757ad7f058_cgraph.svg" width="390" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a748cda680f3a23133864c0757ad7f058_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a748cda680f3a23133864c0757ad7f058_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -575,16 +1311,25 @@ Friends</h2></td></tr>
 <div class="line">   std::vector&lt;Object *&gt; children = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5d2c9017437a3c305cf458c859837fa6">getChildrenByBounds</a>(leftBound, rightBound);</div>
 <div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; children.size(); ++i)</div>
 <div class="line">   {         </div>
-<div class="line">      _children.erase(_children.find(children[i]-&gt;getObjectNumber()));           </div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.erase(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.find(children[i]-&gt;getObjectNumber()));           </div>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ad8bd931350556b884d67c7c470a61e99_cgraph.svg" width="352" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ad8bd931350556b884d67c7c470a61e99_icgraph.svg" width="408" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -611,10 +1356,19 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">           {</div>
-<div class="line">                        _hasStreamInContent = <span class="keyword">true</span>;</div>
-<div class="line">                        _hasStream = <span class="keyword">true</span>;</div>
+<div class="line">                        <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a> = <span class="keyword">true</span>;</div>
+<div class="line">                        <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a> = <span class="keyword">true</span>;</div>
 <div class="line">           }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a352c4cacaa4efa997c96f64273862b8a_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a224f409e2c575b6688db5585bab59ca5"></a>
@@ -632,15 +1386,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="comment">//TODO: check object before returning</span></div>
-<div class="line">   <span class="keywordflow">return</span> _children[objectNumber].first;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>[objectNumber].first;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a224f409e2c575b6688db5585bab59ca5_icgraph.svg" width="339" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a224f409e2c575b6688db5585bab59ca5_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -660,30 +1414,30 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keyword">const</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> &amp; childrenPostion = _children[child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>()].second;</div>
+<div class="line">   <span class="keyword">const</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> &amp; childrenPostion = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>[child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>()].second;</div>
 <div class="line">   <span class="keywordflow">if</span>(</div>
 <div class="line">      (childrenPostion.size() != 1) ||</div>
-<div class="line">      (_children[child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>()].first != child)</div>
+<div class="line">      (<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>[child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>()].first != child)</div>
 <div class="line">      )</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Internal error or wrong document (some reference is found twise)&quot;</span>);</div>
 <div class="line">   <span class="keywordflow">return</span> childrenPostion[0];</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ac703276c6c64aac17a6eebac1847b42c_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ac703276c6c64aac17a6eebac1847b42c_icgraph.svg" width="382" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ac703276c6c64aac17a6eebac1847b42c_icgraph.svg" width="627" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -702,15 +1456,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _children;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_aab580190b963beb33f2ad2c5241a9605_icgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_aab580190b963beb33f2ad2c5241a9605_icgraph.svg" width="100%" height="393"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -741,7 +1496,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::vector&lt;Object *&gt; result;</div>
-<div class="line">   <span class="keywordflow">for</span>(Children::iterator currentChild = _children.begin(); currentChild != _children.end(); ++currentChild)</div>
+<div class="line">   <span class="keywordflow">for</span>(Children::iterator currentChild = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin(); currentChild != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++currentChild)</div>
 <div class="line">   {</div>
 <div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> childPositions = (*currentChild).second.second;</div>
 <div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; childPositions.size(); ++i)</div>
@@ -757,12 +1512,13 @@ Friends</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a5d2c9017437a3c305cf458c859837fa6_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a5d2c9017437a3c305cf458c859837fa6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -783,7 +1539,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::map&lt;unsigned int, Object *&gt; clonesMap;</div>
-<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * clone = _getClone(clonesMap);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * clone = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a2f440188ae7c14b4d4d723c1379c3dd3">_getClone</a>(clonesMap);</div>
 <div class="line">   std::map&lt;unsigned int, Object *&gt;::iterator conesIterator = clonesMap.begin();</div>
 <div class="line">   <span class="keywordflow">for</span>(; conesIterator != clonesMap.end(); ++conesIterator)</div>
 <div class="line">      clones.push_back((*conesIterator).second);</div>
@@ -792,21 +1548,21 @@ Friends</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> clone;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ae2b09666b49e415642bd168fa5d76ba2_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ae2b09666b49e415642bd168fa5d76ba2_cgraph.svg" width="491" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ae2b09666b49e415642bd168fa5d76ba2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ae2b09666b49e415642bd168fa5d76ba2_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -825,15 +1581,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _generationNumber;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a0e3571661a3f1b53a110bf8d8b5aa4fa">_generationNumber</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a63d0ca3a029a3084e66ba862afd690c2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a63d0ca3a029a3084e66ba862afd690c2_icgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -858,29 +1615,30 @@ Friends</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordflow">if</span>( !<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a42a15267894aa3119b5eb5e389c705fa" title="hasStream">hasStream</a>() )</div>
 <div class="line">   {</div>
-<div class="line">      content = _content;</div>
+<div class="line">      content = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>;</div>
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">   }</div>
-<div class="line">   <span class="keywordtype">size_t</span> stream_begin = _content.find(<span class="stringliteral">&quot;stream&quot;</span>);</div>
-<div class="line">   content = _content.substr(0,stream_begin);</div>
+<div class="line">   <span class="keywordtype">size_t</span> stream_begin = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.find(<span class="stringliteral">&quot;stream&quot;</span>);</div>
+<div class="line">   content = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.substr(0,stream_begin);</div>
 <div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a439a2b34f5e9480a36c299e30be0f6f7_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a439a2b34f5e9480a36c299e30be0f6f7_icgraph.svg" width="563" height="138"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a439a2b34f5e9480a36c299e30be0f6f7_icgraph.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -917,7 +1675,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="keywordtype">size_t</span> foundStart, foundEnd;</div>
-<div class="line">   std::string token = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a8137716311af63522dd38cad79fc4a40">Parser::findTokenStr</a>(content,pattern,start,foundStart,foundEnd);</div>
+<div class="line">   std::string <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a> = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a8137716311af63522dd38cad79fc4a40">Parser::findTokenStr</a>(content,pattern,start,foundStart,foundEnd);</div>
 <div class="line"></div>
 <div class="line">   std::string value;</div>
 <div class="line">   <span class="keywordtype">size_t</span> beg = 0;</div>
@@ -959,12 +1717,22 @@ Friends</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> value;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-40-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a74d6f1dd66a4371682ecb1415e61e818_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a74d6f1dd66a4371682ecb1415e61e818_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-41-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a74d6f1dd66a4371682ecb1415e61e818_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -983,15 +1751,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _content;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-42-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ad441291610e8d87698139463d2a27d21_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-42-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ad441291610e8d87698139463d2a27d21_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1010,15 +1779,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _number;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-43-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ad6b6bcffd9533e07678e2cb076dc2787_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-43-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ad6b6bcffd9533e07678e2cb076dc2787_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1045,9 +1815,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">           {</div>
-<div class="line">                  <span class="keywordflow">return</span> _oldNumber;</div>
+<div class="line">                  <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a3b6d99145a438a0d8536f53467a6b509">_oldNumber</a>;</div>
 <div class="line">           }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-44-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-44-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a17910ac5b37657f732f51b1bd312c5e0_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a9b3e355749987384a93891dbd05e73c1"></a>
@@ -1071,7 +1850,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">           {</div>
-<div class="line">                   <span class="keywordflow">return</span> _parents;</div>
+<div class="line">                   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>;</div>
 <div class="line">           }</div>
 </div><!-- fragment -->
 </div>
@@ -1101,7 +1880,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   std::vector&lt;Object *&gt; result;</div>
-<div class="line">   <span class="keywordflow">for</span>(Children::iterator currentChild = _children.begin(); currentChild != _children.end(); ++currentChild)</div>
+<div class="line">   <span class="keywordflow">for</span>(Children::iterator currentChild = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin(); currentChild != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); ++currentChild)</div>
 <div class="line">   {</div>
 <div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> childPositions = (*currentChild).second.second;</div>
 <div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; childPositions.size(); ++i)</div>
@@ -1122,12 +1901,21 @@ Friends</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-45-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-45-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a339dbecce58076f95648775141f7757f_cgraph.svg" width="558" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-46-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-46-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a339dbecce58076f95648775141f7757f_icgraph.svg" width="451" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1150,39 +1938,49 @@ Friends</h2></td></tr>
 <p>getStream </p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Todo:</a></b></dt><dd>: document this function </dd></dl>
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>(!_hasStream &amp;&amp; !_hasStreamInContent)</div>
+<div class="line">   <span class="keywordflow">if</span>(!<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a> &amp;&amp; !<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a>)</div>
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">   <span class="keywordflow">if</span>( _hasStream &amp;&amp; _hasStreamInContent)</div>
+<div class="line">   <span class="keywordflow">if</span>( <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a> &amp;&amp; <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a>)</div>
 <div class="line">   {</div>
-<div class="line">      <span class="keywordflow">if</span>(_getStreamFromContent(stream))</div>
+<div class="line">      <span class="keywordflow">if</span>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a00ed4b0776c43ff1dbc38f47319edb72">_getStreamFromContent</a>(stream))</div>
 <div class="line">         <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">      <span class="keywordflow">else</span></div>
 <div class="line">         <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">   std::ifstream pdfFile;</div>
-<div class="line">   pdfFile.open (_fileName.c_str(), std::ios::binary );</div>
+<div class="line">   pdfFile.open (<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a62552d943b764c2de66f18cc6d7e627a">_fileName</a>.c_str(), std::ios::binary );</div>
 <div class="line">   <span class="keywordflow">if</span> (pdfFile.fail())</div>
 <div class="line">   {</div>
 <div class="line">      std::stringstream errorMessage(<span class="stringliteral">&quot;File &quot;</span>);</div>
-<div class="line">      errorMessage &lt;&lt; _fileName &lt;&lt; <span class="stringliteral">&quot; is absent&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line">      errorMessage &lt;&lt; <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a62552d943b764c2de66f18cc6d7e627a">_fileName</a> &lt;&lt; <span class="stringliteral">&quot; is absent&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\0&quot;</span>;</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(errorMessage);</div>
 <div class="line">   }</div>
 <div class="line">   <span class="comment">// get length of file:</span></div>
-<div class="line">   <span class="keywordtype">int</span> length = _streamBounds.second - _streamBounds.first;</div>
-<div class="line">   pdfFile.seekg (_streamBounds.first, std::ios_base::beg);</div>
+<div class="line">   <span class="keywordtype">int</span> length = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a047801f0b7a04aad33b0eeebe0046e8b">_streamBounds</a>.second - <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a047801f0b7a04aad33b0eeebe0046e8b">_streamBounds</a>.first;</div>
+<div class="line">   pdfFile.seekg (<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a047801f0b7a04aad33b0eeebe0046e8b">_streamBounds</a>.first, std::ios_base::beg);</div>
 <div class="line">   stream.resize(length);</div>
 <div class="line">   pdfFile.read(&amp;stream[0], length);   </div>
 <div class="line">   pdfFile.close();</div>
 <div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-47-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a771b0f03b96250a9f814d4021f558a9a_icgraph.svg" width="100%" height="412"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-47-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a771b0f03b96250a9f814d4021f558a9a_cgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-48-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a771b0f03b96250a9f814d4021f558a9a_icgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1204,15 +2002,16 @@ Friends</h2></td></tr>
 <p>hasStream </p>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd>: document this function </dd></dl>
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _hasStream;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-49-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a42a15267894aa3119b5eb5e389c705fa_icgraph.svg" width="100%" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-49-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a42a15267894aa3119b5eb5e389c705fa_icgraph.svg" width="100%" height="482"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1248,16 +2047,26 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{       </div>
-<div class="line">   _recalculateReferencePositions(position, length);</div>
-<div class="line">   _content.insert(position, insertedStr, length);      </div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa232aee020ebcf4fb2d7ed533d1f312f">_recalculateReferencePositions</a>(position, length);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.insert(position, insertedStr, length);      </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-50-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a365bdb9272a41c9f7f5f9525a03b981f_icgraph.svg" width="403" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-50-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a365bdb9272a41c9f7f5f9525a03b981f_cgraph.svg" width="398" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-51-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-51-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a365bdb9272a41c9f7f5f9525a03b981f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1287,10 +2096,19 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _recalculateReferencePositions(position, insertedStr.size());</div>
-<div class="line">   _content.insert(position, insertedStr);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa232aee020ebcf4fb2d7ed533d1f312f">_recalculateReferencePositions</a>(position, insertedStr.size());</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.insert(position, insertedStr);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-52-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-52-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a77c59ebc8c0a2215be4ad5a76bb524c4_cgraph.svg" width="398" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a5e08d1a187878b9afaad16d0012e692f"></a>
@@ -1314,9 +2132,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">           {</div>
-<div class="line">                  <span class="keywordflow">return</span> _isPassed;</div>
+<div class="line">                  <span class="keywordflow">return</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a>;</div>
 <div class="line">           }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-53-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-53-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a5e08d1a187878b9afaad16d0012e692f_icgraph.svg" width="100%" height="489"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a54aaa67b196c1ee3f75fcb2b5b45c4d7"></a>
@@ -1333,25 +2160,25 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{       </div>
-<div class="line">   _recalculateObjectNumbers(newNumber);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a24ca560b6981eeb6de3febaddafdf522">_recalculateObjectNumbers</a>(newNumber);</div>
 <div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ac38e5117070fa0a81c46259e46f0b939">resetIsPassed</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-54" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-54-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a54aaa67b196c1ee3f75fcb2b5b45c4d7_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-54-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a54aaa67b196c1ee3f75fcb2b5b45c4d7_cgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-55" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-55-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-55-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a54aaa67b196c1ee3f75fcb2b5b45c4d7_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-55-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a54aaa67b196c1ee3f75fcb2b5b45c4d7_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1371,26 +2198,27 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> positions = _children[child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>()].second;</div>
-<div class="line">   _children.erase(child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>());</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">ReferencePositionsInContent</a> positions = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>[child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>()].second;</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.erase(child-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>());</div>
 <div class="line">   <span class="keywordflow">return</span> positions;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-56" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-56-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-56-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div id="dynsection-56-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a5413e83ed98fbab3a852efac0a1d783f_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-57" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-57-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-57-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a5413e83ed98fbab3a852efac0a1d783f_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-57-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a5413e83ed98fbab3a852efac0a1d783f_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1427,11 +2255,11 @@ Friends</h2></td></tr>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-58" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-58-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-58-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div id="dynsection-58-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_aa894578e1dcaa8644e45c07639979b2a_cgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1451,10 +2279,10 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>(!_parents.empty())</div>
+<div class="line">   <span class="keywordflow">if</span>(!<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>.empty())</div>
 <div class="line">   {</div>
-<div class="line">      std::set&lt;Object *&gt;::iterator currentParent = _parents.begin();</div>
-<div class="line">      <span class="keywordflow">for</span>(; currentParent != _parents.end(); ++currentParent)</div>
+<div class="line">      std::set&lt;Object *&gt;::iterator currentParent = <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>.begin();</div>
+<div class="line">      <span class="keywordflow">for</span>(; currentParent != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ab4691d60b7523acaa58c996240895b1a">_parents</a>.end(); ++currentParent)</div>
 <div class="line">      {</div>
 <div class="line">         (*currentParent)-&gt;removeChild(<span class="keyword">this</span>);</div>
 <div class="line">      }</div>
@@ -1484,10 +2312,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">           {</div>
-<div class="line">                  <span class="keywordflow">if</span>(_isPassed)</div>
-<div class="line">                         _isPassed = <span class="keyword">false</span>;</div>
+<div class="line">                  <span class="keywordflow">if</span>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a>)</div>
+<div class="line">                         <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a44b40e376bab45a2c16a795a1f69abb5">_isPassed</a> = <span class="keyword">false</span>;</div>
 <div class="line">                  Children::iterator it;</div>
-<div class="line">                  <span class="keywordflow">for</span> ( it=_children.begin() ; it != _children.end(); it++ )</div>
+<div class="line">                  <span class="keywordflow">for</span> ( it=<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; it != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); it++ )</div>
 <div class="line">                  {</div>
 <div class="line">                         <span class="keywordflow">if</span>((*it).second.first-&gt;isPassed())</div>
 <div class="line">                                (*it).second.first-&gt;resetIsPassed();</div>
@@ -1495,12 +2323,13 @@ Friends</h2></td></tr>
 <div class="line"></div>
 <div class="line">           }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-59-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-59-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ac38e5117070fa0a81c46259e46f0b939_icgraph.svg" width="100%" height="564"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-59-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_ac38e5117070fa0a81c46259e46f0b939_icgraph.svg" width="100%" height="562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1520,25 +2349,25 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _retrieveMaxObjectNumber(maxNumber);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a1d6f62cb23b1ea0ff42f57b795c875d9">_retrieveMaxObjectNumber</a>(maxNumber);</div>
 <div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ac38e5117070fa0a81c46259e46f0b939">resetIsPassed</a>();   </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-60" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-60-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-60-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_afdaeb3e503cd26fe09f0b1d30aadc7bc_cgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-60-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_afdaeb3e503cd26fe09f0b1d30aadc7bc_cgraph.svg" width="600" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-61" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-61-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-61-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_afdaeb3e503cd26fe09f0b1d30aadc7bc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-61-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_afdaeb3e503cd26fe09f0b1d30aadc7bc_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1569,47 +2398,47 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="comment">//is this element already printed</span></div>
-<div class="line">   <span class="keywordflow">if</span>(sizesAndGenerationNumbers.find(_number) != sizesAndGenerationNumbers.end()) <span class="keywordflow">return</span>;</div>
+<div class="line">   <span class="keywordflow">if</span>(sizesAndGenerationNumbers.find(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>) != sizesAndGenerationNumbers.end()) <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
 <div class="line">   std::string stream;</div>
-<div class="line">   <span class="keywordflow">if</span>(_hasStream &amp;&amp; !_hasStreamInContent)</div>
+<div class="line">   <span class="keywordflow">if</span>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#aa46661d0d71a37dc033fa3c38f1e0587">_hasStream</a> &amp;&amp; !<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#acd9f5ed74a7ddc8161baa416b29762b4">_hasStreamInContent</a>)</div>
 <div class="line">   {       </div>
 <div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a771b0f03b96250a9f814d4021f558a9a" title="getStream">getStream</a>(stream);</div>
 <div class="line">      stream.append(<span class="stringliteral">&quot;endstream\n&quot;</span>);        </div>
 <div class="line">   }</div>
 <div class="line">   <span class="comment">// xxxx + &quot; &quot; + &quot;0&quot; + &quot; &quot; + &quot;obj&quot; + &quot;\n&quot; + _content.size() + &quot;endobj\n&quot;, where x - is a digit</span></div>
-<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> objectSizeForXref = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::log10(static_cast&lt;double&gt;(_number))) + 1) + 14 + _content.size() + stream.size();    </div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> objectSizeForXref = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::log10(static_cast&lt;double&gt;(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>))) + 1) + 14 + <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a>.size() + stream.size();    </div>
 <div class="line"></div>
-<div class="line">   sizesAndGenerationNumbers.insert(std::pair&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, std::pair&lt;unsigned long long, unsigned int &gt; &gt;(_number, std::make_pair(objectSizeForXref, _generationNumber)));</div>
+<div class="line">   sizesAndGenerationNumbers.insert(std::pair&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, std::pair&lt;unsigned long long, unsigned int &gt; &gt;(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a>, std::make_pair(objectSizeForXref, <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a0e3571661a3f1b53a110bf8d8b5aa4fa">_generationNumber</a>)));</div>
 <div class="line"></div>
-<div class="line">   _serialize(out, stream);</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a60c4134c5e2c3ac7c7675d049b8fde7c">_serialize</a>(out, stream);</div>
 <div class="line">   stream.clear();</div>
 <div class="line">   stream.reserve();</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//call serialize of each child</span></div>
 <div class="line">   Children::iterator it;</div>
-<div class="line">   <span class="keywordflow">for</span> ( it=_children.begin() ; it != _children.end(); it++ )</div>
+<div class="line">   <span class="keywordflow">for</span> ( it=<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.begin() ; it != <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a381ba3323ae96a52c2f770e646d1c9ba">_children</a>.end(); it++ )</div>
 <div class="line">   {</div>
 <div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * currentChild = (*it).second.first;</div>
 <div class="line">      currentChild-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a90a2dd7c404c4cd275df87902d205337">serialize</a>(out, sizesAndGenerationNumbers);</div>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-62" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-62-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-62-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a90a2dd7c404c4cd275df87902d205337_cgraph.svg" width="315" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-62-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a90a2dd7c404c4cd275df87902d205337_cgraph.svg" width="534" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-63" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-63-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-63-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a90a2dd7c404c4cd275df87902d205337_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-63-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/df1/classmerge__lib_1_1_object_a90a2dd7c404c4cd275df87902d205337_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1629,7 +2458,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _content = objectContent;</div>
+<div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad376fe3a8b85fe4967eb1ead8f6eeb44">_content</a> = objectContent;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -1656,8 +2485,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">           {</div>
-<div class="line">                  _number = objNumber;</div>
-<div class="line">                  _oldNumber = objNumber;</div>
+<div class="line">                  <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a25df1889ab6e9bae8507bd2d8952260c">_number</a> = objNumber;</div>
+<div class="line">                  <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a3b6d99145a438a0d8536f53467a6b509">_oldNumber</a> = objNumber;</div>
 <div class="line"></div>
 <div class="line">           }</div>
 </div><!-- fragment -->
@@ -1684,9 +2513,230 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a381ba3323ae96a52c2f770e646d1c9ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#a4e1f3bf43d9fc39fea3829f7ae1da4a8">Children</a> merge_lib::Object::_children</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad376fe3a8b85fe4967eb1ead8f6eeb44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string merge_lib::Object::_content</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a62552d943b764c2de66f18cc6d7e627a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string merge_lib::Object::_fileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e3571661a3f1b53a110bf8d8b5aa4fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::Object::_generationNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa46661d0d71a37dc033fa3c38f1e0587"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool merge_lib::Object::_hasStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd9f5ed74a7ddc8161baa416b29762b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool merge_lib::Object::_hasStreamInContent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44b40e376bab45a2c16a795a1f69abb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool merge_lib::Object::_isPassed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a25df1889ab6e9bae8507bd2d8952260c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::Object::_number</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b6d99145a438a0d8536f53467a6b509"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::Object::_oldNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab4691d60b7523acaa58c996240895b1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt;<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&gt; merge_lib::Object::_parents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a047801f0b7a04aad33b0eeebe0046e8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;unsigned int, unsigned int&gt; merge_lib::Object::_streamBounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../df/d30/_object_8h_source.html">Object.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d8/ded/_object_8cpp.html">Object.cpp</a></li>
+<li><a class="el" href="../../df/d30/_object_8h_source.html">Object.h</a></li>
+<li><a class="el" href="../../d8/ded/_object_8cpp.html">Object.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1694,7 +2744,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

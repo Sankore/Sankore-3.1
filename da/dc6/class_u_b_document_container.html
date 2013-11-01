@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('da/dc6/class_u_b_document_container.ht
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/daf/class_u_b_document_container-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentContainer Class Reference</div>  </div>
@@ -126,7 +127,7 @@ $(document).ready(function(){initNavTree('da/dc6/class_u_b_document_container.ht
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d54/class_u_b_document_container__coll__graph.svg" width="195" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d54/class_u_b_document_container__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -163,6 +164,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0249241fde3e11a80569e420adb58137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#a0249241fde3e11a80569e420adb58137">deleteThumbPage</a> (int index)</td></tr>
 <tr class="memitem:a0aa2ce35a38cac3cb81ef41b6e4ac04f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#a0aa2ce35a38cac3cb81ef41b6e4ac04f">updateThumbPage</a> (int index)</td></tr>
 <tr class="memitem:a2dafb7fe2ca7358105b7717821647f24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#a2dafb7fe2ca7358105b7717821647f24">insertThumbPage</a> (int index)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a455d7d3abe0a418db7ddb3680ebbd2da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a></td></tr>
+<tr class="memitem:a5bf7b7c966505663831448e624c19258"><td class="memItemLeft" align="right" valign="top">QList&lt; const QPixmap * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5849f5f460c00d25d5a07f99bfb4a973"></a>
@@ -179,7 +185,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    :QObject(parent)</div>
-<div class="line">    ,mCurrentDocument(NULL)</div>
+<div class="line">    ,<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>(NULL)</div>
 <div class="line">{}</div>
 </div><!-- fragment -->
 </div>
@@ -205,7 +211,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">foreach</span>(<span class="keyword">const</span> QPixmap* pm, mDocumentThumbs){</div>
+<div class="line">    <span class="keywordflow">foreach</span>(<span class="keyword">const</span> QPixmap* pm, <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>){</div>
 <div class="line">        <span class="keyword">delete</span> pm;</div>
 <div class="line">        pm = NULL;</div>
 <div class="line">    }</div>
@@ -228,7 +234,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> QPixmap* pThumb = <span class="keyword">new</span> QPixmap();</div>
-<div class="line">    mDocumentThumbs.append(pThumb);</div>
+<div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.append(pThumb);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -236,7 +242,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a860b8b8e9223763778c6980b1fe472b2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a860b8b8e9223763778c6980b1fe472b2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -256,7 +263,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a76cf6f2838a93d64153d7eb6e62521ff">createDocumentSceneAt</a>(mCurrentDocument, index);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a76cf6f2838a93d64153d7eb6e62521ff">createDocumentSceneAt</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, index);</div>
 <div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a2dafb7fe2ca7358105b7717821647f24">insertThumbPage</a>(index);</div>
 <div class="line">    emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#afb8a9a176e31db954ae73e74b78b1d6e">documentThumbnailsUpdated</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
@@ -275,7 +282,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a8695e1fb7c34671938ee814f1e7d4896_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a8695e1fb7c34671938ee814f1e7d4896_icgraph.svg" width="100%" height="590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -305,7 +313,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mDocumentThumbs.insert(index, pix);</div>
+<div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.insert(index, pix);</div>
 <div class="line">    emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#afb8a9a176e31db954ae73e74b78b1d6e">documentThumbnailsUpdated</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -343,7 +351,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a8024bebd59a18f8cefa5f042aa42ed25">deleteDocumentScenes</a>(mCurrentDocument, pageIndexes);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a8024bebd59a18f8cefa5f042aa42ed25">deleteDocumentScenes</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, pageIndexes);</div>
 <div class="line">    <span class="keywordtype">int</span> offset = 0;</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> index, pageIndexes)</div>
 <div class="line">    {</div>
@@ -367,7 +375,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a156ab898f2b4ff3f12f1e6d5e3406a69_icgraph.svg" width="352" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a156ab898f2b4ff3f12f1e6d5e3406a69_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -395,7 +403,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mDocumentThumbs.removeAt(index);</div>
+<div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.removeAt(index);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -403,7 +411,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a0249241fde3e11a80569e420adb58137_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a0249241fde3e11a80569e420adb58137_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -436,7 +444,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ac21fbf1404bb7094ae0094f7382d21c2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ac21fbf1404bb7094ae0094f7382d21c2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -469,7 +478,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a3a55f82506aa66ce1461dee609157862_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a3a55f82506aa66ce1461dee609157862_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -502,7 +512,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_afb8a9a176e31db954ae73e74b78b1d6e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_afb8a9a176e31db954ae73e74b78b1d6e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -525,8 +536,8 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordtype">int</span> offset = 0;</div>
 <div class="line">    <span class="keywordflow">foreach</span>(<span class="keywordtype">int</span> sceneIndex, pageIndexes) {</div>
 <div class="line"><span class="comment">//        UBPersistenceManager::persistenceManager()-&gt;duplicateDocumentScene(mCurrentDocument, sceneIndex + offset);</span></div>
-<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a02050499f8179287038922f42ddf2e17">copyDocumentScene</a>(mCurrentDocument, sceneIndex + offset,</div>
-<div class="line">                                                                      mCurrentDocument, sceneIndex + offset + 1);</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a02050499f8179287038922f42ddf2e17">copyDocumentScene</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, sceneIndex + offset,</div>
+<div class="line">                                                                      <a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, sceneIndex + offset + 1);</div>
 <div class="line">        offset++;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -573,7 +584,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mDocumentThumbs.insert(index, <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a1091dfe6f3cd9fc2abd2de3604d9ec10">UBThumbnailAdaptor::get</a>(mCurrentDocument, index));</div>
+<div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.insert(index, <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a1091dfe6f3cd9fc2abd2de3604d9ec10">UBThumbnailAdaptor::get</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, index));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -581,7 +592,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a2dafb7fe2ca7358105b7717821647f24_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a2dafb7fe2ca7358105b7717821647f24_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -590,7 +601,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a2dafb7fe2ca7358105b7717821647f24_icgraph.svg" width="100%" height="577"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a2dafb7fe2ca7358105b7717821647f24_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -625,7 +637,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        <span class="comment">// Title page - cant be moved</span></div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
-<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab25757455d7f0dc3a356977e4156acda">moveSceneToIndex</a>(mCurrentDocument, source, target);</div>
+<div class="line">    <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab25757455d7f0dc3a356977e4156acda">moveSceneToIndex</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, source, target);</div>
 <div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a0249241fde3e11a80569e420adb58137">deleteThumbPage</a>(source);</div>
 <div class="line">    <a class="code" href="../../da/dc6/class_u_b_document_container.html#a2dafb7fe2ca7358105b7717821647f24">insertThumbPage</a>(target);</div>
 <div class="line">    emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#afb8a9a176e31db954ae73e74b78b1d6e">documentThumbnailsUpdated</a>(<span class="keyword">this</span>);</div>
@@ -637,7 +649,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a4deb511d6a7b576f325daf8aea188f54_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a4deb511d6a7b576f325daf8aea188f54_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -646,7 +658,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a4deb511d6a7b576f325daf8aea188f54_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a4deb511d6a7b576f325daf8aea188f54_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -673,14 +685,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mDocumentThumbs[index];}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>[index];}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a4482fb1ef69c93fca33e2fb69d5e40b7_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a4482fb1ef69c93fca33e2fb69d5e40b7_icgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -706,14 +718,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mDocumentThumbs.size();}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.size();}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ae84266eece665659405100eaf4e7d8d0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ae84266eece665659405100eaf4e7d8d0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -751,7 +764,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ad573f4f006c0eac302455c6bd20421a7_cgraph.svg" width="360" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ad573f4f006c0eac302455c6bd20421a7_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -760,7 +773,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ad573f4f006c0eac302455c6bd20421a7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ad573f4f006c0eac302455c6bd20421a7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -787,7 +801,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mCurrentDocument = document;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a> = document;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -813,11 +827,11 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mCurrentDocument) {</div>
-<div class="line">        <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#adcb1e2aedc83a85ac0407d9332f8ea65">UBThumbnailAdaptor::load</a>(mCurrentDocument, mDocumentThumbs);</div>
-<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Reloading Thumbnails. new mDocumentThumbs size: &quot;</span> &lt;&lt; mDocumentThumbs.size();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>) {</div>
+<div class="line">        <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#adcb1e2aedc83a85ac0407d9332f8ea65">UBThumbnailAdaptor::load</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>);</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Reloading Thumbnails. new mDocumentThumbs size: &quot;</span> &lt;&lt; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.size();</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#aed86191f67adb75e22ad9e2b3d1be7ca">UBThumbnailAdaptor::clearThumbs</a>(mDocumentThumbs);</div>
+<div class="line">        <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#aed86191f67adb75e22ad9e2b3d1be7ca">UBThumbnailAdaptor::clearThumbs</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>);</div>
 <div class="line">    }</div>
 <div class="line">    emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#afb8a9a176e31db954ae73e74b78b1d6e">documentThumbnailsUpdated</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
@@ -827,7 +841,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ac3272d2665550f16f671697a428d444a_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ac3272d2665550f16f671697a428d444a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -836,7 +850,8 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ac3272d2665550f16f671697a428d444a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_ac3272d2665550f16f671697a428d444a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -874,7 +889,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a50018eb826fe5ea46d168cf02b8f1dd8_cgraph.svg" width="360" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a50018eb826fe5ea46d168cf02b8f1dd8_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -909,17 +924,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mCurrentDocument;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a859116555c2e46b6949e6e1cc613d754_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="af4ec175500cc0917a65d77f50b2ddca5"></a>
@@ -956,29 +962,30 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../d6/de0/class_u_b_document_controller.html#a097804748c35b992649703b34879f93a">UBDocumentController</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mCurrentDocument != document || forceReload)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a> != document || forceReload)</div>
 <div class="line">    {</div>
-<div class="line">        mCurrentDocument = document;</div>
+<div class="line">        <a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a> = document;</div>
 <div class="line">        <a class="code" href="../../da/dc6/class_u_b_document_container.html#ac3272d2665550f16f671697a428d444a">reloadThumbnails</a>();</div>
-<div class="line">        emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#a3a55f82506aa66ce1461dee609157862">documentSet</a>(mCurrentDocument);</div>
+<div class="line">        emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#a3a55f82506aa66ce1461dee609157862">documentSet</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_af4ec175500cc0917a65d77f50b2ddca5_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_af4ec175500cc0917a65d77f50b2ddca5_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_af4ec175500cc0917a65d77f50b2ddca5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_af4ec175500cc0917a65d77f50b2ddca5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1002,21 +1009,22 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#afb8a9a176e31db954ae73e74b78b1d6e">documentThumbnailsUpdated</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a79fc0149f295d96c4569bceffc768ccf_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a79fc0149f295d96c4569bceffc768ccf_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a79fc0149f295d96c4569bceffc768ccf_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a79fc0149f295d96c4569bceffc768ccf_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1046,35 +1054,77 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//bad hack for last page duplicated + action that lead to a crash</span></div>
-<div class="line">    <span class="keywordflow">if</span>(index &lt; mDocumentThumbs.count()){</div>
-<div class="line">        mDocumentThumbs[index] = <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a1091dfe6f3cd9fc2abd2de3604d9ec10">UBThumbnailAdaptor::get</a>(mCurrentDocument, index);</div>
+<div class="line">    <span class="keywordflow">if</span>(index &lt; <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>.count()){</div>
+<div class="line">        <a class="code" href="../../da/dc6/class_u_b_document_container.html#a5bf7b7c966505663831448e624c19258">mDocumentThumbs</a>[index] = <a class="code" href="../../d0/d06/class_u_b_thumbnail_adaptor.html#a1091dfe6f3cd9fc2abd2de3604d9ec10">UBThumbnailAdaptor::get</a>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#a455d7d3abe0a418db7ddb3680ebbd2da">mCurrentDocument</a>, index);</div>
 <div class="line">        emit <a class="code" href="../../da/dc6/class_u_b_document_container.html#ac21fbf1404bb7094ae0094f7382d21c2">documentPageUpdated</a>(index);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a0aa2ce35a38cac3cb81ef41b6e4ac04f_cgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a0aa2ce35a38cac3cb81ef41b6e4ac04f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a0aa2ce35a38cac3cb81ef41b6e4ac04f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc6/class_u_b_document_container_a0aa2ce35a38cac3cb81ef41b6e4ac04f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a455d7d3abe0a418db7ddb3680ebbd2da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* UBDocumentContainer::mCurrentDocument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5bf7b7c966505663831448e624c19258"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;const QPixmap*&gt; UBDocumentContainer::mDocumentThumbs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/document/<a class="el" href="../../df/d8e/_u_b_document_container_8h_source.html">UBDocumentContainer.h</a></li>
-<li>Sankore-3.1/src/document/<a class="el" href="../../d1/d9f/_u_b_document_container_8cpp.html">UBDocumentContainer.cpp</a></li>
+<li><a class="el" href="../../df/d8e/_u_b_document_container_8h_source.html">UBDocumentContainer.h</a></li>
+<li><a class="el" href="../../d1/d9f/_u_b_document_container_8cpp.html">UBDocumentContainer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1082,7 +1132,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/dc6/class_u_b_document_container.html">UBDocumentContainer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:58 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

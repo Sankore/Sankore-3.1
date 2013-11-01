@@ -1,11 +1,29 @@
 var class_u_b_windows_media_file =
 [
+    [ "MarkerInfo", "d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html", "d6/d4b/struct_u_b_windows_media_file_1_1_marker_info" ],
     [ "UBWindowsMediaFile", "d7/d45/class_u_b_windows_media_file.html#a7a285d5e38b023d67338b85375554023", null ],
     [ "~UBWindowsMediaFile", "d7/d45/class_u_b_windows_media_file.html#ad24e0567103b5d30ce53b15cc7b2278c", null ],
     [ "appendAudioBuffer", "d7/d45/class_u_b_windows_media_file.html#a8fb19ef55c2c7b9d7e28b4d6c668100e", null ],
     [ "appendVideoFrame", "d7/d45/class_u_b_windows_media_file.html#a1254e9626ed2df7ab83b2b570c687fe7", null ],
     [ "close", "d7/d45/class_u_b_windows_media_file.html#ae0c11e225ab7115cd9a73dc1cb7795db", null ],
     [ "init", "d7/d45/class_u_b_windows_media_file.html#a2ec22f721fb8db66d6a54c0830239dc9", null ],
+    [ "initVideoStream", "d7/d45/class_u_b_windows_media_file.html#ae31d1fe781748605d4f0bbf3603f3791", null ],
     [ "lastErrorMessage", "d7/d45/class_u_b_windows_media_file.html#a9c25699961d8f7d0437a740ea8b513a6", null ],
-    [ "startNewChapter", "d7/d45/class_u_b_windows_media_file.html#aef92398aa853a9cc6999569090c78021", null ]
+    [ "msToSampleTime", "d7/d45/class_u_b_windows_media_file.html#a576e77e106b016b2688227103d9560b1", null ],
+    [ "releaseWMObjects", "d7/d45/class_u_b_windows_media_file.html#a47a56804c3125ba397d29ab7baf1c3b8", null ],
+    [ "setLastErrorMessage", "d7/d45/class_u_b_windows_media_file.html#ae13f7892a4fc270eea4e7551d7271829", null ],
+    [ "startNewChapter", "d7/d45/class_u_b_windows_media_file.html#aef92398aa853a9cc6999569090c78021", null ],
+    [ "mAudioInputIndex", "d7/d45/class_u_b_windows_media_file.html#ae6f6a5b5e16496b3379c9f4e3e8a77e1", null ],
+    [ "mChapters", "d7/d45/class_u_b_windows_media_file.html#a9963c638b51bd5778c13735f8579eff1", null ],
+    [ "mFramesPerSecond", "d7/d45/class_u_b_windows_media_file.html#a37506a61593ec6d8980a7b0fd5e07e01", null ],
+    [ "mLastErrorMessage", "d7/d45/class_u_b_windows_media_file.html#a3b54e7191a8864d6f659dc2866b8db90", null ],
+    [ "mPushSink", "d7/d45/class_u_b_windows_media_file.html#a6592ecffe74c495977de6f856c37e770", null ],
+    [ "mVideoFileName", "d7/d45/class_u_b_windows_media_file.html#a1c1a12638e8d3da5c55e5fe5f9ce5795", null ],
+    [ "mVideoInputIndex", "d7/d45/class_u_b_windows_media_file.html#a6be56adc383a876d15704a4f2445f22a", null ],
+    [ "mWMhDC", "d7/d45/class_u_b_windows_media_file.html#a489cd991fb1fc594975edb913a0148e9", null ],
+    [ "mWMInputAudioProps", "d7/d45/class_u_b_windows_media_file.html#a74645a36a2c6f7a344ed00f80c1d22ce", null ],
+    [ "mWMInputVideoProps", "d7/d45/class_u_b_windows_media_file.html#a36346dbecbe95c597b656026968de6ff", null ],
+    [ "mWMProfile", "d7/d45/class_u_b_windows_media_file.html#a899c5df746a605f56e7e75f7bad18f37", null ],
+    [ "mWMProfileManager", "d7/d45/class_u_b_windows_media_file.html#a1eff308210a239622b867ce8972bd81e", null ],
+    [ "mWMWriter", "d7/d45/class_u_b_windows_media_file.html#af2a66a76cfb53bbc5d4efa6ac19ad89a", null ]
 ];

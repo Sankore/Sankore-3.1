@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('db/dc5/class_u_b_graphics_text_item_un
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/d13/class_u_b_graphics_text_item_undo_command-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsTextItemUndoCommand Class Reference</div>  </div>
@@ -141,6 +142,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa3eb5c208a6f3d30ea3104b435ffebd5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#aa3eb5c208a6f3d30ea3104b435ffebd5">undo</a> ()</td></tr>
 <tr class="memitem:ae96458493969e0d46e23fc0e3eb31f7e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#ae96458493969e0d46e23fc0e3eb31f7e">redo</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a19c2a6202c68305a08d252411d961b02"><td class="memItemLeft" align="right" valign="top">QPointer&lt; <a class="el" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_u_b_abstract_undo_command"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_u_b_abstract_undo_command')"><img src="../../closed.png" alt="-"/>&nbsp;Public Types inherited from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html">UBAbstractUndoCommand</a></td></tr>
@@ -170,7 +175,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mTextItem(textItem)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a>(textItem)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -253,8 +258,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a6de13cf6ae729763431413aa39b78e82">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mTextItem &amp;&amp; mTextItem-&gt;document())</div>
-<div class="line">        mTextItem-&gt;document()-&gt;redo();</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a> &amp;&amp; <a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a>-&gt;document())</div>
+<div class="line">        <a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a>-&gt;document()-&gt;redo();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -282,15 +287,36 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a91cd202e68ba7cc83f8490a6eec15dcc">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mTextItem &amp;&amp; mTextItem-&gt;document())</div>
-<div class="line">        mTextItem-&gt;document()-&gt;undo();</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a> &amp;&amp; <a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a>-&gt;document())</div>
+<div class="line">        <a class="code" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html#a19c2a6202c68305a08d252411d961b02">mTextItem</a>-&gt;document()-&gt;undo();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a19c2a6202c68305a08d252411d961b02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointer&lt;<a class="el" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>&gt; UBGraphicsTextItemUndoCommand::mTextItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d5/d79/_u_b_graphics_text_item_undo_command_8h_source.html">UBGraphicsTextItemUndoCommand.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d5/d23/_u_b_graphics_text_item_undo_command_8cpp.html">UBGraphicsTextItemUndoCommand.cpp</a></li>
+<li><a class="el" href="../../d5/d79/_u_b_graphics_text_item_undo_command_8h_source.html">UBGraphicsTextItemUndoCommand.h</a></li>
+<li><a class="el" href="../../d5/d23/_u_b_graphics_text_item_undo_command_8cpp.html">UBGraphicsTextItemUndoCommand.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -298,7 +324,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dc5/class_u_b_graphics_text_item_undo_command.html">UBGraphicsTextItemUndoCommand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:56 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:04 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

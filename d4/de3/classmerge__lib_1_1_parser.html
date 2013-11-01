@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('d4/de3/classmerge__lib_1_1_parser.html
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../de/d21/classmerge__lib_1_1_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::Parser Class Reference</div>  </div>
@@ -120,7 +121,7 @@ $(document).ready(function(){initNavTree('d4/de3/classmerge__lib_1_1_parser.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dd5/classmerge__lib_1_1_parser__inherit__graph.svg" width="272" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/dd5/classmerge__lib_1_1_parser__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for merge_lib::Parser:</div>
@@ -166,6 +167,31 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ad4811a7d46bb4b2795b22b4bef2f10bb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a></td></tr>
 <tr class="memitem:ac153e7f69cfb00ecd76d987f36dcb305"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a></td></tr>
 <tr class="memitem:a960a35df87a3700cffd4dd2c64a76fa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a436a14da8164a45cecaa908a1362b80c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a436a14da8164a45cecaa908a1362b80c">_getFileContent</a> (const char *fileName)</td></tr>
+<tr class="memitem:a6192bfcc671b3ac2d2caa4ca0cd949eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a6192bfcc671b3ac2d2caa4ca0cd949eb">_getNextObject</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *object)</td></tr>
+<tr class="memitem:ac1737c21e4747c37008fcd8dc947661f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac1737c21e4747c37008fcd8dc947661f">_callObserver</a> (std::string objectContent)</td></tr>
+<tr class="memitem:a78f1b7bc62f8b77302f965c36db8636e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a78f1b7bc62f8b77302f965c36db8636e">_createObjectTree</a> (const char *fileName)</td></tr>
+<tr class="memitem:ab4420fe64119d40e88fa596b0d26ed44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ab4420fe64119d40e88fa596b0d26ed44">_retrieveAllPages</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *objectWithKids)</td></tr>
+<tr class="memitem:acf47c81f2478cfc66ef2b1c1a3e1632f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#acf47c81f2478cfc66ef2b1c1a3e1632f">_fillOutObjects</a> ()</td></tr>
+<tr class="memitem:ab5af6a5dfbd7c2122e957a027d480bd9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ab5af6a5dfbd7c2122e957a027d480bd9">_readXRefAndCreateObjects</a> ()</td></tr>
+<tr class="memitem:a1f0bfdbd39d64fd09534c508c5136ca9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1f0bfdbd39d64fd09534c508c5136ca9">_getEndOfLineFromContent</a> (unsigned int fromPosition)</td></tr>
+<tr class="memitem:ad1687ac4f10bbbee26363653095c5830"><td class="memItemLeft" align="right" valign="top">const std::pair&lt; unsigned int, <br class="typebreak"/>
+unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad1687ac4f10bbbee26363653095c5830">_getLineBounds</a> (const std::string &amp;str, unsigned int fromPosition)</td></tr>
+<tr class="memitem:a2ff2e48880384ed0f006d4588bf8b5d9"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a> (unsigned int &amp;fromPosition)</td></tr>
+<tr class="memitem:ae860b8f4f4664dbfd58afcbe43673e19"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ae860b8f4f4664dbfd58afcbe43673e19">_countTokens</a> (unsigned int leftBound, unsigned int rightBount)</td></tr>
+<tr class="memitem:ae0d9c0256804374e6b63bed10d3bc547"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#ae0d9c0256804374e6b63bed10d3bc547">_skipWhiteSpaces</a> (const std::string &amp;str)</td></tr>
+<tr class="memitem:a81c4b1a307991f43f054e8807185f8c0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a> (unsigned int fromPosition)</td></tr>
+<tr class="memitem:a790b3291140a3cc7d5cf0347127c5cdd"><td class="memItemLeft" align="right" valign="top">const std::map&lt; unsigned int, <br class="typebreak"/>
+<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a790b3291140a3cc7d5cf0347127c5cdd">_getReferences</a> (const std::string &amp;objectContent)</td></tr>
+<tr class="memitem:a87f8339e6400f56ddbb3734ec1b52de0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a87f8339e6400f56ddbb3734ec1b52de0">_skipNumber</a> (const std::string &amp;str, unsigned int currentPosition)</td></tr>
+<tr class="memitem:aee7f96490d297e492c7cafbe017757e6"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#aee7f96490d297e492c7cafbe017757e6">_skipWhiteSpaces</a> (const std::string &amp;str, unsigned int fromPosition)</td></tr>
+<tr class="memitem:a4eaf05edeeeaa767aa30e061cea72262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a4eaf05edeeeaa767aa30e061cea72262">_createDocument</a> (const char *docName)</td></tr>
+<tr class="memitem:a9ee3baabc2c873a62a135a323224aad6"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9ee3baabc2c873a62a135a323224aad6">_getStartOfXrefWithRoot</a> ()</td></tr>
+<tr class="memitem:a2e1d609c14cb305239d77aff2b1deb20"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2e1d609c14cb305239d77aff2b1deb20">_readTrailerAndRterievePrev</a> (const unsigned int startPositionForSearch, unsigned int &amp;previosXref)</td></tr>
+<tr class="memitem:a9fa701b9d070dcc4d5c1d076aa47ccff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9fa701b9d070dcc4d5c1d076aa47ccff">_clearParser</a> ()</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0c16db1ac6d8d9c78fbcf5168fee3db7"></a>
@@ -193,6 +219,462 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ac1737c21e4747c37008fcd8dc947661f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_lib::Parser::_callObserver </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>objectContent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9fa701b9d070dcc4d5c1d076aa47ccff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::_clearParser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a> = 0;</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.clear();</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.reserve();</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.clear();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae860b8f4f4664dbfd58afcbe43673e19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_countTokens </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>leftBound</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>rightBount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a>(leftBound);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tokensCount = 0;</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">while</span> (position &lt; rightBount)</div>
+<div class="line">   {</div>
+<div class="line">      position = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>, position);</div>
+<div class="line">      <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)position != -1)</div>
+<div class="line">         ++tokensCount;</div>
+<div class="line">      <span class="comment">//start search from next symbol</span></div>
+<div class="line">      ++position;</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">return</span> tokensCount;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_ae860b8f4f4664dbfd58afcbe43673e19_cgraph.svg" width="310" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4eaf05edeeeaa767aa30e061cea72262"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::_createDocument </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>docName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(docName);</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a> = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a>;</div>
+<div class="line">   std::string &amp; rootContent = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPages = rootContent.find(<span class="stringliteral">&quot;/Pages&quot;</span>);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)startOfPages == -1)</div>
+<div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Some document is wrong&quot;</span>);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfPages = rootContent.find(<span class="stringliteral">&quot;R&quot;</span>, startOfPages);</div>
+<div class="line">   std::vector&lt;Object *&gt; objectWithKids = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a5d2c9017437a3c305cf458c859837fa6">getChildrenByBounds</a>(startOfPages, endOfPages);</div>
+<div class="line">   <span class="keywordflow">if</span>(objectWithKids.size() != 1)</div>
+<div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Some document is wrong&quot;</span>);</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ab4420fe64119d40e88fa596b0d26ed44">_retrieveAllPages</a>(objectWithKids[0]);</div>
+<div class="line"></div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#afdaeb3e503cd26fe09f0b1d30aadc7bc">retrieveMaxObjectNumber</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a0310f6d329811c8ab7c0eac3f6e7c997">_maxObjectNumber</a>);</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9fa701b9d070dcc4d5c1d076aa47ccff">_clearParser</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a78f1b7bc62f8b77302f965c36db8636e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::_createObjectTree </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rootObjectNumber = 0;</div>
+<div class="line">   <span class="keywordflow">try</span></div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a436a14da8164a45cecaa908a1362b80c">_getFileContent</a>(fileName);</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ab5af6a5dfbd7c2122e957a027d480bd9">_readXRefAndCreateObjects</a>();</div>
+<div class="line">      rootObjectNumber = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a59d3468e300a02465974908a98150779">_readTrailerAndReturnRoot</a>();</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">catch</span> (std::exception &amp;)</div>
+<div class="line">   {</div>
+<div class="line">      std::map&lt;unsigned int, Object *&gt;::const_iterator it(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.begin());</div>
+<div class="line">      <span class="keywordflow">for</span>(;it != <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.end();it++)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keyword">delete</span> (*it).second;</div>
+<div class="line">      }</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.clear();</div>
+<div class="line">      <span class="keywordflow">throw</span>;</div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   std::map&lt;unsigned int, Object *&gt;::iterator objectsIterator;</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">for</span> ( objectsIterator = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.begin() ; objectsIterator != <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.end(); objectsIterator++ )</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * currentObject = (*objectsIterator).second;</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.push_back(currentObject);</div>
+<div class="line">      <span class="comment">//key - object number :  value - positions in object content of this reference</span></div>
+<div class="line">      <span class="keyword">const</span> std::map&lt;unsigned int, Object::ReferencePositionsInContent&gt; &amp; refs = </div>
+<div class="line">         <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a790b3291140a3cc7d5cf0347127c5cdd">_getReferences</a>(currentObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>());      </div>
+<div class="line">      std::map&lt;unsigned int, Object::ReferencePositionsInContent&gt;::const_iterator refsIterator = refs.begin();</div>
+<div class="line">      <span class="keywordflow">for</span>(; refsIterator !=  refs.end(); ++refsIterator)</div>
+<div class="line">      {        </div>
+<div class="line">         <span class="keywordflow">if</span>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.count((*refsIterator).first))</div>
+<div class="line">            currentObject-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a49aeda4d58d8fa8541e9bc2c609ba5f0">addChild</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>[(*refsIterator).first], (*refsIterator).second);           </div>
+<div class="line">      }</div>
+<div class="line">   }   </div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a861ca5313f20519108b925eb1572e84c">_root</a> = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>[rootObjectNumber];</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a78f1b7bc62f8b77302f965c36db8636e_cgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acf47c81f2478cfc66ef2b1c1a3e1632f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_lib::Parser::_fillOutObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1f0bfdbd39d64fd09534c508c5136ca9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_getEndOfLineFromContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fromPosition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   fromPosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a>(fromPosition);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfLine = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<span class="stringliteral">&quot;\n\r&quot;</span>, fromPosition);</div>
+<div class="line">   endOfLine = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_last_of(<span class="stringliteral">&quot;\n\r&quot;</span>, endOfLine);</div>
+<div class="line">   <span class="keywordflow">return</span> endOfLine;</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a436a14da8164a45cecaa908a1362b80c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::_getFileContent </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   ifstream pdfFile;</div>
+<div class="line">   pdfFile.open (fileName, ios::binary );</div>
+<div class="line">   <span class="keywordflow">if</span> (pdfFile.fail())</div>
+<div class="line">   {</div>
+<div class="line">      stringstream errorMessage(<span class="stringliteral">&quot;File &quot;</span>);</div>
+<div class="line">      errorMessage &lt;&lt; fileName &lt;&lt; <span class="stringliteral">&quot; is absent&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\0&quot;</span>;</div>
+<div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(errorMessage);</div>
+<div class="line">   }</div>
+<div class="line">   <span class="comment">// get length of file:</span></div>
+<div class="line">   pdfFile.seekg (0, ios::end);</div>
+<div class="line">   <span class="keywordtype">int</span> length = pdfFile.tellg();</div>
+<div class="line">   pdfFile.seekg (0, ios::beg);</div>
+<div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.resize(length);</div>
+<div class="line">   pdfFile.read(&amp;<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[0], length);</div>
+<div class="line"></div>
+<div class="line">   <span class="comment">// check version</span></div>
+<div class="line">   <span class="keyword">const</span> <span class="keywordtype">char</span> *header = <span class="stringliteral">&quot;%PDF-1.&quot;</span>;</div>
+<div class="line">   <span class="keywordtype">size_t</span> verPos = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(header);</div>
+<div class="line">   <span class="keywordflow">if</span>( verPos == 0 )</div>
+<div class="line">   {</div>
+<div class="line">      verPos += strlen(header);</div>
+<div class="line">      <span class="keywordtype">char</span> ver = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[verPos];</div>
+<div class="line">      <span class="keywordflow">if</span>( ver &lt; &#39;0&#39; || ver &gt; <span class="charliteral">&#39;4&#39;</span> )</div>
+<div class="line">      {</div>
+<div class="line">         stringstream errorMsg;</div>
+<div class="line">         errorMsg&lt;&lt;<span class="stringliteral">&quot; File with verion 1.&quot;</span>&lt;&lt;ver&lt;&lt;<span class="stringliteral">&quot; is not currently supported by merge library\n&quot;</span>;</div>
+<div class="line">         <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(errorMsg);</div>
+<div class="line">      }</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">else</span></div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Unrecognized header of PDF file&quot;</span>);</div>
+<div class="line">   }</div>
+<div class="line">   pdfFile.close();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad1687ac4f10bbbee26363653095c5830"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::pair&lt; unsigned int, unsigned int &gt; &amp; Parser::_getLineBounds </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fromPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keyword">static</span> std::pair&lt;unsigned int, unsigned int&gt; bounds;</div>
+<div class="line">   bounds.first = str.rfind(<span class="charliteral">&#39;\n&#39;</span>, fromPosition);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)bounds.first == -1)</div>
+<div class="line">      bounds.first = 0;</div>
+<div class="line">   bounds.second = str.find(<span class="charliteral">&#39;\n&#39;</span>, fromPosition);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)bounds.second == -1)</div>
+<div class="line">      bounds.second = str.size();    </div>
+<div class="line">   <span class="keywordflow">return</span> bounds;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6192bfcc671b3ac2d2caa4ca0cd949eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool merge_lib::Parser::_getNextObject </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2ff2e48880384ed0f006d4588bf8b5d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; Parser::_getNextToken </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>fromPosition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   fromPosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a81c4b1a307991f43f054e8807185f8c0">_skipWhiteSpacesFromContent</a>(fromPosition);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>, fromPosition);</div>
+<div class="line"></div>
+<div class="line">   <span class="keyword">static</span> std::string <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>;</div>
+<div class="line">   <span class="keywordflow">if</span>(position &gt; fromPosition)</div>
+<div class="line">   {        </div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tokenSize = position - fromPosition;</div>
+<div class="line">      token.resize(tokenSize);</div>
+<div class="line">      memcpy(&amp;token[0], &amp;<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[fromPosition], tokenSize);</div>
+<div class="line">      fromPosition = position;</div>
+<div class="line">      <span class="keywordflow">return</span> <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>;</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">else</span></div>
+<div class="line">   {</div>
+<div class="line">      <span class="comment">//TODO throw exception</span></div>
+<div class="line">   }</div>
+<div class="line">   token = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a2ff2e48880384ed0f006d4588bf8b5d9_cgraph.svg" width="310" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a1189d2610c4c3ed58056ce9a0bc504b8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -246,10 +728,10 @@ Protected Attributes</h2></td></tr>
 <div class="line">   hasObjectStream = <span class="keyword">false</span>;</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> currentPosition = objectPosition;</div>
 <div class="line"></div>
-<div class="line">   std::string token = _getNextToken(currentPosition);  <span class="comment">// number of object</span></div>
+<div class="line">   std::string <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a> = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPosition);  <span class="comment">// number of object</span></div>
 <div class="line">   objectNumber = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(token);</div>
 <div class="line"></div>
-<div class="line">   token = _getNextToken(currentPosition);  <span class="comment">// generation number - not interesting</span></div>
+<div class="line">   token = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPosition);  <span class="comment">// generation number - not interesting</span></div>
 <div class="line">   generationNumber = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(token);</div>
 <div class="line"></div>
 <div class="line">   token = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9e91332f7f45b04ce4753c03c8ff4de5">Parser::getNextToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,currentPosition);</div>
@@ -342,12 +824,160 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1189d2610c4c3ed58056ce9a0bc504b8_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1189d2610c4c3ed58056ce9a0bc504b8_cgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a790b3291140a3cc7d5cf0347127c5cdd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; unsigned int, <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html#aa3326883ea53ef2e2a33e2b81a7cc98c">Object::ReferencePositionsInContent</a> &gt; &amp; Parser::_getReferences </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>objectContent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> currentPosition(0), startOfNextSearch(0);</div>
+<div class="line">   <span class="keyword">static</span> std::map&lt;unsigned int, std::vector&lt;unsigned int&gt; &gt;  searchResult;</div>
+<div class="line">   searchResult.clear();</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> streamStart = objectContent.find(<span class="stringliteral">&quot;stream&quot;</span>);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)streamStart == -1)</div>
+<div class="line">      streamStart = objectContent.size();</div>
+<div class="line">   <span class="keywordflow">while</span>(startOfNextSearch &lt; streamStart)</div>
+<div class="line">   {</div>
+<div class="line">      <span class="comment">//try to find reference. reference example is 15 0 R</span></div>
+<div class="line">      startOfNextSearch = objectContent.find(<span class="stringliteral">&quot; R&quot;</span>, startOfNextSearch);</div>
+<div class="line">      currentPosition = startOfNextSearch;</div>
+<div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)currentPosition != -1)</div>
+<div class="line">      {         </div>
+<div class="line">         <span class="comment">//check that next character of &quot; R&quot; is WHITESPACE. </span></div>
+<div class="line"></div>
+<div class="line">         <span class="keywordflow">if</span>(((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>.find(objectContent[currentPosition + 2]) == -1) &amp;&amp;</div>
+<div class="line">            ((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#af4079dd0bf5d8d17a714b32b6d82a62b">DELIMETERS</a>.find(objectContent[currentPosition + 2]) == -1)</div>
+<div class="line">            )</div>
+<div class="line">         {</div>
+<div class="line">            <span class="comment">//this is not reference. this is something looks like &quot;0 0 0 RG&quot;</span></div>
+<div class="line">            ++startOfNextSearch;</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="comment">//get previos symbol and check that it is a number</span></div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberSearchCounter = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a87f8339e6400f56ddbb3734ec1b52de0">_skipNumber</a>(objectContent, --currentPosition);</div>
+<div class="line"></div>
+<div class="line">         <span class="comment">//previos symbol is not a number</span></div>
+<div class="line">         <span class="keywordflow">if</span>(numberSearchCounter == currentPosition)</div>
+<div class="line">         {</div>
+<div class="line">            ++startOfNextSearch;</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordflow">else</span></div>
+<div class="line">         {</div>
+<div class="line">            currentPosition = numberSearchCounter;</div>
+<div class="line">         }</div>
+<div class="line"></div>
+<div class="line">         <span class="keywordtype">bool</span> isFound(<span class="keyword">false</span>);</div>
+<div class="line">         <span class="comment">//previos symbols should be whitespaces</span></div>
+<div class="line">         <span class="keywordflow">while</span>((objectContent[currentPosition] == <span class="charliteral">&#39; &#39;</span>) &amp;&amp; --currentPosition) </div>
+<div class="line">         {</div>
+<div class="line">            isFound = <span class="keyword">true</span>;</div>
+<div class="line">         }</div>
+<div class="line"></div>
+<div class="line">         <span class="comment">//previos symbol is not a whitespace</span></div>
+<div class="line">         <span class="keywordflow">if</span>(!isFound)</div>
+<div class="line">         {</div>
+<div class="line">            ++startOfNextSearch;</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="comment">//check that this and may be previos symbols are a numbers     </span></div>
+<div class="line">         numberSearchCounter = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a87f8339e6400f56ddbb3734ec1b52de0">_skipNumber</a>(objectContent, currentPosition);</div>
+<div class="line">         <span class="keywordflow">if</span>(numberSearchCounter == currentPosition)</div>
+<div class="line">         {</div>
+<div class="line">            ++startOfNextSearch;</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> objectNumber = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(objectContent.substr(numberSearchCounter + 1, currentPosition - numberSearchCounter));</div>
+<div class="line"></div>
+<div class="line">         searchResult[objectNumber].push_back(numberSearchCounter + 1);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">         ++startOfNextSearch;</div>
+<div class="line"></div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">else</span></div>
+<div class="line">         <span class="keywordflow">break</span>;      </div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">return</span> searchResult;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a790b3291140a3cc7d5cf0347127c5cdd_cgraph.svg" width="512" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ee3baabc2c873a62a135a323224aad6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_getStartOfXrefWithRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> leftBoundOfStartOfXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.rfind(<span class="stringliteral">&quot;startxref&quot;</span>);</div>
+<div class="line">   leftBoundOfStartOfXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a>, leftBoundOfStartOfXref);</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rightBoundOfStartOfXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a>, leftBoundOfStartOfXref + 1);</div>
+<div class="line"></div>
+<div class="line">   std::string  startOfXref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.substr(leftBoundOfStartOfXref, rightBoundOfStartOfXref - leftBoundOfStartOfXref);</div>
+<div class="line">   <span class="keywordtype">int</span> integerStartOfXref = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(startOfXref);</div>
+<div class="line">   <span class="keywordflow">return</span> integerStartOfXref;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9ee3baabc2c873a62a135a323224aad6_cgraph.svg" width="558" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -375,7 +1005,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
-<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfTrailer = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,<span class="stringliteral">&quot;trailer&quot;</span>, _getStartOfXrefWithRoot());</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfTrailer = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,<span class="stringliteral">&quot;trailer&quot;</span>, <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9ee3baabc2c873a62a135a323224aad6">_getStartOfXrefWithRoot</a>());</div>
 <div class="line">   std::string rootStr(<span class="stringliteral">&quot;/Root&quot;</span>);</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfRoot = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,rootStr.data(), startOfTrailer);</div>
 <div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) startOfRoot == -1)</div>
@@ -395,21 +1025,404 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.substr(startOfRoot, endOfRoot - startOfRoot));   </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a59d3468e300a02465974908a98150779_cgraph.svg" width="398" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a59d3468e300a02465974908a98150779_cgraph.svg" width="568" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a59d3468e300a02465974908a98150779_icgraph.svg" width="470" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e1d609c14cb305239d77aff2b1deb20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_readTrailerAndRterievePrev </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>startPositionForSearch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>previosXref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfTrailer = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>,<span class="stringliteral">&quot;trailer&quot;</span>, startPositionForSearch);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) startOfTrailer == -1 )</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Cannot find trailer!&quot;</span>);</div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPrev = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(<span class="stringliteral">&quot;Prev &quot;</span>, startOfTrailer);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startxref = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find(<span class="stringliteral">&quot;startxref&quot;</span>, startOfTrailer);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)startOfPrev == -1 || (startOfPrev &gt; startxref))</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">   <span class="comment">//&quot;Prev &quot;s length = 5</span></div>
+<div class="line">   <span class="keywordflow">else</span></div>
+<div class="line">      startOfPrev += 5;</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfPrev = startOfPrev;</div>
+<div class="line">   <span class="keywordflow">while</span>((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a>.find(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[endOfPrev++]) != -1)</div>
+<div class="line">   {}</div>
+<div class="line">   --endOfPrev;</div>
+<div class="line">   previosXref = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.substr(startOfPrev, endOfPrev - startOfPrev));   </div>
+<div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a2e1d609c14cb305239d77aff2b1deb20_cgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5af6a5dfbd7c2122e957a027d480bd9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::_readXRefAndCreateObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{      </div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> currentPostion = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9ee3baabc2c873a62a135a323224aad6">_getStartOfXrefWithRoot</a>();</div>
+<div class="line">   <span class="keywordflow">do</span></div>
+<div class="line">   {</div>
+<div class="line">      <span class="keyword">const</span> std::string &amp; currentToken = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion);</div>
+<div class="line">      <span class="keywordflow">if</span>(currentToken != <span class="stringliteral">&quot;xref&quot;</span>)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Wrong xref in some document&quot;</span>);</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfLine = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1f0bfdbd39d64fd09534c508c5136ca9">_getEndOfLineFromContent</a>(currentPostion );</div>
+<div class="line">      <span class="keywordflow">if</span>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ae860b8f4f4664dbfd58afcbe43673e19">_countTokens</a>(currentPostion, endOfLine) != 2)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordflow">throw</span> <a class="code" href="../../d7/d2b/classmerge__lib_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Wrong xref in some document&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">      }</div>
+<div class="line">      <span class="comment">//now we are reading the xref</span></div>
+<div class="line">      <span class="keywordflow">while</span>(1)</div>
+<div class="line">      {</div>
+<div class="line">         <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion));</div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> objectCount = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion));</div>
+<div class="line">         <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i(0); i &lt; objectCount; i++)</div>
+<div class="line">         {</div>
+<div class="line">            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>  first;</div>
+<div class="line"></div>
+<div class="line">            <span class="keywordflow">if</span>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ae860b8f4f4664dbfd58afcbe43673e19">_countTokens</a>(currentPostion, <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1f0bfdbd39d64fd09534c508c5136ca9">_getEndOfLineFromContent</a>(currentPostion)) == 3)</div>
+<div class="line">            {</div>
+<div class="line">               first  = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion));</div>
+<div class="line">               <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion));</div>
+<div class="line">               <span class="keyword">const</span> <span class="keywordtype">string</span> &amp; use         = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion);</div>
+<div class="line">               <span class="keywordflow">if</span>(!use.compare(<span class="stringliteral">&quot;n&quot;</span>))</div>
+<div class="line">               {</div>
+<div class="line">                  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> objectNumber;</div>
+<div class="line"></div>
+<div class="line">                  <span class="keywordflow">try</span>               </div>
+<div class="line">                  {</div>
+<div class="line">                     std::pair&lt;unsigned int, unsigned int&gt; streamBounds;</div>
+<div class="line">                     <span class="keywordtype">bool</span> hasObjectStream;</div>
+<div class="line">                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> generationNumber;</div>
+<div class="line">                     <span class="keyword">const</span> std::string content = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a1189d2610c4c3ed58056ce9a0bc504b8">_getObjectContent</a>(first, objectNumber, generationNumber, streamBounds, hasObjectStream);</div>
+<div class="line">                     <span class="keywordflow">if</span>(!<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>.count(objectNumber))</div>
+<div class="line">                     {</div>
+<div class="line">                        <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * newObject = <span class="keyword">new</span> <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>(objectNumber, generationNumber, content, <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a2fddd0197ef13b0380b10d578419566b">_documentName</a> ,streamBounds, hasObjectStream);</div>
+<div class="line">                        <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ac153e7f69cfb00ecd76d987f36dcb305">_objects</a>[objectNumber] = newObject;</div>
+<div class="line">                     }</div>
+<div class="line">                  }</div>
+<div class="line">                  <span class="keywordflow">catch</span>(std::exception &amp;)</div>
+<div class="line">                  {</div>
+<div class="line">                  }</div>
+<div class="line"></div>
+<div class="line">               }</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">               ;</div>
+<div class="line">            }</div>
+<div class="line">            ++currentPostion;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> previosPostion = currentPostion;</div>
+<div class="line">         <span class="keyword">const</span> std::string &amp; isTrailer = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2ff2e48880384ed0f006d4588bf8b5d9">_getNextToken</a>(currentPostion);</div>
+<div class="line"></div>
+<div class="line">         std::string trailer(<span class="stringliteral">&quot;trailer&quot;</span>);</div>
+<div class="line">         <span class="keywordflow">if</span>(isTrailer == trailer)</div>
+<div class="line">         {</div>
+<div class="line">            currentPostion -= trailer.size();</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordflow">else</span></div>
+<div class="line">            currentPostion = previosPostion;</div>
+<div class="line"></div>
+<div class="line">      }</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">while</span>(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a2e1d609c14cb305239d77aff2b1deb20">_readTrailerAndRterievePrev</a>(currentPostion, currentPostion));</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_ab5af6a5dfbd7c2122e957a027d480bd9_cgraph.svg" width="579" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4420fe64119d40e88fa596b0d26ed44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::_retrieveAllPages </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>objectWithKids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   std::string &amp; objectContent = objectWithKids-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfKids = objectContent.find(<span class="stringliteral">&quot;/Kids&quot;</span>);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfKids = objectContent.find(<span class="stringliteral">&quot;]&quot;</span>, startOfKids);</div>
+<div class="line">   <span class="keywordflow">if</span>(</div>
+<div class="line">      ((<span class="keywordtype">int</span>)startOfKids == -1) &amp;&amp;</div>
+<div class="line">      ((<span class="keywordtype">int</span>)objectContent.find(<span class="stringliteral">&quot;/Page&quot;</span>) != -1)</div>
+<div class="line">      )</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberOfPages = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>.size() + 1;</div>
+<div class="line">      <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a> * newPage = <span class="keyword">new</span> <a class="code" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a>(numberOfPages);     </div>
+<div class="line">      newPage-&gt;<a class="code" href="../../db/d32/classmerge__lib_1_1_page.html#a4fcd514536caea527b197653e5ac04cf">_root</a> = objectWithKids;</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>-&gt;<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>.insert(std::pair&lt;unsigned int, Page *&gt;(numberOfPages, newPage));</div>
+<div class="line">      <span class="keywordflow">return</span>;</div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   <span class="keyword">const</span> std::vector&lt;Object *&gt; &amp; kids = objectWithKids-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a339dbecce58076f95648775141f7757f">getSortedByPositionChildren</a>(startOfKids, endOfKids);</div>
+<div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i(0); i &lt; kids.size(); ++i)</div>
+<div class="line">   {</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ab4420fe64119d40e88fa596b0d26ed44">_retrieveAllPages</a>(kids[i]);</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_ab4420fe64119d40e88fa596b0d26ed44_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a87f8339e6400f56ddbb3734ec1b52de0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_skipNumber </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>currentPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberSearchCounter = currentPosition;    </div>
+<div class="line">   <span class="keywordflow">while</span>(((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a01f083b2ba8adb53f83734343c075458">NUMBERS</a>.find(str[numberSearchCounter]) != -1) &amp;&amp; --numberSearchCounter)</div>
+<div class="line">   {}</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">return</span> numberSearchCounter;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae0d9c0256804374e6b63bed10d3bc547"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::Parser::_skipWhiteSpaces </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee7f96490d297e492c7cafbe017757e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_skipWhiteSpaces </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fromPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = fromPosition;</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>.find(str[0]) != -1)</div>
+<div class="line">      position = str.find_first_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>, position);</div>
+<div class="line">   <span class="keywordflow">return</span> position;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aee7f96490d297e492c7cafbe017757e6_cgraph.svg" width="318" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a81c4b1a307991f43f054e8807185f8c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Parser::_skipWhiteSpacesFromContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fromPosition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> position = fromPosition;</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>.find(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>[position]) != -1)</div>
+<div class="line">      position = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#ad4811a7d46bb4b2795b22b4bef2f10bb">_fileContent</a>.find_first_not_of(<a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#aeae49355a210d0171da32858c4af858b">WHITESPACES</a>, position);<span class="comment">// + 1;</span></div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">return</span> position;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a81c4b1a307991f43f054e8807185f8c0_cgraph.svg" width="392" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -528,6 +1541,15 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> foundEnd;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9745f8e44623eeb8d93a4a1c0043df33_icgraph.svg" width="100%" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a10e184b6efbae358d74f48f92406b679"></a>
@@ -600,12 +1622,13 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> foundStart;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a10e184b6efbae358d74f48f92406b679_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a10e184b6efbae358d74f48f92406b679_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -684,12 +1707,13 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> foundStart;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1238dc538fd46f2cbd5c14f5d9fc9f86_icgraph.svg" width="323" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a1238dc538fd46f2cbd5c14f5d9fc9f86_icgraph.svg" width="100%" height="466"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -758,26 +1782,26 @@ Protected Attributes</h2></td></tr>
 <div class="line">   {</div>
 <div class="line">      end_pos = content.size();</div>
 <div class="line">   }</div>
-<div class="line">   std::string token = content.substr(cur_pos,end_pos-cur_pos);</div>
+<div class="line">   std::string <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a> = content.substr(cur_pos,end_pos-cur_pos);</div>
 <div class="line">   foundEnd = end_pos -1;</div>
-<div class="line">   <span class="keywordflow">return</span> token;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d7/d72/_u_b_platform_utils__mac_8mm.html#a79de73324171d1498d3e6d992033bdcc">token</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a8137716311af63522dd38cad79fc4a40_cgraph.svg" width="315" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a8137716311af63522dd38cad79fc4a40_icgraph.svg" width="339" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a8137716311af63522dd38cad79fc4a40_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -838,20 +1862,21 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> out;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9e91332f7f45b04ce4753c03c8ff4de5_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9e91332f7f45b04ce4753c03c8ff4de5_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a9e91332f7f45b04ce4753c03c8ff4de5_icgraph.svg" width="323" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -941,21 +1966,23 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_cgraph.svg" width="512" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_icgraph.svg" width="339" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_aea1235b1ef3c67048cc9f32ecb30918a_icgraph.svg" width="100%" height="490"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -978,12 +2005,12 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a> = <span class="keyword">new</span> <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a>(fileName);</div>
 <div class="line">   <span class="keywordflow">try</span></div>
 <div class="line">   {</div>
-<div class="line">      _createObjectTree(fileName);</div>
-<div class="line">      _createDocument(fileName);</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a78f1b7bc62f8b77302f965c36db8636e">_createObjectTree</a>(fileName);</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a4eaf05edeeeaa767aa30e061cea72262">_createDocument</a>(fileName);</div>
 <div class="line">   }</div>
 <div class="line">   <span class="keywordflow">catch</span>( std::exception &amp;)</div>
 <div class="line">   {</div>
-<div class="line">      _clearParser();</div>
+<div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a9fa701b9d070dcc4d5c1d076aa47ccff">_clearParser</a>();</div>
 <div class="line">      <span class="keyword">delete</span> <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>;</div>
 <div class="line">      <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a> = NULL;</div>
 <div class="line">      <span class="keywordflow">throw</span>;</div>
@@ -991,12 +2018,13 @@ Protected Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a960a35df87a3700cffd4dd2c64a76fa3">_document</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a5658f9ef56e67d81e135db5b36d2881a_icgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a5658f9ef56e67d81e135db5b36d2881a_icgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1108,21 +2136,22 @@ Protected Attributes</h2></td></tr>
 <div class="line">      (<span class="keywordtype">int</span>)pos2 == -1 ? str.length() - 1 : pos2 - pos1 + 1);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a89825c31c50fa949dab5b0b4974b7677_cgraph.svg" width="336" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a89825c31c50fa949dab5b0b4974b7677_icgraph.svg" width="542" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/de3/classmerge__lib_1_1_parser_a89825c31c50fa949dab5b0b4974b7677_icgraph.svg" width="100%" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1290,8 +2319,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../de/df6/_parser_8cpp.html">Parser.cpp</a></li>
+<li><a class="el" href="../../de/d40/_parser_8h_source.html">Parser.h</a></li>
+<li><a class="el" href="../../de/df6/_parser_8cpp.html">Parser.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1299,7 +2328,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d4/de3/classmerge__lib_1_1_parser.html">Parser</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:13 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

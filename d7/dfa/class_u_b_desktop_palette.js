@@ -19,5 +19,12 @@ var class_u_b_desktop_palette =
     [ "stylusToolChanged", "d7/dfa/class_u_b_desktop_palette.html#a74712648d611ebdb6639b53ef4f5461a", null ],
     [ "uniboardClick", "d7/dfa/class_u_b_desktop_palette.html#a40ee5188759874e0935124ce5dc668c6", null ],
     [ "updateShowHideState", "d7/dfa/class_u_b_desktop_palette.html#ac67643756fbb45337db691a38ec1c5db", null ],
-    [ "windowClick", "d7/dfa/class_u_b_desktop_palette.html#af66f822466236ae7653bba638531fb1d", null ]
+    [ "windowClick", "d7/dfa/class_u_b_desktop_palette.html#af66f822466236ae7653bba638531fb1d", null ],
+    [ "mActionCustomSelect", "d7/dfa/class_u_b_desktop_palette.html#ad8d88a0fbda2708f7a0409b0637c293d", null ],
+    [ "mActionTest", "d7/dfa/class_u_b_desktop_palette.html#a9d55086d975603ca94801ff4cfa11b9f", null ],
+    [ "mActionUniboard", "d7/dfa/class_u_b_desktop_palette.html#ae932b281e5d699053c5f59ff89ea1e61", null ],
+    [ "mDisplaySelectAction", "d7/dfa/class_u_b_desktop_palette.html#a8fe120757d918e434343c3bc17c1c5ce", null ],
+    [ "mMaximizeAction", "d7/dfa/class_u_b_desktop_palette.html#a853ef6ff674bf2e67fdcbf07c7ecd4d3", null ],
+    [ "mShowHideAction", "d7/dfa/class_u_b_desktop_palette.html#a10ca6fe9efcde8e25c53fa5ec3d6c782", null ],
+    [ "rightPalette", "d7/dfa/class_u_b_desktop_palette.html#a43412e2d24063190c6960c63aeeb2a37", null ]
 ];

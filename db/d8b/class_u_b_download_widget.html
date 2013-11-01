@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('db/d8b/class_u_b_download_widget.html'
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d4f/class_u_b_download_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDownloadWidget Class Reference</div>  </div>
@@ -116,7 +119,7 @@ $(document).ready(function(){initNavTree('db/d8b/class_u_b_download_widget.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d3c/class_u_b_download_widget__coll__graph.svg" width="179" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d3c/class_u_b_download_widget__coll__graph.svg" width="262" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -125,6 +128,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aab012195b6f2e6b30fbff7a93d2ee5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aab012195b6f2e6b30fbff7a93d2ee5b2"></a><br/></td></tr>
 <tr class="memitem:a7bc5f87020a0955e97915757339ebe74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a7bc5f87020a0955e97915757339ebe74">~UBDownloadWidget</a> ()</td></tr>
 <tr class="memdesc:a7bc5f87020a0955e97915757339ebe74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a7bc5f87020a0955e97915757339ebe74"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:af67af4d96c7af78ca0ed105fc07d3465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#af67af4d96c7af78ca0ed105fc07d3465">onFileAddedToDownload</a> ()</td></tr>
+<tr class="memdesc:af67af4d96c7af78ca0ed105fc07d3465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the tree of downloaded files.  <a href="#af67af4d96c7af78ca0ed105fc07d3465"></a><br/></td></tr>
+<tr class="memitem:a737fb6f9cf013fee165c8e36f438ba91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a737fb6f9cf013fee165c8e36f438ba91">onDownloadUpdated</a> (int id, qint64 crnt, qint64 total)</td></tr>
+<tr class="memdesc:a737fb6f9cf013fee165c8e36f438ba91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the progress bar.  <a href="#a737fb6f9cf013fee165c8e36f438ba91"></a><br/></td></tr>
+<tr class="memitem:a782ecb1e0f8cf7f7ee773c693fa80f6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a782ecb1e0f8cf7f7ee773c693fa80f6d">onDownloadFinished</a> (int id)</td></tr>
+<tr class="memdesc:a782ecb1e0f8cf7f7ee773c693fa80f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the download finish notification.  <a href="#a782ecb1e0f8cf7f7ee773c693fa80f6d"></a><br/></td></tr>
+<tr class="memitem:a733f6dafe33654f90bb9f7ab134f1be2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a733f6dafe33654f90bb9f7ab134f1be2">onCancelClicked</a> ()</td></tr>
+<tr class="memdesc:a733f6dafe33654f90bb9f7ab134f1be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the Cancel button action.  <a href="#a733f6dafe33654f90bb9f7ab134f1be2"></a><br/></td></tr>
+<tr class="memitem:a7799dd25cf6fdd6fe5479fef171eb40b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a7799dd25cf6fdd6fe5479fef171eb40b">onItemClicked</a> (QTreeWidgetItem *pItem, int col)</td></tr>
+<tr class="memdesc:a7799dd25cf6fdd6fe5479fef171eb40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the item click notification.  <a href="#a7799dd25cf6fdd6fe5479fef171eb40b"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9b6afa449233f59da543061b18519572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a9b6afa449233f59da543061b18519572">addCurrentDownloads</a> ()</td></tr>
+<tr class="memdesc:a9b6afa449233f59da543061b18519572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the current downloads.  <a href="#a9b6afa449233f59da543061b18519572"></a><br/></td></tr>
+<tr class="memitem:a170489959fc0b3a186f452dce039bb72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a170489959fc0b3a186f452dce039bb72">addPendingDownloads</a> ()</td></tr>
+<tr class="memdesc:a170489959fc0b3a186f452dce039bb72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the pending downloads.  <a href="#a170489959fc0b3a186f452dce039bb72"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5621bddb30dbaf77394a99449dedd6e0"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a></td></tr>
+<tr class="memitem:a9778a32fdfe84eefa49b8d8aa53a906e"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a></td></tr>
+<tr class="memitem:a4044df85d186f413096c8f32fd19a809"><td class="memItemLeft" align="right" valign="top">QTreeWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a></td></tr>
+<tr class="memitem:a78cd954d04e67242e89c87ff34e10623"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a></td></tr>
+<tr class="memitem:a100e626b85b7b76eae26d309517ddaa7"><td class="memItemLeft" align="right" valign="top">QTreeWidgetItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a></td></tr>
+<tr class="memitem:a6ee79d09bbed83b5cd2ad124b1f41da2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d80/class_u_b_download_progress_delegate.html">UBDownloadProgressDelegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/class_u_b_download_widget.html#a6ee79d09bbed83b5cd2ad124b1f41da2">mProgressBarDelegate</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aab012195b6f2e6b30fbff7a93d2ee5b2"></a>
@@ -160,42 +192,42 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line">                                                                   :QWidget(parent)</div>
-<div class="line">  , mpLayout(NULL)</div>
-<div class="line">  , mpBttnLayout(NULL)</div>
-<div class="line">  , mpTree(NULL)</div>
-<div class="line">  , mpCancelBttn(NULL)</div>
-<div class="line">  , mpItem(NULL)</div>
+<div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>(NULL)</div>
+<div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>(NULL)</div>
+<div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>(NULL)</div>
+<div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>(NULL)</div>
+<div class="line">  , <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
 <div class="line">    setWindowTitle(tr(<span class="stringliteral">&quot;Downloading files&quot;</span>));</div>
-<div class="line">    <a class="code" href="../../d5/d65/src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
+<div class="line">    <a class="code" href="../../df/d99/_sankore-gh-pages_2src_2globals_2_u_b_globals_8h.html#a398e14c3f379f08d06fa30a638a69656">SET_STYLE_SHEET</a>();</div>
 <div class="line">    resize(400, 300);</div>
 <div class="line"></div>
-<div class="line">    mpLayout = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line">    setLayout(mpLayout);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a> = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
+<div class="line">    setLayout(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>);</div>
 <div class="line"></div>
-<div class="line">    mpTree = <span class="keyword">new</span> QTreeWidget(<span class="keyword">this</span>);</div>
-<div class="line">    mpTree-&gt;setRootIsDecorated(<span class="keyword">false</span>);</div>
-<div class="line">    mpTree-&gt;setColumnCount(2);</div>
-<div class="line">    mpTree-&gt;header()-&gt;setStretchLastSection(<span class="keyword">false</span>);</div>
-<div class="line">    mpTree-&gt;header()-&gt;setResizeMode(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, QHeaderView::Stretch);</div>
-<div class="line">    mpTree-&gt;header()-&gt;setResizeMode(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a>, QHeaderView::Custom);</div>
-<div class="line">    mpTree-&gt;resizeColumnToContents(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a>);</div>
-<div class="line">    mpTree-&gt;header()-&gt;close();</div>
-<div class="line">    mpLayout-&gt;addWidget(mpTree, 1);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a> = <span class="keyword">new</span> QTreeWidget(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;setRootIsDecorated(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;setColumnCount(2);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;header()-&gt;setStretchLastSection(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;header()-&gt;setResizeMode(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, QHeaderView::Stretch);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;header()-&gt;setResizeMode(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a>, QHeaderView::Custom);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;resizeColumnToContents(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a>);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;header()-&gt;close();</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>-&gt;addWidget(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>, 1);</div>
 <div class="line"></div>
-<div class="line">    mpBttnLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line">    mpBttnLayout-&gt;addStretch(1);</div>
-<div class="line">    mpCancelBttn = <span class="keyword">new</span> QPushButton(tr(<span class="stringliteral">&quot;Cancel&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpCancelBttn-&gt;setObjectName(<span class="stringliteral">&quot;DockPaletteWidgetButton&quot;</span>);</div>
-<div class="line">    mpBttnLayout-&gt;addWidget(mpCancelBttn, 0);</div>
-<div class="line">    mpLayout-&gt;addLayout(mpBttnLayout);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>-&gt;addStretch(1);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a> = <span class="keyword">new</span> QPushButton(tr(<span class="stringliteral">&quot;Cancel&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>-&gt;setObjectName(<span class="stringliteral">&quot;DockPaletteWidgetButton&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>-&gt;addWidget(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>, 0);</div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>-&gt;addLayout(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>);</div>
 <div class="line"></div>
-<div class="line">    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(fileAddedToDownload()), <span class="keyword">this</span>, SLOT(onFileAddedToDownload()));</div>
-<div class="line">    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(downloadUpdated(<span class="keywordtype">int</span>,qint64,qint64)), <span class="keyword">this</span>, SLOT(onDownloadUpdated(<span class="keywordtype">int</span>,qint64,qint64)));</div>
-<div class="line">    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(downloadFinished(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(onDownloadFinished(<span class="keywordtype">int</span>)));</div>
-<div class="line">    connect(mpCancelBttn, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(onCancelClicked()));</div>
-<div class="line">    connect(mpTree, SIGNAL(itemClicked(QTreeWidgetItem*,<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(onItemClicked(QTreeWidgetItem*,<span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(fileAddedToDownload()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#af67af4d96c7af78ca0ed105fc07d3465" title="Refresh the tree of downloaded files.">onFileAddedToDownload</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(downloadUpdated(<span class="keywordtype">int</span>,qint64,qint64)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a737fb6f9cf013fee165c8e36f438ba91" title="Update the progress bar.">onDownloadUpdated</a>(<span class="keywordtype">int</span>,qint64,qint64)));</div>
+<div class="line">    connect(<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>(), SIGNAL(downloadFinished(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a782ecb1e0f8cf7f7ee773c693fa80f6d" title="Handles the download finish notification.">onDownloadFinished</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a733f6dafe33654f90bb9f7ab134f1be2" title="Handles the Cancel button action.">onCancelClicked</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>, SIGNAL(itemClicked(QTreeWidgetItem*,<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a7799dd25cf6fdd6fe5479fef171eb40b" title="Handles the item click notification.">onItemClicked</a>(QTreeWidgetItem*,<span class="keywordtype">int</span>)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -203,7 +235,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_aab012195b6f2e6b30fbff7a93d2ee5b2_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_aab012195b6f2e6b30fbff7a93d2ee5b2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -224,33 +256,575 @@ Public Member Functions</h2></td></tr>
 
 <p>Destructor. </p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpCancelBttn)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpCancelBttn;</div>
-<div class="line">        mpCancelBttn = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>;</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpTree)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpTree;</div>
-<div class="line">        mpTree = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>;</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpBttnLayout)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpBttnLayout;</div>
-<div class="line">        mpBttnLayout = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>;</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mpLayout)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mpLayout;</div>
-<div class="line">        mpLayout = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>;</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a9b6afa449233f59da543061b18519572"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::addCurrentDownloads </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the current downloads. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QVector&lt;sDownloadFileDesc&gt; actualDL = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#acefaa070ff6fcbabb908d16e4a807b59" title="Get the list of the current downloads.">currentDownloads</a>();</div>
+<div class="line">    qDebug() &lt;&lt; <span class="stringliteral">&quot;Actual downloads size: &quot;</span> &lt;&lt; actualDL.size();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;actualDL.size();i++)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a> = <span class="keyword">new</span> QTreeWidgetItem(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setText(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, actualDL.at(i).name);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setData(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, Qt::UserRole, QVariant(actualDL.at(i).id));</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setIcon(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a>, QIcon(<span class="stringliteral">&quot;:images/close.svg&quot;</span>));</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;addTopLevelItem(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a> = <span class="keyword">new</span> QTreeWidgetItem(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setData(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, Qt::UserRole, actualDL.at(i).currentSize);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setData(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, Qt::UserRole + 1, actualDL.at(i).totalSize);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setData(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, Qt::UserRole + 2, actualDL.at(i).id);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;addTopLevelItem(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;setItemDelegateForRow(((i+1)*2)-1, &amp;<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a6ee79d09bbed83b5cd2ad124b1f41da2">mProgressBarDelegate</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a9b6afa449233f59da543061b18519572_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a9b6afa449233f59da543061b18519572_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a170489959fc0b3a186f452dce039bb72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::addPendingDownloads </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the pending downloads. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QVector&lt;sDownloadFileDesc&gt; pendingDL = <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a4beef0fa708d68bcf92f73b029ed9f60" title="Get the list of the pending downloads.">pendingDownloads</a>();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;pendingDL.size(); i++)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a> = <span class="keyword">new</span> QTreeWidgetItem(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setText(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, pendingDL.at(i).name);</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>-&gt;setData(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, Qt::UserRole, QVariant(pendingDL.at(i).id));</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;addTopLevelItem(<a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a170489959fc0b3a186f452dce039bb72_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a170489959fc0b3a186f452dce039bb72_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a733f6dafe33654f90bb9f7ab134f1be2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::onCancelClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the Cancel button action. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a9ec94b78d3b4eb2d003657590f3a2839" title="Cancel all downloads.">cancelDownloads</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a733f6dafe33654f90bb9f7ab134f1be2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a733f6dafe33654f90bb9f7ab134f1be2_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a782ecb1e0f8cf7f7ee773c693fa80f6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::onDownloadFinished </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the download finish notification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>as the downloaded file id </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(<span class="keywordtype">id</span>);</div>
+<div class="line">    <span class="comment">// Refresh the file&#39;s list</span></div>
+<div class="line">    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#af67af4d96c7af78ca0ed105fc07d3465" title="Refresh the tree of downloaded files.">onFileAddedToDownload</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a782ecb1e0f8cf7f7ee773c693fa80f6d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a782ecb1e0f8cf7f7ee773c693fa80f6d_icgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a737fb6f9cf013fee165c8e36f438ba91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::onDownloadUpdated </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>crnt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>total</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the progress bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>as the downloaded file id </td></tr>
+    <tr><td class="paramname">crnt</td><td>as the current transfered size </td></tr>
+    <tr><td class="paramname">total</td><td>as the total size of the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>)</div>
+<div class="line">    {</div>
+<div class="line">        QAbstractItemModel* model = <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;model();</div>
+<div class="line">        <span class="keywordflow">if</span>(NULL != model)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt; model-&gt;rowCount(); i++)</div>
+<div class="line">            {</div>
+<div class="line">                QModelIndex currentIndex = model-&gt;index(i, <a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>);</div>
+<div class="line">                <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == currentIndex.data(Qt::UserRole + 2))</div>
+<div class="line">                {</div>
+<div class="line">                    <span class="comment">// We found the right item, now we update the progress bar</span></div>
+<div class="line">                    model-&gt;setData(currentIndex, crnt, Qt::UserRole);</div>
+<div class="line">                    model-&gt;setData(currentIndex, total, Qt::UserRole + 1);</div>
+<div class="line">                    <span class="keywordflow">break</span>;</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a737fb6f9cf013fee165c8e36f438ba91_icgraph.svg" width="507" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af67af4d96c7af78ca0ed105fc07d3465"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::onFileAddedToDownload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refresh the tree of downloaded files. </p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>-&gt;clear();</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9b6afa449233f59da543061b18519572" title="Add the current downloads.">addCurrentDownloads</a>();</div>
+<div class="line">        <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a170489959fc0b3a186f452dce039bb72" title="Add the pending downloads.">addPendingDownloads</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_af67af4d96c7af78ca0ed105fc07d3465_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_af67af4d96c7af78ca0ed105fc07d3465_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7799dd25cf6fdd6fe5479fef171eb40b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDownloadWidget::onItemClicked </td>
+          <td>(</td>
+          <td class="paramtype">QTreeWidgetItem *&#160;</td>
+          <td class="paramname"><em>pItem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the item click notification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pItem</td><td>as the item clicked </td></tr>
+    <tr><td class="paramname">col</td><td>as the column containing the item clicked </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>( <a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa77de800b575536ddb2bc76e9c6b0bba9">eItemColumn_Close</a> == col</div>
+<div class="line">            &amp;&amp; <span class="stringliteral">&quot;&quot;</span> != pItem-&gt;text(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>)){</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// Stop the download of the clicked item and remove it from the list</span></div>
+<div class="line">        <a class="code" href="../../d7/d38/class_u_b_download_manager.html#a98ec03d9a74e118191b17197a7b942a8" title="Get the download manager.">UBDownloadManager::downloadManager</a>()-&gt;<a class="code" href="../../d7/d38/class_u_b_download_manager.html#a5425576229c8b6918a72ca6476e2be23">cancelDownload</a>(pItem-&gt;data(<a class="code" href="../../d8/d83/_u_b_download_widget_8h.html#a9358aac9173bcfc4ed2199a1d36e0b0aa9d7f1e5b390ff8d0dc83a9e660e66619">eItemColumn_Desc</a>, Qt::UserRole).toInt());</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a7799dd25cf6fdd6fe5479fef171eb40b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d8b/class_u_b_download_widget_a7799dd25cf6fdd6fe5479fef171eb40b_icgraph.svg" width="475" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a9778a32fdfe84eefa49b8d8aa53a906e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* UBDownloadWidget::mpBttnLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The button layout </p>
+
+</div>
+</div>
+<a class="anchor" id="a78cd954d04e67242e89c87ff34e10623"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* UBDownloadWidget::mpCancelBttn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The 'Cancel' button </p>
+
+</div>
+</div>
+<a class="anchor" id="a100e626b85b7b76eae26d309517ddaa7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTreeWidgetItem* UBDownloadWidget::mpItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A temporary tree widget item </p>
+
+</div>
+</div>
+<a class="anchor" id="a5621bddb30dbaf77394a99449dedd6e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* UBDownloadWidget::mpLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The general layout of this widget </p>
+
+</div>
+</div>
+<a class="anchor" id="a6ee79d09bbed83b5cd2ad124b1f41da2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d80/class_u_b_download_progress_delegate.html">UBDownloadProgressDelegate</a> UBDownloadWidget::mProgressBarDelegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The delegate that will draw the progressbars </p>
+
+</div>
+</div>
+<a class="anchor" id="a4044df85d186f413096c8f32fd19a809"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTreeWidget* UBDownloadWidget::mpTree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The treeview that will display the files list </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../db/df9/_u_b_download_widget_8cpp.html">UBDownloadWidget.cpp</a></li>
+<li><a class="el" href="../../d8/d83/_u_b_download_widget_8h_source.html">UBDownloadWidget.h</a></li>
+<li><a class="el" href="../../db/df9/_u_b_download_widget_8cpp.html">UBDownloadWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -258,7 +832,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d8b/class_u_b_download_widget.html">UBDownloadWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

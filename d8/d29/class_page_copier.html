@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('d8/d29/class_page_copier.html','../../
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/d6d/class_page_copier-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PageCopier Class Reference</div>  </div>
@@ -114,12 +116,23 @@ $(document).ready(function(){initNavTree('d8/d29/class_page_copier.html','../../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d06/class_page_copier__coll__graph.svg" width="110" height="96"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d06/class_page_copier__coll__graph.svg" width="174" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acb8e021b589aaaf65c8789cfb9c7eeb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d29/class_page_copier.html#acb8e021b589aaaf65c8789cfb9c7eeb5">copyPage</a> (const QUrl &amp;fromDir, int fromIndex, const QUrl &amp;toDir, int toIndex)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a83ca51a0c2ecafd491ed0824226eccdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d29/class_page_copier.html#a83ca51a0c2ecafd491ed0824226eccdd">cureIdsFromSvgDom</a> (const QDomDocument &amp;dom)</td></tr>
+<tr class="memitem:a1f64d024a51537d239a7d6fbddb0e76a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d29/class_page_copier.html#a1f64d024a51537d239a7d6fbddb0e76a">cureFromText</a> (const QString &amp;tagName, QDomElement element)</td></tr>
+<tr class="memitem:a94dce90c4ad59261605a27837a594008"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d29/class_page_copier.html#a94dce90c4ad59261605a27837a594008">cureNCopy</a> (const QString &amp;relativePath)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a469181c32d811d3672a2a3587bf8f170"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d29/class_page_copier.html#a469181c32d811d3672a2a3587bf8f170">mFromDir</a></td></tr>
+<tr class="memitem:a11a4cbf69851a66aca5aee5f14318a47"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d29/class_page_copier.html#a11a4cbf69851a66aca5aee5f14318a47">mToDir</a></td></tr>
 </table>
 <h2>Member Function Documentation</h2>
 <a class="anchor" id="acb8e021b589aaaf65c8789cfb9c7eeb5"></a>
@@ -166,18 +179,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    {</div>
-<div class="line">        mFromDir = fromDir.toLocalFile();</div>
-<div class="line">        mToDir = toDir.toLocalFile();</div>
+<div class="line">        <a class="code" href="../../d8/d29/class_page_copier.html#a469181c32d811d3672a2a3587bf8f170">mFromDir</a> = fromDir.toLocalFile();</div>
+<div class="line">        <a class="code" href="../../d8/d29/class_page_copier.html#a11a4cbf69851a66aca5aee5f14318a47">mToDir</a> = toDir.toLocalFile();</div>
 <div class="line"></div>
-<div class="line">        QString svgFrom = mFromDir + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#af8033c33f09e5dd7ba5600cef960a6cb">svgPageName</a>(fromIndex);</div>
+<div class="line">        QString svgFrom = <a class="code" href="../../d8/d29/class_page_copier.html#a469181c32d811d3672a2a3587bf8f170">mFromDir</a> + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#af8033c33f09e5dd7ba5600cef960a6cb">svgPageName</a>(fromIndex);</div>
 <div class="line">        QString svgTo = toDir.toLocalFile() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#af8033c33f09e5dd7ba5600cef960a6cb">svgPageName</a>(toIndex);</div>
-<div class="line">        QDomDocument dd = createDomFromSvg(svgFrom);</div>
+<div class="line">        QDomDocument dd = <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a4ab277dc09e2ecf5c91eb98361adc101">createDomFromSvg</a>(svgFrom);</div>
 <div class="line">        QFile fl(svgTo);</div>
 <div class="line">        <span class="keywordflow">if</span> (!fl.open(QIODevice::WriteOnly)) {</div>
 <div class="line">            qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;can&#39;t open&quot;</span> &lt;&lt; fl.fileName() &lt;&lt; <span class="stringliteral">&quot;for writing&quot;</span>;</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
 <div class="line">        }</div>
-<div class="line">        cureIdsFromSvgDom(dd);</div>
+<div class="line">        <a class="code" href="../../d8/d29/class_page_copier.html#a83ca51a0c2ecafd491ed0824226eccdd">cureIdsFromSvgDom</a>(dd);</div>
 <div class="line"></div>
 <div class="line">        QTextStream str(&amp;fl);</div>
 <div class="line">        dd.save(str, 0);</div>
@@ -190,7 +203,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_acb8e021b589aaaf65c8789cfb9c7eeb5_cgraph.svg" width="326" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_acb8e021b589aaaf65c8789cfb9c7eeb5_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -205,8 +219,236 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1f64d024a51537d239a7d6fbddb0e76a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageCopier::cureFromText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>tagName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomElement&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (tagName == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a77a22abe3234cb90c4024ea559501c56">tVideo</a></div>
+<div class="line">                || tagName == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a3e328511b456f91d06aec6c9d357eff5">tAudio</a></div>
+<div class="line">                || tagName == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a2ec48aaabb40697b3ea3a9e4de1f9dd9">tImage</a>) {</div>
+<div class="line">            QString newRelative = <a class="code" href="../../d8/d29/class_page_copier.html#a94dce90c4ad59261605a27837a594008">cureNCopy</a>(element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a18afd6f5511f627e7dd96dd2e48f3874">aHref</a>));</div>
+<div class="line">            element.setAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a18afd6f5511f627e7dd96dd2e48f3874">aHref</a>, newRelative);</div>
+<div class="line">            <span class="keywordflow">if</span> (element.hasAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a43b5a59830817b1ebc2c0b2e43c2e102">aActionMedia</a>)) {</div>
+<div class="line">                QString newActionPath = <a class="code" href="../../d8/d29/class_page_copier.html#a94dce90c4ad59261605a27837a594008">cureNCopy</a>(element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a43b5a59830817b1ebc2c0b2e43c2e102">aActionMedia</a>));</div>
+<div class="line">                element.setAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a43b5a59830817b1ebc2c0b2e43c2e102">aActionMedia</a>, newActionPath);</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tagName == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a5a3dc78b2b91e40461c9fedb57a55aec">tForeignObject</a>) {</div>
+<div class="line">            QString type = element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#ae3972be9306049b03517d9117cc685ed">aType</a>);</div>
+<div class="line">            <span class="keywordflow">if</span> (type == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a29a1f14af2aa5d834e1a1843d3873154">vText</a>) { <span class="comment">// We don&#39;t have to care of the text object</span></div>
+<div class="line">                <span class="keywordflow">if</span> (element.hasAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a43b5a59830817b1ebc2c0b2e43c2e102">aActionMedia</a>)) {</div>
+<div class="line">                    QString newRelative = <a class="code" href="../../d8/d29/class_page_copier.html#a94dce90c4ad59261605a27837a594008">cureNCopy</a>(element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a43b5a59830817b1ebc2c0b2e43c2e102">aActionMedia</a>));</div>
+<div class="line">                    element.setAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a43b5a59830817b1ebc2c0b2e43c2e102">aActionMedia</a>, newRelative);</div>
+<div class="line">                }</div>
+<div class="line">                <span class="keywordflow">return</span>;</div>
+<div class="line">            }</div>
+<div class="line">            QString newRelative = <a class="code" href="../../d8/d29/class_page_copier.html#a94dce90c4ad59261605a27837a594008">cureNCopy</a>(element.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a3cc5683054ef26334629283f82075fc7">aSrc</a>));</div>
+<div class="line">            element.setAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a3cc5683054ef26334629283f82075fc7">aSrc</a>, newRelative);</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tagName == <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#ae1da2fbc20030720916d9a2085ecd2d5">tTeacherGuide</a>) {</div>
+<div class="line">            QDomElement nMediaElement = element.firstChildElement(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a940e13d3cb6460ef5bd1edede67fca97">tMedia</a>);</div>
+<div class="line">            <span class="keywordflow">while</span> (!nMediaElement.isNull()) {</div>
+<div class="line">                QString newRelative = <a class="code" href="../../d8/d29/class_page_copier.html#a94dce90c4ad59261605a27837a594008">cureNCopy</a>(nMediaElement.attribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a5938f7ffa0b8f6eb02aae651df7ec963">aRelativePath</a>));</div>
+<div class="line">                nMediaElement.setAttribute(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a5938f7ffa0b8f6eb02aae651df7ec963">aRelativePath</a>, newRelative);</div>
+<div class="line">                nMediaElement = nMediaElement.nextSiblingElement(<a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a940e13d3cb6460ef5bd1edede67fca97">tMedia</a>);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_a1f64d024a51537d239a7d6fbddb0e76a_cgraph.svg" width="598" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_a1f64d024a51537d239a7d6fbddb0e76a_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a83ca51a0c2ecafd491ed0824226eccdd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PageCopier::cureIdsFromSvgDom </td>
+          <td>(</td>
+          <td class="paramtype">const QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>dom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    {</div>
+<div class="line">        Q_ASSERT(!dom.isNull());</div>
+<div class="line"></div>
+<div class="line">        QDomElement nextElement = dom.documentElement().firstChildElement();</div>
+<div class="line">        <span class="keywordflow">while</span> (!nextElement.isNull( )) {</div>
+<div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;Tag name of the next parsed element is&quot;</span> &lt;&lt; nextElement.tagName();</div>
+<div class="line">            QString nextTag = nextElement.tagName();</div>
+<div class="line">            <a class="code" href="../../d8/d29/class_page_copier.html#a1f64d024a51537d239a7d6fbddb0e76a">cureFromText</a>(nextTag, nextElement);</div>
+<div class="line">            nextElement = nextElement.nextSiblingElement();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_a83ca51a0c2ecafd491ed0824226eccdd_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_a83ca51a0c2ecafd491ed0824226eccdd_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a94dce90c4ad59261605a27837a594008"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString PageCopier::cureNCopy </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>relativePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    {</div>
+<div class="line">        QString relative = relativePath;</div>
+<div class="line">        QUuid newUuid = QUuid::createUuid();</div>
+<div class="line">        QString newPath = relative.replace(QRegExp(<span class="stringliteral">&quot;\\{.*\\}&quot;</span>), newUuid.toString());</div>
+<div class="line">        <a class="code" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html#a6c4f9534c3f9fe842ae0e624ec4a8f7e">cp_rf</a>(<a class="code" href="../../d8/d29/class_page_copier.html#a469181c32d811d3672a2a3587bf8f170">mFromDir</a> + <span class="stringliteral">&quot;/&quot;</span> + relativePath, <a class="code" href="../../d8/d29/class_page_copier.html#a11a4cbf69851a66aca5aee5f14318a47">mToDir</a> + <span class="stringliteral">&quot;/&quot;</span> + newPath);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> newPath;</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_a94dce90c4ad59261605a27837a594008_cgraph.svg" width="371" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d29/class_page_copier_a94dce90c4ad59261605a27837a594008_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a469181c32d811d3672a2a3587bf8f170"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString PageCopier::mFromDir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a11a4cbf69851a66aca5aee5f14318a47"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString PageCopier::mToDir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html">UBForeignObjectsHandler.cpp</a></li>
+<li><a class="el" href="../../d8/d5c/_u_b_foreign_objects_handler_8cpp.html">UBForeignObjectsHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -214,7 +456,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d29/class_page_copier.html">PageCopier</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

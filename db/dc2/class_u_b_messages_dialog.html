@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('db/dc2/class_u_b_messages_dialog.html'
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/de1/class_u_b_messages_dialog-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBMessagesDialog Class Reference</div>  </div>
@@ -116,13 +118,22 @@ $(document).ready(function(){initNavTree('db/dc2/class_u_b_messages_dialog.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/da1/class_u_b_messages_dialog__coll__graph.svg" width="168" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/da1/class_u_b_messages_dialog__coll__graph.svg" width="168" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a878c7d6564e8acc38133ba99868abba5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#a878c7d6564e8acc38133ba99868abba5">UBMessagesDialog</a> (QString windowTitle, QWidget *parent=NULL)</td></tr>
 <tr class="memitem:aeccdc1dd382ce26c00898c85932e6474"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#aeccdc1dd382ce26c00898c85932e6474">setMessages</a> (const QList&lt; QString &gt; messages)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ab90f3ac0b7033a540dcaf640e5fc651d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#ab90f3ac0b7033a540dcaf640e5fc651d">dispose</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5aca90c606f237a13ae3c9c297d03bca"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#a5aca90c606f237a13ae3c9c297d03bca">mMessages</a></td></tr>
+<tr class="memitem:a1234d3eb2675205885689b4c236a100a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html#a1234d3eb2675205885689b4c236a100a">mMessagesFontSize</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a878c7d6564e8acc38133ba99868abba5"></a>
@@ -160,6 +171,40 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ab90f3ac0b7033a540dcaf640e5fc651d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBMessagesDialog::dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line">}</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_u_b_messages_dialog_ab90f3ac0b7033a540dcaf640e5fc651d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="aeccdc1dd382ce26c00898c85932e6474"></a>
 <div class="memitem">
 <div class="memproto">
@@ -174,12 +219,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mMessages = messages;</div>
+<div class="line">    <a class="code" href="../../db/dc2/class_u_b_messages_dialog.html#a5aca90c606f237a13ae3c9c297d03bca">mMessages</a> = messages;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mMessages.count())</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/dc2/class_u_b_messages_dialog.html#a5aca90c606f237a13ae3c9c297d03bca">mMessages</a>.count())</div>
 <div class="line">    {        </div>
 <div class="line">        QVBoxLayout *messagesLayout = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line">        <span class="keywordflow">foreach</span> (QString message, mMessages)</div>
+<div class="line">        <span class="keywordflow">foreach</span> (QString message, <a class="code" href="../../db/dc2/class_u_b_messages_dialog.html#a5aca90c606f237a13ae3c9c297d03bca">mMessages</a>)</div>
 <div class="line">        {</div>
 <div class="line">            QTextEdit *messageBox = <span class="keyword">new</span> QTextEdit(<span class="keyword">this</span>);</div>
 <div class="line">            messageBox-&gt;setMinimumHeight(55);</div>
@@ -189,7 +234,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">            messagesLayout-&gt;addWidget(messageBox);</div>
 <div class="line">        }</div>
 <div class="line">        QPushButton *closeButton = <span class="keyword">new</span> QPushButton(tr(<span class="stringliteral">&quot;Close&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">        connect(closeButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(dispose()));</div>
+<div class="line">        connect(closeButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../db/dc2/class_u_b_messages_dialog.html#ab90f3ac0b7033a540dcaf640e5fc651d">dispose</a>()));</div>
 <div class="line"></div>
 <div class="line">        messagesLayout-&gt;addWidget(closeButton);</div>
 <div class="line"></div>
@@ -197,20 +242,70 @@ Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_u_b_messages_dialog_aeccdc1dd382ce26c00898c85932e6474_cgraph.svg" width="475" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/dc2/class_u_b_messages_dialog_aeccdc1dd382ce26c00898c85932e6474_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a5aca90c606f237a13ae3c9c297d03bca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt; UBMessagesDialog::mMessages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1234d3eb2675205885689b4c236a100a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBMessagesDialog::mMessagesFontSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp.html">UBMessagesDialog.cpp</a></li>
+<li><a class="el" href="../../d7/def/_u_b_messages_dialog_8h_source.html">UBMessagesDialog.h</a></li>
+<li><a class="el" href="../../dc/d40/_u_b_messages_dialog_8cpp.html">UBMessagesDialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -218,7 +313,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dc2/class_u_b_messages_dialog.html">UBMessagesDialog</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

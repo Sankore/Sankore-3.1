@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('dc/d5a/class_u_b_graphics_media_item.h
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d6/d2a/class_u_b_graphics_media_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsMediaItem Class Reference</div>  </div>
@@ -199,7 +201,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_graphics_item"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_graphics_item')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../d3/dbd/class_u_b_graphics_item.html">UBGraphicsItem</a></td></tr>
 <tr class="memitem:ae96f88cb9995d8da67e7b72f273c471b inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ae96f88cb9995d8da67e7b72f273c471b">UBGraphicsItem</a> ()</td></tr>
 <tr class="memitem:aa2118a97c39bafd7610dcb91fc1bba38 inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#aa2118a97c39bafd7610dcb91fc1bba38">~UBGraphicsItem</a> ()</td></tr>
-<tr class="memitem:ad3dd5cd27bf33d67937f3e75e8e73904 inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a> (<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *mDelegate)</td></tr>
+<tr class="memitem:ad3dd5cd27bf33d67937f3e75e8e73904 inherit pro_methods_class_u_b_graphics_item"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#ad3dd5cd27bf33d67937f3e75e8e73904">setDelegate</a> (<a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a> *<a class="el" href="../../d3/dbd/class_u_b_graphics_item.html#a9c053737a51aebd0c4a5c501ced828a0">mDelegate</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -208,6 +210,24 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a9b39fa6d96948627ee61a0ba82a4ecdc"><td class="memItemLeft" align="right" valign="top">Phonon::AudioOutput *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a></td></tr>
 <tr class="memitem:a949d95040d1999f123f94c06c0e35ffd"><td class="memItemLeft" align="right" valign="top">Phonon::MediaSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a949d95040d1999f123f94c06c0e35ffd">mSource</a></td></tr>
 <tr class="memitem:aedab2a57e159cbc15e470614b0ef2f2c"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#aedab2a57e159cbc15e470614b0ef2f2c">mAudioWidget</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2c12eaddb42ea9dad175d3fc035517a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a></td></tr>
+<tr class="memitem:a29b7e7e96d4c71604af46e9c1b96f7f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a29b7e7e96d4c71604af46e9c1b96f7f2">mMutedByUserAction</a></td></tr>
+<tr class="memitem:a061da9f04710baf2a7cd550850a6cf69"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a></td></tr>
+<tr class="memitem:a8bb8df61b35611500cc451e106307b66"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8bb8df61b35611500cc451e106307b66">mMediaSource</a></td></tr>
+<tr class="memitem:a0066527c7fdc5e1637acfa1c9cca3c03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6">mediaType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03">mMediaType</a></td></tr>
+<tr class="memitem:a80b9f74b7a414e84d4a8c841406ec555"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a80b9f74b7a414e84d4a8c841406ec555">mShouldMove</a></td></tr>
+<tr class="memitem:afc2b0d579ec3276223cfc4c8fe76545e"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#afc2b0d579ec3276223cfc4c8fe76545e">mMousePressPos</a></td></tr>
+<tr class="memitem:a361990c6c99c20c6c61a3d74e36bf8e0"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a361990c6c99c20c6c61a3d74e36bf8e0">mMouseMovePos</a></td></tr>
+<tr class="memitem:a8706263c70167e95467de8b81493e23b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8706263c70167e95467de8b81493e23b">haveLinkedImage</a></td></tr>
+<tr class="memitem:a5b13d7f39141b4630fe8db03e4c2400d"><td class="memItemLeft" align="right" valign="top">QGraphicsPixmapItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5b13d7f39141b4630fe8db03e4c2400d">mLinkedImage</a></td></tr>
+<tr class="memitem:a8299db13f77eea3de94c2a8a52d6862c"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8299db13f77eea3de94c2a8a52d6862c">mInitialPos</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a5c1afe20995f1287f4f720a008945552"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5c1afe20995f1287f4f720a008945552">sIsMutedByDefault</a> = false</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -291,11 +311,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">        : <a class="code" href="../../dd/d13/class_u_b_graphics_proxy_widget.html#ac09d1aba5d9732baf11064fd929f7463">UBGraphicsProxyWidget</a>(parent)</div>
 <div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aa64eaf00cd632a1d8eca70ccd6a61029">mVideoWidget</a>(NULL)</div>
 <div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aedab2a57e159cbc15e470614b0ef2f2c">mAudioWidget</a>(NULL)</div>
-<div class="line">        , mMuted(sIsMutedByDefault)</div>
-<div class="line">        , mMutedByUserAction(sIsMutedByDefault)</div>
-<div class="line">        , mMediaFileUrl(pMediaFileUrl)</div>
-<div class="line">        , mLinkedImage(NULL)</div>
-<div class="line">        , mInitialPos(0)</div>
+<div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5c1afe20995f1287f4f720a008945552">sIsMutedByDefault</a>)</div>
+<div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a29b7e7e96d4c71604af46e9c1b96f7f2">mMutedByUserAction</a>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5c1afe20995f1287f4f720a008945552">sIsMutedByDefault</a>)</div>
+<div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a>(pMediaFileUrl)</div>
+<div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5b13d7f39141b4630fe8db03e4c2400d">mLinkedImage</a>(NULL)</div>
+<div class="line">        , <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8299db13f77eea3de94c2a8a52d6862c">mInitialPos</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    update();</div>
 <div class="line"></div>
@@ -307,7 +327,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (mediaPath.toLower().contains(<span class="stringliteral">&quot;videos&quot;</span>))</div>
 <div class="line">    {</div>
-<div class="line">        mMediaType = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6ae5c40b3772c6427e415cfec2054318e6">mediaType_Video</a>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03">mMediaType</a> = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6ae5c40b3772c6427e415cfec2054318e6">mediaType_Video</a>;</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a> = <span class="keyword">new</span> Phonon::AudioOutput(Phonon::VideoCategory, <span class="keyword">this</span>);</div>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9">mMediaObject</a>-&gt;setTickInterval(50);</div>
@@ -320,12 +340,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aa64eaf00cd632a1d8eca70ccd6a61029">mVideoWidget</a>-&gt;setMinimumSize(140,26);</div>
 <div class="line"></div>
-<div class="line">        haveLinkedImage = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8706263c70167e95467de8b81493e23b">haveLinkedImage</a> = <span class="keyword">true</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    <span class="keywordflow">if</span> (mediaPath.toLower().contains(<span class="stringliteral">&quot;audios&quot;</span>))</div>
 <div class="line">    {</div>
-<div class="line">        mMediaType = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6a49fc08ddeda17dc732caf360a16d571e">mediaType_Audio</a>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03">mMediaType</a> = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6a49fc08ddeda17dc732caf360a16d571e">mediaType_Audio</a>;</div>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a> = <span class="keyword">new</span> Phonon::AudioOutput(Phonon::MusicCategory, <span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9">mMediaObject</a>-&gt;setTickInterval(1000);</div>
@@ -340,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aedab2a57e159cbc15e470614b0ef2f2c">mAudioWidget</a>-&gt;resize(320,26+2*borderSize); <span class="comment">//3*border size with enabled title</span></div>
 <div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aedab2a57e159cbc15e470614b0ef2f2c">mAudioWidget</a>-&gt;setMinimumSize(150,26+borderSize);</div>
 <div class="line"></div>
-<div class="line">        haveLinkedImage = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8706263c70167e95467de8b81493e23b">haveLinkedImage</a> = <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    Phonon::createPath(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9">mMediaObject</a>, <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>);</div>
@@ -353,7 +373,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="comment">// delegate should be created earler because we setWidget calls resize event for graphics proxy widgt.</span></div>
 <div class="line">    <span class="comment">// resize uses delegate.</span></div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6ae5c40b3772c6427e415cfec2054318e6">mediaType_Video</a> == mMediaType)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6ae5c40b3772c6427e415cfec2054318e6">mediaType_Video</a> == <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03">mMediaType</a>)</div>
 <div class="line">        setWidget(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aa64eaf00cd632a1d8eca70ccd6a61029">mVideoWidget</a>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        setWidget(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#aedab2a57e159cbc15e470614b0ef2f2c">mAudioWidget</a>);</div>
@@ -361,7 +381,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="comment">// media widget should be created and placed on proxy widget here.</span></div>
 <div class="line">    <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a1de77276aba7276defacd0b87c9b87c7">init</a>();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6a49fc08ddeda17dc732caf360a16d571e">mediaType_Audio</a> == mMediaType)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6a49fc08ddeda17dc732caf360a16d571e">mediaType_Audio</a> == <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03">mMediaType</a>)</div>
 <div class="line">        <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a20ce0529c071c4a40df4652f34238ee0">frame</a>()-&gt;<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#abc8c1975ac9f282d12afc7d19bbb43aa">setOperationMode</a>(<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#aa3195d439757dd154944daea507f5b94aaa8eb433501e3e0ab2637ad2453ddbbc">UBGraphicsDelegateFrame::ResizingHorizontally</a>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a20ce0529c071c4a40df4652f34238ee0">frame</a>()-&gt;<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#abc8c1975ac9f282d12afc7d19bbb43aa">setOperationMode</a>(<a class="code" href="../../d5/ded/class_u_b_graphics_delegate_frame.html#aa3195d439757dd154944daea507f5b94a7843dd7157918b91e2499ed85cd013d5">UBGraphicsDelegateFrame::Resizing</a>);</div>
@@ -628,14 +648,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mMediaType; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a0066527c7fdc5e1637acfa1c9cca3c03">mMediaType</a>; }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_ab226c5a7da2a694b0b341a49d1900c5f_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_ab226c5a7da2a694b0b341a49d1900c5f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -661,7 +682,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> haveLinkedImage;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8706263c70167e95467de8b81493e23b">haveLinkedImage</a>;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -690,7 +711,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span>(hasMedia &amp;&amp; <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9">mMediaObject</a>-&gt;isSeekable())</div>
 <div class="line">    {</div>
 <div class="line">    Q_UNUSED(hasMedia);</div>
-<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9">mMediaObject</a>-&gt;seek(mInitialPos);</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a05333e3836a8f9e3dd9658ef5e2009f9">mMediaObject</a>-&gt;seek(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8299db13f77eea3de94c2a8a52d6862c">mInitialPos</a>);</div>
 <div class="line">        <a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html">UBGraphicsMediaItemDelegate</a> *med = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html">UBGraphicsMediaItemDelegate</a> *<span class="keyword">&gt;</span>(<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>());</div>
 <div class="line">        <span class="keywordflow">if</span> (med)</div>
 <div class="line">            med-&gt;<a class="code" href="../../df/dfb/class_u_b_graphics_media_item_delegate.html#a302ad976f1306f959d838371cd441dc9">updateTicker</a>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#ab2b9d87a734ede93dbfa53251910eec1">initialPos</a>());</div>
@@ -738,7 +759,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                        {</div>
-<div class="line">        <span class="keywordflow">return</span> mInitialPos;</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8299db13f77eea3de94c2a8a52d6862c">mInitialPos</a>;</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -773,7 +794,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    {</div>
-<div class="line">        <span class="keywordflow">return</span> mMuted;</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>;</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 </div>
@@ -831,11 +852,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        {</div>
 <div class="line">            QString absoluteMediaFilename;</div>
 <div class="line"></div>
-<div class="line">            <span class="keywordflow">if</span>(mMediaFileUrl.toLocalFile().startsWith(<span class="stringliteral">&quot;audios/&quot;</span>) || mMediaFileUrl.toLocalFile().startsWith(<span class="stringliteral">&quot;videos/&quot;</span>)){</div>
-<div class="line">                absoluteMediaFilename = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5b064d18526d1ed0eee805d35fdaa679">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a718297b6e060113fee9e8c7e822f6d39">document</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <span class="stringliteral">&quot;/&quot;</span>  + mMediaFileUrl.toLocalFile();</div>
+<div class="line">            <span class="keywordflow">if</span>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a>.toLocalFile().startsWith(<span class="stringliteral">&quot;audios/&quot;</span>) || <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a>.toLocalFile().startsWith(<span class="stringliteral">&quot;videos/&quot;</span>)){</div>
+<div class="line">                absoluteMediaFilename = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5b064d18526d1ed0eee805d35fdaa679">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a718297b6e060113fee9e8c7e822f6d39">document</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#af57e2a3250ad6ae4c18fc5762e37f8a1">persistencePath</a>() + <span class="stringliteral">&quot;/&quot;</span>  + <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a>.toLocalFile();</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">else</span>{</div>
-<div class="line">                absoluteMediaFilename = mMediaFileUrl.toLocalFile();</div>
+<div class="line">                absoluteMediaFilename = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a>.toLocalFile();</div>
 <div class="line">            }</div>
 <div class="line"></div>
 <div class="line">            <span class="keywordflow">if</span> (absoluteMediaFilename.length() &gt; 0)</div>
@@ -879,7 +900,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    {</div>
-<div class="line">        <span class="keywordflow">return</span> mMediaFileUrl;</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a061da9f04710baf2a7cd550850a6cf69">mMediaFileUrl</a>;</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -887,7 +908,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a8a26c3a782e9d2e3cd8227c679885dd6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a8a26c3a782e9d2e3cd8227c679885dd6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -922,7 +944,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_acb9624b430d6dcf237200bdb86daf5d4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_acb9624b430d6dcf237200bdb86daf5d4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -952,20 +975,20 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d13/class_u_b_graphics_proxy_widget.html#a6016e526b18ae33c0377681f80581b6d">UBGraphicsProxyWidget</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mShouldMove &amp;&amp; (event-&gt;buttons() &amp; Qt::LeftButton))</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a80b9f74b7a414e84d4a8c841406ec555">mShouldMove</a> &amp;&amp; (event-&gt;buttons() &amp; Qt::LeftButton))</div>
 <div class="line">    {</div>
-<div class="line">        QPointF offset = <span class="keyword">event</span>-&gt;scenePos() - mMousePressPos;</div>
+<div class="line">        QPointF offset = <span class="keyword">event</span>-&gt;scenePos() - <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#afc2b0d579ec3276223cfc4c8fe76545e">mMousePressPos</a>;</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (offset.toPoint().manhattanLength() &gt; QApplication::startDragDistance())</div>
 <div class="line">        {</div>
-<div class="line">            QPointF mouseMovePos = mapFromScene(mMouseMovePos);</div>
+<div class="line">            QPointF mouseMovePos = mapFromScene(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a361990c6c99c20c6c61a3d74e36bf8e0">mMouseMovePos</a>);</div>
 <div class="line">            QPointF eventPos = mapFromScene( event-&gt;scenePos());</div>
 <div class="line"></div>
 <div class="line">            QPointF translation = eventPos - mouseMovePos;</div>
 <div class="line">            translate(translation.x(), translation.y());</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mMouseMovePos = <span class="keyword">event</span>-&gt;scenePos();</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a361990c6c99c20c6c61a3d74e36bf8e0">mMouseMovePos</a> = <span class="keyword">event</span>-&gt;scenePos();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
@@ -1021,7 +1044,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (parentItem() &amp;&amp; parentItem()-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a81a76ca0d217448f2b55ff72328b093c">type</a>() == <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad39fe3ee7e219e1d6aa20a87872a95ceaa41722c9d25c5573b0031a811262f974">UBGraphicsGroupContainerItem::Type</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mShouldMove = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a80b9f74b7a414e84d4a8c841406ec555">mShouldMove</a> = <span class="keyword">false</span>;</div>
 <div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">Delegate</a>()-&gt;<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a45ef0fbd6b506782320f17857eca2b0c">mousePressEvent</a>(event))</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keyword">event</span>-&gt;accept();</div>
@@ -1029,9 +1052,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        mShouldMove = (<span class="keyword">event</span>-&gt;buttons() &amp; Qt::LeftButton);</div>
-<div class="line">        mMousePressPos = <span class="keyword">event</span>-&gt;scenePos();</div>
-<div class="line">        mMouseMovePos = mMousePressPos;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a80b9f74b7a414e84d4a8c841406ec555">mShouldMove</a> = (<span class="keyword">event</span>-&gt;buttons() &amp; Qt::LeftButton);</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#afc2b0d579ec3276223cfc4c8fe76545e">mMousePressPos</a> = <span class="keyword">event</span>-&gt;scenePos();</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a361990c6c99c20c6c61a3d74e36bf8e0">mMouseMovePos</a> = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#afc2b0d579ec3276223cfc4c8fe76545e">mMousePressPos</a>;</div>
 <div class="line"></div>
 <div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">        setSelected(<span class="keyword">true</span>);</div>
@@ -1109,9 +1132,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                 {</div>
-<div class="line">        mInitialPos = p;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a8299db13f77eea3de94c2a8a52d6862c">mInitialPos</a> = p;</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a56ddbb8c3e4bbb60539ff6d4e96146f0_icgraph.svg" width="368" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ac46dcad03dfbda8bc06e6f4e2e897dee"></a>
@@ -1136,17 +1168,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mMuted = bMute;</div>
-<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>-&gt;setMuted(mMuted);</div>
-<div class="line">    mMutedByUserAction = mMuted;</div>
-<div class="line">    sIsMutedByDefault = mMuted;</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a> = bMute;</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>-&gt;setMuted(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>);</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a29b7e7e96d4c71604af46e9c1b96f7f2">mMutedByUserAction</a> = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>;</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a5c1afe20995f1287f4f720a008945552">sIsMutedByDefault</a> = <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_ac46dcad03dfbda8bc06e6f4e2e897dee_icgraph.svg" width="430" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1186,12 +1218,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a36a57baf502db973b4541db3f2479731">UBItem::setSourceUrl</a>(pSourceUrl);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a36a57baf502db973b4541db3f2479731_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a36a57baf502db973b4541db3f2479731_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1221,21 +1254,21 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!shown)</div>
 <div class="line">    {</div>
-<div class="line">        mMuted = <span class="keyword">true</span>;</div>
-<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>-&gt;setMuted(mMuted);</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a> = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>-&gt;setMuted(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!mMutedByUserAction)</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a29b7e7e96d4c71604af46e9c1b96f7f2">mMutedByUserAction</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mMuted = <span class="keyword">false</span>;</div>
-<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>-&gt;setMuted(mMuted);</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a9b39fa6d96948627ee61a0ba82a4ecdc">mAudioOutput</a>-&gt;setMuted(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a437f10f9df0d715d037e094a1e4ff9ea_icgraph.svg" width="600" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1263,15 +1296,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mMuted = !mMuted;</div>
-<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#ac46dcad03dfbda8bc06e6f4e2e897dee">setMute</a>(mMuted);</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a> = !<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>;</div>
+<div class="line">    <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#ac46dcad03dfbda8bc06e6f4e2e897dee">setMute</a>(<a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a2c12eaddb42ea9dad175d3fc035517a2">mMuted</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a9b73c3e29fe1c5ed124439c3dab5abb9_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1304,11 +1337,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/d5a/class_u_b_graphics_media_item.html#a940b930449b3aaf6cd9be3639d8d19f2a1694a0279d66b57a1604aba2a2921781">Type</a>;</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d5a/class_u_b_graphics_media_item_a81a76ca0d217448f2b55ff72328b093c_icgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1342,6 +1375,26 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="a8706263c70167e95467de8b81493e23b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsMediaItem::haveLinkedImage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9b39fa6d96948627ee61a0ba82a4ecdc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1382,6 +1435,66 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8299db13f77eea3de94c2a8a52d6862c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 UBGraphicsMediaItem::mInitialPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b13d7f39141b4630fe8db03e4c2400d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsPixmapItem* UBGraphicsMediaItem::mLinkedImage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a061da9f04710baf2a7cd550850a6cf69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUrl UBGraphicsMediaItem::mMediaFileUrl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a05333e3836a8f9e3dd9658ef5e2009f9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1396,6 +1509,146 @@ Additional Inherited Members</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8bb8df61b35611500cc451e106307b66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBGraphicsMediaItem::mMediaSource</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0066527c7fdc5e1637acfa1c9cca3c03"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html#acf0611c604c6a618b1b920389c3ae6f6">mediaType</a> UBGraphicsMediaItem::mMediaType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a361990c6c99c20c6c61a3d74e36bf8e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsMediaItem::mMouseMovePos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afc2b0d579ec3276223cfc4c8fe76545e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsMediaItem::mMousePressPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2c12eaddb42ea9dad175d3fc035517a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsMediaItem::mMuted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29b7e7e96d4c71604af46e9c1b96f7f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsMediaItem::mMutedByUserAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80b9f74b7a414e84d4a8c841406ec555"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsMediaItem::mShouldMove</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1442,9 +1695,29 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5c1afe20995f1287f4f720a008945552"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsMediaItem::sIsMutedByDefault = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d3/dc1/_u_b_graphics_media_item_8h_source.html">UBGraphicsMediaItem.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d8/dd2/_u_b_graphics_media_item_8cpp.html">UBGraphicsMediaItem.cpp</a></li>
+<li><a class="el" href="../../d3/dc1/_u_b_graphics_media_item_8h_source.html">UBGraphicsMediaItem.h</a></li>
+<li><a class="el" href="../../d8/dd2/_u_b_graphics_media_item_8cpp.html">UBGraphicsMediaItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1452,7 +1725,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d5a/class_u_b_graphics_media_item.html">UBGraphicsMediaItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d0/dc0/class_u_b_features_navigator_wi
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d9b/class_u_b_features_navigator_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesNavigatorWidget Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('d0/dc0/class_u_b_features_navigator_wi
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9f/class_u_b_features_navigator_widget__coll__graph.svg" width="219" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9f/class_u_b_features_navigator_widget__coll__graph.svg" width="219" height="371"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -124,6 +125,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac73b5bd04a38664ddd600635c86caa20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/class_u_b_features_navigator_widget.html#ac73b5bd04a38664ddd600635c86caa20">UBFeaturesNavigatorWidget</a> (QWidget *parent, const char *name=&quot;&quot;)</td></tr>
 <tr class="memitem:a348dbe1b8fc1d2bff7a00d9fbcbf0ad9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d12/class_u_b_features_list_view.html">UBFeaturesListView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a348dbe1b8fc1d2bff7a00d9fbcbf0ad9">listView</a> ()</td></tr>
 <tr class="memitem:afce8cb89b855b3d92c1e7bdb141f11af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/class_u_b_features_navigator_widget.html#afce8cb89b855b3d92c1e7bdb141f11af">setSliderPosition</a> (int pValue)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1980bdee20b324d91254c51aa16b8b72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d12/class_u_b_features_list_view.html">UBFeaturesListView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a></td></tr>
+<tr class="memitem:a72fe8f515a9f82206e8d98db5f780fe6"><td class="memItemLeft" align="right" valign="top">QSlider *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac73b5bd04a38664ddd600635c86caa20"></a>
@@ -150,7 +156,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                      :</div>
-<div class="line">    QWidget(parent), mListView(0), mListSlider(0)</div>
+<div class="line">    QWidget(parent), <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a>(0), <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>(0)</div>
 <div class="line"></div>
 <div class="line">{</div>
 <div class="line">    name = <span class="stringliteral">&quot;UBFeaturesNavigatorWidget&quot;</span>;</div>
@@ -158,24 +164,24 @@ Public Member Functions</h2></td></tr>
 <div class="line">    setObjectName(name);</div>
 <div class="line"><span class="comment">//    SET_STYLE_SHEET()</span></div>
 <div class="line"></div>
-<div class="line">    mListView = <span class="keyword">new</span> <a class="code" href="../../d5/d12/class_u_b_features_list_view.html">UBFeaturesListView</a>(<span class="keyword">this</span>, <a class="code" href="../../d5/d85/class_u_b_features_widget.html#aeb129068ba72a8bbbf17f36064241be0">UBFeaturesWidget::objNameFeatureList</a>);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d12/class_u_b_features_list_view.html">UBFeaturesListView</a>(<span class="keyword">this</span>, <a class="code" href="../../d5/d85/class_u_b_features_widget.html#aeb129068ba72a8bbbf17f36064241be0">UBFeaturesWidget::objNameFeatureList</a>);</div>
 <div class="line"></div>
-<div class="line">    mListSlider = <span class="keyword">new</span> QSlider(Qt::Horizontal, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a> = <span class="keyword">new</span> QSlider(Qt::Horizontal, <span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    mListSlider-&gt;setMinimum(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#aea292678d7f53f575fe57cf713aa30a3">UBFeaturesWidget::minThumbnailSize</a>);</div>
-<div class="line">    mListSlider-&gt;setMaximum(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#aeaababf494eed37a667f67b4b781014e">UBFeaturesWidget::maxThumbnailSize</a>);</div>
-<div class="line">    mListSlider-&gt;setValue(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#aea292678d7f53f575fe57cf713aa30a3">UBFeaturesWidget::minThumbnailSize</a>);</div>
-<div class="line">    mListSlider-&gt;setMinimumHeight(20);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>-&gt;setMinimum(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#aea292678d7f53f575fe57cf713aa30a3">UBFeaturesWidget::minThumbnailSize</a>);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>-&gt;setMaximum(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#aeaababf494eed37a667f67b4b781014e">UBFeaturesWidget::maxThumbnailSize</a>);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>-&gt;setValue(<a class="code" href="../../d5/d85/class_u_b_features_widget.html#aea292678d7f53f575fe57cf713aa30a3">UBFeaturesWidget::minThumbnailSize</a>);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>-&gt;setMinimumHeight(20);</div>
 <div class="line"></div>
-<div class="line">    mListView-&gt;setParent(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a>-&gt;setParent(<span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">    QVBoxLayout *mainLayer = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    mainLayer-&gt;addWidget(mListView, 1);</div>
-<div class="line">    mainLayer-&gt;addWidget(mListSlider, 0);</div>
+<div class="line">    mainLayer-&gt;addWidget(<a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a>, 1);</div>
+<div class="line">    mainLayer-&gt;addWidget(<a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>, 0);</div>
 <div class="line">    mainLayer-&gt;setMargin(0);</div>
 <div class="line"></div>
-<div class="line">    connect(mListSlider, SIGNAL(valueChanged(<span class="keywordtype">int</span>)), mListView, SLOT(thumbnailSizeChanged(<span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>, SIGNAL(valueChanged(<span class="keywordtype">int</span>)), <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a>, SLOT(thumbnailSizeChanged(<span class="keywordtype">int</span>)));</div>
 }</div>
 </div><!-- fragment -->
 </div>
@@ -201,14 +207,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mListView;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a1980bdee20b324d91254c51aa16b8b72">mListView</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dc0/class_u_b_features_navigator_widget_a348dbe1b8fc1d2bff7a00d9fbcbf0ad9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dc0/class_u_b_features_navigator_widget_a348dbe1b8fc1d2bff7a00d9fbcbf0ad9_icgraph.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -228,7 +234,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mListSlider-&gt;setValue(pValue);</div>
+<div class="line">    <a class="code" href="../../d0/dc0/class_u_b_features_navigator_widget.html#a72fe8f515a9f82206e8d98db5f780fe6">mListSlider</a>-&gt;setValue(pValue);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -242,9 +248,50 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a72fe8f515a9f82206e8d98db5f780fe6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSlider* UBFeaturesNavigatorWidget::mListSlider</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1980bdee20b324d91254c51aa16b8b72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d12/class_u_b_features_list_view.html">UBFeaturesListView</a>* UBFeaturesNavigatorWidget::mListView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -252,7 +299,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dc0/class_u_b_features_navigator_widget.html">UBFeaturesNavigatorWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

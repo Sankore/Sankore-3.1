@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d5/d5f/classmerge__lib_1_1_filter_pred
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/d74/classmerge__lib_1_1_filter_predictor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::FilterPredictor Class Reference</div>  </div>
@@ -117,14 +119,14 @@ $(document).ready(function(){initNavTree('d5/d5f/classmerge__lib_1_1_filter_pred
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d51/classmerge__lib_1_1_filter_predictor__inherit__graph.svg" width="211" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d51/classmerge__lib_1_1_filter_predictor__inherit__graph.svg" width="211" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for merge_lib::FilterPredictor:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d9b/classmerge__lib_1_1_filter_predictor__coll__graph.svg" width="211" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d9b/classmerge__lib_1_1_filter_predictor__coll__graph.svg" width="211" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -143,6 +145,22 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a97bd51acd9ad395562dfcfeea4452e13"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a97bd51acd9ad395562dfcfeea4452e13">PREDICTOR_TOKEN</a> = &quot;/Predictor&quot;</td></tr>
 <tr class="memitem:aa827dbf05230cde8051f66721ee78c47"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#aa827dbf05230cde8051f66721ee78c47">DECODE_PARAM_TOKEN</a> = &quot;/DecodeParms&quot;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adeef8eaf89b69b73719dbf37a39873b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#adeef8eaf89b69b73719dbf37a39873b5">decodeRow</a> (const char *input, std::string &amp;out, const std::string &amp;prev, int curPrediction)</td></tr>
+<tr class="memitem:a489435228f9020c655a9f0e6f384d175"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a489435228f9020c655a9f0e6f384d175">obtainDecodeParams</a> (<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *objectWithStream, std::string &amp;dictStr)</td></tr>
+<tr class="memitem:abfa7ac853d9c7a25f31a42a36717edbb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#abfa7ac853d9c7a25f31a42a36717edbb">getDictionaryContentStr</a> (std::string &amp;in, size_t &amp;pos)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac7fa83ef5520d2f1143388db886a0ee6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a></td></tr>
+<tr class="memitem:a669d8bf31821094720a3e81beb464a0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a></td></tr>
+<tr class="memitem:a8cceb626ba91f42bf7486583867830b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">_bits</a></td></tr>
+<tr class="memitem:a82bdb00b076fb62a4dad0a49b8ee1629"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">_columns</a></td></tr>
+<tr class="memitem:a891596971c4c70befb3a1ca3ae46543a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a></td></tr>
+<tr class="memitem:a7da34c1d42eb443039e2b9f108ff5bce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a></td></tr>
+<tr class="memitem:a457a1b95275181f4a6e5c77a0582c420"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6d783e05ed476f3b324ad5b889c37ec0"></a>
@@ -158,11 +176,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                :</div>
-<div class="line">_predictor(1),</div>
-<div class="line">_colors(1),</div>
-<div class="line">_bits(8),</div>
-<div class="line">_columns(1),</div>
-<div class="line">_earlyChange(1)</div>
+<div class="line"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a>(1),</div>
+<div class="line"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a>(1),</div>
+<div class="line"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">_bits</a>(8),</div>
+<div class="line"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">_columns</a>(1),</div>
+<div class="line"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a>(1)</div>
 <div class="line">{</div>
 }</div>
 </div><!-- fragment -->
@@ -218,38 +236,38 @@ Static Public Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d3/dbb/classmerge__lib_1_1_decoder.html#a47df14cf561685154b75f282311ae1b0">merge_lib::Decoder</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordtype">bool</span> isPNG = _predictor &gt;= 10?<span class="keyword">true</span>:<span class="keyword">false</span>;</div>
-<div class="line">   <span class="keywordtype">int</span> rowBits = _columns*_colors*_bits;</div>
-<div class="line">   _rowLen = (rowBits&gt;&gt;3) + (rowBits&amp;7);</div>
-<div class="line">   _bytesPerPixel =  (_colors * _bits + 7) &gt;&gt; 3;</div>
+<div class="line">   <span class="keywordtype">bool</span> isPNG = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a> &gt;= 10?<span class="keyword">true</span>:<span class="keyword">false</span>;</div>
+<div class="line">   <span class="keywordtype">int</span> rowBits = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">_columns</a>*<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a>*<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">_bits</a>;</div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a> = (rowBits&gt;&gt;3) + (rowBits&amp;7);</div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a> =  (<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a> * _bits + 7) &gt;&gt; 3;</div>
 <div class="line">   <span class="keywordtype">int</span> rows = 0;</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordflow">if</span>( isPNG )</div>
 <div class="line">   {</div>
-<div class="line">      rows = content.size()/(_rowLen+1) + (content.size()% (_rowLen+1));</div>
+<div class="line">      rows = content.size()/(<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>+1) + (content.size()% (<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>+1));</div>
 <div class="line">   }</div>
 <div class="line">   <span class="keywordflow">else</span></div>
 <div class="line">   {</div>
-<div class="line">      rows = content.size()/(_rowLen) + (content.size()% (_rowLen) );</div>
+<div class="line">      rows = content.size()/(<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>) + (content.size()% (<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>) );</div>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordtype">int</span> inSize = content.size();</div>
 <div class="line">   std::string  out = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"></div>
-<div class="line">   <span class="keywordflow">if</span>( inSize%(isPNG?_rowLen+1:_rowLen) != 0 )</div>
+<div class="line">   <span class="keywordflow">if</span>( inSize%(isPNG?<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>+1:<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>) != 0 )</div>
 <div class="line">   {</div>
-<div class="line">      std::cerr&lt;&lt;<span class="stringliteral">&quot;Warning : wrong PNG identation inSize &quot;</span>&lt;&lt;inSize&lt;&lt;<span class="stringliteral">&quot; rowLen = &quot;</span>&lt;&lt;_rowLen&lt;&lt;<span class="stringliteral">&quot; isPNG = &quot;</span>&lt;&lt;isPNG&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">      std::cerr&lt;&lt;<span class="stringliteral">&quot;Warning : wrong PNG identation inSize &quot;</span>&lt;&lt;inSize&lt;&lt;<span class="stringliteral">&quot; rowLen = &quot;</span>&lt;&lt;<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>&lt;&lt;<span class="stringliteral">&quot; isPNG = &quot;</span>&lt;&lt;isPNG&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line">      content = out;</div>
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">   <span class="keyword">const</span> <span class="keywordtype">char</span> *curRow  = NULL;</div>
-<div class="line">   std::string prev(_bytesPerPixel+_rowLen,<span class="charliteral">&#39;\0&#39;</span>);  <span class="comment">//&quot;previous&quot; line</span></div>
+<div class="line">   std::string prev(<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>+<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>,<span class="charliteral">&#39;\0&#39;</span>);  <span class="comment">//&quot;previous&quot; line</span></div>
 <div class="line">   <span class="keywordtype">int</span> curPredictor  = 1;</div>
 <div class="line"></div>
 <div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;i&lt;rows;i++)</div>
 <div class="line">   {</div>
-<div class="line">      curRow = content.data() + (i* (_rowLen + (isPNG?1:0)) );            </div>
+<div class="line">      curRow = content.data() + (i* (<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a> + (isPNG?1:0)) );            </div>
 <div class="line">      <span class="keywordflow">if</span>( isPNG )</div>
 <div class="line">      {</div>
 <div class="line">         <span class="comment">// this is PNG predictor!</span></div>
@@ -258,10 +276,10 @@ Static Public Attributes</h2></td></tr>
 <div class="line">      }</div>
 <div class="line">      <span class="keywordflow">else</span></div>
 <div class="line">      {</div>
-<div class="line">         curPredictor = _predictor; <span class="comment">// default NONE predictor</span></div>
+<div class="line">         curPredictor = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a>; <span class="comment">// default NONE predictor</span></div>
 <div class="line">      }</div>
 <div class="line">      std::string dec;</div>
-<div class="line">      <span class="keywordflow">if</span>( !decodeRow(curRow,dec,prev,curPredictor) )</div>
+<div class="line">      <span class="keywordflow">if</span>( !<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#adeef8eaf89b69b73719dbf37a39873b5">decodeRow</a>(curRow,dec,prev,curPredictor) )</div>
 <div class="line">      {</div>
 <div class="line">         std::cerr&lt;&lt;<span class="stringliteral">&quot;Unable to process prediction&quot;</span>&lt;&lt;curPredictor&lt;&lt;<span class="stringliteral">&quot;!\n&quot;</span>;</div>
 <div class="line">         content = out;</div>
@@ -269,18 +287,170 @@ Static Public Attributes</h2></td></tr>
 <div class="line">      }</div>
 <div class="line">      <span class="comment">//trace_hex(dec.data()+_bytesPerPixel,_rowLen);</span></div>
 <div class="line">      prev = dec;</div>
-<div class="line">      out += std::string(dec.data()+_bytesPerPixel,_rowLen);</div>
+<div class="line">      out += std::string(dec.data()+<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>,<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>);</div>
 <div class="line">   }</div>
 <div class="line">   content = out;</div>
 <div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_a1b9360122a5f9ad101a11614029da051_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_a1b9360122a5f9ad101a11614029da051_icgraph.svg" width="387" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adeef8eaf89b69b73719dbf37a39873b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FilterPredictor::decodeRow </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>prev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curPrediction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   std::string dec(<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>,<span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line">   dec.append(in,<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>); <span class="comment">// the buffer to decode</span></div>
+<div class="line">   <span class="keywordtype">int</span> start = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>;</div>
+<div class="line">   <span class="keywordtype">int</span> end = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a> + <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>;</div>
+<div class="line">   <span class="keywordflow">switch</span>(curPrediction)</div>
+<div class="line">   {</div>
+<div class="line">   <span class="keywordflow">case</span> 2: <span class="comment">// TIFF predictor</span></div>
+<div class="line">      <span class="comment">// to do, implement TIFF predictor</span></div>
+<div class="line">      std::cerr&lt;&lt;<span class="stringliteral">&quot;TIFF predictor not yet implemented!\n&quot;</span>;</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">case</span> 1: </div>
+<div class="line">   <span class="keywordflow">case</span> 10: <span class="comment">// PNG NONE prediction</span></div>
+<div class="line">      <span class="comment">// nothing to do, take as is</span></div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">   <span class="keywordflow">case</span> 11: <span class="comment">// PNG SUB on all raws</span></div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = start;i&lt;end;i++)</div>
+<div class="line">      {</div>
+<div class="line">         dec[i] += dec[ i - <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a> ];</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line">   <span class="keywordflow">case</span> 12: <span class="comment">// PNG UP on all raws</span></div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = start;i&lt;end;i++)</div>
+<div class="line">      {</div>
+<div class="line">         dec[i] += prev[i];</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line">   <span class="keywordflow">case</span> 13: <span class="comment">// PNG average on all raws</span></div>
+<div class="line">      <span class="comment">//Average(x) + floor((Raw(x-bpp)+Prior(x))/2)</span></div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = start;i&lt;end;i++)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordtype">int</span> leftV  = int(dec[i - <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>])&amp;0xFF;</div>
+<div class="line">         <span class="keywordtype">int</span>   aboveV = int(prev[i - <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>])&amp;0xFF;</div>
+<div class="line">         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> average = (<span class="keywordtype">unsigned</span> char)( (((leftV+aboveV)&gt;&gt;1)&amp;0xFF));</div>
+<div class="line">         dec[i] += average;</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line">   <span class="keywordflow">case</span> 14: <span class="comment">//PNG PAETH on all rows</span></div>
+<div class="line">      <span class="comment">/*function PaethPredictor (a, b, c)</span></div>
+<div class="line"><span class="comment">      ; a = left, b = above, c = upper left</span></div>
+<div class="line"><span class="comment">      p := a + b - c        ; initial estimate</span></div>
+<div class="line"><span class="comment">      pa := abs(p - a)      ; distances to a, b, c</span></div>
+<div class="line"><span class="comment">      pb := abs(p - b)</span></div>
+<div class="line"><span class="comment">      pc := abs(p - c)</span></div>
+<div class="line"><span class="comment">      ; return nearest of a,b,c,</span></div>
+<div class="line"><span class="comment">      ; breaking ties in order a,b,c.</span></div>
+<div class="line"><span class="comment">      if pa &lt;= pb AND pa &lt;= pc then return a</span></div>
+<div class="line"><span class="comment">      else if pb &lt;= pc then return b</span></div>
+<div class="line"><span class="comment">      else return c</span></div>
+<div class="line"><span class="comment">      Paeth(x) + PaethPredictor(Raw(x-bpp), Prior(x), Prior(x-bpp))</span></div>
+<div class="line"><span class="comment">      */</span></div>
+<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = start;i&lt;end;i++)</div>
+<div class="line">      {</div>
+<div class="line">         <span class="keywordtype">int</span> left = int( dec[i - <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>]) &amp; 0xFF;</div>
+<div class="line">         <span class="keywordtype">int</span> upperLeft = int( prev[i - <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>]) &amp; 0xFF;</div>
+<div class="line"></div>
+<div class="line">         <span class="keywordtype">int</span> above = int( prev[i]) &amp; 0xFF;</div>
+<div class="line">         <span class="keywordtype">int</span> p = left + above - upperLeft;</div>
+<div class="line">         <span class="keywordtype">int</span> pLeft = abs(p - left);</div>
+<div class="line">         <span class="keywordtype">int</span> pAbove = abs(p - above);</div>
+<div class="line">         <span class="keywordtype">int</span> pUpperLeft = abs(p - upperLeft);</div>
+<div class="line">         <span class="keywordtype">int</span> paeth = 0;</div>
+<div class="line">         <span class="keywordflow">if</span>( pLeft &lt;= pAbove &amp;&amp; pLeft &lt;=pUpperLeft )</div>
+<div class="line">         {</div>
+<div class="line">            paeth = left;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordflow">else</span> <span class="keywordflow">if</span>( pAbove &lt;= pUpperLeft )</div>
+<div class="line">         {</div>
+<div class="line">            paeth = above;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordflow">else</span> </div>
+<div class="line">         {</div>
+<div class="line">            paeth = upperLeft;</div>
+<div class="line">         }</div>
+<div class="line">         dec[i] += char (paeth &amp; 0xFF);</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line">   <span class="keywordflow">default</span>:</div>
+<div class="line">      <span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">   }</div>
+<div class="line">   out = dec;</div>
+<div class="line">   <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_adeef8eaf89b69b73719dbf37a39873b5_icgraph.svg" width="603" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -316,6 +486,64 @@ Static Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="abfa7ac853d9c7a25f31a42a36717edbb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string FilterPredictor::getDictionaryContentStr </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">size_t</span> beg = in.find(<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#a0681d18e6f1df5f6c6fd114f0c9e0880">DICT_START_TOKEN</a>,pos);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) beg == -1 )</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">   }</div>
+<div class="line"></div>
+<div class="line">   beg += <a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#a0681d18e6f1df5f6c6fd114f0c9e0880">DICT_START_TOKEN</a>.size();</div>
+<div class="line">   <span class="keywordtype">size_t</span> end = in.find(<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ad8ab2050742bee8f488d532635dcc2ce">DICT_END_TOKEN</a>,beg);</div>
+<div class="line">   <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) end == -1 )</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">return</span> in.substr(beg,end-beg);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_abfa7ac853d9c7a25f31a42a36717edbb_icgraph.svg" width="606" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ab633eb1564a580644998e42bb429e4ef"></a>
 <div class="memitem">
 <div class="memproto">
@@ -336,13 +564,13 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> _earlyChange;}</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_ab633eb1564a580644998e42bb429e4ef_icgraph.svg" width="387" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -382,34 +610,267 @@ Static Public Attributes</h2></td></tr>
 <div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) position != -1)</div>
 <div class="line">      {</div>
 <div class="line">         position += <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#aa827dbf05230cde8051f66721ee78c47">DECODE_PARAM_TOKEN</a>.size();</div>
-<div class="line">         std::string dictStr = getDictionaryContentStr(content,position);</div>
+<div class="line">         std::string dictStr = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#abfa7ac853d9c7a25f31a42a36717edbb">getDictionaryContentStr</a>(content,position);</div>
 <div class="line">         <span class="comment">//         trace_hex(dictStr.data(),dictStr.size());</span></div>
-<div class="line">         obtainDecodeParams(objectWithStream,dictStr);</div>
+<div class="line">         <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a489435228f9020c655a9f0e6f384d175">obtainDecodeParams</a>(objectWithStream,dictStr);</div>
 <div class="line">      }</div>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_ab45acfb2cd146059037a607f4d008df7_cgraph.svg" width="531" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_ab45acfb2cd146059037a607f4d008df7_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_ab45acfb2cd146059037a607f4d008df7_icgraph.svg" width="387" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a489435228f9020c655a9f0e6f384d175"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilterPredictor::obtainDecodeParams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>objectWithStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>dictStr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keyword">typedef</span> std::map&lt; std::string, int&gt; DecodeParams;</div>
+<div class="line"></div>
+<div class="line">   DecodeParams params;</div>
+<div class="line">   <span class="comment">// set some initiaial values</span></div>
+<div class="line">   params[<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a97bd51acd9ad395562dfcfeea4452e13">PREDICTOR_TOKEN</a>] = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a>;</div>
+<div class="line">   params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ab574df911e070d4f4003d08680412f2a">COLUMNS_TOKEN</a>] = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">_columns</a>;</div>
+<div class="line">   params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#afc29a81e80b7d387d6fc382c971a6f28">COLORS_TOKEN</a>] = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a>;</div>
+<div class="line">   params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ada3dfbfac0c29eb595dbb322b57f0578">BITS_TOKEN</a>] = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">_bits</a>;</div>
+<div class="line">   params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ae0acc15fbd9aecb3aa3ce73eb8d67f6c">EARLY_TOKEN</a>] = <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a>;</div>
+<div class="line"></div>
+<div class="line">   <span class="comment">// lets parse the content of dictionary and set actual values into the map</span></div>
+<div class="line"></div>
+<div class="line">   DecodeParams::iterator it = params.begin();</div>
+<div class="line">   <span class="keywordflow">for</span>(; it != params.end();it++)</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordtype">size_t</span> pos = dictStr.find((*it).first);</div>
+<div class="line">      <span class="keywordflow">if</span>((<span class="keywordtype">int</span>) pos != -1 )</div>
+<div class="line">      {</div>
+<div class="line">         pos += (*it).first.size();</div>
+<div class="line"></div>
+<div class="line">         <span class="comment">// we assume the following pattern &quot;/Colors 8&quot;</span></div>
+<div class="line">         std::string numstr = objectWithStream-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a74d6f1dd66a4371682ecb1415e61e818">getNameSimpleValue</a>(dictStr,(*it).first);</div>
+<div class="line">         <span class="keywordflow">if</span>( numstr.empty() )</div>
+<div class="line">         {</div>
+<div class="line">            std::cerr&lt;&lt;<span class="stringliteral">&quot;Wrong value of &quot;</span>&lt;&lt;(*it).first&lt;&lt;<span class="stringliteral">&quot;defined as &quot;</span>&lt;&lt;dictStr&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordtype">int</span> number = <a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#a1e6ab2d929fb6879433ff6ed87dcc18b">Utils::stringToInt</a>(numstr);</div>
+<div class="line">         <span class="comment">//trace(&quot;Object number with length = %d&quot;,number);</span></div>
+<div class="line">         params[(*it).first] = number;</div>
+<div class="line">      }</div>
+<div class="line">   }</div>
+<div class="line">   <span class="comment">// refresh the values after reading</span></div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a> = params[<a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a97bd51acd9ad395562dfcfeea4452e13">PREDICTOR_TOKEN</a>];</div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">_columns</a> = params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ab574df911e070d4f4003d08680412f2a">COLUMNS_TOKEN</a>];</div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a> = params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#afc29a81e80b7d387d6fc382c971a6f28">COLORS_TOKEN</a>];</div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">_bits</a> = params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ada3dfbfac0c29eb595dbb322b57f0578">BITS_TOKEN</a>];</div>
+<div class="line">   <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a> = params[<a class="code" href="../../d3/d0e/_filter_predictor_8cpp.html#ae0acc15fbd9aecb3aa3ce73eb8d67f6c">EARLY_TOKEN</a>];</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_a489435228f9020c655a9f0e6f384d175_cgraph.svg" width="100%" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d5f/classmerge__lib_1_1_filter_predictor_a489435228f9020c655a9f0e6f384d175_icgraph.svg" width="603" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="a8cceb626ba91f42bf7486583867830b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_bits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a457a1b95275181f4a6e5c77a0582c420"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_bytesPerPixel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a669d8bf31821094720a3e81beb464a0b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_colors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82bdb00b076fb62a4dad0a49b8ee1629"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_columns</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a891596971c4c70befb3a1ca3ae46543a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_earlyChange</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac7fa83ef5520d2f1143388db886a0ee6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_predictor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7da34c1d42eb443039e2b9f108ff5bce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int merge_lib::FilterPredictor::_rowLen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa827dbf05230cde8051f66721ee78c47"></a>
 <div class="memitem">
 <div class="memproto">
@@ -451,8 +912,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d1/d66/_filter_predictor_8h_source.html">FilterPredictor.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d3/d0e/_filter_predictor_8cpp.html">FilterPredictor.cpp</a></li>
+<li><a class="el" href="../../d1/d66/_filter_predictor_8h_source.html">FilterPredictor.h</a></li>
+<li><a class="el" href="../../d3/d0e/_filter_predictor_8cpp.html">FilterPredictor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -460,7 +921,7 @@ Static Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html">FilterPredictor</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

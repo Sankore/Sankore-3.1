@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('df/dac/class_w_b_history_model.html','
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../da/dd0/class_w_b_history_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBHistoryModel Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('df/dac/class_w_b_history_model.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d58/class_w_b_history_model__coll__graph.svg" width="152" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d58/class_w_b_history_model__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
@@ -143,6 +144,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac33fd2a53e6145f37ee02298edcedb77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dac/class_w_b_history_model.html#ac33fd2a53e6145f37ee02298edcedb77">columnCount</a> (const QModelIndex &amp;parent=QModelIndex()) const </td></tr>
 <tr class="memitem:a761d669ec889b4e7815a3fea79c31b54"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dac/class_w_b_history_model.html#a761d669ec889b4e7815a3fea79c31b54">rowCount</a> (const QModelIndex &amp;parent=QModelIndex()) const </td></tr>
 <tr class="memitem:a791836de2c93231a2eb7d5b4ae355405"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dac/class_w_b_history_model.html#a791836de2c93231a2eb7d5b4ae355405">removeRows</a> (int row, int count, const QModelIndex &amp;parent=QModelIndex())</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad4b0e315d3f4009e2a62d1bb4d13a2fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a></td></tr>
 </table>
 <h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a898ccbc40f3547db69e302996901723a"></a>
@@ -200,17 +205,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QAbstractTableModel(parent)</div>
-<div class="line">    , m_history(history)</div>
+<div class="line">    , <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>(history)</div>
 <div class="line">{</div>
-<div class="line">    Q_ASSERT(m_history);</div>
-<div class="line">    connect(m_history, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()),</div>
+<div class="line">    Q_ASSERT(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>);</div>
+<div class="line">    connect(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()),</div>
 <div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()));</div>
-<div class="line">    connect(m_history, SIGNAL(entryRemoved(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;)),</div>
+<div class="line">    connect(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>, SIGNAL(entryRemoved(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;)),</div>
 <div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()));</div>
 <div class="line"></div>
-<div class="line">    connect(m_history, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a1f0db156717f0eccbfda2058b5885aeb">entryAdded</a>(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;)),</div>
+<div class="line">    connect(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a1f0db156717f0eccbfda2058b5885aeb">entryAdded</a>(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;)),</div>
 <div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a1f0db156717f0eccbfda2058b5885aeb">entryAdded</a>()));</div>
-<div class="line">    connect(m_history, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a2bf955c8d5195ee2d9d281e53ef89ea8">entryUpdated</a>(<span class="keywordtype">int</span>)),</div>
+<div class="line">    connect(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a2bf955c8d5195ee2d9d281e53ef89ea8">entryUpdated</a>(<span class="keywordtype">int</span>)),</div>
 <div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a2bf955c8d5195ee2d9d281e53ef89ea8">entryUpdated</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -269,7 +274,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    QList&lt;WBHistoryItem&gt; lst = m_history-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>();</div>
+<div class="line">    QList&lt;WBHistoryItem&gt; lst = <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (index.row() &lt; 0 || index.row() &gt;= lst.size())</div>
 <div class="line">        <span class="keywordflow">return</span> QVariant();</div>
 <div class="line"></div>
@@ -504,12 +509,12 @@ Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordtype">int</span> lastRow = row + count - 1;</div>
 <div class="line">    beginRemoveRows(parent, row, lastRow);</div>
-<div class="line">    QList&lt;WBHistoryItem&gt; lst = m_history-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>();</div>
+<div class="line">    QList&lt;WBHistoryItem&gt; lst = <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lastRow; i &gt;= row; --i)</div>
 <div class="line">        lst.removeAt(i);</div>
-<div class="line">    disconnect(m_history, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()));</div>
-<div class="line">    m_history-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ac749e2513aa93549de988bb15781d258">setHistory</a>(lst);</div>
-<div class="line">    connect(m_history, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()));</div>
+<div class="line">    disconnect(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()));</div>
+<div class="line">    <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ac749e2513aa93549de988bb15781d258">setHistory</a>(lst);</div>
+<div class="line">    connect(<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>, SIGNAL(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9">historyReset</a>()));</div>
 <div class="line">    endRemoveRows();</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
@@ -519,7 +524,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dac/class_w_b_history_model_a791836de2c93231a2eb7d5b4ae355405_cgraph.svg" width="100%" height="441"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/dac/class_w_b_history_model_a791836de2c93231a2eb7d5b4ae355405_cgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -539,7 +544,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : m_history-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>().count();</div>
+<div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : <a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>-&gt;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>().count();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -553,9 +558,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ad4b0e315d3f4009e2a62d1bb4d13a2fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a>* WBHistoryModel::m_history</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
+<li><a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
+<li><a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -563,7 +589,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d6/d29/class_w_b_url_line_edit.html','
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d53/class_w_b_url_line_edit-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBUrlLineEdit Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('d6/d29/class_w_b_url_line_edit.html','
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/dbd/class_w_b_url_line_edit__inherit__graph.svg" width="158" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/dbd/class_w_b_url_line_edit__inherit__graph.svg" width="171" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for WBUrlLineEdit:</div>
@@ -153,6 +155,14 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7798d1c875d908b7efc1d3f987b433fb inherit pro_methods_class_w_b_ex_line_edit"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#a7798d1c875d908b7efc1d3f987b433fb">updateGeometries</a> ()</td></tr>
 <tr class="memitem:a4c9c286ad93cbd2ec4df7de9a13e7cec inherit pro_methods_class_w_b_ex_line_edit"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#a4c9c286ad93cbd2ec4df7de9a13e7cec">initStyleOption</a> (QStyleOptionFrameV2 *option) const </td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:add50a9278440b9a71b90ec338a0ee863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d29/class_w_b_url_line_edit.html#add50a9278440b9a71b90ec338a0ee863">webViewUrlChanged</a> (const QUrl &amp;url)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae3718ad64e90e6f944d7b6009a1cdce3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d29/class_w_b_url_line_edit.html#ae3718ad64e90e6f944d7b6009a1cdce3">mWebView</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_w_b_ex_line_edit"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_w_b_ex_line_edit')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html">WBExLineEdit</a></td></tr>
@@ -175,7 +185,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a7e84a43757d628a94c07bc48465083e6">WBExLineEdit</a>(parent)</div>
-<div class="line">    , mWebView(0)</div>
+<div class="line">    , <a class="code" href="../../d6/d29/class_w_b_url_line_edit.html#ae3718ad64e90e6f944d7b6009a1cdce3">mWebView</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a95d98a004872d7ad5feb71601982a51f">setLeftWidget</a>(<span class="keyword">new</span> QWidget(<span class="keyword">this</span>));</div>
 <div class="line">}</div>
@@ -216,8 +226,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#a821586f13fc0fae7b4db5056b8aa7263">WBExLineEdit</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;text().isEmpty() &amp;&amp; mWebView)</div>
-<div class="line">        <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;setText(QString::fromUtf8(mWebView-&gt;<a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toEncoded()));</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;text().isEmpty() &amp;&amp; <a class="code" href="../../d6/d29/class_w_b_url_line_edit.html#ae3718ad64e90e6f944d7b6009a1cdce3">mWebView</a>)</div>
+<div class="line">        <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;setText(QString::fromUtf8(<a class="code" href="../../d6/d29/class_w_b_url_line_edit.html#ae3718ad64e90e6f944d7b6009a1cdce3">mWebView</a>-&gt;<a class="code" href="../../d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee">url</a>().toEncoded()));</div>
 <div class="line">    <a class="code" href="../../d6/d29/class_w_b_url_line_edit.html#ab61a2516c92a9c044d85ef9b9e49f234">WBExLineEdit::focusOutEvent</a>(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab1bce2b599c0e2602b4fbe5ad19b5a7e">event</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -246,29 +256,98 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mWebView = pWebView;</div>
+<div class="line">    <a class="code" href="../../d6/d29/class_w_b_url_line_edit.html#ae3718ad64e90e6f944d7b6009a1cdce3">mWebView</a> = pWebView;</div>
 <div class="line"></div>
 <div class="line">    connect(pWebView, SIGNAL(urlChanged(<span class="keyword">const</span> QUrl &amp;)),</div>
-<div class="line">        <span class="keyword">this</span>, SLOT(webViewUrlChanged(<span class="keyword">const</span> QUrl &amp;)));</div>
+<div class="line">        <span class="keyword">this</span>, SLOT(<a class="code" href="../../d6/d29/class_w_b_url_line_edit.html#add50a9278440b9a71b90ec338a0ee863">webViewUrlChanged</a>(<span class="keyword">const</span> QUrl &amp;)));</div>
 <div class="line"></div>
 <div class="line">    connect(pWebView, SIGNAL(loadProgress(<span class="keywordtype">int</span>)),</div>
 <div class="line">        <span class="keyword">this</span>, SLOT(update()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d29/class_w_b_url_line_edit_a599a1ac7fe0bd0430e1480e76aebc474_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d29/class_w_b_url_line_edit_a599a1ac7fe0bd0430e1480e76aebc474_cgraph.svg" width="438" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d29/class_w_b_url_line_edit_a599a1ac7fe0bd0430e1480e76aebc474_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="add50a9278440b9a71b90ec338a0ee863"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBUrlLineEdit::webViewUrlChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;setText(url.toString());</div>
+<div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#a43fd1d49e8339c475bbfbcce357b9ce5">mLineEdit</a>-&gt;setCursorPosition(0);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d29/class_w_b_url_line_edit_add50a9278440b9a71b90ec338a0ee863_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ae3718ad64e90e6f944d7b6009a1cdce3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/da6/class_w_b_web_view.html">WBWebView</a>* WBUrlLineEdit::mWebView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp.html">WBUrlLineEdit.cpp</a></li>
+<li><a class="el" href="../../d4/d69/_w_b_url_line_edit_8h_source.html">WBUrlLineEdit.h</a></li>
+<li><a class="el" href="../../db/dd8/_w_b_url_line_edit_8cpp.html">WBUrlLineEdit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -276,7 +355,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d29/class_w_b_url_line_edit.html">WBUrlLineEdit</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

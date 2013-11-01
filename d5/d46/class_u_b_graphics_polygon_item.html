@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('d5/d46/class_u_b_graphics_polygon_item
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/dfb/class_u_b_graphics_polygon_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsPolygonItem Class Reference</div>  </div>
@@ -180,6 +182,21 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_item"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_item')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../d8/d1e/class_u_b_item.html">UBItem</a></td></tr>
 <tr class="memitem:a8c38f2d78945907ece6dc5a585d7aa13 inherit pro_methods_class_u_b_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#a8c38f2d78945907ece6dc5a585d7aa13">UBItem</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:add8f874d99e40add85275687915d5ba8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#add8f874d99e40add85275687915d5ba8">clearStroke</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5ef9d6d719320fddc2cc45292ee628b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a></td></tr>
+<tr class="memitem:acbc7b0ec5e8f034f151cb75b1064d4dc"><td class="memItemLeft" align="right" valign="top">QLineF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#acbc7b0ec5e8f034f151cb75b1064d4dc">mOriginalLine</a></td></tr>
+<tr class="memitem:ae654543ec7973b5abf4cc5a523c9e820"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a></td></tr>
+<tr class="memitem:afc67ce2663fd8640672901eb1fe6b2e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a></td></tr>
+<tr class="memitem:aa89f42d904b9590b29b86b9b8f339280"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#aa89f42d904b9590b29b86b9b8f339280">mColorOnDarkBackground</a></td></tr>
+<tr class="memitem:a3da626b0ee2f7b917b5343e62bf02976"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a3da626b0ee2f7b917b5343e62bf02976">mColorOnLightBackground</a></td></tr>
+<tr class="memitem:a4cb43e5dea995a7d0a25bdda85bcd975"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a></td></tr>
+<tr class="memitem:a6605f39fc8505e25e1c928c2909d98f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d0b/class_u_b_graphics_strokes_group.html">UBGraphicsStrokesGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4">mpGroup</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_u_b_item"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_u_b_item')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../d8/d1e/class_u_b_item.html">UBItem</a></td></tr>
@@ -222,11 +239,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QGraphicsPolygonItem(parent)</div>
-<div class="line">    , mHasAlpha(<span class="keyword">false</span>)</div>
-<div class="line">    , mOriginalWidth(-1)</div>
-<div class="line">    , mIsNominalLine(<span class="keyword">false</span>)</div>
-<div class="line">    , mStroke(0)</div>
-<div class="line">    , mpGroup(NULL)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4">mpGroup</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a2f069d5cdee13da2363e1c7c353f6994">initialize</a>();</div>
@@ -276,11 +293,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QGraphicsPolygonItem(<a class="code" href="../../d3/dff/class_u_b_geometry_utils.html#a379c882cb437d18ebf536bdc1f40d12f">UBGeometryUtils::lineToPolygon</a>(pLine, pWidth))</div>
-<div class="line">    , mOriginalLine(pLine)</div>
-<div class="line">    , mOriginalWidth(pWidth)</div>
-<div class="line">    , mIsNominalLine(<span class="keyword">true</span>)</div>
-<div class="line">    , mStroke(0)</div>
-<div class="line">    , mpGroup(NULL)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#acbc7b0ec5e8f034f151cb75b1064d4dc">mOriginalLine</a>(pLine)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a>(pWidth)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a>(<span class="keyword">true</span>)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4">mpGroup</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a2f069d5cdee13da2363e1c7c353f6994">initialize</a>();</div>
@@ -321,10 +338,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QGraphicsPolygonItem(polygon, parent)</div>
-<div class="line">    , mOriginalWidth(-1)</div>
-<div class="line">    , mIsNominalLine(<span class="keyword">false</span>)</div>
-<div class="line">    , mStroke(0)</div>
-<div class="line">    , mpGroup(NULL)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4">mpGroup</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a2f069d5cdee13da2363e1c7c353f6994">initialize</a>();</div>
@@ -354,12 +371,72 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    clearStroke();</div>
+<div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#add8f874d99e40add85275687915d5ba8">clearStroke</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a8f601cc855d1fd78dce23b99225f4e15_cgraph.svg" width="651" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="add8f874d99e40add85275687915d5ba8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsPolygonItem::clearStroke </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>!=NULL)</div>
+<div class="line">        {</div>
+<div class="line">        <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>-&gt;<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#aeecdbfc012ba82636e96ffe0d9d13846">remove</a>(<span class="keyword">this</span>);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>-&gt;<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a19d0be99f5ef2ac596e13ef018ec1d77">polygons</a>().empty())</div>
+<div class="line">            <span class="keyword">delete</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>;</div>
+<div class="line">        <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a> = NULL;</div>
+<div class="line">        }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_add8f874d99e40add85275687915d5ba8_cgraph.svg" width="419" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_add8f874d99e40add85275687915d5ba8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a9280bf7621aa90fe3f589d061b5a0af3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -376,12 +453,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> QGraphicsPolygonItem::brush().color();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a9280bf7621aa90fe3f589d061b5a0af3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -408,15 +486,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mColorOnDarkBackground;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#aa89f42d904b9590b29b86b9b8f339280">mColorOnDarkBackground</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a6526b10cc05fde764a2e11e233fe4318_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a6526b10cc05fde764a2e11e233fe4318_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -443,15 +522,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mColorOnLightBackground;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a3da626b0ee2f7b917b5343e62bf02976">mColorOnLightBackground</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a8185c658dcb5920a98f14d4d18e8e060_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a8185c658dcb5920a98f14d4d18e8e060_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -484,14 +564,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a> *cp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>*<span class="keyword">&gt;</span>(copy);</div>
 <div class="line">    <span class="keywordflow">if</span> (cp)</div>
 <div class="line">    {</div>
-<div class="line">        cp-&gt;mOriginalLine = this-&gt;mOriginalLine;</div>
-<div class="line">        cp-&gt;mOriginalWidth = this-&gt;mOriginalWidth;</div>
-<div class="line">        cp-&gt;mIsNominalLine = this-&gt;mIsNominalLine;</div>
+<div class="line">        cp-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#acbc7b0ec5e8f034f151cb75b1064d4dc">mOriginalLine</a> = this-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#acbc7b0ec5e8f034f151cb75b1064d4dc">mOriginalLine</a>;</div>
+<div class="line">        cp-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a> = this-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a>;</div>
+<div class="line">        cp-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a> = this-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a>;</div>
 <div class="line"></div>
 <div class="line">        cp-&gt;setTransform(transform());</div>
 <div class="line">        cp-&gt;setBrush(this-&gt;brush());</div>
 <div class="line">        cp-&gt;setPen(this-&gt;pen());</div>
-<div class="line">        cp-&gt;mHasAlpha = this-&gt;mHasAlpha;</div>
+<div class="line">        cp-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a> = this-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a>;</div>
 <div class="line"></div>
 <div class="line">        cp-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ac9933cb0cf460025e02b4c01482cd561">setColorOnDarkBackground</a>(this-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6526b10cc05fde764a2e11e233fe4318">colorOnDarkBackground</a>());</div>
 <div class="line">        cp-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#aab20d0fba4216687b627ca7cd3eee90f">setColorOnLightBackground</a>(this-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a8185c658dcb5920a98f14d4d18e8e060">colorOnLightBackground</a>());</div>
@@ -501,21 +581,22 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a_cgraph.svg" width="422" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a_icgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a4fc95b8ef165429d9f86ffe128e4839a_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -556,20 +637,20 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> copy;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a71d5d1540d10dedaf6284e29216ce8c7_icgraph.svg" width="400" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -593,20 +674,20 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a97f0b29bd07773c31b351da735b82efd">setUuid</a>(QUuid::createUuid());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a2f069d5cdee13da2363e1c7c353f6994_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -633,14 +714,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mIsNominalLine;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a7132e5315a262757037e72e5fa379d5d_icgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a7132e5315a262757037e72e5fa379d5d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -666,8 +748,17 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mOriginalLine;}</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#acbc7b0ec5e8f034f151cb75b1064d4dc">mOriginalLine</a>;}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_ab349aaecd389a37904ceb2f28ae223da_icgraph.svg" width="390" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aacda0659f1614f24634e4f7276ff1618"></a>
@@ -690,14 +781,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mOriginalWidth;}</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae654543ec7973b5abf4cc5a523c9e820">mOriginalWidth</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_aacda0659f1614f24634e4f7276ff1618_icgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_aacda0659f1614f24634e4f7276ff1618_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -741,7 +833,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mHasAlpha &amp;&amp; <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#af7ecdc68fa4901afd6720eb8d987e947">scene</a>() &amp;&amp; <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#af7ecdc68fa4901afd6720eb8d987e947">scene</a>()-&gt;isLightBackground())</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a> &amp;&amp; <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#af7ecdc68fa4901afd6720eb8d987e947">scene</a>() &amp;&amp; <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#af7ecdc68fa4901afd6720eb8d987e947">scene</a>()-&gt;isLightBackground())</div>
 <div class="line">    {</div>
 <div class="line">        painter-&gt;setCompositionMode(QPainter::CompositionMode_Darken);</div>
 <div class="line">    }</div>
@@ -749,11 +841,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#ae721fea33eb806623854483bc5c0ffa3">QGraphicsPolygonItem::paint</a>(painter, option, widget);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_ae721fea33eb806623854483bc5c0ffa3_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -786,11 +878,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> qobject_cast&lt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*&gt;(<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#af7ecdc68fa4901afd6720eb8d987e947">QGraphicsPolygonItem::scene</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_af7ecdc68fa4901afd6720eb8d987e947_icgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -815,12 +907,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (pColor.alphaF() &gt;= 1.0)</div>
 <div class="line">    {</div>
-<div class="line">        mHasAlpha = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a> = <span class="keyword">false</span>;</div>
 <div class="line">        setPen(Qt::NoPen);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        mHasAlpha = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a5ef9d6d719320fddc2cc45292ee628b8">mHasAlpha</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
 <div class="line">        QColor penColor = pColor;</div>
 <div class="line"></div>
@@ -846,12 +938,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a7a9f3b6814099ead59d91e37d01e70d5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a7a9f3b6814099ead59d91e37d01e70d5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -879,15 +972,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mColorOnDarkBackground = pColorOnDarkBackground;</div>
+<div class="line">            <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#aa89f42d904b9590b29b86b9b8f339280">mColorOnDarkBackground</a> = pColorOnDarkBackground;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_ac9933cb0cf460025e02b4c01482cd561_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_ac9933cb0cf460025e02b4c01482cd561_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -915,15 +1009,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mColorOnLightBackground = pColorOnLightBackground;</div>
+<div class="line">            <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a3da626b0ee2f7b917b5343e62bf02976">mColorOnLightBackground</a> = pColorOnLightBackground;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_aab20d0fba4216687b627ca7cd3eee90f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_aab20d0fba4216687b627ca7cd3eee90f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -951,16 +1046,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mIsNominalLine = <span class="keyword">false</span>;</div>
+<div class="line">            <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a> = <span class="keyword">false</span>;</div>
 <div class="line">            <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afa6907c68bf122f751edf474bba9c99c">QGraphicsPolygonItem::setPolygon</a>(pPolygon);</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_afa6907c68bf122f751edf474bba9c99c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_afa6907c68bf122f751edf474bba9c99c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -980,27 +1076,28 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    clearStroke();</div>
+<div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#add8f874d99e40add85275687915d5ba8">clearStroke</a>();</div>
 <div class="line"></div>
-<div class="line">    mStroke = <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a41dcbc4ac3e7682d6f8355c9fe6a5121">stroke</a>;</div>
-<div class="line">    mStroke-&gt;<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a76ff6a3c17efa506459591785d749f47">addPolygon</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a> = <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a41dcbc4ac3e7682d6f8355c9fe6a5121">stroke</a>;</div>
+<div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>-&gt;<a class="code" href="../../de/d75/class_u_b_graphics_stroke.html#a76ff6a3c17efa506459591785d749f47">addPolygon</a>(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9_cgraph.svg" width="435" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9_cgraph.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a38329b96b64a7b9e68bbeefcf8e4b4e9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1020,15 +1117,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mpGroup = group;</div>
+<div class="line">    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4">mpGroup</a> = group;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a81c74965973558c5c9b1caa82021a08e_icgraph.svg" width="100%" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a81c74965973558c5c9b1caa82021a08e_icgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1062,12 +1160,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba23c3d8f02812e7cb8117e41294a6ff1d">UBGraphicsItemData::ItemUuid</a>, QVariant(pUuid)); <span class="comment">//store item uuid inside the QGraphicsItem to fast operations with Items on the scene</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a97f0b29bd07773c31b351da735b82efd_icgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1120,15 +1219,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mStroke;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a4cb43e5dea995a7d0a25bdda85bcd975">mStroke</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a41dcbc4ac3e7682d6f8355c9fe6a5121_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1154,14 +1254,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mpGroup;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a6605f39fc8505e25e1c928c2909d98f4">mpGroup</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a87013167bd29d82e3b5dd7a40edd0546_icgraph.svg" width="100%" height="516"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a87013167bd29d82e3b5dd7a40edd0546_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1195,27 +1296,28 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">                <span class="keywordflow">if</span> (polygon() != subtractedPolygon)</div>
 <div class="line">                {</div>
-<div class="line">                    mIsNominalLine = <span class="keyword">false</span>;</div>
+<div class="line">                    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a> = <span class="keyword">false</span>;</div>
 <div class="line">                    <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afa6907c68bf122f751edf474bba9c99c">QGraphicsPolygonItem::setPolygon</a>(subtractedPolygon);</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_a116ec58a26fc3d1ad0a99671cf00c212_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1247,16 +1349,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">            <span class="keywordflow">if</span> (polygon() != subtractedPolygon)</div>
 <div class="line">            {</div>
-<div class="line">                mIsNominalLine = <span class="keyword">false</span>;</div>
+<div class="line">                <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afc67ce2663fd8640672901eb1fe6b2e2">mIsNominalLine</a> = <span class="keyword">false</span>;</div>
 <div class="line">                <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#afa6907c68bf122f751edf474bba9c99c">QGraphicsPolygonItem::setPolygon</a>(subtractedPolygon);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d46/class_u_b_graphics_polygon_item_ae42d7228ce873fe2d9c81dd5eac1c78b_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1289,9 +1391,170 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa89f42d904b9590b29b86b9b8f339280"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor UBGraphicsPolygonItem::mColorOnDarkBackground</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3da626b0ee2f7b917b5343e62bf02976"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor UBGraphicsPolygonItem::mColorOnLightBackground</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ef9d6d719320fddc2cc45292ee628b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsPolygonItem::mHasAlpha</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afc67ce2663fd8640672901eb1fe6b2e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsPolygonItem::mIsNominalLine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acbc7b0ec5e8f034f151cb75b1064d4dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineF UBGraphicsPolygonItem::mOriginalLine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae654543ec7973b5abf4cc5a523c9e820"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsPolygonItem::mOriginalWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6605f39fc8505e25e1c928c2909d98f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d0b/class_u_b_graphics_strokes_group.html">UBGraphicsStrokesGroup</a>* UBGraphicsPolygonItem::mpGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4cb43e5dea995a7d0a25bdda85bcd975"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d75/class_u_b_graphics_stroke.html">UBGraphicsStroke</a>* UBGraphicsPolygonItem::mStroke</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../dc/d41/_u_b_graphics_polygon_item_8h_source.html">UBGraphicsPolygonItem.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d7/d44/_u_b_graphics_polygon_item_8cpp.html">UBGraphicsPolygonItem.cpp</a></li>
+<li><a class="el" href="../../dc/d41/_u_b_graphics_polygon_item_8h_source.html">UBGraphicsPolygonItem.h</a></li>
+<li><a class="el" href="../../d7/d44/_u_b_graphics_polygon_item_8cpp.html">UBGraphicsPolygonItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1299,7 +1562,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:56 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:03 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

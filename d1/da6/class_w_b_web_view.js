@@ -2,13 +2,24 @@ var class_w_b_web_view =
 [
     [ "WBWebView", "d1/da6/class_w_b_web_view.html#a38d6dace641501c2c5b071cc31c14cfa", null ],
     [ "contextMenuEvent", "d1/da6/class_w_b_web_view.html#a8b69293de82d06c4f8124fce9cca4443", null ],
+    [ "downloadRequested", "d1/da6/class_w_b_web_view.html#a49dc80a67bf4e00f97fcca40ff0c52ac", null ],
     [ "lastStatusBarText", "d1/da6/class_w_b_web_view.html#a2fa08768c1808fe832eb67b684d099c2", null ],
     [ "load", "d1/da6/class_w_b_web_view.html#a4832fbab411c1e46c4c00c4300dd9a50", null ],
     [ "load", "d1/da6/class_w_b_web_view.html#a25047c2dfbb0aba6efcc5e3c820bb54f", null ],
+    [ "loadFinished", "d1/da6/class_w_b_web_view.html#a2e597020606197c2752564934de9ccac", null ],
+    [ "loadStarted", "d1/da6/class_w_b_web_view.html#ae5c3174f15a8e463666559926ef74990", null ],
     [ "mousePressEvent", "d1/da6/class_w_b_web_view.html#a4502e55d3975d0a2148c77c0c0120ba0", null ],
     [ "mouseReleaseEvent", "d1/da6/class_w_b_web_view.html#afd03faef9b36faf923f870674a02c522", null ],
+    [ "openLinkInNewTab", "d1/da6/class_w_b_web_view.html#a06ff14afd47297b9a0ccefd07fdcba7f", null ],
     [ "progress", "d1/da6/class_w_b_web_view.html#aeb2913d83da4ef918fb845693aeebb8c", null ],
+    [ "setProgress", "d1/da6/class_w_b_web_view.html#a68d68c51c24a24e7d283404ea557f890", null ],
+    [ "setStatusBarText", "d1/da6/class_w_b_web_view.html#ab63d310cdebf2e22e622ab73ad2c53a4", null ],
     [ "url", "d1/da6/class_w_b_web_view.html#ab5ff00bb93aa2e434fc1ab98c7add3ee", null ],
     [ "webPage", "d1/da6/class_w_b_web_view.html#aecf1ef7040499bd62e914632ed039e34", null ],
-    [ "wheelEvent", "d1/da6/class_w_b_web_view.html#ad8377dbf7e39f714010069c1c38b4321", null ]
+    [ "wheelEvent", "d1/da6/class_w_b_web_view.html#ad8377dbf7e39f714010069c1c38b4321", null ],
+    [ "mInitialUrl", "d1/da6/class_w_b_web_view.html#a0da412747c938672ae9815eec6988e77", null ],
+    [ "mLastStatusBarText", "d1/da6/class_w_b_web_view.html#ac0a59b8a5f58508cea75b67afa6c561f", null ],
+    [ "mLoadStartTime", "d1/da6/class_w_b_web_view.html#a58ed8cb0ba9f688ec2807c54763828d8", null ],
+    [ "mPage", "d1/da6/class_w_b_web_view.html#adf97c05468a7cce855e5e5eba53a0826", null ],
+    [ "mProgress", "d1/da6/class_w_b_web_view.html#aac3fc35af39cbfa0e4c4ade561e5482f", null ]
 ];

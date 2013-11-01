@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('df/db6/class_u_b_navigator_palette.htm
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../de/d31/class_u_b_navigator_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBNavigatorPalette Class Reference</div>  </div>
@@ -205,6 +207,20 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a95fc2885262fe2f881eb3d842dd75df5 inherit pro_methods_class_u_b_dock_palette"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_u_b_dock_palette.html#a95fc2885262fe2f881eb3d842dd75df5">collapseWidth</a> ()</td></tr>
 <tr class="memdesc:a95fc2885262fe2f881eb3d842dd75df5 inherit pro_methods_class_u_b_dock_palette"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the collapse width value.  <a href="#a95fc2885262fe2f881eb3d842dd75df5"></a><br/></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a323e45e7242f5988a5a04babed1d6ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a323e45e7242f5988a5a04babed1d6ac5">updateTime</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3f6212757a3a9ecf0e4cb2e9a815da5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a></td></tr>
+<tr class="memitem:a7231f80fff910f3c79dd07fe94b3d469"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a></td></tr>
+<tr class="memitem:a5ce1abe23eac54a3f2997a60bf1c12f5"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a></td></tr>
+<tr class="memitem:a936fddd35e99125ff9a6e35b2c73c959"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a></td></tr>
+<tr class="memitem:aa975dd1efa24276946d265143d57ded9"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a></td></tr>
+<tr class="memitem:aa24b9bad4904d6e3e37250f17aa756d8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a></td></tr>
+<tr class="memitem:a5b05073bb1699c8b939e0927002caa30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html#a5b05073bb1699c8b939e0927002caa30">mTimerID</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_u_b_dock_palette"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_u_b_dock_palette')"><img src="../../closed.png" alt="-"/>&nbsp;Public Attributes inherited from <a class="el" href="../../dc/d54/class_u_b_dock_palette.html">UBDockPalette</a></td></tr>
@@ -266,43 +282,43 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </dl>
 <div class="fragment"><div class="line">                                                                       :</div>
 <div class="line">        <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a6f6fcc9a6785126f2e668742c886905e" title="The constructor.">UBDockPalette</a>(<a class="code" href="../../df/d43/_u_b_dock_palette_8h.html#a63e99c0675ae955b642f5e77e3070053a2e16a75a7d470665686f64084f073cd5">eUBDockPaletteType_LEFT</a>, parent, name)</div>
-<div class="line">        , mNavigator(NULL)</div>
-<div class="line">        , mLayout(NULL)</div>
-<div class="line">    , mHLayout(NULL)</div>
-<div class="line">    , mPageNbr(NULL)</div>
-<div class="line">    , mClock(NULL)</div>
+<div class="line">        , <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>(NULL)</div>
+<div class="line">        , <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Build the gui</span></div>
-<div class="line">    mLayout = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
-<div class="line">    mLayout-&gt;setContentsMargins(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>(), <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>(), 2*<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac21a897b4fba940a69a092cd870d2421">border</a>() + <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>(), <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>());</div>
-<div class="line">    setLayout(mLayout);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a> = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>-&gt;setContentsMargins(<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>(), <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>(), 2*<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac21a897b4fba940a69a092cd870d2421">border</a>() + <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>(), <a class="code" href="../../dc/d54/class_u_b_dock_palette.html#a7c2692990bfc41eddf826a1cb713223f" title="Get the custom margin.">customMargin</a>());</div>
+<div class="line">    setLayout(<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>);</div>
 <div class="line"></div>
-<div class="line">    mNavigator = <span class="keyword">new</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a>(<span class="keyword">this</span>);</div>
-<div class="line">    mNavigator-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;background-color : transparent;&quot;</span>));</div>
-<div class="line">    mLayout-&gt;addWidget(mNavigator, 1);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a> = <span class="keyword">new</span> <a class="code" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;background-color : transparent;&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>-&gt;addWidget(<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>, 1);</div>
 <div class="line"></div>
-<div class="line">    mHLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line">    mLayout-&gt;addLayout(mHLayout, 0);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>-&gt;addLayout(<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a>, 0);</div>
 <div class="line"></div>
-<div class="line">    mPageNbr = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line">    mClock = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line">    mHLayout-&gt;addWidget(mPageNbr);</div>
-<div class="line">    mHLayout-&gt;addWidget(mClock);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a>-&gt;addWidget(<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a>-&gt;addWidget(<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Configure the page number indicator</span></div>
-<div class="line">    mPageNbr-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel { color: white; background-color: transparent; border: none; font-family: Arial; font-weight: bold; font-size: 20px }&quot;</span>));</div>
 <div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a2df6be11bde42dd31f45d37a5a4bbcf3">setPageNumber</a>(0, 0);</div>
-<div class="line">    mPageNbr-&gt;setAlignment(Qt::AlignHCenter);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>-&gt;setAlignment(Qt::AlignHCenter);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Configure the clock</span></div>
-<div class="line">    mClock-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel {color: white; background-color: transparent; text-align: center; font-family: Arial; font-weight: bold; font-size: 20px}&quot;</span>));</div>
-<div class="line">    mTimeFormat = QLocale::system().timeFormat(QLocale::ShortFormat);</div>
-<div class="line">    mClock-&gt;setAlignment(Qt::AlignHCenter);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;QLabel {color: white; background-color: transparent; text-align: center; font-family: Arial; font-weight: bold; font-size: 20px}&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a> = QLocale::system().timeFormat(QLocale::ShortFormat);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>-&gt;setAlignment(Qt::AlignHCenter);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//strip seconds</span></div>
-<div class="line">    mTimeFormat = mTimeFormat.remove(<span class="stringliteral">&quot;:ss&quot;</span>);</div>
-<div class="line">    mTimeFormat = mTimeFormat.remove(<span class="stringliteral">&quot;:s&quot;</span>);</div>
-<div class="line">    mTimerID = startTimer(1000);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a> = <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a>.remove(<span class="stringliteral">&quot;:ss&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a> = <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a>.remove(<span class="stringliteral">&quot;:s&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5b05073bb1699c8b939e0927002caa30">mTimerID</a> = startTimer(1000);</div>
 <div class="line"></div>
 }  </div>
 </div><!-- fragment -->
@@ -332,32 +348,32 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 
 <p>Destructor. </p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    killTimer(mTimerID);</div>
+<div class="line">    killTimer(<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5b05073bb1699c8b939e0927002caa30">mTimerID</a>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mClock)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mClock;</div>
-<div class="line">        mClock = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>;</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mPageNbr)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mPageNbr;</div>
-<div class="line">        mPageNbr = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>;</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mHLayout)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mHLayout;</div>
-<div class="line">        mHLayout = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a>;</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a5ce1abe23eac54a3f2997a60bf1c12f5">mHLayout</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mLayout)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mLayout;</div>
-<div class="line">        mLayout = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a>;</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a7231f80fff910f3c79dd07fe94b3d469">mLayout</a> = NULL;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mNavigator)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mNavigator;</div>
-<div class="line">        mNavigator = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>;</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -422,9 +438,9 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <p>Reimplemented from <a class="el" href="../../dc/d54/class_u_b_dock_palette.html#abe601a30ebea6b08998224bad8eaa7e8">UBDockPalette</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a6ee06feda0cccbfd3a5071368e0ce142" title="Handle the resize event.">UBDockPalette::resizeEvent</a>(event);</div>
-<div class="line">    <span class="keywordflow">if</span>(NULL != mNavigator)</div>
+<div class="line">    <span class="keywordflow">if</span>(NULL != <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mNavigator-&gt;setMinimumHeight(height() - 2*<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac21a897b4fba940a69a092cd870d2421">border</a>());</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a3f6212757a3a9ecf0e4cb2e9a815da5f">mNavigator</a>-&gt;setMinimumHeight(height() - 2*<a class="code" href="../../dc/d54/class_u_b_dock_palette.html#ac21a897b4fba940a69a092cd870d2421">border</a>());</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -487,7 +503,7 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mPageNbr-&gt;setText(QString(<span class="stringliteral">&quot;%1 / %2&quot;</span>).arg(current).arg(total));</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a936fddd35e99125ff9a6e35b2c73c959">mPageNbr</a>-&gt;setText(QString(<span class="stringliteral">&quot;%1 / %2&quot;</span>).arg(current).arg(total));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -524,14 +540,204 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
-<div class="line">    updateTime();</div>
+<div class="line">    <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#a323e45e7242f5988a5a04babed1d6ac5">updateTime</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/db6/class_u_b_navigator_palette_a64fae0f48b21071d304508fc5e3a10b7_cgraph.svg" width="336" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a323e45e7242f5988a5a04babed1d6ac5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBNavigatorPalette::updateTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa975dd1efa24276946d265143d57ded9">mClock</a>-&gt;setText(QLocale::system().toString (QTime::currentTime(), <a class="code" href="../../df/db6/class_u_b_navigator_palette.html#aa24b9bad4904d6e3e37250f17aa756d8">mTimeFormat</a>));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/db6/class_u_b_navigator_palette_a323e45e7242f5988a5a04babed1d6ac5_icgraph.svg" width="336" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa975dd1efa24276946d265143d57ded9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* UBNavigatorPalette::mClock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ce1abe23eac54a3f2997a60bf1c12f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* UBNavigatorPalette::mHLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7231f80fff910f3c79dd07fe94b3d469"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* UBNavigatorPalette::mLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The layout </p>
+
+</div>
+</div>
+<a class="anchor" id="a3f6212757a3a9ecf0e4cb2e9a815da5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dcc/class_u_b_document_navigator.html">UBDocumentNavigator</a>* UBNavigatorPalette::mNavigator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The thumbnails navigator widget </p>
+
+</div>
+</div>
+<a class="anchor" id="a936fddd35e99125ff9a6e35b2c73c959"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* UBNavigatorPalette::mPageNbr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa24b9bad4904d6e3e37250f17aa756d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBNavigatorPalette::mTimeFormat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b05073bb1699c8b939e0927002caa30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBNavigatorPalette::mTimerID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d4/d3e/_u_b_navigator_palette_8h_source.html">UBNavigatorPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/d95/_u_b_navigator_palette_8cpp.html">UBNavigatorPalette.cpp</a></li>
+<li><a class="el" href="../../d4/d3e/_u_b_navigator_palette_8h_source.html">UBNavigatorPalette.h</a></li>
+<li><a class="el" href="../../d1/d95/_u_b_navigator_palette_8cpp.html">UBNavigatorPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -539,7 +745,7 @@ int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/db6/class_u_b_navigator_palette.html">UBNavigatorPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

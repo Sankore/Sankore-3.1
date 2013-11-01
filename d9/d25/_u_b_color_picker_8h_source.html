@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBColorPicker.h Source File</title>
+<title>Open-Sankoré: UBColorPicker.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -143,23 +143,23 @@ $(document).ready(function(){initNavTree('d9/d25/_u_b_color_picker_8h_source.htm
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a8cd49b5b5c69ccf267d7d26b284b2578">~UBColorPicker</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="../../db/d45/class_u_b_color_picker.html#ae88342f0bb98503c9ad938b88a319055">   38</a></span>&#160;        QList&lt;QColor&gt; <a class="code" href="../../db/d45/class_u_b_color_picker.html#ae88342f0bb98503c9ad938b88a319055">getColors</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> mColors;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../db/d45/class_u_b_color_picker.html#a112608c405a7655254d93b9c3b7abb5f">   43</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a112608c405a7655254d93b9c3b7abb5f">setColors</a>(<span class="keyword">const</span> QList&lt;QColor&gt;&amp; pColors)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            mColors = pColors;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a> = pColors;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            repaint();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../db/d45/class_u_b_color_picker.html#a5560d59068afd319dea43329a6bf4f0c">   49</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a5560d59068afd319dea43329a6bf4f0c">selectedColorIndex</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> mSelectedColorIndex;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../db/d45/class_u_b_color_picker.html#a3bad5c8fed65dd4811a0034a0cd36956">   54</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a3bad5c8fed65dd4811a0034a0cd36956">setSelectedColorIndex</a>(<span class="keywordtype">int</span> pSelectedColorIndex)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            mSelectedColorIndex = pSelectedColorIndex;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a> = pSelectedColorIndex;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            repaint();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
@@ -173,8 +173,8 @@ $(document).ready(function(){initNavTree('d9/d25/_u_b_color_picker_8h_source.htm
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        QList&lt;QColor&gt; mColors;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">int</span> mSelectedColorIndex;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">   70</a></span>&#160;        QList&lt;QColor&gt; <a class="code" href="../../db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba">mColors</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">   71</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16">mSelectedColorIndex</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UBCOLORPICKER_H_ */</span><span class="preprocessor"></span></div>
@@ -183,8 +183,8 @@ $(document).ready(function(){initNavTree('d9/d25/_u_b_color_picker_8h_source.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d9/d25/_u_b_color_picker_8h.html">UBColorPicker.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d9/d25/_u_b_color_picker_8h.html">UBColorPicker.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

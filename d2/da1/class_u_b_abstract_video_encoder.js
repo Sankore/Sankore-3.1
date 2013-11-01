@@ -24,5 +24,10 @@ var class_u_b_abstract_video_encoder =
     [ "videoBitsPerSecond", "d2/da1/class_u_b_abstract_video_encoder.html#af9ea652bda987ed6874f1a8fc2055cc8", null ],
     [ "videoFileExtension", "d2/da1/class_u_b_abstract_video_encoder.html#a8feffc37810d5b9ee249545028c65cae", null ],
     [ "videoFileName", "d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7", null ],
-    [ "videoSize", "d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47", null ]
+    [ "videoSize", "d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47", null ],
+    [ "mAudioRecordingDevice", "d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3", null ],
+    [ "mFramesPerSecond", "d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e", null ],
+    [ "mVideoBitsPerSecond", "d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441", null ],
+    [ "mVideoFileName", "d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696", null ],
+    [ "mVideoSize", "d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147", null ]
 ];

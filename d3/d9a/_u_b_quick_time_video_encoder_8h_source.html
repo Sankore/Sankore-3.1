@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/podcast/quicktime/UBQuickTimeVideoEncoder.h Source File</title>
+<title>Open-Sankoré: UBQuickTimeVideoEncoder.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -161,37 +161,37 @@ $(document).ready(function(){initNavTree('d3/d9a/_u_b_quick_time_video_encoder_8
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">   55</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a49e2eaf7d2a7d40d9016dbde8f7fc105">setLastErrorMessage</a>(<span class="keyword">const</span> QString&amp; pMessage)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            qDebug() &lt;&lt; <span class="stringliteral">&quot;UBQuickTimeVideoEncoder :&quot;</span> &lt;&lt; pMessage;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            mLastErrorMessage = pMessage;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a> = pMessage;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a20cf47e6a5eda4d29d1878f0822f58bd">   61</a></span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a20cf47e6a5eda4d29d1878f0822f58bd">lastErrorMessage</a>()</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ae3c9201f5d14e49801b06e77f9fdaf01">setRecordAudio</a>(<span class="keywordtype">bool</span> pRecordAudio);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">private</span> slots:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;       <span class="keywordtype">void</span> compressionFinished();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;       <span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#ab778575112e694444b754846c99fb19c">compressionFinished</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">struct </span>ImageFrame</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">   74</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html">ImageFrame</a></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;           QImage image;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;           <span class="keywordtype">long</span> timestamp;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a1ebacd89ef326c837d0420c9e1aa1faf">   76</a></span>&#160;           QImage <a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a1ebacd89ef326c837d0420c9e1aa1faf">image</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a9321440a65c49024d5db064d431e45cd">   77</a></span>&#160;           <span class="keywordtype">long</span> <a class="code" href="../../d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html#a9321440a65c49024d5db064d431e45cd">timestamp</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        };</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> encodeFrame(<span class="keyword">const</span> QImage&amp; image, <span class="keywordtype">long</span> timestamp);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#aad8993411ce755ce6f1180c63fc01b99">encodeFrame</a>(<span class="keyword">const</span> QImage&amp; image, <span class="keywordtype">long</span> timestamp);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        QList&lt;ImageFrame&gt; mPendingImageFrames;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">   82</a></span>&#160;        QList&lt;ImageFrame&gt; <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a3053a87a60f284d5a610f39d15009e74">mPendingImageFrames</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html">UBQuickTimeFile</a> mQuickTimeCompressionSession;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">   84</a></span>&#160;        <a class="code" href="../../dc/d83/class_u_b_quick_time_file.html">UBQuickTimeFile</a> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#abedf896f6822fa305470224c73cd8f72">mQuickTimeCompressionSession</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QString mLastErrorMessage;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">   86</a></span>&#160;        QString <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a449a3991a7409c76514c71d11e34fb59">mLastErrorMessage</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">bool</span> mShouldRecordAudio;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">   88</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d1/dae/class_u_b_quick_time_video_encoder.html#a6f5f0dda1449f86fbd5dd115904efc27">mShouldRecordAudio</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
@@ -201,8 +201,8 @@ $(document).ready(function(){initNavTree('d3/d9a/_u_b_quick_time_video_encoder_8
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_d37d8428862b2ecaaadbfbbc34ddff69.html">quicktime</a></li><li class="navelem"><a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h.html">UBQuickTimeVideoEncoder.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_de91351bf1172a20a1f8b279a638efc6.html">podcast</a></li><li class="navelem"><a class="el" href="../../dir_84d7bd0b182ac1208e69c8fccd147e6c.html">quicktime</a></li><li class="navelem"><a class="el" href="../../d3/d9a/_u_b_quick_time_video_encoder_8h.html">UBQuickTimeVideoEncoder.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

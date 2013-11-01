@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf-merger/PageElementHandler.h Source File</title>
+<title>Open-Sankoré: PageElementHandler.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -160,20 +160,20 @@ $(document).ready(function(){initNavTree('d0/d9f/_page_element_handler_8h_source
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">   55</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a>()</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = _findStartOfPageElement();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">_findStartOfPageElement</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)startOfPageElement != -1)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            _processObjectContent(startOfPageElement);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#af26c46d658717b679e79bedce761e3d5">_processObjectContent</a>(startOfPageElement);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;         <span class="keywordflow">if</span>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">   64</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a>()</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = _findStartOfPageElement();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">_findStartOfPageElement</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;         <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)startOfPageElement != -1)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            _changeObjectContent(startOfPageElement);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#abc3edcbc6735265a5113d6e982327b3f">_changeObjectContent</a>(startOfPageElement);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;         <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            _pageElementNotFound();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a68a4d12556b2c37bad761e09da88af0d">_pageElementNotFound</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         <span class="keywordflow">if</span>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3f2f76c9182628763aafd37a2020b6e0">_nextHandler</a>-&gt;<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a>();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      }</div>
@@ -195,17 +195,17 @@ $(document).ready(function(){initNavTree('d0/d9f/_page_element_handler_8h_source
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="comment">//methods</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> _processObjectContent(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> _changeObjectContent(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement) = 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> _pageElementNotFound() {};</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _findStartOfPageElement()</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#af26c46d658717b679e79bedce761e3d5">_processObjectContent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#abc3edcbc6735265a5113d6e982327b3f">_changeObjectContent</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startOfPageElement) = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a68a4d12556b2c37bad761e09da88af0d">   94</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a68a4d12556b2c37bad761e09da88af0d">_pageElementNotFound</a>() {};</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">   95</a></span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a0c7aab1c82992e27f778983aef6a8a00">_findStartOfPageElement</a>()</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         <span class="keywordflow">return</span> <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a489f2d42f7bcdae272b81caa93badf14">_pageContent</a>,<a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a794f4d90a0b09b60d60b00c0ebde68c6">_handlerName</a>);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="comment">//members</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">static</span> std::set&lt;std::string&gt; _allPageFields;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">  102</a></span>&#160;      <span class="keyword">static</span> std::set&lt;std::string&gt; <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#afd07e81b4c081eb623241e0f9b41526d">_allPageFields</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   };</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
@@ -216,8 +216,8 @@ $(document).ready(function(){initNavTree('d0/d9f/_page_element_handler_8h_source
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d0/d9f/_page_element_handler_8h.html">PageElementHandler.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bef69977bf836bcacc75baf7cc647ec1.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d0/d9f/_page_element_handler_8h.html">PageElementHandler.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

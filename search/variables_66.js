@@ -1,10 +1,17 @@
 var searchData=
 [
   ['favoritedata',['favoriteData',['../d8/d33/class_u_b_features_controller.html#a252e15cb9fd4a8957f690451517f19d8',1,'UBFeaturesController']]],
+  ['favoriteset',['favoriteSet',['../d8/d33/class_u_b_features_controller.html#a4c74a24a3c0e7b2b04ea836b7c928219',1,'UBFeaturesController']]],
   ['favoritesnativetooluris',['favoritesNativeToolUris',['../db/d66/class_u_b_settings.html#aee964b872d72f35bd573653ead9256db',1,'UBSettings']]],
   ['feature',['feature',['../d8/dda/struct_computing_data.html#aca45a94b8bdf32b0e772d0c3301a1f4d',1,'ComputingData']]],
   ['featurelistborderoffset',['FeatureListBorderOffset',['../d3/dfa/_u_b_features_widget_8cpp.html#a8598082e689e30bae1a2044a4e719524',1,'UBFeaturesWidget.cpp']]],
+  ['featurescontroller',['featuresController',['../dd/d9e/class_u_b_features_action_bar.html#ab8ebb647a1a6532a428499d7da9d89cb',1,'UBFeaturesActionBar']]],
   ['featuresliderposition',['featureSliderPosition',['../db/d66/class_u_b_settings.html#a85902693456aab2bf8f565f4198aeaa6',1,'UBSettings']]],
+  ['featureslist',['featuresList',['../d8/d33/class_u_b_features_controller.html#adfa8536255a27666bf1948ca7d3f69e6',1,'UBFeaturesController::featuresList()'],['../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac',1,'UBFeaturesModel::featuresList()']]],
+  ['featuresmodel',['featuresModel',['../d8/d33/class_u_b_features_controller.html#a22b3cc8f5af7ed86c9dd21acfb82789f',1,'UBFeaturesController']]],
+  ['featurespathmodel',['featuresPathModel',['../d8/d33/class_u_b_features_controller.html#a2a167cf54e8fc418f9236089c8de5f9e',1,'UBFeaturesController']]],
+  ['featuresproxymodel',['featuresProxyModel',['../d8/d33/class_u_b_features_controller.html#a9e015bad418bbe94d4f09092f98f4104',1,'UBFeaturesController']]],
+  ['featuressearchmodel',['featuresSearchModel',['../d8/d33/class_u_b_features_controller.html#a969588960a2beb4353c782bcfc43bdb6',1,'UBFeaturesController']]],
   ['featuretypesplitter',['featureTypeSplitter',['../d3/dfa/_u_b_features_widget_8cpp.html#ae654638291201ca239894922ce8154f2',1,'UBFeaturesWidget.cpp']]],
   ['fepng',['fePng',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a0ca0c081a35152e1e1ecb3c9dd82a732',1,'UBCFFConstants.h']]],
   ['fesvg',['feSvg',['../d4/d4e/_u_b_c_f_f_constants_8h.html#a7ef96ed068dacbfe309e2bd5492efd57',1,'UBCFFConstants.h']]],
@@ -17,6 +24,7 @@ var searchData=
   ['framebuffernotempty',['frameBufferNotEmpty',['../dc/d83/class_u_b_quick_time_file.html#adadd465cfdc1fb11d583b56b9b388128',1,'UBQuickTimeFile']]],
   ['framequeue',['frameQueue',['../dc/d83/class_u_b_quick_time_file.html#a284f54a169c1a7b24b7d0ff7fc907f2d',1,'UBQuickTimeFile']]],
   ['framequeuemutex',['frameQueueMutex',['../dc/d83/class_u_b_quick_time_file.html#a8179154729e1bfcda66f9c0cd52ec2cb',1,'UBQuickTimeFile']]],
+  ['freezeaction',['freezeAction',['../d8/d2c/class_u_b_graphics_widget_item_delegate.html#a8c40ed23bd417f9697711d52c82fd82d',1,'UBGraphicsWidgetItemDelegate']]],
   ['french_5flocale',['FRENCH_LOCALE',['../d4/d45/_u_b_platform_utils__linux_8cpp.html#ab6ded858a96e43270f236992845b10c2',1,'FRENCH_LOCALE():&#160;UBPlatformUtils_linux.cpp'],['../d7/df9/_u_b_platform_utils__win_8cpp.html#ab6ded858a96e43270f236992845b10c2',1,'FRENCH_LOCALE():&#160;UBPlatformUtils_win.cpp']]],
   ['fullname',['fullName',['../d3/d63/class_u_b_keyboard_locale.html#a055471feb8ec0306724cd3b326533737',1,'UBKeyboardLocale']]]
 ];

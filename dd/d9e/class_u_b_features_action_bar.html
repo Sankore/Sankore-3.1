@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('dd/d9e/class_u_b_features_action_bar.h
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/d54/class_u_b_features_action_bar-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesActionBar Class Reference</div>  </div>
@@ -118,7 +121,7 @@ $(document).ready(function(){initNavTree('dd/d9e/class_u_b_features_action_bar.h
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d8d/class_u_b_features_action_bar__coll__graph.svg" width="187" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d8d/class_u_b_features_action_bar__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -144,6 +147,48 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aaf5004fe17a35a486ff3e8c997844c57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#aaf5004fe17a35a486ff3e8c997844c57">dropEvent</a> (QDropEvent *event)</td></tr>
 <tr class="memitem:afb05cfab3fc8d5d242804a98c1902935"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#afb05cfab3fc8d5d242804a98c1902935">eventFilter</a> (QObject *, QEvent *)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:af086004f21056e746e7da2f4562e2d77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#af086004f21056e746e7da2f4562e2d77">onSearchTextChanged</a> (QString txt)</td></tr>
+<tr class="memitem:a66f62c1e10f301296a9abb0ae91718f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a66f62c1e10f301296a9abb0ae91718f6">onActionNewFolder</a> ()</td></tr>
+<tr class="memitem:a09a181b2d213f490c384ed28ffb1e7be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a09a181b2d213f490c384ed28ffb1e7be">onActionFavorite</a> ()</td></tr>
+<tr class="memitem:a95b139c3aa8a5ecf047fa987c653ca87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a95b139c3aa8a5ecf047fa987c653ca87">onActionRemoveFavorite</a> ()</td></tr>
+<tr class="memitem:a1404f54cb2b8495af6517e4e862690f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a1404f54cb2b8495af6517e4e862690f9">onActionTrash</a> ()</td></tr>
+<tr class="memitem:ac842bcc1a5b040c2807ae72f5b0f2300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ac842bcc1a5b040c2807ae72f5b0f2300">onActionRescanModel</a> ()</td></tr>
+<tr class="memitem:a170604139e1096fd181a997fb6e4ed85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a170604139e1096fd181a997fb6e4ed85">lockIt</a> ()</td></tr>
+<tr class="memitem:a9917df1b50b3eda25ffe9e0fab59dc77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a9917df1b50b3eda25ffe9e0fab59dc77">unlockIt</a> ()</td></tr>
+<tr class="memitem:a50e702c2452d4294d77f6798a320f041"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a50e702c2452d4294d77f6798a320f041">allowNewFolderBtn</a> (bool pAllow)</td></tr>
+<tr class="memitem:af0f24f1a7e3b01977483e5557601294e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#af0f24f1a7e3b01977483e5557601294e">allowDeleteButton</a> (bool pAllow)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad31f29dbd94293ca781a3d88b233a1c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ad31f29dbd94293ca781a3d88b233a1c6">setButtons</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab8ebb647a1a6532a428499d7da9d89cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d33/class_u_b_features_controller.html">UBFeaturesController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ab8ebb647a1a6532a428499d7da9d89cb">featuresController</a></td></tr>
+<tr class="memitem:af441110c211c5422a4472875f6f92b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8e">UBFeaturesActionBarState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#af441110c211c5422a4472875f6f92b4a">currentState</a></td></tr>
+<tr class="memitem:af07dd23b81167c3e8118c3cc110f7d90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h.html#a436767fdb5fee719faec899f5422da0d">eButtonSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#af07dd23b81167c3e8118c3cc110f7d90">mCrntButtonSet</a></td></tr>
+<tr class="memitem:a63c4e3fc81bc4dba3f5485a01e2c8510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h.html#a436767fdb5fee719faec899f5422da0d">eButtonSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a63c4e3fc81bc4dba3f5485a01e2c8510">mPreviousButtonSet</a></td></tr>
+<tr class="memitem:a44d5056ed32fa266ea4c2bb26a35a911"><td class="memItemLeft" align="right" valign="top">QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a></td></tr>
+<tr class="memitem:a10bd53838e9acdd0e3a2c44e69523d9e"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a></td></tr>
+<tr class="memitem:a11df5f47123baa0ca967bab2cd6d6f02"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a></td></tr>
+<tr class="memitem:af1c0c7701a12f02c6dad5c84d45da2e4"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#af1c0c7701a12f02c6dad5c84d45da2e4">mpFavoriteAction</a></td></tr>
+<tr class="memitem:a4d5cfb6ffd7438026e57f6328e93c60d"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a4d5cfb6ffd7438026e57f6328e93c60d">mpSocialAction</a></td></tr>
+<tr class="memitem:af366a0bd45d36278b835df0b9ce18ded"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#af366a0bd45d36278b835df0b9ce18ded">mpRescanModelAction</a></td></tr>
+<tr class="memitem:a45b3152a3418f740d1ed5b93a63299fb"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a45b3152a3418f740d1ed5b93a63299fb">mpDeleteAction</a></td></tr>
+<tr class="memitem:ac570924e2c48900861016c8cf9f82aa5"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ac570924e2c48900861016c8cf9f82aa5">mpSearchAction</a></td></tr>
+<tr class="memitem:a7cfac0e4545a3b02be6e5ccecf86b362"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a7cfac0e4545a3b02be6e5ccecf86b362">mpCloseAction</a></td></tr>
+<tr class="memitem:ab05f28910f4923587a6413af9e9f8fca"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ab05f28910f4923587a6413af9e9f8fca">mpRemoveFavorite</a></td></tr>
+<tr class="memitem:a5e5cfaf06e091789a9b04d00c569fb3e"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a5e5cfaf06e091789a9b04d00c569fb3e">mpNewFolderAction</a></td></tr>
+<tr class="memitem:a7f400dd5d1b55d9e5195768ab4fb5ae7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a></td></tr>
+<tr class="memitem:acc5b16c4dc859544dbf1888801877acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a></td></tr>
+<tr class="memitem:a589d7dfe9d0f31f398706d8096ba35c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a589d7dfe9d0f31f398706d8096ba35c3">mpRescanModelBtn</a></td></tr>
+<tr class="memitem:a9566a313f557e36495bb92e5f90ca91d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a></td></tr>
+<tr class="memitem:ae4641c7e6c9f97bb3a020b239847b15c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a></td></tr>
+<tr class="memitem:aa9d338cb0d508231333dc22d891bf4fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a></td></tr>
+<tr class="memitem:ad5a518a54b34825497bb316cc586a98c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a631a181efda4a630f40d9502515c79bc"></a>
@@ -176,75 +221,75 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                                              : QWidget (parent)</div>
-<div class="line">        , featuresController(controller)</div>
-<div class="line">    , mButtonGroup(NULL)</div>
-<div class="line">    , mSearchBar(NULL)</div>
-<div class="line">    , mLayout(NULL)</div>
-<div class="line">    , mpFavoriteAction(NULL)</div>
-<div class="line">    , mpSocialAction(NULL)</div>
-<div class="line">    , mpRescanModelAction(NULL)</div>
-<div class="line">    , mpDeleteAction(NULL)</div>
-<div class="line">    , mpSearchAction(NULL)</div>
-<div class="line">    , mpCloseAction(NULL)</div>
-<div class="line">    , mpRemoveFavorite(NULL)</div>
-<div class="line">    , mpNewFolderAction(NULL)</div>
-<div class="line">    , mpFavoriteBtn(NULL)</div>
-<div class="line">    , mpSocialBtn(NULL)</div>
-<div class="line">    , mpRescanModelBtn(NULL)</div>
-<div class="line">    , mpDeleteBtn(NULL)</div>
-<div class="line">    , mpCloseBtn(NULL)</div>
-<div class="line">    , mpRemoveFavoriteBtn(NULL)</div>
-<div class="line">    , mpNewFolderBtn(NULL)</div>
+<div class="line">        , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ab8ebb647a1a6532a428499d7da9d89cb">featuresController</a>(controller)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af1c0c7701a12f02c6dad5c84d45da2e4">mpFavoriteAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4d5cfb6ffd7438026e57f6328e93c60d">mpSocialAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af366a0bd45d36278b835df0b9ce18ded">mpRescanModelAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a45b3152a3418f740d1ed5b93a63299fb">mpDeleteAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ac570924e2c48900861016c8cf9f82aa5">mpSearchAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7cfac0e4545a3b02be6e5ccecf86b362">mpCloseAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ab05f28910f4923587a6413af9e9f8fca">mpRemoveFavorite</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a5e5cfaf06e091789a9b04d00c569fb3e">mpNewFolderAction</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a589d7dfe9d0f31f398706d8096ba35c3">mpRescanModelBtn</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>(NULL)</div>
+<div class="line">    , <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>(NULL)</div>
 <div class="line">{</div>
 <div class="line">        setObjectName(name);</div>
 <div class="line">    setStyleSheet(QString(<span class="stringliteral">&quot;background: #EEEEEE; border-radius : 10px; border : 2px solid #999999;&quot;</span>));</div>
 <div class="line"></div>
 <div class="line">    setAcceptDrops(<span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">    mButtonGroup = <span class="keyword">new</span> QButtonGroup(<span class="keyword">this</span>);</div>
-<div class="line">    mSearchBar = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
-<div class="line">    mSearchBar-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;background-color:white; border-radius : 10px; padding : 2px;&quot;</span>));</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a> = <span class="keyword">new</span> QButtonGroup(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a> = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;setStyleSheet(QString(<span class="stringliteral">&quot;background-color:white; border-radius : 10px; padding : 2px;&quot;</span>));</div>
 <div class="line"></div>
-<div class="line">    mLayout = <span class="keyword">new</span> QHBoxLayout();</div>
-<div class="line">    setLayout(mLayout);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a> = <span class="keyword">new</span> QHBoxLayout();</div>
+<div class="line">    setLayout(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>);</div>
 <div class="line"></div>
 <div class="line">    setMaximumHeight(<a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#aeb020988cd9dfd5733fbbae346bba0a3">ACTIONBAR_HEIGHT</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create the actions</span></div>
-<div class="line">    mpFavoriteAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniFavorite.png&quot;</span>), tr(<span class="stringliteral">&quot;Add to favorites&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpSocialAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/social.png&quot;</span>), tr(<span class="stringliteral">&quot;Share&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpSearchAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniSearch.png&quot;</span>), tr(<span class="stringliteral">&quot;Search&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpRescanModelAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/cursors/rotate.png&quot;</span>), tr(<span class="stringliteral">&quot;Rescan file system&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpDeleteAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniTrash.png&quot;</span>), tr(<span class="stringliteral">&quot;Delete&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpCloseAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>), tr(<span class="stringliteral">&quot;Back to folder&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpRemoveFavorite = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/trash_favorite.svg&quot;</span>), tr(<span class="stringliteral">&quot;Remove from favorites&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">    mpNewFolderAction = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniNewFolder.png&quot;</span>), tr(<span class="stringliteral">&quot;Create new folder&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af1c0c7701a12f02c6dad5c84d45da2e4">mpFavoriteAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniFavorite.png&quot;</span>), tr(<span class="stringliteral">&quot;Add to favorites&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4d5cfb6ffd7438026e57f6328e93c60d">mpSocialAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/social.png&quot;</span>), tr(<span class="stringliteral">&quot;Share&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ac570924e2c48900861016c8cf9f82aa5">mpSearchAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniSearch.png&quot;</span>), tr(<span class="stringliteral">&quot;Search&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af366a0bd45d36278b835df0b9ce18ded">mpRescanModelAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/cursors/rotate.png&quot;</span>), tr(<span class="stringliteral">&quot;Rescan file system&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a45b3152a3418f740d1ed5b93a63299fb">mpDeleteAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniTrash.png&quot;</span>), tr(<span class="stringliteral">&quot;Delete&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7cfac0e4545a3b02be6e5ccecf86b362">mpCloseAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/close.svg&quot;</span>), tr(<span class="stringliteral">&quot;Back to folder&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ab05f28910f4923587a6413af9e9f8fca">mpRemoveFavorite</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/trash_favorite.svg&quot;</span>), tr(<span class="stringliteral">&quot;Remove from favorites&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a5e5cfaf06e091789a9b04d00c569fb3e">mpNewFolderAction</a> = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;:/images/libpalette/miniNewFolder.png&quot;</span>), tr(<span class="stringliteral">&quot;Create new folder&quot;</span>), <span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Create the buttons</span></div>
-<div class="line">    mpFavoriteBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpFavoriteAction);</div>
-<div class="line">    mpSocialBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpSocialAction);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af1c0c7701a12f02c6dad5c84d45da2e4">mpFavoriteAction</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4d5cfb6ffd7438026e57f6328e93c60d">mpSocialAction</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//mpSearchBtn = new UBActionButton(this, mpSearchAction);</span></div>
-<div class="line">    mpRescanModelBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpRescanModelAction);</div>
-<div class="line">    mpRescanModelBtn-&gt;hide();</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a589d7dfe9d0f31f398706d8096ba35c3">mpRescanModelBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af366a0bd45d36278b835df0b9ce18ded">mpRescanModelAction</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a589d7dfe9d0f31f398706d8096ba35c3">mpRescanModelBtn</a>-&gt;hide();</div>
 <div class="line"></div>
-<div class="line">    mpDeleteBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpDeleteAction);</div>
-<div class="line">    mpCloseBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpCloseAction);</div>
-<div class="line">    mpRemoveFavoriteBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpRemoveFavorite);</div>
-<div class="line">    mpNewFolderBtn = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, mpNewFolderAction);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a45b3152a3418f740d1ed5b93a63299fb">mpDeleteAction</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7cfac0e4545a3b02be6e5ccecf86b362">mpCloseAction</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ab05f28910f4923587a6413af9e9f8fca">mpRemoveFavorite</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>(<span class="keyword">this</span>, <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a5e5cfaf06e091789a9b04d00c569fb3e">mpNewFolderAction</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Initialize the buttons</span></div>
 <div class="line">    <span class="comment">//mpSearchBtn-&gt;setEnabled(false);</span></div>
-<div class="line">    mpNewFolderBtn-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Add the buttons to the button group</span></div>
-<div class="line">    mButtonGroup-&gt;addButton(mpFavoriteBtn);</div>
-<div class="line">    mButtonGroup-&gt;addButton(mpSocialBtn);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>);</div>
 <div class="line">    <span class="comment">//mButtonGroup-&gt;addButton(mpSearchBtn);</span></div>
-<div class="line">    mButtonGroup-&gt;addButton(mpDeleteBtn);</div>
-<div class="line">    mButtonGroup-&gt;addButton(mpCloseBtn);</div>
-<div class="line">    mButtonGroup-&gt;addButton(mpRemoveFavoriteBtn);</div>
-<div class="line">    mButtonGroup-&gt;addButton(mpNewFolderBtn);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a44d5056ed32fa266ea4c2bb26a35a911">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>);</div>
 <div class="line">    <span class="comment">// Connect signals &amp; slots</span></div>
 <div class="line">    <span class="comment">/*connect(mpFavoriteAction,SIGNAL(triggered()), this, SLOT(onActionFavorite()));</span></div>
 <div class="line"><span class="comment">    connect(mpSocialAction,SIGNAL(triggered()), this, SLOT(onActionSocial()));</span></div>
@@ -255,33 +300,33 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><span class="comment">    connect(mSearchBar, SIGNAL(textChanged(QString)), this, SLOT(onSearchTextChanged(QString)));</span></div>
 <div class="line"><span class="comment">    connect(mpNewFolderAction, SIGNAL(triggered()), this, SLOT(onActionNewFolder()));*/</span></div>
 <div class="line"></div>
-<div class="line">    connect(mpFavoriteAction,SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(onActionFavorite()));</div>
-<div class="line">        connect(mSearchBar, SIGNAL(textChanged(QString)), <span class="keyword">this</span>, SLOT(onSearchTextChanged(QString)));</div>
-<div class="line">        connect(mpNewFolderAction, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(onActionNewFolder()));</div>
-<div class="line">    connect(mpRemoveFavorite, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(onActionRemoveFavorite()));</div>
-<div class="line">    connect(mpRescanModelAction, SIGNAL(triggered()), <span class="keyword">this</span> , SLOT(onActionRescanModel()));</div>
-<div class="line">    connect(mpDeleteAction,SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(onActionTrash()));</div>
+<div class="line">    connect(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af1c0c7701a12f02c6dad5c84d45da2e4">mpFavoriteAction</a>,SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a09a181b2d213f490c384ed28ffb1e7be">onActionFavorite</a>()));</div>
+<div class="line">        connect(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>, SIGNAL(textChanged(QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af086004f21056e746e7da2f4562e2d77">onSearchTextChanged</a>(QString)));</div>
+<div class="line">        connect(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a5e5cfaf06e091789a9b04d00c569fb3e">mpNewFolderAction</a>, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a66f62c1e10f301296a9abb0ae91718f6">onActionNewFolder</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ab05f28910f4923587a6413af9e9f8fca">mpRemoveFavorite</a>, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a95b139c3aa8a5ecf047fa987c653ca87">onActionRemoveFavorite</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af366a0bd45d36278b835df0b9ce18ded">mpRescanModelAction</a>, SIGNAL(triggered()), <span class="keyword">this</span> , SLOT(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ac842bcc1a5b040c2807ae72f5b0f2300">onActionRescanModel</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a45b3152a3418f740d1ed5b93a63299fb">mpDeleteAction</a>,SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a1404f54cb2b8495af6517e4e862690f9">onActionTrash</a>()));</div>
 <div class="line"></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Build the default toolbar</span></div>
-<div class="line">    mLayout-&gt;addWidget(mpFavoriteBtn);</div>
-<div class="line">    mLayout-&gt;addWidget(mpSocialBtn);</div>
-<div class="line">    mLayout-&gt;addWidget(mpNewFolderBtn);</div>
-<div class="line">    mLayout-&gt;addWidget(mSearchBar);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>);</div>
 <div class="line">    <span class="comment">//mLayout-&gt;addWidget(mpSearchBtn);</span></div>
-<div class="line">    mLayout-&gt;addWidget(mpRescanModelBtn);</div>
-<div class="line">    mLayout-&gt;addWidget(mpDeleteBtn);</div>
-<div class="line">    mLayout-&gt;addWidget(mpCloseBtn);</div>
-<div class="line">    mLayout-&gt;addWidget(mpRemoveFavoriteBtn);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a589d7dfe9d0f31f398706d8096ba35c3">mpRescanModelBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a11df5f47123baa0ca967bab2cd6d6f02">mLayout</a>-&gt;addWidget(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>);</div>
 <div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a619d52cadd37cef8562972ac359663cd">setCurrentState</a>( <a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8eab8c1a4dd494df2602ac5beb29de7acf9">IN_ROOT</a> );</div>
-<div class="line">        mpDeleteBtn-&gt;setAcceptDrops(<span class="keyword">true</span>);</div>
-<div class="line">    mpFavoriteBtn-&gt;setAcceptDrops(<span class="keyword">true</span>);</div>
-<div class="line">    mpRemoveFavoriteBtn-&gt;setAcceptDrops(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;setAcceptDrops(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;setAcceptDrops(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>-&gt;setAcceptDrops(<span class="keyword">true</span>);</div>
 <div class="line">    setAcceptDrops( <span class="keyword">false</span> );</div>
 <div class="line"></div>
-<div class="line">    mpDeleteBtn-&gt;installEventFilter(<span class="keyword">this</span>);</div>
-<div class="line">    mpFavoriteBtn-&gt;installEventFilter(<span class="keyword">this</span>);</div>
-<div class="line">    mpRemoveFavoriteBtn-&gt;installEventFilter(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>-&gt;installEventFilter(<span class="keyword">this</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -289,7 +334,7 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a631a181efda4a630f40d9502515c79bc_cgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a631a181efda4a630f40d9502515c79bc_cgraph.svg" width="648" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -334,6 +379,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a4efc551e002a4c18a86e0e08a3a6cf68_icgraph.svg" width="582" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aba67d98128e8bd630b9e71179cf0d0d3"></a>
@@ -358,15 +412,67 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_aba67d98128e8bd630b9e71179cf0d0d3_icgraph.svg" width="555" height="87"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="af0f24f1a7e3b01977483e5557601294e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::allowDeleteButton </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pAllow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;setEnabled(pAllow);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a50e702c2452d4294d77f6798a320f041"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::allowNewFolderBtn </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pAllow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;setEnabled(pAllow);}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7100128f156f31c1e3022f877ce0627d"></a>
@@ -389,8 +495,17 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ mSearchBar-&gt;clear(); }</div>
+<div class="fragment"><div class="line">{ <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;clear(); }</div>
 </div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a7100128f156f31c1e3022f877ce0627d_icgraph.svg" width="648" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ad589ee01c81657578c7da6f21da1b36d"></a>
@@ -415,11 +530,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ad589ee01c81657578c7da6f21da1b36d_icgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -446,6 +561,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a4b196bdb6db18808e3fad1032de46377_icgraph.svg" width="584" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -480,7 +604,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    QWidget *dest = childAt(event-&gt;pos());</div>
-<div class="line">    <span class="keywordflow">if</span> (dest == mpDeleteBtn) {</div>
+<div class="line">    <span class="keywordflow">if</span> (dest == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>) {</div>
 <div class="line">        QList&lt;UBFeature&gt; featuresList = fMimeData-&gt;<a class="code" href="../../d9/d29/class_u_b_features_mime_data.html#a4d755ceb10b1e9b239001fbe1e8b4c21">features</a>();</div>
 <div class="line">        <span class="keywordflow">foreach</span> (<a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> curFeature, featuresList) {</div>
 <div class="line">            <span class="keywordflow">if</span> (!curFeature.<a class="code" href="../../db/d98/class_u_b_feature.html#a3f4024d11d7ee8a22878dc7cae1552cb">isDeletable</a>()) {</div>
@@ -490,13 +614,13 @@ Protected Member Functions</h2></td></tr>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dest == mpFavoriteBtn) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dest == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>) {</div>
 <div class="line">        <span class="keyword">event</span>-&gt;setDropAction( Qt::CopyAction);</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"></div>
 <div class="line">        emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aba67d98128e8bd630b9e71179cf0d0d3">addToFavorite</a>(fMimeData);</div>
 <div class="line"></div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dest == mpRemoveFavoriteBtn) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dest == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>) {</div>
 <div class="line">        <span class="keyword">event</span>-&gt;setDropAction(Qt::MoveAction);</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"></div>
@@ -504,20 +628,20 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_aaf5004fe17a35a486ff3e8c997844c57_cgraph.svg" width="592" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_aaf5004fe17a35a486ff3e8c997844c57_icgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -561,7 +685,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        <span class="keyword">const</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a> *fMimeData = qobject_cast&lt;<span class="keyword">const</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a>*&gt;(enterEvent-&gt;mimeData());</div>
 <div class="line">        <span class="keywordflow">if</span> (fMimeData) {</div>
 <div class="line"></div>
-<div class="line">            <span class="keywordflow">if</span> (obj == mpDeleteBtn) {</div>
+<div class="line">            <span class="keywordflow">if</span> (obj == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>) {</div>
 <div class="line">                <span class="keywordflow">foreach</span> (<a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> curFeature, fMimeData-&gt;<a class="code" href="../../d9/d29/class_u_b_features_mime_data.html#a4d755ceb10b1e9b239001fbe1e8b4c21">features</a>()) {</div>
 <div class="line">                    <span class="keywordflow">if</span> (!curFeature.<a class="code" href="../../db/d98/class_u_b_feature.html#a3f4024d11d7ee8a22878dc7cae1552cb">isDeletable</a>()) {</div>
 <div class="line">                        <span class="keyword">event</span>-&gt;ignore();</div>
@@ -570,7 +694,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                }</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"></div>
-<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == mpFavoriteBtn) {</div>
+<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>) {</div>
 <div class="line">                <span class="keywordflow">foreach</span> (<a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> curFeature, fMimeData-&gt;<a class="code" href="../../d9/d29/class_u_b_features_mime_data.html#a4d755ceb10b1e9b239001fbe1e8b4c21">features</a>()) {</div>
 <div class="line">                    <span class="keywordflow">if</span> (curFeature.<a class="code" href="../../db/d98/class_u_b_feature.html#a9e48a4ed3645dd5e1aea16d73ce4feff">getType</a>() == <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674fa0392c3a4bd4f52e04de1e0ba3ef540e9">FEATURE_FOLDER</a>) {</div>
 <div class="line">                        <span class="keyword">event</span>-&gt;ignore();</div>
@@ -579,7 +703,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                }</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"></div>
-<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == mpRemoveFavoriteBtn) {</div>
+<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>) {</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">            }</div>
@@ -589,17 +713,17 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        <span class="keyword">const</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a> *fMimeData = qobject_cast&lt;<span class="keyword">const</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a>*&gt;(dropEvent-&gt;mimeData());</div>
 <div class="line">        <span class="keywordflow">if</span> (fMimeData) {</div>
 <div class="line"></div>
-<div class="line">            <span class="keywordflow">if</span> (obj == mpDeleteBtn) {</div>
+<div class="line">            <span class="keywordflow">if</span> (obj == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>) {</div>
 <div class="line">                dropEvent-&gt;setDropAction(Qt::MoveAction);</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">                emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad589ee01c81657578c7da6f21da1b36d">deleteElements</a>(fMimeData);</div>
 <div class="line"></div>
-<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == mpFavoriteBtn) {</div>
+<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>) {</div>
 <div class="line">                dropEvent-&gt;setDropAction(Qt::CopyAction);</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">                emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aba67d98128e8bd630b9e71179cf0d0d3">addToFavorite</a>(fMimeData);</div>
 <div class="line"></div>
-<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == mpRemoveFavoriteBtn) {</div>
+<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (obj == <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>) {</div>
 <div class="line">                dropEvent-&gt;setDropAction(Qt::MoveAction);</div>
 <div class="line">                <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line"></div>
@@ -610,15 +734,41 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#afb05cfab3fc8d5d242804a98c1902935">QWidget::eventFilter</a>(obj, event);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_afb05cfab3fc8d5d242804a98c1902935_cgraph.svg" width="100%" height="591"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="a170604139e1096fd181a997fb6e4ed85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::lockIt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    setEnabled(<span class="keyword">false</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a30066887b3866485d8dbf208361ee820"></a>
@@ -642,6 +792,281 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a30066887b3866485d8dbf208361ee820_icgraph.svg" width="563" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a09a181b2d213f490c384ed28ffb1e7be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::onActionFavorite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4efc551e002a4c18a86e0e08a3a6cf68">addElementsToFavorite</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a09a181b2d213f490c384ed28ffb1e7be_cgraph.svg" width="376" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a09a181b2d213f490c384ed28ffb1e7be_icgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a66f62c1e10f301296a9abb0ae91718f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::onActionNewFolder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a30066887b3866485d8dbf208361ee820">newFolderToCreate</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a66f62c1e10f301296a9abb0ae91718f6_cgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a66f62c1e10f301296a9abb0ae91718f6_icgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a95b139c3aa8a5ecf047fa987c653ca87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::onActionRemoveFavorite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad98a309cdc263a8903a66350d4eadc0a">removeElementsFromFavorite</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a95b139c3aa8a5ecf047fa987c653ca87_cgraph.svg" width="443" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a95b139c3aa8a5ecf047fa987c653ca87_icgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac842bcc1a5b040c2807ae72f5b0f2300"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::onActionRescanModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ac8ae0628b5a9be66a377d45f04aeac26">rescanModel</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ac842bcc1a5b040c2807ae72f5b0f2300_cgraph.svg" width="371" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ac842bcc1a5b040c2807ae72f5b0f2300_icgraph.svg" width="379" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1404f54cb2b8495af6517e4e862690f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::onActionTrash </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a4b196bdb6db18808e3fad1032de46377">deleteSelectedElements</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a1404f54cb2b8495af6517e4e862690f9_cgraph.svg" width="379" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a1404f54cb2b8495af6517e4e862690f9_icgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af086004f21056e746e7da2f4562e2d77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::onSearchTextChanged </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>txt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(txt)</div>
+<div class="line">    emit <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a39a52a8fce9c541d3b5cf5a41498ef01">searchElement</a>(<a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;text());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_af086004f21056e746e7da2f4562e2d77_cgraph.svg" width="371" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_af086004f21056e746e7da2f4562e2d77_icgraph.svg" width="379" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ad98a309cdc263a8903a66350d4eadc0a"></a>
@@ -664,6 +1089,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ad98a309cdc263a8903a66350d4eadc0a_icgraph.svg" width="648" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -689,11 +1123,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ae14bdabf1997d703ba06c5b3c96e9bb7_icgraph.svg" width="558" height="87"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -721,6 +1155,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ac8ae0628b5a9be66a377d45f04aeac26_icgraph.svg" width="576" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a39a52a8fce9c541d3b5cf5a41498ef01"></a>
@@ -745,6 +1188,110 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a39a52a8fce9c541d3b5cf5a41498ef01_icgraph.svg" width="576" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad31f29dbd94293ca781a3d88b233a1c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::setButtons </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">switch</span>( <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af441110c211c5422a4472875f6f92b4a">currentState</a> )</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8ead9c0c38733b8e925ef55d7570c74a956">IN_FOLDER</a>:</div>
+<div class="line">                <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;show();</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8eab8c1a4dd494df2602ac5beb29de7acf9">IN_ROOT</a>:</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;show();</div>
+<div class="line">                <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line">                <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><span class="comment">//        mpRescanModelBtn-&gt;show();</span></div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8eaab119fe9ea7950bef25fb569a79d6468">IN_PROPERTIES</a>:</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;show();</div>
+<div class="line">        <span class="comment">//mpSearchBtn-&gt;show();</span></div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;hide();</div>
+<div class="line"><span class="comment">//        mpRescanModelBtn-&gt;hide();</span></div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8ea987aff3c5fec4888bf85a40ad8b9b803">IN_FAVORITE</a>:</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;show();</div>
+<div class="line">        <span class="comment">//mpSearchBtn-&gt;show();</span></div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#aa9d338cb0d508231333dc22d891bf4fc">mpRemoveFavoriteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;hide();</div>
+<div class="line"><span class="comment">//        mpRescanModelBtn-&gt;hide();</span></div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8ea0469f2310c30d4afc136c26ea8fa1d05">IN_TRASH</a>:</div>
+<div class="line">                <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a7f400dd5d1b55d9e5195768ab4fb5ae7">mpFavoriteBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#acc5b16c4dc859544dbf1888801877acf">mpSocialBtn</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a10bd53838e9acdd0e3a2c44e69523d9e">mSearchBar</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;show();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#a9566a313f557e36495bb92e5f90ca91d">mpDeleteBtn</a>-&gt;setEnabled(<span class="keyword">true</span>);</div>
+<div class="line">        <span class="comment">//mpSearchBtn-&gt;show();</span></div>
+<div class="line">        <span class="comment">//mpDeleteBtn-&gt;hide();</span></div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ae4641c7e6c9f97bb3a020b239847b15c">mpCloseBtn</a>-&gt;hide();</div>
+<div class="line">        <span class="comment">//mpRemoveFavoriteBtn-&gt;show();</span></div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad5a518a54b34825497bb316cc586a98c">mpNewFolderBtn</a>-&gt;hide();</div>
+<div class="line"><span class="comment">//        mpRescanModelBtn-&gt;hide();</span></div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>:</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_ad31f29dbd94293ca781a3d88b233a1c6_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a619d52cadd37cef8562972ac359663cd"></a>
@@ -761,24 +1308,500 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">        currentState = state;</div>
-<div class="line">        setButtons();</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#af441110c211c5422a4472875f6f92b4a">currentState</a> = state;</div>
+<div class="line">        <a class="code" href="../../dd/d9e/class_u_b_features_action_bar.html#ad31f29dbd94293ca781a3d88b233a1c6">setButtons</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a619d52cadd37cef8562972ac359663cd_icgraph.svg" width="366" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a619d52cadd37cef8562972ac359663cd_cgraph.svg" width="358" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d9e/class_u_b_features_action_bar_a619d52cadd37cef8562972ac359663cd_icgraph.svg" width="667" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a9917df1b50b3eda25ffe9e0fab59dc77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesActionBar::unlockIt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    setEnabled(<span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="af441110c211c5422a4472875f6f92b4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h.html#abc6049497f39775f92ce93e6ad0a2d8e">UBFeaturesActionBarState</a> UBFeaturesActionBar::currentState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab8ebb647a1a6532a428499d7da9d89cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d33/class_u_b_features_controller.html">UBFeaturesController</a>* UBFeaturesActionBar::featuresController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44d5056ed32fa266ea4c2bb26a35a911"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QButtonGroup* UBFeaturesActionBar::mButtonGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af07dd23b81167c3e8118c3cc110f7d90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h.html#a436767fdb5fee719faec899f5422da0d">eButtonSet</a> UBFeaturesActionBar::mCrntButtonSet</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a11df5f47123baa0ca967bab2cd6d6f02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* UBFeaturesActionBar::mLayout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7cfac0e4545a3b02be6e5ccecf86b362"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpCloseAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4641c7e6c9f97bb3a020b239847b15c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpCloseBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a45b3152a3418f740d1ed5b93a63299fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpDeleteAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9566a313f557e36495bb92e5f90ca91d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpDeleteBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1c0c7701a12f02c6dad5c84d45da2e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpFavoriteAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f400dd5d1b55d9e5195768ab4fb5ae7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpFavoriteBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e5cfaf06e091789a9b04d00c569fb3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpNewFolderAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad5a518a54b34825497bb316cc586a98c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpNewFolderBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab05f28910f4923587a6413af9e9f8fca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpRemoveFavorite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9d338cb0d508231333dc22d891bf4fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpRemoveFavoriteBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af366a0bd45d36278b835df0b9ce18ded"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpRescanModelAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a589d7dfe9d0f31f398706d8096ba35c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpRescanModelBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63c4e3fc81bc4dba3f5485a01e2c8510"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h.html#a436767fdb5fee719faec899f5422da0d">eButtonSet</a> UBFeaturesActionBar::mPreviousButtonSet</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac570924e2c48900861016c8cf9f82aa5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpSearchAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d5cfb6ffd7438026e57f6328e93c60d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBFeaturesActionBar::mpSocialAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acc5b16c4dc859544dbf1888801877acf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d50/class_u_b_action_button.html">UBActionButton</a>* UBFeaturesActionBar::mpSocialBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10bd53838e9acdd0e3a2c44e69523d9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* UBFeaturesActionBar::mSearchBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp.html">UBFeaturesActionBar.cpp</a></li>
+<li><a class="el" href="../../d0/dc5/_u_b_features_action_bar_8h_source.html">UBFeaturesActionBar.h</a></li>
+<li><a class="el" href="../../d9/d7b/_u_b_features_action_bar_8cpp.html">UBFeaturesActionBar.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -786,7 +1809,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d9e/class_u_b_features_action_bar.html">UBFeaturesActionBar</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dc/d24/class_u_b_cache_preview_widget.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d41/class_u_b_cache_preview_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBCachePreviewWidget Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('dc/d24/class_u_b_cache_preview_widget.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d57/class_u_b_cache_preview_widget__coll__graph.svg" width="198" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d57/class_u_b_cache_preview_widget__coll__graph.svg" width="198" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -125,6 +127,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa06ca6481bdd13017579fbbf21aab3f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#aa06ca6481bdd13017579fbbf21aab3f6">setHoleSize</a> (QSize size)</td></tr>
 <tr class="memitem:afee0642e27af49528330e8e33bfbce3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#afee0642e27af49528330e8e33bfbce3b">setShape</a> (<a class="el" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232">eMaskShape</a> shape)</td></tr>
 <tr class="memitem:ae7ed3b27ad777a979deaa469f98f6234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#ae7ed3b27ad777a979deaa469f98f6234">setMaskColor</a> (QColor color)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a68749831975f7f95595d2bd4960d5fff"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#a68749831975f7f95595d2bd4960d5fff">sizeHint</a> () const </td></tr>
+<tr class="memitem:ad36ddc6667373b4f0d88694dade6be2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#ad36ddc6667373b4f0d88694dade6be2a">paintEvent</a> (QPaintEvent *event)</td></tr>
+<tr class="memitem:a287fe4ce2b862fc201d27cd3ea2eadb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#a287fe4ce2b862fc201d27cd3ea2eadb2">resizeEvent</a> (QResizeEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4cff73349269f367f65867b382eb9147"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#a4cff73349269f367f65867b382eb9147">mHoleSize</a></td></tr>
+<tr class="memitem:aaeff99e35f336d9a55ce73e23d07af66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232">eMaskShape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#aaeff99e35f336d9a55ce73e23d07af66">mShape</a></td></tr>
+<tr class="memitem:aa5887b3b037e614566d63044a5d0bf6a"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html#aa5887b3b037e614566d63044a5d0bf6a">mMaskColor</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac7ad36661d4fd01074b8ab97fb81547a"></a>
@@ -141,14 +155,112 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
-<div class="line">    , mHoleSize(QSize())</div>
-<div class="line">    , mShape(<a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232a07f69a00fec0245d0ac76ff2e81db521">eMaskShape_Circle</a>)</div>
+<div class="line">    , <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#a4cff73349269f367f65867b382eb9147">mHoleSize</a>(QSize())</div>
+<div class="line">    , <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aaeff99e35f336d9a55ce73e23d07af66">mShape</a>(<a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232a07f69a00fec0245d0ac76ff2e81db521">eMaskShape_Circle</a>)</div>
 <div class="line">{</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ad36ddc6667373b4f0d88694dade6be2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBCachePreviewWidget::paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#ad36ddc6667373b4f0d88694dade6be2a">QWidget::paintEvent</a>(event);</div>
+<div class="line"></div>
+<div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
+<div class="line">    painter.setPen(<a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aa5887b3b037e614566d63044a5d0bf6a">mMaskColor</a>);</div>
+<div class="line">    painter.setBrush(<a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aa5887b3b037e614566d63044a5d0bf6a">mMaskColor</a>);</div>
+<div class="line">    painter.drawRect(rect());</div>
+<div class="line">    painter.setBrush(QColor(Qt::white));</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a> *view = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>();</div>
+<div class="line">    qreal scaleRatio = <span class="keyword">static_cast&lt;</span>qreal<span class="keyword">&gt;</span>(rect().width())/static_cast&lt;qreal&gt;(view-&gt;width());</div>
+<div class="line">    qreal holeWidth = <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#a4cff73349269f367f65867b382eb9147">mHoleSize</a>.width()*scaleRatio;</div>
+<div class="line">    qreal holeHeight = <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#a4cff73349269f367f65867b382eb9147">mHoleSize</a>.height()*scaleRatio;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232a07f69a00fec0245d0ac76ff2e81db521">eMaskShape_Circle</a> == <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aaeff99e35f336d9a55ce73e23d07af66">mShape</a>)</div>
+<div class="line">        painter.drawEllipse(rect().center(), static_cast&lt;int&gt;(holeWidth/2), static_cast&lt;int&gt;(holeHeight/2));</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232ab633d73e9f1880534b60c6c86f259039">eMaskShap_Rectangle</a> == <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aaeff99e35f336d9a55ce73e23d07af66">mShape</a>)</div>
+<div class="line">        painter.drawRect(rect().center().x() - holeWidth/2, rect().center().y() - holeHeight/2, holeWidth, holeHeight);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_ad36ddc6667373b4f0d88694dade6be2a_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a287fe4ce2b862fc201d27cd3ea2eadb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBCachePreviewWidget::resizeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QResizeEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(event);</div>
+<div class="line">    <a class="code" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a> *view = <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#ab71662c63aac8470984b04499e906d3a">controlView</a>();</div>
+<div class="line">    qreal aspectRatio = <span class="keyword">static_cast&lt;</span>qreal<span class="keyword">&gt;</span>(view-&gt;height())/static_cast&lt;qreal&gt;(view-&gt;width());</div>
+<div class="line"></div>
+<div class="line">    QSize newSize(width(),width()*aspectRatio);</div>
+<div class="line">    updateGeometry();</div>
+<div class="line">    resize(newSize);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#a287fe4ce2b862fc201d27cd3ea2eadb2">QWidget::resizeEvent</a>(event);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_a287fe4ce2b862fc201d27cd3ea2eadb2_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="aa06ca6481bdd13017579fbbf21aab3f6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -163,16 +275,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mHoleSize = size;</div>
+<div class="line">    <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#a4cff73349269f367f65867b382eb9147">mHoleSize</a> = size;</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_aa06ca6481bdd13017579fbbf21aab3f6_icgraph.svg" width="640" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_aa06ca6481bdd13017579fbbf21aab3f6_icgraph.svg" width="640" height="220"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -192,10 +304,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mMaskColor = color;</div>
+<div class="line">    <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aa5887b3b037e614566d63044a5d0bf6a">mMaskColor</a> = color;</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_ae7ed3b27ad777a979deaa469f98f6234_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="afee0642e27af49528330e8e33bfbce3b"></a>
@@ -212,23 +333,110 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mShape = shape;</div>
+<div class="line">    <a class="code" href="../../dc/d24/class_u_b_cache_preview_widget.html#aaeff99e35f336d9a55ce73e23d07af66">mShape</a> = shape;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_afee0642e27af49528330e8e33bfbce3b_icgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d24/class_u_b_cache_preview_widget_afee0642e27af49528330e8e33bfbce3b_icgraph.svg" width="640" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a68749831975f7f95595d2bd4960d5fff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize UBCachePreviewWidget::sizeHint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> size();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a4cff73349269f367f65867b382eb9147"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize UBCachePreviewWidget::mHoleSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa5887b3b037e614566d63044a5d0bf6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor UBCachePreviewWidget::mMaskColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaeff99e35f336d9a55ce73e23d07af66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d96/_u_b_graphics_cache_8h.html#ac59628c0f9ed257ff9874210c6ad3232">eMaskShape</a> UBCachePreviewWidget::mShape</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp.html">UBCachePropertiesWidget.cpp</a></li>
+<li><a class="el" href="../../df/db2/_u_b_cache_properties_widget_8h_source.html">UBCachePropertiesWidget.h</a></li>
+<li><a class="el" href="../../dd/da1/_u_b_cache_properties_widget_8cpp.html">UBCachePropertiesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -236,7 +444,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d24/class_u_b_cache_preview_widget.html">UBCachePreviewWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:51 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:56 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('da/d8c/class_u_b_w3_c_widget_a_p_i.htm
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/d04/class_u_b_w3_c_widget_a_p_i-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBW3CWidgetAPI Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('da/d8c/class_u_b_w3_c_widget_a_p_i.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/dc9/class_u_b_w3_c_widget_a_p_i__coll__graph.svg" width="174" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/dc9/class_u_b_w3_c_widget_a_p_i__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -150,6 +151,11 @@ Properties</h2></td></tr>
 <tr class="memitem:a66aaac9c6134b1a349652a8150601ff5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#a66aaac9c6134b1a349652a8150601ff5">height</a></td></tr>
 <tr class="memitem:a47520f530b1ee8b58bba5b33ee06d352"><td class="memItemLeft" align="right" valign="top">QObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#a47520f530b1ee8b58bba5b33ee06d352">preferences</a></td></tr>
 <tr class="memitem:ae1f63491c93d254f18a642912e854963"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#ae1f63491c93d254f18a642912e854963">uuid</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a71c650be37488695afcbdb5895d5e372"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#a71c650be37488695afcbdb5895d5e372">mGraphicsW3CWidget</a></td></tr>
+<tr class="memitem:ae00defbecf57f4627d70d63696d1908b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html">UBW3CWidgetPreferenceAPI</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#ae00defbecf57f4627d70d63696d1908b">mPreferencesAPI</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad08e5e1f29f4192abcf22314fa6d6da1"></a>
@@ -176,9 +182,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(parent)</div>
-<div class="line">    , mGraphicsW3CWidget(graphicsWidget)</div>
+<div class="line">    , <a class="code" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#a71c650be37488695afcbdb5895d5e372">mGraphicsW3CWidget</a>(graphicsWidget)</div>
 <div class="line">{</div>
-<div class="line">    mPreferencesAPI = <span class="keyword">new</span> <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html">UBW3CWidgetPreferenceAPI</a>(graphicsWidget, parent);</div>
+<div class="line">    <a class="code" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html#ae00defbecf57f4627d70d63696d1908b">mPreferencesAPI</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html">UBW3CWidgetPreferenceAPI</a>(graphicsWidget, parent);</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -400,6 +406,47 @@ Properties</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a71c650be37488695afcbdb5895d5e372"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/da7/class_u_b_graphics_w3_c_widget_item.html">UBGraphicsW3CWidgetItem</a>* UBW3CWidgetAPI::mGraphicsW3CWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae00defbecf57f4627d70d63696d1908b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d74/class_u_b_w3_c_widget_preference_a_p_i.html">UBW3CWidgetPreferenceAPI</a>* UBW3CWidgetAPI::mPreferencesAPI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -626,8 +673,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/api/<a class="el" href="../../da/d32/_u_b_w3_c_widget_a_p_i_8h_source.html">UBW3CWidgetAPI.h</a></li>
-<li>Sankore-3.1/src/api/<a class="el" href="../../da/ddd/_u_b_w3_c_widget_a_p_i_8cpp.html">UBW3CWidgetAPI.cpp</a></li>
+<li><a class="el" href="../../da/d32/_u_b_w3_c_widget_a_p_i_8h_source.html">UBW3CWidgetAPI.h</a></li>
+<li><a class="el" href="../../da/ddd/_u_b_w3_c_widget_a_p_i_8cpp.html">UBW3CWidgetAPI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -635,7 +682,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d8c/class_u_b_w3_c_widget_a_p_i.html">UBW3CWidgetAPI</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d6/d84/class_u_b_graphics_item_group_u
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d57/class_u_b_graphics_item_group_undo_command-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsItemGroupUndoCommand Class Reference</div>  </div>
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('d6/d84/class_u_b_graphics_item_group_u
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/dff/class_u_b_graphics_item_group_undo_command__inherit__graph.svg" width="275" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/dff/class_u_b_graphics_item_group_undo_command__inherit__graph.svg" width="275" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBGraphicsItemGroupUndoCommand:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d5a/class_u_b_graphics_item_group_undo_command__coll__graph.svg" width="275" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d5a/class_u_b_graphics_item_group_undo_command__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -140,6 +141,13 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0ec4e3a7be67ad2bf4c32d1757722e0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a0ec4e3a7be67ad2bf4c32d1757722e0c">undo</a> ()</td></tr>
 <tr class="memitem:a5e10f4794f86d6eb7b3859d16252ab4b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a5e10f4794f86d6eb7b3859d16252ab4b">redo</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a304e23f269893689a121162bee213b74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a304e23f269893689a121162bee213b74">mScene</a></td></tr>
+<tr class="memitem:acce0d575d9ea60844df47b0ea0a08946"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a></td></tr>
+<tr class="memitem:a72ede336f07f238d190b142fc06733b6"><td class="memItemLeft" align="right" valign="top">QList&lt; QGraphicsItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a72ede336f07f238d190b142fc06733b6">mItems</a></td></tr>
+<tr class="memitem:abbfc83ba281a1e52043f825e5552e4a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#abbfc83ba281a1e52043f825e5552e4a9">mFirstRedo</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -181,12 +189,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                                                                                   :</div>
-<div class="line">    mScene (pScene), mGroup(pGroupCreated), mFirstRedo(<span class="keyword">true</span>)</div>
+<div class="line">    <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a304e23f269893689a121162bee213b74">mScene</a> (pScene), <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>(pGroupCreated), <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#abbfc83ba281a1e52043f825e5552e4a9">mFirstRedo</a>(<span class="keyword">true</span>)</div>
 <div class="line"></div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (pGroupCreated-&gt;childItems().count()) {</div>
 <div class="line">        <span class="keywordflow">foreach</span> (QGraphicsItem *item, pGroupCreated-&gt;childItems()) {</div>
-<div class="line">            mItems &lt;&lt; item;</div>
+<div class="line">            <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a72ede336f07f238d190b142fc06733b6">mItems</a> &lt;&lt; item;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 }</div>
@@ -268,13 +276,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a6de13cf6ae729763431413aa39b78e82">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mFirstRedo) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#abbfc83ba281a1e52043f825e5552e4a9">mFirstRedo</a>) {</div>
 <div class="line">        <span class="comment">//Work around. TODO determine why does Qt call the redo function on pushing to undo</span></div>
-<div class="line">        mFirstRedo = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#abbfc83ba281a1e52043f825e5552e4a9">mFirstRedo</a> = <span class="keyword">false</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span> (QGraphicsItem *item, mItems) {</div>
+<div class="line">    <span class="keywordflow">foreach</span> (QGraphicsItem *item, <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a72ede336f07f238d190b142fc06733b6">mItems</a>) {</div>
 <div class="line">        <span class="keywordflow">if</span> (item-&gt;type() == <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ad39fe3ee7e219e1d6aa20a87872a95ceaa41722c9d25c5573b0031a811262f974">UBGraphicsGroupContainerItem::Type</a>) {</div>
 <div class="line">            QList&lt;QGraphicsItem*&gt; childItems = item-&gt;childItems();</div>
 <div class="line">            <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *currentGroup = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a>*<span class="keyword">&gt;</span>(item);</div>
@@ -282,17 +290,17 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">                currentGroup-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a71bf648d30983ff33b0e94f515268b80">destroy</a>(<span class="keyword">false</span>);</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">foreach</span> (QGraphicsItem *chItem, childItems) {</div>
-<div class="line">                mGroup-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ac5b04f9899f76674245aeb2e8bc73095">addToGroup</a>(chItem);</div>
+<div class="line">                <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ac5b04f9899f76674245aeb2e8bc73095">addToGroup</a>(chItem);</div>
 <div class="line">            }</div>
 <div class="line">        } <span class="keywordflow">else</span> {</div>
-<div class="line">            mGroup-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ac5b04f9899f76674245aeb2e8bc73095">addToGroup</a>(item);</div>
+<div class="line">            <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ac5b04f9899f76674245aeb2e8bc73095">addToGroup</a>(item);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(mGroup);</div>
-<div class="line">    mGroup-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line">    mGroup-&gt;setFocus();</div>
-<div class="line">    mGroup-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a304e23f269893689a121162bee213b74">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(<a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>);</div>
+<div class="line">    <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>-&gt;setFocus();</div>
+<div class="line">    <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>-&gt;setSelected(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -329,8 +337,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a91cd202e68ba7cc83f8490a6eec15dcc">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mGroup-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a71bf648d30983ff33b0e94f515268b80">destroy</a>(<span class="keyword">false</span>);</div>
-<div class="line">    <span class="keywordflow">foreach</span>(QGraphicsItem *item, mItems) {</div>
+<div class="line">    <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#acce0d575d9ea60844df47b0ea0a08946">mGroup</a>-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a71bf648d30983ff33b0e94f515268b80">destroy</a>(<span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordflow">foreach</span>(QGraphicsItem *item, <a class="code" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html#a72ede336f07f238d190b142fc06733b6">mItems</a>) {</div>
 <div class="line">        item-&gt;setSelected(<span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -346,9 +354,90 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="abbfc83ba281a1e52043f825e5552e4a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsItemGroupUndoCommand::mFirstRedo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acce0d575d9ea60844df47b0ea0a08946"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a>* UBGraphicsItemGroupUndoCommand::mGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a72ede336f07f238d190b142fc06733b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QGraphicsItem*&gt; UBGraphicsItemGroupUndoCommand::mItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a304e23f269893689a121162bee213b74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* UBGraphicsItemGroupUndoCommand::mScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d2/da7/_u_b_graphics_item_group_undo_command_8h_source.html">UBGraphicsItemGroupUndoCommand.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../dd/dbb/_u_b_graphics_item_group_undo_command_8cpp.html">UBGraphicsItemGroupUndoCommand.cpp</a></li>
+<li><a class="el" href="../../d2/da7/_u_b_graphics_item_group_undo_command_8h_source.html">UBGraphicsItemGroupUndoCommand.h</a></li>
+<li><a class="el" href="../../dd/dbb/_u_b_graphics_item_group_undo_command_8cpp.html">UBGraphicsItemGroupUndoCommand.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -356,7 +445,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d84/class_u_b_graphics_item_group_undo_command.html">UBGraphicsItemGroupUndoCommand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

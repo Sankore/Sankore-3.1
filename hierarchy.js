@@ -31,6 +31,7 @@ var hierarchy =
     [ "IDataStorage", "d6/d6d/class_i_data_storage.html", [
       [ "UBTeacherGuideEditionWidget", "de/d83/class_u_b_teacher_guide_edition_widget.html", null ]
     ] ],
+    [ "UBQuickTimeVideoEncoder::ImageFrame", "d5/d68/struct_u_b_quick_time_video_encoder_1_1_image_frame.html", null ],
     [ "itemLayerType", "dc/d14/structitem_layer_type.html", null ],
     [ "UBZLayerController::ItemLayerTypeData", "d7/d85/struct_u_b_z_layer_controller_1_1_item_layer_type_data.html", null ],
     [ "iUBTGSaveData", "d6/d3f/classi_u_b_t_g_save_data.html", [
@@ -40,6 +41,7 @@ var hierarchy =
     ] ],
     [ "KEYBT", "d3/dd2/struct_k_e_y_b_t.html", null ],
     [ "KEYCODE", "d2/dab/struct_k_e_y_c_o_d_e.html", null ],
+    [ "UBWindowsMediaFile::MarkerInfo", "d6/d4b/struct_u_b_windows_media_file_1_1_marker_info.html", null ],
     [ "MediaTimer", "db/dc2/class_media_timer.html", null ],
     [ "merge_lib::MergePageDescription", "d0/dff/structmerge__lib_1_1_merge_page_description.html", null ],
     [ "merge_lib::Merger", "d8/d35/classmerge__lib_1_1_merger.html", null ],
@@ -121,6 +123,7 @@ var hierarchy =
     [ "UBCachePreviewWidget", "dc/d24/class_u_b_cache_preview_widget.html", null ],
     [ "UBCFFAdaptor", "de/d84/class_u_b_c_f_f_adaptor.html", null ],
     [ "UBCFFSubsetAdaptor", "dc/dd6/class_u_b_c_f_f_subset_adaptor.html", null ],
+    [ "UBCFFSubsetAdaptor::UBCFFSubsetReader", "de/d97/class_u_b_c_f_f_subset_adaptor_1_1_u_b_c_f_f_subset_reader.html", null ],
     [ "UBCircleFrame", "dc/d2d/class_u_b_circle_frame.html", null ],
     [ "UBColorPicker", "db/d45/class_u_b_color_picker.html", null ],
     [ "UBCookieJar", "dd/d20/class_u_b_cookie_jar.html", null ],
@@ -354,6 +357,8 @@ var hierarchy =
     [ "UBStylusTool", "d4/dd7/struct_u_b_stylus_tool.html", null ],
     [ "UBSvgSubsetAdaptor", "d3/df9/class_u_b_svg_subset_adaptor.html", null ],
     [ "UBSvgSubsetRasterizer", "d9/dc7/class_u_b_svg_subset_rasterizer.html", null ],
+    [ "UBSvgSubsetAdaptor::UBSvgSubsetReader", "d8/d4f/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_reader.html", null ],
+    [ "UBSvgSubsetAdaptor::UBSvgSubsetWriter", "d4/d65/class_u_b_svg_subset_adaptor_1_1_u_b_svg_subset_writer.html", null ],
     [ "UBTabDockPalette", "d9/dfa/class_u_b_tab_dock_palette.html", null ],
     [ "UBTeacherGuidePageZeroWidget", "db/df0/class_u_b_teacher_guide_page_zero_widget.html", null ],
     [ "UBTeacherGuidePresentationWidget", "d2/d4d/class_u_b_teacher_guide_presentation_widget.html", null ],
@@ -376,10 +381,12 @@ var hierarchy =
     [ "UBThumbnailWidget", "d2/d7e/class_u_b_thumbnail_widget.html", [
       [ "UBDocumentThumbnailWidget", "d2/dd6/class_u_b_document_thumbnail_widget.html", null ]
     ] ],
+    [ "UBCFFAdaptor::UBToCFFConverter", "d3/d15/class_u_b_c_f_f_adaptor_1_1_u_b_to_c_f_f_converter.html", null ],
     [ "UBToolbarButtonGroup", "d3/dce/class_u_b_toolbar_button_group.html", null ],
     [ "UBToolsManager::UBToolDescriptor", "d9/d66/class_u_b_tools_manager_1_1_u_b_tool_descriptor.html", null ],
     [ "UBToolsManager", "df/d8e/class_u_b_tools_manager.html", null ],
     [ "UBToolWidget", "dc/de3/class_u_b_tool_widget.html", null ],
+    [ "UBCFFAdaptor::UBToUBZConverter", "d8/d2a/class_u_b_c_f_f_adaptor_1_1_u_b_to_u_b_z_converter.html", null ],
     [ "UBTrapWebPageContentController", "d9/d3a/class_u_b_trap_web_page_content_controller.html", null ],
     [ "UBUpdateDlg", "d0/d4f/class_u_b_update_dlg.html", null ],
     [ "UBVersion", "d2/da9/class_u_b_version.html", null ],

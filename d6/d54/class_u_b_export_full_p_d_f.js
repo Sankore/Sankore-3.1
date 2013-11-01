@@ -7,5 +7,7 @@ var class_u_b_export_full_p_d_f =
     [ "exportName", "d6/d54/class_u_b_export_full_p_d_f.html#a250b765fd6333b4d80580562562ed8b7", null ],
     [ "persist", "d6/d54/class_u_b_export_full_p_d_f.html#a8c0bd950f21f469ce17daa1add9a75bf", null ],
     [ "persistsDocument", "d6/d54/class_u_b_export_full_p_d_f.html#a2101b6fdc6ed273a6e2c062d5ce7e12c", null ],
-    [ "saveOverlayPdf", "d6/d54/class_u_b_export_full_p_d_f.html#a7f1a5b95025ce905379961d179716fdd", null ]
+    [ "saveOverlayPdf", "d6/d54/class_u_b_export_full_p_d_f.html#a7f1a5b95025ce905379961d179716fdd", null ],
+    [ "mHasPDFBackgrounds", "d6/d54/class_u_b_export_full_p_d_f.html#a3423de26fd011ce573624e9dc4e2d735", null ],
+    [ "mScaleFactor", "d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be", null ]
 ];

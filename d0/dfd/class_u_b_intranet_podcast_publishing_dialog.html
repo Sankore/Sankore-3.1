@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d0/dfd/class_u_b_intranet_podcast_publ
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="../../d9/dee/class_u_b_intranet_podcast_publishing_dialog-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBIntranetPodcastPublishingDialog Class Reference</div>  </div>
@@ -116,13 +117,17 @@ $(document).ready(function(){initNavTree('d0/dfd/class_u_b_intranet_podcast_publ
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/da7/class_u_b_intranet_podcast_publishing_dialog__coll__graph.svg" width="224" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/da7/class_u_b_intranet_podcast_publishing_dialog__coll__graph.svg" width="224" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0aac5a648d1e17638a8dc56f381dd05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#ad0aac5a648d1e17638a8dc56f381dd05">UBIntranetPodcastPublishingDialog</a> (const QString &amp;videoFilePath, QWidget *parent=0)</td></tr>
 <tr class="memitem:a261e24efd6810bea42e5ebf198c2d6ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#a261e24efd6810bea42e5ebf198c2d6ad">~UBIntranetPodcastPublishingDialog</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:aadbd0d16ea1f0cbf317e8078939e52ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a> (const QString &amp;=QString(&quot;&quot;))</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad0aac5a648d1e17638a8dc56f381dd05"></a>
@@ -157,14 +162,23 @@ Public Member Functions</h2></td></tr>
 <div class="line">    connect(dialogButtons, SIGNAL(accepted()), <span class="keyword">this</span>, SLOT(accept()));</div>
 <div class="line">    connect(dialogButtons, SIGNAL(rejected()), <span class="keyword">this</span>, SLOT(reject()));</div>
 <div class="line"></div>
-<div class="line">    connect(title, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
-<div class="line">    connect(description, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(updateUIState()));</div>
-<div class="line">    connect(author, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(updateUIState(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line">    connect(title, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
+<div class="line">    connect(description, SIGNAL(textChanged()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a>()));</div>
+<div class="line">    connect(author, SIGNAL(textChanged(<span class="keyword">const</span> QString&amp;)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html#aadbd0d16ea1f0cbf317e8078939e52ec">updateUIState</a>(<span class="keyword">const</span> QString&amp;)));</div>
 <div class="line"></div>
 <div class="line">    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line">    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setText(tr(<span class="stringliteral">&quot;Publish&quot;</span>));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog_ad0aac5a648d1e17638a8dc56f381dd05_cgraph.svg" width="494" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a261e24efd6810bea42e5ebf198c2d6ad"></a>
@@ -191,9 +205,52 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="aadbd0d16ea1f0cbf317e8078939e52ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBIntranetPodcastPublishingDialog::updateUIState </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>string</em> = <code>QString(&quot;&quot;)</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(<span class="keywordtype">string</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">bool</span> ok = title-&gt;text().length() &gt; 0</div>
+<div class="line">                &amp;&amp;  description-&gt;toPlainText().length() &gt; 0</div>
+<div class="line">                &amp;&amp;  author-&gt;text().length() &gt; 0;</div>
+<div class="line"></div>
+<div class="line">    dialogButtons-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(ok);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog_aadbd0d16ea1f0cbf317e8078939e52ec_icgraph.svg" width="494" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/intranet/<a class="el" href="../../d5/d33/_u_b_intranet_podcast_publisher_8h_source.html">UBIntranetPodcastPublisher.h</a></li>
-<li>Sankore-3.1/src/podcast/intranet/<a class="el" href="../../d5/d24/_u_b_intranet_podcast_publisher_8cpp.html">UBIntranetPodcastPublisher.cpp</a></li>
+<li><a class="el" href="../../d5/d33/_u_b_intranet_podcast_publisher_8h_source.html">UBIntranetPodcastPublisher.h</a></li>
+<li><a class="el" href="../../d5/d24/_u_b_intranet_podcast_publisher_8cpp.html">UBIntranetPodcastPublisher.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -201,7 +258,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dfd/class_u_b_intranet_podcast_publishing_dialog.html">UBIntranetPodcastPublishingDialog</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

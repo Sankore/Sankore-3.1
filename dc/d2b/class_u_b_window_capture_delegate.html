@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dc/d2b/class_u_b_window_capture_delega
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/da6/class_u_b_window_capture_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWindowCaptureDelegate Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('dc/d2b/class_u_b_window_capture_delega
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_window_capture_delegate__coll__graph.svg" width="224" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/de0/class_u_b_window_capture_delegate__coll__graph.svg" width="224" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -125,6 +127,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa59df8947f4d96c30660c5c14df4c61f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#aa59df8947f4d96c30660c5c14df4c61f">~UBWindowCaptureDelegate</a> ()</td></tr>
 <tr class="memitem:a1344c7c1a7a30b52c689f489d2d13317"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a1344c7c1a7a30b52c689f489d2d13317">execute</a> ()</td></tr>
 <tr class="memitem:a2777e6726b1b363ac5c82fa4ce8b3858"><td class="memItemLeft" align="right" valign="top">const QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a2777e6726b1b363ac5c82fa4ce8b3858">getCapturedWindow</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abe77f957f9d689328d16c851026d7959"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#abe77f957f9d689328d16c851026d7959">eventFilter</a> (QObject *target, QEvent *event)</td></tr>
+<tr class="memitem:a1147e68a6ec9389176e8232c083e318d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a1147e68a6ec9389176e8232c083e318d">processPos</a> (QPoint pPoint)</td></tr>
+<tr class="memitem:a8283bde80afb116ee8278ed049493372"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a8283bde80afb116ee8278ed049493372">drawSelectionRect</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad6863bcd2bbddbb8406491f3108e0e13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">mIsCapturing</a></td></tr>
+<tr class="memitem:ad41ed968797c96ce6f7ed23f789ba56b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a></td></tr>
+<tr class="memitem:a02b8cbbd292704d30f4b04d75a4eb747"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a02b8cbbd292704d30f4b04d75a4eb747">mLastPoint</a></td></tr>
+<tr class="memitem:a212faa47ebf2607ca11459942e411813"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a></td></tr>
+<tr class="memitem:a6abe07ac863c6a3b5dc9ac973b13c531"><td class="memItemLeft" align="right" valign="top">QPixmap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a6abe07ac863c6a3b5dc9ac973b13c531">mCapturedPixmap</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2fdd05a7ac35fdc97b0976d760bcdad9"></a>
@@ -141,9 +157,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    :QObject(parent)</div>
-<div class="line">        , mIsCapturing(<span class="keyword">false</span>)</div>
-<div class="line">        , mCancel(<span class="keyword">false</span>)</div>
-<div class="line">        , mLastPoint(0, 0)</div>
+<div class="line">        , <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">mIsCapturing</a>(<span class="keyword">false</span>)</div>
+<div class="line">        , <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a>(<span class="keyword">false</span>)</div>
+<div class="line">        , <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a02b8cbbd292704d30f4b04d75a4eb747">mLastPoint</a>(0, 0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -170,6 +186,108 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a8283bde80afb116ee8278ed049493372"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWindowCaptureDelegate::drawSelectionRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    RECT windowRect;</div>
+<div class="line">    <span class="keywordflow">if</span> (GetWindowRect(<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a>, &amp;windowRect))</div>
+<div class="line">    {</div>
+<div class="line">        HDC hDC;</div>
+<div class="line">        HPEN hOldPen;</div>
+<div class="line">        HBRUSH hOldBrush;</div>
+<div class="line"></div>
+<div class="line">        hDC = GetDC(NULL);</div>
+<div class="line"></div>
+<div class="line">        hOldPen = (HPEN)SelectObject(hDC, CreatePen(PS_SOLID, 5, RGB(255, 0, 0)));</div>
+<div class="line">        hOldBrush = (HBRUSH)SelectObject(hDC, GetStockObject(NULL_BRUSH));</div>
+<div class="line"></div>
+<div class="line">        Rectangle(hDC, windowRect.left + 1, windowRect.top + 1, windowRect.right - 1, windowRect.bottom - 1);</div>
+<div class="line"></div>
+<div class="line">        SelectObject(hDC, hOldBrush);</div>
+<div class="line">        DeleteObject(SelectObject(hDC, hOldPen));</div>
+<div class="line"></div>
+<div class="line">        ReleaseDC(NULL, hDC);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d2b/class_u_b_window_capture_delegate_a8283bde80afb116ee8278ed049493372_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe77f957f9d689328d16c851026d7959"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowCaptureDelegate::eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(target);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// once the application is deactivated, it means that the user clicked somewhere else and we shall</span></div>
+<div class="line">    <span class="comment">// take the capture</span></div>
+<div class="line">    <span class="keywordflow">if</span> (event-&gt;type() == QEvent::MouseButtonPress || <span class="keyword">event</span>-&gt;type() == QEvent::WindowDeactivate)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">mIsCapturing</a> = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event-&gt;type() == QEvent::KeyPress)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a> = <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a1344c7c1a7a30b52c689f489d2d13317"></a>
 <div class="memitem">
 <div class="memproto">
@@ -183,32 +301,32 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mIsCapturing = <span class="keyword">true</span>;</div>
-<div class="line">    mCancel = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">mIsCapturing</a> = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a> = <span class="keyword">false</span>;</div>
 <div class="line">    qApp-&gt;installEventFilter(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">while</span> (mIsCapturing &amp;&amp; !mCancel)</div>
+<div class="line">    <span class="keywordflow">while</span> (<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">mIsCapturing</a> &amp;&amp; !<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a>)</div>
 <div class="line">    {</div>
 <div class="line">        QPoint curPos = QCursor::pos();</div>
-<div class="line">        <span class="keywordflow">if</span> (mLastPoint != curPos)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a02b8cbbd292704d30f4b04d75a4eb747">mLastPoint</a> != curPos)</div>
 <div class="line">        {</div>
-<div class="line">            processPos(curPos);</div>
-<div class="line">            mLastPoint = curPos;</div>
+<div class="line">            <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a1147e68a6ec9389176e8232c083e318d">processPos</a>(curPos);</div>
+<div class="line">            <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a02b8cbbd292704d30f4b04d75a4eb747">mLastPoint</a> = curPos;</div>
 <div class="line">        }</div>
-<div class="line">        drawSelectionRect();</div>
+<div class="line">        <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a8283bde80afb116ee8278ed049493372">drawSelectionRect</a>();</div>
 <div class="line">        qApp-&gt;processEvents();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!mCancel)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a>)</div>
 <div class="line">    {</div>
-<div class="line">        BringWindowToTop(mCurrentWindow);</div>
-<div class="line">        RedrawWindow(mCurrentWindow, NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN);</div>
+<div class="line">        BringWindowToTop(<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a>);</div>
+<div class="line">        RedrawWindow(<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a>, NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN);</div>
 <div class="line">        QWaitCondition sleep;</div>
 <div class="line">        QMutex mutex;</div>
 <div class="line">        mutex.lock();</div>
 <div class="line">        sleep.wait(&amp;mutex, 200);</div>
 <div class="line">        mutex.unlock();</div>
-<div class="line">        mCapturedPixmap = QPixmap::grabWindow(mCurrentWindow);</div>
+<div class="line">        <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a6abe07ac863c6a3b5dc9ac973b13c531">mCapturedPixmap</a> = QPixmap::grabWindow(<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a>);</div>
 <div class="line">        <span class="keywordflow">return</span> QDialog::Accepted;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
@@ -218,6 +336,15 @@ Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d2b/class_u_b_window_capture_delegate_a1344c7c1a7a30b52c689f489d2d13317_cgraph.svg" width="432" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a2777e6726b1b363ac5c82fa4ce8b3858"></a>
@@ -233,14 +360,162 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mCapturedPixmap;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a6abe07ac863c6a3b5dc9ac973b13c531">mCapturedPixmap</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a1147e68a6ec9389176e8232c083e318d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWindowCaptureDelegate::processPos </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pPoint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    POINT wPoint;</div>
+<div class="line"></div>
+<div class="line">    wPoint.x = pPoint.x();</div>
+<div class="line">    wPoint.y = pPoint.y();</div>
+<div class="line">    HWND desktop = GetDesktopWindow();</div>
+<div class="line">    HWND newWindow = ChildWindowFromPointEx(desktop, wPoint, CWP_SKIPINVISIBLE | CWP_SKIPTRANSPARENT);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a> != newWindow &amp;&amp; newWindow != desktop)</div>
+<div class="line">    {</div>
+<div class="line">        RedrawWindow(NULL, NULL, NULL, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN);</div>
+<div class="line">        <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a> = newWindow;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d2b/class_u_b_window_capture_delegate_a1147e68a6ec9389176e8232c083e318d_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ad41ed968797c96ce6f7ed23f789ba56b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowCaptureDelegate::mCancel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6abe07ac863c6a3b5dc9ac973b13c531"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap UBWindowCaptureDelegate::mCapturedPixmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a212faa47ebf2607ca11459942e411813"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HWND UBWindowCaptureDelegate::mCurrentWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6863bcd2bbddbb8406491f3108e0e13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowCaptureDelegate::mIsCapturing</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a02b8cbbd292704d30f4b04d75a4eb747"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint UBWindowCaptureDelegate::mLastPoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../df/dac/_u_b_window_capture_delegate__win_8h_source.html">UBWindowCaptureDelegate_win.h</a></li>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../d7/da8/_u_b_window_capture_delegate__win_8cpp.html">UBWindowCaptureDelegate_win.cpp</a></li>
+<li><a class="el" href="../../df/dac/_u_b_window_capture_delegate__win_8h_source.html">UBWindowCaptureDelegate_win.h</a></li>
+<li><a class="el" href="../../d7/da8/_u_b_window_capture_delegate__win_8cpp.html">UBWindowCaptureDelegate_win.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -248,7 +523,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d2b/class_u_b_window_capture_delegate.html">UBWindowCaptureDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

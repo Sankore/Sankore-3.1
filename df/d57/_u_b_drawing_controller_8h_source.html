@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/board/UBDrawingController.h Source File</title>
+<title>Open-Sankoré: UBDrawingController.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -141,8 +141,8 @@ $(document).ready(function(){initNavTree('df/d57/_u_b_drawing_controller_8h_sour
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Q_OBJECT;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>(QObject * parent = 0);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a381f5fe1a1745d30bc1abb102ebb3c15">UBDrawingController</a>(QObject * parent = 0);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a852d945c07808d707e564a5b42c925aa">~UBDrawingController</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
@@ -167,11 +167,11 @@ $(document).ready(function(){initNavTree('df/d57/_u_b_drawing_controller_8h_sour
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a08b17daa8e837ad621058156d633c518">   61</a></span>&#160;        <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html">UBAbstractDrawRuler</a>* <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a08b17daa8e837ad621058156d633c518">mActiveRuler</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3e260cf4d46a9fbefadb3fcd5b68f214">   63</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3e260cf4d46a9fbefadb3fcd5b68f214">setInDestopMode</a>(<span class="keywordtype">bool</span> mode){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                mIsDesktopMode = mode;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34">mIsDesktopMode</a> = mode;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ae78d73edf7b585f742229d5766f83efc">   67</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ae78d73edf7b585f742229d5766f83efc">isInDesktopMode</a>(){</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> mIsDesktopMode;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34">mIsDesktopMode</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">public</span> slots:</div>
@@ -189,26 +189,26 @@ $(document).ready(function(){initNavTree('df/d57/_u_b_drawing_controller_8h_sour
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a42605540fe8451289997d9b61a89e642">colorIndexChanged</a>(<span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> mStylusTool;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> mLatestDrawingTool;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">bool</span> mIsDesktopMode;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">   86</a></span>&#160;        <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2e952d506b3d17402e734bfd562a35c6">mStylusTool</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a18a3b27b7b2845a4a4d38d8c0eb1199a">   87</a></span>&#160;        <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9">UBStylusTool::Enum</a> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a18a3b27b7b2845a4a4d38d8c0eb1199a">mLatestDrawingTool</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34">   88</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a3ecfdbe192a5bec4e240c8b59bcf1c34">mIsDesktopMode</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>* sDrawingController;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">   90</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html">UBDrawingController</a>* <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a1937c73768c1a29e36423cf9ae6b36a1">sDrawingController</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">private</span> slots:</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> penToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> eraserToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> markerToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> selectorToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> playToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> handToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> zoomInToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> zoomOutToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> pointerToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> lineToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> textToolSelected(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> captureToolSelected(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac50b8d2611584f1b6ce34246bcd89ec6">penToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac9bd7039ea57fe9a8162b31ed4758148">eraserToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#ac4008b36aa26e54eb31c34525eda6b7b">markerToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a26cd871f064f2f1949bd3b46982b7c18">selectorToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a684d708764de024a6ef0b77d14b7f0e3">playToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#af8d76f9b5b29b793a0b2b710cd7a970b">handToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#afb286643f18871b50ebd9421ca692914">zoomInToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a767b7c2868c614a0905cb9951ed11672">zoomOutToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9ba30f83d57b0caab30ae82bc8f1e1ee">pointerToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a2cbdc9d4445dd8abcc4a59b2a6d28c0d">lineToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#aec62d39119a747c11bf8b46f9e19b7ca">textToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a6746622a5b605c5de8e3d5bdabf05aee">captureToolSelected</a>(<span class="keywordtype">bool</span> checked);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UBDRAWINGCONTROLLER_H_ */</span><span class="preprocessor"></span></div>
@@ -217,8 +217,8 @@ $(document).ready(function(){initNavTree('df/d57/_u_b_drawing_controller_8h_sour
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7fe1c7b98da3fc0ec4355570b26fa0a9.html">board</a></li><li class="navelem"><a class="el" href="../../df/d57/_u_b_drawing_controller_8h.html">UBDrawingController.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_21ae343ca4b836b1b9ba61c19408c2b0.html">board</a></li><li class="navelem"><a class="el" href="../../df/d57/_u_b_drawing_controller_8h.html">UBDrawingController.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d0/dea/class_u_b_features_path_item_de
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/ddf/class_u_b_features_path_item_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesPathItemDelegate Class Reference</div>  </div>
@@ -125,6 +126,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9037f4dc05c2807e717316f14b96f75c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a9037f4dc05c2807e717316f14b96f75c">~UBFeaturesPathItemDelegate</a> ()</td></tr>
 <tr class="memitem:a41f49cb6c3a3452463f2cdd6a95ca40c"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a41f49cb6c3a3452463f2cdd6a95ca40c">displayText</a> (const QVariant &amp;value, const QLocale &amp;locale) const </td></tr>
 <tr class="memitem:a89a4e70e902375f5c5f2032442bda8b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a89a4e70e902375f5c5f2032442bda8b3">paint</a> (QPainter *painter, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4e452291d04a98bbfe65714f0a69aa6c"><td class="memItemLeft" align="right" valign="top">QPixmap *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a4e452291d04a98bbfe65714f0a69aa6c">arrowPixmap</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae453ca0b18e0642683a2d08638a3765c"></a>
@@ -142,7 +147,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                                      : QStyledItemDelegate(parent)</div>
 <div class="line">{</div>
-<div class="line">    arrowPixmap = <span class="keyword">new</span> QPixmap(<span class="stringliteral">&quot;:images/navig_arrow.png&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a4e452291d04a98bbfe65714f0a69aa6c">arrowPixmap</a> = <span class="keyword">new</span> QPixmap(<span class="stringliteral">&quot;:images/navig_arrow.png&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -160,10 +165,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> ( arrowPixmap )</div>
+<div class="line">    <span class="keywordflow">if</span> ( <a class="code" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a4e452291d04a98bbfe65714f0a69aa6c">arrowPixmap</a> )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> arrowPixmap;</div>
-<div class="line">        arrowPixmap = NULL;</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a4e452291d04a98bbfe65714f0a69aa6c">arrowPixmap</a>;</div>
+<div class="line">        <a class="code" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a4e452291d04a98bbfe65714f0a69aa6c">arrowPixmap</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -244,7 +249,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">    QRect rect = option.rect;</div>
 <div class="line">    <span class="keywordflow">if</span> ( !feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a4ceaa848c777bba908e70888cc8b0008">getFullPath</a>().isEmpty() )</div>
 <div class="line">    {</div>
-<div class="line">        painter-&gt;drawPixmap( rect.left() - 10, rect.center().y() - 5, *arrowPixmap );</div>
+<div class="line">        painter-&gt;drawPixmap( rect.left() - 10, rect.center().y() - 5, *<a class="code" href="../../d0/dea/class_u_b_features_path_item_delegate.html#a4e452291d04a98bbfe65714f0a69aa6c">arrowPixmap</a> );</div>
 <div class="line">    }</div>
 <div class="line">    painter-&gt;drawImage( rect.left() + 5, rect.center().y() - 5, feature.<a class="code" href="../../db/d98/class_u_b_feature.html#a624b02d751fd78a6698e51d3ef645e2e">getThumbnail</a>().scaledToHeight( 30, Qt::SmoothTransformation ) );</div>
 <div class="line">}</div>
@@ -260,9 +265,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a4e452291d04a98bbfe65714f0a69aa6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPixmap* UBFeaturesPathItemDelegate::arrowPixmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -270,7 +296,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dea/class_u_b_features_path_item_delegate.html">UBFeaturesPathItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

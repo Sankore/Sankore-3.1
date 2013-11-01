@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d5/d7a/class_u_b_features_model.html',
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d5/de4/class_u_b_features_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesModel Class Reference</div>  </div>
@@ -146,6 +147,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56acbe53b62456a7b3681162e7710e7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7a/class_u_b_features_model.html#a56acbe53b62456a7b3681162e7710e7a">removeRow</a> (int row, const QModelIndex &amp;parent=QModelIndex())</td></tr>
 <tr class="memitem:ad30ab5e1a702838c8664cbfcebad1606"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7a/class_u_b_features_model.html#ad30ab5e1a702838c8664cbfcebad1606">moveData</a> (const <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &amp;source, const <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &amp;destination, Qt::DropAction action, bool deleteManualy=false)</td></tr>
 <tr class="memitem:ae51f107d5d1059a432af52a0832dc3ff"><td class="memItemLeft" align="right" valign="top">Qt::DropActions&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7a/class_u_b_features_model.html#ae51f107d5d1059a432af52a0832dc3ff">supportedDropActions</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2a53446bc9b0c38ead8a63f86d153dac"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab0a3b83d6d44b1836a3334b537ec8932"></a>
@@ -179,7 +184,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">: QAbstractListModel(parent), featuresList(pFeaturesList) {;}</div>
+<div class="fragment"><div class="line">: QAbstractListModel(parent), <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>(pFeaturesList) {;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -230,8 +235,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    beginInsertRows( QModelIndex(), featuresList-&gt;size(), featuresList-&gt;size() );</div>
-<div class="line">    featuresList-&gt;append( item );</div>
+<div class="line">    beginInsertRows( QModelIndex(), <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size(), <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size() );</div>
+<div class="line">    <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;append( item );</div>
 <div class="line">    endInsertRows();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -274,18 +279,18 @@ Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> QVariant();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (role == Qt::DisplayRole) {</div>
-<div class="line">        <span class="keywordflow">return</span> featuresList-&gt;at(index.row()).getDisplayName();</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(index.row()).getDisplayName();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (role == Qt::DecorationRole) {</div>
-<div class="line">        <span class="keywordflow">return</span> QIcon( QPixmap::fromImage(featuresList-&gt;at(index.row()).getThumbnail()));</div>
+<div class="line">        <span class="keywordflow">return</span> QIcon( QPixmap::fromImage(<a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(index.row()).getThumbnail()));</div>
 <div class="line"></div>
 <div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (role == Qt::UserRole) {</div>
-<div class="line">        <span class="keywordflow">return</span> featuresList-&gt;at(index.row()).getVirtualPath();</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(index.row()).getVirtualPath();</div>
 <div class="line"></div>
 <div class="line">    }   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (role == Qt::UserRole + 1) {</div>
 <div class="line">        <span class="comment">//return featuresList-&gt;at(index.row()).getType();</span></div>
-<div class="line">        <a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> f = featuresList-&gt;at(index.row());</div>
+<div class="line">        <a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> f = <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(index.row());</div>
 <div class="line">        <span class="keywordflow">return</span> QVariant::fromValue( f );</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -340,10 +345,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; featuresList-&gt;size(); ++i )</div>
+<div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size(); ++i )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> ( !QString::compare( featuresList-&gt;at(i).getFullPath().toString(), path, Qt::CaseInsensitive ) &amp;&amp;</div>
-<div class="line">            !QString::compare( featuresList-&gt;at(i).getVirtualPath(), <span class="stringliteral">&quot;/root/favorites&quot;</span>, Qt::CaseInsensitive ) )</div>
+<div class="line">        <span class="keywordflow">if</span> ( !QString::compare( <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(i).getFullPath().toString(), path, Qt::CaseInsensitive ) &amp;&amp;</div>
+<div class="line">            !QString::compare( <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(i).getVirtualPath(), <span class="stringliteral">&quot;/root/favorites&quot;</span>, Qt::CaseInsensitive ) )</div>
 <div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a56acbe53b62456a7b3681162e7710e7a">removeRow</a>( i, QModelIndex() );</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
@@ -365,7 +370,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a4f5b07854d8eb551451e6e1c591fcd52_icgraph.svg" width="651" height="87"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a4f5b07854d8eb551451e6e1c591fcd52_icgraph.svg" width="100%" height="489"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -385,9 +390,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; featuresList-&gt;size(); ++i )</div>
+<div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size(); ++i )</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> ( !QString::compare( featuresList-&gt;at(i).getFullPath().toString(), path, Qt::CaseInsensitive ) )</div>
+<div class="line">        <span class="keywordflow">if</span> ( !QString::compare( <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;at(i).getFullPath().toString(), path, Qt::CaseInsensitive ) )</div>
 <div class="line">        {</div>
 <div class="line">            <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a56acbe53b62456a7b3681162e7710e7a">removeRow</a>( i, QModelIndex() );</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
@@ -409,7 +414,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a73c6727d3fd9f3dc2bdb0b62ab27370c_icgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a73c6727d3fd9f3dc2bdb0b62ab27370c_icgraph.svg" width="100%" height="408"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -429,7 +434,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordtype">int</span> i = featuresList-&gt;indexOf(feature);</div>
+<div class="line">    <span class="keywordtype">int</span> i = <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;indexOf(feature);</div>
 <div class="line">    <span class="keywordflow">if</span> (i == -1) {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;no matches in deleting item from UBFEaturesModel&quot;</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
@@ -543,7 +548,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ad09e3d23fe39f4e9f727b38b6ebac1ea_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ad09e3d23fe39f4e9f727b38b6ebac1ea_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -614,7 +620,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a> *<a class="code" href="../../d5/d7a/class_u_b_features_model.html#a35db03ecc660325c75b346a4ce75e293">mimeData</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d29/class_u_b_features_mime_data.html">UBFeaturesMimeData</a>();</div>
 <div class="line">    QList &lt;QUrl&gt; urlList;</div>
-<div class="line">    QList &lt;UBFeature&gt; featuresList;</div>
+<div class="line">    QList &lt;UBFeature&gt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>;</div>
 <div class="line">    QByteArray typeData;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">foreach</span> (QModelIndex index, indexes) {</div>
@@ -634,7 +640,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    mimeData-&gt;setUrls(urlList);</div>
 <div class="line">    mimeData-&gt;<a class="code" href="../../d9/d29/class_u_b_features_mime_data.html#a1319851bb37d9c6ee49d62a67cb73e9f">setFeatures</a>(featuresList);</div>
-<div class="line">    mimeData-&gt;setData(mimeSankoreFeatureTypes, typeData);</div>
+<div class="line">    mimeData-&gt;setData(<a class="code" href="../../d3/dfa/_u_b_features_widget_8cpp.html#a22a9b5ede64f809b542fa399847a023b">mimeSankoreFeatureTypes</a>, typeData);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a35db03ecc660325c75b346a4ce75e293">mimeData</a>;</div>
 <div class="line">}</div>
@@ -644,7 +650,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a35db03ecc660325c75b346a4ce75e293_cgraph.svg" width="414" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a35db03ecc660325c75b346a4ce75e293_cgraph.svg" width="414" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -743,7 +750,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="comment">//Passing all the source container ubdating dependancy pathes</span></div>
 <div class="line">    <span class="keywordflow">if</span> (sourceType == <a class="code" href="../../d2/dcd/_u_b_features_controller_8h.html#a1ae525bf6101c0de35195259d4a6674fa0392c3a4bd4f52e04de1e0ba3ef540e9">FEATURE_FOLDER</a>) {</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; featuresList-&gt;count(); i++) {</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;count(); i++) {</div>
 <div class="line"></div>
 <div class="line">            <a class="code" href="../../db/d98/class_u_b_feature.html">UBFeature</a> &amp;curFeature = (*featuresList)[i];</div>
 <div class="line"></div>
@@ -801,7 +808,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ad30ab5e1a702838c8664cbfcebad1606_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ad30ab5e1a702838c8664cbfcebad1606_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -810,7 +818,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ad30ab5e1a702838c8664cbfcebad1606_icgraph.svg" width="475" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ad30ab5e1a702838c8664cbfcebad1606_icgraph.svg" width="100%" height="408"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -842,11 +850,11 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( row &lt; 0 )</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">    <span class="keywordflow">if</span> ( row &gt;= featuresList-&gt;size() )</div>
+<div class="line">    <span class="keywordflow">if</span> ( row &gt;= <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size() )</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    beginRemoveRows( parent, row, row );</div>
 <div class="line">    <span class="comment">//featuresList-&gt;remove( row );</span></div>
-<div class="line">    featuresList-&gt;erase( featuresList-&gt;begin() + row );</div>
+<div class="line">    <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;erase( <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;begin() + row );</div>
 <div class="line">    endRemoveRows();</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
@@ -856,7 +864,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a56acbe53b62456a7b3681162e7710e7a_icgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_a56acbe53b62456a7b3681162e7710e7a_icgraph.svg" width="100%" height="517"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -894,11 +902,11 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> ( row &lt; 0 )</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">    <span class="keywordflow">if</span> ( row + count &gt; featuresList-&gt;size() )</div>
+<div class="line">    <span class="keywordflow">if</span> ( row + count &gt; <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size() )</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    beginRemoveRows( parent, row, row + count - 1 );</div>
 <div class="line">    <span class="comment">//featuresList-&gt;remove( row, count );</span></div>
-<div class="line">    featuresList-&gt;erase( featuresList-&gt;begin() + row, featuresList-&gt;begin() + row + count );</div>
+<div class="line">    <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;erase( <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;begin() + row, <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;begin() + row + count );</div>
 <div class="line">    endRemoveRows();</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
@@ -908,7 +916,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ac1a9616cd7288cc26b27fc6a8dbf04a4_icgraph.svg" width="422" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d7a/class_u_b_features_model_ac1a9616cd7288cc26b27fc6a8dbf04a4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -928,10 +936,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (parent.isValid() || !featuresList)</div>
+<div class="line">    <span class="keywordflow">if</span> (parent.isValid() || !<a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>)</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">        <span class="keywordflow">return</span> featuresList-&gt;size();</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7a/class_u_b_features_model.html#a2a53446bc9b0c38ead8a63f86d153dac">featuresList</a>-&gt;size();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -960,9 +968,30 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a2a53446bc9b0c38ead8a63f86d153dac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a>&gt;* UBFeaturesModel::featuresList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -970,7 +999,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d7a/class_u_b_features_model.html">UBFeaturesModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

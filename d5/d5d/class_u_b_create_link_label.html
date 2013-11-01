@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d5/d5d/class_u_b_create_link_label.htm
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/db6/class_u_b_create_link_label-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBCreateLinkLabel Class Reference</div>  </div>
@@ -134,6 +135,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a16fbdb4f813a2d8823b350f2cf3ffa60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/class_u_b_create_link_label.html#a16fbdb4f813a2d8823b350f2cf3ffa60">dropEvent</a> (QDropEvent *event)</td></tr>
 <tr class="memitem:ae4137d2f13768e576ea7cbe826e2f5f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/class_u_b_create_link_label.html#ae4137d2f13768e576ea7cbe826e2f5f3">dragEnterEvent</a> (QDragEnterEvent *event)</td></tr>
 <tr class="memitem:ab1c9f5f5e80ce904019c8f45e792e00b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/class_u_b_create_link_label.html#ab1c9f5f5e80ce904019c8f45e792e00b">dragLeaveEvent</a> (QDragLeaveEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1405ffd79a5f5c39716d4da867af1d6e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e">mInitialText</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad51146160bca1f32360d79ea0b806302"></a>
@@ -171,8 +176,8 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    QLabel(parent)</div>
 <div class="line">{</div>
 <div class="line">    setAcceptDrops(<span class="keyword">true</span>);</div>
-<div class="line">    mInitialText = labelText;</div>
-<div class="line">    setText(mInitialText);</div>
+<div class="line">    <a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e">mInitialText</a> = labelText;</div>
+<div class="line">    setText(<a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e">mInitialText</a>);</div>
 <div class="line">    setMinimumSize(200, 200);</div>
 <div class="line">    setFrameStyle(QFrame::Sunken | QFrame::StyledPanel);</div>
 <div class="line">    setAlignment(Qt::AlignCenter);</div>
@@ -234,7 +239,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    setText(mInitialText);</div>
+<div class="line">    setText(<a class="code" href="../../d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e">mInitialText</a>);</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -335,9 +340,30 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a1405ffd79a5f5c39716d4da867af1d6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBCreateLinkLabel::mInitialText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp.html">UBCreateLinkPalette.cpp</a></li>
+<li><a class="el" href="../../d7/d9e/_u_b_create_link_palette_8h_source.html">UBCreateLinkPalette.h</a></li>
+<li><a class="el" href="../../d6/dec/_u_b_create_link_palette_8cpp.html">UBCreateLinkPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -345,7 +371,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d5d/class_u_b_create_link_label.html">UBCreateLinkLabel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

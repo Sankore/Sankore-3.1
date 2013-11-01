@@ -107,6 +107,9 @@ $(document).ready(function(){initNavTree('d2/dd6/class_u_b_document_thumbnail_wi
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/dc4/class_u_b_document_thumbnail_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentThumbnailWidget Class Reference</div>  </div>
@@ -180,6 +183,23 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a277497abe2368939b696093d96cff9ff inherit pro_methods_class_u_b_thumbnail_widget"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a277497abe2368939b696093d96cff9ff">focusInEvent</a> (QFocusEvent *event)</td></tr>
 <tr class="memitem:af4e84c1474f32521f8b2470db69fb620 inherit pro_methods_class_u_b_thumbnail_widget"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/class_u_b_thumbnail_widget.html#af4e84c1474f32521f8b2470db69fb620">spacing</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a2fd25d4ed58792c13753da476176a569"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a2fd25d4ed58792c13753da476176a569">autoScroll</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7e69d58206f5d0da7e447c89ff235032"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a7e69d58206f5d0da7e447c89ff235032">deleteDropCaret</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a95d91dbf8a31e2985cad9bd4effff74d"><td class="memItemLeft" align="right" valign="top">QGraphicsRectItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a></td></tr>
+<tr class="memitem:aa14dae7c44970587c75522e8c0e40cb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html">UBSceneThumbnailPixmap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a></td></tr>
+<tr class="memitem:ad44565534cfe0cf370883f240e20645b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#ad44565534cfe0cf370883f240e20645b">mDropIsRight</a></td></tr>
+<tr class="memitem:a487d21570b22d34f3f1f7b92cc87a54d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a487d21570b22d34f3f1f7b92cc87a54d">mDragEnabled</a></td></tr>
+<tr class="memitem:a42806c7dbe2db8bd132550038ae090c9"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a></td></tr>
+<tr class="memitem:a1860138257ea59fae28c1560d7774635"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_u_b_thumbnail_widget"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_u_b_thumbnail_widget')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../d2/d7e/class_u_b_thumbnail_widget.html">UBThumbnailWidget</a></td></tr>
@@ -207,16 +227,25 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#ac6aeee1050bfa0a5b6931da8eae826fb">UBThumbnailWidget</a>(parent)</div>
-<div class="line">    , mDropCaretRectItem(0)</div>
-<div class="line">    , mClosestDropItem(0)</div>
-<div class="line">        , mDragEnabled(<span class="keyword">true</span>)</div>
-<div class="line">    , mScrollMagnitude(0)</div>
+<div class="line">    , <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a>(0)</div>
+<div class="line">        , <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a487d21570b22d34f3f1f7b92cc87a54d">mDragEnabled</a>(<span class="keyword">true</span>)</div>
+<div class="line">    , <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a>(0)</div>
 <div class="line">{</div>
 <div class="line">        <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#ae00409bc4f70482e57523e94583de713">bCanDrag</a> = <span class="keyword">false</span>;</div>
-<div class="line">    mScrollTimer = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
-<div class="line">        connect(mScrollTimer, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(autoScroll()));</div>
+<div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a> = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
+<div class="line">        connect(<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>, SIGNAL(timeout()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a2fd25d4ed58792c13753da476176a569">autoScroll</a>()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a60c5664a0b26615ebd2beb5d8aba8f68_cgraph.svg" width="472" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a8b990730d9bc1281c561b3cdf0152035"></a>
@@ -246,6 +275,81 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a2fd25d4ed58792c13753da476176a569"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentThumbnailWidget::autoScroll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">        this-&gt;verticalScrollBar()-&gt;setValue(this-&gt;verticalScrollBar()-&gt;value() + <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a2fd25d4ed58792c13753da476176a569_icgraph.svg" width="472" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e69d58206f5d0da7e447c89ff235032"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentThumbnailWidget::deleteDropCaret </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a> &amp;&amp; scene())</div>
+<div class="line">    {</div>
+<div class="line">        scene()-&gt;removeItem(<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>);</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>;</div>
+<div class="line">        <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a7e69d58206f5d0da7e447c89ff235032_icgraph.svg" width="464" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a7afb18681a925b9526145952fdade960"></a>
 <div class="memitem">
 <div class="memproto">
@@ -259,14 +363,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mDragEnabled;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a487d21570b22d34f3f1f7b92cc87a54d">mDragEnabled</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a7afb18681a925b9526145952fdade960_icgraph.svg" width="464" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -330,15 +434,24 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(event);</div>
-<div class="line">        <span class="keywordflow">if</span> (mScrollTimer-&gt;isActive())</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;isActive())</div>
 <div class="line">        {</div>
-<div class="line">                mScrollMagnitude = 0;</div>
-<div class="line">                mScrollTimer-&gt;stop();</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a> = 0;</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;stop();</div>
 <div class="line">        }</div>
-<div class="line">    deleteDropCaret();</div>
+<div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a7e69d58206f5d0da7e447c89ff235032">deleteDropCaret</a>();</div>
 <div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a44e0490bf9db7e0281d00e9a2216b612">UBThumbnailWidget::dragLeaveEvent</a>(event);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a44e0490bf9db7e0281d00e9a2216b612_cgraph.svg" width="464" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a03e78590fcc5b0d067b5d203f046253b"></a>
@@ -369,18 +482,18 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <span class="keywordtype">int</span> bottomDist = boundingFrame.bottom() - <span class="keyword">event</span>-&gt;pos().y(), topDist = boundingFrame.top() - <span class="keyword">event</span>-&gt;pos().y();</div>
 <div class="line">        <span class="keywordflow">if</span>(qAbs(bottomDist) &lt;= SCROLL_DISTANCE)</div>
 <div class="line">        {</div>
-<div class="line">                mScrollMagnitude = (SCROLL_DISTANCE - bottomDist)*4;</div>
-<div class="line">                <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !mScrollTimer-&gt;isActive()) mScrollTimer-&gt;start(100);</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a> = (SCROLL_DISTANCE - bottomDist)*4;</div>
+<div class="line">                <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;isActive()) <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;start(100);</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(qAbs(topDist) &lt;= SCROLL_DISTANCE)</div>
 <div class="line">        {</div>
-<div class="line">                mScrollMagnitude = (- SCROLL_DISTANCE - topDist)*4;</div>
-<div class="line">                <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !mScrollTimer-&gt;isActive()) mScrollTimer-&gt;start(100);</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a> = (- SCROLL_DISTANCE - topDist)*4;</div>
+<div class="line">                <span class="keywordflow">if</span>(verticalScrollBar()-&gt;isVisible() &amp;&amp; !<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;isActive()) <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;start(100);</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">                mScrollMagnitude = 0;</div>
-<div class="line">                mScrollTimer-&gt;stop();</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a> = 0;</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;stop();</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        QList&lt;UBSceneThumbnailPixmap*&gt; pixmapItems;</div>
@@ -393,7 +506,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> minDistance = 0;</div>
 <div class="line">    QGraphicsItem *underlyingItem = itemAt(event-&gt;pos());</div>
-<div class="line">    mClosestDropItem = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html">UBSceneThumbnailPixmap</a>*<span class="keyword">&gt;</span>(underlyingItem);</div>
+<div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a> = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html">UBSceneThumbnailPixmap</a>*<span class="keyword">&gt;</span>(underlyingItem);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> pageIndex = -1;</div>
 <div class="line">    <span class="keywordflow">if</span>(mClosestDropItem){</div>
@@ -430,13 +543,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            mClosestDropItem-&gt;pos().x() + mClosestDropItem-&gt;boundingRect().width() * scale / 2,</div>
 <div class="line">            mClosestDropItem-&gt;pos().y() + mClosestDropItem-&gt;boundingRect().height() * scale / 2);</div>
 <div class="line"></div>
-<div class="line">        mDropIsRight = mapToScene(event-&gt;pos()).x() &gt; itemCenter.x();</div>
+<div class="line">        <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#ad44565534cfe0cf370883f240e20645b">mDropIsRight</a> = mapToScene(event-&gt;pos()).x() &gt; itemCenter.x();</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (!mDropCaretRectItem &amp;&amp; <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a2ab6d6162aac89e9656d63aa358cdd20">selectedItems</a>().count() &lt; <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.count())</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a> &amp;&amp; <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a2ab6d6162aac89e9656d63aa358cdd20">selectedItems</a>().count() &lt; <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.count())</div>
 <div class="line">        {</div>
-<div class="line">            mDropCaretRectItem = <span class="keyword">new</span> QGraphicsRectItem(0, scene());</div>
-<div class="line">            mDropCaretRectItem-&gt;setPen(QPen(Qt::darkGray));</div>
-<div class="line">            mDropCaretRectItem-&gt;setBrush(QBrush(Qt::lightGray));</div>
+<div class="line">            <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a> = <span class="keyword">new</span> QGraphicsRectItem(0, scene());</div>
+<div class="line">            <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>-&gt;setPen(QPen(Qt::darkGray));</div>
+<div class="line">            <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>-&gt;setBrush(QBrush(Qt::lightGray));</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        QRectF dropCaretRect(</div>
@@ -445,19 +558,19 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            3,</div>
 <div class="line">            mClosestDropItem-&gt;boundingRect().height() * scale);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (mDropCaretRectItem)</div>
-<div class="line">            mDropCaretRectItem-&gt;setRect(dropCaretRect);</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>)</div>
+<div class="line">            <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a95d91dbf8a31e2985cad9bd4effff74d">mDropCaretRectItem</a>-&gt;setRect(dropCaretRect);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keyword">event</span>-&gt;acceptProposedAction();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a03e78590fcc5b0d067b5d203f046253b_cgraph.svg" width="611" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a03e78590fcc5b0d067b5d203f046253b_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -485,16 +598,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">        <span class="keywordflow">if</span> (mScrollTimer-&gt;isActive())</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;isActive())</div>
 <div class="line">        {</div>
-<div class="line">                mScrollMagnitude = 0;</div>
-<div class="line">                mScrollTimer-&gt;stop();</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a1860138257ea59fae28c1560d7774635">mScrollMagnitude</a> = 0;</div>
+<div class="line">                <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a42806c7dbe2db8bd132550038ae090c9">mScrollTimer</a>-&gt;stop();</div>
 <div class="line">        }</div>
-<div class="line">        deleteDropCaret();</div>
+<div class="line">        <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a7e69d58206f5d0da7e447c89ff235032">deleteDropCaret</a>();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mClosestDropItem)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordtype">int</span> targetIndex = mDropIsRight ? <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.indexOf(mClosestDropItem) + 1 : <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.indexOf(mClosestDropItem);</div>
+<div class="line">        <span class="keywordtype">int</span> targetIndex = <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#ad44565534cfe0cf370883f240e20645b">mDropIsRight</a> ? <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.indexOf(<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a>) + 1 : <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.indexOf(<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a>);</div>
 <div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../da/dc6/class_u_b_document_container.html#ad573f4f006c0eac302455c6bd20421a7">UBDocumentContainer::pageFromSceneIndex</a>(targetIndex) == 0){</div>
 <div class="line">                <span class="keyword">event</span>-&gt;ignore();</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
@@ -509,7 +622,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (1 == mimeDataItems.count() &amp;&amp;</div>
-<div class="line">            (mimeDataItems.at(0).sceneIndex() == <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.indexOf(mClosestDropItem) ||</div>
+<div class="line">            (mimeDataItems.at(0).sceneIndex() == <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#a43bfe498d5772daba93bdd852b8d4fa3">mGraphicItems</a>.indexOf(<a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#aa14dae7c44970587c75522e8c0e40cb1">mClosestDropItem</a>) ||</div>
 <div class="line">             targetIndex == mimeDataItems.at(0).sceneIndex() ||</div>
 <div class="line">             targetIndex == mimeDataItems.at(0).sceneIndex() + 1))</div>
 <div class="line">        {</div>
@@ -543,12 +656,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a0d3a8e207cf1de3b0de65d47f95563b9">UBThumbnailWidget::dropEvent</a>(event);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a0d3a8e207cf1de3b0de65d47f95563b9_cgraph.svg" width="656" height="302"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a0d3a8e207cf1de3b0de65d47f95563b9_cgraph.svg" width="100%" height="578"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -571,11 +684,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d2/d7e/class_u_b_thumbnail_widget.html#ad8826d4cf4305cbfc37ef4316f80cb04">selectItemAt</a>(index);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_ada7873c826dbc17fd0cd15f9133eccf7_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -647,12 +760,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a6d3fecab28e74030ec98a9b24a71b07f">UBThumbnailWidget::mouseMoveEvent</a>(event);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a6d3fecab28e74030ec98a9b24a71b07f_cgraph.svg" width="656" height="334"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a6d3fecab28e74030ec98a9b24a71b07f_cgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -696,11 +809,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a47b8224f86290c3f6f418c5ce170d902_icgraph.svg" width="464" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -721,7 +834,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mDragEnabled = enabled;</div>
+<div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a487d21570b22d34f3f1f7b92cc87a54d">mDragEnabled</a> = enabled;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -770,16 +883,146 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    deleteDropCaret();</div>
+<div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a7e69d58206f5d0da7e447c89ff235032">deleteDropCaret</a>();</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html#a2ae5e6495f1a4d0841ffdf94d16eadd9">UBThumbnailWidget::setGraphicsItems</a>(pGraphicsItems, pItemPaths, pLabels, pMimeType);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dd6/class_u_b_document_thumbnail_widget_a2ae5e6495f1a4d0841ffdf94d16eadd9_cgraph.svg" width="464" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa14dae7c44970587c75522e8c0e40cb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d64/class_u_b_scene_thumbnail_pixmap.html">UBSceneThumbnailPixmap</a>* UBDocumentThumbnailWidget::mClosestDropItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a487d21570b22d34f3f1f7b92cc87a54d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDocumentThumbnailWidget::mDragEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a95d91dbf8a31e2985cad9bd4effff74d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsRectItem* UBDocumentThumbnailWidget::mDropCaretRectItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad44565534cfe0cf370883f240e20645b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDocumentThumbnailWidget::mDropIsRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1860138257ea59fae28c1560d7774635"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBDocumentThumbnailWidget::mScrollMagnitude</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a42806c7dbe2db8bd132550038ae090c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* UBDocumentThumbnailWidget::mScrollTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d1/dec/_u_b_document_thumbnail_widget_8h_source.html">UBDocumentThumbnailWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dff/_u_b_document_thumbnail_widget_8cpp.html">UBDocumentThumbnailWidget.cpp</a></li>
+<li><a class="el" href="../../d1/dec/_u_b_document_thumbnail_widget_8h_source.html">UBDocumentThumbnailWidget.h</a></li>
+<li><a class="el" href="../../d3/dff/_u_b_document_thumbnail_widget_8cpp.html">UBDocumentThumbnailWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -787,7 +1030,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/dd6/class_u_b_document_thumbnail_widget.html">UBDocumentThumbnailWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

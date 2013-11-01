@@ -10,6 +10,12 @@ var class_u_b_graphics_text_item =
     [ "contentsChanged", "da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc", null ],
     [ "copyItemParameters", "da/d65/class_u_b_graphics_text_item.html#a14c3b9ff16071a306fe0834577aa26fa", null ],
     [ "deepCopy", "da/d65/class_u_b_graphics_text_item.html#a6be4507f88dccb25e1e063ec36cf6f47", null ],
+    [ "documentSizeChanged", "da/d65/class_u_b_graphics_text_item.html#af8e979ce1e9395d000f7b2d68d813009", null ],
+    [ "itemChange", "da/d65/class_u_b_graphics_text_item.html#a1732743d88922274ace18be319b58de6", null ],
+    [ "mouseMoveEvent", "da/d65/class_u_b_graphics_text_item.html#a5924011c38b05741817ec8ebfeb0e82a", null ],
+    [ "mousePressEvent", "da/d65/class_u_b_graphics_text_item.html#a0785fc26e52582a3e7a8491e84d65373", null ],
+    [ "mouseReleaseEvent", "da/d65/class_u_b_graphics_text_item.html#a94b640344c6ba2491448fff42bf1321a", null ],
+    [ "paint", "da/d65/class_u_b_graphics_text_item.html#a6fd257fac2fd660d0c3094ddcac6b367", null ],
     [ "resize", "da/d65/class_u_b_graphics_text_item.html#a9a461e55837ce00341381e2f2bb642e8", null ],
     [ "scene", "da/d65/class_u_b_graphics_text_item.html#a78498298ea53c6baee150a3a04a27f51", null ],
     [ "setColorOnDarkBackground", "da/d65/class_u_b_graphics_text_item.html#af5bcc4a16e675e7d16c0f89a0ef4c4c9", null ],
@@ -22,5 +28,12 @@ var class_u_b_graphics_text_item =
     [ "textHeight", "da/d65/class_u_b_graphics_text_item.html#a7aa93056029f13ae3cdc9a7771e8748e", null ],
     [ "textUndoCommandAdded", "da/d65/class_u_b_graphics_text_item.html#a1b9e41208efe10b9d640ee45c2e2dcec", null ],
     [ "type", "da/d65/class_u_b_graphics_text_item.html#a987608d1449cdcb3b46eb6e6db680cf7", null ],
-    [ "lastUsedTextColor", "da/d65/class_u_b_graphics_text_item.html#a2ef8e51d1f91fc24d65445826fd8b83e", null ]
+    [ "undoCommandAdded", "da/d65/class_u_b_graphics_text_item.html#a183a4cfe37778a09a0c895f3c7e4e88d", null ],
+    [ "lastUsedTextColor", "da/d65/class_u_b_graphics_text_item.html#a2ef8e51d1f91fc24d65445826fd8b83e", null ],
+    [ "mColorOnDarkBackground", "da/d65/class_u_b_graphics_text_item.html#a96807b3041f73ba8130ee2e71eabdef7", null ],
+    [ "mColorOnLightBackground", "da/d65/class_u_b_graphics_text_item.html#a3c9b511a1c0f5de989df3bd229af3110", null ],
+    [ "mLastMousePressTime", "da/d65/class_u_b_graphics_text_item.html#acb8afb9a85f15cb571772b92c5090284", null ],
+    [ "mMultiClickState", "da/d65/class_u_b_graphics_text_item.html#a00a21d653d5ff79a2ce14035a38ae64a", null ],
+    [ "mTextHeight", "da/d65/class_u_b_graphics_text_item.html#a158f10cb3dd0a7efad6d2ccc68430533", null ],
+    [ "mTypeTextHereLabel", "da/d65/class_u_b_graphics_text_item.html#aee1fec11df927ec8ed052888bbca37c9", null ]
 ];

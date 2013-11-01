@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/network/UBCookieJar.cpp File Reference</title>
+<title>Open-Sankoré: UBCookieJar.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,8 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp.html','../
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">UBCookieJar.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -117,13 +118,18 @@ $(document).ready(function(){initNavTree('da/d07/_u_b_cookie_jar_8cpp.html','../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d6c/_u_b_cookie_jar_8cpp__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d6c/_u_b_cookie_jar_8cpp__incl.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac1707bac2fc52daf4ef755b47089373f"><td class="memItemLeft" align="right" valign="top">QT_BEGIN_NAMESPACE QDataStream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/_u_b_cookie_jar_8cpp.html#ac1707bac2fc52daf4ef755b47089373f">operator&lt;&lt;</a> (QDataStream &amp;stream, const QList&lt; QNetworkCookie &gt; &amp;list)</td></tr>
 <tr class="memitem:a5581be6fa03584c956413b8092f65645"><td class="memItemLeft" align="right" valign="top">QDataStream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a5581be6fa03584c956413b8092f65645">operator&gt;&gt;</a> (QDataStream &amp;stream, QList&lt; QNetworkCookie &gt; &amp;list)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0591b0b541979c2aaf9271b1748df2dd"><td class="memItemLeft" align="right" valign="top">static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">JAR_VERSION</a> = 23</td></tr>
 </table>
 <h2>Function Documentation</h2>
 <a class="anchor" id="ac1707bac2fc52daf4ef755b47089373f"></a>
@@ -150,7 +156,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    stream &lt;&lt; JAR_VERSION;</div>
+<div class="line">    stream &lt;&lt; <a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">JAR_VERSION</a>;</div>
 <div class="line">    stream &lt;&lt; quint32(list.size());</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i)</div>
 <div class="line">        stream &lt;&lt; list.at(i).toRawForm();</div>
@@ -188,7 +194,7 @@ Functions</h2></td></tr>
 <div class="line">    quint32 version;</div>
 <div class="line">    stream &gt;&gt; version;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (version != JAR_VERSION)</div>
+<div class="line">    <span class="keywordflow">if</span> (version != <a class="code" href="../../da/d07/_u_b_cookie_jar_8cpp.html#a0591b0b541979c2aaf9271b1748df2dd">JAR_VERSION</a>)</div>
 <div class="line">        <span class="keywordflow">return</span> stream;</div>
 <div class="line"></div>
 <div class="line">    quint32 count;</div>
@@ -211,13 +217,34 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Variable Documentation</h2>
+<a class="anchor" id="a0591b0b541979c2aaf9271b1748df2dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int JAR_VERSION = 23</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_19f67c6f330d7befae2271350854a376.html">network</a></li><li class="navelem"><a class="el" href="../../da/d07/_u_b_cookie_jar_8cpp.html">UBCookieJar.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:49 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1b69b9a0ecd21c668fc6a60be75ceac8.html">network</a></li><li class="navelem"><a class="el" href="../../da/d07/_u_b_cookie_jar_8cpp.html">UBCookieJar.cpp</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -9,5 +9,8 @@ var class_w_b_search_line_edit =
     [ "setMenu", "dd/d7f/class_w_b_search_line_edit.html#aaf7efc2fb9abf9e8a680bfccfc92316b", null ],
     [ "setVisible", "dd/d7f/class_w_b_search_line_edit.html#abe9c3dd2ea75106d6288828bd2c4eb35", null ],
     [ "textChanged", "dd/d7f/class_w_b_search_line_edit.html#a665cc68b5a39c70d0f371e8f6d8887ff", null ],
+    [ "updateGeometries", "dd/d7f/class_w_b_search_line_edit.html#abda932129a3e3650340c192e20fea3bd", null ],
+    [ "mInactiveText", "dd/d7f/class_w_b_search_line_edit.html#a4c6fbf2d45da3da260a3de76646dc021", null ],
+    [ "mSearchButton", "dd/d7f/class_w_b_search_line_edit.html#afcd0eb9b638a2a43de06e157921cd443", null ],
     [ "inactiveText", "dd/d7f/class_w_b_search_line_edit.html#a50a8748d17d08f45fbf6fb43b3c5f56d", null ]
 ];

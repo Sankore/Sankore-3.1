@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d8/d58/class_u_b_mouse_press_filter.ht
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d5/d49/class_u_b_mouse_press_filter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBMousePressFilter Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('d8/d58/class_u_b_mouse_press_filter.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d9f/class_u_b_mouse_press_filter__coll__graph.svg" width="182" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d9f/class_u_b_mouse_press_filter__coll__graph.svg" width="182" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -133,6 +134,11 @@ Protected Slots</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9db9a5daf3216eee61eaf0afde6c6de1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d58/class_u_b_mouse_press_filter.html#a9db9a5daf3216eee61eaf0afde6c6de1">eventFilter</a> (QObject *obj, QEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a68a2cba5f011f5db42be6891d16da83f"><td class="memItemLeft" align="right" valign="top">QObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d58/class_u_b_mouse_press_filter.html#a68a2cba5f011f5db42be6891d16da83f">mObject</a></td></tr>
+<tr class="memitem:aed5e45bf0cb8fd23abb6f669aeadf526"><td class="memItemLeft" align="right" valign="top">QMouseEvent *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a32d8b1f6367f51018e79255f3c011319"></a>
@@ -149,7 +155,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(parent)</div>
-<div class="line">    , mPendingEvent(0)</div>
+<div class="line">    , <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -225,31 +231,31 @@ Protected Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (mouseEvent)</div>
 <div class="line">        {</div>
-<div class="line">            <span class="keywordflow">if</span> (mPendingEvent)</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>)</div>
 <div class="line">            {</div>
-<div class="line">                <span class="keyword">delete</span> mPendingEvent;</div>
+<div class="line">                <span class="keyword">delete</span> <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>;</div>
 <div class="line">            }</div>
 <div class="line"></div>
-<div class="line">            mPendingEvent = <span class="keyword">new</span> QMouseEvent(QEvent::MouseButtonDblClick,</div>
+<div class="line">            <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a> = <span class="keyword">new</span> QMouseEvent(QEvent::MouseButtonDblClick,</div>
 <div class="line">                mouseEvent-&gt;pos(), mouseEvent-&gt;globalPos(),</div>
 <div class="line">                mouseEvent-&gt;button(), mouseEvent-&gt;buttons(),</div>
 <div class="line">                mouseEvent-&gt;modifiers());</div>
 <div class="line"></div>
-<div class="line">            mObject = obj;</div>
+<div class="line">            <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#a68a2cba5f011f5db42be6891d16da83f">mObject</a> = obj;</div>
 <div class="line"></div>
 <div class="line">            QTimer::singleShot(1000, <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#a4090719a1987b4e640c6cf0402bf1b6f">mouseDownElapsed</a>()));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isMouseRelease || isMouseMove)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (mPendingEvent)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>)</div>
 <div class="line">        {</div>
 <div class="line">            QTabletEvent * tabletEvent = <span class="keyword">static_cast&lt;</span>QTabletEvent *<span class="keyword">&gt;</span>(event);</div>
-<div class="line">            QPoint point = tabletEvent-&gt;globalPos() - mPendingEvent-&gt;globalPos();</div>
+<div class="line">            QPoint point = tabletEvent-&gt;globalPos() - <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>-&gt;globalPos();</div>
 <div class="line">            <span class="keywordflow">if</span> (isMouseRelease || point.manhattanLength() &gt; QApplication::startDragDistance())</div>
 <div class="line">            {</div>
-<div class="line">                <span class="keyword">delete</span> mPendingEvent;</div>
-<div class="line">                mPendingEvent = 0;</div>
+<div class="line">                <span class="keyword">delete</span> <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>;</div>
+<div class="line">                <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a> = 0;</div>
 <div class="line">                mObject = 0;</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
@@ -290,11 +296,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mPendingEvent &amp;&amp; mObject)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a> &amp;&amp; <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#a68a2cba5f011f5db42be6891d16da83f">mObject</a>)</div>
 <div class="line">    {</div>
-<div class="line">        QApplication::postEvent(mObject, mPendingEvent);</div>
-<div class="line">        mPendingEvent = 0;</div>
-<div class="line">        mObject = 0;</div>
+<div class="line">        QApplication::postEvent(<a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#a68a2cba5f011f5db42be6891d16da83f">mObject</a>, <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a>);</div>
+<div class="line">        <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#aed5e45bf0cb8fd23abb6f669aeadf526">mPendingEvent</a> = 0;</div>
+<div class="line">        <a class="code" href="../../d8/d58/class_u_b_mouse_press_filter.html#a68a2cba5f011f5db42be6891d16da83f">mObject</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -309,9 +315,50 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a68a2cba5f011f5db42be6891d16da83f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QObject* UBMousePressFilter::mObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed5e45bf0cb8fd23abb6f669aeadf526"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMouseEvent* UBMousePressFilter::mPendingEvent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d5/dc1/_u_b_mouse_press_filter_8h_source.html">UBMousePressFilter.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d9/d38/_u_b_mouse_press_filter_8cpp.html">UBMousePressFilter.cpp</a></li>
+<li><a class="el" href="../../d5/dc1/_u_b_mouse_press_filter_8h_source.html">UBMousePressFilter.h</a></li>
+<li><a class="el" href="../../d9/d38/_u_b_mouse_press_filter_8cpp.html">UBMousePressFilter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -319,7 +366,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d58/class_u_b_mouse_press_filter.html">UBMousePressFilter</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

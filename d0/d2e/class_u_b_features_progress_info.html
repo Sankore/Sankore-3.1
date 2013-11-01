@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('d0/d2e/class_u_b_features_progress_inf
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d2/d4a/class_u_b_features_progress_info-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBFeaturesProgressInfo Class Reference</div>  </div>
@@ -116,12 +118,27 @@ $(document).ready(function(){initNavTree('d0/d2e/class_u_b_features_progress_inf
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d95/class_u_b_features_progress_info__coll__graph.svg" width="198" height="96"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d95/class_u_b_features_progress_info__coll__graph.svg" width="198" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1eabf8468a3b06ecc1c3c8ae5ff546d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a1eabf8468a3b06ecc1c3c8ae5ff546d1">UBFeaturesProgressInfo</a> (QWidget *parent=0)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ae03a1d9217a26acb43cb8d991bc009b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#ae03a1d9217a26acb43cb8d991bc009b1">setCommmonInfoText</a> (const QString &amp;str)</td></tr>
+<tr class="memitem:a1513638a6f6bc6059d45af3fd50b9033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a1513638a6f6bc6059d45af3fd50b9033">setDetailedInfoText</a> (const QString &amp;str)</td></tr>
+<tr class="memitem:ae1d41b410c9feec92e342b0a78918925"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#ae1d41b410c9feec92e342b0a78918925">setProgressMin</a> (int pValue)</td></tr>
+<tr class="memitem:a65341082d630e838d5de95649dbbf4d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a65341082d630e838d5de95649dbbf4d2">setProgressMax</a> (int pValue)</td></tr>
+<tr class="memitem:a4c49d9fa232e699ac19311735aa5066a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a4c49d9fa232e699ac19311735aa5066a">increaseProgressValue</a> ()</td></tr>
+<tr class="memitem:ade0891bff09ac8ce81692df1e47eabfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#ade0891bff09ac8ce81692df1e47eabfd">sendFeature</a> (<a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> pFeature)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1d021ddffaf6440f11bad3ddcacf61af"><td class="memItemLeft" align="right" valign="top">QProgressBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a></td></tr>
+<tr class="memitem:a3559d37a36ffa058a822ed8ac9ec2269"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a3559d37a36ffa058a822ed8ac9ec2269">mCommonInfoLabel</a></td></tr>
+<tr class="memitem:a792deebbf29133535fd72d16c38c95f9"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1eabf8468a3b06ecc1c3c8ae5ff546d1"></a>
@@ -139,36 +156,259 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                              :</div>
 <div class="line">    QWidget(parent),</div>
-<div class="line">    mProgressBar(0),</div>
-<div class="line">    mCommonInfoLabel(0),</div>
-<div class="line">    mDetailedInfoLabel(0)</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>(0),</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a3559d37a36ffa058a822ed8ac9ec2269">mCommonInfoLabel</a>(0),</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    QVBoxLayout *mainLayer = <span class="keyword">new</span> QVBoxLayout(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    mProgressBar = <span class="keyword">new</span> QProgressBar(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a> = <span class="keyword">new</span> QProgressBar(<span class="keyword">this</span>);</div>
 <div class="line"><span class="comment">//    setting defaults</span></div>
-<div class="line">    mProgressBar-&gt;setMinimum(0);</div>
-<div class="line">    mProgressBar-&gt;setMaximum(100000);</div>
-<div class="line">    mProgressBar-&gt;setValue(0);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setMinimum(0);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setMaximum(100000);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setValue(0);</div>
 <div class="line"></div>
-<div class="line">    mProgressBar-&gt;setStyleSheet(<span class="stringliteral">&quot;background:white&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setStyleSheet(<span class="stringliteral">&quot;background:white&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    mCommonInfoLabel = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line">    mDetailedInfoLabel = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
-<div class="line">    mDetailedInfoLabel-&gt;setAlignment(Qt::AlignRight);</div>
-<div class="line">    mCommonInfoLabel-&gt;hide();</div>
-<div class="line">    mDetailedInfoLabel-&gt;hide();</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a3559d37a36ffa058a822ed8ac9ec2269">mCommonInfoLabel</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a> = <span class="keyword">new</span> QLabel(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a>-&gt;setAlignment(Qt::AlignRight);</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a3559d37a36ffa058a822ed8ac9ec2269">mCommonInfoLabel</a>-&gt;hide();</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a>-&gt;hide();</div>
 <div class="line"></div>
-<div class="line">    mainLayer-&gt;addWidget(mCommonInfoLabel);</div>
-<div class="line">    mainLayer-&gt;addWidget(mDetailedInfoLabel);</div>
-<div class="line">    mainLayer-&gt;addWidget(mProgressBar);</div>
+<div class="line">    mainLayer-&gt;addWidget(<a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a3559d37a36ffa058a822ed8ac9ec2269">mCommonInfoLabel</a>);</div>
+<div class="line">    mainLayer-&gt;addWidget(<a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a>);</div>
+<div class="line">    mainLayer-&gt;addWidget(<a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>);</div>
 }</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a4c49d9fa232e699ac19311735aa5066a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesProgressInfo::increaseProgressValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setValue(<a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;value() + 1);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ade0891bff09ac8ce81692df1e47eabfd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesProgressInfo::sendFeature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a>&#160;</td>
+          <td class="paramname"><em>pFeature</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(pFeature);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae03a1d9217a26acb43cb8d991bc009b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesProgressInfo::setCommmonInfoText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setFormat(tr(<span class="stringliteral">&quot;Loading &quot;</span>) + str + <span class="stringliteral">&quot; (%p%)&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1513638a6f6bc6059d45af3fd50b9033"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesProgressInfo::setDetailedInfoText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a792deebbf29133535fd72d16c38c95f9">mDetailedInfoLabel</a>-&gt;setText(str);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a65341082d630e838d5de95649dbbf4d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesProgressInfo::setProgressMax </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setMaximum(pValue);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae1d41b410c9feec92e342b0a78918925"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBFeaturesProgressInfo::setProgressMin </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d0/d2e/class_u_b_features_progress_info.html#a1d021ddffaf6440f11bad3ddcacf61af">mProgressBar</a>-&gt;setMinimum(pValue);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a3559d37a36ffa058a822ed8ac9ec2269"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* UBFeaturesProgressInfo::mCommonInfoLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a792deebbf29133535fd72d16c38c95f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* UBFeaturesProgressInfo::mDetailedInfoLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d021ddffaf6440f11bad3ddcacf61af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QProgressBar* UBFeaturesProgressInfo::mProgressBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
+<li><a class="el" href="../../d2/d5a/_u_b_features_widget_8h_source.html">UBFeaturesWidget.h</a></li>
+<li><a class="el" href="../../d3/dfa/_u_b_features_widget_8cpp.html">UBFeaturesWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +416,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d2e/class_u_b_features_progress_info.html">UBFeaturesProgressInfo</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

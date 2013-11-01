@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('df/d23/class_w_b_history_filter_model.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/db6/class_w_b_history_filter_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBHistoryFilterModel Class Reference</div>  </div>
@@ -119,7 +122,7 @@ $(document).ready(function(){initNavTree('df/d23/class_w_b_history_filter_model.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d03/class_w_b_history_filter_model__coll__graph.svg" width="182" height="304"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d03/class_w_b_history_filter_model__coll__graph.svg" width="182" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -137,6 +140,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a494793067e4585e5f31b4edda35305cf"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a> (const QModelIndex &amp;<a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a14fdaea193d5fb1e3994f882c58fccb9">index</a>=QModelIndex()) const </td></tr>
 <tr class="memitem:afcb53b782203d77905aee4d13820a7e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#afcb53b782203d77905aee4d13820a7e3">removeRows</a> (int row, int count, const QModelIndex &amp;<a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>=QModelIndex())</td></tr>
 <tr class="memitem:a12236424d609a63fd2cf8635f172f886"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a12236424d609a63fd2cf8635f172f886">data</a> (const QModelIndex &amp;<a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a14fdaea193d5fb1e3994f882c58fccb9">index</a>, int role=Qt::DisplayRole) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a5eee205f45708ae3a350ea386e04631b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a5eee205f45708ae3a350ea386e04631b">sourceReset</a> ()</td></tr>
+<tr class="memitem:a6b49416cd525ac54564d33b6ff6d2834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a6b49416cd525ac54564d33b6ff6d2834">sourceDataChanged</a> (const QModelIndex &amp;topLeft, const QModelIndex &amp;bottomRight)</td></tr>
+<tr class="memitem:a2efd44ed85ef1eeb059f0f17e406b29e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a2efd44ed85ef1eeb059f0f17e406b29e">sourceRowsInserted</a> (const QModelIndex &amp;<a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>, int start, int end)</td></tr>
+<tr class="memitem:ac8e1400f82d41453e08045b8abdbd763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#ac8e1400f82d41453e08045b8abdbd763">sourceRowsRemoved</a> (const QModelIndex &amp;, int, int)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5353cf3d7970ba9479b09dcd268e79f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a37cdf1ec8a3380ba1a19c30d465b5381"><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a></td></tr>
+<tr class="memitem:aa252b19e20f5b81d21b5d7e36799a848"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a></td></tr>
+<tr class="memitem:ad13cd55432693ceb277d239a02d985ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Proxy model that will remove any duplicate entries. </p>
@@ -166,7 +186,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QAbstractProxyModel(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>),</div>
-<div class="line">    m_loaded(<span class="keyword">false</span>)</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ae6fb2fe854b960e0a8bca4ab23d5e9e5">setSourceModel</a>(sourceModel);</div>
 <div class="line">}</div>
@@ -176,7 +196,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a7e365109a2414ffe2d9de80c60ad4c43_cgraph.svg" width="371" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a7e365109a2414ffe2d9de80c60ad4c43_cgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -205,7 +225,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a6046c2b995db0e2e81003d3c63092220_icgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a6046c2b995db0e2e81003d3c63092220_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -296,13 +316,22 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">        { load(); <span class="keywordflow">return</span> m_historyHash.contains(url); }</div>
+<div class="fragment"><div class="line">        { <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>(); <span class="keywordflow">return</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.contains(url); }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_af43e01b4dabec4cea16b2ae39fa34953_cgraph.svg" width="563" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_af43e01b4dabec4cea16b2ae39fa34953_icgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -323,12 +352,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    load();</div>
-<div class="line">    <span class="keywordflow">if</span> (!m_historyHash.contains(url))</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.contains(url))</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
-<div class="line">    <span class="keywordflow">return</span> sourceModel()-&gt;rowCount() - m_historyHash.value(url);</div>
+<div class="line">    <span class="keywordflow">return</span> sourceModel()-&gt;rowCount() - <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.value(url);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_aaa886ebf372f8f29ff9cc2861b327338_cgraph.svg" width="563" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a14fdaea193d5fb1e3994f882c58fccb9"></a>
@@ -361,20 +399,88 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    load();</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (row &lt; 0 || row &gt;= <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>)</div>
 <div class="line">        || column &lt; 0 || column &gt;= <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a6046c2b995db0e2e81003d3c63092220">columnCount</a>(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>))</div>
 <div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> createIndex(row, column, m_sourceRow[row]);</div>
+<div class="line">    <span class="keywordflow">return</span> createIndex(row, column, <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>[row]);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a14fdaea193d5fb1e3994f882c58fccb9_cgraph.svg" width="363" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a14fdaea193d5fb1e3994f882c58fccb9_cgraph.svg" width="563" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a14fdaea193d5fb1e3994f882c58fccb9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5353cf3d7970ba9479b09dcd268e79f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryFilterModel::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a>)</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.clear();</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.clear();</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.reserve(sourceModel()-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>());</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; sourceModel()-&gt;rowCount(); ++i)</div>
+<div class="line">    {</div>
+<div class="line">        QModelIndex idx = sourceModel()-&gt;index(i, 0);</div>
+<div class="line">        QString url = idx.data(<a class="code" href="../../df/dac/class_w_b_history_model.html#a898ccbc40f3547db69e302996901723aa6e15164773a727795cf597160dc02bbb">WBHistoryModel::UrlStringRole</a>).toString();</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.contains(url))</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.append(sourceModel()-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>() - i);</div>
+<div class="line">            <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>[url] = sourceModel()-&gt;rowCount() - i;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a> = <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a5353cf3d7970ba9479b09dcd268e79f7_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a5353cf3d7970ba9479b09dcd268e79f7_icgraph.svg" width="100%" height="581"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -394,9 +500,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    load();</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>();</div>
 <div class="line">    QString url = sourceIndex.data(<a class="code" href="../../df/dac/class_w_b_history_model.html#a898ccbc40f3547db69e302996901723aa6e15164773a727795cf597160dc02bbb">WBHistoryModel::UrlStringRole</a>).toString();</div>
-<div class="line">    <span class="keywordflow">if</span> (!m_historyHash.contains(url))</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.contains(url))</div>
 <div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// This can be done in a binary search, but we can&#39;t use qBinary find</span></div>
@@ -406,9 +512,9 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordtype">int</span> realRow = -1;</div>
 <div class="line">    <span class="keywordtype">int</span> sourceModelRow = sourceModel()-&gt;rowCount() - sourceIndex.row();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; m_sourceRow.count(); ++i)</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.count(); ++i)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (m_sourceRow.at(i) == sourceModelRow)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.at(i) == sourceModelRow)</div>
 <div class="line">        {</div>
 <div class="line">            realRow = i;</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -420,6 +526,24 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> createIndex(realRow, sourceIndex.column(), sourceModel()-&gt;rowCount() - sourceIndex.row());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_ae8e71451d931f055c0811ab2873811e7_cgraph.svg" width="563" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_ae8e71451d931f055c0811ab2873811e7_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="acb8a8e298da80817fa48b5187e380189"></a>
@@ -436,11 +560,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    load();</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>();</div>
 <div class="line">    <span class="keywordtype">int</span> sourceRow = sourceModel()-&gt;rowCount() - proxyIndex.internalId();</div>
 <div class="line">    <span class="keywordflow">return</span> sourceModel()-&gt;index(sourceRow, proxyIndex.column());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_acb8a8e298da80817fa48b5187e380189_cgraph.svg" width="563" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a494793067e4585e5f31b4edda35305cf"></a>
@@ -496,27 +629,27 @@ Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordtype">int</span> lastRow = row + count - 1;</div>
 <div class="line">    disconnect(sourceModel(), SIGNAL(rowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceRowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ac8e1400f82d41453e08045b8abdbd763">sourceRowsRemoved</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
 <div class="line">    beginRemoveRows(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>, row, lastRow);</div>
 <div class="line">    <span class="keywordtype">int</span> oldCount = <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>();</div>
-<div class="line">    <span class="keywordtype">int</span> start = sourceModel()-&gt;rowCount() - m_sourceRow.value(row);</div>
-<div class="line">    <span class="keywordtype">int</span> end = sourceModel()-&gt;rowCount() - m_sourceRow.value(lastRow);</div>
+<div class="line">    <span class="keywordtype">int</span> start = sourceModel()-&gt;rowCount() - <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.value(row);</div>
+<div class="line">    <span class="keywordtype">int</span> end = sourceModel()-&gt;rowCount() - <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.value(lastRow);</div>
 <div class="line">    sourceModel()-&gt;removeRows(start, end - start + 1);</div>
 <div class="line">    endRemoveRows();</div>
 <div class="line">    connect(sourceModel(), SIGNAL(rowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceRowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
-<div class="line">    m_loaded = <span class="keyword">false</span>;</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ac8e1400f82d41453e08045b8abdbd763">sourceRowsRemoved</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a> = <span class="keyword">false</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (oldCount - count != <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>())</div>
 <div class="line">        reset();</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_afcb53b782203d77905aee4d13820a7e3_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_afcb53b782203d77905aee4d13820a7e3_cgraph.svg" width="571" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -536,18 +669,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    load();</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>.isValid())</div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
-<div class="line">    <span class="keywordflow">return</span> m_historyHash.count();</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.count();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_aecaf7d67cb84d0b9fb4d66cc10660892_icgraph.svg" width="363" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_aecaf7d67cb84d0b9fb4d66cc10660892_cgraph.svg" width="363" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_aecaf7d67cb84d0b9fb4d66cc10660892_icgraph.svg" width="100%" height="567"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -569,44 +711,347 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (sourceModel())</div>
 <div class="line">    {</div>
-<div class="line">        disconnect(sourceModel(), SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">        disconnect(sourceModel(), SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5eee205f45708ae3a350ea386e04631b">sourceReset</a>()));</div>
 <div class="line">        disconnect(sourceModel(), SIGNAL(dataChanged(<span class="keyword">const</span> QModelIndex &amp;, <span class="keyword">const</span> QModelIndex &amp;)),</div>
 <div class="line">                   <span class="keyword">this</span>, SLOT(dataChanged(<span class="keyword">const</span> QModelIndex &amp;, <span class="keyword">const</span> QModelIndex &amp;)));</div>
 <div class="line">        disconnect(sourceModel(), SIGNAL(rowsInserted(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceRowsInserted(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a2efd44ed85ef1eeb059f0f17e406b29e">sourceRowsInserted</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
 <div class="line">        disconnect(sourceModel(), SIGNAL(rowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceRowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ac8e1400f82d41453e08045b8abdbd763">sourceRowsRemoved</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ae6fb2fe854b960e0a8bca4ab23d5e9e5">QAbstractProxyModel::setSourceModel</a>(newSourceModel);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (sourceModel())</div>
 <div class="line">    {</div>
-<div class="line">        m_loaded = <span class="keyword">false</span>;</div>
-<div class="line">        connect(sourceModel(), SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(sourceReset()));</div>
+<div class="line">        <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a> = <span class="keyword">false</span>;</div>
+<div class="line">        connect(sourceModel(), SIGNAL(modelReset()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5eee205f45708ae3a350ea386e04631b">sourceReset</a>()));</div>
 <div class="line">        connect(sourceModel(), SIGNAL(dataChanged(<span class="keyword">const</span> QModelIndex &amp;, <span class="keyword">const</span> QModelIndex &amp;)),</div>
-<div class="line">                   <span class="keyword">this</span>, SLOT(sourceDataChanged(<span class="keyword">const</span> QModelIndex &amp;, <span class="keyword">const</span> QModelIndex &amp;)));</div>
+<div class="line">                   <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a6b49416cd525ac54564d33b6ff6d2834">sourceDataChanged</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keyword">const</span> QModelIndex &amp;)));</div>
 <div class="line">        connect(sourceModel(), SIGNAL(rowsInserted(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceRowsInserted(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a2efd44ed85ef1eeb059f0f17e406b29e">sourceRowsInserted</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
 <div class="line">        connect(sourceModel(), SIGNAL(rowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)),</div>
-<div class="line">                <span class="keyword">this</span>, SLOT(sourceRowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
+<div class="line">                <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ac8e1400f82d41453e08045b8abdbd763">sourceRowsRemoved</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>)));</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_ae6fb2fe854b960e0a8bca4ab23d5e9e5_cgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_ae6fb2fe854b960e0a8bca4ab23d5e9e5_icgraph.svg" width="371" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a6b49416cd525ac54564d33b6ff6d2834"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryFilterModel::sourceDataChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>topLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>bottomRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit dataChanged(<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ae8e71451d931f055c0811ab2873811e7">mapFromSource</a>(topLeft), <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ae8e71451d931f055c0811ab2873811e7">mapFromSource</a>(bottomRight));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a6b49416cd525ac54564d33b6ff6d2834_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a6b49416cd525ac54564d33b6ff6d2834_icgraph.svg" width="571" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5eee205f45708ae3a350ea386e04631b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryFilterModel::sourceReset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a> = <span class="keyword">false</span>;</div>
+<div class="line">    reset();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a5eee205f45708ae3a350ea386e04631b_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2efd44ed85ef1eeb059f0f17e406b29e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryFilterModel::sourceRowsInserted </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_ASSERT(start == end &amp;&amp; start == 0);</div>
+<div class="line">    Q_UNUSED(end);</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a>)</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    QModelIndex idx = sourceModel()-&gt;index(start, 0, <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>);</div>
+<div class="line">    QString url = idx.data(<a class="code" href="../../df/dac/class_w_b_history_model.html#a898ccbc40f3547db69e302996901723aa6e15164773a727795cf597160dc02bbb">WBHistoryModel::UrlStringRole</a>).toString();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.contains(url))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordtype">int</span> sourceRow = sourceModel()-&gt;rowCount() - <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>[url];</div>
+<div class="line">        <span class="keywordtype">int</span> realRow = <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ae8e71451d931f055c0811ab2873811e7">mapFromSource</a>(sourceModel()-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a14fdaea193d5fb1e3994f882c58fccb9">index</a>(sourceRow, 0)).row();</div>
+<div class="line">        beginRemoveRows(QModelIndex(), realRow, realRow);</div>
+<div class="line">        <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.removeAt(realRow);</div>
+<div class="line">        <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.remove(url);</div>
+<div class="line">        endRemoveRows();</div>
+<div class="line">    }</div>
+<div class="line">    beginInsertRows(QModelIndex(), 0, 0);</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.insert(url, sourceModel()-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>() - start);</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>.insert(0, sourceModel()-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aecaf7d67cb84d0b9fb4d66cc10660892">rowCount</a>());</div>
+<div class="line">    endInsertRows();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a2efd44ed85ef1eeb059f0f17e406b29e_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_a2efd44ed85ef1eeb059f0f17e406b29e_icgraph.svg" width="571" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8e1400f82d41453e08045b8abdbd763"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryFilterModel::sourceRowsRemoved </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(start);</div>
+<div class="line">    Q_UNUSED(end);</div>
+<div class="line">    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5eee205f45708ae3a350ea386e04631b">sourceReset</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_ac8e1400f82d41453e08045b8abdbd763_cgraph.svg" width="371" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d23/class_w_b_history_filter_model_ac8e1400f82d41453e08045b8abdbd763_icgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa252b19e20f5b81d21b5d7e36799a848"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, int&gt; WBHistoryFilterModel::m_historyHash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad13cd55432693ceb277d239a02d985ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WBHistoryFilterModel::m_loaded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37cdf1ec8a3380ba1a19c30d465b5381"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;int&gt; WBHistoryFilterModel::m_sourceRow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
+<li><a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
+<li><a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -614,7 +1059,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html">WBHistoryFilterModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

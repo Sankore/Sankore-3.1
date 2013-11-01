@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/frameworks/UBCryptoUtils.h Source File</title>
+<title>Open-Sankoré: UBCryptoUtils.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -151,17 +151,17 @@ $(document).ready(function(){initNavTree('de/d82/_u_b_crypto_utils_8h_source.htm
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html">UBCryptoUtils</a>(QObject * pParent = 0);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html">UBCryptoUtils</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#aef49c3c3a3fba206944a39eb05ac454e">UBCryptoUtils</a>(QObject * pParent = 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a34bcb7071e774c151c4df3cc31c7463a">~UBCryptoUtils</a>();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html">UBCryptoUtils</a>* sInstance;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">static</span> QString sAESKey;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">static</span> QString sAESSalt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#ad8a4197c348e2c5b7a09526516e5a65b">   51</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html">UBCryptoUtils</a>* <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#ad8a4197c348e2c5b7a09526516e5a65b">sInstance</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a1a45918b654b2f08664d72585eb8e168">   52</a></span>&#160;        <span class="keyword">static</span> QString <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a1a45918b654b2f08664d72585eb8e168">sAESKey</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a0aa40007ebcb735bfcab415b3d2b630f">   53</a></span>&#160;        <span class="keyword">static</span> QString <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a0aa40007ebcb735bfcab415b3d2b630f">sAESSalt</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> aesInit();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#afdca9150e121df3b94097d57440ae0fc">aesInit</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        EVP_CIPHER_CTX mAesEncryptContext;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        EVP_CIPHER_CTX mAesDecryptContext;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#acc7c826dd316c0dcfd8c5c2a5971ce8e">   57</a></span>&#160;        EVP_CIPHER_CTX <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#acc7c826dd316c0dcfd8c5c2a5971ce8e">mAesEncryptContext</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a40415daa7a78a5cb505b6090050fb58e">   58</a></span>&#160;        EVP_CIPHER_CTX <a class="code" href="../../dc/d5a/class_u_b_crypto_utils.html#a40415daa7a78a5cb505b6090050fb58e">mAesDecryptContext</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
@@ -171,8 +171,8 @@ $(document).ready(function(){initNavTree('de/d82/_u_b_crypto_utils_8h_source.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_51b1a7486ba114f87fb5467f43226dd1.html">frameworks</a></li><li class="navelem"><a class="el" href="../../de/d82/_u_b_crypto_utils_8h.html">UBCryptoUtils.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_204e0a37828fe70ffe7073e2d4563165.html">frameworks</a></li><li class="navelem"><a class="el" href="../../de/d82/_u_b_crypto_utils_8h.html">UBCryptoUtils.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

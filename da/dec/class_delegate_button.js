@@ -14,7 +14,16 @@ var class_delegate_button =
     [ "setSection", "da/dec/class_delegate_button.html#aaf3246a5b2104d2de13dd6bbe366d7b5", null ],
     [ "setShowProgressIndicator", "da/dec/class_delegate_button.html#a14b394c93e8478fe732bbe11071ffb3e", null ],
     [ "setTransparentToMouseEvent", "da/dec/class_delegate_button.html#a733d2151598760d5f4c86f0f5b84c0ce", null ],
+    [ "startShowProgress", "da/dec/class_delegate_button.html#a74f48c785196c2a5316e12e646a38fac", null ],
     [ "testShowProgresIndicator", "da/dec/class_delegate_button.html#ac04cedb91ed2c93815667b984e0a3ea8", null ],
     [ "timerEvent", "da/dec/class_delegate_button.html#ab90305e2485e7a69ce2643ef1494f740", null ],
-    [ "type", "da/dec/class_delegate_button.html#a0edc4043059338094e1383e2b6756638", null ]
+    [ "type", "da/dec/class_delegate_button.html#a0edc4043059338094e1383e2b6756638", null ],
+    [ "mButtonAlignmentSection", "da/dec/class_delegate_button.html#af202fd95acdf1406830db4a27e5e3a5b", null ],
+    [ "mDelegated", "da/dec/class_delegate_button.html#a7fcb292f2557ff2f414cee85e718e68e", null ],
+    [ "mIsPressed", "da/dec/class_delegate_button.html#a45ec9558622cf4f68d638bdb1011d7c8", null ],
+    [ "mIsTransparentToMouseEvent", "da/dec/class_delegate_button.html#a432a5060d59d8da7269a2bfdb8308e1f", null ],
+    [ "mPressedTime", "da/dec/class_delegate_button.html#aab8e9336658351dfc8e42ea142c90d7b", null ],
+    [ "mPressProgres", "da/dec/class_delegate_button.html#a431e09cbc8f97b2ca73d0bb8656f0b66", null ],
+    [ "mProgressTimerId", "da/dec/class_delegate_button.html#ab2371dfb716b275351871d1e515d4a8d", null ],
+    [ "mShowProgressIndicator", "da/dec/class_delegate_button.html#a43290cb38e10c6f34e4018f357d8b00e", null ]
 ];

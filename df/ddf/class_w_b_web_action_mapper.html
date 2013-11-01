@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('df/ddf/class_w_b_web_action_mapper.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d62/class_w_b_web_action_mapper-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBWebActionMapper Class Reference</div>  </div>
@@ -119,7 +121,7 @@ $(document).ready(function(){initNavTree('df/ddf/class_w_b_web_action_mapper.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dd6/class_w_b_web_action_mapper__coll__graph.svg" width="182" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dd6/class_w_b_web_action_mapper__coll__graph.svg" width="182" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -128,6 +130,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a93022e933f82d86a438d9ccdfe72d93f"><td class="memItemLeft" align="right" valign="top">QWebPage::WebAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a93022e933f82d86a438d9ccdfe72d93f">webAction</a> () const </td></tr>
 <tr class="memitem:a57629da574d3dde2d40ebb3dad324b24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a57629da574d3dde2d40ebb3dad324b24">addChild</a> (QAction *action)</td></tr>
 <tr class="memitem:a6ab4f245f921fa06f9d8d419a4bd5b52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a6ab4f245f921fa06f9d8d419a4bd5b52">updateCurrent</a> (QWebPage *currentParent)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a599b2ac78c7143689cf483dc127768de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a599b2ac78c7143689cf483dc127768de">rootTriggered</a> ()</td></tr>
+<tr class="memitem:a090c311a8917e0bd33cab5ee543d1bb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a090c311a8917e0bd33cab5ee543d1bb2">childChanged</a> ()</td></tr>
+<tr class="memitem:ab11e2d6bc15d8d01ca742802f9f20f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#ab11e2d6bc15d8d01ca742802f9f20f2a">rootDestroyed</a> ()</td></tr>
+<tr class="memitem:a84ee99c8824bc48101effd98bfa2c3d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a84ee99c8824bc48101effd98bfa2c3d5">currentDestroyed</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa598e4d3b685d071867935300f094a8b"><td class="memItemLeft" align="right" valign="top">QWebPage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a></td></tr>
+<tr class="memitem:a2b1ee7a32cc1677317df5f178a4cf9e2"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a></td></tr>
+<tr class="memitem:ac5626d21918a0f841300436b8490f384"><td class="memItemLeft" align="right" valign="top">QWebPage::WebAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">mWebAction</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A proxy object that connects a single browser action to one child webpage action at a time. </p>
@@ -163,17 +178,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(parent)</div>
-<div class="line">    , mCurrentParent(0)</div>
-<div class="line">    , mRootAction(root)</div>
-<div class="line">    , mWebAction(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a93022e933f82d86a438d9ccdfe72d93f">webAction</a>)</div>
+<div class="line">    , <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>(0)</div>
+<div class="line">    , <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>(root)</div>
+<div class="line">    , <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">mWebAction</a>(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a93022e933f82d86a438d9ccdfe72d93f">webAction</a>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mRootAction)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">    connect(mRootAction, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(rootTriggered()));</div>
-<div class="line">    connect(root, SIGNAL(destroyed(QObject *)), <span class="keyword">this</span>, SLOT(rootDestroyed()));</div>
+<div class="line">    connect(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a599b2ac78c7143689cf483dc127768de">rootTriggered</a>()));</div>
+<div class="line">    connect(root, SIGNAL(destroyed(QObject *)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ab11e2d6bc15d8d01ca742802f9f20f2a">rootDestroyed</a>()));</div>
 <div class="line">    root-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_ad9b3b037a503226176745c497b26f2cb_cgraph.svg" width="368" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <h2>Member Function Documentation</h2>
@@ -193,15 +217,189 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (!action)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">    connect(action, SIGNAL(changed()), <span class="keyword">this</span>, SLOT(childChanged()));</div>
+<div class="line">    connect(action, SIGNAL(changed()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a090c311a8917e0bd33cab5ee543d1bb2">childChanged</a>()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a57629da574d3dde2d40ebb3dad324b24_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a090c311a8917e0bd33cab5ee543d1bb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBWebActionMapper::childChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (QAction *source = qobject_cast&lt;QAction*&gt;(sender()))</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a></div>
+<div class="line">            &amp;&amp; <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a></div>
+<div class="line">            &amp;&amp; source-&gt;parent() == <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>-&gt;setChecked(source-&gt;isChecked());</div>
+<div class="line">            <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>-&gt;setEnabled(source-&gt;isEnabled());</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a090c311a8917e0bd33cab5ee543d1bb2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a84ee99c8824bc48101effd98bfa2c3d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBWebActionMapper::currentDestroyed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a6ab4f245f921fa06f9d8d419a4bd5b52">updateCurrent</a>(0);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a84ee99c8824bc48101effd98bfa2c3d5_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a84ee99c8824bc48101effd98bfa2c3d5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab11e2d6bc15d8d01ca742802f9f20f2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBWebActionMapper::rootDestroyed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a> = 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_ab11e2d6bc15d8d01ca742802f9f20f2a_icgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a599b2ac78c7143689cf483dc127768de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBWebActionMapper::rootTriggered </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>)</div>
+<div class="line">    {</div>
+<div class="line">        QAction *gotoAction = <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>-&gt;action(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">mWebAction</a>);</div>
+<div class="line">        gotoAction-&gt;trigger();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a599b2ac78c7143689cf483dc127768de_icgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -221,26 +419,45 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mCurrentParent)</div>
-<div class="line">        disconnect(mCurrentParent, SIGNAL(destroyed(QObject *)),</div>
-<div class="line">                   <span class="keyword">this</span>, SLOT(currentDestroyed()));</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>)</div>
+<div class="line">        disconnect(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>, SIGNAL(destroyed(QObject *)),</div>
+<div class="line">                   <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a84ee99c8824bc48101effd98bfa2c3d5">currentDestroyed</a>()));</div>
 <div class="line"></div>
-<div class="line">    mCurrentParent = currentParent;</div>
-<div class="line">    <span class="keywordflow">if</span> (!mRootAction)</div>
+<div class="line">    <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a> = currentParent;</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">    <span class="keywordflow">if</span> (!mCurrentParent)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mRootAction-&gt;setEnabled(<span class="keyword">false</span>);</div>
-<div class="line">        mRootAction-&gt;setChecked(<span class="keyword">false</span>);</div>
+<div class="line">        <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line">        <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>-&gt;setChecked(<span class="keyword">false</span>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
-<div class="line">    QAction *source = mCurrentParent-&gt;action(mWebAction);</div>
-<div class="line">    mRootAction-&gt;setChecked(source-&gt;isChecked());</div>
-<div class="line">    mRootAction-&gt;setEnabled(source-&gt;isEnabled());</div>
-<div class="line">    connect(mCurrentParent, SIGNAL(destroyed(QObject *)),</div>
-<div class="line">            <span class="keyword">this</span>, SLOT(currentDestroyed()));</div>
+<div class="line">    QAction *source = <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>-&gt;action(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">mWebAction</a>);</div>
+<div class="line">    <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>-&gt;setChecked(source-&gt;isChecked());</div>
+<div class="line">    <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a2b1ee7a32cc1677317df5f178a4cf9e2">mRootAction</a>-&gt;setEnabled(source-&gt;isEnabled());</div>
+<div class="line">    connect(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#aa598e4d3b685d071867935300f094a8b">mCurrentParent</a>, SIGNAL(destroyed(QObject *)),</div>
+<div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#a84ee99c8824bc48101effd98bfa2c3d5">currentDestroyed</a>()));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a6ab4f245f921fa06f9d8d419a4bd5b52_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a6ab4f245f921fa06f9d8d419a4bd5b52_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a93022e933f82d86a438d9ccdfe72d93f"></a>
@@ -256,23 +473,85 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mWebAction;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../df/ddf/class_w_b_web_action_mapper.html#ac5626d21918a0f841300436b8490f384">mWebAction</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/ddf/class_w_b_web_action_mapper_a93022e933f82d86a438d9ccdfe72d93f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa598e4d3b685d071867935300f094a8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebPage* WBWebActionMapper::mCurrentParent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b1ee7a32cc1677317df5f178a4cf9e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* WBWebActionMapper::mRootAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac5626d21918a0f841300436b8490f384"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebPage::WebAction WBWebActionMapper::mWebAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp.html">WBTabWidget.cpp</a></li>
+<li><a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a></li>
+<li><a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp.html">WBTabWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -280,7 +559,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/ddf/class_w_b_web_action_mapper.html">WBWebActionMapper</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -4,5 +4,6 @@ var class_u_b_create_link_label =
     [ "dragEnterEvent", "d5/d5d/class_u_b_create_link_label.html#ae4137d2f13768e576ea7cbe826e2f5f3", null ],
     [ "dragLeaveEvent", "d5/d5d/class_u_b_create_link_label.html#ab1c9f5f5e80ce904019c8f45e792e00b", null ],
     [ "dropEvent", "d5/d5d/class_u_b_create_link_label.html#a16fbdb4f813a2d8823b350f2cf3ffa60", null ],
-    [ "droppedFile", "d5/d5d/class_u_b_create_link_label.html#aed5d9df374491a899c0f18cac99fbaf4", null ]
+    [ "droppedFile", "d5/d5d/class_u_b_create_link_label.html#aed5d9df374491a899c0f18cac99fbaf4", null ],
+    [ "mInitialText", "d5/d5d/class_u_b_create_link_label.html#a1405ffd79a5f5c39716d4da867af1d6e", null ]
 ];

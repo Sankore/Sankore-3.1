@@ -108,6 +108,10 @@ $(document).ready(function(){initNavTree('d3/d33/class_u_b_preferences_controlle
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d6/de1/class_u_b_preferences_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBPreferencesController Class Reference</div>  </div>
@@ -161,6 +165,24 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a2aabaddbdc323e70eb3f060b7022399c"><td class="memItemLeft" align="right" valign="top">Ui::preferencesDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a></td></tr>
 <tr class="memitem:ae3c9a2c79f6e10837f5a7391f42aacb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da2/class_u_b_brush_properties_frame.html">UBBrushPropertiesFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a></td></tr>
 <tr class="memitem:abfffcb36c3b9e5e3305329d0adb0e790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da2/class_u_b_brush_properties_frame.html">UBBrushPropertiesFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ad8f5eb7d4efa72f0bac7bd0e9342bd48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#ad8f5eb7d4efa72f0bac7bd0e9342bd48">adjustScreens</a> (int screen)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa3e2bc13e2dc01df5ba0df4a79937a1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#aa3e2bc13e2dc01df5ba0df4a79937a1e">persistanceCheckboxUpdate</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa1d9d36cbad2f6acd9a9c640ee2eb534"><td class="memItemLeft" align="right" valign="top">QDesktopWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#aa1d9d36cbad2f6acd9a9c640ee2eb534">mDesktop</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ae6b933a40484744637d1697a1741477a"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a> = 10.0</td></tr>
+<tr class="memitem:a2264d33aa3f673e2c5e6a31e9576afbe"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#a2264d33aa3f673e2c5e6a31e9576afbe">sMinPenWidth</a> = 0.5</td></tr>
+<tr class="memitem:a3d3d97e38d3c0931891af366dc0f460a"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html#a3d3d97e38d3c0931891af366dc0f460a">sMaxPenWidth</a> = 50.0</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a515f90bc539e0c9410c8b2b538b17017"></a>
@@ -182,12 +204,12 @@ Protected Attributes</h2></td></tr>
 <div class="line">    , <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>(0)</div>
 <div class="line">    , <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>(0)</div>
 <div class="line">{</div>
-<div class="line">    mDesktop = qApp-&gt;desktop();</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#aa1d9d36cbad2f6acd9a9c640ee2eb534">mDesktop</a> = qApp-&gt;desktop();</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a0288d0694614a47ff163395fb0888d8b">mPreferencesWindow</a> = <span class="keyword">new</span> <a class="code" href="../../d4/d16/class_u_b_preferences_dialog.html">UBPreferencesDialog</a>(<span class="keyword">this</span>,parent, Qt::Dialog);</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a> = <span class="keyword">new</span> Ui::preferencesDialog();  <span class="comment">// deleted in</span></div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;setupUi(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a0288d0694614a47ff163395fb0888d8b">mPreferencesWindow</a>);</div>
-<div class="line">    adjustScreens(1);</div>
-<div class="line">    connect(mDesktop, SIGNAL(screenCountChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(adjustScreens(<span class="keywordtype">int</span>)));</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ad8f5eb7d4efa72f0bac7bd0e9342bd48">adjustScreens</a>(1);</div>
+<div class="line">    connect(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#aa1d9d36cbad2f6acd9a9c640ee2eb534">mDesktop</a>, SIGNAL(screenCountChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ad8f5eb7d4efa72f0bac7bd0e9342bd48">adjustScreens</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ad58e84c5ae34f18622453060ac927ac1">wire</a>();</div>
 <div class="line">}</div>
@@ -236,6 +258,53 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ad8f5eb7d4efa72f0bac7bd0e9342bd48"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPreferencesController::adjustScreens </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(screen);</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html">UBDisplayManager</a> displayManager;</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;multiDisplayGroupBox-&gt;setEnabled(displayManager.<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6e992c0a4a0042501c94b218328529d4">numScreens</a>() &gt; 1);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ad8f5eb7d4efa72f0bac7bd0e9342bd48_cgraph.svg" width="443" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ad8f5eb7d4efa72f0bac7bd0e9342bd48_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="aa81082fb9dc4ab75317798458d5649fe"></a>
 <div class="memitem">
 <div class="memproto">
@@ -270,20 +339,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a0288d0694614a47ff163395fb0888d8b">mPreferencesWindow</a>-&gt;accept();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe_cgraph.svg" width="100%" height="502"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe_cgraph.svg" width="100%" height="593"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_aa81082fb9dc4ab75317798458d5649fe_icgraph.svg" width="619" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -345,12 +414,12 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_aac64d5959f631d99a7f4a245b10eeb5a_cgraph.svg" width="574" height="226"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_aac64d5959f631d99a7f4a245b10eeb5a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -395,9 +464,9 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;mainTabWidget-&gt;currentWidget() == <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;penTab)</div>
 <div class="line">    {</div>
 <div class="line"></div>
-<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a05a5a33384a6406c8e4185e224458877">boardPenFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * sSliderRatio);</div>
-<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a56812af7a16f6ad2bf07ffebe2af7aba">boardPenMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * sSliderRatio);</div>
-<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa1d3e7cc36f9e9f5391b8149edc5ef8d">boardPenStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * sSliderRatio);</div>
+<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a05a5a33384a6406c8e4185e224458877">boardPenFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a56812af7a16f6ad2bf07ffebe2af7aba">boardPenMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa1d3e7cc36f9e9f5391b8149edc5ef8d">boardPenStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
 <div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;pressureSensitiveCheckBox-&gt;setChecked(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a9d839d72ab401185bb7cd41ee27a7823">boardPenPressureSensitive</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toBool());</div>
 <div class="line"></div>
 <div class="line">        settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a7875b1ae8bfd70fa0a0f695eb5e8b8f9">boardPenLightBackgroundSelectedColors</a>-&gt;<a class="code" href="../../da/df0/class_u_b_color_list_setting.html#ab64b8dc9b990c58d1776e419944715f9">reset</a>();</div>
@@ -414,9 +483,9 @@ Protected Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;mainTabWidget-&gt;currentWidget() == <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;markerTab)</div>
 <div class="line">    {</div>
-<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a0985f0662d9606ddb12d889d401111f7">boardMarkerFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * sSliderRatio);</div>
-<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a4f8e7aa90ecb8c2c45118961ad182063">boardMarkerMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * sSliderRatio);</div>
-<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a912e41e00b9eecee7f098c44f52713a4">boardMarkerStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * sSliderRatio);</div>
+<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a0985f0662d9606ddb12d889d401111f7">boardMarkerFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a4f8e7aa90ecb8c2c45118961ad182063">boardMarkerMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a912e41e00b9eecee7f098c44f52713a4">boardMarkerStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
 <div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;pressureSensitiveCheckBox-&gt;setChecked(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a661e9108d58aa9374decbbd60ee9dbe4">boardMarkerPressureSensitive</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toBool());</div>
 <div class="line"></div>
 <div class="line">        <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;opacitySlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a3c96cf37dc85d70412b7bd64658686da">boardMarkerAlpha</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a63ccc6724ba8befce05a946c3c5d3da9">reset</a>().toDouble() * 100);</div>
@@ -449,20 +518,20 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6_cgraph.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ab60dcebb8c91877a2e295a45efeae3a6_icgraph.svg" width="619" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -524,22 +593,22 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;swapControlAndDisplayScreensCheckBox-&gt;setChecked(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a677486ca02da069640c8db3c2f9b1593">swapControlAndDisplayScreens</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool());</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// pen tab</span></div>
-<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a05a5a33384a6406c8e4185e224458877">boardPenFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * sSliderRatio);</div>
-<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a56812af7a16f6ad2bf07ffebe2af7aba">boardPenMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * sSliderRatio);</div>
-<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa1d3e7cc36f9e9f5391b8149edc5ef8d">boardPenStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * sSliderRatio);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a05a5a33384a6406c8e4185e224458877">boardPenFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a56812af7a16f6ad2bf07ffebe2af7aba">boardPenMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aa1d3e7cc36f9e9f5391b8149edc5ef8d">boardPenStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae3c9a2c79f6e10837f5a7391f42aacb6">mPenProperties</a>-&gt;pressureSensitiveCheckBox-&gt;setChecked(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a9d839d72ab401185bb7cd41ee27a7823">boardPenPressureSensitive</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool());</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// marker tab</span></div>
-<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a0985f0662d9606ddb12d889d401111f7">boardMarkerFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * sSliderRatio);</div>
-<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a4f8e7aa90ecb8c2c45118961ad182063">boardMarkerMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * sSliderRatio);</div>
-<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a912e41e00b9eecee7f098c44f52713a4">boardMarkerStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * sSliderRatio);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;fineSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a0985f0662d9606ddb12d889d401111f7">boardMarkerFineWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;mediumSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a4f8e7aa90ecb8c2c45118961ad182063">boardMarkerMediumWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;strongSlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a912e41e00b9eecee7f098c44f52713a4">boardMarkerStrongWidth</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>);</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;pressureSensitiveCheckBox-&gt;setChecked(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a661e9108d58aa9374decbbd60ee9dbe4">boardMarkerPressureSensitive</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool());</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#abfffcb36c3b9e5e3305329d0adb0e790">mMarkerProperties</a>-&gt;opacitySlider-&gt;setValue(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a3c96cf37dc85d70412b7bd64658686da">boardMarkerAlpha</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toDouble() * 100);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//network</span></div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;PSCredentialsPersistenceCheckBox-&gt;setChecked(settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a6ccb4f53241170bf50814fff86cc899e">getCommunityDataPersistence</a>());</div>
-<div class="line">    persistanceCheckboxUpdate();</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#aa3e2bc13e2dc01df5ba0df4a79937a1e">persistanceCheckboxUpdate</a>();</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a75b09fdffc0b761d3b18565a8e2f0605">mIsoCodeAndLanguage</a>.insert(tr(<span class="stringliteral">&quot;Default&quot;</span>),<span class="stringliteral">&quot;NO_VALUE&quot;</span>);</div>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a75b09fdffc0b761d3b18565a8e2f0605">mIsoCodeAndLanguage</a>.insert(tr(<span class="stringliteral">&quot;Arabic&quot;</span>),<span class="stringliteral">&quot;ar&quot;</span>);</div>
@@ -599,20 +668,20 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a07058e851a855d28494161ffb278d48e_icgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -659,11 +728,11 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> isConsistent;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a4d15e8c361bfc3f791143a06ffa0bf6c_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -693,23 +762,23 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adedfe664eb6909d957d09b89d5e761eb">setCommunityPassword</a>(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Password_textEdit-&gt;text());</div>
-<div class="line">    persistanceCheckboxUpdate();</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#aa3e2bc13e2dc01df5ba0df4a79937a1e">persistanceCheckboxUpdate</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0_cgraph.svg" width="100%" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a76bf0de3a28fbed28c1ff5a48b0b67c0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -740,20 +809,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a6ebeb7cab5dc47ffc530e66ec7be1568">setCommunityPersistence</a>(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;PSCredentialsPersistenceCheckBox-&gt;isChecked());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993_cgraph.svg" width="100%" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a851bdd45508864d7f41df1ae26a84993_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -783,23 +852,23 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ab5b70f5ef7cf056b9a9d1485bb442feb">setCommunityUsername</a>(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Username_textBox-&gt;text());</div>
-<div class="line">    persistanceCheckboxUpdate();</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#aa3e2bc13e2dc01df5ba0df4a79937a1e">persistanceCheckboxUpdate</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608_cgraph.svg" width="100%" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a98baf5be423dd6b8ab5dea7d5215a608_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -833,20 +902,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;quitOpenSankorePushButton-&gt;setEnabled(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929_cgraph.svg" width="371" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ae1cd256f410f51d33a86bff8af26f929_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -878,20 +947,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#adf80724a5b19f7164a194113d40b8e1f">appStartupHintsEnabled</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#ace7b75378f8faad31ab6ce6ea1c7589b">setBool</a>(clicked);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8_cgraph.svg" width="371" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a96e0db54154abc1c032721eeac6873e8_icgraph.svg" width="619" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -930,21 +999,58 @@ Protected Attributes</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02_cgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ace81a3f25c9cb83a8ff52285606e8b02_icgraph.svg" width="619" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3e2bc13e2dc01df5ba0df4a79937a1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBPreferencesController::persistanceCheckboxUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">bool</span> checkBoxEnabled = <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Username_textBox-&gt;text().length() || <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;Password_textEdit-&gt;text().length();</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;PSCredentialsPersistenceCheckBox-&gt;setEnabled(checkBoxEnabled);</div>
+<div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;PSCredentialsPersistenceCheckBox-&gt;setStyleSheet(checkBoxEnabled ? <span class="stringliteral">&quot;color:black;&quot;</span> : <span class="stringliteral">&quot;color:lightgray;&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_aa3e2bc13e2dc01df5ba0df4a79937a1e_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -976,11 +1082,11 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a0288d0694614a47ff163395fb0888d8b">mPreferencesWindow</a>-&gt;exec();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a35e0fd13ea04e0e788649ac12b2dcdf3_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -1013,20 +1119,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aee5ac1a9d519a121417130531130b778">appToolBarOrientationVertical</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(!checked);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127_cgraph.svg" width="592" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a8524828dcf95b4d37ec980ab7ccb0127_icgraph.svg" width="643" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1059,20 +1165,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aee5ac1a9d519a121417130531130b778">appToolBarOrientationVertical</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#a5dc12b91ffabb031a3a7a8322f5d30ed">set</a>(checked);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981_cgraph.svg" width="576" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a51c78eb2c05f0e168d3e74975a5dd981_icgraph.svg" width="627" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1109,20 +1215,20 @@ Protected Attributes</h2></td></tr>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661_cgraph.svg" width="568" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_a6ca986c9ec5cf7e3b5856f0d49bf9661_icgraph.svg" width="619" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1153,7 +1259,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html">UBSettings</a>* settings = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>();</div>
 <div class="line"></div>
-<div class="line">    qreal width = value / sSliderRatio;</div>
+<div class="line">    qreal width = value / <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#ae6b933a40484744637d1697a1741477a">sSliderRatio</a>;</div>
 <div class="line"></div>
 <div class="line">    QObject *slider = sender();</div>
 <div class="line">    <a class="code" href="../../dc/d2d/class_u_b_circle_frame.html">UBCircleFrame</a>* display = 0;</div>
@@ -1196,25 +1302,25 @@ Protected Attributes</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (display)</div>
 <div class="line">    {</div>
 <div class="line">        display-&gt;<a class="code" href="../../dc/d2d/class_u_b_circle_frame.html#a21ae21c1c7f5ba4966d5fe17f1504502">currentPenWidth</a> = width;</div>
-<div class="line">        display-&gt;<a class="code" href="../../dc/d2d/class_u_b_circle_frame.html#a1f05aa43c60573f1db992632044b86a7">maxPenWidth</a> = sMaxPenWidth;</div>
+<div class="line">        display-&gt;<a class="code" href="../../dc/d2d/class_u_b_circle_frame.html#a1f05aa43c60573f1db992632044b86a7">maxPenWidth</a> = <a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a3d3d97e38d3c0931891af366dc0f460a">sMaxPenWidth</a>;</div>
 <div class="line">        display-&gt;repaint();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a_cgraph.svg" width="568" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ac1db4fd8a8e770c078dc48a3954b141a_icgraph.svg" width="619" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1320,20 +1426,20 @@ Protected Attributes</h2></td></tr>
 <div class="line">    connect(<a class="code" href="../../d3/d33/class_u_b_preferences_controller.html#a2aabaddbdc323e70eb3f060b7022399c">mPreferencesUI</a>-&gt;checkSoftwareUpdateAtLaunchCheckBox, SIGNAL(clicked(<span class="keywordtype">bool</span>)), settings-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#ae222117a6ae8b801087888a673a76096">appEnableAutomaticSoftwareUpdates</a>, SLOT(setBool(<span class="keywordtype">bool</span>)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d33/class_u_b_preferences_controller_ad58e84c5ae34f18622453060ac927ac1_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1341,6 +1447,26 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="aa1d9d36cbad2f6acd9a9c640ee2eb534"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDesktopWidget* UBPreferencesController::mDesktop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a75b09fdffc0b761d3b18565a8e2f0605"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1441,9 +1567,69 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3d3d97e38d3c0931891af366dc0f460a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBPreferencesController::sMaxPenWidth = 50.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2264d33aa3f673e2c5e6a31e9576afbe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBPreferencesController::sMinPenWidth = 0.5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6b933a40484744637d1697a1741477a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBPreferencesController::sSliderRatio = 10.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp.html">UBPreferencesController.cpp</a></li>
+<li><a class="el" href="../../d7/d8b/_u_b_preferences_controller_8h_source.html">UBPreferencesController.h</a></li>
+<li><a class="el" href="../../de/d49/_u_b_preferences_controller_8cpp.html">UBPreferencesController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1451,7 +1637,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d33/class_u_b_preferences_controller.html">UBPreferencesController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:06 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

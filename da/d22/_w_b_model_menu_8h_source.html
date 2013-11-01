@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/web/browser/WBModelMenu.h Source File</title>
+<title>Open-Sankoré: WBModelMenu.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -214,19 +214,19 @@ $(document).ready(function(){initNavTree('da/d22/_w_b_model_menu_8h_source.html'
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a9bd0e5c35608cc60b18c79d4773e54c0">createMenu</a>(<span class="keyword">const</span> QModelIndex &amp;parent, <span class="keywordtype">int</span> max, QMenu *parentMenu = 0, QMenu *menu = 0);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">void</span> aboutToShow();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> triggered(QAction *action);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae76e76d8f12efb51b19bc2c6ac43d5ce">aboutToShow</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a982885a8cd29372bdc5af91924a39d73">triggered</a>(QAction *action);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ac3383d3a239583b3963ecc967d2db62a">hovered</a>(QAction *action);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        QAction *<a class="code" href="../../d9/d88/class_w_b_model_menu.html#ab07a0d5864e0c88ada596bf225a76b64">makeAction</a>(<span class="keyword">const</span> QModelIndex &amp;index);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">int</span> m_maxRows;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">int</span> m_firstSeparator;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">int</span> m_maxWidth;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">int</span> m_hoverRole;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">int</span> m_separatorRole;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        QAbstractItemModel *m_model;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        QPersistentModelIndex m_root;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">  117</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#ae3d934ba3eef2a969455da0c5a00841f">m_maxRows</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">  118</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#add64b53a7740c2f424c96a6692d04e52">m_firstSeparator</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#afaac03612ca2c4c1b2448fe987d242de">  119</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#afaac03612ca2c4c1b2448fe987d242de">m_maxWidth</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">  120</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a3acd04a1f9d370ab54bd24514b99a8a0">m_hoverRole</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">  121</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a4630ed9e901508dcb613238cc8734ab4">m_separatorRole</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">  122</a></span>&#160;        QAbstractItemModel *<a class="code" href="../../d9/d88/class_w_b_model_menu.html#a6f6891dce3576ffc9cd35782520273ec">m_model</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">  123</a></span>&#160;        QPersistentModelIndex <a class="code" href="../../d9/d88/class_w_b_model_menu.html#a19c7746cf0e2127023956d90441b9d16">m_root</a>;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif // WBMODELMENU_H</span></div>
@@ -236,8 +236,8 @@ $(document).ready(function(){initNavTree('da/d22/_w_b_model_menu_8h_source.html'
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../da/d22/_w_b_model_menu_8h.html">WBModelMenu.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_c5d8e5d1a9c4329f04300c8019051d02.html">web</a></li><li class="navelem"><a class="el" href="../../dir_30ba88fccd588e82598a3ea37e3e2e52.html">browser</a></li><li class="navelem"><a class="el" href="../../da/d22/_w_b_model_menu_8h.html">WBModelMenu.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

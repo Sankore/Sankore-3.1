@@ -7,5 +7,6 @@ var class_u_b_document_datastore_a_p_i =
     [ "key", "d9/d24/class_u_b_document_datastore_a_p_i.html#a54533b8da730d1d9f2807e4f08321c9d", null ],
     [ "length", "d9/d24/class_u_b_document_datastore_a_p_i.html#ae08fc3972fc708b22d4b5c1611254083", null ],
     [ "removeItem", "d9/d24/class_u_b_document_datastore_a_p_i.html#a9a5d28cd39f1eb8875f14be8e2a1e942", null ],
-    [ "setItem", "d9/d24/class_u_b_document_datastore_a_p_i.html#a4c030e84ad9deeecca59bda73f662c9f", null ]
+    [ "setItem", "d9/d24/class_u_b_document_datastore_a_p_i.html#a4c030e84ad9deeecca59bda73f662c9f", null ],
+    [ "mGraphicsW3CWidget", "d9/d24/class_u_b_document_datastore_a_p_i.html#a06546e5fcca8331e15f158861542986a", null ]
 ];

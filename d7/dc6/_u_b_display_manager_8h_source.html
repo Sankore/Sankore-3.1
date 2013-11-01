@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/core/UBDisplayManager.h Source File</title>
+<title>Open-Sankoré: UBDisplayManager.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -157,17 +157,17 @@ $(document).ready(function(){initNavTree('d7/dc6/_u_b_display_manager_8h_source.
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aeaddf24885b0612083da8b4045a35847">   52</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aeaddf24885b0612083da8b4045a35847">hasControl</a>()</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> mControlScreenIndex &gt; -1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a00a31e92ba05b878aca9978ebc45a6cf">   57</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a00a31e92ba05b878aca9978ebc45a6cf">hasDisplay</a>()</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> mDisplayScreenIndex &gt; -1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> &gt; -1;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2d743afe108d8b8b408c48c77be7d78a">   62</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2d743afe108d8b8b408c48c77be7d78a">hasPrevious</a>()</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> !mPreviousScreenIndexes.isEmpty();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> !<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.isEmpty();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106">   67</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106">DisplayRole</a></div>
@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('d7/dc6/_u_b_display_manager_8h_source.
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ac8b7e7f0a2fbdbe631b4321b7d324f2a">   74</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ac8b7e7f0a2fbdbe631b4321b7d324f2a">controleScreenIndex</a>()</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> mControlScreenIndex;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        QRect <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aee84a994758fbdbcc1119681c41c66c8">controlGeometry</a>();</div>
@@ -203,31 +203,31 @@ $(document).ready(function(){initNavTree('d7/dc6/_u_b_display_manager_8h_source.
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> positionScreens();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a55df2e19654e480ac5e38806cd0f097c">positionScreens</a>();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> initScreenIndexes();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aa8284ad27f57b0bb8811da517714e40a">initScreenIndexes</a>();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> mControlScreenIndex;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">  104</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">int</span> mDisplayScreenIndex;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">  106</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        QList&lt;int&gt; mPreviousScreenIndexes;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">  108</a></span>&#160;        QList&lt;int&gt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        QDesktopWidget* mDesktop;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">  110</a></span>&#160;        QDesktopWidget* <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        QWidget* mControlWidget;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">  112</a></span>&#160;        QWidget* <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        QWidget* mDisplayWidget;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">  114</a></span>&#160;        QWidget* <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        QWidget *mDesktopWidget;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">  116</a></span>&#160;        QWidget *<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a>;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        QList&lt;UBBoardView*&gt; mPreviousDisplayWidgets;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">  118</a></span>&#160;        QList&lt;UBBoardView*&gt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        QList&lt;UBBlackoutWidget*&gt; mBlackoutWidgets;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">  120</a></span>&#160;        QList&lt;UBBlackoutWidget*&gt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        QList&lt;DisplayRole&gt; mScreenIndexesRoles;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">  122</a></span>&#160;        QList&lt;DisplayRole&gt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">mScreenIndexesRoles</a>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">bool</span> mUseMultiScreen;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">  124</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
@@ -237,8 +237,8 @@ $(document).ready(function(){initNavTree('d7/dc6/_u_b_display_manager_8h_source.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d7/dc6/_u_b_display_manager_8h.html">UBDisplayManager.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_55aa7dff72311e91c90ae626074ddca7.html">core</a></li><li class="navelem"><a class="el" href="../../d7/dc6/_u_b_display_manager_8h.html">UBDisplayManager.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

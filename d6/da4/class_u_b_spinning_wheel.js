@@ -6,5 +6,7 @@ var class_u_b_spinning_wheel =
     [ "sizeHint", "d6/da4/class_u_b_spinning_wheel.html#a3260528612d75f71081155b1ad28813a", null ],
     [ "startAnimation", "d6/da4/class_u_b_spinning_wheel.html#acbcc339c4ad8ac331812ef58581e8264", null ],
     [ "stopAnimation", "d6/da4/class_u_b_spinning_wheel.html#afce6e8912a9ea4ce878ea2a0dcd47d7e", null ],
-    [ "timerEvent", "d6/da4/class_u_b_spinning_wheel.html#aafd20c824e508e48f8d10e17491676ea", null ]
+    [ "timerEvent", "d6/da4/class_u_b_spinning_wheel.html#aafd20c824e508e48f8d10e17491676ea", null ],
+    [ "mPosition", "d6/da4/class_u_b_spinning_wheel.html#adcd4a85ae5e2115d61ad2a8e6c2f3fb5", null ],
+    [ "mTimerID", "d6/da4/class_u_b_spinning_wheel.html#a93eb7084795f5d957dfc1e256dbac647", null ]
 ];

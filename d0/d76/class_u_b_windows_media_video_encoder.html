@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('d0/d76/class_u_b_windows_media_video_e
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d22/class_u_b_windows_media_video_encoder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWindowsMediaVideoEncoder Class Reference</div>  </div>
@@ -116,14 +118,14 @@ $(document).ready(function(){initNavTree('d0/d76/class_u_b_windows_media_video_e
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d2c/class_u_b_windows_media_video_encoder__inherit__graph.svg" width="248" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d2c/class_u_b_windows_media_video_encoder__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBWindowsMediaVideoEncoder:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d63/class_u_b_windows_media_video_encoder__coll__graph.svg" width="248" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d63/class_u_b_windows_media_video_encoder__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -154,6 +156,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f9a57a0a7afa22d06b5fef2dbb19c6a inherit pub_methods_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f9a57a0a7afa22d06b5fef2dbb19c6a">setAudioRecordingDevice</a> (const QString pAudioRecordingDevice)</td></tr>
 <tr class="memitem:af4bd868b266dbcd3ec158650002598b5 inherit pub_methods_class_u_b_abstract_video_encoder"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:abb568895bcf99fd6d7f03e4ec73a02fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#abb568895bcf99fd6d7f03e4ec73a02fb">processAudioBuffer</a> (WAVEHDR *, long)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac0822979ead3939bbc3175afdf4f63e7"><td class="memItemLeft" align="right" valign="top">QPointer&lt; <a class="el" href="../../d7/d45/class_u_b_windows_media_file.html">UBWindowsMediaFile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a></td></tr>
+<tr class="memitem:a0960b300e5fc19035597fe82a3073457"><td class="memItemLeft" align="right" valign="top">QPointer&lt; <a class="el" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a></td></tr>
+<tr class="memitem:a38b54f5f1670140c15b7491666957a9f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a38b54f5f1670140c15b7491666957a9f">mLastErrorMessage</a></td></tr>
+<tr class="memitem:af8f68b3e8fdb50d1a3ea1db87a9097e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a></td></tr>
+<tr class="memitem:a64ac85c3755fc671a9621e4c6c6cae6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a></td></tr>
+<tr class="memitem:a0c5e84b9defc5a2439d4565f1a314f82"><td class="memItemLeft" align="right" valign="top">quint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0c5e84b9defc5a2439d4565f1a314f82">mLastAudioLevel</a></td></tr>
+<tr class="memitem:a146bb01971d761af98640cfbded1807c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a146bb01971d761af98640cfbded1807c">mIsRecording</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_u_b_abstract_video_encoder"><td colspan="2" onclick="javascript:toggleInherit('signals_class_u_b_abstract_video_encoder')"><img src="../../closed.png" alt="-"/>&nbsp;Signals inherited from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html">UBAbstractVideoEncoder</a></td></tr>
@@ -176,11 +192,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab9656acba80cfe74980b16dc90423b73">UBAbstractVideoEncoder</a>(pParent)</div>
-<div class="line">    , mWMVideo(0)</div>
-<div class="line">    , mWaveRecorder(0)</div>
-<div class="line">    , mRecordAudio(<span class="keyword">true</span>)</div>
-<div class="line">    , mLastAudioLevel(0)</div>
-<div class="line">    , mIsPaused(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a>(<span class="keyword">true</span>)</div>
+<div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0c5e84b9defc5a2439d4565f1a314f82">mLastAudioLevel</a>(0)</div>
+<div class="line">    , <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -263,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab3f6d08c89768a4fc724cfd6da53ac16">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mLastErrorMessage;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a38b54f5f1670140c15b7491666957a9f">mLastErrorMessage</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -302,8 +318,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a51c1523562454b18ea4066b5a4c805e2">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mWMVideo)</div>
-<div class="line">       mWMVideo-&gt;startNewChapter(pLabel, timestamp);</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>)</div>
+<div class="line">       <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;startNewChapter(pLabel, timestamp);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -342,11 +358,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab74514eba01c7b8dcce926934dd6838a">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mWMVideo &amp;&amp; !mIsPaused)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a> &amp;&amp; !<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span>(!mWMVideo-&gt;appendVideoFrame(pPix, timestamp))</div>
+<div class="line">        <span class="keywordflow">if</span>(!<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;appendVideoFrame(pPix, timestamp))</div>
 <div class="line">        {</div>
-<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Error adding new video frame&quot;</span> &lt;&lt; mWMVideo-&gt;lastErrorMessage();</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;Error adding new video frame&quot;</span> &lt;&lt; <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;lastErrorMessage();</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -378,15 +394,15 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(!mIsPaused &amp;&amp; mIsRecording)</div>
+<div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a> &amp;&amp; <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a146bb01971d761af98640cfbded1807c">mIsRecording</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span>(mWaveRecorder)</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>)</div>
 <div class="line">        {</div>
-<div class="line">            result = mWaveRecorder-&gt;stop();</div>
+<div class="line">            result = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;stop();</div>
 <div class="line">            emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(0);</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mIsPaused = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a> = <span class="keyword">true</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
@@ -398,6 +414,85 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_a58feb0ad63b6e980b77e5a7cd9392f7c_cgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abb568895bcf99fd6d7f03e4ec73a02fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBWindowsMediaVideoEncoder::processAudioBuffer </td>
+          <td>(</td>
+          <td class="paramtype">WAVEHDR *&#160;</td>
+          <td class="paramname"><em>waveBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>timestamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_UNUSED(timestamp);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a> &amp;&amp; <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordtype">long</span> samplesCount = waveBuffer-&gt;dwBytesRecorded / 2;</div>
+<div class="line">        qint16* samples = (qint16*)waveBuffer-&gt;lpData;</div>
+<div class="line">        quint16 maxRMS = 0;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">long</span> i = 0; i &lt; samplesCount; i++)</div>
+<div class="line">        {</div>
+<div class="line">            quint8 current = qAbs(samples[i] / 128);</div>
+<div class="line"></div>
+<div class="line">            quint16 currentRMS = current * current;</div>
+<div class="line">            maxRMS = qMax(maxRMS, currentRMS);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        quint8 max = sqrt((qreal)maxRMS);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (max != <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0c5e84b9defc5a2439d4565f1a314f82">mLastAudioLevel</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0c5e84b9defc5a2439d4565f1a314f82">mLastAudioLevel</a> = max;</div>
+<div class="line">            emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0c5e84b9defc5a2439d4565f1a314f82">mLastAudioLevel</a>);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_abb568895bcf99fd6d7f03e4ec73a02fb_cgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_abb568895bcf99fd6d7f03e4ec73a02fb_icgraph.svg" width="480" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -427,27 +522,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab5fae0f75a1993fe478442e0aa9d0c14">UBAbstractVideoEncoder</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mRecordAudio != pRecordAudio)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a> != pRecordAudio)</div>
 <div class="line">    {</div>
-<div class="line">        mRecordAudio = pRecordAudio;</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a> = pRecordAudio;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (mRecordAudio)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a>)</div>
 <div class="line">        {</div>
-<div class="line">            connect(mWaveRecorder, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), mWMVideo, SLOT(appendAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), Qt::DirectConnection);</div>
+<div class="line">            connect(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>, SLOT(appendAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), Qt::DirectConnection);</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            disconnect(mWaveRecorder, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), mWMVideo, SLOT(appendAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)));</div>
+<div class="line">            disconnect(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>, SLOT(appendAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)));</div>
 <div class="line">            emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(0);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_a8161cc1d5203e07de5bcf92b6b7e9acf_cgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -486,48 +581,48 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    qDebug() &lt;&lt; profile;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(mRecordAudio)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a>)</div>
 <div class="line">    {</div>
-<div class="line">        mWaveRecorder = <span class="keyword">new</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>(<span class="keyword">this</span>);</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a> = <span class="keyword">new</span> <a class="code" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordtype">bool</span> audioAvailable = mWaveRecorder-&gt;init(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()) &amp;&amp; mWaveRecorder-&gt;start();</div>
+<div class="line">        <span class="keywordtype">bool</span> audioAvailable = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;init(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()) &amp;&amp; <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;start();</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (!audioAvailable)</div>
 <div class="line">        {</div>
-<div class="line">            mWaveRecorder-&gt;deleteLater();</div>
-<div class="line">            mWaveRecorder = 0;</div>
-<div class="line">            mRecordAudio = <span class="keyword">false</span>;</div>
+<div class="line">            <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;deleteLater();</div>
+<div class="line">            <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a> = 0;</div>
+<div class="line">            <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a> = <span class="keyword">false</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mWMVideo = <span class="keyword">new</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html">UBWindowsMediaFile</a>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d45/class_u_b_windows_media_file.html">UBWindowsMediaFile</a>(<span class="keyword">this</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span>(!mWMVideo-&gt;init(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>().replace(<span class="stringliteral">&quot;/&quot;</span>, <span class="stringliteral">&quot;\\&quot;</span>), profile, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>(),</div>
+<div class="line">    <span class="keywordflow">if</span>(!<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;init(<a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>().replace(<span class="stringliteral">&quot;/&quot;</span>, <span class="stringliteral">&quot;\\&quot;</span>), profile, <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>(),</div>
 <div class="line">        <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>().width(), <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>().height(), 32))</div>
 <div class="line">    {</div>
-<div class="line">        mWMVideo-&gt;deleteLater();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;deleteLater();</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mRecordAudio)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#af8f68b3e8fdb50d1a3ea1db87a9097e9">mRecordAudio</a>)</div>
 <div class="line">    {</div>
-<div class="line">        connect(mWaveRecorder, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), mWMVideo</div>
+<div class="line">        connect(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a></div>
 <div class="line">                        , SLOT(appendAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), Qt::DirectConnection);</div>
-<div class="line">        connect(mWaveRecorder, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <span class="keyword">this</span></div>
-<div class="line">                        , SLOT(processAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), Qt::DirectConnection);</div>
+<div class="line">        connect(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <span class="keyword">this</span></div>
+<div class="line">                        , SLOT(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#abb568895bcf99fd6d7f03e4ec73a02fb">processAudioBuffer</a>(WAVEHDR*, <span class="keywordtype">long</span>)), Qt::DirectConnection);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mIsRecording = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a146bb01971d761af98640cfbded1807c">mIsRecording</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_a88826be28b76bc7917daac0c8b077037_cgraph.svg" width="440" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_a88826be28b76bc7917daac0c8b077037_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -558,46 +653,46 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> audioOk = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mWaveRecorder)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>)</div>
 <div class="line">    {</div>
-<div class="line">        disconnect(mWaveRecorder, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), mWMVideo</div>
+<div class="line">        disconnect(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a></div>
 <div class="line">                , SLOT(appendAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)));</div>
-<div class="line">        disconnect(mWaveRecorder, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <span class="keyword">this</span></div>
-<div class="line">                , SLOT(processAudioBuffer(WAVEHDR*, <span class="keywordtype">long</span>)));</div>
+<div class="line">        disconnect(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>, SIGNAL(newWaveBuffer(WAVEHDR*, <span class="keywordtype">long</span>)), <span class="keyword">this</span></div>
+<div class="line">                , SLOT(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#abb568895bcf99fd6d7f03e4ec73a02fb">processAudioBuffer</a>(WAVEHDR*, <span class="keywordtype">long</span>)));</div>
 <div class="line"></div>
-<div class="line">        mWaveRecorder-&gt;stop();</div>
-<div class="line">        audioOk = mWaveRecorder-&gt;close();</div>
-<div class="line">        mLastErrorMessage = mWaveRecorder-&gt;lastErrorMessage();</div>
-<div class="line">        mWaveRecorder-&gt;deleteLater();</div>
-<div class="line">        mWaveRecorder = 0;</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;stop();</div>
+<div class="line">        audioOk = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;close();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a38b54f5f1670140c15b7491666957a9f">mLastErrorMessage</a> = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;lastErrorMessage();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;deleteLater();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a> = 0;</div>
 <div class="line">        emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a314566aa45510979eda49b487fd0113c">audioLevelChanged</a>(0);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">bool</span> videoOk = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mWMVideo)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>)</div>
 <div class="line">    {</div>
-<div class="line">        videoOk = mWMVideo-&gt;close();</div>
-<div class="line">        mLastErrorMessage = mWMVideo-&gt;lastErrorMessage();</div>
-<div class="line">        mWMVideo-&gt;deleteLater();</div>
-<div class="line">        mWMVideo = 0;</div>
+<div class="line">        videoOk = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;close();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a38b54f5f1670140c15b7491666957a9f">mLastErrorMessage</a> = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;lastErrorMessage();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a>-&gt;deleteLater();</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#ac0822979ead3939bbc3175afdf4f63e7">mWMVideo</a> = 0;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">bool</span> ok = audioOk &amp;&amp; videoOk;</div>
 <div class="line"></div>
 <div class="line">    emit <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#aa4e03edd2cb73ad5ccb94daa23268b54">encodingFinished</a>(ok);</div>
 <div class="line"></div>
-<div class="line">    mIsRecording = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a146bb01971d761af98640cfbded1807c">mIsRecording</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> ok;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_a9f665f07f31a18c712653890abc7c6e6_cgraph.svg" width="440" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d76/class_u_b_windows_media_video_encoder_a9f665f07f31a18c712653890abc7c6e6_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -628,14 +723,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mIsPaused &amp;&amp; mIsRecording)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a> &amp;&amp; <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a146bb01971d761af98640cfbded1807c">mIsRecording</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span>(mWaveRecorder)</div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>)</div>
 <div class="line">        {</div>
-<div class="line">            result = mWaveRecorder-&gt;start();</div>
+<div class="line">            result = <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a0960b300e5fc19035597fe82a3073457">mWaveRecorder</a>-&gt;start();</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        mIsPaused = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d0/d76/class_u_b_windows_media_video_encoder.html#a64ac85c3755fc671a9621e4c6c6cae6e">mIsPaused</a> = <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
@@ -671,9 +766,150 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a64ac85c3755fc671a9621e4c6c6cae6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowsMediaVideoEncoder::mIsPaused</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a146bb01971d761af98640cfbded1807c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowsMediaVideoEncoder::mIsRecording</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0c5e84b9defc5a2439d4565f1a314f82"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint8 UBWindowsMediaVideoEncoder::mLastAudioLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a38b54f5f1670140c15b7491666957a9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBWindowsMediaVideoEncoder::mLastErrorMessage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af8f68b3e8fdb50d1a3ea1db87a9097e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBWindowsMediaVideoEncoder::mRecordAudio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0960b300e5fc19035597fe82a3073457"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointer&lt;<a class="el" href="../../d3/d73/class_u_b_wave_recorder.html">UBWaveRecorder</a>&gt; UBWindowsMediaVideoEncoder::mWaveRecorder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac0822979ead3939bbc3175afdf4f63e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointer&lt;<a class="el" href="../../d7/d45/class_u_b_windows_media_file.html">UBWindowsMediaFile</a>&gt; UBWindowsMediaVideoEncoder::mWMVideo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a></li>
-<li>Sankore-3.1/src/podcast/windowsmedia/<a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp.html">UBWindowsMediaVideoEncoder.cpp</a></li>
+<li><a class="el" href="../../d8/d4e/_u_b_windows_media_video_encoder_8h_source.html">UBWindowsMediaVideoEncoder.h</a></li>
+<li><a class="el" href="../../d5/d4d/_u_b_windows_media_video_encoder_8cpp.html">UBWindowsMediaVideoEncoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -681,7 +917,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d76/class_u_b_windows_media_video_encoder.html">UBWindowsMediaVideoEncoder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

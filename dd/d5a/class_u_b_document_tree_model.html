@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('dd/d5a/class_u_b_document_tree_model.h
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d7/de3/class_u_b_document_tree_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentTreeModel Class Reference</div>  </div>
@@ -119,7 +121,7 @@ $(document).ready(function(){initNavTree('dd/d5a/class_u_b_document_tree_model.h
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d24/class_u_b_document_tree_model__coll__graph.svg" width="200" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d24/class_u_b_document_tree_model__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
@@ -201,6 +203,28 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a75608e2e56549790f922c4e5ce41866d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a75608e2e56549790f922c4e5ce41866d">nodeLessThan</a> (const <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *firstIndex, const <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *secondIndex)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0468df61607cc77c8e9eef92df5996eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a0468df61607cc77c8e9eef92df5996eb">findProxy</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pSearch, <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *pParent) const </td></tr>
+<tr class="memitem:a5bb42dc851a997d8e4226878c9e275c7"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a5bb42dc851a997d8e4226878c9e275c7">pIndexForNode</a> (const QModelIndex &amp;<a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a6c75fc24b71d3a3d65e626f33ae02445">parent</a>, <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *pNode) const </td></tr>
+<tr class="memitem:a437a5e6b25661b80a8542feb34198943"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a437a5e6b25661b80a8542feb34198943">isDescendantOf</a> (const QModelIndex &amp;pPossibleDescendant, const QModelIndex &amp;pPossibleAncestor) const </td></tr>
+<tr class="memitem:abe9485e7ef377a24f43816f689ca358f"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#abe9485e7ef377a24f43816f689ca358f">addNode</a> (<a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *pFreeNode, const QModelIndex &amp;pParent, <a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a07efcb98db28114b23cdf3da63859911">eAddItemMode</a> pMode=<a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a07efcb98db28114b23cdf3da63859911a78c8d816499c7816445704e5d7e7fbf3">aDetectPosition</a>)</td></tr>
+<tr class="memitem:a118d5960adc9281ccbe70cd158bd7670"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a118d5960adc9281ccbe70cd158bd7670">positionForParent</a> (<a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *pFreeNode, <a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *pParentNode)</td></tr>
+<tr class="memitem:aa1ef3d6e22e0bd4542b972834706338a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#aa1ef3d6e22e0bd4542b972834706338a">fixNodeName</a> (const QModelIndex &amp;source, const QModelIndex &amp;dest)</td></tr>
+<tr class="memitem:a8c9847e65954eb3ff3ad7f51265f2edd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a8c9847e65954eb3ff3ad7f51265f2edd">updateIndexNameBindings</a> (<a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *nd)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0681b2d04209dd554fde2c2e9716433b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a></td></tr>
+<tr class="memitem:ae6d13f175cbec4be3a1f9f1a5580738e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a></td></tr>
+<tr class="memitem:aa36d189804ed985ac3cc4bc4b8ad68a4"><td class="memItemLeft" align="right" valign="top">QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#aa36d189804ed985ac3cc4bc4b8ad68a4">mRoot</a></td></tr>
+<tr class="memitem:a8f92c6b4d161f4c74bf3299c819e4293"><td class="memItemLeft" align="right" valign="top">QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a8f92c6b4d161f4c74bf3299c819e4293">mMyDocuments</a></td></tr>
+<tr class="memitem:af082e8b6fd8b96e3adfb743b42d4daa8"><td class="memItemLeft" align="right" valign="top">QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#af082e8b6fd8b96e3adfb743b42d4daa8">mModels</a></td></tr>
+<tr class="memitem:a08edb2783b893d6404593cc057c0ab74"><td class="memItemLeft" align="right" valign="top">QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a08edb2783b893d6404593cc057c0ab74">mTrash</a></td></tr>
+<tr class="memitem:a85f31ace011948bb5aa99c4e5a019aa2"><td class="memItemLeft" align="right" valign="top">QPersistentModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a85f31ace011948bb5aa99c4e5a019aa2">mUntitledDocuments</a></td></tr>
+<tr class="memitem:a08dc51d5ff66481d36ab12d3ee74d586"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a></td></tr>
+<tr class="memitem:a6412e70962097f7c8b775900e9f2abb0"><td class="memItemLeft" align="right" valign="top">QModelIndex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a6412e70962097f7c8b775900e9f2abb0">mHighLighted</a></td></tr>
 </table>
 <h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a07efcb98db28114b23cdf3da63859911"></a>
@@ -297,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                        :</div>
 <div class="line">    QAbstractItemModel(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6c75fc24b71d3a3d65e626f33ae02445">parent</a>)</div>
-<div class="line">  , mRootNode(0)</div>
+<div class="line">  , <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aa632fe27e083103c08ed41bcea4e1001">rootNode</a> = <span class="keyword">new</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>(<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>, <span class="stringliteral">&quot;root&quot;</span>);</div>
 <div class="line"></div>
@@ -314,11 +338,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a534c789e58d81ad0ea55ff1a63604dbb">setRootNode</a>(rootNode);</div>
 <div class="line"></div>
-<div class="line">    mRoot = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(0, 0, QModelIndex());</div>
-<div class="line">    mMyDocuments =  <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(0, 0, QModelIndex());</div>
-<div class="line">    mModels =  <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(1, 0, QModelIndex());</div>
-<div class="line">    mTrash =  <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(2, 0, QModelIndex());</div>
-<div class="line">    mUntitledDocuments = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(0, 0, mMyDocuments);</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aa36d189804ed985ac3cc4bc4b8ad68a4">mRoot</a> = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(0, 0, QModelIndex());</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8f92c6b4d161f4c74bf3299c819e4293">mMyDocuments</a> =  <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(0, 0, QModelIndex());</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#af082e8b6fd8b96e3adfb743b42d4daa8">mModels</a> =  <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(1, 0, QModelIndex());</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08edb2783b893d6404593cc057c0ab74">mTrash</a> =  <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(2, 0, QModelIndex());</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a85f31ace011948bb5aa99c4e5a019aa2">mUntitledDocuments</a> = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(0, 0, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8f92c6b4d161f4c74bf3299c819e4293">mMyDocuments</a>);</div>
 }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -345,7 +369,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keyword">delete</span> mRootNode;</div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -380,14 +404,24 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *catalogNode = <span class="keyword">new</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>(<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>, pName);</div>
-<div class="line">    addNode(catalogNode, pParent);</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe9485e7ef377a24f43816f689ca358f">addNode</a>(catalogNode, pParent);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2ad046b847b973f923ad335939d79b33_cgraph.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2ad046b847b973f923ad335939d79b33_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -437,24 +471,26 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        lParent = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae40c1b98c76d2723d0a503f3b0efd53f">goTo</a>(docGroupName);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    addNode(freeNode, lParent);</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe9485e7ef377a24f43816f689ca358f">addNode</a>(freeNode, lParent);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab34df78baad9b58d8e8c3f3a32bee007_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-</p>
-
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab34df78baad9b58d8e8c3f3a32bee007_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab34df78baad9b58d8e8c3f3a32bee007_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab34df78baad9b58d8e8c3f3a32bee007_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -485,15 +521,89 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ab34df78baad9b58d8e8c3f3a32bee007">addDocument</a>(pProxyData, pParent);</div>
-<div class="line">    mNewDocuments &lt;&lt; pProxyData;</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a> &lt;&lt; pProxyData;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8db99af8fb17b580f381b4bfe120918d_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8db99af8fb17b580f381b4bfe120918d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe9485e7ef377a24f43816f689ca358f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex UBDocumentTreeModel::addNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>pFreeNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>pParent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a07efcb98db28114b23cdf3da63859911">eAddItemMode</a>&#160;</td>
+          <td class="paramname"><em>pMode</em> = <code><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html#a07efcb98db28114b23cdf3da63859911a78c8d816499c7816445704e5d7e7fbf3">aDetectPosition</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *tstParent = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(pParent);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!pParent.isValid() || tstParent-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() != <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">int</span> newIndex = pMode == <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a07efcb98db28114b23cdf3da63859911a78c8d816499c7816445704e5d7e7fbf3">aDetectPosition</a> ? <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a118d5960adc9281ccbe70cd158bd7670">positionForParent</a>(pFreeNode, tstParent): tstParent-&gt;children().size();</div>
+<div class="line">    beginInsertRows(pParent, newIndex, newIndex);</div>
+<div class="line">    tstParent-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab931d6811df7e247108b3312f4e254c8">insertChild</a>(newIndex, pFreeNode);</div>
+<div class="line">    endInsertRows();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> createIndex(newIndex, 0, pFreeNode);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abe9485e7ef377a24f43816f689ca358f_cgraph.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abe9485e7ef377a24f43816f689ca358f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -533,21 +643,21 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> newName;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa08a2244960857a0835f7feb0fdfc757_cgraph.svg" width="622" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa08a2244960857a0835f7feb0fdfc757_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa08a2244960857a0835f7feb0fdfc757_icgraph.svg" width="100%" height="548"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -616,8 +726,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">switch</span> (static_cast&lt;int&gt;(pMode)) {</div>
 <div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8a3b8a397b5435e7f07bfa8de0061150acc3cab6ff862b626c218a67ad866bac1">aReference</a>:</div>
 <div class="line">        clonedNodeSource = nodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a4f1f69c4cc82b3e0edce6a669623b532">clone</a>();</div>
-<div class="line">        <span class="keywordflow">if</span> (mNewDocuments.contains(nodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>())) { <span class="comment">//update references for session documents</span></div>
-<div class="line">            mNewDocuments &lt;&lt; clonedNodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>();</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a>.contains(nodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>())) { <span class="comment">//update references for session documents</span></div>
+<div class="line">            <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a> &lt;&lt; clonedNodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>();</div>
 <div class="line"></div>
 <div class="line">            <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#a3ae9e5749259cbbde2e4e3ede8b84713">reassignDocProxy</a>(clonedNodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>(), nodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
 <div class="line">        }</div>
@@ -652,7 +762,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab96bfcd20014ff5bb36fede047aef3b2">persistDocumentMetadata</a>(clonedNodeSource-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    addNode(clonedNodeSource, newParent);</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe9485e7ef377a24f43816f689ca358f">addNode</a>(clonedNodeSource, newParent);</div>
 <div class="line">    endInsertRows();</div>
 <div class="line"></div>
 <div class="line">    QPersistentModelIndex newParentIndex = createIndex(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe969ce75dea4388d4d1b56a74d9ab9f">rowCount</a>(newParent), 0, clonedNodeSource);</div>
@@ -667,20 +777,21 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> newParentIndex;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ade622c3d2ab31bbff2304db2bbbcf72a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ade622c3d2ab31bbff2304db2bbbcf72a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ade622c3d2ab31bbff2304db2bbbcf72a_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -707,14 +818,14 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a05779f6af8042fbe0c9f72002fb3f246">indexForNode</a>(mCurrentNode);} <span class="comment">//index representing a current document</span></div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a05779f6af8042fbe0c9f72002fb3f246">indexForNode</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a>);} <span class="comment">//index representing a current document</span></div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abff2e582e5101bed6cdd3402eca1e5b0_cgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abff2e582e5101bed6cdd3402eca1e5b0_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -752,11 +863,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9ec074ea59f6c2eb73cc54369233b07d_icgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -783,7 +894,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mCurrentNode;} <span class="comment">//work around for sorting model.</span></div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a>;} <span class="comment">//work around for sorting model.</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -823,7 +934,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">switch</span> (role) {</div>
 <div class="line">        <span class="keywordflow">case</span> (Qt::DecorationRole) :</div>
-<div class="line">            <span class="keywordflow">if</span> (mCurrentNode &amp;&amp; mCurrentNode == dataNode) {</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a> &amp;&amp; <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a> == dataNode) {</div>
 <div class="line">                <span class="keywordflow">return</span> QIcon(<span class="stringliteral">&quot;:images/currentDocument.png&quot;</span>);</div>
 <div class="line">            } <span class="keywordflow">else</span> {</div>
 <div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a> == <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e40cf280fea5a6c98f89e7a7d4e5871">trashIndex</a>()) {</div>
@@ -866,7 +977,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a55e684b2dc7fc9d961427b6b0313a2df">isConstant</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>)) {</div>
 <div class="line">                <span class="keywordflow">return</span> QBrush(0xD9DFEB);</div>
 <div class="line">            }</div>
-<div class="line">            <span class="keywordflow">if</span> (mHighLighted.isValid() &amp;&amp; <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a> == mHighLighted) {</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6412e70962097f7c8b775900e9f2abb0">mHighLighted</a>.isValid() &amp;&amp; <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a> == <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6412e70962097f7c8b775900e9f2abb0">mHighLighted</a>) {</div>
 <div class="line">                <span class="keywordflow">return</span> QBrush(0x6682B5);</div>
 <div class="line">            }</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -876,20 +987,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> QVariant();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a5be66c3a39b33101ddf1aaa4c90f0409_cgraph.svg" width="100%" height="531"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a5be66c3a39b33101ddf1aaa4c90f0409_icgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -994,7 +1105,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">foreach</span> (QModelIndex curIndex, incomingIndexes) {</div>
 <div class="line">        QModelIndex clonedTopLevel = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ade622c3d2ab31bbff2304db2bbbcf72a">copyIndexToNewParent</a>(curIndex, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6c75fc24b71d3a3d65e626f33ae02445">parent</a>, action == Qt::MoveAction ? <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8a3b8a397b5435e7f07bfa8de0061150acc3cab6ff862b626c218a67ad866bac1">aReference</a> : <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8a3b8a397b5435e7f07bfa8de0061150ae5f574b2da79238736ec21d9f1b865e4">aContentCopy</a>);</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(curIndex) == mCurrentNode &amp;&amp; action == Qt::MoveAction) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(curIndex) == <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a> &amp;&amp; action == Qt::MoveAction) {</div>
 <div class="line">            emit <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a9ec074ea59f6c2eb73cc54369233b07d">currentIndexMoved</a>(clonedTopLevel, curIndex);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
@@ -1007,12 +1118,149 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    return true;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_af71ae3d84f577bbee154dea3eb0fad66_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0468df61607cc77c8e9eef92df5996eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> * UBDocumentTreeModel::findProxy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *&#160;</td>
+          <td class="paramname"><em>pSearch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>pParent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">foreach</span> (<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *curNode, pParent-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#add8f3447b6f6d02ff78a440386ed89f4">children</a>())</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a> != curNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>())</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (curNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a79709d748149db076173b8996c544393">theSameDocument</a>(pSearch))</div>
+<div class="line">                <span class="keywordflow">return</span> curNode;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (curNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#add8f3447b6f6d02ff78a440386ed89f4">children</a>().count())</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *recursiveDescendResult = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0468df61607cc77c8e9eef92df5996eb">findProxy</a>(pSearch, curNode);</div>
+<div class="line">            <span class="keywordflow">if</span> (recursiveDescendResult)</div>
+<div class="line">                <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0468df61607cc77c8e9eef92df5996eb">findProxy</a>(pSearch, curNode);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a0468df61607cc77c8e9eef92df5996eb_cgraph.svg" width="416" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a0468df61607cc77c8e9eef92df5996eb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1ef3d6e22e0bd4542b972834706338a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeModel::fixNodeName </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">// Determine whether to provide a name with postfix if the name in current level allready exists</span></div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *srcNode = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(source);</div>
+<div class="line">    Q_ASSERT(srcNode);</div>
+<div class="line"></div>
+<div class="line">    QString newName = srcNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (source.parent() != dest</div>
+<div class="line">            &amp;&amp; (dest != <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e40cf280fea5a6c98f89e7a7d4e5871">trashIndex</a>()</div>
+<div class="line">            || !<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a48a94f5cf48a30ef0b684cfa57fc1eb7">inTrash</a>(dest))) {</div>
+<div class="line">        newName = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aa08a2244960857a0835f7feb0fdfc757">adjustNameForParentIndex</a>(newName, dest);</div>
+<div class="line">        srcNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#afd9356b58412d6df1852ba9676415799">setNodeName</a>(newName);</div>
+<div class="line">        <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(source)-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#afd9356b58412d6df1852ba9676415799">setNodeName</a>(newName);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa1ef3d6e22e0bd4542b972834706338a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa1ef3d6e22e0bd4542b972834706338a_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1050,21 +1298,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> resultFlags;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a1f1ec2d66b699260e9a62f2c0221493a_cgraph.svg" width="100%" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a1f1ec2d66b699260e9a62f2c0221493a_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a1f1ec2d66b699260e9a62f2c0221493a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1116,28 +1365,30 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (!searchingNode) {</div>
 <div class="line">            <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *newChild = <span class="keyword">new</span> <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>(<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>, curLevelName);</div>
-<div class="line">            parentIndex = addNode(newChild, parentIndex);</div>
+<div class="line">            parentIndex = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe9485e7ef377a24f43816f689ca358f">addNode</a>(newChild, parentIndex);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> parentIndex;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae40c1b98c76d2723d0a503f3b0efd53f_cgraph.svg" width="603" height="246"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae40c1b98c76d2723d0a503f3b0efd53f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae40c1b98c76d2723d0a503f3b0efd53f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae40c1b98c76d2723d0a503f3b0efd53f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1163,7 +1414,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mHighLighted;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6412e70962097f7c8b775900e9f2abb0">mHighLighted</a>;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1197,7 +1448,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mRootNode || row &lt; 0 || column &lt; 0) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a> || row &lt; 0 || column &lt; 0) {</div>
 <div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -1216,21 +1467,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> resIndex;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a482d152ef1865a960d12f7d8726133b9_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a482d152ef1865a960d12f7d8726133b9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a482d152ef1865a960d12f7d8726133b9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1288,15 +1540,25 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> pIndexForNode(QModelIndex(), pNode);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a5bb42dc851a997d8e4226878c9e275c7">pIndexForNode</a>(QModelIndex(), pNode);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a05779f6af8042fbe0c9f72002fb3f246_icgraph.svg" width="100%" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a05779f6af8042fbe0c9f72002fb3f246_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a05779f6af8042fbe0c9f72002fb3f246_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1316,7 +1578,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *proxy = findProxy(pSearch, mRootNode);</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *proxy = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0468df61607cc77c8e9eef92df5996eb">findProxy</a>(pSearch, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a>);</div>
 <div class="line">    <span class="keywordflow">if</span> (!proxy) {</div>
 <div class="line">        <span class="keywordflow">return</span> QModelIndex();</div>
 <div class="line">    }</div>
@@ -1324,21 +1586,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a05779f6af8042fbe0c9f72002fb3f246">indexForNode</a>(proxy);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa36062512a401087594dddb607af8050_cgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa36062512a401087594dddb607af8050_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa36062512a401087594dddb607af8050_icgraph.svg" width="100%" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa36062512a401087594dddb607af8050_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1358,24 +1621,25 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> isDescendantOf(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e4fcf3c71fdb7a747d171ce6159717f">modelsIndex</a>());</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a437a5e6b25661b80a8542feb34198943">isDescendantOf</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e4fcf3c71fdb7a747d171ce6159717f">modelsIndex</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a0177775331c363f33b5ed3139c14adc6_cgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a0177775331c363f33b5ed3139c14adc6_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a0177775331c363f33b5ed3139c14adc6_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a0177775331c363f33b5ed3139c14adc6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1395,24 +1659,25 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> isDescendantOf(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e40cf280fea5a6c98f89e7a7d4e5871">trashIndex</a>());</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a437a5e6b25661b80a8542feb34198943">isDescendantOf</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e40cf280fea5a6c98f89e7a7d4e5871">trashIndex</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a48a94f5cf48a30ef0b684cfa57fc1eb7_cgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a48a94f5cf48a30ef0b684cfa57fc1eb7_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a48a94f5cf48a30ef0b684cfa57fc1eb7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a48a94f5cf48a30ef0b684cfa57fc1eb7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1432,15 +1697,15 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> isDescendantOf(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a3c301d6faa90617b061ef7e99bbf6ef2">untitledDocumentsIndex</a>());</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a437a5e6b25661b80a8542feb34198943">isDescendantOf</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a3c301d6faa90617b061ef7e99bbf6ef2">untitledDocumentsIndex</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a05755d6ea8c17fb69c62744c516566cd_cgraph.svg" width="392" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a05755d6ea8c17fb69c62744c516566cd_cgraph.svg" width="392" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1469,21 +1734,22 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>)-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() == <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div id="dynsection-37-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a37960814e9120332dcdd89a88822737f_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a37960814e9120332dcdd89a88822737f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a37960814e9120332dcdd89a88822737f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1510,23 +1776,83 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aba3afb7cd6c13d0b0b4eaaff4a521974">isToplevel</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>) || (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a> == mUntitledDocuments);}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aba3afb7cd6c13d0b0b4eaaff4a521974">isToplevel</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>) || (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a> == <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a85f31ace011948bb5aa99c4e5a019aa2">mUntitledDocuments</a>);}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a55e684b2dc7fc9d961427b6b0313a2df_cgraph.svg" width="595" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-40-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a55e684b2dc7fc9d961427b6b0313a2df_icgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a55e684b2dc7fc9d961427b6b0313a2df_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a437a5e6b25661b80a8542feb34198943"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDocumentTreeModel::isDescendantOf </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>pPossibleDescendant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>pPossibleAncestor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (!pPossibleDescendant.isValid()) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QModelIndex ancestor = pPossibleDescendant;</div>
+<div class="line">    <span class="keywordflow">while</span> (ancestor.parent().isValid()) {</div>
+<div class="line">        ancestor = ancestor.parent();</div>
+<div class="line">        <span class="keywordflow">if</span> (ancestor == pPossibleAncestor) {</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-41-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a437a5e6b25661b80a8542feb34198943_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1555,21 +1881,22 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>)-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() == <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823bae35609de155a6945e883c32052259350">UBDocumentTreeNode::Document</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-42-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div id="dynsection-42-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ad6186a892df7569976b194849f17ff3f_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-43-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ad6186a892df7569976b194849f17ff3f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-43-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ad6186a892df7569976b194849f17ff3f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1598,21 +1925,22 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a1f1ec2d66b699260e9a62f2c0221493a">flags</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>) &amp; Qt::ItemIsEditable;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-44-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div id="dynsection-44-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_af562feb274191bf03e9656d27e177bef_cgraph.svg" width="100%" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-45-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-36-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_af562feb274191bf03e9656d27e177bef_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-45-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_af562feb274191bf03e9656d27e177bef_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1641,21 +1969,22 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>) ? <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>)-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ad23306f658b7dd39203d358ab8c288b0">isTopLevel</a>() : <span class="keyword">false</span>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-46-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div id="dynsection-46-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aba3afb7cd6c13d0b0b4eaaff4a521974_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-47-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-38-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aba3afb7cd6c13d0b0b4eaaff4a521974_icgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-47-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aba3afb7cd6c13d0b0b4eaaff4a521974_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1682,23 +2011,24 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aa36062512a401087594dddb607af8050">indexForProxy</a>(pDoc).isValid()) mNewDocuments &lt;&lt; pDoc;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aa36062512a401087594dddb607af8050">indexForProxy</a>(pDoc).isValid()) <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a> &lt;&lt; pDoc;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-48-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-39-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a52f01503640b7e55146e197b91f8068e_cgraph.svg" width="595" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a52f01503640b7e55146e197b91f8068e_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-40-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-49-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-40-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a52f01503640b7e55146e197b91f8068e_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-49-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a52f01503640b7e55146e197b91f8068e_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1735,20 +2065,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a35c439a8d39ac485825c233531009f27">mimeData</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-41-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-50-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div id="dynsection-50-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a35c439a8d39ac485825c233531009f27_cgraph.svg" width="619" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-42-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-51-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-42-content" class="dyncontent" style="display:none;">
+<div id="dynsection-51-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a35c439a8d39ac485825c233531009f27_icgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1795,14 +2125,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mModels;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#af082e8b6fd8b96e3adfb743b42d4daa8">mModels</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-43-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-52-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-43-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4e4fcf3c71fdb7a747d171ce6159717f_icgraph.svg" width="100%" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-52-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4e4fcf3c71fdb7a747d171ce6159717f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1842,29 +2173,30 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    Q_ASSERT(sourceNode &amp;&amp; newParentNode);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> whatIndex = what.row();</div>
-<div class="line">    <span class="keywordtype">int</span> destIndex = positionForParent(sourceNode, newParentNode);</div>
+<div class="line">    <span class="keywordtype">int</span> destIndex = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a118d5960adc9281ccbe70cd158bd7670">positionForParent</a>(sourceNode, newParentNode);</div>
 <div class="line"></div>
 <div class="line">    beginMoveRows(what.parent(), whatIndex, whatIndex, destination, destIndex);</div>
-<div class="line">    fixNodeName(what, destination);</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#aa1ef3d6e22e0bd4542b972834706338a">fixNodeName</a>(what, destination);</div>
 <div class="line">    sourceNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#acebd29725bf84953e7f65edee7a7c7ab">parentNode</a>()-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a8c78509d2ac0e935a4bb51db63a81d63">moveChild</a>(sourceNode, destIndex, newParentNode);</div>
-<div class="line">    updateIndexNameBindings(sourceNode);</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8c9847e65954eb3ff3ad7f51265f2edd">updateIndexNameBindings</a>(sourceNode);</div>
 <div class="line">    endMoveRows();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-44-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-53-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-44-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a686c9c2ec9bc7b6e6c7dda982f86367e_cgraph.svg" width="595" height="255"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-53-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a686c9c2ec9bc7b6e6c7dda982f86367e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-45-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-54" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-54-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-45-content" class="dyncontent" style="display:none;">
+<div id="dynsection-54-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a686c9c2ec9bc7b6e6c7dda982f86367e_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -1891,13 +2223,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mMyDocuments;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8f92c6b4d161f4c74bf3299c819e4293">mMyDocuments</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-46-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-55" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-55-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-55-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-46-content" class="dyncontent" style="display:none;">
+<div id="dynsection-55-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a3a765b9011251b3a9540412eac4b90f0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -1924,14 +2256,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mNewDocuments;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-47-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-56" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-56-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-56-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-47-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a7103269c237a7b6bfeba14b7e8cdfee3_icgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-56-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a7103269c237a7b6bfeba14b7e8cdfee3_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1962,21 +2295,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-48-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-57" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-57-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-57-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-48-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9414220451ad53871799f407f50c6ceb_cgraph.svg" width="595" height="87"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-57-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9414220451ad53871799f407f50c6ceb_cgraph.svg" width="595" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-49-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-58" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-58-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-58-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-49-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9414220451ad53871799f407f50c6ceb_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-58-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9414220451ad53871799f407f50c6ceb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -1999,16 +2333,17 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (pIndex.isValid()) {</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>*<span class="keyword">&gt;</span>(pIndex.internalPointer());</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <span class="keywordflow">return</span> mRootNode;</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-50-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-59-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-59-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-50-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a09f526b235ed26f15429775ae8c9b08d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-59-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a09f526b235ed26f15429775ae8c9b08d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2049,11 +2384,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> firstIndex-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>() &lt; secondIndex-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-51-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-60" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-60-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-60-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-51-content" class="dyncontent" style="display:none;">
+<div id="dynsection-60-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a75608e2e56549790f922c4e5ce41866d_cgraph.svg" width="382" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2088,21 +2423,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-52-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-61" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-61-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-61-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-52-content" class="dyncontent" style="display:none;">
+<div id="dynsection-61-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab750c5efca6d80e87c6e831a96a6fc8a_cgraph.svg" width="384" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-53-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-53-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-62" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-62-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-62-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-53-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab750c5efca6d80e87c6e831a96a6fc8a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-62-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab750c5efca6d80e87c6e831a96a6fc8a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2144,11 +2480,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> resIndex;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-54" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-54-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-54-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-63" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-63-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-63-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-54-content" class="dyncontent" style="display:none;">
+<div id="dynsection-63-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a6c75fc24b71d3a3d65e626f33ae02445_cgraph.svg" width="384" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2172,12 +2508,147 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> QPersistentModelIndex(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a05779f6af8042fbe0c9f72002fb3f246">indexForNode</a>(pNode));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-55" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-55-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-55-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-64" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-64-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-64-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-55-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a920af1c0ab5249f14989bf30de776268_cgraph.svg" width="392" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-64-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a920af1c0ab5249f14989bf30de776268_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bb42dc851a997d8e4226878c9e275c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex UBDocumentTreeModel::pIndexForNode </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>pNode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe969ce75dea4388d4d1b56a74d9ab9f">rowCount</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6c75fc24b71d3a3d65e626f33ae02445">parent</a>); i++) {</div>
+<div class="line">        QModelIndex curIndex = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>(i, 0, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6c75fc24b71d3a3d65e626f33ae02445">parent</a>);</div>
+<div class="line">        <span class="keywordflow">if</span> (curIndex.internalPointer() == pNode) {</div>
+<div class="line">            <span class="keywordflow">return</span> curIndex;</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#abe969ce75dea4388d4d1b56a74d9ab9f">rowCount</a>(curIndex) &gt; 0) {</div>
+<div class="line">            QModelIndex recursiveDescendIndex = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a5bb42dc851a997d8e4226878c9e275c7">pIndexForNode</a>(curIndex, pNode);</div>
+<div class="line">            <span class="keywordflow">if</span> (recursiveDescendIndex.isValid()) {</div>
+<div class="line">                <span class="keywordflow">return</span> recursiveDescendIndex;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> QModelIndex();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-65" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-65-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-65-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-65-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a5bb42dc851a997d8e4226878c9e275c7_cgraph.svg" width="595" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-66" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-66-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-66-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-66-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a5bb42dc851a997d8e4226878c9e275c7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a118d5960adc9281ccbe70cd158bd7670"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBDocumentTreeModel::positionForParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>pFreeNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>pParentNode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_ASSERT(pFreeNode);</div>
+<div class="line">    Q_ASSERT(pParentNode);</div>
+<div class="line">    Q_ASSERT(pParentNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a20713ca76afd123a3969933729504bce">nodeType</a>() == <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#aba3711968b28d176491608c6c451823baf15b26354cd96e9c8974f186adb8bf1e">UBDocumentTreeNode::Catalog</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">int</span> c = -1;</div>
+<div class="line">    <span class="keywordtype">int</span> childCount = pParentNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#add8f3447b6f6d02ff78a440386ed89f4">children</a>().count();</div>
+<div class="line">    <span class="keywordflow">while</span> (c &lt;= childCount) {</div>
+<div class="line">        <span class="keywordflow">if</span> (++c == childCount || <a class="code" href="../../d4/d39/_u_b_document_controller_8cpp.html#abe5c384067db6ff52f68fdc974316b54">lessThan</a>(pFreeNode, pParentNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#add8f3447b6f6d02ff78a440386ed89f4">children</a>().at(c))) {</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> c == -1 ? childCount : c;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-67" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-67-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-67-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-67-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a118d5960adc9281ccbe70cd158bd7670_cgraph.svg" width="100%" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-68" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-68-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-68-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-68-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a118d5960adc9281ccbe70cd158bd7670_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2206,21 +2677,22 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a09f526b235ed26f15429775ae8c9b08d">nodeFromIndex</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>)-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>();}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-56" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-56-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-56-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-69" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-69-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-69-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-56-content" class="dyncontent" style="display:none;">
+<div id="dynsection-69-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2a35491b48b06e68645640eafc4b3ecc_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-57" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-57-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-57-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-70" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-70-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-70-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-57-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2a35491b48b06e68645640eafc4b3ecc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-70-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2a35491b48b06e68645640eafc4b3ecc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2248,21 +2720,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> node-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-58" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-58-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-58-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-71" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-71-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-71-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-58-content" class="dyncontent" style="display:none;">
+<div id="dynsection-71-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_adc9c453bae3eb78fdf3d63db4f16f3bd_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-59" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-59-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-59-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-72" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-72-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-72-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-59-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_adc9c453bae3eb78fdf3d63db4f16f3bd_icgraph.svg" width="100%" height="489"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-72-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_adc9c453bae3eb78fdf3d63db4f16f3bd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2314,7 +2787,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">                }</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
-<div class="line">        mNewDocuments.removeAll(curChildNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
+<div class="line">        <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08dc51d5ff66481d36ab12d3ee74d586">mNewDocuments</a>.removeAll(curChildNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
 <div class="line">        parentNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a37320f5b69863f36bc246e1117fa6988">removeChild</a>(i);</div>
 <div class="line"></div>
 <div class="line">    }</div>
@@ -2323,11 +2796,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-60" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-60-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-60-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-73" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-73-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-73-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-60-content" class="dyncontent" style="display:none;">
+<div id="dynsection-73-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ab3370874b72647577db9832e7748b894_cgraph.svg" width="595" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2354,13 +2827,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mRootNode;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-61" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-61-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-61-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-74" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-74-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-74-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-61-content" class="dyncontent" style="display:none;">
+<div id="dynsection-74-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_aa632fe27e083103c08ed41bcea4e1001_icgraph.svg" width="392" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2393,21 +2866,22 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> nodeParent-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#add8f3447b6f6d02ff78a440386ed89f4">children</a>().count();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-62" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-62-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-62-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-75" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-75-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-75-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-62-content" class="dyncontent" style="display:none;">
+<div id="dynsection-75-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abe969ce75dea4388d4d1b56a74d9ab9f_cgraph.svg" width="384" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-63" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-63-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-63-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-76" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-76-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-76-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-63-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abe969ce75dea4388d4d1b56a74d9ab9f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-76-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_abe969ce75dea4388d4d1b56a74d9ab9f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2427,28 +2901,29 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *testCurNode = findProxy(pDocument, mRootNode);</div>
+<div class="line">    <a class="code" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *testCurNode = <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0468df61607cc77c8e9eef92df5996eb">findProxy</a>(pDocument, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (testCurNode) {</div>
 <div class="line">        <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a2f39b7efdd09a0319e44c3430362d7fc">setCurrentNode</a>(testCurNode);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-64" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-64-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-64-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-77" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-77-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-77-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-64-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4ccbb4e8792484063d5af6220cf7533d_cgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-77-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4ccbb4e8792484063d5af6220cf7533d_cgraph.svg" width="627" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-65" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-65-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-65-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-78" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-78-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-78-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-65-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4ccbb4e8792484063d5af6220cf7533d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-78-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4ccbb4e8792484063d5af6220cf7533d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2475,14 +2950,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mCurrentNode = pNode;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#ae6d13f175cbec4be3a1f9f1a5580738e">mCurrentNode</a> = pNode;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-66" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-66-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-66-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-79" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-79-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-79-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-66-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2f39b7efdd09a0319e44c3430362d7fc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-79-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a2f39b7efdd09a0319e44c3430362d7fc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2529,12 +3005,13 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a9c3a155904cea70994155d9701056d33">QAbstractItemModel::setData</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a482d152ef1865a960d12f7d8726133b9">index</a>, value, role);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-67" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-67-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-67-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-80" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-80-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-80-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-67-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9c3a155904cea70994155d9701056d33_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-80-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a9c3a155904cea70994155d9701056d33_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2561,13 +3038,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mHighLighted = newHighLighted;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a6412e70962097f7c8b775900e9f2abb0">mHighLighted</a> = newHighLighted;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-68" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-68-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-68-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-81" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-81-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-81-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-68-content" class="dyncontent" style="display:none;">
+<div id="dynsection-81-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_adb81ee375f8b5f9007723e4adaadd176_icgraph.svg" width="379" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2633,20 +3110,21 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-69" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-69-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-69-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-82" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-82-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-82-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-69-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae57b2048ad6889dd3928df266a1a7449_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-82-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae57b2048ad6889dd3928df266a1a7449_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
-<p><div id="dynsection-70" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-70-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-70-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-83" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-83-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-83-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-70-content" class="dyncontent" style="display:none;">
+<div id="dynsection-83-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_ae57b2048ad6889dd3928df266a1a7449_icgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2667,15 +3145,15 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mRootNode = pRoot;</div>
+<div class="line">    <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0681b2d04209dd554fde2c2e9716433b">mRootNode</a> = pRoot;</div>
 <div class="line">    reset();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-71" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-71-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-71-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-84" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-84-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-84-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-71-content" class="dyncontent" style="display:none;">
+<div id="dynsection-84-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a534c789e58d81ad0ea55ff1a63604dbb_icgraph.svg" width="392" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -2726,14 +3204,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mTrash;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a08edb2783b893d6404593cc057c0ab74">mTrash</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-72" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-72-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-72-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-85" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-85-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-85-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-72-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4e40cf280fea5a6c98f89e7a7d4e5871_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-85-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a4e40cf280fea5a6c98f89e7a7d4e5871_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -2759,14 +3238,67 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mUntitledDocuments;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a85f31ace011948bb5aa99c4e5a019aa2">mUntitledDocuments</a>;}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-73" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-73-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-73-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-86" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-86-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-86-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-73-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a3c301d6faa90617b061ef7e99bbf6ef2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-86-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a3c301d6faa90617b061ef7e99bbf6ef2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c9847e65954eb3ff3ad7f51265f2edd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeModel::updateIndexNameBindings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a> *&#160;</td>
+          <td class="paramname"><em>nd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    Q_ASSERT(nd);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (nd-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>()) {</div>
+<div class="line">        nd-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a541c361c5a415640974ecf94147126b1">setMetaData</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#a840d7de55a46ac70210981b48afbea68">UBSettings::documentGroupName</a>, <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a744d9613811edb1ea75823c8b0f95775">virtualPathForIndex</a>(<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a05779f6af8042fbe0c9f72002fb3f246">indexForNode</a>(nd-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#acebd29725bf84953e7f65edee7a7c7ab">parentNode</a>())));</div>
+<div class="line">        nd-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>()-&gt;<a class="code" href="../../de/db4/class_u_b_document_proxy.html#a541c361c5a415640974ecf94147126b1">setMetaData</a>(<a class="code" href="../../db/d66/class_u_b_settings.html#ac835acad66226a9b63347e2ed55fbd13">UBSettings::documentName</a>, nd-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>());</div>
+<div class="line">        <a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ad8b7a880564523143d73c6b86d887769">UBPersistenceManager::persistenceManager</a>()-&gt;<a class="code" href="../../d0/dd5/class_u_b_persistence_manager.html#ab96bfcd20014ff5bb36fede047aef3b2">persistDocumentMetadata</a>(nd-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#a089338d403f60b36f8fc64b8e05f176f">proxyData</a>());</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-87" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-87-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-87-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-87-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8c9847e65954eb3ff3ad7f51265f2edd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+<p><div id="dynsection-88" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-88-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-88-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-88-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8c9847e65954eb3ff3ad7f51265f2edd_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2801,21 +3333,21 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-74" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-74-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-74-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-89" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-89-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-89-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-74-content" class="dyncontent" style="display:none;">
+<div id="dynsection-89-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8f1c1380c531318f25e7c39241553ddd_cgraph.svg" width="384" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-75" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-75-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-75-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-90" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-90-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-90-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-75-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8f1c1380c531318f25e7c39241553ddd_icgraph.svg" width="100%" height="531"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-90-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a8f1c1380c531318f25e7c39241553ddd_icgraph.svg" width="100%" height="581"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -2841,29 +3373,210 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a8f1c1380c531318f25e7c39241553ddd">virtualDirForIndex</a>(pIndex) + <span class="stringliteral">&quot;/&quot;</span> + curNode-&gt;<a class="code" href="../../de/d8b/class_u_b_document_tree_node.html#ab16ac37e87506a868a07eab28e2e572e">nodeName</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-76" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-76-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-76-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-91" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-91-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-91-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-76-content" class="dyncontent" style="display:none;">
+<div id="dynsection-91-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a744d9613811edb1ea75823c8b0f95775_cgraph.svg" width="595" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-77" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-77-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-77-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-92" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-92-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-92-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-77-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a744d9613811edb1ea75823c8b0f95775_icgraph.svg" width="100%" height="469"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-92-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d5a/class_u_b_document_tree_model_a744d9613811edb1ea75823c8b0f95775_icgraph.svg" width="100%" height="548"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ae6d13f175cbec4be3a1f9f1a5580738e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>* UBDocumentTreeModel::mCurrentNode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6412e70962097f7c8b775900e9f2abb0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QModelIndex UBDocumentTreeModel::mHighLighted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af082e8b6fd8b96e3adfb743b42d4daa8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPersistentModelIndex UBDocumentTreeModel::mModels</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8f92c6b4d161f4c74bf3299c819e4293"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPersistentModelIndex UBDocumentTreeModel::mMyDocuments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08dc51d5ff66481d36ab12d3ee74d586"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>*&gt; UBDocumentTreeModel::mNewDocuments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa36d189804ed985ac3cc4bc4b8ad68a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPersistentModelIndex UBDocumentTreeModel::mRoot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0681b2d04209dd554fde2c2e9716433b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d8b/class_u_b_document_tree_node.html">UBDocumentTreeNode</a>* UBDocumentTreeModel::mRootNode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08edb2783b893d6404593cc057c0ab74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPersistentModelIndex UBDocumentTreeModel::mTrash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85f31ace011948bb5aa99c4e5a019aa2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPersistentModelIndex UBDocumentTreeModel::mUntitledDocuments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2871,7 +3584,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

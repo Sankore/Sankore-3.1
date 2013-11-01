@@ -20,8 +20,10 @@ var class_u_b_display_manager =
     [ "hasControl", "dd/d0f/class_u_b_display_manager.html#aeaddf24885b0612083da8b4045a35847", null ],
     [ "hasDisplay", "dd/d0f/class_u_b_display_manager.html#a00a31e92ba05b878aca9978ebc45a6cf", null ],
     [ "hasPrevious", "dd/d0f/class_u_b_display_manager.html#a2d743afe108d8b8b408c48c77be7d78a", null ],
+    [ "initScreenIndexes", "dd/d0f/class_u_b_display_manager.html#aa8284ad27f57b0bb8811da517714e40a", null ],
     [ "numPreviousViews", "dd/d0f/class_u_b_display_manager.html#ad6dc1d98fb11aeb8b42695216ed925f2", null ],
     [ "numScreens", "dd/d0f/class_u_b_display_manager.html#a6e992c0a4a0042501c94b218328529d4", null ],
+    [ "positionScreens", "dd/d0f/class_u_b_display_manager.html#a55df2e19654e480ac5e38806cd0f097c", null ],
     [ "reinitScreens", "dd/d0f/class_u_b_display_manager.html#a3983f3958bedc2c23555db769917c6cc", null ],
     [ "screenLayoutChanged", "dd/d0f/class_u_b_display_manager.html#a8220ab5aebf94b5b596db35b4c9b767f", null ],
     [ "setControlWidget", "dd/d0f/class_u_b_display_manager.html#a8b704ad13b84eb0353814ff4113b8e85", null ],
@@ -30,5 +32,16 @@ var class_u_b_display_manager =
     [ "setPreviousDisplaysWidgets", "dd/d0f/class_u_b_display_manager.html#ae0930b6418b998eddc3dae6ca0e835d3", null ],
     [ "setRoleToScreen", "dd/d0f/class_u_b_display_manager.html#a7f6ac20a2f57588751b0d30ba8834957", null ],
     [ "setUseMultiScreen", "dd/d0f/class_u_b_display_manager.html#a89345c872ad8abfdde371811d10b7044", null ],
-    [ "unBlackout", "dd/d0f/class_u_b_display_manager.html#a0d39dbe11146c6e9ebbe03f14bbebd2e", null ]
+    [ "unBlackout", "dd/d0f/class_u_b_display_manager.html#a0d39dbe11146c6e9ebbe03f14bbebd2e", null ],
+    [ "mBlackoutWidgets", "dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed", null ],
+    [ "mControlScreenIndex", "dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b", null ],
+    [ "mControlWidget", "dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582", null ],
+    [ "mDesktop", "dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213", null ],
+    [ "mDesktopWidget", "dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814", null ],
+    [ "mDisplayScreenIndex", "dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7", null ],
+    [ "mDisplayWidget", "dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea", null ],
+    [ "mPreviousDisplayWidgets", "dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84", null ],
+    [ "mPreviousScreenIndexes", "dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14", null ],
+    [ "mScreenIndexesRoles", "dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd", null ],
+    [ "mUseMultiScreen", "dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb", null ]
 ];

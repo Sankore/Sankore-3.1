@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dc/d98/class_u_b_audio_presentation_wi
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/d53/class_u_b_audio_presentation_widget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBAudioPresentationWidget Class Reference</div>  </div>
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('dc/d98/class_u_b_audio_presentation_wi
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d56/class_u_b_audio_presentation_widget__coll__graph.svg" width="219" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d56/class_u_b_audio_presentation_widget__coll__graph.svg" width="219" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -125,6 +127,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ce5adcb4dd824a47079c6dd119f3371"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a8ce5adcb4dd824a47079c6dd119f3371">borderSize</a> ()</td></tr>
 <tr class="memitem:a72a9e2687d2f56a4cc09d483cd7ab95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a72a9e2687d2f56a4cc09d483cd7ab95c">setTitle</a> (QString title=QString())</td></tr>
 <tr class="memitem:a8c89818dbf8fd78e9081895884389823"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a8c89818dbf8fd78e9081895884389823">getTitle</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a81d3c7378ed651ca041693179e9b2643"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a81d3c7378ed651ca041693179e9b2643">paintEvent</a> (QPaintEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a12cba84b7f26a754da612da804c8505b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a12cba84b7f26a754da612da804c8505b">mBorderSize</a></td></tr>
+<tr class="memitem:a7b27c7e0b5bcef7ccdc52bc5b347d306"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a7b27c7e0b5bcef7ccdc52bc5b347d306">mTitle</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a670b50e1da265fa235407798b44ce412"></a>
@@ -141,7 +152,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWidget(parent)</div>
-<div class="line">    , mBorderSize(10)</div>
+<div class="line">    , <a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a12cba84b7f26a754da612da804c8505b">mBorderSize</a>(10)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -169,7 +180,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mBorderSize;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a12cba84b7f26a754da612da804c8505b">mBorderSize</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -202,7 +213,54 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mTitle;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a7b27c7e0b5bcef7ccdc52bc5b347d306">mTitle</a>;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a81d3c7378ed651ca041693179e9b2643"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBAudioPresentationWidget::paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QPainter painter(<span class="keyword">this</span>);</div>
+<div class="line">    painter.fillRect(rect(), QBrush(Qt::white));</div>
+<div class="line"></div>
+<div class="line">    QPen borderPen;</div>
+<div class="line">    borderPen.setWidth(2);</div>
+<div class="line">    borderPen.setColor(QColor(Qt::black));</div>
+<div class="line"></div>
+<div class="line">    painter.setPen(borderPen);</div>
+<div class="line">    painter.drawRect(0,0, width(), height());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (QString() != <a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a7b27c7e0b5bcef7ccdc52bc5b347d306">mTitle</a>)</div>
+<div class="line">    {</div>
+<div class="line">        painter.setPen(QPen(Qt::black));</div>
+<div class="line">        QRect titleRect = rect();</div>
+<div class="line">        titleRect.setX(<a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a12cba84b7f26a754da612da804c8505b">mBorderSize</a>);</div>
+<div class="line">        titleRect.setY(2);</div>
+<div class="line">        titleRect.setHeight(15);</div>
+<div class="line">        painter.drawText(titleRect, <a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a7b27c7e0b5bcef7ccdc52bc5b347d306">mTitle</a>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a81d3c7378ed651ca041693179e9b2643">QWidget::paintEvent</a>(event);</div>
+<div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,13 +285,54 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{mTitle = title;}</div>
+<div class="fragment"><div class="line">{<a class="code" href="../../dc/d98/class_u_b_audio_presentation_widget.html#a7b27c7e0b5bcef7ccdc52bc5b347d306">mTitle</a> = title;}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a12cba84b7f26a754da612da804c8505b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBAudioPresentationWidget::mBorderSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b27c7e0b5bcef7ccdc52bc5b347d306"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBAudioPresentationWidget::mTitle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d3/dc1/_u_b_graphics_media_item_8h_source.html">UBGraphicsMediaItem.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d8/dd2/_u_b_graphics_media_item_8cpp.html">UBGraphicsMediaItem.cpp</a></li>
+<li><a class="el" href="../../d3/dc1/_u_b_graphics_media_item_8h_source.html">UBGraphicsMediaItem.h</a></li>
+<li><a class="el" href="../../d8/dd2/_u_b_graphics_media_item_8cpp.html">UBGraphicsMediaItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -241,7 +340,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d98/class_u_b_audio_presentation_widget.html">UBAudioPresentationWidget</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:55 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

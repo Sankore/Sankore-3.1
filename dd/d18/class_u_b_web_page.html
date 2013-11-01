@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('dd/d18/class_u_b_web_page.html','../..
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d8/dce/class_u_b_web_page-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBWebPage Class Reference</div>  </div>
@@ -116,14 +117,14 @@ $(document).ready(function(){initNavTree('dd/d18/class_u_b_web_page.html','../..
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dee/class_u_b_web_page__inherit__graph.svg" width="211" height="352"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dee/class_u_b_web_page__inherit__graph.svg" width="211" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBWebPage:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d48/class_u_b_web_page__coll__graph.svg" width="211" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d48/class_u_b_web_page__coll__graph.svg" width="211" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -132,6 +133,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60c2c89a8c386df39e066e93320a242a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d18/class_u_b_web_page.html#a60c2c89a8c386df39e066e93320a242a">~UBWebPage</a> ()</td></tr>
 <tr class="memitem:a0adb6b6e4a73518d2bac4e78e0feab0a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d18/class_u_b_web_page.html#a0adb6b6e4a73518d2bac4e78e0feab0a">javaScriptConsoleMessage</a> (const QString &amp;message, int lineNumber, const QString &amp;sourceID)</td></tr>
 <tr class="memitem:ae34f79bc59709a5b3c727befe55a39d7"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d18/class_u_b_web_page.html#ae34f79bc59709a5b3c727befe55a39d7">userAgentForUrl</a> (const QUrl &amp;url) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aad7cee6c0760c3e78c694e24d834330a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d18/class_u_b_web_page.html#aad7cee6c0760c3e78c694e24d834330a">mCachedUserAgentString</a></td></tr>
+<tr class="memitem:ae2a80755ceb4e9406ba742b5286250ac"><td class="memItemLeft" align="right" valign="top">QWebPluginFactory *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d18/class_u_b_web_page.html#ae2a80755ceb4e9406ba742b5286250ac">mPluginFactory</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6b8383b8189a4e4718a9cc2ac00dfd2d"></a>
@@ -148,9 +154,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWebPage(parent)</div>
-<div class="line">    , mPluginFactory(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d18/class_u_b_web_page.html#ae2a80755ceb4e9406ba742b5286250ac">mPluginFactory</a>(0)</div>
 <div class="line">{</div>
-<div class="line">    mCachedUserAgentString = <a class="code" href="../../dd/d18/class_u_b_web_page.html#ae34f79bc59709a5b3c727befe55a39d7">QWebPage::userAgentForUrl</a>(QUrl());</div>
+<div class="line">    <a class="code" href="../../dd/d18/class_u_b_web_page.html#aad7cee6c0760c3e78c694e24d834330a">mCachedUserAgentString</a> = <a class="code" href="../../dd/d18/class_u_b_web_page.html#ae34f79bc59709a5b3c727befe55a39d7">QWebPage::userAgentForUrl</a>(QUrl());</div>
 <div class="line">    <span class="comment">//mPluginFactory = new UBWebPluginFactory();</span></div>
 <div class="line">    <span class="comment">//setPluginFactory(mPluginFactory);</span></div>
 <div class="line"></div>
@@ -261,7 +267,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(url);</div>
-<div class="line">    <span class="keywordflow">return</span> mCachedUserAgentString;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d18/class_u_b_web_page.html#aad7cee6c0760c3e78c694e24d834330a">mCachedUserAgentString</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -275,9 +281,50 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aad7cee6c0760c3e78c694e24d834330a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBWebPage::mCachedUserAgentString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae2a80755ceb4e9406ba742b5286250ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWebPluginFactory* UBWebPage::mPluginFactory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/<a class="el" href="../../d2/d19/_u_b_web_page_8h_source.html">UBWebPage.h</a></li>
-<li>Sankore-3.1/src/web/<a class="el" href="../../df/d2c/_u_b_web_page_8cpp.html">UBWebPage.cpp</a></li>
+<li><a class="el" href="../../d2/d19/_u_b_web_page_8h_source.html">UBWebPage.h</a></li>
+<li><a class="el" href="../../df/d2c/_u_b_web_page_8cpp.html">UBWebPage.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -285,7 +332,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d18/class_u_b_web_page.html">UBWebPage</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

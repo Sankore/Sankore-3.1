@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('df/d96/class_x_p_d_f_renderer.html','.
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d6/da5/class_x_p_d_f_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">XPDFRenderer Class Reference</div>  </div>
@@ -117,14 +120,14 @@ $(document).ready(function(){initNavTree('df/d96/class_x_p_d_f_renderer.html','.
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d5d/class_x_p_d_f_renderer__inherit__graph.svg" width="150" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/d5d/class_x_p_d_f_renderer__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for XPDFRenderer:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d4e/class_x_p_d_f_renderer__coll__graph.svg" width="150" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d4e/class_x_p_d_f_renderer__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -149,6 +152,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2d5f4c9eda279d52f8883059424520eb inherit pub_methods_class_p_d_f_renderer"><td class="memItemLeft" align="right" valign="top">QUuid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a2d5f4c9eda279d52f8883059424520eb">fileUuid</a> () const </td></tr>
 <tr class="memitem:a78c222edf79ae2a741b8c3e5c3c1cb1b inherit pub_methods_class_p_d_f_renderer"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a78c222edf79ae2a741b8c3e5c3c1cb1b">fileData</a> () const </td></tr>
 <tr class="memitem:a12aa241d086852e8617c89cddaef3585 inherit pub_methods_class_p_d_f_renderer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a12aa241d086852e8617c89cddaef3585">setDPI</a> (int desiredDPI)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a81dc089d445330bf7d88671b4fdc60f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#a81dc089d445330bf7d88671b4fdc60f5">init</a> ()</td></tr>
+<tr class="memitem:abd75fa41c1789ac7778612925e59643a"><td class="memItemLeft" align="right" valign="top">QImage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#abd75fa41c1789ac7778612925e59643a">createPDFImage</a> (int pageNumber, qreal xscale=0.5, qreal yscale=0.5, const QRectF &amp;bounds=QRectF())</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6c3549e9b9d7f27f25739df3fe912720"><td class="memItemLeft" align="right" valign="top">PDFDoc *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a></td></tr>
+<tr class="memitem:aedd0de9478ad0ffb2fa868baaf03eaf1"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">mSliceX</a></td></tr>
+<tr class="memitem:ac2cb77d80bad851cae04e14581fe46e2"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">mSliceY</a></td></tr>
+<tr class="memitem:a49874fa0ef7dafc8e58743cfd7b94014"><td class="memItemLeft" align="right" valign="top">SplashBitmap *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a></td></tr>
+<tr class="memitem:a1e7ab8a2d3b125f9987898d1d4ac1af2"><td class="memItemLeft" align="right" valign="top">SplashOutputDev *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a592aa14fdf0f4418c29a69cedb13c3f8"><td class="memItemLeft" align="right" valign="top">static QAtomicInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html#a592aa14fdf0f4418c29a69cedb13c3f8">sInstancesCount</a> = 0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -183,9 +203,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mDocument(0)</div>
-<div class="line">    , mpSplashBitmap(0)</div>
-<div class="line">    , mSplash(0)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>(0)</div>
+<div class="line">    , <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>(0)</div>
+<div class="line">    , <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>(0)</div>
 <div class="line">{</div>
 <div class="line">    Q_UNUSED(importingFile);</div>
 <div class="line">    <span class="keywordflow">if</span> (!globalParams)</div>
@@ -196,8 +216,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        globalParams-&gt;setupBaseFonts(QFile::encodeName(<a class="code" href="../../d4/d99/class_u_b_platform_utils.html#ae595b29e794b20564550fd45515fc0a8">UBPlatformUtils::applicationResourcesDirectory</a>() + <span class="stringliteral">&quot;/&quot;</span> + <span class="stringliteral">&quot;fonts&quot;</span>).data());</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mDocument = <span class="keyword">new</span> PDFDoc(<span class="keyword">new</span> GString(filename.toUtf8().data()), 0, 0, 0); <span class="comment">// the filename GString is deleted on PDFDoc desctruction</span></div>
-<div class="line">    sInstancesCount.ref();</div>
+<div class="line">    <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a> = <span class="keyword">new</span> PDFDoc(<span class="keyword">new</span> GString(filename.toUtf8().data()), 0, 0, 0); <span class="comment">// the filename GString is deleted on PDFDoc desctruction</span></div>
+<div class="line">    <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a592aa14fdf0f4418c29a69cedb13c3f8">sInstancesCount</a>.ref();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -232,18 +252,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(mSplash){</div>
-<div class="line">        <span class="keyword">delete</span> mSplash;</div>
-<div class="line">        mSplash = NULL;</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>){</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>;</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a> = NULL;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mDocument)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> mDocument;</div>
-<div class="line">        sInstancesCount.deref();</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>;</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a592aa14fdf0f4418c29a69cedb13c3f8">sInstancesCount</a>.deref();</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (sInstancesCount == 0 &amp;&amp; globalParams)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a592aa14fdf0f4418c29a69cedb13c3f8">sInstancesCount</a> == 0 &amp;&amp; globalParams)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keyword">delete</span> globalParams;</div>
 <div class="line">        globalParams = 0;</div>
@@ -253,6 +273,128 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="abd75fa41c1789ac7778612925e59643a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QImage * XPDFRenderer::createPDFImage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pageNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>xscale</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>yscale</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QRectF &amp;&#160;</td>
+          <td class="paramname"><em>bounds</em> = <code>QRectF()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
+<div class="line">    {</div>
+<div class="line">        SplashColor paperColor = {0xFF, 0xFF, 0xFF}; <span class="comment">// white</span></div>
+<div class="line">        <span class="keywordflow">if</span>(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>)</div>
+<div class="line">            <span class="keyword">delete</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>;</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a> = <span class="keyword">new</span> SplashOutputDev(splashModeRGB8, 1, gFalse, paperColor);</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>-&gt;startDoc(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getXRef());</div>
+<div class="line">        <span class="keywordtype">int</span> rotation = 0; <span class="comment">// in degrees (get it from the worldTransform if we want to support rotation)</span></div>
+<div class="line">        GBool useMediaBox = gFalse;</div>
+<div class="line">        GBool crop = gTrue;</div>
+<div class="line">        GBool printing = gFalse;</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">mSliceX</a> = 0.;</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">mSliceY</a> = 0.;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (bounds.isNull())</div>
+<div class="line">        {</div>
+<div class="line">                        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;displayPage(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>, pageNumber, this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> * xscale, this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> *yscale,</div>
+<div class="line">                                   rotation, useMediaBox, crop, printing);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">                        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">mSliceX</a> = bounds.x() * xscale;</div>
+<div class="line">            <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">mSliceY</a> = bounds.y() * yscale;</div>
+<div class="line">            qreal sliceW = bounds.width() * xscale;</div>
+<div class="line">            qreal sliceH = bounds.height() * yscale;</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;displayPageSlice(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>, pageNumber, this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> * xscale, this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> * yscale,</div>
+<div class="line">                                rotation, useMediaBox, crop, printing, <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">mSliceX</a>, <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">mSliceY</a>, sliceW, sliceH);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a> = <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a1e7ab8a2d3b125f9987898d1d4ac1af2">mSplash</a>-&gt;getBitmap();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> QImage(<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>-&gt;getDataPtr(), <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>-&gt;getWidth(), <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>-&gt;getHeight(), <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a49874fa0ef7dafc8e58743cfd7b94014">mpSplashBitmap</a>-&gt;getWidth() * 3, QImage::Format_RGB888);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_abd75fa41c1789ac7778612925e59643a_cgraph.svg" width="438" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_abd75fa41c1789ac7778612925e59643a_icgraph.svg" width="432" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a81dc089d445330bf7d88671b4fdc60f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XPDFRenderer::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="af36a5fe17ef72a12b7b8a16894df56c6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -276,9 +418,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#acd219d79f7b7235c7562a57708147cf9">PDFRenderer</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mDocument)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">return</span> mDocument-&gt;isOk();</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;isOk();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
@@ -286,12 +428,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_af36a5fe17ef72a12b7b8a16894df56c6_icgraph.svg" width="403" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_af36a5fe17ef72a12b7b8a16894df56c6_icgraph.svg" width="640" height="251"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -321,16 +463,16 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#aa952f037d5944d6eb3a06743351be16b">PDFRenderer</a>.</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
-<div class="line">        <span class="keywordflow">return</span> mDocument-&gt;getNumPages();</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getNumPages();</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_a6d5b3c8f24eddf7d73fb4215f28ec963_cgraph.svg" width="403" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -361,8 +503,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d7/dc9/class_p_d_f_renderer.html#a2e04c1447992028916c8f5764493aa77">PDFRenderer</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mDocument)</div>
-<div class="line">        <span class="keywordflow">return</span>  mDocument-&gt;getPageRotate(pageNumber);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>)</div>
+<div class="line">        <span class="keywordflow">return</span>  <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getPageRotate(pageNumber);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
@@ -398,10 +540,10 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordtype">int</span> rotate = mDocument-&gt;getPageRotate(pageNumber);</div>
+<div class="line">        <span class="keywordtype">int</span> rotate = <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getPageRotate(pageNumber);</div>
 <div class="line"></div>
-<div class="line">                cropWidth = mDocument-&gt;getPageCropWidth(pageNumber) * this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> / 72.0;</div>
-<div class="line">        cropHeight = mDocument-&gt;getPageCropHeight(pageNumber) * this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> / 72.0;</div>
+<div class="line">                cropWidth = <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getPageCropWidth(pageNumber) * this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> / 72.0;</div>
+<div class="line">        cropHeight = <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getPageCropHeight(pageNumber) * this-&gt;<a class="code" href="../../d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1">dpiForRendering</a> / 72.0;</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (rotate == 90 || rotate == 270)</div>
 <div class="line">        {</div>
@@ -414,11 +556,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> QSizeF(cropWidth, cropHeight);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_adc4d033ac3f1d9bd2d81466757811652_cgraph.svg" width="400" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -468,21 +610,21 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        qreal xscale = p-&gt;worldTransform().m11();</div>
 <div class="line">        qreal yscale = p-&gt;worldTransform().m22();</div>
 <div class="line"></div>
-<div class="line">        QImage *pdfImage = createPDFImage(pageNumber, xscale, yscale, bounds);</div>
+<div class="line">        QImage *pdfImage = <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#abd75fa41c1789ac7778612925e59643a">createPDFImage</a>(pageNumber, xscale, yscale, bounds);</div>
 <div class="line">        QTransform savedTransform = p-&gt;worldTransform();</div>
 <div class="line">        p-&gt;resetTransform();</div>
-<div class="line">        p-&gt;drawImage(QPointF(savedTransform.dx() + mSliceX, savedTransform.dy() + mSliceY), *pdfImage);</div>
+<div class="line">        p-&gt;drawImage(QPointF(savedTransform.dx() + <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#aedd0de9478ad0ffb2fa868baaf03eaf1">mSliceX</a>, savedTransform.dy() + <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#ac2cb77d80bad851cae04e14581fe46e2">mSliceY</a>), *pdfImage);</div>
 <div class="line">        p-&gt;setWorldTransform(savedTransform);</div>
 <div class="line">        <span class="keyword">delete</span> pdfImage;</div>
 <div class="line">        }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_aac80147a1471e9dee2bc1529c2a99731_cgraph.svg" width="374" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_aac80147a1471e9dee2bc1529c2a99731_cgraph.svg" width="640" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -514,7 +656,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#af36a5fe17ef72a12b7b8a16894df56c6">isValid</a>())</div>
 <div class="line">    {</div>
 <div class="line">        Object pdfInfo;</div>
-<div class="line">        mDocument-&gt;getDocInfo(&amp;pdfInfo);</div>
+<div class="line">        <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a6c3549e9b9d7f27f25739df3fe912720">mDocument</a>-&gt;getDocInfo(&amp;pdfInfo);</div>
 <div class="line">        <span class="keywordflow">if</span> (pdfInfo.isDict())</div>
 <div class="line">        {</div>
 <div class="line">            Object <a class="code" href="../../df/d96/class_x_p_d_f_renderer.html#a5ea5a7a04304ab8018a7b4918f37bebd">title</a>;</div>
@@ -530,20 +672,141 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> QString();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d96/class_x_p_d_f_renderer_a5ea5a7a04304ab8018a7b4918f37bebd_cgraph.svg" width="360" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a6c3549e9b9d7f27f25739df3fe912720"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDFDoc* XPDFRenderer::mDocument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a49874fa0ef7dafc8e58743cfd7b94014"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SplashBitmap* XPDFRenderer::mpSplashBitmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aedd0de9478ad0ffb2fa868baaf03eaf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal XPDFRenderer::mSliceX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac2cb77d80bad851cae04e14581fe46e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal XPDFRenderer::mSliceY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e7ab8a2d3b125f9987898d1d4ac1af2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SplashOutputDev* XPDFRenderer::mSplash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a592aa14fdf0f4418c29a69cedb13c3f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAtomicInt XPDFRenderer::sInstancesCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf/<a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a></li>
-<li>Sankore-3.1/src/pdf/<a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp.html">XPDFRenderer.cpp</a></li>
+<li><a class="el" href="../../d1/d65/_x_p_d_f_renderer_8h_source.html">XPDFRenderer.h</a></li>
+<li><a class="el" href="../../d7/d8a/_x_p_d_f_renderer_8cpp.html">XPDFRenderer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -551,7 +814,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d96/class_x_p_d_f_renderer.html">XPDFRenderer</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

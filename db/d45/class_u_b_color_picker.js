@@ -9,5 +9,7 @@ var class_u_b_color_picker =
     [ "paintEvent", "db/d45/class_u_b_color_picker.html#ae6d1f461011861c1f9ce2d35040026aa", null ],
     [ "selectedColorIndex", "db/d45/class_u_b_color_picker.html#a5560d59068afd319dea43329a6bf4f0c", null ],
     [ "setColors", "db/d45/class_u_b_color_picker.html#a112608c405a7655254d93b9c3b7abb5f", null ],
-    [ "setSelectedColorIndex", "db/d45/class_u_b_color_picker.html#a3bad5c8fed65dd4811a0034a0cd36956", null ]
+    [ "setSelectedColorIndex", "db/d45/class_u_b_color_picker.html#a3bad5c8fed65dd4811a0034a0cd36956", null ],
+    [ "mColors", "db/d45/class_u_b_color_picker.html#aeddf828b1787cc9aec44dab8a899d2ba", null ],
+    [ "mSelectedColorIndex", "db/d45/class_u_b_color_picker.html#a7234c66e7245944f1e1a392a7e732f16", null ]
 ];

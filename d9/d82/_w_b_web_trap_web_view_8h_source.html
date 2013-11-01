@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/web/browser/WBWebTrapWebView.h Source File</title>
+<title>Open-Sankoré: WBWebTrapWebView.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('d9/d82/_w_b_web_trap_web_view_8h_sourc
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8">   41</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a5f010b9c648642f536b5add27dd68cd8">isTrapping</a>()</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> mIsTrapping;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a7ab26ae9b1b272bdf5daaa97e9addc7a">mIsTrapping</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a838843164510c7510c16a2d6b72ce043">highliteElementAtPos</a>(<span class="keyword">const</span> QPoint&amp; pos);</div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('d9/d82/_w_b_web_trap_web_view_8h_sourc
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#af54b425effeae63730c75cd5eb6f501f">webElementCaptured</a>(<span class="keyword">const</span> QUrl&amp; pUrl, <span class="keyword">const</span> QString&amp; query);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> isFrameContentAtPos(<span class="keyword">const</span> QPoint &amp;point) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a6c1b3fcc01475abac104cde4c1390a6c">isFrameContentAtPos</a>(<span class="keyword">const</span> QPoint &amp;point) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#aee781ab6308411f503aff112b4d5c6c9">mousePressEvent</a>(QMouseEvent* event);</div>
@@ -180,17 +180,17 @@ $(document).ready(function(){initNavTree('d9/d82/_w_b_web_trap_web_view_8h_sourc
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        };</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        QRect mDomElementRect;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        QRect mWebViewElementRect;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        QString mElementQuery;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a4cb16c98c564cf5258d2d1029531cebe">WebContentType</a> mCurrentContentType;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a1797ce7cd7799a3b4d87699df8179116">   77</a></span>&#160;        QRect <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a1797ce7cd7799a3b4d87699df8179116">mDomElementRect</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#ac44986a30426fad5261fe6d43e9041c9">   78</a></span>&#160;        QRect <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#ac44986a30426fad5261fe6d43e9041c9">mWebViewElementRect</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a91478433824d9890efbaf5b469dd868e">   79</a></span>&#160;        QString <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a91478433824d9890efbaf5b469dd868e">mElementQuery</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a4fe44719d78a45510c31318fcb481c42">   80</a></span>&#160;        <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a4cb16c98c564cf5258d2d1029531cebe">WebContentType</a> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a4fe44719d78a45510c31318fcb481c42">mCurrentContentType</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> mIsTrapping;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">bool</span> m_bContentForTrapSelected;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">bool</span> m_bScrollingInProcess;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a7ab26ae9b1b272bdf5daaa97e9addc7a">   82</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a7ab26ae9b1b272bdf5daaa97e9addc7a">mIsTrapping</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a2ee1f4a16729c18eea6880c6c5ea4728">   83</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a2ee1f4a16729c18eea6880c6c5ea4728">m_bContentForTrapSelected</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#ae21033eba18b3dea91c95bcf18d4829b">   84</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#ae21033eba18b3dea91c95bcf18d4829b">m_bScrollingInProcess</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> viewLoadFinished(<span class="keywordtype">bool</span> ok);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html#a15129781bed27a1feff4e23f264fab97">viewLoadFinished</a>(<span class="keywordtype">bool</span> ok);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html">UBTrapWebPageContentController</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html">   90</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html">UBWebTrapMouseEventMask</a> : <span class="keyword">public</span> QWidget</div>
@@ -208,8 +208,8 @@ $(document).ready(function(){initNavTree('d9/d82/_w_b_web_trap_web_view_8h_sourc
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a864af1c0701f448dd2fb3a110b5db4cc">paintEvent</a>(QPaintEvent *);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;       <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html">WBWebTrapWebView</a> *mTrappedWebView;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;       <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html">UBTrapWebPageContentController</a> *mTrapController;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">  105</a></span>&#160;       <a class="code" href="../../db/d78/class_w_b_web_trap_web_view.html">WBWebTrapWebView</a> *<a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#ac89fe331ee3bcca20b4a0af4b82a56f0">mTrappedWebView</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a4f862c81a75810d148f5eab2f6caaef4">  106</a></span>&#160;       <a class="code" href="../../d9/d3a/class_u_b_trap_web_page_content_controller.html">UBTrapWebPageContentController</a> *<a class="code" href="../../dd/df0/class_u_b_web_trap_mouse_event_mask.html#a4f862c81a75810d148f5eab2f6caaef4">mTrapController</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WBWEBTRAPWEBVIEW_H_ */</span><span class="preprocessor"></span></div>
@@ -218,8 +218,8 @@ $(document).ready(function(){initNavTree('d9/d82/_w_b_web_trap_web_view_8h_sourc
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../d9/d82/_w_b_web_trap_web_view_8h.html">WBWebTrapWebView.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_c5d8e5d1a9c4329f04300c8019051d02.html">web</a></li><li class="navelem"><a class="el" href="../../dir_30ba88fccd588e82598a3ea37e3e2e52.html">browser</a></li><li class="navelem"><a class="el" href="../../d9/d82/_w_b_web_trap_web_view_8h.html">WBWebTrapWebView.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

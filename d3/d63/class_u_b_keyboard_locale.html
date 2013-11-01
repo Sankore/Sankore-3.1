@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d3/d63/class_u_b_keyboard_locale.html'
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d2/d76/class_u_b_keyboard_locale-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBKeyboardLocale Class Reference</div>  </div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('d3/d63/class_u_b_keyboard_locale.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d19/class_u_b_keyboard_locale__coll__graph.svg" width="174" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d19/class_u_b_keyboard_locale__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -133,6 +134,11 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2b0a9e2afe0dff9abdc767ab8d29f59a"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d63/class_u_b_keyboard_locale.html#a2b0a9e2afe0dff9abdc767ab8d29f59a">name</a></td></tr>
 <tr class="memitem:a53ed8afa7b75cf945a31239d93493610"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d63/class_u_b_keyboard_locale.html#a53ed8afa7b75cf945a31239d93493610">id</a></td></tr>
 <tr class="memitem:a7aa46a7a5bcbac204a35f6ad52fcbf1d"><td class="memItemLeft" align="right" valign="top">QIcon *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d63/class_u_b_keyboard_locale.html#a7aa46a7a5bcbac204a35f6ad52fcbf1d">icon</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adbddd241659e3ed178dab98d07946f9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dd2/struct_k_e_y_b_t.html">KEYBT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d63/class_u_b_keyboard_locale.html#adbddd241659e3ed178dab98d07946f9f">constSymbols</a></td></tr>
+<tr class="memitem:abf742128fb705b04f09797f111340eca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dd2/struct_k_e_y_b_t.html">KEYBT</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae58a7c9f90dd5927870358525910ccf9"></a>
@@ -185,7 +191,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                        :<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a055471feb8ec0306724cd3b326533737">fullName</a>(_fullName),<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a2b0a9e2afe0dff9abdc767ab8d29f59a">name</a>(_name), <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a53ed8afa7b75cf945a31239d93493610">id</a>(_id), <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a7aa46a7a5bcbac204a35f6ad52fcbf1d">icon</a>(_icon),</div>
-<div class="line">                        constSymbols(NULL), varSymbols(_symbols)</div>
+<div class="line">                        <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#adbddd241659e3ed178dab98d07946f9f">constSymbols</a>(NULL), <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>(_symbols)</div>
 <div class="line">                {}</div>
 </div><!-- fragment -->
 </div>
@@ -240,7 +246,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                        :<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a055471feb8ec0306724cd3b326533737">fullName</a>(_fullName),<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a2b0a9e2afe0dff9abdc767ab8d29f59a">name</a>(_name),  <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a53ed8afa7b75cf945a31239d93493610">id</a>(_id), <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a7aa46a7a5bcbac204a35f6ad52fcbf1d">icon</a>(_icon),</div>
-<div class="line">                        constSymbols(_symbols), varSymbols(NULL)</div>
+<div class="line">                        <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#adbddd241659e3ed178dab98d07946f9f">constSymbols</a>(_symbols), <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>(NULL)</div>
 <div class="line">                {}</div>
 </div><!-- fragment -->
 </div>
@@ -258,11 +264,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">        <span class="keywordflow">if</span> (varSymbols!=NULL)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>!=NULL)</div>
 <div class="line">        {</div>
 <div class="line">                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="../../d8/d93/_u_b_platform_utils_8h.html#a460e85d04c1a24281b9e58f882f95922">SYMBOL_KEYS_COUNT</a>; i++)</div>
-<div class="line">                        <span class="keyword">delete</span> varSymbols[i];</div>
-<div class="line">                <span class="keyword">delete</span> [] varSymbols;</div>
+<div class="line">                        <span class="keyword">delete</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>[i];</div>
+<div class="line">                <span class="keyword">delete</span> [] <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keyword">delete</span> <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#a7aa46a7a5bcbac204a35f6ad52fcbf1d">icon</a>;</div>
 <div class="line">}</div>
@@ -292,12 +298,32 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                {</div>
-<div class="line">                        <span class="keywordflow">return</span> (varSymbols==NULL)? constSymbols + index : varSymbols[index];</div>
+<div class="line">                        <span class="keywordflow">return</span> (<a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>==NULL)? <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#adbddd241659e3ed178dab98d07946f9f">constSymbols</a> + index : <a class="code" href="../../d3/d63/class_u_b_keyboard_locale.html#abf742128fb705b04f09797f111340eca">varSymbols</a>[index];</div>
 <div class="line">                }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="adbddd241659e3ed178dab98d07946f9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dd2/struct_k_e_y_b_t.html">KEYBT</a>* UBKeyboardLocale::constSymbols</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a055471feb8ec0306724cd3b326533737"></a>
 <div class="memitem">
 <div class="memproto">
@@ -346,9 +372,29 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="abf742128fb705b04f09797f111340eca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dd2/struct_k_e_y_b_t.html">KEYBT</a>** UBKeyboardLocale::varSymbols</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d8/d93/_u_b_platform_utils_8h_source.html">UBPlatformUtils.h</a></li>
-<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d8/db6/_u_b_platform_utils_8cpp.html">UBPlatformUtils.cpp</a></li>
+<li><a class="el" href="../../d8/d93/_u_b_platform_utils_8h_source.html">UBPlatformUtils.h</a></li>
+<li><a class="el" href="../../d8/db6/_u_b_platform_utils_8cpp.html">UBPlatformUtils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -356,7 +402,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d63/class_u_b_keyboard_locale.html">UBKeyboardLocale</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

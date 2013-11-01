@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/adaptors/UBSvgSubsetAdaptor.cpp File Reference</title>
+<title>Open-Sankoré: UBSvgSubsetAdaptor.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,6 +101,7 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp.ht
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">UBSvgSubsetAdaptor.cpp File Reference</div>  </div>
@@ -153,9 +154,14 @@ $(document).ready(function(){initNavTree('dd/dc8/_u_b_svg_subset_adaptor_8cpp.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d17/_u_b_svg_subset_adaptor_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d17/_u_b_svg_subset_adaptor_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af5ff26cfb5b5e8337af0d5b59fe3b91a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#af5ff26cfb5b5e8337af0d5b59fe3b91a">itemZIndexComp</a> (const QGraphicsItem *item1, const QGraphicsItem *item2)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a4fecaf524ddfc3aeef320a1698ad8e83"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a4fecaf524ddfc3aeef320a1698ad8e83">tElement</a> = &quot;element&quot;</td></tr>
@@ -164,6 +170,54 @@ Variables</h2></td></tr>
 <tr class="memitem:a337686d5fc5596fa7d06a9efb4aaaec5"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#a337686d5fc5596fa7d06a9efb4aaaec5">tGroups</a> = &quot;groups&quot;</td></tr>
 <tr class="memitem:afe9debc9a85986a0bb658b48113ca3bc"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html#afe9debc9a85986a0bb658b48113ca3bc">aId</a> = &quot;id&quot;</td></tr>
 </table>
+<h2>Function Documentation</h2>
+<a class="anchor" id="af5ff26cfb5b5e8337af0d5b59fe3b91a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool itemZIndexComp </td>
+          <td>(</td>
+          <td class="paramtype">const QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> item1-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bafd234c2c7d1e0807eaa42fbbe52319fb">UBGraphicsItemData::ItemOwnZValue</a>).toReal() &lt; item2-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bafd234c2c7d1e0807eaa42fbbe52319fb">UBGraphicsItemData::ItemOwnZValue</a>).toReal();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp_af5ff26cfb5b5e8337af0d5b59fe3b91a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
 <h2>Variable Documentation</h2>
 <a class="anchor" id="afe9debc9a85986a0bb658b48113ca3bc"></a>
 <div class="memitem">
@@ -230,8 +284,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_ba3bda1af5b46be6c34dbdf9592f1d27.html">adaptors</a></li><li class="navelem"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html">UBSvgSubsetAdaptor.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_54d31cd2bed02ac2c374bf1924e627e1.html">adaptors</a></li><li class="navelem"><a class="el" href="../../dd/dc8/_u_b_svg_subset_adaptor_8cpp.html">UBSvgSubsetAdaptor.cpp</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

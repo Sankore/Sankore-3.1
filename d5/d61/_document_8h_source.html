@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf-merger/Document.h Source File</title>
+<title>Open-Sankoré: Document.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -158,30 +158,30 @@ $(document).ready(function(){initNavTree('d5/d61/_document_8h_source.html','../.
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="comment">//add objects to allObjects repository</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a3d977a03274a3b5353ed034d95a3b714">   53</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a3d977a03274a3b5353ed034d95a3b714">addToAllObjects</a>(<span class="keyword">const</span> std::vector&lt;Object *&gt; &amp; allObjs)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         _allObjects.insert(_allObjects.end(), allObjs.begin(), allObjs.end());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.insert(<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.end(), allObjs.begin(), allObjs.end());</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="comment">//methods   </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * docName);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#af30dc8743eea217391812af8a8a55dbb">Document</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * docName);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="comment">//members</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="comment">//root of all document&#39;s objects</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * _root;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">   64</a></span>&#160;      <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="comment">//document&#39;s pages</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="comment">//key - is a page number</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="comment">//values is a page</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      std::map &lt;unsigned int, Page *&gt; _pages;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">   69</a></span>&#160;      std::map &lt;unsigned int, Page *&gt; <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">//repository for all objects. </span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="comment">//this repository is using to destroy all document&#39;s objects in destructor</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      std::vector&lt;Object *&gt; _allObjects;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">   73</a></span>&#160;      std::vector&lt;Object *&gt; <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      std::string _documentName;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a2fddd0197ef13b0380b10d578419566b">   75</a></span>&#160;      std::string <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a2fddd0197ef13b0380b10d578419566b">_documentName</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="comment">//max number of all document&#39;s objects</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxObjectNumber;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a0310f6d329811c8ab7c0eac3f6e7c997">   78</a></span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a0310f6d329811c8ab7c0eac3f6e7c997">_maxObjectNumber</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   };</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
@@ -191,8 +191,8 @@ $(document).ready(function(){initNavTree('d5/d61/_document_8h_source.html','../.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d5/d61/_document_8h.html">Document.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bef69977bf836bcacc75baf7cc647ec1.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d5/d61/_document_8h.html">Document.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

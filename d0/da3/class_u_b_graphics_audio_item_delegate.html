@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('d0/da3/class_u_b_graphics_audio_item_d
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/d0c/class_u_b_graphics_audio_item_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsAudioItemDelegate Class Reference</div>  </div>
@@ -182,6 +184,20 @@ Protected Member Functions</h2></td></tr>
 <tr class="inherit_header pro_methods_class_u_b_graphics_item_delegate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_graphics_item_delegate')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a></td></tr>
 <tr class="memitem:a37a264e2942f9d1a2f74fe2dd0d5c9b1 inherit pro_methods_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a37a264e2942f9d1a2f74fe2dd0d5c9b1">decorateMenu</a> (QMenu *menu)</td></tr>
 <tr class="memitem:aaac5b391602a6c42ad371a3addf84662 inherit pro_methods_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#aaac5b391602a6c42ad371a3addf84662">updateMenuActionState</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ab1549746ca690b79a136ebbb4bef3284"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#ab1549746ca690b79a136ebbb4bef3284">togglePlayPause</a> ()</td></tr>
+<tr class="memitem:ac87493f86f5c215d32874b0cfbc18da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#ac87493f86f5c215d32874b0cfbc18da4">toggleMute</a> ()</td></tr>
+<tr class="memitem:acad472380c1bf31ca9602b8648c2ea8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#acad472380c1bf31ca9602b8648c2ea8a">remove</a> (bool canUndo)</td></tr>
+<tr class="memitem:a4c9bc21618cf84e66c5ce6745d4ec308"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#a4c9bc21618cf84e66c5ce6745d4ec308">updatePlayPauseState</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a451d5b45c65043894eeb5dd38d1ea302"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#a451d5b45c65043894eeb5dd38d1ea302">mPlayPauseButton</a></td></tr>
+<tr class="memitem:a73cc55fc77cc0a69c62a735b0e6bdbdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#a73cc55fc77cc0a69c62a735b0e6bdbdf">mStopButton</a></td></tr>
+<tr class="memitem:a668e9353bd30074d53297ae7ba8006b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#a668e9353bd30074d53297ae7ba8006b6">mMuteButton</a></td></tr>
+<tr class="memitem:ae533692f008999645fb5796135df65ab"><td class="memItemLeft" align="right" valign="top">UBGraphicsAudioItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html#ae533692f008999645fb5796135df65ab">mDelegated</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -322,8 +338,182 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="acad472380c1bf31ca9602b8648c2ea8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAudioItemDelegate::remove </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>canUndo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac87493f86f5c215d32874b0cfbc18da4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAudioItemDelegate::toggleMute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1549746ca690b79a136ebbb4bef3284"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAudioItemDelegate::togglePlayPause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c9bc21618cf84e66c5ce6745d4ec308"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAudioItemDelegate::updatePlayPauseState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ae533692f008999645fb5796135df65ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UBGraphicsAudioItem* UBGraphicsAudioItemDelegate::mDelegated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a668e9353bd30074d53297ae7ba8006b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsAudioItemDelegate::mMuteButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a451d5b45c65043894eeb5dd38d1ea302"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsAudioItemDelegate::mPlayPauseButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a73cc55fc77cc0a69c62a735b0e6bdbdf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsAudioItemDelegate::mStopButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d3/dc8/_u_b_graphics_audio_item_delegate_8h_source.html">UBGraphicsAudioItemDelegate.h</a></li>
+<li><a class="el" href="../../d3/dc8/_u_b_graphics_audio_item_delegate_8h_source.html">UBGraphicsAudioItemDelegate.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -331,7 +521,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/da3/class_u_b_graphics_audio_item_delegate.html">UBGraphicsAudioItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:01 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

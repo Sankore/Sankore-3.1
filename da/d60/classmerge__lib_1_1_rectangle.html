@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('da/d60/classmerge__lib_1_1_rectangle.h
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d0/d8c/classmerge__lib_1_1_rectangle-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::Rectangle Class Reference</div>  </div>
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('da/d60/classmerge__lib_1_1_rectangle.h
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dc0/classmerge__lib_1_1_rectangle__coll__graph.svg" width="208" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dc0/classmerge__lib_1_1_rectangle__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -137,6 +139,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2fd7bfb16e5ea70e0a9546b8ce13ff31"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a2fd7bfb16e5ea70e0a9546b8ce13ff31">y1</a></td></tr>
 <tr class="memitem:a5f3b6541b34a0f5484cbb78cf1587854"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a></td></tr>
 <tr class="memitem:a29e8913a7de8214057c8eae5045695e5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac88f5dcd795fecc1168b725e1a646e03"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ac88f5dcd795fecc1168b725e1a646e03">_getRectangleAsString</a> (const char *delimeter)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad314393e516b2ff590b8fcd085d28e2a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a></td></tr>
+<tr class="memitem:a21433c7c43b728f8686e346a1a391b44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html">TransformationMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8e31593fafdc0b14f21d6006fa858ee1"></a>
@@ -157,8 +168,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a2fd7bfb16e5ea70e0a9546b8ce13ff31">y1</a>(0),</div>
 <div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a>(0),</div>
 <div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a>(0),</div>
-<div class="line">_rectangleName(rectangleName),</div>
-<div class="line">_tm()</div>
+<div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a>(rectangleName),</div>
+<div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a>()</div>
 <div class="line"></div>
 <div class="line">{}</div>
 </div><!-- fragment -->
@@ -192,7 +203,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a2fd7bfb16e5ea70e0a9546b8ce13ff31">y1</a>(0),</div>
 <div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a>(0),</div>
 <div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a>(0),</div>
-<div class="line">_rectangleName(rectangleName)</div>
+<div class="line"><a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a>(rectangleName)</div>
 <div class="line">{</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rectanglePosition = <a class="code" href="../../d4/de3/classmerge__lib_1_1_parser.html#a10e184b6efbae358d74f48f92406b679">Parser::findToken</a>(content,rectangleName);</div>
 <div class="line">   </div>
@@ -224,6 +235,61 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="ac88f5dcd795fecc1168b725e1a646e03"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Rectangle::_getRectangleAsString </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>delimeter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   std::string result(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a>);    </div>
+<div class="line">   result.append(<span class="stringliteral">&quot; [&quot;</span>);</div>
+<div class="line">   result.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#af53ad8c0314cf4b736cfb4b9aed6f596">Utils::doubleToStr</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ac2114ba824684a5e571ace001eae7e89">x1</a>));</div>
+<div class="line">   result.append(delimeter);</div>
+<div class="line">   result.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#af53ad8c0314cf4b736cfb4b9aed6f596">Utils::doubleToStr</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a2fd7bfb16e5ea70e0a9546b8ce13ff31">y1</a>));</div>
+<div class="line">   result.append(delimeter);</div>
+<div class="line">   result.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#af53ad8c0314cf4b736cfb4b9aed6f596">Utils::doubleToStr</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a>));</div>
+<div class="line">   result.append(delimeter);</div>
+<div class="line">   result.append(<a class="code" href="../../d4/d67/classmerge__lib_1_1_utils.html#af53ad8c0314cf4b736cfb4b9aed6f596">Utils::doubleToStr</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a>));</div>
+<div class="line">   result.append(<span class="stringliteral">&quot; ]\n&quot;</span>);</div>
+<div class="line">   <span class="keywordflow">return</span> result;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_ac88f5dcd795fecc1168b725e1a646e03_cgraph.svg" width="384" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_ac88f5dcd795fecc1168b725e1a646e03_icgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="afa3ba9cfa8812322bc535ca5e31d924d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -248,9 +314,27 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{   </div>
-<div class="line">   content.append(_getRectangleAsString(delimeter));      </div>
+<div class="line">   content.append(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ac88f5dcd795fecc1168b725e1a646e03">_getRectangleAsString</a>(delimeter));      </div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_afa3ba9cfa8812322bc535ca5e31d924d_cgraph.svg" width="614" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_afa3ba9cfa8812322bc535ca5e31d924d_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a78c23ebff32769d54b568536d76af7f8"></a>
@@ -307,28 +391,28 @@ Public Attributes</h2></td></tr>
 <div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; transformations.size(); ++i)</div>
 <div class="line">   {</div>
 <div class="line">      tempTm = transformations[i]-&gt;getMatrix();</div>
-<div class="line">      tempTm.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#a8784873ef512545d240ae5d721919df9">add</a>(_tm);</div>
-<div class="line">      _tm = tempTm;</div>
+<div class="line">      tempTm.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#a8784873ef512545d240ae5d721919df9">add</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a>);</div>
+<div class="line">      <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a> = tempTm;</div>
 <div class="line">   }</div>
-<div class="line">   _tm.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#adc7b7e9b0e34d5cb7d93c19f23670bc3">recalculateCoordinates</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ac2114ba824684a5e571ace001eae7e89">x1</a>, <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a2fd7bfb16e5ea70e0a9546b8ce13ff31">y1</a>);</div>
-<div class="line">   _tm.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#adc7b7e9b0e34d5cb7d93c19f23670bc3">recalculateCoordinates</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a>, <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a>);</div>
+<div class="line">   <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a>.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#adc7b7e9b0e34d5cb7d93c19f23670bc3">recalculateCoordinates</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ac2114ba824684a5e571ace001eae7e89">x1</a>, <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a2fd7bfb16e5ea70e0a9546b8ce13ff31">y1</a>);</div>
+<div class="line">   <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a>.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#adc7b7e9b0e34d5cb7d93c19f23670bc3">recalculateCoordinates</a>(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a5f3b6541b34a0f5484cbb78cf1587854">x2</a>, <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a29e8913a7de8214057c8eae5045695e5">y2</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_a395b14c81be2add7783e1393be9d311a_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_a395b14c81be2add7783e1393be9d311a_icgraph.svg" width="456" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_a395b14c81be2add7783e1393be9d311a_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -348,7 +432,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   _rectangleName = newName;</div>
+<div class="line">   <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a> = newName;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -379,12 +463,12 @@ Public Attributes</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * foundObjectWithRectangle;</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fake;</div>
-<div class="line">   objectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a23bc60e234d95166f9daa4eb0c2235ad">findObject</a>(std::string(_rectangleName), foundObjectWithRectangle, fake);</div>
+<div class="line">   objectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a23bc60e234d95166f9daa4eb0c2235ad">findObject</a>(std::string(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a>), foundObjectWithRectangle, fake);</div>
 <div class="line">   std::string objectContent = foundObjectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
-<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rectanglePosition = objectContent.find(_rectangleName);</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rectanglePosition = objectContent.find(<a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ad314393e516b2ff590b8fcd085d28e2a">_rectangleName</a>);</div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfRectangle = objectContent.find(<span class="stringliteral">&quot;]&quot;</span>, rectanglePosition) + 1;</div>
 <div class="line">   foundObjectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a21c04aa4fd032fef003e6aac6ab1212d">eraseContent</a>(rectanglePosition, endOfRectangle - rectanglePosition);</div>
-<div class="line">   foundObjectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a365bdb9272a41c9f7f5f9525a03b981f">insertToContent</a>(rectanglePosition, _getRectangleAsString(delimeter));</div>
+<div class="line">   foundObjectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a365bdb9272a41c9f7f5f9525a03b981f">insertToContent</a>(rectanglePosition, <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#ac88f5dcd795fecc1168b725e1a646e03">_getRectangleAsString</a>(delimeter));</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">// reread the objectContent, since it was changed just above;</span></div>
 <div class="line">   objectContent = foundObjectWithRectangle-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad441291610e8d87698139463d2a27d21">getObjectContent</a>();</div>
@@ -404,23 +488,63 @@ Public Attributes</h2></td></tr>
 <div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> matrixValueLeftBound = objectContent.find(<span class="stringliteral">&quot;[&quot;</span>, matrixPosition);</div>
 <div class="line">      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> matrixValueRightBound = objectContent.find(<span class="stringliteral">&quot;]&quot;</span>, matrixValueLeftBound) + 1;</div>
 <div class="line">      objectWithMatrix-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a21c04aa4fd032fef003e6aac6ab1212d">eraseContent</a>(matrixValueLeftBound, matrixValueRightBound - matrixValueLeftBound);</div>
-<div class="line">      objectWithMatrix-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a365bdb9272a41c9f7f5f9525a03b981f">insertToContent</a>(matrixValueLeftBound, _tm.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#ab925e196201af200deab259ff1b57155">getValue</a>());</div>
+<div class="line">      objectWithMatrix-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a365bdb9272a41c9f7f5f9525a03b981f">insertToContent</a>(matrixValueLeftBound, <a class="code" href="../../da/d60/classmerge__lib_1_1_rectangle.html#a21433c7c43b728f8686e346a1a391b44">_tm</a>.<a class="code" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html#ab925e196201af200deab259ff1b57155">getValue</a>());</div>
 <div class="line"></div>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_aae4dc8f5494c96f19cde0771122a9267_cgraph.svg" width="555" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d60/classmerge__lib_1_1_rectangle_aae4dc8f5494c96f19cde0771122a9267_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="ad314393e516b2ff590b8fcd085d28e2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* merge_lib::Rectangle::_rectangleName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a21433c7c43b728f8686e346a1a391b44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d51/classmerge__lib_1_1_transformation_matrix.html">TransformationMatrix</a> merge_lib::Rectangle::_tm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac2114ba824684a5e571ace001eae7e89"></a>
 <div class="memitem">
 <div class="memproto">
@@ -470,8 +594,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../db/def/_rectangle_8h_source.html">Rectangle.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d5/d16/_rectangle_8cpp.html">Rectangle.cpp</a></li>
+<li><a class="el" href="../../db/def/_rectangle_8h_source.html">Rectangle.h</a></li>
+<li><a class="el" href="../../d5/d16/_rectangle_8cpp.html">Rectangle.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -479,7 +603,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../da/d60/classmerge__lib_1_1_rectangle.html">Rectangle</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:13 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

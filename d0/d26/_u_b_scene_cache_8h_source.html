@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/core/UBSceneCache.h Source File</title>
+<title>Open-Sankoré: UBSceneCache.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -204,17 +204,17 @@ $(document).ready(function(){initNavTree('d0/d26/_u_b_scene_cache_8h_source.html
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> internalMoveScene(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keywordtype">int</span> sourceIndex, <span class="keywordtype">int</span> targetIndex);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a16417fd70405280bcc6bdd6c5cb94ef0">internalMoveScene</a>(<a class="code" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a>* proxy, <span class="keywordtype">int</span> sourceIndex, <span class="keywordtype">int</span> targetIndex);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> dumpCacheContent();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a8cb59f393bc9a09128481a481ea8e931">dumpCacheContent</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> compactCache();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a3fb8dc0f975cefa634cf97c15c478e0c">compactCache</a>();</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">int</span> mCachedSceneCount;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">  107</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a42d17d7108e9d176c579a251ebe8a181">mCachedSceneCount</a>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        QQueue&lt;UBSceneCacheID&gt; mCachedKeyFIFO;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">  109</a></span>&#160;        QQueue&lt;UBSceneCacheID&gt; <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#aef6769ec2aec33d62b1df0f7a4f7bdab">mCachedKeyFIFO</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        QHash&lt;UBSceneCacheID, UBGraphicsScene::SceneViewState&gt; mViewStates;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a98c9d0b64d87414c869c5d0807c67b43">  111</a></span>&#160;        QHash&lt;UBSceneCacheID, UBGraphicsScene::SceneViewState&gt; <a class="code" href="../../d2/d79/class_u_b_scene_cache.html#a98c9d0b64d87414c869c5d0807c67b43">mViewStates</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
@@ -226,8 +226,8 @@ $(document).ready(function(){initNavTree('d0/d26/_u_b_scene_cache_8h_source.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_7d6d68be4f452814e43b66a7c76c6136.html">core</a></li><li class="navelem"><a class="el" href="../../d0/d26/_u_b_scene_cache_8h.html">UBSceneCache.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_55aa7dff72311e91c90ae626074ddca7.html">core</a></li><li class="navelem"><a class="el" href="../../d0/d26/_u_b_scene_cache_8h.html">UBSceneCache.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

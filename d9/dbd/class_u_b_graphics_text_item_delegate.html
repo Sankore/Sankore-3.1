@@ -106,6 +106,11 @@ $(document).ready(function(){initNavTree('d9/dbd/class_u_b_graphics_text_item_de
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../db/d75/class_u_b_graphics_text_item_delegate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsTextItemDelegate Class Reference</div>  </div>
@@ -195,6 +200,41 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a63f892bf8e8b39d2f8449b0ee45f6ca4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a63f892bf8e8b39d2f8449b0ee45f6ca4">updateMenuActionState</a> ()</td></tr>
 <tr class="memitem:a7ecdc3b3ed05e772714e7bb461de779f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a7ecdc3b3ed05e772714e7bb461de779f">positionHandles</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a082adea47802da41303236e3129b01ef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef">textChangeMode</a> { <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a> =  0, 
+<a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55">scaleSize</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a292ce49af67835859e297876d3f68602"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a292ce49af67835859e297876d3f68602">pickFont</a> ()</td></tr>
+<tr class="memitem:aa6d62a566b628c831f30862e1045b21e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa6d62a566b628c831f30862e1045b21e">pickColor</a> ()</td></tr>
+<tr class="memitem:a2b8cedd28837af619724fa6fa66d8a59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a2b8cedd28837af619724fa6fa66d8a59">decreaseSize</a> ()</td></tr>
+<tr class="memitem:a4ed451af17738fdb339961e3d4df6655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a4ed451af17738fdb339961e3d4df6655">increaseSize</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8fb4e6a562718d4e66b434baf2e84b62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a> ()</td></tr>
+<tr class="memitem:ace94fb205d9e2e71e843fb4da43b1286"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ace94fb205d9e2e71e843fb4da43b1286">customize</a> (QFontDialog &amp;fontDialog)</td></tr>
+<tr class="memitem:abe9ad56f66396204e7c3c39af073b6e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a> (qreal factor, <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef">textChangeMode</a> changeMode)</td></tr>
+<tr class="memitem:a62afd99cbb5caf18ec6c2b47308a7df9"><td class="memItemLeft" align="right" valign="top">QFont&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a62afd99cbb5caf18ec6c2b47308a7df9">createDefaultFont</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a52b95a8e4d6bb3f3c38109f32ad577d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a></td></tr>
+<tr class="memitem:a6ed75b7ae76caaf42ad7291844f8050b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a></td></tr>
+<tr class="memitem:abe0181f33669bcfbe019e52bf5719681"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a></td></tr>
+<tr class="memitem:a9c52adf52baa9cd605efdd236a5ed389"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a></td></tr>
+<tr class="memitem:a6cd17f55d34d5c28f8d8c8cd71778881"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6cd17f55d34d5c28f8d8c8cd71778881">mLastFontPixelSize</a></td></tr>
+<tr class="memitem:aa20fb7d9e9577010c933d99ecd281e50"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a></td></tr>
+<tr class="memitem:ae192432d9e32a369f38708e4c6022e3c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c">delta</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:addf015f82fcdd2fd0b225ede0e21ea64"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#addf015f82fcdd2fd0b225ede0e21ea64">sMinPixelSize</a> = 8</td></tr>
+<tr class="memitem:af57b7f2bcb2b34593b2d5178b8f4e7d5"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#af57b7f2bcb2b34593b2d5178b8f4e7d5">sMinPointSize</a> = 8</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_u_b_graphics_item_delegate"><td colspan="2" onclick="javascript:toggleInherit('signals_class_u_b_graphics_item_delegate')"><img src="../../closed.png" alt="-"/>&nbsp;Signals inherited from <a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html">UBGraphicsItemDelegate</a></td></tr>
@@ -223,6 +263,39 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:adf8972176c6e60c4a78e90eee2f97540 inherit pro_attribs_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html">UBGraphicsToolBarItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a></td></tr>
 <tr class="memitem:a87e149520c268ac29f26412129d2cca2 inherit pro_attribs_class_u_b_graphics_item_delegate"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dfb/class_u_b_graphics_item_action.html">UBGraphicsItemAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a87e149520c268ac29f26412129d2cca2">mAction</a></td></tr>
 </table>
+<h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a082adea47802da41303236e3129b01ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef">UBGraphicsTextItemDelegate::textChangeMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682"></a>changeSize</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55"></a>scaleSize</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+<div class="fragment"><div class="line">    {</div>
+<div class="line">        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a> = 0,</div>
+<div class="line">        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55">scaleSize</a></div>
+<div class="line">    };</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8e216ad171c1c7216732b7e266fe785e"></a>
 <div class="memitem">
@@ -248,24 +321,24 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a78857ae5335c1a31581a38210d8b2e5e">UBGraphicsItemDelegate</a>(pDelegated,0, parent, <span class="keyword">true</span>)</div>
-<div class="line">    , mLastFontPixelSize(-1)</div>
-<div class="line">    , delta(5)</div>
+<div class="line">    , <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6cd17f55d34d5c28f8d8c8cd71778881">mLastFontPixelSize</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c">delta</a>(5)</div>
 <div class="line">{</div>
-<div class="line">    delegated()-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">true</span>));</div>
-<div class="line">    delegated()-&gt;setPlainText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">true</span>));</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setPlainText(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    QTextCursor curCursor = delegated()-&gt;textCursor();</div>
+<div class="line">    QTextCursor curCursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line">    QTextCharFormat format;</div>
-<div class="line">    QFont font(createDefaultFont());</div>
+<div class="line">    QFont font(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a62afd99cbb5caf18ec6c2b47308a7df9">createDefaultFont</a>());</div>
 <div class="line">    font.setPointSize(<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;fontPointSize());</div>
 <div class="line"></div>
 <div class="line">    format.setFont(font);</div>
 <div class="line">    curCursor.mergeCharFormat(format);</div>
-<div class="line">    delegated()-&gt;setTextCursor(curCursor);</div>
-<div class="line">    delegated()-&gt;setFont(font);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(curCursor);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setFont(font);</div>
 <div class="line"></div>
-<div class="line">    delegated()-&gt;adjustSize();</div>
-<div class="line">    delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;adjustSize();</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -275,7 +348,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a8e216ad171c1c7216732b7e266fe785e_cgraph.svg" width="619" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a8e216ad171c1c7216732b7e266fe785e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -333,18 +406,18 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aed68d84ee8c86411f7b9197a4220e18f">UBGraphicsItemDelegate::buildButtons</a>();</div>
 <div class="line"></div>
-<div class="line">    mFontButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/font.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
-<div class="line">    mColorButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/color.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
-<div class="line">    mDecreaseSizeButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/minus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
-<div class="line">    mIncreaseSizeButton = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/plus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/font.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/color.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/minus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a> = <span class="keyword">new</span> <a class="code" href="../../da/dec/class_delegate_button.html">DelegateButton</a>(<span class="stringliteral">&quot;:/images/plus.svg&quot;</span>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>, <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>, Qt::TitleBarArea);</div>
 <div class="line"></div>
-<div class="line">    connect(mFontButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(pickFont()));</div>
-<div class="line">    connect(mColorButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(pickColor()));</div>
-<div class="line">    connect(mDecreaseSizeButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(decreaseSize()));</div>
-<div class="line">    connect(mIncreaseSizeButton, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(increaseSize()));</div>
+<div class="line">    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a292ce49af67835859e297876d3f68602">pickFont</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa6d62a566b628c831f30862e1045b21e">pickColor</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a2b8cedd28837af619724fa6fa66d8a59">decreaseSize</a>()));</div>
+<div class="line">    connect(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a>, SIGNAL(clicked(<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a4ed451af17738fdb339961e3d4df6655">increaseSize</a>()));</div>
 <div class="line"></div>
 <div class="line">    QList&lt;QGraphicsItem*&gt; itemsOnToolBar;</div>
-<div class="line">    itemsOnToolBar &lt;&lt; mFontButton &lt;&lt; mColorButton &lt;&lt; mDecreaseSizeButton &lt;&lt; mIncreaseSizeButton;</div>
+<div class="line">    itemsOnToolBar &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4">mFontButton</a> &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b">mColorButton</a> &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681">mDecreaseSizeButton</a> &lt;&lt; <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389">mIncreaseSizeButton</a>;</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ac63d42d3f32525ccfc43bac7da080a29">setItemsOnToolBar</a>(itemsOnToolBar);</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#ab9b66d30fdfa53a2399f4f95f6ef2f15">setShifting</a>(<span class="keyword">true</span>);</div>
 <div class="line">    <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a7463af65640e38f4555ddaa308a1446e">setVisibleOnBoard</a>(<span class="keyword">true</span>);</div>
@@ -355,7 +428,140 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aed68d84ee8c86411f7b9197a4220e18f_cgraph.svg" width="635" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aed68d84ee8c86411f7b9197a4220e18f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe9ad56f66396204e7c3c39af073b6e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsTextItemDelegate::ChangeTextSize </td>
+          <td>(</td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>factor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef">textChangeMode</a>&#160;</td>
+          <td class="paramname"><em>changeMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55">scaleSize</a> == changeMode)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (1 == factor)</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    <span class="keywordflow">if</span> (0 == factor)</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a> *item = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>());</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (item &amp;&amp; (QString() == item-&gt;toPlainText()))</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line"></div>
+<div class="line">    QTextCursor cursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
+<div class="line">    QTextCharFormat textFormat;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">int</span> anchorPos = cursor.anchor();</div>
+<div class="line">    <span class="keywordtype">int</span> cursorPos = cursor.position();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (0 == anchorPos-cursorPos)</div>
+<div class="line">    {</div>
+<div class="line">        cursor.setPosition (0, QTextCursor::MoveAnchor);</div>
+<div class="line">        cursor.setPosition (cursor.document()-&gt;characterCount()-1, QTextCursor::KeepAnchor);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">int</span> startPos = qMin(cursor.anchor(), cursor.position());</div>
+<div class="line">    <span class="keywordtype">int</span> endPos = qMax(cursor.anchor(), cursor.position());</div>
+<div class="line"></div>
+<div class="line">    QFont curFont;</div>
+<div class="line">    <span class="keywordtype">bool</span> bEndofTheSameBlock;</div>
+<div class="line">    <span class="keywordtype">int</span> iBlockLen;</div>
+<div class="line">    <span class="keywordtype">int</span> iPointSize;</div>
+<div class="line">    <span class="keywordtype">int</span> iNextPointSize;</div>
+<div class="line">    <span class="keywordtype">int</span> iCursorPos = startPos;</div>
+<div class="line"></div>
+<div class="line">   <span class="comment">// we search continuous blocks of the text with the same PointSize and allpy new settings for them.</span></div>
+<div class="line">    cursor.setPosition (startPos, QTextCursor::MoveAnchor);</div>
+<div class="line">    <span class="keywordflow">while</span>(iCursorPos &lt; endPos)</div>
+<div class="line">    {</div>
+<div class="line">        bEndofTheSameBlock = <span class="keyword">false</span>;</div>
+<div class="line">        iBlockLen = 0;</div>
+<div class="line"></div>
+<div class="line">        cursor.setPosition (iCursorPos+1, QTextCursor::KeepAnchor);</div>
+<div class="line">        iPointSize = cursor.charFormat().font().pointSize();</div>
+<div class="line">        curFont = cursor.charFormat().font();</div>
+<div class="line">        cursor.setPosition (iCursorPos, QTextCursor::KeepAnchor);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">do</span></div>
+<div class="line">        {</div>
+<div class="line">            iBlockLen++;</div>
+<div class="line"></div>
+<div class="line">            cursor.setPosition (iCursorPos+iBlockLen+1, QTextCursor::KeepAnchor);</div>
+<div class="line">            iNextPointSize = cursor.charFormat().font().pointSize();</div>
+<div class="line"></div>
+<div class="line">            cursor.setPosition (iCursorPos+iBlockLen, QTextCursor::KeepAnchor);</div>
+<div class="line">            <span class="keywordflow">if</span> ((iPointSize != iNextPointSize)||(iCursorPos+iBlockLen &gt;= endPos))</div>
+<div class="line">                bEndofTheSameBlock = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">        }<span class="keywordflow">while</span>(!bEndofTheSameBlock);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">        <span class="comment">//setting new parameners</span></div>
+<div class="line">        <span class="keywordtype">int</span> iNewPointSize = (<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a> == changeMode) ? (iPointSize + factor) : (iPointSize * factor);</div>
+<div class="line">        curFont.setPointSize( (iNewPointSize &gt; 0)?iNewPointSize:1);</div>
+<div class="line">        textFormat.setFont(curFont);</div>
+<div class="line">        cursor.mergeCharFormat(textFormat);</div>
+<div class="line"></div>
+<div class="line">        iCursorPos += iBlockLen;</div>
+<div class="line">        cursor.setPosition (iCursorPos, QTextCursor::MoveAnchor);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a2da8021ba2c62727724f931442a58c64">setFontPointSize</a>(iPointSize);</div>
+<div class="line">    <span class="comment">//returning initial selection</span></div>
+<div class="line">    cursor.setPosition (anchorPos, QTextCursor::MoveAnchor);</div>
+<div class="line">    cursor.setPosition (cursorPos, QTextCursor::KeepAnchor);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(cursor);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_abe9ad56f66396204e7c3c39af073b6e9_cgraph.svg" width="100%" height="513"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_abe9ad56f66396204e7c3c39af073b6e9_icgraph.svg" width="100%" height="453"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -383,15 +589,170 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a7ecdc3b3ed05e772714e7bb461de779f">positionHandles</a>();</div>
-<div class="line">    delegated()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a689f8e8c48294a231258478c3c61fe21_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a62afd99cbb5caf18ec6c2b47308a7df9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFont UBGraphicsTextItemDelegate::createDefaultFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QTextCharFormat textFormat;</div>
+<div class="line"></div>
+<div class="line">    QString fFamily = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#aff04ceea46fd5131313d443c361ed870">fontFamily</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (!fFamily.isEmpty())</div>
+<div class="line">        textFormat.setFontFamily(fFamily);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">bool</span> bold = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a7902b7be4ce2a0ad1d55c41c464a07ab">isBoldFont</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (bold)</div>
+<div class="line">        textFormat.setFontWeight(QFont::Bold);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">bool</span> italic = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a8c1ddd0b0ef139ee370dccd1906fd0dc">isItalicFont</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (italic)</div>
+<div class="line">        textFormat.setFontItalic(<span class="keyword">true</span>);</div>
+<div class="line"></div>
+<div class="line">    QFont font(fFamily, -1, bold ? QFont::Bold : -1, italic);</div>
+<div class="line">    <span class="keywordtype">int</span> pointSize = <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a1e41fd8d8f405d1655bfde52e48adbe9">fontPointSize</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (pointSize &gt; 0) {</div>
+<div class="line">        font.setPointSize(pointSize);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> font;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a62afd99cbb5caf18ec6c2b47308a7df9_cgraph.svg" width="100%" height="541"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a62afd99cbb5caf18ec6c2b47308a7df9_icgraph.svg" width="462" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace94fb205d9e2e71e843fb4da43b1286"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsTextItemDelegate::customize </td>
+          <td>(</td>
+          <td class="paramtype">QFontDialog &amp;&#160;</td>
+          <td class="paramname"><em>fontDialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    fontDialog.setOption(QFontDialog::DontUseNativeDialog);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;isDarkBackground()) {</div>
+<div class="line">        fontDialog.setStyleSheet(<span class="stringliteral">&quot;background-color: white;&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QListView *fontNameListView;</div>
+<div class="line">    QList&lt;QListView*&gt; listViews = fontDialog.findChildren&lt;QListView*&gt;();</div>
+<div class="line">    <span class="keywordflow">if</span> (listViews.count() &gt; 0)</div>
+<div class="line">    {</div>
+<div class="line">        fontNameListView = listViews.at(0);</div>
+<div class="line">        <span class="keywordflow">foreach</span> (QListView* listView, listViews)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (listView-&gt;pos().x() &lt; fontNameListView-&gt;pos().x())</div>
+<div class="line">                fontNameListView = listView;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (fontNameListView)</div>
+<div class="line">    {</div>
+<div class="line">        QStringListModel *stringListModel = <span class="keyword">dynamic_cast&lt;</span>QStringListModel*<span class="keyword">&gt;</span>(fontNameListView-&gt;model());</div>
+<div class="line">        <span class="keywordflow">if</span> (stringListModel)</div>
+<div class="line">        {</div>
+<div class="line">            QStringList dialogFontNames = stringListModel-&gt;stringList();</div>
+<div class="line">            QStringList safeWebFontNames;</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Arial&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Arial Black&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Comic Sans MS&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Courier New&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Georgia&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Impact&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Times New Roman&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Trebuchet MS&quot;</span>);</div>
+<div class="line">            safeWebFontNames.append(<span class="stringliteral">&quot;Verdana&quot;</span>);</div>
+<div class="line"></div>
+<div class="line">            QStringList customFontList =  <a class="code" href="../../d8/d23/class_u_b_resources.html#af681f547d1374c661b79246375397337">UBResources::resources</a>()-&gt;<a class="code" href="../../d8/d23/class_u_b_resources.html#a72047c709be99fb3769a42d16cbbc9a3">customFontList</a>();</div>
+<div class="line">            <span class="keywordtype">int</span> index = 0;</div>
+<div class="line">            <span class="keywordflow">foreach</span> (QString dialogFontName, dialogFontNames){</div>
+<div class="line">                <span class="keywordflow">if</span> (safeWebFontNames.contains(dialogFontName, Qt::CaseInsensitive) || customFontList.contains(dialogFontName, Qt::CaseSensitive))</div>
+<div class="line">                    index++;</div>
+<div class="line">                <span class="keywordflow">else</span></div>
+<div class="line">                    stringListModel-&gt;removeRow(index);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    QList&lt;QComboBox*&gt; comboBoxes = fontDialog.findChildren&lt;QComboBox*&gt;();</div>
+<div class="line">    <span class="keywordflow">if</span> (comboBoxes.count() &gt; 0)</div>
+<div class="line">        comboBoxes.at(0)-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_ace94fb205d9e2e71e843fb4da43b1286_cgraph.svg" width="100%" height="541"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_ace94fb205d9e2e71e843fb4da43b1286_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -423,18 +784,141 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a50aee9dacc7199cbea2b7e1d1fd06a18">UBGraphicsItemDelegate::decorateMenu</a>(menu);</div>
 <div class="line"></div>
-<div class="line">    mEditableAction = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Editable&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43">setEditable</a>(<span class="keywordtype">bool</span>)));</div>
-<div class="line">    mEditableAction-&gt;setCheckable(<span class="keyword">true</span>);</div>
-<div class="line">    mEditableAction-&gt;setChecked(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ac7b1a97796fd1c07b61d5aa900020573">isEditable</a>());</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a> = menu-&gt;addAction(tr(<span class="stringliteral">&quot;Editable&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43">setEditable</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a>-&gt;setCheckable(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50">mEditableAction</a>-&gt;setChecked(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ac7b1a97796fd1c07b61d5aa900020573">isEditable</a>());</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a50aee9dacc7199cbea2b7e1d1fd06a18_cgraph.svg" width="454" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a50aee9dacc7199cbea2b7e1d1fd06a18_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b8cedd28837af619724fa6fa66d8a59"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsTextItemDelegate::decreaseSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a>(-<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c">delta</a>, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a2b8cedd28837af619724fa6fa66d8a59_cgraph.svg" width="100%" height="513"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a2b8cedd28837af619724fa6fa66d8a59_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fb4e6a562718d4e66b434baf2e84b62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a> * UBGraphicsTextItemDelegate::delegated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../da/d65/class_u_b_graphics_text_item.html">UBGraphicsTextItem</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a8fb4e6a562718d4e66b434baf2e84b62_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ed451af17738fdb339961e3d4df6655"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsTextItemDelegate::increaseSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a>(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c">delta</a>, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682">changeSize</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a4ed451af17738fdb339961e3d4df6655_cgraph.svg" width="100%" height="513"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a4ed451af17738fdb339961e3d4df6655_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -456,11 +940,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>).toBool();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_ac7b1a97796fd1c07b61d5aa900020573_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -503,19 +987,167 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (change == QGraphicsItem::ItemSelectedChange)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (delegated()-&gt;isSelected())</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;isSelected())</div>
 <div class="line">        {</div>
-<div class="line">            QTextCursor c = delegated()-&gt;textCursor();</div>
+<div class="line">            QTextCursor c = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
 <div class="line">            <span class="keywordflow">if</span> (c.hasSelection())</div>
 <div class="line">            {</div>
 <div class="line">                c.clearSelection();</div>
-<div class="line">                delegated()-&gt;setTextCursor(c);</div>
+<div class="line">                <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(c);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ab61402d03cd4a7cc467a21c583aa16fa">UBGraphicsItemDelegate::itemChange</a>(change, value);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_ab61402d03cd4a7cc467a21c583aa16fa_cgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6d62a566b628c831f30862e1045b21e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsTextItemDelegate::pickColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a> &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().size() &gt; 0)</div>
+<div class="line">    {</div>
+<div class="line">        QColorDialog colorDialog(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;defaultTextColor(), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().at(0));</div>
+<div class="line">        colorDialog.setWindowTitle(tr(<span class="stringliteral">&quot;Text Color&quot;</span>));</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;isDarkBackground())</div>
+<div class="line">        {</div>
+<div class="line">            colorDialog.setStyleSheet(<span class="stringliteral">&quot;background-color: white;&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (colorDialog.exec())</div>
+<div class="line">        {</div>
+<div class="line">            QColor selectedColor = colorDialog.selectedColor();</div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setDefaultTextColor(selectedColor);</div>
+<div class="line">            QTextCursor curCursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
+<div class="line">            QTextCharFormat format;</div>
+<div class="line">            format.setForeground(QBrush(selectedColor));</div>
+<div class="line">            curCursor.mergeCharFormat(format);</div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(curCursor);</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a2ef8e51d1f91fc24d65445826fd8b83e">UBGraphicsTextItem::lastUsedTextColor</a> = selectedColor;</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aa6d62a566b628c831f30862e1045b21e_cgraph.svg" width="100%" height="537"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aa6d62a566b628c831f30862e1045b21e_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a292ce49af67835859e297876d3f68602"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsTextItemDelegate::pickFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a> &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene() &amp;&amp; <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().size() &gt; 0)</div>
+<div class="line">    {</div>
+<div class="line">        QFontDialog fontDialog(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor().charFormat().font(), <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;scene()-&gt;views().at(0));</div>
+<div class="line">        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#ace94fb205d9e2e71e843fb4da43b1286">customize</a>(fontDialog);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (fontDialog.exec())</div>
+<div class="line">        {</div>
+<div class="line">            QFont selectedFont = fontDialog.selectedFont();</div>
+<div class="line">            <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#af86c98d215ecddd64f90fe92e9fdd529">setFontFamily</a>(selectedFont.family());</div>
+<div class="line">            <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a5194a30c471ad4dc15fdbc99a7b64188">setBoldFont</a>(selectedFont.bold());</div>
+<div class="line">            <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a6e81b5086d516060e3cef858778ed144">setItalicFont</a>(selectedFont.italic());</div>
+<div class="line">            <a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a2da8021ba2c62727724f931442a58c64">setFontPointSize</a>(selectedFont.pointSize());</div>
+<div class="line"></div>
+<div class="line">            <span class="comment">//setting format for selected item</span></div>
+<div class="line">            QTextCursor curCursor = <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;textCursor();</div>
+<div class="line">            QTextCharFormat format;</div>
+<div class="line">            format.setFont(selectedFont);</div>
+<div class="line">            curCursor.mergeCharFormat(format);</div>
+<div class="line"></div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(curCursor);</div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setFont(selectedFont);</div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line"><span class="comment">//          disabled and replaced by the next line because of not optimum result (text splits to two lines when that is not necessary)</span></div>
+<div class="line"><span class="comment">//          delegated()-&gt;adjustSize();</span></div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a9a461e55837ce00341381e2f2bb642e8">resize</a>(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;document()-&gt;idealWidth(), <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;size().height());</div>
+<div class="line">            <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;<a class="code" href="../../da/d65/class_u_b_graphics_text_item.html#a522f83321532b4e289086240a3bc49fc">contentsChanged</a>();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a292ce49af67835859e297876d3f68602_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a292ce49af67835859e297876d3f68602_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a7ecdc3b3ed05e772714e7bb461de779f"></a>
@@ -550,7 +1182,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            qreal AntiScaleRatio = 1 / (<a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a6f46e3fe2ffde7ca74f50f175504c229">systemScaleFactor</a>() * <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#acd5ef85a2562dd209581430f5e5231f2">currentZoom</a>());</div>
 <div class="line">            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;setScale(AntiScaleRatio);</div>
 <div class="line">            QRectF toolBarRect = <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;rect();</div>
-<div class="line">            toolBarRect.setWidth(delegated()-&gt;boundingRect().width()/AntiScaleRatio);</div>
+<div class="line">            toolBarRect.setWidth(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;boundingRect().width()/AntiScaleRatio);</div>
 <div class="line">            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;setRect(toolBarRect);</div>
 <div class="line">            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#afb333932944e51dd53af4d61f4920d76">positionHandles</a>();</div>
 <div class="line">            <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#adf8972176c6e60c4a78e90eee2f97540">mToolBarItem</a>-&gt;<a class="code" href="../../dd/ddb/class_u_b_graphics_tool_bar_item.html#a88a96bf42a11d028087d59eb0a897ca8">update</a>();</div>
@@ -579,20 +1211,20 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a7ecdc3b3ed05e772714e7bb461de779f_cgraph.svg" width="440" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a7ecdc3b3ed05e772714e7bb461de779f_cgraph.svg" width="454" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a7ecdc3b3ed05e772714e7bb461de779f_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -640,9 +1272,27 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    ChangeTextSize(multiplyer, scaleSize);</div>
+<div class="line">    <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9">ChangeTextSize</a>(multiplyer, <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55">scaleSize</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a31031f4a0ecc99956015db236d973ac6_cgraph.svg" width="100%" height="513"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_a31031f4a0ecc99956015db236d973ac6_icgraph.svg" width="611" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aafb261e96f3bf4f3e732f6e69556eb43"></a>
@@ -668,24 +1318,33 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (editable) {</div>
-<div class="line">        delegated()-&gt;setTextInteractionFlags(Qt::TextEditorInteraction);</div>
+<div class="line">        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextInteractionFlags(Qt::TextEditorInteraction);</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">true</span>));</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        QTextCursor cursor(delegated()-&gt;document());</div>
+<div class="line">        QTextCursor cursor(<a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;document());</div>
 <div class="line">        cursor.clearSelection();</div>
-<div class="line">        delegated()-&gt;setTextCursor(cursor);</div>
+<div class="line">        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextCursor(cursor);</div>
 <div class="line"></div>
-<div class="line">        delegated()-&gt;setTextInteractionFlags(Qt::NoTextInteraction);</div>
+<div class="line">        <a class="code" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62">delegated</a>()-&gt;setTextInteractionFlags(Qt::NoTextInteraction);</div>
 <div class="line">        <a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a126d39dd710594d5f4f1c9956c0aafe3">mDelegated</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba02b241a6418be241a25a9a4261575b9f">UBGraphicsItemData::ItemEditable</a>, QVariant(<span class="keyword">false</span>));</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aafb261e96f3bf4f3e732f6e69556eb43_icgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aafb261e96f3bf4f3e732f6e69556eb43_cgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dbd/class_u_b_graphics_text_item_delegate_aafb261e96f3bf4f3e732f6e69556eb43_icgraph.svg" width="454" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -719,9 +1378,190 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="ae192432d9e32a369f38708e4c6022e3c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int UBGraphicsTextItemDelegate::delta</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6ed75b7ae76caaf42ad7291844f8050b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsTextItemDelegate::mColorButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe0181f33669bcfbe019e52bf5719681"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsTextItemDelegate::mDecreaseSizeButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa20fb7d9e9577010c933d99ecd281e50"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* UBGraphicsTextItemDelegate::mEditableAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52b95a8e4d6bb3f3c38109f32ad577d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsTextItemDelegate::mFontButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c52adf52baa9cd605efdd236a5ed389"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dec/class_delegate_button.html">DelegateButton</a>* UBGraphicsTextItemDelegate::mIncreaseSizeButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6cd17f55d34d5c28f8d8c8cd71778881"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBGraphicsTextItemDelegate::mLastFontPixelSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="addf015f82fcdd2fd0b225ede0e21ea64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int UBGraphicsTextItemDelegate::sMinPixelSize = 8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af57b7f2bcb2b34593b2d5178b8f4e7d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int UBGraphicsTextItemDelegate::sMinPointSize = 8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d4/dae/_u_b_graphics_text_item_delegate_8h_source.html">UBGraphicsTextItemDelegate.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d5/d90/_u_b_graphics_text_item_delegate_8cpp.html">UBGraphicsTextItemDelegate.cpp</a></li>
+<li><a class="el" href="../../d4/dae/_u_b_graphics_text_item_delegate_8h_source.html">UBGraphicsTextItemDelegate.h</a></li>
+<li><a class="el" href="../../d5/d90/_u_b_graphics_text_item_delegate_8cpp.html">UBGraphicsTextItemDelegate.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -729,7 +1569,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/dbd/class_u_b_graphics_text_item_delegate.html">UBGraphicsTextItemDelegate</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:56 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:04 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

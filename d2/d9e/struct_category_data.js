@@ -13,5 +13,9 @@ var struct_category_data =
     [ "librarySubPermissions", "d2/d9e/struct_category_data.html#a150b25038b995956b89896ac8f66886e", null ],
     [ "pathData", "d2/d9e/struct_category_data.html#ae5da36a3b7327e15fd29b87c20e6ac39", null ],
     [ "subFolderPermissionsForType", "d2/d9e/struct_category_data.html#ae0b01c9f7beb03243dbe07a9c209e028", null ],
-    [ "UserSubPermissions", "d2/d9e/struct_category_data.html#a9b8921537cdfd9b9523b451b1630fa30", null ]
+    [ "UserSubPermissions", "d2/d9e/struct_category_data.html#a9b8921537cdfd9b9523b451b1630fa30", null ],
+    [ "mCategoryFeature", "d2/d9e/struct_category_data.html#aa62dec74f6ba224c9a9e07bf38cc8fc5", null ],
+    [ "mIsNull", "d2/d9e/struct_category_data.html#a6cbc6681a504cfd20a70675ee57583f8", null ],
+    [ "mPathData", "d2/d9e/struct_category_data.html#a803bf4c4bd7f14d6018c09abb9a95f04", null ],
+    [ "mSubFolderPermissions", "d2/d9e/struct_category_data.html#a02540ea452d6f2bf97278d589d8a20a6", null ]
 ];

@@ -21,5 +21,7 @@ var class_u_b_graphics_group_container_item =
     [ "removeFromGroup", "de/d93/class_u_b_graphics_group_container_item.html#a7da3a6916abfde2a91c77b9ec2ab974c", null ],
     [ "setCurrentItem", "de/d93/class_u_b_graphics_group_container_item.html#ae52daee7b60e1306eeadf135896a53cc", null ],
     [ "setUuid", "de/d93/class_u_b_graphics_group_container_item.html#adf49f1e629c8ddf5d65ffe8d3ac63ab2", null ],
-    [ "type", "de/d93/class_u_b_graphics_group_container_item.html#aeb2222d49ff6a0b5f8808f4f99a0b635", null ]
+    [ "type", "de/d93/class_u_b_graphics_group_container_item.html#aeb2222d49ff6a0b5f8808f4f99a0b635", null ],
+    [ "itemsBoundingRect", "de/d93/class_u_b_graphics_group_container_item.html#a76f5fdb955ea6666929b979055c739bb", null ],
+    [ "mCurrentItem", "de/d93/class_u_b_graphics_group_container_item.html#ad2964c4f26ed73f323648f15426bca5a", null ]
 ];

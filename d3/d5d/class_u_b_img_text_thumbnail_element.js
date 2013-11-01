@@ -7,5 +7,8 @@ var class_u_b_img_text_thumbnail_element =
     [ "Place", "d3/d5d/class_u_b_img_text_thumbnail_element.html#a9957e6410bb70e4c9011ee67a48516ab", null ],
     [ "setBorder", "d3/d5d/class_u_b_img_text_thumbnail_element.html#aed1ed25175ba1e7f8551e5b9812772cc", null ],
     [ "setCaption", "d3/d5d/class_u_b_img_text_thumbnail_element.html#af5519fc379ef974b1078b0178453f3a9", null ],
-    [ "setThumbnail", "d3/d5d/class_u_b_img_text_thumbnail_element.html#abd7b83917e0825105a4d1039221dc674", null ]
+    [ "setThumbnail", "d3/d5d/class_u_b_img_text_thumbnail_element.html#abd7b83917e0825105a4d1039221dc674", null ],
+    [ "border", "d3/d5d/class_u_b_img_text_thumbnail_element.html#a393bfb20ee222d11494db4ce99466f9c", null ],
+    [ "caption", "d3/d5d/class_u_b_img_text_thumbnail_element.html#a6e6c33c2bb0b36854d27d1372c2e7d21", null ],
+    [ "thumbnail", "d3/d5d/class_u_b_img_text_thumbnail_element.html#af6f661aa00e9327a0d94580813b83d0e", null ]
 ];

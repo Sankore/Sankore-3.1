@@ -8,5 +8,10 @@ var class_u_b_graphics_item_undo_command =
     [ "GetRemovedList", "d2/df2/class_u_b_graphics_item_undo_command.html#a5d60f1df43ac7f7d785117da9d602ffe", null ],
     [ "getType", "d2/df2/class_u_b_graphics_item_undo_command.html#aa1bbdd494ad151b48edf59dc1c29d42d", null ],
     [ "redo", "d2/df2/class_u_b_graphics_item_undo_command.html#a85f77fad80b241baaf0c35b98ee7de82", null ],
-    [ "undo", "d2/df2/class_u_b_graphics_item_undo_command.html#ad72c268f481bda2170f4b0cafe193bd5", null ]
+    [ "undo", "d2/df2/class_u_b_graphics_item_undo_command.html#ad72c268f481bda2170f4b0cafe193bd5", null ],
+    [ "mAddedItems", "d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7", null ],
+    [ "mExcludedFromGroup", "d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7", null ],
+    [ "mFirstRedo", "d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3", null ],
+    [ "mRemovedItems", "d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3", null ],
+    [ "mScene", "d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b", null ]
 ];

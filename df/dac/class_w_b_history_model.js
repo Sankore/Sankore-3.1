@@ -14,5 +14,6 @@ var class_w_b_history_model =
     [ "headerData", "df/dac/class_w_b_history_model.html#a67599d7e32056287276197996be84084", null ],
     [ "historyReset", "df/dac/class_w_b_history_model.html#a756d78c9591f3804bcb0653451d285d9", null ],
     [ "removeRows", "df/dac/class_w_b_history_model.html#a791836de2c93231a2eb7d5b4ae355405", null ],
-    [ "rowCount", "df/dac/class_w_b_history_model.html#a761d669ec889b4e7815a3fea79c31b54", null ]
+    [ "rowCount", "df/dac/class_w_b_history_model.html#a761d669ec889b4e7815a3fea79c31b54", null ],
+    [ "m_history", "df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb", null ]
 ];

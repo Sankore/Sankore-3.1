@@ -105,6 +105,8 @@ $(document).ready(function(){initNavTree('d2/dfd/class_u_b_stylus_palette.html',
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d73/class_u_b_stylus_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBStylusPalette Class Reference</div>  </div>
@@ -181,6 +183,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb0926b8eb8fa8efe5e5ca05ee20abc6 inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#abb0926b8eb8fa8efe5e5ca05ee20abc6">savePos</a> ()</td></tr>
 <tr class="memitem:a1d84529dc9179497ba4f91d00a86460e inherit pub_methods_class_u_b_floating_palette"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d97/class_u_b_floating_palette.html#a1d84529dc9179497ba4f91d00a86460e">restorePos</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a70e9ed4830189a17df194adf1a95d032"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfd/class_u_b_stylus_palette.html#a70e9ed4830189a17df194adf1a95d032">stylusToolDoubleClicked</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a53ca42019a0b9a49595c8aa9227c60a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfd/class_u_b_stylus_palette.html#a53ca42019a0b9a49595c8aa9227c60a9">mLastSelectedId</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_slots_class_u_b_action_palette"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_u_b_action_palette')"><img src="../../closed.png" alt="-"/>&nbsp;Public Slots inherited from <a class="el" href="../../de/dc5/class_u_b_action_palette.html">UBActionPalette</a></td></tr>
@@ -233,7 +243,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a389dab585e37f7e97617370ee784a514">UBActionPalette</a>(Qt::TopLeftCorner, parent, orient)</div>
-<div class="line">    , mLastSelectedId(-1)</div>
+<div class="line">    , <a class="code" href="../../d2/dfd/class_u_b_stylus_palette.html#a53ca42019a0b9a49595c8aa9227c60a9">mLastSelectedId</a>(-1)</div>
 <div class="line">{</div>
 <div class="line">    QList&lt;QAction*&gt; <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a6f0c33558354c13ccc5111cfa385a2ff">actions</a>;</div>
 <div class="line"></div>
@@ -271,7 +281,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            {</div>
 <div class="line">                    <a class="code" href="../../de/dc5/class_u_b_action_palette.html#abee5fd5d774e46838952b4632add4e46">mButtonGroup</a>-&gt;addButton(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>[i], i);</div>
 <div class="line">            }</div>
-<div class="line">        connect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#abee5fd5d774e46838952b4632add4e46">mButtonGroup</a>, SIGNAL(buttonClicked(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#ada3077d2b24368051f6d63f704bdddde">buttonGroupClicked</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line">        connect(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#abee5fd5d774e46838952b4632add4e46">mButtonGroup</a>, SIGNAL(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#a40216f168183eecab89bcbafd56cbefd">buttonClicked</a>(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#ada3077d2b24368051f6d63f704bdddde">buttonGroupClicked</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d1/d97/class_u_b_floating_palette.html#abc34a1ea7b29b6aaa4a0ea25d5715210">adjustSizeAndPosition</a>();</div>
@@ -280,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">foreach</span>(<span class="keyword">const</span> <a class="code" href="../../d8/d5a/class_u_b_action_palette_button.html">UBActionPaletteButton</a>* button, <a class="code" href="../../de/dc5/class_u_b_action_palette.html#a533f91782bfb170d961413b39671ed03">mButtons</a>)</div>
 <div class="line">    {</div>
-<div class="line">        connect(button, SIGNAL(doubleClicked()), <span class="keyword">this</span>, SLOT(stylusToolDoubleClicked()));</div>
+<div class="line">        connect(button, SIGNAL(doubleClicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d2/dfd/class_u_b_stylus_palette.html#a70e9ed4830189a17df194adf1a95d032">stylusToolDoubleClicked</a>()));</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">}</div>
@@ -360,7 +370,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dfd/class_u_b_stylus_palette_a88643ee79adc6b2e6531cf42471ed975_cgraph.svg" width="611" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dfd/class_u_b_stylus_palette_a88643ee79adc6b2e6531cf42471ed975_cgraph.svg" width="100%" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -369,7 +379,43 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dfd/class_u_b_stylus_palette_a88643ee79adc6b2e6531cf42471ed975_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/dfd/class_u_b_stylus_palette_a88643ee79adc6b2e6531cf42471ed975_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a70e9ed4830189a17df194adf1a95d032"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBStylusPalette::stylusToolDoubleClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    emit <a class="code" href="../../d2/dfd/class_u_b_stylus_palette.html#a70e9ed4830189a17df194adf1a95d032">stylusToolDoubleClicked</a>(<a class="code" href="../../de/dc5/class_u_b_action_palette.html#abee5fd5d774e46838952b4632add4e46">mButtonGroup</a>-&gt;checkedId());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/dfd/class_u_b_stylus_palette_a70e9ed4830189a17df194adf1a95d032_icgraph.svg" width="430" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -399,9 +445,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a53ca42019a0b9a49595c8aa9227c60a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBStylusPalette::mLastSelectedId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../d4/d27/_u_b_stylus_palette_8h_source.html">UBStylusPalette.h</a></li>
-<li>Sankore-3.1/src/gui/<a class="el" href="../../de/d89/_u_b_stylus_palette_8cpp.html">UBStylusPalette.cpp</a></li>
+<li><a class="el" href="../../d4/d27/_u_b_stylus_palette_8h_source.html">UBStylusPalette.h</a></li>
+<li><a class="el" href="../../de/d89/_u_b_stylus_palette_8cpp.html">UBStylusPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -409,7 +476,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/dfd/class_u_b_stylus_palette.html">UBStylusPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:58 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:08 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

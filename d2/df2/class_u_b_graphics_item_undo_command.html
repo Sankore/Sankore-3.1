@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d2/df2/class_u_b_graphics_item_undo_co
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dd/d5a/class_u_b_graphics_item_undo_command-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsItemUndoCommand Class Reference</div>  </div>
@@ -118,14 +119,14 @@ $(document).ready(function(){initNavTree('d2/df2/class_u_b_graphics_item_undo_co
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dec/class_u_b_graphics_item_undo_command__inherit__graph.svg" width="248" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dec/class_u_b_graphics_item_undo_command__inherit__graph.svg" width="248" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBGraphicsItemUndoCommand:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/d48/class_u_b_graphics_item_undo_command__coll__graph.svg" width="248" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d48/class_u_b_graphics_item_undo_command__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
@@ -162,6 +163,14 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad72c268f481bda2170f4b0cafe193bd5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#ad72c268f481bda2170f4b0cafe193bd5">undo</a> ()</td></tr>
 <tr class="memitem:a85f77fad80b241baaf0c35b98ee7de82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a85f77fad80b241baaf0c35b98ee7de82">redo</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7eaed5035821f27252280918eac2c70b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a></td></tr>
+<tr class="memitem:aeb37af7788ceeba0bcc5232de47873d3"><td class="memItemLeft" align="right" valign="top">QSet&lt; QGraphicsItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a></td></tr>
+<tr class="memitem:a31932a581465a8bd4323e1af0af174a7"><td class="memItemLeft" align="right" valign="top">QSet&lt; QGraphicsItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a></td></tr>
+<tr class="memitem:a07a547078f70e1f933be5e3c3f02f6d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4aa053457a498a33bbfef270fbf4608a">GroupDataTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7">mExcludedFromGroup</a></td></tr>
+<tr class="memitem:a4ffbb46169a26f2bceef70ae745dfbb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">mFirstRedo</a></td></tr>
 </table>
 <h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a4aa053457a498a33bbfef270fbf4608a"></a>
@@ -212,20 +221,20 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mScene(pScene)</div>
-<div class="line">    , mRemovedItems(pRemovedItems - pAddedItems)</div>
-<div class="line">    , mAddedItems(pAddedItems - pRemovedItems)</div>
-<div class="line">    , mExcludedFromGroup(groupsMap)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>(pScene)</div>
+<div class="line">    , <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>(pRemovedItems - pAddedItems)</div>
+<div class="line">    , <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>(pAddedItems - pRemovedItems)</div>
+<div class="line">    , <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7">mExcludedFromGroup</a>(groupsMap)</div>
 <div class="line">{</div>
-<div class="line">    mFirstRedo = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">mFirstRedo</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itAdded(mAddedItems);</div>
+<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itAdded(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>);</div>
 <div class="line">    <span class="keywordflow">while</span> (itAdded.hasNext())</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a3e83388ec403a3bec62277e1b1a0144f">freezeW3CWidget</a>(itAdded.next(), <span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itRemoved(mRemovedItems);</div>
+<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itRemoved(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>);</div>
 <div class="line">    <span class="keywordflow">while</span> (itRemoved.hasNext())</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a3e83388ec403a3bec62277e1b1a0144f">freezeW3CWidget</a>(itRemoved.next(), <span class="keyword">false</span>);</div>
@@ -273,20 +282,20 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                          :</div>
-<div class="line">    mScene(pScene)</div>
+<div class="line">    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>(pScene)</div>
 <div class="line">{</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (pRemovedItem)</div>
 <div class="line">    {</div>
-<div class="line">        mRemovedItems.insert(pRemovedItem);</div>
+<div class="line">        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>.insert(pRemovedItem);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (pAddedItem)</div>
 <div class="line">    {</div>
-<div class="line">        mAddedItems.insert(pAddedItem);</div>
+<div class="line">        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>.insert(pAddedItem);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mFirstRedo = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">mFirstRedo</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
 }</div>
 </div><!-- fragment -->
@@ -339,7 +348,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mAddedItems; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -363,7 +372,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> mRemovedItems; }</div>
+<div class="fragment"><div class="line">{ <span class="keywordflow">return</span> <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -418,13 +427,13 @@ Protected Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">// the Undo framework calls a redo while appending the undo command.</span></div>
 <div class="line">    <span class="comment">// as we have already plotted the elements, we do not want to do it twice</span></div>
-<div class="line">    <span class="keywordflow">if</span> (!mFirstRedo)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">mFirstRedo</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (!mScene){</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>){</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        QMapIterator&lt;UBGraphicsGroupContainerItem*, QUuid&gt; curMapElement(mExcludedFromGroup);</div>
+<div class="line">        QMapIterator&lt;UBGraphicsGroupContainerItem*, QUuid&gt; curMapElement(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7">mExcludedFromGroup</a>);</div>
 <div class="line">        <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *nextGroup = NULL;</div>
 <div class="line">        <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *previousGroupItem = NULL;</div>
 <div class="line">        <span class="keywordtype">bool</span> groupChanged = <span class="keyword">false</span>;</div>
@@ -440,7 +449,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                    nextGroup = groupCandidate;</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
-<div class="line">            QGraphicsItem *groupedItem = mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a00577d96d8060f76953659cc48ecdff4">itemForUuid</a>(curMapElement.value());</div>
+<div class="line">            QGraphicsItem *groupedItem = <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a00577d96d8060f76953659cc48ecdff4">itemForUuid</a>(curMapElement.value());</div>
 <div class="line">            <span class="keywordflow">if</span> (groupedItem) {</div>
 <div class="line">                <span class="keywordflow">if</span> (nextGroup-&gt;childItems().count() == 1) {</div>
 <div class="line">                    nextGroup-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#a71bf648d30983ff33b0e94f515268b80">destroy</a>(<span class="keyword">false</span>);</div>
@@ -453,7 +462,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">            <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#ac8a143db621d9be68be5f3c9da0f1405">UBGraphicsItem::Delegate</a>(nextGroup)-&gt;<a class="code" href="../../dd/dd5/class_u_b_graphics_item_delegate.html#a25ea09abfab2c00bb19c08a995cd819e">update</a>();</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        QSetIterator&lt;QGraphicsItem*&gt; itRemoved(mRemovedItems);</div>
+<div class="line">        QSetIterator&lt;QGraphicsItem*&gt; itRemoved(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>);</div>
 <div class="line">        <span class="keywordflow">while</span> (itRemoved.hasNext())</div>
 <div class="line">        {</div>
 <div class="line">            QGraphicsItem* item = itRemoved.next();</div>
@@ -476,7 +485,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">                polygonItem-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a87013167bd29d82e3b5dd7a40edd0546">strokesGroup</a>()-&gt;removeFromGroup(polygonItem);</div>
 <div class="line">            }</div>
-<div class="line">            mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(item);</div>
+<div class="line">            <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(item);</div>
 <div class="line"></div>
 <div class="line">            <span class="keywordflow">if</span> (bApplyTransform)</div>
 <div class="line">                item-&gt;setTransform(t);</div>
@@ -484,7 +493,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">            <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a3e83388ec403a3bec62277e1b1a0144f">freezeW3CWidget</a>(item, <span class="keyword">true</span>);</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        QSetIterator&lt;QGraphicsItem*&gt; itAdded(mAddedItems);</div>
+<div class="line">        QSetIterator&lt;QGraphicsItem*&gt; itAdded(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>);</div>
 <div class="line">        <span class="keywordflow">while</span> (itAdded.hasNext())</div>
 <div class="line">        {</div>
 <div class="line">            QGraphicsItem* item = itAdded.next();</div>
@@ -493,26 +502,26 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                <a class="code" href="../../d8/d81/class_u_b_application.html#a34aa9a6616b61208ada7ff5fb228e5ff">UBApplication::boardController</a>-&gt;<a class="code" href="../../d7/d62/class_u_b_board_controller.html#a3e83388ec403a3bec62277e1b1a0144f">freezeW3CWidget</a>(item, <span class="keyword">false</span>);</div>
 <div class="line"></div>
 <div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a62a2a46f8a166127e772b661d66b0c4e">UBItemLayerType::FixedBackground</a> == item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>))</div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#af73c8ccfbf79c5b00b5195ab3de28328">setAsBackgroundObject</a>(item);</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#af73c8ccfbf79c5b00b5195ab3de28328">setAsBackgroundObject</a>(item);</div>
 <div class="line">                <span class="keywordflow">else</span></div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(item);</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(item);</div>
 <div class="line"></div>
 <div class="line">                <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a> *polygonItem = qgraphicsitem_cast&lt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>*&gt;(item);</div>
 <div class="line">                <span class="keywordflow">if</span> (polygonItem)</div>
 <div class="line">                {</div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(polygonItem);</div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f">removeItemFromDeletion</a>(polygonItem);</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(polygonItem);</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f">removeItemFromDeletion</a>(polygonItem);</div>
 <div class="line">                    polygonItem-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a87013167bd29d82e3b5dd7a40edd0546">strokesGroup</a>()-&gt;addToGroup(polygonItem);</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">// force refresh, QT is a bit lazy and take a lot of time (nb item ^2) to trigger repaint</span></div>
-<div class="line">        mScene-&gt;update(mScene-&gt;sceneRect());</div>
+<div class="line">        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;update(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;sceneRect());</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        mFirstRedo = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4ffbb46169a26f2bceef70ae745dfbb3">mFirstRedo</a> = <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -550,11 +559,11 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../dd/d07/class_u_b_abstract_undo_command.html#a91cd202e68ba7cc83f8490a6eec15dcc">UBAbstractUndoCommand</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (!mScene){</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>){</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itAdded(mAddedItems);</div>
+<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itAdded(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a31932a581465a8bd4323e1af0af174a7">mAddedItems</a>);</div>
 <div class="line">    <span class="keywordflow">while</span> (itAdded.hasNext())</div>
 <div class="line">    {</div>
 <div class="line">        QGraphicsItem* item = itAdded.next();</div>
@@ -578,24 +587,24 @@ Protected Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">            polygonItem-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a87013167bd29d82e3b5dd7a40edd0546">strokesGroup</a>()-&gt;removeFromGroup(polygonItem);</div>
 <div class="line">        }</div>
-<div class="line">        mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(item);</div>
+<div class="line">        <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(item);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (bApplyTransform)</div>
 <div class="line">            polygonItem-&gt;setTransform(t);</div>
 <div class="line"></div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itRemoved(mRemovedItems);</div>
+<div class="line">    QSetIterator&lt;QGraphicsItem*&gt; itRemoved(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#aeb37af7788ceeba0bcc5232de47873d3">mRemovedItems</a>);</div>
 <div class="line">    <span class="keywordflow">while</span> (itRemoved.hasNext())</div>
 <div class="line">    {</div>
 <div class="line">        QGraphicsItem* item = itRemoved.next();</div>
 <div class="line">        <span class="keywordflow">if</span> (item)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a62a2a46f8a166127e772b661d66b0c4e">UBItemLayerType::FixedBackground</a> == item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>)) {</div>
-<div class="line">                mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#af73c8ccfbf79c5b00b5195ab3de28328">setAsBackgroundObject</a>(item);</div>
+<div class="line">                <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#af73c8ccfbf79c5b00b5195ab3de28328">setAsBackgroundObject</a>(item);</div>
 <div class="line">            } <span class="keywordflow">else</span> {</div>
 <div class="line">                qreal ownZ = <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#a6952774d19830afc8429f649a7163390">UBGraphicsItem::getOwnZValue</a>(item);</div>
-<div class="line">                mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(item);</div>
+<div class="line">                <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(item);</div>
 <div class="line">                <a class="code" href="../../d3/dbd/class_u_b_graphics_item.html#af0b4688328f6b7c06e2f8e2ca5f80805">UBGraphicsItem::assignZValue</a>(item, ownZ); <span class="comment">//restoring the previous z index</span></div>
 <div class="line">            }</div>
 <div class="line"></div>
@@ -604,8 +613,8 @@ Protected Member Functions</h2></td></tr>
 <div class="line">                <a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a> *polygonItem = qgraphicsitem_cast&lt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html">UBGraphicsPolygonItem</a>*&gt;(item);</div>
 <div class="line">                <span class="keywordflow">if</span> (polygonItem)</div>
 <div class="line">                {</div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(polygonItem);</div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f">removeItemFromDeletion</a>(polygonItem);</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a769a40e7bebcaf040e391eed5f5d3f56">removeItem</a>(polygonItem);</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#a310c66a09239231971b65da11d89886f">removeItemFromDeletion</a>(polygonItem);</div>
 <div class="line">                    polygonItem-&gt;<a class="code" href="../../d5/d46/class_u_b_graphics_polygon_item.html#a87013167bd29d82e3b5dd7a40edd0546">strokesGroup</a>()-&gt;addToGroup(polygonItem);</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
@@ -614,7 +623,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    QMapIterator&lt;UBGraphicsGroupContainerItem*, QUuid&gt; curMapElement(mExcludedFromGroup);</div>
+<div class="line">    QMapIterator&lt;UBGraphicsGroupContainerItem*, QUuid&gt; curMapElement(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a07a547078f70e1f933be5e3c3f02f6d7">mExcludedFromGroup</a>);</div>
 <div class="line">    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *nextGroup = NULL;</div>
 <div class="line">    <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *previousGroupItem = NULL;</div>
 <div class="line">    <span class="keywordtype">bool</span> groupChanged = <span class="keyword">false</span>;</div>
@@ -628,14 +637,14 @@ Protected Member Functions</h2></td></tr>
 <div class="line">            <a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html">UBGraphicsGroupContainerItem</a> *groupCandidate = curMapElement.key();</div>
 <div class="line">            <span class="keywordflow">if</span> (groupCandidate) {</div>
 <div class="line">                nextGroup = groupCandidate;</div>
-<div class="line">                <span class="keywordflow">if</span>(!mScene-&gt;items().contains(nextGroup)) {</div>
-<div class="line">                    mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(nextGroup);</div>
+<div class="line">                <span class="keywordflow">if</span>(!<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;items().contains(nextGroup)) {</div>
+<div class="line">                    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a546b3015e60c63f2ef0e72fed5e4eb35">addItem</a>(nextGroup);</div>
 <div class="line">                }</div>
 <div class="line">                nextGroup-&gt;setVisible(<span class="keyword">true</span>);</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        QGraphicsItem *groupedItem = mScene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a00577d96d8060f76953659cc48ecdff4">itemForUuid</a>(curMapElement.value());</div>
+<div class="line">        QGraphicsItem *groupedItem = <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a00577d96d8060f76953659cc48ecdff4">itemForUuid</a>(curMapElement.value());</div>
 <div class="line">        <span class="keywordflow">if</span> (groupedItem) {</div>
 <div class="line">            nextGroup-&gt;<a class="code" href="../../de/d93/class_u_b_graphics_group_container_item.html#ac5b04f9899f76674245aeb2e8bc73095">addToGroup</a>(groupedItem);</div>
 <div class="line">        }</div>
@@ -645,7 +654,7 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// force refresh, QT is a bit lazy and take a lot of time (nb item ^2 ?) to trigger repaint</span></div>
-<div class="line">    mScene-&gt;update(mScene-&gt;sceneRect());</div>
+<div class="line">    <a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;update(<a class="code" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a7eaed5035821f27252280918eac2c70b">mScene</a>-&gt;sceneRect());</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -660,9 +669,110 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a31932a581465a8bd4323e1af0af174a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSet&lt;QGraphicsItem*&gt; UBGraphicsItemUndoCommand::mAddedItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a07a547078f70e1f933be5e3c3f02f6d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html#a4aa053457a498a33bbfef270fbf4608a">GroupDataTable</a> UBGraphicsItemUndoCommand::mExcludedFromGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ffbb46169a26f2bceef70ae745dfbb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsItemUndoCommand::mFirstRedo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb37af7788ceeba0bcc5232de47873d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSet&lt;QGraphicsItem*&gt; UBGraphicsItemUndoCommand::mRemovedItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7eaed5035821f27252280918eac2c70b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>* UBGraphicsItemUndoCommand::mScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../dc/d29/_u_b_graphics_item_undo_command_8h_source.html">UBGraphicsItemUndoCommand.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../db/dcd/_u_b_graphics_item_undo_command_8cpp.html">UBGraphicsItemUndoCommand.cpp</a></li>
+<li><a class="el" href="../../dc/d29/_u_b_graphics_item_undo_command_8h_source.html">UBGraphicsItemUndoCommand.h</a></li>
+<li><a class="el" href="../../db/dcd/_u_b_graphics_item_undo_command_8cpp.html">UBGraphicsItemUndoCommand.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -670,7 +780,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/df2/class_u_b_graphics_item_undo_command.html">UBGraphicsItemUndoCommand</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:02 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

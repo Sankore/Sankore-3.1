@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d7/dae/class_u_b_desktop_property_pale
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/dce/class_u_b_desktop_property_palette-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDesktopPropertyPalette Class Reference</div>  </div>
@@ -176,6 +177,10 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad2014614e7eff4eacadef3bc4b4d6c7b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dae/class_u_b_desktop_property_palette.html#ad2014614e7eff4eacadef3bc4b4d6c7b">getParentRightOffset</a> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a85d64519c1f90e802dcb1eb908b1acb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_slots_class_u_b_action_palette"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_u_b_action_palette')"><img src="../../closed.png" alt="-"/>&nbsp;Public Slots inherited from <a class="el" href="../../de/dc5/class_u_b_action_palette.html">UBActionPalette</a></td></tr>
@@ -226,7 +231,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    :<a class="code" href="../../d4/df1/class_u_b_property_palette.html#a169cc95159558832b82ee732374610a7" title="Constructor.">UBPropertyPalette</a>(Qt::Horizontal, parent)</div>
-<div class="line">    ,rightPalette(_rightPalette)</div>
+<div class="line">    ,<a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>(_rightPalette)</div>
 <div class="line">{}</div>
 </div><!-- fragment -->
 </div>
@@ -255,14 +260,35 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d1/d97/class_u_b_floating_palette.html#acf3ead0c3d8a3bde89b934ad208e9f9a">UBFloatingPalette</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> rightPalette-&gt;width();</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>-&gt;width();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a85d64519c1f90e802dcb1eb908b1acb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* UBDesktopPropertyPalette::rightPalette</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../dc/dd0/_u_b_desktop_property_palette_8h_source.html">UBDesktopPropertyPalette.h</a></li>
-<li>Sankore-3.1/src/desktop/<a class="el" href="../../d1/d42/_u_b_desktop_property_palette_8cpp.html">UBDesktopPropertyPalette.cpp</a></li>
+<li><a class="el" href="../../dc/dd0/_u_b_desktop_property_palette_8h_source.html">UBDesktopPropertyPalette.h</a></li>
+<li><a class="el" href="../../d1/d42/_u_b_desktop_property_palette_8cpp.html">UBDesktopPropertyPalette.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -270,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/dae/class_u_b_desktop_property_palette.html">UBDesktopPropertyPalette</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

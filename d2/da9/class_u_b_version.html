@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('d2/da9/class_u_b_version.html','../../
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d96/class_u_b_version-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBVersion Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('d2/da9/class_u_b_version.html','../../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d85/class_u_b_version__coll__graph.svg" width="144" height="304"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d85/class_u_b_version__coll__graph.svg" width="144" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -134,6 +135,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3c0eea3ec18a269184cf7419bc7edaf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#af3c0eea3ec18a269184cf7419bc7edaf">operator&lt;</a> (const <a class="el" href="../../d2/da9/class_u_b_version.html">UBVersion</a> &amp;otherVersion) const </td></tr>
 <tr class="memitem:afb567c978f399a89f875de8c193e99c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#afb567c978f399a89f875de8c193e99c6">operator==</a> (const <a class="el" href="../../d2/da9/class_u_b_version.html">UBVersion</a> &amp;otherVersion) const </td></tr>
 <tr class="memitem:a6bfa26312caaf38e4d6b24c566304f1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#a6bfa26312caaf38e4d6b24c566304f1a">operator&gt;</a> (const <a class="el" href="../../d2/da9/class_u_b_version.html">UBVersion</a> &amp;otherVersion) const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae4c27773588a7c02f07dfa216fc14f5d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a></td></tr>
+<tr class="memitem:a1e3543f3f775f4153a88b22baa4a7547"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a></td></tr>
+<tr class="memitem:ac311188ac430b399a9ef314c2426c05c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a></td></tr>
+<tr class="memitem:ae76c2ce9cd4c374e38279f7b40ef94c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a></td></tr>
+<tr class="memitem:a1aa912b74f54e5e8d18d4e19c244f896"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a></td></tr>
+<tr class="memitem:abd648e3b45cdf368ac86a3fae852b317"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4">ReleaseStage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8de16363b89e71b411aaea85ccd85ca6"></a>
@@ -148,10 +158,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">    : mIsValid(<span class="keyword">false</span>)</div>
-<div class="line">    , mPlatform(-1)</div>
-<div class="line">    , mMajor(-1)</div>
-<div class="line">    , mMinor(-1)</div>
+<div class="fragment"><div class="line">    : <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a>(-1)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -226,7 +236,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mIsValid;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -254,7 +264,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line">    <span class="keywordflow">return</span> mMajor;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -291,7 +301,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line">    <span class="keywordflow">return</span> mMinor;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -440,7 +450,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line">    <span class="keywordflow">return</span> mPlatform;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -477,7 +487,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_ASSERT(<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>());</div>
-<div class="line">    <span class="keywordflow">return</span> mReleaseStage;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -514,59 +524,59 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mIsValid = <span class="keyword">true</span>;</div>
-<div class="line">    mString = string;</div>
+<div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a> = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a> = string;</div>
 <div class="line">    QStringList versionParts = <span class="keywordtype">string</span>.split(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line">    <span class="keywordtype">int</span> count = versionParts.count();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (count &lt;  2)</div>
 <div class="line">    {</div>
-<div class="line">        mIsValid = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a> = <span class="keyword">false</span>;</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mPlatform = versionParts.at(0).toInt(&amp;mIsValid);</div>
+<div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#ac311188ac430b399a9ef314c2426c05c">mPlatform</a> = versionParts.at(0).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line">    mMajor = versionParts.at(1).toInt(&amp;mIsValid);</div>
+<div class="line">    <a class="code" href="../../d2/da9/class_u_b_version.html#ae76c2ce9cd4c374e38279f7b40ef94c0">mMajor</a> = versionParts.at(1).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (count == 2)</div>
 <div class="line">    {</div>
-<div class="line">        mMinor = 0;</div>
-<div class="line">        mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line">        <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = 0;</div>
+<div class="line">        <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == 3)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// Format 4.1.2 (implicitly release)</span></div>
-<div class="line">        mMinor = versionParts.at(2).toInt(&amp;mIsValid);</div>
+<div class="line">        <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = versionParts.at(2).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line">        mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line">        <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count &gt;= 4)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// Format 4.1.x.2 (where x = a|b|r|&lt;integer&gt;)</span></div>
 <div class="line">        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;a&quot;</span> == versionParts.at(2))</div>
 <div class="line">        {</div>
-<div class="line">            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4ab8e4fd775ba181b65c0fb6929cc7c6b3">Alpha</a>;</div>
+<div class="line">            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4ab8e4fd775ba181b65c0fb6929cc7c6b3">Alpha</a>;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;b&quot;</span> == versionParts.at(2))</div>
 <div class="line">        {</div>
-<div class="line">            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aefbfbaaca302a957185ade21ac0f8fd2">Beta</a>;</div>
+<div class="line">            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aefbfbaaca302a957185ade21ac0f8fd2">Beta</a>;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;r&quot;</span> == versionParts.at(2))</div>
 <div class="line">        {</div>
-<div class="line">            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line">            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">            mMinor = versionParts.at(2).toInt(&amp;mIsValid);</div>
+<div class="line">            <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = versionParts.at(2).toInt(&amp;<a class="code" href="../../d2/da9/class_u_b_version.html#a1e3543f3f775f4153a88b22baa4a7547">mIsValid</a>);</div>
 <div class="line">            <span class="keywordflow">if</span> (!<a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>()) <span class="keywordflow">return</span>;</div>
-<div class="line">            mReleaseStage = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
+<div class="line">            <a class="code" href="../../d2/da9/class_u_b_version.html#abd648e3b45cdf368ac86a3fae852b317">mReleaseStage</a> = <a class="code" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4aae4fa6732c26211af4458811d660af1f">ReleaseCandidate</a>;</div>
 <div class="line">            <span class="keywordflow">return</span>;</div>
 <div class="line">        }</div>
 <div class="line"></div>
 <div class="line">        QStringList lastParts = versionParts.at(3).split(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line">        mMinor = lastParts.at(0).toInt();</div>
+<div class="line">        <a class="code" href="../../d2/da9/class_u_b_version.html#a1aa912b74f54e5e8d18d4e19c244f896">mMinor</a> = lastParts.at(0).toInt();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -603,7 +613,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>() ? mString : <span class="stringliteral">&quot;INVALID&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d2/da9/class_u_b_version.html#ab16121026b0d5adef791a9c9c7a6c2a5">isValid</a>() ? <a class="code" href="../../d2/da9/class_u_b_version.html#ae4c27773588a7c02f07dfa216fc14f5d">mString</a> : <span class="stringliteral">&quot;INVALID&quot;</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -617,9 +627,130 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a1e3543f3f775f4153a88b22baa4a7547"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBVersion::mIsValid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae76c2ce9cd4c374e38279f7b40ef94c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBVersion::mMajor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1aa912b74f54e5e8d18d4e19c244f896"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBVersion::mMinor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac311188ac430b399a9ef314c2426c05c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBVersion::mPlatform</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd648e3b45cdf368ac86a3fae852b317"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d60/_u_b_version_8h.html#a0ba9715b6fc5eba4291eb57bb444b2f4">ReleaseStage</a> UBVersion::mReleaseStage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4c27773588a7c02f07dfa216fc14f5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBVersion::mString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a></li>
-<li>Sankore-3.1/src/frameworks/<a class="el" href="../../d6/de4/_u_b_version_8cpp.html">UBVersion.cpp</a></li>
+<li><a class="el" href="../../d6/d60/_u_b_version_8h_source.html">UBVersion.h</a></li>
+<li><a class="el" href="../../d6/de4/_u_b_version_8cpp.html">UBVersion.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -627,7 +758,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/da9/class_u_b_version.html">UBVersion</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:09 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

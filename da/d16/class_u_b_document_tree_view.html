@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('da/d16/class_u_b_document_tree_view.ht
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../d6/d90/class_u_b_document_tree_view-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDocumentTreeView Class Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('da/d16/class_u_b_document_tree_view.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d1f/class_u_b_document_tree_view__coll__graph.svg" width="203" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d1f/class_u_b_document_tree_view__coll__graph.svg" width="203" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -141,6 +142,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2ce720d0c684045f200f2563022139cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a2ce720d0c684045f200f2563022139cc">paintEvent</a> (QPaintEvent *event)</td></tr>
 <tr class="memitem:a2b3206b0a159d6831e7e0138b2b43228"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a> ()</td></tr>
 <tr class="memitem:a01af3b2ab4276f23082e7b11b57a4581"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a01af3b2ab4276f23082e7b11b57a4581">rowsAboutToBeRemoved</a> (const QModelIndex &amp;parent, int start, int end)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aae247f5fa6b6023ee9d2bb3c6834b26d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#aae247f5fa6b6023ee9d2bb3c6834b26d">isAcceptable</a> (const QModelIndex &amp;dragIndex, const QModelIndex &amp;atIndex)</td></tr>
+<tr class="memitem:a65f30c6518ff4413859eeeb4046bd94d"><td class="memItemLeft" align="right" valign="top">Qt::DropAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a65f30c6518ff4413859eeeb4046bd94d">acceptableAction</a> (const QModelIndex &amp;dragIndex, const QModelIndex &amp;atIndex)</td></tr>
+<tr class="memitem:a95cd9658a133984334dd6ebd43ca9bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html#a95cd9658a133984334dd6ebd43ca9bf6">updateIndexEnvirons</a> (const QModelIndex &amp;index)</td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3ef4cb8dc8a2d81efffa042829a244e2"></a>
@@ -178,6 +185,61 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a65f30c6518ff4413859eeeb4046bd94d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Qt::DropAction UBDocumentTreeView::acceptableAction </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>dragIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>atIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;inModel(dragIndex)) {</div>
+<div class="line">        <span class="keywordflow">if</span> (atIndex == <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;trashIndex() || <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;inTrash(atIndex)) {</div>
+<div class="line">            <span class="keywordflow">return</span> Qt::MoveAction; <span class="comment">//do not accept drop from model to trash, only &quot;delete&quot; command accepted</span></div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> Qt::CopyAction;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> Qt::MoveAction;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> Qt::IgnoreAction;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a65f30c6518ff4413859eeeb4046bd94d_cgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a776f3ae88bf5cad79fdd6eec358bc0d0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -210,11 +272,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line">        setColumnWidth(0, headerSizeHint);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a776f3ae88bf5cad79fdd6eec358bc0d0_icgraph.svg" width="382" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -278,11 +340,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a1a0ae3e2f2c94f767e0702680a37906d_cgraph.svg" width="379" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -311,7 +373,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordtype">bool</span> acceptIt = isAcceptable(selectedIndexes().first(), indexAt(event-&gt;pos()));</div>
+<div class="line">    <span class="keywordtype">bool</span> acceptIt = <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#aae247f5fa6b6023ee9d2bb3c6834b26d">isAcceptable</a>(selectedIndexes().first(), indexAt(event-&gt;pos()));</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;mimeData()-&gt;hasFormat(<a class="code" href="../../d8/d81/class_u_b_application.html#ad4f533c7971ce1c441b13a1b61e17525">UBApplication::mimeTypeUniboardPage</a>)) {</div>
 <div class="line">        <a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a> *docModel = qobject_cast&lt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>*&gt;(model());</div>
 <div class="line">        QModelIndex targetIndex = indexAt(event-&gt;pos());</div>
@@ -324,18 +386,18 @@ Protected Member Functions</h2></td></tr>
 <div class="line">            docModel-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#adb81ee375f8b5f9007723e4adaadd176">setHighLighted</a>(targetIndex);</div>
 <div class="line">            acceptIt = <span class="keyword">true</span>;</div>
 <div class="line">        }</div>
-<div class="line">        updateIndexEnvirons(targetIndex);</div>
+<div class="line">        <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a95cd9658a133984334dd6ebd43ca9bf6">updateIndexEnvirons</a>(targetIndex);</div>
 <div class="line">    }</div>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a57b90cd037e3dd8bf096a0138d30d5ee">QTreeView::dragMoveEvent</a>(event);</div>
 <div class="line">    <span class="keyword">event</span>-&gt;setAccepted(acceptIt);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a57b90cd037e3dd8bf096a0138d30d5ee_cgraph.svg" width="590" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a57b90cd037e3dd8bf096a0138d30d5ee_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -428,11 +490,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a776f3ae88bf5cad79fdd6eec358bc0d0">adjustSize</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a8364df11d6b3285ea0684673801b0b6c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -461,6 +523,15 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{<span class="keywordflow">return</span> qobject_cast&lt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html">UBDocumentTreeModel</a>*&gt;(model());}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a2b3206b0a159d6831e7e0138b2b43228_icgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ac9e847ad2b2e8fb7a12fab80a8eea1e8"></a>
@@ -507,6 +578,71 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="aae247f5fa6b6023ee9d2bb3c6834b26d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDocumentTreeView::isAcceptable </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>dragIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>atIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (!dragIndex.isValid()) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0177775331c363f33b5ed3139c14adc6">inModel</a>(dragIndex)) {</div>
+<div class="line">        <span class="keywordflow">if</span> (atIndex == <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a4e4fcf3c71fdb7a747d171ce6159717f">modelsIndex</a>() || <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#a2b3206b0a159d6831e7e0138b2b43228">fullModel</a>()-&gt;<a class="code" href="../../dd/d5a/class_u_b_document_tree_model.html#a0177775331c363f33b5ed3139c14adc6">inModel</a>(atIndex)) {</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//do not accept drop from model to itself</span></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_aae247f5fa6b6023ee9d2bb3c6834b26d_cgraph.svg" width="590" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_aae247f5fa6b6023ee9d2bb3c6834b26d_icgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ac4ae6d7b0e1c1fa635183133cb5a0069"></a>
 <div class="memitem">
 <div class="memproto">
@@ -543,11 +679,11 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../da/d16/class_u_b_document_tree_view.html#ab603fd056fbd771f92b8e3008e745b78">setSelectedAndExpanded</a>(pNewIndex, true);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_ac4ae6d7b0e1c1fa635183133cb5a0069_cgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -675,20 +811,59 @@ Protected Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_ab603fd056fbd771f92b8e3008e745b78_icgraph.svg" width="403" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="a95cd9658a133984334dd6ebd43ca9bf6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDocumentTreeView::updateIndexEnvirons </td>
+          <td>(</td>
+          <td class="paramtype">const QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QRect updateRect = visualRect(index);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> multipler = 3;</div>
+<div class="line">    updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);</div>
+<div class="line">    update(updateRect);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d16/class_u_b_document_tree_view_a95cd9658a133984334dd6ebd43ca9bf6_icgraph.svg" width="374" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/document/<a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
-<li>Sankore-3.1/src/document/<a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
+<li><a class="el" href="../../de/d00/_u_b_document_controller_8h_source.html">UBDocumentController.h</a></li>
+<li><a class="el" href="../../d4/d39/_u_b_document_controller_8cpp.html">UBDocumentController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -696,7 +871,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d16/class_u_b_document_tree_view.html">UBDocumentTreeView</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:59 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

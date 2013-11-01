@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/podcast/UBAbstractVideoEncoder.h Source File</title>
+<title>Open-Sankoré: UBAbstractVideoEncoder.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -156,56 +156,56 @@ $(document).ready(function(){initNavTree('db/de0/_u_b_abstract_video_encoder_8h_
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a6255653005e6a14f455f1948591db794">   51</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a6255653005e6a14f455f1948591db794">setFramesPerSecond</a>(<span class="keywordtype">int</span> pFps)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            mFramesPerSecond = pFps;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a> = pFps;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">   56</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a2188fa51abf5736939cb971c8030f54c">framesPerSecond</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> mFramesPerSecond;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a8feffc37810d5b9ee249545028c65cae">videoFileExtension</a>() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ad818fe4bbe2eca67923e9ddcc6b55950">   63</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ad818fe4bbe2eca67923e9ddcc6b55950">setVideoFileName</a>(<span class="keyword">const</span> QString&amp; pFileName)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            mVideoFileName = pFileName;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a> = pFileName;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">   68</a></span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab8322081d835d9045ab9c7cc4845c2a7">videoFileName</a>()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> mVideoFileName;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#acdac7b3bcec229a6953f85279e833a2a">   73</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#acdac7b3bcec229a6953f85279e833a2a">setVideoSize</a>(<span class="keyword">const</span> QSize&amp; pSize)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            mVideoSize = pSize;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a> = pSize;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">   78</a></span>&#160;        <span class="keyword">virtual</span> QSize <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab4c34762f756b5779a6befa3c3bdcc47">videoSize</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> mVideoSize;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af9ea652bda987ed6874f1a8fc2055cc8">   83</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">long</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af9ea652bda987ed6874f1a8fc2055cc8">videoBitsPerSecond</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> mVideoBitsPerSecond;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#abff86ce967d23f7da2c61c01343585cc">   88</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#abff86ce967d23f7da2c61c01343585cc">setVideoBitsPerSecond</a>(<span class="keywordtype">long</span> pVideoBitsPerSecond)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            mVideoBitsPerSecond = pVideoBitsPerSecond;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a> = pVideoBitsPerSecond;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab3f6d08c89768a4fc724cfd6da53ac16">lastErrorMessage</a>() = 0;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f9a57a0a7afa22d06b5fef2dbb19c6a">   95</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f9a57a0a7afa22d06b5fef2dbb19c6a">setAudioRecordingDevice</a>(<span class="keyword">const</span> QString pAudioRecordingDevice)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            mAudioRecordingDevice = pAudioRecordingDevice;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a> = pAudioRecordingDevice;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">  100</a></span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a>()</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> mAudioRecordingDevice;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab5fae0f75a1993fe478442e0aa9d0c14">setRecordAudio</a>(<span class="keywordtype">bool</span> pRecordAudio) = 0;</div>
@@ -220,15 +220,15 @@ $(document).ready(function(){initNavTree('db/de0/_u_b_abstract_video_encoder_8h_
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">int</span> mFramesPerSecond;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">  117</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        QString mVideoFileName;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">  119</a></span>&#160;        QString <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        QSize mVideoSize;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">  121</a></span>&#160;        QSize <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">long</span> mVideoBitsPerSecond;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">  123</a></span>&#160;        <span class="keywordtype">long</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a>;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        QString mAudioRecordingDevice;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">  125</a></span>&#160;        QString <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a>;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
@@ -238,8 +238,8 @@ $(document).ready(function(){initNavTree('db/de0/_u_b_abstract_video_encoder_8h_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_3305105d7de22fda5ef028f8975c8bdb.html">podcast</a></li><li class="navelem"><a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h.html">UBAbstractVideoEncoder.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_de91351bf1172a20a1f8b279a638efc6.html">podcast</a></li><li class="navelem"><a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h.html">UBAbstractVideoEncoder.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

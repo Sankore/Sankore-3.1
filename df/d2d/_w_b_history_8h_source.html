@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/web/browser/WBHistory.h Source File</title>
+<title>Open-Sankoré: WBHistory.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -239,24 +239,24 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a28ae9f1cea36d3351846d33378cf1d42">loadSettings</a>();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">void</span> save();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">void</span> checkForExpired();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#abffc46e39370d1c540937c928c8807f2">save</a>();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a787ca4007d5003cf7d4ce9d52c3937bb">addHistoryItem</a>(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;item);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">void</span> load();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a4f1ec69221eb4d3cd462a720fe5aeb27">load</a>();</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a> *m_saveTimer;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">int</span> m_historyLimit;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        QTimer m_expiredTimer;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        QList&lt;WBHistoryItem&gt; m_history;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        QString m_lastSavedUrl;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">  145</a></span>&#160;        <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a> *<a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">  146</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#a65bf823c63c9d57f390b12b1f6c3ce71">  147</a></span>&#160;        QTimer <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a65bf823c63c9d57f390b12b1f6c3ce71">m_expiredTimer</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">  148</a></span>&#160;        QList&lt;WBHistoryItem&gt; <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">  149</a></span>&#160;        QString <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a>;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a> *m_historyModel;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="../../df/d23/class_w_b_history_filter_model.html" title="Proxy model that will remove any duplicate entries.">WBHistoryFilterModel</a> *m_historyFilterModel;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a> *m_historyTreeModel;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">  151</a></span>&#160;        <a class="code" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a> *<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">m_historyModel</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">  152</a></span>&#160;        <a class="code" href="../../df/d23/class_w_b_history_filter_model.html" title="Proxy model that will remove any duplicate entries.">WBHistoryFilterModel</a> *<a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="../../dd/d34/class_w_b_history_manager.html#a54ffc709343e35c1b7bdeda3ef4cafde">  153</a></span>&#160;        <a class="code" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a> *<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a54ffc709343e35c1b7bdeda3ef4cafde">m_historyTreeModel</a>;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
 <div class="line"><a name="l00156"></a><span class="lineno"><a class="code" href="../../df/dac/class_w_b_history_model.html">  156</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a> : <span class="keyword">public</span> QAbstractTableModel</div>
@@ -284,7 +284,7 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../df/dac/class_w_b_history_model.html#a791836de2c93231a2eb7d5b4ae355405">removeRows</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> count, <span class="keyword">const</span> QModelIndex &amp;parent = QModelIndex());</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a> *m_history;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">  181</a></span>&#160;        <a class="code" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a> *<a class="code" href="../../df/dac/class_w_b_history_model.html#ad4b0e315d3f4009e2a62d1bb4d13a2fb">m_history</a>;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;};</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
 <div class="line"><a name="l00189"></a><span class="lineno"><a class="code" href="../../df/d23/class_w_b_history_filter_model.html">  189</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d23/class_w_b_history_filter_model.html" title="Proxy model that will remove any duplicate entries.">WBHistoryFilterModel</a> : <span class="keyword">public</span> QAbstractProxyModel</div>
@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a7e365109a2414ffe2d9de80c60ad4c43">WBHistoryFilterModel</a>(QAbstractItemModel *sourceModel, QObject *<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a> = 0);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
 <div class="line"><a name="l00196"></a><span class="lineno"><a class="code" href="../../df/d23/class_w_b_history_filter_model.html#af43e01b4dabec4cea16b2ae39fa34953">  196</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#af43e01b4dabec4cea16b2ae39fa34953">historyContains</a>(<span class="keyword">const</span> QString &amp;url)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keyword">        </span>{ load(); <span class="keywordflow">return</span> m_historyHash.contains(url); }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keyword">        </span>{ <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>(); <span class="keywordflow">return</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>.contains(url); }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aaa886ebf372f8f29ff9cc2861b327338">historyLocation</a>(<span class="keyword">const</span> QString &amp;url) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    QModelIndex <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ae8e71451d931f055c0811ab2873811e7">mapFromSource</a>(<span class="keyword">const</span> QModelIndex &amp;sourceIndex) <span class="keyword">const</span>;</div>
@@ -310,17 +310,17 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    QVariant <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a12236424d609a63fd2cf8635f172f886">data</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a14fdaea193d5fb1e3994f882c58fccb9">index</a>, <span class="keywordtype">int</span> role = Qt::DisplayRole) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> sourceReset();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">void</span> sourceDataChanged(<span class="keyword">const</span> QModelIndex &amp;topLeft, <span class="keyword">const</span> QModelIndex &amp;bottomRight);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">void</span> sourceRowsInserted(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> sourceRowsRemoved(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5eee205f45708ae3a350ea386e04631b">sourceReset</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a6b49416cd525ac54564d33b6ff6d2834">sourceDataChanged</a>(<span class="keyword">const</span> QModelIndex &amp;topLeft, <span class="keyword">const</span> QModelIndex &amp;bottomRight);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a2efd44ed85ef1eeb059f0f17e406b29e">sourceRowsInserted</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a494793067e4585e5f31b4edda35305cf">parent</a>, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ac8e1400f82d41453e08045b8abdbd763">sourceRowsRemoved</a>(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">void</span> load() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a5353cf3d7970ba9479b09dcd268e79f7">load</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keyword">mutable</span> QList&lt;int&gt; m_sourceRow;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keyword">mutable</span> QHash&lt;QString, int&gt; m_historyHash;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keyword">mutable</span> <span class="keywordtype">bool</span> m_loaded;</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">  220</a></span>&#160;    <span class="keyword">mutable</span> QList&lt;int&gt; <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#a37cdf1ec8a3380ba1a19c30d465b5381">m_sourceRow</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">  221</a></span>&#160;    <span class="keyword">mutable</span> QHash&lt;QString, int&gt; <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#aa252b19e20f5b81d21b5d7e36799a848">m_historyHash</a>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">  222</a></span>&#160;    <span class="keyword">mutable</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html#ad13cd55432693ceb277d239a02d985ee">m_loaded</a>;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;};</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">/*</span></div>
@@ -347,7 +347,7 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a73376f863cf4067e3a023f8ad0bb06dd">bumpedRows</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <a class="code" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a> *m_treeModel;</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">  249</a></span>&#160;        <a class="code" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a> *<a class="code" href="../../d2/de6/class_w_b_history_menu_model.html#a06aa1635f8cbe58107f988c2a196f285">m_treeModel</a>;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;};</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">// Menu that is dynamically populated from the history</span></div>
@@ -367,13 +367,13 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d4c/class_w_b_history_menu.html#abd509c7b92a5ec976075da73b085b161">postPopulated</a>();</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordtype">void</span> activated(<span class="keyword">const</span> QModelIndex &amp;index);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordtype">void</span> showHistoryDialog();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d4c/class_w_b_history_menu.html#acc95fda5c83b13d0c66122532d603e9c">activated</a>(<span class="keyword">const</span> QModelIndex &amp;index);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d4c/class_w_b_history_menu.html#a6cd727e7ea9141ad9efe1e7dc8952ee6">showHistoryDialog</a>();</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a> *m_history;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html">WBHistoryMenuModel</a> *m_historyMenuModel;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        QList&lt;QAction*&gt; m_initialActions;</div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="code" href="../../d2/d4c/class_w_b_history_menu.html#a3d6acbadc9d696aa538268377faab2f6">  273</a></span>&#160;        <a class="code" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a> *<a class="code" href="../../d2/d4c/class_w_b_history_menu.html#a3d6acbadc9d696aa538268377faab2f6">m_history</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="code" href="../../d2/d4c/class_w_b_history_menu.html#aca80faa431e3847108293f288113289e">  274</a></span>&#160;        <a class="code" href="../../d2/de6/class_w_b_history_menu_model.html">WBHistoryMenuModel</a> *<a class="code" href="../../d2/d4c/class_w_b_history_menu.html#aca80faa431e3847108293f288113289e">m_historyMenuModel</a>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="code" href="../../d2/d4c/class_w_b_history_menu.html#a800aea35750af4c453b661bff297a0ab">  275</a></span>&#160;        QList&lt;QAction*&gt; <a class="code" href="../../d2/d4c/class_w_b_history_menu.html#a800aea35750af4c453b661bff297a0ab">m_initialActions</a>;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;};</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">// proxy model for the history model that</span></div>
@@ -394,7 +394,7 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a7ea06700bceb5cb04a8a0e740c703eaa">setSourceModel</a>(QAbstractItemModel *sourceModel);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordtype">void</span> sourceReset();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1">sourceReset</a>();</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;};</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
@@ -422,13 +422,13 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a94f2891195b053381a3587a790509266">setSourceModel</a>(QAbstractItemModel *sourceModel);</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordtype">void</span> sourceReset();</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">void</span> sourceRowsInserted(<span class="keyword">const</span> QModelIndex &amp;parent, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">void</span> sourceRowsRemoved(<span class="keyword">const</span> QModelIndex &amp;parent, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html#afca6ed9bcc01b7c9e2f7c00d14c3f594">sourceReset</a>();</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html#af2e7b9a946246741af5fbb52e9d04354">sourceRowsInserted</a>(<span class="keyword">const</span> QModelIndex &amp;parent, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a5482665e8fd4e2a903f98b552d21cdf2">sourceRowsRemoved</a>(<span class="keyword">const</span> QModelIndex &amp;parent, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordtype">int</span> sourceDateRow(<span class="keywordtype">int</span> row) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keyword">mutable</span> QList&lt;int&gt; m_sourceRowCache;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html#a0c061aee7f71d62161a4ca4f4c0c8f0f">sourceDateRow</a>(<span class="keywordtype">int</span> row) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ab443312246abb2d4c774f3ff2827a00f">  330</a></span>&#160;        <span class="keyword">mutable</span> QList&lt;int&gt; <a class="code" href="../../df/de6/class_w_b_history_tree_model.html#ab443312246abb2d4c774f3ff2827a00f">m_sourceRowCache</a>;</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;};</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
@@ -454,8 +454,8 @@ $(document).ready(function(){initNavTree('df/d2d/_w_b_history_8h_source.html','.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_23c3c48ca986e1b762b52f212c89e8a6.html">web</a></li><li class="navelem"><a class="el" href="../../dir_05fa3516a2ceff1bc2c895d074675fab.html">browser</a></li><li class="navelem"><a class="el" href="../../df/d2d/_w_b_history_8h.html">WBHistory.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:48 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_c5d8e5d1a9c4329f04300c8019051d02.html">web</a></li><li class="navelem"><a class="el" href="../../dir_30ba88fccd588e82598a3ea37e3e2e52.html">browser</a></li><li class="navelem"><a class="el" href="../../df/d2d/_w_b_history_8h.html">WBHistory.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

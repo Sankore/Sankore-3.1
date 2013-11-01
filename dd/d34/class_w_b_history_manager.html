@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('dd/d34/class_w_b_history_manager.html'
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/d51/class_w_b_history_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBHistoryManager Class Reference</div>  </div>
@@ -120,7 +123,7 @@ $(document).ready(function(){initNavTree('dd/d34/class_w_b_history_manager.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/df7/class_w_b_history_manager__coll__graph.svg" width="174" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/df7/class_w_b_history_manager__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-slots"></a>
@@ -157,6 +160,26 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ac239829b6d6ba9045ee8f2e7951e97d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#ac239829b6d6ba9045ee8f2e7951e97d0">historyLimit</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:abffc46e39370d1c540937c928c8807f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#abffc46e39370d1c540937c928c8807f2">save</a> ()</td></tr>
+<tr class="memitem:a7b2f07f92233508d90debb053b69136d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a4f1ec69221eb4d3cd462a720fe5aeb27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a4f1ec69221eb4d3cd462a720fe5aeb27">load</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af17f25c4b708e2a39279d7919af66e4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a></td></tr>
+<tr class="memitem:aeae0808002fbda0582558bc0e10f3d7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a></td></tr>
+<tr class="memitem:a65bf823c63c9d57f390b12b1f6c3ce71"><td class="memItemLeft" align="right" valign="top">QTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a65bf823c63c9d57f390b12b1f6c3ce71">m_expiredTimer</a></td></tr>
+<tr class="memitem:a2929a1b280b8ffe51113318acb759cf8"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a></td></tr>
+<tr class="memitem:a619d00b664e409eec7dab8f89af3a7a4"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a></td></tr>
+<tr class="memitem:a7b539a9f374b694b4f2218b0717fea40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">m_historyModel</a></td></tr>
+<tr class="memitem:addaa5df9fcd26ed75c6d29bc93a03112"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html">WBHistoryFilterModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a></td></tr>
+<tr class="memitem:a54ffc709343e35c1b7bdeda3ef4cafde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d34/class_w_b_history_manager.html#a54ffc709343e35c1b7bdeda3ef4cafde">m_historyTreeModel</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af6e554315a62f73b992821d871eeef5d"></a>
@@ -173,24 +196,24 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QWebHistoryInterface(parent)</div>
-<div class="line">    , m_saveTimer(<span class="keyword">new</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>(<span class="keyword">this</span>))</div>
-<div class="line">    , m_historyLimit(30)</div>
-<div class="line">    , m_historyModel(0)</div>
-<div class="line">    , m_historyFilterModel(0)</div>
-<div class="line">    , m_historyTreeModel(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>(<span class="keyword">new</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>(<span class="keyword">this</span>))</div>
+<div class="line">    , <a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a>(30)</div>
+<div class="line">    , <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">m_historyModel</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a54ffc709343e35c1b7bdeda3ef4cafde">m_historyTreeModel</a>(0)</div>
 <div class="line">{</div>
-<div class="line">    m_expiredTimer.setSingleShot(<span class="keyword">true</span>);</div>
-<div class="line">    connect(&amp;m_expiredTimer, SIGNAL(timeout()),</div>
-<div class="line">            <span class="keyword">this</span>, SLOT(checkForExpired()));</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a65bf823c63c9d57f390b12b1f6c3ce71">m_expiredTimer</a>.setSingleShot(<span class="keyword">true</span>);</div>
+<div class="line">    connect(&amp;<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a65bf823c63c9d57f390b12b1f6c3ce71">m_expiredTimer</a>, SIGNAL(timeout()),</div>
+<div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a>()));</div>
 <div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a47811019ca3f38969becf80093a53f40">entryAdded</a>(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;)),</div>
-<div class="line">            m_saveTimer, SLOT(changeOccurred()));</div>
+<div class="line">            <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>, SLOT(changeOccurred()));</div>
 <div class="line">    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a0a4f98730bf77d6f1b22e2d2b0cc1bb3">entryRemoved</a>(<span class="keyword">const</span> <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> &amp;)),</div>
-<div class="line">            m_saveTimer, SLOT(changeOccurred()));</div>
-<div class="line">    load();</div>
+<div class="line">            <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>, SLOT(changeOccurred()));</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a4f1ec69221eb4d3cd462a720fe5aeb27">load</a>();</div>
 <div class="line"></div>
-<div class="line">    m_historyModel = <span class="keyword">new</span> <a class="code" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a>(<span class="keyword">this</span>, <span class="keyword">this</span>);</div>
-<div class="line">    m_historyFilterModel = <span class="keyword">new</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html" title="Proxy model that will remove any duplicate entries.">WBHistoryFilterModel</a>(m_historyModel, <span class="keyword">this</span>);</div>
-<div class="line">    m_historyTreeModel = <span class="keyword">new</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a>(m_historyFilterModel, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">m_historyModel</a> = <span class="keyword">new</span> <a class="code" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a>(<span class="keyword">this</span>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a> = <span class="keyword">new</span> <a class="code" href="../../df/d23/class_w_b_history_filter_model.html" title="Proxy model that will remove any duplicate entries.">WBHistoryFilterModel</a>(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">m_historyModel</a>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a54ffc709343e35c1b7bdeda3ef4cafde">m_historyTreeModel</a> = <span class="keyword">new</span> <a class="code" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a>(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a>, <span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// QWebHistoryInterface will delete the history manager</span></div>
 <div class="line">    QWebHistoryInterface::setDefaultInterface(<span class="keyword">this</span>);</div>
@@ -201,7 +224,7 @@ Properties</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_af6e554315a62f73b992821d871eeef5d_cgraph.svg" width="496" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_af6e554315a62f73b992821d871eeef5d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -220,7 +243,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    m_saveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -261,7 +284,7 @@ Properties</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ac17f733de040227c0d309299928ef157_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ac17f733de040227c0d309299928ef157_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -293,10 +316,10 @@ Properties</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (globalSettings-&gt;testAttribute(QWebSettings::PrivateBrowsingEnabled))</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"></div>
-<div class="line">    m_history.prepend(item);</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.prepend(item);</div>
 <div class="line">    emit <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a47811019ca3f38969becf80093a53f40">entryAdded</a>(item);</div>
-<div class="line">    <span class="keywordflow">if</span> (m_history.count() == 1)</div>
-<div class="line">        checkForExpired();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.count() == 1)</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -304,7 +327,7 @@ Properties</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb_cgraph.svg" width="504" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -314,6 +337,78 @@ Properties</h2></td></tr>
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a787ca4007d5003cf7d4ce9d52c3937bb_icgraph.svg" width="502" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b2f07f92233508d90debb053b69136d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryManager::checkForExpired </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a> &lt; 0 || <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.isEmpty())</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line"></div>
+<div class="line">    QDateTime now = QDateTime::currentDateTime();</div>
+<div class="line">    <span class="keywordtype">int</span> nextTimeout = 0;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span> (!<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.isEmpty())</div>
+<div class="line">    {</div>
+<div class="line">        QDateTime <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a> = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.last().dateTime;</div>
+<div class="line">        checkForExpired.setDate(checkForExpired.date().addDays(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a>));</div>
+<div class="line">        <span class="keywordflow">if</span> (now.daysTo(checkForExpired) &gt; 7)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// check at most in a week to prevent int overflows on the timer</span></div>
+<div class="line">            nextTimeout = 7 * 86400;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            nextTimeout = now.secsTo(checkForExpired);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (nextTimeout &gt; 0)</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> item = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.takeLast();</div>
+<div class="line">        <span class="comment">// remove from saved file also</span></div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = QString();</div>
+<div class="line">        emit <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a0a4f98730bf77d6f1b22e2d2b0cc1bb3">entryRemoved</a>(item);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (nextTimeout &gt; 0)</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a65bf823c63c9d57f390b12b1f6c3ce71">m_expiredTimer</a>.start(nextTimeout * 1000);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a7b2f07f92233508d90debb053b69136d_cgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a7b2f07f92233508d90debb053b69136d_icgraph.svg" width="100%" height="467"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -340,18 +435,18 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    m_history.clear();</div>
-<div class="line">    m_lastSavedUrl = QString();</div>
-<div class="line">    m_saveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
-<div class="line">    m_saveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.clear();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = QString();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#ab8ca2ee909188de7a1756d84fcf406f4">historyReset</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a8aeebe09c94695b3e139ca534234e3a9_cgraph.svg" width="100%" height="420"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -380,11 +475,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a47811019ca3f38969becf80093a53f40_icgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -413,12 +508,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a0a4f98730bf77d6f1b22e2d2b0cc1bb3_icgraph.svg" width="496" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a0a4f98730bf77d6f1b22e2d2b0cc1bb3_icgraph.svg" width="100%" height="467"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -446,12 +541,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_aab586f70afd1f679d6064e0cb714b482_icgraph.svg" width="467" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_aab586f70afd1f679d6064e0cb714b482_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -470,15 +566,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> m_history;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d_icgraph.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ae0f6c3f537992122192559a4f711a60d_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -498,15 +594,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> m_historyFilterModel-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#af43e01b4dabec4cea16b2ae39fa34953">historyContains</a>(url);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a>-&gt;<a class="code" href="../../df/d23/class_w_b_history_filter_model.html#af43e01b4dabec4cea16b2ae39fa34953">historyContains</a>(url);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_acc7ef1d1cbfd3a31c3f6a106262238e6_cgraph.svg" width="395" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_acc7ef1d1cbfd3a31c3f6a106262238e6_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -525,7 +621,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> m_historyFilterModel;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#addaa5df9fcd26ed75c6d29bc93a03112">m_historyFilterModel</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -558,7 +654,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> m_historyModel;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b539a9f374b694b4f2218b0717fea40">m_historyModel</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -584,12 +680,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ab8ca2ee909188de7a1756d84fcf406f4_icgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ab8ca2ee909188de7a1756d84fcf406f4_icgraph.svg" width="100%" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -608,15 +704,120 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> m_historyTreeModel;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a54ffc709343e35c1b7bdeda3ef4cafde">m_historyTreeModel</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a2928319fdfb6988be63872b10fdd3e1a_icgraph.svg" width="446" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f1ec69221eb4d3cd462a720fe5aeb27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryManager::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a28ae9f1cea36d3351846d33378cf1d42">loadSettings</a>();</div>
+<div class="line"></div>
+<div class="line">    QFile historyFile(<a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">UBSettings::userDataDirectory</a>() + QLatin1String(<span class="stringliteral">&quot;/history&quot;</span>));</div>
+<div class="line">    <span class="keywordflow">if</span> (!historyFile.exists())</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    <span class="keywordflow">if</span> (!historyFile.open(QFile::ReadOnly))</div>
+<div class="line">    {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Unable to open history file&quot;</span> &lt;&lt; historyFile.fileName();</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QList&lt;WBHistoryItem&gt; list;</div>
+<div class="line">    QDataStream in(&amp;historyFile);</div>
+<div class="line">    <span class="comment">// Double check that the history file is sorted as it is read in</span></div>
+<div class="line">    <span class="keywordtype">bool</span> needToSort = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> lastInsertedItem;</div>
+<div class="line">    QByteArray data;</div>
+<div class="line">    QDataStream stream;</div>
+<div class="line">    QBuffer buffer;</div>
+<div class="line">    stream.setDevice(&amp;buffer);</div>
+<div class="line">    <span class="keywordflow">while</span> (!historyFile.atEnd())</div>
+<div class="line">    {</div>
+<div class="line">        in &gt;&gt; data;</div>
+<div class="line">        buffer.close();</div>
+<div class="line">        buffer.setBuffer(&amp;data);</div>
+<div class="line">        buffer.open(QIODevice::ReadOnly);</div>
+<div class="line">        quint32 ver;</div>
+<div class="line">        stream &gt;&gt; ver;</div>
+<div class="line">        <span class="keywordflow">if</span> (ver != <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#a611ca910c8a9c967b78ae4581cc1fc02">HISTORY_VERSION</a>)</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">        <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> item;</div>
+<div class="line">        stream &gt;&gt; item.<a class="code" href="../../db/d07/class_w_b_history_item.html#a09a9594a8300aefea4744b04890fb673">url</a>;</div>
+<div class="line">        stream &gt;&gt; item.<a class="code" href="../../db/d07/class_w_b_history_item.html#ad980324142b673c15d0f0b30f1d72920">dateTime</a>;</div>
+<div class="line">        stream &gt;&gt; item.<a class="code" href="../../db/d07/class_w_b_history_item.html#a864c9e04f1b6d92445dd3980894b3fbc">title</a>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!item.<a class="code" href="../../db/d07/class_w_b_history_item.html#ad980324142b673c15d0f0b30f1d72920">dateTime</a>.isValid())</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (item == lastInsertedItem)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (lastInsertedItem.<a class="code" href="../../db/d07/class_w_b_history_item.html#a864c9e04f1b6d92445dd3980894b3fbc">title</a>.isEmpty() &amp;&amp; !list.isEmpty())</div>
+<div class="line">                list[0].title = item.<a class="code" href="../../db/d07/class_w_b_history_item.html#a864c9e04f1b6d92445dd3980894b3fbc">title</a>;</div>
+<div class="line">            <span class="keywordflow">continue</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!needToSort &amp;&amp; !list.isEmpty() &amp;&amp; lastInsertedItem &lt; item)</div>
+<div class="line">            needToSort = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">        list.prepend(item);</div>
+<div class="line">        lastInsertedItem = item;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (needToSort)</div>
+<div class="line">        qSort(list.begin(), list.end());</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#ac749e2513aa93549de988bb15781d258">setHistory</a>(list, <span class="keyword">true</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// If we had to sort re-write the whole history sorted</span></div>
+<div class="line">    <span class="keywordflow">if</span> (needToSort)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = QString();</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a4f1ec69221eb4d3cd462a720fe5aeb27_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a4f1ec69221eb4d3cd462a720fe5aeb27_icgraph.svg" width="435" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -646,9 +847,120 @@ Properties</h2></td></tr>
 <div class="line">    <span class="comment">// load settings</span></div>
 <div class="line">    QSettings settings;</div>
 <div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;history&quot;</span>));</div>
-<div class="line">    m_historyLimit = settings.value(QLatin1String(<span class="stringliteral">&quot;historyLimit&quot;</span>), 30).toInt();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a> = settings.value(QLatin1String(<span class="stringliteral">&quot;historyLimit&quot;</span>), 30).toInt();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a28ae9f1cea36d3351846d33378cf1d42_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abffc46e39370d1c540937c928c8807f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBHistoryManager::save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QSettings settings;</div>
+<div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;history&quot;</span>));</div>
+<div class="line">    settings.setValue(QLatin1String(<span class="stringliteral">&quot;historyLimit&quot;</span>), <a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">bool</span> saveAll = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a>.isEmpty();</div>
+<div class="line">    <span class="keywordtype">int</span> first = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.count() - 1;</div>
+<div class="line">    <span class="keywordflow">if</span> (!saveAll)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// find the first one to save</span></div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.count(); ++i)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.at(i).url == <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a>)</div>
+<div class="line">            {</div>
+<div class="line">                first = i - 1;</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (first == <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.count() - 1)</div>
+<div class="line">        saveAll = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">    QString directory = <a class="code" href="../../db/d66/class_u_b_settings.html#af38d2ad231149df734ca7b5486356500">UBSettings::userDataDirectory</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (directory.isEmpty())</div>
+<div class="line">        directory = QDir::homePath() + QLatin1String(<span class="stringliteral">&quot;/.&quot;</span>) + QCoreApplication::applicationName();</div>
+<div class="line">    <span class="keywordflow">if</span> (!QFile::exists(directory))</div>
+<div class="line">    {</div>
+<div class="line">        QDir dir;</div>
+<div class="line">        dir.mkpath(directory);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QFile historyFile(directory + QLatin1String(<span class="stringliteral">&quot;/history&quot;</span>));</div>
+<div class="line">    <span class="comment">// When saving everything use a temporary file to prevent possible data loss.</span></div>
+<div class="line">    QTemporaryFile tempFile;</div>
+<div class="line">    tempFile.setAutoRemove(<span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordtype">bool</span> open = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordflow">if</span> (saveAll)</div>
+<div class="line">    {</div>
+<div class="line">        open = tempFile.open();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        open = historyFile.open(QFile::Append);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!open)</div>
+<div class="line">    {</div>
+<div class="line">        qWarning() &lt;&lt; <span class="stringliteral">&quot;Unable to open history file for saving&quot;</span></div>
+<div class="line">                   &lt;&lt; (saveAll ? tempFile.fileName() : historyFile.fileName());</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QDataStream out(saveAll ? &amp;tempFile : &amp;historyFile);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = first; i &gt;= 0; --i)</div>
+<div class="line">    {</div>
+<div class="line">        QByteArray data;</div>
+<div class="line">        QDataStream stream(&amp;data, QIODevice::WriteOnly);</div>
+<div class="line">        <a class="code" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a> item = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.at(i);</div>
+<div class="line">        stream &lt;&lt; <a class="code" href="../../db/ddb/_w_b_history_8cpp.html#a611ca910c8a9c967b78ae4581cc1fc02">HISTORY_VERSION</a> &lt;&lt; item.<a class="code" href="../../db/d07/class_w_b_history_item.html#a09a9594a8300aefea4744b04890fb673">url</a> &lt;&lt; item.<a class="code" href="../../db/d07/class_w_b_history_item.html#ad980324142b673c15d0f0b30f1d72920">dateTime</a> &lt;&lt; item.<a class="code" href="../../db/d07/class_w_b_history_item.html#a864c9e04f1b6d92445dd3980894b3fbc">title</a>;</div>
+<div class="line">        out &lt;&lt; data;</div>
+<div class="line">    }</div>
+<div class="line">    tempFile.close();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (saveAll)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (historyFile.exists() &amp;&amp; !historyFile.remove())</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;History: error removing old history.&quot;</span> &lt;&lt; historyFile.errorString();</div>
+<div class="line">        <span class="keywordflow">if</span> (!tempFile.rename(historyFile.fileName()))</div>
+<div class="line">            qWarning() &lt;&lt; <span class="stringliteral">&quot;History: error moving new history over old.&quot;</span> &lt;&lt; tempFile.errorString() &lt;&lt; historyFile.fileName();</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.value(0).url;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_abffc46e39370d1c540937c928c8807f2_cgraph.svg" width="100%" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ac749e2513aa93549de988bb15781d258"></a>
@@ -675,38 +987,38 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    m_history = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>;</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a> = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#ae0f6c3f537992122192559a4f711a60d">history</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// verify that it is sorted by date</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!loadedAndSorted)</div>
-<div class="line">        qSort(m_history.begin(), m_history.end());</div>
+<div class="line">        qSort(<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.begin(), <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.end());</div>
 <div class="line"></div>
-<div class="line">    checkForExpired();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a>();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (loadedAndSorted) {</div>
-<div class="line">        m_lastSavedUrl = m_history.value(0).url;</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.value(0).url;</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        m_lastSavedUrl = QString();</div>
-<div class="line">        m_saveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = QString();</div>
+<div class="line">        <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line">    }</div>
 <div class="line">    emit <a class="code" href="../../dd/d34/class_w_b_history_manager.html#ab8ca2ee909188de7a1756d84fcf406f4">historyReset</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258_cgraph.svg" width="100%" height="422"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258_cgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258_icgraph.svg" width="472" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_ac749e2513aa93549de988bb15781d258_icgraph.svg" width="100%" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -726,19 +1038,19 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (m_historyLimit == limit)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a> == limit)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">    m_historyLimit = limit;</div>
-<div class="line">    checkForExpired();</div>
-<div class="line">    m_saveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#aeae0808002fbda0582558bc0e10f3d7b">m_historyLimit</a> = limit;</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a7b2f07f92233508d90debb053b69136d">checkForExpired</a>();</div>
+<div class="line">    <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a73e44c1cb296fdcc42cb7567fe534f90_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a73e44c1cb296fdcc42cb7567fe534f90_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -768,28 +1080,199 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; m_history.count(); ++i)</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.count(); ++i)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (url == m_history.at(i).url)</div>
+<div class="line">        <span class="keywordflow">if</span> (url == <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.at(i).url)</div>
 <div class="line">        {</div>
-<div class="line">            m_history[i].title = title;</div>
-<div class="line">            m_saveTimer-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
-<div class="line">            <span class="keywordflow">if</span> (m_lastSavedUrl.isEmpty())</div>
-<div class="line">                m_lastSavedUrl = m_history.at(i).url;</div>
+<div class="line">            <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>[i].title = title;</div>
+<div class="line">            <a class="code" href="../../dd/d34/class_w_b_history_manager.html#af17f25c4b708e2a39279d7919af66e4a">m_saveTimer</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a>.isEmpty())</div>
+<div class="line">                <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a619d00b664e409eec7dab8f89af3a7a4">m_lastSavedUrl</a> = <a class="code" href="../../dd/d34/class_w_b_history_manager.html#a2929a1b280b8ffe51113318acb759cf8">m_history</a>.at(i).url;</div>
 <div class="line">            emit <a class="code" href="../../dd/d34/class_w_b_history_manager.html#aab586f70afd1f679d6064e0cb714b482">entryUpdated</a>(i);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a23ef7e0b61749b3b33591e9ca6413a4a_cgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
+
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d34/class_w_b_history_manager_a23ef7e0b61749b3b33591e9ca6413a4a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a65bf823c63c9d57f390b12b1f6c3ce71"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer WBHistoryManager::m_expiredTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2929a1b280b8ffe51113318acb759cf8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../db/d07/class_w_b_history_item.html">WBHistoryItem</a>&gt; WBHistoryManager::m_history</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="addaa5df9fcd26ed75c6d29bc93a03112"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d23/class_w_b_history_filter_model.html">WBHistoryFilterModel</a>* WBHistoryManager::m_historyFilterModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeae0808002fbda0582558bc0e10f3d7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WBHistoryManager::m_historyLimit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b539a9f374b694b4f2218b0717fea40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dac/class_w_b_history_model.html">WBHistoryModel</a>* WBHistoryManager::m_historyModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a54ffc709343e35c1b7bdeda3ef4cafde"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/de6/class_w_b_history_tree_model.html">WBHistoryTreeModel</a>* WBHistoryManager::m_historyTreeModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a619d00b664e409eec7dab8f89af3a7a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString WBHistoryManager::m_lastSavedUrl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af17f25c4b708e2a39279d7919af66e4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>* WBHistoryManager::m_saveTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -815,8 +1298,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
+<li><a class="el" href="../../df/d2d/_w_b_history_8h_source.html">WBHistory.h</a></li>
+<li><a class="el" href="../../db/ddb/_w_b_history_8cpp.html">WBHistory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -824,7 +1307,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d34/class_w_b_history_manager.html">WBHistoryManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

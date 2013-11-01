@@ -13,6 +13,13 @@ var class_p_d_f_renderer =
     [ "render", "d7/dc9/class_p_d_f_renderer.html#ab34077fb1f1e5d94150866ba4df335a7", null ],
     [ "rendererForUuid", "d7/dc9/class_p_d_f_renderer.html#aa787e1e22efa35f5d7bde2f85093c992", null ],
     [ "setDPI", "d7/dc9/class_p_d_f_renderer.html#a12aa241d086852e8617c89cddaef3585", null ],
+    [ "setFileData", "d7/dc9/class_p_d_f_renderer.html#a57c13f04b0b2a56d6155bfd2149c578c", null ],
+    [ "setFileUuid", "d7/dc9/class_p_d_f_renderer.html#a7a1faede58c61c79f1c6ddee4bf9c6bc", null ],
+    [ "setRefCount", "d7/dc9/class_p_d_f_renderer.html#a7a40a31cb576210cc5a4a54f2cd9ef13", null ],
     [ "title", "d7/dc9/class_p_d_f_renderer.html#a9e455189ab34238ccc84f42db288ca70", null ],
-    [ "dpiForRendering", "d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1", null ]
+    [ "dpiForRendering", "d7/dc9/class_p_d_f_renderer.html#a2cbfdcd0a7c6bbea158b0e7e324fdbe1", null ],
+    [ "mFileData", "d7/dc9/class_p_d_f_renderer.html#aa3f2bca75d2b415cbc6eadca17267dc2", null ],
+    [ "mFileUuid", "d7/dc9/class_p_d_f_renderer.html#a0be60264576b6bede3ffcb9198711e87", null ],
+    [ "mRefCount", "d7/dc9/class_p_d_f_renderer.html#a55a5be69092855a0d66dafd246d65a58", null ],
+    [ "sRenderers", "d7/dc9/class_p_d_f_renderer.html#ab0362104f0a9d7b87afb4af22a5ad65c", null ]
 ];

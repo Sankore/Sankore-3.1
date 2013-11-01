@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/desktop/UBDesktopPropertyPalette.h Source File</title>
+<title>Open-Sankoré: UBDesktopPropertyPalette.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('dc/dd0/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a9d316939376b30c5835b08faf0d6fc88">UBDesktopPropertyPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* _rightPalette);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* rightPalette;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">   40</a></span>&#160;        <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#ad2014614e7eff4eacadef3bc4b4d6c7b">getParentRightOffset</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
@@ -152,28 +152,28 @@ $(document).ready(function(){initNavTree('dc/dd0/_u_b_desktop_property_palette_8
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#aef31c4aef4db735b604264cdf7818427">UBDesktopPenPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* rightPalette);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#aef31c4aef4db735b604264cdf7818427">UBDesktopPenPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#af0182fe96738c7e096972a953df02193">   50</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#af0182fe96738c7e096972a953df02193">~UBDesktopPenPalette</a>(){}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">public</span> slots:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#a1ebbe0f3a6b460be4cb4752b9d6ffe5e" title="Disconnect the released event of the buttons.">onParentMinimized</a>();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#ae40ce5ea3ce05079f6e93c4dad3fadb3" title="Connect the released event of the buttons.">onParentMaximized</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> onButtonReleased();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../de/dd8/class_u_b_desktop_pen_palette.html#ad04790ae55474177a65ae9e512fcdd15">onButtonReleased</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../d5/d5e/class_u_b_desktop_eraser_palette.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d5e/class_u_b_desktop_eraser_palette.html">UBDesktopEraserPalette</a> : <span class="keyword">public</span> <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html">UBDesktopPropertyPalette</a></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d5/d5e/class_u_b_desktop_eraser_palette.html#a120edf48766c1aa8db17b106a93f7e73">UBDesktopEraserPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* rightPalette);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="../../d5/d5e/class_u_b_desktop_eraser_palette.html#a120edf48766c1aa8db17b106a93f7e73">UBDesktopEraserPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="../../d5/d5e/class_u_b_desktop_eraser_palette.html#af992b33d69fd2b7b79e79f752a114de7">   64</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../d5/d5e/class_u_b_desktop_eraser_palette.html#af992b33d69fd2b7b79e79f752a114de7">~UBDesktopEraserPalette</a>(){}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="../../dc/d7b/class_u_b_desktop_marker_palette.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d7b/class_u_b_desktop_marker_palette.html">UBDesktopMarkerPalette</a> : <span class="keyword">public</span> <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html">UBDesktopPropertyPalette</a></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../dc/d7b/class_u_b_desktop_marker_palette.html#ab9e24b301b52b1d303e0e9f3915b9ad9">UBDesktopMarkerPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* rightPalette);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../dc/d7b/class_u_b_desktop_marker_palette.html#ab9e24b301b52b1d303e0e9f3915b9ad9">UBDesktopMarkerPalette</a>(QWidget *parent, <a class="code" href="../../d9/d48/class_u_b_right_palette.html">UBRightPalette</a>* <a class="code" href="../../d7/dae/class_u_b_desktop_property_palette.html#a85d64519c1f90e802dcb1eb908b1acb7">rightPalette</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../dc/d7b/class_u_b_desktop_marker_palette.html#a2c9b0a900d14eaeae27cd72f912a654f">   71</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../dc/d7b/class_u_b_desktop_marker_palette.html#a2c9b0a900d14eaeae27cd72f912a654f">~UBDesktopMarkerPalette</a>(){}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
@@ -184,8 +184,8 @@ $(document).ready(function(){initNavTree('dc/dd0/_u_b_desktop_property_palette_8
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8ebb89634e1987729655e2e2ec5841f3.html">desktop</a></li><li class="navelem"><a class="el" href="../../dc/dd0/_u_b_desktop_property_palette_8h.html">UBDesktopPropertyPalette.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_adbc73d0946e4fb5dbf2c04aa25db900.html">desktop</a></li><li class="navelem"><a class="el" href="../../dc/dd0/_u_b_desktop_property_palette_8h.html">UBDesktopPropertyPalette.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

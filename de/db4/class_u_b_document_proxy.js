@@ -10,6 +10,7 @@ var class_u_b_document_proxy =
     [ "documentDate", "de/db4/class_u_b_document_proxy.html#ae6794c66922fe216e4b9b189725c3ad5", null ],
     [ "groupName", "de/db4/class_u_b_document_proxy.html#a298cd4af6aa7311fce5d2760f9d39031", null ],
     [ "incPageCount", "de/db4/class_u_b_document_proxy.html#a14b9161a9b26e1d090f4d1df3818b165", null ],
+    [ "init", "de/db4/class_u_b_document_proxy.html#a354d7c229f066e6e9ba1de847aafe733", null ],
     [ "isModified", "de/db4/class_u_b_document_proxy.html#a5616a9b21de8f24ca6605a05f792b387", null ],
     [ "lastUpdate", "de/db4/class_u_b_document_proxy.html#a8a9e3bec772fc108c933ed6dd2233279", null ],
     [ "metaData", "de/db4/class_u_b_document_proxy.html#aba93539ec11aad9eb4156cb4edf246ba", null ],
@@ -25,5 +26,9 @@ var class_u_b_document_proxy =
     [ "setUuid", "de/db4/class_u_b_document_proxy.html#a029188b2c67889594af3057c06cb5217", null ],
     [ "theSameDocument", "de/db4/class_u_b_document_proxy.html#a79709d748149db076173b8996c544393", null ],
     [ "uuid", "de/db4/class_u_b_document_proxy.html#aa7e2c218977544f65bf842dc42197a6a", null ],
-    [ "UBPersistenceManager", "de/db4/class_u_b_document_proxy.html#a5f897416511abe617c56d086f54e4b3e", null ]
+    [ "UBPersistenceManager", "de/db4/class_u_b_document_proxy.html#a5f897416511abe617c56d086f54e4b3e", null ],
+    [ "mIsModified", "de/db4/class_u_b_document_proxy.html#a26900e34c69bb288f0b0386b5dcd79dd", null ],
+    [ "mMetaDatas", "de/db4/class_u_b_document_proxy.html#a77f11c3b6a8da34c889b7d25132f091c", null ],
+    [ "mPageCount", "de/db4/class_u_b_document_proxy.html#a884f4daddf926634de45d40069048e1f", null ],
+    [ "mPersistencePath", "de/db4/class_u_b_document_proxy.html#a20ef9aba103201f297f1730bcc1056ce", null ]
 ];

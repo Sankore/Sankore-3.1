@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d2/d9e/struct_category_data.html','../
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d2/d43/struct_category_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CategoryData Struct Reference</div>  </div>
@@ -118,7 +119,7 @@ $(document).ready(function(){initNavTree('d2/d9e/struct_category_data.html','../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d97/struct_category_data__coll__graph.svg" width="230" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d97/struct_category_data__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
@@ -142,6 +143,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b8921537cdfd9b9523b451b1630fa30"><td class="memItemLeft" align="right" valign="top">UBFeature::Permissions&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#a9b8921537cdfd9b9523b451b1630fa30">UserSubPermissions</a> () const </td></tr>
 <tr class="memitem:ae0b01c9f7beb03243dbe07a9c209e028"><td class="memItemLeft" align="right" valign="top">UBFeature::Permissions&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#ae0b01c9f7beb03243dbe07a9c209e028">subFolderPermissionsForType</a> (<a class="el" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030a">pathType</a> pType) const </td></tr>
 <tr class="memitem:a23a8249beaef2e6ab2a8e6bda8e175a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#a23a8249beaef2e6ab2a8e6bda8e175a6">isNull</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a803bf4c4bd7f14d6018c09abb9a95f04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d32/struct_category_data_1_1_path_data.html">PathData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#a803bf4c4bd7f14d6018c09abb9a95f04">mPathData</a></td></tr>
+<tr class="memitem:aa62dec74f6ba224c9a9e07bf38cc8fc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#aa62dec74f6ba224c9a9e07bf38cc8fc5">mCategoryFeature</a></td></tr>
+<tr class="memitem:a02540ea452d6f2bf97278d589d8a20a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/ddd/struct_category_data_1_1_permissions_data.html">PermissionsData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#a02540ea452d6f2bf97278d589d8a20a6">mSubFolderPermissions</a></td></tr>
+<tr class="memitem:a6cbc6681a504cfd20a70675ee57583f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d9e/struct_category_data.html#a6cbc6681a504cfd20a70675ee57583f8">mIsNull</a></td></tr>
 </table>
 <h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a69249ca5f66736ffb9fb8136d012030a"></a>
@@ -189,7 +197,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">: mIsNull(<span class="keyword">true</span>) {;}</div>
+<div class="fragment"><div class="line">: <a class="code" href="../../d2/d9e/struct_category_data.html#a6cbc6681a504cfd20a70675ee57583f8">mIsNull</a>(<span class="keyword">true</span>) {;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -230,10 +238,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">        : mPathData(pPathData)</div>
-<div class="line">        , mCategoryFeature(pFeature)</div>
-<div class="line">        , mSubFolderPermissions(psubFolderPermissions)</div>
-<div class="line">        , mIsNull(<span class="keyword">false</span>)</div>
+<div class="fragment"><div class="line">        : <a class="code" href="../../d2/d9e/struct_category_data.html#a803bf4c4bd7f14d6018c09abb9a95f04">mPathData</a>(pPathData)</div>
+<div class="line">        , <a class="code" href="../../d2/d9e/struct_category_data.html#aa62dec74f6ba224c9a9e07bf38cc8fc5">mCategoryFeature</a>(pFeature)</div>
+<div class="line">        , <a class="code" href="../../d2/d9e/struct_category_data.html#a02540ea452d6f2bf97278d589d8a20a6">mSubFolderPermissions</a>(psubFolderPermissions)</div>
+<div class="line">        , <a class="code" href="../../d2/d9e/struct_category_data.html#a6cbc6681a504cfd20a70675ee57583f8">mIsNull</a>(<span class="keyword">false</span>)</div>
 <div class="line">    {;}</div>
 </div><!-- fragment -->
 </div>
@@ -259,14 +267,15 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mCategoryFeature;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d2/d9e/struct_category_data.html#aa62dec74f6ba224c9a9e07bf38cc8fc5">mCategoryFeature</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_a12f08c37bc3241d3346228a5b262c4fa_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_a12f08c37bc3241d3346228a5b262c4fa_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -292,14 +301,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mIsNull;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d2/d9e/struct_category_data.html#a6cbc6681a504cfd20a70675ee57583f8">mIsNull</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_a23a8249beaef2e6ab2a8e6bda8e175a6_icgraph.svg" width="579" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_a23a8249beaef2e6ab2a8e6bda8e175a6_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -325,7 +334,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mSubFolderPermissions.value(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aacf2d83eb1af825781eb7b471bf6e25b8">Library</a>, <a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ac5b053fe5b2b8f899db8524645ee8fa7">UBFeature::ALL_P</a>);}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d2/d9e/struct_category_data.html#a02540ea452d6f2bf97278d589d8a20a6">mSubFolderPermissions</a>.value(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aacf2d83eb1af825781eb7b471bf6e25b8">Library</a>, <a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ac5b053fe5b2b8f899db8524645ee8fa7">UBFeature::ALL_P</a>);}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -349,14 +358,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mPathData;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d2/d9e/struct_category_data.html#a803bf4c4bd7f14d6018c09abb9a95f04">mPathData</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_ae5da36a3b7327e15fd29b87c20e6ac39_icgraph.svg" width="624" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_ae5da36a3b7327e15fd29b87c20e6ac39_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -383,8 +392,17 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mSubFolderPermissions.value(pType, <a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ac5b053fe5b2b8f899db8524645ee8fa7">UBFeature::ALL_P</a>);}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d2/d9e/struct_category_data.html#a02540ea452d6f2bf97278d589d8a20a6">mSubFolderPermissions</a>.value(pType, <a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ac5b053fe5b2b8f899db8524645ee8fa7">UBFeature::ALL_P</a>);}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_ae0b01c9f7beb03243dbe07a9c209e028_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a9b8921537cdfd9b9523b451b1630fa30"></a>
@@ -407,12 +425,102 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> mSubFolderPermissions.value(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aa3c42bc32e8dbf7ba16b44aac0d126478">UserDefined</a>, <a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ac5b053fe5b2b8f899db8524645ee8fa7">UBFeature::ALL_P</a>);}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d2/d9e/struct_category_data.html#a02540ea452d6f2bf97278d589d8a20a6">mSubFolderPermissions</a>.value(<a class="code" href="../../d2/d9e/struct_category_data.html#a69249ca5f66736ffb9fb8136d012030aa3c42bc32e8dbf7ba16b44aac0d126478">UserDefined</a>, <a class="code" href="../../db/d98/class_u_b_feature.html#a7fb84a230f92260b4a29261329ad4180ac5b053fe5b2b8f899db8524645ee8fa7">UBFeature::ALL_P</a>);}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d9e/struct_category_data_a9b8921537cdfd9b9523b451b1630fa30_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="aa62dec74f6ba224c9a9e07bf38cc8fc5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d98/class_u_b_feature.html">UBFeature</a> CategoryData::mCategoryFeature</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6cbc6681a504cfd20a70675ee57583f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CategoryData::mIsNull</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a803bf4c4bd7f14d6018c09abb9a95f04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d32/struct_category_data_1_1_path_data.html">PathData</a> CategoryData::mPathData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a02540ea452d6f2bf97278d589d8a20a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/ddd/struct_category_data_1_1_permissions_data.html">PermissionsData</a> CategoryData::mSubFolderPermissions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Sankore-3.1/src/board/<a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a></li>
+<li><a class="el" href="../../d2/dcd/_u_b_features_controller_8h_source.html">UBFeaturesController.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -420,7 +528,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d9e/struct_category_data.html">CategoryData</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -14,6 +14,8 @@ var class_u_b_w3_c_widget_a_p_i =
     [ "uuid", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#a51208ef96bdb7e03dc189f41541c2ccc", null ],
     [ "version", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#a52585938277d1a5789738615968449f5", null ],
     [ "width", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#a1f59ec53bee6ff1c4a9ad0b0b865fbe6", null ],
+    [ "mGraphicsW3CWidget", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#a71c650be37488695afcbdb5895d5e372", null ],
+    [ "mPreferencesAPI", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#ae00defbecf57f4627d70d63696d1908b", null ],
     [ "author", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#a49c7138ed218b64fdc14cc475515d415", null ],
     [ "authorEmail", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#aa8da17aa1b04a9de8d5b82f009cdaf9c", null ],
     [ "authorHref", "da/d8c/class_u_b_w3_c_widget_a_p_i.html#a665ac2b44329d6d6062194c9738681b4", null ],

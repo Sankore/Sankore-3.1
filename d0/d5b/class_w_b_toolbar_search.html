@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('d0/d5b/class_w_b_toolbar_search.html',
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/dac/class_w_b_toolbar_search-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">WBToolbarSearch Class Reference</div>  </div>
@@ -158,6 +161,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad496a3dd0488f3a254054697f7661314 inherit pub_methods_class_w_b_ex_line_edit"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#ad496a3dd0488f3a254054697f7661314">sizeHint</a> () const </td></tr>
 <tr class="memitem:a941060cd2e504e6b35900be50a20fef1 inherit pub_methods_class_w_b_ex_line_edit"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dbb/class_w_b_ex_line_edit.html#a941060cd2e504e6b35900be50a20fef1">inputMethodQuery</a> (Qt::InputMethodQuery property) const </td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:aaa38bd12f9ae34285a5d08d6276b59ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#aaa38bd12f9ae34285a5d08d6276b59ca">save</a> ()</td></tr>
+<tr class="memitem:a9620a554c58c2198e5440c9d8f9853f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#a9620a554c58c2198e5440c9d8f9853f4">aboutToShowMenu</a> ()</td></tr>
+<tr class="memitem:aee63d1400861457065332313678130e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#aee63d1400861457065332313678130e1">triggeredMenuAction</a> (QAction *action)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a79339146e1f8173d3005b5a092a430a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#a79339146e1f8173d3005b5a092a430a4">load</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0b79cae3b29885009e4c6adf9367b96e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a></td></tr>
+<tr class="memitem:aab66a2e3ed8714666895d2c4aa154a42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a></td></tr>
+<tr class="memitem:a3f83094feeb75d016ace67dc43ce6a3f"><td class="memItemLeft" align="right" valign="top">QStringListModel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_w_b_search_line_edit"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_w_b_search_line_edit')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../dd/d7f/class_w_b_search_line_edit.html">WBSearchLineEdit</a></td></tr>
@@ -185,21 +204,21 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a2e5341c027fc5800ad24c1beee6bc8b1">WBSearchLineEdit</a>(parent)</div>
-<div class="line">    , mAutosaver(<span class="keyword">new</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>(<span class="keyword">this</span>))</div>
-<div class="line">    , mMaxSavedSearches(10)</div>
-<div class="line">    , mStringListModel(<span class="keyword">new</span> QStringListModel(<span class="keyword">this</span>))</div>
+<div class="line">    , <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>(<span class="keyword">new</span> <a class="code" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>(<span class="keyword">this</span>))</div>
+<div class="line">    , <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>(10)</div>
+<div class="line">    , <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>(<span class="keyword">new</span> QStringListModel(<span class="keyword">this</span>))</div>
 <div class="line">{</div>
 <div class="line">    QMenu *m = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>();</div>
-<div class="line">    connect(m, SIGNAL(aboutToShow()), <span class="keyword">this</span>, SLOT(aboutToShowMenu()));</div>
-<div class="line">    connect(m, SIGNAL(triggered(QAction*)), <span class="keyword">this</span>, SLOT(triggeredMenuAction(QAction*)));</div>
+<div class="line">    connect(m, SIGNAL(aboutToShow()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a9620a554c58c2198e5440c9d8f9853f4">aboutToShowMenu</a>()));</div>
+<div class="line">    connect(m, SIGNAL(triggered(QAction*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aee63d1400861457065332313678130e1">triggeredMenuAction</a>(QAction*)));</div>
 <div class="line"></div>
-<div class="line">    QCompleter *completer = <span class="keyword">new</span> QCompleter(mStringListModel, <span class="keyword">this</span>);</div>
+<div class="line">    QCompleter *completer = <span class="keyword">new</span> QCompleter(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>, <span class="keyword">this</span>);</div>
 <div class="line">    completer-&gt;setCompletionMode(QCompleter::InlineCompletion);</div>
 <div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;setCompleter(completer);</div>
 <div class="line"></div>
 <div class="line">    connect(<a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>(), SIGNAL(returnPressed()), SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a24eb7599264750fc0fe2c6d5d5a2b6d3">searchNow</a>()));</div>
 <div class="line">    <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a6a7e5818f01dfbf6c71f38f2d1f80978">setInactiveText</a>(tr(<span class="stringliteral">&quot;Search&quot;</span>));</div>
-<div class="line">    load();</div>
+<div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a79339146e1f8173d3005b5a092a430a4">load</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -207,7 +226,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a7cc7398b8f94e62dfbc13801f227e716_cgraph.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a7cc7398b8f94e62dfbc13801f227e716_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -226,7 +245,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mAutosaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
+<div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#add0bbcc4aaba6dcffdaa789a58dabb13">saveIfNeccessary</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -241,6 +260,68 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a9620a554c58c2198e5440c9d8f9853f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBToolbarSearch::aboutToShowMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;selectAll();</div>
+<div class="line">    QMenu *m = <a class="code" href="../../dd/d7f/class_w_b_search_line_edit.html#a44e00f3dccf769084ebe0b994baab91b">menu</a>();</div>
+<div class="line">    m-&gt;clear();</div>
+<div class="line">    QStringList list = <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList();</div>
+<div class="line">    <span class="keywordflow">if</span> (list.isEmpty())</div>
+<div class="line">    {</div>
+<div class="line">        m-&gt;addAction(tr(<span class="stringliteral">&quot;No Recent Searches&quot;</span>));</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    QAction *recent = m-&gt;addAction(tr(<span class="stringliteral">&quot;Recent Searches&quot;</span>));</div>
+<div class="line">    recent-&gt;setEnabled(<span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.count(); ++i)</div>
+<div class="line">    {</div>
+<div class="line">        QString text = list.at(i);</div>
+<div class="line">        m-&gt;addAction(text)-&gt;setData(text);</div>
+<div class="line">    }</div>
+<div class="line">    m-&gt;addSeparator();</div>
+<div class="line">    m-&gt;addAction(tr(<span class="stringliteral">&quot;Clear Recent Searches&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#ab7ebe2c0430bc2b31f37942bcbb11de5">clear</a>()));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a9620a554c58c2198e5440c9d8f9853f4_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a9620a554c58c2198e5440c9d8f9853f4_icgraph.svg" width="446" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ab7ebe2c0430bc2b31f37942bcbb11de5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -262,19 +343,98 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mStringListModel-&gt;setStringList(QStringList());</div>
-<div class="line">    mAutosaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();;</div>
+<div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(QStringList());</div>
+<div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_ab7ebe2c0430bc2b31f37942bcbb11de5_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_ab7ebe2c0430bc2b31f37942bcbb11de5_icgraph.svg" width="659" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a79339146e1f8173d3005b5a092a430a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBToolbarSearch::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QSettings settings;</div>
+<div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;toolbarsearch&quot;</span>));</div>
+<div class="line">    QStringList list = settings.value(QLatin1String(<span class="stringliteral">&quot;recentSearches&quot;</span>)).toStringList();</div>
+<div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a> = settings.value(QLatin1String(<span class="stringliteral">&quot;maximumSaved&quot;</span>), <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>).toInt();</div>
+<div class="line">    <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(list);</div>
+<div class="line">    settings.endGroup();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a79339146e1f8173d3005b5a092a430a4_icgraph.svg" width="422" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa38bd12f9ae34285a5d08d6276b59ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBToolbarSearch::save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QSettings settings;</div>
+<div class="line">    settings.beginGroup(QLatin1String(<span class="stringliteral">&quot;toolbarsearch&quot;</span>));</div>
+<div class="line">    settings.setValue(QLatin1String(<span class="stringliteral">&quot;recentSearches&quot;</span>), <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList());</div>
+<div class="line">    settings.setValue(QLatin1String(<span class="stringliteral">&quot;maximumSaved&quot;</span>), <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>);</div>
+<div class="line">    settings.endGroup();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4ccdd0957e5628c7f6bbb7ada7d6ebc5"></a>
@@ -299,12 +459,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a4ccdd0957e5628c7f6bbb7ada7d6ebc5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a4ccdd0957e5628c7f6bbb7ada7d6ebc5_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -332,20 +492,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QString searchText = <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;text();</div>
-<div class="line">    QStringList newList = mStringListModel-&gt;stringList();</div>
+<div class="line">    QStringList newList = <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;stringList();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (newList.contains(searchText))</div>
 <div class="line">        newList.removeAt(newList.indexOf(searchText));</div>
 <div class="line">    newList.prepend(searchText);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (newList.size() &gt;= mMaxSavedSearches)</div>
+<div class="line">    <span class="keywordflow">if</span> (newList.size() &gt;= <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#aab66a2e3ed8714666895d2c4aa154a42">mMaxSavedSearches</a>)</div>
 <div class="line">        newList.removeLast();</div>
 <div class="line"></div>
 <div class="line">    QWebSettings *globalSettings = QWebSettings::globalSettings();</div>
 <div class="line">    <span class="keywordflow">if</span> (!globalSettings-&gt;testAttribute(QWebSettings::PrivateBrowsingEnabled))</div>
 <div class="line">    {</div>
-<div class="line">        mStringListModel-&gt;setStringList(newList);</div>
-<div class="line">        mAutosaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">        <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a3f83094feeb75d016ace67dc43ce6a3f">mStringListModel</a>-&gt;setStringList(newList);</div>
+<div class="line">        <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a0b79cae3b29885009e4c6adf9367b96e">mAutosaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    QUrl url(QLatin1String(<span class="stringliteral">&quot;http://www.google.com/search&quot;</span>));</div>
@@ -356,29 +516,141 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    emit <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a4ccdd0957e5628c7f6bbb7ada7d6ebc5">search</a>(url);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a24eb7599264750fc0fe2c6d5d5a2b6d3_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a24eb7599264750fc0fe2c6d5d5a2b6d3_icgraph.svg" width="464" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_a24eb7599264750fc0fe2c6d5d5a2b6d3_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<a class="anchor" id="aee63d1400861457065332313678130e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBToolbarSearch::triggeredMenuAction </td>
+          <td>(</td>
+          <td class="paramtype">QAction *&#160;</td>
+          <td class="paramname"><em>action</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QVariant v = action-&gt;data();</div>
+<div class="line">    <span class="keywordflow">if</span> (v.canConvert&lt;QString&gt;())</div>
+<div class="line">    {</div>
+<div class="line">        QString text = v.toString();</div>
+<div class="line">        <a class="code" href="../../d6/dbb/class_w_b_ex_line_edit.html#ab4e568ff65b659f5b359f4a81ab54857">lineEdit</a>()-&gt;setText(text);</div>
+<div class="line">        <a class="code" href="../../d0/d5b/class_w_b_toolbar_search.html#a24eb7599264750fc0fe2c6d5d5a2b6d3">searchNow</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_aee63d1400861457065332313678130e1_cgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d5b/class_w_b_toolbar_search_aee63d1400861457065332313678130e1_icgraph.svg" width="448" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a0b79cae3b29885009e4c6adf9367b96e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d3b/class_u_b_auto_saver.html">UBAutoSaver</a>* WBToolbarSearch::mAutosaver</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab66a2e3ed8714666895d2c4aa154a42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WBToolbarSearch::mMaxSavedSearches</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f83094feeb75d016ace67dc43ce6a3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringListModel* WBToolbarSearch::mStringListModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp.html">WBToolBarSearch.cpp</a></li>
+<li><a class="el" href="../../df/d66/_w_b_tool_bar_search_8h_source.html">WBToolBarSearch.h</a></li>
+<li><a class="el" href="../../d1/d3c/_w_b_tool_bar_search_8cpp.html">WBToolBarSearch.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -386,7 +658,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d5b/class_w_b_toolbar_search.html">WBToolbarSearch</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

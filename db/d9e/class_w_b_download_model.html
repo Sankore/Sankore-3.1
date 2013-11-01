@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('db/d9e/class_w_b_download_model.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d7/dda/class_w_b_download_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('db/d9e/class_w_b_download_model.html',
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d49/class_w_b_download_model__coll__graph.svg" width="168" height="150"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d8/d49/class_w_b_download_model__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -126,6 +127,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ace6f1b922e565bddd8993af307eb321b"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d9e/class_w_b_download_model.html#ace6f1b922e565bddd8993af307eb321b">data</a> (const QModelIndex &amp;index, int role=Qt::DisplayRole) const </td></tr>
 <tr class="memitem:a1bddb1e72a09902bb24df9e0e4e13787"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d9e/class_w_b_download_model.html#a1bddb1e72a09902bb24df9e0e4e13787">rowCount</a> (const QModelIndex &amp;parent=QModelIndex()) const </td></tr>
 <tr class="memitem:a561256f7726b999ca9eec7c593d232b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d9e/class_w_b_download_model.html#a561256f7726b999ca9eec7c593d232b1">removeRows</a> (int row, int count, const QModelIndex &amp;parent=QModelIndex())</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6a9f394c867b98ce0ab975568421221b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dda/class_w_b_download_manager.html">WBDownloadManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -156,7 +161,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QAbstractListModel(parent)</div>
-<div class="line">    , mDownloadManager(downloadManager)</div>
+<div class="line">    , <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>(downloadManager)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line">}</div>
@@ -192,8 +197,8 @@ Friends</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> QVariant();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (role == Qt::ToolTipRole)</div>
-<div class="line">        <span class="keywordflow">if</span> (!mDownloadManager-&gt;mDownloads.at(index.row())-&gt;downloadedSuccessfully())</div>
-<div class="line">            <span class="keywordflow">return</span> mDownloadManager-&gt;mDownloads.at(index.row())-&gt;downloadInfoLabel-&gt;text();</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.at(index.row())-&gt;downloadedSuccessfully())</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.at(index.row())-&gt;downloadInfoLabel-&gt;text();</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> QVariant();</div>
 <div class="line">}</div>
@@ -246,16 +251,16 @@ Friends</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lastRow; i &gt;= row; --i)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (mDownloadManager-&gt;mDownloads.at(i)-&gt;downloadedSuccessfully()</div>
-<div class="line">            || mDownloadManager-&gt;mDownloads.at(i)-&gt;tryAgainButton-&gt;isEnabled())</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.at(i)-&gt;downloadedSuccessfully()</div>
+<div class="line">            || <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.at(i)-&gt;tryAgainButton-&gt;isEnabled())</div>
 <div class="line">        {</div>
 <div class="line">            beginRemoveRows(parent, i, i);</div>
-<div class="line">            mDownloadManager-&gt;mDownloads.takeAt(i)-&gt;deleteLater();</div>
+<div class="line">            <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.takeAt(i)-&gt;deleteLater();</div>
 <div class="line">            endRemoveRows();</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    mDownloadManager-&gt;mAutoSaver-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
+<div class="line">    <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a54a89f5fd43a68252a1bd34b37aab470">mAutoSaver</a>-&gt;<a class="code" href="../../dd/d3b/class_u_b_auto_saver.html#a3b7247fb354306120ff74fff03ed7135">changeOccurred</a>();</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -293,7 +298,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : mDownloadManager-&gt;mDownloads.count();</div>
+<div class="line">    <span class="keywordflow">return</span> (parent.isValid()) ? 0 : <a class="code" href="../../db/d9e/class_w_b_download_model.html#a6a9f394c867b98ce0ab975568421221b">mDownloadManager</a>-&gt;<a class="code" href="../../d3/dda/class_w_b_download_manager.html#a0b8e124ece5d9e8e37ff7bc533bcc571">mDownloads</a>.count();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -328,9 +333,30 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a6a9f394c867b98ce0ab975568421221b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dda/class_w_b_download_manager.html">WBDownloadManager</a>* WBDownloadModel::mDownloadManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d1/d12/_w_b_download_manager_8cpp.html">WBDownloadManager.cpp</a></li>
+<li><a class="el" href="../../d6/db4/_w_b_download_manager_8h_source.html">WBDownloadManager.h</a></li>
+<li><a class="el" href="../../d1/d12/_w_b_download_manager_8cpp.html">WBDownloadManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -338,7 +364,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d9e/class_w_b_download_model.html">WBDownloadModel</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

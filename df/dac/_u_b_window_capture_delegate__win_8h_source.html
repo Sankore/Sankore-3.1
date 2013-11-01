@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/desktop/UBWindowCaptureDelegate_win.h Source File</title>
+<title>Open-Sankoré: UBWindowCaptureDelegate_win.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -144,15 +144,15 @@ $(document).ready(function(){initNavTree('df/dac/_u_b_window_capture_delegate__w
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> QPixmap <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a2777e6726b1b363ac5c82fa4ce8b3858">getCapturedWindow</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> eventFilter(QObject *target, QEvent *event);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> processPos(QPoint pPoint);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> drawSelectionRect();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#abe77f957f9d689328d16c851026d7959">eventFilter</a>(QObject *target, QEvent *event);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a1147e68a6ec9389176e8232c083e318d">processPos</a>(QPoint pPoint);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a8283bde80afb116ee8278ed049493372">drawSelectionRect</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">bool</span> mIsCapturing;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> mCancel;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        QPoint mLastPoint;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        HWND mCurrentWindow;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        QPixmap mCapturedPixmap;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">   45</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad6863bcd2bbddbb8406491f3108e0e13">mIsCapturing</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">   46</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#ad41ed968797c96ce6f7ed23f789ba56b">mCancel</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a02b8cbbd292704d30f4b04d75a4eb747">   47</a></span>&#160;        QPoint <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a02b8cbbd292704d30f4b04d75a4eb747">mLastPoint</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">   48</a></span>&#160;        HWND <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a212faa47ebf2607ca11459942e411813">mCurrentWindow</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a6abe07ac863c6a3b5dc9ac973b13c531">   49</a></span>&#160;        QPixmap <a class="code" href="../../dc/d2b/class_u_b_window_capture_delegate.html#a6abe07ac863c6a3b5dc9ac973b13c531">mCapturedPixmap</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UBWINDOWCAPTUREDELEGATE_H_ */</span><span class="preprocessor"></span></div>
@@ -161,8 +161,8 @@ $(document).ready(function(){initNavTree('df/dac/_u_b_window_capture_delegate__w
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_8ebb89634e1987729655e2e2ec5841f3.html">desktop</a></li><li class="navelem"><a class="el" href="../../df/dac/_u_b_window_capture_delegate__win_8h.html">UBWindowCaptureDelegate_win.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_adbc73d0946e4fb5dbf2c04aa25db900.html">desktop</a></li><li class="navelem"><a class="el" href="../../df/dac/_u_b_window_capture_delegate__win_8h.html">UBWindowCaptureDelegate_win.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

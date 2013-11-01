@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('d2/d86/class_u_b_media_button.html','.
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../de/d4f/class_u_b_media_button-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBMediaButton Class Reference</div>  </div>
@@ -138,6 +139,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a2c172342f8ae55ee1069e1503e922e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the mouse press notification.  <a href="#a2c172342f8ae55ee1069e1503e922e86"></a><br/></td></tr>
 <tr class="memitem:af195ae4937bf0a3f4046172311f79056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d86/class_u_b_media_button.html#af195ae4937bf0a3f4046172311f79056">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
 <tr class="memdesc:af195ae4937bf0a3f4046172311f79056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the mouse release notification.  <a href="#af195ae4937bf0a3f4046172311f79056"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a81d1dd95a03947006ab86733c8a5f528"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d86/class_u_b_media_button.html#a81d1dd95a03947006ab86733c8a5f528">mPressed</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a24f0531e6b5c1784dea9f512a596492c"></a>
@@ -173,7 +178,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line">                                                             :QLabel(parent)</div>
-<div class="line">  , mPressed(<span class="keyword">false</span>)</div>
+<div class="line">  , <a class="code" href="../../d2/d86/class_u_b_media_button.html#a81d1dd95a03947006ab86733c8a5f528">mPressed</a>(<span class="keyword">false</span>)</div>
 <div class="line">{</div>
 <div class="line">    setObjectName(name);</div>
 <div class="line">    resize(<a class="code" href="../../d5/dc0/_u_b_media_widget_8h.html#acd57ae2228cb81a96eec3d5814002fb1">UBMEDIABUTTON_SIZE</a>, <a class="code" href="../../d5/dc0/_u_b_media_widget_8h.html#acd57ae2228cb81a96eec3d5814002fb1">UBMEDIABUTTON_SIZE</a>);</div>
@@ -266,7 +271,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(ev);</div>
-<div class="line">    mPressed = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../d2/d86/class_u_b_media_button.html#a81d1dd95a03947006ab86733c8a5f528">mPressed</a> = <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -302,8 +307,8 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(ev);</div>
-<div class="line">    <span class="keywordflow">if</span>(mPressed){</div>
-<div class="line">        mPressed = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../d2/d86/class_u_b_media_button.html#a81d1dd95a03947006ab86733c8a5f528">mPressed</a>){</div>
+<div class="line">        <a class="code" href="../../d2/d86/class_u_b_media_button.html#a81d1dd95a03947006ab86733c8a5f528">mPressed</a> = <span class="keyword">false</span>;</div>
 <div class="line">        emit <a class="code" href="../../d2/d86/class_u_b_media_button.html#abf7cff18cfc253d7c2c7418ce36e7506">clicked</a>();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -319,9 +324,31 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a81d1dd95a03947006ab86733c8a5f528"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBMediaButton::mPressed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>And indicator of the press event in progress </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/customWidgets/<a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a></li>
-<li>Sankore-3.1/src/customWidgets/<a class="el" href="../../db/d7e/_u_b_media_widget_8cpp.html">UBMediaWidget.cpp</a></li>
+<li><a class="el" href="../../d5/dc0/_u_b_media_widget_8h_source.html">UBMediaWidget.h</a></li>
+<li><a class="el" href="../../db/d7e/_u_b_media_widget_8cpp.html">UBMediaWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -329,7 +356,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d86/class_u_b_media_button.html">UBMediaButton</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:57 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:05 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

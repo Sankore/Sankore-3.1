@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('d7/dd6/class_u_b_z_layer_controller.ht
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d0/dbe/class_u_b_z_layer_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBZLayerController Class Reference</div>  </div>
@@ -119,7 +121,7 @@ $(document).ready(function(){initNavTree('d7/dd6/class_u_b_z_layer_controller.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d93/class_u_b_z_layer_controller__coll__graph.svg" width="168" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d93/class_u_b_z_layer_controller__coll__graph.svg" width="168" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
@@ -152,6 +154,15 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1dc0a9d321bdfa56f71b82e90dc05acd"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html#a1dc0a9d321bdfa56f71b82e90dc05acd">errorNum</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6c7eca41e637418d7b688b57262054bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html#a67dfc701ad2ecd2815ca091be35a9dc0">ScopeMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a></td></tr>
+<tr class="memitem:a18410f6435dcaae333c6ea52d2746081"><td class="memItemLeft" align="right" valign="top">QGraphicsScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html#a18410f6435dcaae333c6ea52d2746081">mScene</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a789671add17a75a45474a4cdae883bdb"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb">errorNumber</a> = -20000001.0</td></tr>
 </table>
 <h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a67dfc701ad2ecd2815ca091be35a9dc0"></a>
@@ -212,21 +223,21 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">                                                            :</div>
-<div class="line">    mScene(scene)</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a18410f6435dcaae333c6ea52d2746081">mScene</a>(scene)</div>
 <div class="line"></div>
 <div class="line">{</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da10984694cf95b3b668aa3299dcb644b7">itemLayerType::NoLayer</a>,        ItemLayerTypeData( errorNumber, errorNumber));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4daad09e580d327bf96c8af8319f9bfd783">itemLayerType::BackgroundItem</a>, ItemLayerTypeData(-10000000.0, -10000000.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da04f8adf94396478eaad7a51dba7cec73">itemLayerType::ObjectItem</a>,     ItemLayerTypeData(-10000000.0,  0.0        ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da11a3b59c8049e62fb302a6d3e4f7cb93">itemLayerType::DrawingItem</a>,    ItemLayerTypeData( 0.0,         10000000.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da3952af1d79fd862b12b68694b83e354e">itemLayerType::ToolItem</a>,       ItemLayerTypeData( 10000000.0,  10000100.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da21f89658948604baf4c7b0c69cbd59bb">itemLayerType::CppTool</a>,        ItemLayerTypeData( 10000100.0,  10000200.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da2f5be93ddf838cdb24cd3fba094d818a">itemLayerType::Curtain</a>,        ItemLayerTypeData( 10000200.0,  10001000.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dab238ea398864c472ed43c95cfdb7432f">itemLayerType::Eraiser</a>,        ItemLayerTypeData( 10001000.0,  10001100.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da1b8be55bbf77b8743a87621730d0ef35">itemLayerType::Pointer</a>,        ItemLayerTypeData( 10001100.0,  10001200.0 ));</div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dac0b7e8dd7cfe41d0c713f7305fd0d661">itemLayerType::Cache</a>,          ItemLayerTypeData( 10001300.0,  10001400.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da10984694cf95b3b668aa3299dcb644b7">itemLayerType::NoLayer</a>,        ItemLayerTypeData( <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb">errorNumber</a>, <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb">errorNumber</a>));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4daad09e580d327bf96c8af8319f9bfd783">itemLayerType::BackgroundItem</a>, ItemLayerTypeData(-10000000.0, -10000000.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da04f8adf94396478eaad7a51dba7cec73">itemLayerType::ObjectItem</a>,     ItemLayerTypeData(-10000000.0,  0.0        ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da11a3b59c8049e62fb302a6d3e4f7cb93">itemLayerType::DrawingItem</a>,    ItemLayerTypeData( 0.0,         10000000.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da3952af1d79fd862b12b68694b83e354e">itemLayerType::ToolItem</a>,       ItemLayerTypeData( 10000000.0,  10000100.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da21f89658948604baf4c7b0c69cbd59bb">itemLayerType::CppTool</a>,        ItemLayerTypeData( 10000100.0,  10000200.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da2f5be93ddf838cdb24cd3fba094d818a">itemLayerType::Curtain</a>,        ItemLayerTypeData( 10000200.0,  10001000.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dab238ea398864c472ed43c95cfdb7432f">itemLayerType::Eraiser</a>,        ItemLayerTypeData( 10001000.0,  10001100.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da1b8be55bbf77b8743a87621730d0ef35">itemLayerType::Pointer</a>,        ItemLayerTypeData( 10001100.0,  10001200.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dac0b7e8dd7cfe41d0c713f7305fd0d661">itemLayerType::Cache</a>,          ItemLayerTypeData( 10001300.0,  10001400.0 ));</div>
 <div class="line"></div>
-<div class="line">    scopeMap.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dad670c3e12808823a24f9e1bad75572b9">itemLayerType::SelectedItem</a>,   ItemLayerTypeData( 10001000.0,  10001000.0 ));</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.insert(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4dad670c3e12808823a24f9e1bad75572b9">itemLayerType::SelectedItem</a>,   ItemLayerTypeData( 10001000.0,  10001000.0 ));</div>
 }</div>
 </div><!-- fragment -->
 </div>
@@ -264,8 +275,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="comment">//select only items wiht the same z-level as item&#39;s one and push it to sortedItems QMultiMap</span></div>
 <div class="line">    QMultiMap&lt;qreal, QGraphicsItem*&gt; sortedItems;</div>
-<div class="line">    <span class="keywordflow">if</span> (mScene-&gt;items().count()) {</div>
-<div class="line">        <span class="keywordflow">foreach</span> (QGraphicsItem *tmpItem, mScene-&gt;items()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a18410f6435dcaae333c6ea52d2746081">mScene</a>-&gt;items().count()) {</div>
+<div class="line">        <span class="keywordflow">foreach</span> (QGraphicsItem *tmpItem, <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a18410f6435dcaae333c6ea52d2746081">mScene</a>-&gt;items()) {</div>
 <div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a93fe7dc3f86bb3daff7b48a7a8d97ea7">typeForData</a>(tmpItem) == curItemLayerType) {</div>
 <div class="line"></div>
 <div class="line">                sortedItems.insert(tmpItem-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bafd234c2c7d1e0807eaa42fbbe52319fb">UBGraphicsItemData::ItemOwnZValue</a>).toReal(), tmpItem);</div>
@@ -325,7 +336,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">                iCurElement.toFront();</div>
 <div class="line">                qreal nextZ = iCurElement.next().value()-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bafd234c2c7d1e0807eaa42fbbe52319fb">UBGraphicsItemData::ItemOwnZValue</a>).toReal();</div>
 <div class="line"></div>
-<div class="line">                ItemLayerTypeData curItemLayerTypeData = scopeMap.value(curItemLayerType);</div>
+<div class="line">                ItemLayerTypeData curItemLayerTypeData = <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(curItemLayerType);</div>
 <div class="line"></div>
 <div class="line">                <span class="comment">//if we have some free space between lowest graphics item and layer&#39;s bottom bound,</span></div>
 <div class="line">                <span class="comment">//insert element close to first element in layer</span></div>
@@ -412,14 +423,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> errorNumber;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb">errorNumber</a>;}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dd6/class_u_b_z_layer_controller_a1dc0a9d321bdfa56f71b82e90dc05acd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dd6/class_u_b_z_layer_controller_a1dc0a9d321bdfa56f71b82e90dc05acd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -440,25 +452,25 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!scopeMap.contains(key)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.contains(key)) {</div>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Number is out of layer scope&quot;</span>;</div>
-<div class="line">        <span class="keywordflow">return</span> errorNumber;</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb">errorNumber</a>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    qreal result = scopeMap.value(key).curValue;</div>
-<div class="line">    qreal <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#aaea26acb88959955623736b3127f96b3a5c881d20f56fa453c2a32b9e981782bf">top</a> = scopeMap.value(key).topLimit;</div>
-<div class="line">    qreal incrementalStep = scopeMap.value(key).incStep;</div>
+<div class="line">    qreal result = <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).curValue;</div>
+<div class="line">    qreal <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#aaea26acb88959955623736b3127f96b3a5c881d20f56fa453c2a32b9e981782bf">top</a> = <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).topLimit;</div>
+<div class="line">    qreal incrementalStep = <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).incStep;</div>
 <div class="line"></div>
 <div class="line">    result += incrementalStep;</div>
 <div class="line">    <span class="keywordflow">if</span> (result &gt;= top) {</div>
 <div class="line">        <span class="comment">// If not only one variable presents in the scope, notify that values for scope are over</span></div>
-<div class="line">        <span class="keywordflow">if</span> (scopeMap.value(key).topLimit != scopeMap.value(key).bottomLimit) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).topLimit != <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).bottomLimit) {</div>
 <div class="line">            qDebug() &lt;&lt; <span class="stringliteral">&quot;new values are over for the scope&quot;</span> &lt;&lt; key;</div>
 <div class="line">        }</div>
 <div class="line">        result = top - incrementalStep;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    scopeMap[key].curValue = result;</div>
+<div class="line">    <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>[key].curValue = result;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
@@ -468,7 +480,8 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dd6/class_u_b_z_layer_controller_a2d0d1251e0ad4f984f1dff3051a77e21_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dd6/class_u_b_z_layer_controller_a2d0d1251e0ad4f984f1dff3051a77e21_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -488,7 +501,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal result = errorNumber;</div>
+<div class="line">    qreal result = <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a789671add17a75a45474a4cdae883bdb">errorNumber</a>;</div>
 <div class="line">    <a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4d">itemLayerType::Enum</a> type = <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4d">itemLayerType::Enum</a><span class="keyword">&gt;</span>(item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bacbe7e8290ad84618c29310455744ee5b">UBGraphicsItemData::itemLayerType</a>).toInt());</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#adda3ea374db9b6e353a188b4c9a7b535">validLayerType</a>(type)) {</div>
@@ -530,7 +543,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> scopeMap.value(key).bottomLimit;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).bottomLimit;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -555,7 +568,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> scopeMap.value(key).topLimit;}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.value(key).topLimit;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -591,7 +604,8 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dd6/class_u_b_z_layer_controller_ad5800f9c85401ba1d5d7a74371170ce5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d7/dd6/class_u_b_z_layer_controller_ad5800f9c85401ba1d5d7a74371170ce5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -613,7 +627,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4d">itemLayerType::Enum</a> result = <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4d">itemLayerType::Enum</a><span class="keyword">&gt;</span>(item-&gt;data(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bacbe7e8290ad84618c29310455744ee5b">UBGraphicsItemData::itemLayerType</a>).toInt());</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!scopeMap.contains(result)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.contains(result)) {</div>
 <div class="line">        result = <a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da10984694cf95b3b668aa3299dcb644b7">itemLayerType::NoLayer</a>;</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -652,7 +666,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">{<span class="keywordflow">return</span> scopeMap.contains(key);}</div>
+<div class="fragment"><div class="line">{<span class="keywordflow">return</span> <a class="code" href="../../d7/dd6/class_u_b_z_layer_controller.html#a6c7eca41e637418d7b688b57262054bc">scopeMap</a>.contains(key);}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -665,9 +679,70 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a789671add17a75a45474a4cdae883bdb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBZLayerController::errorNumber = -20000001.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a18410f6435dcaae333c6ea52d2746081"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsScene* UBZLayerController::mScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c7eca41e637418d7b688b57262054bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html#a67dfc701ad2ecd2815ca091be35a9dc0">ScopeMap</a> UBZLayerController::scopeMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d7/d87/_u_b_graphics_scene_8h_source.html">UBGraphicsScene.h</a></li>
-<li>Sankore-3.1/src/domain/<a class="el" href="../../d5/de9/_u_b_graphics_scene_8cpp.html">UBGraphicsScene.cpp</a></li>
+<li><a class="el" href="../../d7/d87/_u_b_graphics_scene_8h_source.html">UBGraphicsScene.h</a></li>
+<li><a class="el" href="../../d5/de9/_u_b_graphics_scene_8cpp.html">UBGraphicsScene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -675,7 +750,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/dd6/class_u_b_z_layer_controller.html">UBZLayerController</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:59 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:10 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

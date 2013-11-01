@@ -1,15 +1,36 @@
 var class_u_b_graphics_text_item_delegate =
 [
+    [ "textChangeMode", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01ef", [
+      [ "changeSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efac1c8e8e66d9ff44d03bbe83e79ffe682", null ],
+      [ "scaleSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a082adea47802da41303236e3129b01efa259d12e59baad5a7ce28c0222f608f55", null ]
+    ] ],
     [ "UBGraphicsTextItemDelegate", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a8e216ad171c1c7216732b7e266fe785e", null ],
     [ "~UBGraphicsTextItemDelegate", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a8e653f904e398465939a70bf78205544", null ],
     [ "buildButtons", "d9/dbd/class_u_b_graphics_text_item_delegate.html#aed68d84ee8c86411f7b9197a4220e18f", null ],
+    [ "ChangeTextSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#abe9ad56f66396204e7c3c39af073b6e9", null ],
     [ "contentsChanged", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a689f8e8c48294a231258478c3c61fe21", null ],
+    [ "createDefaultFont", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a62afd99cbb5caf18ec6c2b47308a7df9", null ],
+    [ "customize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#ace94fb205d9e2e71e843fb4da43b1286", null ],
     [ "decorateMenu", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a50aee9dacc7199cbea2b7e1d1fd06a18", null ],
+    [ "decreaseSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a2b8cedd28837af619724fa6fa66d8a59", null ],
+    [ "delegated", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a8fb4e6a562718d4e66b434baf2e84b62", null ],
+    [ "increaseSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a4ed451af17738fdb339961e3d4df6655", null ],
     [ "isEditable", "d9/dbd/class_u_b_graphics_text_item_delegate.html#ac7b1a97796fd1c07b61d5aa900020573", null ],
     [ "itemChange", "d9/dbd/class_u_b_graphics_text_item_delegate.html#ab61402d03cd4a7cc467a21c583aa16fa", null ],
+    [ "pickColor", "d9/dbd/class_u_b_graphics_text_item_delegate.html#aa6d62a566b628c831f30862e1045b21e", null ],
+    [ "pickFont", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a292ce49af67835859e297876d3f68602", null ],
     [ "positionHandles", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a7ecdc3b3ed05e772714e7bb461de779f", null ],
     [ "remove", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a2fd28552fd6c37fad3935a44ec6b1eff", null ],
     [ "scaleTextSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a31031f4a0ecc99956015db236d973ac6", null ],
     [ "setEditable", "d9/dbd/class_u_b_graphics_text_item_delegate.html#aafb261e96f3bf4f3e732f6e69556eb43", null ],
-    [ "updateMenuActionState", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a63f892bf8e8b39d2f8449b0ee45f6ca4", null ]
+    [ "updateMenuActionState", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a63f892bf8e8b39d2f8449b0ee45f6ca4", null ],
+    [ "delta", "d9/dbd/class_u_b_graphics_text_item_delegate.html#ae192432d9e32a369f38708e4c6022e3c", null ],
+    [ "mColorButton", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a6ed75b7ae76caaf42ad7291844f8050b", null ],
+    [ "mDecreaseSizeButton", "d9/dbd/class_u_b_graphics_text_item_delegate.html#abe0181f33669bcfbe019e52bf5719681", null ],
+    [ "mEditableAction", "d9/dbd/class_u_b_graphics_text_item_delegate.html#aa20fb7d9e9577010c933d99ecd281e50", null ],
+    [ "mFontButton", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a52b95a8e4d6bb3f3c38109f32ad577d4", null ],
+    [ "mIncreaseSizeButton", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a9c52adf52baa9cd605efdd236a5ed389", null ],
+    [ "mLastFontPixelSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#a6cd17f55d34d5c28f8d8c8cd71778881", null ],
+    [ "sMinPixelSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#addf015f82fcdd2fd0b225ede0e21ea64", null ],
+    [ "sMinPointSize", "d9/dbd/class_u_b_graphics_text_item_delegate.html#af57b7f2bcb2b34593b2d5178b8f4e7d5", null ]
 ];

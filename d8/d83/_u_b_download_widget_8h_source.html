@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBDownloadWidget.h Source File</title>
+<title>Open-Sankoré: UBDownloadWidget.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -163,22 +163,22 @@ $(document).ready(function(){initNavTree('d8/d83/_u_b_download_widget_8h_source.
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a7bc5f87020a0955e97915757339ebe74" title="Destructor.">~UBDownloadWidget</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> onFileAddedToDownload();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> onDownloadUpdated(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, qint64 crnt, qint64 total);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> onDownloadFinished(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> onCancelClicked();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> onItemClicked(QTreeWidgetItem* pItem, <span class="keywordtype">int</span> col);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#af67af4d96c7af78ca0ed105fc07d3465" title="Refresh the tree of downloaded files.">onFileAddedToDownload</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a737fb6f9cf013fee165c8e36f438ba91" title="Update the progress bar.">onDownloadUpdated</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, qint64 crnt, qint64 total);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a782ecb1e0f8cf7f7ee773c693fa80f6d" title="Handles the download finish notification.">onDownloadFinished</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a733f6dafe33654f90bb9f7ab134f1be2" title="Handles the Cancel button action.">onCancelClicked</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a7799dd25cf6fdd6fe5479fef171eb40b" title="Handles the item click notification.">onItemClicked</a>(QTreeWidgetItem* pItem, <span class="keywordtype">int</span> col);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> addCurrentDownloads();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> addPendingDownloads();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9b6afa449233f59da543061b18519572" title="Add the current downloads.">addCurrentDownloads</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a170489959fc0b3a186f452dce039bb72" title="Add the pending downloads.">addPendingDownloads</a>();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    QVBoxLayout* mpLayout;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    QHBoxLayout* mpBttnLayout;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    QTreeWidget* mpTree;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    QPushButton* mpCancelBttn;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QTreeWidgetItem* mpItem;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d3/d80/class_u_b_download_progress_delegate.html">UBDownloadProgressDelegate</a> mProgressBarDelegate;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">   71</a></span>&#160;    QVBoxLayout* <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a5621bddb30dbaf77394a99449dedd6e0">mpLayout</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">   73</a></span>&#160;    QHBoxLayout* <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a9778a32fdfe84eefa49b8d8aa53a906e">mpBttnLayout</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">   75</a></span>&#160;    QTreeWidget* <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a4044df85d186f413096c8f32fd19a809">mpTree</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">   77</a></span>&#160;    QPushButton* <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a78cd954d04e67242e89c87ff34e10623">mpCancelBttn</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">   79</a></span>&#160;    QTreeWidgetItem* <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a100e626b85b7b76eae26d309517ddaa7">mpItem</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="../../db/d8b/class_u_b_download_widget.html#a6ee79d09bbed83b5cd2ad124b1f41da2">   81</a></span>&#160;    <a class="code" href="../../d3/d80/class_u_b_download_progress_delegate.html">UBDownloadProgressDelegate</a> <a class="code" href="../../db/d8b/class_u_b_download_widget.html#a6ee79d09bbed83b5cd2ad124b1f41da2">mProgressBarDelegate</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // UBDOWNLOADWIDGET_H</span></div>
@@ -187,8 +187,8 @@ $(document).ready(function(){initNavTree('d8/d83/_u_b_download_widget_8h_source.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d8/d83/_u_b_download_widget_8h.html">UBDownloadWidget.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d8/d83/_u_b_download_widget_8h.html">UBDownloadWidget.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

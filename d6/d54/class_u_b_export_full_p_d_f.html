@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d6/d54/class_u_b_export_full_p_d_f.htm
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d9d/class_u_b_export_full_p_d_f-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBExportFullPDF Class Reference</div>  </div>
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('d6/d54/class_u_b_export_full_p_d_f.htm
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d95/class_u_b_export_full_p_d_f__inherit__graph.svg" width="259" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d95/class_u_b_export_full_p_d_f__inherit__graph.svg" width="259" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBExportFullPDF:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d73/class_u_b_export_full_p_d_f__coll__graph.svg" width="259" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d73/class_u_b_export_full_p_d_f__coll__graph.svg" width="259" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -152,6 +153,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a73efa8baa12dbd72b1b3e3e9a04ca1d7 inherit pro_methods_class_u_b_export_adaptor"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a73efa8baa12dbd72b1b3e3e9a04ca1d7">askForDirName</a> (<a class="el" href="../../de/db4/class_u_b_document_proxy.html">UBDocumentProxy</a> *pDocument, const QString &amp;pDialogTitle)</td></tr>
 <tr class="memitem:a6d6f072b3dfdc144409527ca7be57951 inherit pro_methods_class_u_b_export_adaptor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html#a6d6f072b3dfdc144409527ca7be57951">showErrorsList</a> (QList&lt; QString &gt; errorsList)</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a39ec46ae687f3220808c1fef651756be"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a></td></tr>
+<tr class="memitem:a3423de26fd011ce573624e9dc4e2d735"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a3423de26fd011ce573624e9dc4e2d735">mHasPDFBackgrounds</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_u_b_export_adaptor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_u_b_export_adaptor')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="../../d8/dd5/class_u_b_export_adaptor.html">UBExportAdaptor</a></td></tr>
@@ -177,7 +183,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="comment">//need to calculate screen resolution</span></div>
 <div class="line">        QDesktopWidget* desktop = UBApplication::desktop();</div>
 <div class="line">        <span class="keywordtype">int</span> dpiCommon = (desktop-&gt;physicalDpiX() + desktop-&gt;physicalDpiY()) / 2;</div>
-<div class="line">        mScaleFactor = 72.0f / dpiCommon;</div>
+<div class="line">        <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a> = 72.0f / dpiCommon;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -404,11 +410,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (previousOverlay.exists())</div>
 <div class="line">        previousOverlay.remove();</div>
 <div class="line"></div>
-<div class="line">    mHasPDFBackgrounds = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a3423de26fd011ce573624e9dc4e2d735">mHasPDFBackgrounds</a> = <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a7f1a5b95025ce905379961d179716fdd">saveOverlayPdf</a>(pDocumentProxy, overlayName);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!mHasPDFBackgrounds)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a3423de26fd011ce573624e9dc4e2d735">mHasPDFBackgrounds</a>)</div>
 <div class="line">    {</div>
 <div class="line">        QFile f(overlayName);</div>
 <div class="line">        f.rename(filename);</div>
@@ -455,17 +461,17 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">                    <span class="comment">// Here, we force the PDF page to be on the topleft corner of the page</span></div>
 <div class="line">                    <span class="keywordtype">double</span> xPdfOffset = 0;</div>
-<div class="line">                    <span class="keywordtype">double</span> yPdfOffset = (hPdf - hPdfTransformed) * mScaleFactor;</div>
+<div class="line">                    <span class="keywordtype">double</span> yPdfOffset = (hPdf - hPdfTransformed) * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>;</div>
 <div class="line"></div>
 <div class="line">                    <span class="comment">// Now we align the items</span></div>
-<div class="line">                    xPdfOffset += (xPdf - xAnnotation) * scaleFactor * mScaleFactor;</div>
-<div class="line">                    yPdfOffset -= (yPdf - yAnnotation) * scaleFactor * mScaleFactor;</div>
+<div class="line">                    xPdfOffset += (xPdf - xAnnotation) * scaleFactor * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>;</div>
+<div class="line">                    yPdfOffset -= (yPdf - yAnnotation) * scaleFactor * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>;</div>
 <div class="line"></div>
 <div class="line">                    <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html">TransformationDescription</a> pdfTransform(xPdfOffset, yPdfOffset, scaleFactor, 0);</div>
 <div class="line">                    <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html">TransformationDescription</a> annotationTransform(xAnnotationsOffset, yAnnotationsOffset, 1, 0);</div>
 <div class="line"></div>
-<div class="line">                    <a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html">MergePageDescription</a> pageDescription(pageSize.width() * mScaleFactor,</div>
-<div class="line">                                                         pageSize.height() * mScaleFactor,</div>
+<div class="line">                    <a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html">MergePageDescription</a> pageDescription(pageSize.width() * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>,</div>
+<div class="line">                                                         pageSize.height() * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>,</div>
 <div class="line">                                                         pdfItem-&gt;<a class="code" href="../../d9/d97/class_graphics_p_d_f_item.html#a7d6a6f4a9eaaea2125bff9244fed220a">pageNumber</a>(),</div>
 <div class="line">                                                         QFile::encodeName(backgroundPath).constData(),</div>
 <div class="line">                                                         pdfTransform,</div>
@@ -479,8 +485,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">                }</div>
 <div class="line">                <span class="keywordflow">else</span></div>
 <div class="line">                {</div>
-<div class="line">                    <a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html">MergePageDescription</a> pageDescription(pageSize.width() * mScaleFactor,</div>
-<div class="line">                             pageSize.height() * mScaleFactor,</div>
+<div class="line">                    <a class="code" href="../../d0/dff/structmerge__lib_1_1_merge_page_description.html">MergePageDescription</a> pageDescription(pageSize.width() * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>,</div>
+<div class="line">                             pageSize.height() * <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>,</div>
 <div class="line">                             0,</div>
 <div class="line">                             <span class="stringliteral">&quot;&quot;</span>,</div>
 <div class="line">                             <a class="code" href="../../df/d6f/classmerge__lib_1_1_transformation_description.html">TransformationDescription</a>(),</div>
@@ -526,7 +532,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d54/class_u_b_export_full_p_d_f_a2101b6fdc6ed273a6e2c062d5ce7e12c_icgraph.svg" width="416" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d54/class_u_b_export_full_p_d_f_a2101b6fdc6ed273a6e2c062d5ce7e12c_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -594,9 +600,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">                <a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a> *pdfItem = qgraphicsitem_cast&lt;<a class="code" href="../../d9/d0d/class_u_b_graphics_p_d_f_item.html">UBGraphicsPDFItem</a>*&gt;(scene-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a49ec61d268a5757bb2d1f2ed7f4b8d26">backgroundObject</a>());</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (pdfItem) mHasPDFBackgrounds = <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">if</span> (pdfItem) <a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a3423de26fd011ce573624e9dc4e2d735">mHasPDFBackgrounds</a> = <span class="keyword">true</span>;</div>
 <div class="line">        </div>
-<div class="line">                pdfPrinter.setPaperSize(QSizeF(pageSize.width()*mScaleFactor, pageSize.height()*mScaleFactor), QPrinter::Point);</div>
+<div class="line">                pdfPrinter.setPaperSize(QSizeF(pageSize.width()*<a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>, pageSize.height()*<a class="code" href="../../d6/d54/class_u_b_export_full_p_d_f.html#a39ec46ae687f3220808c1fef651756be">mScaleFactor</a>), QPrinter::Point);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (!pdfPainter) pdfPainter = <span class="keyword">new</span> QPainter(&amp;pdfPrinter);</div>
 <div class="line"></div>
@@ -632,15 +638,56 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d54/class_u_b_export_full_p_d_f_a7f1a5b95025ce905379961d179716fdd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d54/class_u_b_export_full_p_d_f_a7f1a5b95025ce905379961d179716fdd_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a3423de26fd011ce573624e9dc4e2d735"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBExportFullPDF::mHasPDFBackgrounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a39ec46ae687f3220808c1fef651756be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UBExportFullPDF::mScaleFactor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d6/db3/_u_b_export_full_p_d_f_8h_source.html">UBExportFullPDF.h</a></li>
-<li>Sankore-3.1/src/adaptors/<a class="el" href="../../d6/d4c/_u_b_export_full_p_d_f_8cpp.html">UBExportFullPDF.cpp</a></li>
+<li><a class="el" href="../../d6/db3/_u_b_export_full_p_d_f_8h_source.html">UBExportFullPDF.h</a></li>
+<li><a class="el" href="../../d6/d4c/_u_b_export_full_p_d_f_8cpp.html">UBExportFullPDF.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -648,7 +695,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d54/class_u_b_export_full_p_d_f.html">UBExportFullPDF</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:54 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:00 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

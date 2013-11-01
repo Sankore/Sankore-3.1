@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/gui/UBMagnifer.h Source File</title>
+<title>Open-Sankoré: UBMagnifer.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('d6/dcc/_u_b_magnifer_8h_source.html','
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ab743216a271eb539ee225270c49207ce">setZoom</a>(qreal zoom);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a1fe23f2b7bffb592b7e5946137761c2c">setGrabView</a>(QWidget *view);</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ac64314a8ead26579a13f89dc195e0549">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ac64314a8ead26579a13f89dc195e0549">setMoveView</a>(QWidget *view) {mView = view;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ac64314a8ead26579a13f89dc195e0549">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ac64314a8ead26579a13f89dc195e0549">setMoveView</a>(QWidget *view) {<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">mView</a> = view;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a00499d30e969d31228200bcfc1a68927">setDrawingMode</a>(<span class="keywordtype">int</span> mode);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a473a5f6edebf14a67f0d71fba84738c8">grabPoint</a>();</div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('d6/dcc/_u_b_magnifer_8h_source.html','
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a7497d3351ddbded1b3904d2700517f9a">slot_refresh</a>();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> calculateButtonsPositions();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a30125c1c230388ef2cd84ee5db00f470">calculateButtonsPositions</a>();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a35fff03d6240e01b251e565c9c9b9580">paintEvent</a>(QPaintEvent *);</div>
@@ -214,20 +214,20 @@ $(document).ready(function(){initNavTree('d6/dcc/_u_b_magnifer_8h_source.html','
 <div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#aa9896755efd6a80ade87f0581bdfe629">  108</a></span>&#160;    QCursor <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#aa9896755efd6a80ade87f0581bdfe629">mResizeCursor</a>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6c6c18c690a2b5951c96834210a48d91">DrawingMode</a> mDrawingMode;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a9667ece486e5afd632e43a0e8e5f815b">  111</a></span>&#160;    <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6c6c18c690a2b5951c96834210a48d91">DrawingMode</a> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a9667ece486e5afd632e43a0e8e5f815b">mDrawingMode</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QTimer mRefreshTimer;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">bool</span> m_isInteractive;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a47b4bac573276fb55796d43336d9ff1f">  113</a></span>&#160;    QTimer <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a47b4bac573276fb55796d43336d9ff1f">mRefreshTimer</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a726ff880fc6615755548b04db3b160a9">  114</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a726ff880fc6615755548b04db3b160a9">m_isInteractive</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    QPoint updPointGrab;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QPoint updPointMove;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">  116</a></span>&#160;    QPoint <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6cf6678349b3fcd3f433529112ceb8c5">updPointGrab</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a7c83c9cc253d51d8810ebb5ecc47b2b5">  117</a></span>&#160;    QPoint <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a7c83c9cc253d51d8810ebb5ecc47b2b5">updPointMove</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QPixmap pMap;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    QBitmap bmpMask;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    QPen borderPen;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#abcd65bbfd9e690cc254a08f5fbf15f39">  119</a></span>&#160;    QPixmap <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#abcd65bbfd9e690cc254a08f5fbf15f39">pMap</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#af2aa16f2f98e4e764a2df571cc0dd2b7">  120</a></span>&#160;    QBitmap <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#af2aa16f2f98e4e764a2df571cc0dd2b7">bmpMask</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#af570d0456df974dd3290edbee7adcf86">  121</a></span>&#160;    QPen <a class="code" href="../../d4/d9d/class_u_b_magnifier.html#af570d0456df974dd3290edbee7adcf86">borderPen</a>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    QWidget *gView;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QWidget *mView;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">  123</a></span>&#160;    QWidget *<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#a6b654b774bedaf65db06b39abaf78168">gView</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">  124</a></span>&#160;    QWidget *<a class="code" href="../../d4/d9d/class_u_b_magnifier.html#ad3e5ba067a1adff000360fea5a2c1e3f">mView</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;};</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif // UBMAGNIFIER_H</span></div>
@@ -236,8 +236,8 @@ $(document).ready(function(){initNavTree('d6/dcc/_u_b_magnifer_8h_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_aef878534d578975a4848edbbc4fd1ed.html">gui</a></li><li class="navelem"><a class="el" href="../../d6/dcc/_u_b_magnifer_8h.html">UBMagnifer.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_a367a059929237797c762105a62e4cf9.html">gui</a></li><li class="navelem"><a class="el" href="../../d6/dcc/_u_b_magnifer_8h.html">UBMagnifer.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:52 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

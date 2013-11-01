@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf-merger/FilterPredictor.h Source File</title>
+<title>Open-Sankoré: FilterPredictor.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -149,20 +149,20 @@ $(document).ready(function(){initNavTree('d1/d66/_filter_predictor_8h_source.htm
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a97bd51acd9ad395562dfcfeea4452e13">   43</a></span>&#160;      <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a97bd51acd9ad395562dfcfeea4452e13">PREDICTOR_TOKEN</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#aa827dbf05230cde8051f66721ee78c47">   44</a></span>&#160;      <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#aa827dbf05230cde8051f66721ee78c47">DECODE_PARAM_TOKEN</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab633eb1564a580644998e42bb429e4ef">   46</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab633eb1564a580644998e42bb429e4ef">getEarlyChange</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earlyChange;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab633eb1564a580644998e42bb429e4ef">   46</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ab633eb1564a580644998e42bb429e4ef">getEarlyChange</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a>;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">bool</span> decodeRow(<span class="keyword">const</span> <span class="keywordtype">char</span> *input, std::string &amp;out,<span class="keyword">const</span> std::string &amp;prev,<span class="keywordtype">int</span> curPrediction);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">void</span> obtainDecodeParams(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>*objectWithStream,std::string &amp;dictStr);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::string getDictionaryContentStr(std::string &amp; in, <span class="keywordtype">size_t</span> &amp;pos );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">int</span> _predictor;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordtype">int</span> _colors;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordtype">int</span> _bits;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordtype">int</span> _columns;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordtype">int</span> _earlyChange;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordtype">int</span> _rowLen;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordtype">int</span> _bytesPerPixel;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#adeef8eaf89b69b73719dbf37a39873b5">decodeRow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *input, std::string &amp;out,<span class="keyword">const</span> std::string &amp;prev,<span class="keywordtype">int</span> curPrediction);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a489435228f9020c655a9f0e6f384d175">obtainDecodeParams</a>(<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>*objectWithStream,std::string &amp;dictStr);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::string <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#abfa7ac853d9c7a25f31a42a36717edbb">getDictionaryContentStr</a>(std::string &amp; in, <span class="keywordtype">size_t</span> &amp;pos );</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">   53</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#ac7fa83ef5520d2f1143388db886a0ee6">_predictor</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">   54</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a669d8bf31821094720a3e81beb464a0b">_colors</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">   55</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a8cceb626ba91f42bf7486583867830b7">_bits</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">   56</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a82bdb00b076fb62a4dad0a49b8ee1629">_columns</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">   57</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a891596971c4c70befb3a1ca3ae46543a">_earlyChange</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">   58</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a7da34c1d42eb443039e2b9f108ff5bce">_rowLen</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">   59</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d5/d5f/classmerge__lib_1_1_filter_predictor.html#a457a1b95275181f4a6e5c77a0582c420">_bytesPerPixel</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   };</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
@@ -176,8 +176,8 @@ $(document).ready(function(){initNavTree('d1/d66/_filter_predictor_8h_source.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d1/d66/_filter_predictor_8h.html">FilterPredictor.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:47 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bef69977bf836bcacc75baf7cc647ec1.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d1/d66/_filter_predictor_8h.html">FilterPredictor.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:51 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

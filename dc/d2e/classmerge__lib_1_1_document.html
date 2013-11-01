@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('dc/d2e/classmerge__lib_1_1_document.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d4/dc4/classmerge__lib_1_1_document-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -117,7 +119,7 @@ $(document).ready(function(){initNavTree('dc/d2e/classmerge__lib_1_1_document.ht
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d2f/classmerge__lib_1_1_document__coll__graph.svg" width="168" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d2f/classmerge__lib_1_1_document__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
@@ -127,6 +129,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6687738a8f98a95f3cafbfca7dd7c928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6687738a8f98a95f3cafbfca7dd7c928">saveAs</a> (const char *newFileName)</td></tr>
 <tr class="memitem:acd7bddf194781a0f4862caf8d7898733"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#acd7bddf194781a0f4862caf8d7898733">getDocumentObject</a> ()</td></tr>
 <tr class="memitem:a3d977a03274a3b5353ed034d95a3b714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#a3d977a03274a3b5353ed034d95a3b714">addToAllObjects</a> (const std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt; &amp;allObjs)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af30dc8743eea217391812af8a8a55dbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#af30dc8743eea217391812af8a8a55dbb">Document</a> (const char *docName)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad705cd86f7609ad621f025b74d497078"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a></td></tr>
+<tr class="memitem:a6eab071c85c993e110a784959dc6fa01"><td class="memItemLeft" align="right" valign="top">std::map&lt; unsigned int, <a class="el" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a></td></tr>
+<tr class="memitem:afb0386907cf662123e922cd3f185ddff"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a></td></tr>
+<tr class="memitem:a2fddd0197ef13b0380b10d578419566b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#a2fddd0197ef13b0380b10d578419566b">_documentName</a></td></tr>
+<tr class="memitem:a0310f6d329811c8ab7c0eac3f6e7c997"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html#a0310f6d329811c8ab7c0eac3f6e7c997">_maxObjectNumber</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -147,17 +161,46 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; _allObjects.size(); ++i)</div>
-<div class="line">      <span class="keyword">delete</span> _allObjects[i];         </div>
-<div class="line">   _allObjects.clear();</div>
+<div class="line">   <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.size(); ++i)</div>
+<div class="line">      <span class="keyword">delete</span> <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>[i];         </div>
+<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.clear();</div>
 <div class="line"></div>
-<div class="line">   std::map&lt;unsigned int, Page *&gt;::const_iterator it(_pages.begin());</div>
-<div class="line">   <span class="keywordflow">for</span>(;it != _pages.end();it++)</div>
+<div class="line">   std::map&lt;unsigned int, Page *&gt;::const_iterator it(<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>.begin());</div>
+<div class="line">   <span class="keywordflow">for</span>(;it != <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>.end();it++)</div>
 <div class="line">   {</div>
 <div class="line">      <span class="keyword">delete</span> (*it).second;</div>
 <div class="line">   }</div>
-<div class="line">   _pages.clear();</div>
+<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>.clear();</div>
 <div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af30dc8743eea217391812af8a8a55dbb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Document::Document </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>docName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">                                       :</div>
+<div class="line">    <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>(0), <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>(), <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a2fddd0197ef13b0380b10d578419566b">_documentName</a>(fileName), <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a0310f6d329811c8ab7c0eac3f6e7c997">_maxObjectNumber</a>(0)</div>
+<div class="line">{</div>
+<div class="line"></div>
+}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,7 +227,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">      {</div>
-<div class="line">         _allObjects.insert(_allObjects.end(), allObjs.begin(), allObjs.end());</div>
+<div class="line">         <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.insert(<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#afb0386907cf662123e922cd3f185ddff">_allObjects</a>.end(), allObjs.begin(), allObjs.end());</div>
 <div class="line">      }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -192,7 +235,7 @@ Friends</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a3d977a03274a3b5353ed034d95a3b714_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a3d977a03274a3b5353ed034d95a3b714_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -211,7 +254,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">return</span> _root;</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -219,7 +262,7 @@ Friends</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_acd7bddf194781a0f4862caf8d7898733_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_acd7bddf194781a0f4862caf8d7898733_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -239,7 +282,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">   <span class="keywordflow">if</span>(!_pages.count(pageNumber))</div>
+<div class="line">   <span class="keywordflow">if</span>(!<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>.count(pageNumber))</div>
 <div class="line">   {</div>
 <div class="line">      <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="comment">/*      std::stringstream error;</span></div>
@@ -248,7 +291,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="comment">         &lt;&lt; _documentName;</span></div>
 <div class="line"><span class="comment">      throw Exception(error);*/</span></div>
 <div class="line">   }</div>
-<div class="line">   <span class="keywordflow">return</span>  _pages[pageNumber];</div>
+<div class="line">   <span class="keywordflow">return</span>  <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a6eab071c85c993e110a784959dc6fa01">_pages</a>[pageNumber];</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -256,7 +299,7 @@ Friends</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a6975164cb7c18fc388e6eb6059b2f5c5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a6975164cb7c18fc388e6eb6059b2f5c5_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -278,8 +321,8 @@ Friends</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">   <span class="comment">//first two objects will be created by hand</span></div>
 <div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> fromObjNumber = 2;</div>
-<div class="line">   _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(fromObjNumber);</div>
-<div class="line">   _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#afdaeb3e503cd26fe09f0b1d30aadc7bc">retrieveMaxObjectNumber</a>(_maxObjectNumber);</div>
+<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a54aaa67b196c1ee3f75fcb2b5b45c4d7">recalculateObjectNumbers</a>(fromObjNumber);</div>
+<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#afdaeb3e503cd26fe09f0b1d30aadc7bc">retrieveMaxObjectNumber</a>(<a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#a0310f6d329811c8ab7c0eac3f6e7c997">_maxObjectNumber</a>);</div>
 <div class="line">   </div>
 <div class="line">   <span class="comment">//sizes of all objects</span></div>
 <div class="line">   <span class="comment">//key - object number</span></div>
@@ -295,7 +338,7 @@ Friends</h2></td></tr>
 <div class="line">   }</div>
 <div class="line"></div>
 <div class="line">   out &lt;&lt; <a class="code" href="../../d0/d97/_document_8cpp.html#a6166d175b6007adca2adc2a37a7ead66">firstObj</a>.c_str();</div>
-<div class="line">   _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a90a2dd7c404c4cd275df87902d205337">serialize</a>( out, sizesAndGenerationNumbers);</div>
+<div class="line">   <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a90a2dd7c404c4cd275df87902d205337">serialize</a>( out, sizesAndGenerationNumbers);</div>
 <div class="line">   </div>
 <div class="line">   std::map&lt; unsigned int, std::pair&lt;unsigned long long, unsigned int &gt; &gt;::iterator sizeIterator;</div>
 <div class="line"></div>
@@ -320,7 +363,7 @@ Friends</h2></td></tr>
 <div class="line">          sizeInXref = sizeInXref + (*sizeIterator).second.first;</div>
 <div class="line">   }</div>
 <div class="line">   out &lt;&lt; <span class="stringliteral">&quot;trailer\n&lt;&lt;\n/Size &quot;</span> &lt;&lt; numberOfObjects  &lt;&lt; <span class="stringliteral">&quot;\n/Info 1 0 R\n&quot;</span></div>
-<div class="line">      &lt;&lt; <span class="stringliteral">&quot;/Root &quot;</span> &lt;&lt; _root-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>() &lt;&lt; <span class="stringliteral">&quot; 0 R\n &gt;&gt;\nstartxref\n&quot;</span> &lt;&lt; sizeInXref &lt;&lt; <span class="stringliteral">&quot;\n%%EOF&quot;</span>;</div>
+<div class="line">      &lt;&lt; <span class="stringliteral">&quot;/Root &quot;</span> &lt;&lt; <a class="code" href="../../dc/d2e/classmerge__lib_1_1_document.html#ad705cd86f7609ad621f025b74d497078">_root</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad6b6bcffd9533e07678e2cb076dc2787">getObjectNumber</a>() &lt;&lt; <span class="stringliteral">&quot; 0 R\n &gt;&gt;\nstartxref\n&quot;</span> &lt;&lt; sizeInXref &lt;&lt; <span class="stringliteral">&quot;\n%%EOF&quot;</span>;</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -329,7 +372,8 @@ Friends</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a6687738a8f98a95f3cafbfca7dd7c928_cgraph.svg" width="563" height="342"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a6687738a8f98a95f3cafbfca7dd7c928_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -338,7 +382,7 @@ Friends</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a6687738a8f98a95f3cafbfca7dd7c928_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/d2e/classmerge__lib_1_1_document_a6687738a8f98a95f3cafbfca7dd7c928_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -385,9 +429,110 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="afb0386907cf662123e922cd3f185ddff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a> *&gt; merge_lib::Document::_allObjects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2fddd0197ef13b0380b10d578419566b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string merge_lib::Document::_documentName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0310f6d329811c8ab7c0eac3f6e7c997"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int merge_lib::Document::_maxObjectNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6eab071c85c993e110a784959dc6fa01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;unsigned int, <a class="el" href="../../db/d32/classmerge__lib_1_1_page.html">Page</a> *&gt; merge_lib::Document::_pages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad705cd86f7609ad621f025b74d497078"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/df1/classmerge__lib_1_1_object.html">Object</a>* merge_lib::Document::_root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d5/d61/_document_8h_source.html">Document.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d0/d97/_document_8cpp.html">Document.cpp</a></li>
+<li><a class="el" href="../../d5/d61/_document_8h_source.html">Document.h</a></li>
+<li><a class="el" href="../../d0/d97/_document_8cpp.html">Document.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -395,7 +540,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../dc/d2e/classmerge__lib_1_1_document.html">Document</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:12 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('d2/da1/class_u_b_abstract_video_encode
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d5/ddb/class_u_b_abstract_video_encoder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBAbstractVideoEncoder Class Reference</div>  </div>
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('d2/da1/class_u_b_abstract_video_encode
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/daa/class_u_b_abstract_video_encoder__inherit__graph.svg" width="486" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/daa/class_u_b_abstract_video_encoder__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for UBAbstractVideoEncoder:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d19/class_u_b_abstract_video_encoder__coll__graph.svg" width="208" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d19/class_u_b_abstract_video_encoder__coll__graph.svg" width="208" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -157,6 +158,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f9a57a0a7afa22d06b5fef2dbb19c6a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f9a57a0a7afa22d06b5fef2dbb19c6a">setAudioRecordingDevice</a> (const QString pAudioRecordingDevice)</td></tr>
 <tr class="memitem:af4bd868b266dbcd3ec158650002598b5"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#af4bd868b266dbcd3ec158650002598b5">audioRecordingDevice</a> ()</td></tr>
 <tr class="memitem:ab5fae0f75a1993fe478442e0aa9d0c14"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#ab5fae0f75a1993fe478442e0aa9d0c14">setRecordAudio</a> (bool pRecordAudio)=0</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3cbb147dfef3dae714c55cdb023e2a2e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a></td></tr>
+<tr class="memitem:a29134295e5cc5d5d6f6198cb42698696"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a></td></tr>
+<tr class="memitem:a76351bf2704abd324b0c15933e202147"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a></td></tr>
+<tr class="memitem:a08ceed682bfc2b804f1c1c4849b6e441"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a></td></tr>
+<tr class="memitem:a4f1220f87f0ee6e2e65c22c02adb9eb3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a></td></tr>
 </table>
 <h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab9656acba80cfe74980b16dc90423b73"></a>
@@ -173,9 +182,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(pParent)</div>
-<div class="line">    , mFramesPerSecond(10)</div>
-<div class="line">    , mVideoSize(640, 480)</div>
-<div class="line">    , mVideoBitsPerSecond(1700000) <span class="comment">// 1.7 Mbps</span></div>
+<div class="line">    , <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a>(10)</div>
+<div class="line">    , <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a>(640, 480)</div>
+<div class="line">    , <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a>(1700000) <span class="comment">// 1.7 Mbps</span></div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// NOOP</span></div>
 <div class="line"></div>
@@ -237,7 +246,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_abstract_video_encoder_a314566aa45510979eda49b487fd0113c_icgraph.svg" width="440" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_abstract_video_encoder_a314566aa45510979eda49b487fd0113c_icgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -264,7 +273,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mAudioRecordingDevice;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -331,7 +340,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_abstract_video_encoder_aa4e03edd2cb73ad5ccb94daa23268b54_icgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da1/class_u_b_abstract_video_encoder_aa4e03edd2cb73ad5ccb94daa23268b54_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -382,7 +391,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mFramesPerSecond;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -545,7 +554,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mAudioRecordingDevice = pAudioRecordingDevice;</div>
+<div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a4f1220f87f0ee6e2e65c22c02adb9eb3">mAudioRecordingDevice</a> = pAudioRecordingDevice;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -572,7 +581,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mFramesPerSecond = pFps;</div>
+<div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a3cbb147dfef3dae714c55cdb023e2a2e">mFramesPerSecond</a> = pFps;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -625,7 +634,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mVideoBitsPerSecond = pVideoBitsPerSecond;</div>
+<div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a> = pVideoBitsPerSecond;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -652,7 +661,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mVideoFileName = pFileName;</div>
+<div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a> = pFileName;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -679,7 +688,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            mVideoSize = pSize;</div>
+<div class="line">            <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a> = pSize;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -781,7 +790,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mVideoBitsPerSecond;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a08ceed682bfc2b804f1c1c4849b6e441">mVideoBitsPerSecond</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -841,7 +850,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mVideoFileName;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a29134295e5cc5d5d6f6198cb42698696">mVideoFileName</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -876,7 +885,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mVideoSize;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../d2/da1/class_u_b_abstract_video_encoder.html#a76351bf2704abd324b0c15933e202147">mVideoSize</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -890,9 +899,110 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a4f1220f87f0ee6e2e65c22c02adb9eb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBAbstractVideoEncoder::mAudioRecordingDevice</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3cbb147dfef3dae714c55cdb023e2a2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBAbstractVideoEncoder::mFramesPerSecond</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08ceed682bfc2b804f1c1c4849b6e441"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long UBAbstractVideoEncoder::mVideoBitsPerSecond</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29134295e5cc5d5d6f6198cb42698696"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UBAbstractVideoEncoder::mVideoFileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a76351bf2704abd324b0c15933e202147"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize UBAbstractVideoEncoder::mVideoSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/podcast/<a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a></li>
-<li>Sankore-3.1/src/podcast/<a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp.html">UBAbstractVideoEncoder.cpp</a></li>
+<li><a class="el" href="../../db/de0/_u_b_abstract_video_encoder_8h_source.html">UBAbstractVideoEncoder.h</a></li>
+<li><a class="el" href="../../d1/dd4/_u_b_abstract_video_encoder_8cpp.html">UBAbstractVideoEncoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -900,7 +1010,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/da1/class_u_b_abstract_video_encoder.html">UBAbstractVideoEncoder</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:50 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:54 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

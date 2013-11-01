@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('dd/d0f/class_u_b_display_manager.html'
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d68/class_u_b_display_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBDisplayManager Class Reference</div>  </div>
@@ -119,7 +121,7 @@ $(document).ready(function(){initNavTree('dd/d0f/class_u_b_display_manager.html'
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/d6d/class_u_b_display_manager__coll__graph.svg" width="222" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d6d/class_u_b_display_manager__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
@@ -166,6 +168,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8b7e7f0a2fbdbe631b4321b7d324f2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#ac8b7e7f0a2fbdbe631b4321b7d324f2a">controleScreenIndex</a> ()</td></tr>
 <tr class="memitem:aee84a994758fbdbcc1119681c41c66c8"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#aee84a994758fbdbcc1119681c41c66c8">controlGeometry</a> ()</td></tr>
 <tr class="memitem:a8e1cf8cf19164e7707a4c25c4ca08bba"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a8e1cf8cf19164e7707a4c25c4ca08bba">displayGeometry</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a55df2e19654e480ac5e38806cd0f097c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a55df2e19654e480ac5e38806cd0f097c">positionScreens</a> ()</td></tr>
+<tr class="memitem:aa8284ad27f57b0bb8811da517714e40a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#aa8284ad27f57b0bb8811da517714e40a">initScreenIndexes</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1d33055b6ec537b516ac88d0f622c33b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a></td></tr>
+<tr class="memitem:a6ba48a7d08a49ec9c1e9d1b2b3e130a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a></td></tr>
+<tr class="memitem:a8032d399a89a2b7635fbf3cea3ca7e14"><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a></td></tr>
+<tr class="memitem:a2724e9260106d2ecd79769a1bb2b7213"><td class="memItemLeft" align="right" valign="top">QDesktopWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a></td></tr>
+<tr class="memitem:a4e449c070f8a3863d5e72ab1dddb6582"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a></td></tr>
+<tr class="memitem:abdab8010f9127adc8738e0035f04f9ea"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a></td></tr>
+<tr class="memitem:ae23ae0e67d851b3815e22983c49a6814"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a></td></tr>
+<tr class="memitem:a2742b5a48594bd560d57ebaf0ee4de84"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a></td></tr>
+<tr class="memitem:adabe1c9ef5269df8f1eb4965aa8b6aed"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d3/dff/class_u_b_blackout_widget.html">UBBlackoutWidget</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a></td></tr>
+<tr class="memitem:a67bad609a6e6a5996641257d964420cd"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106">DisplayRole</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">mScreenIndexesRoles</a></td></tr>
+<tr class="memitem:a0db3ff12a3a597baac02e1774d75d8fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a></td></tr>
 </table>
 <h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a8ca88c477b630972d2d9fa7810162106"></a>
@@ -218,20 +239,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : QObject(parent)</div>
-<div class="line">    , mControlScreenIndex(-1)</div>
-<div class="line">    , mDisplayScreenIndex(-1)</div>
-<div class="line">    , mControlWidget(0)</div>
-<div class="line">    , mDisplayWidget(0)</div>
-<div class="line">    , mDesktopWidget(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>(-1)</div>
+<div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a>(0)</div>
 <div class="line">{</div>
-<div class="line">    mDesktop = qApp-&gt;desktop();</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a> = qApp-&gt;desktop();</div>
 <div class="line"></div>
-<div class="line">    mUseMultiScreen = <span class="keyword">true</span>;</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a> = <span class="keyword">true</span>;</div>
 <div class="line"></div>
-<div class="line">    initScreenIndexes();</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aa8284ad27f57b0bb8811da517714e40a">initScreenIndexes</a>();</div>
 <div class="line"></div>
-<div class="line">    connect(mDesktop, SIGNAL(resized(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(<span class="keywordtype">int</span>)));</div>
-<div class="line">    connect(mDesktop, SIGNAL(workAreaResized(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>, SIGNAL(resized(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>, SIGNAL(workAreaResized(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -239,7 +260,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a4f83c8788c9fb53294b037d9ccfcf1a4_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a4f83c8788c9fb53294b037d9ccfcf1a4_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -296,9 +317,9 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    Q_UNUSED(screen);</div>
 <div class="line"></div>
-<div class="line">    initScreenIndexes();</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aa8284ad27f57b0bb8811da517714e40a">initScreenIndexes</a>();</div>
 <div class="line"></div>
-<div class="line">    positionScreens();</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a55df2e19654e480ac5e38806cd0f097c">positionScreens</a>();</div>
 <div class="line"></div>
 <div class="line">    emit <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8220ab5aebf94b5b596db35b4c9b767f">screenLayoutChanged</a>();</div>
 <div class="line">}</div>
@@ -308,7 +329,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a29552f5710e39a7e45c63627ead4d0e6_cgraph.svg" width="422" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a29552f5710e39a7e45c63627ead4d0e6_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -317,7 +338,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a29552f5710e39a7e45c63627ead4d0e6_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a29552f5710e39a7e45c63627ead4d0e6_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -346,13 +368,13 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QList&lt;int&gt; screenIndexes;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mControlScreenIndex &gt; -1)</div>
-<div class="line">        screenIndexes &lt;&lt; mControlScreenIndex;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1)</div>
+<div class="line">        screenIndexes &lt;&lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (mDisplayScreenIndex &gt; -1)</div>
-<div class="line">        screenIndexes &lt;&lt; mDisplayScreenIndex;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> &gt; -1)</div>
+<div class="line">        screenIndexes &lt;&lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>;</div>
 <div class="line"></div>
-<div class="line">    screenIndexes &lt;&lt; mPreviousScreenIndexes;</div>
+<div class="line">    screenIndexes &lt;&lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; screenIndexes.size(); i++)</div>
 <div class="line">    {</div>
@@ -369,14 +391,14 @@ Public Member Functions</h2></td></tr>
 <div class="line">        blackoutUi-&gt;iconButton-&gt;setVisible(screenIndex == mControlScreenIndex);</div>
 <div class="line">        blackoutUi-&gt;labelClickToReturn-&gt;setVisible(screenIndex == mControlScreenIndex);</div>
 <div class="line"></div>
-<div class="line">        blackoutWidget-&gt;setGeometry(mDesktop-&gt;screenGeometry(screenIndex));</div>
+<div class="line">        blackoutWidget-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(screenIndex));</div>
 <div class="line"></div>
-<div class="line">        mBlackoutWidgets &lt;&lt; blackoutWidget;</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a> &lt;&lt; blackoutWidget;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a68a5c07988899d87cfbb9e9e1daca556">UBPlatformUtils::fadeDisplayOut</a>();</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">foreach</span>(<a class="code" href="../../d3/dff/class_u_b_blackout_widget.html">UBBlackoutWidget</a> *blackoutWidget, mBlackoutWidgets)</div>
+<div class="line">    <span class="keywordflow">foreach</span>(<a class="code" href="../../d3/dff/class_u_b_blackout_widget.html">UBBlackoutWidget</a> *blackoutWidget, <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a>)</div>
 <div class="line">    {</div>
 <div class="line">        blackoutWidget-&gt;showFullScreen();</div>
 <div class="line">    }</div>
@@ -396,7 +418,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ad63e13d90aee1a779ba82c72345fbad7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ad63e13d90aee1a779ba82c72345fbad7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -423,7 +446,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mControlScreenIndex;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 </div>
@@ -441,7 +464,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mDesktop-&gt;screenGeometry(mControlScreenIndex);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -468,7 +491,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mDesktop-&gt;screenGeometry(mDisplayScreenIndex);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>
@@ -494,7 +517,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mControlScreenIndex &gt; -1;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -502,7 +525,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aeaddf24885b0612083da8b4045a35847_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aeaddf24885b0612083da8b4045a35847_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -529,7 +553,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> mDisplayScreenIndex &gt; -1;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> &gt; -1;</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -537,7 +561,8 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a00a31e92ba05b878aca9978ebc45a6cf_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a00a31e92ba05b878aca9978ebc45a6cf_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -564,9 +589,94 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">        {</div>
-<div class="line">            <span class="keywordflow">return</span> !mPreviousScreenIndexes.isEmpty();</div>
+<div class="line">            <span class="keywordflow">return</span> !<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.isEmpty();</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa8284ad27f57b0bb8811da517714e40a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDisplayManager::initScreenIndexes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> screenCount = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6e992c0a4a0042501c94b218328529d4">numScreens</a>();</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">mScreenIndexesRoles</a>.clear();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (screenCount &gt; 0)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;primaryScreen();</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;swapControlAndDisplayScreens-&gt;get().toBool())</div>
+<div class="line">        {</div>
+<div class="line">           <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>^1;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">mScreenIndexesRoles</a> &lt;&lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a1edc3ec56f2181bd9580d4e40fddad93">Control</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> = -1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (screenCount &gt; 1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> != 0 ? 0 : 1;</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a67bad609a6e6a5996641257d964420cd">mScreenIndexesRoles</a> &lt;&lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106a71761afed29f078efd2e43feacffefed">Display</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> = -1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.clear();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (screenCount &gt; 2)</div>
+<div class="line">    {</div>
+<div class="line">       <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 2; i &lt; screenCount; i++)</div>
+<div class="line">       {</div>
+<div class="line">           <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> == i)</div>
+<div class="line">               <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.append(1);</div>
+<div class="line">           <span class="keywordflow">else</span></div>
+<div class="line">               <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.append(i);</div>
+<div class="line">       }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aa8284ad27f57b0bb8811da517714e40a_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_aa8284ad27f57b0bb8811da517714e40a_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ad6dc1d98fb11aeb8b42695216ed925f2"></a>
@@ -582,14 +692,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> mPreviousScreenIndexes.size();</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.size();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ad6dc1d98fb11aeb8b42695216ed925f2_icgraph.svg" width="448" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -609,9 +719,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mUseMultiScreen)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">return</span> mDesktop-&gt;numScreens();</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;numScreens();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
@@ -619,12 +729,90 @@ Public Member Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a6e992c0a4a0042501c94b218328529d4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a6e992c0a4a0042501c94b218328529d4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a55df2e19654e480ac5e38806cd0f097c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBDisplayManager::positionScreens </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a> &amp;&amp; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a>-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>));</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a> &amp;&amp; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a>));</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>-&gt;showFullScreen();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a> &amp;&amp; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a> &gt; -1)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;hide();</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>));</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;showFullScreen();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;hide();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> wi = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.size(); wi &lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a>.size(); wi++)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a>.at(wi)-&gt;hide();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> psi = 0; psi &lt; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.size(); psi++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a>.size() &gt; psi)</div>
+<div class="line">        {</div>
+<div class="line">            QWidget* previous = <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a>.at(psi);</div>
+<div class="line">            previous-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a8032d399a89a2b7635fbf3cea3ca7e14">mPreviousScreenIndexes</a>.at(psi)));</div>
+<div class="line">            previous-&gt;showFullScreen();</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a> &amp;&amp; <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a1d33055b6ec537b516ac88d0f622c33b">mControlScreenIndex</a> &gt; -1)</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>-&gt;activateWindow();</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a55df2e19654e480ac5e38806cd0f097c_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -656,12 +844,12 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a29552f5710e39a7e45c63627ead4d0e6">adjustScreens</a>(-1);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a3983f3958bedc2c23555db769917c6cc_cgraph.svg" width="640" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a3983f3958bedc2c23555db769917c6cc_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -688,12 +876,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8220ab5aebf94b5b596db35b4c9b767f_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8220ab5aebf94b5b596db35b4c9b767f_icgraph.svg" width="100%" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -713,25 +902,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aeaddf24885b0612083da8b4045a35847">hasControl</a>() &amp;&amp; pControlWidget &amp;&amp; (pControlWidget != mControlWidget))</div>
-<div class="line">        mControlWidget = pControlWidget;</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#aeaddf24885b0612083da8b4045a35847">hasControl</a>() &amp;&amp; pControlWidget &amp;&amp; (pControlWidget != <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>))</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a> = pControlWidget;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8b704ad13b84eb0353814ff4113b8e85_cgraph.svg" width="470" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8b704ad13b84eb0353814ff4113b8e85_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a8b704ad13b84eb0353814ff4113b8e85_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -751,16 +941,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(pControlWidget &amp;&amp; (pControlWidget != mControlWidget))</div>
-<div class="line">        mDesktopWidget = pControlWidget;</div>
+<div class="line">    <span class="keywordflow">if</span>(pControlWidget &amp;&amp; (pControlWidget != <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a4e449c070f8a3863d5e72ab1dddb6582">mControlWidget</a>))</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#ae23ae0e67d851b3815e22983c49a6814">mDesktopWidget</a> = pControlWidget;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a28e33f53af270ad368f70c705380fb6b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a28e33f53af270ad368f70c705380fb6b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -780,36 +971,37 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span>(pDisplayWidget &amp;&amp; (pDisplayWidget != mDisplayWidget))</div>
+<div class="line">    <span class="keywordflow">if</span>(pDisplayWidget &amp;&amp; (pDisplayWidget != <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>))</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (mDisplayWidget)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>)</div>
 <div class="line">        {</div>
-<div class="line">            mDisplayWidget-&gt;hide();</div>
-<div class="line">            pDisplayWidget-&gt;setGeometry(mDisplayWidget-&gt;geometry());</div>
-<div class="line">            pDisplayWidget-&gt;setWindowFlags(mDisplayWidget-&gt;windowFlags());</div>
+<div class="line">            <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;hide();</div>
+<div class="line">            pDisplayWidget-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;geometry());</div>
+<div class="line">            pDisplayWidget-&gt;setWindowFlags(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;windowFlags());</div>
 <div class="line">        }</div>
-<div class="line">        mDisplayWidget = pDisplayWidget;</div>
-<div class="line">        mDisplayWidget-&gt;setGeometry(mDesktop-&gt;screenGeometry(mDisplayScreenIndex));</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a> = pDisplayWidget;</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;setGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2724e9260106d2ecd79769a1bb2b7213">mDesktop</a>-&gt;screenGeometry(<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a6ba48a7d08a49ec9c1e9d1b2b3e130a7">mDisplayScreenIndex</a>));</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../db/d66/class_u_b_settings.html#a0d8ed418921c2b2d37851faeae00715d">UBSettings::settings</a>()-&gt;<a class="code" href="../../db/d66/class_u_b_settings.html#a5ca43f0a662f527bf32637439c602747">appUseMultiscreen</a>-&gt;<a class="code" href="../../d7/d24/class_u_b_setting.html#afe671b284dd9f1e313e6f27df3ecd2a8">get</a>().toBool())</div>
-<div class="line">            mDisplayWidget-&gt;showFullScreen();</div>
+<div class="line">            <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#abdab8010f9127adc8738e0035f04f9ea">mDisplayWidget</a>-&gt;showFullScreen();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a621254d8cb7ab7967cdab619c76962f5_cgraph.svg" width="584" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a621254d8cb7ab7967cdab619c76962f5_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a621254d8cb7ab7967cdab619c76962f5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a621254d8cb7ab7967cdab619c76962f5_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -829,15 +1021,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mPreviousDisplayWidgets = pPreviousViews;</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a2742b5a48594bd560d57ebaf0ee4de84">mPreviousDisplayWidgets</a> = pPreviousViews;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ae0930b6418b998eddc3dae6ca0e835d3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_ae0930b6418b998eddc3dae6ca0e835d3_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -895,15 +1088,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    mUseMultiScreen = pUse;</div>
+<div class="line">    <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#a0db3ff12a3a597baac02e1774d75d8fb">mUseMultiScreen</a> = pUse;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a89345c872ad8abfdde371811d10b7044_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a89345c872ad8abfdde371811d10b7044_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
@@ -930,38 +1124,260 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">while</span> (!mBlackoutWidgets.isEmpty())</div>
+<div class="line">    <span class="keywordflow">while</span> (!<a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a>.isEmpty())</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">// the widget is also destroyed thanks to its Qt::WA_DeleteOnClose attribute</span></div>
-<div class="line">        mBlackoutWidgets.takeFirst()-&gt;close();</div>
+<div class="line">        <a class="code" href="../../dd/d0f/class_u_b_display_manager.html#adabe1c9ef5269df8f1eb4965aa8b6aed">mBlackoutWidgets</a>.takeFirst()-&gt;close();</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d4/d99/class_u_b_platform_utils.html#a8d5f0c37f7f7e9d0c8dd4b6592d9dddb">UBPlatformUtils::fadeDisplayIn</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a0d39dbe11146c6e9ebbe03f14bbebd2e_cgraph.svg" width="472" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a0d39dbe11146c6e9ebbe03f14bbebd2e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/d0f/class_u_b_display_manager_a0d39dbe11146c6e9ebbe03f14bbebd2e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </p>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="adabe1c9ef5269df8f1eb4965aa8b6aed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d3/dff/class_u_b_blackout_widget.html">UBBlackoutWidget</a>*&gt; UBDisplayManager::mBlackoutWidgets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d33055b6ec537b516ac88d0f622c33b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBDisplayManager::mControlScreenIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e449c070f8a3863d5e72ab1dddb6582"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* UBDisplayManager::mControlWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2724e9260106d2ecd79769a1bb2b7213"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDesktopWidget* UBDisplayManager::mDesktop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae23ae0e67d851b3815e22983c49a6814"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* UBDisplayManager::mDesktopWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6ba48a7d08a49ec9c1e9d1b2b3e130a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UBDisplayManager::mDisplayScreenIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abdab8010f9127adc8738e0035f04f9ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* UBDisplayManager::mDisplayWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2742b5a48594bd560d57ebaf0ee4de84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d1/d78/class_u_b_board_view.html">UBBoardView</a>*&gt; UBDisplayManager::mPreviousDisplayWidgets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8032d399a89a2b7635fbf3cea3ca7e14"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;int&gt; UBDisplayManager::mPreviousScreenIndexes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a67bad609a6e6a5996641257d964420cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../dd/d0f/class_u_b_display_manager.html#a8ca88c477b630972d2d9fa7810162106">DisplayRole</a>&gt; UBDisplayManager::mScreenIndexesRoles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0db3ff12a3a597baac02e1774d75d8fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBDisplayManager::mUseMultiScreen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a></li>
-<li>Sankore-3.1/src/core/<a class="el" href="../../d5/d28/_u_b_display_manager_8cpp.html">UBDisplayManager.cpp</a></li>
+<li><a class="el" href="../../d7/dc6/_u_b_display_manager_8h_source.html">UBDisplayManager.h</a></li>
+<li><a class="el" href="../../d5/d28/_u_b_display_manager_8cpp.html">UBDisplayManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -969,7 +1385,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d0f/class_u_b_display_manager.html">UBDisplayManager</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:53 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:57 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

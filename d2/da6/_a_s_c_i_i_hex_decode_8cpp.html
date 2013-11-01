@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/pdf-merger/ASCIIHexDecode.cpp File Reference</title>
+<title>Open-Sankoré: ASCIIHexDecode.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -117,7 +117,8 @@ $(document).ready(function(){initNavTree('d2/da6/_a_s_c_i_i_hex_decode_8cpp.html
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/dec/_a_s_c_i_i_hex_decode_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/dec/_a_s_c_i_i_hex_decode_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
@@ -127,6 +128,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac2c3406e3793e69426121bcaa2b6ea2d"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp.html#ac2c3406e3793e69426121bcaa2b6ea2d">WHITESPACES</a> (&quot; \t\f\v\n\r&quot;)</td></tr>
+<tr class="memitem:a16a8fc5968c9186081fab09acc31547e"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp.html#a16a8fc5968c9186081fab09acc31547e">convertHexVal</a> (unsigned char c)</td></tr>
 </table>
 <h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a3327318f2063b2073cc77bf54822abc7"></a>
@@ -146,6 +148,54 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2>Function Documentation</h2>
+<a class="anchor" id="a16a8fc5968c9186081fab09acc31547e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int convertHexVal </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordflow">if</span>(c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> (c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">if</span>(c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;F&#39;</span>)</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> (c - <span class="charliteral">&#39;A&#39;</span> + 10);</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">if</span>(c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;f&#39;</span>)</div>
+<div class="line">   {</div>
+<div class="line">      <span class="keywordflow">return</span> (c - <span class="charliteral">&#39;a&#39;</span> + 10);</div>
+<div class="line">   }</div>
+<div class="line">   <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp_a16a8fc5968c9186081fab09acc31547e_icgraph.svg" width="360" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ac2c3406e3793e69426121bcaa2b6ea2d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,12 +210,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp_ac2c3406e3793e69426121bcaa2b6ea2d_icgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp_ac2c3406e3793e69426121bcaa2b6ea2d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -176,8 +226,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcc07476d459fe777de0be1c7a8eb906.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp.html">ASCIIHexDecode.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:49 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bef69977bf836bcacc75baf7cc647ec1.html">pdf-merger</a></li><li class="navelem"><a class="el" href="../../d2/da6/_a_s_c_i_i_hex_decode_8cpp.html">ASCIIHexDecode.cpp</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -8,5 +8,6 @@ var class_w_b_history_completion_model =
     [ "mapToSource", "da/d41/class_w_b_history_completion_model.html#a2fb929fea59615528c02d723e1980bc8", null ],
     [ "parent", "da/d41/class_w_b_history_completion_model.html#a4f06d5ece9d8aba9f470137b3d008e2b", null ],
     [ "rowCount", "da/d41/class_w_b_history_completion_model.html#ac440de5607401eff7ec22c3f0cd41359", null ],
-    [ "setSourceModel", "da/d41/class_w_b_history_completion_model.html#a7ea06700bceb5cb04a8a0e740c703eaa", null ]
+    [ "setSourceModel", "da/d41/class_w_b_history_completion_model.html#a7ea06700bceb5cb04a8a0e740c703eaa", null ],
+    [ "sourceReset", "da/d41/class_w_b_history_completion_model.html#a2d8504b5b207d82a7f8e54f960bcfdc1", null ]
 ];

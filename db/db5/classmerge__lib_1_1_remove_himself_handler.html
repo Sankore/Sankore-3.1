@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('db/db5/classmerge__lib_1_1_remove_hims
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../d9/dd1/classmerge__lib_1_1_remove_himself_handler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">merge_lib::RemoveHimselfHandler Class Reference</div>  </div>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('db/db5/classmerge__lib_1_1_remove_hims
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d92/classmerge__lib_1_1_remove_himself_handler__inherit__graph.svg" width="219" height="571"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/d92/classmerge__lib_1_1_remove_himself_handler__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for merge_lib::RemoveHimselfHandler:</div>
@@ -136,6 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f70456aa95c0e2a30c749b5eb7b15a0 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2f70456aa95c0e2a30c749b5eb7b15a0">addNextHandler</a> (<a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html">PageElementHandler</a> *nextHandler)</td></tr>
 <tr class="memitem:a4344983a7b938dc8c29a8ddd319c8771 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a4344983a7b938dc8c29a8ddd319c8771">processObjectContent</a> ()</td></tr>
 <tr class="memitem:a3c2f6868b3578e8ee1d5c9f0a37120d3 inherit pub_methods_classmerge__lib_1_1_page_element_handler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a3c2f6868b3578e8ee1d5c9f0a37120d3">changeObjectContent</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3ec0663ca1610a39f892cf30a66c0321"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html#a3ec0663ca1610a39f892cf30a66c0321">_changeObjectContent</a> (unsigned int startOfPageElement)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -222,9 +227,48 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Function Documentation</h2>
+<a class="anchor" id="a3ec0663ca1610a39f892cf30a66c0321"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RemoveHimselfHandler::_changeObjectContent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>startOfPageElement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> endOfElement = <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a2164e57a4264777fa75b091967c2cb23">_findEndOfElementContent</a>(startOfPageElement);</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#ad8bd931350556b884d67c7c470a61e99">forgetAboutChildren</a>(startOfPageElement, endOfElement);</div>
+<div class="line">   <a class="code" href="../../da/d91/classmerge__lib_1_1_page_element_handler.html#a52d5dd4a33423e5da12fb0317303e6ab">_page</a>-&gt;<a class="code" href="../../d7/df1/classmerge__lib_1_1_object.html#a21c04aa4fd032fef003e6aac6ab1212d">eraseContent</a>(startOfPageElement, endOfElement - startOfPageElement);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/db5/classmerge__lib_1_1_remove_himself_handler_a3ec0663ca1610a39f892cf30a66c0321_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../dc/d8b/_remove_him_self_handler_8h_source.html">RemoveHimSelfHandler.h</a></li>
-<li>Sankore-3.1/src/pdf-merger/<a class="el" href="../../d5/d57/_remove_himself_handler_8cpp.html">RemoveHimselfHandler.cpp</a></li>
+<li><a class="el" href="../../dc/d8b/_remove_him_self_handler_8h_source.html">RemoveHimSelfHandler.h</a></li>
+<li><a class="el" href="../../d5/d57/_remove_himself_handler_8cpp.html">RemoveHimselfHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -232,7 +276,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d27/namespacemerge__lib.html">merge_lib</a></li><li class="navelem"><a class="el" href="../../db/db5/classmerge__lib_1_1_remove_himself_handler.html">RemoveHimselfHandler</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:13 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

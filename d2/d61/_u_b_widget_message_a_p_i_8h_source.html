@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Open-Sankoré: Sankore-3.1/src/api/UBWidgetMessageAPI.h Source File</title>
+<title>Open-Sankoré: UBWidgetMessageAPI.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -148,22 +148,22 @@ $(document).ready(function(){initNavTree('d2/d61/_u_b_widget_message_a_p_i_8h_so
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a0c8ae74bb7102109d7a343c1053c3f0f">   43</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a0c8ae74bb7102109d7a343c1053c3f0f">subscribeToTopic</a>(<span class="keyword">const</span> QString&amp; pTopicName)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            mSubscribedTopics &lt;&lt; pTopicName;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a> &lt;&lt; pTopicName;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a08f6a980f76f590775868e4f4d6c68eb">   48</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a08f6a980f76f590775868e4f4d6c68eb">unsubscribeFromTopic</a>(<span class="keyword">const</span> QString&amp; pTopicName)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            mSubscribedTopics.remove(pTopicName);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a>.remove(pTopicName);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">private</span> slots:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <span class="keywordtype">void</span> onNewMessage(<span class="keyword">const</span> QString&amp; pTopicName, <span class="keyword">const</span> QString&amp; pMessage);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <span class="keywordtype">void</span> <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#af1dc22ac7d5ead2309f8801c1d1efc2c">onNewMessage</a>(<span class="keyword">const</span> QString&amp; pTopicName, <span class="keyword">const</span> QString&amp; pMessage);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        QSet&lt;QString&gt; mSubscribedTopics;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a> *mGraphicsWidgetItem;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">   59</a></span>&#160;        QSet&lt;QString&gt; <a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#ac4fad81b7d28445fdd10c827deaa87c9">mSubscribedTopics</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">   60</a></span>&#160;        <a class="code" href="../../d0/d16/class_u_b_graphics_widget_item.html">UBGraphicsWidgetItem</a> *<a class="code" href="../../df/d09/class_u_b_widget_message_a_p_i.html#a777c64bc9195690f2a552c1a627d3aef">mGraphicsWidgetItem</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
@@ -173,8 +173,8 @@ $(document).ready(function(){initNavTree('d2/d61/_u_b_widget_message_a_p_i_8h_so
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>(QObject *parent = 0);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ~<a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#ae5b9fef6126ef42e3b4ee149cd6e73c2">UBWidgetAPIMessageBroker</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a028defb975f3a8b91974c233288daef9">~UBWidgetAPIMessageBroker</a>();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>* <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a27cbf8eac6c295336db681119b4c020c">instance</a>();</div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('d2/d61/_u_b_widget_message_a_p_i_8h_so
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keyword">static</span> <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>* sInstance;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a4502cf0d98f7bc0afa7812b3554b0daf">   86</a></span>&#160;      <span class="keyword">static</span> <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html">UBWidgetAPIMessageBroker</a>* <a class="code" href="../../d2/d5c/class_u_b_widget_a_p_i_message_broker.html#a4502cf0d98f7bc0afa7812b3554b0daf">sInstance</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
@@ -199,8 +199,8 @@ $(document).ready(function(){initNavTree('d2/d61/_u_b_widget_message_a_p_i_8h_so
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_6fc3cff80e7745fc3f93f5539daaa27b.html">Sankore-3.1</a></li><li class="navelem"><a class="el" href="../../dir_667baa572e9e8f5ece3bd51e5bbbf100.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4ece80c69b6edd07df782a5802cea5a3.html">api</a></li><li class="navelem"><a class="el" href="../../d2/d61/_u_b_widget_message_a_p_i_8h.html">UBWidgetMessageAPI.h</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:46 for Open-Sankoré by
+    <li class="navelem"><a class="el" href="../../dir_13af20e113c05e74a0f6818d39586f65.html">Sankore-gh-pages</a></li><li class="navelem"><a class="el" href="../../dir_f8851847c95b94b698d4f01e7f372e35.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4b249c2e80028f4e112ac13653fa639a.html">api</a></li><li class="navelem"><a class="el" href="../../d2/d61/_u_b_widget_message_a_p_i_8h.html">UBWidgetMessageAPI.h</a></li>
+    <li class="footer">Generated on Fri Nov 1 2013 11:34:53 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

@@ -106,6 +106,8 @@ $(document).ready(function(){initNavTree('df/d78/class_w_b_tab_bar.html','../../
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d4/d58/class_w_b_tab_bar-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -119,7 +121,7 @@ $(document).ready(function(){initNavTree('df/d78/class_w_b_tab_bar.html','../../
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/de3/class_w_b_tab_bar__coll__graph.svg" width="158" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/de3/class_w_b_tab_bar__coll__graph.svg" width="187" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="signals"></a>
@@ -140,6 +142,20 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad4092ce74bc8f0978b4577fdbfa0e8c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#ad4092ce74bc8f0978b4577fdbfa0e8c8">mousePressEvent</a> (QMouseEvent *event)</td></tr>
 <tr class="memitem:a3a93f6d91f44c09c70323d0b85ad5e8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a3a93f6d91f44c09c70323d0b85ad5e8d">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a98cdbdc8e668461e38c5348e01e32173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a98cdbdc8e668461e38c5348e01e32173">selectTabAction</a> ()</td></tr>
+<tr class="memitem:a655f9bc950435775e49bd604a09e586f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a655f9bc950435775e49bd604a09e586f">cloneTab</a> ()</td></tr>
+<tr class="memitem:a2bbec06145b9ab481e461c4fd05b87be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a2bbec06145b9ab481e461c4fd05b87be">closeTab</a> ()</td></tr>
+<tr class="memitem:ae0c875e05ffecdfb2069bf4e8b7e8cf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#ae0c875e05ffecdfb2069bf4e8b7e8cf0">closeOtherTabs</a> ()</td></tr>
+<tr class="memitem:adae9c2f3145a1b801f1c0048adb38692"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#adae9c2f3145a1b801f1c0048adb38692">reloadTab</a> ()</td></tr>
+<tr class="memitem:a44af771c72ac4535e7190726aa258d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a44af771c72ac4535e7190726aa258d45">contextMenuRequested</a> (const QPoint &amp;position)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a58b28ab137c40aabd05c53f1806e8cc4"><td class="memItemLeft" align="right" valign="top">QList&lt; QShortcut * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a58b28ab137c40aabd05c53f1806e8cc4">mTabShortcuts</a></td></tr>
+<tr class="memitem:a1dcd11e5b261f446c4de9d666afabc25"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -167,7 +183,7 @@ Friends</h2></td></tr>
 <div class="line">    setContextMenuPolicy(Qt::CustomContextMenu);</div>
 <div class="line">    setAcceptDrops(<span class="keyword">true</span>);</div>
 <div class="line">    connect(<span class="keyword">this</span>, SIGNAL(customContextMenuRequested(<span class="keyword">const</span> QPoint &amp;)),</div>
-<div class="line">            <span class="keyword">this</span>, SLOT(contextMenuRequested(<span class="keyword">const</span> QPoint &amp;)));</div>
+<div class="line">            <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a44af771c72ac4535e7190726aa258d45">contextMenuRequested</a>(<span class="keyword">const</span> QPoint &amp;)));</div>
 <div class="line"></div>
 <div class="line">    QString alt = QLatin1String(<span class="stringliteral">&quot;Alt+%1&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 10; ++i) {</div>
@@ -175,11 +191,11 @@ Friends</h2></td></tr>
 <div class="line">        <span class="keywordflow">if</span> (key == 10)</div>
 <div class="line">            key = 0;</div>
 <div class="line">        QShortcut *shortCut = <span class="keyword">new</span> QShortcut(alt.arg(key), <span class="keyword">this</span>);</div>
-<div class="line">        mTabShortcuts.append(shortCut);</div>
-<div class="line">        connect(shortCut, SIGNAL(activated()), <span class="keyword">this</span>, SLOT(selectTabAction()));</div>
+<div class="line">        <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a58b28ab137c40aabd05c53f1806e8cc4">mTabShortcuts</a>.append(shortCut);</div>
+<div class="line">        connect(shortCut, SIGNAL(activated()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a98cdbdc8e668461e38c5348e01e32173">selectTabAction</a>()));</div>
 <div class="line">    }</div>
 <div class="line">    setTabsClosable(<span class="keyword">true</span>);</div>
-<div class="line">    connect(<span class="keyword">this</span>, SIGNAL(tabCloseRequested(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a96559d2e7ede50a3a99fce8f8b80f362">closeTab</a>(<span class="keywordtype">int</span>)));</div>
+<div class="line">    connect(<span class="keyword">this</span>, SIGNAL(tabCloseRequested(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a2bbec06145b9ab481e461c4fd05b87be">closeTab</a>(<span class="keywordtype">int</span>)));</div>
 <div class="line">    setSelectionBehaviorOnRemove(QTabBar::SelectPreviousTab);</div>
 <div class="line">    setMovable(<span class="keyword">true</span>);</div>
 <div class="line">    setDocumentMode(<span class="keyword">false</span>);</div>
@@ -196,7 +212,7 @@ Friends</h2></td></tr>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a059a3b50612d69cebed1c5ba1b2392eb_cgraph.svg" width="366" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a059a3b50612d69cebed1c5ba1b2392eb_cgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -227,6 +243,44 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a655f9bc950435775e49bd604a09e586f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBTabBar::cloneTab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
+<div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
+<div class="line">        emit <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a655f9bc950435775e49bd604a09e586f">cloneTab</a>(index);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a655f9bc950435775e49bd604a09e586f_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="af37300f578c8205d5023e249ef9a1b16"></a>
 <div class="memitem">
 <div class="memproto">
@@ -248,6 +302,44 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae0c875e05ffecdfb2069bf4e8b7e8cf0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBTabBar::closeOtherTabs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
+<div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
+<div class="line">        emit <a class="code" href="../../df/d78/class_w_b_tab_bar.html#ae0c875e05ffecdfb2069bf4e8b7e8cf0">closeOtherTabs</a>(index);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_ae0c875e05ffecdfb2069bf4e8b7e8cf0_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -273,12 +365,110 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a96559d2e7ede50a3a99fce8f8b80f362_icgraph.svg" width="366" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<a class="anchor" id="a2bbec06145b9ab481e461c4fd05b87be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBTabBar::closeTab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
+<div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
+<div class="line">        emit <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a2bbec06145b9ab481e461c4fd05b87be">closeTab</a>(index);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a2bbec06145b9ab481e461c4fd05b87be_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a44af771c72ac4535e7190726aa258d45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBTabBar::contextMenuRequested </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QMenu menu;</div>
+<div class="line">    menu.addAction(tr(<span class="stringliteral">&quot;New &amp;Tab&quot;</span>), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a845c426f236cbd3bb419fed27aad66a6">newTab</a>()), QKeySequence::AddTab);</div>
+<div class="line">    <span class="keywordtype">int</span> index = tabAt(position);</div>
+<div class="line">    <span class="keywordflow">if</span> (-1 != index) {</div>
+<div class="line">        QAction *action = menu.addAction(tr(<span class="stringliteral">&quot;Clone Tab&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a655f9bc950435775e49bd604a09e586f">cloneTab</a>()));</div>
+<div class="line">        action-&gt;setData(index);</div>
+<div class="line"></div>
+<div class="line">        menu.addSeparator();</div>
+<div class="line"></div>
+<div class="line">        action = menu.addAction(tr(<span class="stringliteral">&quot;&amp;Close Tab&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#a2bbec06145b9ab481e461c4fd05b87be">closeTab</a>()), QKeySequence::Close);</div>
+<div class="line">        action-&gt;setData(index);</div>
+<div class="line"></div>
+<div class="line">        action = menu.addAction(tr(<span class="stringliteral">&quot;Close &amp;Other Tabs&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#ae0c875e05ffecdfb2069bf4e8b7e8cf0">closeOtherTabs</a>()));</div>
+<div class="line">        action-&gt;setData(index);</div>
+<div class="line"></div>
+<div class="line">        menu.addSeparator();</div>
+<div class="line"></div>
+<div class="line">        action = menu.addAction(tr(<span class="stringliteral">&quot;Reload Tab&quot;</span>), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#adae9c2f3145a1b801f1c0048adb38692">reloadTab</a>()), QKeySequence::Refresh);</div>
+<div class="line">        action-&gt;setData(index);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">        menu.addSeparator();</div>
+<div class="line">    }</div>
+<div class="line">    menu.addAction(tr(<span class="stringliteral">&quot;Reload All Tabs&quot;</span>), <span class="keyword">this</span>, SIGNAL(<a class="code" href="../../df/d78/class_w_b_tab_bar.html#aaceefa56d0cdda0cf37a72a61e200057">reloadAllTabs</a>()));</div>
+<div class="line">    menu.exec(QCursor::pos());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a44af771c72ac4535e7190726aa258d45_cgraph.svg" width="478" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a44af771c72ac4535e7190726aa258d45_icgraph.svg" width="483" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -307,9 +497,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;buttons() == Qt::LeftButton) {</div>
-<div class="line">        <span class="keywordtype">int</span> diffX = <span class="keyword">event</span>-&gt;pos().x() - mDragStartPos.x();</div>
-<div class="line">        <span class="keywordtype">int</span> diffY = <span class="keyword">event</span>-&gt;pos().y() - mDragStartPos.y();</div>
-<div class="line">        <span class="keywordflow">if</span> ((event-&gt;pos() - mDragStartPos).manhattanLength() &gt; QApplication::startDragDistance()</div>
+<div class="line">        <span class="keywordtype">int</span> diffX = <span class="keyword">event</span>-&gt;pos().x() - <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a>.x();</div>
+<div class="line">        <span class="keywordtype">int</span> diffY = <span class="keyword">event</span>-&gt;pos().y() - <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a>.y();</div>
+<div class="line">        <span class="keywordflow">if</span> ((event-&gt;pos() - <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a>).manhattanLength() &gt; QApplication::startDragDistance()</div>
 <div class="line">            &amp;&amp; diffX &lt; 3 &amp;&amp; diffX &gt; -3</div>
 <div class="line">            &amp;&amp; diffY &lt; -10) {</div>
 <div class="line">            QDrag *drag = <span class="keyword">new</span> QDrag(<span class="keyword">this</span>);</div>
@@ -353,7 +543,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span> (event-&gt;button() == Qt::LeftButton)</div>
-<div class="line">        mDragStartPos = event-&gt;pos();</div>
+<div class="line">        <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a1dcd11e5b261f446c4de9d666afabc25">mDragStartPos</a> = event-&gt;pos();</div>
 <div class="line">    <a class="code" href="../../df/d78/class_w_b_tab_bar.html#ad4092ce74bc8f0978b4577fdbfa0e8c8">QTabBar::mousePressEvent</a>(event);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -380,6 +570,15 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a845c426f236cbd3bb419fed27aad66a6_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aaceefa56d0cdda0cf37a72a61e200057"></a>
@@ -402,6 +601,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_aaceefa56d0cdda0cf37a72a61e200057_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -426,6 +634,84 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adae9c2f3145a1b801f1c0048adb38692"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBTabBar::reloadTab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (QAction *action = qobject_cast&lt;QAction*&gt;(sender())) {</div>
+<div class="line">        <span class="keywordtype">int</span> index = action-&gt;data().toInt();</div>
+<div class="line">        emit <a class="code" href="../../df/d78/class_w_b_tab_bar.html#adae9c2f3145a1b801f1c0048adb38692">reloadTab</a>(index);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_adae9c2f3145a1b801f1c0048adb38692_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a98cdbdc8e668461e38c5348e01e32173"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WBTabBar::selectTabAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (QShortcut *shortCut = qobject_cast&lt;QShortcut*&gt;(sender())) {</div>
+<div class="line">        <span class="keywordtype">int</span> index = <a class="code" href="../../df/d78/class_w_b_tab_bar.html#a58b28ab137c40aabd05c53f1806e8cc4">mTabShortcuts</a>.indexOf(shortCut);</div>
+<div class="line">        <span class="keywordflow">if</span> (index == 0)</div>
+<div class="line">            index = 10;</div>
+<div class="line">        setCurrentIndex(index);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d78/class_w_b_tab_bar_a98cdbdc8e668461e38c5348e01e32173_icgraph.svg" width="408" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -484,9 +770,50 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a1dcd11e5b261f446c4de9d666afabc25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint WBTabBar::mDragStartPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a58b28ab137c40aabd05c53f1806e8cc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QShortcut*&gt; WBTabBar::mTabShortcuts</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a></li>
-<li>Sankore-3.1/src/web/browser/<a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp.html">WBTabWidget.cpp</a></li>
+<li><a class="el" href="../../d7/ded/_w_b_tab_widget_8h_source.html">WBTabWidget.h</a></li>
+<li><a class="el" href="../../d2/dee/_w_b_tab_widget_8cpp.html">WBTabWidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -494,7 +821,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d78/class_w_b_tab_bar.html">WBTabBar</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:09:00 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:11 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>

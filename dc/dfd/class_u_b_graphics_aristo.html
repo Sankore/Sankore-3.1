@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('dc/dfd/class_u_b_graphics_aristo.html'
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d1/d3a/class_u_b_graphics_aristo-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UBGraphicsAristo Class Reference</div>  </div>
@@ -211,6 +214,45 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa2d644906d0527ecd64ef9d8aceed6c4 inherit pro_methods_class_u_b_abstract_draw_ruler"><td class="memItemLeft" align="right" valign="top">QFont&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#aa2d644906d0527ecd64ef9d8aceed6c4">font</a> () const </td></tr>
 <tr class="inherit_header pro_methods_class_u_b_item"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_u_b_item')"><img src="../../closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="../../d8/d1e/class_u_b_item.html">UBItem</a></td></tr>
 <tr class="memitem:a8c38f2d78945907ece6dc5a585d7aa13 inherit pro_methods_class_u_b_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1e/class_u_b_item.html#a8c38f2d78945907ece6dc5a585d7aa13">UBItem</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad006b5fed8f2c43b56ea92ac2e4b79e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6">Tool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad006b5fed8f2c43b56ea92ac2e4b79e9">toolFromPos</a> (QPointF pos)</td></tr>
+<tr class="memitem:a1b65a27220d2b0346e939ae16c82fcf1"><td class="memItemLeft" align="right" valign="top">QTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a1b65a27220d2b0346e939ae16c82fcf1">calculateRotationTransform</a> ()</td></tr>
+<tr class="memitem:ad9f0d95c05391c8121a347c093417941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad9f0d95c05391c8121a347c093417941">rotateAroundCenter</a> (QTransform &amp;transform, QPointF center)</td></tr>
+<tr class="memitem:a0c9c02f6def84f9081058f272bc7b552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0c9c02f6def84f9081058f272bc7b552">calculatePoints</a> (QRectF bounds)</td></tr>
+<tr class="memitem:a79daf11caf4585b9e56dc5d568d37ff2"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a79daf11caf4585b9e56dc5d568d37ff2">determinePath</a> ()</td></tr>
+<tr class="memitem:a1c80b7954e2c8e1f0e9f1a17c55e9b07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a1c80b7954e2c8e1f0e9f1a17c55e9b07">setItemsPos</a> ()</td></tr>
+<tr class="memitem:a04d14a2d90f2efe176ad54793aa407fb"><td class="memItemLeft" align="right" valign="top">QBrush&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a04d14a2d90f2efe176ad54793aa407fb">fillBrush</a> () const </td></tr>
+<tr class="memitem:afc6aae31a1c6139bd4b61e6ed18e14bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#afc6aae31a1c6139bd4b61e6ed18e14bc">paintGraduations</a> (QPainter *painter)</td></tr>
+<tr class="memitem:a58631286979bae2c6c08ad345a181c29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a58631286979bae2c6c08ad345a181c29">paintMarker</a> (QPainter *painter)</td></tr>
+<tr class="memitem:a579fcac57f441e629d500b77d81efd65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a579fcac57f441e629d500b77d81efd65">paintProtractorGraduations</a> (QPainter *painter)</td></tr>
+<tr class="memitem:a7653583726568f17f7ba69c7b85b2827"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7653583726568f17f7ba69c7b85b2827">paintRulerGraduations</a> (QPainter *painter)</td></tr>
+<tr class="memitem:a0cf39738306724e15929531a4988dd6b"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a> () const </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aed95950df1415e3f78388473f37a398f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a></td></tr>
+<tr class="memitem:a2bc18e367cd976881ae7ffcaea5420ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a></td></tr>
+<tr class="memitem:a9b31600be1ab67febe8d7efbf92e36b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a></td></tr>
+<tr class="memitem:a6fc7e2f6d0a65e112f8f939300ddce12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6">Orientation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a></td></tr>
+<tr class="memitem:a78bc79e98381367d6fd4f14be2a0cae1"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a></td></tr>
+<tr class="memitem:ad14220730637cb8e14bc10bb15ed5712"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a></td></tr>
+<tr class="memitem:a5ced47eb0a0bc433c7f949c253867a83"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a5ced47eb0a0bc433c7f949c253867a83">mStartAngle</a></td></tr>
+<tr class="memitem:acdc226eb6b95e552093c3810652b6243"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#acdc226eb6b95e552093c3810652b6243">mSpan</a></td></tr>
+<tr class="memitem:a85fe44d809fadbe7971d35bf777e189a"><td class="memItemLeft" align="right" valign="top">QGraphicsSvgItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a></td></tr>
+<tr class="memitem:a0463970a02532faee5153ca168174d21"><td class="memItemLeft" align="right" valign="top">QGraphicsSvgItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a></td></tr>
+<tr class="memitem:a635904f494e3207ed426ecf0f7c9c545"><td class="memItemLeft" align="right" valign="top">QGraphicsSvgItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a></td></tr>
+<tr class="memitem:a775fb1e95cc2fb69622199a14b9b5644"><td class="memItemLeft" align="right" valign="top">QGraphicsSvgItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a></td></tr>
+<tr class="memitem:a3df7ec86d7615410bfab5688287b98eb"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a></td></tr>
+<tr class="memitem:ac630a6f4bf90ea9161053d06e3a39bc9"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a></td></tr>
+<tr class="memitem:ab6c5afb184295cf806e622c4ce18d479"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a576aa01ea67d8867c9387c29c8b17b16"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a576aa01ea67d8867c9387c29c8b17b16">sArcAngleMargin</a> = 5</td></tr>
+<tr class="memitem:ac6b5824421237362bd71be8f601e9f8c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6">Orientation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac6b5824421237362bd71be8f601e9f8c">sDefaultOrientation</a> = <a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">UBGraphicsAristo::Top</a></td></tr>
+<tr class="memitem:a0faf777f20c129dea6fb00c9443fc209"><td class="memItemLeft" align="right" valign="top">static const QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0faf777f20c129dea6fb00c9443fc209">sDefaultRect</a> = QRectF(0, 0, 800, 500)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -343,41 +385,41 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">    : <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a6f99fdef144a55e29b3778c5c15b58ee">UBAbstractDrawRuler</a>()</div>
 <div class="line">    , QGraphicsPathItem()</div>
-<div class="line">    , mMarking(<span class="keyword">false</span>)</div>
-<div class="line">    , mResizing(<span class="keyword">false</span>)</div>
-<div class="line">    , mRotating(<span class="keyword">false</span>)</div>
-<div class="line">    , mOrientation(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6aa2cbc32c34499eea63ef68ee4d9b5712">Undefined</a>)</div>
-<div class="line">    , mRotatedAngle(0)</div>
-<div class="line">    , mMarkerAngle(0)</div>
-<div class="line">    , mStartAngle(0)</div>
-<div class="line">    , mSpan(180)</div>
-<div class="line">    , mHFlipSvgItem(0)</div>
-<div class="line">    , mMarkerSvgItem(0)</div>
-<div class="line">    , mResizeSvgItem(0)</div>
-<div class="line">    , mRotateSvgItem(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a>(<span class="keyword">false</span>)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6aa2cbc32c34499eea63ef68ee4d9b5712">Undefined</a>)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a5ced47eb0a0bc433c7f949c253867a83">mStartAngle</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#acdc226eb6b95e552093c3810652b6243">mSpan</a>(180)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>(0)</div>
+<div class="line">    , <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>(0)</div>
 <div class="line">{</div>
-<div class="line">    mHFlipSvgItem = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/vflipTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line">    mHFlipSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line">    mHFlipSvgItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a> = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/vflipTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"></div>
-<div class="line">    mResizeSvgItem = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/resizeTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line">    mResizeSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line">    mResizeSvgItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a> = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/resizeTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"></div>
-<div class="line">    mRotateSvgItem = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/rotateTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line">    mRotateSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line">    mRotateSvgItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a> = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/rotateTool.svg&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76ab96e374be4d9beaa4679165e7f9bcba1">UBItemLayerType::Control</a>));</div>
 <div class="line"></div>
-<div class="line">    mMarkerSvgItem = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/angleMarker.svg&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line">    mMarkerSvgItem-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a6a39d921f91e17c4ac61cd4f28e98b2d">UBItemLayerType::Tool</a>));</div>
-<div class="line">    mMarkerSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a> = <span class="keyword">new</span> QGraphicsSvgItem(<span class="stringliteral">&quot;:/images/angleMarker.svg&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864ba2e41b0c7fe33a4d4ea2d3fa3be02ae15">UBGraphicsItemData::ItemLayerType</a>, QVariant(<a class="code" href="../../db/d30/struct_u_b_item_layer_type.html#ad19bfadfaeb8bac929f4db7eb33a0c76a6a39d921f91e17c4ac61cd4f28e98b2d">UBItemLayerType::Tool</a>));</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a24501e936a1663e81603fad843d9745d">create</a>(*<span class="keyword">this</span>);</div>
 <div class="line"></div>
 <div class="line">    setData(<a class="code" href="../../dc/dbe/struct_u_b_graphics_item_data.html#a25580b2117f348914ccb50e97700864bacbe7e8290ad84618c29310455744ee5b">UBGraphicsItemData::itemLayerType</a>, QVariant(<a class="code" href="../../dc/d14/structitem_layer_type.html#a94572e74aaa23902038cf97f28ec5a4da21f89658948604baf4c7b0c69cbd59bb">itemLayerType::CppTool</a>)); <span class="comment">//Necessary to set if we want z value to be assigned correctly</span></div>
 <div class="line">    setFlag(QGraphicsItem::ItemIsSelectable, <span class="keyword">false</span>);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3d30683ac4014ed9ea722d597cb65182">setOrientation</a>(sDefaultOrientation);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3d30683ac4014ed9ea722d597cb65182">setOrientation</a>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac6b5824421237362bd71be8f601e9f8c">sDefaultOrientation</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -385,7 +427,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a4577f1147d21cadecf59d9637dacfb6b_cgraph.svg" width="483" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a4577f1147d21cadecf59d9637dacfb6b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -427,6 +469,100 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2>Member Function Documentation</h2>
+<a class="anchor" id="a0c9c02f6def84f9081058f272bc7b552"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::calculatePoints </td>
+          <td>(</td>
+          <td class="paramtype">QRectF&#160;</td>
+          <td class="paramname"><em>bounds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="keywordflow">switch</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a>) {</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>:</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>.setX(bounds.center().x());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>.setY(bounds.bottom());</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.setX(bounds.left());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.setY(bounds.bottom() - bounds.width() / 2);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.setX(bounds.right());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.setY(bounds.bottom() - bounds.width() / 2);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>:</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>.setX(bounds.center().x());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>.setY(bounds.top());</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.setX(bounds.left());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.setY(bounds.top() + bounds.width() / 2);</div>
+<div class="line"></div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.setX(bounds.right());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.setY(bounds.top() + bounds.width() / 2);</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>:</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a1c80b7954e2c8e1f0e9f1a17c55e9b07">setItemsPos</a>();</div>
+<div class="line">    setPath(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a79daf11caf4585b9e56dc5d568d37ff2">determinePath</a>());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0c9c02f6def84f9081058f272bc7b552_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0c9c02f6def84f9081058f272bc7b552_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b65a27220d2b0346e939ae16c82fcf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTransform UBGraphicsAristo::calculateRotationTransform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0920748116645fa3f2e7f369c9ca005e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -450,18 +586,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a5398312ddd84af7dc66e18b4cb37a3fa">UBAbstractDrawRuler</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal y = radius() / 4 + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3a2030ef56785d9a7fcef713c3f1587c">hFlipRect</a>().height() + 3 + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae8f5828cbb7ea2e9eede89955541e2fb">rotateRect</a>().height() + 3;</div>
-<div class="line">    <span class="keywordflow">if</span> (mOrientation == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>)</div>
+<div class="line">    qreal y = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>() / 4 + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3a2030ef56785d9a7fcef713c3f1587c">hFlipRect</a>().height() + 3 + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae8f5828cbb7ea2e9eede89955541e2fb">rotateRect</a>().height() + 3;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>)</div>
 <div class="line">        y = -y;</div>
 <div class="line">    <span class="keywordflow">return</span> QRectF(- <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;boundingRect().width() / 2, y, <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;boundingRect().width(), <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;boundingRect().height());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0920748116645fa3f2e7f369c9ca005e_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0920748116645fa3f2e7f369c9ca005e_cgraph.svg" width="100%" height="384"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0920748116645fa3f2e7f369c9ca005e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -497,26 +642,26 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <span class="comment">/* TODO: copy all members */</span></div>
 <div class="line">        cp-&gt;setPos(this-&gt;pos());</div>
 <div class="line">        cp-&gt;setTransform(this-&gt;transform());</div>
-<div class="line">        cp-&gt;<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3d30683ac4014ed9ea722d597cb65182">setOrientation</a>(mOrientation);</div>
-<div class="line">        cp-&gt;mRotatedAngle = mRotatedAngle;</div>
-<div class="line">        cp-&gt;mMarkerAngle = mMarkerAngle;</div>
+<div class="line">        cp-&gt;<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3d30683ac4014ed9ea722d597cb65182">setOrientation</a>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a>);</div>
+<div class="line">        cp-&gt;<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a> = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a>;</div>
+<div class="line">        cp-&gt;<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_af67823d02c787d0f52b8955454a2bfa8_cgraph.svg" width="464" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_af67823d02c787d0f52b8955454a2bfa8_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_af67823d02c787d0f52b8955454a2bfa8_icgraph.svg" width="443" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -552,12 +697,101 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> copy;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a9139b4fed7604be23bd8cb429b12d54a_cgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a9139b4fed7604be23bd8cb429b12d54a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a79daf11caf4585b9e56dc5d568d37ff2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPainterPath UBGraphicsAristo::determinePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QPainterPath path;</div>
+<div class="line"></div>
+<div class="line">    QPolygonF polygon;</div>
+<div class="line">    polygon &lt;&lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a> &lt;&lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a> &lt;&lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>;</div>
+<div class="line"></div>
+<div class="line">    qreal rotationAngle = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> : <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> - 360 * (int)(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> / 360);</div>
+<div class="line">    QTransform t;</div>
+<div class="line">    t.rotate(rotationAngle);</div>
+<div class="line">    <span class="keywordtype">bool</span> markerIsInPolygon = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordflow">if</span> ((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> &amp;&amp; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> &lt; 90) || (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a> &amp;&amp; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> &lt; 270))</div>
+<div class="line">        markerIsInPolygon = polygon.containsPoint(t.map(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().topLeft()) + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>(), Qt::OddEvenFill);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        markerIsInPolygon = polygon.containsPoint(t.map(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().bottomLeft()) + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>(), Qt::OddEvenFill);</div>
+<div class="line"></div>
+<div class="line">    path.moveTo(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>);</div>
+<div class="line"></div>
+<div class="line">    QRectF mappedRect = t.mapRect(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>());</div>
+<div class="line">    path.lineTo(QPointF(mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).left(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y()));</div>
+<div class="line">    <span class="keywordflow">if</span> (!markerIsInPolygon) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>) {</div>
+<div class="line">            path.lineTo(QPointF(mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).left(), mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).bottom()));</div>
+<div class="line">            path.lineTo(QPointF(mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).right(), mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).bottom()));</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>) {</div>
+<div class="line">            path.lineTo(QPointF(mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).left(), mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).top()));</div>
+<div class="line">            path.lineTo(QPointF(mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).right(), mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).top()));</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    path.lineTo(QPointF(mappedRect.translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).right(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y()));</div>
+<div class="line"></div>
+<div class="line">    path.lineTo(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).left(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y()));</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>) {</div>
+<div class="line">        path.lineTo(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).left(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).bottom()));</div>
+<div class="line">        path.lineTo(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).right(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).bottom()));</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>) {</div>
+<div class="line">        path.lineTo(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).left(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).top()));</div>
+<div class="line">        path.lineTo(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).right(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).top()));</div>
+<div class="line">    }</div>
+<div class="line">    path.lineTo(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().translated(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).right(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y()));</div>
+<div class="line"></div>
+<div class="line">    path.lineTo(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>);</div>
+<div class="line">    path.lineTo(C);</div>
+<div class="line">    path.lineTo(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> path;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a79daf11caf4585b9e56dc5d568d37ff2_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a79daf11caf4585b9e56dc5d568d37ff2_icgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -616,11 +850,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">            <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;stylusTool() != <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9ae35495827e689e89f0d8710b1863fe0d">UBStylusTool::Marker</a>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a005f6581c02f86e19b1117d2ab9505d8_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -655,6 +889,57 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a04d14a2d90f2efe176ad54793aa407fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QBrush UBGraphicsAristo::fillBrush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    QColor fillColor = <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a5e31d81ff314da040fbdb744ebad5473">edgeFillColor</a>();<span class="comment">// scene()-&gt;isDarkBackground() ? sDarkBackgroundFillColor : sFillColor;</span></div>
+<div class="line">    QColor fillColorCenter = <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a36041ae344dcd157fb3b96f8ade6bdc5">middleFillColor</a>();<span class="comment">//scene()-&gt;isDarkBackground() ? sDarkBackgroundFillColorCenter : sFillColorCenter;</span></div>
+<div class="line">    QColor transparentWhite = Qt::white;</div>
+<div class="line">    transparentWhite.setAlpha(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae53a96ef8f69832958f5bd8ee1af7def">scene</a>()-&gt;isDarkBackground() ? <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a052023f4bc0064aa6b1cf72f4e8b1b87">sDrawTransparency</a> : <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#ac1c6c55d78cb6754791f657a8de5ef7e">sFillTransparency</a>);</div>
+<div class="line">    QRadialGradient radialGradient(boundingRect().center(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>(), boundingRect().center());</div>
+<div class="line">    radialGradient.setColorAt(0, fillColorCenter);</div>
+<div class="line">    radialGradient.setColorAt(1, fillColor);</div>
+<div class="line">    <span class="keywordflow">return</span> radialGradient;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a04d14a2d90f2efe176ad54793aa407fb_cgraph.svg" width="100%" height="474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a04d14a2d90f2efe176ad54793aa407fb_icgraph.svg" width="406" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a9585b440cea0b3f8372ee57bcb8ba8d8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -679,11 +964,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> Qt::ArrowCursor;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a9585b440cea0b3f8372ee57bcb8ba8d8_icgraph.svg" width="451" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -711,19 +996,28 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal y = radius() / 4;</div>
-<div class="line">    <span class="keywordflow">if</span> (mOrientation == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>)</div>
+<div class="line">    qreal y = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>() / 4;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>)</div>
 <div class="line">        y = -y;</div>
 <div class="line"></div>
-<div class="line">     <span class="keywordflow">return</span> QRectF(- mHFlipSvgItem-&gt;boundingRect().width() / 2, y, mHFlipSvgItem-&gt;boundingRect().width(), mHFlipSvgItem-&gt;boundingRect().height());</div>
+<div class="line">     <span class="keywordflow">return</span> QRectF(- <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;boundingRect().width() / 2, y, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;boundingRect().width(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;boundingRect().height());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a3a2030ef56785d9a7fcef713c3f1587c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a3a2030ef56785d9a7fcef713c3f1587c_cgraph.svg" width="422" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a3a2030ef56785d9a7fcef713c3f1587c_icgraph.svg" width="100%" height="531"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -755,12 +1049,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (currentTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>)  {</div>
 <div class="line">        <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a46299ed6a2cf838fdfc9e5927a0b4d4b">mShowButtons</a> = <span class="keyword">true</span>;</div>
-<div class="line">        mHFlipSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line">        mRotateSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line">        mResizeSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
 <div class="line">        <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">switch</span> (toolFromPos(event-&gt;pos())) {</div>
+<div class="line">        <span class="keywordflow">switch</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad006b5fed8f2c43b56ea92ac2e4b79e9">toolFromPos</a>(event-&gt;pos())) {</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6ad2612ce9b334b11435735e39acdd5436">HorizontalFlip</a>:</div>
 <div class="line">            setCursor(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9585b440cea0b3f8372ee57bcb8ba8d8">flipCursor</a>());</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -791,11 +1085,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_af0efa637a7053d42593a8e54a041bf3f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -826,21 +1120,21 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a46299ed6a2cf838fdfc9e5927a0b4d4b">mShowButtons</a> = <span class="keyword">false</span>;</div>
 <div class="line">    setCursor(Qt::ArrowCursor);</div>
-<div class="line">    mHFlipSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line">    mRotateSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line">    mResizeSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a9d2d10417806a2d7303df24b820f2ab3">UBDrawingController::drawingController</a>()-&gt;<a class="code" href="../../d0/d58/class_u_b_drawing_controller.html#a08b17daa8e837ad621058156d633c518">mActiveRuler</a> = NULL;</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0130bf4692fb924ebc15e6b1035dfca0_cgraph.svg" width="408" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0130bf4692fb924ebc15e6b1035dfca0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -873,12 +1167,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (currentTool == <a class="code" href="../../d4/dd7/struct_u_b_stylus_tool.html#acc3e432aa8846d2ec16c6c2d914ce9e9a68529751c1aec797cb07039723dc59b8">UBStylusTool::Selector</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a46299ed6a2cf838fdfc9e5927a0b4d4b">mShowButtons</a> = <span class="keyword">true</span>;</div>
-<div class="line">        mHFlipSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line">        mRotateSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line">        mResizeSvgItem-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
 <div class="line">        <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;setVisible(<span class="keyword">true</span>);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">switch</span> (toolFromPos(event-&gt;pos())) {</div>
+<div class="line">        <span class="keywordflow">switch</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad006b5fed8f2c43b56ea92ac2e4b79e9">toolFromPos</a>(event-&gt;pos())) {</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6ad2612ce9b334b11435735e39acdd5436">HorizontalFlip</a>:</div>
 <div class="line">            setCursor(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9585b440cea0b3f8372ee57bcb8ba8d8">flipCursor</a>());</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -905,11 +1199,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a07eb72e705daa05c9a5bcbf6baa3b914_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -937,10 +1231,28 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal y = - mMarkerSvgItem-&gt;boundingRect().height()/2;</div>
-<div class="line">    <span class="keywordflow">return</span> QRectF (radius()/2 - mMarkerSvgItem-&gt;boundingRect().width(), y, mMarkerSvgItem-&gt;boundingRect().width(), mMarkerSvgItem-&gt;boundingRect().height());</div>
+<div class="line">    qreal y = - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;boundingRect().height()/2;</div>
+<div class="line">    <span class="keywordflow">return</span> QRectF (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>()/2 - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;boundingRect().width(), y, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;boundingRect().width(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;boundingRect().height());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a7ff325c889d34aeaaa285a5e4c4c5efd_cgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a7ff325c889d34aeaaa285a5e4c4c5efd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a8ed657442889f6b2c48712277c2791ee"></a>
@@ -967,11 +1279,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> Qt::ArrowCursor;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a8ed657442889f6b2c48712277c2791ee_icgraph.svg" width="435" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1001,7 +1313,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (!mResizing &amp;&amp; !mRotating &amp;&amp; !mMarking)</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a> &amp;&amp; !<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a> &amp;&amp; !<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab97120a624364cbe109c1a0194b7e3b1">QGraphicsItem::mouseMoveEvent</a>(event);</div>
 <div class="line">    }</div>
@@ -1010,31 +1322,31 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        QLineF currentLine(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>(), event-&gt;pos());</div>
 <div class="line">        QLineF lastLine(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>(), event-&gt;lastPos());</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (mRotating) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a>) {</div>
 <div class="line">            </div>
 <div class="line">            <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775e8bff5ff03371f9b6b1769277245e">rotateAroundCenter</a>(currentLine.angleTo(lastLine));</div>
 <div class="line">        }</div>
-<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mResizing) {</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a>) {</div>
 <div class="line">            QPointF delta = <span class="keyword">event</span>-&gt;pos() - <span class="keyword">event</span>-&gt;lastPos();</div>
-<div class="line">            calculatePoints(QRectF(boundingRect().topLeft(), QSizeF(boundingRect().width() + delta.x(), boundingRect().height() + delta.x())));</div>
+<div class="line">            <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0c9c02f6def84f9081058f272bc7b552">calculatePoints</a>(QRectF(boundingRect().topLeft(), QSizeF(boundingRect().width() + delta.x(), boundingRect().height() + delta.x())));</div>
 <div class="line">        }</div>
-<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mMarking) {</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a>) {</div>
 <div class="line">            qreal angle = currentLine.angleTo(lastLine);</div>
 <div class="line"></div>
-<div class="line">            mMarkerAngle += angle;</div>
-<div class="line">            mMarkerAngle -= (int)(mMarkerAngle/360)*360;</div>
+<div class="line">            <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> += angle;</div>
+<div class="line">            <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> -= (int)(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>/360)*360;</div>
 <div class="line"></div>
-<div class="line">            <span class="keywordflow">if</span> (mOrientation == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>) {</div>
-<div class="line">                <span class="keywordflow">if</span> (mMarkerAngle &gt;= 270)</div>
-<div class="line">                    mMarkerAngle = 0;</div>
-<div class="line">                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mMarkerAngle &gt; 180)</div>
-<div class="line">                    mMarkerAngle = 180;</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>) {</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> &gt;= 270)</div>
+<div class="line">                    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> = 0;</div>
+<div class="line">                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> &gt; 180)</div>
+<div class="line">                    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> = 180;</div>
 <div class="line">            }</div>
-<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mOrientation == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>) {</div>
-<div class="line">                <span class="keywordflow">if</span> (mMarkerAngle &lt; 90)</div>
-<div class="line">                    mMarkerAngle = 360;</div>
-<div class="line">                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mMarkerAngle &lt; 180)</div>
-<div class="line">                    mMarkerAngle = 180;</div>
+<div class="line">            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>) {</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> &lt; 90)</div>
+<div class="line">                    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> = 360;</div>
+<div class="line">                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> &lt; 180)</div>
+<div class="line">                    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> = 180;</div>
 <div class="line">            }</div>
 <div class="line">            update();</div>
 <div class="line">        }</div>
@@ -1043,12 +1355,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ab97120a624364cbe109c1a0194b7e3b1_cgraph.svg" width="662" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ab97120a624364cbe109c1a0194b7e3b1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1076,17 +1388,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">switch</span> (toolFromPos(event-&gt;pos())) {</div>
+<div class="line">    <span class="keywordflow">switch</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad006b5fed8f2c43b56ea92ac2e4b79e9">toolFromPos</a>(event-&gt;pos())) {</div>
 <div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6aabb3692d745e909e31a699876ee4906f">Rotate</a>:</div>
-<div class="line">        mRotating = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a> = <span class="keyword">true</span>;</div>
 <div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6ad75b65cda1ccbca48d97e108f3a1a39c">Resize</a>:</div>
-<div class="line">        mResizing = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a> = <span class="keyword">true</span>;</div>
 <div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6a7a3ba7ef9610450fde2a71cfc35da5fd">MoveMarker</a>:</div>
-<div class="line">        mMarking = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a> = <span class="keyword">true</span>;</div>
 <div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    <span class="keywordflow">default</span>:</div>
@@ -1095,13 +1407,22 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a46299ed6a2cf838fdfc9e5927a0b4d4b">mShowButtons</a> = <span class="keyword">false</span>;</div>
-<div class="line">    mHFlipSvgItem-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
 <div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line">    mRotateSvgItem-&gt;setVisible(mRotating);</div>
-<div class="line">    mResizeSvgItem-&gt;setVisible(mResizing);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setVisible(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setVisible(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a>);</div>
 <div class="line">    update();</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a1de606930da513b9da811584642489fe_cgraph.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a10e21b4981c8b19255c6e7ff4f64b6a8"></a>
@@ -1126,25 +1447,25 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (mResizing || mRotating || mMarking)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a> || <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a> || <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (mMarking)</div>
-<div class="line">            setPath(determinePath());</div>
-<div class="line">        mResizing = <span class="keyword">false</span>;</div>
-<div class="line">        mRotating = <span class="keyword">false</span>;</div>
-<div class="line">        mMarking = <span class="keyword">false</span>;</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a>)</div>
+<div class="line">            setPath(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a79daf11caf4585b9e56dc5d568d37ff2">determinePath</a>());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2bc18e367cd976881ae7ffcaea5420ee">mResizing</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a9b31600be1ab67febe8d7efbf92e36b8">mRotating</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#aed95950df1415e3f78388473f37a398f">mMarking</a> = <span class="keyword">false</span>;</div>
 <div class="line">        <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">switch</span> (toolFromPos(event-&gt;pos())) {</div>
+<div class="line">        <span class="keywordflow">switch</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad006b5fed8f2c43b56ea92ac2e4b79e9">toolFromPos</a>(event-&gt;pos())) {</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6a58b069ce567f6254e3fb720d46733d94">Close</a> :</div>
 <div class="line">            hide();</div>
 <div class="line">            emit <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a4115b2260e92b3da0529278ef89a1560">hidden</a>();</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6ad2612ce9b334b11435735e39acdd5436">HorizontalFlip</a>:            </div>
 <div class="line">            <span class="comment">/* setting new orientation */</span></div>
-<div class="line">            <span class="keywordflow">switch</span>(mOrientation) {</div>
+<div class="line">            <span class="keywordflow">switch</span>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a>) {</div>
 <div class="line">            <span class="keywordflow">case</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>:</div>
 <div class="line">                <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3d30683ac4014ed9ea722d597cb65182">setOrientation</a>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
@@ -1166,12 +1487,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae53a96ef8f69832958f5bd8ee1af7def">scene</a>()-&gt;<a class="code" href="../../d3/db1/class_u_b_core_graphics_scene.html#ad92b735788dc8e172f091a13e899b783">setModified</a>(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a10e21b4981c8b19255c6e7ff4f64b6a8_cgraph.svg" width="499" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a10e21b4981c8b19255c6e7ff4f64b6a8_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1217,23 +1538,440 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    QPolygonF polygon;</div>
 <div class="line"></div>
-<div class="line">    painter-&gt;setBrush(fillBrush());</div>
+<div class="line">    painter-&gt;setBrush(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a04d14a2d90f2efe176ad54793aa407fb">fillBrush</a>());</div>
 <div class="line">    painter-&gt;setPen(<a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#af1700f03c5581a7619a96eb90fcc9709">drawColor</a>());</div>
 <div class="line"></div>
-<div class="line">    polygon &lt;&lt; A &lt;&lt; B &lt;&lt; C;</div>
+<div class="line">    polygon &lt;&lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a> &lt;&lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a> &lt;&lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>;</div>
 <div class="line">    painter-&gt;drawPolygon(polygon);</div>
 <div class="line">    polygon.clear();</div>
 <div class="line"></div>
-<div class="line">    paintGraduations(painter);</div>
-<div class="line">    paintMarker(painter);    </div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#afc6aae31a1c6139bd4b61e6ed18e14bc">paintGraduations</a>(painter);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a58631286979bae2c6c08ad345a181c29">paintMarker</a>(painter);    </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_aa4bcaa89d15302de155cb71c00b59c8d_cgraph.svg" width="667" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_aa4bcaa89d15302de155cb71c00b59c8d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afc6aae31a1c6139bd4b61e6ed18e14bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::paintGraduations </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7653583726568f17f7ba69c7b85b2827">paintRulerGraduations</a>(painter);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a579fcac57f441e629d500b77d81efd65">paintProtractorGraduations</a>(painter);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_afc6aae31a1c6139bd4b61e6ed18e14bc_cgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_afc6aae31a1c6139bd4b61e6ed18e14bc_icgraph.svg" width="456" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a58631286979bae2c6c08ad345a181c29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::paintMarker </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">/* adjusting marker button */</span></div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;resetTransform();</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;translate(-<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().left(), -<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().top());</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;rotate(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>);</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;translate(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().left(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().top());</div>
+<div class="line"></div>
+<div class="line">    </div>
+<div class="line">    qreal co = cos((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>) * <a class="code" href="../../d4/d4e/_u_b_c_f_f_constants_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/180);</div>
+<div class="line">    qreal si = sin((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>) * <a class="code" href="../../d4/d4e/_u_b_c_f_f_constants_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/180);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Setting point composing the line (from point C) which intersects the line we want to draw. */</span></div>
+<div class="line">    QPointF referencePoint;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> % 360 &lt; 90)</div>
+<div class="line">            referencePoint = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            referencePoint = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> % 360 &lt; 270 &amp;&amp; (<span class="keywordtype">int</span>)<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> % 360 &gt; 0)</div>
+<div class="line">            referencePoint = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            referencePoint = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">/* getting intersection point to draw the wanted line */</span></div>
+<div class="line">    QLineF intersectedLine(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>(), QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x()+co, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y()+si)); </div>
+<div class="line">    QPointF intersectionPoint;</div>
+<div class="line">    <span class="keywordflow">if</span> (intersectedLine.intersect(QLineF(referencePoint, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>), &amp;intersectionPoint))</div>
+<div class="line">        painter-&gt;drawLine(QLineF(intersectionPoint, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()));</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* drawing angle value */</span></div>
+<div class="line">    qreal rightAngle = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> : 360 - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    QString angleText = QString(<span class="stringliteral">&quot;%1°&quot;</span>).arg(rightAngle, 0, <span class="charliteral">&#39;f&#39;</span>, 1);</div>
+<div class="line"></div>
+<div class="line">    QFont font1 = painter-&gt;font();</div>
+<div class="line"><span class="preprocessor">#ifdef Q_WS_MAC</span></div>
+<div class="line"><span class="preprocessor"></span>    font1.setPointSizeF(font1.pointSizeF() - 3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="preprocessor"></span>    QFontMetricsF fm1(font1);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a>)</div>
+<div class="line">        painter-&gt;drawText(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - fm1.width(angleText)/2 - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>()/8, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>()/8 - fm1.height()/2, fm1.width(angleText), fm1.height(), Qt::AlignCenter, angleText);</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        painter-&gt;drawText(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - fm1.width(angleText)/2 - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>()/8, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y() - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>()/8 - fm1.height()/2, fm1.width(angleText), fm1.height(), Qt::AlignCenter, angleText);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a58631286979bae2c6c08ad345a181c29_cgraph.svg" width="659" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a58631286979bae2c6c08ad345a181c29_icgraph.svg" width="424" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a579fcac57f441e629d500b77d81efd65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::paintProtractorGraduations </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">/* defining useful constants */</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span>  tenDegreeGraduationLength = 15;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> fiveDegreeGraduationLength = 10;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span>  oneDegreeGraduationLength = 5;</div>
+<div class="line"></div>
+<div class="line">    painter-&gt;save();</div>
+<div class="line"></div>
+<div class="line">    QFont font1 = painter-&gt;font();</div>
+<div class="line"><span class="preprocessor">#ifdef Q_WS_MAC</span></div>
+<div class="line"><span class="preprocessor"></span>    font1.setPointSizeF(font1.pointSizeF() - 3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="preprocessor"></span>    QFontMetricsF fm1(font1);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//Font for internal arc</span></div>
+<div class="line">    QFont font2 = painter-&gt;font();</div>
+<div class="line">    font2.setPointSizeF(font1.pointSizeF()/1.5);</div>
+<div class="line">    QFontMetricsF fm2(font2);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* defining virtual arc diameter */</span></div>
+<div class="line">    qreal rad = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>();</div>
+<div class="line"></div>
+<div class="line">    QPointF center = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* browsing angles */</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> angle = 1; angle &lt; <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#acdc226eb6b95e552093c3810652b6243">mSpan</a>; angle++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordtype">int</span> graduationLength = (0 == angle % 10) ? tenDegreeGraduationLength : ((0 == angle % 5) ? fiveDegreeGraduationLength : oneDegreeGraduationLength);</div>
+<div class="line">        </div>
+<div class="line">        qreal co = cos(((qreal)angle + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a5ced47eb0a0bc433c7f949c253867a83">mStartAngle</a>) * <a class="code" href="../../d4/d4e/_u_b_c_f_f_constants_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/180);</div>
+<div class="line">        qreal si = sin(((qreal)angle + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a5ced47eb0a0bc433c7f949c253867a83">mStartAngle</a>) * <a class="code" href="../../d4/d4e/_u_b_c_f_f_constants_8h.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/180);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* inverse sinus according to the orientation, to draw graduations on the polygon */</span></div>
+<div class="line">        si = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? -si : si;</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* drawing the graduation around the virtual arc */</span></div>
+<div class="line">        <span class="keywordflow">if</span> (angle &gt;= <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a576aa01ea67d8867c9387c29c8b17b16">sArcAngleMargin</a> &amp;&amp; angle &lt;= mSpan - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a576aa01ea67d8867c9387c29c8b17b16">sArcAngleMargin</a>)</div>
+<div class="line">            painter-&gt;drawLine(QLineF(QPointF(center.x()+ rad/2*co, center.y() - rad/2*si),</div>
+<div class="line">                                    QPointF(center.x()+ (rad/2 + graduationLength)*co,</div>
+<div class="line">                                            center.y() - (rad/2 + graduationLength)*si)));</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">        QPointF intersectionPoint;</div>
+<div class="line">        QLineF referenceLine;</div>
+<div class="line">        <span class="keywordflow">if</span> (angle &lt; 90)</div>
+<div class="line">            referenceLine.setP1(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>);</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            referenceLine.setP1(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>);</div>
+<div class="line">        referenceLine.setP2(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* if angle is 10-multiple, drawing it&#39;s value, rotated to be easily red */</span></div>
+<div class="line">        <span class="keywordflow">if</span> (0 == angle % 10) {</div>
+<div class="line">            QString grad = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((<span class="keywordtype">int</span>)(angle));</div>
+<div class="line">            QString grad2 = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((<span class="keywordtype">int</span>)mSpan - angle);</div>
+<div class="line"></div>
+<div class="line">            painter-&gt;setFont(font2);</div>
+<div class="line"></div>
+<div class="line">            painter-&gt;save();</div>
+<div class="line">            painter-&gt;translate(center.x() + (rad/2 + graduationLength*1.5)*co, center.y() - (rad/2 + graduationLength*1.5)*si);</div>
+<div class="line">            <span class="keywordtype">int</span> degrees = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? angle : -angle;</div>
+<div class="line">            painter-&gt;rotate(-90 + degrees);</div>
+<div class="line">            painter-&gt;drawText(- fm2.width(grad)/2, - fm2.height()/2, fm2.width(grad), fm2.height(), Qt::AlignCenter, grad);</div>
+<div class="line">            painter-&gt;restore();</div>
+<div class="line"></div>
+<div class="line">            painter-&gt;setFont(font1);</div>
+<div class="line"></div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">/* drawing the graduation near tool&#39;s side */</span></div>
+<div class="line">            <span class="keywordflow">if</span> (QLineF(QPointF(center.x()+ rad/2*co, center.y() - rad/2*si),</div>
+<div class="line">                                     QPointF(center.x()+ (rad/2 + graduationLength)*co,</div>
+<div class="line">                                             center.y() - (rad/2 + graduationLength)*si)).intersect(referenceLine, &amp;intersectionPoint) == QLineF::UnboundedIntersection)</div>
+<div class="line"></div>
+<div class="line">                painter-&gt;drawLine(QLineF(QPointF(center.x() + (rad/2 + graduationLength*1.5 + fm2.width(grad)/2)*co,</div>
+<div class="line">                                                 center.y() - (rad/2 + graduationLength*1.5 + fm2.height()/2)*si),</div>
+<div class="line">                                        intersectionPoint));</div>
+<div class="line"></div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* drawing the graduation near tool&#39;s side */</span></div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            <span class="keywordflow">if</span> (QLineF(QPointF(center.x()+ rad/2*co, center.y() - rad/2*si),</div>
+<div class="line">                                     QPointF(center.x()+ (rad/2 + graduationLength)*co,</div>
+<div class="line">                                             center.y() - (rad/2 + graduationLength)*si)).intersect(referenceLine, &amp;intersectionPoint) == QLineF::UnboundedIntersection)</div>
+<div class="line"></div>
+<div class="line">                painter-&gt;drawLine(QLineF(QPointF(intersectionPoint.x() - (graduationLength*1.5)*co,</div>
+<div class="line">                                                 intersectionPoint.y() + (graduationLength*1.5)*si),</div>
+<div class="line">                                        intersectionPoint));</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    painter-&gt;restore();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a579fcac57f441e629d500b77d81efd65_cgraph.svg" width="459" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a579fcac57f441e629d500b77d81efd65_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7653583726568f17f7ba69c7b85b2827"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::paintRulerGraduations </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <span class="comment">/* defining useful constants */</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> centimeterGraduationHeight = 15;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> halfCentimeterGraduationHeight = 10;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> millimeterGraduationHeight = 5;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> millimetersPerCentimeter = 10;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> millimetersPerHalfCentimeter = 5;</div>
+<div class="line"></div>
+<div class="line">    painter-&gt;save();</div>
+<div class="line">    painter-&gt;setFont(<a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#aa2d644906d0527ecd64ef9d8aceed6c4">font</a>());</div>
+<div class="line">    QFontMetricsF fontMetrics(painter-&gt;font());</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Browsing milliters in half width of ruler side */</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> millimeters = 0; millimeters &lt; (boundingRect().width() / 2 - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a7462cd58ac10ab7911361ac63dd8cc81">sLeftEdgeMargin</a> - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#af6ab3c413950b0276b304a289116728e">sRoundingRadius</a>) / <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a>; millimeters++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">/* defining graduationHeight ; values are different to draw bigger lines if millimiter considered is a centimeter or a half centimeter */</span></div>
+<div class="line">        <span class="keywordtype">int</span> graduationHeight = (0 == millimeters % millimetersPerCentimeter) ?</div>
+<div class="line">            centimeterGraduationHeight :</div>
+<div class="line">            ((0 == millimeters % millimetersPerHalfCentimeter) ?</div>
+<div class="line">                halfCentimeterGraduationHeight : millimeterGraduationHeight);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* correcting graduationHeight: draw the line in the other direction in case ruler is top-oriented, to stay inside the tool and inside the rect */</span></div>
+<div class="line">        graduationHeight = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? graduationHeight : - graduationHeight;</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">/* drawing graduation to the left and to the right of origin, which is the center of graduated side */</span></div>
+<div class="line">        painter-&gt;drawLine(QLine(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() + <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() + <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y() + graduationHeight));</div>
+<div class="line">        <span class="keywordflow">if</span> (millimeters != 0)</div>
+<div class="line">            painter-&gt;drawLine(QLine(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y() + graduationHeight));</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">/* drawing associated value if considered graduation is a centimeter */</span></div>
+<div class="line">        <span class="keywordflow">if</span> (0 == millimeters % millimetersPerCentimeter)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">/* defining graduation value */</span></div>
+<div class="line">            QString text = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg((<span class="keywordtype">int</span>)(millimeters / millimetersPerCentimeter));</div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">/* staying inside polygon */</span></div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() + <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters + fontMetrics.width(text) / 2 &lt; boundingRect().right())</div>
+<div class="line">            {</div>
+<div class="line">                qreal textWidth = fontMetrics.width(text);</div>
+<div class="line">                qreal textHeight = fontMetrics.tightBoundingRect(text).height() + 5;</div>
+<div class="line">                </div>
+<div class="line">                <span class="comment">/* text y-coordinate is different according to tool&#39;s orientation */</span></div>
+<div class="line">                qreal textY = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y() + 5 + centimeterGraduationHeight : <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y() - 5 - centimeterGraduationHeight + graduationHeight;</div>
+<div class="line">                </div>
+<div class="line">                <span class="comment">/* if text&#39;s rect is not out of polygon&#39;s bounds, drawing value below or above graduation */</span></div>
+<div class="line">                QPointF intersectionPoint;</div>
+<div class="line">                </div>
+<div class="line">                <span class="keywordtype">bool</span> <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#ad8f49aa56a8dc14fb727f64f718a2ea2">paint</a> = <span class="keyword">false</span>;</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> &amp;&amp; QLineF(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters - textWidth / 2, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y()), QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters - textWidth / 2, textY + textHeight)).intersect(QLineF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>), &amp;intersectionPoint) != QLineF::BoundedIntersection &amp;&amp; QLineF(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters + textWidth / 2, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y()), QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters + textWidth / 2, textY + textHeight)).intersect(QLineF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>), &amp;intersectionPoint) != QLineF::BoundedIntersection) {</div>
+<div class="line">                    paint = <span class="keyword">true</span>;</div>
+<div class="line">                }</div>
+<div class="line">                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a> &amp;&amp; QLineF(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters - textWidth / 2, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y()), QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters - textWidth / 2, textY - textHeight)).intersect(QLineF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>), &amp;intersectionPoint) != QLineF::BoundedIntersection &amp;&amp; QLineF(QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters + textWidth / 2, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y()), QPointF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters + textWidth / 2, textY - textHeight)).intersect(QLineF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ab6c5afb184295cf806e622c4ce18d479">C</a>), &amp;intersectionPoint) != QLineF::BoundedIntersection) {</div>
+<div class="line">                    paint = <span class="keyword">true</span>;</div>
+<div class="line">                }</div>
+<div class="line"></div>
+<div class="line">                <span class="keywordflow">if</span> (paint) {</div>
+<div class="line">                    painter-&gt;drawText(</div>
+<div class="line">                        QRectF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() + <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters - textWidth / 2, textY, textWidth, textHeight),</div>
+<div class="line">                        Qt::AlignVCenter, text);</div>
+<div class="line">                    <span class="keywordflow">if</span> (millimeters != 0)</div>
+<div class="line">                        painter-&gt;drawText(</div>
+<div class="line">                        QRectF(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x() - <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a55740bf0a8ca5f716c90287e721fbe89">sPixelsPerMillimeter</a> * millimeters - textWidth / 2, textY, textWidth, textHeight),</div>
+<div class="line">                        Qt::AlignVCenter, text);</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    painter-&gt;restore();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a7653583726568f17f7ba69c7b85b2827_cgraph.svg" width="632" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a7653583726568f17f7ba69c7b85b2827_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cf39738306724e15929531a4988dd6b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsAristo::radius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> sqrt(((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.x() - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.x())*(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.x() - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.x()))+((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.y() - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y())*(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.y() - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y()))) * 9 / 16 - 20;</div>
+<div class="line">    }        </div>
+</div><!-- fragment -->
+<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-37-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a0cf39738306724e15929531a4988dd6b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1267,11 +2005,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    translate(-<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().x(), -<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>().y());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-38-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a471b1006f1e88b392712b7aad8a18d55_cgraph.svg" width="408" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1299,15 +2037,24 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> QRectF((B - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).x() - 100 - mResizeSvgItem-&gt;boundingRect().width()/2, - mResizeSvgItem-&gt;boundingRect().height()/2, mResizeSvgItem-&gt;boundingRect().width(), mResizeSvgItem-&gt;boundingRect().height());   </div>
+<div class="line">    <span class="keywordflow">return</span> QRectF((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a> - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()).x() - 100 - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;boundingRect().width()/2, - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;boundingRect().height()/2, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;boundingRect().width(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;boundingRect().height());   </div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-39-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a20c43f4b37afd8dc774306ebf7f652da_cgraph.svg" width="408" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-40-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a20c43f4b37afd8dc774306ebf7f652da_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1337,11 +2084,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> Qt::ArrowCursor;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-41-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-41-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a26d7eda2a9ae104078793457f8e4d7c8_icgraph.svg" width="430" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
@@ -1372,32 +2119,71 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a2669a909cd1260a392fef3606daa11be">UBAbstractDrawRuler</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal oldAngle = mRotatedAngle;</div>
-<div class="line">    mRotatedAngle = angle;</div>
+<div class="line">    qreal oldAngle = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a>;</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a> = angle;</div>
 <div class="line">    QTransform transform;</div>
 <div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775e8bff5ff03371f9b6b1769277245e">rotateAroundCenter</a>(transform, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>());</div>
 <div class="line">    setTransform(transform, <span class="keyword">true</span>);</div>
-<div class="line">    mRotatedAngle = oldAngle + angle; <span class="comment">// We have to store absolute value for FLIP case</span></div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a> = oldAngle + angle; <span class="comment">// We have to store absolute value for FLIP case</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-42-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-42-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a775e8bff5ff03371f9b6b1769277245e_cgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-43-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-43-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a775e8bff5ff03371f9b6b1769277245e_icgraph.svg" width="435" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
+</div>
+</div>
+<a class="anchor" id="ad9f0d95c05391c8121a347c093417941"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::rotateAroundCenter </td>
+          <td>(</td>
+          <td class="paramtype">QTransform &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>center</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    transform.translate(center.x(), center.y());</div>
+<div class="line">    transform.rotate(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a78bc79e98381367d6fd4f14be2a0cae1">mRotatedAngle</a>);</div>
+<div class="line">    transform.translate(- center.x(), - center.y());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae8f5828cbb7ea2e9eede89955541e2fb"></a>
@@ -1421,28 +2207,28 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
-<div class="line">    qreal y = radius() / 4 + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3a2030ef56785d9a7fcef713c3f1587c">hFlipRect</a>().height() + 3;</div>
-<div class="line">    <span class="keywordflow">if</span> (mOrientation == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>)</div>
+<div class="line">    qreal y = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0cf39738306724e15929531a4988dd6b">radius</a>() / 4 + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3a2030ef56785d9a7fcef713c3f1587c">hFlipRect</a>().height() + 3;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a>)</div>
 <div class="line">        y = -y;</div>
-<div class="line">    <span class="keywordflow">return</span> QRectF(- mRotateSvgItem-&gt;boundingRect().width() / 2, y, mRotateSvgItem-&gt;boundingRect().width(), mRotateSvgItem-&gt;boundingRect().height());</div>
+<div class="line">    <span class="keywordflow">return</span> QRectF(- <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;boundingRect().width() / 2, y, <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;boundingRect().width(), <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;boundingRect().height());</div>
 <div class="line"></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-44-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ae8f5828cbb7ea2e9eede89955541e2fb_cgraph.svg" width="448" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-44-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ae8f5828cbb7ea2e9eede89955541e2fb_cgraph.svg" width="667" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-45-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ae8f5828cbb7ea2e9eede89955541e2fb_icgraph.svg" width="488" height="40"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-45-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ae8f5828cbb7ea2e9eede89955541e2fb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1471,15 +2257,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a718ca9bb91acddcb77982ed343eb6703">UBAbstractDrawRuler</a>.</p>
 <div class="fragment"><div class="line">{</div>
-<div class="line">    <span class="keywordflow">return</span> QPointF((A.x() + B.x()) / 2, (A.y() + B.y()) / 2);</div>
+<div class="line">    <span class="keywordflow">return</span> QPointF((<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.x() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.x()) / 2, (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3df7ec86d7615410bfab5688287b98eb">A</a>.y() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ac630a6f4bf90ea9161053d06e3a39bc9">B</a>.y()) / 2);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-46-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a2d6e4e79ddf6fa78100f0faf9fa04c4f_icgraph.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-46-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a2d6e4e79ddf6fa78100f0faf9fa04c4f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1511,12 +2297,60 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dc/db2/class_u_b_graphics_scene.html">UBGraphicsScene</a>*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae53a96ef8f69832958f5bd8ee1af7def">QGraphicsPathItem::scene</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-47-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ae53a96ef8f69832958f5bd8ee1af7def_icgraph.svg" width="454" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-47-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ae53a96ef8f69832958f5bd8ee1af7def_icgraph.svg" width="664" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c80b7954e2c8e1f0e9f1a17c55e9b07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UBGraphicsAristo::setItemsPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="../../d0/de1/class_u_b_abstract_draw_ruler.html#a72b3fd06a1ed5dd3facd96ba93639398">mCloseSvgItem</a>-&gt;setPos(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0920748116645fa3f2e7f369c9ca005e">closeButtonRect</a>().topLeft() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>());</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a85fe44d809fadbe7971d35bf777e189a">mHFlipSvgItem</a>-&gt;setPos(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3a2030ef56785d9a7fcef713c3f1587c">hFlipRect</a>().topLeft() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>());</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a775fb1e95cc2fb69622199a14b9b5644">mRotateSvgItem</a>-&gt;setPos(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae8f5828cbb7ea2e9eede89955541e2fb">rotateRect</a>().topLeft() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>());</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a635904f494e3207ed426ecf0f7c9c545">mResizeSvgItem</a>-&gt;setPos(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().topLeft() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>()); </div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0463970a02532faee5153ca168174d21">mMarkerSvgItem</a>-&gt;setPos(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().topLeft() + <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-48-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a1c80b7954e2c8e1f0e9f1a17c55e9b07_cgraph.svg" width="100%" height="543"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-49-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-49-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a1c80b7954e2c8e1f0e9f1a17c55e9b07_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
 
@@ -1537,22 +2371,31 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">{</div>
 <div class="line">    <span class="comment">/* substracting difference to zero [2pi] twice, to obtain the desired angle */</span></div>
-<div class="line">    mMarkerAngle -= 2 * (mMarkerAngle - (int)(mMarkerAngle/360)*360) - 360;</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> -= 2 * (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> - (int)(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a>/360)*360) - 360;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">bool</span> wasUndefined = mOrientation == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6aa2cbc32c34499eea63ef68ee4d9b5712">Undefined</a>;</div>
-<div class="line">    mOrientation = orientation;</div>
+<div class="line">    <span class="keywordtype">bool</span> wasUndefined = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6aa2cbc32c34499eea63ef68ee4d9b5712">Undefined</a>;</div>
+<div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> = orientation;</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (wasUndefined)</div>
-<div class="line">        calculatePoints(sDefaultRect);</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0c9c02f6def84f9081058f272bc7b552">calculatePoints</a>(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0faf777f20c129dea6fb00c9443fc209">sDefaultRect</a>);</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">        calculatePoints(boundingRect());</div>
+<div class="line">        <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0c9c02f6def84f9081058f272bc7b552">calculatePoints</a>(boundingRect());</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-50-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div id="dynsection-50-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a3d30683ac4014ed9ea722d597cb65182_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-51-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-51-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a3d30683ac4014ed9ea722d597cb65182_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </p>
@@ -1611,12 +2454,78 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae53a96ef8f69832958f5bd8ee1af7def">scene</a>()-&gt;<a class="code" href="../../dc/db2/class_u_b_graphics_scene.html#a539db7c6773c2f0f560b1be082e71c8e">drawLineTo</a>(itemPos, width, <span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-52-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-52-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_a6c1672fb375f65509b15f964ea5b709e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad006b5fed8f2c43b56ea92ac2e4b79e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6">UBGraphicsAristo::Tool</a> UBGraphicsAristo::toolFromPos </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">{</div>
+<div class="line">    pos = pos - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a2d6e4e79ddf6fa78100f0faf9fa04c4f">rotationCenter</a>();</div>
+<div class="line"></div>
+<div class="line">    qreal rotationAngle = <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a6fc7e2f6d0a65e112f8f939300ddce12">mOrientation</a> == <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a87dc8fccee0e40cb4ad423ee41d7cdf8">Bottom</a> ? - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> : <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">Top</a> ? 360 * (int)(<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> / 360 + 1) - <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ad14220730637cb8e14bc10bb15ed5712">mMarkerAngle</a> : 0;</div>
+<div class="line"></div>
+<div class="line">    QTransform t;</div>
+<div class="line">    t.rotate(rotationAngle);</div>
+<div class="line">    QPointF p2 = t.map(pos);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a20c43f4b37afd8dc774306ebf7f652da">resizeButtonRect</a>().contains(pos))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6ad75b65cda1ccbca48d97e108f3a1a39c">Resize</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a0920748116645fa3f2e7f369c9ca005e">closeButtonRect</a>().contains(pos))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6a58b069ce567f6254e3fb720d46733d94">Close</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#ae8f5828cbb7ea2e9eede89955541e2fb">rotateRect</a>().contains(pos))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6aabb3692d745e909e31a699876ee4906f">Rotate</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a7ff325c889d34aeaaa285a5e4c4c5efd">markerButtonRect</a>().contains(p2))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6a7a3ba7ef9610450fde2a71cfc35da5fd">MoveMarker</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a3a2030ef56785d9a7fcef713c3f1587c">hFlipRect</a>().contains(pos))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6ad2612ce9b334b11435735e39acdd5436">HorizontalFlip</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (shape().contains(pos))</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6a60d414fc45351019c8ed512b98ee6391">Move</a>;</div>
+<div class="line">    <span class="keywordflow">else</span></div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="../../dc/dfd/class_u_b_graphics_aristo.html#a442c85fa58209d18f39c3159039a7da6a6d4b780b021605391369a9b8411e1d5b">None</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p><div id="dynsection-53" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-53-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-53-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ad006b5fed8f2c43b56ea92ac2e4b79e9_cgraph.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</p>
+
+<p><div id="dynsection-54" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-54-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-54-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dfd/class_u_b_graphics_aristo_ad006b5fed8f2c43b56ea92ac2e4b79e9_icgraph.svg" width="494" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -1648,9 +2557,370 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a3df7ec86d7615410bfab5688287b98eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsAristo::A</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac630a6f4bf90ea9161053d06e3a39bc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsAristo::B</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6c5afb184295cf806e622c4ce18d479"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF UBGraphicsAristo::C</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85fe44d809fadbe7971d35bf777e189a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsSvgItem* UBGraphicsAristo::mHFlipSvgItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad14220730637cb8e14bc10bb15ed5712"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsAristo::mMarkerAngle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0463970a02532faee5153ca168174d21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsSvgItem* UBGraphicsAristo::mMarkerSvgItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed95950df1415e3f78388473f37a398f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsAristo::mMarking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6fc7e2f6d0a65e112f8f939300ddce12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6">Orientation</a> UBGraphicsAristo::mOrientation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a635904f494e3207ed426ecf0f7c9c545"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsSvgItem* UBGraphicsAristo::mResizeSvgItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2bc18e367cd976881ae7ffcaea5420ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsAristo::mResizing</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78bc79e98381367d6fd4f14be2a0cae1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsAristo::mRotatedAngle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a775fb1e95cc2fb69622199a14b9b5644"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsSvgItem* UBGraphicsAristo::mRotateSvgItem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9b31600be1ab67febe8d7efbf92e36b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UBGraphicsAristo::mRotating</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acdc226eb6b95e552093c3810652b6243"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsAristo::mSpan</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ced47eb0a0bc433c7f949c253867a83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal UBGraphicsAristo::mStartAngle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a576aa01ea67d8867c9387c29c8b17b16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int UBGraphicsAristo::sArcAngleMargin = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac6b5824421237362bd71be8f601e9f8c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6">UBGraphicsAristo::Orientation</a> UBGraphicsAristo::sDefaultOrientation = <a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html#a346151deb4ebe2925a8c232e85a60fd6a71268e4d62a4a3181536d16423afef35">UBGraphicsAristo::Top</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0faf777f20c129dea6fb00c9443fc209"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QRectF UBGraphicsAristo::sDefaultRect = QRectF(0, 0, 800, 500)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Sankore-3.1/src/tools/<a class="el" href="../../d9/d02/_u_b_graphics_aristo_8h_source.html">UBGraphicsAristo.h</a></li>
-<li>Sankore-3.1/src/tools/<a class="el" href="../../d1/df7/_u_b_graphics_aristo_8cpp.html">UBGraphicsAristo.cpp</a></li>
+<li><a class="el" href="../../d9/d02/_u_b_graphics_aristo_8h_source.html">UBGraphicsAristo.h</a></li>
+<li><a class="el" href="../../d1/df7/_u_b_graphics_aristo_8cpp.html">UBGraphicsAristo.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1658,7 +2928,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/dfd/class_u_b_graphics_aristo.html">UBGraphicsAristo</a></li>
-    <li class="footer">Generated on Fri Nov 1 2013 11:08:55 for Open-Sankoré by
+    <li class="footer">Generated on Fri Nov 1 2013 11:35:01 for Open-Sankoré by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.1.2 </li>
   </ul>
