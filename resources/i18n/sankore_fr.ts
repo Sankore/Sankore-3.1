@@ -3004,7 +3004,7 @@ la bibliothèque</translation>
     <message>
         <source>Download to
 current page</source>
-        <translation>Télécharger sur 
+        <translation>Télécharger sur
 la page courante</translation>
     </message>
     <message>
@@ -3016,7 +3016,7 @@ dans la bibliothèque</translation>
     <message>
         <source>Add link to
 current page</source>
-        <translation>Ajouter un lien 
+        <translation>Ajouter un lien
 sur la page courante</translation>
     </message>
 </context>
@@ -3361,7 +3361,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation>Enrgistrer les paramètres de connexion.</translation>
+        <translation>Enregistrer les paramètres de connexion.</translation>
     </message>
     <message>
         <source>Start up tips</source>
