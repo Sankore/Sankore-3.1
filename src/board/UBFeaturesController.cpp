@@ -1409,6 +1409,10 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
         destPath =  audiosData.pathData().value(CategoryData::UserDefined).toLocalFile();
     if(dest == moviesData.categoryFeature())
         destPath =  moviesData.pathData().value(CategoryData::UserDefined).toLocalFile();
+    // Issue 1614 - CFA - 20131104 : oubli pour les animations
+    if(dest == flashData.categoryFeature())
+        destPath =  flashData.pathData().value(CategoryData::UserDefined).toLocalFile();
+
 
     QString destVirtualPath = dest.getFullVirtualPath();
     QString newFullPath = destPath + "/" + name;
