@@ -31,7 +31,6 @@
 #include "core/UBSetting.h"
 #include "core/UBPersistenceManager.h"
 
-#include "domain/UBGraphicsScene.h"
 #include "domain/UBGraphicsSvgItem.h"
 #include "domain/UBGraphicsPDFItem.h"
 
@@ -86,7 +85,9 @@ void UBExportFullPDF::saveOverlayPdf(UBDocumentProxy* pDocumentProxy, const QStr
 
     for(int pageIndex = 0 ; pageIndex < pDocumentProxy->pageCount(); pageIndex++)
     {
-        UBGraphicsScene* scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(pDocumentProxy, pageIndex);
+        //issue 1483 - NNE - 20131031
+        UBGraphicsScene* scene = allScenes[pageIndex];
+
         // set background to white, no grid for PDF output
         bool isDark = scene->isDarkBackground();
         bool isCrossed = scene->isCrossedBackground();
@@ -109,7 +110,8 @@ void UBExportFullPDF::saveOverlayPdf(UBDocumentProxy* pDocumentProxy, const QStr
 		if (pageIndex != 0) pdfPrinter.newPage();
 
         //render to PDF
-        scene->setDrawingMode(true);
+        scene->setDrawingMode(true);  
+
         scene->render(pdfPainter, QRectF(), scene->normalizedSceneRect());
 
         //restore screen rendering quality
@@ -129,6 +131,16 @@ void UBExportFullPDF::persist(UBDocumentProxy* pDocumentProxy)
 {
     if (!pDocumentProxy)
         return;
+
+    //issue 1483 - NNE - 20131031
+    //load the document before asking for the filename
+    //it's just a hack to give the time for the W3CWidget
+    //to load completly...
+    for(int i = 0; i<pDocumentProxy->pageCount(); i++){
+        UBGraphicsScene* scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(pDocumentProxy, i);
+        this->allScenes.push_back(scene);
+    }
+    //issue 1483 - NNE - 20131031 : END
 
     QString filename = askForFileName(pDocumentProxy, tr("Export as PDF File"));
 

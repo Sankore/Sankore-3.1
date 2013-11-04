@@ -560,6 +560,8 @@ void UBBoardController::duplicateScene(int nIndex)
     QApplication::restoreOverrideCursor();
 
     emit pageChanged();
+
+    reloadThumbnails(); // Issue 1026 - AOU - 20131031
 }
 
 void UBBoardController::duplicateScene()
