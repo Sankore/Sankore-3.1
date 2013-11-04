@@ -559,7 +559,7 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
 
     foreach (QModelIndex curIndex, incomingIndexes) {
 #ifdef Q_WS_MAC
-        if (inModel(currentIndex())) {
+        if (inModel(curIndex)) {
             return true;
         }
 #endif
