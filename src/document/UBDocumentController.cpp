@@ -1204,7 +1204,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 
         docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
         QApplication::restoreOverrideCursor();
-        docModel->setHighLighted(QModelIndex());
+        setCurrentIndex(QModelIndex());
+//        docModel->setHighLighted(QModelIndex());
     }
     else if (!inModel) {
         drA = Qt::IgnoreAction;
