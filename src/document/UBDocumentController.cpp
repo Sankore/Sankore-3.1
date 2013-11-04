@@ -538,16 +538,16 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
         return true;
     }
 
-
-
     const UBDocumentTreeMimeData *mimeData = qobject_cast<const UBDocumentTreeMimeData*>(data);
     if (!mimeData) {
         qDebug() << "Incorrect mimeData, only internal one supported";
         return false;
     }
+
     if (!parent.isValid()) {
         return false;
     }
+
     UBDocumentTreeNode *newParentNode = nodeFromIndex(parent);
 
     if (!newParentNode) {
@@ -558,6 +558,12 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
     QList<QModelIndex> incomingIndexes = mimeData->indexes();
 
     foreach (QModelIndex curIndex, incomingIndexes) {
+#ifdef Q_WS_MAC
+        if (inModel(currentIndex())) {
+            return true;
+        }
+#endif
+
         QModelIndex clonedTopLevel = copyIndexToNewParent(curIndex, parent, action == Qt::MoveAction ? aReference : aContentCopy);
         if (nodeFromIndex(curIndex) == mCurrentNode && action == Qt::MoveAction) {
             emit currentIndexMoved(clonedTopLevel, curIndex);
@@ -1193,7 +1199,9 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
         docModel->setHighLighted(QModelIndex());
     }
     else if(isSourceAModel){
+#ifndef Q_WS_MAC
         drA = Qt::IgnoreAction;
+#endif
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
         UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
         QModelIndex targetParentIndex;
@@ -1204,8 +1212,7 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 
         docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
         QApplication::restoreOverrideCursor();
-        setCurrentIndex(QModelIndex());
-//        docModel->setHighLighted(QModelIndex());
+        docModel->setHighLighted(QModelIndex());
     }
     else if (!inModel) {
         drA = Qt::IgnoreAction;
