@@ -563,11 +563,27 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                     polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
 
                     UBGraphicsStrokesGroup* group;
-                    if(!mStrokesGroupList.contains(parentId)){
+                    if(!mStrokesGroupList.contains(parentId)) {
                         group = new UBGraphicsStrokesGroup();
                         mStrokesGroupList.insert(parentId,group);
                         group->Delegate()->setAction(readAction());
                         mStrokeList.insert(parentId,new UBGraphicsStroke);
+
+                        bool nullondark = mXmlReader.attributes().value(mNamespaceUri, "fill-on-dark-background").isNull();
+                        bool nullonlight = mXmlReader.attributes().value(mNamespaceUri, "fill-on-light-background").isNull();
+                        if (nullondark || nullonlight) {
+                            QColor curColor(mXmlReader.attributes().value("fill").toString());
+                            double opacity = mXmlReader.attributes().value("fill-opacity").toString().toDouble();
+                            const char tool = (opacity == 1.0) ? 'p' : 'm';
+
+                            QColor oppozColor(UBApplication::boardController->inferOpposite(curColor, tool));
+
+                            mGroupDarkBackgroundColor = mScene->isDarkBackground() ? curColor : oppozColor;
+                            mGroupLightBackgroundColor = mScene->isDarkBackground() ? oppozColor : curColor;
+
+                            polygonItem->setColorOnDarkBackground(mGroupDarkBackgroundColor);
+                            polygonItem->setColorOnLightBackground(mGroupLightBackgroundColor);
+                        }
                     }
                     else
                         group = mStrokesGroupList.value(parentId);
@@ -972,8 +988,8 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                         annotationGroup = 0;
                 }
                 mGroupHasInfo = false;
-                mGroupDarkBackgroundColor = QColor();
-                mGroupLightBackgroundColor = QColor();
+                mGroupDarkBackgroundColor = Qt::cyan;
+                mGroupLightBackgroundColor = Qt::cyan;
             }
         }
     }
@@ -1604,11 +1620,12 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgLine(UBGraphicsPolyg
         mXmlWriter.writeAttribute("stroke-opacity", QString::number(alpha, 'f', 2));
     mXmlWriter.writeAttribute("stroke-linecap", "round");
 
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "fill-on-dark-background", polygonItem->colorOnDarkBackground().name());
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "fill-on-light-background", polygonItem->colorOnLightBackground().name());
+
     if (!groupHoldsInfo)
     {
         mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", QString("%1").arg(polygonItem->zValue()));
-        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "fill-on-dark-background", polygonItem->colorOnDarkBackground().name());
-        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "fill-on-light-background", polygonItem->colorOnLightBackground().name());
     }
 
     mXmlWriter.writeEndElement();
@@ -1649,15 +1666,17 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::strokeToSvgPolyline(UBGraphicsStroke
         mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(firstPolygonItem->brush().color().alphaF()));
         mXmlWriter.writeAttribute("stroke-linecap", "round");
 
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri
+                                  , "fill-on-dark-background", firstPolygonItem->colorOnDarkBackground().name());
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri
+                                  , "fill-on-light-background", firstPolygonItem->colorOnLightBackground().name());
+
         if (!groupHoldsInfo)
         {
 
             mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", QString("%1").arg(firstPolygonItem->zValue()));
 
-            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri
-                                      , "fill-on-dark-background", firstPolygonItem->colorOnDarkBackground().name());
-            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri
-                                      , "fill-on-light-background", firstPolygonItem->colorOnLightBackground().name());
+
         }
 
         mXmlWriter.writeEndElement();
@@ -1700,6 +1719,10 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::polygonItemToSvgPolygon(UBGraphicsPo
         mXmlWriter.writeAttribute("points", points);
         mXmlWriter.writeAttribute("transform",toSvgTransform(polygonItem->sceneMatrix()));
         mXmlWriter.writeAttribute("fill", polygonItem->brush().color().name());
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri
+                                  , "fill-on-dark-background", polygonItem->colorOnDarkBackground().name());
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri
+                                  , "fill-on-light-background", polygonItem->colorOnLightBackground().name());
 
         qreal alpha = polygonItem->brush().color().alphaF();
         mXmlWriter.writeAttribute("fill-opacity", QString::number(alpha, 'f', 2));

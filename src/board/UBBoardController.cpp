@@ -1994,6 +1994,51 @@ void UBBoardController::setColorIndex(int pColorIndex)
     }
 }
 
+static bool sameRGB(const QColor &lcol, const QColor &rcol)
+{
+    return lcol.red() == rcol.red()
+            && lcol.green() == rcol.green()
+            && lcol.blue() == rcol.blue();
+}
+
+QColor UBBoardController::inferOpposite(const QColor &candidate, const char tool)
+{
+    qDebug() << "!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!";
+
+    //looking for existing index
+    //Tool 'm': marker
+    //     'p': pen
+    QList<QColor> (UBSettings::*fn)(bool) = NULL;
+
+    switch (tool) {
+    case 'p': {
+        fn = &UBSettings::penColors;
+    } break;
+    case 'm': {
+        fn = &UBSettings::markerColors;
+    } break;
+    }
+
+    int count = qMin((UBSettings::settings()->*fn)(true).count(), (UBSettings::settings()->*fn)(false).count());
+    for (int i=0; i<count; i++) {
+        QColor dark = (UBSettings::settings()->*fn)(true).at(i);
+        QColor light = (UBSettings::settings()->*fn)(false).at(i);
+        if (sameRGB(candidate, dark)) {
+            return light;
+        } else if (sameRGB(candidate, light)) {
+            return dark;
+        }
+    }
+
+    //If there is no color stored just change the value to the opposite
+    QColor retColor = QColor::fromRgb(255 - candidate.red()
+                                      , 255 - candidate.green()
+                                      , 255 - candidate.blue()
+                                      , candidate.alpha());
+
+    return retColor;
+}
+
 void UBBoardController::colorPaletteChanged()
 {
     mPenColorOnDarkBackground = UBSettings::settings()->penColor(true);
