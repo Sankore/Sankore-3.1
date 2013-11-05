@@ -996,7 +996,11 @@ void UBDocumentTreeModel::updateIndexNameBindings(UBDocumentTreeNode *nd)
 {
     Q_ASSERT(nd);
 
-    if (nd->proxyData()) {
+    if (nd->nodeType() == UBDocumentTreeNode::Catalog) {
+        foreach (UBDocumentTreeNode *lnd, nd->children()) {
+            updateIndexNameBindings(lnd);
+        }
+    } else if (nd->proxyData()) {
         nd->proxyData()->setMetaData(UBSettings::documentGroupName, virtualPathForIndex(indexForNode(nd->parentNode())));
         nd->proxyData()->setMetaData(UBSettings::documentName, nd->nodeName());
         UBPersistenceManager::persistenceManager()->persistDocumentMetadata(nd->proxyData());
