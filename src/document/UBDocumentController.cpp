@@ -284,6 +284,57 @@ UBDocumentTreeNode::~UBDocumentTreeNode()
         delete mProxy;
 }
 
+//issue 1629 - NNE - 20131105
+bool UBDocumentTreeNode::findNode(UBDocumentTreeNode *node)
+{
+    UBDocumentTreeNode *parent = node->parentNode();
+
+    bool hasFound = false;
+
+    while(parent){
+        if(parent == this){
+            hasFound = true;
+            break;
+        }
+
+        parent = parent->parentNode();
+    }
+
+    return hasFound;
+}
+
+UBDocumentTreeNode *UBDocumentTreeNode::nextSibling()
+{
+    UBDocumentTreeNode *parent = this->parentNode();
+    UBDocumentTreeNode *nextSibling = NULL;
+
+    int myIndex = parent->children().indexOf(this);
+    int indexOfNextSibling = myIndex + 1;
+
+    if(indexOfNextSibling < parent->children().size()){
+        nextSibling = parent->children().at(indexOfNextSibling);
+    }
+
+    return nextSibling;
+}
+
+UBDocumentTreeNode *UBDocumentTreeNode::previousSibling()
+{
+    UBDocumentTreeNode *parent = this->parentNode();
+    UBDocumentTreeNode *previousSibling = NULL;
+
+    int myIndex = parent->children().indexOf(this);
+    int indexOfPreviousSibling = myIndex - 1;
+
+    if(indexOfPreviousSibling >= 0){
+        previousSibling = parent->children().at(indexOfPreviousSibling);
+    }
+
+    return previousSibling;
+}
+
+//issue 1629 - NNE - 20131105 : END
+
 UBDocumentTreeModel::UBDocumentTreeModel(QObject *parent) :
     QAbstractItemModel(parent)
   , mRootNode(0)
@@ -1386,7 +1437,7 @@ void UBDocumentController::createNewDocument()
         selectDocument(document);
 
         if (document)
-            UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->markDocumentAsNew(document);
+            pManager->mDocumentTreeStructureModel->markDocumentAsNew(document);
     }
 }
 
@@ -1425,6 +1476,9 @@ void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurr
         UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->setCurrentDocument(proxy);
         QModelIndex indexCurrentDoc = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->indexForProxy(proxy);
         mDocumentUI->documentTreeView->setSelectedAndExpanded(indexCurrentDoc, true);
+
+        //issue 1629 - NNE - 20131105 : When set a current document, change in the board controller
+        mBoardController->setActiveDocumentScene(proxy, 0);
     }
 
     mSelectionType = Document;
@@ -1995,51 +2049,75 @@ void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
 void UBDocumentController::deleteSelectedItem()
 {
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
     QModelIndex currentIndex = firstSelectedTreeIndex();
     DeletionType deletionForSelection = deletionTypeForSelection(mSelectionType, currentIndex, docModel);
 
-    switch (static_cast<int>(deletionForSelection)) {
+    switch (deletionForSelection) {
     case DeletePage :
         deletePages(mDocumentUI->thumbnailWidget->selectedItems());
         break;
 
     case MoveToTrash : {
-        //issue 1629 - NNE - 20131023
-        //If we delete the acive document, we have to select the next sibling if it exists
-        //otherwise select the previous sibling. If sibling doesn't exist, so we create a new document
-        if(currentIndex == docModel->currentIndex()){
-            QModelIndex sibling = docModel->sibling(currentIndex.row()+1, 0, currentIndex);
-            if(!sibling.isValid()){
-                sibling = docModel->sibling(currentIndex.row()-1, 0, currentIndex);
+        //issue 1629 - NNE - 20131105
+        UBDocumentTreeNode *currentNode = docModel->nodeFromIndex(currentIndex);
 
-                //Only previous sibling can be a folder, so find the "previous" document
-                while(docModel->isCatalog(sibling)){
-                    UBDocumentTreeNode* node = docModel->nodeFromIndex(sibling);
-                    QList<UBDocumentTreeNode*> children = node->children();
+        //check if we try to delete the current scene
+        bool deleteCurrentScene = (currentIndex == docModel->currentIndex());
 
-                    if(children.size() > 0){
-                        UBDocumentTreeNode* lastChild = children.last();
-                        sibling = docModel->indexForNode(lastChild);
-                    }else{
-                        //If the folder is empty, set the sibling invalid
-                        sibling = QModelIndex();
-                        break;
-                    }
-                }
-            }
-
-            if(sibling.isValid()){
-                UBDocumentProxy* document = docModel->proxyData(sibling);
-                selectDocument(document);
-                mBoardController->setActiveDocumentScene(document, 0);
-            }else{
-                createNewDocument();
-            }
-
+        //check if we try to delete the current scene if the currentIndex is a folder
+        if(currentNode->nodeType() == UBDocumentTreeNode::Catalog){
+            deleteCurrentScene = currentNode->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
         }
-        //issue 1629 - NNE - 20131023 : END
+
+        UBDocumentTreeNode *nextSibling = currentNode->nextSibling();
+
+        if(nextSibling){
+            //a next sibling exists
+            QModelIndex nextSiblingIndex = docModel->indexForNode(nextSibling);
+
+            if(deleteCurrentScene){
+                if(docModel->isDocument(nextSiblingIndex)){
+                    UBDocumentProxy *document = docModel->proxyForIndex(nextSiblingIndex);
+                    selectDocument(document);
+                    deleteCurrentScene = false; //indicate that the current has not been really "deleted"
+                }
+            }else{
+                mDocumentUI->documentTreeView->setSelectedAndExpanded(nextSiblingIndex);
+            }
+        }else{
+            //check if a previous sibling exists
+            UBDocumentTreeNode *previousSibling = currentNode->previousSibling();
+
+            if(previousSibling){
+                QModelIndex previousSiblingIndex = docModel->indexForNode(previousSibling);
+
+                if(deleteCurrentScene){
+                    if(docModel->isDocument(previousSiblingIndex)){
+                        UBDocumentProxy *document = docModel->proxyForIndex(previousSiblingIndex);
+                        selectDocument(document);
+                        deleteCurrentScene = false;
+                    }
+                }else{
+                    mDocumentUI->documentTreeView->setSelectedAndExpanded(previousSiblingIndex);
+                }
+            }else{
+                //no sibling, so select the parent
+                QModelIndex parentIndex = docModel->indexForNode(currentNode->parentNode());
+
+                mDocumentUI->documentTreeView->setSelectedAndExpanded(parentIndex);
+            }
+        }
+
+
 
         docModel->moveIndex(currentIndex, docModel->trashIndex());
+
+        if(deleteCurrentScene){
+            //create the new documen after, because the selection stay on the old document
+            createNewDocumentInUntitledFolder();
+        }
+        //issue 1629 - NNE - 20131105 : END
 
         break;
     }
@@ -2061,20 +2139,26 @@ void UBDocumentController::deleteSelectedItem()
                     break;
                 }
                 docModel->moveIndex(testSubINdecurrentIndex, docModel->trashIndex());
+
+                //issue 1629 - NNE - 20131105
+                //Here, we are sure that the current scene has been deleted
+                createNewDocumentInUntitledFolder();
             }
         } else {
-            emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
-        }
+            //issue 1629 - NNE - 20131105
+            //Check if we will delete the current scene
+            UBDocumentTreeNode *currentNode = docModel->nodeFromIndex(currentIndex);
+            bool deleteCurrentScene = currentNode->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
 
-        //issue 1629 - NNE - 20131016
-        if (docModel->children().isEmpty())
-            createNewDocument();
-        //issue 1629 - NNE - 20131016 : END
+            emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
+
+            if(deleteCurrentScene) createNewDocumentInUntitledFolder();
+        }
 
         break;
     }
     case EmptyTrash :
-         emptyFolder(currentIndex, CompleteDelete); // Empty trahs folder
+        emptyFolder(currentIndex, CompleteDelete); // Empty trash folder
         break;
     }
 }
@@ -3207,4 +3291,18 @@ void UBDocumentController::refreshDocumentThumbnailsView(UBDocumentContainer*)
     }
 
     QApplication::restoreOverrideCursor();
+}
+
+void UBDocumentController::createNewDocumentInUntitledFolder()
+{
+    UBPersistenceManager *pManager = UBPersistenceManager::persistenceManager();
+    UBDocumentTreeModel *docModel = pManager->mDocumentTreeStructureModel;
+
+    QString groupName = docModel->virtualPathForIndex(docModel->untitledDocumentsIndex());
+
+    UBDocumentProxy *document = pManager->createDocument(groupName);
+    selectDocument(document);
+
+    if (document)
+        pManager->mDocumentTreeStructureModel->markDocumentAsNew(document);
 }
