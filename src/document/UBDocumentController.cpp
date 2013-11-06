@@ -775,6 +775,10 @@ void UBDocumentTreeModel::moveIndex(const QModelIndex &what, const QModelIndex &
     UBDocumentTreeNode *sourceNode = nodeFromIndex(what);
     UBDocumentTreeNode *newParentNode = nodeFromIndex(destination);
 
+    //issue NC - NNE - 20131106 : to prevent a std::bad_alloc
+    //if we try to move the source in its own parent (the user can make this with th drag'n'drop), do nothing
+    if(newParentNode == sourceNode->parentNode()) return;
+
     Q_ASSERT(sourceNode && newParentNode);
 
     int whatIndex = what.row();
