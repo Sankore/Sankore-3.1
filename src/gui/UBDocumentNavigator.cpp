@@ -113,7 +113,7 @@ void UBDocumentNavigator::generateThumbnails(UBDocumentContainer* source)
             UBGraphicsScene * pBoardActiveScene = UBApplication::boardController->activeScene();
             QGraphicsView * viewBoardScene = new QGraphicsView(pBoardActiveScene);
             viewBoardScene->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing | QPainter::HighQualityAntialiasing);
-            viewBoardScene->setInteractive(false); // This View must be inactive.
+            viewBoardScene->setInteractive(false); // This View must be read-only.
 
             // Create view, with same size as others pixmap Thumbnails :
             qreal nominalWidth = pBoardActiveScene->nominalSize().width();
