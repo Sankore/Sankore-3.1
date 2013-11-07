@@ -58,7 +58,7 @@ class UBApplication : public QtSingleApplication
 
         int exec(const QString& pFileToImport);
 
-		void cleanup();
+        void cleanup();
 
         static QPointer<QUndoStack> undoStack;
 
@@ -95,6 +95,7 @@ class UBApplication : public QtSingleApplication
         void setVerbose(bool verbose){mIsVerbose = verbose;}
         static QString urlFromHtml(QString html);
         static bool isFromWeb(QString url);
+//        bool notify ( QObject * receiver, QEvent * event );
 
     signals:
 

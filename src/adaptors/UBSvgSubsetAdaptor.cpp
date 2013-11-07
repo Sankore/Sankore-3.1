@@ -366,8 +366,8 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 
     mFileVersion = 40100; // default to 4.1.0
 
-    UBGraphicsStroke* annotationGroup = 0;
     UBGraphicsStrokesGroup* strokesGroup = 0;
+    UBGraphicsStroke* currentStroke = 0;
 
     while (!mXmlReader.atEnd())
     {
@@ -450,9 +450,9 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                 QStringRef pageDpi = mXmlReader.attributes().value("pageDpi");
 
                 if (!pageDpi.isNull())
-                {
                     UBSettings::settings()->pageDpi->set(pageDpi.toString());
-                }
+                else
+                    UBSettings::settings()->pageDpi->set(UBApplication::desktop()->physicalDpiX());
 
                 bool darkBackground = false;
                 bool crossedBackground = false;
@@ -491,16 +491,6 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
             }
             else if (mXmlReader.name() == "g")
             {
-                // Create new stroke, if its NULL or already has polygons
-                if (annotationGroup)
-                {
-                    if (!annotationGroup->polygons().empty())
-                        annotationGroup = new UBGraphicsStroke();
-                }
-                else
-                    annotationGroup = new UBGraphicsStroke();
-
-
                 strokesGroup = new UBGraphicsStrokesGroup();
                 graphicsItemFromSvg(strokesGroup);
 
@@ -542,32 +532,21 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                 if(parentId.isEmpty() && strokesGroup)
                     parentId = strokesGroup->uuid().toString();
 
-                Q_ASSERT(!parentId.isEmpty());
+                if(parentId.isEmpty())
+                    parentId = QUuid::createUuid().toString();
 
                 if (polygonItem)
                 {
-                    polygonItem->setUuid(uuidFromSvg);
-
-                    if (annotationGroup)
-                    {
-                        polygonItem->setStroke(annotationGroup);
-                    }
-
-
-                    if(strokesGroup){
-                            polygonItem->setTransform(strokesGroup->transform());
-                            strokesGroup->addToGroup(polygonItem);
-                            polygonItem->setStrokesGroup(strokesGroup);
-                    }
-
                     polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
 
                     UBGraphicsStrokesGroup* group;
-                    if(!mStrokesGroupList.contains(parentId)) {
+                    if(!mStrokesList.contains(parentId)){
                         group = new UBGraphicsStrokesGroup();
-                        mStrokesGroupList.insert(parentId,group);
-                        group->Delegate()->setAction(readAction());
-                        mStrokeList.insert(parentId,new UBGraphicsStroke);
+
+                        mStrokesList.insert(parentId,group);
+                        currentStroke = new UBGraphicsStroke();
+                        group->setTransform(polygonItem->transform());
+                        UBGraphicsItem::assignZValue(group, polygonItem->zValue());
 
                         bool nullondark = mXmlReader.attributes().value(mNamespaceUri, "fill-on-dark-background").isNull();
                         bool nullonlight = mXmlReader.attributes().value(mNamespaceUri, "fill-on-light-background").isNull();
@@ -586,36 +565,49 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                         }
                     }
                     else
-                        group = mStrokesGroupList.value(parentId);
+                        group = mStrokesList.value(parentId);
+
+                    if(polygonItem->transform().isIdentity())
+                        polygonItem->setTransform(group->transform());
+
+                    group->addToGroup(polygonItem);
+                    polygonItem->setStrokesGroup(group);
+                    polygonItem->setStroke(currentStroke);
 
                     polygonItem->show();
-                    polygonItem->setStrokesGroup(group);
-                    polygonItem->setStroke(mStrokeList.value(parentId));
                     group->addToGroup(polygonItem);
-
                 }
             }
             else if (mXmlReader.name() == "polyline")
             {
-                QList<UBGraphicsPolygonItem*> polygonItems
-                = polygonItemsFromPolylineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                QList<UBGraphicsPolygonItem*> polygonItems = polygonItemsFromPolylineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+
+                QString parentId = QUuid::createUuid().toString();
 
                 foreach(UBGraphicsPolygonItem* polygonItem, polygonItems)
                 {
-                    if (annotationGroup)
-                    {
-                        polygonItem->setStroke(annotationGroup);
-                    }
-
-
-                    if(strokesGroup){
-                        polygonItem->setTransform(strokesGroup->transform());
-                        strokesGroup->addToGroup(polygonItem);
-                        polygonItem->setStrokesGroup(strokesGroup);
-                    }
-
                     polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
+
+                    UBGraphicsStrokesGroup* group;
+                    if(!mStrokesList.contains(parentId)){
+                        group = new UBGraphicsStrokesGroup();
+                        mStrokesList.insert(parentId,group);
+                        currentStroke = new UBGraphicsStroke();
+                        group->setTransform(polygonItem->transform());
+                        UBGraphicsItem::assignZValue(group, polygonItem->zValue());
+                    }
+                    else
+                        group = mStrokesList.value(parentId);
+
+                    if(polygonItem->transform().isIdentity())
+                        polygonItem->setTransform(group->transform());
+
+                    group->addToGroup(polygonItem);
+                    polygonItem->setStrokesGroup(group);
+                    polygonItem->setStroke(currentStroke);
+
                     polygonItem->show();
+                    group->addToGroup(polygonItem);
                 }
             }
             else if (mXmlReader.name() == "image")
@@ -978,15 +970,6 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
         {
             if (mXmlReader.name() == "g")
             {
-//                if(strokesGroup && mScene){
-//                    mScene->addItem(strokesGroup);
-//                }
-
-                if (annotationGroup)
-                {
-                    //if (!annotationGroup->polygons().empty())
-                        annotationGroup = 0;
-                }
                 mGroupHasInfo = false;
                 mGroupDarkBackgroundColor = Qt::cyan;
                 mGroupLightBackgroundColor = Qt::cyan;
@@ -999,7 +982,8 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
         qWarning() << "error parsing Sankore file " << mXmlReader.errorString();
     }
 
-    QMapIterator<QString, UBGraphicsStrokesGroup*> iterator(mStrokesGroupList);
+    qDebug() << "Number of detected strokes: " << mStrokesList.count();
+    QHashIterator<QString, UBGraphicsStrokesGroup*> iterator(mStrokesList);
     while (iterator.hasNext()) {
         iterator.next();
         mScene->addItem(iterator.value());
@@ -1007,11 +991,6 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 
     if (mScene)
         mScene->setModified(false);
-
-    if (annotationGroup /*&& annotationGroup->polygons().empty()*/){
-            delete annotationGroup;
-            annotationGroup = 0;
-    }
 
     mScene->enableUndoRedoStack();
     return mScene;
@@ -2809,18 +2788,6 @@ UBGraphicsW3CWidgetItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::graphicsW3CWidge
 
 void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* item)
 {
-    /**
-     * sample
-     *
-        <foreignObject x="0" y="0" width="489.297" height="76.3303" transform="matrix(0.508456, -0.861088, 0.861088, 0.508456, -181.721, 243.124)" ub:z-value="-9999998.000000" ub:background="false" ub:fill-on-dark-background="#81ff5c" ub:fill-on-light-background="#008000">
-            <xhtml:body>
-                <xhtml:div>
-                    <xhtml:font face="Arial" style="font-size:48px;" color="#81ff5c">this a text<br/>on 2 lines</xhtml:font>
-                </xhtml:div>
-            </xhtml:body>
-        </foreignObject>
-     */
-
     mXmlWriter.writeStartElement("foreignObject");
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "type", "text");
 
@@ -2909,7 +2876,8 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
                 }
 
             //tracking for backward capability with older versions
-            } else if (mXmlReader.name() == "font")  {
+            }
+            else if (mXmlReader.name() == "font")  {
                 QFont font = textItem->font();
 
                 QStringRef fontFamily = mXmlReader.attributes().value("face");
@@ -2925,6 +2893,10 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
                             int fontSize = styleToken.mid(
                                                sFontSizePrefix.length(),
                                                styleToken.length() - sFontSizePrefix.length() - sPixelUnit.length()).toInt();
+//                            qDebug() << "fontSize : " << fontSize;
+//                            qDebug() << UBApplication::desktop()->physicalDpiX();
+//                            fontSize = (((qreal)(fontSize*UBApplication::desktop()->physicalDpiX()))/76);
+//                            qDebug() << "fontSize : " << fontSize;
                             font.setPixelSize(fontSize);
                         } else if (styleToken.startsWith(sFontWeightPrefix)) {
                             QString fontWeight = styleToken.mid(
