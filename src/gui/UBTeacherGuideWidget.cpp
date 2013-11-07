@@ -205,6 +205,35 @@ void UBTeacherGuideEditionWidget::load(QDomDocument doc)
             onAddItemClicked(mpAddALinkItem, 0, &element);
         else if (tagName == "action")
             onAddItemClicked(mpAddAnActionItem, 0, &element);
+
+    }
+
+    //backward compatibility
+    if (doc.childNodes().length() == 1 && doc.childNodes().at(0).toElement().tagName() == "teacherBar"){
+        QDomElement element = doc.childNodes().at(0).toElement();
+        QDomNamedNodeMap nodeMap = element.attributes();
+        for (int i= 0; i < nodeMap.size() ; i+=1){
+            QDomNode node = nodeMap.item(i);
+            QString attributeName = node.nodeName();
+            QString value = element.attribute(attributeName);
+            qDebug() << attributeName<< " " << value;
+            if(attributeName.contains("title") && value.length())
+                mpPageTitle->setInitialText(value);
+            else if(attributeName.contains("Teacher") && value.length()){
+                QDomElement teacherAction(element);
+                teacherAction.setTagName("action");
+                teacherAction.setAttribute("owner","0");
+                teacherAction.setAttribute("task",value);
+                onAddItemClicked(mpAddAnActionItem,0,&teacherAction);
+            }
+            else if (attributeName.contains("Student") && value.length()){
+                QDomElement studentAction(element);
+                studentAction.setTagName("action");
+                studentAction.setAttribute("owner","1");
+                studentAction.setAttribute("task",value);
+                onAddItemClicked(mpAddAnActionItem,0,&studentAction);
+            }
+        }
     }
 }
 

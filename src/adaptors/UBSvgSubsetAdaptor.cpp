@@ -343,7 +343,7 @@ QDomDocument UBSvgSubsetAdaptor::readTeacherGuideNode(int sceneIndex)
     QDomDocument result("teacherGuide");
     QDomNodeList list = domDocument.childNodes().at(1).childNodes();
     for(int i = 0 ; i < list.size(); i++){
-        if(list.at(i).nodeName() == "teacherGuide"){
+        if(list.at(i).nodeName() == "teacherGuide" || list.at(i).nodeName() == "teacherBar"){
             result.appendChild(list.at(i).cloneNode());
         }
     }
@@ -2953,12 +2953,12 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
     if (text.isEmpty()) {
         delete textItem;
         textItem = 0;
-    } else {
+    }
+    else {
         textItem->setPlainText(text);
         textItem->resize(width, height);
     }
 
-    textItem->resize(width, height);
     return textItem;
 }
 
