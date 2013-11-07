@@ -96,6 +96,8 @@ const QString tStrokeGroup = "strokeGroup";
 const QString tGroups = "groups";
 const QString aId = "id";
 
+static bool mIsOldVersionFileWithText = false;
+
 QMap<QString,IDataStorage*> UBSvgSubsetAdaptor::additionalElementToStore;
 
 QString UBSvgSubsetAdaptor::toSvgTransform(const QMatrix& matrix)
@@ -361,6 +363,7 @@ UBSvgSubsetAdaptor::UBSvgSubsetReader::UBSvgSubsetReader(UBDocumentProxy* pProxy
 
 UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 {
+    mIsOldVersionFileWithText = false;
     mScene = 0;
     UBGraphicsWidgetItem *currentWidget = 0;
 
@@ -2813,7 +2816,15 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     // Texts copied from other programs like Open-Office can truncate the svg file.
     //mXmlWriter.writeCharacters(item->toHtml());
 
-    mXmlWriter.writeCharacters(UBTextTools::cleanHtmlCData(item->toHtml()));
+    QString content = UBTextTools::cleanHtmlCData(item->toHtml());
+
+    if(mIsOldVersionFileWithText){
+        qDebug() << content;
+        content = content.replace(QRegExp("span style=\".*font-size:.*pt;\""), "span");
+        qDebug() << content;
+    }
+
+    mXmlWriter.writeCharacters(content);
 
     mXmlWriter.writeEndElement(); //itemTextContent
 
@@ -2878,6 +2889,7 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             //tracking for backward capability with older versions
             }
             else if (mXmlReader.name() == "font")  {
+                mIsOldVersionFileWithText = true;
                 QFont font = textItem->font();
 
                 QStringRef fontFamily = mXmlReader.attributes().value("face");
@@ -2893,10 +2905,6 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
                             int fontSize = styleToken.mid(
                                                sFontSizePrefix.length(),
                                                styleToken.length() - sFontSizePrefix.length() - sPixelUnit.length()).toInt();
-//                            qDebug() << "fontSize : " << fontSize;
-//                            qDebug() << UBApplication::desktop()->physicalDpiX();
-//                            fontSize = (((qreal)(fontSize*UBApplication::desktop()->physicalDpiX()))/76);
-//                            qDebug() << "fontSize : " << fontSize;
                             font.setPixelSize(fontSize);
                         } else if (styleToken.startsWith(sFontWeightPrefix)) {
                             QString fontWeight = styleToken.mid(
@@ -2953,7 +2961,6 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
     }
 
     textItem->resize(width, height);
-
     return textItem;
 }
 
