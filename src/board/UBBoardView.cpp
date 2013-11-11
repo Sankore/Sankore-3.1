@@ -729,7 +729,7 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
 
         //TODO claudio
         // another chuck of very good code
-        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()){
+        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type() && currentTool == UBStylusTool::Play){
             UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
             if(group && group->Delegate()->action())
                 group->Delegate()->action()->play();
