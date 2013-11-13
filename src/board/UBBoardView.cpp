@@ -528,11 +528,10 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
     }else{
         //If item is null, it's the background, so we have to deselect all elements in the scene
         //issue 1554 - NNE - 20131009
-        scene()->deselectAllItems();
+        //scene()->deselectAllItems();
     }
 }
 
-#include <iostream>
 bool UBBoardView::itemShouldReceiveMousePressEvent(QGraphicsItem *item)
 {
 /*
