@@ -112,6 +112,12 @@ public:
     UBDocumentTreeNode *clone();
     QString dirPathInHierarchy();
 
+    //issue 1629 - NNE - 20131105 : Add some utility methods
+    bool findNode(UBDocumentTreeNode *node);
+    UBDocumentTreeNode *nextSibling();
+    UBDocumentTreeNode *previousSibling();
+    //issue 1629 - NNE - 20131105 : END
+
 private:
     Type mType;
     QString mName;
@@ -347,6 +353,9 @@ class UBDocumentController : public UBDocumentContainer
 
     public slots:
         void createNewDocument();
+        //issue 1629 - NNE - 20131105
+        void createNewDocumentInUntitledFolder();
+
         void createNewDocumentGroup();
         void deleteSelectedItem();
         void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);

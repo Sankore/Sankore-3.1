@@ -385,13 +385,16 @@ void UBGraphicsTextItem::documentSizeChanged(const QSizeF & newSize)
 //issue 1554 - NNE - 20131009
 void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 {
+    qDebug() << textInteractionFlags();
+
     this->isActivatedTextEditor = activateTextEditor;
 
-    Qt::TextInteractionFlag flag = Qt::NoTextInteraction;
-    if(activateTextEditor){
-        flag = Qt::TextEditorInteraction;
+    if(!activateTextEditor){
+        setTextInteractionFlags(Qt::TextSelectableByMouse);
+    }else{
+        setTextInteractionFlags(Qt::TextEditorInteraction);
     }
 
-    setTextInteractionFlags(flag);
+    qDebug() <<  textInteractionFlags();
 }
 //issue 1554 - NNE - 20131009 : END

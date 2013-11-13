@@ -28,6 +28,7 @@
 #include "UBMainWindow.h"
 
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 
 #include "core/UBSettings.h"
 #include "core/UBApplication.h"
@@ -1012,15 +1013,16 @@ void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGra
 {
     // Fit the view :
     if (view() && view()->scene()){
-        UBGraphicsScene * s = UBApplication::boardController->activeScene();
-        QRectF nominalSceneRect(0, 0, s->nominalSize().width(), s->nominalSize().height());
-        QRectF itemsBoundingRect = view()->scene()->sceneRect();
+        UBGraphicsScene * s = dynamic_cast<UBGraphicsScene *>(view()->scene());
+        int nominalSizeWidth = s->nominalSize().width();
+        int nominalSizeHeight = s->nominalSize().height();
+        QRectF nominalSceneRect(-nominalSizeWidth/2, -nominalSizeHeight/2, nominalSizeWidth, nominalSizeHeight);
 
-        QRectF rect = nominalSceneRect;
-        if (itemsBoundingRect.width() > nominalSceneRect.width() || itemsBoundingRect.height() > nominalSceneRect.height()){
-            rect = itemsBoundingRect;
-        }
-        view()->fitInView(rect, Qt::KeepAspectRatio);
+        QRectF itemsBoundingRect = s->itemsBoundingRect();
+
+        QRectF visibleRect = nominalSceneRect.unite(itemsBoundingRect);
+        view()->fitInView(visibleRect, Qt::KeepAspectRatio);
+        view()->setSceneRect(visibleRect);
     }
 
     QGraphicsProxyWidget::paint(painter, option, widget);

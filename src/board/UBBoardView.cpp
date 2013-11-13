@@ -528,11 +528,10 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
     }else{
         //If item is null, it's the background, so we have to deselect all elements in the scene
         //issue 1554 - NNE - 20131009
-        scene()->deselectAllItems();
+        //scene()->deselectAllItems();
     }
 }
 
-#include <iostream>
 bool UBBoardView::itemShouldReceiveMousePressEvent(QGraphicsItem *item)
 {
 /*
@@ -1206,6 +1205,12 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
 
               if (currentTool == UBStylusTool::Selector)
                   foreach (QGraphicsItem *item, items(bandRect)) {
+
+                      // Issue 1569 - CFA - 20131113 : le traitement spécifique aux polygones (fait partout ailleurs) n'était pas fait ici
+                      if (item->type() == UBGraphicsItemType::PolygonItemType)
+                            if (item->parentItem())
+                                item = item->parentItem();
+                      // Fin Issue 1569 - CFA - 20131113
 
                       if (item->type() == UBGraphicsW3CWidgetItem::Type
                               || item->type() == UBGraphicsPixmapItem::Type
