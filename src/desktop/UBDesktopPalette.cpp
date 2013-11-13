@@ -156,7 +156,8 @@ void UBDesktopPalette::minimizeMe(eMinimizedLocation location)
     actions << mMaximizeAction;
     setActions(actions);
 
-    adjustSizeAndPosition();
+    //issue 1621 - NNE - 20131113 : Avoid to recenter the palette when minimized
+    adjustSizeAndPosition(true, false);
 
 #ifdef Q_WS_X11
         emit refreshMask();
