@@ -1273,6 +1273,14 @@
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
         <translation>Le document &quot;modèle&quot; n&apos;est pas éditable. Copiez le dans le dossier &quot;Mes documents&quot; pour pouvoir l&apos;utiliser ou l&apos;éditer.</translation>
     </message>
+    <message numerus="yes">
+        <source>duplicated %1 page</source>
+        <comment>duplicated %1 pages</comment>
+        <translation type="unfinished">
+            <numerusform>%1 page créée</numerusform>
+            <numerusform>%1 pages créées</numerusform>
+        </translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>
