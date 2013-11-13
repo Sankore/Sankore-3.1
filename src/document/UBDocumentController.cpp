@@ -2144,10 +2144,10 @@ void UBDocumentController::deleteSelectedItem()
                 }
                 docModel->moveIndex(testSubINdecurrentIndex, docModel->trashIndex());
 
-                //issue 1629 - NNE - 20131105
-                //Here, we are sure that the current scene has been deleted
-                createNewDocumentInUntitledFolder();
             }
+            //issue 1629 - NNE - 20131105
+            //Here, we are sure that the current scene has been deleted
+            createNewDocumentInUntitledFolder();
         } else {
             //issue 1629 - NNE - 20131105
             //Check if we will delete the current scene
