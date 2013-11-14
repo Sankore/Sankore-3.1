@@ -598,15 +598,16 @@ Here we determines cases when items should to get mouse press event at pressing 
         break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
+        /* Issue 1509 - AOU - 20131113
         if(currentTool == UBStylusTool::Play)
         {
             movingItem = NULL;
             return true;
         }
+        Issue 1509 - AOU - 20131113 : Fin
+        */
         return false;
         break;
-
-
     case QGraphicsWebView::Type:
         return true;
     case QGraphicsProxyWidget::Type: // Issue 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
@@ -715,10 +716,11 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
         // if item is on group and group is not selected - group should take press.
-        if (UBStylusTool::Selector == currentTool
+        if ((UBStylusTool::Selector == currentTool
+             || currentTool == UBStylusTool::Play) // Issue 1509 - AOU - 20131113
             && item->parentItem()
-            && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()
-                && !item->parentItem()->isSelected())
+            && UBGraphicsGroupContainerItem::Type == item->parentItem()->type())
+                /*&& !item->parentItem()->isSelected())*/ // Issue 1509 - AOU - 20131113
             return item->parentItem();
 
         // items like polygons placed in two groups nested, so we need to recursive call.
