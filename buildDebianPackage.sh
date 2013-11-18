@@ -331,7 +331,16 @@ echo "Essential: no" >> "$CONTROL_FILE"
 echo "Maintainer: ALTI" >> "$CONTROL_FILE"
 echo "Installed-Size: `du -s $SANKORE_PACKAGE_DIRECTORY | awk '{ print $1 }'`" >> "$CONTROL_FILE"
 echo "Homepage: http://dev.open-sankore.org" >> "$CONTROL_FILE"
-echo -n "Depends: " >> "$CONTROL_FILE"
+# Issue 1625 - CFA - 20131118 - ajout d'une dépendence pour la 10.04 LTS d'Ubuntu (nom de code Lucid)
+codename=`lsb_release -c`;
+if [ "$codename"==*lucid* ]
+then
+	echo "Ubuntu 10.04 LTS detected : adding 'ttf-mscorefonts-installer' on dependencies...";
+	echo -n "Depends: ttf-mscorefonts-installer, " >> "$CONTROL_FILE"
+else
+	echo -n "Depends: " >> "$CONTROL_FILE"
+fi
+#Fin Issue 1625 - CFA - 20131118
 unset tab
 declare -a tab
 let count=0
