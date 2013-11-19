@@ -169,6 +169,9 @@ $PLISTBUDDY -c "Set :CFBundleGetInfoString $NAME" "$INFO_PLIST"
 notify "Bulding frameworks ..."
 cd "`pwd`/build/macx/release/product/"
 $MACDEPLOYQT "`pwd`/Open-Sankore.app"
+find . -name *.dylib -exec codesign --force --verify --verbose --sign "3rd Party Mac Developer Application: webdoc (394B9J3ZHJ)" {} \;
+codesign --force --verify --verbose --sign "3rd Party Mac Developer Application: webdoc (394B9J3ZHJ)" Open-Sankore.app
+find Open-Sankore.app/Contents/Frameworks/ -type f -exec codesign --force --verify --verbose --sign "3rd Party Mac Developer Application: webdoc (394B9J3ZHJ)" {} \;
 cd -
 
 notify "Extracting debug information ..."

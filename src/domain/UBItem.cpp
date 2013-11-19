@@ -48,8 +48,10 @@ UBItem::~UBItem()
 
 UBGraphicsItem::~UBGraphicsItem()
 {
-    if (mDelegate!=NULL)
+    if (mDelegate!=NULL){
         delete mDelegate;
+        mDelegate = NULL;
+    }
 }
 
 void UBGraphicsItem::setDelegate(UBGraphicsItemDelegate* delegate)
