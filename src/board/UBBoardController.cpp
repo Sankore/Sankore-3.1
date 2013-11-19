@@ -2700,15 +2700,20 @@ void UBBoardController::freezeW3CWidgets(bool freeze)
         QList<QGraphicsItem *> list = UBApplication::boardController->activeScene()->getFastAccessItems();
         foreach(QGraphicsItem *item, list)
         {
-            freezeW3CWidget(item, freeze);
-            //TODO Claudio remove this hack
-            // this is not a good place to make this check as isn't the good place to do the previous check.
-            // try to detect hide event of the qgraphicsitem
-            UBGraphicsItem* graphicsItem = dynamic_cast<UBGraphicsItem*>(item);
-            if(graphicsItem){
-                UBGraphicsItemDelegate* delegate = graphicsItem->Delegate();
-                if(delegate && delegate->action() && delegate->action()->linkType() == eLinkToAudio)
-                    dynamic_cast<UBGraphicsItemPlayAudioAction*>(delegate->action())->onSourceHide();
+            if(item != NULL){
+                freezeW3CWidget(item, freeze);
+                //TODO Claudio remove this hack
+                // this is not a good place to make this check as isn't the good place to do the previous check.
+                // try to detect hide event of the qgraphicsitem
+                UBGraphicsItem* graphicsItem = dynamic_cast<UBGraphicsItem*>(item);
+                if(graphicsItem){
+                    UBGraphicsItemDelegate* delegate = graphicsItem->Delegate();
+                    if(delegate && delegate->action() && delegate->action()->linkType() == eLinkToAudio)
+                        dynamic_cast<UBGraphicsItemPlayAudioAction*>(delegate->action())->onSourceHide();
+                }
+            }
+            else{
+                qDebug() << "wrong place";
             }
         }
     }
@@ -2716,7 +2721,7 @@ void UBBoardController::freezeW3CWidgets(bool freeze)
 
 void UBBoardController::freezeW3CWidget(QGraphicsItem *item, bool freeze)
 {
-    if(item->type() == UBGraphicsW3CWidgetItem::Type)
+    if(item && item->type() == UBGraphicsW3CWidgetItem::Type)
     {
         UBGraphicsW3CWidgetItem* item_casted = dynamic_cast<UBGraphicsW3CWidgetItem*>(item);
         if (0 == item_casted)
