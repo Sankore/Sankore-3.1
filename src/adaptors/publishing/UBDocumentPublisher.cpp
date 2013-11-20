@@ -117,7 +117,9 @@ void UBDocumentPublisher::buildUbwFile()
     if (UBFileSystemUtils::copyDir(mSourceDocument->persistencePath(), tmpDir))
     {
         QString documentName = mSourceDocument->name();
-
+        //remove all the directory separators from the document name.
+        //we do not want to interperete them as directory separator
+        documentName = documentName.replace("/",".").replace("\\",".");
         mPublishingPath = tmpDir;
         mPublishingSize = mSourceDocument->pageCount();
 

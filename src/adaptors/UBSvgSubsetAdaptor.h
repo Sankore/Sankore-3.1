@@ -167,6 +167,8 @@ class UBSvgSubsetAdaptor
                 UBDocumentProxy *mProxy;
                 QString mDocumentPath;
 
+                QHash<QString,UBGraphicsStrokesGroup*> mStrokesList;
+
                 QColor mGroupDarkBackgroundColor;
                 QColor mGroupLightBackgroundColor;
                 qreal mGroupZIndex;
@@ -175,7 +177,6 @@ class UBSvgSubsetAdaptor
                 QString mNamespaceUri;
                 UBGraphicsScene *mScene;
                 UBGraphicsItemAction* readAction();
-                QMap<QString,UBGraphicsStrokesGroup*> mStrokesGroupList;
                 QMap<QString,UBGraphicsStroke*> mStrokeList;
         };
 

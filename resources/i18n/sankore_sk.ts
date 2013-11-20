@@ -1271,6 +1271,15 @@
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
         <translation>Vzorové dokumenty sa nedajú upravovať. Skopírujte ho do priečinka &quot;Moje dokumenty&quot; a budete s ním môcť pracovať</translation>
     </message>
+    <message numerus="yes">
+        <source>duplicated %1 page</source>
+        <comment>duplicated %1 pages</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>

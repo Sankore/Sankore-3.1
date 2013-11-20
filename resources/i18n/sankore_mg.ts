@@ -1268,6 +1268,14 @@
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
         <translation>Tsy azo ovaina eto io modelin-drakitra io. Mila adika any amin&apos;ny &quot;Rakitrako&quot; ilay izy mba anovana an&apos;azy</translation>
     </message>
+    <message numerus="yes">
+        <source>duplicated %1 page</source>
+        <comment>duplicated %1 pages</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
 </context>
 <context>
     <name>UBDocumentManager</name>

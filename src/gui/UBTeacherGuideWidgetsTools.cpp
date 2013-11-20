@@ -611,7 +611,7 @@ void UBTGMediaWidget::parseMimeData(const QMimeData* pMimeData)
     if(pMimeData){
         if(pMimeData->hasText()){
             mMediaPath = QUrl::fromLocalFile(pMimeData->text()).toString();
-        }	
+        }
         else if(pMimeData->hasUrls() && pMimeData->urls().count()){ // on windows found hasUrls = true and count = 0
             mMediaPath = pMimeData->urls().at(0).toString();
         }
