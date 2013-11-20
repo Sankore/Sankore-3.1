@@ -2569,7 +2569,12 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
                 downloadURL(QUrl(qsTmp), QString(), pPos);
             }
             else{
-                mActiveScene->addTextHtml(pMimeData->text(), pPos);
+                if(eItemActionType_Paste == actionType && mActiveScene->selectedItems().at(0)->type() == UBGraphicsItemType::TextItemType){
+                    dynamic_cast<UBGraphicsTextItem*>(mActiveScene->selectedItems().at(0))->setHtml(pMimeData->text());
+                }
+                else{
+                    mActiveScene->addTextHtml(pMimeData->text(), pPos);
+                }
             }
         }
         else{
