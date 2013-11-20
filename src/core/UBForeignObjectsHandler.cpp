@@ -34,12 +34,14 @@ const QString tMedia = "media";
 
 const QString aHref = "xlink:href";
 const QString aType = "ub:type";
+const QString aReqExt = "requiredExtensions";
 const QString aSrc = "ub:src";
 const QString aMediaType = "mediaType";
 const QString aRelativePath = "relativePath";
 const QString aActionMedia = "ub:actionFirstParameter";
 
 const QString vText = "text";
+const QString vReqExt = "http://ns.adobe.com/pdf/1.3/";
 
 const QString wgtSuff = ".wgt";
 const QString thumbSuff = ".png";
@@ -364,6 +366,8 @@ public:
     {
         mFromDir = fromDir.toLocalFile();
         mToDir = toDir.toLocalFile();
+        mFromIndex = fromIndex;
+        mToIndex = toIndex;
 
         QString svgFrom = mFromDir + "/" + svgPageName(fromIndex);
         QString svgTo = toDir.toLocalFile() + "/" + svgPageName(toIndex);
@@ -407,6 +411,17 @@ private:
                 element.setAttribute(aActionMedia, newActionPath);
             }
         } else if (tagName == tForeignObject) {
+            //Pdf object is a special case. Detect if it ends with #reference
+            QString reqExt = element.attribute(aReqExt);
+            if (reqExt == vReqExt) { //pdf reference
+                QString ref = element.attribute(aHref);
+                if (ref.isEmpty()) {
+                    return;
+                }
+                ref.replace(QRegExp("^(.*pdf\\#page\\=).*$"), QString("\\1%1").arg(mToIndex));
+                return;
+            }
+
             QString type = element.attribute(aType);
             if (type == vText) { // We don't have to care of the text object
                 if (element.hasAttribute(aActionMedia)) {
@@ -440,6 +455,8 @@ private:
 private:
     QString mFromDir;
     QString mToDir;
+    int mFromIndex;
+    int mToIndex;
 };
 
 class UBForeighnObjectsHandlerPrivate {
