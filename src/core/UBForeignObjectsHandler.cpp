@@ -98,7 +98,7 @@ static bool cp_rf(const QString &what, const QString &where)
         qDebug() << what << "does not exist" << Q_FUNC_INFO;
         return false;
     } else if (whatFi.isFile()) {
-        QString whereDir = where.section(QDir::separator(), 0, -2, QString::SectionSkipEmpty | QString::SectionIncludeLeadingSep);
+        QString whereDir = where.section("/", 0, -2, QString::SectionSkipEmpty | QString::SectionIncludeLeadingSep);
         QString newFilePath = where;
         if (!whereFi.exists()) {
             QDir().mkpath(whereDir);
