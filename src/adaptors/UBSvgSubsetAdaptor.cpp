@@ -1030,7 +1030,6 @@ UBGraphicsGroupContainerItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::readGroup(U
 
                 QGraphicsItem *curItem = readElementFromGroup();
 
-
                 if(curItem  && id.count("{") < 2)
                     groupContainer.append(curItem);
                 else
@@ -1104,8 +1103,9 @@ QGraphicsItem *UBSvgSubsetAdaptor::UBSvgSubsetReader::readElementFromGroup()
     QString uuid = id.right(QUuid().toString().size());
     result = mScene->itemForUuid(QUuid(uuid));
 
-    if(!result)
-        result = mStrokesGroupList.take(uuid.replace("}","").replace("{",""));
+    if(!result){
+        result = mStrokesList.take(uuid.replace("}","").replace("{",""));
+    }
 
     //Q_ASSERT(result);
 

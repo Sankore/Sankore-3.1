@@ -177,7 +177,6 @@ class UBSvgSubsetAdaptor
                 QString mNamespaceUri;
                 UBGraphicsScene *mScene;
                 UBGraphicsItemAction* readAction();
-                QMap<QString,UBGraphicsStrokesGroup*> mStrokesGroupList;
                 QMap<QString,UBGraphicsStroke*> mStrokeList;
         };
 
