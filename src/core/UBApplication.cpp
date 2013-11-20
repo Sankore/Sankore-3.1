@@ -361,7 +361,6 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(mainWindow->actionMultiScreen, SIGNAL(triggered(bool)), applicationController, SLOT(useMultiScreen(bool)));
     connect(mainWindow->actionWidePageSize, SIGNAL(triggered(bool)), boardController, SLOT(setWidePageSize(bool)));
     connect(mainWindow->actionRegularPageSize, SIGNAL(triggered(bool)), boardController, SLOT(setRegularPageSize(bool)));
-    connect(mainWindow->actionImportUniboardDocuments, SIGNAL(triggered()), this, SLOT(importUniboardFiles()));
 
     connect(mainWindow->actionCut, SIGNAL(triggered()), applicationController, SLOT(actionCut()));
     connect(mainWindow->actionCopy, SIGNAL(triggered()), applicationController, SLOT(actionCopy()));
@@ -545,7 +544,6 @@ void UBApplication::decorateActionMenu(QAction* action)
             menu->addSeparator();
             menu->addAction(mainWindow->actionPreferences);
             menu->addAction(mainWindow->actionMultiScreen);
-            menu->addAction(mainWindow->actionImportUniboardDocuments);
             // SANKORE-48: Hide the check update action if the setting
             // EnableAutomaticSoftwareUpdates is false in Uniboard.config
             if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool())
