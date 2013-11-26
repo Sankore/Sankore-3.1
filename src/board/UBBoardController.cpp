@@ -218,6 +218,7 @@ void UBBoardController::setupViews()
     mDisplayView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
     mMessageWindow = new UBMessageWindow(mControlView);
+    mMessageWindow->setCustomPosition(true);
     mMessageWindow->hide();
 
     mPaletteManager = new UBBoardPaletteManager(mControlContainer, this);
