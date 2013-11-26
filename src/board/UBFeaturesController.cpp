@@ -20,7 +20,7 @@
  */
 
 
-
+#include <limits>
 #include <QGraphicsItem>
 #include <QPointF>
 #include <QtGui>
@@ -40,6 +40,7 @@
 #include "domain/UBGraphicsVideoItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
 
+#include "gui/UBMainWindow.h"
 #include "gui/UBFeaturesWidget.h"
 
 void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
@@ -355,10 +356,31 @@ bool UBFeature::inTrash() const
     return getFullPath().toLocalFile().startsWith(QUrl::fromLocalFile(UBSettings::userTrashDirPath()).toLocalFile() );
 }
 
+//issue 1474 - NNE - 20131121
+void UBFeature::setName(const QString &newName)
+{
+    QString name = newName;
+    if(!this->isFolder()){
+        name += '.' + UBFileSystemUtils::extension(this->mName);
+    }
+
+    this->mDisplayName = name;
+    this->mName = name;
+    this->mSortKey = name;
+
+    QString fullPath = this->getFullPath().toString();
+    int slashPos = fullPath.lastIndexOf("/");
+
+    QString newUrl = fullPath.mid(0, slashPos+1) + name;
+    this->mPath = QUrl(newUrl);
+}
+//issue 1474 - NNE - 20131121 : END
+
 UBFeaturesController::UBFeaturesController(QWidget *pParentWidget) :
     QObject(pParentWidget)
     ,featuresList(0)
     ,mLastItemOffsetIndex(0)
+    ,mTrashRegistery(this)
 {
     initHardcodedData();
 
@@ -393,6 +415,9 @@ UBFeaturesController::UBFeaturesController(QWidget *pParentWidget) :
     connect(UBApplication::boardController, SIGNAL(npapiWidgetCreated(QString)), this, SLOT(createNpApiFeature(QString)));
 
     QTimer::singleShot(0, this, SLOT(scanFS()));
+
+    //issue 1474 - NNE - 201310
+    mTrashRegistery.synchronizeWith(UBSettings::userTrashDirPath());
 }
 
 void UBFeaturesController::scanFS()
@@ -1079,6 +1104,17 @@ void UBFeaturesController::addNewFolder(QString name)
     featuresProxyModel->invalidate();
 }
 
+//issue 1474 - NNE - 20131121
+void UBFeaturesController::addNewFolder(QString name, const UBFeature from)
+{
+    UBFeature currentElement = this->currentElement;
+
+    this->currentElement = from;
+    this->addNewFolder(name);
+    this->currentElement = currentElement;
+}
+//issue 1474 - NNE - 20131121 : END
+
 void UBFeaturesController::addItemToPage(const UBFeature &item)
 {
     UBApplication::boardController->downloadURL( item.getFullPath() );
@@ -1262,6 +1298,7 @@ void UBFeaturesController::siftElements(const QString &pSiftValue)
     featuresProxyModel->invalidate();
 
     featuresPathModel->setPath(pSiftValue);
+
     featuresPathModel->invalidate();
 
     if (currentElement != rootData.categoryFeature()) {
@@ -1419,12 +1456,9 @@ void UBFeaturesController::deleteItem(const QUrl &url)
              }
         }
     }
-    if (QFileInfo(path).isFile()) {
-        QFile::remove( path );
 
-    } else if (QFileInfo(path).isDir()) {
-        UBFileSystemUtils::deleteDir(path);
-    }
+    //issue 1474 - NNE - 20131121
+    UBFileSystemUtils::deletePath(path);
 }
 
 void UBFeaturesController::deleteItem(const UBFeature &pFeature)
@@ -1438,11 +1472,35 @@ bool UBFeaturesController::isTrash( const QUrl &url )
 {
     return url.toLocalFile().startsWith(trashData.categoryFeature().getFullPath().toLocalFile());
 }
+
 void UBFeaturesController::moveToTrash(UBFeature feature, bool deleteManualy)
 {
+    //issue 1474 - NNE - 20131126
+    /* First, check if a feature of the same name exists in the trash.
+     * If it exists, we overwrite the file in the trash, otherwise
+     * just move it.
+     */
+
+    bool alreadyInTrash = false;
+    UBFeature item;
+    for(int i = 0; i < featuresList->size(); i++){
+        item = featuresList->at(i);
+        if(item.inTrash() && item.getType() != FEATURE_TRASH && item.getName() == feature.getName()){
+            alreadyInTrash = true;
+            break;
+        }
+    }
+
+    if(alreadyInTrash) deleteItem(item);
+
+    mTrashRegistery.addEntry(feature.getName(), feature.getFullPath().toLocalFile().remove('/'+feature.getName()), feature.getVirtualPath());
+    mTrashRegistery.saveToDisk();
+
+
     featuresModel->moveData(feature, trashData.categoryFeature(), Qt::MoveAction, deleteManualy);
     removeFromFavorite(feature.getFullPath(), true);
     featuresModel->deleteFavoriteItem(UBFeaturesController::fileNameFromUrl(feature.getFullPath()));
+    //issue 1474 - NNE - 20131126 : END
 }
 
 UBFeaturesController::~UBFeaturesController()
@@ -1489,4 +1547,169 @@ void UBFeaturesController::assignPathListView(UBFeaturesListView *pList)
     pList->setItemDelegate(pathItemDelegate);
 }
 
+//issue 1474 - NNE - 20131119
+void UBFeaturesController::restoreFeature(const QVector<UBFeature> features)
+{
+    QString textHasBeenRestored = tr("has been restored to");
+    QString confirmationMessage = "";
 
+    foreach (UBFeature feature, features) {
+        RegisteryEntry entry = mTrashRegistery.getEntry(feature.getName());
+        QStringList path = entry.originalVirtualPath.split("/");
+
+        //Get a reference on the feature, to make the modification on the "true" object
+        int featurePos = this->featuresList->indexOf(feature);
+        UBFeature &referenceFeature = (*featuresList)[featurePos];
+
+        //check and recreate if necessary the folders in the path
+        QString currentPath = "/root";
+        QString parentPath = "";
+
+        for(int i = 2; i < path.size(); i++){
+            currentPath += "/" + path[i];
+
+            if(!currentPath.isEmpty()){
+                UBFeature folder = this->getFeatureByPath(currentPath);
+                if(folder.getFullVirtualPath() == "/"){
+                    this->addNewFolder(path[i], this->getFeatureByPath(parentPath));
+                }
+            }
+
+            parentPath = currentPath;
+        }
+
+        bool isRestored = false;
+        if(feature.isFolder()){
+            isRestored = this->restoreFolderFeature(referenceFeature, entry);
+        }else{
+            isRestored = this->restoreFileFeature(referenceFeature, entry);
+        }
+
+        if(isRestored)
+            confirmationMessage += entry.filename + " " + textHasBeenRestored + " " + entry.originalVirtualPath + "\n";
+    }
+
+    if(!confirmationMessage.isEmpty())
+        UBApplication::showMessage(confirmationMessage);
+
+    this->refreshModels();
+}
+
+UBFeature UBFeaturesController::getFeatureByPath(const QString &path) const
+{
+    for(int i = 0; i < this->featuresList->size(); i++){
+        if(this->featuresList->at(i).getFullVirtualPath() == path){
+            return this->featuresList->at(i);
+        }
+    }
+
+    return UBFeature();
+}
+//issue 1474 - NNE - 20131119 : END
+
+//issue 1474 - NNE - 20131125
+bool UBFeaturesController::restoreFolderFeature(UBFeature &feature, RegisteryEntry entry)
+{
+    /* The feature is a folder.
+     */
+
+    bool hasBeenRestored = true;
+
+    QString path = entry.originalRealPath + "/" + entry.filename;
+    if(QDir(path).exists()){
+        QString uniqueName = UBFileSystemUtils::nextAvailableDirName(path);
+        QString name = uniqueName.mid(uniqueName.lastIndexOf("/") + 1);
+
+        if(name != entry.filename){
+            bool move = UBApplication::mainWindow->yesNoQuestion(
+                            tr("Move folder"),
+                            tr("There is a folder with the same name in this location.")
+                            + "\n\n"
+                            + tr("The folder will be moved and rename to %1").arg(name)
+                            + "\n\n"
+                            + tr("Are you sure to move and rename the folder ?")
+                        );
+            if(move){
+                UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+
+                featuresModel->rename(feature, name);
+                featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+
+                mTrashRegistery.removeEnty(entry.filename);
+            }
+
+            hasBeenRestored = move;
+        }else{
+            UBApplication::mainWindow->warning(
+                tr("Move folder"),
+                tr("Too many folder have the same name in this location %1. Please delete some folder.").arg(entry.originalVirtualPath));
+            hasBeenRestored = false;
+        }
+    }else{
+        UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+        featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+        mTrashRegistery.removeEnty(entry.filename);
+    }
+
+    return hasBeenRestored;
+}
+
+bool UBFeaturesController::restoreFileFeature(UBFeature& feature, RegisteryEntry entry)
+{
+    /* The feature is a file.
+     * If a feature have the same name in the location, generate a new name
+     * then ask the user to confirm.
+     * Otherwise, simply move the file to the location.
+     */
+
+    bool hasBeenRestored = true;
+
+    QString path = entry.originalRealPath + "/" + entry.filename;
+    if(QFile(path).exists()){
+        QString uniqueName = UBFileSystemUtils::nextAvailableFileName(path);
+        QString name = uniqueName.mid(uniqueName.lastIndexOf("/") + 1);
+
+        if(name != entry.filename){
+            bool move = UBApplication::mainWindow->yesNoQuestion(
+                            tr("Move file"),
+                            tr("There is a file with the same name in this location.")
+                            + "\n\n"
+                            + tr("The file will be moved and rename to %1").arg(name)
+                            + "\n\n"
+                            + tr("Are you sure to move and rename the file ?")
+                        );
+
+            if(move){
+                UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+
+                featuresModel->rename(feature, name.split('.')[0]);
+                featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+
+                mTrashRegistery.removeEnty(entry.filename);
+            }
+
+            hasBeenRestored = move;
+        }else{
+            UBApplication::mainWindow->warning(
+                tr("Move file"),
+                tr("Too many file have the same name in this location %1. Please delete some files.").arg(entry.originalVirtualPath));
+            hasBeenRestored = false;
+        }
+    }else{
+        UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+        featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+        mTrashRegistery.removeEnty(entry.filename);
+    }
+
+    return hasBeenRestored;
+}
+//issue 1474 - NNE - 20131125 : END
+
+//issue 1474 - NNE - 20131120
+void UBFeaturesController::removeFromTrashRegistery(UBFeature feature)
+{
+    mTrashRegistery.removeEnty(feature.getName());
+    mTrashRegistery.saveToDisk();
+}
+
+//issue 1474 - NNE - 20131120 :END

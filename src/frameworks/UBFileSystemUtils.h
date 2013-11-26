@@ -64,6 +64,47 @@ class UBFileSystemUtils : public QObject
 
         static bool copy(const QString &source, const QString &Destination, bool overwrite = false);
 
+        //issue 1474 - NNE - 20131120
+        /**
+          * Delete a resource on the disk according to its path.
+          * @arg path The full path on the disk of the resource.
+          * @return True if the resource has been deleted, false otherwise.
+          */
+        static bool deletePath(const QString &path);
+
+        //issue 1474 - NNE - 20131120
+        /**
+          * Rename a ressource on the disk.
+          * @arg path the full path of the resource on the disk.
+          * @arg newName The new name of the resource. If it's a file, the name must be given without the extention.
+          */
+        static void rename(const QString &path, const QString &newName);
+
+        /**
+          * Return the next name avaible for a folder.
+          * @arg filename The full path of the folder on the disk.
+          * @arg seperator The separator between the name of the folder and the id.
+          * @return The next available name. Return the orginal name if all id are used or if path is incorrect.
+          */
+        static QString nextAvailableDirName(const QString& filename, const QString& seperator = "");
+
+        //issue 1474 - NNE - 20131122
+        /**
+          * Checks if the string path is in the string source.
+          * The main difference with he string method contains(),
+          * is that check according the segment of the path.
+          *
+          * Exemple : path = /root/folder and source = /root/folder1
+          *             with contains this will return true,
+          *             with our method this will retur false (and it's the correct result)
+          *
+          * @arg path The path which will be test in source
+          * @arg source The original path where we want to test path
+          *
+          * @return True if path is "in" source, false otherwise.
+          */
+        static bool isPathMatch(QString path, QString source);
+
         static QString cleanName(const QString& name);
 
         static QString digitFileFormat(const QString& s, int digit);
@@ -105,7 +146,13 @@ class UBFileSystemUtils : public QObject
         static QString md5InHex(const QByteArray &pByteArray);
         static QString md5(const QByteArray &pByteArray);
 
-        static QString nextAvailableFileName(const QString& filename, const QString& inter = QString(""));
+        /**
+          * Find the next available filename on the disk.
+          * @arg filename The full path of the filename on the disk.
+          * @arg separator The seperator between the file name and the id.
+          * @return The next filename available on the disk. If no file names are available, return the original file name.
+          */
+        static QString nextAvailableFileName(const QString& filename, const QString& seperator = QString(""));
 
         static QString readTextFile(QString path);
 
