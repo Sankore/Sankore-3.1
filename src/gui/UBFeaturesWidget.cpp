@@ -75,6 +75,9 @@ UBFeaturesWidget::UBFeaturesWidget(QWidget *parent, const char *name)
     layout->addWidget(centralWidget);
     layout->addWidget(mActionBar);
 
+    //issue 1474 - NNE - 20131119
+    connect(centralWidget->listView(), SIGNAL(restoreFeature(QVector<UBFeature>)), controller, SLOT(restoreFeature(QVector<UBFeature>)));
+
     connect(centralWidget->listView(), SIGNAL(clicked(QModelIndex)), this, SLOT(currentSelected(QModelIndex)));
     connect(centralWidget->listView()->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection))
             , this, SLOT(processViewSelectionChanged(QItemSelection,QItemSelection)));
@@ -136,7 +139,15 @@ void UBFeaturesWidget::currentSelected(const QModelIndex &current)
 
     UBFeature feature = controller->getFeature(current, objName);
 
-    if ( feature.isFolder() ) {
+    //issue 1474 - NNE - 20131125
+    bool isNotTrash = feature != controller->trashData.categoryFeature();
+    bool isInTrash = feature.inTrash();
+
+    //if the folder is in the trash, do nothing
+    if(feature.isFolder() && isNotTrash && isInTrash) return;
+    //issue 1474 - NNE - 20131125 : END
+
+    if ( feature.isFolder()) {
         QString newPath = feature.getFullVirtualPath();
 
         controller->setCurrentElement(feature);
@@ -204,11 +215,12 @@ void UBFeaturesWidget::deleteElements( const UBFeaturesMimeData * mimeData )
 
     QList<UBFeature> featuresList = mimeData->features();
 
-    foreach ( UBFeature curFeature, featuresList ) {
-        if ( curFeature.inTrash()) {
+    foreach(UBFeature curFeature, featuresList){
+        if(curFeature.inTrash()){
+            //issue 1474 - NNE - 20131120
+            controller->removeFromTrashRegistery(curFeature);
             controller->deleteItem(curFeature.getFullPath());
-
-        } else {
+        }else{
            controller->moveToTrash(curFeature);
         }
     }
@@ -478,6 +490,26 @@ UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
     : QListView(parent)
 {
     setObjectName(name);
+
+    //issue 1474 - NNE - 20131118
+    contextMenuTrash.setParent(this);
+    contextMenuTrash.setClosable(true);
+
+    textRestoreOneFile = tr("Restore file");
+    textRestoreManyFile = tr("Restore %1 files");
+
+    restoreAction = new QAction(textRestoreOneFile, 0);
+    contextMenuTrash.addAction(restoreAction);
+    contextMenuTrash.hide();
+
+    timer.setInterval(1000);
+    timer.setSingleShot(true);
+
+    connect(&timer, SIGNAL(timeout()), this, SLOT(onLongPressEvent()));
+
+    connect(restoreAction, SIGNAL(triggered()), this, SLOT(emitRestoreFeature()));
+    connect(restoreAction, SIGNAL(triggered()), this, SLOT(hideContextMenu()));
+    //issue 1474 - NNE - 20131118 : END
 }
 
 void UBFeaturesListView::dragEnterEvent( QDragEnterEvent *event )
@@ -488,6 +520,9 @@ void UBFeaturesListView::dragEnterEvent( QDragEnterEvent *event )
 
 void UBFeaturesListView::dragMoveEvent( QDragMoveEvent *event )
 {
+    //issue 1474 - NNE - 20131120
+    timer.stop();
+
     const UBFeaturesMimeData *fMimeData = qobject_cast<const UBFeaturesMimeData*>(event->mimeData());
     QModelIndex index = indexAt(event->pos());
     UBFeature onFeature = model()->data(index, Qt::UserRole + 1).value<UBFeature>();
@@ -531,6 +566,67 @@ void UBFeaturesListView::thumbnailSizeChanged( int value )
     UBSettings::settings()->featureSliderPosition->set(value);
 }
 
+//issue 1474 - NNE - 20131118 : Add the menu for restoring the elements in the trash
+void UBFeaturesListView::mousePressEvent(QMouseEvent *event)
+{
+    if(this->objectName() == UBFeaturesWidget::objNameFeatureList){
+        QModelIndex index = this->indexAt(event->pos());
+        UBFeature feature = model()->data(index, Qt::UserRole + 1).value<UBFeature>();
+
+        if(feature.inTrash() && feature.getType() != FEATURE_TRASH){
+            contextMenuTrash.move(event->pos());
+            timer.start();
+        }
+    }
+
+    QListView::mousePressEvent(event);
+}
+
+void UBFeaturesListView::mouseReleaseEvent(QMouseEvent *event)
+{
+    timer.stop();
+
+    //if the context menu is not visible, do the normale process
+    //else do nothing (to avoid to show the menu of the feature)
+    if(!contextMenuTrash.isVisible()){
+        QListView::mouseReleaseEvent(event);
+    }
+}
+
+void UBFeaturesListView::onLongPressEvent()
+{
+    QModelIndexList selectedModel = this->selectionModel()->selectedIndexes();
+
+    if(selectedModel.count() == 1){
+        restoreAction->setText(textRestoreOneFile);
+    }else{
+        restoreAction->setText(textRestoreManyFile.arg(selectedModel.count()));
+    }
+
+    contextMenuTrash.show();
+}
+//issue 1474 - NNE - 20131118 : END
+
+//issue 1474 - NNE - 20131119
+void UBFeaturesListView::emitRestoreFeature()
+{
+    QModelIndexList selectedModel = this->selectionModel()->selectedIndexes();
+    QVector<UBFeature> selectedFeatures;
+
+    foreach (QModelIndex m, selectedModel) {
+        selectedFeatures.push_back(model()->data(m, Qt::UserRole + 1).value<UBFeature>());
+    }
+
+    emit restoreFeature(selectedFeatures);
+}
+//issue 1474 - NNE - 20131119 : END
+
+//issue 1474 - NNE - 20131121 : END
+void UBFeaturesListView::hideContextMenu()
+{
+    this->contextMenuTrash.hide();
+}
+
 UBFeaturesNavigatorWidget::UBFeaturesNavigatorWidget(QWidget *parent, const char *name) :
     QWidget(parent), mListView(0), mListSlider(0)
 
@@ -539,6 +635,7 @@ UBFeaturesNavigatorWidget::UBFeaturesNavigatorWidget(QWidget *parent, const char
 
     setObjectName(name);
 //    SET_STYLE_SHEET()
+
 
     mListView = new UBFeaturesListView(this, UBFeaturesWidget::objNameFeatureList);
 
@@ -1393,13 +1490,16 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
 
     if ( sourcePath.compare(destFullPath, Qt::CaseInsensitive ) || destination.getType() != FEATURE_TRASH)
     {
+
         UBFileSystemUtils::copy(sourcePath, destFullPath);
+
+
         if (action == Qt::MoveAction) {
             curController->deleteItem( source.getFullPath() );
         }
     }
 
-    //Passing all the source container ubdating dependancy pathes
+    //If it's a folder, we have to update the path of each file/folder in the source folder
     if (sourceType == FEATURE_FOLDER) {
         for (int i = 0; i < featuresList->count(); i++) {
 
@@ -1408,12 +1508,14 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
             QString curFeatureFullPath = curFeature.getFullPath().toLocalFile();
             QString curFeatureVirtualPath = curFeature.getVirtualPath();
 
-            if (curFeatureFullPath.contains(sourcePath) && curFeatureFullPath != sourcePath) {
+
+            if (UBFileSystemUtils::isPathMatch(curFeatureFullPath, sourcePath) && curFeatureFullPath != sourcePath) {
 
                 UBFeature copyFeature = curFeature;
                 QUrl newPath = QUrl::fromLocalFile(curFeatureFullPath.replace(sourcePath, destFullPath));
+
                 QString newVirtualPath = curFeatureVirtualPath.replace(sourceVirtualPath, destVirtualPath);
-                //when copying to trash don't change the real path
+
                 if (destination.getType() != FEATURE_TRASH) {
                     // processing copy or move action for real FS
                     if (action == Qt::CopyAction) {
@@ -1426,6 +1528,8 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
                         copyFeature.setPermissions(curFeature.getPermissions());
                     } else {
                         curFeature.setPermissions(UBFeature::WRITE_P | UBFeature::DELETE_P);
+                        //issue 1474 - NNE - 20131125
+                        curFeature.setFullPath(newPath);
                     }
                 }
                 // processing copy or move action for virtual FS
@@ -1444,14 +1548,13 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
 
     UBFeature newElement( destVirtualPath + "/" + name, sourceIcon, name, QUrl::fromLocalFile(destFullPath), sourceType );
     addItem(newElement);
-
     if (deleteManualy) {
         deleteItem(source);
     }
 
 // Commented because of crashes on mac. But works fine. It is not predictable behavior.
 // Please uncomment it if model will not refreshes
-//   emit dataRestructured();.
+//   emit dataRestructured();
 }
 
 Qt::ItemFlags UBFeaturesModel::flags( const QModelIndex &index ) const
@@ -1494,6 +1597,15 @@ int UBFeaturesModel::rowCount(const QModelIndex &parent) const
         return 0;
     else
         return featuresList->size();
+}
+
+//issue 1474 - NNE - 20131121
+void UBFeaturesModel::rename(UBFeature &feature, const QString newName) const
+{
+    QString path = feature.getFullPath().toLocalFile();
+
+    UBFileSystemUtils::rename(path, newName);
+    feature.setName(newName);
 }
 
 bool UBFeaturesProxyModel::filterAcceptsRow( int sourceRow, const QModelIndex & sourceParent )const
@@ -1550,7 +1662,8 @@ bool UBFeaturesPathProxyModel::filterAcceptsRow( int sourceRow, const QModelInde
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
     UBFeature feature = sourceModel()->data(index, Qt::UserRole + 1).value<UBFeature>();
 
-    return feature.isFolder() && path.startsWith( feature.getFullVirtualPath()) ;
+    //issue 1474 - NNE - 20131122
+    return feature.isFolder() && UBFileSystemUtils::isPathMatch(path, feature.getFullVirtualPath());
 }
 
 QString	UBFeaturesItemDelegate::displayText ( const QVariant & value, const QLocale & locale ) const

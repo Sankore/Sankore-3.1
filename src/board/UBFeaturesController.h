@@ -39,6 +39,7 @@
 #include <QThread>
 #include <QMutex>
 #include <QWaitCondition>
+#include "frameworks/UBTrashRegistery.h"
 
 class UBFeaturesModel;
 class UBFeaturesItemDelegate;
@@ -93,6 +94,8 @@ public:
 //    UBFeature();
     virtual ~UBFeature();
     QString getName() const { return mName; }
+
+
     QString getDisplayName() const {return mDisplayName;}
     QImage getThumbnail() const {return mThumbnail;}
     QString getVirtualPath() const { return virtualDir; }
@@ -103,6 +106,14 @@ public:
     QString getSortKey() const {return mSortKey;}
     void setFullPath(const QUrl &newPath) {mPath = newPath;}
     void setFullVirtualPath(const QString &newVirtualPath) {virtualDir = newVirtualPath;}
+
+    //issue 1474 - NNE - 20131121
+    /**
+      * Change the current name of the feature.
+      * @arg newName The new name of the feature.
+      */
+    void setName(const QString &newName);
+
     UBFeatureElementType getType() const { return elementType; }
     UBFeature &markedWithSortKey(const QString &str);
 
@@ -319,6 +330,12 @@ public:
     void assignFeaturesListView(UBFeaturesListView *pList);
     void assignPathListView(UBFeaturesListView *pList);
 
+    //issue 1474 - NNE - 20131120
+    /**
+      * Simple wrapper that remove the associated entry of the feature in the trash registery.
+      * @arg feature The feature to remove from the trash registery.
+      */
+    void removeFromTrashRegistery(UBFeature feature);
 public:
     //Hardcoded toplevel data
     CategoryData rootData;
@@ -347,9 +364,35 @@ signals:
     void scanPath(const QString &);
 
 private slots:
+    /**
+      * Add a new folder in the currentFeature.
+      * @arg name The name of the new folder.
+      */
     void addNewFolder(QString name);
+
+    //issue 1474 - NNE - 20131121
+    /**
+      * Add a new folder in the feature given in parameter.
+      * @arg name The name of the new folder.
+      * @arg from The feature where the folder will be added.
+      */
+    void addNewFolder(QString name, const UBFeature from);
+
     void scanFS();
     void createNpApiFeature(const QString &str);
+
+//issue 1474 - NNE - 20131119
+public slots:
+    /**
+      * Action performs when a feature or several features have to be restored.
+      * @arg features The features to restore.
+      */
+    void restoreFeature(const QVector<UBFeature> features);
+
+    bool restoreFolderFeature(UBFeature &feature, RegisteryEntry entry);
+
+    bool restoreFileFeature(UBFeature &feature, RegisteryEntry entry);
+//issue 1474 - NNE - 20131119 : END
 
 private:
 
@@ -363,6 +406,9 @@ private:
 
     QAbstractItemModel *curListModel;
     UBFeaturesComputingThread mCThread;
+
+    //issue 1474 - NNE - 20131025
+    UBTrashRegistery mTrashRegistery;///< This the trash registery. It is used to restore the elements in the trash.
 
 private:
 
@@ -384,6 +430,9 @@ public:
     CategoryData getDestinationCategoryForUrl( const QUrl &url );
     CategoryData getDestinationCategoryForMimeType(const QString &pMmimeType, const QUrl &sourceUrl = QUrl());
     QString getFeaturePathByName(const QString &featureName) const;
+
+    //issue 1474 - NNE - 20131119
+    UBFeature getFeatureByPath(const QString &path) const;
 
 };
 

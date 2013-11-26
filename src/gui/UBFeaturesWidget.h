@@ -47,6 +47,7 @@
 #include <QtWebKit>
 #include <QWebView>
 #include <QWebSettings>
+#include "UBActionPalette.h"
 
 #define THUMBNAIL_WIDTH 400
 #define ID_LISTVIEW 0
@@ -169,13 +170,57 @@ public:
     UBFeaturesListView(QWidget* parent=0, const char* name="UBFeaturesListView");
     virtual ~UBFeaturesListView() {;}
 
+    //issue 1474 - NNE - 20131118
+    /**
+      * Reimplement the mousePressEvent function.
+      * This reimplimentation allow to detect a long press on a feature.
+      * @arg event The event given by Qt.
+      */
+    virtual void mousePressEvent(QMouseEvent *event);
+
+    /**
+      * Reimplement the mouseReleaseEvent function.
+      * This reimplementation allow to dectect a long press on a feature.
+      * @arg event The event given by Qt.
+      */
+    virtual void mouseReleaseEvent(QMouseEvent *event);
+    //issue 1474 - NNE - 20131118 : END
+
 protected:
     virtual void dragEnterEvent(QDragEnterEvent *event);
     virtual void dropEvent(QDropEvent *event);
     virtual void dragMoveEvent(QDragMoveEvent *event);
 
+//issue 1474 - NNE - 20131118
+private:
+    QTimer timer;///< Use to implement the long press event.
+    UBActionPalette contextMenuTrash;///< The context menu when an user makes a long click on an element in the trash.
+    QAction *restoreAction;///< The QAction for the restoring action.
+    QString textRestoreOneFile;
+    QString textRestoreManyFile;
+//issue 1474 - NNE - 20131118 : END
+
 private slots:
     void thumbnailSizeChanged(int);
+
+    //issue 1474 - NNE - 20131121
+    /**
+      * Action performs when the user makes a long press by the view.
+      * In our case, just show the context menu.
+      */
+    void onLongPressEvent();
+    void emitRestoreFeature();
+    void hideContextMenu();
+    //issue 1474 - NNE - 20131121 : END
+
+//issue 1474 - NNE - 20131118
+signals:
+    /**
+      * Emit when the user clicks on the restore action of the context menu.
+      * @arg features The features which has been selected by the user.
+      */
+    void restoreFeature(const QVector<UBFeature> features);
+//issue 1474 - NNE - 20131118 : END
 
 };
 
@@ -193,7 +238,6 @@ public:
 private:
     UBFeaturesListView *mListView;
     QSlider *mListSlider;
-
 };
 
 class UBFeaturesCentralWidget : public QWidget
@@ -402,9 +446,30 @@ public:
     //bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
     //bool insertRow(int row, const QModelIndex &parent = QModelIndex());
 
+    /**
+      * Move the data of the feature to a destination.
+      *
+      * @arg source The feature to moved.
+      * @arg destination The feature of the destination.
+      * @arg action The action performs on the moving. Can be Qt::CopyAction or Qt::MoveAction.
+      * @arg deleteManualy Allow to remove the source after the moving.
+      */
     void moveData(const UBFeature &source, const UBFeature &destination, Qt::DropAction action, bool deleteManualy = false);
+
     Qt::DropActions supportedDropActions() const { return Qt::MoveAction | Qt::CopyAction; }
 //    void setFeaturesList(QList <UBFeature> *flist ) { featuresList = flist; }
+
+
+    //issue 1474 - NNE - 20131121
+    /**
+      * Rename a feature.
+      * This function updates the file pointed by the feature.
+      *
+      * @arg feature The feature to renamed.
+      * @arg newName The new name of the feature.
+      */
+    void rename(UBFeature &feature, const QString newName) const;
+    //issue 1474 - NNE - 20131121 : END
 
 public slots:
     void addItem( const UBFeature &item );
