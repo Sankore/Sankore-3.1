@@ -122,6 +122,11 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         //issue 1554
         bool isActivatedTextEditor;
+
+    protected:
+         //issue 1539 - NNE - 20131018
+         void keyPressEvent(QKeyEvent *event);
+
 };
 
 #endif /* UBGRAPHICSTEXTITEM_H_ */
