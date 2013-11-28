@@ -360,11 +360,15 @@ void UBGraphicsScene::updateGroupButtonState()
     int selCount = selItems.count();
 
     if (selCount < 1) {
+        //issue NC - NNE - 20131128 : correction bug of group action icon
+        groupAction->setChecked(false);
         groupAction->setEnabled(false);
         groupAction->setText(UBApplication::app()->boardController->actionGroupText());
 
     } else if (selCount == 1) {
         if (selItems.first()->type() == UBGraphicsGroupContainerItem::Type) {
+            //issue NC - NNE - 20131128 : correction bug of group action icon
+            groupAction->setChecked(true);
             groupAction->setEnabled(true);
             groupAction->setText(UBApplication::app()->boardController->actionUngroupText());
         } else {
