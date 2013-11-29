@@ -71,6 +71,15 @@ enum UBFeatureElementType
     FEATURE_INVALID
 };
 
+enum UBFeatureBackgroundDisposition
+{
+    Center,
+    Adjust,
+    Mosaic,
+    Fill,
+    Extend
+};
+
 class UBFeature
 {
 public:
@@ -117,6 +126,11 @@ public:
     UBFeatureElementType getType() const { return elementType; }
     UBFeature &markedWithSortKey(const QString &str);
 
+    // Issue 1684 - CFA - 20131125
+    const UBFeatureBackgroundDisposition &getBackgroundDisposition() const;
+    void setBackgroundDisposition(UBFeatureBackgroundDisposition disposition);
+
+
     bool isFolder() const;
     bool allowedCopy() const;
     bool isDeletable() const;
@@ -130,7 +144,6 @@ public:
     bool operator !=( const UBFeature &f )const;
     const QMap<QString,QString> & getMetadata() const { return metadata; }
     void setMetadata( const QMap<QString,QString> &data ) { metadata = data; }
-
 
 private:
     QString getNameFromVirtualPath(const QString &pVirtPath);
@@ -147,6 +160,7 @@ private:
     QMap<QString,QString> metadata;
     Permissions mOwnPermissions;
     QString mSortKey;
+    UBFeatureBackgroundDisposition mDisposition;
 };
 Q_DECLARE_METATYPE( UBFeature )
 Q_DECLARE_OPERATORS_FOR_FLAGS(UBFeature::Permissions)
@@ -286,6 +300,7 @@ public:
 
     void addItemToPage(const UBFeature &item);
     void addItemAsBackground(const UBFeature &item);
+    void addItemAsDefaultBackground(const UBFeature &item);
     const UBFeature& getCurrentElement()const {return currentElement;}
     void setCurrentElement( const UBFeature &elem ) {currentElement = elem;}
     UBFeature getTrashElement () const { return trashData.categoryFeature(); }

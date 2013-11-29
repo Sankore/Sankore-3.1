@@ -34,6 +34,7 @@
 
 UBDocumentProxy::UBDocumentProxy()
     : mPageCount(0)
+    , mHasDefaultImageBackground(false)
 {
     init();
 }
@@ -45,10 +46,12 @@ UBDocumentProxy::UBDocumentProxy(const UBDocumentProxy &rValue) :
     mMetaDatas = rValue.mMetaDatas;
     mIsModified = rValue.mIsModified;
     mPageCount = rValue.mPageCount;
+    mHasDefaultImageBackground = false;
 }
 
 UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)
     : mPageCount(0)
+    , mHasDefaultImageBackground(false)
 {
     init();
     setPersistencePath(pPersistancePath);
@@ -68,6 +71,7 @@ void UBDocumentProxy::init()
 
     setUuid(QUuid::createUuid());
 
+    //qDebug() << UBSettings::settings()->pageSize->get().toSize();
     setDefaultDocumentSize(UBSettings::settings()->pageSize->get().toSize());
 
     //teacherGuide metadata
@@ -246,6 +250,31 @@ bool UBDocumentProxy::isModified() const
     return mIsModified;
 }
 
+
+void UBDocumentProxy::setHasDefaultImageBackground(const bool hasDefault)
+{
+   mHasDefaultImageBackground = hasDefault;
+}
+
+const bool UBDocumentProxy::hasDefaultImageBackground() const
+{
+    return mHasDefaultImageBackground;
+}
+
+void UBDocumentProxy::setDefaultImageBackground(const UBFeature& item)
+{
+   mDefaultImageBackground = item;
+}
+
+UBFeature& UBDocumentProxy::defaultImageBackground()
+{
+    return mDefaultImageBackground;
+}
+
+const UBFeature& UBDocumentProxy::defaultImageBackground() const
+{
+    return mDefaultImageBackground;
+}
 
 
 

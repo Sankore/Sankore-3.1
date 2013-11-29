@@ -42,6 +42,7 @@
 
 #include "gui/UBMainWindow.h"
 #include "gui/UBFeaturesWidget.h"
+#include "core/UBPersistenceManager.h"
 
 #include <sstream>
 #include <vector>
@@ -266,6 +267,7 @@ UBFeature::UBFeature(const QString &url
     , elementType(type)
     , mOwnPermissions(pOwnPermissions)
     , mSortKey(pSortKey)
+    , mDisposition(Center)
 {
     mName = getNameFromVirtualPath(url);
     virtualDir = getVirtualDirFromVirtualPath(url);
@@ -1145,7 +1147,44 @@ void UBFeaturesController::addItemToPage(const UBFeature &item)
 
 void UBFeaturesController::addItemAsBackground(const UBFeature &item)
 {
-    UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true );
+    // Issue 1684 - CFA - 20131127 : handle default background
+    if ( UBApplication::boardController->selectedDocument()->hasDefaultImageBackground()
+        && item.getFullPath() !=  UBApplication::boardController->selectedDocument()->defaultImageBackground().getFullPath()
+        && item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())
+        UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
+    UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.getBackgroundDisposition());
+}
+
+// Issue 1684 - CFA - 20131120
+const UBFeatureBackgroundDisposition& UBFeature::getBackgroundDisposition() const
+{
+    return mDisposition;
+}
+
+void UBFeature::setBackgroundDisposition(UBFeatureBackgroundDisposition disposition)
+{
+    mDisposition = disposition;
+}
+
+
+void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
+{
+    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+    // on clean le répertoire
+    UBFileSystemUtils::deleteFilesContaining(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::imageDirectory, "background");
+            // + "/" + pixmapItem->uuid().toString() + "_background"  + ".png";
+
+    int currentPageIndex = UBApplication::boardController->activeSceneIndex();
+    UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(true);
+    UBApplication::boardController->selectedDocument()->setDefaultImageBackground(item);
+    for (int i = 0; i < UBApplication::boardController->selectedDocument()->pageCount(); i++)
+    {
+        UBApplication::boardController->setActiveDocumentScene(i);
+        UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true,  false, item.getBackgroundDisposition() );
+    }
+    UBApplication::boardController->setActiveDocumentScene(currentPageIndex);
+    QApplication::restoreOverrideCursor();
 }
 
 CategoryData UBFeaturesController::getDestinationCategoryForUrl( const QUrl &url )

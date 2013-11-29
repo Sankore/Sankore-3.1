@@ -284,6 +284,21 @@ QFileInfoList UBFileSystemUtils::allElementsInDirectory(const QString& pDirPath)
 }
 
 
+bool UBFileSystemUtils::deleteFilesContaining(const QString& pDirPath, const QString& pFileName)
+{
+    if (pDirPath == "" || pDirPath == "." || pDirPath == "..")
+        return false;
+
+    QDir dir(pDirPath);
+
+    if (dir.exists())
+        foreach(QString dirContent, dir.entryList(QDir::Files | QDir::NoDotAndDotDot , QDir::Name))
+            if (dirContent.contains(pFileName))
+                QFile::remove(pDirPath + "/" + dirContent);
+
+    return true;
+}
+
 bool UBFileSystemUtils::deleteDir(const QString& pDirPath)
 {
     if (pDirPath == "" || pDirPath == "." || pDirPath == "..")

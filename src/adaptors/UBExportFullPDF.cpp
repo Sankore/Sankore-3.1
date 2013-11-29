@@ -86,7 +86,8 @@ void UBExportFullPDF::saveOverlayPdf(UBDocumentProxy* pDocumentProxy, const QStr
     for(int pageIndex = 0 ; pageIndex < pDocumentProxy->pageCount(); pageIndex++)
     {
         //issue 1483 - NNE - 20131031
-        UBGraphicsScene* scene = allScenes[pageIndex];
+        qDebug() << allScenes;
+        UBGraphicsScene* scene = allScenes.at(pageIndex);
 
         // set background to white, no grid for PDF output
         bool isDark = scene->isDarkBackground();
