@@ -32,6 +32,7 @@
 
 #include "UBItem.h"
 #include "tools/UBGraphicsCurtainItem.h"
+#include "board/UBFeaturesController.h"
 
 class UBGraphicsPixmapItem;
 class UBGraphicsProxyWidget;
@@ -170,7 +171,15 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         UBGraphicsGroupContainerItem *createGroup(QList<QGraphicsItem*> items);
         void addGroup(UBGraphicsGroupContainerItem *groupItem);
 
-        QGraphicsItem* setAsBackgroundObject(QGraphicsItem* item, bool pAdaptTransformation = false, bool expand = false);
+        QGraphicsItem* setAsBackgroundObject(QGraphicsItem* item, bool pAdaptTransformation = false, bool expand = false, UBFeatureBackgroundDisposition disposition = Center);
+
+        QUrl backgroundObjectUrl();
+        void setBackgroundObjectUrl(QUrl url);
+
+        const UBFeatureBackgroundDisposition backgroundObjectDisposition() const
+        {
+            return mBackgroundObjectDisposition;
+        }
 
         QGraphicsItem* backgroundObject() const
         {
@@ -182,7 +191,7 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
             return item == mBackgroundObject;
         }
 
-        QGraphicsItem* scaleToFitDocumentSize(QGraphicsItem* item, bool center = false, int margin = 0, bool expand = false);
+        QGraphicsItem* scaleToFitDocumentSize(QGraphicsItem* item, bool center = false, int margin = 0, bool expand = false, UBFeatureBackgroundDisposition disposition = Center);
 
         QRectF normalizedSceneRect(qreal ratio = -1.0);
 
@@ -410,6 +419,9 @@ public slots:
         qreal mZoomFactor;
 
         QGraphicsItem* mBackgroundObject;
+        // Issue 1684 - CFA - 20131128
+        UBFeatureBackgroundDisposition mBackgroundObjectDisposition;
+        QUrl mBackgroundObjectUrl;
 
         QPointF mPreviousPoint;
         qreal mPreviousWidth;

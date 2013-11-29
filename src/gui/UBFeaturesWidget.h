@@ -96,6 +96,9 @@ public:
     void switchToRoot();
     void switchToBookmarks();
 
+    // Issue 1684 - CFA 20131120
+    UBFeaturesCentralWidget* getCentralWidget() { return centralWidget; }
+
     static const int minThumbnailSize = 20;
     static const int maxThumbnailSize = 100;
     static const int defaultThumbnailSize = 40;
@@ -135,7 +138,7 @@ private slots:
 private:
     void switchToListView();
     void switchToProperties();
-    void switchToWebView();
+    void switchToWebView();    
 
 private:
     UBFeaturesController *controller;
@@ -332,7 +335,8 @@ private:
 class UBFeatureProperties : public QWidget
 {
     Q_OBJECT
-public:
+public:   
+
     UBFeatureProperties(QWidget* parent=0, const char* name="UBFeatureProperties");
     ~UBFeatureProperties();
 
@@ -348,7 +352,12 @@ protected:
 private slots:
     void onAddToPage();
     void onAddToLib();
+    void setAsBackgroundPressed();
+    void setAsBackgroundReleased();
+    void setAsDefaultBackgroundPressed();
+    void setAsDefaultBackgroundReleased();
     void onSetAsBackground();
+    void onSetAsDefaultBackground();
     //void onBack();
 
 private:
@@ -359,7 +368,15 @@ private:
     QHBoxLayout* mpButtonLayout;
     UBFeatureItemButton *mpAddPageButton;
     UBFeatureItemButton *mpAddToLibButton;
+
+    //Issue 1684 - CFA - 20131120
     UBFeatureItemButton *mpSetAsBackgroundButton;
+    QTime mSetAsBackgroundButtonPressedTime;
+    bool mPendingSetAsBackgroundButtonPressed;
+    UBFeatureItemButton *mpSetAsDefaultBackgroundButton;
+    QTime mSetAsDefaultBackgroundButtonPressedTime;
+    bool mPendingSetAsDefaultBackgroundButtonPressed;
+
     QLabel* mpObjInfoLabel;
     QTreeWidget* mpObjInfos;
     QLabel* mpThumbnail;

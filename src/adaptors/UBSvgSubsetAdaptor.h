@@ -239,8 +239,8 @@ class UBSvgSubsetAdaptor
                         return trickAlpha;
                 }
 
-                void pixmapItemToLinkedImage(UBGraphicsPixmapItem *pixmapItem);
-                void svgItemToLinkedSvg(UBGraphicsSvgItem *svgItem);
+                void pixmapItemToLinkedImage(UBGraphicsPixmapItem *pixmapItem, bool isBackground = false); // Issue 1684 - CFA 20131128
+                void svgItemToLinkedSvg(UBGraphicsSvgItem *svgItem, bool isBackground = false);
                 void pdfItemToLinkedPDF(UBGraphicsPDFItem *pdfItem);
                 void videoItemToLinkedVideo(UBGraphicsMediaItem *videoItem);
                 void audioItemToLinkedAudio(UBGraphicsMediaItem *audioItem);

@@ -394,6 +394,13 @@ void UBBoardController::connectToolbar()
     connect(mMainWindow->actionEraseAnnotations, SIGNAL(triggered()), this, SLOT(clearSceneAnnotation()));
     connect(mMainWindow->actionEraseBackground,SIGNAL(triggered()),this,SLOT(clearSceneBackground()));
 
+    // Issue 1684 - CFA - 20131119
+    connect(mMainWindow->actionCenterImageBackground, SIGNAL(triggered()), this, SLOT( centerImageBackground()));
+    connect(mMainWindow->actionAdjustImageBackground, SIGNAL(triggered()), this, SLOT( adjustImageBackground()));
+    connect(mMainWindow->actionMosaicImageBackground, SIGNAL(triggered()), this, SLOT( mosaicImageBackground()));
+    connect(mMainWindow->actionFillImageBackground, SIGNAL(triggered()), this, SLOT( fillImageBackground()));
+    connect(mMainWindow->actionExtendImageBackground, SIGNAL(triggered()), this, SLOT( extendImageBackground()));
+
     connect(mMainWindow->actionUndo, SIGNAL(triggered()), UBApplication::undoStack, SLOT(undo()));
     connect(mMainWindow->actionRedo, SIGNAL(triggered()), UBApplication::undoStack, SLOT(redo()));
     connect(mMainWindow->actionRedo, SIGNAL(triggered()), this, SLOT(startScript()));
@@ -497,6 +504,11 @@ void UBBoardController::addScene()
     reloadThumbnails(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
 
     setActiveDocumentScene(mActiveSceneIndex + 1);
+
+    // Issue 1684 - CFA - 20131127 : handle default background
+    if (selectedDocument()->hasDefaultImageBackground())
+        downloadURL( selectedDocument()->defaultImageBackground().getFullPath(), QString(), QPointF(), QSize(), true, false, selectedDocument()->defaultImageBackground().getBackgroundDisposition());
+
     QApplication::restoreOverrideCursor();
 }
 
@@ -528,7 +540,8 @@ void UBBoardController::addScene(UBGraphicsScene* scene, bool replaceActiveIfEmp
             persistCurrentScene();
             UBPersistenceManager::persistenceManager()->insertDocumentSceneAt(selectedDocument(), scene, mActiveSceneIndex + 1);
             setActiveDocumentScene(mActiveSceneIndex + 1);
-        }        
+        }
+
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
     }
 }
@@ -834,6 +847,75 @@ void UBBoardController::clearSceneAnnotation()
     }
 }
 
+// Issue 1684 - CFA - 20131120
+void UBBoardController::setImageBackground(UBFeatureBackgroundDisposition disposition)
+{
+    downloadURL(mActiveScene->backgroundObjectUrl(), QString(), QPointF(), QSize(), true, false, disposition);
+}
+
+void UBBoardController::centerImageBackground()
+{
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties());
+    else
+        c->addItemAsBackground(paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties());
+}
+
+void UBBoardController::adjustImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+    // on fait joujou avec f ...
+
+    f.setBackgroundDisposition(Adjust);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+
+}
+
+void UBBoardController::mosaicImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Mosaic);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+}
+
+void UBBoardController::fillImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Fill);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+}
+
+void UBBoardController::extendImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Extend);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+}
+
 void UBBoardController::clearSceneBackground()
 {
     if (mActiveScene)
@@ -905,7 +987,7 @@ void UBBoardController::zoomRestore()
     QTransform tr;
 
     tr.scale(mSystemScaleFactor, mSystemScaleFactor);
-    mControlView->setTransform(tr);
+    mControlView->setTransform(tr);    
 
     centerRestore();
 
@@ -1082,7 +1164,7 @@ void UBBoardController::groupButtonClicked()
     }
 }
 
-void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, const QPointF& pPos, const QSize& pSize, bool isBackground, bool internalData)
+void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, const QPointF& pPos, const QSize& pSize, bool isBackground, bool internalData, UBFeatureBackgroundDisposition disposition)
 {
     qDebug() << "something has been dropped on the board! Url is: " << url.toString();
     QString sUrl = url.toString();
@@ -1114,7 +1196,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
         {
             QFile file(fileName);
             file.open(QIODevice::ReadOnly);
-            downloadFinished(true, formedUrl, QUrl(), contentType, file.readAll(), pPos, pSize, true, isBackground, internalData);
+            downloadFinished(true, formedUrl, QUrl(), contentType, file.readAll(), pPos, pSize, true, isBackground, internalData, eItemActionType_Default, disposition);
             file.close();
        }
        else
@@ -1214,7 +1296,7 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
     }
 }
 
-UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData, eItemActionType actionType)
+UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData, eItemActionType actionType, UBFeatureBackgroundDisposition disposition)
 {
     Q_ASSERT(pSuccess);
 
@@ -1224,7 +1306,6 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     // why we will check if an ; exists and take the first part (the standard allows this kind of mimetype)
     if(mimeType.isEmpty())
       mimeType = UBFileSystemUtils::mimeTypeFromFileName(sourceUrl.toString());
-
 
     int position=mimeType.indexOf(";");
     if(position != -1)
@@ -1276,25 +1357,52 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         }
     }
 
-
     if (UBMimeType::RasterImage == itemMimeType)
     {
         QPixmap pix;
         if(pData.length() == 0){
             pix.load(sourceUrl.toLocalFile());
         }
-        else{
-            QImage img;
-            img.loadFromData(pData);
-            pix = QPixmap::fromImage(img);
+        else
+        {
+            // Issue 1684 - CFA - 20131127 : pour la disposition mosaique, on doit modifier la taille de l'image elle-même
+            QImage srcImage;
+            srcImage.loadFromData(pData);
+            if (disposition == Mosaic)
+            {
+                QImage destImage = QImage(mActiveScene->nominalSize().width(), mActiveScene->nominalSize().height(), QImage::Format_ARGB32_Premultiplied);
+                destImage.fill(QColor(Qt::transparent).rgba());
+                QPoint destPos = QPoint(0, 0);
+                QPainter painter(&destImage);
+                while (destPos.y() < mActiveScene->nominalSize().height())
+                {
+                    while (destPos.x() < mActiveScene->nominalSize().width())
+                    {
+                        painter.drawImage(destPos, srcImage);
+                        destPos += QPoint(srcImage.width(), 0);
+                    }
+                    destPos.setX(0);
+                    destPos += QPoint(0, srcImage.height());
+                }
+                painter.end();
+
+                pix = QPixmap::fromImage(destImage);
+            }
+            else
+            {
+                pix = QPixmap::fromImage(srcImage);
+            }
         }
 
         UBGraphicsPixmapItem* pixItem = mActiveScene->addPixmap(pix, NULL, pPos, 1.);
         pixItem->setSourceUrl(sourceUrl);
 
+
         if (isBackground)
         {
-            mActiveScene->setAsBackgroundObject(pixItem, true);
+                // Issue 1684 - CFA - need to save background Url
+                mActiveScene->setBackgroundObjectUrl(sourceUrl);
+                mActiveScene->setAsBackgroundObject(pixItem, true, false, disposition);
         }
         else
         {
@@ -1308,12 +1416,48 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     else if (UBMimeType::VectorImage == itemMimeType)
     {
         qDebug() << "accepting mime type" << mimeType << "as vector image";
+        // Issue 1684 - CFA - 20131127 : pour la disposition mosaique, on doit modifier la taille de l'image elle-même
+        UBGraphicsPixmapItem* pixItem = NULL;
+        UBGraphicsSvgItem* svgItem = NULL;
+        if (disposition == Mosaic)
+        {
+            QImage srcImage;
+            srcImage.loadFromData(pData);
+            QImage destImage = QImage(mActiveScene->nominalSize().width(), mActiveScene->nominalSize().height(), QImage::Format_ARGB32_Premultiplied);
+            destImage.fill(QColor(Qt::transparent).rgba());
+            QPoint destPos = QPoint(0, 0);
+            QPainter painter(&destImage);
+            while (destPos.y() < mActiveScene->nominalSize().height())
+            {
+                while (destPos.x() < mActiveScene->nominalSize().width())
+                {
+                    painter.drawImage(destPos, srcImage);
+                    destPos += QPoint(srcImage.width(), 0);
+                }
+                destPos.setX(0);
+                destPos += QPoint(0, srcImage.height());
+            }
+            painter.end();
 
-        UBGraphicsSvgItem* svgItem = mActiveScene->addSvg(sourceUrl, pPos, pData);
-        svgItem->setSourceUrl(sourceUrl);
+            QPixmap pix = QPixmap::fromImage(destImage);
+            pixItem = mActiveScene->addPixmap(pix, NULL, pPos, 1.);
+            pixItem->setSourceUrl(sourceUrl);
+        }
+        else
+        {
+            svgItem = mActiveScene->addSvg(sourceUrl, pPos, pData);
+            svgItem->setSourceUrl(sourceUrl);
+        }
 
         if (isBackground)
-            mActiveScene->setAsBackgroundObject(svgItem);
+        {
+            // Issue 1684 - CFA - need to save background Url
+            mActiveScene->setBackgroundObjectUrl(sourceUrl);
+            if (disposition == Mosaic)
+                mActiveScene->setAsBackgroundObject(pixItem, true, false, disposition);
+            else
+                mActiveScene->setAsBackgroundObject(svgItem, true, false, disposition);
+        }
         else
         {
             mActiveScene->scaleToFitDocumentSize(svgItem, true, UBSettings::objectInControlViewMargin);
@@ -1340,7 +1484,9 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
 
         if (isBackground)
         {
-            mActiveScene->setAsBackgroundObject(appleWidgetItem);
+            // Issue 1684 - CFA - need to save background Url
+            mActiveScene->setBackgroundObjectUrl(sourceUrl);
+            mActiveScene->setAsBackgroundObject(appleWidgetItem, true, false, disposition);
         }
         else
         {
@@ -1359,7 +1505,11 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         UBGraphicsWidgetItem *w3cWidgetItem = addW3cWidget(widgetUrl, pPos);
 
         if (isBackground)
-            mActiveScene->setAsBackgroundObject(w3cWidgetItem);
+        {
+            // Issue 1684 - CFA - need to save background Url
+            mActiveScene->setBackgroundObjectUrl(sourceUrl);
+            mActiveScene->setAsBackgroundObject(w3cWidgetItem, true, false, disposition);
+        }
         else
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
@@ -2099,7 +2249,7 @@ void UBBoardController::updateSystemScaleFactor()
         QSize pageNominalSize = mActiveScene->nominalSize();
         //we're going to keep scale factor untouched if the size is custom
         QMap<DocumentSizeRatio::Enum, QSize> sizesMap = UBSettings::settings()->documentSizes;
-      //  if(pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_9) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio4_3))
+        if(pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_9) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio4_3) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_10))
         {
             QSize controlSize = controlViewport();
 
@@ -2143,6 +2293,20 @@ void UBBoardController::setWidePageSize(bool checked)
     }
 }
 
+void UBBoardController::setWidePageSize16_10(bool checked)
+{
+    Q_UNUSED(checked);
+    QSize newSize = UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_10);
+
+    if (mActiveScene->nominalSize() != newSize)
+    {
+        UBPageSizeUndoCommand* uc = new UBPageSizeUndoCommand(mActiveScene, mActiveScene->nominalSize(), newSize);
+        UBApplication::undoStack->push(uc);
+
+        setPageSize(newSize);
+    }
+}
+
 
 void UBBoardController::setRegularPageSize(bool checked)
 {
@@ -2164,12 +2328,37 @@ void UBBoardController::setPageSize(QSize newSize)
     if (mActiveScene->nominalSize() != newSize)
     {
         mActiveScene->setNominalSize(newSize);
-
         saveViewState();
 
         updateSystemScaleFactor();
         updatePageSizeState();
         adjustDisplayViews();
+
+        // Issue 1684 - CFA - 20131128 : hack to force qgraphicsview to refresh
+        handScroll(1.f, 0.f);
+        handScroll(-1.f, 0.f);
+        if (selectedDocument()->hasDefaultImageBackground())
+        {
+            UBFeature& item = selectedDocument()->defaultImageBackground();
+            if (item.getBackgroundDisposition() == Center)
+                centerImageBackground();
+            else if (item.getBackgroundDisposition() == Adjust)
+                adjustImageBackground();
+            else if (item.getBackgroundDisposition() == Mosaic)
+                mosaicImageBackground();
+            else if (item.getBackgroundDisposition() == Fill)
+                fillImageBackground();
+            else // Extend
+                extendImageBackground();
+
+        }
+        else if (mActiveScene->hasBackground())
+        {
+            setImageBackground(mActiveScene->backgroundObjectDisposition());
+        }
+
+        // Fin Issue 1684 - CFA - 20131128
+
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
 
         UBSettings::settings()->pageSize->set(newSize);
@@ -2190,7 +2379,8 @@ void UBBoardController::notifyCache(bool visible)
 }
 
 void UBBoardController::updatePageSizeState()
-{
+{    
+    qDebug() << mActiveScene->nominalSize();
     if (mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_9))
     {
         mMainWindow->actionWidePageSize->setChecked(true);
@@ -2198,6 +2388,10 @@ void UBBoardController::updatePageSizeState()
     else if(mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio4_3))
     {
         mMainWindow->actionRegularPageSize->setChecked(true);
+    }
+    else if(mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_10))
+    {
+        mMainWindow->actionWidePageSize_16_10->setChecked(true);
     }
     else
     {

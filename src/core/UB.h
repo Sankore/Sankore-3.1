@@ -168,7 +168,7 @@ struct DocumentSizeRatio
 {
     enum Enum
     {
-        Ratio4_3 = 0, Ratio16_9, Custom
+        Ratio4_3 = 0, Ratio16_9, Ratio16_10, Custom
     };
 };
 
