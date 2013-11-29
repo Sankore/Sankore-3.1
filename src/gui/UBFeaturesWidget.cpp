@@ -31,6 +31,7 @@
 #include "core/UBDownloadManager.h"
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h" // Issue 1684 - CFA - 20131120
 #include "web/UBWebController.h"
 
 const char *UBFeaturesWidget::objNamePathList = "PathList";
@@ -749,7 +750,7 @@ void UBFeaturesCentralWidget::setPropertiesThumbnail(const QPixmap &pix)
 
 UBFeature UBFeaturesCentralWidget::getCurElementFromProperties()
 {
-    return mFeatureProperties->getCurrentElement();
+    return mFeatureProperties->getCurrentElement();    
 }
 
 void UBFeaturesCentralWidget::showAdditionalData(AddWidget pWidgetType, AddWidgetState pState)
@@ -1030,6 +1031,7 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
     , mpAddPageButton(NULL)
     , mpAddToLibButton(NULL)
     , mpSetAsBackgroundButton(NULL)
+    , mpSetAsDefaultBackgroundButton(NULL)
     , mpObjInfoLabel(NULL)
     , mpObjInfos(NULL)
     , mpThumbnail(NULL)
@@ -1067,6 +1069,11 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
     mpSetAsBackgroundButton->setText(tr("Set as background"));
     mpButtonLayout->addWidget(mpSetAsBackgroundButton);
 
+    // Issue 1684 - CFA - 20131120
+    mpSetAsDefaultBackgroundButton = new UBFeatureItemButton();
+    mpSetAsDefaultBackgroundButton->setText(tr("Set as default background"));
+    mpButtonLayout->addWidget(mpSetAsDefaultBackgroundButton);
+
     mpAddToLibButton = new UBFeatureItemButton();
     mpAddToLibButton->setText(tr("Add to library"));
     mpButtonLayout->addWidget(mpAddToLibButton);
@@ -1088,7 +1095,12 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
     mpLayout->setMargin(0);
 
     connect( mpAddPageButton, SIGNAL(clicked()), this, SLOT(onAddToPage()) );
-    connect( mpSetAsBackgroundButton, SIGNAL( clicked() ), this, SLOT( onSetAsBackground() ) );
+    // Issue 1684 - CFA - 20131120
+    //connect( mpSetAsBackgroundButton, SIGNAL( clicked() ), this, SLOT( onSetAsBackground() ) );
+    connect( mpSetAsBackgroundButton, SIGNAL( pressed() ), this, SLOT( setAsBackgroundPressed() ) );
+    connect( mpSetAsBackgroundButton, SIGNAL( released() ), this, SLOT( setAsBackgroundReleased() ) );
+    connect( mpSetAsDefaultBackgroundButton, SIGNAL( pressed() ), this, SLOT( setAsDefaultBackgroundPressed() ) );
+    connect( mpSetAsDefaultBackgroundButton, SIGNAL( released() ), this, SLOT( setAsDefaultBackgroundReleased() ) );
     connect( mpAddToLibButton, SIGNAL( clicked() ), this, SLOT(onAddToLib() ) );
 }
 
@@ -1123,6 +1135,11 @@ UBFeatureProperties::~UBFeatureProperties()
     {
         delete mpSetAsBackgroundButton;
         mpSetAsBackgroundButton = NULL;
+    }
+    if (mpSetAsDefaultBackgroundButton)
+    {
+        delete mpSetAsDefaultBackgroundButton;
+        mpSetAsDefaultBackgroundButton = NULL;
     }
     if ( mpAddToLibButton )
     {
@@ -1212,24 +1229,28 @@ void UBFeatureProperties::showElement(const UBFeature &elem)
     {
         mpAddToLibButton->show();
         if( elem.getMetadata()["Type"].toLower().contains("image") )
-        {
+        { // Issue 1684 - CFA - 20131120
             mpSetAsBackgroundButton->show();
+            mpSetAsDefaultBackgroundButton->show();
         }
         else
         {
             mpSetAsBackgroundButton->hide();
+            mpSetAsDefaultBackgroundButton->hide();
         }
     }
     else
     {
         mpAddToLibButton->hide();
         if (UBFileSystemUtils::mimeTypeFromFileName( elem.getFullPath().toLocalFile() ).contains("image"))
-        {
+        { // Issue 1684 - CFA - 20131120
             mpSetAsBackgroundButton->show();
+            mpSetAsDefaultBackgroundButton->show();
         }
         else
         {
             mpSetAsBackgroundButton->hide();
+            mpSetAsDefaultBackgroundButton->hide();
         }
     }
 }
@@ -1276,12 +1297,71 @@ void UBFeatureProperties::onAddToLib()
     }
 }
 
+// Issue 1684 - CFA - 20131120
+void UBFeatureProperties::setAsBackgroundPressed()
+{
+    mSetAsBackgroundButtonPressedTime = QTime::currentTime();
+
+    mPendingSetAsBackgroundButtonPressed = true;
+    QTimer::singleShot(1000, this, SLOT(setAsBackgroundReleased()));
+}
+
+void UBFeatureProperties::setAsBackgroundReleased()
+{
+    if (mPendingSetAsBackgroundButtonPressed)
+    {
+        if( mSetAsBackgroundButtonPressedTime.msecsTo(QTime::currentTime()) > 900)
+        {
+             UBApplication::boardController->paletteManager()->toggleImageBackgroundPalette(true, false);
+        }
+        else
+        {
+            onSetAsBackground();
+        }
+
+        mPendingSetAsBackgroundButtonPressed = false;
+    }
+}
+
+void UBFeatureProperties::setAsDefaultBackgroundPressed()
+{
+    mSetAsDefaultBackgroundButtonPressedTime = QTime::currentTime();
+
+    mPendingSetAsDefaultBackgroundButtonPressed = true;
+    QTimer::singleShot(1000, this, SLOT(setAsDefaultBackgroundReleased()));
+}
+
+
+void UBFeatureProperties::setAsDefaultBackgroundReleased()
+{
+    if (mPendingSetAsDefaultBackgroundButtonPressed)
+    {
+        if( mSetAsDefaultBackgroundButtonPressedTime.msecsTo(QTime::currentTime()) > 900)
+        {
+             UBApplication::boardController->paletteManager()->toggleImageBackgroundPalette(true, true);
+        }
+        else
+        {
+            onSetAsDefaultBackground();
+        }
+
+        mPendingSetAsDefaultBackgroundButtonPressed = false;
+    }
+}
 
 void UBFeatureProperties::onSetAsBackground()
 {
     QWidget *w = parentWidget()->parentWidget()->parentWidget();
     UBFeaturesWidget* featuresWidget = qobject_cast<UBFeaturesWidget*>( w );
     featuresWidget->getFeaturesController()->addItemAsBackground( *mpElement );
+}
+
+// Issue 1684 - CFA - 20131120
+void UBFeatureProperties::onSetAsDefaultBackground()
+{
+    QWidget *w = parentWidget()->parentWidget()->parentWidget();
+    UBFeaturesWidget* featuresWidget = qobject_cast<UBFeaturesWidget*>( w );
+    featuresWidget->getFeaturesController()->addItemAsDefaultBackground( *mpElement );
 }
 
 

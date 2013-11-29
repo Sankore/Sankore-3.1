@@ -29,6 +29,7 @@
 #include "frameworks/UBStringUtils.h"
 
 #include "core/UBSettings.h"
+#include "board/UBFeaturesController.h"
 
 class UBGraphicsScene;
 
@@ -42,9 +43,9 @@ class UBDocumentProxy : public QObject
 
         UBDocumentProxy();
         UBDocumentProxy(const UBDocumentProxy &rValue);
-        UBDocumentProxy(const QString& pPersistencePath);
+        UBDocumentProxy(const QString& pPersistencePath);        
 
-        virtual ~UBDocumentProxy();
+        virtual ~UBDocumentProxy();        
 
         QString persistencePath() const;
 
@@ -60,6 +61,13 @@ class UBDocumentProxy : public QObject
 
         QDateTime lastUpdate();
 
+
+        // Issue 1684 - CFA - 20131120
+        void setHasDefaultImageBackground(const bool hasDefault);
+        const bool hasDefaultImageBackground() const;
+        void setDefaultImageBackground(const UBFeature& item);
+        UBFeature& defaultImageBackground();
+        const UBFeature& defaultImageBackground() const;
 
         QSize defaultDocumentSize() const;
         void setDefaultDocumentSize(QSize pSize);
@@ -94,6 +102,9 @@ class UBDocumentProxy : public QObject
 
         int mPageCount;
 
+        // Issue 1684 - CFA - 20131120
+        bool mHasDefaultImageBackground;
+        UBFeature mDefaultImageBackground;
 };
 
 inline bool operator==(const UBDocumentProxy &proxy1, const UBDocumentProxy &proxy2)

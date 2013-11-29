@@ -89,6 +89,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mAddItemPalette(0)
     , mErasePalette(NULL)
     , mPagePalette(NULL)
+    , mImageBackgroundPalette(NULL)
     , mPendingPageButtonPressed(false)
     , mPendingZoomButtonPressed(false)
     , mPendingPanButtonPressed(false)
@@ -315,6 +316,29 @@ void UBBoardPaletteManager::setupPalettes()
     mPagePalette->adjustSizeAndPosition();
     mPagePalette->hide();
 
+    // Issue 1684 - CFA - 20131120
+    QList<QAction*> imageBackgroundActions;
+
+    imageBackgroundActions << UBApplication::mainWindow->actionCenterImageBackground;
+    UBApplication::mainWindow->actionCenterImageBackground->setIcon(QIcon(":/images/imageBackgroundPalette/centerBackground.png"));
+    imageBackgroundActions << UBApplication::mainWindow->actionAdjustImageBackground;
+    UBApplication::mainWindow->actionAdjustImageBackground->setIcon(QIcon(":/images/imageBackgroundPalette/adjustBackground.png"));
+    imageBackgroundActions << UBApplication::mainWindow->actionMosaicImageBackground;
+    UBApplication::mainWindow->actionMosaicImageBackground->setIcon(QIcon(":/images/imageBackgroundPalette/mosaicBackground.png"));
+    imageBackgroundActions << UBApplication::mainWindow->actionFillImageBackground;
+    UBApplication::mainWindow->actionFillImageBackground->setIcon(QIcon(":/images/imageBackgroundPalette/fillBackground.png"));
+    imageBackgroundActions << UBApplication::mainWindow->actionExtendImageBackground;
+    UBApplication::mainWindow->actionExtendImageBackground->setIcon(QIcon(":/images/imageBackgroundPalette/extendBackground.png"));
+
+    mImageBackgroundPalette = new UBActionPalette(imageBackgroundActions, Qt::Horizontal , mContainer);
+    mImageBackgroundPalette->setButtonIconSize(QSize(128, 128));
+    mImageBackgroundPalette->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    mImageBackgroundPalette->groupActions();
+    mImageBackgroundPalette->setClosable(true);
+    mImageBackgroundPalette->adjustSizeAndPosition();
+    mImageBackgroundPalette->hide();
+    // Fin Issue 1684 - CFA - 20131120
+
     connect(UBSettings::settings()->appToolBarOrientationVertical, SIGNAL(changed(QVariant)), this, SLOT(changeStylusPaletteOrientation(QVariant)));
 }
 
@@ -325,7 +349,6 @@ void UBBoardPaletteManager::pagePaletteButtonPressed()
     mPendingPageButtonPressed = true;
     QTimer::singleShot(1000, this, SLOT(pagePaletteButtonReleased()));
 }
-
 
 void UBBoardPaletteManager::pagePaletteButtonReleased()
 {
@@ -393,8 +416,6 @@ void UBBoardPaletteManager::erasePaletteButtonReleased()
     }
 }
 
-
-
 void UBBoardPaletteManager::linkClicked(const QUrl& url)
 {
       UBApplication::applicationController->showInternet();
@@ -455,11 +476,19 @@ void UBBoardPaletteManager::connectPalettes()
     connect(UBApplication::mainWindow->actionAddItemToNewPage, SIGNAL(triggered()), this, SLOT(addItemToNewPage()));
     connect(UBApplication::mainWindow->actionAddItemToLibrary, SIGNAL(triggered()), this, SLOT(addItemToLibrary()));
 
+    // Issue 1684 - CFA - 20131119
     connect(UBApplication::mainWindow->actionEraseItems, SIGNAL(triggered()), mErasePalette, SLOT(close()));
     connect(UBApplication::mainWindow->actionEraseAnnotations, SIGNAL(triggered()), mErasePalette, SLOT(close()));
     connect(UBApplication::mainWindow->actionClearPage, SIGNAL(triggered()), mErasePalette, SLOT(close()));
     connect(UBApplication::mainWindow->actionEraseBackground,SIGNAL(triggered()),mErasePalette,SLOT(close()));
     connect(mErasePalette, SIGNAL(closed()), this, SLOT(erasePaletteClosed()));
+
+    connect(UBApplication::mainWindow->actionCenterImageBackground, SIGNAL(triggered()), mImageBackgroundPalette, SLOT(close()));
+    connect(UBApplication::mainWindow->actionAdjustImageBackground, SIGNAL(triggered()),mImageBackgroundPalette, SLOT(close()));
+    connect(UBApplication::mainWindow->actionExtendImageBackground, SIGNAL(triggered()), mImageBackgroundPalette, SLOT(close()));
+    connect(UBApplication::mainWindow->actionFillImageBackground,SIGNAL(triggered()),mImageBackgroundPalette,SLOT(close()));
+    connect(UBApplication::mainWindow->actionMosaicImageBackground,SIGNAL(triggered()),mImageBackgroundPalette,SLOT(close()));
+    connect(mImageBackgroundPalette, SIGNAL(closed()), this, SLOT(imageBackgroundPaletteClosed()));
 
     foreach(QWidget *widget, UBApplication::mainWindow->actionErase->associatedWidgets())
     {
@@ -615,6 +644,25 @@ void UBBoardPaletteManager::erasePaletteClosed()
     UBApplication::mainWindow->actionErase->setChecked(false);
 }
 
+
+// Issue 1684 - CFA - 20131120
+void UBBoardPaletteManager::toggleImageBackgroundPalette(bool checked, bool isDefault)
+{
+    mImageBackgroundPalette->setVisible(checked);
+    UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(isDefault);
+    if (checked)
+    {
+        UBApplication::mainWindow->actionBackgrounds->setChecked(false);
+        UBApplication::mainWindow->actionErase->setChecked(false);
+
+        mImageBackgroundPalette->adjustSizeAndPosition();
+    }
+}
+
+void imageBackgroundPaletteClosed()
+{
+    UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(!UBApplication::boardController->selectedDocument()->hasDefaultImageBackground());
+}
 
 void UBBoardPaletteManager::togglePagePalette(bool checked)
 {
@@ -931,7 +979,6 @@ void UBBoardPaletteManager::zoomButtonPressed()
     mPendingZoomButtonPressed = true;
     QTimer::singleShot(1000, this, SLOT(zoomButtonReleased()));
 }
-
 
 void UBBoardPaletteManager::zoomButtonReleased()
 {

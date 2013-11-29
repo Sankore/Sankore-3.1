@@ -56,6 +56,8 @@ class UBFileSystemUtils : public QObject
 
         static bool deleteDir(const QString& pDirPath);
 
+        static bool deleteFilesContaining(const QString& pDirPath, const QString& pFileName);
+
         static bool copyDir(const QString& pSourceDirPath, const QString& pTargetDirPath);
 
         static bool moveDir(const QString& pSourceDirPath, const QString& pTargetDirPath);

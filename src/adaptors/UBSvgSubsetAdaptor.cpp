@@ -1303,7 +1303,11 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsPixmapItem *pixmapItem = qgraphicsitem_cast<UBGraphicsPixmapItem*> (item);
             if (pixmapItem && pixmapItem->isVisible())
             {
-                pixmapItemToLinkedImage(pixmapItem);
+                //Issue 1684 - CFA - 20131128
+                if (pixmapItem->scene()->isBackgroundObject(item))
+                   pixmapItemToLinkedImage(pixmapItem, true);
+                else
+                   pixmapItemToLinkedImage(pixmapItem);
                 continue;
             }
 
@@ -1311,7 +1315,12 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsSvgItem *svgItem = qgraphicsitem_cast<UBGraphicsSvgItem*> (item);
             if (svgItem && svgItem->isVisible())
             {
-                svgItemToLinkedSvg(svgItem);
+                //Issue 1684 - CFA - 20131128
+                if (pixmapItem->scene()->isBackgroundObject(item))
+                    svgItemToLinkedSvg(svgItem, true);
+                else
+                    svgItemToLinkedSvg(svgItem);
+
                 continue;
             }
 
@@ -2076,11 +2085,14 @@ QList<UBGraphicsPolygonItem*> UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItem
 
 
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPixmapItem* pixmapItem)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPixmapItem* pixmapItem, bool isBackground)
 {
     mXmlWriter.writeStartElement("image");
-
-    QString fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + ".png";
+    QString fileName;
+    if (isBackground) // Issue 1684 - CFA - 20131128 : specify isBackground
+        fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + "_background"  + ".png";
+    else
+        fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + ".png";
 
     QString path = mDocumentPath + "/" + fileName;
 
@@ -2168,12 +2180,16 @@ UBGraphicsPixmapItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg()
 }
 
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(UBGraphicsSvgItem* svgItem)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(UBGraphicsSvgItem* svgItem, bool isBackground)
 {
 
     mXmlWriter.writeStartElement("image");
 
-    QString fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + ".svg";
+    QString fileName;
+    if (isBackground)
+        fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + "_background" ".svg";
+    else
+        fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + ".svg";
 
     QString path = mDocumentPath + "/" + fileName;
 
