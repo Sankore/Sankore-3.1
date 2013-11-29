@@ -837,6 +837,54 @@
         <comment>tooltip</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wide Size (16/10)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Document Wide Size (16/10)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : expand</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1719,6 +1767,10 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set as default background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -845,6 +845,54 @@
         <comment>tooltip</comment>
         <translation>Tobin-drohy</translation>
     </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wide Size (16/10)</source>
+        <translation type="unfinished">Habe lehibe (16/9) {16/10)?}</translation>
+    </message>
+    <message>
+        <source>Use Document Wide Size (16/10)</source>
+        <translation type="unfinished">Ampiasana ny haben&apos;ny antonta-tarasy malalaka (16/9) {16/10)?}</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : expand</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1735,6 +1783,10 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     <message>
         <source>Add</source>
         <translation>Ampiana</translation>
+    </message>
+    <message>
+        <source>Set as default background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

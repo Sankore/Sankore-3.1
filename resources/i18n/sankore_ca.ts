@@ -846,6 +846,54 @@
         <comment>tooltip</comment>
         <translation>Adreça d&apos;interès</translation>
     </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wide Size (16/10)</source>
+        <translation type="unfinished">Mida ampla (16:9) {16/10)?}</translation>
+    </message>
+    <message>
+        <source>Use Document Wide Size (16/10)</source>
+        <translation type="unfinished">Utilitza la mida de document ampla (16:9) {16/10)?}</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : expand</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1741,6 +1789,10 @@ Si indiqueu un nom diferent es crearà un document nou.</translation>
     <message>
         <source>Add</source>
         <translation>Afegeix</translation>
+    </message>
+    <message>
+        <source>Set as default background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

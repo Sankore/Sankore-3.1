@@ -845,6 +845,54 @@
         <source>Add link to current page</source>
         <translation>Lotura uneko orrian gehitu</translation>
     </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : mosaic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wide Size (16/10)</source>
+        <translation type="unfinished">Formatu zabala (16/9) {16/10)?}</translation>
+    </message>
+    <message>
+        <source>Use Document Wide Size (16/10)</source>
+        <translation type="unfinished">Formatu zabala erabili (16/9) {16/10)?}</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : expand</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1736,6 +1784,10 @@ Izen berri bat ezarriz, dokumentu berri bat sortuko duzu.
     <message>
         <source>Add to page</source>
         <translation>Orrian gehitu</translation>
+    </message>
+    <message>
+        <source>Set as default background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

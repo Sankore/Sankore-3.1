@@ -850,6 +850,54 @@
         <comment>tooltip</comment>
         <translation>Signet</translation>
     </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrer</translation>
+    </message>
+    <message>
+        <source>Image position : center</source>
+        <translation type="unfinished">Position de l&apos;image : centrée</translation>
+    </message>
+    <message>
+        <source>Adjust</source>
+        <translation>Ajuster</translation>
+    </message>
+    <message>
+        <source>Image position : adjust</source>
+        <translation>Position de l&apos;image : ajustée</translation>
+    </message>
+    <message>
+        <source>Fill</source>
+        <translation>Remplissage</translation>
+    </message>
+    <message>
+        <source>Image position : fill</source>
+        <translation>Position de l&apos;image : remplissage</translation>
+    </message>
+    <message>
+        <source>Mosaic</source>
+        <translation>Mosaïque</translation>
+    </message>
+    <message>
+        <source>Image position : mosaic</source>
+        <translation>Position de l&apos;image : mosaïque</translation>
+    </message>
+    <message>
+        <source>Wide Size (16/10)</source>
+        <translation>Format large (16/10)</translation>
+    </message>
+    <message>
+        <source>Use Document Wide Size (16/10)</source>
+        <translation>Utiliser un format large (16/10)</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Etendu</translation>
+    </message>
+    <message>
+        <source>Image position : expand</source>
+        <translation>Position de l&apos;image : étendue</translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1746,6 +1794,10 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <message>
         <source>Add</source>
         <translation>Ajouter à :</translation>
+    </message>
+    <message>
+        <source>Set as default background</source>
+        <translation>Fond par défaut</translation>
     </message>
 </context>
 <context>
