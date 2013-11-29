@@ -34,6 +34,7 @@
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
 #include "core/memcheck.h"
+#include "document/UBDocumentController.h"
 
 
 QPixmap* UBToolWidget::sClosePixmap = 0;
@@ -67,6 +68,7 @@ UBToolWidget::UBToolWidget(UBGraphicsWidgetItem *pWidget, QWidget *pParent)
     , mShouldMoveWidget(false)
     , mContentMargin(0)
     , mFrameWidth(0)
+    , mScene(0)
 
 {
     initialize();
@@ -91,6 +93,7 @@ void UBToolWidget::initialize()
     {
         wscene->removeItemFromDeletion(mToolWidget);
         wscene->removeItem(mToolWidget);
+        mScene = wscene;
     }
 
 
@@ -121,6 +124,7 @@ void UBToolWidget::initialize()
 
 
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(javaScriptWindowObjectCleared()));
+    connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(reactOnBoardChanged()));
 }
 
 
@@ -217,6 +221,15 @@ void UBToolWidget::javaScriptWindowObjectCleared()
         UBW3CWidgetAPI* widgetAPI = new UBW3CWidgetAPI(graphicsW3cWidgetItem);
         mWebView->page()->mainFrame()->addToJavaScriptWindowObject("widget", widgetAPI);
     }
+}
+
+void UBToolWidget::reactOnBoardChanged()
+{
+    if (!mScene) {
+        return;
+    }
+
+    UBApplication::boardController->selectedDocument() == mScene->document() ? show() : hide();
 }
 
 UBGraphicsWidgetItem* UBToolWidget::toolWidget() const

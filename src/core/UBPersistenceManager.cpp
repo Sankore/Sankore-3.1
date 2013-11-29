@@ -480,10 +480,11 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     {
         doc->setMetaData(UBSettings::documentName, pName);
     }
-    if(withEmptyPage) createDocumentSceneAt(doc, 0);
-    if(addTitlePage) persistDocumentScene(doc, mSceneCache.createScene(doc, 0, false), 0);
 
     QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(pDocumentDirectory);
+
+    if(withEmptyPage) createDocumentSceneAt(doc, 0);
+    if(addTitlePage) persistDocumentScene(doc, mSceneCache.createScene(doc, 0, false), 0);
 
     foreach(QString key, metadatas.keys())
     {

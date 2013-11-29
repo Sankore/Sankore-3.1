@@ -129,10 +129,10 @@ win32 {
 }
 
 macx {
-   LIBS += -framework Foundation 
+   LIBS += -framework Foundation
    LIBS += -lcrypto
    #commented because Sankore crashes on Java Script. It seems to backends dependencies.
-   #LIBS += -framework AppKit 
+   #LIBS += -framework AppKit
    #LIBS += -framework WebKit
 
    CONFIG(release, debug|release):CONFIG += x86
@@ -467,4 +467,11 @@ INSTALLS = UB_ETC \
    UB_I18N \
    UB_LIBRARY \
    UB_THIRDPARTY_INTERACTIVE
+
+OTHER_FILES += \
+    resources/library/shape/fleche blanche.svg \
+    resources/library/shape/fleche bleue.svg \
+    resources/library/shape/fleche grise.svg \
+    resources/library/shape/fleche rouge.svg \
+    resources/library/shape/fleche vide.svg
 

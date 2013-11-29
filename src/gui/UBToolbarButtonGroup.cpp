@@ -196,12 +196,18 @@ void UBToolbarButtonGroup::colorPaletteChanged()
 
     QList<QColor> colors;
 
-    if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pen 
-        || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line)
-    {
-        colors = UBSettings::settings()->penColors(isDarkBackground);
-    }
-    else if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker)
+//    if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Pen
+//        || UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Line)
+//    {
+//        colors = UBSettings::settings()->penColors(isDarkBackground);
+//    }
+//    else if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker)
+//    {
+//        colors = UBSettings::settings()->markerColors(isDarkBackground);
+//    }
+
+    colors = UBSettings::settings()->penColors(isDarkBackground);
+    if (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Marker)
     {
         colors = UBSettings::settings()->markerColors(isDarkBackground);
     }

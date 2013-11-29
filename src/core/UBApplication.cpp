@@ -323,9 +323,9 @@ int UBApplication::exec(const QString& pFileToImport)
 
     UBDrawingController::drawingController()->setStylusTool((int)UBStylusTool::Pen);
 
-    applicationController = new UBApplicationController(boardController->controlView(), 
-                                                        boardController->displayView(), 
-                                                        mainWindow, 
+    applicationController = new UBApplicationController(boardController->controlView(),
+                                                        boardController->displayView(),
+                                                        mainWindow,
                                                         staticMemoryCleaner,
                                                         boardController->paletteManager()->rightPalette());
 
@@ -362,7 +362,6 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(mainWindow->actionMultiScreen, SIGNAL(triggered(bool)), applicationController, SLOT(useMultiScreen(bool)));
     connect(mainWindow->actionWidePageSize, SIGNAL(triggered(bool)), boardController, SLOT(setWidePageSize(bool)));
     connect(mainWindow->actionRegularPageSize, SIGNAL(triggered(bool)), boardController, SLOT(setRegularPageSize(bool)));
-    connect(mainWindow->actionImportUniboardDocuments, SIGNAL(triggered()), this, SLOT(importUniboardFiles()));
 
     connect(mainWindow->actionCut, SIGNAL(triggered()), applicationController, SLOT(actionCut()));
     connect(mainWindow->actionCopy, SIGNAL(triggered()), applicationController, SLOT(actionCopy()));
@@ -546,7 +545,6 @@ void UBApplication::decorateActionMenu(QAction* action)
             menu->addSeparator();
             menu->addAction(mainWindow->actionPreferences);
             menu->addAction(mainWindow->actionMultiScreen);
-            menu->addAction(mainWindow->actionImportUniboardDocuments);
             // SANKORE-48: Hide the check update action if the setting
             // EnableAutomaticSoftwareUpdates is false in Uniboard.config
             if(UBSettings::settings()->appEnableAutomaticSoftwareUpdates->get().toBool())
@@ -659,17 +657,17 @@ bool UBApplication::handleOpenMessage(const QString& pMessage)
 
 void UBApplication::cleanup()
 {
-	if (applicationController) delete applicationController;
-	if (boardController) delete boardController;
-	if (webController) delete webController;
-	if (documentController) delete documentController;
+    if (applicationController) delete applicationController;
+    if (boardController) delete boardController;
+    if (webController) delete webController;
+    if (documentController) delete documentController;
     if (mUniboardSankoreTransition) delete mUniboardSankoreTransition;
 
 
-	applicationController = NULL;
-	boardController = NULL;
-	webController = NULL;
-	documentController = NULL;
+    applicationController = NULL;
+    boardController = NULL;
+    webController = NULL;
+    documentController = NULL;
     mUniboardSankoreTransition = NULL;
 }
 
@@ -708,19 +706,19 @@ void UBStyle::drawItemText(QPainter *painter, const QRect &rect, int alignment, 
 
 QString UBApplication::urlFromHtml(QString html)
 {
-	QString _html;
-	QRegExp comments("\\<![ \r\n\t]*(--([^\\-]|[\r\n]|-[^\\-])*--[ \r\n\t]*)\\>");
-	QString url;
+    QString _html;
+    QRegExp comments("\\<![ \r\n\t]*(--([^\\-]|[\r\n]|-[^\\-])*--[ \r\n\t]*)\\>");
+    QString url;
     QDomDocument domDoc;
 
-	//	We remove all the comments & CRLF of this html
-	_html = html.remove(comments);
-	domDoc.setContent(_html.remove(QRegExp("[\\0]")));
+    //	We remove all the comments & CRLF of this html
+    _html = html.remove(comments);
+    domDoc.setContent(_html.remove(QRegExp("[\\0]")));
     QDomElement rootElem = domDoc.documentElement();
 
     //  QUICKFIX: Here we have to check rootElem. Sometimes it can be a <meta> tag
     //  In such a case we will not be able to retrieve the src value
-	if(rootElem.tagName().toLower().contains("meta")){
+    if(rootElem.tagName().toLower().contains("meta")){
         qDebug() << rootElem.firstChildElement().tagName();
         //  In that case we get the next element
         url = rootElem.firstChildElement().attribute("src");
@@ -728,7 +726,7 @@ QString UBApplication::urlFromHtml(QString html)
         url = rootElem.attribute("src");
     }
 
-	return url;
+    return url;
 }
 
 bool UBApplication::isFromWeb(QString url)
@@ -743,3 +741,10 @@ bool UBApplication::isFromWeb(QString url)
 
     return res;
 }
+
+
+//bool UBApplication::notify ( QObject * receiver, QEvent * event )
+//{
+//    qDebug() << event->type();
+//}
+

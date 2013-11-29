@@ -14,9 +14,10 @@ QString UBTextTools::cleanHtmlCData(const QString &_html){
 }
 
 
-QString UBTextTools::cleanHtml(const QString& _html){
-    const QString START_TAG = "<!doctype";
-    const QString END_TAG = "</html";
+QString UBTextTools::cleanHtml(const QString& _html)
+{
+    const QString START_TAG = "<body";
+    const QString END_TAG = "</body";
 
     QString cleanSource = "";
     QString simplifiedHtml = _html;
@@ -24,7 +25,10 @@ QString UBTextTools::cleanHtml(const QString& _html){
     int start = simplifiedHtml.toLower().indexOf(START_TAG);
     int end = simplifiedHtml.toLower().indexOf(END_TAG) + END_TAG.size();
 
-    cleanSource = simplifiedHtml.mid(start, end);
+    if(start != -1 && end != -1)
+        cleanSource = simplifiedHtml.mid(start, end);
+    else
+        cleanSource = _html;
 
     return cleanSource;
 }

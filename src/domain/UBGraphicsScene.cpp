@@ -984,14 +984,18 @@ void UBGraphicsScene::recolorAllItems()
     foreach (QGraphicsItem *item, items()) {
         if (item->type() == UBGraphicsStrokesGroup::Type) {
             UBGraphicsStrokesGroup *curGroup = static_cast<UBGraphicsStrokesGroup*>(item);
-            QColor compareColor =  curGroup->color(currentIslight ? UBGraphicsStrokesGroup::colorOnDarkBackground
-                                                                  : UBGraphicsStrokesGroup::colorOnLightBackground);
+//            QColor compareColor =  curGroup->color(currentIslight ? UBGraphicsStrokesGroup::colorOnDarkBackground
+//                                                                  : UBGraphicsStrokesGroup::colorOnLightBackground);
 
-            if (curGroup->color() == compareColor) {
-                QColor newColor = curGroup->color(!currentIslight ? UBGraphicsStrokesGroup::colorOnDarkBackground
-                                                                  : UBGraphicsStrokesGroup::colorOnLightBackground);
-                curGroup->setColor(newColor);
-            }
+//            if (curGroup->color() == compareColor) {
+//                QColor newColor = curGroup->color(!currentIslight ? UBGraphicsStrokesGroup::colorOnDarkBackground
+//                                                                  : UBGraphicsStrokesGroup::colorOnLightBackground);
+//                curGroup->setColor(newColor);
+//            }
+            UBGraphicsStrokesGroup::colorType reqCol = currentIslight ? UBGraphicsStrokesGroup::colorOnLightBackground
+                                                                      : UBGraphicsStrokesGroup::colorOnDarkBackground;
+
+            curGroup->setColor(curGroup->color(reqCol));
         }
     }
 
@@ -1630,10 +1634,15 @@ UBGraphicsTextItem* UBGraphicsScene::addTextWithFont(const QString& pString, con
 
 UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const QPointF& pTopLeft)
 {
+    QString cleanString = UBTextTools::cleanHtml(pString);
+    if(!cleanString.length()){
+        qDebug() << "Cleaning the string leads to an empty string";
+        cleanString = pString;
+    }
     UBGraphicsTextItem *textItem = new UBGraphicsTextItem();
 
     textItem->setPlainText("");
-    textItem->setHtml(UBTextTools::cleanHtml(pString));
+    textItem->setHtml(cleanString);
 
     addItem(textItem);
     textItem->show();

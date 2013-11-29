@@ -1842,8 +1842,10 @@ void UBBoardController::adjustDisplayViews()
 {
     if (UBApplication::applicationController)
     {
-        UBApplication::applicationController->adjustDisplayView();
-        UBApplication::applicationController->adjustPreviousViews(mActiveSceneIndex, selectedDocument());
+        mControlView->centerOn(0,0);
+
+//        UBApplication::applicationController->adjustDisplayView();
+//        UBApplication::applicationController->adjustPreviousViews(mActiveSceneIndex, selectedDocument());
     }
 }
 
@@ -2043,6 +2045,51 @@ void UBBoardController::setColorIndex(int pColorIndex)
         mMarkerColorOnDarkBackground = UBSettings::settings()->markerColors(true).at(pColorIndex);
         mMarkerColorOnLightBackground = UBSettings::settings()->markerColors(false).at(pColorIndex);
     }
+}
+
+static bool sameRGB(const QColor &lcol, const QColor &rcol)
+{
+    return lcol.red() == rcol.red()
+            && lcol.green() == rcol.green()
+            && lcol.blue() == rcol.blue();
+}
+
+QColor UBBoardController::inferOpposite(const QColor &candidate, const char tool)
+{
+    qDebug() << "!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!HACK!!!!!!!!!!!";
+
+    //looking for existing index
+    //Tool 'm': marker
+    //     'p': pen
+    QList<QColor> (UBSettings::*fn)(bool) = NULL;
+
+    switch (tool) {
+    case 'p': {
+        fn = &UBSettings::penColors;
+    } break;
+    case 'm': {
+        fn = &UBSettings::markerColors;
+    } break;
+    }
+
+    int count = qMin((UBSettings::settings()->*fn)(true).count(), (UBSettings::settings()->*fn)(false).count());
+    for (int i=0; i<count; i++) {
+        QColor dark = (UBSettings::settings()->*fn)(true).at(i);
+        QColor light = (UBSettings::settings()->*fn)(false).at(i);
+        if (sameRGB(candidate, dark)) {
+            return light;
+        } else if (sameRGB(candidate, light)) {
+            return dark;
+        }
+    }
+
+    //If there is no color stored just change the value to the opposite
+    QColor retColor = QColor::fromRgb(255 - candidate.red()
+                                      , 255 - candidate.green()
+                                      , 255 - candidate.blue()
+                                      , candidate.alpha());
+
+    return retColor;
 }
 
 void UBBoardController::colorPaletteChanged()
@@ -2450,7 +2497,10 @@ void UBBoardController::copy()
 void UBBoardController::paste()
 {
     QClipboard *clipboard = QApplication::clipboard();
-    QPointF pos(0, 0);
+    //avoiding the to paste two objects exaclty at the same position
+    qreal xPosition = ((qreal)qrand()/(qreal)RAND_MAX) * 400;
+    qreal yPosition = ((qreal)qrand()/(qreal)RAND_MAX) * 200;
+    QPointF pos(xPosition -200 , yPosition - 100);
     processMimeData(clipboard->mimeData(), pos, eItemActionType_Paste);
 
     selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
@@ -2547,14 +2597,19 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
 
     if (pMimeData->hasText())
     {
-        if("" != pMimeData->text()){
+        if(pMimeData->text().length()){
             // Sometimes, it is possible to have an URL as text. we check here if it is the case
             QString qsTmp = pMimeData->text().remove(QRegExp("[\\0]"));
             if(qsTmp.startsWith("http")){
                 downloadURL(QUrl(qsTmp), QString(), pPos);
             }
             else{
-                mActiveScene->addTextHtml(pMimeData->html(), pPos);
+                if(eItemActionType_Paste == actionType && mActiveScene->selectedItems().at(0)->type() == UBGraphicsItemType::TextItemType){
+                    dynamic_cast<UBGraphicsTextItem*>(mActiveScene->selectedItems().at(0))->setHtml(pMimeData->text());
+                }
+                else{
+                    mActiveScene->addTextHtml(pMimeData->text(), pPos);
+                }
             }
         }
         else{
@@ -2685,14 +2740,28 @@ void UBBoardController::freezeW3CWidgets(bool freeze)
         QList<QGraphicsItem *> list = UBApplication::boardController->activeScene()->getFastAccessItems();
         foreach(QGraphicsItem *item, list)
         {
-            freezeW3CWidget(item, freeze);
+            if(item != NULL){
+                freezeW3CWidget(item, freeze);
+                //TODO Claudio remove this hack
+                // this is not a good place to make this check as isn't the good place to do the previous check.
+                // try to detect hide event of the qgraphicsitem
+                UBGraphicsItem* graphicsItem = dynamic_cast<UBGraphicsItem*>(item);
+                if(graphicsItem){
+                    UBGraphicsItemDelegate* delegate = graphicsItem->Delegate();
+                    if(delegate && delegate->action() && delegate->action()->linkType() == eLinkToAudio)
+                        dynamic_cast<UBGraphicsItemPlayAudioAction*>(delegate->action())->onSourceHide();
+                }
+            }
+            else{
+                qDebug() << "wrong place";
+            }
         }
     }
 }
 
 void UBBoardController::freezeW3CWidget(QGraphicsItem *item, bool freeze)
 {
-    if(item->type() == UBGraphicsW3CWidgetItem::Type)
+    if(item && item->type() == UBGraphicsW3CWidgetItem::Type)
     {
         UBGraphicsW3CWidgetItem* item_casted = dynamic_cast<UBGraphicsW3CWidgetItem*>(item);
         if (0 == item_casted)

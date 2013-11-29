@@ -48,8 +48,10 @@ UBItem::~UBItem()
 
 UBGraphicsItem::~UBGraphicsItem()
 {
-    if (mDelegate!=NULL)
+    if (mDelegate!=NULL){
         delete mDelegate;
+        mDelegate = NULL;
+    }
 }
 
 void UBGraphicsItem::setDelegate(UBGraphicsItemDelegate* delegate)
@@ -72,6 +74,11 @@ bool UBGraphicsItem::isFlippable(QGraphicsItem *item)
 bool UBGraphicsItem::isRotatable(QGraphicsItem *item)
 {
     return item->data(UBGraphicsItemData::ItemRotatable).toBool();
+}
+
+bool UBGraphicsItem::isLocked(QGraphicsItem *item)
+{
+    return item->data(UBGraphicsItemData::ItemLocked).toBool();
 }
 
 QUuid UBGraphicsItem::getOwnUuid(QGraphicsItem *item)

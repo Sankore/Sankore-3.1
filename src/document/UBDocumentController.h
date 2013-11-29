@@ -434,7 +434,7 @@ protected:
         void thumbnailPageDoubleClicked(QGraphicsItem* item, int index);
         void pageClicked(QGraphicsItem* item, int index);
         void addToDocument();
-        void addDocumentInTree(UBDocumentProxy* pDocument);
+//        void addDocumentInTree(UBDocumentProxy* pDocument);
         void updateDocumentInTree(UBDocumentProxy* pDocument);
         void addFolderOfImages();
         void addFileToDocument();

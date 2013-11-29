@@ -117,7 +117,9 @@ void UBDocumentPublisher::buildUbwFile()
     if (UBFileSystemUtils::copyDir(mSourceDocument->persistencePath(), tmpDir))
     {
         QString documentName = mSourceDocument->name();
-
+        //remove all the directory separators from the document name.
+        //we do not want to interperete them as directory separator
+        documentName = documentName.replace("/",".").replace("\\",".");
         mPublishingPath = tmpDir;
         mPublishingSize = mSourceDocument->pageCount();
 
@@ -146,7 +148,7 @@ void UBDocumentPublisher::buildUbwFile()
         UBFileSystemUtils::deleteDir(mPublishingPath + "/" + UBPersistenceManager::videoDirectory);
         UBFileSystemUtils::deleteDir(mPublishingPath + "/" + UBPersistenceManager::audioDirectory);
 
-        mTmpZipFile = UBFileSystemUtils::defaultTempDirPath() + "/" + UBStringUtils::toCanonicalUuid(QUuid::createUuid()) + ".ubw~";
+        mTmpZipFile = UBFileSystemUtils::defaultTempDirPath() + "/" + UBStringUtils::toCanonicalUuid(QUuid::createUuid()) + ".ubw";
 
         QuaZip zip(mTmpZipFile);
         zip.setFileNameCodec("UTF-8");
@@ -583,7 +585,7 @@ void UBDocumentPublisher::onFinished(QNetworkReply *reply)
 
     for(int j = 0; j < qslCookieVals.size(); j++)
     {
-        qDebug() << j;
+        qDebug() << j << qslCookieVals.at(j);
         if(qslCookieVals.at(j).startsWith("assetStatus"))
         {
             QStringList qslAsset = qslCookieVals.at(j).split("=");

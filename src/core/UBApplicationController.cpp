@@ -19,8 +19,6 @@
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-
 #include "UBApplicationController.h"
 
 #include "frameworks/UBPlatformUtils.h"
