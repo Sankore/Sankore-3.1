@@ -78,7 +78,10 @@ void UBExportDocumentSetAdaptor::persist(UBDocumentProxy* pDocumentProxy)
             UBApplication::showMessage(tr("Failed to export..."));
             return;
         }
+
+        UBDocumentTreeNode* node = treeModel->nodeFromIndex(treeViewParentIndex);
         UBDocumentProxy proxy;
+        proxy.setMetaData(UBSettings::documentName,node->displayName());
         filename = askForFileName(&proxy, tr("Export as UBX File"));
     }
 
