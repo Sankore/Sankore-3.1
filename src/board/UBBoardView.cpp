@@ -553,8 +553,6 @@ Here we determines cases when items should to get mouse press event at pressing 
     // some behavior depends on current tool.
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
-    qDebug() << item->type();
-
     switch(item->type())
     {
     case UBGraphicsProtractor::Type:
@@ -685,6 +683,7 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
     switch(item->type())
     {
     case UBGraphicsCurtainItem::Type:
+        return true;
     case UBGraphicsGroupContainerItem::Type:
         return !dynamic_cast<UBGraphicsGroupContainerItem*>(item)->Delegate()->isLocked();
     case UBGraphicsWidgetItem::Type:
