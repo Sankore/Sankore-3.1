@@ -149,6 +149,7 @@ void UBDocumentNavigator::updateSpecificThumbnail(int iPage)
     const QPixmap* pix = UBApplication::boardController->pageAt(iPage);
     UBSceneThumbnailNavigPixmap* newItem = new UBSceneThumbnailNavigPixmap(*pix, UBApplication::boardController->selectedDocument(), iPage);
 
+
     // Get the old thumbnail
     UBSceneThumbnailNavigPixmap* oldItem = mThumbsWithLabels.at(iPage).getThumbnail();
     if(NULL != oldItem)
@@ -159,7 +160,6 @@ void UBDocumentNavigator::updateSpecificThumbnail(int iPage)
         delete oldItem;
         oldItem = NULL;
     }
-
 }
 
 /**

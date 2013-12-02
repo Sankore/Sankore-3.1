@@ -154,8 +154,7 @@ int UBDocumentContainer::sceneIndexFromPage(int page)
     return page-1;
 }
 
-void UBDocumentContainer::addEmptyThumbPage()
+const QPixmap* UBDocumentContainer::pageAt(int index)
 {
-    const QPixmap* pThumb = new QPixmap();
-    mDocumentThumbs.append(pThumb);
+    return mDocumentThumbs[index];
 }
