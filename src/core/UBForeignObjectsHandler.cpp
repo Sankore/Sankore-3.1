@@ -297,6 +297,27 @@ private:
         } else if (what == tTeacherGuide) {
             teacherGuideToContainer(element);
         }
+
+        pullActionFromElement(element);
+    }
+
+    void pullActionFromElement(const QDomElement &element)
+    {
+        if (!element.hasAttribute(aActionMedia)) {
+            return;
+        }
+
+        QString path = element.attribute(aActionMedia);
+        if (path.isNull()) {
+            return;
+        }
+
+        QString uid = strIdFrom(path);
+        if (uid.isNull()) {
+            return;
+        }
+
+        mDomIdsMap.insert(uid, path);
     }
 
     void teacherGuideToContainer(const QDomElement &element)
