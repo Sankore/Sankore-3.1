@@ -2385,6 +2385,8 @@ void UBBoardController::setPageSize(QSize newSize)
         // Issue 1684 - CFA - 20131128 : hack to force qgraphicsview to refresh
         handScroll(1.f, 0.f);
         handScroll(-1.f, 0.f);
+        reloadThumbnails();
+
         if (selectedDocument()->hasDefaultImageBackground())
         {
             UBFeature& item = selectedDocument()->defaultImageBackground();
