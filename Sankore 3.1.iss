@@ -107,23 +107,23 @@ Root: HKCR; Subkey: "SankoreFile"; ValueType: string; ValueName: ""; ValueData: 
 Root: HKCR; Subkey: "SankoreFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\Open-Sankore.exe,1"
 Root: HKCR; Subkey: "SankoreFile\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\Open-Sankore.exe"" ""%1"""
 
-Root: HKLM; Subkey: "SOFTWARE\Open-Sankore"; ValueType: string; ValueName: "Client application"; ValueData: "{app}\Open-Sankore.exe"; Flags: uninsdeletevalue; Check: isProcessorNotX64
-Root: HKLM; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "Transfer mode"; ValueData: "0"; Flags: uninsdeletevalue; Check: isProcessorNotX64
-Root: HKLM; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "EMF: Hide page"; ValueData: "1"; Flags: uninsdeletevalue; Check: isProcessorNotX64
-Root: HKLM; Subkey: "SOFTWARE\Open-Sankore\Defaults"; ValueType: dword; ValueName: "PDF: Enabled"; ValueData: "1"; Flags: uninsdeletevalue; Check: isProcessorNotX64
+Root: HKLM; Subkey: "SOFTWARE\Open-Sankore"; ValueType: string; ValueName: "Client application"; ValueData: "{app}\Open-Sankore.exe"; Flags: uninsdeletevalue; Check: (not IsWin64)
+Root: HKLM; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "Transfer mode"; ValueData: "0"; Flags: uninsdeletevalue; Check: (not IsWin64)
+Root: HKLM; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "EMF: Hide page"; ValueData: "1"; Flags: uninsdeletevalue; Check: (not IsWin64)
+Root: HKLM; Subkey: "SOFTWARE\Open-Sankore\Defaults"; ValueType: dword; ValueName: "PDF: Enabled"; ValueData: "1"; Flags: uninsdeletevalue; Check: (not IsWin64)
 
-Root: HKLM; Subkey: "SOFTWARE\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: dword; ValueName: "Policy"; ValueData: "3"; Flags: uninsdeletevalue; Check: isProcessorNotX64
-Root: HKLM; Subkey: "SOFTWARE\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppName"; ValueData: "Open-Sankore.exe"; Flags: uninsdeletevalue; Check: isProcessorNotX64
-Root: HKLM; Subkey: "SOFTWARE\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppPath"; ValueData: "{app}"; Flags: uninsdeletevalue; Check: isProcessorNotX64
+Root: HKLM; Subkey: "SOFTWARE\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: dword; ValueName: "Policy"; ValueData: "3"; Flags: uninsdeletevalue; Check: (not IsWin64)
+Root: HKLM; Subkey: "SOFTWARE\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppName"; ValueData: "Open-Sankore.exe"; Flags: uninsdeletevalue; Check: (not IsWin64)
+Root: HKLM; Subkey: "SOFTWARE\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppPath"; ValueData: "{app}"; Flags: uninsdeletevalue; Check: (not IsWin64)
 
-Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore"; ValueType: string; ValueName: "Client application"; ValueData: "{app}\Open-Sankore.exe"; Flags: uninsdeletevalue; Check: isProcessorX64
-Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "Transfer mode"; ValueData: "0"; Flags: uninsdeletevalue; Check: isProcessorX64
-Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "EMF: Hide page"; ValueData: "1"; Flags: uninsdeletevalue; Check: isProcessorX64
-Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore\Defaults"; ValueType: dword; ValueName: "PDF: Enabled"; ValueData: "1"; Flags: uninsdeletevalue; Check: isProcessorX64
+Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore"; ValueType: string; ValueName: "Client application"; ValueData: "{app}\Open-Sankore.exe"; Flags: uninsdeletevalue; Check: IsWin64
+Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "Transfer mode"; ValueData: "0"; Flags: uninsdeletevalue; Check: IsWin64
+Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore"; ValueType: dword; ValueName: "EMF: Hide page"; ValueData: "1"; Flags: uninsdeletevalue; Check: IsWin64
+Root: HKLM64; Subkey: "SOFTWARE\Open-Sankore\Defaults"; ValueType: dword; ValueName: "PDF: Enabled"; ValueData: "1"; Flags: uninsdeletevalue; Check: IsWin64
 
-Root: HKLM64; Subkey: "SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: dword; ValueName: "Policy"; ValueData: "3"; Flags: uninsdeletevalue; Check: isProcessorX64
-Root: HKLM64; Subkey: "SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppName"; ValueData: "Open-Sankore.exe"; Flags: uninsdeletevalue; Check: isProcessorX64
-Root: HKLM64; Subkey: "SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppPath"; ValueData: "{app}"; Flags: uninsdeletevalue; Check: isProcessorX64
+Root: HKLM64; Subkey: "SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: dword; ValueName: "Policy"; ValueData: "3"; Flags: uninsdeletevalue; Check: IsWin64
+Root: HKLM64; Subkey: "SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppName"; ValueData: "Open-Sankore.exe"; Flags: uninsdeletevalue; Check: IsWin64
+Root: HKLM64; Subkey: "SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\{{E63D17F8-D9DA-479D-B9B5-0D101A03703B}"; ValueType: string; ValueName: "AppPath"; ValueData: "{app}"; Flags: uninsdeletevalue; Check: IsWin64
 
 [Run]
 Filename: "{tmp}\vcredist_x86.exe";WorkingDir:"{tmp}"; Parameters: "/q:a/c:""VCREDI~3.EXE /q:a /c:""""msiexec /i vcredist.msi /qn"""""""; StatusMsg: Installing CRT ...
@@ -133,14 +133,14 @@ Filename: "{app}\Open-Sankore.exe"; Description: "{cm:LaunchProgram,Open-Sankoré
 ; cleanup and delete whole installation directory
 Name: {app}; Type: filesandordirs
 
-[Code]
-function isProcessorX64: Boolean;
-begin
-  Result := (ProcessorArchitecture = paX64);
-end;
+;[Code]
+;function isProcessorX64: Boolean;
+;begin
+;  Result := (ProcessorArchitecture = paX64);
+;end;
 
-function isProcessorNotX64: Boolean;
-begin
-	Result := not isProcessorX64;
-end;
+;function isProcessorNotX64: Boolean;
+;begin
+;	Result := not isProcessorX64;
+;end;
 
