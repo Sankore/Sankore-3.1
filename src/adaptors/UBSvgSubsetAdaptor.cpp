@@ -1315,8 +1315,7 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsSvgItem *svgItem = qgraphicsitem_cast<UBGraphicsSvgItem*> (item);
             if (svgItem && svgItem->isVisible())
             {
-                //Issue 1684 - CFA - 20131128
-                if (pixmapItem->scene()->isBackgroundObject(item))
+                if (svgItem->scene()->isBackgroundObject(item))
                     svgItemToLinkedSvg(svgItem, true);
                 else
                     svgItemToLinkedSvg(svgItem);
