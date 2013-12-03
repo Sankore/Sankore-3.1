@@ -1153,6 +1153,7 @@ void UBFeaturesController::addItemAsBackground(const UBFeature &item)
         && item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())
         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
     UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.getBackgroundDisposition());
+    UBApplication::boardController->centerRestore();
 }
 
 // Issue 1684 - CFA - 20131120
