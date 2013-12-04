@@ -1275,7 +1275,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     }
     else if (!inModel) {
         drA = Qt::IgnoreAction;
-        docModel->moveIndex(dropIndex, targetIndex);
+        if(dropIndex.internalId() != targetIndex.internalId())
+            docModel->moveIndex(dropIndex, targetIndex);
     }
 
     event->setDropAction(drA);

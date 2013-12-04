@@ -171,7 +171,7 @@ UBDocumentProxy* UBDocumentManager::importFile(const QFile& pFile, const QString
                 UBDocumentBasedImportAdaptor* importAdaptor = (UBDocumentBasedImportAdaptor*)adaptor;
 
                 document = importAdaptor->importFile(pFile, pGroup);
-            
+
             }
             else
             {
@@ -202,6 +202,7 @@ UBDocumentProxy* UBDocumentManager::importFile(const QFile& pFile, const QString
                 int nPage = 0;
                 foreach(UBGraphicsItem* page, pages)
                 {
+
                     UBApplication::showMessage(tr("Inserting page %1 of %2").arg(++nPage).arg(pages.size()), true);
 #ifdef Q_WS_MACX
                     //Workaround for issue 912
@@ -273,7 +274,7 @@ int UBDocumentManager::addFilesToDocument(UBDocumentProxy* document, QStringList
                         UBGraphicsScene* scene = UBPersistenceManager::persistenceManager()->createDocumentSceneAt(document, pageIndex);
                         importAdaptor->placeImportedItemToScene(scene, page);
                         UBPersistenceManager::persistenceManager()->persistDocumentScene(document, scene, pageIndex);
-                        UBApplication::boardController->addEmptyThumbPage();
+                        UBApplication::boardController->insertThumbPage(pageIndex);
                     }
 
                     UBPersistenceManager::persistenceManager()->persistDocumentMetadata(document);

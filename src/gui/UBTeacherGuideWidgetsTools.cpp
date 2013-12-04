@@ -277,16 +277,16 @@ void UBTGAdaptableText::insertFromMimeData(const QMimeData *source)
     if (source->hasHtml())
     {
         textDoc.setHtml(UBTextTools::cleanHtml(source->html()));
-        plainText += textDoc.toPlainText();
+        plainText = textDoc.toPlainText();
     }
     if (source->hasText())
         if (textDoc.toPlainText() != source->text())
-            plainText += source->text();
+            plainText = source->text();
     if (source->hasUrls())
     {
         foreach(QUrl url, source->urls())
         {
-            plainText += url.toString();
+            plainText = url.toString();
         }
     }
 

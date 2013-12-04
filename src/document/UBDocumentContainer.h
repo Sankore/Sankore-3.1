@@ -39,8 +39,8 @@ class UBDocumentContainer : public QObject
         void pureSetDocument(UBDocumentProxy *document) {mCurrentDocument = document;}
 
         UBDocumentProxy* selectedDocument() {return mCurrentDocument;}
-        int pageCount() {return mDocumentThumbs->size();}
-        const QPixmap* pageAt(int index) {return mDocumentThumbs->at(index);}
+        int pageCount() {return mDocumentThumbs.size();}
+        const QPixmap* pageAt(int index);
 
         QList<const QPixmap*> * documentThumbs() const {return mDocumentThumbs;}
         void setDocumentThumbs(QList<const QPixmap*> * documentThumb){mDocumentThumbs = documentThumb;}
@@ -53,17 +53,16 @@ class UBDocumentContainer : public QObject
         void deletePages(QList<int>& pageIndexes);
         void addPage(int index);
         void updatePage(int index);
-        void addEmptyThumbPage();
         void reloadThumbnails();
         void addPixmapAt(const QPixmap *pix, int index);
+        void insertThumbPage(int index);
 
     private:
         UBDocumentProxy* mCurrentDocument;
-   
+
     protected:
         void deleteThumbPage(int index);
         void updateThumbPage(int index);
-        void insertThumbPage(int index);
         QList<const QPixmap*>  * mDocumentThumbs; // Issue 1026 - AOU - 20131028 : (commentaire du 20130925)
 
     signals:
