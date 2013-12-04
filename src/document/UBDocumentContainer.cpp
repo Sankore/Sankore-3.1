@@ -158,5 +158,5 @@ int UBDocumentContainer::sceneIndexFromPage(int page)
 
 const QPixmap* UBDocumentContainer::pageAt(int index)
 {
-    return mDocumentThumbs[index];
+    return (*mDocumentThumbs)[index];
 }

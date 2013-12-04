@@ -550,11 +550,7 @@ Here we determines cases when items should to get mouse press event at pressing 
         return false;
 
     // some behavior depends on current tool.
-<<<<<<< HEAD
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
-=======
-    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
->>>>>>> branchHub
 
     switch(item->type())
     {
