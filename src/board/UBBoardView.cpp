@@ -687,6 +687,7 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
     switch(item->type())
     {
     case UBGraphicsCurtainItem::Type:
+        return true;
     case UBGraphicsGroupContainerItem::Type:
         return !dynamic_cast<UBGraphicsGroupContainerItem*>(item)->Delegate()->isLocked();
     case UBGraphicsWidgetItem::Type:

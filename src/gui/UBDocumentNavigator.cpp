@@ -185,6 +185,7 @@ void UBDocumentNavigator::updateSpecificThumbnail(int iPage)
     const QPixmap* pix = UBApplication::boardController->pageAt(iPage);
     QGraphicsItem* newItem = new UBSceneThumbnailNavigPixmap(*pix, UBApplication::boardController->selectedDocument(), iPage);
 
+
     // Get the old thumbnail
     QGraphicsItem* oldItem = mThumbsWithLabels.at(iPage).getThumbnail();
     if(NULL != oldItem)
