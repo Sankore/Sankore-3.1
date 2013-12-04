@@ -36,6 +36,7 @@ UBHttpGet::UBHttpGet(QObject* parent)
     : QObject(parent)
     , mReply(0)
     , mIsBackground(false)
+    , mDisposition(Center)
     , mRedirectionCount(0)
     , mIsSelfAborting(false)
 {
@@ -53,11 +54,12 @@ UBHttpGet::~UBHttpGet()
     }
 }
 
-QNetworkReply* UBHttpGet::get(QUrl pUrl, QPointF pPos, QSize pSize, bool isBackground)
+QNetworkReply* UBHttpGet::get(QUrl pUrl, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition)
 {
     mPos = pPos;
     mSize = pSize;
     mIsBackground = isBackground;
+    mDisposition = disposition;
 
     if (mReply)
         delete mReply;
@@ -96,7 +98,7 @@ void UBHttpGet::requestFinished()
 
         mRedirectionCount = 0;
 
-        emit downloadFinished(false, mReply->url(), mReply->errorString(), mDownloadedBytes, mPos, mSize, mIsBackground);
+        emit downloadFinished(false, mReply->url(), mReply->errorString(), mDownloadedBytes, mPos, mSize, mIsBackground, mDisposition);
     }
     else
     {
@@ -114,7 +116,7 @@ void UBHttpGet::requestFinished()
         mRedirectionCount = 0;
 
         emit downloadFinished(true, mReply->url(), mReply->header(QNetworkRequest::ContentTypeHeader).toString(),
-                        mDownloadedBytes, mPos, mSize, mIsBackground);
+                        mDownloadedBytes, mPos, mSize, mIsBackground, mDisposition);
     }
 
 }

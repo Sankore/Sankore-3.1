@@ -88,7 +88,7 @@ void UBAsyncLocalFileDownloader::run()
             QFile::remove(mTo);
     }
     else
-        emit signal_asyncCopyFinished(descriptor.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(descriptor.originalSrcUrl), "", NULL, descriptor.pos, descriptor.size, descriptor.isBackground);
+        emit signal_asyncCopyFinished(descriptor.id, !mTo.isEmpty(), QUrl::fromLocalFile(mTo), QUrl(descriptor.originalSrcUrl), "", NULL, descriptor.pos, descriptor.size, descriptor.isBackground, descriptor.disposition);
 }
 
 void UBAsyncLocalFileDownloader::abort()
@@ -270,7 +270,7 @@ void UBDownloadManager::onDownloadProgress(int id, qint64 received, qint64 total
  * @param desc as the current downloaded file description
  */
 
-void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground)
+void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition)
 {
 //    Temporary data for dnd do not delete it please
     Q_UNUSED(pPos)
@@ -289,7 +289,7 @@ void UBDownloadManager::onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl
             }
             else if(desc.dest == sDownloadFileDesc::board) {
                 // The downloaded file is modal so we must put it on the board
-                emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, false, isBackground);
+                emit addDownloadedFileToBoard(pSuccess, sourceUrl, contentUrl, pContentTypeHeader, pData, pPos, pSize, false, isBackground, false, eItemActionType_Default, disposition);
             }
             else if(desc.dest == sDownloadFileDesc::library)
             {
@@ -383,7 +383,7 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
     if (desc.srcUrl.startsWith("file://") || desc.srcUrl.startsWith("/"))
     {
         UBAsyncLocalFileDownloader * cpHelper = new UBAsyncLocalFileDownloader(desc, QByteArray(), this);
-        connect(cpHelper, SIGNAL(signal_asyncCopyFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl,QString, QByteArray, QPointF, QSize, bool)));
+        connect(cpHelper, SIGNAL(signal_asyncCopyFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool, UBFeatureBackgroundDisposition)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl,QString, QByteArray, QPointF, QSize, bool, UBFeatureBackgroundDisposition)));
         QObject *res = dynamic_cast<QObject *>(cpHelper->download());
         if (!res)
             delete res;
@@ -394,14 +394,14 @@ void UBDownloadManager::startFileDownload(sDownloadFileDesc desc)
     {
         UBDownloadHttpFile* http = new UBDownloadHttpFile(desc.id, this);
         connect(http, SIGNAL(downloadProgress(int, qint64,qint64)), this, SLOT(onDownloadProgress(int,qint64,qint64)));
-        connect(http, SIGNAL(downloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool)));
+        connect(http, SIGNAL(downloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool, UBFeatureBackgroundDisposition)), this, SLOT(onDownloadFinished(int, bool, QUrl, QUrl, QString, QByteArray, QPointF, QSize, bool, UBFeatureBackgroundDisposition)));
         connect(http, SIGNAL(downloadError(int)), this, SLOT(onDownloadError(int)));
 
         //the desc.srcUrl is encoded. So we have to decode it before.
         QUrl url;
         url.setEncodedUrl(desc.srcUrl.toUtf8());
         // We send here the request and store its reply in order to be able to cancel it if needed
-        mDownloads[desc.id] = dynamic_cast<QObject *>(http->get(url, desc.pos, desc.size, desc.isBackground));
+        mDownloads[desc.id] = dynamic_cast<QObject *>(http->get(url, desc.pos, desc.size, desc.isBackground, desc.disposition));
     }
 }
 
@@ -642,7 +642,7 @@ UBDownloadHttpFile::UBDownloadHttpFile(int fileId, QObject *parent):UBHttpGet(pa
 {
     mId = fileId;
 
-    connect(this, SIGNAL(downloadFinished(bool,QUrl,QString,QByteArray,QPointF,QSize,bool)), this, SLOT(onDownloadFinished(bool,QUrl,QString,QByteArray,QPointF,QSize,bool)));
+    connect(this, SIGNAL(downloadFinished(bool,QUrl,QString,QByteArray,QPointF,QSize,bool, UBFeatureBackgroundDisposition)), this, SLOT(onDownloadFinished(bool,QUrl,QString,QByteArray,QPointF,QSize,bool, UBFeatureBackgroundDisposition)));
     connect(this, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(onDownloadProgress(qint64,qint64)));
 }
 
@@ -674,12 +674,12 @@ void UBDownloadHttpFile::onDownloadProgress(qint64 bytesReceived, qint64 bytesTo
  * @param psize as the item size (GUI)
  * @param isBackground as the background mdoe indicator
  */
-void UBDownloadHttpFile::onDownloadFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground)
+void UBDownloadHttpFile::onDownloadFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition)
 {
     if(pSuccess)
     {
         // Notify the end of the download
-        emit downloadFinished(mId, pSuccess, sourceUrl, sourceUrl, pContentTypeHeader, pData, pPos, pSize, isBackground);
+        emit downloadFinished(mId, pSuccess, sourceUrl, sourceUrl, pContentTypeHeader, pData, pPos, pSize, isBackground, disposition);
     }
     else
     {

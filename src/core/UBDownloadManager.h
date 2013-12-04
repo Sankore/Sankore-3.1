@@ -31,6 +31,9 @@
 #include <QDropEvent>
 
 #include "UBDownloadThread.h"
+#include "board/UBFeaturesController.h"
+#include "board/UBBoardController.h"
+
 
 #include "network/UBHttpGet.h"
 
@@ -51,6 +54,7 @@ struct sDownloadFileDesc
       , currentSize(0)
       , modal(false)
       , isBackground(false)
+      , disposition(Center)
       , dropActions(Qt::IgnoreAction)
       , dropMouseButtons(Qt::NoButton)
       , dropModifiers(Qt::NoModifier)
@@ -68,6 +72,7 @@ struct sDownloadFileDesc
     QPointF pos;        // For board drop only
     QSize size;         // For board drop only
     bool isBackground;  // For board drop only
+    UBFeatureBackgroundDisposition disposition;
 
     QPoint dropPoint;    //For widget's Drop event
     Qt::DropActions dropActions; //For widget's Drop event
@@ -85,11 +90,11 @@ public:
 
 signals:
     void downloadProgress(int id, qint64 current,qint64 total);
-    void downloadFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
+    void downloadFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition = Center);
     void downloadError(int id);
 
 private slots:
-    void onDownloadFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
+    void onDownloadFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition = Center);
     void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 
 private:
@@ -108,7 +113,7 @@ public:
 
 signals:
     void finished(QString srcUrl, QString resUrl);
-    void signal_asyncCopyFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
+    void signal_asyncCopyFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition);
 
 
 private:
@@ -142,7 +147,7 @@ signals:
     void downloadFinished(bool pSuccess, int id, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData);
     void downloadFinished(bool pSuccess, sDownloadFileDesc desc, QByteArray pData);
     void downloadModalFinished();
-    void addDownloadedFileToBoard(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground);
+    void addDownloadedFileToBoard(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData, eItemActionType actionType, UBFeatureBackgroundDisposition disposition = Center);
     void addDownloadedFileToLibrary(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData, QString pTitle);
     void cancelAllDownloads();
     void allDownloadsFinished();
@@ -150,7 +155,7 @@ signals:
 private slots:
     void onUpdateDownloadLists();
     void onDownloadProgress(int id, qint64 received, qint64 total);
-    void onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
+    void onDownloadFinished(int id, bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition = Center);
     void onDownloadError(int id);
 
 private:
