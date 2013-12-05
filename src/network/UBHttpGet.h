@@ -28,8 +28,6 @@
 #include <QtNetwork>
 #include <QDropEvent>
 
-#include "board/UBFeaturesController.h"
-
 class UBHttpGet : public QObject
 {
 
@@ -39,14 +37,14 @@ class UBHttpGet : public QObject
         UBHttpGet(QObject* parent = 0);
         virtual ~UBHttpGet();
 
-        QNetworkReply* get(QUrl pUrl, QPointF pPoint = QPointF(0, 0), QSize pSize = QSize(0, 0), bool isBackground = false, UBFeatureBackgroundDisposition disposition = Center);
+        QNetworkReply* get(QUrl pUrl, QPointF pPoint = QPointF(0, 0), QSize pSize = QSize(0, 0), bool isBackground = false);
 //        QNetworkReply* get(const sDownloadFileDesc &downlinfo);
 
     signals:
 
         void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
         void downloadFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader
-                , QByteArray pData, QPointF pPos, QSize pSize, bool isBackground, UBFeatureBackgroundDisposition disposition = Center);
+                , QByteArray pData, QPointF pPos, QSize pSize, bool isBackground);
 //        void downloadFinished(bool pSuccess, QUrl sourceUrl, QString pContentTypeHeader, QByteArray pData
 //                              , sDownloadFileDesc downlInfo);
 
@@ -64,7 +62,6 @@ class UBHttpGet : public QObject
         QSize mSize;
 
         bool mIsBackground;
-        UBFeatureBackgroundDisposition mDisposition;
         int mRequestID;
         int mRedirectionCount;
         bool mIsSelfAborting;

@@ -154,7 +154,7 @@ void UBBoardController::init()
             , this, SLOT(lastWindowClosed()));
 
     connect(UBDownloadManager::downloadManager(), SIGNAL(downloadModalFinished()), this, SLOT(onDownloadModalFinished()));
-    connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool, bool, eItemActionType, UBFeatureBackgroundDisposition)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool, bool, eItemActionType, UBFeatureBackgroundDisposition)));
+    connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
     UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createNewDocument();
 
@@ -1235,7 +1235,6 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
         desc.pos = pPos;
         desc.size = pSize;
         desc.isBackground = isBackground;
-        desc.disposition = disposition;
 
         UBDownloadManager::downloadManager()->addFileToDownload(desc);
     }
