@@ -903,9 +903,15 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpLicenceBox->setObjectName("DockPaletteWidgetComboBox");
     mpContainerWidgetLayout->addWidget(mpLicenceBox);
     mpLicenceLayout = new QVBoxLayout(0); // Issue 1517 - ALTI/AOU - 20131206 : change le layout Horizontal en Vertical.
-    mpLicenceIcon = new QLabel(this);
+
+    //issue 1517 - NNE - 20131206
+    mpLicenceIcon = new UBClickableLabel(this);
     mpLicenceIcon->setMinimumWidth(LOWER_RESIZE_WIDTH/2);
     mpLicenceLayout->addWidget(mpLicenceIcon);
+
+    //issue 1517 - NNE - 20131206
+    connect(mpLicenceIcon, SIGNAL(clicked()), this, SLOT(onClickLicence()));
+
     mpLicenceValueLabel = new QLabel(this);
     mpLicenceValueLabel->setMinimumWidth(LOWER_RESIZE_WIDTH/2);
     mpLicenceLayout->addWidget(mpLicenceValueLabel);
@@ -915,6 +921,13 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
     fillComboBoxes();
 }
+
+//issue 1517 - NNE - 20131206
+void UBTeacherGuidePageZeroWidget::onClickLicence()
+{
+    UBApplication::webController->loadUrl(QUrl("http://creativecommons.org/licenses/by-sa/3.0/"));
+}
+//issue 1517 - NNE - 20131206
 
 UBTeacherGuidePageZeroWidget::~UBTeacherGuidePageZeroWidget()
 {
