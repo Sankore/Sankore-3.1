@@ -63,7 +63,8 @@ typedef enum {
     eUBTGAddSubItemWidgetType_None,
     eUBTGAddSubItemWidgetType_Action,
     eUBTGAddSubItemWidgetType_Media,
-    eUBTGAddSubItemWidgetType_Url
+    eUBTGAddSubItemWidgetType_Url,
+    eUBTGAddSubItemWidgetType_File // Issue 1683 (Evolution) - AOU - 20131206
 } eUBTGAddSubItemWidgetType;
 
 /***************************************************************************
@@ -248,7 +249,7 @@ QVector<tIDataStorage*> UBTeacherGuideEditionWidget::save(int pageIndex)
     tIDataStorage* data = new tIDataStorage();
     data->name = "teacherGuide";
     data->type = eElementType_START;
-    data->attributes.insert("version", "2.00");
+    data->attributes.insert("version", "2.3.0"); // Issue 1683 (Evolution) - AOU - 20131206 : modifie numero de version "2.00" --> "2.3.0"
     result << data;
 
     data = new tIDataStorage();
@@ -744,10 +745,18 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
   , mpLicenceLayout(NULL)
   , mpSceneItemSessionTitle(NULL)
   , mCurrentDocument(NULL)
+  // Issue 1683 (Evolution) - AOU - 20131206
+  , mpSeparatorFiles(NULL)
+  , mpTreeWidgetEdition(NULL)
+  , mpTreeWidgetPresentation(NULL)
+  , pMode(tUBTGZeroPageMode_EDITION)
+  , mbFilesChanged(false)
+  // Fin Issue 1683 (Evolution) - AOU - 20131206
 {
     setObjectName(name);
     QString chapterStyle("QLabel {font-size:16px; font-weight:bold;}");
     mpLayout = new QVBoxLayout(0);
+
     setLayout(mpLayout);
     mpPageNumberLabel = new QLabel(this);
     mpPageNumberLabel->setAlignment(Qt::AlignRight);
@@ -910,10 +919,64 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpLicenceValueLabel->setMinimumWidth(LOWER_RESIZE_WIDTH/2);
     mpLicenceLayout->addWidget(mpLicenceValueLabel);
     mpContainerWidgetLayout->addLayout(mpLicenceLayout);
-    mpContainerWidgetLayout->addStretch(1);
+
+
+    // Les QTreeWidget qui permettent d'embarquer des fichiers externes dans le Document : // Issue 1683 (Evolution) - AOU - 20131206
+
+    mpSeparatorFiles = new QFrame(this);
+    mpSeparatorFiles->setFixedHeight(UBTG_SEPARATOR_FIXED_HEIGHT);
+    mpSeparatorFiles->setObjectName("UBTGSeparator");
+    mpContainerWidgetLayout->addWidget(mpSeparatorFiles);
+
+    // QTreeView visible en Mode Edition :
+    mpTreeWidgetEdition = new QTreeWidget(this);
+    mpTreeWidgetEdition->setStyleSheet("selection-background-color:transparent; padding-bottom:5px; padding-top:5px;");
+    mpContainerWidgetLayout->addWidget(mpTreeWidgetEdition);
+
+    QTreeWidgetItem* mpRootWidgetItem = mpTreeWidgetEdition->invisibleRootItem();
+    mpTreeWidgetEdition->setRootIsDecorated(false);
+    mpTreeWidgetEdition->setIndentation(0);
+    mpTreeWidgetEdition->setDropIndicatorShown(false);
+    mpTreeWidgetEdition->header()->close();
+    mpTreeWidgetEdition->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    mpTreeWidgetEdition->setColumnCount(2);
+    mpTreeWidgetEdition->header()->setStretchLastSection(false);
+    mpTreeWidgetEdition->header()->setResizeMode(0, QHeaderView::Stretch);
+    mpTreeWidgetEdition->header()->setResizeMode(1, QHeaderView::Fixed);
+    mpTreeWidgetEdition->header()->setDefaultSectionSize(18);
+    mpTreeWidgetEdition->setSelectionMode(QAbstractItemView::NoSelection);
+
+    connect(mpTreeWidgetEdition, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
+
+    mpAddAFileItem = new UBAddItem(tr("Add a file"), eUBTGAddSubItemWidgetType_File, mpTreeWidgetEdition);
+    mpRootWidgetItem->addChild(mpAddAFileItem);
+
+
+    // QTreeView visible en Mode Presentation :
+    mpTreeWidgetPresentation = new QTreeWidget(this);
+    mpContainerWidgetLayout->addWidget(mpTreeWidgetPresentation);
+    mpTreeWidgetPresentation->setDragEnabled(true);
+    mpTreeWidgetPresentation->setRootIsDecorated(false);
+    mpTreeWidgetPresentation->setIndentation(0);
+    mpTreeWidgetPresentation->setDropIndicatorShown(false);
+    mpTreeWidgetPresentation->header()->close();
+    mpTreeWidgetPresentation->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    mpTreeWidgetPresentation->setStyleSheet("selection-background-color:transparent; padding-bottom:5px; padding-top:5px; ");
+    mpTreeWidgetPresentation->setIconSize(QSize(24,24));
+
+    connect(mpTreeWidgetPresentation, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
+
+    // Fin Issue 1683 (Evolution) - AOU - 20131206
+
+    //mpContainerWidgetLayout->addStretch(1);
 
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
     fillComboBoxes();
+
+    if (UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool()) {
+        UBSvgSubsetAdaptor::addElementToBeStored(QString("teacherGuide"), this);
+        connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onActiveDocumentChanged()));
+    }
 }
 
 UBTeacherGuidePageZeroWidget::~UBTeacherGuidePageZeroWidget()
@@ -949,6 +1012,14 @@ UBTeacherGuidePageZeroWidget::~UBTeacherGuidePageZeroWidget()
     DELETEPTR(mpContainerWidgetLayout);
     DELETEPTR(mpContainerWidget);
     DELETEPTR(mpScrollArea);
+    // Issue 1683 (Evolution) - AOU - 20131206
+/*    DELETEPTR(mpSeparatorFiles);
+    DELETEPTR(mpMediaSwitchItem);
+    DELETEPTR(mpModePushButton);
+    DELETEPTR(mpAddAFileItem);
+    DELETEPTR(mpTreeWidgetEdition);
+    DELETEPTR(mpTreeWidgetPresentation);*/
+    // Fin Issue 1683 (Evolution) - AOU - 20131206
     DELETEPTR(mpLayout);
 }
 
@@ -1045,7 +1116,10 @@ void UBTeacherGuidePageZeroWidget::onActiveSceneChanged()
         loadData();
         updateSceneTitle();
     }
+    load(UBSvgSubsetAdaptor::readTeacherGuideNode(0)); // Issue 1683 (Evolution) - AOU - 20131206
 }
+
+
 
 void UBTeacherGuidePageZeroWidget::hideEvent(QHideEvent * event)
 {
@@ -1075,6 +1149,8 @@ void UBTeacherGuidePageZeroWidget::loadData()
     currentIndex = documentProxy->metaData(UBSettings::sessionLicence).toInt();
     mpLicenceBox->setCurrentIndex((currentIndex != -1) ? currentIndex : 0);
 }
+
+
 
 void UBTeacherGuidePageZeroWidget::persistData()
 {
@@ -1108,6 +1184,8 @@ void UBTeacherGuidePageZeroWidget::updateSceneTitle()
 
 void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
 {
+    setMode(mode); // Issue 1683 (Evolution) - AOU - 20131206
+
     if (mode == tUBTGZeroPageMode_EDITION) {
         QString inputStyleSheet("QTextEdit { background: white; border-radius: 10px; border: 2px;}");
         mpModePushButton->hide();
@@ -1134,6 +1212,11 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
         mpLicenceIcon->hide();
         mpLicenceValueLabel->hide();
         mpLicenceBox->show();
+
+        // Issue 1683 (Evolution) - AOU - 20131206
+        mpTreeWidgetEdition->show();
+        mpTreeWidgetPresentation->hide();
+        // Fin Issue 1683 (Evolution) - AOU - 20131206
     }
     else {
         QString inputStyleSheet( "QTextEdit { background: transparent; border: none;}");
@@ -1170,6 +1253,31 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
         mpLicenceValueLabel->show();
         mpLicenceBox->hide();
         persistData();
+
+        // Issue 1683 (Evolution) - AOU - 20131206
+        mpTreeWidgetEdition->hide();
+
+        // Rafraichir le QTreeWidget "Presentation" avec les items du QTreeWidget "Edition"
+        cleanData(tUBTGZeroPageMode_PRESENTATION);
+        for(int i=0; i<mpTreeWidgetEdition->invisibleRootItem()->child(0)->childCount(); ++i)
+        {
+            QTreeWidgetItem* item = mpTreeWidgetEdition->invisibleRootItem()->child(0)->child(i);
+            UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidgetEdition->itemWidget(item, 0));
+            if (fileItem)
+            {
+                createMediaButtonItem();
+                QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpMediaSwitchItem);
+                newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/doc.png"));
+                newWidgetItem->setText(0, fileItem->getTitreFichier());
+                newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_URL);
+                newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnUrl, QVariant(fileItem->path()));
+                newWidgetItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 11)));
+                newWidgetItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+                mpTreeWidgetPresentation->invisibleRootItem()->addChild(newWidgetItem);
+            }
+        }
+        mpTreeWidgetPresentation->show();
+        // Fin Issue 1683 (Evolution) - AOU - 20131206
     }
     update();
 }
@@ -1242,6 +1350,7 @@ bool UBTeacherGuidePageZeroWidget::isModified()
         result |= mpSchoolSubjectsBox->currentIndex() > 0;
         result |= mpSchoolTypeBox->currentIndex() > 0;
         result |= mpLicenceBox->currentIndex() > 0;
+        result |= filesChanged(); // Issue 1683 (Evolution) - AOU - 20131206
     }
     else
         qDebug() << "this should not happen";
@@ -1254,6 +1363,206 @@ void UBTeacherGuidePageZeroWidget::resizeEvent(QResizeEvent* ev)
     emit resized();
     QWidget::resizeEvent(ev);
 }
+
+// Issue 1683 (Evolution) - AOU - 20131206
+void UBTeacherGuidePageZeroWidget::load(QDomDocument doc)
+{
+    setMode(tUBTGZeroPageMode_EDITION);
+    cleanData(tUBTGZeroPageMode_EDITION);
+    for (QDomElement element = doc.documentElement().firstChildElement();
+         !element.isNull(); element = element.nextSiblingElement()) {
+        QString tagName = element.tagName();
+        if (tagName == "file")
+            onAddItemClicked(mpAddAFileItem, 0, &element);
+    }
+    mbFilesChanged = false;
+}
+
+QVector<tIDataStorage *> UBTeacherGuidePageZeroWidget::save(int pageIndex)
+{
+    QVector<tIDataStorage*> result;
+
+    if (pageIndex == 0)
+    {
+        tIDataStorage* data = new tIDataStorage();
+        data->name = "teacherGuide";
+        data->type = eElementType_START;
+        data->attributes.insert("version", "2.3.0");
+        result << data;
+
+        QList<QTreeWidgetItem*> children;
+        for (int i = 0; i < mpAddAFileItem->childCount(); i += 1)
+            children << mpAddAFileItem->child(i);
+
+        foreach(QTreeWidgetItem* widgetItem, children) {
+            tUBGEElementNode* node = dynamic_cast<iUBTGSaveData*>(mpTreeWidgetEdition->itemWidget( widgetItem, 0))->saveData();
+            if (node) {
+                data = new tIDataStorage();
+                data->name = node->name;
+                data->type = eElementType_UNIQUE;
+                foreach(QString currentKey, node->attributes.keys())
+                    data->attributes.insert(currentKey, node->attributes.value(currentKey));
+                result << data;
+            }
+        }
+
+        data = new tIDataStorage();
+        data->name = "teacherGuide";
+        data->type = eElementType_END;
+        result << data;
+    }
+    return result;
+}
+
+void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
+{
+    int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
+
+    if (mode() == tUBTGZeroPageMode_EDITION)
+    {
+        if (addSubItemWidgetType != eUBTGAddSubItemWidgetType_None) {
+            QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(widget);
+            newWidgetItem->setData(column, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
+            newWidgetItem->setData(1, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
+            newWidgetItem->setIcon(1, QIcon(":images/close.svg"));
+
+            switch (addSubItemWidgetType) {
+            case eUBTGAddSubItemWidgetType_File: {
+                UBTGFileWidget* fileWidget = new UBTGFileWidget();
+                if (element)
+                    fileWidget->initializeWithDom(*element);
+                mpTreeWidgetEdition->setItemWidget(newWidgetItem, 0, fileWidget);
+                connect(fileWidget, SIGNAL(changed()), this, SLOT(setFilesChanged()));
+                break;
+            }
+            default:
+                delete newWidgetItem;
+                qCritical() << "onAddItemClicked no action set";
+                return;
+            }
+
+            if (addSubItemWidgetType != eUBTGAddSubItemWidgetType_None && !widget->isExpanded())
+                widget->setExpanded(true);
+            else {
+                //to update the tree and subtrees
+                widget->setExpanded(false);
+                widget->setExpanded(true);
+            }
+        }
+        else if (column == 1 && addSubItemWidgetType == eUBTGAddSubItemWidgetType_None)
+        {
+            UBTGFileWidget * fileWidget = dynamic_cast<UBTGFileWidget*>(mpTreeWidgetEdition->itemWidget(widget, 0));
+            if (fileWidget)
+            {
+                // Supprimer le fichier embarqué (si il est bien dans un chemin relatif au dossier Document)
+                QString pathFile = fileWidget->path();
+                if (pathFile.left(pathFile.indexOf('/')) == UBPersistenceManager::teacherGuideDirectory)
+                {
+                    QFile file(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + pathFile);
+                    QFileInfo fi(file);
+                    file.remove();  // supprimer le fichier
+                    QDir parentDir = fi.dir();
+                    QString s = parentDir.absolutePath();
+                    parentDir.rmpath(parentDir.absolutePath()); // supprimer le repertoire
+                }
+                setFilesChanged();
+            }
+
+            int index = mpTreeWidgetEdition->currentIndex().row();
+            QTreeWidgetItem* toBeDeletedWidgetItem = widget->parent()->takeChild(index);
+            delete toBeDeletedWidgetItem;
+        }
+
+    }
+    else if (mode() == tUBTGZeroPageMode_PRESENTATION)
+    {
+        switch (addSubItemWidgetType) {
+        case tUBTGActionAssociateOnClickItem_EXPAND: {
+            widget->setExpanded(!widget->isExpanded());
+            if (widget->isExpanded()){
+#ifdef Q_WS_MAC
+                for(int i = 0 ; i < mpMediaSwitchItem->childCount(); i+=1 ){
+                    QTreeWidgetItem* eachItem = mpMediaSwitchItem->child(i);
+                    eachItem->setHidden(false);
+                }
+#endif
+                mpMediaSwitchItem->setText(0, "-");
+            }
+            else
+            {
+#ifdef Q_WS_MAC
+                for(int i = 0 ; i < mpMediaSwitchItem->childCount(); i+=1 ){
+                    QTreeWidgetItem* eachItem = mpMediaSwitchItem->child(i);
+                    eachItem->setHidden(true);
+                }
+#endif
+                mpMediaSwitchItem->setText(0, "+");
+            }
+            break;
+        }
+        case tUBTGActionAssociateOnClickItem_URL: {
+            widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
+
+            QString pathFile = widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
+            QString pathDocument = UBApplication::boardController->selectedDocument()->persistencePath();
+            QString fullPathFile = pathDocument + "/" + pathFile;
+
+            if ( pathFile.isEmpty() || ! QFile::exists(fullPathFile) ) // Si le fichier n'existe pas, on prévient l'utilisateur
+            {
+                UBApplication::showMessage(tr("File not found"));
+            }
+            else if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
+                UBApplication::showMessage(tr("No application was found to handle this file type"));
+            }
+            break;
+        }
+        default:
+            qCritical() << "onAddItemClicked no action set";
+            return;
+        }
+    }
+}
+
+void UBTeacherGuidePageZeroWidget::setFilesChanged()
+{
+    mbFilesChanged = true;
+}
+
+
+void UBTeacherGuidePageZeroWidget::createMediaButtonItem()
+{
+    if (!mpMediaSwitchItem) {
+        mpMediaSwitchItem = new QTreeWidgetItem(mpTreeWidgetPresentation->invisibleRootItem());
+        mpMediaSwitchItem->setText(0, "+");
+        mpMediaSwitchItem->setExpanded(false);
+        mpMediaSwitchItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_EXPAND);
+        mpMediaSwitchItem->setData(0, Qt::BackgroundRole, QVariant(QColor(200, 200, 200)));
+        mpMediaSwitchItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 16)));
+        mpMediaSwitchItem->setData(0, Qt::TextAlignmentRole, QVariant(Qt::AlignCenter));
+        mpTreeWidgetPresentation->invisibleRootItem()->addChild(mpMediaSwitchItem);
+    }
+}
+
+void UBTeacherGuidePageZeroWidget::cleanData(tUBTGZeroPageMode mode)
+{
+    if (mode == tUBTGZeroPageMode_EDITION)
+    {
+        QList<QTreeWidgetItem*> itemToRemove = mpAddAFileItem->takeChildren();
+        foreach(QTreeWidgetItem* eachItem, itemToRemove) {
+            DELETEPTR(eachItem);
+        }
+    }
+    else if (mode == tUBTGZeroPageMode_PRESENTATION)
+    {
+        QList<QTreeWidgetItem*> itemToRemove = mpTreeWidgetPresentation->invisibleRootItem()->takeChildren();
+        foreach(QTreeWidgetItem* eachItem, itemToRemove) {
+            DELETEPTR(eachItem);
+        }
+        // the mpMediaSwitchItem is deleted by the previous loop but the pointer is not set to zero
+        mpMediaSwitchItem = NULL;
+    }
+}
+// Fin Issue 1683 (Evolution) - AOU - 20131206
 
 /***************************************************************************
  *                    class    UBTeacherGuideWidget                        *

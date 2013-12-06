@@ -54,6 +54,7 @@ class UBPersistenceManager : public QObject
         static const QString audioDirectory;
         static const QString widgetDirectory;
         static const QString teacherGuideDirectory;
+        static const QString fileDirectory; // Issue 1683 (Evolution) - AOU - 20131206
 
         static const QString myDocumentsName;
         static const QString modelsName;

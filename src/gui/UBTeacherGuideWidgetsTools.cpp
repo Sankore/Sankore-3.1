@@ -729,3 +729,114 @@ QMimeData* UBTGDraggableTreeItem::mimeData(const QList<QTreeWidgetItem *> items)
     result->setUrls(urls);
     return result;
 }
+
+// Issue 1683 (Evolution) - AOU - 20131206
+/***************************************************************************
+ *              class    UBTGFileWidget                                    *
+ ***************************************************************************/
+UBTGFileWidget::UBTGFileWidget(QWidget *parent, const char *name)
+    : QWidget(parent)
+    , mpLayout(NULL)
+    , mpHLayout(NULL)
+    , mpTitreFichier(NULL)
+    , mpNomFichier(NULL)
+    , mpBtnSelectFile(NULL)
+    , mPath("")
+{
+    setObjectName(name);
+    SET_STYLE_SHEET();
+    mpLayout = new QVBoxLayout();
+
+    mpTitreFichier = new QLineEdit;
+    mpTitreFichier->setObjectName("UBTGLineEdit");
+    mpTitreFichier->setPlaceholderText(tr("Insert file title here..."));
+    mpLayout->addWidget(mpTitreFichier);
+
+    mpHLayout = new QHBoxLayout;
+
+    mpNomFichier = new QLineEdit;
+    mpNomFichier->setEnabled(false);
+    mpNomFichier->setObjectName("UBTGLineEdit");
+
+    mpBtnSelectFile = new QPushButton("...");
+    mpBtnSelectFile->setObjectName("UBTGPushButton");
+
+    connect(mpBtnSelectFile, SIGNAL(clicked()), this, SLOT(OnClickBtnSelectFile()));
+    mpHLayout->addWidget(mpNomFichier);
+    mpHLayout->addWidget(mpBtnSelectFile);
+
+    mpLayout->addLayout(mpHLayout);
+
+    setLayout(mpLayout);
+
+    connect(mpTitreFichier, SIGNAL(textEdited(QString)), this, SIGNAL(changed()));
+}
+
+UBTGFileWidget::~UBTGFileWidget()
+{
+    DELETEPTR(mpTitreFichier);
+    DELETEPTR(mpNomFichier);
+    DELETEPTR(mpBtnSelectFile);
+    DELETEPTR(mpHLayout);
+    DELETEPTR(mpLayout);
+}
+
+tUBGEElementNode* UBTGFileWidget::saveData()
+{
+    tUBGEElementNode* result = new tUBGEElementNode();
+    result->name = "file";
+    result->attributes.insert("title",mpTitreFichier->text());
+    result->attributes.insert("path",mPath);
+    return result;
+}
+
+void UBTGFileWidget::initializeWithDom(QDomElement element)
+{
+    mPath = element.attribute("path");
+    mpTitreFichier->setText(element.attribute("title"));
+    mpNomFichier->setText(mPath.mid(mPath.lastIndexOf('/') + 1));
+}
+
+void UBTGFileWidget::OnClickBtnSelectFile()
+{
+    // Ouvrir une dialog de selection de fichier :
+    QFileDialog fileDialog;
+    fileDialog.setFileMode(QFileDialog::ExistingFile);
+    if (fileDialog.exec() == QDialog::Accepted)
+    {
+        QString documentPath = UBApplication::boardController->selectedDocument()->persistencePath();
+
+        // On a selectionné un fichier :
+        // Si un fichier avait déjà été embarqué dans le dossier Document, on le supprime :
+        if ( mPath.left(mPath.indexOf('/') ) == UBPersistenceManager::teacherGuideDirectory)
+        {
+            QFile file(documentPath + "/" + mPath);
+            QFileInfo fi(file);
+            file.remove();  // supprimer le fichier
+            QDir parentDir = fi.dir();
+            parentDir.rmpath(parentDir.absolutePath()); // supprimer le repertoire
+        }
+
+        QFileInfo fileInfo(fileDialog.selectedFiles().at(0));
+        if (fileInfo.exists())
+        {
+            mpNomFichier->setText(fileInfo.fileName());
+            setPath(fileInfo.filePath());
+
+            // Dupliquer le fichier vers le dossier Document/TeacherGuide/Files/UUID/nomFichier.
+            // On crée un nouveau dossier pour y copier le fichier à embarquer :
+            QString dirPath = UBPersistenceManager::teacherGuideDirectory + "/" + UBPersistenceManager::fileDirectory + "/" + QUuid::createUuid().toString();
+            QDir docDir(documentPath);
+            docDir.mkpath(dirPath);
+
+            // On copie le fichier dans ce nouveau repertoire :
+            QString path = dirPath + "/" + fileInfo.fileName();
+            QFile::copy(fileInfo.absoluteFilePath(), documentPath + "/" + path);
+
+            setPath(path);
+        }
+
+        emit changed();
+    }
+}
+// Fin Issue 1683 (Evolution) - AOU - 20131206

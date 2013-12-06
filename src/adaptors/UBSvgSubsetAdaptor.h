@@ -265,6 +265,7 @@ class UBSvgSubsetAdaptor
                 QString mDocumentPath;
                 int mPageIndex;
 
+                void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
         };
 };
 

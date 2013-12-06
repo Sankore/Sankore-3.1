@@ -137,6 +137,7 @@ private slots:
  *                  class    UBTeacherGuidePageZeroWidget                  *
  ***************************************************************************/
 class UBTeacherGuidePageZeroWidget : public QWidget
+        , public IDataStorage // Issue 1683 (Evolution) - AOU - 20131206
 {
     Q_OBJECT
 
@@ -216,9 +217,34 @@ private:
 
     UBDocumentProxy* mCurrentDocument;
 
+    // Issue 1683 (Evolution) - AOU - 20131206
+    QFrame* mpSeparatorFiles;
+    QTreeWidget * mpTreeWidgetEdition;      // Tree qui permet de donner un titre et de selectionner un fichier
+    UBAddItem * mpAddAFileItem;             // Bouton pour ajouter un file au Tree Edition
+    QTreeWidget * mpTreeWidgetPresentation; // Tree qui permet d'afficher les titres des fichiers selectionnés, et d'ouvrir le fichier par un clic sur ce titre.
+    QTreeWidgetItem * mpMediaSwitchItem;    // Bouton pour déplier/replier le Tree Presentation
+
+    tUBTGZeroPageMode pMode;
+    inline tUBTGZeroPageMode mode(){return pMode;}
+    inline void setMode(tUBTGZeroPageMode mode){pMode = mode;}
+
+    bool mbFilesChanged;
+    inline bool filesChanged(){return mbFilesChanged;}
+
+    void load(QDomDocument doc);
+    void createMediaButtonItem();
+    void cleanData(tUBTGZeroPageMode mode);
+    QVector<tIDataStorage*> save(int pageIndex);
+    // Fin Issue 1683 (Evolution) - AOU - 20131206
+
 private slots:
     void onSchoolLevelChanged(QString schoolLevel);
     void persistData();
+
+    // Issue 1683 (Evolution) - AOU - 20131206
+    void onAddItemClicked(QTreeWidgetItem *widget, int column, QDomElement *element = 0);
+    void setFilesChanged();
+    // Fin Issue 1683 (Evolution) - AOU - 20131206
 };
 
 /***************************************************************************

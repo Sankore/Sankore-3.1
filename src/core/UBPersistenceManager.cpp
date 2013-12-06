@@ -63,6 +63,7 @@ const QString UBPersistenceManager::widgetDirectory = "widgets"; // added to UBP
 const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPersistenceManager::mAllDirectories
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
 const QString UBPersistenceManager::teacherGuideDirectory = "teacherGuideObjects";
+const QString UBPersistenceManager::fileDirectory = "files"; // Issue 1683 (Evolution) - AOU - 20131206
 
 const QString UBPersistenceManager::myDocumentsName = "MyDocuments";
 const QString UBPersistenceManager::modelsName = "Models";
@@ -86,6 +87,7 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     mDocumentSubDirectories << videoDirectory;
     mDocumentSubDirectories << audioDirectory;
     mDocumentSubDirectories << teacherGuideDirectory;
+    mDocumentSubDirectories << fileDirectory; // Issue 1683 (Evolution) - AOU - 20131206
 
     mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
     mFoldersXmlStorageName =  mDocumentRepositoryPath + "/" + fFolders;
@@ -1044,13 +1046,13 @@ void UBPersistenceManager::purgeEmptyDocuments()
     foreach(UBDocumentProxy* docProxy, mDocumentTreeStructureModel->newDocuments())
     {
         if (isEmpty(docProxy)
-            && !docProxy->metaData("sessionTitle").toString().size()
-            && !docProxy->metaData("sessionAuthors").toString().size()
-            && !docProxy->metaData("sessionObjectives").toString().size()
-            && !docProxy->metaData("sessionKeywords").toString().size()
-            && !docProxy->metaData("sessionGradeLevel").toString().size()
-            && !docProxy->metaData("sessionSubjects").toString().size()
-            && !docProxy->metaData("sessionType").toString().size()
+            && !docProxy->metaData(UBSettings::sessionTitle).toString().size()
+            && !docProxy->metaData(UBSettings::sessionAuthors).toString().size()
+            && !docProxy->metaData(UBSettings::sessionObjectives).toString().size()
+            && !docProxy->metaData(UBSettings::sessionKeywords).toString().size()
+            && !docProxy->metaData(UBSettings::sessionGradeLevel).toString().size()
+            && !docProxy->metaData(UBSettings::sessionSubjects).toString().size()
+            && !docProxy->metaData(UBSettings::sessionType).toString().size()
             )
         {
             toBeDeleted << docProxy;
