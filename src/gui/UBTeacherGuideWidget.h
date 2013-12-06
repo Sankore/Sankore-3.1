@@ -207,7 +207,7 @@ private:
     QComboBox* mpLicenceBox;
     QLabel* mpLicenceValueLabel;
     QLabel* mpLicenceIcon;
-    QHBoxLayout* mpLicenceLayout;
+    QVBoxLayout* mpLicenceLayout; // Issue 1517 - ALTI/AOU - 20131206 : change le layout Horizontal en Vertical.
 
     UBGraphicsTextItem* mpSceneItemSessionTitle;
 

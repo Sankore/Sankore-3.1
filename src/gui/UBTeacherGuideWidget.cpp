@@ -902,7 +902,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpLicenceBox->setMinimumWidth(LOWER_RESIZE_WIDTH);
     mpLicenceBox->setObjectName("DockPaletteWidgetComboBox");
     mpContainerWidgetLayout->addWidget(mpLicenceBox);
-    mpLicenceLayout = new QHBoxLayout(0);
+    mpLicenceLayout = new QVBoxLayout(0); // Issue 1517 - ALTI/AOU - 20131206 : change le layout Horizontal en Vertical.
     mpLicenceIcon = new QLabel(this);
     mpLicenceIcon->setMinimumWidth(LOWER_RESIZE_WIDTH/2);
     mpLicenceLayout->addWidget(mpLicenceIcon);
