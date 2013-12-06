@@ -155,6 +155,12 @@ public slots:
     void onActiveSceneChanged();
     void switchToMode(tUBTGZeroPageMode mode = tUBTGZeroPageMode_EDITION);
 
+    //issue 1517 - NNE - 20131206
+    /**
+      * Signals used when the user click on the licence logo
+      */
+    void onClickLicence();
+
 protected:
     void resizeEvent(QResizeEvent* ev);
 
@@ -208,7 +214,7 @@ private:
     QComboBox* mpLicenceBox;
     QLabel* mpLicenceValueLabel;
     QLabel* mpLicenceIcon;
-    QHBoxLayout* mpLicenceLayout;
+    QVBoxLayout* mpLicenceLayout; // Issue 1517 - ALTI/AOU - 20131206 : change le layout Horizontal en Vertical.
 
     UBGraphicsTextItem* mpSceneItemSessionTitle;
 
@@ -246,6 +252,35 @@ private slots:
     void setFilesChanged();
     // Fin Issue 1683 (Evolution) - AOU - 20131206
 };
+
+//issue 1517 - NNE - 20131206 : Make the QLabel class clickable
+/**
+  * \class UBClickableLabel
+  *
+  * A simple class wich override the QLabel to make it clickable
+  */
+class UBClickableLabel : public QLabel
+{
+    Q_OBJECT
+
+public:
+    UBClickableLabel(QWidget * parent = 0, Qt::WindowFlags f = 0):
+        QLabel(parent, f)
+    {
+
+    }
+
+protected:
+    void mousePressEvent(QMouseEvent * ev)
+    {
+        QLabel::mousePressEvent(ev);
+        emit clicked();
+    }
+
+signals:
+    void clicked();
+};
+//issue 1517 - NNE - 20131206 : END
 
 /***************************************************************************
  *                    class    UBTeacherGuideWidget                        *
