@@ -32,7 +32,6 @@ Name: "sp"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [InstallDelete]
 
@@ -99,7 +98,6 @@ Source: "resources\fonts\*"; DestDir: "{app}\fonts"; Flags: ignoreversion
 Name: "{group}\Open-Sankoré"; Filename: "{app}\Open-Sankore.exe"
 Name: "{group}\{cm:UninstallProgram,Open-Sankoré}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\Open-Sankoré"; Filename: "{app}\Open-Sankore.exe"; Tasks: desktopicon
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\Open-Sankoré"; Filename: "{app}\Open-Sankore.exe"; Tasks: quicklaunchicon
 
 [Registry]
 Root: HKCR; Subkey: ".ubz"; ValueType: string; ValueName: ""; ValueData: "SankoreFile"; Flags: uninsdeletevalue
