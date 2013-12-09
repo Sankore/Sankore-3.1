@@ -1797,6 +1797,7 @@ void UBDocumentController::setupViews()
             mMessageWindow = new UBMessageWindow(mDocumentUI->thumbnailWidget);
         #endif
 
+        mMessageWindow->setCustomPosition(true);
         mMessageWindow->hide();
         mDocumentUI->documentTreeWidget->hide();
     }
