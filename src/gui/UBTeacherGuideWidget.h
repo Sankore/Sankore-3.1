@@ -230,9 +230,9 @@ private:
     QTreeWidget * mpTreeWidgetPresentation; // Tree qui permet d'afficher les titres des fichiers selectionnés, et d'ouvrir le fichier par un clic sur ce titre.
     QTreeWidgetItem * mpMediaSwitchItem;    // Bouton pour déplier/replier le Tree Presentation
 
-    tUBTGZeroPageMode pMode;
-    inline tUBTGZeroPageMode mode(){return pMode;}
-    inline void setMode(tUBTGZeroPageMode mode){pMode = mode;}
+    tUBTGZeroPageMode mMode;
+    inline tUBTGZeroPageMode mode(){return mMode;}
+    inline void setMode(tUBTGZeroPageMode mode){mMode = mode;}
 
     bool mbFilesChanged;
     inline bool filesChanged(){return mbFilesChanged;}
@@ -251,6 +251,7 @@ private slots:
     void onAddItemClicked(QTreeWidgetItem *widget, int column, QDomElement *element = 0);
     void setFilesChanged();
     // Fin Issue 1683 (Evolution) - AOU - 20131206
+    void onActiveDocumentChanged();
 };
 
 //issue 1517 - NNE - 20131206 : Make the QLabel class clickable

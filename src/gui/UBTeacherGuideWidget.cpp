@@ -246,6 +246,8 @@ QVector<tIDataStorage*> UBTeacherGuideEditionWidget::save(int pageIndex)
     QVector<tIDataStorage*> result;
     if (pageIndex != UBApplication::boardController->currentPage())
         return result;
+    if (pageIndex == 0) // Issue 1517 - ALTI/AOU - 20131209 : Dans cette fonction, on ne traite pas la page zero.
+        return result;
     tIDataStorage* data = new tIDataStorage();
     data->name = "teacherGuide";
     data->type = eElementType_START;
@@ -749,7 +751,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
   , mpSeparatorFiles(NULL)
   , mpTreeWidgetEdition(NULL)
   , mpTreeWidgetPresentation(NULL)
-  , pMode(tUBTGZeroPageMode_EDITION)
+  , mMode(tUBTGZeroPageMode_EDITION)
   , mbFilesChanged(false)
   // Fin Issue 1683 (Evolution) - AOU - 20131206
 {
@@ -974,13 +976,13 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
 
     // Fin Issue 1683 (Evolution) - AOU - 20131206
 
-    //mpContainerWidgetLayout->addStretch(1);
+    mpContainerWidgetLayout->addStretch(1);
 
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
     fillComboBoxes();
 
     if (UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool()) {
-        UBSvgSubsetAdaptor::addElementToBeStored(QString("teacherGuide"), this);
+        UBSvgSubsetAdaptor::addElementToBeStored(QString("teacherGuidePageZero"), this);
         connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onActiveDocumentChanged()));
     }
 }
@@ -1010,10 +1012,13 @@ UBTeacherGuidePageZeroWidget::~UBTeacherGuidePageZeroWidget()
     DELETEPTR(mpKeywords);
     DELETEPTR(mpSchoolLevelItemLabel);
     DELETEPTR(mpSchoolLevelBox);
+    DELETEPTR(mpSchoolLevelValueLabel);
     DELETEPTR(mpSchoolSubjectsItemLabel);
     DELETEPTR(mpSchoolSubjectsBox);
+    DELETEPTR(mpSchoolSubjectsValueLabel);
     DELETEPTR(mpSchoolTypeItemLabel);
     DELETEPTR(mpSchoolTypeBox);
+    DELETEPTR(mpSchoolTypeValueLabel);
     DELETEPTR(mpSeparatorIndex);
     DELETEPTR(mpLicenceLabel);
     DELETEPTR(mpLicenceBox);
@@ -1022,17 +1027,17 @@ UBTeacherGuidePageZeroWidget::~UBTeacherGuidePageZeroWidget()
     DELETEPTR(mpModePushButton);
     DELETEPTR(mpLicenceLayout);
     DELETEPTR(mpButtonTitleLayout);
-    DELETEPTR(mpContainerWidgetLayout);
-    DELETEPTR(mpContainerWidget);
-    DELETEPTR(mpScrollArea);
     // Issue 1683 (Evolution) - AOU - 20131206
-/*    DELETEPTR(mpSeparatorFiles);
+    DELETEPTR(mpSeparatorFiles);
     DELETEPTR(mpMediaSwitchItem);
     DELETEPTR(mpModePushButton);
     DELETEPTR(mpAddAFileItem);
     DELETEPTR(mpTreeWidgetEdition);
-    DELETEPTR(mpTreeWidgetPresentation);*/
+    DELETEPTR(mpTreeWidgetPresentation);
     // Fin Issue 1683 (Evolution) - AOU - 20131206
+    DELETEPTR(mpContainerWidgetLayout);
+    DELETEPTR(mpContainerWidget);
+    DELETEPTR(mpScrollArea);
     DELETEPTR(mpLayout);
 }
 
@@ -1185,6 +1190,7 @@ void UBTeacherGuidePageZeroWidget::persistData()
         documentProxy->setMetaData(UBSettings::sessionSubjects, mpSchoolSubjectsBox->currentText());
         documentProxy->setMetaData(UBSettings::sessionType, mpSchoolTypeBox->currentText());
         documentProxy->setMetaData(UBSettings::sessionLicence, mpLicenceBox->currentIndex());
+        documentProxy->setMetaData(UBSettings::documentExternalFilesCount, mpAddAFileItem->childCount()); // Issue 1517 - ALTI/AOU - 20131209
     }
 }
 
@@ -1692,4 +1698,11 @@ bool UBTeacherGuideWidget::isModified()
         return mpPageZeroWidget->isModified();
     else
         return mpEditionWidget->isModified();
+}
+
+void UBTeacherGuidePageZeroWidget::onActiveDocumentChanged()
+{
+    int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
+    if (UBApplication::boardController->pageFromSceneIndex(activeSceneIndex) == 0)
+        load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
 }

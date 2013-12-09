@@ -1053,6 +1053,7 @@ void UBPersistenceManager::purgeEmptyDocuments()
             && !docProxy->metaData(UBSettings::sessionGradeLevel).toString().size()
             && !docProxy->metaData(UBSettings::sessionSubjects).toString().size()
             && !docProxy->metaData(UBSettings::sessionType).toString().size()
+            && !docProxy->metaData(UBSettings::documentExternalFilesCount).toInt() // Issue 1517 - ALTI/AOU - 20131209
             )
         {
             toBeDeleted << docProxy;

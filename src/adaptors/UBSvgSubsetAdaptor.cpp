@@ -1435,6 +1435,8 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
 
         if(elements.value("teacherGuide"))
             dataStorageItems = elements.value("teacherGuide")->save(pageIndex);
+        if(elements.value("teacherGuidePageZero")) // Issue 1517 - ALTI/AOU - 20131209
+            dataStorageItems += elements.value("teacherGuidePageZero")->save(pageIndex);
         foreach(tIDataStorage* eachItem, dataStorageItems){
             if(eachItem->type == eElementType_START){
                 mXmlWriter.writeStartElement(eachItem->name);

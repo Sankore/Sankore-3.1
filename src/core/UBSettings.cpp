@@ -60,6 +60,7 @@ QString UBSettings::sessionSubjects = QString("sessionSubjects");
 QString UBSettings::sessionType = QString("sessionType");
 QString UBSettings::sessionLicence = QString("sessionLicence");
 QString UBSettings::documentDate = QString("date");
+QString UBSettings::documentExternalFilesCount = QString("externalFilesCount"); // Issue 1517 - ALTI/AOU - 20131209
 
 QString UBSettings::trashedDocumentGroupNamePrefix = QString("_Trash:");
 

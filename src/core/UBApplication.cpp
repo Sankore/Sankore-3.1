@@ -628,7 +628,8 @@ bool UBApplication::eventFilter(QObject *obj, QEvent *event)
 
     if (event->type() == QEvent::ApplicationActivate)
     {
-        boardController->controlView()->setMultiselection(false);
+        if (boardController && boardController->controlView())
+            boardController->controlView()->setMultiselection(false);
     }
 
 #ifdef Q_WS_MAC

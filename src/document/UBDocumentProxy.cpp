@@ -83,6 +83,7 @@ void UBDocumentProxy::init()
     setMetaData(UBSettings::sessionSubjects,"");
     setMetaData(UBSettings::sessionType,"");
     setMetaData(UBSettings::sessionLicence,"");
+    setMetaData(UBSettings::documentExternalFilesCount, 0); // Issue 1517 - ALTI/AOU - 20131209
 }
 
 
