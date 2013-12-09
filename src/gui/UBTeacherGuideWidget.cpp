@@ -990,7 +990,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
 //issue 1517 - NNE - 20131206
 void UBTeacherGuidePageZeroWidget::onClickLicence()
 {
-    UBApplication::webController->loadUrl(QUrl("http://creativecommons.org/licenses/by-sa/3.0/"));
+    UBApplication::webController->loadUrl(QUrl("http://creativecommons.org"));
 }
 //issue 1517 - NNE - 20131206
 
