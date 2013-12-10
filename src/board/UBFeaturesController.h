@@ -351,6 +351,17 @@ public:
       * @arg feature The feature to remove from the trash registery.
       */
     void removeFromTrashRegistery(UBFeature feature);
+
+    //issue 1474 - NNE - 20131210
+    /**
+      * Return the translation for the category data.
+      * This function exists to avoid to break previous translations by
+      * move the tr() string.
+      *
+      * \param name The original name of the category data.
+      * \return The name of the category data according to the curent user's language.
+      */
+    QString getTranslationNameForCategoryData(const QString& name) const;
 public:
     //Hardcoded toplevel data
     CategoryData rootData;

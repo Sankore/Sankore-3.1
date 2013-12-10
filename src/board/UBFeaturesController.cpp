@@ -1188,6 +1188,42 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
     QApplication::restoreOverrideCursor();
 }
 
+//isue 1474 - NNE - 20131210
+QString UBFeaturesController::getTranslationNameForCategoryData(const QString& name) const
+{
+    CategoryData category;
+
+    if(name == "Audios"){
+        category = this->audiosData;
+    }else if(name == "Movies"){
+        category = this->moviesData;
+    }else if(name == "Pictures"){
+        category = this->picturesData;
+    }else if(name == "Animations"){
+        category = this->flashData;
+    }else if(name == "Applications"){
+        category = this->appData;
+    }else if(name == "Interactivities"){
+        category = this->interactivityData;
+    }else if(name == "Shapes"){
+        category = this->shapesData;
+    }else if(name == "Favorites"){
+        category = this->favoriteData;
+    }else if(name == "Web search"){
+        category = this->webSearchData;
+    }else if(name == "Bookmark"){
+        category = this->bookmarkData;
+    }else if(name == "Trash"){
+        category = this->trashData;
+    }else if(name == "Web"){
+        category = this->webFolderData;
+    }
+
+    QString s = category.categoryFeature().getDisplayName();
+    return s;
+}
+//isue 1474 - NNE - 20131210 : END
+
 CategoryData UBFeaturesController::getDestinationCategoryForUrl( const QUrl &url )
 {
     QString mimetype = UBFileSystemUtils::mimeTypeFromFileName( url.toString() );
@@ -1652,8 +1688,17 @@ void UBFeaturesController::restoreFeature(const QVector<UBFeature> features)
             isRestored = this->restoreFileFeature(referenceFeature, entry);
         }
 
-        if(isRestored)
-            confirmationMessage += entry.filename + " " + textHasBeenRestored + " " + entry.originalVirtualPath + "\n";
+        if(isRestored){
+            QStringList path = entry.originalVirtualPath.split("/");
+            QString translatedPath = this->getTranslationNameForCategoryData(path[2]) + '/';
+
+            for(int i = 3; i < path.size(); i++){
+                translatedPath += path[i] + "/";
+            }
+
+            confirmationMessage += entry.filename + " " + textHasBeenRestored + " " + translatedPath + "\n";
+        }
+
     }
 
     if(!confirmationMessage.isEmpty())
@@ -1677,9 +1722,6 @@ UBFeature UBFeaturesController::getFeatureByPath(const QString &path) const
 //issue 1474 - NNE - 20131125
 bool UBFeaturesController::restoreFolderFeature(UBFeature &feature, RegisteryEntry entry)
 {
-    /* The feature is a folder.
-     */
-
     bool hasBeenRestored = true;
 
     QString path = entry.originalRealPath + "/" + entry.filename;
