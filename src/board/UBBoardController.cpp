@@ -1066,7 +1066,7 @@ void UBBoardController::persistViewPositionOnCurrentScene()
 {
     QRect rect = mControlView->rect();
     QPoint center(rect.x() + rect.width() / 2, rect.y() + rect.height() / 2);
-    QPointF viewRelativeCenter= mControlView->mapToScene(center);
+    QPointF viewRelativeCenter = mControlView->mapToScene(center);
     mActiveScene->setLastCenter(viewRelativeCenter);
 }
 // Fin issue 1598/1605 - CFA - 20131028
