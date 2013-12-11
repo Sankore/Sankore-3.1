@@ -1923,6 +1923,14 @@ Providing a new name will create a new document.</source>
         <source>Too many file have the same name in this location %1. Please delete some files.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Are you sure ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every background will be replaced with this one. Are you sure ?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBFeaturesListView</name>

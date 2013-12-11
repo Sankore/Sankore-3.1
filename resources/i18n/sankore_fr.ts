@@ -856,7 +856,7 @@
     </message>
     <message>
         <source>Image position : center</source>
-        <translation type="unfinished">Position de l&apos;image : centrée</translation>
+        <translation>Position de l&apos;image : centrée</translation>
     </message>
     <message>
         <source>Adjust</source>
@@ -1932,6 +1932,14 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <message>
         <source>Too many file have the same name in this location %1. Please delete some files.</source>
         <translation>Trop de fichiers ont le même nom à cet emplacement %1. Essayez d&apos;en supprimer.</translation>
+    </message>
+    <message>
+        <source>Are you sure ?</source>
+        <translation>Etes-vous sûr ?</translation>
+    </message>
+    <message>
+        <source>Every background will be replaced with this one. Are you sure ?</source>
+        <translation>Chaque Fond sera remplacé par celui-ci. Etes-vous sûr ?</translation>
     </message>
 </context>
 <context>
