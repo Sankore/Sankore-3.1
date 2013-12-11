@@ -2112,8 +2112,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPi
     if (isBackground // Issue 1684 - CFA - 20131128 : specify isBackground
         && ( ! mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty())) // Issue 1684 - ALTI/AOU - 20131210 : Si il y a une image par défaut définie, on utilise son uuid :
     {
-            //fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + "_background"  + ".png";
-            fileName = UBPersistenceManager::imageDirectory + "/" + mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+        fileName = UBPersistenceManager::imageDirectory + "/" + mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
     }
     else
         fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + ".png";
@@ -2210,8 +2209,11 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(UBGraphicsSvgItem
     mXmlWriter.writeStartElement("image");
 
     QString fileName;
-    if (isBackground)
-        fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + "_background" ".svg";
+    if (isBackground
+            && ( ! mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty())) // Issue 1684 - ALTI/AOU - 20131210 : Si il y a une image par défaut définie, on utilise son uuid :
+    {
+        fileName = UBPersistenceManager::imageDirectory + "/" + mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    }
     else
         fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + ".svg";
 
