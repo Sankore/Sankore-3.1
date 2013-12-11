@@ -1096,7 +1096,6 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
 
     connect( mpAddPageButton, SIGNAL(clicked()), this, SLOT(onAddToPage()) );
     // Issue 1684 - CFA - 20131120
-    //connect( mpSetAsBackgroundButton, SIGNAL( clicked() ), this, SLOT( onSetAsBackground() ) );
     connect( mpSetAsBackgroundButton, SIGNAL( pressed() ), this, SLOT( setAsBackgroundPressed() ) );
     connect( mpSetAsBackgroundButton, SIGNAL( released() ), this, SLOT( setAsBackgroundReleased() ) );
     connect( mpSetAsDefaultBackgroundButton, SIGNAL( pressed() ), this, SLOT( setAsDefaultBackgroundPressed() ) );
@@ -1228,16 +1227,10 @@ void UBFeatureProperties::showElement(const UBFeature &elem)
     if ( UBApplication::isFromWeb( elem.getFullPath().toString() ) )
     {
         mpAddToLibButton->show();
-        if( elem.getMetadata()["Type"].toLower().contains("image") )
-        { // Issue 1684 - CFA - 20131120
-            mpSetAsBackgroundButton->show();
-            mpSetAsDefaultBackgroundButton->show();
-        }
-        else
-        {
-            mpSetAsBackgroundButton->hide();
-            mpSetAsDefaultBackgroundButton->hide();
-        }
+        // Issue 1684 - CFA - 201312002 : on ne souhaite pas que ces options soient disponibles directement ici
+        mpSetAsBackgroundButton->hide();
+        mpSetAsDefaultBackgroundButton->hide();
+
     }
     else
     {
@@ -1336,17 +1329,17 @@ void UBFeatureProperties::setAsDefaultBackgroundReleased()
 {
     if (mPendingSetAsDefaultBackgroundButtonPressed)
     {
+        mPendingSetAsDefaultBackgroundButtonPressed = false;
         if( mSetAsDefaultBackgroundButtonPressedTime.msecsTo(QTime::currentTime()) > 900)
-        {
-             UBApplication::boardController->paletteManager()->toggleImageBackgroundPalette(true, true);
+        {            
+                UBApplication::boardController->paletteManager()->toggleImageBackgroundPalette(true, true);
         }
         else
-        {
-            onSetAsDefaultBackground();
-        }
-
-        mPendingSetAsDefaultBackgroundButtonPressed = false;
+        {         
+                onSetAsDefaultBackground();
+        }        
     }
+
 }
 
 void UBFeatureProperties::onSetAsBackground()

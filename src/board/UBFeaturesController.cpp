@@ -1170,6 +1170,10 @@ void UBFeature::setBackgroundDisposition(UBFeatureBackgroundDisposition disposit
 
 void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
 {
+    //Issue 1684 - CFA - 20131211 : ajout d'une yesnoquestion avant de
+     if (!UBApplication::mainWindow->yesNoQuestion(tr("Are you sure ?"), tr ("Every background will be replaced with this one. Are you sure ?")))
+         return;
+
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
     // Issue 1684 - ALTI/AOU - 20131210
@@ -1185,7 +1189,7 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
     }
 
     UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + "." + QFileInfo(item.getFullPath().toString()).suffix());
-    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, static_cast<int>(item.getBackgroundDisposition()));
+    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.getBackgroundDisposition());
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
     int currentPageIndex = UBApplication::boardController->activeSceneIndex();
