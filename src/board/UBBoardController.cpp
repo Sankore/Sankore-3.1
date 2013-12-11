@@ -506,9 +506,15 @@ void UBBoardController::addScene()
 
     setActiveDocumentScene(mActiveSceneIndex + 1);
 
-    // Issue 1684 - CFA - 20131127 : handle default background
-    if (selectedDocument()->hasDefaultImageBackground())
-        downloadURL( selectedDocument()->defaultImageBackground().getFullPath(), QString(), QPointF(), QSize(), true, false, selectedDocument()->defaultImageBackground().getBackgroundDisposition());
+    // Issue 1684 - CFA - 20131127 : handle default background // Issue 1684 - ALTI/AOU - 20131210
+    QString backgroundImage = selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    UBFeatureBackgroundDisposition backgroundImageDisposition = static_cast<UBFeatureBackgroundDisposition>(selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImageDisposition).toInt());
+    if ( ! backgroundImage.isEmpty())
+    {
+        QString sUrl = "file:///" + selectedDocument()->persistencePath() + "/" + UBPersistenceManager::imageDirectory + "/" + backgroundImage;
+        QUrl urlImage(sUrl);
+        downloadURL( urlImage, QString(), QPointF(), QSize(), true, false, backgroundImageDisposition);
+    }
 
     QApplication::restoreOverrideCursor();
 }

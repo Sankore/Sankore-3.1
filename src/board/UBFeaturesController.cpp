@@ -1149,8 +1149,8 @@ void UBFeaturesController::addItemAsBackground(const UBFeature &item)
 {
     // Issue 1684 - CFA - 20131127 : handle default background
     if ( UBApplication::boardController->selectedDocument()->hasDefaultImageBackground()
-        && item.getFullPath() !=  UBApplication::boardController->selectedDocument()->defaultImageBackground().getFullPath()
-        && item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())
+        && (item.getFullPath() !=  UBApplication::boardController->selectedDocument()->defaultImageBackground().getFullPath()
+        || item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())) // Issue 1684 - ALTI/AOU - 20131210 : il fallait ici un "OU logique", et des parentheses.
         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
     UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.getBackgroundDisposition());
     UBApplication::boardController->centerRestore();
@@ -1172,9 +1172,21 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
 {
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
-    // on clean le répertoire
-    UBFileSystemUtils::deleteFilesContaining(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::imageDirectory, "background");
-            // + "/" + pixmapItem->uuid().toString() + "_background"  + ".png";
+    // Issue 1684 - ALTI/AOU - 20131210
+    // Si metaData "background" deja existante, avant de l'écraser, supprimer le fichier dans /doc/images/
+    QString metaDataBackgroundImage = UBApplication::boardController->selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    if ( ! metaDataBackgroundImage.isEmpty() )
+    {
+        QFile fichier(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::imageDirectory + "/" + metaDataBackgroundImage);
+        if (fichier.exists())
+        {
+            fichier.remove();
+        }
+    }
+
+    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + "." + QFileInfo(item.getFullPath().toString()).suffix());
+    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, static_cast<int>(item.getBackgroundDisposition()));
+    // Fin Issue 1684 - ALTI/AOU - 20131210
 
     int currentPageIndex = UBApplication::boardController->activeSceneIndex();
     UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(true);

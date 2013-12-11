@@ -622,8 +622,18 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                     QString href = imageHref.toString();
 
                     QStringRef ubBackground = mXmlReader.attributes().value(mNamespaceUri, "background");
-
                     bool isBackground = (!ubBackground.isNull() && ubBackground.toString() == xmlTrue);
+
+                    // Issue 1684 - ALTI/AOU - 20131210
+                    UBFeatureBackgroundDisposition disposition = Center;
+
+					if (isBackground)
+                    {
+                        QStringRef sDisposition = mXmlReader.attributes().value(mNamespaceUri, "disposition");
+                        int iDisposition = sDisposition.isNull() ? Center : sDisposition.toString().toInt();
+                        disposition = static_cast<UBFeatureBackgroundDisposition>(iDisposition);
+                    }
+                    // Fin Issue 1684 - ALTI/AOU - 20131210
 
                     if (href.contains("png"))
                     {
@@ -643,7 +653,9 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                                 pixmapItem->setUuid(uuidFromSvg);
 
                             if (isBackground)
-                                mScene->setAsBackgroundObject(pixmapItem);
+                            {
+                                mScene->setAsBackgroundObject(pixmapItem, true, false, disposition); // Issue 1684 - ALTI/AOU - 20131210
+                            }
 
                             pixmapItem->show();
                         }
@@ -2097,8 +2109,12 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPi
 {
     mXmlWriter.writeStartElement("image");
     QString fileName;
-    if (isBackground) // Issue 1684 - CFA - 20131128 : specify isBackground
-        fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + "_background"  + ".png";
+    if (isBackground // Issue 1684 - CFA - 20131128 : specify isBackground
+        && ( ! mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty())) // Issue 1684 - ALTI/AOU - 20131210 : Si il y a une image par défaut définie, on utilise son uuid :
+    {
+            //fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + "_background"  + ".png";
+            fileName = UBPersistenceManager::imageDirectory + "/" + mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    }
     else
         fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + ".png";
 
@@ -2591,8 +2607,14 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsItemToSvg(QGraphicsItem* ite
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", zs);
 
     bool isBackground = mScene->isBackgroundObject(item);
-
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "background", isBackground ? xmlTrue : xmlFalse);
+
+    // Issue 1684 - ALTI/AOU - 20131210
+    if (isBackground)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "disposition",  QString::number(static_cast<int>(mScene->backgroundObjectDisposition())));
+    }
+    // Fin Issue 1684 - ALTI/AOU - 20131210
 
     UBItem* ubItem = dynamic_cast<UBItem*>(item);
 

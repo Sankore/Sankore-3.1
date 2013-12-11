@@ -1157,6 +1157,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
     case clearBackground :
         if(mBackgroundObject){
             mBackgroundObjectDisposition = Center; // Issue 1684 - CFA - 20131128
+            mDocument->setHasDefaultImageBackground(false); // Issue 1684 - ALTI/AOU - 20131210
             mBackgroundObjectUrl = QUrl();
             removeItem(mBackgroundObject);
             removedItems << mBackgroundObject;
@@ -1878,6 +1879,10 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
 {
     int maxWidth = 0;
     int maxHeight = 0;
+
+    // On reinit les transform de l'item, car dans cette fonction, on va recalculer son scale et sa position
+    item->setTransform(QTransform()); // Issue 1684 - ALTI/AOU - 20131210
+
     if (disposition == Adjust)
     {
         maxWidth = mNominalSize.width() - (margin * 2);

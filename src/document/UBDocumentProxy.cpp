@@ -84,6 +84,10 @@ void UBDocumentProxy::init()
     setMetaData(UBSettings::sessionType,"");
     setMetaData(UBSettings::sessionLicence,"");
     setMetaData(UBSettings::documentExternalFilesCount, 0); // Issue 1517 - ALTI/AOU - 20131209
+    // Issue 1684 - ALTI/AOU - 20131210
+    setMetaData(UBSettings::documentDefaultBackgroundImage,"");
+    setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, "");
+    // Fin Issue 1684 - ALTI/AOU - 20131210
 }
 
 
@@ -255,6 +259,12 @@ bool UBDocumentProxy::isModified() const
 void UBDocumentProxy::setHasDefaultImageBackground(const bool hasDefault)
 {
    mHasDefaultImageBackground = hasDefault;
+   // Issue 1684 - ALTI/AOU - 20131210
+   if (hasDefault == false){
+        setMetaData(UBSettings::documentDefaultBackgroundImage, "");
+        setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, "");
+   // Fin Issue 1684 - ALTI/AOU - 20131210
+   }
 }
 
 const bool UBDocumentProxy::hasDefaultImageBackground() const

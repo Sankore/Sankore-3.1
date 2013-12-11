@@ -61,6 +61,10 @@ QString UBSettings::sessionType = QString("sessionType");
 QString UBSettings::sessionLicence = QString("sessionLicence");
 QString UBSettings::documentDate = QString("date");
 QString UBSettings::documentExternalFilesCount = QString("externalFilesCount"); // Issue 1517 - ALTI/AOU - 20131209
+// Issue 1684 - ALTI/AOU - 20131210
+QString UBSettings::documentDefaultBackgroundImage = QString("defaultBackgroundImage");
+QString UBSettings::documentDefaultBackgroundImageDisposition = QString("defaultBackgroundImageDisposition");
+// Fin Issue 1684 - ALTI/AOU - 20131210
 
 QString UBSettings::trashedDocumentGroupNamePrefix = QString("_Trash:");
 

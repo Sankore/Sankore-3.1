@@ -607,6 +607,12 @@ void UBPersistenceManager::deleteDocumentScenes(UBDocumentProxy* proxy, const QL
     QString sourceName = proxy->metaData(UBSettings::documentName).toString();
     UBDocumentProxy *trashDocProxy = createDocument(UBSettings::trashedDocumentGroupNamePrefix/* + sourceGroupName*/, sourceName, false);
 
+    // Issue 1684 - ALTI/AOU - 20131210
+    // Dupliquer dans le document _Trash les metaData qui doivent suivre :
+    trashDocProxy->setMetaData(UBSettings::documentDefaultBackgroundImage, proxy->metaData(UBSettings::documentDefaultBackgroundImage));
+    trashDocProxy->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, proxy->metaData(UBSettings::documentDefaultBackgroundImageDisposition));
+    // Fin Issue 1684 - ALTI/AOU - 20131210
+
     foreach(int index, compactedIndexes)
     {
         UBGraphicsScene *scene = loadDocumentScene(proxy, index);
