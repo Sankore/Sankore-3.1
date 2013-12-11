@@ -488,7 +488,6 @@ void UBBoardPaletteManager::connectPalettes()
     connect(UBApplication::mainWindow->actionExtendImageBackground, SIGNAL(triggered()), mImageBackgroundPalette, SLOT(close()));
     connect(UBApplication::mainWindow->actionFillImageBackground,SIGNAL(triggered()),mImageBackgroundPalette,SLOT(close()));
     connect(UBApplication::mainWindow->actionMosaicImageBackground,SIGNAL(triggered()),mImageBackgroundPalette,SLOT(close()));
-    connect(mImageBackgroundPalette, SIGNAL(closed()), this, SLOT(imageBackgroundPaletteClosed()));
 
     foreach(QWidget *widget, UBApplication::mainWindow->actionErase->associatedWidgets())
     {
@@ -657,11 +656,6 @@ void UBBoardPaletteManager::toggleImageBackgroundPalette(bool checked, bool isDe
 
         mImageBackgroundPalette->adjustSizeAndPosition();
     }
-}
-
-void imageBackgroundPaletteClosed()
-{
-    UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(!UBApplication::boardController->selectedDocument()->hasDefaultImageBackground());
 }
 
 void UBBoardPaletteManager::togglePagePalette(bool checked)
