@@ -1199,7 +1199,15 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
 
     int currentPageIndex = UBApplication::boardController->activeSceneIndex();
 
+
     UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(true);
+
+    // Retirer l'ancien item Background, qui devient inutile maintenant qu'on en choisit un autre :
+    if (UBApplication::boardController->activeScene()->backgroundObject())
+    {
+        UBApplication::boardController->activeScene()->removeItem(UBApplication::boardController->activeScene()->backgroundObject());
+    }
+
     UBApplication::boardController->selectedDocument()->setDefaultImageBackground(item);
 
     for (int i = 0; i < UBApplication::boardController->selectedDocument()->pageCount(); i++)
