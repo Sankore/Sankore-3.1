@@ -83,7 +83,6 @@ void UBDocumentProxy::init()
     setMetaData(UBSettings::sessionSubjects,"");
     setMetaData(UBSettings::sessionType,"");
     setMetaData(UBSettings::sessionLicence,"");
-    setMetaData(UBSettings::documentExternalFilesCount, 0); // Issue 1517 - ALTI/AOU - 20131209
     // Issue 1684 - ALTI/AOU - 20131210
     setMetaData(UBSettings::documentDefaultBackgroundImage,"");
     setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, "");
@@ -91,9 +90,11 @@ void UBDocumentProxy::init()
 }
 
 
+
+
 UBDocumentProxy::~UBDocumentProxy()
 {
-    // NOOP
+    externalFilesClear(); // Issue 1683 - ALTI/AOU - 20131212
 }
 
 
@@ -287,6 +288,24 @@ const UBFeature& UBDocumentProxy::defaultImageBackground() const
     return mDefaultImageBackground;
 }
 
+// Issue 1683 - ALTI/AOU - 20131212
+void UBDocumentProxy::externalFilesAdd(UBDocumentExternalFile *file)
+{
+    mExternalFiles.append(file);
+}
 
+const QList<UBDocumentExternalFile *> *UBDocumentProxy::externalFiles() const
+{
+    return &mExternalFiles;
+}
 
+void UBDocumentProxy::externalFilesClear(){
+    foreach(UBDocumentExternalFile* ef, mExternalFiles)
+    {
+        delete ef;
+        ef = NULL;
+    }
+    mExternalFiles.clear();
+}
+// Fin Issue 1683 - ALTI/AOU - 20131212
 

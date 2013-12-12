@@ -256,6 +256,7 @@ class UBSvgSubsetAdaptor
                 void protractorToSvg(UBGraphicsProtractor *item);
                 void cacheToSvg(UBGraphicsCache* item);
                 void triangleToSvg(UBGraphicsTriangle *item);
+                void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
                 void writeSvgElement();
 
         private:
@@ -264,8 +265,8 @@ class UBSvgSubsetAdaptor
                 QXmlStreamWriter mXmlWriter;
                 QString mDocumentPath;
                 int mPageIndex;
+                UBDocumentProxy * mpDocument;   // Issue 1683 - ALTI/AOU - 20131212
 
-                void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
         };
 };
 

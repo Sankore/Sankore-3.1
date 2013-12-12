@@ -192,8 +192,6 @@ class UBSettings : public QObject
         static QString sessionType;
         static QString sessionLicence;
 
-        static QString documentExternalFilesCount; // Issue 1517 - ALTI/AOU - 20131209
-
         // Issue 1684 - ALTI/AOU - 20131210
         static QString documentDefaultBackgroundImage;
         static QString documentDefaultBackgroundImageDisposition;

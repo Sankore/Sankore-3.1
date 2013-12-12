@@ -33,6 +33,25 @@
 
 class UBGraphicsScene;
 
+// Issue 1683 - ALTI/AOU - 20131212
+///
+/// \brief The UBDocumentExternalFile class
+///         is used to store informations about an external file or document that is embedded in the Sankore document (via the TeacherGuide of Page Zero).
+///
+class UBDocumentExternalFile
+{
+private:
+    QString mTitle;
+    QString mPath;
+public:
+    inline QString title() const {return mTitle;}
+    inline void setTitle(QString title){mTitle = title;}
+
+    inline QString path() const {return mPath;}
+    inline void setPath(QString path){mPath = path;}
+};
+// Fin Issue 1683 - ALTI/AOU - 20131212
+
 class UBDocumentProxy : public QObject
 {
     Q_OBJECT
@@ -82,6 +101,12 @@ class UBDocumentProxy : public QObject
 
         bool theSameDocument(UBDocumentProxy *proxy);
 
+        // Issue 1683 - ALTI/AOU - 20131212
+        void externalFilesAdd(UBDocumentExternalFile* file);
+        const QList<UBDocumentExternalFile*> * externalFiles() const;
+        void externalFilesClear();
+        // Fin Issue 1683 - ALTI/AOU - 20131212
+
     protected:
         void setPageCount(int pPageCount);
         int incPageCount();
@@ -105,6 +130,8 @@ class UBDocumentProxy : public QObject
         // Issue 1684 - CFA - 20131120
         bool mHasDefaultImageBackground;
         UBFeature mDefaultImageBackground;
+
+        QList<UBDocumentExternalFile*> mExternalFiles; // Issue 1683 - ALTI/AOU - 20131212
 };
 
 inline bool operator==(const UBDocumentProxy &proxy1, const UBDocumentProxy &proxy2)

@@ -137,7 +137,6 @@ private slots:
  *                  class    UBTeacherGuidePageZeroWidget                  *
  ***************************************************************************/
 class UBTeacherGuidePageZeroWidget : public QWidget
-        , public IDataStorage // Issue 1683 (Evolution) - AOU - 20131206
 {
     Q_OBJECT
 

@@ -976,13 +976,10 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
 
     // Fin Issue 1683 (Evolution) - AOU - 20131206
 
-    mpContainerWidgetLayout->addStretch(1);
-
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
     fillComboBoxes();
 
     if (UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool()) {
-        UBSvgSubsetAdaptor::addElementToBeStored(QString("teacherGuidePageZero"), this);
         connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onActiveDocumentChanged()));
     }
 }
@@ -1190,7 +1187,6 @@ void UBTeacherGuidePageZeroWidget::persistData()
         documentProxy->setMetaData(UBSettings::sessionSubjects, mpSchoolSubjectsBox->currentText());
         documentProxy->setMetaData(UBSettings::sessionType, mpSchoolTypeBox->currentText());
         documentProxy->setMetaData(UBSettings::sessionLicence, mpLicenceBox->currentIndex());
-        documentProxy->setMetaData(UBSettings::documentExternalFilesCount, mpAddAFileItem->childCount()); // Issue 1517 - ALTI/AOU - 20131209
     }
 }
 
@@ -1397,42 +1393,6 @@ void UBTeacherGuidePageZeroWidget::load(QDomDocument doc)
     mbFilesChanged = false;
 }
 
-QVector<tIDataStorage *> UBTeacherGuidePageZeroWidget::save(int pageIndex)
-{
-    QVector<tIDataStorage*> result;
-
-    if (pageIndex == 0)
-    {
-        tIDataStorage* data = new tIDataStorage();
-        data->name = "teacherGuide";
-        data->type = eElementType_START;
-        data->attributes.insert("version", "2.3.0");
-        result << data;
-
-        QList<QTreeWidgetItem*> children;
-        for (int i = 0; i < mpAddAFileItem->childCount(); i += 1)
-            children << mpAddAFileItem->child(i);
-
-        foreach(QTreeWidgetItem* widgetItem, children) {
-            tUBGEElementNode* node = dynamic_cast<iUBTGSaveData*>(mpTreeWidgetEdition->itemWidget( widgetItem, 0))->saveData();
-            if (node) {
-                data = new tIDataStorage();
-                data->name = node->name;
-                data->type = eElementType_UNIQUE;
-                foreach(QString currentKey, node->attributes.keys())
-                    data->attributes.insert(currentKey, node->attributes.value(currentKey));
-                result << data;
-            }
-        }
-
-        data = new tIDataStorage();
-        data->name = "teacherGuide";
-        data->type = eElementType_END;
-        result << data;
-    }
-    return result;
-}
-
 void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
 {
     int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
@@ -1481,15 +1441,15 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                     QFileInfo fi(file);
                     file.remove();  // supprimer le fichier
                     QDir parentDir = fi.dir();
-                    QString s = parentDir.absolutePath();
                     parentDir.rmpath(parentDir.absolutePath()); // supprimer le repertoire
                 }
-                setFilesChanged();
             }
 
             int index = mpTreeWidgetEdition->currentIndex().row();
             QTreeWidgetItem* toBeDeletedWidgetItem = widget->parent()->takeChild(index);
             delete toBeDeletedWidgetItem;
+
+            setFilesChanged();
         }
 
     }
@@ -1544,6 +1504,27 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
 
 void UBTeacherGuidePageZeroWidget::setFilesChanged()
 {
+    // Issue 1683 - ALTI/AOU - 20131212
+    // Dans cette fonction, on reconstruit les DocumentProxy.externalFiles, à partir des items du treeViewEdition
+    UBDocumentProxy* pDoc = UBApplication::boardController->selectedDocument();
+    pDoc->externalFilesClear();
+
+    QList<QTreeWidgetItem*> children;
+    for (int i = 0; i < mpAddAFileItem->childCount(); i += 1)
+        children << mpAddAFileItem->child(i);
+
+    foreach(QTreeWidgetItem* widgetItem, children) {
+
+        tUBGEElementNode* node = dynamic_cast<iUBTGSaveData*>(mpTreeWidgetEdition->itemWidget( widgetItem, 0))->saveData();
+        if (node) {
+            UBDocumentExternalFile* externalFile = new UBDocumentExternalFile();
+            externalFile->setPath(node->attributes.value("path"));
+            externalFile->setTitle(node->attributes.value("title"));
+            pDoc->externalFilesAdd(externalFile);
+        }
+    }
+    // Fin Issue 1683 - ALTI/AOU - 20131212
+
     mbFilesChanged = true;
 }
 

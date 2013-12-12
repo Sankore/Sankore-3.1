@@ -1138,7 +1138,7 @@ UBSvgSubsetAdaptor::UBSvgSubsetWriter::UBSvgSubsetWriter(UBDocumentProxy* proxy,
         : mScene(pScene)
         , mDocumentPath(proxy->persistencePath())
         , mPageIndex(pageIndex)
-
+        , mpDocument(proxy) // Issue 1683 - ALTI/AOU - 20131212
 {
     // NOOP
 }
@@ -1447,8 +1447,39 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
 
         if(elements.value("teacherGuide"))
             dataStorageItems = elements.value("teacherGuide")->save(pageIndex);
-        if(elements.value("teacherGuidePageZero")) // Issue 1517 - ALTI/AOU - 20131209
-            dataStorageItems += elements.value("teacherGuidePageZero")->save(pageIndex);
+        // Issue 1683 - ALTI/AOU - 20131212
+        // On ne peut malheureusement pas utiliser UBTeacherGuidePageZeroWidget.save(),
+        // car celle-ci ne pourrait renvoyer que les élements du document chargé dans la Board.
+        // Or on veut pouvoir ici persister un autre Document, car par exemple quand on crée un nouveau Document :
+        // on le persite alors qu'il n'a pas encore été chargé dans la Board.
+        if(pageIndex == 0)
+        {
+            QVector<tIDataStorage*> result;
+
+            tIDataStorage* data = new tIDataStorage();
+            data->name = "teacherGuide";
+            data->type = eElementType_START;
+            data->attributes.insert("version", "2.3.0");
+            result << data;
+
+            foreach (UBDocumentExternalFile* ef, *(mpDocument->externalFiles())) {
+                data = new tIDataStorage();
+                data->name = "file";
+                data->type = eElementType_UNIQUE;
+                data->attributes.insert("path", ef->path());
+                data->attributes.insert("title", ef->title());
+                result << data;
+            }
+
+            data = new tIDataStorage();
+            data->name = "teacherGuide";
+            data->type = eElementType_END;
+            result << data;
+
+            dataStorageItems += result;
+        }
+        // Fin Issue 1683 - ALTI/AOU - 20131212
+
         foreach(tIDataStorage* eachItem, dataStorageItems){
             if(eachItem->type == eElementType_START){
                 mXmlWriter.writeStartElement(eachItem->name);
