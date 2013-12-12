@@ -245,9 +245,11 @@ int UBDocumentManager::addFilesToDocument(UBDocumentProxy* document, QStringList
 
                 if (adaptor->isDocumentBased())
                 {
-                    UBDocumentBasedImportAdaptor* importAdaptor = (UBDocumentBasedImportAdaptor*)adaptor;
+                    //issue 1629 - NNE - 20131212 : Resolve a segfault, but for .ubx, actually
+                    //the file wiil be not imported...
+                    UBDocumentBasedImportAdaptor* importAdaptor = dynamic_cast<UBDocumentBasedImportAdaptor*>(adaptor);
 
-                    if (importAdaptor->addFileToDocument(document, file))
+                    if (importAdaptor && importAdaptor->addFileToDocument(document, file))
                         nImportedDocuments++;
                 }
                 else

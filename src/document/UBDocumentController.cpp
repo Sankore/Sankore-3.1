@@ -1226,6 +1226,9 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     bool inModel = docModel->inModel(targetIndex) || targetIndex == docModel->modelsIndex();
     bool isSourceAModel = docModel->inModel(dropIndex);
 
+    //issue 1629 - NNE - 20131212
+    bool targetIsInTrash = docModel->inTrash(targetIndex) || docModel->trashIndex() == targetIndex;
+
     Qt::DropAction drA = Qt::CopyAction;
     if (isUBPage) {
         UBDocumentProxy *targetDocProxy = docModel->proxyData(targetIndex);
@@ -1237,7 +1240,6 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
             return;
         }
 
-        //        int count = 0;
         int total = ubMime->items().size();
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
@@ -1261,30 +1263,37 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 #ifndef Q_WS_MAC
         drA = Qt::IgnoreAction;
 #endif
-        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-        UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
-        QModelIndex targetParentIndex;
-        if(node->nodeType() == UBDocumentTreeNode::Catalog)
-            targetParentIndex = docModel->indexForNode(node);
-        else
-            targetParentIndex = docModel->indexForNode(node->parentNode());
+        if(targetIsInTrash){
+            //issue 1629 - NNE - 20131212 : If the source is a model and we want to delete it
+            UBApplication::documentController->moveToTrash(dropIndex, docModel);
+        }else{
+            QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+            UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
+            QModelIndex targetParentIndex;
+            if(node->nodeType() == UBDocumentTreeNode::Catalog)
+                targetParentIndex = docModel->indexForNode(node);
+            else
+                targetParentIndex = docModel->indexForNode(node->parentNode());
 
-        docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
-        QApplication::restoreOverrideCursor();
-        docModel->setHighLighted(QModelIndex());
+            docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
+            QApplication::restoreOverrideCursor();
+            docModel->setHighLighted(QModelIndex());
+        }
     }
-    else if (!inModel) {
+    else if(!inModel){
         drA = Qt::IgnoreAction;
         if(dropIndex.internalId() != targetIndex.internalId()){
             //issue 1632 - NNE - 20131212
-            bool targetIsTrash = (targetIndex == docModel->trashIndex());
-            if(targetIsTrash){
+            if(targetIsInTrash){
                 UBApplication::documentController->moveToTrash(dropIndex, docModel);
             }else{
                 docModel->moveIndex(dropIndex, targetIndex);
             }
             //issue 1632 - NNE - 20131212 : END
         }
+    }else if(docModel->inTrash(dropIndex) && inModel){
+        drA = Qt::IgnoreAction;
+        docModel->moveIndex(dropIndex, targetIndex);
     }
 
     event->setDropAction(drA);
