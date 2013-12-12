@@ -42,6 +42,7 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 #include "frameworks/UBFileSystemUtils.h"
 #include "core/UBPersistenceManager.h"
+#include "core/UBTextTools.h"
 
 #include "core/memcheck.h"
 
@@ -402,20 +403,17 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 //issue 1539 - NNE - 20131018
 void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
 {
-    QClipboard *clipboard = QApplication::clipboard();
-    const QMimeData *mimeData = clipboard->mimeData();
-
-    if(event->matches(QKeySequence::Paste) && mimeData->hasHtml()){
-        QMimeData *myMime = new QMimeData();
-        QTextDocument doc;
-        doc.setHtml(mimeData->html());
-
-        QString cleanHtml = doc.toPlainText();
-
-        myMime->setHtml(cleanHtml);
-        clipboard->setMimeData(myMime);
+    if(event->matches(QKeySequence::Paste)){
+        UBTextTools::cleanHtmlClipboard();
     }
 
     QGraphicsTextItem::keyPressEvent(event);
 }
 //issue 1539 - NNE - 20131018 : END
+
+//issue 1539 - NNE - 20131211
+void UBGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    UBTextTools::cleanHtmlClipboard();
+    QGraphicsTextItem::contextMenuEvent(event);
+}

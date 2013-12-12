@@ -125,7 +125,22 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
     protected:
          //issue 1539 - NNE - 20131018
+         /**
+           * Override beacause we have to clean the clipboard
+           * (if contains html data) before paste.
+           *
+           * \param event The event send by Qt.
+           */
          void keyPressEvent(QKeyEvent *event);
+
+         //issue 1539 - NNE - 20131211
+         /**
+           * Override beacause we have to clean the clipboard
+           * (if contains html data) before paste.
+           *
+           * \param event The event send by Qt.
+           */
+         void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 
 };
 

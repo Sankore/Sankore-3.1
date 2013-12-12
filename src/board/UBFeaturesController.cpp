@@ -27,6 +27,7 @@
 
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 #include "UBFeaturesController.h"
 #include "core/UBSettings.h"
 #include "tools/UBToolsManager.h"
@@ -1153,7 +1154,6 @@ void UBFeaturesController::addItemAsBackground(const UBFeature &item)
         || item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())) // Issue 1684 - ALTI/AOU - 20131210 : il fallait ici un "OU logique", et des parentheses.
         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
     UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.getBackgroundDisposition());
-    UBApplication::boardController->centerRestore();
 }
 
 // Issue 1684 - CFA - 20131120
@@ -1170,7 +1170,7 @@ void UBFeature::setBackgroundDisposition(UBFeatureBackgroundDisposition disposit
 
 void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
 {
-    //Issue 1684 - CFA - 20131211 : ajout d'une yesnoquestion avant de
+     //Issue 1684 - CFA - 20131211 : ajout d'une yesnoquestion avant de
      if (!UBApplication::mainWindow->yesNoQuestion(tr("Are you sure ?"), tr ("Every background will be replaced with this one. Are you sure ?")))
          return;
 
@@ -1193,14 +1193,21 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
     int currentPageIndex = UBApplication::boardController->activeSceneIndex();
+
     UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(true);
     UBApplication::boardController->selectedDocument()->setDefaultImageBackground(item);
+
     for (int i = 0; i < UBApplication::boardController->selectedDocument()->pageCount(); i++)
     {
+        //Issue 1684 - ALTI/CFA - 20131211 : persist center
+        UBApplication::boardController->persistViewPositionOnCurrentScene();
         UBApplication::boardController->setActiveDocumentScene(i);
+        UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());
         UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true,  false, item.getBackgroundDisposition() );
-    }
+    }    
     UBApplication::boardController->setActiveDocumentScene(currentPageIndex);
+    UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());
+
     QApplication::restoreOverrideCursor();
 }
 
