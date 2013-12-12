@@ -1759,7 +1759,7 @@ bool UBGraphicsScene::isEmpty() const
 }
 
 
-// Issue 1684 - CFA - 20131119 : ici pour calculer le résultat final
+
 QUrl UBGraphicsScene::backgroundObjectUrl()
 {
     return mBackgroundObjectUrl;
@@ -1770,6 +1770,7 @@ void UBGraphicsScene::setBackgroundObjectUrl(QUrl url)
     mBackgroundObjectUrl = url;
 }
 
+// Issue 1684 - CFA - 20131119 : ici pour calculer le résultat final
 QGraphicsItem* UBGraphicsScene::setAsBackgroundObject(QGraphicsItem* item, bool pAdaptTransformation, bool pExpand, UBFeatureBackgroundDisposition disposition)
 {
     if (mBackgroundObject)

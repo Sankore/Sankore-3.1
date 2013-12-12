@@ -1153,7 +1153,9 @@ void UBFeaturesController::addItemAsBackground(const UBFeature &item)
         && (item.getFullPath() !=  UBApplication::boardController->selectedDocument()->defaultImageBackground().getFullPath()
         || item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())) // Issue 1684 - ALTI/AOU - 20131210 : il fallait ici un "OU logique", et des parentheses.
         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
+
     UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.getBackgroundDisposition());
+    UBApplication::boardController->persistCurrentScene();
 }
 
 // Issue 1684 - CFA - 20131120
@@ -1188,7 +1190,10 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
         }
     }
 
-    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + "." + QFileInfo(item.getFullPath().toString()).suffix());
+    if (item.getBackgroundDisposition() != Mosaic)
+        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + "." + QFileInfo(item.getFullPath().toString()).suffix());
+    else
+        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");//Issue 1684 - CFA - 20131211 : dans le cas des mosaic, les images sont systématiquement au format png
     UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.getBackgroundDisposition());
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
@@ -1208,6 +1213,7 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
     UBApplication::boardController->setActiveDocumentScene(currentPageIndex);
     UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());
 
+    UBApplication::boardController->persistCurrentScene();
     QApplication::restoreOverrideCursor();
 }
 

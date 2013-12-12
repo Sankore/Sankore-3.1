@@ -508,6 +508,7 @@ void UBBoardController::addScene()
 
     // Issue 1684 - CFA - 20131127 : handle default background // Issue 1684 - ALTI/AOU - 20131210
     QString backgroundImage = selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    qDebug() << backgroundImage;
     UBFeatureBackgroundDisposition backgroundImageDisposition = static_cast<UBFeatureBackgroundDisposition>(selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImageDisposition).toInt());
     if ( ! backgroundImage.isEmpty())
     {
@@ -1432,6 +1433,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             srcImage.loadFromData(pData);
             QImage destImage = QImage(mActiveScene->nominalSize().width(), mActiveScene->nominalSize().height(), QImage::Format_ARGB32_Premultiplied);
             destImage.fill(QColor(Qt::transparent).rgba());
+
             QPoint destPos = QPoint(0, 0);
             QPainter painter(&destImage);
             while (destPos.y() < mActiveScene->nominalSize().height())
@@ -1470,9 +1472,14 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             mActiveScene->scaleToFitDocumentSize(svgItem, true, UBSettings::objectInControlViewMargin);
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
             svgItem->setSelected(true);
+
         }
 
-        return svgItem;
+        if (disposition == Mosaic)
+            return pixItem;
+        else
+            return svgItem;
+
     }
     else if (UBMimeType::AppleWidget == itemMimeType) //mime type invented by us :-(
     {
