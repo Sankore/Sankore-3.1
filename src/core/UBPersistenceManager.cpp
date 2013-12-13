@@ -1025,7 +1025,8 @@ bool UBPersistenceManager::addDirectoryContentToDocument(const QString& document
 
     pDocument->setPageCount(sceneCount(pDocument));
 
-    return false;
+    //issue NC - NNE - 20131213 : At this point, all is well done.
+    return true;
 }
 
 

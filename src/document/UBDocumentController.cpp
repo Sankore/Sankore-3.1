@@ -1948,8 +1948,6 @@ void UBDocumentController::duplicateSelectedItem()
 
         showMessage(tr("Document %1 copied").arg(""), false);
     }
-
-    mBoardController->setActiveDocumentScene(getSelectedItemIndex()); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
 }
 
 void UBDocumentController::moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi, UBDocumentProxyTreeItem *proxyTi)

@@ -1862,3 +1862,10 @@ void UBFeaturesController::removeFromTrashRegistery(UBFeature feature)
 }
 
 //issue 1474 - NNE - 20131120 :END
+
+//issue 1474 - NNE - 20131213
+RegisteryEntry UBFeaturesController::getRegisteryEntry(const QString &name) const
+{
+    return mTrashRegistery.getEntry(name);
+}
+//issue 1474 - NNE - 20131213 : END
