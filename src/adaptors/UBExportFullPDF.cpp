@@ -86,7 +86,6 @@ void UBExportFullPDF::saveOverlayPdf(UBDocumentProxy* pDocumentProxy, const QStr
     for(int pageIndex = 0 ; pageIndex < pDocumentProxy->pageCount(); pageIndex++)
     {
         //issue 1483 - NNE - 20131031
-        qDebug() << allScenes;
         UBGraphicsScene* scene = allScenes.at(pageIndex);
 
         // set background to white, no grid for PDF output
@@ -173,6 +172,13 @@ void UBExportFullPDF::persistsDocument(UBDocumentProxy* pDocumentProxy, const QS
         previousOverlay.remove();
 
     mHasPDFBackgrounds = false;
+
+    //isse 1483 - NNE - 20131213
+    for(int i = 0; i<pDocumentProxy->pageCount(); i++){
+        UBGraphicsScene* scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(pDocumentProxy, i);
+        this->allScenes.push_back(scene);
+    }
+    //issue 1483 - NNE - 20131213 : END
 
     saveOverlayPdf(pDocumentProxy, overlayName);
 
