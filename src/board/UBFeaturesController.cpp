@@ -1174,7 +1174,10 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
 {
      //Issue 1684 - CFA - 20131211 : ajout d'une yesnoquestion avant de
      if (!UBApplication::mainWindow->yesNoQuestion(tr("Are you sure ?"), tr ("Every background will be replaced with this one. Are you sure ?")))
+     {
+         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
          return;
+     }
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
