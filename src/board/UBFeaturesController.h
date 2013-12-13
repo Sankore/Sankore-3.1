@@ -362,6 +362,17 @@ public:
       * \return The name of the category data according to the curent user's language.
       */
     QString getTranslationNameForCategoryData(const QString& name) const;
+
+    //issue 1474 - NNE - 20131213
+    /**
+      * Return the associated entry in the trash register
+      *
+      * \param name The name of the entry
+      *
+      * \return The associated entry if exist, otherwise null
+      */
+    RegisteryEntry getRegisteryEntry(const QString &name) const;
+
 public:
     //Hardcoded toplevel data
     CategoryData rootData;

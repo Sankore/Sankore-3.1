@@ -496,8 +496,8 @@ UBFeaturesListView::UBFeaturesListView( QWidget* parent, const char* name )
     contextMenuTrash.setParent(this);
     contextMenuTrash.setClosable(true);
 
-    textRestoreOneFile = tr("Restore file");
-    textRestoreManyFile = tr("Restore %1 files");
+    textRestoreOneFile = tr("Restore element");
+    textRestoreManyFile = tr("Restore %1 elements");
 
     restoreAction = new QAction(textRestoreOneFile, 0);
     contextMenuTrash.addAction(restoreAction);
@@ -1563,9 +1563,19 @@ void UBFeaturesModel::moveData(const UBFeature &source, const UBFeature &destina
 
     if ( sourcePath.compare(destFullPath, Qt::CaseInsensitive ) || destination.getType() != FEATURE_TRASH)
     {
+        RegisteryEntry r = curController->getRegisteryEntry(source.getName());
+
+        //if the destionation isn't the trash, use the old real path
+        //beacause here, desFullPath is equal to the path of the feature of destination.
+        //When the source has to be restore in user's file, this is wrong to use the path
+        //of the destination feature.
+        //issue 1474 - NNE - 20131213
+        if(destination.getType() != FEATURE_TRASH && r.filename != ""){
+            destFullPath = r.originalRealPath + "/" + r.filename;
+        }
+        //issue 1474 - NNE - 20131213 : END
 
         UBFileSystemUtils::copy(sourcePath, destFullPath);
-
 
         if (action == Qt::MoveAction) {
             curController->deleteItem( source.getFullPath() );

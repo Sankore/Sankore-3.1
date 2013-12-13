@@ -1946,11 +1946,19 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <name>UBFeaturesListView</name>
     <message>
         <source>Restore file</source>
-        <translation>Restaurer fichier</translation>
+        <translation type="obsolete">Restaurer fichier</translation>
     </message>
     <message>
         <source>Restore %1 files</source>
-        <translation>Restaurer %1 fichiers</translation>
+        <translation type="obsolete">Restaurer %1 fichiers</translation>
+    </message>
+    <message>
+        <source>Restore element</source>
+        <translation type="unfinished">Restaurer cet élément</translation>
+    </message>
+    <message>
+        <source>Restore %1 elements</source>
+        <translation type="unfinished">Restaurer ces %1 éléments</translation>
     </message>
 </context>
 <context>

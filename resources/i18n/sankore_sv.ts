@@ -1935,11 +1935,11 @@ Om ett nytt namn ges kommer ett nytt dokument att skapas.</translation>
 <context>
     <name>UBFeaturesListView</name>
     <message>
-        <source>Restore file</source>
+        <source>Restore element</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Restore %1 files</source>
+        <source>Restore %1 elements</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
