@@ -184,6 +184,11 @@ void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &c
                 docProxy->setMetaData(key, metadatas.value(key));
             }
 
+            if ( ! docProxy->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) // Issue 1684 - ALTI/AOU - 20131213
+            {
+                docProxy->setHasDefaultImageBackground(true);
+            }
+
             docProxy->setPageCount(sceneCount(docProxy));
             bool addDoc = false;
             if (!interactive) {
@@ -484,6 +489,11 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
     }
 
     QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(pDocumentDirectory);
+
+    if ( ! metadatas.value(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) // Issue 1684 - ALTI/AOU - 20131213
+    {
+        doc->setHasDefaultImageBackground(true);
+    }
 
     if(withEmptyPage) createDocumentSceneAt(doc, 0);
     if(addTitlePage) persistDocumentScene(doc, mSceneCache.createScene(doc, 0, false), 0);
