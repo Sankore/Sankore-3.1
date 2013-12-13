@@ -2437,7 +2437,7 @@ void UBDocumentController::addFileToDocument()
 bool UBDocumentController::addFileToDocument(UBDocumentProxy* document)
 {
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
-    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"), defaultPath, UBDocumentManager::documentManager()->importFileFilter());
+    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"), defaultPath, UBDocumentManager::documentManager()->importFileFilter(true));
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
     QApplication::processEvents();

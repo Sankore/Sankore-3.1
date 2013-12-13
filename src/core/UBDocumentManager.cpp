@@ -107,32 +107,39 @@ UBDocumentManager::~UBDocumentManager()
 }
 
 
-QStringList UBDocumentManager::importFileExtensions()
+QStringList UBDocumentManager::importFileExtensions(bool notUbx)
 {
     QStringList result;
 
     foreach (UBImportAdaptor *importAdaptor, mImportAdaptors)
     {
-        result << importAdaptor->supportedExtentions();
+        //issue 1629 - NNE - 20131213 : add test to remove ubx extention if necessary
+        if(!(notUbx && importAdaptor->supportedExtentions().at(0) == "ubx")){
+            result << importAdaptor->supportedExtentions();
+        }
     }
     return result;
 }
 
 
-QString UBDocumentManager::importFileFilter()
+QString UBDocumentManager::importFileFilter(bool notUbx)
 {
     QString result;
 
-    result += tr("All supported files (*.%1)").arg(importFileExtensions().join(" *."));
+    result += tr("All supported files (*.%1)").arg(importFileExtensions(notUbx).join(" *."));
     foreach (UBImportAdaptor *importAdaptor, mImportAdaptors)
     {
         if (importAdaptor->importFileFilter().length() > 0)
         {
-            if (result.length())
-            {
-                result += ";;";
+            //issue 1629 - NNE - 20131213 : Add a test on ubx before put in the list
+            if(!(notUbx && importAdaptor->supportedExtentions().at(0) == "ubx")){
+                if (result.length())
+                {
+                    result += ";;";
+                }
+
+                result += importAdaptor->importFileFilter();
             }
-            result += importAdaptor->importFileFilter();
         }
     }
     qDebug() << "import file filter" << result;
@@ -246,7 +253,7 @@ int UBDocumentManager::addFilesToDocument(UBDocumentProxy* document, QStringList
                 if (adaptor->isDocumentBased())
                 {
                     //issue 1629 - NNE - 20131212 : Resolve a segfault, but for .ubx, actually
-                    //the file wiil be not imported...
+                    //the file will be not imported...
                     UBDocumentBasedImportAdaptor* importAdaptor = dynamic_cast<UBDocumentBasedImportAdaptor*>(adaptor);
 
                     if (importAdaptor && importAdaptor->addFileToDocument(document, file))

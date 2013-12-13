@@ -38,8 +38,23 @@ class UBDocumentManager : public QObject
         static UBDocumentManager* documentManager();
         virtual ~UBDocumentManager();
 
-        QString importFileFilter();
-        QStringList importFileExtensions();
+        /**
+          * List all supported files in a filter for the importation.
+          *
+          * \param notUbx If true, the ubx format isn't put in the list of supported file.
+          *
+          * \return Return the filter of supported files for the importation.
+          */
+        QString importFileFilter(bool notUbx = false);
+
+        /**
+          * List all supported files for the importation.
+          *
+          * \param notUbx If true, the ubx format isn't put in the list of supported file.
+          *
+          * \return Return the lsit of supported files for the importation.
+          */
+        QStringList importFileExtensions(bool notUbx = false);
 
         QFileInfoList importUbx(const QString &Incomingfile, const QString &destination);
         UBDocumentProxy* importFile(const QFile& pFile, const QString& pGroup);
