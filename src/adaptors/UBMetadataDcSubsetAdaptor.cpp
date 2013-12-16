@@ -168,6 +168,9 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
             return metadata;
         }
 
+        QString docVersion = "4.1"; // untagged doc version 4.1
+        metadata.insert(UBSettings::documentVersion, docVersion);
+
         QXmlStreamReader xml(&file);
 
         while (!xml.atEnd())
@@ -176,7 +179,6 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
 
             if (xml.isStartElement())
             {
-                QString docVersion = "4.1"; // untagged doc version 4.1
 
                 if (xml.name() == "title")
                 {
@@ -198,6 +200,7 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
                         && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
                 {
                         docVersion = xml.readElementText();
+                        metadata.insert(UBSettings::documentVersion, docVersion);
                 }
                 else if (xml.name() == "size" // introduced in UB 4.2
                         && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
@@ -288,8 +291,6 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
                     metadata.insert(UBSettings::documentDefaultBackgroundImageDisposition, xml.readElementText());
                 }
                 // Fin Issue 1684 - ALTI/AOU - 20131210
-
-                metadata.insert(UBSettings::documentVersion, docVersion);
             }
 
             if (xml.hasError())
