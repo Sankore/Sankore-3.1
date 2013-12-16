@@ -777,14 +777,6 @@
         <translation>Göm öppen Sankoré applikation</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importera Uniboard dokument</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importera gamla Sankoré eller Unibord dokument</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Gruppobjekt</translation>
     </message>
@@ -2465,6 +2457,10 @@ Vill du ignorera felen för den här värden?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

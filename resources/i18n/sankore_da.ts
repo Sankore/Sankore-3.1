@@ -777,14 +777,6 @@
         <translation>Skjul programmet Open-Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importer Unibord-dokumenter</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importer ældre version af Sankoré eller Uniboard-dokumenter</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translatorcomment>Gruppér enheder</translatorcomment>
         <translation>Group items</translation>
@@ -2465,6 +2457,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -777,14 +777,6 @@
         <translation>Afeno ny rindran&apos;asan&apos;i Open-Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Hafaro ny rakitra Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Hafaro ny rakitra Uniboard na ny rakitra Sankore taloha</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Atokony ny zavatra</translation>
     </message>
@@ -2464,6 +2456,10 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

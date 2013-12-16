@@ -777,14 +777,6 @@
         <translation>隐藏Open-Sankoré应用程序</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">导入Uniboard文件</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">导入以前的Sankore或Uniboard文件</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>组合项目</translation>
     </message>
@@ -2459,6 +2451,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

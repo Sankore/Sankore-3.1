@@ -777,14 +777,6 @@
         <translation>הסתר את היישום של הגרסה הפתוחה של Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">ייבא את מסמכי ה- Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">ייבא מסמכים ישנים של Sankoré או של Uniboard</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>פריטי קבוצה</translation>
     </message>
@@ -2459,6 +2451,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

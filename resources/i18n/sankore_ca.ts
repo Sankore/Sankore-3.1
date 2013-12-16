@@ -777,14 +777,6 @@
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importa documents Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importa documents antics de l&apos;Uniboard o del Sankoré</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Agrupa elements</translation>
     </message>
@@ -2470,6 +2462,10 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -777,14 +777,6 @@
         <translation>Open-Sankoré ausblenden</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Uniboard-Dokumente importieren</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Alte Sankore oder Uniboard Dokumente importieren</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Objekte gruppieren</translation>
     </message>
@@ -2462,6 +2454,10 @@ Möchten Sie diese Fehler auf diesem Computer ignorieren?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

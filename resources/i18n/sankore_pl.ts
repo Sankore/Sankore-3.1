@@ -781,14 +781,6 @@
         <translation>Ukryj aplikację Open-Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importuj dokumenty Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importuj stare dokumenty Sankore lub Uniboard</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Grupuj elementy</translation>
     </message>
@@ -2474,6 +2466,10 @@ Czy chcesz ignorować te błędy dla tego hosta?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -779,14 +779,6 @@
         <translation type="unfinished">संकोर्_खोलें उपयोग छुपायें </translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">यूनिबोर्ड दस्तावेज इंपोर्ट करें </translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">पुराने संकोर या यूनिबोर्ड दस्तावेज इंपोर्ट करें </translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation type="unfinished">समूह वस्तुएं </translation>
     </message>
@@ -2461,6 +2453,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

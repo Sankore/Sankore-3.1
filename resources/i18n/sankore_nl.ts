@@ -777,14 +777,6 @@
         <translation>Verberg Open-Sankoré Toepassing</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importeer Uniboard Document</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importeer oude Sankoré of Uniboarddocumenten</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>groep onderdelen</translation>
     </message>
@@ -2461,6 +2453,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

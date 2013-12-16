@@ -308,10 +308,6 @@
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Behera kargatu&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;uneko orrian&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Uniboard dokumentuak inportatu</translation>
-    </message>
-    <message>
         <source>Bigger</source>
         <translation>Handiago</translation>
     </message>
@@ -482,10 +478,6 @@
     <message>
         <source>Rename Content</source>
         <translation>Edukia berriz izendatu</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Sankore edo Uniboard dokumentu zaharrak inportatu</translation>
     </message>
     <message>
         <source>Zoom Out</source>
@@ -1466,10 +1458,6 @@ Izen berri bat ezarriz, dokumentu berri bat sortuko duzu.
     <message>
         <source>Models</source>
         <translation>Modeloak</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">%2tik %1. orria kopiatzen ari...</translation>
     </message>
     <message>
         <source>Untitled documents</source>
@@ -2471,6 +2459,10 @@ Ostalari honetako errorei paso egin nahi diezu ?</translation>
         <source>Galician</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -2963,10 +2955,6 @@ Otoi, aplikazioa berrabiarazi dokumentu eguneratuetara itzultzeko.</translation>
 <context>
     <name>WBDownloadItem</name>
     <message>
-        <source>?</source>
-        <translation type="obsolete">Fitxategi tamaina ezezaguna</translation>
-    </message>
-    <message>
         <source>KB</source>
         <translation>kB</translation>
     </message>
@@ -3026,10 +3014,6 @@ Otoi, aplikazioa berrabiarazi dokumentu eguneratuetara itzultzeko.</translation>
 </context>
 <context>
     <name>WBDownloadManager</name>
-    <message>
-        <source>%1 Downloads</source>
-        <translation type="obsolete">%1 elementu behera kargatuak</translation>
-    </message>
     <message>
         <source>1 Download</source>
         <translation>1 elementu behera kargatua</translation>
@@ -3483,24 +3467,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Keyboard button size:</source>
         <translation>Teklatu birtualaren teklen tamaina :</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;The licences are in English to respect the official and legal approved translation.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&quot;&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
-&lt;tr&gt;
-&lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;;&quot;&gt;Lizentziak ingelesez dira, legezko testu hauek ez baitute euskarazko itzulpen ofizialik.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>

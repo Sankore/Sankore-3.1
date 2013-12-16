@@ -777,14 +777,6 @@
         <translation>Nascondi l&apos;applicazione Open-Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importa documenti Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importa vecchi documenti Sankoré o Uniboard</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Raggruppa oggetti</translation>
     </message>
@@ -2464,6 +2456,10 @@ Vuoi ignorare gli errori per questo host?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

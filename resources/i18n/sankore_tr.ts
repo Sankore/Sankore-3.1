@@ -777,14 +777,6 @@
         <translation>Open-Sankoré Uygulamasını Gizle</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Uniboard Dökümanı İçeri Aktar</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Eski Sankore yada Uniboard Dökümanı İçeri Aktar</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Grup Parçaları</translation>
     </message>
@@ -2457,6 +2449,10 @@ Bu host için yukarıdaki hatalar yok sayılsın mı?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -777,14 +777,6 @@
         <translation>Open-Sankoréを隠す</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Uniboardの書類を移入する</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">古いSankore書類やUniboard書類を移入する</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>アイテムを纏める</translation>
     </message>
@@ -2460,6 +2452,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

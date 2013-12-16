@@ -777,14 +777,6 @@
         <translation>Open-Sankoré 응용 프로그램 숨기기</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">유니보드 문서 가져오기</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">기존 Sankore 또는 유니보드 문서 가져오기</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>그룹 항목</translation>
     </message>
@@ -2459,6 +2451,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

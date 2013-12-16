@@ -277,10 +277,6 @@
         <translation>Otevřít stránku na tabuli</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Otevřít dokumenty Uniboard</translation>
-    </message>
-    <message>
         <source>Bigger</source>
         <translation>Větší</translation>
     </message>
@@ -447,10 +443,6 @@
     <message>
         <source>Rename Content</source>
         <translation>Přejmenovat obsah</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Otevřít staré dokumenty Sankoré nebo Uniboard</translation>
     </message>
     <message>
         <source>Zoom Out</source>
@@ -2470,6 +2462,10 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -777,14 +777,6 @@
         <translation>Скрий приложението Санкоре</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Вмъкни документи Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Вмъкни стари Санкоре или Uniboard документи</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Групирай обекти</translation>
     </message>
@@ -2465,6 +2457,10 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

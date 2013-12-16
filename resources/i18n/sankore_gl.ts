@@ -2458,6 +2458,10 @@ Do you want to ignore these errors for this host?</source>
         <source>Galician</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

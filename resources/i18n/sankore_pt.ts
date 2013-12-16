@@ -778,14 +778,6 @@
         <translation>Ocultar a Aplicação Open-Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importar Documentos Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importar Antigas Versões de Documentos Uniboard ou Sankoré</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Agrupar itens</translation>
     </message>
@@ -2468,6 +2460,10 @@ Quer ignorar estes erros, deste servidor?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

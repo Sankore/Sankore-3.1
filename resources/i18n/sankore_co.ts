@@ -782,14 +782,6 @@
         <translation>Piattà l&apos;appiicazione Open Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Impurtà dcumenti Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Impurtà l&apos;anziani ducumenti Sankorè o Uniboard</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Aggruppà l&apos;ogetti</translation>
     </message>
@@ -2480,6 +2472,10 @@ Vulete lascià corre sti sbaglii per stu servore ?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

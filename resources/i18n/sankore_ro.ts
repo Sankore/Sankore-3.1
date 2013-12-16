@@ -777,14 +777,6 @@
         <translation>Ascundere aplicaţie Open-Sankoré</translation>
     </message>
     <message>
-        <source>Import Uniboard Documents</source>
-        <translation type="obsolete">Importare documente Uniboard</translation>
-    </message>
-    <message>
-        <source>Import old Sankore or Uniboard documents</source>
-        <translation type="obsolete">Importare documente vechi Sankore sau Uniboard</translation>
-    </message>
-    <message>
         <source>Group items</source>
         <translation>Grupare articole</translation>
     </message>
@@ -2464,6 +2456,10 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
