@@ -10,8 +10,8 @@ CONFIG += debug_and_release \
 
 VERSION_MAJ = 2
 VERSION_MIN = 3
-VERSION_TYPE = b # a = alpha, b = beta, r = release, other => error
-VERSION_PATCH = 13
+VERSION_TYPE = r # a = alpha, b = beta, r = release, other => error
+VERSION_PATCH = 0RC
 
 VERSION = "$${VERSION_MAJ}.$${VERSION_MIN}.$${VERSION_TYPE}.$${VERSION_PATCH}"
 VERSION = $$replace(VERSION, "\\.r", "")
@@ -467,7 +467,7 @@ TRANSLATIONS = resources/i18n/sankore_en.ts \
    resources/i18n/sankore_co.ts \
    resources/i18n/sankore_eu.ts \
    resources/i18n/sankore_bm.ts \
-   resources/i18n/sankore_oc.ts
+   resources/i18n/sankore_oc.ts \
    resources/i18n/sankore_gl.ts
 
 INSTALLS = UB_ETC \
