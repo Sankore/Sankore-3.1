@@ -555,6 +555,13 @@ void UBWidgetUniboardAPI::ProcessDropEvent(QGraphicsSceneDragDropEvent *event)
     QString mimeText = createMimeText(downloaded, contentType, destFileName);
     dropMimeData->setData(tMimeText, mimeText.toAscii());
 
+    if (mGraphicsWidget->page() && mGraphicsWidget->page()->mainFrame()) {
+        mGraphicsWidget
+            ->page()
+            ->mainFrame()
+            ->evaluateJavaScript("if(widget && widget.ondrop) { widget.ondrop('" + destFileName + "', '" + contentType + "');}");
+    }
+
     event->setMimeData(dropMimeData);
 }
 

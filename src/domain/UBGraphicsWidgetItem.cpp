@@ -519,6 +519,7 @@ void UBGraphicsWidgetItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     mShouldMoveWidget = false;
 
+    sendJSClickEvent(); // Issue NC - CFA - 20131202
     Delegate()->mouseReleaseEvent(event);
     QGraphicsWebView::mouseReleaseEvent(event);
 }
@@ -532,6 +533,12 @@ void UBGraphicsWidgetItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     sendJSLeaveEvent();
     Delegate()->hoverLeaveEvent(event);
+}
+
+void UBGraphicsWidgetItem::sendJSClickEvent()// Issue NC - CFA - 20131202
+{
+    if (page() && page()->mainFrame())
+        page()->mainFrame()->evaluateJavaScript("if(widget && widget.onClick) { widget.onClick();}");
 }
 
 void UBGraphicsWidgetItem::sendJSEnterEvent()
@@ -799,6 +806,13 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
         mIsResizable = widgetElement.attribute("ub:resizable", "false") == "true";
         mIsFreezable = widgetElement.attribute("ub:freezable", "true") == "true";
 
+        /* Issue NC - PBO - 20131213 */
+        if (widgetElement.attribute("ub:transparent", "false") == "true") {
+            QPalette palette = page()->palette();
+            palette.setBrush(QPalette::Base, QColor(0, 0, 0, 0));
+            setPalette(palette);
+        }
+
         QString roles = widgetElement.attribute("ub:roles", "content tool").trimmed().toLower();
 
         /* ------------------------------ */
@@ -919,6 +933,22 @@ UBItem* UBGraphicsW3CWidgetItem::deepCopy() const
     copyItemParameters(copy);
 
     return copy;
+}
+
+// Issue NC - CFA - 20131202
+QVariant UBGraphicsW3CWidgetItem::itemChange(GraphicsItemChange change, const QVariant &value)
+{
+    if (change == QGraphicsItem::ItemSelectedChange) {
+        if (page() && page()->mainFrame()) {
+            if (isSelected()) {
+                page()->mainFrame()->evaluateJavaScript("if(widget && widget.onblur) { widget.onblur();}");
+            } else {
+                page()->mainFrame()->evaluateJavaScript("if(widget && widget.onfocus) { widget.onfocus();}");
+            }
+        }
+    }
+
+    return UBGraphicsWidgetItem::itemChange(change, value);
 }
 
 QMap<QString, UBGraphicsW3CWidgetItem::PreferenceValue> UBGraphicsW3CWidgetItem::preferences()
