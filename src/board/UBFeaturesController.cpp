@@ -1193,10 +1193,8 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
         }
     }
 
-    if (item.getBackgroundDisposition() != Mosaic)
-        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + "." + QFileInfo(item.getFullPath().toString()).suffix());
-    else
-        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");//Issue 1684 - CFA - 20131211 : dans le cas des mosaic, les images sont systématiquement au format png
+
+    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");
     UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.getBackgroundDisposition());
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
