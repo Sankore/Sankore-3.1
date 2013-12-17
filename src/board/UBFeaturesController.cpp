@@ -1194,7 +1194,10 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
     }
 
 
-    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");
+    if (QFileInfo(item.getFullPath().toString()).suffix() == "svg")
+        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".svg");
+    else
+        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");
     UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.getBackgroundDisposition());
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
