@@ -566,12 +566,15 @@ UBDocumentProxy* UBPersistenceManager::duplicateDocument(UBDocumentProxy* pDocum
     foreach(QString key, pDocumentProxy->metaDatas().keys())
     {
         copy->setMetaData(key, pDocumentProxy->metaDatas().value(key));
-    }
+    }    
 
     copy->setMetaData(UBSettings::documentName,
             pDocumentProxy->metaData(UBSettings::documentName).toString() + " " + tr("(copy)"));
 
     copy->setUuid(QUuid::createUuid());
+
+    if (!copy->metaDatas().value(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) //Issue 1684 - CFA - 20131217
+        copy->setHasDefaultImageBackground(true);
 
     persistDocumentMetadata(copy);
 
