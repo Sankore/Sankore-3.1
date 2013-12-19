@@ -556,7 +556,7 @@
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
-                window.sankore.showMessage('Open this in the internal brower : ' + $(a).attr('href'));
+                window.sankore.loadUrl($(a).attr('href'));
             };
 
             options.onInit = function () {
