@@ -218,12 +218,13 @@ void UBSettings::init()
 
     softwareHomeUrl = productWebUrl->get().toString();
 
-    QRect mainScreenGeometry = UBApplication::desktop()->screenGeometry(UBApplication::desktop()->primaryScreen());
-    qDebug() << mainScreenGeometry;
-
-    documentSizes.insert(DocumentSizeRatio::Ratio4_3, QSize(mainScreenGeometry.height() * 4.f / 3.f, mainScreenGeometry.height())); // 1.33
-    documentSizes.insert(DocumentSizeRatio::Ratio16_10, QSize((mainScreenGeometry.height() * 16.f / 10.f), mainScreenGeometry.height())); // 1.6
-    documentSizes.insert(DocumentSizeRatio::Ratio16_9, QSize((mainScreenGeometry.height() * 16.f / 9.f), mainScreenGeometry.height())); // 1.77
+//    QRect mainScreenGeometry = UBApplication::desktop()->screenGeometry(UBApplication::desktop()->primaryScreen());
+//    documentSizes.insert(DocumentSizeRatio::Ratio4_3, QSize(mainScreenGeometry.height() * 4.f / 3.f, mainScreenGeometry.height())); // 1.33
+//    documentSizes.insert(DocumentSizeRatio::Ratio16_10, QSize((mainScreenGeometry.height() * 16.f / 10.f), mainScreenGeometry.height())); // 1.6
+//    documentSizes.insert(DocumentSizeRatio::Ratio16_9, QSize((mainScreenGeometry.height() * 16.f / 9.f), mainScreenGeometry.height())); // 1.77
+    documentSizes.insert(DocumentSizeRatio::Ratio4_3, QSize(1280, 960)); // 1.33
+    documentSizes.insert(DocumentSizeRatio::Ratio16_10, QSize((960 / 10 * 16), 960)); // 1.60
+    documentSizes.insert(DocumentSizeRatio::Ratio16_9, QSize((960 / 9 * 16), 960)); // 1.77
 
     appToolBarPositionedAtTop = new UBSetting(this, "App", "ToolBarPositionedAtTop", true);
     appToolBarDisplayText = new UBSetting(this, "App", "ToolBarDisplayText", true);
@@ -294,8 +295,8 @@ void UBSettings::init()
     ValidateKeyboardPaletteKeyBtnSize();
 
     // Issue 1684 - CFA - 20131127 : default page size = screen size no ?
-    //pageSize = new UBSetting(this, "Board", "DefaultPageSize", documentSizes.value(DocumentSizeRatio::Ratio4_3));
-    pageSize = new UBSetting(this, "Board", "DefaultPageSize", mainScreenGeometry.size());
+    pageSize = new UBSetting(this, "Board", "DefaultPageSize", documentSizes.value(DocumentSizeRatio::Ratio4_3));
+    //pageSize = new UBSetting(this, "Board", "DefaultPageSize", mainScreenGeometry.size());
 
     pageDpi = new UBSetting(this, "Board", "pageDpi", 0);
 
