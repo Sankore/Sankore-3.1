@@ -70,6 +70,7 @@ void UBResources::init()
     arrowCursor     = QCursor(Qt::ArrowCursor);
     playCursor      = QCursor(QPixmap(":/images/cursors/play.png"), 6, 1);
     textCursor      = QCursor(Qt::ArrowCursor);
+    richTextCursor  = QCursor(Qt::ArrowCursor);
     rotateCursor    = QCursor(QPixmap(":/images/cursors/rotate.png"), 16, 16);
     drawLineRulerCursor = QCursor(QPixmap(":/images/cursors/drawRulerLine.png"), 3, 12);
 }

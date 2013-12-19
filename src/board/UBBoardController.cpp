@@ -1527,6 +1527,8 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         else
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
+        w3cWidgetItem->setSelected(true);
+
         return w3cWidgetItem;
     }
     else if (UBMimeType::Video == itemMimeType)

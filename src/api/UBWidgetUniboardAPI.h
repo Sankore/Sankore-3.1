@@ -217,6 +217,11 @@ class UBWidgetUniboardAPI : public QObject
          */
         void showMessage(const QString& message);
 
+        /**
+         * Laucnh Url on Nav
+         */
+        void loadUrl(const QString& url);
+
 
         /**
          * Center the scene coordinates within the display port

@@ -913,6 +913,8 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
     initialize();
     setOwnFolder(pWidgetUrl);
+
+    Delegate()->setRotatable(true);// CFA
 }
 
 UBGraphicsW3CWidgetItem::~UBGraphicsW3CWidgetItem()

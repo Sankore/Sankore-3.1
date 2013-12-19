@@ -70,6 +70,7 @@ UBDrawingController::UBDrawingController(QObject * parent)
     connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered(bool)), this, SLOT(pointerToolSelected(bool)));
     connect(UBApplication::mainWindow->actionLine, SIGNAL(triggered(bool)), this, SLOT(lineToolSelected(bool)));
     connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(textToolSelected(bool)));
+    connect(UBApplication::mainWindow->actionRichTextEditor, SIGNAL(triggered(bool)), this, SLOT(richTextToolSelected(bool)));
     connect(UBApplication::mainWindow->actionCapture, SIGNAL(triggered(bool)), this, SLOT(captureToolSelected(bool)));
 }
 
@@ -139,6 +140,8 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionLine->setChecked(true);
         else if (mStylusTool == UBStylusTool::Text)
             UBApplication::mainWindow->actionText->setChecked(true);
+        else if (mStylusTool == UBStylusTool::RichText)
+            UBApplication::mainWindow->actionRichTextEditor->setChecked(true);
         else if (mStylusTool == UBStylusTool::Capture)
             UBApplication::mainWindow->actionCapture->setChecked(true);
 
@@ -399,6 +402,12 @@ void UBDrawingController::textToolSelected(bool checked)
 {
     if (checked)
         setStylusTool(UBStylusTool::Text);
+}
+
+void UBDrawingController::richTextToolSelected(bool checked)
+{
+    if (checked)
+        setStylusTool(UBStylusTool::RichText);
 }
 
 

@@ -93,6 +93,7 @@ class UBApplication : public QtSingleApplication
 
         bool isVerbose() { return mIsVerbose;}
         void setVerbose(bool verbose){mIsVerbose = verbose;}
+        static void loadUrl(const QString& url);
         static QString urlFromHtml(QString html);
         static bool isFromWeb(QString url);
 //        bool notify ( QObject * receiver, QEvent * event );

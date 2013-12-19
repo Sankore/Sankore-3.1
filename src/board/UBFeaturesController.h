@@ -68,7 +68,8 @@ enum UBFeatureElementType
     FEATURE_SEARCH,
     FEATURE_BOOKMARK,
     FEATURE_LINK,
-    FEATURE_INVALID
+    FEATURE_INVALID,
+    FEATURE_RTE
 };
 
 enum UBFeatureBackgroundDisposition

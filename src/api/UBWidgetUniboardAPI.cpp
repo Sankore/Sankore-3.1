@@ -348,6 +348,11 @@ void UBWidgetUniboardAPI::showMessage(const QString& message)
     UBApplication::boardController->showMessage(message, false);
 }
 
+void UBWidgetUniboardAPI::loadUrl(const QString& url)
+{
+    UBApplication::loadUrl(url);
+}
+
 
 QString UBWidgetUniboardAPI::pageThumbnail(const int pageNumber)
 {
