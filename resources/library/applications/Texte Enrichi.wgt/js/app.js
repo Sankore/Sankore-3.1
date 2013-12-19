@@ -11,6 +11,7 @@
         ];
 
         this.id = id;
+        this.empty = true;
         this.widget = widget;
         this.dark = false;
         this.options = {};
@@ -38,7 +39,8 @@
                 this.options = $.extend({}, {
                     defaultText: this.$container.html(),
                     locale: 'en_GB',
-                    onLinkClick: function (a) {}
+                    onLinkClick: function (a) {},
+                    onInit: function () {}
                 }, options);
             };
 
@@ -53,9 +55,9 @@
                         statusbar: false,
                         menubar: false,
                         skin: 'rteditor',
-                        plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor', 'image'],
-                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | alignleft aligncenter alignright alignjustify',
-                        toolbar2: 'fontselect fontsizeselect | customtable | link | image | undo redo'
+                        plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor'],
+                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | undo redo',
+                        toolbar2: 'fontselect fontsizeselect  | alignleft aligncenter alignright alignjustify | customtable'
                     };
 
                 options.fontsize_formats = [
@@ -66,18 +68,28 @@
 
                 options.font_formats = [
                     'Alphonetic=alphonetic,serif',
-                    'AlphoneticGB=alphoneticGB,serif',
+                    'Alphonetic GB=alphoneticGB,serif',
                     'Andika Basic=andika basic,sans',
                     'Arial=arial,sans',
                     'Arial Black=arial black,sans',
                     'Comic Sans MS=comic sans ms,sans',
                     'Courier New=courier new,courier,serif',
-                    'Cursive standard=cursive standard,serif',
+                    'Cursive Standard=cursive standard,serif',
+                    'Écolier=ecolier,serif',
+                    'Écolier (court)=ecolier_court,serif',
+                    'Écolier CP=ecolier_cp,serif',
+                    'Écolier CP (pointillés)=ecolier_cp_pointillés,serif',
+                    'Écolier lignes=ecolier_lignes,serif',
+                    'Écolier lignes (court)=ecolier_lignes_court,serif',
+                    'Écolier lignes (pointillés)=ecolier_lignes_pointillés,serif',
+                    'Écolier (pointillés)=ecolier_pointillés,serif',
+                    'Écriture A=ecriture a,serif',
+                    'Écriture B=ecriture b,serif',
                     'Georgia=georgia,serif',
-                    'GinoSchoolScript=ginoschoolscript,serif',
+                    'Gino School Script=ginoschoolscript,serif',
                     'Impact=impact,sans',
-                    'Script cole=script cole,serif',
-                    'Script Ecole 2=script ecole 2,serif',
+                    'Script École=script cole,serif',
+                    'Script École 2=script ecole 2,serif',
                     'Scriptcase cole=scriptcase cole,serif',
                     'Times New Roman=times new roman,times,serif',
                     'Trebuchet MS=trebuchet ms,sans',
@@ -311,10 +323,21 @@
                 if (this.widget) {
                     this.widget.onfocus = function () {
                         self.show();
+
+                        if (self.empty) {
+                            self.setContent('');
+                        }
                     };
 
                     this.widget.onblur = function () {
                         self.tinymce.fire('blur');
+
+                        var content = self.getContent();
+
+                        if (self.empty = !content.trim().length) {
+                            self.setContent(tinymce.translate(self.options.defaultText));
+                        }
+
                         self.hide();
                     };
 
@@ -370,7 +393,7 @@
              * Switch background to inverted colors (preserving color other than white and black)
              */
             app.RTEditor.prototype.setDarkBackground = function (dark) {
-                dark = !!dark;
+                dark = !! dark;
 
                 var $docBody = $(this.tinymce.getDoc()).find('body'),
                     darkClassname = 'dark',
@@ -398,6 +421,21 @@
             };
 
             /**
+             *
+             */
+            app.RTEditor.prototype.getContent = function () {
+                return this.tinymce.getContent();
+            };
+
+            /**
+             *
+             */
+            app.RTEditor.prototype.setContent = function (content) {
+                this.tinymce.setContent(content);
+                this.tinymce.save();
+            };
+
+            /**
              * Validate dropped content type. Image only
              */
             app.RTEditor.prototype.isAllowedDroppedContentType = function (contentType) {
@@ -420,17 +458,63 @@
              */
             app.RTEditor.prototype.onTinyInit = function (e) {
                 this.refreshSize();
+                this.options.onInit.call(this);
+
+                var editor = this.tinymce;
+
+                this.tinymce.editorCommands.addCommands({
+                    'HiliteColor': function (command, ui, value) {
+                        var set = false;
+                        if (editor.selection.selectedRange && editor.selection.selectedRange.commonAncestorContainer) {
+                            var $container = $(editor.selection.selectedRange.commonAncestorContainer),
+                                $tds = null;
+
+                            if ($container.is('tr')) { // cas où on sélectionne plusieurs td en ligne
+                                var $firstTd = $(editor.selection.selectedRange.startContainer),
+                                    $lastTd = $(editor.selection.selectedRange.endContainer);
+                                
+                                //console.log($container.prop('tagName'));
+                                
+                                if ($firstTd.is('td')) {
+                                    $firstTd = $firstTd.closest('td');
+                                }
+                                
+                                if ($lastTd.is('td')) {
+                                    $lastTd = $lastTd.closest('td');
+                                }
+                                
+                                $tds = $firstTd
+                                    .nextUntil($lastTd)
+                                    .andSelf()
+                                    .add($lastTd);
+                            } else if ($container.is('td')) { // cas où sélectionne simplement un td
+                                $tds = $container;
+                            } else if ($container.closest('td').length) { // cas où on sélectionne des élements contenus dans un td
+                                $tds = $container.closest('td');
+                            }
+
+                            if (null !== $tds) {
+                                $tds.css('background-color', value);
+                                set = true;
+                            }
+                        }
+
+                        if (!set) {
+                            editor.formatter.toggle(command, value ? {
+                                value: value
+                            } : undefined);
+                        }
+
+                        editor.nodeChanged();
+                    }
+                });
             };
 
             /**
              * Event handler for TinyMCE editor 'blur' event
              */
             app.RTEditor.prototype.onTinyBlur = function (e) {
-                var content = $(this.tinymce.getContent()).text();
-                
-                if (!content.trim().length) {
-                    this.tinymce.setContent(this.options.defaultText);
-                }
+
             };
 
             /**
@@ -467,14 +551,23 @@
 
     $(document).ready(function () {
         var options = {
-            locale: 'en_GB'
+            locale: 'en_GB',
+            defaultText: 'Insert your text here'
         }, widget = null;
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
-				alert('aaaaaaaaah');
-				alert($(a).attr('href'));
-                window.sankore.loadUrl($(a).attr('href'));
+                window.sankore.showMessage('Open this in the internal brower : ' + $(a).attr('href'));
+            };
+
+            options.onInit = function () {
+                var text = window.sankore.preference('content', '');
+
+                this.setContent(text);
+
+                if (text.trim().length !== 0) {
+                    this.empty = false;
+                }
             };
 
             options.locale = window.sankore.locale();
@@ -489,5 +582,11 @@
         }
 
         window.rteditor = new app.RTEditor('ubwidget', widget, options);
+
+        $(window).on('beforeunload', function (e) {
+            if (window.sankore) {
+                window.sankore.setPreference('content', window.rteditor.getContent());
+            }
+        });
     });
 }(jQuery));

@@ -174,5 +174,6 @@ tinymce.addI18n('fr_FR',{
 "View": "Voir",
 "Table": "Tableau",
 "Format": "Format",
-"Page color": "Couleur de fond"
+"Page color": "Couleur de fond",
+"Insert your text here": "Insérer votre texte ici"
 });
