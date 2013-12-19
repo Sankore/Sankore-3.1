@@ -251,6 +251,7 @@ private slots:
     void setFilesChanged();
     // Fin Issue 1683 (Evolution) - AOU - 20131206
     void onActiveDocumentChanged();
+    void onScrollAreaRangeChanged(int min, int max); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
 };
 
 //issue 1517 - NNE - 20131206 : Make the QLabel class clickable

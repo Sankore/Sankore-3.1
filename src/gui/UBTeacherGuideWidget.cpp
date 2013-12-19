@@ -954,6 +954,13 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpTreeWidgetEdition->header()->setDefaultSectionSize(18);
     mpTreeWidgetEdition->setSelectionMode(QAbstractItemView::NoSelection);
 
+	// Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
+    mpTreeWidgetEdition->setExpandsOnDoubleClick(false);
+    mpTreeWidgetEdition->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    connect(mpScrollArea->verticalScrollBar(), SIGNAL(rangeChanged(int,int)), this, SLOT(onScrollAreaRangeChanged(int, int)));
+	// Fin Issue 1683 - AOU - 20131219
+
     connect(mpTreeWidgetEdition, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
 
     mpAddAFileItem = new UBAddItem(tr("Add a file"), eUBTGAddSubItemWidgetType_File, mpTreeWidgetEdition);
@@ -971,6 +978,11 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpTreeWidgetPresentation->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mpTreeWidgetPresentation->setStyleSheet("selection-background-color:transparent; padding-bottom:5px; padding-top:5px; ");
     mpTreeWidgetPresentation->setIconSize(QSize(24,24));
+
+	// Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
+    mpTreeWidgetPresentation->setExpandsOnDoubleClick(false);
+    mpTreeWidgetPresentation->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	// Fin Issue 1683 - AOU - 20131219
 
     connect(mpTreeWidgetPresentation, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
 
@@ -1412,6 +1424,10 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                     fileWidget->initializeWithDom(*element);
                 mpTreeWidgetEdition->setItemWidget(newWidgetItem, 0, fileWidget);
                 connect(fileWidget, SIGNAL(changed()), this, SLOT(setFilesChanged()));
+
+                // Redim le TreeViewEdition : // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
+                mpTreeWidgetEdition->setMinimumHeight(20 + fileWidget->height() * mpAddAFileItem->childCount());
+                
                 break;
             }
             default:
@@ -1445,9 +1461,10 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                 }
             }
 
-            int index = mpTreeWidgetEdition->currentIndex().row();
-            QTreeWidgetItem* toBeDeletedWidgetItem = widget->parent()->takeChild(index);
-            delete toBeDeletedWidgetItem;
+            delete widget;
+
+            mpTreeWidgetEdition->setMinimumHeight(20 + fileWidget->height() * mpAddAFileItem->childCount()); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
+
 
             setFilesChanged();
         }
@@ -1466,6 +1483,7 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                 }
 #endif
                 mpMediaSwitchItem->setText(0, "-");
+                mpTreeWidgetPresentation->setMinimumHeight(30 + 25 * mpAddAFileItem->childCount()); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
             }
             else
             {
@@ -1476,6 +1494,7 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                 }
 #endif
                 mpMediaSwitchItem->setText(0, "+");
+                mpTreeWidgetPresentation->setMinimumHeight(30); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
             }
             break;
         }
@@ -1686,4 +1705,9 @@ void UBTeacherGuidePageZeroWidget::onActiveDocumentChanged()
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
     if (UBApplication::boardController->pageFromSceneIndex(activeSceneIndex) == 0)
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
+}
+
+void UBTeacherGuidePageZeroWidget::onScrollAreaRangeChanged(int min, int max) // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
+{
+    mpScrollArea->verticalScrollBar()->setValue(max);
 }
