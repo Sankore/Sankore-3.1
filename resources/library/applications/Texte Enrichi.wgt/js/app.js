@@ -40,7 +40,8 @@
                     defaultText: this.$container.html(),
                     locale: 'en_GB',
                     onLinkClick: function (a) {},
-                    onInit: function () {}
+                    onInit: function () {},
+                    onBlur: function () {}
                 }, options);
             };
 
@@ -468,18 +469,16 @@
                         if (editor.selection.selectedRange && editor.selection.selectedRange.commonAncestorContainer) {
                             var $container = $(editor.selection.selectedRange.commonAncestorContainer),
                                 $tds = null;
-
-                            if ($container.is('tr')) { // cas où on sélectionne plusieurs td en ligne
+                            
+                            if ($container.is('tr') || $container.is('tbody')) { // cas où on sélectionne plusieurs td en ligne
                                 var $firstTd = $(editor.selection.selectedRange.startContainer),
                                     $lastTd = $(editor.selection.selectedRange.endContainer);
                                 
-                                //console.log($container.prop('tagName'));
-                                
-                                if ($firstTd.is('td')) {
+                                if (!$firstTd.is('td')) {
                                     $firstTd = $firstTd.closest('td');
                                 }
                                 
-                                if ($lastTd.is('td')) {
+                                if (!$lastTd.is('td')) {
                                     $lastTd = $lastTd.closest('td');
                                 }
                                 
@@ -514,7 +513,7 @@
              * Event handler for TinyMCE editor 'blur' event
              */
             app.RTEditor.prototype.onTinyBlur = function (e) {
-
+                this.options.onBlur.call(this);
             };
 
             /**
@@ -569,6 +568,10 @@
                     this.empty = false;
                 }
             };
+            
+            options.onBlur = function () {
+                window.sankore.setPreference('content', this.getContent());
+            };
 
             options.locale = window.sankore.locale();
         } else {
@@ -582,11 +585,5 @@
         }
 
         window.rteditor = new app.RTEditor('ubwidget', widget, options);
-
-        $(window).on('beforeunload', function (e) {
-            if (window.sankore) {
-                window.sankore.setPreference('content', window.rteditor.getContent());
-            }
-        });
     });
 }(jQuery));
