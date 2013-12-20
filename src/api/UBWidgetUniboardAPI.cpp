@@ -353,6 +353,13 @@ void UBWidgetUniboardAPI::loadUrl(const QString& url)
     UBApplication::loadUrl(url);
 }
 
+bool UBWidgetUniboardAPI::currentToolIsSelector()
+{
+    return ((UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector);
+}
+
+
+
 
 QString UBWidgetUniboardAPI::pageThumbnail(const int pageNumber)
 {

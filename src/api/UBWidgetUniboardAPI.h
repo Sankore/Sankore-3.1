@@ -222,6 +222,11 @@ class UBWidgetUniboardAPI : public QObject
          */
         void loadUrl(const QString& url);
 
+        /**
+         *  check if current Tool is selector
+         */
+        bool currentToolIsSelector();
+
 
         /**
          * Center the scene coordinates within the display port
