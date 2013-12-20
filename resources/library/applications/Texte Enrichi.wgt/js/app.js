@@ -324,13 +324,16 @@
 
                 if (this.widget) {
                     this.widget.onfocus = function () {
-                        self.show();
+			if (window && window.sankore && window.sankore.currentToolIsSelector())
+			{
+				self.show();
 
-                        if (self.empty) {
-                            self.setContent('');
-                        }
+				if (self.empty) {
+				    self.setContent('');
+				}
 
-                        $('body').removeClass('view');
+				$('body').removeClass('view');
+			}
                     };
 
                     this.widget.onblur = function () {
