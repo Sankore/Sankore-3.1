@@ -7,13 +7,14 @@
     app.RTEditor = function (id, widget, options) {
 
         var allowedDroppedContentTyped = [
-            'image/png', 'image/jpg', 'image/jpeg', 'image/gif'
+            'image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/svg+xml', 'image/tiff'
         ];
 
         this.id = id;
         this.empty = true;
         this.widget = widget;
         this.dark = false;
+        this.backgroundColor = 'transparent';
         this.options = {};
         this.$container = null;
 
@@ -328,6 +329,8 @@
                         if (self.empty) {
                             self.setContent('');
                         }
+
+                        $('body').removeClass('view');
                     };
 
                     this.widget.onblur = function () {
@@ -340,6 +343,8 @@
                         }
 
                         self.hide();
+
+                        $('body').addClass('view');
                     };
 
                     this.widget.ondrop = function (url, contentType) {
@@ -383,8 +388,10 @@
              */
             app.RTEditor.prototype.setBackgroundColor = function (color) {
                 if ((color === '#FFFFFF' && !this.dark) || (color === '#000000' && this.dark)) {
-                    color = '';
+                    color = 'transparent';
                 }
+                
+                this.backgroundColor = color;
 
                 $(this.tinymce.getDoc()).find('body').css('background-color', color);
                 this.$container.css('background-color', color);
@@ -399,11 +406,15 @@
                 var $docBody = $(this.tinymce.getDoc()).find('body'),
                     darkClassname = 'dark',
                     cleanColorSpan = function ($body, color) {
-                        $body.find('span[style]').each(function () {
-                            var $span = $(this);
+                        $body.find('span[style],td[style]').each(function () {
+                            var $el = $(this);
 
-                            if ($span.css('color') === color) {
-                                $span.css('color', 'inherit');
+                            if ($el.is('span') && $el.css('color') === color) {
+                                $el.css('color', 'inherit');
+                            }
+
+                            if ($el.is('td') && $el.css('background-color') === color) {
+                                $el.css('background-color', 'inherit');
                             }
                         });
                     };
@@ -468,32 +479,26 @@
                         var set = false;
                         if (editor.selection.selectedRange && editor.selection.selectedRange.commonAncestorContainer) {
                             var $container = $(editor.selection.selectedRange.commonAncestorContainer),
-                                $tds = null;
-                            
-                            if ($container.is('tr') || $container.is('tbody')) { // cas où on sélectionne plusieurs td en ligne
-                                var $firstTd = $(editor.selection.selectedRange.startContainer),
-                                    $lastTd = $(editor.selection.selectedRange.endContainer);
-                                
-                                if (!$firstTd.is('td')) {
-                                    $firstTd = $firstTd.closest('td');
+                                tds = [],
+                                all = $container.find('*'),
+                                i;
+
+                            for (i = 0; i < all.length; i++) {
+                                if (editor.selection.getSel().containsNode(all[i], true) && $(all[i]).is('td')) {
+                                    tds.push(all[i]);
                                 }
-                                
-                                if (!$lastTd.is('td')) {
-                                    $lastTd = $lastTd.closest('td');
-                                }
-                                
-                                $tds = $firstTd
-                                    .nextUntil($lastTd)
-                                    .andSelf()
-                                    .add($lastTd);
-                            } else if ($container.is('td')) { // cas où sélectionne simplement un td
-                                $tds = $container;
-                            } else if ($container.closest('td').length) { // cas où on sélectionne des élements contenus dans un td
-                                $tds = $container.closest('td');
                             }
 
-                            if (null !== $tds) {
-                                $tds.css('background-color', value);
+                            if ($container.is('td')) {
+                                tds.push($container.get('0'));
+                            }
+
+                            if ($container.closest('td').length) {
+                                tds.push($container.closest('td').get(0));
+                            }
+
+                            if (tds.length > 0) {
+                                $(tds).css('background-color', value);
                                 set = true;
                             }
                         }
@@ -567,10 +572,18 @@
                 if (text.trim().length !== 0) {
                     this.empty = false;
                 }
+
+                if ('true' === window.sankore.preference('dark', 'false')) {
+                    this.setDarkBackground(true);
+                }
+                
+                this.setBackgroundColor(window.sankore.preference('background'));
             };
-            
+
             options.onBlur = function () {
                 window.sankore.setPreference('content', this.getContent());
+                window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
+                window.sankore.setPreference('background', this.backgroundColor);
             };
 
             options.locale = window.sankore.locale();
