@@ -110,7 +110,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
 
         QPixmap snapshot();
         void setSnapshot(const QPixmap& pix);
-        QPixmap takeSnapshot();
+        void takeSnapshot();
 
         virtual UBItem* deepCopy() const = 0;
         virtual UBGraphicsScene* scene();

@@ -26,7 +26,6 @@
 
 #include <QtCore>
 #include "UBExportAdaptor.h"
-#include "domain/UBGraphicsScene.h"
 
 class UBDocumentProxy;
 
@@ -51,9 +50,6 @@ class UBExportFullPDF : public UBExportAdaptor
     private:
         float mScaleFactor;
         bool mHasPDFBackgrounds;
-
-        //issue 1483 - NNE - 20131031
-        QVector<UBGraphicsScene*> allScenes;
 };
 
 #endif /* UBExportFullPDF_H_ */
