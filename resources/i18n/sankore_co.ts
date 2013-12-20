@@ -2552,6 +2552,10 @@ Vulete lascià corre sti sbaglii per stu servore ?</translation>
         <source>Insert file title here...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>

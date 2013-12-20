@@ -2528,6 +2528,10 @@ Do you want to ignore these errors for this host?</source>
         <source>Insert file title here...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>

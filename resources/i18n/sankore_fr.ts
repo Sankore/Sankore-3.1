@@ -2547,6 +2547,10 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
         <source>Insert file title here...</source>
         <translation>Renseigner le titre du fichier ici ...</translation>
     </message>
+    <message>
+        <source>Select File</source>
+        <translation>Sélectionner un fichier</translation>
+    </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>

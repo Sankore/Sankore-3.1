@@ -799,10 +799,11 @@ void UBTGFileWidget::initializeWithDom(QDomElement element)
 
 void UBTGFileWidget::OnClickBtnSelectFile()
 {
+
     // Ouvrir une dialog de selection de fichier :
-    QFileDialog fileDialog;
-    fileDialog.setFileMode(QFileDialog::ExistingFile);
-    if (fileDialog.exec() == QDialog::Accepted)
+    QString filename = QFileDialog::getOpenFileName(UBApplication::mainWindow, tr("Select File"), QString(), "*.*", NULL);
+
+    if (filename.length() > 0)
     {
         QString documentPath = UBApplication::boardController->selectedDocument()->persistencePath();
 
@@ -817,7 +818,7 @@ void UBTGFileWidget::OnClickBtnSelectFile()
             parentDir.rmpath(parentDir.absolutePath()); // supprimer le repertoire
         }
 
-        QFileInfo fileInfo(fileDialog.selectedFiles().at(0));
+        QFileInfo fileInfo(filename);
         if (fileInfo.exists())
         {
             mpNomFichier->setText(fileInfo.fileName());

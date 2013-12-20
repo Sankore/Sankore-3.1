@@ -2536,6 +2536,10 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
         <source>Insert file title here...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBTGMediaWidget</name>
