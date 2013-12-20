@@ -57,6 +57,7 @@
                         statusbar: false,
                         menubar: false,
                         skin: 'rteditor',
+                        target_list: false,
                         plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor'],
                         toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | undo redo',
                         toolbar2: 'fontselect fontsizeselect  | alignleft aligncenter alignright alignjustify | customtable'
@@ -321,19 +322,22 @@
                 $(window).bind('resize', function () {
                     self.refreshSize();
                 });
+                
+                $('#' + this.id).on('click', 'a', function (e) {
+                    self.options.onLinkClick.call(self, e);    
+                });
 
                 if (this.widget) {
                     this.widget.onfocus = function () {
-			if (window && window.sankore && window.sankore.currentToolIsSelector())
-			{
-				self.show();
+                        if (window && window.sankore && window.sankore.currentToolIsSelector()) {
+                            self.show();
 
-				if (self.empty) {
-				    self.setContent('');
-				}
+                            if (self.empty) {
+                                self.setContent('');
+                            }
 
-				$('body').removeClass('view');
-			}
+                            $('body').removeClass('view');
+                        }
                     };
 
                     this.widget.onblur = function () {
@@ -393,7 +397,7 @@
                 if ((color === '#FFFFFF' && !this.dark) || (color === '#000000' && this.dark)) {
                     color = 'transparent';
                 }
-                
+
                 this.backgroundColor = color;
 
                 $(this.tinymce.getDoc()).find('body').css('background-color', color);
@@ -579,7 +583,7 @@
                 if ('true' === window.sankore.preference('dark', 'false')) {
                     this.setDarkBackground(true);
                 }
-                
+
                 this.setBackgroundColor(window.sankore.preference('background'));
             };
 
