@@ -58,6 +58,8 @@
                         menubar: false,
                         skin: 'rteditor',
                         target_list: false,
+                        relative_urls: true,
+                        convert_urls: false,
                         plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor'],
                         toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | undo redo',
                         toolbar2: 'fontselect fontsizeselect  | alignleft aligncenter alignright alignjustify | customtable'
@@ -519,6 +521,15 @@
                         editor.nodeChanged();
                     }
                 });
+                
+                var confirm = this.tinymce.windowManager.confirm;
+                this.tinymce.windowManager.confirm = function (message, callback, scope) {
+                    if (message.indexOf('external link') !== -1) {
+                        callback.call(scope || this, true);
+                    } else {
+                        confirm.call(this, message, callback, scope);
+                    }
+                };
             };
 
             /**
@@ -542,9 +553,9 @@
             app.RTEditor.prototype.onTinyClick = function (e) {
                 var clicked = $(e.target);
 
-                if (clicked.is('a')) {
+                if (clicked.closest('a').length) {
                     e.preventDefault();
-                    this.options.onLinkClick.call(this, e.target);
+                    this.options.onLinkClick.call(this, clicked.closest('a').get(0));
 
                     return false;
                 }
