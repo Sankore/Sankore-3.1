@@ -12,14 +12,14 @@ class UBShape : public UBItem, public UBGraphicsItem
 public:
     UBShape();
 
-    UBFillingPropertie* fillingPropertie() const
+    UBFillingProperty* fillingProperty() const
     {
-        return mFillingPropertie;
+        return mFillingProperty;
     }
 
     UBStrokeProperty* strockeProperty() const
     {
-        return mStrockePropertie;
+        return mStrockeProperty;
     }
 
     bool hasFillingProperty() const
