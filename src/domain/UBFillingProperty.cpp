@@ -10,5 +10,19 @@ UBFillingProperty::UBFillingProperty():
 
 void UBFillingProperty::fill(QPainter *painter)
 {
+    QBrush brush = painter->brush();
+    brush.setStyle(mBrushStyle);
 
+    switch (mBrushStyle)
+    {
+    case Qt::SolidPattern:
+    {
+        brush.setColor(mFirstColor);
+        break;
+    }
+    default:
+        break;
+    }
+
+    painter->setBrush(brush);
 }

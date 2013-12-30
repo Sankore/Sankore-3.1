@@ -1478,6 +1478,8 @@ UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
     ellipse->setRect(100, 100, 300, 200);
     ellipse->fillingProperty()->setFirstColor(Qt::red);
     ellipse->fillingProperty()->setBrushStyle(Qt::SolidPattern);
+    ellipse->strokeProperty()->setColor(Qt::blue);
+    ellipse->strokeProperty()->setThickness(10);
     scene()->addItem(ellipse);
 
   // We don't want a double click, we want two clicks

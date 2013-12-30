@@ -33,10 +33,25 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
 {
     mFillingProperty = new UBFillingProperty();
     mStrokeProperty = new UBStrokeProperty();
+
+/*
+    setDelegate(new UBGraphicsItemDelegate(this, 0));
+    Delegate()->init();
+
+    //Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
+    Delegate()->setFlippable(false);
+    Delegate()->setRotatable(true);
+    //Delegate()->setCanTrigAnAction(true);
+*/
 }
 
 UBGraphicsEllipseItem::~UBGraphicsEllipseItem()
 {
+    delete mFillingProperty;
+    delete mStrokeProperty;
+
+    mFillingProperty = NULL;
+    mStrokeProperty = NULL;
 }
 
 UBItem *UBGraphicsEllipseItem::deepCopy() const
@@ -71,4 +86,21 @@ void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
                 cp->Delegate()->setAction(Delegate()->action());
         }
     }
+}
+
+void UBGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    /*
+    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
+    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
+    styleOption.state &= ~QStyle::State_Selected;
+    styleOption.state &= ~QStyle::State_HasFocus;
+*/
+
+    fillingProperty()->fill(painter);
+    strokeProperty()->stroke(painter);
+
+    //QGraphicsEllipseItem::paint(painter, option, widget);
+
+    painter->drawEllipse(rect());
 }

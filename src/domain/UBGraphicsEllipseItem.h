@@ -42,6 +42,12 @@ public:
     virtual UBItem* deepCopy() const;
 
     virtual void copyItemParameters(UBItem *copy) const;
+
+    // UBItem interface
+
+    // QGraphicsItem interface
+public:
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H
