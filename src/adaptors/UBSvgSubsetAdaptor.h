@@ -52,6 +52,7 @@ class IDataStorage;
 class UBGraphicsGroupContainerItem;
 class UBGraphicsItemAction;
 class UBGraphicsStrokesGroup;
+class UBGraphicsEllipseItem;
 
 class UBSvgSubsetAdaptor
 {
@@ -152,6 +153,8 @@ class UBSvgSubsetAdaptor
                 UBGraphicsTriangle* triangleFromSvg();
 
                 UBGraphicsCache* cacheFromSvg();
+
+                UBGraphicsEllipseItem* shapeEllipseFromSvg();
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
@@ -257,6 +260,7 @@ class UBSvgSubsetAdaptor
                 void cacheToSvg(UBGraphicsCache* item);
                 void triangleToSvg(UBGraphicsTriangle *item);
                 void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
+                void shapeEllipseToSvg(UBGraphicsEllipseItem *item);
                 void writeSvgElement();
 
         private:

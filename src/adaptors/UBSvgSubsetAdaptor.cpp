@@ -39,6 +39,7 @@
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsGroupContainerItemDelegate.h"
+#include "domain/ubgraphicsellipseitem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -1432,6 +1433,13 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             {
                 persistGroupToDom(groupItem, &groupRoot, &groupDomDocument,groupItem->Delegate()->action());
                 continue;
+            }
+
+            // Is the item a Shape Ellipse ?
+            UBGraphicsEllipseItem * shapeEllipse = qgraphicsitem_cast<UBGraphicsEllipseItem *>(item);
+            if (shapeEllipse && shapeEllipse->isVisible())
+            {
+                shapeEllipseToSvg(shapeEllipse);
             }
         }
 
@@ -3382,6 +3390,21 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(UBGraphicsCache* item)
         mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(ubItem->uuid()));
     }
 
+    mXmlWriter.writeEndElement();
+}
+
+UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg()
+{
+    throw new std::exception("Not implemented : UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg");
+    return NULL;
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseItem *item)
+{
+    mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri, "ellipse");
+    mXmlWriter.writeAttribute("cx", "100"); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
+    mXmlWriter.writeAttribute("y", "200");
+    //...
     mXmlWriter.writeEndElement();
 }
 
