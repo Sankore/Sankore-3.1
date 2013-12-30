@@ -28,10 +28,19 @@
 #include "UBItem.h"
 #include "UBShape.h"
 
-class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape, public UBItem, public UBGraphicsItem
+class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape
 {
 public:
     UBGraphicsEllipseItem();
+
+    virtual int type() const
+    {
+        return Type;
+    }
+
+    virtual UBItem* deepCopy() const;
+
+    virtual void copyItemParameters(UBItem *copy) const;
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H

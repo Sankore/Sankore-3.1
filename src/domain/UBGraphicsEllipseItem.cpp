@@ -22,7 +22,42 @@
 
 
 #include "ubgraphicsellipseitem.h"
+#include "customWidgets/UBGraphicsItemAction.h"
 
 UBGraphicsEllipseItem::UBGraphicsEllipseItem()
 {
+}
+
+UBItem *UBGraphicsEllipseItem::deepCopy() const
+{
+    UBGraphicsEllipseItem* copy = new UBGraphicsEllipseItem();
+
+    copyItemParameters(copy);
+
+    return copy;
+}
+
+
+void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
+{
+    UBGraphicsEllipseItem *cp = dynamic_cast<UBGraphicsEllipseItem*>(copy);
+    if (cp)
+    {
+        cp->setPos(this->pos());
+        cp->setTransform(this->transform());
+        cp->setFlag(QGraphicsItem::ItemIsMovable, true);
+        cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
+        cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
+        cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+
+        if(Delegate()->action()){
+            if(Delegate()->action()->linkType() == eLinkToAudio){
+                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
+                cp->Delegate()->setAction(action);
+            }
+            else
+                cp->Delegate()->setAction(Delegate()->action());
+        }
+    }
 }
