@@ -3401,9 +3401,11 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
 
 void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseItem *item)
 {
-    mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri, "ellipse");
-    mXmlWriter.writeAttribute("cx", "100"); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
-    mXmlWriter.writeAttribute("y", "200");
+    mXmlWriter.writeStartElement("ellipse");
+    mXmlWriter.writeAttribute("cx", QString("%1").arg(item->rect().left())); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
+    mXmlWriter.writeAttribute("cy", QString("%1").arg(item->rect().top()));
+    mXmlWriter.writeAttribute("rx", "60");
+    mXmlWriter.writeAttribute("ry", "50");
     //...
     mXmlWriter.writeEndElement();
 }

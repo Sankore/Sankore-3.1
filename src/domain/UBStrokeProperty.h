@@ -1,13 +1,13 @@
-#ifndef UBSTROCKEPROPERTY_H
-#define UBSTROCKEPROPERTY_H
+#ifndef UBSTROKEPROPERTY_H
+#define UBSTROKEPROPERTY_H
 
 #include <QColor>
 #include <QPainter>
 
-class UBStrockeProperty
+class UBStrokeProperty
 {
 public:
-    UBStrockeProperty();
+    UBStrokeProperty();
 
     unsigned int thickness() const
     {
@@ -47,4 +47,4 @@ private:
     Qt::PenStyle mPenStyle;
 };
 
-#endif // UBSTROCKEPROPERTY_H
+#endif // UBSTROKEPROPERTY_H

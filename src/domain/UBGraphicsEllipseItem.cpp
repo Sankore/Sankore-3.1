@@ -23,8 +23,19 @@
 
 #include "ubgraphicsellipseitem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
+#include "UBShape.h"
+#include "UBFillingProperty.h"
+#include "UBStrokeProperty.h"
 
-UBGraphicsEllipseItem::UBGraphicsEllipseItem()
+UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
+    : QGraphicsEllipseItem(parent)
+    , UBShape()
+{
+    mFillingProperty = new UBFillingProperty();
+    mStrokeProperty = new UBStrokeProperty();
+}
+
+UBGraphicsEllipseItem::~UBGraphicsEllipseItem()
 {
 }
 

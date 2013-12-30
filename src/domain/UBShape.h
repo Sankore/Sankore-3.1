@@ -17,9 +17,9 @@ public:
         return mFillingProperty;
     }
 
-    UBStrokeProperty* strockeProperty() const
+    UBStrokeProperty* strokeProperty() const
     {
-        return mStrockeProperty;
+        return mStrokeProperty;
     }
 
     bool hasFillingProperty() const
@@ -27,14 +27,14 @@ public:
         return mFillingProperty != NULL;
     }
 
-    bool hasStrockeProperty() const
+    bool hasStrokeProperty() const
     {
-        return mStrockeProperty != NULL;
+        return mStrokeProperty != NULL;
     }
 
-private:
+protected:
     UBFillingProperty *mFillingProperty;
-    UBStrokeProperty *mStrockeProperty;
+    UBStrokeProperty *mStrokeProperty;
 };
 
 #endif // UBSHAPE_H

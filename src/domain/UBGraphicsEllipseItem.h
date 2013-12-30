@@ -31,7 +31,8 @@
 class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape
 {
 public:
-    UBGraphicsEllipseItem();
+    UBGraphicsEllipseItem(QGraphicsItem* parent = 0);
+    virtual ~UBGraphicsEllipseItem();
 
     virtual int type() const
     {

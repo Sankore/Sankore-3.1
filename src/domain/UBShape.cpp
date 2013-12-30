@@ -2,7 +2,7 @@
 
 UBShape::UBShape():
     mFillingProperty(NULL),
-    mStrockeProperty(NULL)
+    mStrokeProperty(NULL)
 {
 
 }

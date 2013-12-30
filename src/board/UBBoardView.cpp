@@ -67,6 +67,7 @@
 #include "domain/UBGraphicsSvgItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsStrokesGroup.h"
+#include "domain/UBGraphicsEllipseItem.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -81,6 +82,9 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
+
+#include "domain/UBFillingProperty.h"
+#include "domain/UBStrokeProperty.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)
 : QGraphicsView (pParent)
@@ -1470,6 +1474,12 @@ UBBoardView::forcedTabletRelease ()
 void
 UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
 {
+    UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
+    ellipse->setRect(100, 100, 300, 200);
+    ellipse->fillingProperty()->setFirstColor(Qt::red);
+    ellipse->fillingProperty()->setBrushStyle(Qt::SolidPattern);
+    scene()->addItem(ellipse);
+
   // We don't want a double click, we want two clicks
   mousePressEvent (event);
 }
