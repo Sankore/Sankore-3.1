@@ -36,6 +36,9 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     mFillingProperty = new UBFillingProperty();
     mStrokeProperty = new UBStrokeProperty();
 
+    //By default, an ellipse isn't a circle
+    mIsCircle = false;
+
     setDelegate(new UBGraphicsItemDelegate(this, 0));
     Delegate()->init();
     Delegate()->setFlippable(false);
@@ -155,4 +158,19 @@ QVariant UBGraphicsEllipseItem::itemChange(GraphicsItemChange change, const QVar
         newValue = Delegate()->itemChange(change, value);
 
     return QGraphicsEllipseItem::itemChange(change, newValue);
+}
+
+void UBGraphicsEllipseItem::setRect(const QRectF &rect)
+{
+    QRectF r(rect);
+
+    if(mIsCircle){
+        if(r.width() < r.height()){
+            r.setHeight(r.width());
+        }else{
+            r.setWidth(r.height());
+        }
+    }
+
+    QGraphicsEllipseItem::setRect(r);
 }

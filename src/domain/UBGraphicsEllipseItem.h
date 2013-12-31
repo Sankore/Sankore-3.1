@@ -45,6 +45,16 @@ public:
     QPointF center() const;
     qreal radius(Qt::Orientation orientation) const;
 
+    void setAsCircle(){
+        mIsCircle = true;
+    }
+
+    void setAsEllipse(){
+        mIsCircle = false;
+    }
+
+    void setRect(const QRectF &rect);
+
     // UBItem interface
     void setUuid(const QUuid &pUuid);
 
@@ -55,6 +65,9 @@ public:
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+
+private:
+    bool mIsCircle;
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H

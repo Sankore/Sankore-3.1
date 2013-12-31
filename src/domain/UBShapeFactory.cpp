@@ -52,9 +52,19 @@ void UBShapeFactory::createEllipse(bool create)
     if(create){
         mIsRegularShape = true;
         mIsCreating = true;
-        mCurrentShape = new UBGraphicsEllipseItem;
 
         mCurrentShape->fillingProperty()->setFirstColor(Qt::red);
+    }
+}
+
+void UBShapeFactory::createCircle(bool create)
+{
+    if(create){
+        mIsRegularShape = true;
+        mIsCreating = true;
+        UBGraphicsEllipseItem* ellipse = new UBGraphicsEllipseItem;
+
+        ellipse->setAsCircle();
     }
 }
 
@@ -87,7 +97,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
             QPointF cursorPosition = mBoardView->mapToScene(event->pos());
 
-            ellipse->setRect(cursorPosition.x(), cursorPosition.y(), 0, 0);
+            ellipse->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
 
             mBoardView->scene()->addItem(ellipse);
         }else{
