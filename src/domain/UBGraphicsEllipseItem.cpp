@@ -21,7 +21,7 @@
 
 
 
-#include "ubgraphicsellipseitem.h"
+#include "UBGraphicsEllipseItem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
 #include "UBShape.h"
 #include "UBFillingProperty.h"
@@ -34,21 +34,17 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     mFillingProperty = new UBFillingProperty();
     mStrokeProperty = new UBStrokeProperty();
 
-
     setDelegate(new UBGraphicsItemDelegate(this, 0));
     Delegate()->init();
     //Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(true);
 
     setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
-
-
 }
 
 UBGraphicsEllipseItem::~UBGraphicsEllipseItem()
@@ -75,7 +71,6 @@ UBItem *UBGraphicsEllipseItem::deepCopy() const
 
     return copy;
 }
-
 
 void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
 {

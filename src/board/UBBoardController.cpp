@@ -163,6 +163,9 @@ void UBBoardController::init()
     connect(UBApplication::mainWindow->actionGroupItems, SIGNAL(triggered()), this, SLOT(groupButtonClicked()));
 
     undoRedoStateChange(true);
+
+    //EV-7 - NNE - 20131231
+    mShapeFactory.init();
 }
 
 
@@ -411,6 +414,9 @@ void UBBoardController::connectToolbar()
     connect(mMainWindow->actionSleep, SIGNAL(triggered()), this, SLOT(blackout()));
     connect(mMainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(showKeyboard(bool)));
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
+
+    //EV-7 - NNE - 20131230
+    connect(mMainWindow->actionEllipse, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createEllipse(bool)));
 }
 
 void UBBoardController::startScript()

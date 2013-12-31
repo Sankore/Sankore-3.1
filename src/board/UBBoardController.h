@@ -29,6 +29,7 @@
 #include <QObject>
 #include "document/UBDocumentContainer.h"
 #include "UBFeaturesController.h"
+#include "domain/UBShapeFactory.h"
 
 class UBMainWindow;
 class UBApplication;
@@ -322,6 +323,9 @@ class UBBoardController : public UBDocumentContainer
         int mMovingSceneIndex;
         QString mActionGroupText;
         QString mActionUngroupText;
+
+        //EV-7 - NNE - 20131230
+        UBShapeFactory mShapeFactory;
 
     private slots:
         void stylusToolDoubleClicked(int tool);

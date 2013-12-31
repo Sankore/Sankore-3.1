@@ -1014,6 +1014,9 @@ void UBBoardView::longPressEvent()
 
 void UBBoardView::mousePressEvent (QMouseEvent *event)
 {
+    //EV-7 - NNE - 20131231
+    emit mousePress(event);
+
     if (!bIsControl && !bIsDesktop) {
         event->ignore();
         return;
@@ -1158,6 +1161,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 void
 UBBoardView::mouseMoveEvent (QMouseEvent *event)
 {
+
+    //EV-7 - NNE - 20131231
+    emit mouseMove(event);
+
   if(!mIsDragInProgress && ((mapToScene(event->pos()) - mLastPressedMousePos).manhattanLength() < QApplication::startDragDistance()))
   {
       return;
@@ -1278,6 +1285,9 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
 void
 UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 {
+    //EV-7 - NNE - 20131231
+    emit mouseRelease(event);
+
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController ()->stylusTool ();
 
   setToolCursor (currentTool);
@@ -1474,6 +1484,7 @@ UBBoardView::forcedTabletRelease ()
 void
 UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
 {
+    /*
     UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
     ellipse->setRect(100, 100, 300, 200);
     ellipse->fillingProperty()->setFirstColor(Qt::red);
@@ -1481,6 +1492,7 @@ UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
     ellipse->strokeProperty()->setColor(Qt::blue);
     ellipse->strokeProperty()->setThickness(10);
     scene()->addItem(ellipse);
+    */
 
   // We don't want a double click, we want two clicks
   mousePressEvent (event);

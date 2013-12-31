@@ -25,7 +25,6 @@
 #define UBGRAPHICSELLIPSEITEM_H
 
 #include <QGraphicsEllipseItem>
-#include "UBItem.h"
 #include "UBShape.h"
 
 class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape
@@ -45,10 +44,6 @@ public:
 
     QPointF center() const;
     qreal radius(Qt::Orientation orientation) const;
-
-    // UBItem interface
-
-    // QGraphicsItem interface
 public:
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 protected:

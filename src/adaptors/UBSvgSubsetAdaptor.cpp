@@ -39,7 +39,7 @@
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsGroupContainerItemDelegate.h"
-#include "domain/ubgraphicsellipseitem.h"
+#include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -78,6 +78,9 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
+
+#include <exception>
+
 //#include "qtlogger.h"
 
 const QString UBSvgSubsetAdaptor::nsSvg = "http://www.w3.org/2000/svg";
@@ -3395,7 +3398,6 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(UBGraphicsCache* item)
 
 UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg()
 {
-    throw new std::exception("Not implemented : UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg");
     return NULL;
 }
 

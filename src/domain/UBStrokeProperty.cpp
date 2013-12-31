@@ -1,8 +1,8 @@
 #include "UBStrokeProperty.h"
 
 UBStrokeProperty::UBStrokeProperty():
-    mColor(0, 0, 0, 0),
-    mThickness(0),
+    mColor(0, 0, 0, 255),
+    mThickness(1),
     mPenStyle(Qt::SolidLine)
 {
 

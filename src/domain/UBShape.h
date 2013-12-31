@@ -24,7 +24,7 @@ public:
 
     bool hasFillingProperty() const
     {
-        return mFillingProperty != NULL;
+        return mFillingProperty != 0;
     }
 
     bool hasStrokeProperty() const
