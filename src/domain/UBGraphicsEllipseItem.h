@@ -43,11 +43,17 @@ public:
 
     virtual void copyItemParameters(UBItem *copy) const;
 
+    QPointF center() const;
+    qreal radius(Qt::Orientation orientation) const;
+
     // UBItem interface
 
     // QGraphicsItem interface
 public:
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+protected:
+    void setUuid(const QUuid &pUuid);
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H
