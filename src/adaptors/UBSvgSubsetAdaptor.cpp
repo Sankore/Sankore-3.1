@@ -3452,6 +3452,17 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
     }
     ellipse->fillingProperty()->setFirstColor(brushColor);
 
+    // Fill opacity (transparency)
+    QStringRef svgOpacity = mXmlReader.attributes().value("fill-opacity");
+    qreal opacity = 1.0; // opaque
+    if (!svgOpacity.isNull())
+    {
+        opacity = svgOpacity.toString().toFloat();
+    }
+    QColor color = ellipse->fillingProperty()->firstColor();
+    color.setAlphaF(opacity);
+    ellipse->fillingProperty()->setFirstColor(color);
+
     // Transform matrix
     QStringRef svgTransform = mXmlReader.attributes().value("transform");
     QMatrix itemMatrix;
@@ -3478,6 +3489,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseI
     mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->thickness()));
         // Fill :
     mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->firstColor().name()));
+    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->firstColor().alphaF()));
 
     mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
 
