@@ -19,7 +19,7 @@ public:
 public slots:
     void createEllipse(bool create);
 
-    void changeFillColor(UBShape *shape, const QColor &newColor);
+    void changeFillColor(bool ok);
 
     void onMouseMove(QMouseEvent *event);
     void onMousePress(QMouseEvent *event);

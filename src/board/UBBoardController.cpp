@@ -417,6 +417,7 @@ void UBBoardController::connectToolbar()
 
     //EV-7 - NNE - 20131230
     connect(mMainWindow->actionEllipse, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createEllipse(bool)));
+    connect(mMainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(changeFillColor(bool)));
 }
 
 void UBBoardController::startScript()

@@ -17,9 +17,24 @@ UBShapeFactory::UBShapeFactory():
 
 }
 
-void UBShapeFactory::changeFillColor(UBShape *shape, const QColor &newColor)
+
+void UBShapeFactory::changeFillColor(bool ok)
 {
-    shape->fillingProperty()->setFirstColor(newColor);
+    if(ok){
+        UBGraphicsScene* scene = mBoardView->scene();
+
+        QList<QGraphicsItem*> items = scene->selectedItems();
+
+        for(int i = 0; i < items.size(); i++){
+            UBGraphicsEllipseItem *ellipse = dynamic_cast<UBGraphicsEllipseItem*>(items.at(i));
+
+            if(ellipse){
+                ellipse->fillingProperty()->setFirstColor(QColor(128, 255, 100, 128));
+                ellipse->update();
+            }
+
+        }
+    }
 }
 
 void UBShapeFactory::init()

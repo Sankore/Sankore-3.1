@@ -59,6 +59,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionCapture;
     
     actions << UBApplication::mainWindow->actionEllipse;
+    actions << UBApplication::mainWindow->actionChangeFillingColor;
 
     if(UBPlatformUtils::hasVirtualKeyboard())
         actions << UBApplication::mainWindow->actionVirtualKeyboard;
