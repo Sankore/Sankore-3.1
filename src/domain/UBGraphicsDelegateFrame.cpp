@@ -874,7 +874,7 @@ void UBGraphicsDelegateFrame::positionHandles()
     QVariant vLocked = delegated()->data(UBGraphicsItemData::ItemLocked);
     bool isLocked = (vLocked.isValid() && vLocked.toBool());
     bool bShowHorizontalResizers = ResizingHorizontally == mOperationMode;
-    bool bShowVerticalResizers   = ResizingHorizontally != mOperationMode;
+    bool bShowVerticalResizers   = ResizingHorizontally != mOperationMode && NoResizing != mOperationMode; // EV-7 - ALTI/AOU - 20131231 : new NoResizing possibility
     bool bShowAllResizers        = Resizing == mOperationMode || Scaling == mOperationMode ;
 
     mBottomRightResizeGripSvgItem->setVisible(!isLocked && bShowAllResizers);

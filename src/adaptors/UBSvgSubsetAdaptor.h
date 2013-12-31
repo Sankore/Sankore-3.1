@@ -154,7 +154,7 @@ class UBSvgSubsetAdaptor
 
                 UBGraphicsCache* cacheFromSvg();
 
-                UBGraphicsEllipseItem* shapeEllipseFromSvg();
+                UBGraphicsEllipseItem* shapeEllipseFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
@@ -260,7 +260,7 @@ class UBSvgSubsetAdaptor
                 void cacheToSvg(UBGraphicsCache* item);
                 void triangleToSvg(UBGraphicsTriangle *item);
                 void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
-                void shapeEllipseToSvg(UBGraphicsEllipseItem *item);
+                void shapeEllipseToSvg(UBGraphicsEllipseItem *item); // EV-7 - ALTI/AOU - 20131231
                 void writeSvgElement();
 
         private:

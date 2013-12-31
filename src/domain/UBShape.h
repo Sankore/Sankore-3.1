@@ -3,9 +3,9 @@
 
 #include "UBItem.h"
 #include "core/UB.h"
+#include "UBFillingProperty.h"
+#include "UBStrokeProperty.h"
 
-class UBFillingProperty;
-class UBStrokeProperty;
 
 class UBShape : public UBItem, public UBGraphicsItem
 {

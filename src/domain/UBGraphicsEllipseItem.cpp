@@ -26,19 +26,22 @@
 #include "UBShape.h"
 #include "UBFillingProperty.h"
 #include "UBStrokeProperty.h"
+#include "UBGraphicsDelegateFrame.h"
 
 UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     : QGraphicsEllipseItem(parent)
     , UBShape()
 {
+    // Ellipse has Stroke and Fill capabilities :
     mFillingProperty = new UBFillingProperty();
     mStrokeProperty = new UBStrokeProperty();
 
     setDelegate(new UBGraphicsItemDelegate(this, 0));
     Delegate()->init();
-    //Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
+    Delegate()->setCanTrigAnAction(false);
+    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
@@ -66,8 +69,13 @@ UBItem *UBGraphicsEllipseItem::deepCopy() const
 {
     UBGraphicsEllipseItem* copy = new UBGraphicsEllipseItem();
 
+    if (fillingProperty())
+        copy->mFillingProperty = new UBFillingProperty(*fillingProperty());
+
+    if (strokeProperty())
+        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+
     copyItemParameters(copy);
-    // TODO
 
     return copy;
 }
@@ -78,6 +86,7 @@ void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
     if (cp)
     {
         cp->setPos(this->pos());
+        cp->setRect(this->rect());
         cp->setTransform(this->transform());
         cp->setFlag(QGraphicsItem::ItemIsMovable, true);
         cp->setFlag(QGraphicsItem::ItemIsSelectable, true);

@@ -8,6 +8,14 @@ UBStrokeProperty::UBStrokeProperty():
 
 }
 
+UBStrokeProperty::UBStrokeProperty(const UBStrokeProperty & source)
+    : mColor(source.mColor)
+    , mThickness(source.mThickness)
+    , mPenStyle(source.mPenStyle)
+{
+
+}
+
 void UBStrokeProperty::stroke(QPainter *painter)
 {
     QPen pen = painter->pen();

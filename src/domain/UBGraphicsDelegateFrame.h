@@ -56,7 +56,7 @@ class UBGraphicsDelegateFrame: public QGraphicsRectItem, public QObject
 
                 virtual void setAntiScale(qreal pAntiScale);
 
-        enum OperationMode {Scaling, Resizing, ResizingHorizontally};
+        enum OperationMode {NoResizing = -1, Scaling, Resizing, ResizingHorizontally}; // EV-7 - ALTI/AOU - 20131231 : add NoResizing to enum.
         void setOperationMode(OperationMode pMode) {mOperationMode = pMode;}
         bool isResizing(){return mResizing;}
         void moveLinkedItems(QLineF movingVector, bool bLinked = false);

@@ -1484,16 +1484,6 @@ UBBoardView::forcedTabletRelease ()
 void
 UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
 {
-    /*
-    UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
-    ellipse->setRect(100, 100, 300, 200);
-    ellipse->fillingProperty()->setFirstColor(Qt::red);
-    ellipse->fillingProperty()->setBrushStyle(Qt::SolidPattern);
-    ellipse->strokeProperty()->setColor(Qt::blue);
-    ellipse->strokeProperty()->setThickness(10);
-    scene()->addItem(ellipse);
-    */
-
   // We don't want a double click, we want two clicks
   mousePressEvent (event);
 }

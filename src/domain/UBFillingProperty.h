@@ -8,6 +8,7 @@ class UBFillingProperty
 {
 public:
     UBFillingProperty();
+    UBFillingProperty(const UBFillingProperty & source);
 
     QColor firstColor() const
     {

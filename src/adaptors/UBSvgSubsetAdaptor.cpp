@@ -78,9 +78,6 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
-
-#include <exception>
-
 //#include "qtlogger.h"
 
 const QString UBSvgSubsetAdaptor::nsSvg = "http://www.w3.org/2000/svg";
@@ -843,6 +840,20 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                         UBGraphicsItem::assignZValue(cache, zFromSvg);
                 }
             }
+            else if (mXmlReader.name() == "ellipse") // EV-7 - ALTI/AOU - 20131231
+            {
+                UBGraphicsEllipseItem* ellipse = shapeEllipseFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                if (ellipse)
+                {
+                    mScene->addItem(ellipse);
+
+                    if (zFromSvg != UBZLayerController::errorNum())
+                        UBGraphicsItem::assignZValue(ellipse, zFromSvg);
+
+                    if (!uuidFromSvg.isNull())
+                        ellipse->setUuid(uuidFromSvg);
+                }
+            }
             else if (mXmlReader.name() == "foreignObject")
             {
                 QString href = mXmlReader.attributes().value(nsXLink, "href").toString();
@@ -1438,8 +1449,8 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
                 continue;
             }
 
-            // Is the item a Shape Ellipse ?
-            UBGraphicsEllipseItem * shapeEllipse = qgraphicsitem_cast<UBGraphicsEllipseItem *>(item);
+            // Is the item a shape Ellipse ?
+            UBGraphicsEllipseItem * shapeEllipse = qgraphicsitem_cast<UBGraphicsEllipseItem *>(item); // EV-7 - ALTI/AOU - 20131231
             if (shapeEllipse && shapeEllipse->isVisible())
             {
                 shapeEllipseToSvg(shapeEllipse);
@@ -3396,19 +3407,80 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(UBGraphicsCache* item)
     mXmlWriter.writeEndElement();
 }
 
-UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg()
+UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg(const QColor& pDefaultPenColor) // EV-7 - ALTI/AOU - 20131231
 {
-    return NULL;
+    UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
+
+
+    qreal cx=0, cy=0, rx=100, ry=100;
+    QStringRef svgCx = mXmlReader.attributes().value("cx");
+    QStringRef svgCy = mXmlReader.attributes().value("cy");
+    QStringRef svgRx = mXmlReader.attributes().value("rx");
+    QStringRef svgRy = mXmlReader.attributes().value("ry");
+
+    if ( ! svgCx.isNull()) cx = svgCx.toString().toFloat();
+    if ( ! svgCy.isNull()) cy = svgCy.toString().toFloat();
+    if ( ! svgRx.isNull()) rx = svgRx.toString().toFloat();
+    if ( ! svgRy.isNull()) ry = svgRy.toString().toFloat();
+
+    ellipse->setRect(cx - rx, cy - ry, 2*rx, 2*ry);
+
+    // Stroke color
+    QStringRef svgStroke = mXmlReader.attributes().value("stroke");
+    QColor strokeColor = pDefaultPenColor;
+    if (!svgStroke.isNull())
+    {
+        strokeColor.setNamedColor(svgStroke.toString());
+    }
+    ellipse->strokeProperty()->setColor(strokeColor);
+
+    // Stroke width/thickness
+    QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
+    int strokeWidth = 2;
+    if (!svgStrokeWidth.isNull())
+    {
+        strokeWidth = svgStrokeWidth.toString().toInt();
+    }
+    ellipse->strokeProperty()->setThickness(strokeWidth);
+
+    // Fill color
+    QStringRef svgFill = mXmlReader.attributes().value("fill");
+    QColor brushColor = Qt::transparent;
+    if (!svgFill.isNull())
+    {
+        brushColor.setNamedColor(svgFill.toString());
+    }
+    ellipse->fillingProperty()->setFirstColor(brushColor);
+
+    // Transform matrix
+    QStringRef svgTransform = mXmlReader.attributes().value("transform");
+    QMatrix itemMatrix;
+    if (!svgTransform.isNull())
+    {
+        itemMatrix = fromSvgTransform(svgTransform.toString());
+        ellipse->setMatrix(itemMatrix);
+    }
+
+    return ellipse;
 }
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseItem *item)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseItem *item) // EV-7 - ALTI/AOU - 20131231
 {
     mXmlWriter.writeStartElement("ellipse");
+
+    // SVG <ellipse> tag :
     mXmlWriter.writeAttribute("cx", QString("%1").arg(item->center().x())); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
     mXmlWriter.writeAttribute("cy", QString("%1").arg(item->center().y()));
     mXmlWriter.writeAttribute("rx", QString("%1").arg(item->radius(Qt::Horizontal)));
     mXmlWriter.writeAttribute("ry", QString("%1").arg(item->radius(Qt::Vertical)));
-    //...
+        // Stroke :
+    mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->thickness()));
+        // Fill :
+    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->firstColor().name()));
+
+    mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
+
     mXmlWriter.writeEndElement();
 }
 

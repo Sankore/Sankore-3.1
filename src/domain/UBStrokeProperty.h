@@ -8,6 +8,7 @@ class UBStrokeProperty
 {
 public:
     UBStrokeProperty();
+    UBStrokeProperty(const UBStrokeProperty & source);
 
     unsigned int thickness() const
     {

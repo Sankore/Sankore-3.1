@@ -44,10 +44,16 @@ public:
 
     QPointF center() const;
     qreal radius(Qt::Orientation orientation) const;
-public:
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-protected:
+
+    // UBItem interface
     void setUuid(const QUuid &pUuid);
+
+    // QGraphicsItem interface
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
+
+protected:
+    // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 };
 

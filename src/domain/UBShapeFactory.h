@@ -2,6 +2,7 @@
 #define UBSHAPEFACTORY_H
 
 #include <QObject>
+#include <QColor>
 
 class UBShape;
 class UBBoardView;
@@ -18,7 +19,7 @@ public:
 public slots:
     void createEllipse(bool create);
 
-    void changeFillColor(UBShape *shape, const QColor &newColor) const;
+    void changeFillColor(UBShape *shape, const QColor &newColor);
 
     void onMouseMove(QMouseEvent *event);
     void onMousePress(QMouseEvent *event);

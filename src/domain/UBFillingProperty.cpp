@@ -8,6 +8,13 @@ UBFillingProperty::UBFillingProperty():
 
 }
 
+UBFillingProperty::UBFillingProperty(const UBFillingProperty & source)
+    : mFirstColor(source.mFirstColor)
+    , mSecondColor(source.mSecondColor)
+    , mBrushStyle(source.mBrushStyle)
+{
+}
+
 void UBFillingProperty::fill(QPainter *painter)
 {
     QBrush brush = painter->brush();

@@ -17,7 +17,7 @@ UBShapeFactory::UBShapeFactory():
 
 }
 
-void changeFillColor(UBShape *shape, const QColor &newColor) const
+void UBShapeFactory::changeFillColor(UBShape *shape, const QColor &newColor)
 {
     shape->fillingProperty()->setFirstColor(newColor);
 }
