@@ -1,6 +1,7 @@
 #include "UBShapeFactory.h"
 #include "UBFillingProperty.h"
 #include "UBGraphicsEllipseItem.h"
+//#include "UBGraphicsPathItem.h"
 
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
@@ -47,14 +48,45 @@ void UBShapeFactory::init()
 
 }
 
+
+UBShape* UBShapeFactory::instanciateShape()
+{
+    switch (mShapeType) {
+    case Ellipse:
+        mCurrentShape = new UBGraphicsEllipseItem();
+        mCurrentShape->fillingProperty()->setFirstColor(Qt::red);
+        break;
+/*    case Polygon:
+        mCurrentShape = new UBGraphicsPathItem();
+        mCurrentShape->fillingProperty()->setFirstColor(Qt::blue);
+        break;*/
+    default:
+        break;
+    }
+
+    return mCurrentShape;
+}
+
 void UBShapeFactory::createEllipse(bool create)
 {
     if(create){
         mIsRegularShape = true;
         mIsCreating = true;
-        mCurrentShape = new UBGraphicsEllipseItem;
+        mShapeType = Ellipse;
 
-        mCurrentShape->fillingProperty()->setFirstColor(Qt::red);
+        //mCurrentShape = new UBGraphicsEllipseItem;
+        //mCurrentShape->fillingProperty()->setFirstColor(Qt::red);
+    }
+}
+
+void UBShapeFactory::createPolygon(bool create)
+{
+    if(create){
+        mIsRegularShape = false;
+        mIsCreating = true;
+        mShapeType = Polygon;
+        //mCurrentShape = new UBGraphicsPolygonItem();
+        //mCurrentShape->fillingProperty()->setFirstColor(Qt::red);
     }
 }
 
@@ -82,16 +114,31 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
     if(mIsCreating){
         mIsPress = true;
 
-        if(mIsRegularShape){
-            UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+        QPointF cursorPosition = mBoardView->mapToScene(event->pos());
 
-            QPointF cursorPosition = mBoardView->mapToScene(event->pos());
+        if(mIsRegularShape){
+            //UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+            UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(instanciateShape());
 
             ellipse->setRect(cursorPosition.x(), cursorPosition.y(), 0, 0);
 
             mBoardView->scene()->addItem(ellipse);
-        }else{
+        }else{/*
+            UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
+            if (mCurrentShape == NULL || pathItem == NULL)
+            {
+                pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateShape());
+                mBoardView->scene()->addItem(pathItem);
 
+                QPainterPath path = pathItem->path();
+                path.moveTo(cursorPosition);
+                pathItem->setPath(path);
+            }
+
+            QPainterPath path = pathItem->path();
+            path.lineTo(cursorPosition);
+            pathItem->setPath(path);
+*/
         }
     }
 
@@ -100,8 +147,11 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 void UBShapeFactory::onMouseRelease(QMouseEvent *event)
 {
     if(mIsCreating){
+        if (mIsRegularShape) // Les regularShapes finissent d'être dessinées quand on relache la souris. Par contre les shapes "multi-points" (polygones) ne sont pas forcement finis (sauf si point pressé == premier point).
+        {
         mIsCreating = false;
+            mCurrentShape = NULL;
+        }
         mIsPress = false;
-        mCurrentShape = NULL;
     }
 }

@@ -18,6 +18,7 @@ public:
 
 public slots:
     void createEllipse(bool create);
+    void createPolygon(bool create);
 
     void changeFillColor(bool ok);
 
@@ -32,6 +33,16 @@ private:
     bool mIsCreating;
     bool mIsPress;
     bool mIsRegularShape;
+
+
+    enum ShapeType
+    {
+        Ellipse,
+        Polygon
+    };
+
+    ShapeType mShapeType;
+    UBShape *instanciateShape();
 };
 
 #endif // UBSHAPEFACTORY_H
