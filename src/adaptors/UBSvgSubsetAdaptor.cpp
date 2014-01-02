@@ -40,6 +40,7 @@
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsGroupContainerItemDelegate.h"
 #include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsPathItem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -584,34 +585,53 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
             }
             else if (mXmlReader.name() == "polyline")
             {
-                QList<UBGraphicsPolygonItem*> polygonItems = polygonItemsFromPolylineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
-
-                QString parentId = QUuid::createUuid().toString();
-
-                foreach(UBGraphicsPolygonItem* polygonItem, polygonItems)
+                QStringRef s = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapePath"); // EV-7 - ALTI/AOU - 20140102
+                if (!s.isNull())
                 {
-                    polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
+                    UBGraphicsPathItem* pathItem = shapePathFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
 
-                    UBGraphicsStrokesGroup* group;
-                    if(!mStrokesList.contains(parentId)){
-                        group = new UBGraphicsStrokesGroup();
-                        mStrokesList.insert(parentId,group);
-                        currentStroke = new UBGraphicsStroke();
-                        group->setTransform(polygonItem->transform());
-                        UBGraphicsItem::assignZValue(group, polygonItem->zValue());
+                    if (pathItem)
+                    {
+                        mScene->addItem(pathItem);
+
+                        if (zFromSvg != UBZLayerController::errorNum())
+                            UBGraphicsItem::assignZValue(pathItem, zFromSvg);
+
+                        if (!uuidFromSvg.isNull())
+                            pathItem->setUuid(uuidFromSvg);
                     }
-                    else
-                        group = mStrokesList.value(parentId);
+                }
+                else
+                {
+                    QList<UBGraphicsPolygonItem*> polygonItems = polygonItemsFromPolylineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
 
-                    if(polygonItem->transform().isIdentity())
-                        polygonItem->setTransform(group->transform());
+                    QString parentId = QUuid::createUuid().toString();
 
-                    group->addToGroup(polygonItem);
-                    polygonItem->setStrokesGroup(group);
-                    polygonItem->setStroke(currentStroke);
+                    foreach(UBGraphicsPolygonItem* polygonItem, polygonItems)
+                    {
+                        polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
 
-                    polygonItem->show();
-                    group->addToGroup(polygonItem);
+                        UBGraphicsStrokesGroup* group;
+                        if(!mStrokesList.contains(parentId)){
+                            group = new UBGraphicsStrokesGroup();
+                            mStrokesList.insert(parentId,group);
+                            currentStroke = new UBGraphicsStroke();
+                            group->setTransform(polygonItem->transform());
+                            UBGraphicsItem::assignZValue(group, polygonItem->zValue());
+                        }
+                        else
+                            group = mStrokesList.value(parentId);
+
+                        if(polygonItem->transform().isIdentity())
+                            polygonItem->setTransform(group->transform());
+
+                        group->addToGroup(polygonItem);
+                        polygonItem->setStrokesGroup(group);
+                        polygonItem->setStroke(currentStroke);
+
+                        polygonItem->show();
+                        group->addToGroup(polygonItem);
+                    }
                 }
             }
             else if (mXmlReader.name() == "image")
@@ -1450,10 +1470,17 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             }
 
             // Is the item a shape Ellipse ?
-            UBGraphicsEllipseItem * shapeEllipse = qgraphicsitem_cast<UBGraphicsEllipseItem *>(item); // EV-7 - ALTI/AOU - 20131231
-            if (shapeEllipse && shapeEllipse->isVisible())
+            UBGraphicsEllipseItem * shapeEllipseItem = qgraphicsitem_cast<UBGraphicsEllipseItem *>(item); // EV-7 - ALTI/AOU - 20131231
+            if (shapeEllipseItem && shapeEllipseItem->isVisible())
             {
-                shapeEllipseToSvg(shapeEllipse);
+                shapeEllipseToSvg(shapeEllipseItem);
+            }
+
+            // Is the item a shape Path ? (closed polygon, opened polygon, freehand drawing)
+            UBGraphicsPathItem * shapePathItem = qgraphicsitem_cast<UBGraphicsPathItem *>(item); // EV-7 - ALTI/AOU - 20140102
+            if (shapePathItem && shapePathItem->isVisible())
+            {
+                shapePathToSvg(shapePathItem);
             }
         }
 
@@ -3423,7 +3450,7 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
     if ( ! svgRx.isNull()) rx = svgRx.toString().toFloat();
     if ( ! svgRy.isNull()) ry = svgRy.toString().toFloat();
 
-    ellipse->setRect(cx - rx, cy - ry, 2*rx, 2*ry);
+    ellipse->setRect(QRectF(cx - rx, cy - ry, 2*rx, 2*ry));
 
     // Stroke color
     QStringRef svgStroke = mXmlReader.attributes().value("stroke");
@@ -3494,6 +3521,126 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseI
     mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
 
     mXmlWriter.writeEndElement();
+}
+
+UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(const QColor& pDefaultPenColor) // EV-7 - ALTI/AOU - 20140102
+{
+    UBGraphicsPathItem * pathItem = new UBGraphicsPathItem();
+
+    QStringRef svgPoints = mXmlReader.attributes().value("points");
+
+    if (!svgPoints.isNull())
+    {
+        QStringList ts = svgPoints.toString().split(QLatin1Char(' '),
+                         QString::SkipEmptyParts);
+
+        foreach(const QString sPoint, ts)
+        {
+            QStringList sCoord = sPoint.split(QLatin1Char(','), QString::SkipEmptyParts);
+
+            if (sCoord.size() == 2)
+            {
+                QPointF point;
+                point.setX(sCoord.at(0).toFloat());
+                point.setY(sCoord.at(1).toFloat());
+                pathItem->addPoint(point);
+            }
+            else if (sCoord.size() == 4){
+                //This is the case on system were the "," is used to seperate decimal
+                QPointF point;
+                QString x = sCoord.at(0) + "." + sCoord.at(1);
+                QString y = sCoord.at(2) + "." + sCoord.at(3);
+                point.setX(x.toFloat());
+                point.setY(y.toFloat());
+                pathItem->addPoint(point);
+            }
+            else
+            {
+                qWarning() << "cannot make sense of a 'point' value" << sCoord;
+            }
+        }
+    }
+    else
+    {
+        qWarning() << "cannot make sense of 'points' value " << svgPoints.toString();
+    }
+
+    // Stroke color
+    QStringRef svgStroke = mXmlReader.attributes().value("stroke");
+    QColor strokeColor = pDefaultPenColor;
+    if (!svgStroke.isNull())
+    {
+        strokeColor.setNamedColor(svgStroke.toString());
+    }
+    pathItem->strokeProperty()->setColor(strokeColor);
+
+    // Stroke width/thickness
+    QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
+    int strokeWidth = 2;
+    if (!svgStrokeWidth.isNull())
+    {
+        strokeWidth = svgStrokeWidth.toString().toInt();
+    }
+    pathItem->strokeProperty()->setThickness(strokeWidth);
+
+    // Fill color
+    QStringRef svgFill = mXmlReader.attributes().value("fill");
+    QColor brushColor = Qt::transparent;
+    if (!svgFill.isNull())
+    {
+        brushColor.setNamedColor(svgFill.toString());
+    }
+    pathItem->fillingProperty()->setFirstColor(brushColor);
+
+    // Fill opacity (transparency)
+    QStringRef svgOpacity = mXmlReader.attributes().value("fill-opacity");
+    qreal opacity = 1.0; // opaque
+    if (!svgOpacity.isNull())
+    {
+        opacity = svgOpacity.toString().toFloat();
+    }
+    QColor color = pathItem->fillingProperty()->firstColor();
+    color.setAlphaF(opacity);
+    pathItem->fillingProperty()->setFirstColor(color);
+
+    // Transform matrix
+    QStringRef svgTransform = mXmlReader.attributes().value("transform");
+    QMatrix itemMatrix;
+    if (!svgTransform.isNull())
+    {
+        itemMatrix = fromSvgTransform(svgTransform.toString());
+        pathItem->setMatrix(itemMatrix);
+    }
+
+
+    return pathItem;
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBGraphicsPathItem *item) // EV-7 - ALTI/AOU - 20140102
+{
+    mXmlWriter.writeStartElement("polyline");
+
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapePath", "true"); // just to know it's a path drawn with the drawingPalette
+
+    QString sPoints;
+    for(int i=0; i<item->path().elementCount(); ++i)
+    {
+        QPainterPath::Element element = item->path().elementAt(i);
+        sPoints += QString("%1,%2 ").arg(element.x).arg(element.y);
+    }
+    mXmlWriter.writeAttribute("points", sPoints);
+
+    // Stroke :
+    mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->thickness()));
+    // Fill :
+    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->firstColor().name()));
+    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->firstColor().alphaF()));
+
+    mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
+
+    mXmlWriter.writeEndElement();
+
 }
 
 void UBSvgSubsetAdaptor::convertPDFObjectsToImages(UBDocumentProxy* proxy)

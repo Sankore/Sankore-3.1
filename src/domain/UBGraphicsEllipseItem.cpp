@@ -72,10 +72,10 @@ UBItem *UBGraphicsEllipseItem::deepCopy() const
 {
     UBGraphicsEllipseItem* copy = new UBGraphicsEllipseItem();
 
-    if (fillingProperty())
+    if (hasFillingProperty())
         copy->mFillingProperty = new UBFillingProperty(*fillingProperty());
 
-    if (strokeProperty())
+    if (hasStrokeProperty())
         copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
     copyItemParameters(copy);
@@ -96,6 +96,7 @@ void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
 
+        /* Pas d'Action possible sur une Shape
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
                 UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
@@ -105,6 +106,7 @@ void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
+        */
     }
 }
 
