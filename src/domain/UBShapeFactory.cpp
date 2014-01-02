@@ -90,6 +90,17 @@ void UBShapeFactory::createPolygon(bool create)
     }
 }
 
+void UBShapeFactory::createCircle(bool create)
+{
+    if(create){
+        mIsRegularShape = true;
+        mIsCreating = true;
+        UBGraphicsEllipseItem* ellipse = new UBGraphicsEllipseItem;
+
+        ellipse->setAsCircle();
+    }
+}
+
 void UBShapeFactory::onMouseMove(QMouseEvent *event)
 {
     if(mIsCreating && mIsPress){
@@ -120,7 +131,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
             //UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
             UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(instanciateShape());
 
-            ellipse->setRect(cursorPosition.x(), cursorPosition.y(), 0, 0);
+            ellipse->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
 
             mBoardView->scene()->addItem(ellipse);
         }else{/*
@@ -147,7 +158,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 void UBShapeFactory::onMouseRelease(QMouseEvent *event)
 {
     if(mIsCreating){
-        if (mIsRegularShape) // Les regularShapes finissent d'Ãªtre dessinÃ©es quand on relache la souris. Par contre les shapes "multi-points" (polygones) ne sont pas forcement finis (sauf si point pressÃ© == premier point).
+        if (mIsRegularShape) // Les regularShapes finissent d'être dessinées quand on relache la souris. Par contre les shapes "multi-points" (polygones) ne sont pas forcement finis (sauf si point pressé == premier point).
         {
         mIsCreating = false;
             mCurrentShape = NULL;

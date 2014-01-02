@@ -19,6 +19,7 @@ public:
 public slots:
     void createEllipse(bool create);
     void createPolygon(bool create);
+    void createCircle(bool create);
 
     void changeFillColor(bool ok);
 
