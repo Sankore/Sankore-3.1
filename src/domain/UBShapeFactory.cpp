@@ -6,6 +6,7 @@
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
 #include "board/UBBoardView.h"
+#include "board/UBDrawingController.h"
 #include "UBGraphicsScene.h"
 
 UBShapeFactory::UBShapeFactory():
@@ -15,7 +16,8 @@ UBShapeFactory::UBShapeFactory():
     mIsPress(false),
     mIsRegularShape(true),
     mCurrentStrokeColor(Qt::black),
-    mCurrentFillFirstColor(Qt::lightGray)
+    mCurrentFillFirstColor(Qt::lightGray),
+    mDrawingController(NULL)
 {
 
 }
@@ -44,6 +46,7 @@ void UBShapeFactory::changeFillColor(bool ok)
 void UBShapeFactory::init()
 {
     mBoardView = UBApplication::boardController->controlView();
+    mDrawingController = UBDrawingController::drawingController();
 
     connect(mBoardView, SIGNAL(mouseMove(QMouseEvent*)), this, SLOT(onMouseMove(QMouseEvent*)));
     connect(mBoardView, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(onMouseRelease(QMouseEvent*)));
@@ -85,6 +88,7 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
 void UBShapeFactory::createEllipse(bool create)
 {
     if(create){
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
         mIsRegularShape = true;
         mIsCreating = true;
         mShapeType = Ellipse;
@@ -94,6 +98,7 @@ void UBShapeFactory::createEllipse(bool create)
 void UBShapeFactory::createCircle(bool create)
 {
     if(create){
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
         mIsRegularShape = true;
         mIsCreating = true;
         mShapeType = Circle;
@@ -103,6 +108,7 @@ void UBShapeFactory::createCircle(bool create)
 void UBShapeFactory::createPolygon(bool create)
 {
     if(create){
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
         mIsRegularShape = false;
         mIsCreating = true;
         mShapeType = Polygon;
@@ -122,8 +128,6 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
              qreal h = cursorPosition.y() - rect.y();
 
              shape->setRect(QRectF(rect.x(), rect.y(), w, h));
-        }else{
-
         }
     }
 }
@@ -152,8 +156,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
             if (pathItem->isClosed())
             {
-                // Si closed, terminer le dessin , en passant mIsCreating à false
-                mIsCreating = false;
+                mCurrentShape = NULL;
             }
         }
     }
@@ -163,12 +166,11 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 void UBShapeFactory::onMouseRelease(QMouseEvent *event)
 {
     mIsPress = false;
+}
 
-    if(mIsCreating){
-        if (mIsRegularShape) // Les regularShapes finissent d'être dessinées quand on relache la souris. Par contre les shapes "multi-points" (polygones) ne sont pas forcement finis (sauf si point pressé == premier point).
-        {
-            mIsCreating = false;
-            mCurrentShape = NULL;
-        }
-    }
+void UBShapeFactory::desactivate()
+{
+    mIsPress = false;
+    mIsCreating = false;
+    mCurrentShape = NULL;
 }

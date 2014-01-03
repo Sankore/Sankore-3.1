@@ -564,6 +564,8 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsCompass::Type:
     case UBGraphicsCache::Type:
     case UBGraphicsAristo::Type:
+    //EV-7 - NNE - 20140103
+    case UBGraphicsItemType::ShapeType:
         return true;
 
     case UBGraphicsDelegateFrame::Type:
@@ -1233,13 +1235,15 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
                                 item = item->parentItem();
                       // Fin Issue 1569 - CFA - 20131113
 
+                      //EV-7 - NNE - 20140103 : Add test on drawing objects
                       if (item->type() == UBGraphicsW3CWidgetItem::Type
                               || item->type() == UBGraphicsPixmapItem::Type
                               || item->type() == UBGraphicsMediaItem::Type
                               || item->type() == UBGraphicsSvgItem::Type
                               || item->type() == UBGraphicsTextItem::Type
                               || item->type() == UBGraphicsStrokesGroup::Type
-                              || item->type() == UBGraphicsGroupContainerItem::Type) {
+                              || item->type() == UBGraphicsGroupContainerItem::Type
+                              || item->type() == UBGraphicsItemType::ShapeType) {
 
                           if (!mJustSelectedItems.contains(item)) {
                               item->setSelected(true);
@@ -1774,7 +1778,7 @@ UBBoardView::setToolCursor (int tool)
       controlViewport->setCursor (UBResources::resources ()->penCursor);
       break;
     default:
-      Q_ASSERT (false);
+      //Q_ASSERT (false);
       //failsafe
       controlViewport->setCursor (UBResources::resources ()->penCursor);
     }

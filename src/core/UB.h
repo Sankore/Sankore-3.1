@@ -64,7 +64,8 @@ struct UBStylusTool
         Pointer,
         Line,
         Text,
-        Capture
+        Capture,
+        Drawing //EV-7 - NNE - 20140103
     };
 };
 
@@ -160,8 +161,7 @@ struct UBGraphicsItemType
         groupContainerType,
         ToolWidgetItemType,
         GraphicsWidgetItemType,
-        ShapeEllipseType,
-        ShapePathType,
+        ShapeType,
         UserTypesCount // this line must be the last line in this enum because it is types counter.
     };
 };

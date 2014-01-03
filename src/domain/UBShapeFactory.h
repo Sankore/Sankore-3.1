@@ -7,6 +7,7 @@
 class UBShape;
 class UBBoardView;
 class QMouseEvent;
+class UBDrawingController;
 
 class UBShapeFactory : public QObject
 {
@@ -27,6 +28,8 @@ public slots:
     void onMousePress(QMouseEvent *event);
     void onMouseRelease(QMouseEvent *event);
 
+    void desactivate();
+
 private:
     UBShape* mCurrentShape;
     UBBoardView* mBoardView;
@@ -34,7 +37,6 @@ private:
     bool mIsCreating;
     bool mIsPress;
     bool mIsRegularShape;
-
 
     enum ShapeType
     {
@@ -48,8 +50,13 @@ private:
     QColor mCurrentStrokeColor;
     QColor mCurrentFillFirstColor;
 
+    UBDrawingController *mDrawingController;
+
 protected:
     UBShape *instanciateCurrentShape();
+
+    template<typename C>
+    C *instanciate();
 
 };
 

@@ -28,6 +28,8 @@
 #include "UBStrokeProperty.h"
 #include "UBGraphicsDelegateFrame.h"
 
+#include "board/UBDrawingController.h"
+
 UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     : QGraphicsEllipseItem(parent)
     , UBShape()

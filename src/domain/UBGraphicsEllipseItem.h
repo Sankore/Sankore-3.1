@@ -33,7 +33,7 @@ public:
     UBGraphicsEllipseItem(QGraphicsItem* parent = 0);
     virtual ~UBGraphicsEllipseItem();
 
-    enum { Type = UBGraphicsItemType::ShapeEllipseType };
+    enum { Type = UBGraphicsItemType::ShapeType };
     virtual int type() const { return Type; }
 
     virtual UBItem* deepCopy() const;
