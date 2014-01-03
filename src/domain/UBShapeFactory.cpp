@@ -174,3 +174,9 @@ void UBShapeFactory::desactivate()
     mIsCreating = false;
     mCurrentShape = NULL;
 }
+
+bool UBShapeFactory::isShape(QGraphicsItem *item)
+{
+    return item->type() == UBGraphicsEllipseItem ::Type
+            || item->type() == UBGraphicsPathItem::Type;
+}

@@ -85,6 +85,7 @@
 
 #include "domain/UBFillingProperty.h"
 #include "domain/UBStrokeProperty.h"
+#include "domain/UBShapeFactory.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)
 : QGraphicsView (pParent)
@@ -556,6 +557,12 @@ Here we determines cases when items should to get mouse press event at pressing 
     // some behavior depends on current tool.
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
 
+    //EV-7 - NNE - 20140103
+    if(UBShapeFactory::isShape(item)){
+        if(currentTool == UBStylusTool::Play)
+            return true;
+    }
+
     switch(item->type())
     {
     case UBGraphicsProtractor::Type:
@@ -564,10 +571,6 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsCompass::Type:
     case UBGraphicsCache::Type:
     case UBGraphicsAristo::Type:
-    //EV-7 - NNE - 20140103
-    case UBGraphicsItemType::ShapeType:
-        return true;
-
     case UBGraphicsDelegateFrame::Type:
         if (currentTool == UBStylusTool::Play)
             return false;
@@ -689,6 +692,11 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
             return false;
 
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+
+    //EV-7 - NNE - 20140103
+    if(UBShapeFactory::isShape(item)){
+        return true;
+    }
 
     switch(item->type())
     {
@@ -1243,7 +1251,7 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
                               || item->type() == UBGraphicsTextItem::Type
                               || item->type() == UBGraphicsStrokesGroup::Type
                               || item->type() == UBGraphicsGroupContainerItem::Type
-                              || item->type() == UBGraphicsItemType::ShapeType) {
+                              || UBShapeFactory::isShape(item)) {
 
                           if (!mJustSelectedItems.contains(item)) {
                               item->setSelected(true);

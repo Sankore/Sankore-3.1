@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QColor>
+#include <QGraphicsItem>
 
 class UBShape;
 class UBBoardView;
@@ -17,6 +18,14 @@ public:
     UBShapeFactory();
     void init();
 
+    static bool isShape(QGraphicsItem *item);
+
+    enum ShapeType
+    {
+        Ellipse,
+        Circle,
+        Polygon
+    };
 public slots:
     void createEllipse(bool create);
     void createPolygon(bool create);
@@ -37,13 +46,6 @@ private:
     bool mIsCreating;
     bool mIsPress;
     bool mIsRegularShape;
-
-    enum ShapeType
-    {
-        Ellipse,
-        Circle,
-        Polygon
-    };
 
     ShapeType mShapeType;
 

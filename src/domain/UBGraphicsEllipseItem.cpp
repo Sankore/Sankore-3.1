@@ -178,3 +178,20 @@ void UBGraphicsEllipseItem::setRect(const QRectF &rect)
 
     QGraphicsEllipseItem::setRect(r);
 }
+
+void UBGraphicsEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
+{
+    Delegate()->mousePressEvent(event);
+}
+
+void UBGraphicsEllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (Delegate()->mouseMoveEvent(event))
+    {
+
+    }
+    else
+    {
+        QGraphicsEllipseItem::mouseMoveEvent(event);
+    }
+}
