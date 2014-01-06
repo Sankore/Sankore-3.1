@@ -161,7 +161,8 @@ struct UBGraphicsItemType
         groupContainerType,
         ToolWidgetItemType,
         GraphicsWidgetItemType,
-        ShapeType,
+        GraphicsEllipseItemType,
+        GraphicsPathItemType,
         UserTypesCount // this line must be the last line in this enum because it is types counter.
     };
 };

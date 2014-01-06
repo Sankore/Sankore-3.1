@@ -33,7 +33,7 @@ public:
     UBGraphicsEllipseItem(QGraphicsItem* parent = 0);
     virtual ~UBGraphicsEllipseItem();
 
-    enum { Type = UBGraphicsItemType::ShapeType };
+    enum { Type = UBGraphicsItemType::GraphicsEllipseItemType };
     virtual int type() const { return Type; }
 
     virtual UBItem* deepCopy() const;
@@ -63,6 +63,9 @@ public:
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+
+    void mousePressEvent(QGraphicsSceneMouseEvent * event);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
 private:
     bool mIsCircle;

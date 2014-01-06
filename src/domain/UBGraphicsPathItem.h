@@ -21,7 +21,7 @@ public:
     virtual void setUuid(const QUuid &pUuid);
 
     // QGraphicsItem interface
-    enum { Type = UBGraphicsItemType::ShapeType };
+    enum { Type = UBGraphicsItemType::GraphicsPathItemType };
     virtual int type() const { return Type; }
     virtual QRectF boundingRect() const;
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
