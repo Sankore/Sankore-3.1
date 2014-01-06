@@ -53,9 +53,8 @@ UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
 
     adjustSizeAndPosition();
 
-    initPosition();
-
     hide();
+
 }
 
 UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
@@ -74,30 +73,7 @@ UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
 
     adjustSizeAndPosition();
 
-    initPosition();
-
     hide();
-}
-
-void UBEllipsePalette::initPosition()
-{
-    if(!UBSettings::settings()->appToolBarOrientationVertical->get().toBool())
-    {
-        QWidget* pParentW = parentWidget();
-        if(NULL != pParentW)
-        {
-            mCustomPosition = true;
-            QPoint pos;
-            int parentWidth = pParentW->width();
-            int parentHeight = pParentW->height();
-            int posX = (parentWidth / 2) - (width() / 2);
-            int posY = parentHeight - border() - height();
-
-            pos.setX(posX);
-            pos.setY(posY);
-            moveInsideParent(pos);
-        }
-    }
 }
 
 UBEllipsePalette::~UBEllipsePalette()

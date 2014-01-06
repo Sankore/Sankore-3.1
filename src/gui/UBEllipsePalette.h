@@ -17,7 +17,6 @@ class UBEllipsePalette : public UBAbstractSubPalette
 
         void mouseMoveEvent(QMouseEvent *event);
 
-        void initPosition();
 
         void togglePalette();
 

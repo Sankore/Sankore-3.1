@@ -23,9 +23,9 @@ class UBDrawingPalette : public UBActionPalette
         void setupSubPalettes(QWidget* parent, Qt::Orientation);
 
         void initSubPalettesPosition(const QPointF& drawingPaletteTopLeft);
-        void updateSubPalettesPosition(QMouseEvent *event);
         void mousePressEvent(QMouseEvent *event);
         void updateCheckedId(int);
+        void updateSubPalettesPosition(const QPoint &delta);
 
         static const int PRESS_DURATION;
 
@@ -34,14 +34,12 @@ class UBDrawingPalette : public UBActionPalette
         void drawingToolPressed();
         void drawingToolReleased();
 
-
     signals:
         void pressed(int);
 
     private:
         int mLastSelectedId;
         QList<UBAbstractSubPalette*> mSubPalettes;
-        UBEllipsePalette* mEllipsePalette;
 
         QTime mActionButtonPressedTime;
         bool mPendingActionButtonPressed;
