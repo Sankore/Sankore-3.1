@@ -69,6 +69,7 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
         ellipse->setAsCircle();
         mCurrentShape = ellipse;
+        mCurrentShape->fillingProperty()->setFirstColor(Qt::blue);
         break;
     }
     case Polygon:

@@ -520,15 +520,6 @@ void UBBoardPaletteManager::connectPalettes()
             connect(button, SIGNAL(released()), this, SLOT(pagePaletteButtonReleased()));
         }
     }
-
-    mEllipseActionPaletteButton = mDrawingPalette->getButtonFromAction(UBApplication::mainWindow->actionEllipse);
-    if (mEllipseActionPaletteButton)
-    {
-        connect(mEllipseActionPaletteButton, SIGNAL( pressed() ), UBApplication::boardController, SLOT( ellipsePressed()) );
-        connect(mEllipseActionPaletteButton, SIGNAL( released() ), UBApplication::boardController , SLOT( ellipseReleased()) );
-    }
-
-
 }
 
 

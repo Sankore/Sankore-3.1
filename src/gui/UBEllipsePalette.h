@@ -3,9 +3,9 @@
 
 #include <QButtonGroup>
 
-#include "UBActionPalette.h"
+#include "UBAbstractSubPalette.h"
 
-class UBEllipsePalette : public UBActionPalette
+class UBEllipsePalette : public UBAbstractSubPalette
 {
     Q_OBJECT
 
@@ -19,10 +19,12 @@ class UBEllipsePalette : public UBActionPalette
 
         void initPosition();
 
+        void togglePalette();
+
     private slots:
 
-        void drawingToolPressed();
-        void drawingToolReleased();
+        void ellipseToolPressed();
+        void ellipseToolReleased();
 
     private:
         int mLastSelectedId;

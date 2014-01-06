@@ -38,7 +38,7 @@
 #include "core/memcheck.h"
 
 UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
-    : UBActionPalette(Qt::TopLeftCorner, parent, orient)
+    : UBAbstractSubPalette(parent, orient)
     , mLastSelectedId(-1)
 {
     QList<QAction*> actions;
@@ -55,14 +55,11 @@ UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
 
     initPosition();
 
-    foreach(const UBActionPaletteButton* button, mButtons)
-    {
-        connect(button, SIGNAL(doubleClicked()), this, SLOT(ellipseToolDoubleClicked()));
-    }       
+    hide();
 }
 
 UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
-    : UBActionPalette(Qt::TopLeftCorner, parent, orient)
+    : UBAbstractSubPalette(parent, orient)
     , mLastSelectedId(-1)
 {
     QList<QAction*> actions;
@@ -79,10 +76,7 @@ UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
 
     initPosition();
 
-    foreach(const UBActionPaletteButton* button, mButtons)
-    {
-        connect(button, SIGNAL(doubleClicked()), this, SLOT(ellipseToolDoubleClicked()));
-    }
+    hide();
 }
 
 void UBEllipsePalette::initPosition()
@@ -111,12 +105,12 @@ UBEllipsePalette::~UBEllipsePalette()
 
 }
 
-void UBEllipsePalette::drawingToolPressed()
+void UBEllipsePalette::ellipseToolPressed()
 {
 
 }
 
-void UBEllipsePalette::drawingToolReleased()
+void UBEllipsePalette::ellipseToolReleased()
 {
 
 }
@@ -124,4 +118,9 @@ void UBEllipsePalette::drawingToolReleased()
 void UBEllipsePalette::mouseMoveEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
+}
+
+void UBEllipsePalette::togglePalette()
+{
+    show();
 }

@@ -43,7 +43,7 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
     , mLastSelectedId(-1)
 {
-    QList<QAction*> actions;
+    QList<QAction*> actions;   
 
     actions << UBApplication::mainWindow->actionEllipse;
     actions << UBApplication::mainWindow->actionPolygon;
@@ -55,25 +55,38 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     groupActions();
 
     adjustSizeAndPosition();
-
     initPosition();
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {
         connect(button, SIGNAL(pressed()), this, SLOT(drawingToolPressed()));
+        connect(button, SIGNAL(pressed(int)), this, SLOT(updateCheckedId(int)));
         connect(button, SIGNAL(released()), this, SLOT(drawingToolReleased()));
     }
 
-    setupSubPalettes(orient);
+    setupSubPalettes(parent, orient);
 }
 
-void UBDrawingPalette::setupSubPalettes(Qt::Orientation orientation)
+void UBDrawingPalette::updateCheckedId(int i)
 {
-    //Sub Palette for ellipses and circles
+    mLastSelectedId = i;
+}
+
+
+void UBDrawingPalette::setupSubPalettes(QWidget* parent, Qt::Orientation orientation)
+{
+
     if (orientation == Qt::Vertical)
-        mEllipsePalette = new UBEllipsePalette(Qt::Horizontal);
+    {
+        //Sub Palette for ellipses and circles
+        mSubPalettes.push_back(new UBEllipsePalette(parent, Qt::Horizontal));
+    }
     else
-        mEllipsePalette = new UBEllipsePalette();
+    {
+        mSubPalettes.push_back(new UBEllipsePalette(parent));
+    }
+
+    initSubPalettesPosition(rect().topLeft());
 }
 
 void UBDrawingPalette::initPosition()
@@ -97,24 +110,44 @@ void UBDrawingPalette::initPosition()
     }
 }
 
-void UBDrawingPalette::toggleEllipsePalette()
-{
-    mEllipsePalette->show();
-}
-
 UBDrawingPalette::~UBDrawingPalette()
 {
 
 }
 
+void UBDrawingPalette::mousePressEvent(QMouseEvent *event)
+{
+    emit pressed(0);
+    UBActionPalette::mousePressEvent(event);
+}
+
 void UBDrawingPalette::drawingToolPressed()
 {
-    emit drawingToolPressed(mButtonGroup->checkedId());
+    mActionButtonPressedTime = QTime::currentTime();
+
+    mPendingActionButtonPressed = true;
+    QTimer::singleShot(UBDrawingPalette::PRESS_DURATION, this, SLOT(drawingToolReleased()));
 }
 
 void UBDrawingPalette::drawingToolReleased()
 {
-    emit drawingToolReleased(mButtonGroup->checkedId());
+    if (mPendingActionButtonPressed)
+    {
+        if( mActionButtonPressedTime.msecsTo(QTime::currentTime()) > UBDrawingPalette::PRESS_DURATION)
+        {
+            mSubPalettes.at(0)->togglePalette();
+        }
+        else
+        {
+            //mSubPalettes.at(0)->mainAction()->trigger();
+        }
+
+        mPendingActionButtonPressed = false;
+    }
+    else
+    {
+
+    }
 }
 
 void UBDrawingPalette::mouseMoveEvent(QMouseEvent *event)
@@ -126,6 +159,11 @@ void UBDrawingPalette::mouseMoveEvent(QMouseEvent *event)
 void UBDrawingPalette::updateSubPalettesPosition(QMouseEvent *event)
 {
     Q_UNUSED(event);
+}
+
+void UBDrawingPalette::initSubPalettesPosition(const QPointF& drawingPaletteTopLeft)
+{
+    Q_UNUSED(drawingPaletteTopLeft);
 }
 
 

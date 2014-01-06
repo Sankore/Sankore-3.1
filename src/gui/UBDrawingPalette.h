@@ -3,7 +3,7 @@
 
 #include <QButtonGroup>
 
-#include "UBActionPalette.h"
+#include "UBAbstractSubPalette.h"
 #include "UBEllipsePalette.h"
 
 
@@ -20,8 +20,12 @@ class UBDrawingPalette : public UBActionPalette
 
         void initPosition();
         void toggleEllipsePalette();
-        void setupSubPalettes(Qt::Orientation);
+        void setupSubPalettes(QWidget* parent, Qt::Orientation);
+
+        void initSubPalettesPosition(const QPointF& drawingPaletteTopLeft);
         void updateSubPalettesPosition(QMouseEvent *event);
+        void mousePressEvent(QMouseEvent *event);
+        void updateCheckedId(int);
 
         static const int PRESS_DURATION;
 
@@ -30,13 +34,17 @@ class UBDrawingPalette : public UBActionPalette
         void drawingToolPressed();
         void drawingToolReleased();
 
-    private:
-        int mLastSelectedId;
-        UBEllipsePalette* mEllipsePalette;
 
     signals:
-        void drawingToolPressed(int tool);
-        void drawingToolReleased(int tool);
+        void pressed(int);
+
+    private:
+        int mLastSelectedId;
+        QList<UBAbstractSubPalette*> mSubPalettes;
+        UBEllipsePalette* mEllipsePalette;
+
+        QTime mActionButtonPressedTime;
+        bool mPendingActionButtonPressed;
 };
 
 #endif // UBDRAWINGPALETTE_H

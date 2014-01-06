@@ -215,10 +215,6 @@ class UBBoardController : public UBDocumentContainer
         void fillImageBackground();
         void extendImageBackground();
 
-        //EV-7 - CFA - 20140102
-        void ellipsePressed();
-        void ellipseReleased();
-
         void clearSceneBackground();
         void zoomIn(QPointF scenePoint = QPointF(0,0));
         void zoomOut(QPointF scenePoint = QPointF(0,0));
@@ -332,8 +328,6 @@ class UBBoardController : public UBDocumentContainer
 
         //EV-7 - NNE - 20131230
         UBShapeFactory mShapeFactory;        
-        QTime mEllipseButtonPressedTime;///< Ellipse/Circle Button Timer
-        bool mPendingEllipseButtonPressed;
 
     private slots:
         void stylusToolDoubleClicked(int tool);

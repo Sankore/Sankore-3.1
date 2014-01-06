@@ -114,7 +114,6 @@ UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     , mMovingSceneIndex(-1)
     , mActionGroupText(tr("Group"))
     , mActionUngroupText(tr("Ungroup"))
-    , mPendingEllipseButtonPressed(false)
 {
     mZoomFactor = UBSettings::settings()->boardZoomFactor->get().toDouble();
 
@@ -415,37 +414,9 @@ void UBBoardController::connectToolbar()
 
     //EV-7 - NNE - 20131230
     connect(mMainWindow->actionEllipse, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createEllipse(bool)));
-    connect(mMainWindow->actionPolygon, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createPolygon(bool)));    connect(mMainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(changeFillColor(bool)));
-}
-
-// EV-7 - CFA - 20140102
-void UBBoardController::ellipsePressed()
-{
-    mEllipseButtonPressedTime = QTime::currentTime();
-
-    mPendingEllipseButtonPressed = true;
-    QTimer::singleShot(UBDrawingPalette::PRESS_DURATION, this, SLOT(ellipseReleased()));
-}
-
-void UBBoardController::ellipseReleased()
-{
-    if (mPendingEllipseButtonPressed)
-    {
-        if( mEllipseButtonPressedTime.msecsTo(QTime::currentTime()) > UBDrawingPalette::PRESS_DURATION)
-        {
-            UBApplication::boardController->paletteManager()->drawingPalette()->toggleEllipsePalette();
-        }
-        else
-        {
-            mShapeFactory.createEllipse(true);
-        }
-
-        mPendingEllipseButtonPressed = false;
-    }
-    else
-    {
-
-    }
+    connect(mMainWindow->actionCircle, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createCircle(bool)));
+    connect(mMainWindow->actionPolygon, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createPolygon(bool)));
+    connect(mMainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(changeFillColor(bool)));
 }
 
 void UBBoardController::startScript()
