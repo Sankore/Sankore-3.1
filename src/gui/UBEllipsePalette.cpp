@@ -21,7 +21,7 @@
 
 
 
-#include "UBStylusPalette.h"
+#include "UBEllipsePalette.h"
 
 #include <QtGui>
 
@@ -37,48 +37,19 @@
 
 #include "core/memcheck.h"
 
-UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
-    : UBActionPalette(Qt::TopRightCorner, parent, orient)
+UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
+    : UBActionPalette(Qt::TopLeftCorner, parent, orient)
     , mLastSelectedId(-1)
 {
     QList<QAction*> actions;
 
-    actions << UBApplication::mainWindow->actionPen;
-    actions << UBApplication::mainWindow->actionEraser;
-    actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionPlay;
-
-    actions << UBApplication::mainWindow->actionHand;
-    actions << UBApplication::mainWindow->actionZoomIn;
-    actions << UBApplication::mainWindow->actionZoomOut;
-
-    actions << UBApplication::mainWindow->actionPointer;
-    actions << UBApplication::mainWindow->actionLine;
-    actions << UBApplication::mainWindow->actionText;
-    actions << UBApplication::mainWindow->actionCapture;
-
-    if(UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
+    actions << UBApplication::mainWindow->actionEllipse;
+    actions << UBApplication::mainWindow->actionCircle;
 
     setActions(actions);
-    setButtonIconSize(QSize(42, 42));
+    setButtonIconSize(QSize(28, 28));
 
-    if(!UBPlatformUtils::hasVirtualKeyboard())
-    {
-            groupActions();
-    }
-    else
-    {
-            // VirtualKeyboard action is not in group
-            // So, groupping all buttons, except last
-            mButtonGroup = new QButtonGroup(this);
-            for(int i=0; i < mButtons.size()-1; i++)
-            {
-                    mButtonGroup->addButton(mButtons[i], i);
-            }
-        connect(mButtonGroup, SIGNAL(buttonClicked(int)), this, SIGNAL(buttonGroupClicked(int)));
-    }
+    groupActions();
 
     adjustSizeAndPosition();
 
@@ -86,12 +57,35 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {
-        connect(button, SIGNAL(doubleClicked()), this, SLOT(stylusToolDoubleClicked()));
-    }
-
+        connect(button, SIGNAL(doubleClicked()), this, SLOT(ellipseToolDoubleClicked()));
+    }       
 }
 
-void UBStylusPalette::initPosition()
+UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
+    : UBActionPalette(Qt::TopLeftCorner, parent, orient)
+    , mLastSelectedId(-1)
+{
+    QList<QAction*> actions;
+
+    actions << UBApplication::mainWindow->actionEllipse;
+    actions << UBApplication::mainWindow->actionCircle;
+
+    setActions(actions);
+    setButtonIconSize(QSize(28, 28));
+
+    groupActions();
+
+    adjustSizeAndPosition();
+
+    initPosition();
+
+    foreach(const UBActionPaletteButton* button, mButtons)
+    {
+        connect(button, SIGNAL(doubleClicked()), this, SLOT(ellipseToolDoubleClicked()));
+    }
+}
+
+void UBEllipsePalette::initPosition()
 {
     if(!UBSettings::settings()->appToolBarOrientationVertical->get().toBool())
     {
@@ -112,14 +106,22 @@ void UBStylusPalette::initPosition()
     }
 }
 
-UBStylusPalette::~UBStylusPalette()
+UBEllipsePalette::~UBEllipsePalette()
 {
 
 }
 
-void UBStylusPalette::stylusToolDoubleClicked()
+void UBEllipsePalette::drawingToolPressed()
 {
-    emit stylusToolDoubleClicked(mButtonGroup->checkedId());
+
 }
 
+void UBEllipsePalette::drawingToolReleased()
+{
 
+}
+
+void UBEllipsePalette::mouseMoveEvent(QMouseEvent *event)
+{
+    Q_UNUSED(event);
+}

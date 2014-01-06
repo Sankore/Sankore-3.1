@@ -114,9 +114,6 @@ void UBThumbnailAdaptor::load(UBDocumentProxy* proxy, QList<const QPixmap*>& lis
     updateDocumentToHandleZeroPage(proxy);
     generateMissingThumbnails(proxy);
 
-    foreach(const QPixmap* pm, list)
-        delete pm;
-    list.clear();
     for(int i=0; proxy && i<proxy->pageCount(); i++)
         list.append(get(proxy, i));
 }

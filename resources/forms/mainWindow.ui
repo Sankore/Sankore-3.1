@@ -58,6 +58,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionDrawing"/>
    <addaction name="actionStylus"/>
    <addaction name="actionBackgrounds"/>
    <addaction name="separator"/>
@@ -1873,6 +1874,43 @@
    </property>
    <property name="toolTip">
     <string>Draw a Polygon</string>
+   </property>
+  </action>
+  <action name="actionDrawing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/toolbar/stylus.png</normaloff>:/images/toolbar/stylus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Drawing</string>
+   </property>
+   <property name="iconText">
+    <string>Drawing</string>
+   </property>
+   <property name="toolTip">
+    <string>Drawing</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../sankore.qrc">
+     <normaloff>:/images/drawingPalette/cercle.png</normaloff>
+     <normalon>:/images/drawingPalette/cercleON.png</normalon>:/images/drawingPalette/cercle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw a Circle</string>
    </property>
   </action>
  </widget>

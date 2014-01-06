@@ -34,6 +34,7 @@
 #include "gui/UBDockDownloadWidget.h"
 #include "core/UBApplicationController.h"
 #include "gui/UBFeaturesWidget.h"
+#include "gui/UBDrawingPalette.h"
 
 
 class UBWebToolsPalette;
@@ -64,6 +65,7 @@ class UBBoardPaletteManager : public QObject
         UBRightPalette* rightPalette(){return mRightPalette;}
         UBFeaturesWidget *featuresWidget(){return mpFeaturesWidget;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
+        UBDrawingPalette* drawingPalette() { return mDrawingPalette; }
         UBActionPalette *addItemPalette() {return mAddItemPalette;}
         void showVirtualKeyboard(bool show = true);
         void initPalettesPosAtStartup();
@@ -110,6 +112,7 @@ class UBBoardPaletteManager : public QObject
         QWidget* mContainer;
         UBBoardController *mBoardControler;
 
+        UBDrawingPalette *mDrawingPalette;
         UBStylusPalette *mStylusPalette;
 
         UBZoomPalette *mZoomPalette;
@@ -127,6 +130,9 @@ class UBBoardPaletteManager : public QObject
         UBActionPalette* mErasePalette;
         UBActionPalette* mPagePalette;
         UBActionPalette* mImageBackgroundPalette;// Issue 1684 - CFA - 20131119
+
+        // EV-7 - CFA - 20140102
+        UBActionPaletteButton* mEllipseActionPaletteButton;
 
         QUrl mItemUrl;
         QPixmap mPixmap;
@@ -167,6 +173,7 @@ class UBBoardPaletteManager : public QObject
         void backgroundPaletteClosed();
 
         void toggleStylusPalette(bool checked);
+        void toggleDrawingPalette(bool checked);
         void tooglePodcastPalette(bool checked);
 
         void erasePaletteButtonPressed();

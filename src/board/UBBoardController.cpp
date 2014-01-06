@@ -83,6 +83,7 @@
 
 #include "adaptors/UBMetadataDcSubsetAdaptor.h"
 #include "adaptors/UBSvgSubsetAdaptor.h"
+#include "adaptors/UBThumbnailAdaptor.h"
 
 #include "UBBoardPaletteManager.h"
 
@@ -113,6 +114,7 @@ UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     , mMovingSceneIndex(-1)
     , mActionGroupText(tr("Group"))
     , mActionUngroupText(tr("Ungroup"))
+    , mPendingEllipseButtonPressed(false)
 {
     mZoomFactor = UBSettings::settings()->boardZoomFactor->get().toDouble();
 
@@ -128,9 +130,8 @@ UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     int dpiCommon = (desktop->physicalDpiX() + desktop->physicalDpiY()) / 2;
     int sPixelsPerMillimeter = qRound(dpiCommon / UBGeometryUtils::inchSize);
     UBSettings::settings()->crossSize = 10*sPixelsPerMillimeter;
-
-    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 }
+
 
 
 void UBBoardController::init()
@@ -157,6 +158,7 @@ void UBBoardController::init()
     connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
     UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createNewDocument();
+    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 
     setActiveDocumentScene(doc);
 
@@ -174,11 +176,7 @@ UBBoardController::~UBBoardController()
     delete mDisplayView;
 
     // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
-    foreach(const QPixmap* pm, *mDocumentThumbs){
-        delete pm;
-        pm = NULL;
-    }
-    mDocumentThumbs->clear();
+    UBThumbnailAdaptor::clearThumbs(*mDocumentThumbs);
     delete mDocumentThumbs;
     mDocumentThumbs = NULL;
     // Issue 1026 - AOU - 20131028 : End
@@ -417,8 +415,37 @@ void UBBoardController::connectToolbar()
 
     //EV-7 - NNE - 20131230
     connect(mMainWindow->actionEllipse, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createEllipse(bool)));
-    connect(mMainWindow->actionPolygon, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createPolygon(bool)));
-    connect(mMainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(changeFillColor(bool)));
+    connect(mMainWindow->actionPolygon, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createPolygon(bool)));    connect(mMainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(changeFillColor(bool)));
+}
+
+// EV-7 - CFA - 20140102
+void UBBoardController::ellipsePressed()
+{
+    mEllipseButtonPressedTime = QTime::currentTime();
+
+    mPendingEllipseButtonPressed = true;
+    QTimer::singleShot(UBDrawingPalette::PRESS_DURATION, this, SLOT(ellipseReleased()));
+}
+
+void UBBoardController::ellipseReleased()
+{
+    if (mPendingEllipseButtonPressed)
+    {
+        if( mEllipseButtonPressedTime.msecsTo(QTime::currentTime()) > UBDrawingPalette::PRESS_DURATION)
+        {
+            UBApplication::boardController->paletteManager()->drawingPalette()->toggleEllipsePalette();
+        }
+        else
+        {
+            mShapeFactory.createEllipse(true);
+        }
+
+        mPendingEllipseButtonPressed = false;
+    }
+    else
+    {
+
+    }
 }
 
 void UBBoardController::startScript()

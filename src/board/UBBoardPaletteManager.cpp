@@ -79,6 +79,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mContainer(container)
     , mBoardControler(pBoardController)
     , mStylusPalette(0)
+    , mDrawingPalette(NULL)
     , mZoomPalette(0)
     , mTipPalette(0)
     , mLinkPalette(0)
@@ -90,6 +91,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mErasePalette(NULL)
     , mPagePalette(NULL)
     , mImageBackgroundPalette(NULL)
+    , mEllipseActionPaletteButton(NULL)
     , mPendingPageButtonPressed(false)
     , mPendingZoomButtonPressed(false)
     , mPendingPanButtonPressed(false)
@@ -253,8 +255,12 @@ void UBBoardPaletteManager::setupPalettes()
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
     mStylusPalette->show(); // always show stylus palette at startup
 
+    mDrawingPalette = new UBDrawingPalette(mContainer, UBSettings::settings()->appDrawingPaletteOrientationHorizontal->get().toBool() ? Qt::Vertical : Qt::Horizontal);
+    mDrawingPalette->hide();
+
     mZoomPalette = new UBZoomPalette(mContainer);
     mStylusPalette->stackUnder(mZoomPalette);
+    mDrawingPalette->stackUnder(mZoomPalette);
 
     mTipPalette = new UBStartupHintsPalette(mContainer);
 
@@ -431,6 +437,7 @@ void UBBoardPaletteManager::purchaseLinkActivated(const QString& link)
 
 void UBBoardPaletteManager::connectPalettes()
 {
+    connect(UBApplication::mainWindow->actionDrawing, SIGNAL(toggled(bool)), this, SLOT(toggleDrawingPalette(bool)));
     connect(UBApplication::mainWindow->actionStylus, SIGNAL(toggled(bool)), this, SLOT(toggleStylusPalette(bool)));
 
     foreach(QWidget *widget, UBApplication::mainWindow->actionZoomIn->associatedWidgets())
@@ -513,6 +520,14 @@ void UBBoardPaletteManager::connectPalettes()
             connect(button, SIGNAL(released()), this, SLOT(pagePaletteButtonReleased()));
         }
     }
+
+    mEllipseActionPaletteButton = mDrawingPalette->getButtonFromAction(UBApplication::mainWindow->actionEllipse);
+    if (mEllipseActionPaletteButton)
+    {
+        connect(mEllipseActionPaletteButton, SIGNAL( pressed() ), UBApplication::boardController, SLOT( ellipsePressed()) );
+        connect(mEllipseActionPaletteButton, SIGNAL( released() ), UBApplication::boardController , SLOT( ellipseReleased()) );
+    }
+
 
 }
 
@@ -618,6 +633,10 @@ void UBBoardPaletteManager::backgroundPaletteClosed()
     UBApplication::mainWindow->actionBackgrounds->setChecked(false);
 }
 
+void UBBoardPaletteManager::toggleDrawingPalette(bool checked)
+{
+    mDrawingPalette->setVisible(checked);
+}
 
 void UBBoardPaletteManager::toggleStylusPalette(bool checked)
 {
@@ -1026,6 +1045,13 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
         delete mStylusPalette;
         mStylusPalette = NULL;
     }
+
+    if(mDrawingPalette != NULL )
+    {
+        delete mDrawingPalette;
+        mDrawingPalette = NULL;
+    }
+
 
     // Create the new palette
     if(bVertical)
