@@ -2178,6 +2178,8 @@ void UBDocumentController::importFile()
     UBDocumentManager *docManager = UBDocumentManager::documentManager();
 
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
+    if(defaultPath.isDetached())
+        defaultPath = UBSettings::settings()->userDocumentDirectory();
     QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"),
                                                     defaultPath, docManager->importFileFilter());
 
