@@ -155,6 +155,13 @@ class UBBoardController : public UBDocumentContainer
         {
             return mSystemScaleFactor;
         }
+
+        //EV-7 - NNE - 20140106
+        UBShapeFactory& shapeFactory()
+        {
+            return mShapeFactory;
+        }
+
         qreal currentZoom();
 
         void persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028

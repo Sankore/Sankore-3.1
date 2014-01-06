@@ -141,7 +141,7 @@ void UBDrawingPalette::mousePressEvent(QMouseEvent *event)
 void UBDrawingPalette::drawingToolPressed()
 {
 
-    //UBApplication::boardController->setA
+    UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Drawing);
     mActionButtonPressedTime = QTime::currentTime();
 
     mPendingActionButtonPressed = true;
