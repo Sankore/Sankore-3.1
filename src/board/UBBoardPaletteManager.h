@@ -36,7 +36,6 @@
 #include "gui/UBFeaturesWidget.h"
 #include "gui/UBDrawingPalette.h"
 
-
 class UBWebToolsPalette;
 class UBStylusPalette;
 class UBClockPalette;

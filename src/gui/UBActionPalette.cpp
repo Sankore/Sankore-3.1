@@ -224,7 +224,6 @@ void UBActionPalette::close()
     emit closed();
 }
 
-
 void UBActionPalette::mouseReleaseEvent(QMouseEvent * event)
 {
     if (mIsClosable && event->pos().x() >= 0 && event->pos().x() < QPixmap(":/images/close.svg").width()
@@ -277,7 +276,6 @@ UBActionPaletteButton::UBActionPaletteButton(QAction* action, QWidget * parent)
 
     setObjectName("ubActionPaletteButton");
 }
-
 
 UBActionPaletteButton::~UBActionPaletteButton()
 {

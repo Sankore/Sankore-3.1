@@ -626,7 +626,7 @@ void UBBoardPaletteManager::backgroundPaletteClosed()
 
 void UBBoardPaletteManager::toggleDrawingPalette(bool checked)
 {
-    mDrawingPalette->setVisible(checked);
+    mDrawingPalette->changeVisibility(checked);
 }
 
 void UBBoardPaletteManager::toggleStylusPalette(bool checked)

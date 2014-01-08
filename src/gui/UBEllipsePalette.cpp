@@ -53,6 +53,12 @@ UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
 
     adjustSizeAndPosition();
 
+    foreach(const UBActionPaletteButton* button, mButtons)
+    {
+        connect(button, SIGNAL(pressed()), this, SLOT(ellipseToolPressed()));
+        connect(button, SIGNAL(released()), this, SLOT(ellipseToolReleased()));
+    }
+
     hide();
 
 }
@@ -73,6 +79,12 @@ UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
 
     adjustSizeAndPosition();
 
+    foreach(const UBActionPaletteButton* button, mButtons)
+    {
+        //connect(button, SIGNAL(pressed()), this, SLOT(ellipseToolPressed()));
+        connect(button, SIGNAL(released()), this, SLOT(ellipseToolReleased()));
+    }
+
     hide();
 }
 
@@ -88,7 +100,10 @@ void UBEllipsePalette::ellipseToolPressed()
 
 void UBEllipsePalette::ellipseToolReleased()
 {
+    mMainAction = mButtonGroup->checkedId();
+    hide();
 
+    emit newMainAction();
 }
 
 void UBEllipsePalette::mouseMoveEvent(QMouseEvent *event)

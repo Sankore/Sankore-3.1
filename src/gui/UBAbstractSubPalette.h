@@ -12,7 +12,7 @@ class UBAbstractSubPalette : public UBActionPalette
 
         virtual void togglePalette() =0;
         QAction* mainAction() { return actions().at(mMainAction); }
-    private :
+    protected :
         int mMainAction;
 };
 #endif // UBABSTRACTSUBPALETTE_H

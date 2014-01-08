@@ -31,6 +31,7 @@ class UBEllipsePalette : public UBAbstractSubPalette
     signals:
         void ellipseToolPressed(int tool);
         void ellipseToolReleased(int tool);
+        void newMainAction();
 };
 
 #endif // UBELLIPSEPALETTE_H
