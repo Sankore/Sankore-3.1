@@ -103,11 +103,13 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
     mpPageTitle = new UBTGAdaptableText(0, this);
     mpPageTitle->setObjectName("UBTGEditionPageTitle");
     mpPageTitle->setPlaceHolderText(tr("Type title here ..."));
+    mpPageTitle->setTabChangesFocus(true);
     mpLayout->addWidget(mpPageTitle);
 
     mpComment = new UBTGAdaptableText(0, this);
     mpComment->setObjectName("UBTGEditionComment");
     mpComment->setPlaceHolderText(tr("Type comment here ..."));
+    mpComment->setTabChangesFocus(true);
     mpLayout->addWidget(mpComment);
 
     mpSeparator = new QFrame(this);
@@ -790,6 +792,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpSessionTitle = new UBTGAdaptableText(0, this, "UBTGSessionTitle");
     mpSessionTitle->setPlaceHolderText(tr("Type session title here ..."));
     mpSessionTitle->setMaximumLength(1000);
+    mpSessionTitle->setTabChangesFocus(true);
     mpButtonTitleLayout->addWidget(mpSessionTitle);
     connect(this, SIGNAL(resized()), mpSessionTitle, SLOT(onTextChanged()));
 
@@ -809,6 +812,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpAuthors = new UBTGAdaptableText(0, this);
     mpAuthors->setObjectName("UBTGZeroPageInputText");
     mpAuthors->setPlaceHolderText(tr("Type authors here ..."));
+    mpAuthors->setTabChangesFocus(true);
     mpContainerWidgetLayout->addWidget(mpAuthors);
     connect(this, SIGNAL(resized()), mpAuthors, SLOT(onTextChanged()));
 
@@ -834,6 +838,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpObjectives = new UBTGAdaptableText(0, this);
     mpObjectives->setObjectName("UBTGZeroPageInputText");
     mpObjectives->setPlaceHolderText(tr("Type objectives here..."));
+    mpObjectives->setTabChangesFocus(true);
     mpContainerWidgetLayout->addWidget(mpObjectives);
     connect(this, SIGNAL(resized()), mpObjectives, SLOT(onTextChanged()));
 
@@ -855,6 +860,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     mpContainerWidgetLayout->addWidget(mpKeywordsLabel);
     mpKeywords = new UBTGAdaptableText(0, this);
     mpKeywords->setPlaceHolderText(tr("Type keywords here ..."));
+    mpKeywords->setTabChangesFocus(true);
     mpContainerWidgetLayout->addWidget(mpKeywords);
     connect(this, SIGNAL(resized()), mpKeywords, SLOT(onTextChanged()));
 
