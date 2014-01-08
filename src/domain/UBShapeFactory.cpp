@@ -26,6 +26,8 @@ UBShapeFactory::UBShapeFactory():
 void UBShapeFactory::changeFillColor(bool ok)
 {
     if(ok){
+
+        this->desactivate();
         UBGraphicsScene* scene = mBoardView->scene();
 
         QList<QGraphicsItem*> items = scene->selectedItems();

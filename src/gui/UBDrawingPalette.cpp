@@ -138,6 +138,7 @@ void UBDrawingPalette::drawingToolPressed()
 {
     mLastSelectedId = mButtonGroup->checkedId();
 
+    UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Drawing);
     mActionButtonPressedTime = QTime::currentTime();
     mPendingActionButtonPressed = true;
     QTimer::singleShot(UBDrawingPalette::PRESS_DURATION, this, SLOT(drawingToolReleased()));
