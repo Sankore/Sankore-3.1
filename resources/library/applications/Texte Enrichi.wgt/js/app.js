@@ -173,7 +173,19 @@
                         menu: [
                             editor.menuItems.inserttable,
                             editor.menuItems.column,
-                            editor.menuItems.row
+                            editor.menuItems.row,
+                            {
+                                text: 'Merge cells',
+                                onclick: function () {
+                                    editor.execCommand('mceTableMergeCells');
+                                }
+                            },
+                            {
+                                text: 'Split cell',
+                                onclick: function () {
+                                    editor.execCommand('mceTableSplitCells');
+                                }
+                            }
                         ]
                     });
 
@@ -410,7 +422,7 @@
              * Switch background to inverted colors (preserving color other than white and black)
              */
             app.RTEditor.prototype.setDarkBackground = function (dark) {
-                dark = !! dark;
+                dark = !!dark;
 
                 var $docBody = $(this.tinymce.getDoc()).find('body'),
                     darkClassname = 'dark',
@@ -483,23 +495,18 @@
 
                 var editor = this.tinymce;
 
+                // permet d'affecter la couleur de surbrillance à l'intégralité de la cellule dans le cas d'un tableau
+                // fonctionne dans tous les cas sauf quand on sélectionne en colonne
+                // à décommenter et compléter si le client nécessite vraiment cette fonctionnalité
                 this.tinymce.editorCommands.addCommands({
                     'HiliteColor': function (command, ui, value) {
                         var set = false;
                         if (editor.selection.selectedRange && editor.selection.selectedRange.commonAncestorContainer) {
                             var $container = $(editor.selection.selectedRange.commonAncestorContainer),
-                                tds = [],
-                                all = $container.find('*'),
-                                i;
-
-                            for (i = 0; i < all.length; i++) {
-                                if (editor.selection.getSel().containsNode(all[i], true) && $(all[i]).is('td')) {
-                                    tds.push(all[i]);
-                                }
-                            }
+                                tds = $container.parents('table').find('.mce-item-selected').toArray();
 
                             if ($container.is('td')) {
-                                tds.push($container.get('0'));
+                                tds.push($container.get(0));
                             }
 
                             if ($container.closest('td').length) {
@@ -522,6 +529,7 @@
                     }
                 });
                 
+                // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
                 var confirm = this.tinymce.windowManager.confirm;
                 this.tinymce.windowManager.confirm = function (message, callback, scope) {
                     if (message.indexOf('external link') !== -1) {
