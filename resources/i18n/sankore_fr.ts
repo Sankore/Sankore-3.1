@@ -2761,7 +2761,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation>Équerre</translation>
+        <translation>Equerre</translation>
     </message>
     <message>
         <source>Magnifier</source>
