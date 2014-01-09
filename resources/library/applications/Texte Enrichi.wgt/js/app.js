@@ -40,6 +40,7 @@
                 this.options = $.extend({}, {
                     defaultText: this.$container.html(),
                     locale: 'en_GB',
+                    autoShow: false,
                     onLinkClick: function (a) {},
                     onInit: function () {},
                     onBlur: function () {}
@@ -336,9 +337,9 @@
                 $(window).bind('resize', function () {
                     self.refreshSize();
                 });
-                
+
                 $('#' + this.id).on('click', 'a', function (e) {
-                    self.options.onLinkClick.call(self, e);    
+                    self.options.onLinkClick.call(self, e);
                 });
 
                 if (this.widget) {
@@ -349,8 +350,6 @@
                             if (self.empty) {
                                 self.setContent('');
                             }
-
-                            $('body').removeClass('view');
                         }
                     };
 
@@ -364,8 +363,6 @@
                         }
 
                         self.hide();
-
-                        $('body').addClass('view');
                     };
 
                     this.widget.ondrop = function (url, contentType) {
@@ -395,6 +392,7 @@
              */
             app.RTEditor.prototype.show = function () {
                 this.tinymce.show();
+                $('body').removeClass('view');
             };
 
             /**
@@ -402,6 +400,7 @@
              */
             app.RTEditor.prototype.hide = function () {
                 this.tinymce.hide();
+                $('body').addClass('view');
             };
 
             /**
@@ -422,7 +421,7 @@
              * Switch background to inverted colors (preserving color other than white and black)
              */
             app.RTEditor.prototype.setDarkBackground = function (dark) {
-                dark = !!dark;
+                dark = !! dark;
 
                 var $docBody = $(this.tinymce.getDoc()).find('body'),
                     darkClassname = 'dark',
@@ -495,9 +494,6 @@
 
                 var editor = this.tinymce;
 
-                // permet d'affecter la couleur de surbrillance à l'intégralité de la cellule dans le cas d'un tableau
-                // fonctionne dans tous les cas sauf quand on sélectionne en colonne
-                // à décommenter et compléter si le client nécessite vraiment cette fonctionnalité
                 this.tinymce.editorCommands.addCommands({
                     'HiliteColor': function (command, ui, value) {
                         var set = false;
@@ -528,7 +524,7 @@
                         editor.nodeChanged();
                     }
                 });
-                
+
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
                 var confirm = this.tinymce.windowManager.confirm;
                 this.tinymce.windowManager.confirm = function (message, callback, scope) {
@@ -538,6 +534,10 @@
                         confirm.call(this, message, callback, scope);
                     }
                 };
+                
+                if (!this.options.autoShow) {
+                    this.hide();
+                }
             };
 
             /**
@@ -575,6 +575,7 @@
         try {
             this.init(id, options);
         } catch (e) {
+            console.error(e.message);
             console.error(e.stack);
         }
     };
@@ -582,8 +583,10 @@
     $(document).ready(function () {
         var options = {
             locale: 'en_GB',
-            defaultText: 'Insert your text here'
+            defaultText: 'Insert your text here',
+            autoSjow: false,
         }, widget = null;
+
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
@@ -592,7 +595,7 @@
 
             options.onInit = function () {
                 var text = window.sankore.preference('content', '');
-
+   
                 this.setContent(text);
 
                 if (text.trim().length !== 0) {
@@ -621,6 +624,13 @@
 
         if (window.widget) {
             widget = window.widget;
+        }
+
+        if (window.sankore) {
+            if (window.sankore.preference('loaded').length === 0) {
+                options.autoShow = true;
+                window.sankore.setPreference('loaded', 'true');
+            }
         }
 
         window.rteditor = new app.RTEditor('ubwidget', widget, options);
