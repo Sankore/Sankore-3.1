@@ -1931,7 +1931,7 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     </message>
     <message>
         <source>Every background will be replaced with this one. Are you sure ?</source>
-        <translation>Chaque Fond sera remplacé par celui-ci. Etes-vous sûr ?</translation>
+        <translation>Chaque fond sera remplacé par celui-ci. Etes-vous sûr ?</translation>
     </message>
 </context>
 <context>
@@ -2568,7 +2568,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>The currect action is not supported. The teacher bar is design to work only with media stored locally.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette action n&apos;est pas possible. La barre du professeur peut seulement recevoir des médias stockés en local.</translation>
     </message>
 </context>
 <context>

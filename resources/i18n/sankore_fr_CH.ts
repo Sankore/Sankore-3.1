@@ -1323,15 +1323,15 @@
     </message>
     <message>
         <source>Empty the trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Vider la corbeille</translation>
     </message>
     <message>
         <source>You&apos;re about to empty the trash.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous êtes sur le point de vider la corbeille.</translation>
     </message>
     <message>
         <source>Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Etes-vous sûr ?</translation>
     </message>
 </context>
 <context>
@@ -1789,7 +1789,7 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     </message>
     <message>
         <source>Set as default background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fond par défaut</translation>
     </message>
 </context>
 <context>
@@ -1883,55 +1883,55 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     </message>
     <message>
         <source>has been restored to</source>
-        <translation type="unfinished"></translation>
+        <translation>a été restauré dans</translation>
     </message>
     <message>
         <source>Move folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer un dossier</translation>
     </message>
     <message>
         <source>There is a folder with the same name in this location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un dossier portant le même nom existe déjà à cet emplacement.</translation>
     </message>
     <message>
         <source>The folder will be moved and rename to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le dossier va être déplacé et renommé en %1</translation>
     </message>
     <message>
         <source>Are you sure to move and rename the folder ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Êtes-vous sûr de déplacer et renommer le dossier ?</translation>
     </message>
     <message>
         <source>Too many folder have the same name in this location %1. Please delete some folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trop de dossier ont le même nom à cet emplacement %1. Essayez d&apos;en supprimer.</translation>
     </message>
     <message>
         <source>Move file</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer un fichier</translation>
     </message>
     <message>
         <source>There is a file with the same name in this location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un fichier portant le même nom existe déjà à cet emplacement.</translation>
     </message>
     <message>
         <source>The file will be moved and rename to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier va être déplacé et renommé en %1</translation>
     </message>
     <message>
         <source>Are you sure to move and rename the file ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Êtes-vous sûr de déplacer et renommer le fichier ?</translation>
     </message>
     <message>
         <source>Too many file have the same name in this location %1. Please delete some files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trop de fichiers ont le même nom à cet emplacement %1. Essayez d&apos;en supprimer.</translation>
     </message>
     <message>
         <source>Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Etes-vous sûr ?</translation>
     </message>
     <message>
         <source>Every background will be replaced with this one. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chaque fond sera remplacé par celui-ci. Etes-vous sûr ?</translation>
     </message>
 </context>
 <context>
@@ -2568,7 +2568,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>The currect action is not supported. The teacher bar is design to work only with media stored locally.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette action n&apos;est pas possible. La barre du professeur peut seulement recevoir des médias stockés en local.</translation>
     </message>
 </context>
 <context>
@@ -2712,15 +2712,15 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Add a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un fichier</translation>
     </message>
     <message>
         <source>File not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier introuvable</translation>
     </message>
     <message>
         <source>No application was found to handle this file type</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune application n&apos;a été trouvée pour gérer ce type de fichier</translation>
     </message>
 </context>
 <context>
