@@ -563,9 +563,13 @@ void UBWidgetUniboardAPI::ProcessDropEvent(QGraphicsSceneDragDropEvent *event)
             }
         }
     }
-    qDebug() << destFileName;
+
     QString mimeText = createMimeText(downloaded, contentType, destFileName);
-    dropMimeData->setData(tMimeText, mimeText.toAscii());
+
+    // Ev-5.1 - CFA - 20140109 : correction drop RTE
+    UBFeaturesController* c = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController();
+    if (c->getFeatureByFullPath(mGraphicsWidget->sourceUrl().toLocalFile()).getType() != FEATURE_RTE)
+        dropMimeData->setData(tMimeText, mimeText.toAscii());
 
     if (mGraphicsWidget->page() && mGraphicsWidget->page()->mainFrame()) {
         mGraphicsWidget

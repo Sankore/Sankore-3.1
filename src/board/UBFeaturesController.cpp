@@ -1762,6 +1762,17 @@ UBFeature UBFeaturesController::getFeatureByPath(const QString &path) const
 
     return UBFeature();
 }
+
+UBFeature UBFeaturesController::getFeatureByFullPath(const QString &path) const
+{
+    for(int i = 0; i < this->featuresList->size(); i++){
+        if(this->featuresList->at(i).getFullPath().toLocalFile() == path){
+            return this->featuresList->at(i);
+        }
+    }
+
+    return UBFeature();
+}
 //issue 1474 - NNE - 20131119 : END
 
 //issue 1474 - NNE - 20131125

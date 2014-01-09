@@ -471,6 +471,7 @@ public:
 
     //issue 1474 - NNE - 20131119
     UBFeature getFeatureByPath(const QString &path) const;
+    UBFeature getFeatureByFullPath(const QString &path) const;
 
 };
 
