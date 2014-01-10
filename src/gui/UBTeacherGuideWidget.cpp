@@ -57,6 +57,8 @@
 
 #include "core/memcheck.h"
 
+#include <frameworks/UBWidgetUtils.h>
+
 #define UBTG_SEPARATOR_FIXED_HEIGHT 3
 
 typedef enum {
@@ -66,6 +68,9 @@ typedef enum {
     eUBTGAddSubItemWidgetType_Url,
     eUBTGAddSubItemWidgetType_File // Issue 1683 (Evolution) - AOU - 20131206
 } eUBTGAddSubItemWidgetType;
+
+
+
 
 /***************************************************************************
  *               class    UBTeacherGuideEditionWidget                      *
@@ -133,6 +138,7 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
     mpTreeWidget->header()->setResizeMode(1, QHeaderView::Fixed);
     mpTreeWidget->header()->setDefaultSectionSize(18);
     mpTreeWidget->setSelectionMode(QAbstractItemView::NoSelection);
+    mpTreeWidget->setExpandsOnDoubleClick(false);
 
     connect(mpTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
@@ -430,7 +436,8 @@ typedef enum {
     tUBTGActionAssociateOnClickItem_NONE,
     tUBTGActionAssociateOnClickItem_URL,
     tUBTGActionAssociateOnClickItem_MEDIA,
-    tUBTGActionAssociateOnClickItem_EXPAND
+    tUBTGActionAssociateOnClickItem_EXPAND,
+    tUBTGActionAssociateOnClickItem_FILE
 } tUBTGActionAssociateOnClickItem;
 
 typedef enum {
@@ -988,6 +995,8 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
 	// Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
     mpTreeWidgetPresentation->setExpandsOnDoubleClick(false);
     mpTreeWidgetPresentation->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    mpContainerWidgetLayout->addStretch();
 	// Fin Issue 1683 - AOU - 20131219
 
     connect(mpTreeWidgetPresentation, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
@@ -1249,6 +1258,11 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
         // Issue 1683 (Evolution) - AOU - 20131206
         mpTreeWidgetEdition->show();
         mpTreeWidgetPresentation->hide();
+
+        // Redim tree :
+        int treeTotalHeight = UBWidgetUtils::getTreeWidgetItemVisualHeight(mpTreeWidgetEdition, mpAddAFileItem);
+        treeTotalHeight += 2 * mpTreeWidgetEdition->frameWidth(); // add thickness of outline (top and bottom borders)
+        mpTreeWidgetEdition->setFixedHeight(treeTotalHeight);
         // Fin Issue 1683 (Evolution) - AOU - 20131206
     }
     else {
@@ -1292,7 +1306,7 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
 
         // Rafraichir le QTreeWidget "Presentation" avec les items du QTreeWidget "Edition"
         cleanData(tUBTGZeroPageMode_PRESENTATION);
-        for(int i=0; i<mpTreeWidgetEdition->invisibleRootItem()->child(0)->childCount(); ++i)
+        for(int i=0; i<mpAddAFileItem->childCount(); ++i)
         {
             QTreeWidgetItem* item = mpTreeWidgetEdition->invisibleRootItem()->child(0)->child(i);
             UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidgetEdition->itemWidget(item, 0));
@@ -1302,7 +1316,7 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
                 QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpMediaSwitchItem);
                 newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/doc.png"));
                 newWidgetItem->setText(0, fileItem->getTitreFichier());
-                newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_URL);
+                newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_FILE);
                 newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnUrl, QVariant(fileItem->path()));
                 newWidgetItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 11)));
                 newWidgetItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
@@ -1310,6 +1324,12 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
             }
         }
         mpTreeWidgetPresentation->show();
+
+        // Redim tree :
+        int treeTotalHeight = UBWidgetUtils::getTreeWidgetItemVisualHeight(mpTreeWidgetPresentation, mpMediaSwitchItem);
+        treeTotalHeight += 2 * mpTreeWidgetPresentation->frameWidth(); // add thickness of outline (top and bottom borders)
+        mpTreeWidgetPresentation->setFixedHeight(treeTotalHeight);
+
         // Fin Issue 1683 (Evolution) - AOU - 20131206
     }
     update();
@@ -1411,6 +1431,7 @@ void UBTeacherGuidePageZeroWidget::load(QDomDocument doc)
     mbFilesChanged = false;
 }
 
+
 void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
 {
     int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
@@ -1431,9 +1452,6 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                 mpTreeWidgetEdition->setItemWidget(newWidgetItem, 0, fileWidget);
                 connect(fileWidget, SIGNAL(changed()), this, SLOT(setFilesChanged()));
 
-                // Redim le TreeViewEdition : // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
-                mpTreeWidgetEdition->setMinimumHeight(20 + fileWidget->height() * mpAddAFileItem->childCount());
-                
                 break;
             }
             default:
@@ -1469,12 +1487,13 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
 
             delete widget;
 
-            mpTreeWidgetEdition->setMinimumHeight(20 + fileWidget->height() * mpAddAFileItem->childCount()); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
-
-
             setFilesChanged();
         }
 
+        // Redim TreeViewEdition :
+        int treeTotalHeight = UBWidgetUtils::getTreeWidgetItemVisualHeight(mpTreeWidgetEdition, mpAddAFileItem);
+        treeTotalHeight += (2 * mpTreeWidgetEdition->frameWidth()); // add thickness of outline (top and bottom borders)
+        mpTreeWidgetEdition->setFixedHeight(treeTotalHeight);
     }
     else if (mode() == tUBTGZeroPageMode_PRESENTATION)
     {
@@ -1489,7 +1508,6 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                 }
 #endif
                 mpMediaSwitchItem->setText(0, "-");
-                mpTreeWidgetPresentation->setMinimumHeight(30 + 25 * mpAddAFileItem->childCount()); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
             }
             else
             {
@@ -1500,11 +1518,16 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
                 }
 #endif
                 mpMediaSwitchItem->setText(0, "+");
-                mpTreeWidgetPresentation->setMinimumHeight(30); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
             }
+
+            // Redim tree :
+            int treeTotalHeight = UBWidgetUtils::getTreeWidgetItemVisualHeight(mpTreeWidgetPresentation, mpMediaSwitchItem);
+            treeTotalHeight += 2 * mpTreeWidgetPresentation->frameWidth(); // add thickness of outline (top and bottom borders)
+            mpTreeWidgetPresentation->setFixedHeight(treeTotalHeight);
+
             break;
         }
-        case tUBTGActionAssociateOnClickItem_URL: {
+        case tUBTGActionAssociateOnClickItem_FILE: {
             widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
 
             QString pathFile = widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
@@ -1715,5 +1738,11 @@ void UBTeacherGuidePageZeroWidget::onActiveDocumentChanged()
 
 void UBTeacherGuidePageZeroWidget::onScrollAreaRangeChanged(int min, int max) // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
 {
-    mpScrollArea->verticalScrollBar()->setValue(max);
+    static int nbExternalFiles = 0;
+
+    if (nbExternalFiles != mpAddAFileItem->childCount())
+    {
+        mpScrollArea->verticalScrollBar()->setValue(max);
+        nbExternalFiles = mpAddAFileItem->childCount();
+    }
 }
