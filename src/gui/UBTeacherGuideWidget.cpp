@@ -1314,7 +1314,12 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
             {
                 createMediaButtonItem();
                 QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpMediaSwitchItem);
-                newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/doc.png"));
+                if (fileItem->path().isEmpty()){
+                    newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large_warning.gif")); // different icon, if no file choosed.
+                }
+                else{
+                    newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large.gif"));
+                }
                 newWidgetItem->setText(0, fileItem->getTitreFichier());
                 newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_FILE);
                 newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnUrl, QVariant(fileItem->path()));
