@@ -225,7 +225,7 @@ public:
     virtual ~UBTGFileWidget();
     tUBGEElementNode* saveData();
     void initializeWithDom(QDomElement element);
-    inline QString getTitreFichier() const {return mpTitreFichier->text();}
+    inline QString titreFichier() const {return mpTitreFichier->text();}
     inline QString path() const {return mPath;}
     inline void setPath(QString path){mPath = path;}
 

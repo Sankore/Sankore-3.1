@@ -1304,11 +1304,25 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
         // Issue 1683 (Evolution) - AOU - 20131206
         mpTreeWidgetEdition->hide();
 
+        // Remove empty ExternalFiles from treeEdition :
+        for(int i=0; i<mpAddAFileItem->childCount();)
+        {
+            QTreeWidgetItem* item = mpAddAFileItem->child(i);
+            UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidgetEdition->itemWidget(item, 0));
+            if (fileItem->titreFichier().isEmpty() && fileItem->path().isEmpty()){ // if no title nor file choosen ...
+                QTreeWidgetItem * itemtoBeDeleted = mpAddAFileItem->takeChild(i); // remove item from tree...
+                DELETEPTR(itemtoBeDeleted); // and destroy item.
+            }
+            else{
+                i++;
+            }
+        }
+
         // Rafraichir le QTreeWidget "Presentation" avec les items du QTreeWidget "Edition"
         cleanData(tUBTGZeroPageMode_PRESENTATION);
         for(int i=0; i<mpAddAFileItem->childCount(); ++i)
         {
-            QTreeWidgetItem* item = mpTreeWidgetEdition->invisibleRootItem()->child(0)->child(i);
+            QTreeWidgetItem* item = mpAddAFileItem->child(i);
             UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidgetEdition->itemWidget(item, 0));
             if (fileItem)
             {
@@ -1320,7 +1334,7 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
                 else{
                     newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large.gif"));
                 }
-                newWidgetItem->setText(0, fileItem->getTitreFichier());
+                newWidgetItem->setText(0, fileItem->titreFichier());
                 newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_FILE);
                 newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnUrl, QVariant(fileItem->path()));
                 newWidgetItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 11)));
@@ -1743,6 +1757,8 @@ void UBTeacherGuidePageZeroWidget::onActiveDocumentChanged()
 
 void UBTeacherGuidePageZeroWidget::onScrollAreaRangeChanged(int min, int max) // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
 {
+    Q_UNUSED(min)
+
     static int nbExternalFiles = 0;
 
     if (nbExternalFiles != mpAddAFileItem->childCount())
