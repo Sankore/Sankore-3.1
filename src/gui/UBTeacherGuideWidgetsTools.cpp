@@ -835,6 +835,7 @@ void UBTGFileWidget::OnClickBtnSelectFile()
             QFile::copy(fileInfo.absoluteFilePath(), documentPath + "/" + path);
 
             setPath(path);
+            mpTitreFichier->setText(fileInfo.fileName()); // default Title is file name.
         }
 
         emit changed();
