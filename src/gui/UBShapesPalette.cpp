@@ -21,7 +21,7 @@
 
 
 
-#include "UBEllipsePalette.h"
+#include "UBShapesPalette.h"
 
 #include <QtGui>
 
@@ -37,7 +37,7 @@
 
 #include "core/memcheck.h"
 
-UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
+UBShapesPalette::UBShapesPalette(QWidget *parent, Qt::Orientation orient)
     : UBAbstractSubPalette(parent, orient)
     , mLastSelectedId(-1)
 {
@@ -45,6 +45,11 @@ UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
 
     actions << UBApplication::mainWindow->actionEllipse;
     actions << UBApplication::mainWindow->actionCircle;
+    actions << UBApplication::mainWindow->actionRectangle;
+    actions << UBApplication::mainWindow->actionSquare;
+    actions << UBApplication::mainWindow->actionSmartLine;
+    actions << UBApplication::mainWindow->actionSmartPen;
+
 
     setActions(actions);
     setButtonIconSize(QSize(28, 28));
@@ -55,15 +60,14 @@ UBEllipsePalette::UBEllipsePalette(QWidget *parent, Qt::Orientation orient)
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {
-        connect(button, SIGNAL(pressed()), this, SLOT(ellipseToolPressed()));
-        connect(button, SIGNAL(released()), this, SLOT(ellipseToolReleased()));
+        connect(button, SIGNAL(released()), this, SLOT(shapesToolReleased()));
     }
 
     hide();
 
 }
 
-UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
+UBShapesPalette::UBShapesPalette(Qt::Orientation orient, QWidget *parent )
     : UBAbstractSubPalette(parent, orient)
     , mLastSelectedId(-1)
 {
@@ -71,6 +75,10 @@ UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
 
     actions << UBApplication::mainWindow->actionEllipse;
     actions << UBApplication::mainWindow->actionCircle;
+    actions << UBApplication::mainWindow->actionRectangle;
+    actions << UBApplication::mainWindow->actionSquare;
+    actions << UBApplication::mainWindow->actionSmartLine;
+    actions << UBApplication::mainWindow->actionSmartPen;
 
     setActions(actions);
     setButtonIconSize(QSize(28, 28));
@@ -81,37 +89,37 @@ UBEllipsePalette::UBEllipsePalette(Qt::Orientation orient, QWidget *parent )
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {
-        //connect(button, SIGNAL(pressed()), this, SLOT(ellipseToolPressed()));
-        connect(button, SIGNAL(released()), this, SLOT(ellipseToolReleased()));
+        connect(button, SIGNAL(released()), this, SLOT(shapesToolReleased()));
     }
 
     hide();
 }
 
-UBEllipsePalette::~UBEllipsePalette()
+UBShapesPalette::~UBShapesPalette()
 {
 
 }
 
-void UBEllipsePalette::ellipseToolPressed()
+void UBShapesPalette::shapesToolPressed()
 {
 
 }
 
-void UBEllipsePalette::ellipseToolReleased()
+void UBShapesPalette::shapesToolReleased()
 {
     mMainAction = mButtonGroup->checkedId();
+
     hide();
 
     emit newMainAction();
 }
 
-void UBEllipsePalette::mouseMoveEvent(QMouseEvent *event)
+void UBShapesPalette::mouseMoveEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
 }
 
-void UBEllipsePalette::togglePalette()
+void UBShapesPalette::togglePalette()
 {
     show();
 }

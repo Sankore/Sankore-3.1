@@ -24,12 +24,20 @@ public:
     {
         Ellipse,
         Circle,
+        Rectangle,
+        Square,
+        Line,
+        Pen,
         Polygon
     };
 public slots:
     void createEllipse(bool create);
     void createPolygon(bool create);
     void createCircle(bool create);
+    void createRectangle(bool create);
+    void createSquare(bool create);
+    void createLine(bool create);
+    void createPen(bool create);
 
     void changeFillColor(bool ok);
 

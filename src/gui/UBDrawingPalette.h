@@ -5,7 +5,7 @@
 #include <QButtonGroup>
 
 #include "UBAbstractSubPalette.h"
-#include "UBEllipsePalette.h"
+#include "UBShapesPalette.h"
 
 class UBDrawingPalette : public UBActionPalette
 {
@@ -15,7 +15,7 @@ class UBDrawingPalette : public UBActionPalette
 
         enum Actions // The order here defines the order on the palette
         {
-            EllipseAction,
+            ShapesAction,
             PolygonAction,
             FillAction
         };
@@ -27,9 +27,9 @@ class UBDrawingPalette : public UBActionPalette
         void mouseMoveEvent(QMouseEvent *event);
 
         void initPosition();
-        void toggleEllipsePalette();
         void connectButtons();
         void setupSubPalettes(QWidget* parent, Qt::Orientation);
+        void connectDrawingActions();
         void connectSubPalettes();
         void changeVisibility(bool checked);
 

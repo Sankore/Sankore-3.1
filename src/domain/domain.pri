@@ -30,7 +30,9 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBStrokeProperty.h \
     src/domain/UBGraphicsEllipseItem.h \
     src/domain/UBShapeFactory.h \
-    src/domain/UBGraphicsPathItem.h
+    src/domain/UBGraphicsPathItem.h \
+    src/domain/UBGraphicsRectItem.h \
+    src/domain/UBGraphicsLineItem.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
@@ -65,4 +67,6 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsEllipseItem.cpp \
     src/domain/UBStrokeProperty.cpp \
     src/domain/UBShapeFactory.cpp \
-    src/domain/UBGraphicsPathItem.cpp
+    src/domain/UBGraphicsPathItem.cpp \
+    src/domain/UBGraphicsRectItem.cpp \
+    src/domain/UBGraphicsLineItem.cpp

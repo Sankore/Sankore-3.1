@@ -63,7 +63,22 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     connectButtons();
 
     setupSubPalettes(parent, orient);
+
+    connectDrawingActions();
     connectSubPalettes();
+}
+
+void UBDrawingPalette::connectDrawingActions()
+{
+    connect(UBApplication::mainWindow->actionEllipse, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createEllipse(bool)));
+    connect(UBApplication::mainWindow->actionCircle, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createCircle(bool)));
+    connect(UBApplication::mainWindow->actionRectangle, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createRectangle(bool)));
+    connect(UBApplication::mainWindow->actionSquare, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createSquare(bool)));
+    connect(UBApplication::mainWindow->actionSmartLine, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createLine(bool)));
+    connect(UBApplication::mainWindow->actionSmartPen, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createPen(bool)));
+    connect(UBApplication::mainWindow->actionPolygon, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createPolygon(bool)));
+    connect(UBApplication::mainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(changeFillColor(bool)));
+
 }
 
 void UBDrawingPalette::connectButtons()
@@ -82,21 +97,21 @@ void UBDrawingPalette::setupSubPalettes(QWidget* parent, Qt::Orientation orienta
     if (orientation == Qt::Vertical)
     {
         //Sub Palette for ellipses and circles
-        mSubPalettes[EllipseAction] = new UBEllipsePalette(parent, Qt::Horizontal);
+        mSubPalettes[ShapesAction] = new UBShapesPalette(parent, Qt::Horizontal);
 
-        int x = this->pos().x() + this->width();
+        int x = this->pos().x() + this->width() - 10.f;
 
-        mSubPalettes[EllipseAction]->setCustomPosition(true);
-        mSubPalettes[EllipseAction]->move(x, this->pos().y());
+        mSubPalettes[ShapesAction]->setCustomPosition(true);
+        mSubPalettes[ShapesAction]->move(x, this->pos().y());
     }
     else
     {
-        mSubPalettes[EllipseAction] = new UBEllipsePalette(parent);
+        mSubPalettes[ShapesAction] = new UBShapesPalette(parent);
 
         int x = this->pos().x() + this->width();
 
-        mSubPalettes[EllipseAction]->setCustomPosition(true);
-        mSubPalettes[EllipseAction]->move(x, this->pos().y());
+        mSubPalettes[ShapesAction]->setCustomPosition(true);
+        mSubPalettes[ShapesAction]->move(x, this->pos().y());
     }
 
     initSubPalettesPosition(rect().topLeft());
@@ -104,14 +119,14 @@ void UBDrawingPalette::setupSubPalettes(QWidget* parent, Qt::Orientation orienta
 
 void UBDrawingPalette::connectSubPalettes()
 {
-    connect(mSubPalettes[EllipseAction], SIGNAL(newMainAction()), this, SLOT(updateActions()));
+    connect(mSubPalettes[ShapesAction], SIGNAL(newMainAction()), this, SLOT(updateActions()));
 }
 
 void UBDrawingPalette::updateActions()
 {
     QList<QAction*> actions;
 
-    actions << mSubPalettes[EllipseAction]->mainAction();
+    actions << mSubPalettes[ShapesAction]->mainAction();
     actions << UBApplication::mainWindow->actionPolygon;
     actions << UBApplication::mainWindow->actionChangeFillingColor;
 

@@ -1,6 +1,8 @@
 #include "UBShapeFactory.h"
 #include "UBFillingProperty.h"
 #include "UBGraphicsEllipseItem.h"
+#include "UBGraphicsRectItem.h"
+#include "UBGraphicsLineItem.h"
 #include "UBGraphicsPathItem.h"
 
 #include "core/UBApplication.h"
@@ -74,6 +76,29 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         mCurrentShape->fillingProperty()->setFirstColor(Qt::blue);
         break;
     }
+    case Rectangle:
+    {
+        UBGraphicsRectItem* rect = new UBGraphicsRectItem();
+        rect->setAsRectangle();
+        mCurrentShape = rect;
+        mCurrentShape->fillingProperty()->setFirstColor(Qt::green);
+        break;
+    }
+    case Square:
+    {
+        UBGraphicsRectItem* square = new UBGraphicsRectItem();
+        square->setAsSquare();
+        mCurrentShape = square;
+        mCurrentShape->fillingProperty()->setFirstColor(Qt::black);
+        break;
+    }
+    case Line:
+    {
+        UBGraphicsLineItem* line = new UBGraphicsLineItem();
+        mCurrentShape = line;
+        mCurrentShape->fillingProperty()->setFirstColor(Qt::black);
+        break;
+    }
     case Polygon:
     {
         UBGraphicsPathItem * pathItem = new UBGraphicsPathItem();
@@ -108,6 +133,50 @@ void UBShapeFactory::createCircle(bool create)
     }
 }
 
+void UBShapeFactory::createRectangle(bool create)
+{
+    if(create)
+    {
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
+        mIsRegularShape = true;
+        mIsCreating = true;
+        mShapeType = Rectangle;
+    }
+}
+
+void UBShapeFactory::createSquare(bool create)
+{
+    if(create)
+    {
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
+        mIsRegularShape = true;
+        mIsCreating = true;
+        mShapeType = Square;
+    }
+}
+
+void UBShapeFactory::createLine(bool create)
+{
+    if(create)
+    {
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
+        mIsRegularShape = true;
+        mIsCreating = true;
+        mShapeType = Line;
+    }
+}
+
+void UBShapeFactory::createPen(bool create)
+{
+    if(create)
+    {
+        mDrawingController->setStylusTool(UBStylusTool::Drawing);
+        mIsRegularShape = true;
+        mIsCreating = true;
+        mShapeType = Pen;
+    }
+}
+
 void UBShapeFactory::createPolygon(bool create)
 {
     if(create){
@@ -123,14 +192,35 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
     if(mIsCreating && mIsPress){
         QPointF cursorPosition = mBoardView->mapToScene(event->pos());
 
-        if(mIsRegularShape){
-            UBGraphicsEllipseItem* shape = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
-             QRectF rect = shape->rect();
+        if(mIsRegularShape)
+        {
+            if (mShapeType == Ellipse || mShapeType == Circle)
+            {
+                UBGraphicsEllipseItem* shape = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+                QRectF rect = shape->rect();
 
-             qreal w = cursorPosition.x() - rect.x();
-             qreal h = cursorPosition.y() - rect.y();
+                qreal w = cursorPosition.x() - rect.x();
+                qreal h = cursorPosition.y() - rect.y();
 
-             shape->setRect(QRectF(rect.x(), rect.y(), w, h));
+                shape->setRect(QRectF(rect.x(), rect.y(), w, h));
+            }
+            else if (mShapeType == Rectangle || mShapeType == Square)
+            {
+                UBGraphicsRectItem* shape = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
+                QRectF rect = shape->rect();
+
+                qreal w = cursorPosition.x() - rect.x();
+                qreal h = cursorPosition.y() - rect.y();
+
+                shape->setRect(QRectF(rect.x(), rect.y(), w, h));
+            }
+            else if (mShapeType == Line)
+            {
+                UBGraphicsLineItem* line= dynamic_cast<UBGraphicsLineItem*>(mCurrentShape);
+                QLineF newLine(line->startPoint(), cursorPosition);
+                line->setLine(newLine);
+                line->setEndPoint(cursorPosition);
+            }
         }
     }
 }
@@ -143,11 +233,32 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
         QPointF cursorPosition = mBoardView->mapToScene(event->pos());
 
         if(mIsRegularShape){
-            UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(instanciateCurrentShape());
+            if (mShapeType == Ellipse || mShapeType == Circle)
+            {
+                UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(instanciateCurrentShape());
 
-            ellipse->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
+                ellipse->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
 
-            mBoardView->scene()->addItem(ellipse);
+                mBoardView->scene()->addItem(ellipse);
+            }
+            else if (mShapeType == Rectangle || mShapeType == Square)
+            {
+                UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(instanciateCurrentShape());
+
+                rect->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
+
+                mBoardView->scene()->addItem(rect);
+            }
+            else if (mShapeType == Line)
+            {
+                UBGraphicsLineItem* line = dynamic_cast<UBGraphicsLineItem*>(instanciateCurrentShape());
+
+                line->setLine(QLineF(cursorPosition, cursorPosition));
+                line->setStartPoint(cursorPosition);
+                line->setEndPoint(cursorPosition);
+
+                mBoardView->scene()->addItem(line);
+            }
         }else{
             UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
             if (mCurrentShape == NULL || pathItem == NULL)
@@ -168,7 +279,13 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
 void UBShapeFactory::onMouseRelease(QMouseEvent *event)
 {
+    Q_UNUSED(event);
     mIsPress = false;
+
+    UBGraphicsLineItem* line= dynamic_cast<UBGraphicsLineItem*>(mCurrentShape);
+    if (line)
+        if (line->startPoint() == line->endPoint())
+             mBoardView->scene()->removeItem(line);
 }
 
 void UBShapeFactory::desactivate()

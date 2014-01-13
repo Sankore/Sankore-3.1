@@ -19,19 +19,17 @@
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef UBGRAPHICSRECTITEM_H
+#define UBGRAPHICSRECTITEM_H
 
-
-#ifndef UBGRAPHICSELLIPSEITEM_H
-#define UBGRAPHICSELLIPSEITEM_H
-
-#include <QGraphicsEllipseItem>
+#include <QGraphicsRectItem>
 #include "UBShape.h"
 
-class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape
+class UBGraphicsRectItem : public QGraphicsRectItem, public UBShape
 {
 public:
-    UBGraphicsEllipseItem(QGraphicsItem* parent = 0);
-    virtual ~UBGraphicsEllipseItem();
+    UBGraphicsRectItem(QGraphicsItem* parent = 0);
+    virtual ~UBGraphicsRectItem();
 
     enum { Type = UBGraphicsItemType::GraphicsShapeItemType };
     virtual int type() const { return Type; }
@@ -40,15 +38,14 @@ public:
 
     virtual void copyItemParameters(UBItem *copy) const;
 
-    QPointF center() const;
-    qreal radius(Qt::Orientation orientation) const;
-
-    void setAsCircle(){
-        mIsCircle = true;
+    void setAsSquare()
+    {
+        mIsSquare = true;
     }
 
-    void setAsEllipse(){
-        mIsCircle = false;
+    void setAsRectangle()
+    {
+        mIsSquare = false;
     }
 
     void setRect(const QRectF &rect);
@@ -68,7 +65,7 @@ protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
 private:
-    bool mIsCircle;
+    bool mIsSquare;
 };
 
-#endif // UBGRAPHICSELLIPSEITEM_H
+#endif // UBGRAPHICSRECTITEM_H

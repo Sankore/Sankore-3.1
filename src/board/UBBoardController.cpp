@@ -413,10 +413,6 @@ void UBBoardController::connectToolbar()
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
 
     //EV-7 - NNE - 20131230
-    connect(mMainWindow->actionEllipse, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createEllipse(bool)));
-    connect(mMainWindow->actionCircle, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createCircle(bool)));
-    connect(mMainWindow->actionPolygon, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(createPolygon(bool)));
-    connect(mMainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &mShapeFactory, SLOT(changeFillColor(bool)));
 }
 
 void UBBoardController::startScript()

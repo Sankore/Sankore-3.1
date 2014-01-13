@@ -47,8 +47,8 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBStartupHintsPalette.h \
     src/gui/UBCreateLinkPalette.h \
     src/gui/UBDrawingPalette.h \
-    src/gui/UBEllipsePalette.h \
-    src/gui/UBAbstractSubPalette.h
+    src/gui/UBAbstractSubPalette.h \
+    src/gui/UBShapesPalette.h
 SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBFloatingPalette.cpp \
     src/gui/UBToolbarButtonGroup.cpp \
@@ -98,8 +98,8 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBStartupHintsPalette.cpp \
     src/gui/UBCreateLinkPalette.cpp \
     src/gui/UBDrawingPalette.cpp \
-    src/gui/UBEllipsePalette.cpp \
-    src/gui/UBAbstractSubPalette.cpp
+    src/gui/UBAbstractSubPalette.cpp \
+    src/gui/UBShapesPalette.cpp
 win32:SOURCES += src/gui/UBKeyboardPalette_win.cpp
 macx:SOURCES += src/gui/UBKeyboardPalette_mac.cpp
 linux-*:SOURCES += src/gui/UBKeyboardPalette_linux.cpp
