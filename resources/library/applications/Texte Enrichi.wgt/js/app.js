@@ -43,7 +43,8 @@
                     autoShow: false,
                     onLinkClick: function (a) {},
                     onInit: function () {},
-                    onBlur: function () {}
+                    onBlur: function () {},
+                    onContentOverflow: function (delta) {}
                 }, options);
             };
 
@@ -178,7 +179,13 @@
                             {
                                 text: 'Merge cells',
                                 onclick: function () {
+                                    var cell = editor.dom.getParent(editor.selection.getStart(), 'th,td');
+                                    
                                     editor.execCommand('mceTableMergeCells');
+                                    
+                                    if (cell) {
+                                        cell.innerHTML = cell.innerHTML.replace(/(<br>\s*)+/, '<br>');
+                                    }
                                 }
                             },
                             {
@@ -489,6 +496,8 @@
              * Event handler for TinyMCE editor 'init' event
              */
             app.RTEditor.prototype.onTinyInit = function (e) {
+                var self = this;
+                
                 this.refreshSize();
                 this.options.onInit.call(this);
 
@@ -522,6 +531,17 @@
                         }
 
                         editor.nodeChanged();
+                    }
+                });
+                
+                var $iframe = $('#' + editor.id + '_ifr');
+                $iframe.attr('scrolling', 'no');
+                
+                $(editor.getDoc()).bind('keydown', function (e) {
+                    var delta = $(this).height() - $iframe.height();
+                    
+                    if (delta > 0) {
+                        self.options.onContentOverflow.call(self, delta);
                     }
                 });
 
@@ -584,9 +604,8 @@
         var options = {
             locale: 'en_GB',
             defaultText: 'Insert your text here',
-            autoSjow: false,
+            autoShow: false,
         }, widget = null;
-
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
@@ -614,6 +633,15 @@
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
             };
+            
+            options.onContentOverflow = function (delta) {
+                var $win = $(window);
+                
+                window.sankore.resize(
+                    $win.width(),
+                    $win.height() + delta
+                );
+            };
 
             options.locale = window.sankore.locale();
         } else {
@@ -636,3 +664,38 @@
         window.rteditor = new app.RTEditor('ubwidget', widget, options);
     });
 }(jQuery));
+
+/** mockup sankore object for browser testing */
+if (!('sankore' in window)) {
+    var preferences = {};
+    
+    window.sankore = {
+        loadUrl: function (url) {
+            window.open(url);
+        },
+        
+        setPreference: function (name, value) {
+            preferences[name] = value;
+        },
+        
+        resize: function (w, h) {
+            console.log('Resizing window to [' + w + ', ' + h + ']');  
+        },
+        
+        preference: function (name, def) {
+            if (name in preferences) {
+                return preferences[name];
+            }
+            
+            if (typeof def !== 'undefined') {
+                return def;
+            }
+            
+            return '';
+        },
+        
+        locale: function () {
+            return 'fr_FR';
+        }
+    };
+}
