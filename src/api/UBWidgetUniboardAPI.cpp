@@ -190,7 +190,6 @@ QString UBWidgetUniboardAPI::fontSizePreference()
     return QString::number(UBSettings::settings()->fontPixelSize());
 }
 
-
 void UBWidgetUniboardAPI::setMarkerColor(const QString& penColor)
 {
     if (UBApplication::boardController->activeScene() != mScene)
