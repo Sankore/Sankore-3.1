@@ -46,7 +46,9 @@
                     onBlur: function () {},
                     onContentOverflow: function (delta) {},
                     onFontSizeChange: function (fontSize) {},
-                    onFontFamily: function (fontFamily) {}
+                    onFontFamily: function (fontFamily) {},
+                    onWidgetFocus: function () {},
+                    onWidgetBlur: function () {}
                 }, options);
             };
 
@@ -363,6 +365,8 @@
                             if (self.empty) {
                                 self.setContent('');
                             }
+                            
+                            self.options.onWidgetFocus.call(self);
                         }
                     };
 
@@ -371,11 +375,13 @@
 
                         var content = self.getContent();
 
-                        if (self.empty = !content.trim().length) {
+                        if (self.empty = !$(content).text().trim().length) {
                             self.setContent(tinymce.translate(self.options.defaultText));
                         }
 
                         self.hide();
+                        
+                        self.options.onWidgetBlur.call(self);
                     };
 
                     this.widget.ondrop = function (url, contentType) {
@@ -560,9 +566,12 @@
 
                 $('#' + editor.id + '_ifr').attr('scrolling', 'no');
 
-                $(editor.getDoc()).bind('keydown', function (e) {
+                var handler = function (e) {
                     self.checkForResize();
-                });
+                };
+                
+                $(editor.getDoc()).bind('keydown', handler);
+                $(editor.getDoc()).bind('keyup', handler);
 
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
                 var confirm = this.tinymce.windowManager.confirm;
@@ -661,7 +670,7 @@
 
                 this.setContent(text);
 
-                if (text.trim().length !== 0) {
+                if ($(text).text().trim().length !== 0) {
                     this.empty = false;
                 }
 
@@ -695,6 +704,13 @@
 
             options.onFontSizeChange = function (size) {
                 window.sankore.updateFontSizePreference(size.replace('pt', ''));
+            };
+            
+            options.onWidgetFocus = function () {
+                if (this.empty) {
+                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+                    this.setDefaultFontSize(window.sankore.fontSizePreference());
+                }  
             };
 
             options.locale = window.sankore.locale();
