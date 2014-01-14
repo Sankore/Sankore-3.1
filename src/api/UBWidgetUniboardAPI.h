@@ -227,6 +227,25 @@ class UBWidgetUniboardAPI : public QObject
          */
         bool currentToolIsSelector();
 
+        /**
+         *  update font family
+         */
+        void updateFontFamilyPreference(const QString& fontFamily);
+
+        /**
+         *  update font size
+         */
+        void updateFontSizePreference(const QString& fontSize);
+
+        /**
+         *  get font family
+         */
+        QString fontFamilyPreference();
+
+        /**
+         *  get font size
+         */
+        QString fontSizePreference();
 
         /**
          * Center the scene coordinates within the display port

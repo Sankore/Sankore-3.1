@@ -170,6 +170,26 @@ void UBWidgetUniboardAPI::setPenColor(const QString& penColor)
     }
 }
 
+void UBWidgetUniboardAPI::updateFontFamilyPreference(const QString& fontFamily)
+{
+    UBSettings::settings()->setFontFamily(fontFamily);
+}
+
+void UBWidgetUniboardAPI::updateFontSizePreference(const QString& fontSize)
+{
+    UBSettings::settings()->setFontPixelSize(fontSize.toInt());
+}
+
+QString UBWidgetUniboardAPI::fontFamilyPreference()
+{
+    return UBSettings::settings()->fontFamily();
+}
+
+QString UBWidgetUniboardAPI::fontSizePreference()
+{
+    return UBSettings::settings()->fontPixelSize();
+}
+
 
 void UBWidgetUniboardAPI::setMarkerColor(const QString& penColor)
 {
