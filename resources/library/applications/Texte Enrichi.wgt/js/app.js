@@ -44,7 +44,9 @@
                     onLinkClick: function (a) {},
                     onInit: function () {},
                     onBlur: function () {},
-                    onContentOverflow: function (delta) {}
+                    onContentOverflow: function (delta) {},
+                    onFontSizeChange: function (fontSize) {},
+                    onFontFamily: function (fontFamily) {}
                 }, options);
             };
 
@@ -119,6 +121,10 @@
                     editor.on('show', function (e) {
                         self.onTinyShow(e);
                     });
+
+                    editor.on('ExecCommand', function (e) {
+                        self.onTinyCommand(e);
+                    });
                 };
 
                 tinymce.PluginManager.add('rteditor', function (editor, url) {
@@ -180,9 +186,9 @@
                                 text: 'Merge cells',
                                 onclick: function () {
                                     var cell = editor.dom.getParent(editor.selection.getStart(), 'th,td');
-                                    
+
                                     editor.execCommand('mceTableMergeCells');
-                                    
+
                                     if (cell) {
                                         cell.innerHTML = cell.innerHTML.replace(/(<br>\s*)+/, '<br>');
                                     }
@@ -473,6 +479,25 @@
                 this.tinymce.setContent(content);
                 this.tinymce.save();
             };
+            
+            /**
+             *
+             */
+            app.RTEditor.prototype.setDefaultFontFamily = function (name) {
+                if (name.length > 0) {
+                    this.tinymce.execCommand('FontName', true, name);
+                }
+            };
+            
+            /**
+             *
+             */
+            app.RTEditor.prototype.setDefaultFontSize = function (size) {
+                size = size.replace('pt', '');
+                if (!isNaN(Number(size)) && Number(size) > 0) {
+                    this.tinymce.execCommand('FontSize', true, size + 'pt');
+                }
+            };
 
             /**
              * Validate dropped content type. Image only
@@ -497,8 +522,7 @@
              */
             app.RTEditor.prototype.onTinyInit = function (e) {
                 var self = this;
-                
-                this.refreshSize();
+
                 this.options.onInit.call(this);
 
                 var editor = this.tinymce;
@@ -533,16 +557,11 @@
                         editor.nodeChanged();
                     }
                 });
-                
-                var $iframe = $('#' + editor.id + '_ifr');
-                $iframe.attr('scrolling', 'no');
-                
+
+                $('#' + editor.id + '_ifr').attr('scrolling', 'no');
+
                 $(editor.getDoc()).bind('keydown', function (e) {
-                    var delta = $(this).height() - $iframe.height();
-                    
-                    if (delta > 0) {
-                        self.options.onContentOverflow.call(self, delta);
-                    }
+                    self.checkForResize();
                 });
 
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
@@ -555,8 +574,18 @@
                     }
                 };
                 
+                this.checkForResize();
+
                 if (!this.options.autoShow) {
                     this.hide();
+                }
+            };
+
+            app.RTEditor.prototype.checkForResize = function () {
+                var delta = $(this.tinymce.getDoc()).height() - $('#' + this.tinymce.id + '_ifr').height();
+
+                if (delta > 0) {
+                    this.options.onContentOverflow.call(this, delta);
                 }
             };
 
@@ -589,6 +618,21 @@
                 }
             };
 
+            /**
+             * Event handler for TinyMCE editor 'ExecCommand' event
+             */
+            app.RTEditor.prototype.onTinyCommand = function (e) {
+                if (e.command === 'FontName') {
+                    this.options.onFontFamilyChange.call(this, e.value);
+                }
+
+                if (e.command === 'FontSize') {
+                    this.options.onFontSizeChange.call(this, e.value);
+                }
+                
+                this.checkForResize();
+            };
+
             app.RTEditor.defined = true;
         }
 
@@ -614,7 +658,7 @@
 
             options.onInit = function () {
                 var text = window.sankore.preference('content', '');
-   
+
                 this.setContent(text);
 
                 if (text.trim().length !== 0) {
@@ -626,6 +670,8 @@
                 }
 
                 this.setBackgroundColor(window.sankore.preference('background'));
+                this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+                this.setDefaultFontSize(window.sankore.fontSizePreference());
             };
 
             options.onBlur = function () {
@@ -633,21 +679,25 @@
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
             };
-            
+
             options.onContentOverflow = function (delta) {
                 var $win = $(window);
-                
+
                 window.sankore.resize(
                     $win.width(),
                     $win.height() + delta
                 );
             };
 
-            options.locale = window.sankore.locale();
-        } else {
-            options.onLinkClick = function (a) {
-                console.log(a);
+            options.onFontFamilyChange = function (name) {
+                window.sankore.updateFontFamilyPreference(name);
             };
+
+            options.onFontSizeChange = function (size) {
+                window.sankore.updateFontSizePreference(size.replace('pt', ''));
+            };
+
+            options.locale = window.sankore.locale();
         }
 
         if (window.widget) {
@@ -668,32 +718,48 @@
 /** mockup sankore object for browser testing */
 if (!('sankore' in window)) {
     var preferences = {};
-    
+
     window.sankore = {
         loadUrl: function (url) {
             window.open(url);
         },
-        
+
         setPreference: function (name, value) {
             preferences[name] = value;
         },
-        
-        resize: function (w, h) {
-            console.log('Resizing window to [' + w + ', ' + h + ']');  
+
+        updateFontFamilyPreference: function (name) {
+            console.log('Default font family set to : ' + name);
         },
         
+        fontFamilyPreference: function () {
+            return 'Arial,sans';
+        },
+        
+        fontSizePreference: function () {
+            return '12pt';
+        },
+
+        updateFontSizePreference: function (name) {
+            console.log('Default font size set to : ' + name);
+        },
+
+        resize: function (w, h) {
+            console.log('Resizing window to [' + w + ', ' + h + ']');
+        },
+
         preference: function (name, def) {
             if (name in preferences) {
                 return preferences[name];
             }
-            
+
             if (typeof def !== 'undefined') {
                 return def;
             }
-            
+
             return '';
         },
-        
+
         locale: function () {
             return 'fr_FR';
         }
