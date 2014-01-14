@@ -187,7 +187,7 @@ QString UBWidgetUniboardAPI::fontFamilyPreference()
 
 QString UBWidgetUniboardAPI::fontSizePreference()
 {
-    return UBSettings::settings()->fontPixelSize();
+    return QString::number(UBSettings::settings()->fontPixelSize());
 }
 
 
