@@ -494,6 +494,24 @@
                     this.tinymce.execCommand('FontName', true, name);
                 }
             };
+			
+			/**
+             *
+             */
+            app.RTEditor.prototype.setDefaultFontBold = function (isBold) {
+                if (isBold) {
+                    this.tinymce.execCommand('Bold', true);
+                }
+            };
+			
+			/**
+             *
+             */
+            app.RTEditor.prototype.setDefaultFontItalic = function (isItalic) {
+                if (isItalic) {
+                    this.tinymce.execCommand('Italic', true);
+                }
+            };
             
             /**
              *
@@ -631,6 +649,9 @@
              * Event handler for TinyMCE editor 'ExecCommand' event
              */
             app.RTEditor.prototype.onTinyCommand = function (e) {
+		if (e.command === 'mceToggleFormat') {
+                    this.options.onFontFormatChange.call(this, e.value);
+                }
                 if (e.command === 'FontName') {
                     this.options.onFontFamilyChange.call(this, e.value);
                 }
@@ -681,6 +702,8 @@
                 this.setBackgroundColor(window.sankore.preference('background'));
                 this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
                 this.setDefaultFontSize(window.sankore.fontSizePreference());
+		this.setDefaultFontBold(window.sankore.fontBoldPreference());
+		this.setDefaultFontItalic(window.sankore.fontItalicPreference());
             };
 
             options.onBlur = function () {
@@ -705,11 +728,20 @@
             options.onFontSizeChange = function (size) {
                 window.sankore.updateFontSizePreference(size.replace('pt', ''));
             };
+	    
+	    options.onFontFormatChange = function (name) {
+		if (name === 'bold')
+		    window.sankore.updateFontBoldPreference();
+		else if (name === 'italic')
+		    window.sankore.updateFontItalicPreference();
+            };
             
             options.onWidgetFocus = function () {
                 if (this.empty) {
                     this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
                     this.setDefaultFontSize(window.sankore.fontSizePreference());
+		    this.setDefaultFontBoldPreference(window.fontBoldPreference());
+		    this.setDefaultFontItalicPreference(window.fontItalicPreference());
                 }  
             };
 

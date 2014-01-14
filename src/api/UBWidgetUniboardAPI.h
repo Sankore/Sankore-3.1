@@ -238,6 +238,16 @@ class UBWidgetUniboardAPI : public QObject
         void updateFontSizePreference(const QString& fontSize);
 
         /**
+         *  update font bold
+         */
+        void updateFontBoldPreference();
+
+        /**
+         *  update font italic
+         */
+        void updateFontItalicPreference();
+
+        /**
          *  get font family
          */
         QString fontFamilyPreference();
@@ -246,6 +256,16 @@ class UBWidgetUniboardAPI : public QObject
          *  get font size
          */
         QString fontSizePreference();
+
+        /**
+         *  get font size
+         */
+        bool fontBoldPreference();
+
+        /**
+         *  get font size
+         */
+        bool fontItalicPreference();
 
         /**
          * Center the scene coordinates within the display port

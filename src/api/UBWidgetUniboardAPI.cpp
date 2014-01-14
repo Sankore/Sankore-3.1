@@ -177,7 +177,17 @@ void UBWidgetUniboardAPI::updateFontFamilyPreference(const QString& fontFamily)
 
 void UBWidgetUniboardAPI::updateFontSizePreference(const QString& fontSize)
 {
-    UBSettings::settings()->setFontPixelSize(fontSize.toInt());
+    UBSettings::settings()->setFontPointSize(fontSize.toInt());
+}
+
+void UBWidgetUniboardAPI::updateFontBoldPreference()
+{
+    UBSettings::settings()->setBoldFont(!fontBoldPreference());
+}
+
+void UBWidgetUniboardAPI::updateFontItalicPreference()
+{
+    UBSettings::settings()->setItalicFont(!fontItalicPreference());
 }
 
 QString UBWidgetUniboardAPI::fontFamilyPreference()
@@ -187,7 +197,17 @@ QString UBWidgetUniboardAPI::fontFamilyPreference()
 
 QString UBWidgetUniboardAPI::fontSizePreference()
 {
-    return QString::number(UBSettings::settings()->fontPixelSize());
+    return QString::number(UBSettings::settings()->fontPointSize());
+}
+
+bool UBWidgetUniboardAPI::fontBoldPreference()
+{
+    return UBSettings::settings()->isBoldFont();
+}
+
+bool UBWidgetUniboardAPI::fontItalicPreference()
+{
+    return UBSettings::settings()->isItalicFont();
 }
 
 void UBWidgetUniboardAPI::setMarkerColor(const QString& penColor)
