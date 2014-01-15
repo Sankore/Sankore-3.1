@@ -1305,7 +1305,7 @@ void UBFeatureProperties::setAsBackgroundReleased()
     {
         if( mSetAsBackgroundButtonPressedTime.msecsTo(QTime::currentTime()) > 900)
         {
-             UBApplication::boardController->paletteManager()->toggleImageBackgroundPalette(true, false);
+            UBApplication::boardController->paletteManager()->toggleImageBackgroundPalette(true, false);
         }
         else
         {
@@ -1346,7 +1346,7 @@ void UBFeatureProperties::onSetAsBackground()
 {
     QWidget *w = parentWidget()->parentWidget()->parentWidget();
     UBFeaturesWidget* featuresWidget = qobject_cast<UBFeaturesWidget*>( w );
-    featuresWidget->getFeaturesController()->addItemAsBackground( *mpElement );
+    featuresWidget->getFeaturesController()->addItemAsBackground( *mpElement, false );
 }
 
 // Issue 1684 - CFA - 20131120
@@ -1354,7 +1354,7 @@ void UBFeatureProperties::onSetAsDefaultBackground()
 {
     QWidget *w = parentWidget()->parentWidget()->parentWidget();
     UBFeaturesWidget* featuresWidget = qobject_cast<UBFeaturesWidget*>( w );
-    featuresWidget->getFeaturesController()->addItemAsDefaultBackground( *mpElement );
+    featuresWidget->getFeaturesController()->addItemAsDefaultBackground( *mpElement, false);
 }
 
 

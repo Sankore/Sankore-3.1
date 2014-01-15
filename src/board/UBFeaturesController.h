@@ -127,7 +127,7 @@ public:
     UBFeature &markedWithSortKey(const QString &str);
 
     // Issue 1684 - CFA - 20131125
-    const UBFeatureBackgroundDisposition &getBackgroundDisposition() const;
+    const UBFeatureBackgroundDisposition& backgroundDisposition() const;
     void setBackgroundDisposition(UBFeatureBackgroundDisposition disposition);
 
 
@@ -299,8 +299,8 @@ public:
     void loadHardcodedItemsToModel();
 
     void addItemToPage(const UBFeature &item);
-    void addItemAsBackground(const UBFeature &item);
-    void addItemAsDefaultBackground(const UBFeature &item);
+    void addItemAsBackground(UBFeature &item, bool isFromPalette = true);
+    void addItemAsDefaultBackground(UBFeature &item, bool isFromPalette = true);
     const UBFeature& getCurrentElement()const {return currentElement;}
     void setCurrentElement( const UBFeature &elem ) {currentElement = elem;}
     UBFeature getTrashElement () const { return trashData.categoryFeature(); }

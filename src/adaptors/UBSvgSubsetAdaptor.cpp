@@ -624,21 +624,31 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                     QStringRef ubBackground = mXmlReader.attributes().value(mNamespaceUri, "background");
                     bool isBackground = (!ubBackground.isNull() && ubBackground.toString() == xmlTrue);
 
+                    // Issue 1684 - CFA - 20140115
                     // Issue 1684 - ALTI/AOU - 20131210
                     UBFeatureBackgroundDisposition disposition = Center;
 
+                    QStringRef sDisposition = mXmlReader.attributes().value(mNamespaceUri, "disposition");
 					if (isBackground)
                     {
-                        QStringRef sDisposition = mXmlReader.attributes().value(mNamespaceUri, "disposition");
-                        int iDisposition = sDisposition.isNull() ? Center : sDisposition.toString().toInt();
-                        disposition = static_cast<UBFeatureBackgroundDisposition>(iDisposition);
+                        if (sDisposition.isNull())// centré ou ajusté selon la taille de l'image
+                        {
+                            int width = mXmlReader.attributes().value("width").toString().toInt();
+                            int height = mXmlReader.attributes().value("height").toString().toInt();
+                            if (width > mScene->nominalSize().width() || height > mScene->nominalSize().height())
+                                disposition = Adjust;
+                        }
+                        else
+                            disposition = static_cast<UBFeatureBackgroundDisposition>(sDisposition.toString().toInt());
                     }
                     // Fin Issue 1684 - ALTI/AOU - 20131210
+                    // Fin Issue 1684 - CFA - 20140115
 
                     if (href.contains("png"))
-                    {
-
+                    {                        
                         UBGraphicsPixmapItem* pixmapItem = pixmapItemFromSvg();
+
+
                         if (pixmapItem)
                         {
                             pixmapItem->setFlag(QGraphicsItem::ItemIsMovable, true);
@@ -2285,7 +2295,7 @@ UBGraphicsSvgItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::svgItemFromSvg()
     {
         QString href = imageHref.toString();
 
-        svgItem = new UBGraphicsSvgItem(mDocumentPath + "/" + UBFileSystemUtils::normalizeFilePath(href));
+        svgItem = new UBGraphicsSvgItem(mDocumentPath + "/" + UBFileSystemUtils::normalizeFilePath(href));        
     }
     else
     {

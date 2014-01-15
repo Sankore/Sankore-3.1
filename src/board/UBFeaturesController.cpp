@@ -1146,20 +1146,29 @@ void UBFeaturesController::addItemToPage(const UBFeature &item)
     UBApplication::boardController->downloadURL( item.getFullPath() );
 }
 
-void UBFeaturesController::addItemAsBackground(const UBFeature &item)
+void UBFeaturesController::addItemAsBackground(UBFeature &item, bool isFromPalette)
 {
     // Issue 1684 - CFA - 20131127 : handle default background
+    if (!isFromPalette) // centrer == centrer voire ajuster si dépasse du cadre gris
+    {
+        QImage img(item.getFullPath().toLocalFile());
+        qDebug() << img.rect();
+        QSize nominaleSize = UBApplication::boardController->activeScene()->nominalSize();
+        if (item.backgroundDisposition() == Center && (img.width() > nominaleSize.width() || img.height() > nominaleSize.height()))
+            item.setBackgroundDisposition(Adjust);
+    }
+
     if ( UBApplication::boardController->selectedDocument()->hasDefaultImageBackground()
         && (item.getFullPath() !=  UBApplication::boardController->selectedDocument()->defaultImageBackground().getFullPath()
-        || item.getBackgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().getBackgroundDisposition())) // Issue 1684 - ALTI/AOU - 20131210 : il fallait ici un "OU logique", et des parentheses.
+        || item.backgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().backgroundDisposition())) // Issue 1684 - ALTI/AOU - 20131210 : il fallait ici un "OU logique", et des parentheses.
         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
 
-    UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.getBackgroundDisposition());
+    UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.backgroundDisposition());
     UBApplication::boardController->persistCurrentScene();
 }
 
 // Issue 1684 - CFA - 20131120
-const UBFeatureBackgroundDisposition& UBFeature::getBackgroundDisposition() const
+const UBFeatureBackgroundDisposition& UBFeature::backgroundDisposition() const
 {
     return mDisposition;
 }
@@ -1170,8 +1179,8 @@ void UBFeature::setBackgroundDisposition(UBFeatureBackgroundDisposition disposit
 }
 
 
-void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
-{
+void UBFeaturesController::addItemAsDefaultBackground(UBFeature &item, bool isFromPalette)
+{        
      //Issue 1684 - CFA - 20131211 : ajout d'une yesnoquestion avant de
      if (!UBApplication::mainWindow->yesNoQuestion(tr("Are you sure ?"), tr ("Every background will be replaced with this one. Are you sure ?")))
      {
@@ -1180,6 +1189,15 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
      }
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+    // Issue 1684 - CFA - 20131127 : handle default background
+    if (!isFromPalette) // centrer == centrer voire ajuster si dépasse du cadre gris
+    {
+        QImage img(item.getFullPath().toLocalFile());
+        QSize nominaleSize = UBApplication::boardController->activeScene()->nominalSize();
+        if (item.backgroundDisposition() == Center && (img.width() > nominaleSize.width() || img.height() > nominaleSize.height()))
+            item.setBackgroundDisposition(Adjust);
+    }
 
     // Issue 1684 - ALTI/AOU - 20131210
     // Si metaData "background" deja existante, avant de l'écraser, supprimer le fichier dans /doc/images/
@@ -1193,12 +1211,11 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
         }
     }
 
-
     if (QFileInfo(item.getFullPath().toString()).suffix() == "svg")
         UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".svg");
     else
         UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");
-    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.getBackgroundDisposition());
+    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.backgroundDisposition());
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
     int currentPageIndex = UBApplication::boardController->activeSceneIndex();
@@ -1220,7 +1237,7 @@ void UBFeaturesController::addItemAsDefaultBackground(const UBFeature &item)
         UBApplication::boardController->persistViewPositionOnCurrentScene();
         UBApplication::boardController->setActiveDocumentScene(i);
         UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());
-        UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true,  false, item.getBackgroundDisposition() );
+        UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true,  false, item.backgroundDisposition() );
     }    
     UBApplication::boardController->setActiveDocumentScene(currentPageIndex);
     UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());

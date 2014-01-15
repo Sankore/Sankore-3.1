@@ -863,17 +863,20 @@ void UBBoardController::setImageBackground(UBFeatureBackgroundDisposition dispos
 
 void UBBoardController::centerImageBackground()
 {
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Center);
+
     UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
     if (selectedDocument()->hasDefaultImageBackground())
-        c->addItemAsDefaultBackground(paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties());
+        c->addItemAsDefaultBackground(f);
     else
-        c->addItemAsBackground(paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties());
+        c->addItemAsBackground(f);
 }
 
 void UBBoardController::adjustImageBackground()
 {
     UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
-    // on fait joujou avec f ...
 
     f.setBackgroundDisposition(Adjust);
 
@@ -2401,13 +2404,13 @@ void UBBoardController::setPageSize(QSize newSize)
         if (selectedDocument()->hasDefaultImageBackground())
         {
             UBFeature& item = selectedDocument()->defaultImageBackground();
-            if (item.getBackgroundDisposition() == Center)
+            if (item.backgroundDisposition() == Center)
                 centerImageBackground();
-            else if (item.getBackgroundDisposition() == Adjust)
+            else if (item.backgroundDisposition() == Adjust)
                 adjustImageBackground();
-            else if (item.getBackgroundDisposition() == Mosaic)
+            else if (item.backgroundDisposition() == Mosaic)
                 mosaicImageBackground();
-            else if (item.getBackgroundDisposition() == Fill)
+            else if (item.backgroundDisposition() == Fill)
                 fillImageBackground();
             else // Extend
                 extendImageBackground();
