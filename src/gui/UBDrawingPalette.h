@@ -1,7 +1,7 @@
 #ifndef UBDRAWINGPALETTE_H
 #define UBDRAWINGPALETTE_H
 
-#include <map>
+#include <QMap>
 #include <QButtonGroup>
 
 #include "UBAbstractSubPalette.h"
@@ -33,8 +33,10 @@ class UBDrawingPalette : public UBActionPalette
         void connectSubPalettes();
         void changeVisibility(bool checked);
 
-        void initSubPalettesPosition(const QPointF& drawingPaletteTopLeft);
+        virtual void initSubPalettesPosition();
         void updateSubPalettesPosition(const QPoint &delta);
+
+        void stackUnder(QWidget *w);
 
         static const int PRESS_DURATION;
 
@@ -49,10 +51,13 @@ class UBDrawingPalette : public UBActionPalette
 
     private:
         int mLastSelectedId;
-        std::map<int, UBAbstractSubPalette*> mSubPalettes;
+        QMap<int, UBAbstractSubPalette*> mSubPalettes;
 
         QTime mActionButtonPressedTime;
         bool mPendingActionButtonPressed;
+
+    public slots:
+        void raise();
 };
 
 

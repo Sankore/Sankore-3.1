@@ -540,6 +540,12 @@ void UBBoardPaletteManager::containerResized()
         mStylusPalette->initPosition();
     }
 
+    if (mDrawingPalette)
+    {
+        mDrawingPalette->adjustSizeAndPosition(true,false);
+        mDrawingPalette->initPosition();
+    }
+
     if(mZoomPalette)
     {
         mZoomPalette->move(userLeft + userWidth - mZoomPalette->width()
@@ -753,6 +759,8 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 mRightPalette->assignParent(mContainer);
                 mRightPalette->stackUnder(mStylusPalette);
                 mLeftPalette->stackUnder(mStylusPalette);
+                mRightPalette->stackUnder(mDrawingPalette);
+                mLeftPalette->stackUnder(mDrawingPalette);
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
 
@@ -786,6 +794,7 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 mLeftPalette->assignParent((QWidget*)UBApplication::applicationController->uninotesController()->drawingView());
                 mRightPalette->assignParent((QWidget*)UBApplication::applicationController->uninotesController()->drawingView());
                 mStylusPalette->raise();
+                mDrawingPalette->raise();
 
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {

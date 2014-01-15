@@ -40,7 +40,7 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
 
-const int UBDrawingPalette::PRESS_DURATION = 300;
+const int UBDrawingPalette::PRESS_DURATION = 1;
 
 UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
@@ -68,6 +68,13 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     connectSubPalettes();
 }
 
+
+UBDrawingPalette::~UBDrawingPalette()
+{
+
+}
+
+
 void UBDrawingPalette::connectDrawingActions()
 {
     connect(UBApplication::mainWindow->actionEllipse, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createEllipse(bool)));
@@ -93,28 +100,14 @@ void UBDrawingPalette::connectButtons()
 
 void UBDrawingPalette::setupSubPalettes(QWidget* parent, Qt::Orientation orientation)
 {
+    Qt::Orientation orientationSubPalette = (orientation == Qt::Horizontal) ? Qt::Vertical : Qt::Horizontal;
 
-    if (orientation == Qt::Vertical)
-    {
-        //Sub Palette for ellipses and circles
-        mSubPalettes[ShapesAction] = new UBShapesPalette(parent, Qt::Horizontal);
+    //Sub Palette for ellipses and circles
+    UBShapesPalette * shapesPalette = new UBShapesPalette(parent, orientationSubPalette);
+    shapesPalette->setCustomPosition(true);
+    mSubPalettes[ShapesAction] = shapesPalette;
 
-        int x = this->pos().x() + this->width() - 10.f;
-
-        mSubPalettes[ShapesAction]->setCustomPosition(true);
-        mSubPalettes[ShapesAction]->move(x, this->pos().y());
-    }
-    else
-    {
-        mSubPalettes[ShapesAction] = new UBShapesPalette(parent);
-
-        int x = this->pos().x() + this->width();
-
-        mSubPalettes[ShapesAction]->setCustomPosition(true);
-        mSubPalettes[ShapesAction]->move(x, this->pos().y());
-    }
-
-    initSubPalettesPosition(rect().topLeft());
+    initSubPalettesPosition();
 }
 
 void UBDrawingPalette::connectSubPalettes()
@@ -139,14 +132,59 @@ void UBDrawingPalette::updateActions()
     connectButtons();
 }
 
+
+
 void UBDrawingPalette::initPosition()
 {
+    // Rem : positions would be very different if palette were horizontal...
 
+    mCustomPosition = true;
+
+    int x = 0;
+    int y = 0;
+
+    // By default, place the drawingPalette next to the Library (RightPalette)
+    if (UBApplication::boardController
+            && UBApplication::boardController->paletteManager()
+            && UBApplication::boardController->paletteManager()->rightPalette())
+    {
+        x = UBApplication::boardController->paletteManager()->rightPalette()->pos().x();
+        x -= this->width();
+    }
+
+    // By default, center vertically the drawingPalette in her parent
+    y = ( parentWidget()->height() - this->height() ) / 2;
+
+    moveInsideParent(QPoint(x, y));
+
+    initSubPalettesPosition(); // place the subPalettes next to the palette.
 }
 
-UBDrawingPalette::~UBDrawingPalette()
-{
 
+void UBDrawingPalette::initSubPalettesPosition()
+{
+    // For each button of palette ...
+    for(int i = 0; i < mButtons.count(); ++i)
+    {
+        if (mSubPalettes.contains(i)) // ... if there is a subPalette associated to this button ...
+        {
+            // Place the subPalette :
+            UBAbstractSubPalette* subPalette = mSubPalettes[i];
+            UBActionPaletteButton* button = mButtons.at(i);
+
+            // Depending on position of palette,
+            int x = this->x() + this->width(); // place subPalette on the right of the palette ...
+            if (this->x() > parentWidget()->width()/2)
+            {
+                x = this->x() - subPalette->width(); // ... or on the left on the palette.
+            }
+
+            // Align vertically the center of subPalette to center of button :
+            int y = this->y() + button->y() + button->height()/2 - subPalette->height()/2;
+
+            subPalette->move(x, y);
+        }
+    }
 }
 
 void UBDrawingPalette::drawingToolPressed()
@@ -167,6 +205,7 @@ void UBDrawingPalette::drawingToolReleased()
         {
             if (mSubPalettes.find(mLastSelectedId) != mSubPalettes.end())
             {
+                initSubPalettesPosition();
                 mSubPalettes[mLastSelectedId]->togglePalette();
             }
         }
@@ -194,8 +233,11 @@ void UBDrawingPalette::changeVisibility(bool checked)
     else
     {
         setVisible(false);
-        for (std::map<int, UBAbstractSubPalette*>::iterator it = mSubPalettes.begin(); it != mSubPalettes.end(); it++)
-            it->second->hide();
+
+        foreach(UBAbstractSubPalette* subPalette, mSubPalettes.values())
+        {
+            subPalette->hide();
+        }
     }
 }
 
@@ -211,16 +253,29 @@ void UBDrawingPalette::mouseMoveEvent(QMouseEvent *event)
 
 void UBDrawingPalette::updateSubPalettesPosition(const QPoint& delta)
 {
-    for(std::map<int, UBAbstractSubPalette*>::iterator it= mSubPalettes.begin(); it != mSubPalettes.end(); it++)
-    {
-        QPoint newPos = it->second->pos() + delta;
-        it->second->move(newPos);
+    foreach (UBAbstractSubPalette* subPalette, mSubPalettes.values()) {
+        QPoint newPos = subPalette->pos() + delta;
+        subPalette->move(newPos);
     }
 }
 
-void UBDrawingPalette::initSubPalettesPosition(const QPointF& drawingPaletteTopLeft)
+
+void UBDrawingPalette::stackUnder(QWidget * w)
 {
-    Q_UNUSED(drawingPaletteTopLeft);
+    UBActionPalette::stackUnder(w);
+
+    // For all subpalettes :
+    foreach (UBAbstractSubPalette* subPalette, mSubPalettes.values()) {
+        subPalette->stackUnder(w);
+    }
 }
 
+void UBDrawingPalette::raise()
+{
+    UBActionPalette::raise();
 
+    // For all subpalettes :
+    foreach (UBAbstractSubPalette* subPalette, mSubPalettes.values()) {
+        subPalette->raise();
+    }
+}
