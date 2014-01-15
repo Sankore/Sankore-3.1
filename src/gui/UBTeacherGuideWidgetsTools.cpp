@@ -822,7 +822,6 @@ void UBTGFileWidget::OnClickBtnSelectFile()
         if (fileInfo.exists())
         {
             mpNomFichier->setText(fileInfo.fileName());
-            setPath(fileInfo.filePath());
 
             // Dupliquer le fichier vers le dossier Document/TeacherGuide/Files/UUID/nomFichier.
             // On crée un nouveau dossier pour y copier le fichier à embarquer :
@@ -835,7 +834,9 @@ void UBTGFileWidget::OnClickBtnSelectFile()
             QFile::copy(fileInfo.absoluteFilePath(), documentPath + "/" + path);
 
             setPath(path);
-            mpTitreFichier->setText(fileInfo.fileName()); // default Title is file name.
+            if (mpTitreFichier->text().trimmed().isEmpty()){
+                mpTitreFichier->setText(fileInfo.fileName()); // default Title is file name.
+            }
         }
 
         emit changed();
