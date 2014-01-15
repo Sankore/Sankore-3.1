@@ -122,6 +122,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
     public slots:
         void freeze();
         void unFreeze();
+        virtual void sendJSChangeBackgroundEvent();
     protected:
         enum OSType
         {

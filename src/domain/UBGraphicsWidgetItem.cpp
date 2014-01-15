@@ -123,6 +123,7 @@ void UBGraphicsWidgetItem::initialize()
     connect(this, SIGNAL(loadFinished(bool)), this, SLOT(mainFrameLoadFinished (bool)));
     connect(page()->mainFrame(), SIGNAL(initialLayoutCompleted()), this, SLOT(initialLayoutCompleted()));
     connect(page(), SIGNAL(linkClicked(const QUrl&)), this, SLOT(onLinkClicked(const QUrl&)));
+    connect(UBApplication::boardController, SIGNAL(backgroundChanged()), this, SLOT(sendJSChangeBackgroundEvent()));
 }
 
 void UBGraphicsWidgetItem::onLinkClicked(const QUrl& url)
@@ -533,6 +534,12 @@ void UBGraphicsWidgetItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     sendJSLeaveEvent();
     Delegate()->hoverLeaveEvent(event);
+}
+
+void UBGraphicsWidgetItem::sendJSChangeBackgroundEvent()// Issue NC - CFA - 20131202
+{
+    if (page() && page()->mainFrame())
+        page()->mainFrame()->evaluateJavaScript("if(widget && widget.onChangeBackground) { widget.onChangeBackground();}");
 }
 
 void UBGraphicsWidgetItem::sendJSClickEvent()// Issue NC - CFA - 20131202

@@ -210,6 +210,11 @@ bool UBWidgetUniboardAPI::fontItalicPreference()
     return UBSettings::settings()->isItalicFont();
 }
 
+bool UBWidgetUniboardAPI::isDarkBackground()
+{
+    return UBApplication::boardController->activeScene()->isDarkBackground();
+}
+
 void UBWidgetUniboardAPI::setMarkerColor(const QString& penColor)
 {
     if (UBApplication::boardController->activeScene() != mScene)

@@ -307,6 +307,8 @@ class UBWidgetUniboardAPI : public QObject
         void ProcessDropEvent(QGraphicsSceneDragDropEvent *);
         bool isDropableData(const QMimeData *pMimeData) const;
 
+        bool isDarkBackground();
+
 private slots:
         void onDownloadFinished(bool pSuccess, sDownloadFileDesc desc, QByteArray pData);
 
