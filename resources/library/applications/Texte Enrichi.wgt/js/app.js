@@ -44,6 +44,7 @@
                     onLinkClick: function (a) {},
                     onInit: function () {},
                     onBlur: function () {},
+                    onFocus: function () {},
                     onContentOverflow: function (delta) {},
                     onFontSizeChange: function (fontSize) {},
                     onFontFamilyChange: function (fontFamily) {},
@@ -67,9 +68,13 @@
                         target_list: false,
                         relative_urls: true,
                         convert_urls: false,
+                        forced_root_block: '',
+                        force_br_newlines: true,
+                        force_p_newlines: false,
+                        keep_styles: true,
                         plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor'],
                         toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | undo redo',
-                        toolbar2: 'fontselect fontsizeselect  | alignleft aligncenter alignright alignjustify | customtable'
+                        toolbar2: 'fontselect fontsizeselect | alignleft aligncenter alignright alignjustify | customtable'
                     };
 
                 options.fontsize_formats = [
@@ -79,33 +84,33 @@
                 ].join(' ');
 
                 options.font_formats = [
-                    'Alphonetic=alphonetic,serif',
-                    'Alphonetic GB=alphoneticGB,serif',
-                    'Andika Basic=andika basic,sans',
-                    'Arial=arial,sans',
-                    'Arial Black=arial black,sans',
-                    'Comic Sans MS=comic sans ms,sans',
-                    'Courier New=courier new,courier,serif',
-                    'Cursive Standard=cursive standard,serif',
-                    'Écolier=ecolier,serif',
-                    'Écolier (court)=ecolier_court,serif',
-                    'Écolier CP=ecolier_cp,serif',
-                    'Écolier CP (pointillés)=ecolier_cp_pointillés,serif',
-                    'Écolier lignes=ecolier_lignes,serif',
-                    'Écolier lignes (court)=ecolier_lignes_court,serif',
-                    'Écolier lignes (pointillés)=ecolier_lignes_pointillés,serif',
-                    'Écolier (pointillés)=ecolier_pointillés,serif',
-                    'Écriture A=ecriture a,serif',
-                    'Écriture B=ecriture b,serif',
-                    'Georgia=georgia,serif',
-                    'Gino School Script=ginoschoolscript,serif',
-                    'Impact=impact,sans',
-                    'Script École=script cole,serif',
-                    'Script École 2=script ecole 2,serif',
-                    'Scriptcase cole=scriptcase cole,serif',
-                    'Times New Roman=times new roman,times,serif',
-                    'Trebuchet MS=trebuchet ms,sans',
-                    'Verdana=verdana,serif'
+                    'Alphonetic=alphonetic',
+                    'Alphonetic GB=alphoneticGB',
+                    'Andika Basic=andika basic',
+                    'Arial=arial',
+                    'Arial Black=arial black',
+                    'Comic Sans MS=comic sans ms',
+                    'Courier New=courier new',
+                    'Cursive Standard=cursive standard',
+                    'Écolier=ecolier',
+                    'Écolier (court)=ecolier_court',
+                    'Écolier CP=ecolier_cp',
+                    'Écolier CP (pointillés)=ecolier_cp_pointillés',
+                    'Écolier lignes=ecolier_lignes',
+                    'Écolier lignes (court)=ecolier_lignes_court',
+                    'Écolier lignes (pointillés)=ecolier_lignes_pointillés',
+                    'Écolier (pointillés)=ecolier_pointillés',
+                    'Écriture A=ecriture a',
+                    'Écriture B=ecriture b',
+                    'Georgia=georgia',
+                    'Gino School Script=ginoschoolscript',
+                    'Impact=impact',
+                    'Script École=script cole',
+                    'Script École 2=script ecole 2',
+                    'Scriptcase cole=scriptcase cole',
+                    'Times New Roman=times new roman,times',
+                    'Trebuchet MS=trebuchet ms',
+                    'Verdana=verdana'
                 ].join(';');
 
                 options.setup = function (editor) {
@@ -119,6 +124,10 @@
 
                     editor.on('blur', function (e) {
                         self.onTinyBlur(e);
+                    });
+
+                    editor.on('focus', function (e) {
+                        self.onTinyFocus(e);
                     });
 
                     editor.on('show', function (e) {
@@ -195,13 +204,15 @@
                                     if (cell) {
                                         cell.innerHTML = cell.innerHTML.replace(/(<br>\s*)+/, '<br>');
                                     }
-                                }
+                                },
+                                onPostRender: onPostRender
                             },
                             {
                                 text: 'Split cell',
                                 onclick: function () {
                                     editor.execCommand('mceTableSplitCells');
-                                }
+                                },
+                                onPostRender: onPostRender
                             }
                         ]
                     });
@@ -376,7 +387,7 @@
 
                         var content = self.getContent();
 
-                        if (self.empty = !$(content).text().trim().length) {
+                        if (self.empty = app.RTEditor.isContentEmpty(content)) {
                             self.setContent(tinymce.translate(self.options.defaultText));
                         }
 
@@ -390,8 +401,19 @@
                             self.addDroppedContent(url);
                         }
                     };
+
+                    this.widget.onbackgroundswitch = function (dark) {
+                        self.setDarkBackground(dark);
+                    }
                 }
             };
+
+            /**
+             * Gets the current iframe element. May be null if invoked before the tinyMCE editor is initialized
+             */
+            app.RTEditor.prototype.getIframe = function () {
+                return $('#' + this.id + '_ifr');
+            },
 
             /**
              * Recompute the editor instance size to fit into the viewport
@@ -433,7 +455,7 @@
 
                 this.backgroundColor = color;
 
-                $(this.tinymce.getDoc()).find('body').css('background-color', color);
+                $(this.tinymce.getDoc().body).css('background-color', color);
                 this.$container.css('background-color', color);
             };
 
@@ -462,11 +484,17 @@
                 if (dark) {
                     $docBody.addClass(darkClassname);
                     this.$container.addClass(darkClassname);
-                    cleanColorSpan($docBody, 'rgb(0, 0, 0)');
+
+                    if (this.backgroundColor !== 'transparent') {
+                        cleanColorSpan($docBody, 'rgb(0, 0, 0)');
+                    }
                 } else {
                     $docBody.removeClass(darkClassname);
                     this.$container.removeClass(darkClassname);
-                    cleanColorSpan($docBody, 'rgb(255, 255, 255)');
+
+                    if (this.backgroundColor !== 'transparent') {
+                        cleanColorSpan($docBody, 'rgb(255, 255, 255)');
+                    }
                 }
 
                 this.dark = dark;
@@ -542,6 +570,14 @@
                 this.tinymce.selection.getRng().insertNode(img);
             };
 
+            app.RTEditor.prototype.checkForResize = function () {
+                var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height();
+
+                if (delta > 0) {
+                    this.options.onContentOverflow.call(this, delta);
+                }
+            };
+
             /**
              * Event handler for TinyMCE editor 'init' event
              */
@@ -583,14 +619,13 @@
                     }
                 });
 
-                $('#' + editor.id + '_ifr').attr('scrolling', 'no');
+                this.getIframe().attr('scrolling', 'no');
 
                 var handler = function (e) {
                     self.checkForResize();
                 };
 
                 $(editor.getDoc()).bind('keydown', handler);
-                $(editor.getDoc()).bind('keyup', handler);
 
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
                 var confirm = this.tinymce.windowManager.confirm;
@@ -609,14 +644,6 @@
                 }
             };
 
-            app.RTEditor.prototype.checkForResize = function () {
-                var delta = $(this.tinymce.getDoc()).height() - $('#' + this.tinymce.id + '_ifr').height();
-
-                if (delta > 0) {
-                    this.options.onContentOverflow.call(this, delta);
-                }
-            };
-
             /**
              * Event handler for TinyMCE editor 'blur' event
              */
@@ -625,10 +652,17 @@
             };
 
             /**
+             * Event handler for TinyMCE editor 'blur' event
+             */
+            app.RTEditor.prototype.onTinyFocus = function (e) {
+                this.options.onFocus.call(this);
+            };
+
+            /**
              * Event handler for TinyMCE editor 'show' event
              */
             app.RTEditor.prototype.onTinyShow = function (e) {
-                this.tinymce.focus();
+                this.tinymce.fire('focus');
                 this.refreshSize();
             };
 
@@ -653,7 +687,7 @@
                 if (e.command === 'mceToggleFormat') {
                     this.options.onFontFormatChange.call(this, e.value);
                 }
-                
+
                 if (e.command === 'FontName') {
                     this.options.onFontFamilyChange.call(this, e.value);
                 }
@@ -676,6 +710,10 @@
         }
     };
 
+    app.RTEditor.isContentEmpty = function (content) {
+        return $('<div>' + content + '</div>').text().trim().length === 0;
+    };
+
     $(document).ready(function () {
         var options = {
             locale: 'en_GB',
@@ -693,7 +731,7 @@
 
                 this.setContent(text);
 
-                if ($(text).text().trim().length !== 0) {
+                if (!app.RTEditor.isContentEmpty(text)) {
                     this.empty = false;
                 }
 
@@ -702,16 +740,28 @@
                 }
 
                 this.setBackgroundColor(window.sankore.preference('background'));
-                this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
-                this.setDefaultFontSize(window.sankore.fontSizePreference());
-                this.setDefaultFontBold(window.sankore.fontBoldPreference());
-                this.setDefaultFontItalic(window.sankore.fontItalicPreference());
+
+//                if (this.empty) {
+//                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+//                    this.setDefaultFontSize(window.sankore.fontSizePreference());
+//                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
+//                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
+//                }
             };
 
             options.onBlur = function () {
                 window.sankore.setPreference('content', this.getContent());
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
+            };
+
+            options.onFocus = function () {
+                if (this.empty) {
+                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+                    this.setDefaultFontSize(window.sankore.fontSizePreference());
+                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
+                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
+                }
             };
 
             options.onContentOverflow = function (delta) {
@@ -753,6 +803,12 @@
 
         if (window.widget) {
             widget = window.widget;
+
+            window.widget.onChangeBackground = function () {
+                if (window.sankore && window.widget.onbackgroundswitch) {
+                    window.widget.onbackgroundswitch(window.sankore.isDarkBackground());
+                }
+            };
         }
 
         if (window.sankore) {
@@ -765,6 +821,11 @@
         window.rteditor = new app.RTEditor('ubwidget', widget, options);
     });
 }(jQuery));
+
+/** mockup widget object for browser testing */
+if (!('widget' in window)) {
+    window.widget = {};
+}
 
 /** mockup sankore object for browser testing */
 if (!('sankore' in window)) {
@@ -784,11 +845,11 @@ if (!('sankore' in window)) {
         },
 
         fontFamilyPreference: function () {
-            return 'Arial,sans';
+            return 'georgia';
         },
 
         fontSizePreference: function () {
-            return '12pt';
+            return '16pt';
         },
 
         updateFontSizePreference: function (name) {

@@ -21,16 +21,24 @@ body.view:before{
     height: 0;
 }
 .rteditor {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin-top: 59px;
+    box-sizing:border-box;
     word-break:break-all;
     padding: 8px;
     overflow: hidden;
-    height: 100%;
 }
 .rteditor p {
     margin: 0;
 }
 .rteditor table {
     border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
 }
 .rteditor table td,
 .rteditor table th {
