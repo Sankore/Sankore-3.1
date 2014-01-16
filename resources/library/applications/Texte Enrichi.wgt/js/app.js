@@ -12,6 +12,10 @@
 
         this.id = id;
         this.empty = true;
+        this.font = {
+            name: 'arial',
+            size: '12pt'
+        };
         this.widget = widget;
         this.dark = false;
         this.backgroundColor = 'transparent';
@@ -41,6 +45,7 @@
                     defaultText: this.$container.html(),
                     locale: 'en_GB',
                     autoShow: false,
+                    dark: false,
                     onLinkClick: function (a) {},
                     onInit: function () {},
                     onBlur: function () {},
@@ -68,9 +73,9 @@
                         target_list: false,
                         relative_urls: true,
                         convert_urls: false,
-                        forced_root_block: '',
-                        force_br_newlines: true,
-                        force_p_newlines: false,
+                        forced_root_block: 'p',
+                        force_p_newlines: true,
+                        valid_elements : '*[*]',
                         keep_styles: true,
                         plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor'],
                         toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | undo redo',
@@ -136,6 +141,10 @@
 
                     editor.on('ExecCommand', function (e) {
                         self.onTinyCommand(e);
+                    });
+                    
+                    editor.on('PreProcess', function (e) {
+                        $(e.node).find('[data-mce-bogus]').replaceWith('<br>');
                     });
                 };
 
@@ -212,6 +221,13 @@
                                 onclick: function () {
                                     editor.execCommand('mceTableSplitCells');
                                 },
+                                onPostRender: onPostRender
+                            },
+                            {
+                                text: 'Cell properties', 
+                                onclick: function () {
+                                    editor.execCommand('mceTableCellProps');
+                                }, 
                                 onPostRender: onPostRender
                             }
                         ]
@@ -386,7 +402,7 @@
                         self.tinymce.fire('blur');
 
                         var content = self.getContent();
-
+                        
                         if (self.empty = app.RTEditor.isContentEmpty(content)) {
                             self.setContent(tinymce.translate(self.options.defaultText));
                         }
@@ -404,7 +420,7 @@
 
                     this.widget.onbackgroundswitch = function (dark) {
                         self.setDarkBackground(dark);
-                    }
+                    };
                 }
             };
 
@@ -413,7 +429,7 @@
              */
             app.RTEditor.prototype.getIframe = function () {
                 return $('#' + this.id + '_ifr');
-            },
+            };
 
             /**
              * Recompute the editor instance size to fit into the viewport
@@ -463,9 +479,9 @@
              * Switch background to inverted colors (preserving color other than white and black)
              */
             app.RTEditor.prototype.setDarkBackground = function (dark) {
-                dark = !! dark;
+                dark = !!dark;
 
-                var $docBody = $(this.tinymce.getDoc()).find('body'),
+                var $docBody = $(this.tinymce.getDoc().body),
                     darkClassname = 'dark',
                     cleanColorSpan = function ($body, color) {
                         $body.find('span[style],td[style]').each(function () {
@@ -521,6 +537,7 @@
             app.RTEditor.prototype.setDefaultFontFamily = function (name) {
                 if (name.length > 0) {
                     this.tinymce.execCommand('FontName', true, name);
+                    this.font.name = name;
                 }
             };
 
@@ -549,6 +566,7 @@
                 size = size.replace('pt', '');
                 if (!isNaN(Number(size)) && Number(size) > 0) {
                     this.tinymce.execCommand('FontSize', true, size + 'pt');
+                    this.font.size = size + 'pt';
                 }
             };
 
@@ -570,6 +588,9 @@
                 this.tinymce.selection.getRng().insertNode(img);
             };
 
+            /**
+             *
+             */
             app.RTEditor.prototype.checkForResize = function () {
                 var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height();
 
@@ -582,11 +603,10 @@
              * Event handler for TinyMCE editor 'init' event
              */
             app.RTEditor.prototype.onTinyInit = function (e) {
-                var self = this;
+                var self = this,
+                    editor = this.tinymce;
 
                 this.options.onInit.call(this);
-
-                var editor = this.tinymce;
 
                 this.tinymce.editorCommands.addCommands({
                     'HiliteColor': function (command, ui, value) {
@@ -642,6 +662,8 @@
                 if (!this.options.autoShow) {
                     this.hide();
                 }
+
+                this.setDarkBackground(this.options.dark);
             };
 
             /**
@@ -690,13 +712,29 @@
 
                 if (e.command === 'FontName') {
                     this.options.onFontFamilyChange.call(this, e.value);
+                    this.font.name = e.value;
                 }
 
                 if (e.command === 'FontSize') {
                     this.options.onFontSizeChange.call(this, e.value);
+                    this.font.size = e.value;
+                }
+
+                if (e.command === 'mceInsertContent' && e.value.indexOf('<table>') !== -1) {
+                    this.onTinyTableCreate($(this.tinymce.selection.getNode()).parents('table'));
                 }
 
                 this.checkForResize();
+            };
+
+            /**
+             * Custom event handler for table creation
+             */
+            app.RTEditor.prototype.onTinyTableCreate = function ($table) {
+                $table.find('td,th').css({
+                    fontFamily: this.font.name,
+                    fontSize: this.font.size
+                });
             };
 
             app.RTEditor.defined = true;
@@ -718,7 +756,7 @@
         var options = {
             locale: 'en_GB',
             defaultText: 'Insert your text here',
-            autoShow: false,
+            autoShow: false
         }, widget = null;
 
         if (window.sankore) {
@@ -740,13 +778,6 @@
                 }
 
                 this.setBackgroundColor(window.sankore.preference('background'));
-
-//                if (this.empty) {
-//                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
-//                    this.setDefaultFontSize(window.sankore.fontSizePreference());
-//                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
-//                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
-//                }
             };
 
             options.onBlur = function () {
@@ -789,16 +820,17 @@
                 }
             };
 
-            options.onWidgetFocus = function () {
-                if (this.empty) {
-                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
-                    this.setDefaultFontSize(window.sankore.fontSizePreference());
-                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
-                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
-                }
-            };
+//            options.onWidgetFocus = function () {
+//                if (this.empty) {
+//                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+//                    this.setDefaultFontSize(window.sankore.fontSizePreference());
+//                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
+//                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
+//                }
+//            };
 
             options.locale = window.sankore.locale();
+            options.dark = window.sankore.isDarkBackground();
         }
 
         if (window.widget) {
@@ -834,6 +866,10 @@ if (!('sankore' in window)) {
     window.sankore = {
         loadUrl: function (url) {
             window.open(url);
+        },
+
+        isDarkBackground: function () {
+            return false;
         },
 
         setPreference: function (name, value) {
@@ -890,6 +926,10 @@ if (!('sankore' in window)) {
 
         locale: function () {
             return 'fr_FR';
+        },
+        
+        currentToolIsSelector: function () {
+            return true;
         }
     };
 }
