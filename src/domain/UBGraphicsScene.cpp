@@ -1884,13 +1884,13 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
     // On reinit les transform de l'item, car dans cette fonction, on va recalculer son scale et sa position
     item->setTransform(QTransform()); // Issue 1684 - ALTI/AOU - 20131210
 
+    maxWidth = mNominalSize.width() - (margin * 2);
+    maxHeight = mNominalSize.height() - (margin * 2);
+
+    QRectF size = item->sceneBoundingRect();
+
     if (disposition == Adjust)
     {
-        maxWidth = mNominalSize.width() - (margin * 2);
-        maxHeight = mNominalSize.height() - (margin * 2);
-
-        QRectF size = item->sceneBoundingRect();
-
         qreal ratio = qMin(maxWidth / size.width(), maxHeight / size.height());
 
         item->scale(ratio, ratio);
@@ -1911,11 +1911,6 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
     }
     else if (disposition == Fill)
     {
-        maxWidth = mNominalSize.width() - (margin * 2);
-        maxHeight = mNominalSize.height() - (margin * 2);
-
-        QRectF size = item->sceneBoundingRect();
-
         qreal ratio = qMax(maxWidth / size.width(), maxHeight / size.height());
 
         item->scale(ratio, ratio);
@@ -1928,11 +1923,6 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
     }
     else if (disposition == Extend)
     {
-        maxWidth = mNominalSize.width() - (margin * 2);
-        maxHeight = mNominalSize.height() - (margin * 2);
-
-        QRectF size = item->sceneBoundingRect();
-
         item->scale(maxWidth / size.width(),maxHeight / size.height());
 
         if(center)
@@ -1944,7 +1934,16 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
     }
     else //Center
     {
-        item->setPos(item->sceneBoundingRect().width() / -2.0, item->sceneBoundingRect().height() / -2.0);
+        //Issue 1684 - CFA - 20140116 : rescale de l'image dans le cas où elle dépasse (ici il faudrait recevoir '!center' dans le cas d'un drag'n'drop)
+        if (expand || size.width() > maxWidth || size.height() > maxHeight)
+        {
+            qreal ratio = qMin(maxWidth / size.width(), maxHeight / size.height());
+
+            item->scale(ratio, ratio);
+
+            if (center)
+                item->setPos(item->sceneBoundingRect().width() / -2.0, item->sceneBoundingRect().height() / -2.0);
+        }
     }
 
     return item;

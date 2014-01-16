@@ -1408,7 +1408,6 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         UBGraphicsPixmapItem* pixItem = mActiveScene->addPixmap(pix, NULL, pPos, 1.);
         pixItem->setSourceUrl(sourceUrl);
 
-
         if (isBackground)
         {
                 // Issue 1684 - CFA - need to save background Url
@@ -1417,6 +1416,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         }
         else
         {
+            mActiveScene->scaleToFitDocumentSize(pixItem, true, UBSettings::objectInControlViewMargin);
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
             pixItem->setSelected(true);
         }
@@ -1455,7 +1455,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
             pixItem->setSourceUrl(sourceUrl);
         }
         else
-        {
+        {           
             svgItem = mActiveScene->addSvg(sourceUrl, pPos, pData);
             svgItem->setSourceUrl(sourceUrl);
         }
@@ -1471,6 +1471,7 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         }
         else
         {
+            mActiveScene->scaleToFitDocumentSize(svgItem, true, UBSettings::objectInControlViewMargin);
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
             svgItem->setSelected(true);
 
