@@ -49,13 +49,13 @@ void UBShape::applyFillColor(const QColor& color)
         fillingProperty()->setColor(color);
 }
 
-void UBShape::applyStrockeColor(const QColor& color)
+void UBShape::applyStrokeColor(const QColor& color)
 {
     if(hasStrokeProperty())
         strokeProperty()->setColor(color);
 }
 
-void UBShape::setStrockeSize(int size)
+void UBShape::setStrokeSize(int size)
 {
     if(hasStrokeProperty())
         strokeProperty()->setWidth(size);

@@ -31,7 +31,7 @@ UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     , UBShape()
 {
     // Line has Stroke and Fill capabilities :
-    initializeStrockeProperty();
+    initializeStrokeProperty();
     initializeFillingProperty();
 
     setDelegate(new UBGraphicsItemDelegate(this, 0));
@@ -71,7 +71,7 @@ UBItem *UBGraphicsLineItem::deepCopy() const
         copy->mFillingProperty = new UBFillProperty(*fillingProperty());
 
     if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
+        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
     copyItemParameters(copy);
 

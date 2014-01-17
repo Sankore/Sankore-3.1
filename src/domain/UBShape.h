@@ -20,16 +20,16 @@ public:
     }
 };
 
-class UBStrockeProperty : public QPen
+class UBStrokeProperty : public QPen
 {
 public:
-    UBStrockeProperty():
+    UBStrokeProperty():
         QPen(Qt::SolidLine)
     {
 
     }
 
-    UBStrockeProperty(const UBStrockeProperty& src):
+    UBStrokeProperty(const UBStrokeProperty& src):
         QPen(src)
     {
 
@@ -46,7 +46,7 @@ public:
         return mFillingProperty;
     }
 
-    UBStrockeProperty* strokeProperty() const
+    UBStrokeProperty* strokeProperty() const
     {
         return mStrokeProperty;
     }
@@ -61,9 +61,9 @@ public:
         return mStrokeProperty != NULL;
     }
 
-    void initializeStrockeProperty()
+    void initializeStrokeProperty()
     {
-        mStrokeProperty = new UBStrockeProperty();
+        mStrokeProperty = new UBStrokeProperty();
     }
 
     void initializeFillingProperty()
@@ -78,13 +78,13 @@ public:
     void applyStyle(Qt::BrushStyle brushStyle, Qt::PenStyle penStyle);
 
     void applyFillColor(const QColor& color);
-    void applyStrockeColor(const QColor& color);
+    void applyStrokeColor(const QColor& color);
 
-    void setStrockeSize(int size);
+    void setStrokeSize(int size);
 
 protected:
     UBFillProperty *mFillingProperty;
-    UBStrockeProperty *mStrokeProperty;
+    UBStrokeProperty *mStrokeProperty;
 };
 
 #endif // UBSHAPE_H

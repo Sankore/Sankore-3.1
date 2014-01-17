@@ -20,7 +20,7 @@ UBShapeFactory::UBShapeFactory():
     mCurrentFillFirstColor(Qt::lightGray),
     mDrawingController(NULL),
     mCurrentBrushStyle(Qt::SolidPattern),
-    mCurrentPenStyle(Qt::DotLine),
+    mCurrentPenStyle(Qt::SolidLine),
     mThickness(1)
 {
 
@@ -106,8 +106,8 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
 
     mCurrentShape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
     mCurrentShape->applyFillColor(mCurrentFillFirstColor);
-    mCurrentShape->applyStrockeColor(mCurrentStrokeColor);
-    mCurrentShape->setStrockeSize(mThickness);
+    mCurrentShape->applyStrokeColor(mCurrentStrokeColor);
+    mCurrentShape->setStrokeSize(mThickness);
 
     return mCurrentShape;
 }
@@ -318,7 +318,7 @@ void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
     }
 }
 
-void UBShapeFactory::setStrockeStyle(Qt::PenStyle penStyle)
+void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 {
     mCurrentPenStyle = penStyle;
 
@@ -348,12 +348,12 @@ void UBShapeFactory::setThickness(int thickness)
         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
 
         if(shape){
-            shape->setStrockeSize(mThickness);
+            shape->setStrokeSize(mThickness);
         }
     }
 }
 
-void UBShapeFactory::setStrockeColor(QColor color)
+void UBShapeFactory::setStrokeColor(QColor color)
 {
     mCurrentStrokeColor = color;
 
@@ -365,7 +365,7 @@ void UBShapeFactory::setStrockeColor(QColor color)
         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
 
         if(shape){
-            shape->applyStrockeColor(mCurrentStrokeColor);
+            shape->applyStrokeColor(mCurrentStrokeColor);
         }
     }
 }

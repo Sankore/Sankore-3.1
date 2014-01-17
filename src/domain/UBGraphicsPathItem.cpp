@@ -10,7 +10,7 @@ UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
 
 void UBGraphicsPathItem::initialize()
 {
-    initializeStrockeProperty();
+    initializeStrokeProperty();
     initializeFillingProperty();
 
     setDelegate(new UBGraphicsItemDelegate(this, 0));
@@ -136,7 +136,7 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
             cp->mFillingProperty = new UBFillProperty(*fillingProperty());
 
         if (hasStrokeProperty())
-            cp->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
+            cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
         cp->mClosed = this->mClosed;
     }

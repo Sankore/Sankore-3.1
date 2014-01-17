@@ -50,8 +50,8 @@ public slots:
     void setFillingStyle(Qt::BrushStyle brushStyle);
     void setFillingColor(QColor color);
 
-    void setStrockeStyle(Qt::PenStyle penStyle);
-    void setStrockeColor(QColor color);
+    void setStrokeStyle(Qt::PenStyle penStyle);
+    void setStrokeColor(QColor color);
 
     void setThickness(int thickness);
 private:

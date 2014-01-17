@@ -31,7 +31,7 @@ UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
     , UBShape()
 {
     // Rect has Stroke and Fill capabilities :
-    initializeStrockeProperty();
+    initializeStrokeProperty();
     initializeFillingProperty();
 
     //By default, a rectangle isn't a square
@@ -74,7 +74,7 @@ UBItem *UBGraphicsRectItem::deepCopy() const
         copy->mFillingProperty = new UBFillProperty(*fillingProperty());
 
     if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
+        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
     copyItemParameters(copy);
 

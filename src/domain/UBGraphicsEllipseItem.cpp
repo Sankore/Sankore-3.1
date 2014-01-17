@@ -33,7 +33,7 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     , UBShape()
 {
     // Ellipse has Stroke and Fill capabilities :
-    initializeStrockeProperty();
+    initializeStrokeProperty();
     initializeFillingProperty();
 
     //By default, an ellipse isn't a circle
@@ -76,7 +76,7 @@ UBItem *UBGraphicsEllipseItem::deepCopy() const
         copy->mFillingProperty = new UBFillProperty(*fillingProperty());
 
     if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
+        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
     copyItemParameters(copy);
 
