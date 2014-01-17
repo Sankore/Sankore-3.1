@@ -63,12 +63,12 @@ public:
 
     void initializeStrockeProperty()
     {
-        mStrokeProperty = new UBStrockeProperty;
+        mStrokeProperty = new UBStrockeProperty();
     }
 
     void initializeFillingProperty()
     {
-        mFillingProperty = new UBFillProperty;
+        mFillingProperty = new UBFillProperty();
     }
 
     virtual ~UBShape();

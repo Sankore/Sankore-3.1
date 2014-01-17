@@ -117,11 +117,10 @@ void UBGraphicsRectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    setBrush(*fillingProperty());
+    painter->setBrush(*fillingProperty());
+    painter->setPen(*strokeProperty());
 
-    setPen(*strokeProperty());
-
-    QGraphicsRectItem::paint(painter, &styleOption, widget);
+    painter->drawRect(rect());
 }
 
 QVariant UBGraphicsRectItem::itemChange(GraphicsItemChange change, const QVariant &value)

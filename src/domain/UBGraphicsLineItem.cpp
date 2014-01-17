@@ -117,7 +117,7 @@ void UBGraphicsLineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     painter->setBrush(*fillingProperty());
     painter->setPen(*strokeProperty());
 
-    QGraphicsLineItem::paint(painter, &styleOption, widget);
+    painter->drawLine(mStartPoint, mEndPoint);
 }
 
 //pas de référence : sémantique de valeur

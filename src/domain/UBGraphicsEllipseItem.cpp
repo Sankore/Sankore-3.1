@@ -145,10 +145,10 @@ void UBGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsI
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    setBrush(*fillingProperty());
-    setPen(*strokeProperty());
+    painter->setBrush(*fillingProperty());
+    painter->setPen(*strokeProperty());
 
-    QGraphicsEllipseItem::paint(painter, &styleOption, widget);
+    painter->drawEllipse(rect());
 }
 
 QVariant UBGraphicsEllipseItem::itemChange(GraphicsItemChange change, const QVariant &value)
