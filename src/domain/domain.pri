@@ -26,8 +26,6 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBGraphicsWidgetItemDelegate.h \
     src/domain/UBGraphicsMediaItemDelegate.h \
     src/domain/UBShape.h \
-    src/domain/UBFillingProperty.h \
-    src/domain/UBStrokeProperty.h \
     src/domain/UBGraphicsEllipseItem.h \
     src/domain/UBShapeFactory.h \
     src/domain/UBGraphicsPathItem.h \
@@ -63,9 +61,7 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsDelegateFrame.cpp \
     src/domain/UBGraphicsWidgetItemDelegate.cpp \
     src/domain/UBShape.cpp \
-    src/domain/UBFillingProperty.cpp \
     src/domain/UBGraphicsEllipseItem.cpp \
-    src/domain/UBStrokeProperty.cpp \
     src/domain/UBShapeFactory.cpp \
     src/domain/UBGraphicsPathItem.cpp \
     src/domain/UBGraphicsRectItem.cpp \

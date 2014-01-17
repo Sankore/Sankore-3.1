@@ -22,8 +22,6 @@
 #include "UBGraphicsLineItem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
 #include "UBShape.h"
-#include "UBFillingProperty.h"
-#include "UBStrokeProperty.h"
 #include "UBGraphicsDelegateFrame.h"
 
 #include "board/UBDrawingController.h"
@@ -33,8 +31,8 @@ UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     , UBShape()
 {
     // Line has Stroke and Fill capabilities :
-    mFillingProperty = new UBFillingProperty();
-    mStrokeProperty = new UBStrokeProperty();
+    initializeStrockeProperty();
+    initializeFillingProperty();
 
     setDelegate(new UBGraphicsItemDelegate(this, 0));
     Delegate()->init();
@@ -70,10 +68,10 @@ UBItem *UBGraphicsLineItem::deepCopy() const
     UBGraphicsLineItem* copy = new UBGraphicsLineItem();
 
     if (hasFillingProperty())
-        copy->mFillingProperty = new UBFillingProperty(*fillingProperty());
+        copy->mFillingProperty = new UBFillProperty(*fillingProperty());
 
     if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+        copy->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
 
     copyItemParameters(copy);
 
@@ -116,11 +114,10 @@ void UBGraphicsLineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    fillingProperty()->fill(painter);
-    strokeProperty()->stroke(painter);
+    painter->setBrush(*fillingProperty());
+    painter->setPen(*strokeProperty());
 
-    //QGraphicsEllipseItem::paint(painter, &styleOption, widget);    
-    painter->drawLine(mStartPoint, mEndPoint);
+    QGraphicsLineItem::paint(painter, &styleOption, widget);
 }
 
 //pas de référence : sémantique de valeur

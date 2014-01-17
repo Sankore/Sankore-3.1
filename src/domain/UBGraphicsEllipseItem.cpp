@@ -24,8 +24,6 @@
 #include "UBGraphicsEllipseItem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
 #include "UBShape.h"
-#include "UBFillingProperty.h"
-#include "UBStrokeProperty.h"
 #include "UBGraphicsDelegateFrame.h"
 
 #include "board/UBDrawingController.h"
@@ -35,8 +33,8 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     , UBShape()
 {
     // Ellipse has Stroke and Fill capabilities :
-    mFillingProperty = new UBFillingProperty();
-    mStrokeProperty = new UBStrokeProperty();
+    initializeStrockeProperty();
+    initializeFillingProperty();
 
     //By default, an ellipse isn't a circle
     mIsCircle = false;
@@ -75,10 +73,10 @@ UBItem *UBGraphicsEllipseItem::deepCopy() const
     UBGraphicsEllipseItem* copy = new UBGraphicsEllipseItem();
 
     if (hasFillingProperty())
-        copy->mFillingProperty = new UBFillingProperty(*fillingProperty());
+        copy->mFillingProperty = new UBFillProperty(*fillingProperty());
 
     if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+        copy->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
 
     copyItemParameters(copy);
 
@@ -147,11 +145,10 @@ void UBGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsI
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    fillingProperty()->fill(painter);
-    strokeProperty()->stroke(painter);
+    setBrush(*fillingProperty());
+    setPen(*strokeProperty());
 
-    //QGraphicsEllipseItem::paint(painter, &styleOption, widget);
-    painter->drawEllipse(rect());
+    QGraphicsEllipseItem::paint(painter, &styleOption, widget);
 }
 
 QVariant UBGraphicsEllipseItem::itemChange(GraphicsItemChange change, const QVariant &value)

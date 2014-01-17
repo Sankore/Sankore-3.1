@@ -10,8 +10,8 @@ UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
 
 void UBGraphicsPathItem::initialize()
 {
-    mFillingProperty = new UBFillingProperty();
-    mStrokeProperty = new UBStrokeProperty();
+    initializeStrockeProperty();
+    initializeFillingProperty();
 
     setDelegate(new UBGraphicsItemDelegate(this, 0));
     Delegate()->init();
@@ -133,10 +133,10 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
         */
 
         if (hasFillingProperty())
-            cp->mFillingProperty = new UBFillingProperty(*fillingProperty());
+            cp->mFillingProperty = new UBFillProperty(*fillingProperty());
 
         if (hasStrokeProperty())
-            cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+            cp->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
 
         cp->mClosed = this->mClosed;
     }
@@ -162,8 +162,10 @@ void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    fillingProperty()->fill(painter);
-    strokeProperty()->stroke(painter);
+    if(this->isClosed())
+        setBrush(*fillingProperty());
+
+    setPen(*strokeProperty());
 
     if (isClosed())
     {

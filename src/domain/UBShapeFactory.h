@@ -30,6 +30,7 @@ public:
         Pen,
         Polygon
     };
+
 public slots:
     void createEllipse(bool create);
     void createPolygon(bool create);
@@ -38,7 +39,6 @@ public slots:
     void createSquare(bool create);
     void createLine(bool create);
     void createPen(bool create);
-
     void changeFillColor(bool ok);
 
     void onMouseMove(QMouseEvent *event);
@@ -47,6 +47,13 @@ public slots:
 
     void desactivate();
 
+    void setFillingStyle(Qt::BrushStyle brushStyle);
+    void setFillingColor(QColor color);
+
+    void setStrockeStyle(Qt::PenStyle penStyle);
+    void setStrockeColor(QColor color);
+
+    void setThickness(int thickness);
 private:
     UBShape* mCurrentShape;
     UBBoardView* mBoardView;
@@ -60,13 +67,14 @@ private:
     QColor mCurrentStrokeColor;
     QColor mCurrentFillFirstColor;
 
+    Qt::BrushStyle mCurrentBrushStyle;
+    Qt::PenStyle mCurrentPenStyle;
+
+    int mThickness;
     UBDrawingController *mDrawingController;
 
 protected:
     UBShape *instanciateCurrentShape();
-
-    template<typename C>
-    C *instanciate();
 
 };
 

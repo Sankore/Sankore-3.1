@@ -3468,7 +3468,7 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
     {
         strokeWidth = svgStrokeWidth.toString().toInt();
     }
-    ellipse->strokeProperty()->setThickness(strokeWidth);
+    ellipse->strokeProperty()->setWidth(strokeWidth);
 
     // Fill color
     QStringRef svgFill = mXmlReader.attributes().value("fill");
@@ -3477,7 +3477,7 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
     {
         brushColor.setNamedColor(svgFill.toString());
     }
-    ellipse->fillingProperty()->setFirstColor(brushColor);
+    ellipse->fillingProperty()->setColor(brushColor);
 
     // Fill opacity (transparency)
     QStringRef svgOpacity = mXmlReader.attributes().value("fill-opacity");
@@ -3486,9 +3486,9 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
     {
         opacity = svgOpacity.toString().toFloat();
     }
-    QColor color = ellipse->fillingProperty()->firstColor();
+    QColor color = ellipse->fillingProperty()->color();
     color.setAlphaF(opacity);
-    ellipse->fillingProperty()->setFirstColor(color);
+    ellipse->fillingProperty()->setColor(color);
 
     // Transform matrix
     QStringRef svgTransform = mXmlReader.attributes().value("transform");
@@ -3513,10 +3513,10 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseI
     mXmlWriter.writeAttribute("ry", QString("%1").arg(item->radius(Qt::Vertical)));
         // Stroke :
     mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
-    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->thickness()));
+    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
         // Fill :
-    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->firstColor().name()));
-    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->firstColor().alphaF()));
+    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
+    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
 
     mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
 
@@ -3581,7 +3581,7 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     {
         strokeWidth = svgStrokeWidth.toString().toInt();
     }
-    pathItem->strokeProperty()->setThickness(strokeWidth);
+    pathItem->strokeProperty()->setWidth(strokeWidth);
 
     // Fill color
     QStringRef svgFill = mXmlReader.attributes().value("fill");
@@ -3590,7 +3590,7 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     {
         brushColor.setNamedColor(svgFill.toString());
     }
-    pathItem->fillingProperty()->setFirstColor(brushColor);
+    pathItem->fillingProperty()->setColor(brushColor);
 
     // Fill opacity (transparency)
     QStringRef svgOpacity = mXmlReader.attributes().value("fill-opacity");
@@ -3599,9 +3599,9 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     {
         opacity = svgOpacity.toString().toFloat();
     }
-    QColor color = pathItem->fillingProperty()->firstColor();
+    QColor color = pathItem->fillingProperty()->color();
     color.setAlphaF(opacity);
-    pathItem->fillingProperty()->setFirstColor(color);
+    pathItem->fillingProperty()->setColor(color);
 
     // Transform matrix
     QStringRef svgTransform = mXmlReader.attributes().value("transform");
@@ -3632,10 +3632,10 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBGraphicsPathItem *i
 
     // Stroke :
     mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
-    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->thickness()));
+    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
     // Fill :
-    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->firstColor().name()));
-    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->firstColor().alphaF()));
+    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
+    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
 
     mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
 

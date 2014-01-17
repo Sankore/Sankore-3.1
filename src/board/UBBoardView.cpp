@@ -83,8 +83,6 @@
 
 #include "core/memcheck.h"
 
-#include "domain/UBFillingProperty.h"
-#include "domain/UBStrokeProperty.h"
 #include "domain/UBShapeFactory.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)

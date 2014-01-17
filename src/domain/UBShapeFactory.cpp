@@ -1,5 +1,4 @@
 #include "UBShapeFactory.h"
-#include "UBFillingProperty.h"
 #include "UBGraphicsEllipseItem.h"
 #include "UBGraphicsRectItem.h"
 #include "UBGraphicsLineItem.h"
@@ -19,7 +18,10 @@ UBShapeFactory::UBShapeFactory():
     mIsRegularShape(true),
     mCurrentStrokeColor(Qt::black),
     mCurrentFillFirstColor(Qt::lightGray),
-    mDrawingController(NULL)
+    mDrawingController(NULL),
+    mCurrentBrushStyle(Qt::SolidPattern),
+    mCurrentPenStyle(Qt::DotLine),
+    mThickness(1)
 {
 
 }
@@ -36,13 +38,11 @@ void UBShapeFactory::changeFillColor(bool ok)
 
         for(int i = 0; i < items.size(); i++){
             UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
-            //UBGraphicsEllipseItem *ellipse = dynamic_cast<UBGraphicsEllipseItem*>(items.at(i));
 
             if(shape){
-                shape->fillingProperty()->setFirstColor(QColor(128, 255, 100, 128));
+                shape->fillingProperty()->setColor(QColor(128, 255, 100, 128));
                 items.at(i)->update();
             }
-
         }
     }
 }
@@ -65,7 +65,6 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
     case Ellipse:
     {
         mCurrentShape = new UBGraphicsEllipseItem();
-        mCurrentShape->fillingProperty()->setFirstColor(Qt::red);
         break;
     }
     case Circle:
@@ -73,7 +72,6 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
         ellipse->setAsCircle();
         mCurrentShape = ellipse;
-        mCurrentShape->fillingProperty()->setFirstColor(Qt::blue);
         break;
     }
     case Rectangle:
@@ -81,7 +79,6 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsRectItem* rect = new UBGraphicsRectItem();
         rect->setAsRectangle();
         mCurrentShape = rect;
-        mCurrentShape->fillingProperty()->setFirstColor(Qt::green);
         break;
     }
     case Square:
@@ -89,26 +86,28 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsRectItem* square = new UBGraphicsRectItem();
         square->setAsSquare();
         mCurrentShape = square;
-        mCurrentShape->fillingProperty()->setFirstColor(Qt::black);
         break;
     }
     case Line:
     {
         UBGraphicsLineItem* line = new UBGraphicsLineItem();
         mCurrentShape = line;
-        mCurrentShape->fillingProperty()->setFirstColor(Qt::black);
         break;
     }
     case Polygon:
     {
         UBGraphicsPathItem * pathItem = new UBGraphicsPathItem();
-        pathItem->fillingProperty()->setFirstColor(mCurrentFillFirstColor);
         mCurrentShape = pathItem;
         break;
     }
     default:
         break;
     }
+
+    mCurrentShape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
+    mCurrentShape->applyFillColor(mCurrentFillFirstColor);
+    mCurrentShape->applyStrockeColor(mCurrentStrokeColor);
+    mCurrentShape->setStrockeSize(mThickness);
 
     return mCurrentShape;
 }
@@ -299,4 +298,92 @@ bool UBShapeFactory::isShape(QGraphicsItem *item)
 {
     return item->type() == UBGraphicsEllipseItem ::Type
             || item->type() == UBGraphicsPathItem::Type;
+}
+
+void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
+{
+    //save the style and then update all selected elements
+    mCurrentBrushStyle = brushStyle;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+
+        if(shape){
+            shape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
+        }
+    }
+}
+
+void UBShapeFactory::setStrockeStyle(Qt::PenStyle penStyle)
+{
+    mCurrentPenStyle = penStyle;
+
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+
+        if(shape){
+            shape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
+        }
+    }
+}
+
+void UBShapeFactory::setThickness(int thickness)
+{
+    mThickness = thickness;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+
+        if(shape){
+            shape->setStrockeSize(mThickness);
+        }
+    }
+}
+
+void UBShapeFactory::setStrockeColor(QColor color)
+{
+    mCurrentStrokeColor = color;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+
+        if(shape){
+            shape->applyStrockeColor(mCurrentStrokeColor);
+        }
+    }
+}
+
+
+void UBShapeFactory::setFillingColor(QColor color)
+{
+    mCurrentFillFirstColor = color;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+
+        if(shape){
+            shape->applyFillColor(mCurrentFillFirstColor);
+        }
+    }
 }

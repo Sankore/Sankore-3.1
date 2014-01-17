@@ -3,21 +3,50 @@
 
 #include "UBItem.h"
 #include "core/UB.h"
-#include "UBFillingProperty.h"
-#include "UBStrokeProperty.h"
 
+class UBFillProperty : public QBrush
+{
+public:
+    UBFillProperty():
+        QBrush(Qt::SolidPattern)
+    {
+
+    }
+
+    UBFillProperty(const UBFillProperty& src):
+        QBrush(src)
+    {
+
+    }
+};
+
+class UBStrockeProperty : public QPen
+{
+public:
+    UBStrockeProperty():
+        QPen(Qt::SolidLine)
+    {
+
+    }
+
+    UBStrockeProperty(const UBStrockeProperty& src):
+        QPen(src)
+    {
+
+    }
+};
 
 class UBShape : public UBItem, public UBGraphicsItem
 {
 public:
     UBShape();
 
-    UBFillingProperty* fillingProperty() const
+    UBFillProperty* fillingProperty() const
     {
         return mFillingProperty;
     }
 
-    UBStrokeProperty* strokeProperty() const
+    UBStrockeProperty* strokeProperty() const
     {
         return mStrokeProperty;
     }
@@ -32,9 +61,30 @@ public:
         return mStrokeProperty != NULL;
     }
 
+    void initializeStrockeProperty()
+    {
+        mStrokeProperty = new UBStrockeProperty;
+    }
+
+    void initializeFillingProperty()
+    {
+        mFillingProperty = new UBFillProperty;
+    }
+
+    virtual ~UBShape();
+
+    void applyStyle(Qt::PenStyle penStyle);
+    void applyStyle(Qt::BrushStyle brushStyle);
+    void applyStyle(Qt::BrushStyle brushStyle, Qt::PenStyle penStyle);
+
+    void applyFillColor(const QColor& color);
+    void applyStrockeColor(const QColor& color);
+
+    void setStrockeSize(int size);
+
 protected:
-    UBFillingProperty *mFillingProperty;
-    UBStrokeProperty *mStrokeProperty;
+    UBFillProperty *mFillingProperty;
+    UBStrockeProperty *mStrokeProperty;
 };
 
 #endif // UBSHAPE_H

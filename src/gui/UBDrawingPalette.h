@@ -46,6 +46,9 @@ class UBDrawingPalette : public UBActionPalette
         void drawingToolReleased();
         void updateActions();
 
+        //for testing
+        void changeProperty(bool ok);
+
     signals:
         void pressed(int);
 

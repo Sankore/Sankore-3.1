@@ -22,8 +22,6 @@
 #include "UBGraphicsRectItem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
 #include "UBShape.h"
-#include "UBFillingProperty.h"
-#include "UBStrokeProperty.h"
 #include "UBGraphicsDelegateFrame.h"
 
 #include "board/UBDrawingController.h"
@@ -33,8 +31,8 @@ UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
     , UBShape()
 {
     // Rect has Stroke and Fill capabilities :
-    mFillingProperty = new UBFillingProperty();
-    mStrokeProperty = new UBStrokeProperty();
+    initializeStrockeProperty();
+    initializeFillingProperty();
 
     //By default, a rectangle isn't a square
     setAsRectangle();
@@ -73,10 +71,10 @@ UBItem *UBGraphicsRectItem::deepCopy() const
     UBGraphicsRectItem* copy = new UBGraphicsRectItem();
 
     if (hasFillingProperty())
-        copy->mFillingProperty = new UBFillingProperty(*fillingProperty());
+        copy->mFillingProperty = new UBFillProperty(*fillingProperty());
 
     if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+        copy->mStrokeProperty = new UBStrockeProperty(*strokeProperty());
 
     copyItemParameters(copy);
 
@@ -119,11 +117,11 @@ void UBGraphicsRectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    fillingProperty()->fill(painter);
-    strokeProperty()->stroke(painter);
+    setBrush(*fillingProperty());
 
-    //QGraphicsEllipseItem::paint(painter, &styleOption, widget);
-    painter->drawRect(rect());
+    setPen(*strokeProperty());
+
+    QGraphicsRectItem::paint(painter, &styleOption, widget);
 }
 
 QVariant UBGraphicsRectItem::itemChange(GraphicsItemChange change, const QVariant &value)

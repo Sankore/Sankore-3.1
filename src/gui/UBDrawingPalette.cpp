@@ -84,7 +84,7 @@ void UBDrawingPalette::connectDrawingActions()
     connect(UBApplication::mainWindow->actionSmartLine, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createLine(bool)));
     connect(UBApplication::mainWindow->actionSmartPen, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createPen(bool)));
     connect(UBApplication::mainWindow->actionPolygon, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(createPolygon(bool)));
-    connect(UBApplication::mainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), &UBApplication::boardController->shapeFactory(), SLOT(changeFillColor(bool)));
+    connect(UBApplication::mainWindow->actionChangeFillingColor, SIGNAL(triggered(bool)), this, SLOT(changeProperty(bool)));
 
 }
 
@@ -132,8 +132,6 @@ void UBDrawingPalette::updateActions()
     connectButtons();
 }
 
-
-
 void UBDrawingPalette::initPosition()
 {
     // Rem : positions would be very different if palette were horizontal...
@@ -159,7 +157,6 @@ void UBDrawingPalette::initPosition()
 
     initSubPalettesPosition(); // place the subPalettes next to the palette.
 }
-
 
 void UBDrawingPalette::initSubPalettesPosition()
 {
@@ -259,7 +256,6 @@ void UBDrawingPalette::updateSubPalettesPosition(const QPoint& delta)
     }
 }
 
-
 void UBDrawingPalette::stackUnder(QWidget * w)
 {
     UBActionPalette::stackUnder(w);
@@ -277,5 +273,12 @@ void UBDrawingPalette::raise()
     // For all subpalettes :
     foreach (UBAbstractSubPalette* subPalette, mSubPalettes.values()) {
         subPalette->raise();
+    }
+}
+
+void UBDrawingPalette::changeProperty(bool ok)
+{
+    if(ok){
+        UBApplication::boardController->shapeFactory().setThickness(15);
     }
 }
