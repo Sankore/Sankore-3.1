@@ -138,10 +138,19 @@ void UBGraphicsRectItem::setRect(const QRectF &rect)
     QRectF r(rect);
 
     if(mIsSquare){
-        if(r.width() < r.height()){
-            r.setHeight(r.width());
-        }else{
-            r.setWidth(r.height());
+        if (r.width() < 0)
+        {
+            if (r.height() < 0)
+                r.setWidth(r.height());
+            else
+                r.setWidth(-r.height());
+        }
+        else
+        {
+            if (r.height() < 0)
+                r.setHeight(-r.width());
+            else
+                r.setHeight(r.width());
         }
     }
 
