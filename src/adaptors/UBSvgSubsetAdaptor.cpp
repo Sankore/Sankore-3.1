@@ -92,6 +92,8 @@ const QString UBSvgSubsetAdaptor::sFontWeightPrefix = "font-weight:";
 const QString UBSvgSubsetAdaptor::sFontStylePrefix = "font-style:";
 const QString UBSvgSubsetAdaptor::sFormerUniboardDocumentNamespaceUri = "http://www.mnemis.com/uniboard";
 
+const QString UBSvgSubsetAdaptor::SVG_STROKE_DOTLINE = "1 1"; // 1 dot, 1 space
+
 const QString tElement = "element";
 const QString tGroup = "group";
 const QString tStrokeGroup = "strokeGroup";
@@ -3470,6 +3472,17 @@ UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSv
     }
     ellipse->strokeProperty()->setWidth(strokeWidth);
 
+    // Stroke style
+    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+    if (!svgStrokeStyle.isNull())
+    {
+        QString strokeStyle = svgStrokeStyle.toString();
+        if (strokeStyle == SVG_STROKE_DOTLINE)
+        {
+            ellipse->strokeProperty()->setStyle(Qt::DotLine);
+        }
+    }
+
     // Fill color
     QStringRef svgFill = mXmlReader.attributes().value("fill");
     QColor brushColor = Qt::transparent;
@@ -3514,6 +3527,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseI
         // Stroke :
     mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
     mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+    if (item->strokeProperty()->style() == Qt::DotLine){
+        mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+    }
         // Fill :
     mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
     mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
@@ -3583,6 +3599,17 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     }
     pathItem->strokeProperty()->setWidth(strokeWidth);
 
+    // Stroke style
+    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+    if (!svgStrokeStyle.isNull())
+    {
+        QString strokeStyle = svgStrokeStyle.toString();
+        if (strokeStyle == SVG_STROKE_DOTLINE)
+        {
+            pathItem->strokeProperty()->setStyle(Qt::DotLine);
+        }
+    }
+
     // Fill color
     QStringRef svgFill = mXmlReader.attributes().value("fill");
     QColor brushColor = Qt::transparent;
@@ -3633,6 +3660,12 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBGraphicsPathItem *i
     // Stroke :
     mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
     mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+
+    if (item->strokeProperty()->style() == Qt::DotLine){
+        mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+    }
+
+
     // Fill :
     mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
     mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));

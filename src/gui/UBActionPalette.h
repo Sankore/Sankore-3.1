@@ -69,6 +69,8 @@ class UBActionPalette : public UBFloatingPalette
 
         UBActionPaletteButton* getButtonFromAction(QAction* action);
 
+        QButtonGroup* buttonGroup(){return mButtonGroup;}
+
     public slots:
         void close();
 
@@ -81,7 +83,7 @@ class UBActionPalette : public UBFloatingPalette
     protected:
         virtual void paintEvent(QPaintEvent *event);
         virtual void mouseReleaseEvent(QMouseEvent * event);
-        virtual void init(Qt::Orientation orientation);
+        virtual void init();
 
         void updateLayout();
 
@@ -90,12 +92,15 @@ class UBActionPalette : public UBFloatingPalette
         QList<QAction*> mActions;
         QMap<QAction*, UBActionPaletteButton*> mMapActionToButton;
 
+        //QList<QButtonGroup*> mButtonGroups;
+
         bool mIsClosable;
         Qt::ToolButtonStyle mToolButtonStyle;
         bool mAutoClose;
         QSize mButtonSize;
         QPoint mMousePos;
         UBActionPaletteButton *createPaletteButton(QAction* action, QWidget *parent);
+        Qt::Orientation mOrientation;
 
     private slots:
         void buttonClicked();

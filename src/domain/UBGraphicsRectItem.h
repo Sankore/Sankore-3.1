@@ -66,6 +66,12 @@ protected:
 
 private:
     bool mIsSquare;
+
+    // UBItem interface
+
+    // QGraphicsItem interface
+public:
+    virtual QRectF boundingRect() const;
 };
 
 #endif // UBGRAPHICSRECTITEM_H

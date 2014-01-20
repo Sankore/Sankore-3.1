@@ -37,51 +37,29 @@
 
 #include "core/memcheck.h"
 
-UBShapesPalette::UBShapesPalette(QWidget *parent, Qt::Orientation orient)
-    : UBAbstractSubPalette(parent, orient)
-    , mLastSelectedId(-1)
-{
-    QList<QAction*> actions;
+#include "board/UBBoardController.h"
+#include "domain/UBShapeFactory.h"
 
-    actions << UBApplication::mainWindow->actionEllipse;
-    actions << UBApplication::mainWindow->actionCircle;
-    actions << UBApplication::mainWindow->actionRectangle;
-    actions << UBApplication::mainWindow->actionSquare;
-    actions << UBApplication::mainWindow->actionSmartLine;
-    actions << UBApplication::mainWindow->actionSmartPen;
-
-
-    setActions(actions);
-    setButtonIconSize(QSize(28, 28));
-
-    groupActions();
-
-    adjustSizeAndPosition();
-
-    foreach(const UBActionPaletteButton* button, mButtons)
-    {
-        connect(button, SIGNAL(released()), this, SLOT(shapesToolReleased()));
-    }
-
-    hide();
-
-}
+#include "board/UBBoardPaletteManager.h"
+#include "gui/UBStylusPalette.h"
 
 UBShapesPalette::UBShapesPalette(Qt::Orientation orient, QWidget *parent )
     : UBAbstractSubPalette(parent, orient)
     , mLastSelectedId(-1)
 {
+    hide();
+
     QList<QAction*> actions;
 
     actions << UBApplication::mainWindow->actionEllipse;
     actions << UBApplication::mainWindow->actionCircle;
     actions << UBApplication::mainWindow->actionRectangle;
     actions << UBApplication::mainWindow->actionSquare;
-    actions << UBApplication::mainWindow->actionSmartLine;
-    actions << UBApplication::mainWindow->actionSmartPen;
+    //actions << UBApplication::mainWindow->actionSmartLine;
+    //actions << UBApplication::mainWindow->actionSmartPen;
 
     setActions(actions);
-    setButtonIconSize(QSize(28, 28));
+    //setButtonIconSize(QSize(28, 28));
 
     groupActions();
 
@@ -89,15 +67,76 @@ UBShapesPalette::UBShapesPalette(Qt::Orientation orient, QWidget *parent )
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {
-        connect(button, SIGNAL(released()), this, SLOT(shapesToolReleased()));
+        //connect(button, SIGNAL(released()), this, SLOT(shapesToolReleased()));
+        connect(button, SIGNAL(clicked()), this, SLOT(buttonClicked()));
     }
-
-    hide();
 }
 
 UBShapesPalette::~UBShapesPalette()
 {
 
+}
+
+void UBShapesPalette::buttonClicked()
+{
+    UBActionPaletteButton * button = dynamic_cast<UBActionPaletteButton *>(sender());
+    if (button)
+    {
+        QAction * action = button->defaultAction();
+
+        if (action)
+        {
+            if (action == UBApplication::mainWindow->actionEllipse){
+                UBApplication::boardController->shapeFactory().createEllipse(true); // UBShapeFactory::Ellipse
+            }
+            else if (action == UBApplication::mainWindow->actionCircle){
+                UBApplication::boardController->shapeFactory().createCircle(true);
+            }
+            else if (action == UBApplication::mainWindow->actionRectangle){
+                UBApplication::boardController->shapeFactory().createRectangle(true);
+            }
+            else if (action == UBApplication::mainWindow->actionSquare){
+                UBApplication::boardController->shapeFactory().createSquare(true);
+            }/*
+            else if (action == UBApplication::mainWindow->actionSmartLine){
+                UBApplication::boardController->shapeFactory().createLine(true);
+            }
+            else if (action == UBApplication::mainWindow->actionSmartPen){
+                UBApplication::boardController->shapeFactory().createPen(true);
+            }*/
+
+            actionPaletteButtonParent()->setDefaultAction(action);
+        }
+    }/*
+
+    // A DEPLACER dans UBBoardController::stylusToolChanged()
+    // Deselect tool from Stylus Palette
+    UBStylusPalette* stylusPalette = UBApplication::boardController->paletteManager()->stylusPalette();
+    if (stylusPalette->buttonGroup()->checkedButton()){
+        stylusPalette->buttonGroup()->setExclusive(false);
+        stylusPalette->buttonGroup()->checkedButton()->toggle();
+        stylusPalette->buttonGroup()->setExclusive(true);
+    }
+*/
+    /*
+    // Deselect tool from Stylus Palette
+    UBStylusPalette* stylusPalette = UBApplication::boardController->paletteManager()->stylusPalette();
+    QAbstractButton * checkedButton = stylusPalette->buttonGroup()->checkedButton();
+    if (checkedButton){
+        stylusPalette->buttonGroup()->setExclusive(false);
+
+        QToolButton * toolButton = dynamic_cast<QToolButton*>(checkedButton);
+        if (toolButton && toolButton->defaultAction()){
+            //toolButton->defaultAction()->setChecked(false);
+            toolButton->defaultAction()->toggle();
+    }
+
+        //stylusPalette->buttonGroup()->checkedButton()->setChecked(false);
+        stylusPalette->buttonGroup()->setExclusive(true);
+
+    }
+*/
+    hide();
 }
 
 void UBShapesPalette::shapesToolPressed()
@@ -109,17 +148,11 @@ void UBShapesPalette::shapesToolReleased()
 {
     mMainAction = mButtonGroup->checkedId();
 
+    //mActionParent = UBApplication::mainWindow->actionRectangle;
+
     hide();
 
     emit newMainAction();
 }
 
-void UBShapesPalette::mouseMoveEvent(QMouseEvent *event)
-{
-    Q_UNUSED(event);
-}
 
-void UBShapesPalette::togglePalette()
-{
-    show();
-}

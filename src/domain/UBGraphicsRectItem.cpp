@@ -42,7 +42,7 @@ UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
     Delegate()->setCanTrigAnAction(false);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
+    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Scaling);
 
     setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem));
@@ -165,3 +165,17 @@ void UBGraphicsRectItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     }
 }
 
+
+
+QRectF UBGraphicsRectItem::boundingRect() const
+{
+    QRectF retour = QGraphicsRectItem::boundingRect();
+
+    if (strokeProperty())
+    {
+        int thickness = strokeProperty()->width();
+        retour.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
+    }
+
+    return retour;
+}

@@ -69,6 +69,12 @@ protected:
 
 private:
     bool mIsCircle;
+
+    // UBItem interface
+
+    // QGraphicsItem interface
+public:
+    virtual QRectF boundingRect() const;
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H

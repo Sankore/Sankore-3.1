@@ -106,6 +106,8 @@ class UBSvgSubsetAdaptor
 
         static QMap<QString,IDataStorage*> additionalElementToStore;
 
+        static const QString SVG_STROKE_DOTLINE;
+
 
 
 

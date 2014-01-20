@@ -874,17 +874,18 @@ void UBGraphicsDelegateFrame::positionHandles()
     QVariant vLocked = delegated()->data(UBGraphicsItemData::ItemLocked);
     bool isLocked = (vLocked.isValid() && vLocked.toBool());
     bool bShowHorizontalResizers = ResizingHorizontally == mOperationMode;
-    bool bShowVerticalResizers   = ResizingHorizontally != mOperationMode && NoResizing != mOperationMode; // EV-7 - ALTI/AOU - 20131231 : new NoResizing possibility
-    bool bShowAllResizers        = Resizing == mOperationMode || Scaling == mOperationMode ;
+    bool bShowVerticalResizers   = ResizingHorizontally != mOperationMode && NoResizing != mOperationMode && mOperationMode != Scaling; // EV-7 - ALTI/AOU - 20131231 : new NoResizing possibility
+    bool bShowAllResizers        = Resizing == mOperationMode;// || Scaling == mOperationMode ;
+    bool bScaling                = mOperationMode == Scaling;
 
-    mBottomRightResizeGripSvgItem->setVisible(!isLocked && bShowAllResizers);
+    mBottomRightResizeGripSvgItem->setVisible(!isLocked && (bShowAllResizers || bScaling));
     mBottomResizeGripSvgItem->setVisible(!isLocked && (bShowVerticalResizers || bShowAllResizers));
     mLeftResizeGripSvgItem->setVisible(!isLocked && (bShowHorizontalResizers || bShowAllResizers));
     mRightResizeGripSvgItem->setVisible(!isLocked && (bShowHorizontalResizers || bShowAllResizers));
     mTopResizeGripSvgItem->setVisible(!isLocked && (bShowVerticalResizers || bShowAllResizers));
     mRotateButton->setVisible(mDelegate->canRotate() && !isLocked);
 
-    mBottomRightResizeGrip->setVisible(!isLocked && bShowAllResizers);
+    mBottomRightResizeGrip->setVisible(!isLocked && (bShowAllResizers || bScaling));
     mBottomResizeGrip->setVisible(!isLocked && (bShowVerticalResizers || bShowAllResizers));
     mLeftResizeGrip->setVisible(!isLocked && (bShowHorizontalResizers || bShowAllResizers));
     mRightResizeGrip->setVisible(!isLocked && (bShowHorizontalResizers || bShowAllResizers));
@@ -917,14 +918,14 @@ UBGraphicsDelegateFrame::FrameTool UBGraphicsDelegateFrame::toolFromPos(QPointF 
         return None;
     else if (bottomRightResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode)
         return ResizeBottomRight;
-    else if (bottomResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode){
+    else if (bottomResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode && mOperationMode != Scaling ){
             if(mMirrorY){
                 return ResizeTop;
             }else{
                 return ResizeBottom;
             }
         }
-    else if (leftResizeGripRect().contains(pos)){
+    else if (leftResizeGripRect().contains(pos) && mOperationMode != Scaling){
             if(mMirrorX){
                 return ResizeRight;
             }else{
@@ -932,14 +933,14 @@ UBGraphicsDelegateFrame::FrameTool UBGraphicsDelegateFrame::toolFromPos(QPointF 
             }
             return ResizeLeft;
         }
-    else if (rightResizeGripRect().contains(pos)){
+    else if (rightResizeGripRect().contains(pos) && mOperationMode != Scaling){
             if(mMirrorX){
                 return ResizeLeft;
             }else{
                 return ResizeRight;
             }
         }
-    else if (topResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode){
+    else if (topResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode && mOperationMode != Scaling){
             if(mMirrorY){
                 return ResizeBottom;
             }else{

@@ -4,6 +4,7 @@
 UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
     : QGraphicsPathItem(parent)
     , mClosed(false)
+    , HANDLE_SIZE(20)
 {
     initialize();
 }
@@ -150,7 +151,24 @@ void UBGraphicsPathItem::setUuid(const QUuid &pUuid)
 
 QRectF UBGraphicsPathItem::boundingRect() const
 {
-    return path().boundingRect();
+    QRectF retour = path().boundingRect();
+
+    int enlarge = 0;
+
+    if (strokeProperty())
+    {
+        int thickness = strokeProperty()->width();
+        enlarge = thickness/2;
+    }
+
+    // IF Handles are drawn
+    {
+        enlarge = qMax(enlarge, HANDLE_SIZE/2); // if handles are widther than border, enlarge more boundingRect.
+    }
+
+    retour.adjust(-enlarge, -enlarge, enlarge, enlarge);
+
+    return retour;
 }
 
 void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -163,27 +181,54 @@ void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     styleOption.state &= ~QStyle::State_HasFocus;
 
     if(this->isClosed())
-        setBrush(*fillingProperty());
+        painter->setBrush(*fillingProperty());
 
-    setPen(*strokeProperty());
+    painter->setPen(*strokeProperty());
 
     if (isClosed())
     {
         painter->fillPath(path(), painter->brush());
     }
 
-    QGraphicsPathItem::paint(painter, &styleOption, widget);
-
+    //QGraphicsPathItem::paint(painter, &styleOption, widget);
+    painter->drawPath(path());
+/*
     // Dessiner les sommets (et extremités)
     //if (isSelected())
     {
+        QPen penHandles;
+        penHandles.setWidth(1);
+        penHandles.setColor(Qt::black);
+        penHandles.setStyle(Qt::SolidLine);
+        painter->setPen(penHandles);
+
         for(int iElement = 0; iElement < path().elementCount(); ++iElement)
         {
             QPainterPath::Element element = path().elementAt(iElement);
             QPointF point(element.x, element.y);
-            painter->drawEllipse(point, 10, 10);
+            painter->drawEllipse(point, HANDLE_SIZE/2, HANDLE_SIZE/2);
         }
     }
+*/
+    if ( ! isClosed())
+    {
+        QPen penHandles;
+        penHandles.setWidth(1);
+        penHandles.setColor(Qt::black);
+        penHandles.setStyle(Qt::SolidLine);
+        painter->setPen(penHandles);
+
+        QList<QPainterPath::Element> handlesToDraw;
+        handlesToDraw.push_back(path().elementAt(0));
+        handlesToDraw.push_back(path().elementAt(path().elementCount()-1));
+
+        foreach(QPainterPath::Element element, handlesToDraw)
+        {
+            QPointF point(element.x, element.y);
+            painter->drawEllipse(point, HANDLE_SIZE/2, HANDLE_SIZE/2);
+        }
+    }
+
 }
 
 QVariant UBGraphicsPathItem::itemChange(GraphicsItemChange change, const QVariant &value)

@@ -60,3 +60,8 @@ void UBShape::setStrokeSize(int size)
     if(hasStrokeProperty())
         strokeProperty()->setWidth(size);
 }
+
+QRectF UBShape::boundingRect() const
+{
+    return QRectF();
+}

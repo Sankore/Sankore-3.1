@@ -31,6 +31,9 @@ public:
         Polygon
     };
 
+    QColor strokeColor();
+    QColor fillFirstColor();
+
 public slots:
     void createEllipse(bool create);
     void createPolygon(bool create);

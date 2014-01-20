@@ -85,6 +85,8 @@ public:
 protected:
     UBFillProperty *mFillingProperty;
     UBStrokeProperty *mStrokeProperty;
+
+    virtual QRectF boundingRect() const;
 };
 
 #endif // UBSHAPE_H

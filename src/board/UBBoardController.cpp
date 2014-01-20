@@ -2504,6 +2504,29 @@ void UBBoardController::stylusToolChanged(int tool)
         }
     }
 
+    QButtonGroup * buttonGroup = NULL;
+    if (tool == UBStylusTool::Drawing)
+    {
+        buttonGroup = paletteManager()->stylusPalette()->buttonGroup();
+    }
+    else
+    {
+        buttonGroup = paletteManager()->drawingPalette()->buttonGroup();
+    }
+
+    if (buttonGroup->checkedButton())
+    {
+        QToolButton * toolButton = dynamic_cast<QToolButton*>(buttonGroup->checkedButton());
+        if (toolButton && toolButton->defaultAction())
+        {
+            buttonGroup->setExclusive(false);
+            //buttonGroup->checkedButton()->setChecked(false);
+            toolButton->defaultAction()->toggle();
+            //buttonGroup->checkedButton()->toggle();
+            buttonGroup->setExclusive(true);
+        }
+    }
+
     updateBackgroundState();
 }
 

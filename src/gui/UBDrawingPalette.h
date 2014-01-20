@@ -6,6 +6,7 @@
 
 #include "UBAbstractSubPalette.h"
 #include "UBShapesPalette.h"
+#include <QActionGroup>
 
 class UBDrawingPalette : public UBActionPalette
 {
@@ -28,10 +29,10 @@ class UBDrawingPalette : public UBActionPalette
 
         void initPosition();
         void connectButtons();
-        void setupSubPalettes(QWidget* parent, Qt::Orientation);
+        void setupSubPalettes(QWidget* parent);
         void connectDrawingActions();
         void connectSubPalettes();
-        void changeVisibility(bool checked);
+        void setVisible(bool checked);
 
         virtual void initSubPalettesPosition();
         void updateSubPalettesPosition(const QPoint &delta);
@@ -42,9 +43,10 @@ class UBDrawingPalette : public UBActionPalette
 
     private slots:
 
-        void drawingToolPressed();
-        void drawingToolReleased();
+        //void drawingToolPressed();
+        //void drawingToolReleased();
         void updateActions();
+        void buttonClicked();
 
         //for testing
         void changeProperty(bool ok);
@@ -55,12 +57,18 @@ class UBDrawingPalette : public UBActionPalette
     private:
         int mLastSelectedId;
         QMap<int, UBAbstractSubPalette*> mSubPalettes;
+        QMap<UBActionPaletteButton*, UBAbstractSubPalette*> mSubPalettes2;
 
         QTime mActionButtonPressedTime;
         bool mPendingActionButtonPressed;
 
-    public slots:
+        void monInit();
+        UBActionPaletteButton *addActionButton(QAction *action);
+public slots:
         void raise();
+
+protected:
+        UBActionPaletteButton *addButtonSubPalette(UBAbstractSubPalette *subPalette, QAction *action = 0);
 };
 
 

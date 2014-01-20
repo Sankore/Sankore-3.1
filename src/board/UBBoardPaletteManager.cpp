@@ -120,6 +120,7 @@ UBBoardPaletteManager::~UBBoardPaletteManager()
 void UBBoardPaletteManager::initPalettesPosAtStartup()
 {
     mStylusPalette->initPosition();
+    mDrawingPalette->initPosition();
 }
 
 void UBBoardPaletteManager::setupLayout()
@@ -630,14 +631,14 @@ void UBBoardPaletteManager::backgroundPaletteClosed()
     UBApplication::mainWindow->actionBackgrounds->setChecked(false);
 }
 
-void UBBoardPaletteManager::toggleDrawingPalette(bool checked)
-{
-    mDrawingPalette->changeVisibility(checked);
-}
-
 void UBBoardPaletteManager::toggleStylusPalette(bool checked)
 {
     mStylusPalette->setVisible(checked);
+}
+
+void UBBoardPaletteManager::toggleDrawingPalette(bool checked)
+{
+    mDrawingPalette->setVisible(checked);
 }
 
 

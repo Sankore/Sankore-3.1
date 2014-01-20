@@ -44,7 +44,7 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
     Delegate()->setCanTrigAnAction(false);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
+    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Scaling);
 
     setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
@@ -191,4 +191,18 @@ void UBGraphicsEllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     {
         QGraphicsEllipseItem::mouseMoveEvent(event);
     }
+}
+
+
+QRectF UBGraphicsEllipseItem::boundingRect() const
+{
+    QRectF retour = QGraphicsEllipseItem::boundingRect();
+
+    if (strokeProperty())
+    {
+        int thickness = strokeProperty()->width();
+        retour.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
+    }
+
+    return retour;
 }

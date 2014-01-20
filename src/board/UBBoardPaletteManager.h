@@ -35,6 +35,7 @@
 #include "core/UBApplicationController.h"
 #include "gui/UBFeaturesWidget.h"
 #include "gui/UBDrawingPalette.h"
+#include "gui/UBStylusPalette.h"
 
 class UBWebToolsPalette;
 class UBStylusPalette;

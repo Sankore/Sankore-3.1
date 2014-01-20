@@ -17,11 +17,11 @@ UBShapeFactory::UBShapeFactory():
     mIsPress(false),
     mIsRegularShape(true),
     mCurrentStrokeColor(Qt::black),
-    mCurrentFillFirstColor(Qt::lightGray),
+    mCurrentFillFirstColor(Qt::transparent),
     mDrawingController(NULL),
     mCurrentBrushStyle(Qt::SolidPattern),
     mCurrentPenStyle(Qt::SolidLine),
-    mThickness(1)
+    mThickness(3)
 {
 
 }
@@ -315,6 +315,8 @@ void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
         if(shape){
             shape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
         }
+
+        items.at(i)->update();
     }
 }
 
@@ -333,6 +335,8 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
         if(shape){
             shape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
         }
+
+        items.at(i)->update();
     }
 }
 
@@ -350,6 +354,8 @@ void UBShapeFactory::setThickness(int thickness)
         if(shape){
             shape->setStrokeSize(mThickness);
         }
+
+        items.at(i)->update();
     }
 }
 
@@ -367,7 +373,14 @@ void UBShapeFactory::setStrokeColor(QColor color)
         if(shape){
             shape->applyStrokeColor(mCurrentStrokeColor);
         }
+
+        items.at(i)->update();
     }
+}
+
+QColor UBShapeFactory::strokeColor()
+{
+    return mCurrentStrokeColor;
 }
 
 
@@ -385,5 +398,12 @@ void UBShapeFactory::setFillingColor(QColor color)
         if(shape){
             shape->applyFillColor(mCurrentFillFirstColor);
         }
+
+        items.at(i)->update();
     }
+}
+
+QColor UBShapeFactory::fillFirstColor()
+{
+    return mCurrentFillFirstColor;
 }

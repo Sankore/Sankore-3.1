@@ -35,6 +35,7 @@ private:
     void initialize();
     bool mClosed;
 
+    const int HANDLE_SIZE; // in pixels
 };
 
 #endif // UBGRAPHICSPATHITEM_H
