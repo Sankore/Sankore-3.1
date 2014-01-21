@@ -8,6 +8,7 @@ UBGraphicsRegularPathItem::UBGraphicsRegularPathItem(int nVertices, QPointF star
     , mClosed(false)
     , mNVertices(nVertices)
     , mStartPoint(startPos)
+    , HANDLE_SIZE(20)
 {
     initialize();
     createGraphicsRegularPathItem();
@@ -164,3 +165,24 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
     }
 }
 
+QRectF UBGraphicsRegularPathItem::boundingRect() const
+{
+    QRectF retour = path().boundingRect();
+
+    int enlarge = 0;
+
+    if (strokeProperty())
+    {
+        int thickness = strokeProperty()->width();
+        enlarge = thickness/2;
+    }
+
+    // IF Handles are drawn
+    {
+        enlarge = qMax(enlarge, HANDLE_SIZE/2); // if handles are widther than border, enlarge more boundingRect.
+    }
+
+    retour.adjust(-enlarge, -enlarge, enlarge, enlarge);
+
+    return retour;
+}

@@ -57,6 +57,8 @@ class UBGraphicsRegularPathItem : public QGraphicsPathItem, public UBShape
         UBItem *deepCopy() const;
         void copyItemParameters(UBItem *copy) const;
 
+        QRectF boundingRect() const;
+
         // QGraphicsItem interface
         enum { Type = UBGraphicsItemType::GraphicsRegularPathItemType };
         virtual int type() const { return Type; }        
@@ -72,6 +74,8 @@ class UBGraphicsRegularPathItem : public QGraphicsPathItem, public UBShape
         int mNVertices;
         QList<QPair<double, double>> mVertices;
         QPointF mStartPoint;
+
+        const int HANDLE_SIZE; // in pixels
 
 };
 
