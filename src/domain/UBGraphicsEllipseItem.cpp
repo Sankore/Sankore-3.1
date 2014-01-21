@@ -163,13 +163,24 @@ QVariant UBGraphicsEllipseItem::itemChange(GraphicsItemChange change, const QVar
 
 void UBGraphicsEllipseItem::setRect(const QRectF &rect)
 {
-    QRectF r(rect);
+    QRectF r(rect);    
+    qDebug() << rect;
 
-    if(mIsCircle){
-        if(r.width() < r.height()){
-            r.setHeight(r.width());
-        }else{
-            r.setWidth(r.height());
+    if(mIsCircle)
+    {
+        if (r.width() < 0)
+        {
+            if (r.height() < 0)
+                r.setWidth(r.height());
+            else
+                r.setWidth(-r.height());
+        }
+        else
+        {
+            if (r.height() < 0)
+                r.setHeight(-r.width());
+            else
+                r.setHeight(r.width());
         }
     }
 
