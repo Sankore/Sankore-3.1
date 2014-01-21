@@ -1,33 +1,13 @@
 #include "UBGraphicsPathItem.h"
-#include "UBGraphicsDelegateFrame.h"
 
 UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
-    : QGraphicsPathItem(parent)
+    : UBAbstractGraphicsPathItem(parent)
     , mClosed(false)
     , HANDLE_SIZE(20)
 {
-    initialize();
-}
-
-void UBGraphicsPathItem::initialize()
-{
     initializeStrokeProperty();
     initializeFillingProperty();
-
-    setDelegate(new UBGraphicsItemDelegate(this, 0));
-    Delegate()->init();
-    Delegate()->setFlippable(false);
-    Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(false);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
-
-    setUuid(QUuid::createUuid());
-    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemIsMovable, true);
 }
-
 
 UBGraphicsPathItem::~UBGraphicsPathItem()
 {
@@ -121,18 +101,6 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
 
-        /* Pas d'Action possible sur une Shape
-        if(Delegate()->action()){
-            if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
-                cp->Delegate()->setAction(action);
-            }
-            else
-                cp->Delegate()->setAction(Delegate()->action());
-        }
-        */
-
         if (hasFillingProperty())
             cp->mFillingProperty = new UBFillProperty(*fillingProperty());
 
@@ -141,12 +109,6 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
 
         cp->mClosed = this->mClosed;
     }
-}
-
-void UBGraphicsPathItem::setUuid(const QUuid &pUuid)
-{
-    UBItem::setUuid(pUuid);
-    setData(UBGraphicsItemData::ItemUuid, QVariant(pUuid)); //store item uuid inside the QGraphicsItem to fast operations with Items on the scene
 }
 
 QRectF UBGraphicsPathItem::boundingRect() const
@@ -229,14 +191,4 @@ void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
         }
     }
 
-}
-
-QVariant UBGraphicsPathItem::itemChange(GraphicsItemChange change, const QVariant &value)
-{
-    QVariant newValue = value;
-
-    if(Delegate())
-        newValue = Delegate()->itemChange(change, value);
-
-    return QGraphicsPathItem::itemChange(change, newValue);
 }

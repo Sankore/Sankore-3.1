@@ -72,7 +72,7 @@ class UBGraphicsRegularPathItem : public QGraphicsPathItem, public UBShape
         void initialize();
         bool mClosed;
         int mNVertices;
-        QList<QPair<double, double>> mVertices;
+        QList<QPair<double, double> > mVertices;
         QPointF mStartPoint;
 
         const int HANDLE_SIZE; // in pixels

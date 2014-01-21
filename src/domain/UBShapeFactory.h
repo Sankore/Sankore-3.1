@@ -29,7 +29,8 @@ public:
         Line,
         Pen,
         RegularPolygon,
-        Polygon
+        Polygon,
+        None
     };
 
     QColor strokeColor();
@@ -43,7 +44,9 @@ public slots:
     void createRectangle(bool create);
     void createSquare(bool create);
     void createLine(bool create);
+
     void createPen(bool create);    
+
     void changeFillColor(bool ok);
 
     void onMouseMove(QMouseEvent *event);
@@ -66,6 +69,8 @@ private:
     bool mIsCreating;
     bool mIsPress;
     bool mIsRegularShape;
+
+    bool mFirstClickForFreeHand;
 
     ShapeType mShapeType;
 

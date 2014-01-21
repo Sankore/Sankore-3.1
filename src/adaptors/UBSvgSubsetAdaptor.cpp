@@ -41,6 +41,7 @@
 #include "domain/UBGraphicsGroupContainerItemDelegate.h"
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsPathItem.h"
+#include "domain/UBGraphicsFreehandItem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -590,7 +591,7 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                 QStringRef s = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapePath"); // EV-7 - ALTI/AOU - 20140102
                 if (!s.isNull())
                 {
-                    UBGraphicsPathItem* pathItem = shapePathFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                    UBAbstractGraphicsPathItem* pathItem = shapePathFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black, s.toString().toInt());
 
                     if (pathItem)
                     {
@@ -1479,7 +1480,7 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             }
 
             // Is the item a shape Path ? (closed polygon, opened polygon, freehand drawing)
-            UBGraphicsPathItem * shapePathItem = qgraphicsitem_cast<UBGraphicsPathItem *>(item); // EV-7 - ALTI/AOU - 20140102
+            UBAbstractGraphicsPathItem * shapePathItem = dynamic_cast<UBAbstractGraphicsPathItem *>(item); // EV-7 - ALTI/AOU - 20140102
             if (shapePathItem && shapePathItem->isVisible())
             {
                 shapePathToSvg(shapePathItem);
@@ -3539,9 +3540,20 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseI
     mXmlWriter.writeEndElement();
 }
 
-UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(const QColor& pDefaultPenColor) // EV-7 - ALTI/AOU - 20140102
+UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(const QColor& pDefaultPenColor, int type) // EV-7 - ALTI/AOU - 20140102
 {
-    UBGraphicsPathItem * pathItem = new UBGraphicsPathItem();
+    UBAbstractGraphicsPathItem *pathItem = 0;
+
+    switch(type){
+    case UBGraphicsFreehandItem::Type:
+        pathItem = new UBGraphicsFreehandItem();
+        break;
+    case UBGraphicsPathItem::Type:
+        pathItem = new UBGraphicsPathItem();
+        break;
+    default:
+        break;
+    }
 
     QStringRef svgPoints = mXmlReader.attributes().value("points");
 
@@ -3587,8 +3599,8 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     if (!svgStroke.isNull())
     {
         strokeColor.setNamedColor(svgStroke.toString());
+        pathItem->strokeProperty()->setColor(strokeColor);
     }
-    pathItem->strokeProperty()->setColor(strokeColor);
 
     // Stroke width/thickness
     QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
@@ -3596,8 +3608,8 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     if (!svgStrokeWidth.isNull())
     {
         strokeWidth = svgStrokeWidth.toString().toInt();
+        pathItem->strokeProperty()->setWidth(strokeWidth);
     }
-    pathItem->strokeProperty()->setWidth(strokeWidth);
 
     // Stroke style
     QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
@@ -3616,8 +3628,8 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     if (!svgFill.isNull())
     {
         brushColor.setNamedColor(svgFill.toString());
+        pathItem->fillingProperty()->setColor(brushColor);
     }
-    pathItem->fillingProperty()->setColor(brushColor);
 
     // Fill opacity (transparency)
     QStringRef svgOpacity = mXmlReader.attributes().value("fill-opacity");
@@ -3625,10 +3637,11 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
     if (!svgOpacity.isNull())
     {
         opacity = svgOpacity.toString().toFloat();
+        QColor color = pathItem->fillingProperty()->color();
+        color.setAlphaF(opacity);
+        pathItem->fillingProperty()->setColor(color);
     }
-    QColor color = pathItem->fillingProperty()->color();
-    color.setAlphaF(opacity);
-    pathItem->fillingProperty()->setColor(color);
+
 
     // Transform matrix
     QStringRef svgTransform = mXmlReader.attributes().value("transform");
@@ -3639,15 +3652,16 @@ UBGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(cons
         pathItem->setMatrix(itemMatrix);
     }
 
+    qDebug() << pathItem->path().elementCount();
 
     return pathItem;
 }
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBGraphicsPathItem *item) // EV-7 - ALTI/AOU - 20140102
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPathItem *item) // EV-7 - ALTI/AOU - 20140102
 {
     mXmlWriter.writeStartElement("polyline");
 
-    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapePath", "true"); // just to know it's a path drawn with the drawingPalette
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapePath", QString::number(item->type())); // just to know it's a path drawn with the drawingPalette
 
     QString sPoints;
     for(int i=0; i<item->path().elementCount(); ++i)
@@ -3658,17 +3672,20 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBGraphicsPathItem *i
     mXmlWriter.writeAttribute("points", sPoints);
 
     // Stroke :
-    mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
-    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+    if(item->hasStrokeProperty()){
+        mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+        mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
 
-    if (item->strokeProperty()->style() == Qt::DotLine){
-        mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+        if (item->strokeProperty()->style() == Qt::DotLine){
+            mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+        }
     }
 
-
     // Fill :
-    mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
-    mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
+    if(item->hasFillingProperty()){
+        mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
+        mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
+    }
 
     mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
 

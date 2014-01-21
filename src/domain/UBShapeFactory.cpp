@@ -4,6 +4,7 @@
 #include "UBGraphicsLineItem.h"
 #include "UBGraphicsRegularPathItem.h"
 #include "UBGraphicsPathItem.h"
+#include "UBGraphicsFreehandItem.h"
 
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
@@ -17,6 +18,7 @@ UBShapeFactory::UBShapeFactory():
     mIsCreating(false),
     mIsPress(false),
     mIsRegularShape(true),
+    mFirstClickForFreeHand(true),
     mCurrentStrokeColor(Qt::black),
     mCurrentFillFirstColor(Qt::transparent),
     mDrawingController(NULL),
@@ -93,6 +95,12 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
     {
         UBGraphicsLineItem* line = new UBGraphicsLineItem();
         mCurrentShape = line;
+        break;
+    }
+    case Pen:
+    {
+        UBGraphicsFreehandItem * pathItem = new UBGraphicsFreehandItem();
+        mCurrentShape = pathItem;
         break;
     }
     case Polygon:
@@ -237,11 +245,15 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 line->setLine(newLine);
                 line->setEndPoint(cursorPosition);
             }
-        }
-        else
-        {
-            if (mShapeType == RegularPolygon)
-            {
+        }else{
+            if(mShapeType == Pen){
+                UBGraphicsFreehandItem *path = dynamic_cast<UBGraphicsFreehandItem*>(mCurrentShape);
+                QPointF point = event->pos() - path->path().currentPosition();
+
+                if(point.manhattanLength() > 3){
+                    path->addPoint(cursorPosition);
+                }
+            }else if (mShapeType == RegularPolygon){
                 UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
                 regularPathItem->updatePath(cursorPosition);
             }
@@ -293,17 +305,28 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
             }
             else //Polygon
             {
-                UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
-                if (mCurrentShape == NULL || pathItem == NULL)
-                {
-                    pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateCurrentShape());
-                    mBoardView->scene()->addItem(pathItem);
-                }
-                pathItem->addPoint(cursorPosition);
+                if(mShapeType == Pen){
+                    if(mFirstClickForFreeHand){
+                        UBGraphicsFreehandItem* pathItem = dynamic_cast<UBGraphicsFreehandItem*>(instanciateCurrentShape());
 
-                if (pathItem->isClosed())
-                {
-                    mCurrentShape = NULL;
+                        pathItem->addPoint(cursorPosition);
+
+                        mFirstClickForFreeHand = false;
+                        mBoardView->scene()->addItem(pathItem);
+                    }
+                }else{
+                    UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
+                    if (mCurrentShape == NULL || pathItem == NULL)
+                    {
+                        pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateCurrentShape());
+                        mBoardView->scene()->addItem(pathItem);
+                    }
+                    pathItem->addPoint(cursorPosition);
+
+                    if (pathItem->isClosed())
+                    {
+                        mCurrentShape = NULL;
+                    }
                 }
             }
         }
@@ -320,6 +343,11 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     if (line)
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
+
+    if(mShapeType == Pen){
+        mCurrentShape = NULL;
+        mFirstClickForFreeHand = true;
+    }
 }
 
 void UBShapeFactory::desactivate()
@@ -327,6 +355,7 @@ void UBShapeFactory::desactivate()
     mIsPress = false;
     mIsCreating = false;
     mCurrentShape = NULL;
+    mShapeType = None;
 }
 
 bool UBShapeFactory::isShape(QGraphicsItem *item)
