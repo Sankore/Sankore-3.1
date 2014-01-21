@@ -15,18 +15,7 @@ class UBShapesPalette : public UBAbstractSubPalette
         virtual ~UBShapesPalette();
 
     private slots:
-
-        void shapesToolPressed();
-        void shapesToolReleased();
-
         void buttonClicked();
-private:
-        int mLastSelectedId;
-
-    signals:
-        void shapesToolPressed(int tool);
-        void shapesToolReleased(int tool);
-        void newMainAction();
 };
 
 #endif // UBSHAPESPALETTE_H

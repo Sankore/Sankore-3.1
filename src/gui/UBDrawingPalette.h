@@ -28,41 +28,24 @@ class UBDrawingPalette : public UBActionPalette
         void mouseMoveEvent(QMouseEvent *event);
 
         void initPosition();
-        void connectButtons();
-        void setupSubPalettes(QWidget* parent);
-        void connectDrawingActions();
-        void connectSubPalettes();
-        void setVisible(bool checked);
-
         virtual void initSubPalettesPosition();
+
+        void setVisible(bool checked);
         void updateSubPalettesPosition(const QPoint &delta);
 
         void stackUnder(QWidget *w);
 
-        static const int PRESS_DURATION;
 
     private slots:
 
-        //void drawingToolPressed();
-        //void drawingToolReleased();
-        void updateActions();
         void buttonClicked();
 
-        //for testing
-        void changeProperty(bool ok);
-
-    signals:
-        void pressed(int);
-
     private:
-        int mLastSelectedId;
-        QMap<int, UBAbstractSubPalette*> mSubPalettes;
-        QMap<UBActionPaletteButton*, UBAbstractSubPalette*> mSubPalettes2;
+        QMap<UBActionPaletteButton*, UBAbstractSubPalette*> mSubPalettes;
 
         QTime mActionButtonPressedTime;
         bool mPendingActionButtonPressed;
 
-        void monInit();
         UBActionPaletteButton *addActionButton(QAction *action);
 public slots:
         void raise();

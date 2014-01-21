@@ -92,8 +92,6 @@ class UBActionPalette : public UBFloatingPalette
         QList<QAction*> mActions;
         QMap<QAction*, UBActionPaletteButton*> mMapActionToButton;
 
-        //QList<QButtonGroup*> mButtonGroups;
-
         bool mIsClosable;
         Qt::ToolButtonStyle mToolButtonStyle;
         bool mAutoClose;

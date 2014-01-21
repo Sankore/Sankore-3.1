@@ -26,25 +26,6 @@
 #include "UBAbstractSubPalette.h"
 #include <QPen>
 
-/*
-class UBColorPickerButton : public QPushButton
-{
-public:
-    UBColorPickerButton(QWidget * parent = 0);
-
-    QColor color() const {return mColor;}
-    void setColor(QColor color) {mColor = color;}
-
-    // QWidget interface
-protected:
-    virtual void paintEvent(QPaintEvent * pe);
-
-private:
-    QColor mColor;
-};
-*/
-
-
 class UBDrawingStrokePropertiesPalette : public UBAbstractSubPalette
 {
     Q_OBJECT

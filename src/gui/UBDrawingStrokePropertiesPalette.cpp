@@ -96,7 +96,6 @@ UBDrawingStrokePropertiesPalette::~UBDrawingStrokePropertiesPalette()
 
 void UBDrawingStrokePropertiesPalette::onBtnSelectStrokeColor()
 {
-    //setFocusPolicy(Qt::NoFocus);
     QColorDialog colorPicker(this);
     if ( colorPicker.exec() )
     {

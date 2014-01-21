@@ -13,15 +13,8 @@ public:
 
 private:
     UBActionPaletteButton *addActionButton(QAction *action);
-    void changeParentPaletteButtonAction(UBActionPaletteButton *button);
 
 private slots:
-    /*
-    void createPolygon();
-    void createLine();
-    void createRectangle();
-    void createSquare();
-    */
     void buttonClicked();
 };
 
