@@ -164,7 +164,6 @@ QVariant UBGraphicsEllipseItem::itemChange(GraphicsItemChange change, const QVar
 void UBGraphicsEllipseItem::setRect(const QRectF &rect)
 {
     QRectF r(rect);    
-    qDebug() << rect;
 
     if(mIsCircle)
     {

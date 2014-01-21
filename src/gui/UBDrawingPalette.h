@@ -7,6 +7,7 @@
 #include "UBAbstractSubPalette.h"
 #include "UBShapesPalette.h"
 #include <QActionGroup>
+#include "UBRegularShapesPalette.h"
 
 class UBDrawingPalette : public UBActionPalette
 {
@@ -18,6 +19,7 @@ class UBDrawingPalette : public UBActionPalette
         {
             ShapesAction,
             PolygonAction,
+            RegularShapesAction,
             FillAction
         };
 

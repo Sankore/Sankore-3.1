@@ -28,6 +28,7 @@ public:
         Square,
         Line,
         Pen,
+        RegularPolygon,
         Polygon
     };
 
@@ -35,13 +36,14 @@ public:
     QColor fillFirstColor();
 
 public slots:
+    void createRegularPolygon(int nVertices);
     void createEllipse(bool create);
     void createPolygon(bool create);
     void createCircle(bool create);
     void createRectangle(bool create);
     void createSquare(bool create);
     void createLine(bool create);
-    void createPen(bool create);
+    void createPen(bool create);    
     void changeFillColor(bool ok);
 
     void onMouseMove(QMouseEvent *event);
@@ -75,6 +77,8 @@ private:
 
     int mThickness;
     UBDrawingController *mDrawingController;
+
+    int mNVertices;
 
 protected:
     UBShape *instanciateCurrentShape();

@@ -41,7 +41,6 @@
 #include "domain/UBShapeFactory.h"
 
 #include "board/UBBoardPaletteManager.h"
-#include "gui/UBStylusPalette.h"
 
 UBShapesPalette::UBShapesPalette(Qt::Orientation orient, QWidget *parent )
     : UBAbstractSubPalette(parent, orient)

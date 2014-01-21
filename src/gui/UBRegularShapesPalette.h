@@ -19,24 +19,35 @@
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef UBSHAPESPALETTE_H
-#define UBSHAPESPALETTE_H
+#ifndef UBREGULARSHAPESPALETTE_H
+#define UBREGULARSHAPESPALETTE_H
 
 #include <QButtonGroup>
 
 #include "UBAbstractSubPalette.h"
 
-class UBShapesPalette : public UBAbstractSubPalette
+class UBRegularShapesPalette : public UBAbstractSubPalette
 {
     Q_OBJECT
 
     public:
-        UBShapesPalette(Qt::Orientation orient, QWidget *parent = 0 );
+        enum NVertices
+        {
+            Triangle = 3,
+            Carre,
+            Pentagone,
+            Hexagone,
+            Heptagone,
+            Octogone
+        };
 
-        virtual ~UBShapesPalette();
+        UBRegularShapesPalette(QWidget *parent = 0, Qt::Orientation orient = Qt::Vertical);
+        UBRegularShapesPalette(Qt::Orientation orient, QWidget *parent = 0 );
 
+        virtual ~UBRegularShapesPalette();
     private slots:
         void buttonClicked();
+
 };
 
-#endif // UBSHAPESPALETTE_H
+#endif // UBREGULARSHAPESPALETTE_H

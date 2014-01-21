@@ -163,6 +163,7 @@ struct UBGraphicsItemType
         GraphicsWidgetItemType,
         GraphicsShapeItemType,
         GraphicsPathItemType,
+        GraphicsRegularPathItemType,
         UserTypesCount // this line must be the last line in this enum because it is types counter.
     };
 };

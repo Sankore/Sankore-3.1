@@ -2,6 +2,7 @@
 #include "UBGraphicsEllipseItem.h"
 #include "UBGraphicsRectItem.h"
 #include "UBGraphicsLineItem.h"
+#include "UBGraphicsRegularPathItem.h"
 #include "UBGraphicsPathItem.h"
 
 #include "core/UBApplication.h"
@@ -100,6 +101,12 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         mCurrentShape = pathItem;
         break;
     }
+    case RegularPolygon:
+    {
+        UBGraphicsRegularPathItem* regularPathItem = new UBGraphicsRegularPathItem(mNVertices);
+        mCurrentShape = regularPathItem;
+        break;
+    }
     default:
         break;
     }
@@ -176,9 +183,19 @@ void UBShapeFactory::createPen(bool create)
     }
 }
 
+void UBShapeFactory::createRegularPolygon(int nVertices)
+{
+    mDrawingController->setStylusTool(UBStylusTool::Drawing);
+    mIsRegularShape = false;
+    mIsCreating = true;
+    mShapeType = RegularPolygon;
+    mNVertices = nVertices;
+}
+
 void UBShapeFactory::createPolygon(bool create)
 {
-    if(create){
+    if(create)
+    {
         mDrawingController->setStylusTool(UBStylusTool::Drawing);
         mIsRegularShape = false;
         mIsCreating = true;
@@ -221,6 +238,14 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 line->setEndPoint(cursorPosition);
             }
         }
+        else
+        {
+            if (mShapeType == RegularPolygon)
+            {
+                UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
+                regularPathItem->updatePath(cursorPosition);
+            }
+        }
     }
 }
 
@@ -259,17 +284,27 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                 mBoardView->scene()->addItem(line);
             }
         }else{
-            UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
-            if (mCurrentShape == NULL || pathItem == NULL)
+            if (mShapeType == RegularPolygon)
             {
-                pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateCurrentShape());
-                mBoardView->scene()->addItem(pathItem);
-            }
-            pathItem->addPoint(cursorPosition);
+                UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(instanciateCurrentShape());
+                regularPathItem->setStartPoint(cursorPosition);
 
-            if (pathItem->isClosed())
+                mBoardView->scene()->addItem(regularPathItem);
+            }
+            else //Polygon
             {
-                mCurrentShape = NULL;
+                UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
+                if (mCurrentShape == NULL || pathItem == NULL)
+                {
+                    pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateCurrentShape());
+                    mBoardView->scene()->addItem(pathItem);
+                }
+                pathItem->addPoint(cursorPosition);
+
+                if (pathItem->isClosed())
+                {
+                    mCurrentShape = NULL;
+                }
             }
         }
     }

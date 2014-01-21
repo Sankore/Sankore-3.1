@@ -40,7 +40,7 @@
 #include "board/UBBoardPaletteManager.h"
 
 #include <QActionGroup>
-
+#include "domain/UBGraphicsRegularPathItem.h"
 #include "UBDrawingStrokePropertiesPalette.h"
 #include "UBDrawingFillPropertiesPalette.h"
 
@@ -48,6 +48,7 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
 {
     UBActionPaletteButton * btnSubPaletteShape = addButtonSubPalette(new UBShapesPalette(Qt::Horizontal, parentWidget()));
+    UBActionPaletteButton * btnSubPaletteRegularShape = addButtonSubPalette(new UBRegularShapesPalette(Qt::Horizontal, parentWidget()));
     UBActionPaletteButton * btnSubPalettePolygon = addButtonSubPalette(new UBDrawingPolygonPalette(Qt::Horizontal, parentWidget()));
     addButtonSubPalette(new UBDrawingStrokePropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionStrokeProperties);
     addButtonSubPalette(new UBDrawingFillPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionFillProperties);
@@ -56,8 +57,9 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     // Certains de ces boutons sont groupés
     mButtonGroup = new QButtonGroup(this);
     mButtonGroup->addButton(btnSubPaletteShape);
+    mButtonGroup->addButton(btnSubPaletteRegularShape);
     mButtonGroup->addButton(btnSubPalettePolygon);
-    mButtonGroup->addButton(btnPaintBucket);
+    mButtonGroup->addButton(btnPaintBucket);    
 
     initSubPalettesPosition();
 
@@ -157,7 +159,6 @@ void UBDrawingPalette::initSubPalettesPosition()
         {
             x = this->x() - subPalette->width(); // ... or on the left on the palette.
         }
-
         // Align vertically the center of subPalette to center of button :
         int y = this->y() + button->y() + button->height()/2 - subPalette->height()/2;
 
