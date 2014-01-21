@@ -70,7 +70,7 @@ class UBGraphicsRegularPathItem : public QGraphicsPathItem, public UBShape
         void initialize();
         bool mClosed;
         int mNVertices;
-        QList<QPair<double, double>> mVertices;
+        QList<QPair<double, double> > mVertices;
         QPointF mStartPoint;
 
 };

@@ -31,7 +31,9 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBGraphicsPathItem.h \
     src/domain/UBGraphicsRectItem.h \
     src/domain/UBGraphicsLineItem.h \
-    src/domain/UBGraphicsRegularPathItem.h
+    src/domain/UBGraphicsRegularPathItem.h \
+    src/domain/UBGraphicsFreehandItem.h \
+    src/domain/UBAbstractGraphicsPathItem.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
@@ -67,4 +69,6 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsPathItem.cpp \
     src/domain/UBGraphicsRectItem.cpp \
     src/domain/UBGraphicsLineItem.cpp \
-    src/domain/UBGraphicsRegularPathItem.cpp
+    src/domain/UBGraphicsRegularPathItem.cpp \
+    src/domain/UBGraphicsFreehandItem.cpp \
+    src/domain/UBAbstractGraphicsPathItem.cpp

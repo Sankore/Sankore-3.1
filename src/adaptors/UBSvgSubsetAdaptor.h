@@ -54,6 +54,7 @@ class UBGraphicsItemAction;
 class UBGraphicsStrokesGroup;
 class UBGraphicsEllipseItem;
 class UBGraphicsPathItem;
+class UBAbstractGraphicsPathItem;
 
 class UBSvgSubsetAdaptor
 {
@@ -159,7 +160,7 @@ class UBSvgSubsetAdaptor
 
                 UBGraphicsEllipseItem* shapeEllipseFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
 
-                UBGraphicsPathItem* shapePathFromSvg(const QColor& pDefaultPenColor); // EV-7 - ALTI/AOU - 20140102
+                UBAbstractGraphicsPathItem* shapePathFromSvg(const QColor& pDefaultPenColor, int type); // EV-7 - ALTI/AOU - 20140102
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
@@ -266,7 +267,7 @@ class UBSvgSubsetAdaptor
                 void triangleToSvg(UBGraphicsTriangle *item);
                 void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
                 void shapeEllipseToSvg(UBGraphicsEllipseItem *item); // EV-7 - ALTI/AOU - 20131231
-                void shapePathToSvg(UBGraphicsPathItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapePathToSvg(UBAbstractGraphicsPathItem *item); // EV-7 - ALTI/AOU - 20131231
                 void writeSvgElement();
 
         private:
