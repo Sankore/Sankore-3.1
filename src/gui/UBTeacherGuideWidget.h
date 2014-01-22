@@ -37,6 +37,9 @@ class QDomDocument;
 #include "UBTeacherGuideWidgetsTools.h"
 
 #include "interfaces/IDataStorage.h"
+#include "UBTeacherGuideResourceEditionWidget.h"
+#include "UBTeacherGuideResourcesPresentationWidget.h"
+#include "UBAbstractTeacherGuide.h"
 
 typedef enum
 {
@@ -80,9 +83,8 @@ private:
     QFrame* mpSeparator;
     QTreeWidget* mpTreeWidget;
     QTreeWidgetItem* mpRootWidgetItem;
-    UBAddItem* mpAddAnActionItem;
-    UBAddItem* mpAddAMediaItem;
     UBAddItem* mpAddALinkItem;
+    UBAddItem* mpAddAnActionItem;
 
 private slots:
     void onActiveDocumentChanged();
@@ -287,7 +289,7 @@ signals:
  *                    class    UBTeacherGuideWidget                        *
  ***************************************************************************/
 
-class UBTeacherGuideWidget : public QStackedWidget
+class UBTeacherGuideWidget : public UBAbstractTeacherGuide
 {
     Q_OBJECT
 public:
@@ -296,10 +298,8 @@ public:
 
     bool isModified();
 
-public slots:
     void changeMode();
     void showPresentationMode();
-    void connectToStylusPalette();
     void onActiveSceneChanged();
 
 private:
@@ -307,11 +307,22 @@ private:
     UBTeacherGuideEditionWidget* mpEditionWidget;
     UBTeacherGuidePresentationWidget* mpPresentationWidget;
     QVector<tUBGEElementNode*>mCurrentData;
-    bool mKeyboardActionFired;
-
-private slots:
-    void onTriggeredAction(bool checked);
-    void onTriggeredKeyboardAction(bool checked);
 };
 
+class UBTeacherResources : public UBAbstractTeacherGuide
+{
+    Q_OBJECT
+public:
+    UBTeacherResources(QWidget *parent = 0);
+
+    bool isModified();
+
+    void showPresentationMode();
+    void changeMode();
+    void onActiveSceneChanged();
+
+private:
+    UBTeacherGuideResourceEditionWidget *mEditionWidget;
+    UBTeacherGuideResourcesPresentationWidget *mPresentationWidget;
+};
 #endif // UBTEACHERGUIDEWIDGET_H

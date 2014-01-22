@@ -34,7 +34,7 @@
 #include "gui/UBDockDownloadWidget.h"
 #include "core/UBApplicationController.h"
 #include "gui/UBFeaturesWidget.h"
-
+#include "gui/UBDockResourcesWidget.h"
 
 class UBWebToolsPalette;
 class UBStylusPalette;
@@ -79,6 +79,9 @@ class UBBoardPaletteManager : public QObject
 
         UBDockTeacherGuideWidget* teacherGuideDockWidget() { return mpTeacherGuideWidget;}
 
+        //issue 1682 - NNE - 20140110
+        UBDockResourcesWidget* teacherResourcesDockWidget(){ return mTeacherResources; }
+
         void processPalettersWidget(UBDockPalette *paletter, eUBDockPaletteWidgetMode mode);
         void changeMode(eUBDockPaletteWidgetMode newMode, bool isInit = false);
         void startDownloads();
@@ -120,6 +123,9 @@ class UBBoardPaletteManager : public QObject
         UBLeftPalette* mLeftPalette;
         /** The right dock palette */
         UBRightPalette* mRightPalette;
+
+        //issue 1682 - NNE - 20131218
+        UBDockResourcesWidget *mTeacherResources;
 
         UBActionPalette *mBackgroundsPalette;
         UBActionPalette *mToolsPalette;

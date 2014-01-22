@@ -44,7 +44,6 @@
 #include "gui/UBStartupHintsPalette.h"
 #include "gui/UBCreateLinkPalette.h"
 
-
 #include "web/UBWebPage.h"
 #include "web/UBWebController.h"
 #include "web/browser/WBBrowserWindow.h"
@@ -100,6 +99,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mpTeacherGuideWidget(NULL)
     , mDownloadInProgress(false)
 {
+    mTeacherResources = NULL;
     setupPalettes();
     connectPalettes();
 }
@@ -147,10 +147,17 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     mLeftPalette->addTab(mpPageNavigWidget);
 
     if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool() || UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()){
+
         mpTeacherGuideWidget = new UBDockTeacherGuideWidget();
         mLeftPalette->registerWidget(mpTeacherGuideWidget);
         mLeftPalette->addTab(mpTeacherGuideWidget);
     }
+
+    //issue 1682 - NNE - 20131218
+    mTeacherResources = new UBDockResourcesWidget;
+    mLeftPalette->registerWidget(mTeacherResources);
+    mLeftPalette->addTab(mTeacherResources);
+    //issue 1682 - NNE - 20131218 : END
 
     mLeftPalette->connectSignals();
 
@@ -590,6 +597,18 @@ void UBBoardPaletteManager::activeSceneChanged()
     {
         mpPageNavigWidget->setPageNumber(UBDocumentContainer::pageFromSceneIndex(pageIndex), activeScene->document()->pageCount());
     }
+
+    //issue 1682 - NNE - 20140113
+    if(pageIndex > 0){
+        int currentTabIndex = mLeftPalette->currentTabIndex();
+
+        mLeftPalette->addTab(mTeacherResources);
+
+        mLeftPalette->showTabWidget(currentTabIndex);
+    }else{
+        mLeftPalette->removeTab(mTeacherResources);
+    }
+    //issue 1682 - NNE - 20140113 : END
 
     if (mZoomPalette)
         connect(mZoomPalette, SIGNAL(mouseEntered()), activeScene, SLOT(hideEraser()));

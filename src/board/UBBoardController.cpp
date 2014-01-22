@@ -2293,10 +2293,16 @@ void UBBoardController::show()
 
 void UBBoardController::persistCurrentScene(UBDocumentProxy *pProxy)
 {
+    UBBoardPaletteManager *paletteManager = UBApplication::boardController->paletteManager();
+    UBTeacherGuideWidget *teacherGuide = paletteManager->teacherGuideDockWidget()->teacherGuideWidget();
+    UBDockResourcesWidget *teacherResources = paletteManager->teacherResourcesDockWidget();
+
+    //issue 1682 - NNE - 20140122 : Add the test on the teacherResources
     if(UBPersistenceManager::persistenceManager()
             && selectedDocument() && mActiveScene && mActiveSceneIndex != mDeletingSceneIndex
             && (mActiveSceneIndex >= 0) && mActiveSceneIndex != mMovingSceneIndex
-            && (mActiveScene->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified())))
+            && (mActiveScene->isModified() || (teacherGuide && teacherGuide->isModified()))
+            || (teacherResources && teacherResources->isModified()))
     {
         UBPersistenceManager::persistenceManager()->persistDocumentScene(pProxy ? pProxy : selectedDocument(), mActiveScene, mActiveSceneIndex);
         updatePage(mActiveSceneIndex);

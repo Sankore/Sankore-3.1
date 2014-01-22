@@ -19,38 +19,30 @@
  * along with Open-Sankoré.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef UBABSTRACTTEACHERGUIDE_H
+#define UBABSTRACTTEACHERGUIDE_H
 
+#include "QStackedWidget"
 
-#ifndef UBDOCKDOWNLOADWIDGET_H
-#define UBDOCKDOWNLOADWIDGET_H
-
-#include <QWidget>
-#include <QVBoxLayout>
-
-#include "UBDockPaletteWidget.h"
-#include "UBDownloadWidget.h"
-
-class UBDockDownloadWidget : public UBDockPaletteWidget
+class UBAbstractTeacherGuide : public QStackedWidget
 {
     Q_OBJECT
+
 public:
-    UBDockDownloadWidget(QWidget* parent=0, const char* name="UBDockDownloadWidget");
-    ~UBDockDownloadWidget();
+    UBAbstractTeacherGuide(QWidget *parent);
 
-    bool visibleInMode(eUBDockPaletteWidgetMode mode, int currentPage)
-    {
-        //issue 1682 - NNE - 20140113
-        Q_UNUSED(currentPage)
+public slots:
+    virtual void changeMode() = 0;
+    virtual void showPresentationMode() = 0;
+    void connectToStylusPalette();
+    virtual void onActiveSceneChanged() = 0;
 
-        return mode == eUBDockPaletteWidget_BOARD;
-    }
-
-    QPixmap iconToLeft() const {return QPixmap(":images/download_open.png");}
-    QPixmap iconToRight() const {return QPixmap(":images/download_close.png");}
+private slots:
+    void onTriggeredKeyboardAction(bool checked);
+    void onTriggeredAction(bool checked);
 
 private:
-    QVBoxLayout* mpLayout;
-    UBDownloadWidget* mpDLWidget;
+    bool mKeyboardActionFired;
 };
 
-#endif // UBDOCKDOWNLOADWIDGET_H
+#endif // UBABSTRACTTEACHERGUIDE_H

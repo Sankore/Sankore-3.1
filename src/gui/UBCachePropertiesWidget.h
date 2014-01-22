@@ -62,8 +62,11 @@ public:
     UBCachePropertiesWidget(QWidget* parent=0, const char* name="UBCachePropertiesWidget");
     ~UBCachePropertiesWidget();
 
-    bool visibleInMode(eUBDockPaletteWidgetMode mode)
+    bool visibleInMode(eUBDockPaletteWidgetMode mode, int currentPage)
     {
+        //issue 1682 - NNE - 20140113
+        Q_UNUSED(currentPage)
+
         return mode == eUBDockPaletteWidget_BOARD;
     }
 

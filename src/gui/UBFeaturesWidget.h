@@ -80,8 +80,10 @@ public:
     UBFeaturesWidget(QWidget* parent=0, const char* name="UBFeaturesWidget");
     virtual ~UBFeaturesWidget();
 
-    bool visibleInMode(eUBDockPaletteWidgetMode mode)
+    bool visibleInMode(eUBDockPaletteWidgetMode mode, int currentPage)
     {
+        Q_UNUSED(currentPage)
+
         return mode == eUBDockPaletteWidget_BOARD
             || mode == eUBDockPaletteWidget_DESKTOP
             || mode == eUBDockPaletteWidget_WEB;

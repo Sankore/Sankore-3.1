@@ -26,6 +26,9 @@
 #include "core/memcheck.h"
 #include <QIcon>
 
+#include "core/UBApplication.h"
+#include "board/UBBoardController.h"
+
 UBDockPaletteWidget::UBDockPaletteWidget(QWidget *parent, const char *name):QWidget(parent)
 {
     setObjectName(name);
@@ -62,7 +65,8 @@ void UBDockPaletteWidget::registerMode(eUBDockPaletteWidgetMode mode)
 
 void UBDockPaletteWidget::slot_changeMode(eUBDockPaletteWidgetMode newMode)
 {
-    this->setVisible(this->visibleInMode( newMode ));
+    //issue 1682 - NNE - 20140122 : Add the currentPage argument
+    this->setVisible(this->visibleInMode(newMode, UBApplication::boardController->currentPage()));
 }
 
 

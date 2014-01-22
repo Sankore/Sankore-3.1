@@ -37,7 +37,12 @@ public:
     UBDockTeacherGuideWidget(QWidget* parent=0, const char* name="UBDockTeacherGuideWidget");
     ~UBDockTeacherGuideWidget();
 
-    bool visibleInMode(eUBDockPaletteWidgetMode mode){ return mode == eUBDockPaletteWidget_BOARD; }
+    bool visibleInMode(eUBDockPaletteWidgetMode mode, int currentPage){
+        //issue 1682 - NNE - 20140113
+        Q_UNUSED(currentPage)
+
+        return mode == eUBDockPaletteWidget_BOARD;
+    }
 
     QPixmap iconToLeft() const {return QPixmap(":images/teacher_close.png");}
     QPixmap iconToRight() const {return QPixmap(":images/teacher_open");}

@@ -34,12 +34,22 @@ typedef enum
     eElementType_UNIQUE
 }eElementType;
 
-typedef struct
+struct tIDataStorage
 {
     QString name;
     QMap<QString,QString> attributes;
     eElementType type;
-}tIDataStorage;
+
+    tIDataStorage(){ }
+
+    tIDataStorage(QString name, eElementType type):
+        name(name),
+        type(type)
+    {
+
+    }
+
+};
 
 class IDataStorage
 {

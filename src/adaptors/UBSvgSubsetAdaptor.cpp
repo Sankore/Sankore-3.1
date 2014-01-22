@@ -1193,7 +1193,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement()
 
 bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
 {
-    if (mScene->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()))
+    //issue 1682 - NNE - add the test on the teacherResources
+    if (mScene->isModified() || (UBApplication::boardController->paletteManager()->teacherGuideDockWidget() && UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()) ||
+            UBApplication::boardController->paletteManager()->teacherResourcesDockWidget() && UBApplication::boardController->paletteManager()->teacherResourcesDockWidget()->isModified())
     {
 
         //Creating dom structure to store information
@@ -1455,8 +1457,20 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
         QMap<QString,IDataStorage*> elements = getAdditionalElementToStore();
         QVector<tIDataStorage*> dataStorageItems;
 
-        if(elements.value("teacherGuide"))
-            dataStorageItems = elements.value("teacherGuide")->save(pageIndex);
+        //issue 1682 - NNE - 20140122 : Refractor the persistance for the teacher and
+        //the resources guide
+        tIDataStorage* data = new tIDataStorage("teacherGuide", eElementType_START);
+        data->attributes.insert("version", "2.3.0");
+        dataStorageItems << data;
+
+        if(pageIndex != 0){
+            if(elements.value("teacherGuide"))
+                dataStorageItems += elements.value("teacherGuide")->save(pageIndex);
+
+            if(elements.value("resourcesGuide"))
+                dataStorageItems += elements.value("resourcesGuide")->save(pageIndex);
+        }
+
         // Issue 1683 - ALTI/AOU - 20131212
         // On ne peut malheureusement pas utiliser UBTeacherGuidePageZeroWidget.save(),
         // car celle-ci ne pourrait renvoyer que les élements du document chargé dans la Board.
@@ -1465,12 +1479,6 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
         if(pageIndex == 0)
         {
             QVector<tIDataStorage*> result;
-
-            tIDataStorage* data = new tIDataStorage();
-            data->name = "teacherGuide";
-            data->type = eElementType_START;
-            data->attributes.insert("version", "2.3.0");
-            result << data;
 
             foreach (UBDocumentExternalFile* ef, *(mpDocument->externalFiles())) {
                 data = new tIDataStorage();
@@ -1481,14 +1489,12 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
                 result << data;
             }
 
-            data = new tIDataStorage();
-            data->name = "teacherGuide";
-            data->type = eElementType_END;
-            result << data;
-
             dataStorageItems += result;
         }
         // Fin Issue 1683 - ALTI/AOU - 20131212
+
+        dataStorageItems << new tIDataStorage("teacherGuide", eElementType_END);
+        //issue 1682 - NNE - 20140122 : END
 
         foreach(tIDataStorage* eachItem, dataStorageItems){
             if(eachItem->type == eElementType_START){
@@ -1514,6 +1520,7 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             else
                 qWarning() << "unknown type";
         }
+
 
         //writing group data
         if (groupRoot.hasChildNodes()) {

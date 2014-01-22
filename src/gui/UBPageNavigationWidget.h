@@ -45,10 +45,14 @@ public:
     //void setDocument(UBDocumentProxy* document);
     void refresh();
 
-    bool visibleInMode(eUBDockPaletteWidgetMode mode)
+    bool visibleInMode(eUBDockPaletteWidgetMode mode, int currentPage)
     {
+        //issue 1682 - NNE - 20140113
+        Q_UNUSED(currentPage)
+
         return mode == eUBDockPaletteWidget_BOARD;
     }
+
     QPixmap iconToLeft() const {return QPixmap(":images/pages_close.png");}
     QPixmap iconToRight() const {return QPixmap(":images/pages_open.png");}
 
