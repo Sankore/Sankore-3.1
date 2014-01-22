@@ -64,15 +64,8 @@ protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
-    void mousePressEvent(QGraphicsSceneMouseEvent * event);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
-
 private:
     bool mIsCircle;
-
-    // UBItem interface
-
-    // QGraphicsItem interface
 public:
     virtual QRectF boundingRect() const;
 };

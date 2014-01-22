@@ -360,8 +360,10 @@ void UBShapeFactory::desactivate()
 
 bool UBShapeFactory::isShape(QGraphicsItem *item)
 {
-    return item->type() == UBGraphicsEllipseItem ::Type
-            || item->type() == UBGraphicsPathItem::Type;
+    return item->type() == UBGraphicsItemType::GraphicsShapeItemType
+            || item->type() == UBGraphicsItemType::GraphicsPathItemType
+            || item->type() == UBGraphicsItemType::GraphicsRegularPathItemType
+            || item->type() == UBGraphicsItemType::GraphicsFreehandItemType;
 }
 
 void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)

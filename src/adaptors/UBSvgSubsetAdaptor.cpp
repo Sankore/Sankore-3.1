@@ -42,6 +42,7 @@
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsPathItem.h"
 #include "domain/UBGraphicsFreehandItem.h"
+#include "domain/UBGraphicsRegularPathItem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -3551,6 +3552,14 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
     case UBGraphicsPathItem::Type:
         pathItem = new UBGraphicsPathItem();
         break;
+    case UBGraphicsRegularPathItem::Type:
+    {
+        QStringRef nVertices = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "nVertices");
+        QStringRef startPointX = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startPointX");
+        QStringRef startPointY = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startPointY");
+        pathItem = new UBGraphicsRegularPathItem(nVertices.toString().toInt(), QPointF(startPointX.toString().toFloat(), startPointY.toString().toFloat()));
+        break;
+    }
     default:
         break;
     }
@@ -3585,7 +3594,7 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
             else
             {
                 qWarning() << "cannot make sense of a 'point' value" << sCoord;
-            }
+            }            
         }
     }
     else
@@ -3660,6 +3669,17 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
 void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPathItem *item) // EV-7 - ALTI/AOU - 20140102
 {
     mXmlWriter.writeStartElement("polyline");
+
+    if (item->type() == UBGraphicsItemType::GraphicsRegularPathItemType)
+    {
+        UBGraphicsRegularPathItem* it = dynamic_cast<UBGraphicsRegularPathItem*>(item);
+        if (it)
+        {
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "nVertices", QString::number(it->nVertices()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startPointX", QString::number(it->startPoint().x()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startPointY", QString::number(it->startPoint().y()));
+        }
+    }
 
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapePath", QString::number(item->type())); // just to know it's a path drawn with the drawingPalette
 

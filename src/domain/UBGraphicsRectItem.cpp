@@ -157,25 +157,6 @@ void UBGraphicsRectItem::setRect(const QRectF &rect)
     QGraphicsRectItem::setRect(r);
 }
 
-void UBGraphicsRectItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
-{
-    Delegate()->mousePressEvent(event);
-}
-
-void UBGraphicsRectItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    if (Delegate()->mouseMoveEvent(event))
-    {
-
-    }
-    else
-    {
-        QGraphicsRectItem::mouseMoveEvent(event);
-    }
-}
-
-
-
 QRectF UBGraphicsRectItem::boundingRect() const
 {
     QRectF retour = QGraphicsRectItem::boundingRect();

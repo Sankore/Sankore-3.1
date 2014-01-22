@@ -71,4 +71,5 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsLineItem.cpp \
     src/domain/UBGraphicsRegularPathItem.cpp \
     src/domain/UBGraphicsFreehandItem.cpp \
-    src/domain/UBAbstractGraphicsPathItem.cpp
+    src/domain/UBAbstractGraphicsPathItem.cpp \
+    src/domain/UBGraphicsFreehandItem.cpp

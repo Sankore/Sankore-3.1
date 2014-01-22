@@ -9,12 +9,6 @@ class UBAbstractGraphicsPathItem : public QGraphicsPathItem, public UBShape
 public:
     UBAbstractGraphicsPathItem(QGraphicsItem *parent = 0);
 
-    enum PersistanceType{
-        FreeHand,
-        Path,
-        RegularPath
-    };
-
     virtual int type() const = 0;
 
     // UBItem interface

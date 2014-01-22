@@ -4,13 +4,13 @@
 #include <cmath>
 
 UBGraphicsRegularPathItem::UBGraphicsRegularPathItem(int nVertices, QPointF startPos, QGraphicsItem * parent)
-    : QGraphicsPathItem(parent)
-    , mClosed(false)
+    : UBAbstractGraphicsPathItem(parent)
     , mNVertices(nVertices)
     , mStartPoint(startPos)
     , HANDLE_SIZE(20)
 {
-    initialize();
+    initializeStrokeProperty();
+    initializeFillingProperty();
     createGraphicsRegularPathItem();
 }
 
@@ -71,25 +71,6 @@ void UBGraphicsRegularPathItem::updatePath(QPointF newPos)
     setPath(path);
 }
 
-void UBGraphicsRegularPathItem::initialize()
-{
-    initializeStrokeProperty();
-    initializeFillingProperty();
-
-    setDelegate(new UBGraphicsItemDelegate(this, 0));
-    Delegate()->init();
-    Delegate()->setFlippable(false);
-    Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(false);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
-
-    setUuid(QUuid::createUuid());
-    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemIsMovable, true);
-}
-
 void UBGraphicsRegularPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
@@ -106,21 +87,48 @@ void UBGraphicsRegularPathItem::paint(QPainter *painter, const QStyleOptionGraph
     painter->drawPath(path());
 }
 
-QVariant UBGraphicsRegularPathItem::itemChange(GraphicsItemChange change, const QVariant &value)
-{
-    QVariant newValue = value;
-
-    if(Delegate())
-        newValue = Delegate()->itemChange(change, value);
-
-    return QGraphicsPathItem::itemChange(change, newValue);
-}
-
 void UBGraphicsRegularPathItem::setStartPoint(QPointF pos)
 {
     mStartPoint = pos;
 }
 
+QRectF UBGraphicsRegularPathItem::boundingRect() const
+{
+    QRectF retour = path().boundingRect();
+
+    int enlarge = 0;
+
+    if (strokeProperty())
+    {
+        int thickness = strokeProperty()->width();
+        enlarge = thickness/2;
+    }
+
+    // IF Handles are drawn
+    {
+        enlarge = qMax(enlarge, HANDLE_SIZE/2); // if handles are widther than border, enlarge more boundingRect.
+    }
+
+    retour.adjust(-enlarge, -enlarge, enlarge, enlarge);
+
+    return retour;
+}
+
+void UBGraphicsRegularPathItem::addPoint(const QPointF & point)
+{
+    QPainterPath painterPath = path();
+
+    if (painterPath.elementCount() == 0)
+    {
+        painterPath.moveTo(point); // For the first point added, we must use moveTo().
+    }
+    else
+    {
+        painterPath.lineTo(point);
+    }
+
+    setPath(painterPath);
+}
 
 UBItem *UBGraphicsRegularPathItem::deepCopy() const
 {
@@ -161,28 +169,5 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
         if (hasStrokeProperty())
             cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
-        cp->mClosed = this->mClosed;
     }
-}
-
-QRectF UBGraphicsRegularPathItem::boundingRect() const
-{
-    QRectF retour = path().boundingRect();
-
-    int enlarge = 0;
-
-    if (strokeProperty())
-    {
-        int thickness = strokeProperty()->width();
-        enlarge = thickness/2;
-    }
-
-    // IF Handles are drawn
-    {
-        enlarge = qMax(enlarge, HANDLE_SIZE/2); // if handles are widther than border, enlarge more boundingRect.
-    }
-
-    retour.adjust(-enlarge, -enlarge, enlarge, enlarge);
-
-    return retour;
 }

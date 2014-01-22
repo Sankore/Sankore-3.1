@@ -22,10 +22,9 @@
 #ifndef UBGRAPHICSREGULARSHAPES_H
 #define UBGRAPHICSREGULARSHAPES_H
 
-#include <QGraphicsPathItem>
-#include "UBShape.h"
+#include "UBAbstractGraphicsPathItem.h"
 
-class UBGraphicsRegularPathItem : public QGraphicsPathItem, public UBShape
+class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem
 {
     public:
 
@@ -40,43 +39,33 @@ class UBGraphicsRegularPathItem : public QGraphicsPathItem, public UBShape
         };
 
         UBGraphicsRegularPathItem(int nVertices = 3, QPointF startPoint = QPointF(0,0), QGraphicsItem* parent = 0);
-
         ~UBGraphicsRegularPathItem();
 
         void createGraphicsRegularPathItem();
-
-        void addPoint(const QPointF &point);
-        inline bool isClosed() const {return mClosed;}
-        inline void setClosed(bool closed);
+        virtual void addPoint(const QPointF &point);
 
         void updatePath(QPointF newPos);
-        void setStartPoint(QPointF pos);
-
+        void setStartPoint(QPointF pos);        
 
         // UBItem interface
         UBItem *deepCopy() const;
         void copyItemParameters(UBItem *copy) const;
 
-        QRectF boundingRect() const;
-
-        // QGraphicsItem interface
         enum { Type = UBGraphicsItemType::GraphicsRegularPathItemType };
         virtual int type() const { return Type; }        
         virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
-    protected:
-        // QGraphicsItem interface
-        virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+        QRectF boundingRect() const;
 
-    private:
-        void initialize();
-        bool mClosed;
+        inline const int nVertices() const { return mNVertices; }
+        inline const QPointF& startPoint() const { return mStartPoint; }
+
+    private:      
         int mNVertices;
         QList<QPair<double, double> > mVertices;
         QPointF mStartPoint;
 
         const int HANDLE_SIZE; // in pixels
-
 };
 
 #endif // UBGRAPHICSREGULARSHAPES_H

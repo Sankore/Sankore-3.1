@@ -60,7 +60,13 @@ UBDrawingFillPropertiesPalette::~UBDrawingFillPropertiesPalette()
 
 void UBDrawingFillPropertiesPalette::onBtnSelectFillColor()
 {
+
     QColorDialog colorPicker(this);
+
+#ifdef Q_WS_MAC
+    colorPicker.setOption(QColorDialog::DontUseNativeDialog);
+#endif
+
     if ( colorPicker.exec() )
     {
         QColor selectedColor = colorPicker.selectedColor();
