@@ -14,7 +14,7 @@
         this.empty = true;
         this.font = {
             name: 'arial',
-            size: '12pt'
+            size: '32pt'
         };
         this.widget = widget;
         this.dark = false;
@@ -75,11 +75,13 @@
                         convert_urls: false,
                         forced_root_block: 'p',
                         force_p_newlines: true,
-                        valid_elements : '*[*]',
+                        convert_newlines_to_br: false,
+                        remove_linebreaks: false,
+                        valid_elements: '*[*]',
                         keep_styles: true,
-                        plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor'],
-                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | undo redo',
-                        toolbar2: 'fontselect fontsizeselect | alignleft aligncenter alignright alignjustify | customtable'
+                        plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor', 'code'],
+                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | customtable | code',
+                        toolbar2: 'fontselect fontsizeselect | alignleft aligncenter alignright alignjustify | undo redo'
                     };
 
                 options.fontsize_formats = [
@@ -113,7 +115,7 @@
                     'Script École=script cole',
                     'Script École 2=script ecole 2',
                     'Scriptcase cole=scriptcase cole',
-                    'Times New Roman=times new roman,times',
+                    'Times New Roman=times new roman',
                     'Trebuchet MS=trebuchet ms',
                     'Verdana=verdana'
                 ].join(';');
@@ -142,9 +144,27 @@
                     editor.on('ExecCommand', function (e) {
                         self.onTinyCommand(e);
                     });
+
+                    editor.on('NodeChange', function (e) {
+                        if (e.element.nodeName === 'TD' && e.element.innerHTML.length === 0) {
+                            e.element.appendChild(document.createElement('br'));
+                        }
+                    });
                     
+                    editor.on('SaveContent', function (e) {
+                        var $content = $('<div>' + e.content + '</div>');
+
+                        $content.find('td,p').each(function () {
+                            if (this.innerHTML.length === 0) {
+                                this.appendChild(document.createElement('br'));
+                            }
+                        });
+                        
+                        e.content = $content.html();
+                    });
+
                     editor.on('PreProcess', function (e) {
-                        $(e.node).find('[data-mce-bogus]').replaceWith('<br>');
+                        $(e.node).find('br[data-mce-bogus]').replaceWith('<br>');
                     });
                 };
 
@@ -224,10 +244,10 @@
                                 onPostRender: onPostRender
                             },
                             {
-                                text: 'Cell properties', 
+                                text: 'Cell properties',
                                 onclick: function () {
                                     editor.execCommand('mceTableCellProps');
-                                }, 
+                                },
                                 onPostRender: onPostRender
                             }
                         ]
@@ -402,8 +422,10 @@
                         self.tinymce.fire('blur');
 
                         var content = self.getContent();
-                        
-                        if (self.empty = app.RTEditor.isContentEmpty(content)) {
+
+                        self.empty = app.RTEditor.isContentEmpty(content);
+
+                        if (self.empty) {
                             self.setContent(tinymce.translate(self.options.defaultText));
                         }
 
@@ -465,7 +487,7 @@
              * Change the background independently to the dark background feature
              */
             app.RTEditor.prototype.setBackgroundColor = function (color) {
-                if ((color === '#FFFFFF' && !this.dark) || (color === '#000000' && this.dark)) {
+                if ((color === '#FFFFFF' && !this.dark) || (color === '#000000' && !this.dark)) {
                     color = 'transparent';
                 }
 
@@ -479,7 +501,7 @@
              * Switch background to inverted colors (preserving color other than white and black)
              */
             app.RTEditor.prototype.setDarkBackground = function (dark) {
-                dark = !!dark;
+                dark = !! dark;
 
                 var $docBody = $(this.tinymce.getDoc().body),
                     darkClassname = 'dark',
@@ -582,6 +604,7 @@
              */
             app.RTEditor.prototype.addDroppedContent = function (url) {
                 var img = new Image();
+
                 img.src = url;
                 img.alt = url;
 
@@ -640,6 +663,10 @@
                 });
 
                 this.getIframe().attr('scrolling', 'no');
+
+                this.tinymce.getBody().addEventListener('drop', function (e) {
+                    console.log('test');
+                });
 
                 var handler = function (e) {
                     self.checkForResize();
@@ -749,7 +776,8 @@
     };
 
     app.RTEditor.isContentEmpty = function (content) {
-        return $('<div>' + content + '</div>').text().trim().length === 0;
+        var $content = $('<div>' + content + '</div>');
+        return $content.text().trim().length === 0 && $content.find('img,table').length === 0;
     };
 
     $(document).ready(function () {
@@ -819,15 +847,6 @@
                     window.sankore.updateFontItalicPreference();
                 }
             };
-
-//            options.onWidgetFocus = function () {
-//                if (this.empty) {
-//                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
-//                    this.setDefaultFontSize(window.sankore.fontSizePreference());
-//                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
-//                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
-//                }
-//            };
 
             options.locale = window.sankore.locale();
             options.dark = window.sankore.isDarkBackground();
@@ -927,7 +946,7 @@ if (!('sankore' in window)) {
         locale: function () {
             return 'fr_FR';
         },
-        
+
         currentToolIsSelector: function () {
             return true;
         }
