@@ -145,6 +145,9 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         void addItems(const QSet<QGraphicsItem*>& item);
         void removeItems(const QSet<QGraphicsItem*>& item);
 
+        void addShapeToUndoStack(QGraphicsItem* item);
+        void removeShapeToUndoStack(QGraphicsItem* item);
+
         UBGraphicsWidgetItem* addWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
         UBGraphicsAppleWidgetItem* addAppleWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
         UBGraphicsW3CWidgetItem* addW3CWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
