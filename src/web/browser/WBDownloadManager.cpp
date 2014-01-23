@@ -73,6 +73,7 @@
 
 #include <math.h>
 
+#include "gui/UBFileDialog.h"
 #include "core/memcheck.h"
 
 /*!
@@ -151,7 +152,8 @@ void WBDownloadItem::getFileName()
     QString fileName = defaultFileName;
     if (mRequestFileName)
     {
-        fileName = QFileDialog::getSaveFileName(this, tr("Save File"), defaultFileName);
+        //issue 1666 - NNE - 20140123
+        fileName = UBFileDialog::getSaveFileName(this, tr("Save File"), defaultFileName);
         if (fileName.isEmpty())
         {
             m_reply->close();

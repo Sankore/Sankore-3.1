@@ -50,6 +50,10 @@ UBExportAdaptor::~UBExportAdaptor()
     // NOOP
 }
 
+#include "gui/UBFileDialog.h"
+#include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h"
+#include "gui/UBKeyboardPalette.h"
 
 QString UBExportAdaptor::askForFileName(UBDocumentProxy* pDocument, const QString& pDialogTitle)
 {
@@ -60,7 +64,7 @@ QString UBExportAdaptor::askForFileName(UBDocumentProxy* pDocument, const QStrin
     defaultName = UBFileSystemUtils::cleanName(defaultName);
     QString defaultPath = UBSettings::settings()->lastExportFilePath->get().toString() + "/" + defaultName;
 
-    QString filename = QFileDialog::getSaveFileName(UBApplication::mainWindow, pDialogTitle, defaultPath);
+    QString filename = UBFileDialog::getSaveFileName(UBApplication::mainWindow, pDialogTitle, defaultPath);
 
     if (filename.size() == 0)
     {
@@ -83,7 +87,7 @@ QString UBExportAdaptor::askForDirName(UBDocumentProxy* pDocument, const QString
 {
     QString defaultPath = UBSettings::settings()->lastExportDirPath->get().toString();
 
-    QString container = QFileDialog::getExistingDirectory(UBApplication::mainWindow, pDialogTitle, defaultPath);
+    QString container = UBFileDialog::getExistingDirectory(UBApplication::mainWindow, pDialogTitle, defaultPath);
 
     QString dirname;
 

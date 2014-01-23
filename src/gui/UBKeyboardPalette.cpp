@@ -44,14 +44,13 @@ UBKeyboardPalette::UBKeyboardPalette(QWidget *parent)
         : UBActionPalette(Qt::TopRightCorner, parent)
 {
 
-  //  setWindowFlags(/*Qt::CustomizeWindowHint|*/Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);
-
     setCustomCloseProcessing(true);
     setCustomPosition(true);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     setFocusPolicy(Qt::NoFocus);
     setClosable(true);
     setGrip(false);
+    windowHasLostFocus = false;
 
     capsLock = false;
     shift = false;
@@ -64,6 +63,7 @@ UBKeyboardPalette::UBKeyboardPalette(QWidget *parent)
     currBtnImages = new BTNImages("16", btnWidth, btnHeight);
     storage = NULL;
 
+    mIsDetach = false;
 
     buttons = new UBKeyButton*[47];
     for (int i=0; i<47; i++)
@@ -103,6 +103,84 @@ void UBKeyboardPalette::init()
 
     UBPlatformUtils::setWindowNonActivableFlag(this, true);
 }
+
+//issue 1666 - NNE - 20131230
+
+void UBKeyboardPalette::detachFromParent()
+{
+    mOldParent = this->parentWidget();
+
+    //computes the new position on the screen
+    //because "setParent" reset the position of the widget (see Qt documentation)
+    globalPosition = this->mapToGlobal(this->parentWidget()->pos());
+
+    this->savePos();
+
+    this->setParent(0);
+    this->move(globalPosition);
+
+    if(m_isVisible){        
+        this->show();
+    }
+
+    mIsDetach = true;
+}
+
+void UBKeyboardPalette::attachToParent()
+{
+    if(!windowHasLostFocus){
+        //Because if e window lost the focus, the keyboard
+        //has been already attach to its parent
+        QPoint pos = this->pos();
+
+        this->setParent(mOldParent);
+        this->move(QPoint());
+
+        this->move(pos - mapToGlobal(mOldParent->pos()));
+
+        if(m_isVisible){
+            this->show();
+        }
+    }
+
+    mIsDetach = false;
+}
+//issue 1666 - NNE - 20131230 : END
+
+//issue 1666 - NNE - 20140108
+void UBKeyboardPalette::onWindowFocusGain()
+{
+    windowHasLostFocus = false;
+
+    if(mIsDetach){
+        this->setParent(0);
+
+        this->move(this->globalPosition);
+
+        if(m_isVisible)
+            this->show();
+    }
+}
+
+void UBKeyboardPalette::onWindowFocusLost()
+{
+    windowHasLostFocus = true;
+
+    if(mIsDetach){
+        QPoint pos = this->pos();
+
+        globalPosition = pos;
+
+        this->setParent(mOldParent);
+        this->move(QPoint());
+
+        this->move(pos - mapToGlobal(mOldParent->pos()));
+
+        if(m_isVisible)
+            this->show();
+    }
+}
+//issue 1666 - NNE - 20140108 : END
 
 void UBKeyboardPalette::showKeyboard(bool show)
 {
@@ -243,6 +321,7 @@ void UBKeyboardPalette::leaveEvent ( QEvent * )
 void  UBKeyboardPalette::moveEvent ( QMoveEvent * event )
 {
     UBActionPalette::moveEvent(event);
+
     emit moved(event->pos());
 }
 
