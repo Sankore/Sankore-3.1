@@ -2505,7 +2505,7 @@ void UBBoardController::stylusToolChanged(int tool)
     }
 
     QButtonGroup * buttonGroup = NULL;
-    if (tool == UBStylusTool::Drawing)
+    if (tool == UBStylusTool::Drawing || tool == UBStylusTool::ChangeFill)
     {
         buttonGroup = paletteManager()->stylusPalette()->buttonGroup();
     }

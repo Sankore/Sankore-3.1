@@ -29,23 +29,35 @@ UBShapeFactory::UBShapeFactory():
 
 }
 
-
-void UBShapeFactory::changeFillColor(bool ok)
+void UBShapeFactory::prepareChangeFill()
 {
-    if(ok){
+   mDrawingController->setStylusTool(UBStylusTool::ChangeFill);
+   mIsRegularShape = false;
+   mIsCreating = false;
+   mShapeType = None;
+}
 
-        this->desactivate();
-        UBGraphicsScene* scene = mBoardView->scene();
+void getFamily(QGraphicsItem* o)
+{
+    if (o)
+        if (o->parentItem())
+            getFamily(o->parentItem());
 
-        QList<QGraphicsItem*> items = scene->selectedItems();
+    qDebug() << o;
+}
 
-        for(int i = 0; i < items.size(); i++){
-            UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+void UBShapeFactory::changeFillColor(const QPointF& pos)
+{
+    UBGraphicsScene* scene = mBoardView->scene();
+    QGraphicsItem* item = scene->itemAt(pos, QTransform());
 
-            if(shape){
-                shape->fillingProperty()->setColor(QColor(128, 255, 100, 128));
-                items.at(i)->update();
-            }
+    if (item)
+    {
+        UBShape * shape = dynamic_cast<UBShape*>(item);
+        if (shape)
+        {
+            shape->fillingProperty()->setColor(mCurrentFillFirstColor);
+            item->update();
         }
     }
 }

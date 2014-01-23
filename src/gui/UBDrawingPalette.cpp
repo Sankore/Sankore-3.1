@@ -114,6 +114,11 @@ void UBDrawingPalette::buttonClicked()
         initSubPalettesPosition();
         mSubPalettes.value(button)->togglePalette();
     }
+    else
+    {
+        //sender() == QAction pot de peinture : seule action sans ss palette
+        UBApplication::boardController->shapeFactory().prepareChangeFill();
+    }
 
     // Terminer tout dessin en cours de tracé (polygone)
     //UBApplication::boardController->shapeFactory().desactivate();

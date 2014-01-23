@@ -1134,7 +1134,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
         }
         else if (currentTool == UBStylusTool::Capture)
         {
-            scene ()->deselectAllItems ();
+            scene ()->deselectAllItems();
 
             if (!mRubberBand)
                 mRubberBand = new UBRubberBand (QRubberBand::Rectangle, this);
@@ -1144,6 +1144,11 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             mIsCreatingSceneGrabZone = true;
 
             event->accept ();
+        }
+        else if (currentTool == UBStylusTool::ChangeFill)
+        {
+            qDebug() << "on est dans le cas du pot de peinture, on va remplir l'objet si possible";
+            UBApplication::boardController->shapeFactory().changeFillColor(mapToScene(mMouseDownPos));
         }
         else
         {

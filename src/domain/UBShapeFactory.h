@@ -47,7 +47,8 @@ public slots:
 
     void createPen(bool create);    
 
-    void changeFillColor(bool ok);
+    void prepareChangeFill();
+    void changeFillColor(const QPointF& pos);
 
     void onMouseMove(QMouseEvent *event);
     void onMousePress(QMouseEvent *event);
