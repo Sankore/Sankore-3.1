@@ -1214,6 +1214,9 @@ void UBTeacherGuidePageZeroWidget::persistData()
         documentProxy->setMetaData(UBSettings::sessionSubjects, mpSchoolSubjectsBox->currentText());
         documentProxy->setMetaData(UBSettings::sessionType, mpSchoolTypeBox->currentText());
         documentProxy->setMetaData(UBSettings::sessionLicence, mpLicenceBox->currentIndex());
+        //Issue 1683 (Evolution) - CFA - 20140124 : a la modifications des infos de la teacher guide apres reimport de l'ubz, les external files (DocumentProxy) n'etaient pas recharges.
+        //A la persistence dans subset adaptor, on perdait les fichiers dans le svg a la reecriture
+        setFilesChanged();
     }
 }
 
