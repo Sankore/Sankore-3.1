@@ -23,11 +23,12 @@
 
 #include "UBDockPaletteWidget.h"
 
-#include "core/memcheck.h"
 #include <QIcon>
 
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
+
+#include "core/memcheck.h"
 
 UBDockPaletteWidget::UBDockPaletteWidget(QWidget *parent, const char *name):QWidget(parent)
 {
