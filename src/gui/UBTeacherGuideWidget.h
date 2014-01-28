@@ -85,6 +85,7 @@ private:
     QTreeWidgetItem* mpRootWidgetItem;
     UBAddItem* mpAddALinkItem;
     UBAddItem* mpAddAnActionItem;
+    UBAddItem* mpAddAFileItem; //Issue 1716 - ALTI/AOU - 20140128
 
 private slots:
     void onActiveDocumentChanged();

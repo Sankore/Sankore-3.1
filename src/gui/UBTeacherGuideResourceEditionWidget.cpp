@@ -32,9 +32,11 @@ UBTeacherGuideResourceEditionWidget::UBTeacherGuideResourceEditionWidget(QWidget
 
     mpAddAMediaItem = new UBAddItem(tr("Add a media"), eUBTGAddSubItemWidgetType_Media, mpTreeWidget);
     mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
+    mpAddAFileItem = new UBAddItem(tr("Add a file"), eUBTGAddSubItemWidgetType_File, mpTreeWidget); //Issue 1716 - ALTI/AOU - 20140128
 
     mpRootWidgetItem->addChild(mpAddAMediaItem);
     mpRootWidgetItem->addChild(mpAddALinkItem);
+    mpRootWidgetItem->addChild(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
 
     connect(mpTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
@@ -65,6 +67,13 @@ void UBTeacherGuideResourceEditionWidget::onAddItemClicked(QTreeWidgetItem* widg
             if (element)
                 urlWidget->initializeWithDom(*element);
             mpTreeWidget->setItemWidget(newWidgetItem, 0, urlWidget);
+            break;
+        }
+        case eUBTGAddSubItemWidgetType_File: { //Issue 1716 - ALTI/AOU - 20140128
+            UBTGFileWidget* fileWidget = new UBTGFileWidget();
+            if (element)
+                fileWidget->initializeWithDom(*element);
+            mpTreeWidget->setItemWidget(newWidgetItem, 0, fileWidget);
             break;
         }
         default:
@@ -119,8 +128,9 @@ QVector<tIDataStorage*> UBTeacherGuideResourceEditionWidget::save(int pageIndex)
         }
     }
 
-    //For the link we have to add the "student" attribute
+    //For the links and files, we have to add the "student" attribute
     children = getChildrenList(mpAddALinkItem);
+    children << getChildrenList(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
     foreach(QTreeWidgetItem* widgetItem, children) {
         tUBGEElementNode* node = dynamic_cast<iUBTGSaveData*>(mpTreeWidget->itemWidget( widgetItem, 0))->saveData();
         if (node) {
@@ -146,6 +156,7 @@ QVector<tUBGEElementNode*> UBTeacherGuideResourceEditionWidget::getData()
 
     children << getChildrenList(mpAddAMediaItem);
     children << getChildrenList(mpAddALinkItem);
+    children << getChildrenList(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
 
     foreach(QTreeWidgetItem* widgetItem, children) {
         tUBGEElementNode* node = dynamic_cast<iUBTGSaveData*>(mpTreeWidget->itemWidget( widgetItem, 0))->saveData();
@@ -170,6 +181,7 @@ void UBTeacherGuideResourceEditionWidget::cleanData()
 
     children << mpAddAMediaItem->takeChildren();
     children << mpAddALinkItem->takeChildren();
+    children << mpAddAFileItem->takeChildren(); //Issue 1716 - ALTI/AOU - 20140128
 
     foreach(QTreeWidgetItem* item, children) {
         delete item;
@@ -203,6 +215,8 @@ void UBTeacherGuideResourceEditionWidget::load(QDomDocument doc)
             onAddItemClicked(mpAddAMediaItem, 0, &element);
         else if (tagName == "link" && element.attribute("student", "false") == "true")
             onAddItemClicked(mpAddALinkItem, 0, &element);
+        else if (tagName == "file" && element.attribute("student", "false") == "true") //Issue 1716 - ALTI/AOU - 20140128
+            onAddItemClicked(mpAddAFileItem, 0, &element);
     }
 }
 

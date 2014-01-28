@@ -5,13 +5,19 @@
 #include "UBTeacherGuideConstantes.h"
 #include "board/UBBoardController.h"
 #include "web/UBWebController.h"
+#include "globals/UBGlobals.h"
 
 UBTeacherGuideResourcesPresentationWidget::UBTeacherGuideResourcesPresentationWidget(QWidget *parent):
     QWidget(parent)
 {
     mpLayout = new QVBoxLayout(this);
 
-    mpButtonTitleLayout = new QHBoxLayout(0);
+    mpPageNumberLabel = new QLabel(this);
+    mpPageNumberLabel->setAlignment(Qt::AlignRight);
+    mpPageNumberLabel->setObjectName("UBTGPageNumberLabel");
+    mpLayout->addWidget(mpPageNumberLabel);
+
+    mpButtonLayout = new QHBoxLayout();
 
     mpModePushButton = new QPushButton(this);
     mpModePushButton->setIcon(QIcon(":images/teacherGuide/pencil.svg"));
@@ -19,7 +25,10 @@ UBTeacherGuideResourcesPresentationWidget::UBTeacherGuideResourcesPresentationWi
     mpModePushButton->installEventFilter(this);
 
     connect(mpModePushButton, SIGNAL(clicked()), parentWidget(), SLOT(changeMode()));
-    mpButtonTitleLayout->addWidget(mpModePushButton);
+    mpButtonLayout->addWidget(mpModePushButton);
+    mpButtonLayout->addStretch();
+
+    mpLayout->addLayout(mpButtonLayout);
 
     mpSeparator = new QFrame(this);
     mpSeparator->setFixedHeight(UBTG_SEPARATOR_FIXED_HEIGHT);
@@ -45,6 +54,17 @@ UBTeacherGuideResourcesPresentationWidget::UBTeacherGuideResourcesPresentationWi
     // on mac and with the custom qt the widget on the tree are not automatically relocated when using the vertical scrollbar. To relocate them we link the valueChange signal of the vertical scrollbar witht a local signal to trig a change and a repaint of the tree widget
     connect(mpTreeWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(onSliderMoved(int)));
 #endif
+}
+
+UBTeacherGuideResourcesPresentationWidget::~UBTeacherGuideResourcesPresentationWidget()
+{
+    DELETEPTR(mpPageNumberLabel);
+    DELETEPTR(mpSeparator);
+    DELETEPTR(mpMediaSwitchItem);
+    DELETEPTR(mpModePushButton);
+    DELETEPTR(mpButtonLayout);
+    DELETEPTR(mpTreeWidget);
+    DELETEPTR(mpLayout);
 }
 
 void UBTeacherGuideResourcesPresentationWidget::showData( QVector<tUBGEElementNode*> data)
@@ -93,6 +113,22 @@ void UBTeacherGuideResourcesPresentationWidget::showData( QVector<tUBGEElementNo
             newWidgetItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
             mpRootWidgetItem->addChild(newWidgetItem);
         }
+        else if (element->name == "file") { //Issue 1716 - ALTI/AOU - 20140128
+            createMediaButtonItem();
+            QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpMediaSwitchItem);
+            if (element->attributes.value("path").isEmpty()){
+                newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large_warning.gif")); // different icon, if no file choosed.
+            }
+            else{
+                newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large.gif"));
+            }
+            newWidgetItem->setText(0, element->attributes.value("title"));
+            newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_FILE);
+            newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnUrl, element->attributes.value("path"));
+            newWidgetItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 11)));
+            newWidgetItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+            mpRootWidgetItem->addChild(newWidgetItem);
+        }
     }
 }
 
@@ -113,6 +149,7 @@ void UBTeacherGuideResourcesPresentationWidget::createMediaButtonItem()
 void UBTeacherGuideResourcesPresentationWidget::onActiveSceneChanged()
 {    
     cleanData();
+    mpPageNumberLabel->setText(tr("Page: %0").arg(UBApplication::boardController->currentPage()));
 }
 
 void UBTeacherGuideResourcesPresentationWidget::cleanData()
@@ -159,6 +196,22 @@ void UBTeacherGuideResourcesPresentationWidget::onAddItemClicked(QTreeWidgetItem
         case tUBTGActionAssociateOnClickItem_MEDIA:
             widget->setExpanded(!widget->isExpanded());
             break;
+        case tUBTGActionAssociateOnClickItem_FILE: { //Issue 1716 - ALTI/AOU - 20140128
+            widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
+
+            QString pathFile = widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
+            QString pathDocument = UBApplication::boardController->selectedDocument()->persistencePath();
+            QString fullPathFile = pathDocument + "/" + pathFile;
+
+            if ( pathFile.isEmpty() || ! QFile::exists(fullPathFile) ) // Si le fichier n'existe pas, on prévient l'utilisateur
+            {
+                UBApplication::showMessage(tr("File not found"));
+            }
+            else if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
+                UBApplication::showMessage(tr("No application was found to handle this file type"));
+            }
+            break;
+        }
         default:
             qDebug() << "associateAction no action set " << associateAction;
         }

@@ -15,6 +15,7 @@ class UBTeacherGuideResourcesPresentationWidget : public QWidget
 
 public:
     UBTeacherGuideResourcesPresentationWidget(QWidget *parent = 0);
+    ~UBTeacherGuideResourcesPresentationWidget();
 
     void showData(QVector<tUBGEElementNode*> data);
     void createMediaButtonItem();
@@ -28,12 +29,13 @@ private:
     bool eventFilter(QObject* object, QEvent* event);
 
     QVBoxLayout* mpLayout;
-    QHBoxLayout* mpButtonTitleLayout;
+    QHBoxLayout* mpButtonLayout;
     QPushButton* mpModePushButton;
     UBTGDraggableTreeItem* mpTreeWidget;
     QTreeWidgetItem* mpRootWidgetItem;
     QTreeWidgetItem* mpMediaSwitchItem;
     QFrame *mpSeparator;
+    QLabel* mpPageNumberLabel;
 
 #ifdef Q_WS_MACX
 private slots:

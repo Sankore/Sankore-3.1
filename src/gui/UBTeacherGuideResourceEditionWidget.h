@@ -49,6 +49,7 @@ private:
     QTreeWidgetItem* mpRootWidgetItem;
     UBAddItem* mpAddAMediaItem;
     UBAddItem* mpAddALinkItem;
+    UBAddItem* mpAddAFileItem; //Issue 1716 - ALTI/AOU - 20140128
 
     bool mIsModified;
 };

@@ -1038,7 +1038,7 @@
     </message>
     <message>
         <source>Duplication successful</source>
-        <translation>Dupplication réussite</translation>
+        <translation>Duplication réussie</translation>
     </message>
     <message>
         <source>Paste successful</source>
@@ -1316,7 +1316,7 @@
     <message numerus="yes">
         <source>duplicated %1 page</source>
         <comment>duplicated %1 pages</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 page créée</numerusform>
             <numerusform>%1 pages créées</numerusform>
         </translation>
@@ -1938,11 +1938,11 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <name>UBFeaturesListView</name>
     <message>
         <source>Restore element</source>
-        <translation type="unfinished">Restaurer cet élément</translation>
+        <translation>Restaurer cet élément</translation>
     </message>
     <message>
         <source>Restore %1 elements</source>
-        <translation type="unfinished">Restaurer ces %1 éléments</translation>
+        <translation>Restaurer ces %1 éléments</translation>
     </message>
 </context>
 <context>
@@ -2471,7 +2471,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Occitan</source>
-        <translation type="unfinished"></translation>
+        <translation>Occitan</translation>
     </message>
 </context>
 <context>
@@ -2602,7 +2602,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Add a media</source>
-        <translation>Ajouter un média</translation>
+        <translation type="obsolete">Ajouter un média</translation>
     </message>
     <message>
         <source>Add a link</source>
@@ -2611,6 +2611,10 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Page: %0</source>
         <translation>Page : %0</translation>
+    </message>
+    <message>
+        <source>Add a file</source>
+        <translation>Ajouter un fichier</translation>
     </message>
 </context>
 <context>
@@ -2728,6 +2732,44 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Page: %0</source>
         <translation>Page : %0</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation>Fichier introuvable</translation>
+    </message>
+    <message>
+        <source>No application was found to handle this file type</source>
+        <translation>Aucune application n&apos;a été trouvée pour gérer ce type de fichier</translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherGuideResourceEditionWidget</name>
+    <message>
+        <source>Add a media</source>
+        <translation>Ajouter un média</translation>
+    </message>
+    <message>
+        <source>Add a link</source>
+        <translation>Ajouter un lien web</translation>
+    </message>
+    <message>
+        <source>Add a file</source>
+        <translation>Ajouter un fichier</translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherGuideResourcesPresentationWidget</name>
+    <message>
+        <source>Page: %0</source>
+        <translation>Page: %0</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation>Fichier introuvable</translation>
+    </message>
+    <message>
+        <source>No application was found to handle this file type</source>
+        <translation>Aucune application n&apos;a été trouvée pour gérer ce type de fichier</translation>
     </message>
 </context>
 <context>
@@ -3557,7 +3599,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
@@ -3568,7 +3610,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;Translations&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;A special thanks to:&lt;/span&gt;&lt;/p&gt;

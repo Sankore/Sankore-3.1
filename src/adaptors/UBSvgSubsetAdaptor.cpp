@@ -1505,17 +1505,10 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             else if (eachItem->type == eElementType_END)
                 mXmlWriter.writeEndElement();
             else if (eachItem->type == eElementType_UNIQUE){
-                if (eachItem->name == "file") // Issue 1683 (Evolution) - AOU - 20131206
-                {
-                    fileToLinkedFile(eachItem->attributes);
-                }
-                else
-                {
-                    mXmlWriter.writeStartElement(eachItem->name);
-                    foreach(QString key,eachItem->attributes.keys())
-                        mXmlWriter.writeAttribute(key,eachItem->attributes.value(key));
-                    mXmlWriter.writeEndElement();
-                }
+                mXmlWriter.writeStartElement(eachItem->name);
+                foreach(QString key,eachItem->attributes.keys())
+                    mXmlWriter.writeAttribute(key,eachItem->attributes.value(key));
+                mXmlWriter.writeEndElement();
             }
             else
                 qWarning() << "unknown type";
@@ -2421,16 +2414,6 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::videoItemToLinkedVideo(UBGraphicsMed
         videoFileHref = videoFileHref.replace(mDocumentPath + "/","");
 
     mXmlWriter.writeAttribute(nsXLink, "href", videoFileHref);
-    mXmlWriter.writeEndElement();
-}
-
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::fileToLinkedFile(QMap<QString, QString> attributes) // Issue 1683 (Evolution) - AOU - 20131206
-{
-    mXmlWriter.writeStartElement("file");
-
-    mXmlWriter.writeAttribute("path", attributes.value("path"));
-    mXmlWriter.writeAttribute("title", attributes.value("title"));
-
     mXmlWriter.writeEndElement();
 }
 

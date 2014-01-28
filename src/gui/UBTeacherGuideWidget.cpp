@@ -141,9 +141,12 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
 
     mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
     mpAddAnActionItem = new UBAddItem(tr("Add an action"), eUBTGAddSubItemWidgetType_Action, mpTreeWidget);
+    mpAddAFileItem = new UBAddItem(tr("Add a file"), eUBTGAddSubItemWidgetType_File, mpTreeWidget); //Issue 1716 - ALTI/AOU - 20140128
+
 
     mpRootWidgetItem->addChild(mpAddALinkItem);
     mpRootWidgetItem->addChild(mpAddAnActionItem);
+    mpRootWidgetItem->addChild(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
 
     if (UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()) {
         UBSvgSubsetAdaptor::addElementToBeStored(QString("teacherGuide"), this);
@@ -159,6 +162,8 @@ UBTeacherGuideEditionWidget::~UBTeacherGuideEditionWidget()
     DELETEPTR(mpComment);
     DELETEPTR(mpSeparator);
     DELETEPTR(mpAddAnActionItem);
+    DELETEPTR(mpAddALinkItem);
+    DELETEPTR(mpAddAFileItem);
     DELETEPTR(mpTreeWidget);
     DELETEPTR(mpLayout);
 }
@@ -200,7 +205,8 @@ void UBTeacherGuideEditionWidget::load(QDomDocument doc)
             onAddItemClicked(mpAddAnActionItem, 0, &element);
         else if (tagName == "link" && element.attribute("student", "false") == "false")
             onAddItemClicked(mpAddALinkItem, 0, &element);
-
+        else if (tagName == "file" && element.attribute("student", "false") == "false") //Issue 1716 - ALTI/AOU - 20140128
+            onAddItemClicked(mpAddAFileItem, 0, &element);
     }
 
     //backward compatibility
@@ -256,8 +262,8 @@ QVector<tIDataStorage*> UBTeacherGuideEditionWidget::save(int pageIndex)
         result << data;
 
     QList<QTreeWidgetItem*> children = getChildrenList(mpAddAnActionItem);
-
     children += getChildrenList(mpAddALinkItem);
+    children += getChildrenList(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
 
     foreach(QTreeWidgetItem* widgetItem, children) {
         tUBGEElementNode* node = dynamic_cast<iUBTGSaveData*>(mpTreeWidget->itemWidget( widgetItem, 0))->saveData();
@@ -291,8 +297,8 @@ void UBTeacherGuideEditionWidget::cleanData()
     mpPageTitle->resetText();
     mpComment->resetText();
     QList<QTreeWidgetItem*> children = mpAddAnActionItem->takeChildren();
-
     children += mpAddALinkItem->takeChildren();
+    children += mpAddAFileItem->takeChildren(); //Issue 1716 - ALTI/AOU - 20140128
 
     foreach(QTreeWidgetItem* item, children) {
         DELETEPTR(item);
@@ -326,8 +332,8 @@ QVector<tUBGEElementNode*> UBTeacherGuideEditionWidget::getData()
 {
     QVector<tUBGEElementNode*> result;
     QList<QTreeWidgetItem*> children = getChildrenList(mpAddAnActionItem);
-
     children += getChildrenList(mpAddALinkItem);
+    children += getChildrenList(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
 
     result << getPageAndCommentData();
     foreach(QTreeWidgetItem* widgetItem, children) {
@@ -369,6 +375,13 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
             mpTreeWidget->setItemWidget(newWidgetItem, 0, urlWidget);
             break;
         }
+        case eUBTGAddSubItemWidgetType_File: { //Issue 1716 - ALTI/AOU - 20140128
+            UBTGFileWidget* fileWidget = new UBTGFileWidget();
+            if (element)
+                fileWidget->initializeWithDom(*element);
+            mpTreeWidget->setItemWidget(newWidgetItem, 0, fileWidget);
+            break;
+        }
         default:
             delete newWidgetItem;
             qCritical() << "onAddItemClicked no action set";
@@ -398,7 +411,8 @@ bool UBTeacherGuideEditionWidget::isModified()
     return mpPageTitle->text().length() > 0
         || mpComment->text().length() > 0
         || mpAddAnActionItem->childCount() > 0
-        || mpAddALinkItem->childCount() > 0;
+        || mpAddALinkItem->childCount() > 0
+        || mpAddAFileItem->childCount() > 0; //Issue 1716 - ALTI/AOU - 20140128
 }
 
 /***************************************************************************
@@ -590,6 +604,21 @@ void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data
             newWidgetItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 11)));
             newWidgetItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
             mpRootWidgetItem->addChild(newWidgetItem);
+        }else if (element->name == "file") { //Issue 1716 - ALTI/AOU - 20140128
+            createMediaButtonItem();
+            QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpMediaSwitchItem);
+            if (element->attributes.value("path").isEmpty()){
+                newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large_warning.gif")); // different icon, if no file choosed.
+            }
+            else{
+                newWidgetItem->setIcon(0, QIcon(":images/teacherGuide/document_large.gif"));
+            }
+            newWidgetItem->setText(0, element->attributes.value("title"));
+            newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnAction, tUBTGActionAssociateOnClickItem_FILE);
+            newWidgetItem->setData(0, tUBTGTreeWidgetItemRole_HasAnUrl, element->attributes.value("path"));
+            newWidgetItem->setData(0, Qt::FontRole, QVariant(QFont(QApplication::font().family(), 11)));
+            newWidgetItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+            mpRootWidgetItem->addChild(newWidgetItem);
         }
     }
 
@@ -641,6 +670,22 @@ void UBTeacherGuidePresentationWidget::onAddItemClicked(QTreeWidgetItem* widget,
             widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
             UBApplication::webController->loadUrl( QUrl( widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString()));
             break;
+        case tUBTGActionAssociateOnClickItem_FILE: { //Issue 1716 - ALTI/AOU - 20140128
+            widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
+
+            QString pathFile = widget->data(column, tUBTGTreeWidgetItemRole_HasAnUrl).toString();
+            QString pathDocument = UBApplication::boardController->selectedDocument()->persistencePath();
+            QString fullPathFile = pathDocument + "/" + pathFile;
+
+            if ( pathFile.isEmpty() || ! QFile::exists(fullPathFile) ) // Si le fichier n'existe pas, on prévient l'utilisateur
+            {
+                UBApplication::showMessage(tr("File not found"));
+            }
+            else if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
+                UBApplication::showMessage(tr("No application was found to handle this file type"));
+            }
+            break;
+        }
         default:
             qDebug() << "associateAction no action set " << associateAction;
         }
@@ -915,7 +960,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     // QTreeView visible en Mode Presentation :
     mpTreeWidgetPresentation = new QTreeWidget(this);
     mpContainerWidgetLayout->addWidget(mpTreeWidgetPresentation);
-    mpTreeWidgetPresentation->setDragEnabled(true);
+    mpTreeWidgetPresentation->setDragEnabled(false);
     mpTreeWidgetPresentation->setRootIsDecorated(false);
     mpTreeWidgetPresentation->setIndentation(0);
     mpTreeWidgetPresentation->setDropIndicatorShown(false);
