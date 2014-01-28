@@ -63,7 +63,8 @@ public:
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
 private:
     bool mIsCircle;
 public:

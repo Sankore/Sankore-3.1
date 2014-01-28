@@ -38,7 +38,7 @@ UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(false);
+    Delegate()->setCanTrigAnAction(true);
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
@@ -91,7 +91,6 @@ void UBGraphicsLineItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
 
-        /* Pas d'Action possible sur une Shape
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
                 UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
@@ -101,7 +100,6 @@ void UBGraphicsLineItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
-        */
     }
 }
 

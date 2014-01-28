@@ -1,5 +1,7 @@
 #include "UBGraphicsPathItem.h"
 
+#include <customWidgets/UBGraphicsItemAction.h>
+
 UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
     : UBAbstractGraphicsPathItem(parent)
     , mClosed(false)
@@ -100,6 +102,16 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
         cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+
+        if(Delegate()->action()){
+            if(Delegate()->action()->linkType() == eLinkToAudio){
+                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
+                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
+                cp->Delegate()->setAction(action);
+            }
+            else
+                cp->Delegate()->setAction(Delegate()->action());
+        }
 
         if (hasFillingProperty())
             cp->mFillingProperty = new UBFillProperty(*fillingProperty());

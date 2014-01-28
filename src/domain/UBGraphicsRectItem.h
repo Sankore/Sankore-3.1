@@ -60,6 +60,8 @@ public:
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
 private:
     bool mIsSquare;
