@@ -601,12 +601,11 @@ void UBBoardPaletteManager::activeSceneChanged()
     //issue 1682 - NNE - 20140113
     if(pageIndex > 0){
         int currentTabIndex = mLeftPalette->currentTabIndex();
-
         mLeftPalette->addTab(mTeacherResources);
-
         mLeftPalette->showTabWidget(currentTabIndex);
     }else{
         mLeftPalette->removeTab(mTeacherResources);
+        mLeftPalette->showTabWidget(mLeftPalette->currentTabIndex());
     }
     //issue 1682 - NNE - 20140113 : END
 
