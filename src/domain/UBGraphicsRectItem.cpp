@@ -42,7 +42,7 @@ UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
     Delegate()->setCanTrigAnAction(true);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Scaling);
+    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem));
