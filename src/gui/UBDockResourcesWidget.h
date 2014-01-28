@@ -23,8 +23,8 @@ public:
         return mode == eUBDockPaletteWidget_BOARD && currentPage > 0;
     }
 
-    QPixmap iconToLeft() const {return QPixmap(":images/pages_close.png");}
-    QPixmap iconToRight() const {return QPixmap(":images/pages_open.png");}
+    QPixmap iconToLeft() const {return QPixmap(":images/teacherGuideResources_close.png");}
+    QPixmap iconToRight() const {return QPixmap(":images/teacherGuideResources_open.png");}
 
     bool isModified();
 
