@@ -9,7 +9,6 @@ UBGraphicsFreehandItem::UBGraphicsFreehandItem(QGraphicsItem *parent) :
 void UBGraphicsFreehandItem::addPoint(const QPointF & point)
 {
     QPainterPath painterPath = path();
-
     if (painterPath.elementCount() == 0)
     {
         painterPath.moveTo(point); // For the first point added, we must use moveTo().
@@ -18,8 +17,7 @@ void UBGraphicsFreehandItem::addPoint(const QPointF & point)
     {
         painterPath.lineTo(point);
     }
-
-    setPath(painterPath);
+        setPath(painterPath);
 }
 
 UBItem *UBGraphicsFreehandItem::deepCopy() const
@@ -57,7 +55,7 @@ void UBGraphicsFreehandItem::paint(QPainter *painter, const QStyleOptionGraphics
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
-    setPen(*strokeProperty());
+    painter->setPen(*strokeProperty());
 
-    QGraphicsPathItem::paint(painter, &styleOption, widget);
+    painter->drawPath(path());
 }

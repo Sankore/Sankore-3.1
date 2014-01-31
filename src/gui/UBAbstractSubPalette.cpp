@@ -1,5 +1,42 @@
 #include "UBAbstractSubPalette.h"
 
+
+const QString UBAbstractSubPalette::styleSheetLeftGroupedButton =   "QToolButton{background: qlineargradient(x1: 0, y1: 0.49, x2: 0, y2: 0.5,"
+                                                                                "stop: 0 #d3d3d3, stop: 1  #c4c4c4);margin-top: 1px;margin-right: 0px;"
+                                                                                "padding: 5px;border: 1px solid #444444;border-right: none;"
+                                                                                "border-top-left-radius : 3px;border-bottom-left-radius : 3px;height: 14px;}"
+                                                                                "QToolButton:checked { background: qlineargradient(x1: 0, y1: 0.49, x2: 0, y2: 0.5, stop: 0 #c3c3c3, stop: 1  #b4b4b4);"
+                                                                                "border-right: 1px solid #444444;"
+                                                                                "padding-right: 4px; }";
+
+const QString UBAbstractSubPalette::styleSheetCenterGroupedButton =     "QToolButton{background: qlineargradient(x1: 0, y1: 0.49, x2: 0, y2: 0.5, stop: 0 #d3d3d3, stop: 1  #c4c4c4);"
+                                                                                    "margin-top: 1px;"
+                                                                                    "margin-right: 0px;"
+                                                                                    "margin-left: 0px;"
+                                                                                    "padding: 5px;"
+                                                                                    "border: 1px solid #444444;"
+                                                                                    "border-right: none;"
+                                                                                    "border-left: none;"
+                                                                                    "height: 14px;}"
+                                                                                    "QToolButton:checked { background: qlineargradient(x1: 0, y1: 0.49, x2: 0, y2: 0.5, stop: 0 #c3c3c3, stop: 1  #b4b4b4);"
+                                                                                    "border-left: 1px solid #444444;"
+                                                                                    "border-right: 1px solid #444444;"
+                                                                                    "padding-right: 4px;"
+                                                                                    "padding-left: 4px;}";
+
+const QString UBAbstractSubPalette::styleSheetRightGroupedButton =  "QToolButton{background: qlineargradient(x1: 0, y1: 0.49, x2: 0, y2: 0.5, stop: 0 #d3d3d3, stop: 1  #c4c4c4);"
+                                                                                "margin-top: 1px;"
+                                                                                "margin-left: 0px;"
+                                                                                "padding: 5px;"
+                                                                                "border: 1px solid #444444;"
+                                                                                "border-left: none;"
+                                                                                "border-top-right-radius : 3px;"
+                                                                                "border-bottom-right-radius : 3px;"
+                                                                                "height: 14px;}"
+                                                                                "QToolButton:checked { background: qlineargradient(x1: 0, y1: 0.49, x2: 0, y2: 0.5, stop: 0 #c3c3c3, stop: 1  #b4b4b4);"
+                                                                                "border-left: 1px solid #444444;"
+                                                                                "padding-left: 4px;}";
+
 UBAbstractSubPalette::UBAbstractSubPalette(QWidget *parent, Qt::Orientation orient) :
     UBActionPalette(Qt::TopLeftCorner, parent, orient)
     , mMainAction(0)
@@ -41,12 +78,12 @@ void UBColorPickerButton::paintEvent(QPaintEvent * pe)
 {
     QPainter painter(this);
     painter.setBrush(color());
-    painter.drawRect(0, 0, 20, 20);
+    painter.drawRect(margin_left, margin_top, width, height);
 
     // If transparent color, draw a cross in the rect :
     if (color() == Qt::transparent)
     {
-        painter.drawLine(0,0, 20,20);
-        painter.drawLine(20,0, 0,20);
+        painter.drawLine(margin_left,margin_top, width+margin_left,height+margin_top);
+        painter.drawLine(width+margin_left,margin_top, margin_left,height+margin_top);
     }
 }

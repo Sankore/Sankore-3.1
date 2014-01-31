@@ -33,8 +33,27 @@ public:
         None
     };
 
+    enum FillType
+    {
+        Transparent,
+        Full,
+        Dense,
+        Diag,
+        Gradient
+    };
+
     QColor strokeColor();
     QColor fillFirstColor();
+    QColor fillSecondColor();
+
+    void setFillingStyle(Qt::BrushStyle brushStyle);
+    void setFillingFirstColor(QColor color);
+    void setFillingSecondColor(QColor color);
+    void setGradientFillingProperty(UBShape* shape);
+    void updateFillingPropertyOnSelectedItems();
+
+    FillType fillType();
+    void setFillType(FillType fillType);
 
 public slots:
     void createRegularPolygon(int nVertices);
@@ -56,13 +75,12 @@ public slots:
 
     void desactivate();
 
-    void setFillingStyle(Qt::BrushStyle brushStyle);
-    void setFillingColor(QColor color);
-
     void setStrokeStyle(Qt::PenStyle penStyle);
     void setStrokeColor(QColor color);
 
     void setThickness(int thickness);
+
+
 private:
     UBShape* mCurrentShape;
     UBBoardView* mBoardView;
@@ -77,6 +95,7 @@ private:
 
     QColor mCurrentStrokeColor;
     QColor mCurrentFillFirstColor;
+    QColor mCurrentFillSecondColor;
 
     Qt::BrushStyle mCurrentBrushStyle;
     Qt::PenStyle mCurrentPenStyle;
@@ -85,6 +104,9 @@ private:
     UBDrawingController *mDrawingController;
 
     int mNVertices;
+
+    FillType mFillType;
+    QRectF mBoundingRect;
 
 protected:
     UBShape *instanciateCurrentShape();

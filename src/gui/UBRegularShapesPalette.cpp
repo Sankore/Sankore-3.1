@@ -49,11 +49,19 @@ UBRegularShapesPalette::UBRegularShapesPalette(QWidget *parent, Qt::Orientation 
     actions << UBApplication::mainWindow->actionRegularPentagone;
     actions << UBApplication::mainWindow->actionRegularHexagone;
     actions << UBApplication::mainWindow->actionRegularHeptagone;
-    actions << UBApplication::mainWindow->actionRegularOctogone;
+    actions << UBApplication::mainWindow->actionRegularOctogone;            
 
     setActions(actions);
 
     groupActions();
+
+    layout()->setSpacing(0);
+    mButtons.at(0)->setStyleSheet(styleSheetLeftGroupedButton);
+    mButtons.at(1)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(2)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(3)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(4)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(5)->setStyleSheet(styleSheetRightGroupedButton);
 
     adjustSizeAndPosition();
 
@@ -78,8 +86,15 @@ UBRegularShapesPalette::UBRegularShapesPalette(Qt::Orientation orient, QWidget *
     actions << UBApplication::mainWindow->actionRegularOctogone;
 
     setActions(actions);
-
     groupActions();
+
+    layout()->setSpacing(0);
+    mButtons.at(0)->setStyleSheet(styleSheetLeftGroupedButton);
+    mButtons.at(1)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(2)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(3)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(4)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(5)->setStyleSheet(styleSheetRightGroupedButton);
 
     adjustSizeAndPosition();
 

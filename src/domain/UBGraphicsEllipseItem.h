@@ -43,6 +43,8 @@ public:
     QPointF center() const;
     qreal radius(Qt::Orientation orientation) const;
 
+    inline bool isCircle() { return mIsCircle; }
+
     void setAsCircle(){
         mIsCircle = true;
     }

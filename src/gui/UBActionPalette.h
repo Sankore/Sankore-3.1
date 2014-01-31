@@ -115,11 +115,11 @@ class UBActionPaletteButton : public QToolButton
         virtual ~UBActionPaletteButton();
 
     signals:
-        void doubleClicked();
+        void doubleClicked();        
 
     protected:        
         virtual void mouseDoubleClickEvent(QMouseEvent *event);
-        virtual bool hitButton(const QPoint &pos) const;
+        virtual bool hitButton(const QPoint &pos) const;        
 
 };
 

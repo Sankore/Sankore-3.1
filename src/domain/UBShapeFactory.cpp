@@ -21,10 +21,12 @@ UBShapeFactory::UBShapeFactory():
     mFirstClickForFreeHand(true),
     mCurrentStrokeColor(Qt::black),
     mCurrentFillFirstColor(Qt::transparent),
+    mCurrentFillSecondColor(Qt::transparent),
     mDrawingController(NULL),
     mCurrentBrushStyle(Qt::SolidPattern),
     mCurrentPenStyle(Qt::SolidLine),
-    mThickness(3)
+    mThickness(3),
+    mFillType(Transparent)
 {
 
 }
@@ -54,12 +56,82 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
     if (item)
     {
         UBShape * shape = dynamic_cast<UBShape*>(item);
-        if (shape)
+        if (shape)        
         {
-            shape->fillingProperty()->setColor(mCurrentFillFirstColor);
+            if (mFillType != Gradient)
+            {
+                delete shape->fillingProperty();
+                shape->initializeFillingProperty();
+                shape->fillingProperty()->setColor(mCurrentFillFirstColor);
+            }
+            else
+            {
+                setGradientFillingProperty(shape);
+            }
             item->update();
         }
     }
+}
+
+void UBShapeFactory::setGradientFillingProperty(UBShape* shape)
+{
+    //besoin de "downcaster" davantage pour recuperer le bounding rect de l'objet
+    QRectF recup;
+
+    UBGraphicsRectItem* rect = NULL;
+    UBGraphicsLineItem* line = NULL;
+    UBGraphicsFreehandItem * freeHandItem = NULL;
+    UBGraphicsPathItem * pathItem = NULL;
+    UBGraphicsRegularPathItem * regularPathItem = NULL;
+    UBGraphicsEllipseItem * ellipse = dynamic_cast<UBGraphicsEllipseItem*>(shape);
+    if (!ellipse)
+    {
+        rect = dynamic_cast<UBGraphicsRectItem*>(shape);
+        if (!rect)
+        {
+            line = dynamic_cast<UBGraphicsLineItem*>(shape);
+            if (!line)
+            {
+                freeHandItem = dynamic_cast<UBGraphicsFreehandItem*>(shape);
+                if (!freeHandItem)
+                {
+                    pathItem = dynamic_cast<UBGraphicsPathItem*>(shape);
+                    if (!regularPathItem)
+                    {
+                        regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(shape);
+                    }
+                }
+            }
+        }
+    }
+    if (ellipse)
+        recup = ellipse->rect();
+    else if (rect)
+        recup = rect->rect();
+    else if (line)
+        recup = line->boundingRect();
+    else if (freeHandItem)
+        recup = freeHandItem->boundingRect();
+    else if (pathItem)
+        recup = pathItem->boundingRect();
+    else if (regularPathItem)
+        recup = regularPathItem->boundingRect();
+
+
+    QLinearGradient gradient(recup.topLeft(), recup.topRight());
+    gradient.setColorAt(0, mCurrentFillFirstColor);
+    gradient.setColorAt(1, mCurrentFillSecondColor);    
+    shape->setFillingProperty(new UBFillProperty(gradient));
+}
+
+UBShapeFactory::FillType UBShapeFactory::fillType()
+{
+    return mFillType;
+}
+
+void UBShapeFactory::setFillType(FillType fillType)
+{
+    mFillType = fillType;
 }
 
 void UBShapeFactory::init()
@@ -79,7 +151,9 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
     switch (mShapeType) {
     case Ellipse:
     {
-        mCurrentShape = new UBGraphicsEllipseItem();
+        UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
+        mCurrentShape = ellipse;
+        mBoundingRect = ellipse->rect();
         break;
     }
     case Circle:
@@ -87,6 +161,7 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
         ellipse->setAsCircle();
         mCurrentShape = ellipse;
+        mBoundingRect = ellipse->rect();
         break;
     }
     case Rectangle:
@@ -94,6 +169,7 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsRectItem* rect = new UBGraphicsRectItem();
         rect->setAsRectangle();
         mCurrentShape = rect;
+        mBoundingRect = rect->rect();
         break;
     }
     case Square:
@@ -101,30 +177,35 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
         UBGraphicsRectItem* square = new UBGraphicsRectItem();
         square->setAsSquare();
         mCurrentShape = square;
+        mBoundingRect = square->rect();
         break;
     }
     case Line:
     {
         UBGraphicsLineItem* line = new UBGraphicsLineItem();
         mCurrentShape = line;
+        mBoundingRect = line->boundingRect();
         break;
     }
     case Pen:
     {
         UBGraphicsFreehandItem * pathItem = new UBGraphicsFreehandItem();
         mCurrentShape = pathItem;
+        mBoundingRect = pathItem->boundingRect();
         break;
     }
     case Polygon:
     {
         UBGraphicsPathItem * pathItem = new UBGraphicsPathItem();
         mCurrentShape = pathItem;
+        mBoundingRect = pathItem->boundingRect();
         break;
     }
     case RegularPolygon:
     {
         UBGraphicsRegularPathItem* regularPathItem = new UBGraphicsRegularPathItem(mNVertices);
         mCurrentShape = regularPathItem;
+        mBoundingRect = regularPathItem->boundingRect();
         break;
     }
     default:
@@ -132,7 +213,17 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
     }
 
     mCurrentShape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
-    mCurrentShape->applyFillColor(mCurrentFillFirstColor);
+    if (mFillType != Gradient)
+    {
+        mCurrentShape->applyFillColor(mCurrentFillFirstColor);
+    }
+    else
+    {
+        QLinearGradient gradient(mBoundingRect.topLeft(), mBoundingRect.topRight());
+        gradient.setColorAt(0, mCurrentFillFirstColor);
+        gradient.setColorAt(1, mCurrentFillSecondColor);
+        mCurrentShape->setFillingProperty(new UBFillProperty(gradient));
+    }
     mCurrentShape->applyStrokeColor(mCurrentStrokeColor);
     mCurrentShape->setStrokeSize(mThickness);
 
@@ -197,7 +288,7 @@ void UBShapeFactory::createPen(bool create)
     if(create)
     {
         mDrawingController->setStylusTool(UBStylusTool::Drawing);
-        mIsRegularShape = true;
+        mIsRegularShape = false;
         mIsCreating = true;
         mShapeType = Pen;
     }
@@ -238,7 +329,9 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 qreal w = cursorPosition.x() - rect.x();
                 qreal h = cursorPosition.y() - rect.y();
 
-                shape->setRect(QRectF(rect.x(), rect.y(), w, h));
+                mBoundingRect = QRectF(rect.x(), rect.y(), w, h);
+                shape->setRect(mBoundingRect);
+
             }
             else if (mShapeType == Rectangle || mShapeType == Square)
             {
@@ -248,7 +341,8 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 qreal w = cursorPosition.x() - rect.x();
                 qreal h = cursorPosition.y() - rect.y();
 
-                shape->setRect(QRectF(rect.x(), rect.y(), w, h));
+                mBoundingRect = QRectF(rect.x(), rect.y(), w, h);
+                shape->setRect(mBoundingRect);
             }
             else if (mShapeType == Line)
             {
@@ -256,18 +350,33 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 QLineF newLine(line->startPoint(), cursorPosition);
                 line->setLine(newLine);
                 line->setEndPoint(cursorPosition);
+
+                mBoundingRect = line->boundingRect();
             }
         }else{
             if(mShapeType == Pen){
-                UBGraphicsFreehandItem *path = dynamic_cast<UBGraphicsFreehandItem*>(mCurrentShape);
-                QPointF point = event->pos() - path->path().currentPosition();
+                UBGraphicsFreehandItem *freeHand = dynamic_cast<UBGraphicsFreehandItem*>(mCurrentShape);
+                if (freeHand)
+                {
+                    QPointF point = event->pos() - freeHand->path().currentPosition();
 
-                if(point.manhattanLength() > 3){
-                    path->addPoint(cursorPosition);
+                    if(point.manhattanLength() > 3){
+                        freeHand->addPoint(cursorPosition);
+                    }
+
+                    mBoundingRect = freeHand->boundingRect();
                 }
             }else if (mShapeType == RegularPolygon){
                 UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
                 regularPathItem->updatePath(cursorPosition);
+                mBoundingRect = regularPathItem->boundingRect();
+            }
+        }
+        if (mCurrentShape)
+        {
+            if (mFillType == Gradient)
+            {
+                setGradientFillingProperty(mCurrentShape);
             }
         }
     }
@@ -285,7 +394,8 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
             {
                 UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(instanciateCurrentShape());
 
-                ellipse->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
+                mBoundingRect = QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0);
+                ellipse->setRect(mBoundingRect);
 
                 mBoardView->scene()->addItem(ellipse);
             }
@@ -293,7 +403,8 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
             {
                 UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(instanciateCurrentShape());
 
-                rect->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
+                mBoundingRect = QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0);
+                rect->setRect(mBoundingRect);
 
                 mBoardView->scene()->addItem(rect);
             }
@@ -305,6 +416,8 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                 line->setStartPoint(cursorPosition);
                 line->setEndPoint(cursorPosition);
 
+                mBoundingRect = line->boundingRect();
+
                 mBoardView->scene()->addItem(line);
             }
         }else{
@@ -312,6 +425,8 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
             {
                 UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(instanciateCurrentShape());
                 regularPathItem->setStartPoint(cursorPosition);
+
+                mBoundingRect = regularPathItem->boundingRect();
 
                 mBoardView->scene()->addItem(regularPathItem);
             }
@@ -324,7 +439,8 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                         pathItem->addPoint(cursorPosition);
 
                         mFirstClickForFreeHand = false;
-                        mBoardView->scene()->addItem(pathItem);
+                        mBoundingRect = pathItem->boundingRect();
+                        mBoardView->scene()->addItem(pathItem);                        
                     }
                 }else{
                     UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
@@ -334,6 +450,8 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                         mBoardView->scene()->addItem(pathItem);
                     }
                     pathItem->addPoint(cursorPosition);
+
+                    mBoundingRect = pathItem->boundingRect();
 
                     if (pathItem->isClosed())
                     {
@@ -390,9 +508,9 @@ void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
     for(int i = 0; i < items.size(); i++){
         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
 
-        if(shape){
-            shape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
-        }
+        if(shape)
+            shape->applyStyle(mCurrentBrushStyle);
+
 
         items.at(i)->update();
     }
@@ -410,8 +528,9 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
     for(int i = 0; i < items.size(); i++){
         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
 
-        if(shape){
-            shape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
+        if(shape)
+        {
+            shape->applyStyle(mCurrentPenStyle);
         }
 
         items.at(i)->update();
@@ -448,7 +567,8 @@ void UBShapeFactory::setStrokeColor(QColor color)
     for(int i = 0; i < items.size(); i++){
         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
 
-        if(shape){
+        if(shape)
+        {
             shape->applyStrokeColor(mCurrentStrokeColor);
         }
 
@@ -462,26 +582,54 @@ QColor UBShapeFactory::strokeColor()
 }
 
 
-void UBShapeFactory::setFillingColor(QColor color)
+void UBShapeFactory::setFillingFirstColor(QColor color)
 {
     mCurrentFillFirstColor = color;
 
+    updateFillingPropertyOnSelectedItems();
+}
+
+void UBShapeFactory::setFillingSecondColor(QColor color)
+{
+    mCurrentFillSecondColor = color;
+
+    updateFillingPropertyOnSelectedItems();
+}
+
+void UBShapeFactory::updateFillingPropertyOnSelectedItems()
+{
     UBGraphicsScene* scene = mBoardView->scene();
 
-    QList<QGraphicsItem*> items = scene->selectedItems();
+     QList<QGraphicsItem*> items = scene->selectedItems();
 
-    for(int i = 0; i < items.size(); i++){
-        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+     for(int i = 0; i < items.size(); i++)
+     {
+         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
 
-        if(shape){
-            shape->applyFillColor(mCurrentFillFirstColor);
-        }
+         if(shape)
+         {
+             if (mFillType != Gradient)
+             {
+                 if (shape->fillingProperty())
+                    shape->fillingProperty()->setStyle(mCurrentBrushStyle);
+                shape->applyFillColor(mCurrentFillFirstColor);
+             }
+             else
+                setGradientFillingProperty(shape);
 
-        items.at(i)->update();
-    }
+         }
+
+         items.at(i)->update();
+
+     }
 }
 
 QColor UBShapeFactory::fillFirstColor()
 {
     return mCurrentFillFirstColor;
+}
+
+QColor UBShapeFactory::fillSecondColor()
+{
+    return mCurrentFillSecondColor;
 }

@@ -25,22 +25,36 @@ class UBAbstractSubPalette : public UBActionPalette
 protected:
         virtual void focusOutEvent(QFocusEvent *);
         virtual void mouseMoveEvent(QMouseEvent *);
+
+        // EV-7 - CFA - 20140127 : ...
+        //unable to use Uniboard.css for custom classes, even with overiding paintEvent as Qt recommands...
+        //use .css and setObjectName should be preferable, but no more time, and not enough knowledge...
+        static const QString styleSheetLeftGroupedButton;
+        static const QString styleSheetCenterGroupedButton;
+        static const QString styleSheetRightGroupedButton;
 };
 
 class UBColorPickerButton : public QPushButton
 {
-public:
-    UBColorPickerButton(QWidget * parent = 0);
+    public:
+        UBColorPickerButton(QWidget * parent = 0);
 
-    QColor color() const {return mColor;}
-    void setColor(QColor color) {mColor = color;}
+        QColor color() const {return mColor;}
+        void setColor(QColor color) {mColor = color;}
+
+        static const int iconSize = 32;
 
     // QWidget interface
-protected:
-    virtual void paintEvent(QPaintEvent * pe);
+    protected:
+        virtual void paintEvent(QPaintEvent * pe);
 
-private:
-    QColor mColor;
+    private:
+        QColor mColor;
+
+        static const int margin_left = 5;
+        static const int margin_top = 2;
+        static const int width = 27;
+        static const int height = 20;
 };
 
 

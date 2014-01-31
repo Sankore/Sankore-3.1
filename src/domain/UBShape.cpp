@@ -22,7 +22,9 @@ UBShape::~UBShape()
 
 void UBShape::applyStyle(Qt::PenStyle penStyle)
 {
-    Qt::BrushStyle brushStyle = this->fillingProperty()->style();
+    Qt::BrushStyle brushStyle = Qt::SolidPattern;
+    if (fillingProperty())
+        brushStyle = this->fillingProperty()->style();
 
     applyStyle(brushStyle, penStyle);
 }
@@ -59,9 +61,4 @@ void UBShape::setStrokeSize(int size)
 {
     if(hasStrokeProperty())
         strokeProperty()->setWidth(size);
-}
-
-QRectF UBShape::boundingRect() const
-{
-    return QRectF();
 }

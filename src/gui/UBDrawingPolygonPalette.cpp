@@ -26,6 +26,12 @@ UBDrawingPolygonPalette::UBDrawingPolygonPalette(Qt::Orientation orient, QWidget
 
     adjustSizeAndPosition();
 
+    //css
+    layout()->setSpacing(0);
+    mButtons.at(0)->setStyleSheet(styleSheetLeftGroupedButton);
+    mButtons.at(1)->setStyleSheet(styleSheetCenterGroupedButton);
+    mButtons.at(2)->setStyleSheet(styleSheetRightGroupedButton);
+
     foreach(const UBActionPaletteButton* button, mButtons)
     {
         connect(button, SIGNAL(clicked()), this, SLOT(buttonClicked()));

@@ -18,6 +18,12 @@ public:
     {
 
     }
+
+    UBFillProperty(const QBrush& src):
+        QBrush(src)
+    {
+
+    }
 };
 
 class UBStrokeProperty : public QPen
@@ -71,6 +77,14 @@ public:
         mFillingProperty = new UBFillProperty();
     }
 
+    void setFillingProperty(UBFillProperty* newFillingProperty)
+    {
+        if (mFillingProperty)
+            delete mFillingProperty;
+
+        mFillingProperty = newFillingProperty;
+    }
+
     virtual ~UBShape();
 
     void applyStyle(Qt::PenStyle penStyle);
@@ -86,7 +100,7 @@ protected:
     UBFillProperty *mFillingProperty;
     UBStrokeProperty *mStrokeProperty;
 
-    virtual QRectF boundingRect() const;
+
 };
 
 #endif // UBSHAPE_H

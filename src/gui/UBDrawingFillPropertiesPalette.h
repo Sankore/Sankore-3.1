@@ -34,12 +34,19 @@ public:
     virtual ~UBDrawingFillPropertiesPalette();
 
 private slots:
-    void onBtnSelectFillColor();
-    void onBtnFillColorTransparent();
+    void onBtnSelectFillFirstColor();
+    void onBtnSelectFillSecondColor();
+    void onBtnColorTransparent();
+    void onBtnColorFull();
+    void onBtnColorGradient();
+    void onBtnFillStyleDense();
+    void onBtnFillStyleDiag();
 
 private:
     UBColorPickerButton * mBtnColorPicker;
-    UBColorPickerButton * mBtnColorTransparent;
+    UBColorPickerButton * mBtnColor2Picker;
+    QButtonGroup* mButtonGroupColorStyle;
+
 };
 
 #endif // UBDRAWINGFILLPROPERTIESPALETTE_H

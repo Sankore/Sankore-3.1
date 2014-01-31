@@ -38,6 +38,8 @@ public:
 
     virtual void copyItemParameters(UBItem *copy) const;
 
+    inline bool isSquare() { return mIsSquare; }
+
     void setAsSquare()
     {
         mIsSquare = true;

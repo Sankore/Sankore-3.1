@@ -23,6 +23,7 @@
 #include "UBDrawingFillPropertiesPalette.h"
 
 #include "core/UBApplication.h"
+#include "UBMainWindow.h"
 #include "board/UBBoardController.h"
 #include "domain/UBShapeFactory.h"
 
@@ -35,20 +36,66 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
     mBtnColorPicker = new UBColorPickerButton(this);
     mBtnColorPicker->setToolTip(tr("Select and set fill color"));
     mBtnColorPicker->setColor(UBApplication::boardController->shapeFactory().fillFirstColor());
-    mBtnColorPicker->setIconSize(QSize(32,32));
-    mBtnColorPicker->setStyleSheet(QString("QToolButton {color: white; font-weight: bold; font-family: Arial; background-color: transparent; border: none}"));
+    mBtnColorPicker->setIconSize(QSize(UBColorPickerButton::iconSize,UBColorPickerButton::iconSize));
     layout()->addWidget(mBtnColorPicker);
-    connect(mBtnColorPicker, SIGNAL(clicked()), this, SLOT(onBtnSelectFillColor()));
+    connect(mBtnColorPicker, SIGNAL(clicked()), this, SLOT(onBtnSelectFillFirstColor()));    
 
-    // Transparent color button
-    mBtnColorTransparent = new UBColorPickerButton(this);
-    mBtnColorTransparent->setToolTip(tr("Set transparent fill color"));
-    mBtnColorTransparent->setColor(Qt::transparent);
-    mBtnColorTransparent->setIconSize(QSize(32,32));
-    mBtnColorTransparent->setStyleSheet(QString("QToolButton {color: white; font-weight: bold; font-family: Arial; background-color: transparent; border: none}"));
-    layout()->addWidget(mBtnColorTransparent);
-    connect(mBtnColorTransparent, SIGNAL(clicked()), this, SLOT(onBtnFillColorTransparent()));
+    //layout "ColorStyle"
+    QHBoxLayout* colorStyleLayout = new QHBoxLayout();
+    colorStyleLayout->setSpacing(0);
 
+    // ColorType buttons
+    UBActionPaletteButton* btnAlphaColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleTransparent, this);
+    btnAlphaColor->setStyleSheet(styleSheetLeftGroupedButton);
+    colorStyleLayout->addWidget(btnAlphaColor);
+
+    UBActionPaletteButton* btnFillStyleDense = new UBActionPaletteButton(UBApplication::mainWindow->actionFillStyleDense, this);
+    btnFillStyleDense->setStyleSheet(styleSheetCenterGroupedButton);
+    colorStyleLayout->addWidget(btnFillStyleDense);
+
+    UBActionPaletteButton* btnFillStyleDiag = new UBActionPaletteButton(UBApplication::mainWindow->actionFillStyleDiag, this);
+    btnFillStyleDiag->setStyleSheet(styleSheetCenterGroupedButton);
+    colorStyleLayout->addWidget(btnFillStyleDiag);
+
+    UBActionPaletteButton* btnFullColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleFull, this);
+    btnFullColor->setStyleSheet(styleSheetCenterGroupedButton);
+    colorStyleLayout->addWidget(btnFullColor);
+    UBApplication::mainWindow->actionColorStyleFull->setChecked(true);
+
+    UBActionPaletteButton* btnGradientColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleGradient, this);
+    btnGradientColor->setStyleSheet(styleSheetRightGroupedButton);
+    colorStyleLayout->addWidget(btnGradientColor);
+
+    //group color style buttons
+    mButtonGroupColorStyle = new QButtonGroup(this);
+    mButtonGroupColorStyle->addButton(btnAlphaColor);
+    mButtonGroupColorStyle->addButton(btnFillStyleDiag);
+    mButtonGroupColorStyle->addButton(btnFillStyleDense);
+    mButtonGroupColorStyle->addButton(btnFullColor);
+    mButtonGroupColorStyle->addButton(btnGradientColor);
+
+    connect(btnAlphaColor, SIGNAL(clicked()), this, SLOT(onBtnColorTransparent()));
+    connect(btnFillStyleDense, SIGNAL(clicked()), this, SLOT(onBtnFillStyleDense()));
+    connect(btnFillStyleDiag, SIGNAL(clicked()), this, SLOT(onBtnFillStyleDiag()));
+    connect(btnFullColor, SIGNAL(clicked()), this, SLOT(onBtnColorFull()));
+    connect(btnGradientColor, SIGNAL(clicked()), this, SLOT(onBtnColorGradient()));
+
+    //group layouts to main layout
+    QHBoxLayout* mainLayout = dynamic_cast<QHBoxLayout*>(layout());
+    if (mainLayout)
+    {
+        mainLayout->addLayout(colorStyleLayout);
+    }
+
+
+    // ColorPicker button
+    mBtnColor2Picker = new UBColorPickerButton(this);
+    mBtnColor2Picker->setToolTip(tr("Select and set fill color"));
+    mBtnColor2Picker->setColor(UBApplication::boardController->shapeFactory().fillSecondColor());
+    mBtnColor2Picker->setIconSize(QSize(UBColorPickerButton::iconSize,UBColorPickerButton::iconSize));
+    mBtnColor2Picker->setEnabled(false);
+    layout()->addWidget(mBtnColor2Picker);
+    connect(mBtnColor2Picker, SIGNAL(clicked()), this, SLOT(onBtnSelectFillSecondColor()));
 
     adjustSizeAndPosition();
 }
@@ -58,10 +105,51 @@ UBDrawingFillPropertiesPalette::~UBDrawingFillPropertiesPalette()
 
 }
 
-void UBDrawingFillPropertiesPalette::onBtnSelectFillColor()
+void UBDrawingFillPropertiesPalette::onBtnColorTransparent()
 {
+    mBtnColor2Picker->setEnabled(false);
+    UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Transparent);
+    UBApplication::boardController->shapeFactory().setFillingFirstColor(Qt::transparent);
+    mBtnColorPicker->setColor(Qt::transparent);
+    mBtnColorPicker->repaint();
+}
 
+void UBDrawingFillPropertiesPalette::onBtnFillStyleDense()
+{
+    mBtnColor2Picker->setEnabled(false);
+    UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Dense);
+    UBApplication::boardController->shapeFactory().setFillingStyle(Qt::Dense7Pattern);
+    UBApplication::boardController->shapeFactory().setFillingFirstColor(mBtnColorPicker->color());
+}
+
+void UBDrawingFillPropertiesPalette::onBtnFillStyleDiag()
+{
+    mBtnColor2Picker->setEnabled(false);
+    UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Diag);
+    UBApplication::boardController->shapeFactory().setFillingStyle(Qt::BDiagPattern);
+    UBApplication::boardController->shapeFactory().setFillingFirstColor(mBtnColorPicker->color());
+}
+
+
+void UBDrawingFillPropertiesPalette::onBtnColorFull()
+{
+    mBtnColor2Picker->setEnabled(false);
+    UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Full);
+    UBApplication::boardController->shapeFactory().setFillingStyle(Qt::SolidPattern);
+    UBApplication::boardController->shapeFactory().setFillingFirstColor(mBtnColorPicker->color());
+}
+
+void UBDrawingFillPropertiesPalette::onBtnColorGradient()
+{
+    mBtnColor2Picker->setEnabled(true);
+    UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Gradient);    
+    UBApplication::boardController->shapeFactory().updateFillingPropertyOnSelectedItems();
+}
+
+void UBDrawingFillPropertiesPalette::onBtnSelectFillFirstColor()
+{
     QColorDialog colorPicker(this);
+    colorPicker.setOption(QColorDialog::ShowAlphaChannel);
 
 #ifdef Q_WS_MAC
     colorPicker.setOption(QColorDialog::DontUseNativeDialog);
@@ -70,13 +158,36 @@ void UBDrawingFillPropertiesPalette::onBtnSelectFillColor()
     if ( colorPicker.exec() )
     {
         QColor selectedColor = colorPicker.selectedColor();
+        if (selectedColor.alpha() == 0)
+            selectedColor = Qt::transparent;
 
-        UBApplication::boardController->shapeFactory().setFillingColor(selectedColor);
-        mBtnColorPicker->setColor(selectedColor); // udpate Color icon in palette.
+        UBApplication::boardController->shapeFactory().setFillingFirstColor(selectedColor);
+        mBtnColorPicker->setColor(selectedColor); // udpate Color icon in palette.        
+        if (UBApplication::boardController->shapeFactory().fillType() == UBShapeFactory::Transparent)
+        {
+            UBApplication::mainWindow->actionColorStyleFull->setChecked(true);
+            onBtnColorFull();
+        }
     }
 }
 
-void UBDrawingFillPropertiesPalette::onBtnFillColorTransparent()
+void UBDrawingFillPropertiesPalette::onBtnSelectFillSecondColor()
 {
-    UBApplication::boardController->shapeFactory().setFillingColor(Qt::transparent);
+
+    QColorDialog colorPicker(this);
+    colorPicker.setOption(QColorDialog::ShowAlphaChannel);
+
+#ifdef Q_WS_MAC
+    colorPicker.setOption(QColorDialog::DontUseNativeDialog);
+#endif
+
+    if ( colorPicker.exec() )
+    {
+        QColor selectedColor = colorPicker.selectedColor();
+        if (selectedColor.alpha() == 0)
+            selectedColor = Qt::transparent;
+
+        UBApplication::boardController->shapeFactory().setFillingSecondColor(selectedColor);
+        mBtnColor2Picker->setColor(selectedColor); // udpate Color icon in palette.
+    }
 }

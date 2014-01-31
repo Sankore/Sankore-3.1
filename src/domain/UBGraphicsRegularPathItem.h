@@ -38,7 +38,7 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem
             Octogone
         };
 
-        UBGraphicsRegularPathItem(int nVertices = 3, QPointF startPoint = QPointF(0,0), QGraphicsItem* parent = 0);
+        UBGraphicsRegularPathItem(int nVertices = Triangle, QPointF startPoint = QPointF(0,0), QGraphicsItem* parent = 0);
         ~UBGraphicsRegularPathItem();
 
         void createGraphicsRegularPathItem();

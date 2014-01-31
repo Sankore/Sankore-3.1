@@ -33,46 +33,75 @@
 UBDrawingStrokePropertiesPalette::UBDrawingStrokePropertiesPalette(Qt::Orientation orient, QWidget *parent)
     :UBAbstractSubPalette(orient, parent)
 {
-    hide();
+    hide();    
 
     // Color button
     mBtnColorPicker = new UBColorPickerButton(this);
-    mBtnColorPicker->setIconSize(QSize(32,32));
-    mBtnColorPicker->setStyleSheet(QString("QToolButton {color: white; font-weight: bold; font-family: Arial; background-color: transparent; border: none}"));
+    mBtnColorPicker->setIconSize(QSize(UBColorPickerButton::iconSize,UBColorPickerButton::iconSize));
     layout()->addWidget(mBtnColorPicker);
     connect(mBtnColorPicker, SIGNAL(clicked()), this, SLOT(onBtnSelectStrokeColor()));
 
-    // Thickness buttons :
+    //layout "thickness"
+    QHBoxLayout* thicknessLayout = new QHBoxLayout();
+    thicknessLayout->setSpacing(0);
 
-    mBtnStrokeThickness.append(new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness0, this));
-    mMapBtnStrokeThickness[mBtnStrokeThickness.last()] = 3;
-    mBtnStrokeThickness.append(new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness1, this));
-    mMapBtnStrokeThickness[mBtnStrokeThickness.last()] = 5;
-    mBtnStrokeThickness.append(new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness2, this));
-    mMapBtnStrokeThickness[mBtnStrokeThickness.last()] = 10;
+    // Thickness buttons
+    UBActionPaletteButton* btnThickness1 = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness0, this);
+    btnThickness1->setStyleSheet(styleSheetLeftGroupedButton);
+    mBtnStrokeThickness.append(btnThickness1);
+    mMapBtnStrokeThickness[btnThickness1] = Fine;
+    UBApplication::mainWindow->actionStrokePropertyThickness0->setChecked(true);
 
+    UBActionPaletteButton* btnThickness2 = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness1, this);
+    btnThickness2->setStyleSheet(styleSheetCenterGroupedButton);
+    mBtnStrokeThickness.append(btnThickness2);
+    mMapBtnStrokeThickness[btnThickness2] = Medium;
+
+    UBActionPaletteButton* btnThickness3 = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness2, this);
+    mBtnStrokeThickness.append(btnThickness3);
+    btnThickness3->setStyleSheet(styleSheetRightGroupedButton);
+    mMapBtnStrokeThickness[btnThickness3] = Large;
+
+    //group thickness buttons
     mButtonGroupStrokeThickness = new QButtonGroup(this);
-
     foreach(UBActionPaletteButton* button, mBtnStrokeThickness)
     {
         mButtonGroupStrokeThickness->addButton(button);
-        layout()->addWidget(button);
+        thicknessLayout->addWidget(button);
         connect(button, SIGNAL(clicked()), this, SLOT(onBtnSelectThickness()));
     }
 
-    // Style buttons :
-    mMapBtnStrokeStyle[new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleSolidLine, this)] = Qt::SolidLine;
-    mMapBtnStrokeStyle[new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleDotLine, this)] = Qt::DotLine;
+    //layout "Style"
+    QHBoxLayout* styleLayout = new QHBoxLayout();
+    styleLayout->setSpacing(0);
 
+    // Style buttons
+    UBActionPaletteButton* btnSolidLine = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleSolidLine, this);
+    mMapBtnStrokeStyle[btnSolidLine] = Qt::SolidLine;
+    btnSolidLine->setStyleSheet(styleSheetLeftGroupedButton);
+    UBApplication::mainWindow->actionStrokePropertyStyleSolidLine->setChecked(true);
+
+
+    UBActionPaletteButton* btnDotLine = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleDotLine, this);
+    mMapBtnStrokeStyle[btnDotLine] = Qt::DotLine;
+    btnDotLine->setStyleSheet(styleSheetRightGroupedButton);
+
+    //group style buttons
     mButtonGroupStrokeStyle = new QButtonGroup(this);
-
     foreach(UBActionPaletteButton* button, mMapBtnStrokeStyle.keys())
     {
         mButtonGroupStrokeStyle->addButton(button);
-        layout()->addWidget(button);
+        styleLayout->addWidget(button);
         connect(button, SIGNAL(clicked()), this, SLOT(onBtnSelectStyle()));
     }
 
+    //group layouts to main layout
+    QHBoxLayout* mainLayout = dynamic_cast<QHBoxLayout*>(layout());
+    if (mainLayout)
+    {
+        mainLayout->addLayout(thicknessLayout);
+        mainLayout->addLayout(styleLayout);
+    }
 
     adjustSizeAndPosition();
 }
@@ -97,9 +126,14 @@ UBDrawingStrokePropertiesPalette::~UBDrawingStrokePropertiesPalette()
 void UBDrawingStrokePropertiesPalette::onBtnSelectStrokeColor()
 {
     QColorDialog colorPicker(this);
+    colorPicker.setOption(QColorDialog::ShowAlphaChannel);
+
     if ( colorPicker.exec() )
     {
         QColor selectedColor = colorPicker.selectedColor();
+
+        if (selectedColor.alpha() == 0)
+            selectedColor = Qt::transparent;
 
         UBApplication::boardController->shapeFactory().setStrokeColor(selectedColor);
         mBtnColorPicker->setColor(selectedColor); // udpate Color icon in palette.

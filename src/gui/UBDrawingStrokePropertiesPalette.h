@@ -30,7 +30,13 @@ class UBDrawingStrokePropertiesPalette : public UBAbstractSubPalette
 {
     Q_OBJECT
 
-public:
+public:  
+    enum Thickness{
+        Fine = 3,
+        Medium = 5,
+        Large = 10
+    };
+
     UBDrawingStrokePropertiesPalette(Qt::Orientation orient, QWidget *parent = 0);
     virtual ~UBDrawingStrokePropertiesPalette();
 
@@ -46,6 +52,7 @@ private:
     QButtonGroup * mButtonGroupStrokeThickness;
     QMap<UBActionPaletteButton*, Qt::PenStyle> mMapBtnStrokeStyle;
     QButtonGroup * mButtonGroupStrokeStyle;
+
 };
 
 #endif // UBDRAWINGSTROKEPROPERTIESPALETTE_H
