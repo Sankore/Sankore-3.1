@@ -41,8 +41,8 @@ UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(false);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Scaling);
+    Delegate()->setCanTrigAnAction(true);
+    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem));
@@ -94,7 +94,6 @@ void UBGraphicsRectItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
 
-        /* Pas d'Action possible sur une Shape
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
                 UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
@@ -104,7 +103,6 @@ void UBGraphicsRectItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
-        */
     }
 }
 
@@ -168,4 +166,16 @@ QRectF UBGraphicsRectItem::boundingRect() const
     }
 
     return retour;
+}
+
+
+void UBGraphicsRectItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    Delegate()->mousePressEvent(event);
+}
+
+void UBGraphicsRectItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    Delegate()->mouseReleaseEvent(event);
+    QGraphicsRectItem::mouseReleaseEvent(event);
 }

@@ -3,6 +3,8 @@
 
 #include <cmath>
 
+#include <customWidgets/UBGraphicsItemAction.h>
+
 UBGraphicsRegularPathItem::UBGraphicsRegularPathItem(int nVertices, QPointF startPos, QGraphicsItem * parent)
     : UBAbstractGraphicsPathItem(parent)
     , mNVertices(nVertices)
@@ -151,7 +153,6 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
         cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
 
-        /* Pas d'Action possible sur une Shape
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
                 UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
@@ -161,7 +162,6 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
-        */
 
         if (hasFillingProperty())
             cp->mFillingProperty = new UBFillProperty(*fillingProperty());

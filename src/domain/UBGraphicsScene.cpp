@@ -1691,11 +1691,8 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
 void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
 {
     //CFA - TEST UNDO
-    UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(item);
-    UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(item);
-    UBGraphicsLineItem* line = dynamic_cast<UBGraphicsLineItem*>(item);
-    UBAbstractGraphicsPathItem* path = dynamic_cast<UBAbstractGraphicsPathItem*>(item);
-    if (ellipse || rect || path || line)
+    UBShape * shape = dynamic_cast<UBShape*>(item);
+    if (shape)
     {
         mAddedItems.insert(item);
     }
@@ -1704,11 +1701,8 @@ void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
 void UBGraphicsScene::removeShapeToUndoStack(QGraphicsItem* item)
 {
     //CFA - TEST UNDO
-    UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(item);
-    UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(item);
-    UBGraphicsLineItem* line = dynamic_cast<UBGraphicsLineItem*>(item);
-    UBAbstractGraphicsPathItem* path = dynamic_cast<UBAbstractGraphicsPathItem*>(item);
-    if (ellipse || rect || path || line)
+    UBShape * shape = dynamic_cast<UBShape*>(item);
+    if (shape)
     {
         mRemovedItems.insert(item);
     }

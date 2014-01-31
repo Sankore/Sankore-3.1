@@ -9,7 +9,7 @@ UBAbstractGraphicsPathItem::UBAbstractGraphicsPathItem(QGraphicsItem *parent):
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(false);
+    Delegate()->setCanTrigAnAction(true);
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
@@ -33,4 +33,16 @@ QVariant UBAbstractGraphicsPathItem::itemChange(GraphicsItemChange change, const
         newValue = Delegate()->itemChange(change, value);
 
     return QGraphicsPathItem::itemChange(change, newValue);
+}
+
+
+void UBAbstractGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    Delegate()->mousePressEvent(event);
+}
+
+void UBAbstractGraphicsPathItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    Delegate()->mouseReleaseEvent(event);
+    QGraphicsPathItem::mouseReleaseEvent(event);
 }

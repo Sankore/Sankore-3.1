@@ -26,6 +26,8 @@ public:
 
 protected:
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 };
 
 #endif // UBABSTRACTGRAPHICSPATHITEM_H
