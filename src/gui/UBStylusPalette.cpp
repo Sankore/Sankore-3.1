@@ -43,6 +43,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
 {
     QList<QAction*> actions;
 
+    actions << UBApplication::mainWindow->actionDrawing; // Issue 1684 (EV-7) - ALTI/AOU - 20140203 : add to the Stylus Palette a button to open the Drawing Palette.
+
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
@@ -54,7 +56,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionZoomOut;
 
     actions << UBApplication::mainWindow->actionPointer;
-    actions << UBApplication::mainWindow->actionLine;
+    //actions << UBApplication::mainWindow->actionLine; // ALTI/AOU - 20140203 : Don't show the Line tool anymore.
     actions << UBApplication::mainWindow->actionText;
     actions << UBApplication::mainWindow->actionCapture;
 
@@ -70,10 +72,10 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     }
     else
     {
-            // VirtualKeyboard action is not in group
-            // So, groupping all buttons, except last
+            // VirtualKeyboard and Drawing actions are not in group
+            // So, groupping all buttons, except first and last
             mButtonGroup = new QButtonGroup(this);
-            for(int i=0; i < mButtons.size()-1; i++)
+            for(int i=1; i < mButtons.size()-1; i++)
             {
                     mButtonGroup->addButton(mButtons[i], i);
             }

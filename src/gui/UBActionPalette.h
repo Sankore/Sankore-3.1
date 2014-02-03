@@ -71,6 +71,8 @@ class UBActionPalette : public UBFloatingPalette
 
         QButtonGroup* buttonGroup(){return mButtonGroup;}
 
+        Qt::Orientation orientation() const {return mOrientation;}
+
     public slots:
         void close();
 
