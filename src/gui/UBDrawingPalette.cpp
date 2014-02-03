@@ -47,6 +47,8 @@
 UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
 {
+    mCustomPosition = true;
+
     UBActionPaletteButton * btnSubPaletteShape = addButtonSubPalette(new UBShapesPalette(Qt::Horizontal, parentWidget()));
     UBActionPaletteButton * btnSubPaletteRegularShape = addButtonSubPalette(new UBRegularShapesPalette(Qt::Horizontal, parentWidget()));
     UBActionPaletteButton * btnSubPalettePolygon = addButtonSubPalette(new UBDrawingPolygonPalette(Qt::Horizontal, parentWidget()));
@@ -54,7 +56,7 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     addButtonSubPalette(new UBDrawingFillPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionFillProperties);
     UBActionPaletteButton * btnPaintBucket = addActionButton(UBApplication::mainWindow->actionChangeFillingColor);
 
-    // Certains de ces boutons sont groupés
+    // Some of those buttons are grouped :
     mButtonGroup = new QButtonGroup(this);
     mButtonGroup->addButton(btnSubPaletteShape);
     mButtonGroup->addButton(btnSubPaletteRegularShape);
@@ -111,18 +113,25 @@ void UBDrawingPalette::buttonClicked()
     UBActionPaletteButton * button = dynamic_cast<UBActionPaletteButton *>( sender() );
     if (button && mSubPalettes.contains(button))
     {
-        initSubPalettesPosition();
-        mSubPalettes.value(button)->togglePalette();
+        UBAbstractSubPalette * subPalette = mSubPalettes.value(button);
+
+        if (subPalette->isHidden())
+        {
+            initSubPalettesPosition();
+            subPalette->togglePalette(); // Show palette
+        }
+        else
+        {
+            subPalette->hide(); // Hide palette
+        }
     }
-    else
+    else if (sender() == UBApplication::mainWindow->actionChangeFillingColor)
     {
-        //sender() == QAction pot de peinture : seule action sans ss palette
         UBApplication::boardController->shapeFactory().prepareChangeFill();
     }
 
-    // Terminer tout dessin en cours de tracé (polygone)
-    //UBApplication::boardController->shapeFactory().desactivate();
-
+    // On any click on this palette's buttons, ends currently drawing shape.
+    UBApplication::boardController->shapeFactory().terminateShape();
 }
 
 
@@ -130,22 +139,32 @@ void UBDrawingPalette::initPosition()
 {
     // Rem : positions would be very different if drawingPalette were horizontal...
 
-    mCustomPosition = true;
-
     int x = 0;
     int y = 0;
 
-    // By default, place the drawingPalette next to the Library (RightPalette)
-    if (UBApplication::boardController
-            && UBApplication::boardController->paletteManager()
-            && UBApplication::boardController->paletteManager()->rightPalette())
+    // The drawingPalette appears near the button that open it.
+    // Find the "Drawing" button :
+    UBStylusPalette * stylusPalette = UBApplication::boardController->paletteManager()->stylusPalette();
+    int indexDrawingButton = stylusPalette->actions().indexOf(UBApplication::mainWindow->actionDrawing);
+    QAction * actionDrawing = stylusPalette->actions().at(indexDrawingButton);
+    QList<QWidget *> buttonsDrawing = actionDrawing->associatedWidgets();
+    if (buttonsDrawing.size()>0)
     {
-        x = UBApplication::boardController->paletteManager()->rightPalette()->pos().x();
-        x -= this->width();
+        QWidget* buttonDrawing = buttonsDrawing.first();
+        if (buttonDrawing)
+        {
+            if (stylusPalette->orientation() == Qt::Horizontal)
+            {
+                x = stylusPalette->pos().x() + buttonDrawing->pos().x() + buttonDrawing->width()/2 - this->width()/2;
+                y = stylusPalette->pos().y() - this->height();
+            }
+            else // stylus Palette is vertical :
+            {
+                x = stylusPalette->pos().x() - this->width();
+                y = stylusPalette->pos().y() + buttonDrawing->pos().y() + buttonDrawing->height()/2 - this->width()/2;
+            }
+        }
     }
-
-    // By default, center vertically the drawingPalette in her parent
-    y = ( parentWidget()->height() - this->height() ) / 2;
 
     moveInsideParent(QPoint(x, y));
 

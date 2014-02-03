@@ -74,6 +74,7 @@ public slots:
     void onMouseRelease(QMouseEvent *event);
 
     void desactivate();
+    void terminateShape();
 
     void setStrokeStyle(Qt::PenStyle penStyle);
     void setStrokeColor(QColor color);

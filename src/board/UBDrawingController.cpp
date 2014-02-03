@@ -145,13 +145,7 @@ void UBDrawingController::setStylusTool(int tool)
         else if (mStylusTool == UBStylusTool::Capture)
             UBApplication::mainWindow->actionCapture->setChecked(true);
 
-        if(mStylusTool == UBStylusTool::Drawing){
-            //EV-7 - NNE - 20140106
-            UBApplication::mainWindow->actionPen->setChecked(false);
-
-            UBApplication::mainWindow->actionSelector->setChecked(false);
-            UBApplication::mainWindow->actionSelector->setChecked(true);
-        }else{
+        if(mStylusTool != UBStylusTool::Drawing){
             UBApplication::boardController->shapeFactory().desactivate();
         }
 

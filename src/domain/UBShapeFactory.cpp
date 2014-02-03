@@ -488,6 +488,12 @@ void UBShapeFactory::desactivate()
     mShapeType = None;
 }
 
+void UBShapeFactory::terminateShape()
+{
+    // Ends the current shape :
+    mCurrentShape = NULL;
+}
+
 bool UBShapeFactory::isShape(QGraphicsItem *item)
 {
     return item->type() == UBGraphicsItemType::GraphicsShapeItemType

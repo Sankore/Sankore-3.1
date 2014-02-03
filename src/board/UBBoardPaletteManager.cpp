@@ -1047,13 +1047,6 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
         mStylusPalette = NULL;
     }
 
-    if(mDrawingPalette != NULL )
-    {
-        delete mDrawingPalette;
-        mDrawingPalette = NULL;
-    }
-
-
     // Create the new palette
     if(bVertical)
     {
@@ -1066,6 +1059,7 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
 
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
     mStylusPalette->setVisible(bVisible); // always show stylus palette at startup
+    mDrawingPalette->initPosition(); // move de drawing Palette
 }
 
 
