@@ -95,7 +95,7 @@ const QString UBSvgSubsetAdaptor::sFontWeightPrefix = "font-weight:";
 const QString UBSvgSubsetAdaptor::sFontStylePrefix = "font-style:";
 const QString UBSvgSubsetAdaptor::sFormerUniboardDocumentNamespaceUri = "http://www.mnemis.com/uniboard";
 
-const QString UBSvgSubsetAdaptor::SVG_STROKE_DOTLINE = "1 1"; // 1 dot, 1 space
+const QString UBSvgSubsetAdaptor::SVG_STROKE_DOTLINE = "20 10"; // 1 big dot, 1 little space
 
 const QString tElement = "element";
 const QString tGroup = "group";
