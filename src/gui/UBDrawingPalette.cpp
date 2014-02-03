@@ -113,14 +113,25 @@ void UBDrawingPalette::buttonClicked()
     UBActionPaletteButton * button = dynamic_cast<UBActionPaletteButton *>( sender() );
     if (button && mSubPalettes.contains(button))
     {
-        initSubPalettesPosition();
-        mSubPalettes.value(button)->togglePalette();
+        UBAbstractSubPalette * subPalette = mSubPalettes.value(button);
+
+        if (subPalette->isHidden())
+        {
+            initSubPalettesPosition();
+            subPalette->togglePalette(); // Show palette
+        }
+        else
+        {
+            subPalette->hide(); // Hide palette
+        }
     }
-    else
+    else if (sender() == UBApplication::mainWindow->actionChangeFillingColor)
     {
-        //sender() == QAction pot de peinture : seule action sans ss palette
         UBApplication::boardController->shapeFactory().prepareChangeFill();
     }
+
+    // On any click on this palette's buttons, ends currently drawing shape.
+    UBApplication::boardController->shapeFactory().terminateShape();
 }
 
 
@@ -131,7 +142,8 @@ void UBDrawingPalette::initPosition()
     int x = 0;
     int y = 0;
 
-    // The drawingPalette appears near the button that open it :
+    // The drawingPalette appears near the button that open it.
+    // Find the "Drawing" button :
     UBStylusPalette * stylusPalette = UBApplication::boardController->paletteManager()->stylusPalette();
     int indexDrawingButton = stylusPalette->actions().indexOf(UBApplication::mainWindow->actionDrawing);
     QAction * actionDrawing = stylusPalette->actions().at(indexDrawingButton);
