@@ -159,6 +159,8 @@ class UBSvgSubsetAdaptor
 
                 UBGraphicsCache* cacheFromSvg();
 
+                QLinearGradient linearGradiantFromSvg();
+
                 UBGraphicsEllipseItem* shapeEllipseFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
 
                 UBGraphicsRectItem* shapeRectFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231

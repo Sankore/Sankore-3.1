@@ -39,15 +39,6 @@ void UBShapeFactory::prepareChangeFill()
    mShapeType = None;
 }
 
-void getFamily(QGraphicsItem* o)
-{
-    if (o)
-        if (o->parentItem())
-            getFamily(o->parentItem());
-
-    qDebug() << o;
-}
-
 void UBShapeFactory::changeFillColor(const QPointF& pos)
 {
     UBGraphicsScene* scene = mBoardView->scene();
@@ -60,13 +51,18 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
         {
             if (mFillType != Gradient)
             {
-                delete shape->fillingProperty();
-                shape->initializeFillingProperty();
-                shape->fillingProperty()->setColor(mCurrentFillFirstColor);
+                if (shape->fillingProperty())
+                {
+                    delete shape->fillingProperty();
+                    shape->initializeFillingProperty();
+                    shape->fillingProperty()->setStyle(mCurrentBrushStyle);
+                    shape->fillingProperty()->setColor(mCurrentFillFirstColor);
+                }
             }
             else
             {
-                setGradientFillingProperty(shape);
+                if (shape->fillingProperty())
+                    setGradientFillingProperty(shape);
             }
             item->update();
         }
@@ -103,7 +99,7 @@ void UBShapeFactory::setGradientFillingProperty(UBShape* shape)
                 }
             }
         }
-    }
+    }    
     if (ellipse)
         recup = ellipse->rect();
     else if (rect)
@@ -219,10 +215,13 @@ UBShape* UBShapeFactory::instanciateCurrentShape()
     }
     else
     {
-        QLinearGradient gradient(mBoundingRect.topLeft(), mBoundingRect.topRight());
-        gradient.setColorAt(0, mCurrentFillFirstColor);
-        gradient.setColorAt(1, mCurrentFillSecondColor);
-        mCurrentShape->setFillingProperty(new UBFillProperty(gradient));
+        if (mCurrentShape->fillingProperty())
+        {
+            QLinearGradient gradient(mBoundingRect.topLeft(), mBoundingRect.topRight());
+            gradient.setColorAt(0, mCurrentFillFirstColor);
+            gradient.setColorAt(1, mCurrentFillSecondColor);
+            mCurrentShape->setFillingProperty(new UBFillProperty(gradient));
+        }
     }
     mCurrentShape->applyStrokeColor(mCurrentStrokeColor);
     mCurrentShape->setStrokeSize(mThickness);
@@ -376,7 +375,8 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
         {
             if (mFillType == Gradient)
             {
-                setGradientFillingProperty(mCurrentShape);
+                if (mCurrentShape->fillingProperty())
+                    setGradientFillingProperty(mCurrentShape);
             }
         }
     }
