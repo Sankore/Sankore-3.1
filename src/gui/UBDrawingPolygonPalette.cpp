@@ -71,7 +71,11 @@ void UBDrawingPolygonPalette::buttonClicked()
                 UBApplication::boardController->shapeFactory().createPen(true);
             }
 
-            actionPaletteButtonParent()->setDefaultAction(action);
+            // Change the Action shown in the DrawingPalette :
+            foreach (QAction* a, actionPaletteButtonParent()->actions()) {
+                actionPaletteButtonParent()->removeAction(a); // Remove all older actions, in order to let only one action associated to the button.
+            }
+            actionPaletteButtonParent()->setDefaultAction(action); // Associate the new Action to the Button.
         }
     }
 
