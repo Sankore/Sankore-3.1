@@ -142,6 +142,9 @@ class UBApplicationController : public QObject
         void checkUpdateRequest();
         void checkUpdateAtLaunch();
 
+        void setUserSceneIndex(int index);
+        int userSceneIndex() const { return mUserSceneIndex; }
+
     private slots:
         void updateRequestFinished(int id, bool error);
 
@@ -160,6 +163,8 @@ class UBApplicationController : public QObject
         UBScreenMirror* mMirror;
 
         int mInitialHScroll, mInitialVScroll;
+
+        int mUserSceneIndex;
 
     private:
 

@@ -3055,6 +3055,15 @@ bool UBDocumentController::pageCanBeDeleted(int page)
     return page != 0;
 }
 
+bool UBDocumentController::pageCanBeStuckOnPreviousViews(int page)
+{
+    if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool())
+        return page != 0;
+    else
+        return true;
+}
+
+
 void UBDocumentController::setDocument(UBDocumentProxy *document, bool forceReload)
 {
     UBDocumentContainer::setDocument(document, forceReload);

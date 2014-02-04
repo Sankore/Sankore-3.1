@@ -330,6 +330,7 @@ class UBDocumentController : public UBDocumentContainer
         bool pageCanBeMovedDown(int page);
         bool pageCanBeDuplicated(int page);
         bool pageCanBeDeleted(int page);
+        bool pageCanBeStuckOnPreviousViews(int page);
         QString documentTrashGroupName(){ return mDocumentTrashGroupName;}
         QString defaultDocumentGroupName(){ return mDefaultDocumentGroupName;}
 

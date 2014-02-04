@@ -82,6 +82,7 @@ UBApplicationController::UBApplicationController(UBBoardView *pControlView,
     , mCheckingForUpdates(false)
     , mIsShowingDesktop(false)
     , mHttp(0)
+    , mUserSceneIndex(-1)
 {
     mDisplayManager = new UBDisplayManager(this);
 
@@ -240,10 +241,19 @@ void UBApplicationController::adjustDisplayView()
     }
 }
 
+void UBApplicationController::setUserSceneIndex(int index) {
+    mUserSceneIndex = index;
+    
+}
 
 void UBApplicationController::adjustPreviousViews(int pActiveSceneIndex, UBDocumentProxy *pActiveDocument)
 {
-    int viewIndex = pActiveSceneIndex;
+    qDebug() << "adjustPreviousViews(pActiveSceneIndex=" << pActiveSceneIndex << ")";
+    int viewIndex;
+    if (mUserSceneIndex == -1)
+        viewIndex = pActiveSceneIndex;
+    else
+        viewIndex = mUserSceneIndex + 1;
 
     foreach(UBBoardView* previousView, mPreviousViews)
     {
