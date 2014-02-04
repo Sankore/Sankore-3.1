@@ -32,8 +32,9 @@ class UBShapesPalette : public UBAbstractSubPalette
 
     public:
         UBShapesPalette(Qt::Orientation orient, QWidget *parent = 0 );
-
         virtual ~UBShapesPalette();
+
+        void triggerAction(QAction *action);
 
     private slots:
         void buttonClicked();

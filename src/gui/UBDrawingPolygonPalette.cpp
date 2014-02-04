@@ -61,15 +61,7 @@ void UBDrawingPolygonPalette::buttonClicked()
 
         if (action)
         {
-            if (action == UBApplication::mainWindow->actionPolygon){
-                UBApplication::boardController->shapeFactory().createPolygon(true);
-            }
-            else if (action == UBApplication::mainWindow->actionSmartLine){
-                UBApplication::boardController->shapeFactory().createLine(true);
-            }
-            else if (action == UBApplication::mainWindow->actionSmartPen){
-                UBApplication::boardController->shapeFactory().createPen(true);
-            }
+            triggerAction(action);
 
             // Change the Action shown in the DrawingPalette :
             foreach (QAction* a, actionPaletteButtonParent()->actions()) {
@@ -82,3 +74,20 @@ void UBDrawingPolygonPalette::buttonClicked()
     hide();
 }
 
+
+
+void UBDrawingPolygonPalette::triggerAction(QAction *action)
+{
+    if (action)
+    {
+        if (action == UBApplication::mainWindow->actionPolygon){
+            UBApplication::boardController->shapeFactory().createPolygon(true);
+        }
+        else if (action == UBApplication::mainWindow->actionSmartLine){
+            UBApplication::boardController->shapeFactory().createLine(true);
+        }
+        else if (action == UBApplication::mainWindow->actionSmartPen){
+            UBApplication::boardController->shapeFactory().createPen(true);
+        }
+    }
+}

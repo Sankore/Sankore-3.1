@@ -118,24 +118,7 @@ void UBRegularShapesPalette::buttonClicked()
 
         if (action)
         {
-            if (action == UBApplication::mainWindow->actionRegularTriangle){
-                UBApplication::boardController->shapeFactory().createRegularPolygon(Triangle);
-            }
-            else if (action == UBApplication::mainWindow->actionRegularSquare){
-                UBApplication::boardController->shapeFactory().createRegularPolygon(Carre);
-            }
-            else if (action == UBApplication::mainWindow->actionRegularPentagone){
-                UBApplication::boardController->shapeFactory().createRegularPolygon(Pentagone);
-            }
-            else if (action == UBApplication::mainWindow->actionRegularHexagone){
-                UBApplication::boardController->shapeFactory().createRegularPolygon(Hexagone);
-            }
-            else if (action == UBApplication::mainWindow->actionRegularHeptagone){
-                UBApplication::boardController->shapeFactory().createRegularPolygon(Heptagone);
-            }
-            else if (action == UBApplication::mainWindow->actionRegularOctogone){
-                UBApplication::boardController->shapeFactory().createRegularPolygon(Octogone);
-            }
+            triggerAction(action);
 
             // Change the Action shown in the DrawingPalette :
             foreach (QAction* a, actionPaletteButtonParent()->actions()) {
@@ -146,4 +129,30 @@ void UBRegularShapesPalette::buttonClicked()
     }
 
     hide();
+}
+
+
+void UBRegularShapesPalette::triggerAction(QAction *action)
+{
+    if (action)
+    {
+        if (action == UBApplication::mainWindow->actionRegularTriangle){
+            UBApplication::boardController->shapeFactory().createRegularPolygon(Triangle);
+        }
+        else if (action == UBApplication::mainWindow->actionRegularSquare){
+            UBApplication::boardController->shapeFactory().createRegularPolygon(Carre);
+        }
+        else if (action == UBApplication::mainWindow->actionRegularPentagone){
+            UBApplication::boardController->shapeFactory().createRegularPolygon(Pentagone);
+        }
+        else if (action == UBApplication::mainWindow->actionRegularHexagone){
+            UBApplication::boardController->shapeFactory().createRegularPolygon(Hexagone);
+        }
+        else if (action == UBApplication::mainWindow->actionRegularHeptagone){
+            UBApplication::boardController->shapeFactory().createRegularPolygon(Heptagone);
+        }
+        else if (action == UBApplication::mainWindow->actionRegularOctogone){
+            UBApplication::boardController->shapeFactory().createRegularPolygon(Octogone);
+        }
+    }
 }

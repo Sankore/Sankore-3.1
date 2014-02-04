@@ -45,9 +45,10 @@ class UBRegularShapesPalette : public UBAbstractSubPalette
         UBRegularShapesPalette(Qt::Orientation orient, QWidget *parent = 0 );
 
         virtual ~UBRegularShapesPalette();
+        virtual void triggerAction(QAction *action);
+
     private slots:
         void buttonClicked();
-
 };
 
 #endif // UBREGULARSHAPESPALETTE_H

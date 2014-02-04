@@ -85,28 +85,36 @@ void UBShapesPalette::buttonClicked()
 
         if (action)
         {
-            if (action == UBApplication::mainWindow->actionEllipse){
-                UBApplication::boardController->shapeFactory().createEllipse(true);
-            }
-            else if (action == UBApplication::mainWindow->actionCircle){
-                UBApplication::boardController->shapeFactory().createCircle(true);
-            }
-            else if (action == UBApplication::mainWindow->actionRectangle){
-                UBApplication::boardController->shapeFactory().createRectangle(true);
-            }
-            else if (action == UBApplication::mainWindow->actionSquare){
-                UBApplication::boardController->shapeFactory().createSquare(true);
-            }
+            triggerAction(action);
 
             // Change the Action shown in the DrawingPalette :
             foreach (QAction* a, actionPaletteButtonParent()->actions()) {
                 actionPaletteButtonParent()->removeAction(a); // Remove all older actions, in order to let only one action associated to the button.
             }
             actionPaletteButtonParent()->setDefaultAction(action); // Associate the new Action to the Button.
-        }
+        } 
     }
 
     hide();
+}
+
+void UBShapesPalette::triggerAction(QAction* action)
+{
+    if (action)
+    {
+        if (action == UBApplication::mainWindow->actionEllipse){
+            UBApplication::boardController->shapeFactory().createEllipse(true);
+        }
+        else if (action == UBApplication::mainWindow->actionCircle){
+            UBApplication::boardController->shapeFactory().createCircle(true);
+        }
+        else if (action == UBApplication::mainWindow->actionRectangle){
+            UBApplication::boardController->shapeFactory().createRectangle(true);
+        }
+        else if (action == UBApplication::mainWindow->actionSquare){
+            UBApplication::boardController->shapeFactory().createSquare(true);
+        }
+    }
 }
 
 

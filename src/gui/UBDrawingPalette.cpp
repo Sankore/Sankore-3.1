@@ -119,6 +119,7 @@ void UBDrawingPalette::buttonClicked()
         {
             initSubPalettesPosition();
             subPalette->togglePalette(); // Show palette
+            subPalette->triggerAction(button->defaultAction());
         }
         else
         {

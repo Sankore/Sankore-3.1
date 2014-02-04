@@ -16,6 +16,8 @@ class UBAbstractSubPalette : public UBActionPalette
         UBActionPaletteButton * actionPaletteButtonParent() const {return mActionPaletteButtonParent;}
         void setActionPaletteButtonParent(UBActionPaletteButton * button){mActionPaletteButtonParent = button;}
 
+        virtual void triggerAction(QAction * action);
+
     protected :
         int mMainAction;
 

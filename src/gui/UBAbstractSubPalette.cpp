@@ -58,6 +58,10 @@ void UBAbstractSubPalette::togglePalette()
     setFocus(); // explicitely give focus to the subPalette, to detect when it loses focus, and then hide it .
 }
 
+void UBAbstractSubPalette::triggerAction(QAction *action)
+{
+    // NOOP
+}
 
 void UBAbstractSubPalette::focusOutEvent(QFocusEvent *)
 {
