@@ -1347,8 +1347,12 @@ void UBSettings::cleanNonPersistentSettings()
         communityUser->set(QVariant(""));
     }
 
-    if(!youTubeCredentialsPersistence->get().toBool()){
-        removePassword(youTubeUserEMail->get().toString());
+    if(!youTubeCredentialsPersistence->get().toBool())
+    {
+        if ( ! youTubeUserEMail->get().toString().isEmpty()) // ALTI/AOU - 20140204 : remove only the Youtube credentials if existing, and not the whole "Vault" section.
+        {
+            removePassword(youTubeUserEMail->get().toString());
+        }
         youTubeUserEMail->set(QVariant(""));
     }
 }
