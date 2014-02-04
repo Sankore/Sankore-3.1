@@ -34,7 +34,7 @@ protected:
         static const QString styleSheetRightGroupedButton;
 };
 
-class UBColorPickerButton : public QPushButton
+class UBColorPickerButton : public QToolButton
 {
     public:
         UBColorPickerButton(QWidget * parent = 0);
@@ -52,7 +52,7 @@ class UBColorPickerButton : public QPushButton
         QColor mColor;
 
         static const int margin_left = 5;
-        static const int margin_top = 2;
+        static const int margin_top = 10;
         static const int width = 27;
         static const int height = 20;
 };
