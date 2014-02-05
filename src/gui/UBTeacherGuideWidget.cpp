@@ -681,8 +681,14 @@ void UBTeacherGuidePresentationWidget::onAddItemClicked(QTreeWidgetItem* widget,
             {
                 UBApplication::showMessage(tr("File not found"));
             }
-            else if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
-                UBApplication::showMessage(tr("No application was found to handle this file type"));
+            else
+            {
+                QCursor oldCursor = cursor();
+                setCursor(Qt::WaitCursor);
+                if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
+                    UBApplication::showMessage(tr("No application was found to handle this file type"));
+                }
+                setCursor(oldCursor);
             }
             break;
         }
@@ -1537,8 +1543,14 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
             {
                 UBApplication::showMessage(tr("File not found"));
             }
-            else if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
-                UBApplication::showMessage(tr("No application was found to handle this file type"));
+            else
+            {
+                QCursor oldCursor = cursor();
+                setCursor(Qt::WaitCursor);
+                if ( ! QDesktopServices::openUrl(QUrl("file:///" + fullPathFile)) ){
+                    UBApplication::showMessage(tr("No application was found to handle this file type"));
+                }
+                setCursor(oldCursor);
             }
             break;
         }
