@@ -25,7 +25,9 @@
 #include <QGraphicsLineItem>
 #include "UBShape.h"
 
-class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape
+#include "UBEditable.h"
+
+class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape, public UBEditable
 {
     public:
         UBGraphicsLineItem(QGraphicsItem* parent = 0);
@@ -51,17 +53,22 @@ class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape
         // QGraphicsItem interface
         virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
+        void updateHandle(UBAbstractHandle *handle);
 
+        QRectF boundingRect() const;
+        QPainterPath shape() const;
     protected:
         // QGraphicsItem interface
         QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
         void mousePressEvent(QGraphicsSceneMouseEvent * event);
-        void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+        void focusOutEvent(QFocusEvent *event);
 
     private:
         QPointF mStartPoint;
         QPointF mEndPoint;
+
+        int mMultiClickState;
 };
 
 #endif // UBGRAPHICSLINEITEM_H

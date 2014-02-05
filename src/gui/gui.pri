@@ -53,6 +53,7 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBDrawingStrokePropertiesPalette.h \
     src/gui/UBDrawingFillPropertiesPalette.h \
     src/gui/UBRegularShapesPalette.h
+
 SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBFloatingPalette.cpp \
     src/gui/UBToolbarButtonGroup.cpp \

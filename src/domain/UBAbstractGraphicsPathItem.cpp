@@ -17,6 +17,7 @@ UBAbstractGraphicsPathItem::UBAbstractGraphicsPathItem(QGraphicsItem *parent):
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+    setFlag(QGraphicsItem::ItemIsFocusable, true);
 }
 
 void UBAbstractGraphicsPathItem::setUuid(const QUuid &pUuid)
@@ -30,7 +31,7 @@ QVariant UBAbstractGraphicsPathItem::itemChange(GraphicsItemChange change, const
     QVariant newValue = value;
 
     if(Delegate())
-        newValue = Delegate()->itemChange(change, value);
+        newValue = Delegate()->itemChange(change, value);    
 
     return QGraphicsPathItem::itemChange(change, newValue);
 }

@@ -449,6 +449,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                         pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateCurrentShape());
                         mBoardView->scene()->addItem(pathItem);
                     }
+
                     pathItem->addPoint(cursorPosition);
 
                     mBoundingRect = pathItem->boundingRect();

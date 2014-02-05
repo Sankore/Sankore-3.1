@@ -26,8 +26,9 @@
 
 #include <QGraphicsEllipseItem>
 #include "UBShape.h"
+#include "UB3HandlesEditable.h"
 
-class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape
+class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape, public UB3HandlesEditable
 {
 public:
     UBGraphicsEllipseItem(QGraphicsItem* parent = 0);
@@ -47,10 +48,18 @@ public:
 
     void setAsCircle(){
         mIsCircle = true;
+
+        horizontalHandle()->setParentItem(0);
+        verticalHandle()->setParentItem(0);
+        diagonalHandle()->setParentItem(this);
     }
 
     void setAsEllipse(){
         mIsCircle = false;
+
+        horizontalHandle()->setParentItem(this);
+        verticalHandle()->setParentItem(this);
+        diagonalHandle()->setParentItem(this);
     }
 
     void setRect(const QRectF &rect);
@@ -61,16 +70,20 @@ public:
     // QGraphicsItem interface
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
+    void updateHandle(UBAbstractHandle *handle);
+    virtual QRectF boundingRect() const;
+    QPainterPath shape() const;
 
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void focusOutEvent(QFocusEvent *event);
+
 private:
     bool mIsCircle;
-public:
-    virtual QRectF boundingRect() const;
+    int mMultiClickState;    
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H

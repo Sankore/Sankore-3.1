@@ -25,6 +25,12 @@
 #include "UBGraphicsDelegateFrame.h"
 
 #include "board/UBDrawingController.h"
+#include "UBFreeHandle.h"
+
+#include "core/UBApplication.h"
+#include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
+#include "domain/UBGraphicsScene.h"
 
 UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     : QGraphicsLineItem(parent)
@@ -33,6 +39,8 @@ UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     // Line has Stroke and Fill capabilities :
     initializeStrokeProperty();
     initializeFillingProperty();
+
+    mMultiClickState = 0;
 
     setDelegate(new UBGraphicsItemDelegate(this, 0));
     Delegate()->init();
@@ -46,6 +54,24 @@ UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+    setFlag(QGraphicsItem::ItemIsFocusable, true);
+
+    UBFreeHandle *startHandle = new UBFreeHandle;
+    UBFreeHandle *endHandle = new UBFreeHandle;
+
+    endHandle->setId(1);
+
+    startHandle->setParentItem(this);
+    endHandle->setParentItem(this);
+
+    startHandle->setEditableObject(this);
+    endHandle->setEditableObject(this);
+
+    startHandle->hide();
+    endHandle->hide();
+
+    mHandles.push_back(startHandle);
+    mHandles.push_back(endHandle);
 }
 
 UBGraphicsLineItem::~UBGraphicsLineItem()
@@ -100,6 +126,14 @@ void UBGraphicsLineItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
+
+        for(int i = 0; i < mHandles.size(); i++){
+            UBFreeHandle *handle = new UBFreeHandle(dynamic_cast<UBFreeHandle*>(mHandles.at(i)));
+            cp->mHandles.push_back(handle);
+            UBApplication::boardController->controlView()->scene()->addItem(handle);
+            handle->setParentItem(cp);
+            handle->setEditableObject(cp);
+        }
     }
 }
 
@@ -151,19 +185,67 @@ QVariant UBGraphicsLineItem::itemChange(GraphicsItemChange change, const QVarian
 
 void UBGraphicsLineItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
-    Delegate()->mousePressEvent(event);
+    mMultiClickState++;
+
+    QGraphicsLineItem::mousePressEvent(event);
+
+    if(mMultiClickState == 2){
+        mHandles.at(0)->setPos(mStartPoint);
+        mHandles.at(1)->setPos(mEndPoint);
+
+        setFlag(QGraphicsItem::ItemIsSelectable, false);
+        setFlag(QGraphicsItem::ItemIsMovable, false);
+
+        Delegate()->showFrame(false);
+        setFocus();
+        showEditMode(true);
+    }
 }
 
-void UBGraphicsLineItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+void UBGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
 {
-    if (Delegate()->mouseMoveEvent(event))
-    {
-
+    if(handle->getId() == 0){
+        mStartPoint = handle->pos();
+    }else if(handle->getId() == 1){
+        mEndPoint = handle->pos();
     }
-    else
-    {
-        QGraphicsLineItem::mouseMoveEvent(event);
+
+    setLine(QLineF(mStartPoint, mEndPoint));
+}
+
+void UBGraphicsLineItem::focusOutEvent(QFocusEvent *event)
+{
+    Q_UNUSED(event)
+
+    if(mMultiClickState > 1){
+        mMultiClickState = 0;
+        setFlag(QGraphicsItem::ItemIsSelectable, true);
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        showEditMode(false);
     }
 }
 
+QRectF UBGraphicsLineItem::boundingRect() const
+{
+    QRectF rect = QGraphicsLineItem::boundingRect();
 
+    int thickness = strokeProperty()->width();
+    rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
+
+    if(mMultiClickState >= 2){
+        qreal r = mHandles.first()->radius();
+
+        rect.adjust(-r, -r, r, r);
+    }
+
+    return rect;
+}
+
+QPainterPath UBGraphicsLineItem::shape() const
+{
+    QPainterPath path;
+
+    path.addRect(boundingRect());
+
+    return path;
+}

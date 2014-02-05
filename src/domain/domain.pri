@@ -33,7 +33,16 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBGraphicsLineItem.h \
     src/domain/UBGraphicsRegularPathItem.h \
     src/domain/UBGraphicsFreehandItem.h \
-    src/domain/UBAbstractGraphicsPathItem.h
+    src/domain/UBAbstractGraphicsPathItem.h \
+    src/domain/UBEditable.h \
+    src/domain/UBAbstractHandle.h \
+    src/domain/UBDiagonalHandle.h \
+    src/domain/UBFreeHandle.h \
+    src/domain/UB1HandleEditable.h \
+    src/domain/UBHorizontalHandle.h \
+    src/domain/UBVerticalHandle.h \
+    src/domain/UB2HandlesEditable.h \
+    src/domain/UB3HandlesEditable.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
@@ -71,4 +80,13 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsLineItem.cpp \
     src/domain/UBGraphicsRegularPathItem.cpp \
     src/domain/UBGraphicsFreehandItem.cpp \
-    src/domain/UBAbstractGraphicsPathItem.cpp
+    src/domain/UBAbstractGraphicsPathItem.cpp \
+    src/domain/UBAbstractHandle.cpp \
+    src/domain/UBEditable.cpp \
+    src/domain/UBDiagonalHandle.cpp \
+    src/domain/UBFreeHandle.cpp \
+    src/domain/UB1HandleEditable.cpp \
+    src/domain/UBHorizontalHandle.cpp \
+    src/domain/UBVerticalHandle.cpp \
+    src/domain/UB2HandlesEditable.cpp \
+    src/domain/UB3HandlesEditable.cpp

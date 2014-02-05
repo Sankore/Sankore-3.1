@@ -555,6 +555,20 @@ void UBGraphicsItemDelegate::showHide(bool show)
     emit showOnDisplayChanged(show);
 }
 
+void UBGraphicsItemDelegate::showFrame(bool show)
+{
+    if(!show){
+        mFrame->hide();
+        for(int i = 0; i < mButtons.size(); i++){
+            mButtons.at(i)->hide();
+        }
+    }else{
+        mFrame->show();
+        for(int i = 0; i < mButtons.size(); i++){
+            mButtons.at(i)->show();
+        }
+    }
+}
 
 void UBGraphicsItemDelegate::gotoContentSource()
 {

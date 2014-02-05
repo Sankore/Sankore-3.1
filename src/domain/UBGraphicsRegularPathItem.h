@@ -23,8 +23,9 @@
 #define UBGRAPHICSREGULARSHAPES_H
 
 #include "UBAbstractGraphicsPathItem.h"
+#include "UB1HandleEditable.h"
 
-class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem
+class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1HandleEditable
 {
     public:
 
@@ -57,15 +58,30 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem
 
         QRectF boundingRect() const;
 
+        QPainterPath shape() const;
+
         inline const int nVertices() const { return mNVertices; }
         inline const QPointF& startPoint() const { return mStartPoint; }
 
-    private:      
-        int mNVertices;
-        QList<QPair<double, double> > mVertices;
-        QPointF mStartPoint;
+        void updateHandle(UBAbstractHandle *handle);
 
-        const int HANDLE_SIZE; // in pixels
+        //used to zoom the form with he handle
+        void redim(float size);
+
+protected:
+    void focusOutEvent(QFocusEvent *event);
+
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+
+private:
+    int mMultiClickState;
+    int mNVertices;
+    QList<QPair<double, double> > mVertices;
+    QPointF mStartPoint;
+
+    //for the circumscribed circle
+    QPointF mCenter;
+    qreal mRadius;
 };
 
 #endif // UBGRAPHICSREGULARSHAPES_H

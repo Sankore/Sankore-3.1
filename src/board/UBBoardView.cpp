@@ -557,8 +557,7 @@ Here we determines cases when items should to get mouse press event at pressing 
 
     //EV-7 - NNE - 20140103
     if(UBShapeFactory::isShape(item)){
-        if(currentTool == UBStylusTool::Play)
-            return true;
+        return true;
     }
 
     switch(item->type())
@@ -629,6 +628,8 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         return false;
         break;
+    case UBGraphicsItemType::GraphicsHandle:
+        return true;
 
     }
 
@@ -836,6 +837,8 @@ void UBBoardView::handleItemMousePress(QMouseEvent *event)
                 graphicsItem->Delegate()->startUndoStep();
 
             movingItem->clearFocus();
+            qDebug() << movingItem;
+            qDebug() << movingItem->type();
         }
 
         if (suspendedMousePressEvent)
@@ -1039,6 +1042,9 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
     }
 
     mMouseDownPos = event->pos ();
+
+    qDebug() << scene();
+    qDebug() << event;
 
     movingItem = scene()->itemAt(this->mapToScene(event->posF().toPoint()));
 

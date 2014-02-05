@@ -2,8 +2,9 @@
 #define UBGRAPHICSPATHITEM_H
 
 #include "UBAbstractGraphicsPathItem.h"
+#include "UBEditable.h"
 
-class UBGraphicsPathItem : public UBAbstractGraphicsPathItem
+class UBGraphicsPathItem : public UBAbstractGraphicsPathItem, public UBEditable
 {
 public:
     UBGraphicsPathItem(QGraphicsItem* parent = 0);
@@ -24,10 +25,22 @@ public:
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
     QRectF boundingRect() const;
+    QPainterPath shape() const;
+
+    virtual void updateHandle(UBAbstractHandle *handle);
+
+protected:
+    void focusOutEvent(QFocusEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+
 private:
     bool mClosed;
 
-    const int HANDLE_SIZE; // in pixels
+    int mMultiClickState;
+
+    QPointF mStartEndPoint[2];
+
+    int HANDLE_SIZE; //in pixel
 };
 
 #endif // UBGRAPHICSPATHITEM_H

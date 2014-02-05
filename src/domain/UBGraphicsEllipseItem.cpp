@@ -28,13 +28,25 @@
 
 #include "board/UBDrawingController.h"
 
+#include "UBHorizontalHandle.h"
+#include "UBVerticalHandle.h"
+#include "UBDiagonalHandle.h"
+
+#include "core/UBApplication.h"
+#include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
+#include "domain/UBGraphicsScene.h"
+
 UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     : QGraphicsEllipseItem(parent)
     , UBShape()
+    , UB3HandlesEditable()
 {
     // Ellipse has Stroke and Fill capabilities :
     initializeStrokeProperty();
     initializeFillingProperty();
+
+    mMultiClickState = 0;
 
     //By default, an ellipse isn't a circle
     mIsCircle = false;
@@ -43,7 +55,7 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(true);
+    Delegate()->setCanTrigAnAction(true);    
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
@@ -51,6 +63,11 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemIsMovable, true);
+    setFlag(QGraphicsItem::ItemIsFocusable, true);
+
+    horizontalHandle()->setParentItem(this);
+    verticalHandle()->setParentItem(this);
+    diagonalHandle()->setParentItem(this);
 }
 
 UBGraphicsEllipseItem::~UBGraphicsEllipseItem()
@@ -104,6 +121,19 @@ void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
             }
             else
                 cp->Delegate()->setAction(Delegate()->action());
+        }
+
+        //be careful of pushing the handles in the correct order (horizontal, vertical then diagonal)
+        cp->mHandles.push_back(new UBHorizontalHandle(dynamic_cast<UBHorizontalHandle*>(horizontalHandle())));
+        cp->mHandles.push_back(new UBVerticalHandle(dynamic_cast<UBVerticalHandle*>(verticalHandle())));
+        cp->mHandles.push_back(new UBDiagonalHandle(dynamic_cast<UBDiagonalHandle*>(diagonalHandle())));
+
+
+        for(int i = 0; i < cp->mHandles.size(); i++){
+            UBAbstractHandle *handle = cp->mHandles.at(i);
+            UBApplication::boardController->controlView()->scene()->addItem(handle);
+            handle->setParentItem(cp);
+            handle->setEditableObject(cp);
         }
     }
 }
@@ -186,26 +216,93 @@ void UBGraphicsEllipseItem::setRect(const QRectF &rect)
 
 QRectF UBGraphicsEllipseItem::boundingRect() const
 {
-    QRectF retour = QGraphicsEllipseItem::boundingRect();
+    QRectF rect = QGraphicsEllipseItem::boundingRect();
 
     if (strokeProperty())
     {
         int thickness = strokeProperty()->width();
-        retour.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
+        rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
     }
 
-    return retour;
+    if(mMultiClickState >= 2){
+        qreal r = horizontalHandle()->radius();
+
+        rect.adjust(-r, -r, r, r);
+    }
+
+    return rect;
 }
-
-
-void UBGraphicsEllipseItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
-{
-    Delegate()->mouseReleaseEvent(event);
-    QGraphicsEllipseItem::mouseReleaseEvent(event);
-}
-
 
 void UBGraphicsEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    Delegate()->mousePressEvent(event);
+    mMultiClickState++;
+
+    QGraphicsEllipseItem::mousePressEvent(event);
+
+    if(mMultiClickState == 2){
+        QRectF rectangle = rect();
+        QPointF bottomRight = rectangle.bottomRight();
+
+        horizontalHandle()->setPos(bottomRight.x(), rectangle.y() + rectangle.height()/2);
+        verticalHandle()->setPos(rectangle.x() + rectangle.width()/2, bottomRight.y());
+        diagonalHandle()->setPos(bottomRight.x(), bottomRight.y());
+
+        setFlag(QGraphicsItem::ItemIsSelectable, false);
+        setFlag(QGraphicsItem::ItemIsMovable, false);
+
+        Delegate()->showFrame(false);
+        setFocus();
+        showEditMode(true);
+    }
 }
+
+void UBGraphicsEllipseItem::focusOutEvent(QFocusEvent *event)
+{
+    if(mMultiClickState > 1){
+        mMultiClickState = 0;
+        setFlag(QGraphicsItem::ItemIsSelectable, true);
+        setFlag(QGraphicsItem::ItemIsMovable, true);
+        showEditMode(false);
+    }
+}
+
+void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
+{
+    QRectF newRect = rect();
+
+    if(handle->getId() == 1){
+        //it's the vertical handle
+        newRect.setBottom(handle->pos().y());
+
+        horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
+
+        diagonalHandle()->setPos(newRect.bottomRight().x(), newRect.bottomRight().y());
+    }else if(handle->getId() == 0){
+        //it's the horizontal handle
+        newRect.setRight(handle->pos().x());
+
+        verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
+
+        diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
+    }else{
+        //it's the diagonal handle
+        newRect.setRight(handle->pos().x());
+        newRect.setBottom(handle->pos().y());
+
+        verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y());
+
+        horizontalHandle()->setPos(newRect.bottomRight().x() , newRect.y() + newRect.height()/2);
+    }
+
+    setRect(newRect);
+}
+
+QPainterPath UBGraphicsEllipseItem::shape() const
+{
+    QPainterPath path;
+
+    path.addRect(boundingRect());
+
+    return path;
+}
+

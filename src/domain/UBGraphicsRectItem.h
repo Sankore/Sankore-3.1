@@ -25,7 +25,9 @@
 #include <QGraphicsRectItem>
 #include "UBShape.h"
 
-class UBGraphicsRectItem : public QGraphicsRectItem, public UBShape
+#include "UB3HandlesEditable.h"
+
+class UBGraphicsRectItem : public QGraphicsRectItem, public UBShape, public UB3HandlesEditable
 {
 public:
     UBGraphicsRectItem(QGraphicsItem* parent = 0);
@@ -43,11 +45,20 @@ public:
     void setAsSquare()
     {
         mIsSquare = true;
+
+
+        horizontalHandle()->setParentItem(0);
+        verticalHandle()->setParentItem(0);
+        diagonalHandle()->setParentItem(this);
     }
 
     void setAsRectangle()
     {
         mIsSquare = false;
+
+        horizontalHandle()->setParentItem(this);
+        verticalHandle()->setParentItem(this);
+        diagonalHandle()->setParentItem(this);
     }
 
     void setRect(const QRectF &rect);
@@ -58,18 +69,22 @@ public:
     // QGraphicsItem interface
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
+    void updateHandle(UBAbstractHandle *handle);
+
+    virtual QRectF boundingRect() const;
+    QPainterPath shape() const;
 
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void focusOutEvent(QFocusEvent *event);
 
 private:
     bool mIsSquare;
 
-public:
-    virtual QRectF boundingRect() const;
+    int mMultiClickState;
 };
 
 #endif // UBGRAPHICSRECTITEM_H

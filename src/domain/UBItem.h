@@ -104,7 +104,7 @@ protected:
         // NOOP
     }
     virtual ~UBGraphicsItem();
-    void setDelegate(UBGraphicsItemDelegate* mDelegate);
+    void setDelegate(UBGraphicsItemDelegate* mDelegate);    
 
 public:
 
