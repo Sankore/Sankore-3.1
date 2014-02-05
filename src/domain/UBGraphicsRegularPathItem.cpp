@@ -210,40 +210,7 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
 
 void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
 {
-    QPointF p = handle->pos();
-/*
-    //We have to offset the given posisition to updatePath
-    QPointF diff(p - mStartPoint);
-
-    if (diff.x() < 0)
-        diff.setX(-diff.x());
-    if (diff.y() < 0)
-        diff.setY(-diff.y());
-
-    qreal diffMin = qMin(diff.x(),diff.y());
-    qreal r = getHandle()->radius();
-
-    qreal dist = sqrt(2*diffMin*diffMin) - diffMin;
-
-    qreal offset = dist - r;
-
-    if(hasStrokeProperty())
-        dist -= strokeProperty()->width();
-
-    updatePath(QPointF(p.x() + offset, p.y() + offset));
-*/
-    QPointF diff = p - boundingRect().topLeft();
-
-    if (diff.x() < 0)
-        diff.setX(-diff.x());
-    if (diff.y() < 0)
-        diff.setY(-diff.y());
-
-    qreal diffMin = qMin(diff.x(),diff.y());
-
-    updatePath(QPointF(p.x() - getHandle()->radius(), p.y() -
-                       getHandle()->radius()));
-    //handle->setPos(boundingRect().bottomRight().x() - r, boundingRect().bottomRight().y() - r);
+    updatePath(handle->pos());
 }
 
 void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -284,67 +251,4 @@ QPainterPath UBGraphicsRegularPathItem::shape() const
     QPainterPath path;
     path.addRect(boundingRect());
     return path;
-}
-
-void UBGraphicsRegularPathItem::redim(float size)
-{
-    qreal radius = size/2;
-
-    QPointF center(radius, radius);
-
-    //center += this->boundingRect().topLeft();
-
-    QPainterPath path;
-
-    /*
-
-    QPointF diff2 = this->boundingRect().topLeft() - getHandle()->pos();
-
-    qreal r = qMin(diff2.x(), diff2.y());
-
-    */
-
-    /*
-    qreal remaining = (sqrt(diff2.x()*diff2.x() + diff2.y()*diff2.y()) - r);
-
-    radius = (r + remaining)/2;
-    */
-
-    //radius = r / 2;// - getHandle()->radius() / 2;
-
-    QPointF vertice(mVertices.at(0).first, mVertices.at(0).second);
-    QPointF currentPoint = center - vertice*radius;
-    QPointF firstPoint = currentPoint;
-
-    path.moveTo(currentPoint);
-
-    for (int i = 1; i < mNVertices; i++){
-        vertice = QPointF(mVertices.at(i).first, mVertices.at(i).second);
-        currentPoint = center - vertice*radius;
-        path.lineTo(currentPoint);
-    }
-
-    path.lineTo(firstPoint);
-/*
-    QPointF diff = this->path().boundingRect().topLeft() - path.boundingRect().topLeft();
-
-    QPainterPath cpath;
-
-    center += diff;
-
-    d_center = center;
-
-    vertice = QPointF(mVertices.at(0).first, mVertices.at(0).second);
-    firstPoint = vertice;
-
-    cpath.moveTo(center - vertice * radius);
-
-    for(int i = 1; i < mNVertices; i++){
-        vertice = QPointF(mVertices.at(i).first, mVertices.at(i).second);
-        cpath.lineTo(center - vertice * radius);
-    }
-
-    cpath.lineTo(center - firstPoint * radius);
-*/
-    setPath(path);
 }

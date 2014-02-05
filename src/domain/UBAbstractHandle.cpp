@@ -6,7 +6,7 @@ UBAbstractHandle::UBAbstractHandle()
 {
     mId = 0;
     mClick = false;
-    mRadius = 10;
+    mRadius = 7;
     mEditableObject = 0;
 
     //setUuid(QUuid::createUuid());
@@ -53,12 +53,6 @@ void UBAbstractHandle::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void UBAbstractHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QBrush brush;
-    brush.setStyle(Qt::SolidPattern);
-    brush.setColor(QColor(0,0,0));
-
-    painter->setBrush(brush);
-
     painter->drawEllipse(-mRadius, -mRadius, mRadius*2, mRadius*2);
 }
 
@@ -66,7 +60,6 @@ QRectF UBAbstractHandle::boundingRect() const
 {
     int d = mRadius*2, x = -mRadius;
     int y = x;
-
 
     return QRectF(x, y, d, d);
 }

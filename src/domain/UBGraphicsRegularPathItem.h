@@ -65,8 +65,25 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1H
 
         void updateHandle(UBAbstractHandle *handle);
 
-        //used to zoom the form with he handle
-        void redim(float size);
+        QPointF circumscribedCenterCircle() const
+        {
+            return mCenter;
+        }
+
+        qreal circumscribedRadiusCircle() const
+        {
+            return mRadius;
+        }
+
+        void setCircumscribedCenterCircle(const QPointF &center)
+        {
+            mCenter = center;
+        }
+
+        void setCircumscribedRadiusCircle(qreal radius)
+        {
+            mRadius = radius;
+        }
 
 protected:
     void focusOutEvent(QFocusEvent *event);
