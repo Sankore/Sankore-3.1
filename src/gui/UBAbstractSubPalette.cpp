@@ -74,7 +74,7 @@ void UBAbstractSubPalette::mouseMoveEvent(QMouseEvent *)
 }
 
 UBColorPickerButton::UBColorPickerButton(QWidget *parent)
-    :QPushButton(parent)
+    :QToolButton(parent)
 {
 }
 
