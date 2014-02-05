@@ -4,6 +4,7 @@
 #include "core/UBApplication.h"
 #include "adaptors/UBSvgSubsetAdaptor.h"
 #include "board/UBBoardController.h"
+#include "globals/UBGlobals.h"
 
 UBTeacherGuideResourceEditionWidget::UBTeacherGuideResourceEditionWidget(QWidget *parent, const char* name):
     QWidget(parent)
@@ -154,6 +155,20 @@ QVector<tUBGEElementNode*> UBTeacherGuideResourceEditionWidget::getData()
 {
     QVector<tUBGEElementNode*> result;
     QList<QTreeWidgetItem*> children;
+
+    // Remove empty ExternalFiles from Tree :
+    for(int i=0; i<mpAddAFileItem->childCount();)
+    {
+        QTreeWidgetItem* item = mpAddAFileItem->child(i);
+        UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidget->itemWidget(item, 0));
+        if (fileItem && fileItem->titreFichier().trimmed().isEmpty() && fileItem->path().isEmpty()){ // if no title nor file choosen ...
+            QTreeWidgetItem * itemtoBeDeleted = mpAddAFileItem->takeChild(i); // remove item from tree...
+            DELETEPTR(itemtoBeDeleted); // and destroy item.
+        }
+        else{
+            i++;
+        }
+    }
 
     children << getChildrenList(mpAddAMediaItem);
     children << getChildrenList(mpAddALinkItem);

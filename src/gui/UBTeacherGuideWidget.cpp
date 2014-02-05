@@ -330,6 +330,20 @@ QVector<tUBGEElementNode*> UBTeacherGuideEditionWidget::getPageAndCommentData()
 
 QVector<tUBGEElementNode*> UBTeacherGuideEditionWidget::getData()
 {
+    // Remove empty ExternalFiles from Tree :
+    for(int i=0; i<mpAddAFileItem->childCount();)
+    {
+        QTreeWidgetItem* item = mpAddAFileItem->child(i);
+        UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidget->itemWidget(item, 0));
+        if (fileItem && fileItem->titreFichier().trimmed().isEmpty() && fileItem->path().isEmpty()){ // if no title nor file choosen ...
+            QTreeWidgetItem * itemtoBeDeleted = mpAddAFileItem->takeChild(i); // remove item from tree...
+            DELETEPTR(itemtoBeDeleted); // and destroy item.
+        }
+        else{
+            i++;
+        }
+    }
+
     QVector<tUBGEElementNode*> result;
     QList<QTreeWidgetItem*> children = getChildrenList(mpAddAnActionItem);
     children += getChildrenList(mpAddALinkItem);
@@ -1295,7 +1309,7 @@ void UBTeacherGuidePageZeroWidget::switchToMode(tUBTGZeroPageMode mode)
         {
             QTreeWidgetItem* item = mpAddAFileItem->child(i);
             UBTGFileWidget* fileItem = dynamic_cast<UBTGFileWidget*>(mpTreeWidgetEdition->itemWidget(item, 0));
-            if (fileItem->titreFichier().trimmed().isEmpty() && fileItem->path().isEmpty()){ // if no title nor file choosen ...
+            if (fileItem && fileItem->titreFichier().trimmed().isEmpty() && fileItem->path().isEmpty()){ // if no title nor file choosen ...
                 QTreeWidgetItem * itemtoBeDeleted = mpAddAFileItem->takeChild(i); // remove item from tree...
                 DELETEPTR(itemtoBeDeleted); // and destroy item.
             }
