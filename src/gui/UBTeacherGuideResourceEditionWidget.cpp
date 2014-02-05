@@ -29,6 +29,7 @@ UBTeacherGuideResourceEditionWidget::UBTeacherGuideResourceEditionWidget(QWidget
     mpTreeWidget->header()->setResizeMode(1, QHeaderView::Fixed);
     mpTreeWidget->header()->setDefaultSectionSize(18);
     mpTreeWidget->setSelectionMode(QAbstractItemView::NoSelection);
+    mpTreeWidget->setExpandsOnDoubleClick(false);
 
     mpAddAMediaItem = new UBAddItem(tr("Add a media"), eUBTGAddSubItemWidgetType_Media, mpTreeWidget);
     mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
