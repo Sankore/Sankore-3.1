@@ -251,6 +251,10 @@ void UBTGAdaptableText::showText(const QString & text)
 void UBTGAdaptableText::bottomMargin(int newValue)
 {
     mBottomMargin = newValue;
+
+    mMinimumHeight = document()->size().height() + mBottomMargin;
+    setMinimumHeight(mMinimumHeight);
+
     onTextChanged();
 }
 
