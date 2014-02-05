@@ -68,7 +68,8 @@ enum UBFeatureElementType
     FEATURE_SEARCH,
     FEATURE_BOOKMARK,
     FEATURE_LINK,
-    FEATURE_INVALID
+    FEATURE_INVALID,
+    FEATURE_RTE
 };
 
 enum UBFeatureBackgroundDisposition
@@ -470,6 +471,7 @@ public:
 
     //issue 1474 - NNE - 20131119
     UBFeature getFeatureByPath(const QString &path) const;
+    UBFeature getFeatureByFullPath(const QString &path) const;
 
 };
 

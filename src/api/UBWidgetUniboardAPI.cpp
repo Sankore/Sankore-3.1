@@ -170,6 +170,50 @@ void UBWidgetUniboardAPI::setPenColor(const QString& penColor)
     }
 }
 
+void UBWidgetUniboardAPI::updateFontFamilyPreference(const QString& fontFamily)
+{
+    UBSettings::settings()->setFontFamily(fontFamily);
+}
+
+void UBWidgetUniboardAPI::updateFontSizePreference(const QString& fontSize)
+{
+    UBSettings::settings()->setFontPointSize(fontSize.toInt());
+}
+
+void UBWidgetUniboardAPI::updateFontBoldPreference()
+{
+    UBSettings::settings()->setBoldFont(!fontBoldPreference());
+}
+
+void UBWidgetUniboardAPI::updateFontItalicPreference()
+{
+    UBSettings::settings()->setItalicFont(!fontItalicPreference());
+}
+
+QString UBWidgetUniboardAPI::fontFamilyPreference()
+{
+    return UBSettings::settings()->fontFamily();
+}
+
+QString UBWidgetUniboardAPI::fontSizePreference()
+{
+    return QString::number(UBSettings::settings()->fontPointSize());
+}
+
+bool UBWidgetUniboardAPI::fontBoldPreference()
+{
+    return UBSettings::settings()->isBoldFont();
+}
+
+bool UBWidgetUniboardAPI::fontItalicPreference()
+{
+    return UBSettings::settings()->isItalicFont();
+}
+
+bool UBWidgetUniboardAPI::isDarkBackground()
+{
+    return UBApplication::boardController->activeScene()->isDarkBackground();
+}
 
 void UBWidgetUniboardAPI::setMarkerColor(const QString& penColor)
 {
@@ -347,6 +391,18 @@ void UBWidgetUniboardAPI::showMessage(const QString& message)
 {
     UBApplication::boardController->showMessage(message, false);
 }
+
+void UBWidgetUniboardAPI::loadUrl(const QString& url)
+{
+    UBApplication::loadUrl(url);
+}
+
+bool UBWidgetUniboardAPI::currentToolIsSelector()
+{
+    return ((UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector);
+}
+
+
 
 
 QString UBWidgetUniboardAPI::pageThumbnail(const int pageNumber)
@@ -551,9 +607,20 @@ void UBWidgetUniboardAPI::ProcessDropEvent(QGraphicsSceneDragDropEvent *event)
             }
         }
     }
-    qDebug() << destFileName;
+
     QString mimeText = createMimeText(downloaded, contentType, destFileName);
-    dropMimeData->setData(tMimeText, mimeText.toAscii());
+
+    // Ev-5.1 - CFA - 20140109 : correction drop RTE
+    UBFeaturesController* c = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController();
+    if (c->getFeatureByFullPath(mGraphicsWidget->sourceUrl().toLocalFile()).getType() != FEATURE_RTE)
+        dropMimeData->setData(tMimeText, mimeText.toAscii());
+
+    if (mGraphicsWidget->page() && mGraphicsWidget->page()->mainFrame()) {
+        mGraphicsWidget
+            ->page()
+            ->mainFrame()
+            ->evaluateJavaScript("if(widget && widget.ondrop) { widget.ondrop('" + destFileName + "', '" + contentType + "');}");
+    }
 
     event->setMimeData(dropMimeData);
 }

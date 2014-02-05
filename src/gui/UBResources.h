@@ -57,6 +57,7 @@ class UBResources : public QObject
          QCursor arrowCursor;
          QCursor playCursor;
          QCursor textCursor;
+         QCursor richTextCursor;
          QCursor rotateCursor;
 		 QCursor drawLineRulerCursor;
 };

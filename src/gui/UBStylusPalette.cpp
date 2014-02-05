@@ -56,6 +56,10 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionPointer;
     actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionText;
+
+    UBApplication::mainWindow->actionRichTextEditor->setEnabled(false);
+    actions << UBApplication::mainWindow->actionRichTextEditor;
+
     actions << UBApplication::mainWindow->actionCapture;
 
     if(UBPlatformUtils::hasVirtualKeyboard())
