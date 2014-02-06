@@ -122,6 +122,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
     public slots:
         void freeze();
         void unFreeze();
+        virtual void sendJSChangeBackgroundEvent();
     protected:
         enum OSType
         {
@@ -153,6 +154,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         virtual void dropEvent(QGraphicsSceneDragDropEvent *event);
         virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
         virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+        virtual void sendJSClickEvent();
         virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
         virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
         virtual void sendJSEnterEvent();
@@ -241,6 +243,7 @@ class UBGraphicsW3CWidgetItem : public UBGraphicsWidgetItem
         virtual void setUuid(const QUuid &pUuid);
         virtual UBItem* deepCopy() const;
         virtual void copyItemParameters(UBItem *copy) const;
+        QVariant itemChange(GraphicsItemChange change, const QVariant &value);
         QMap<QString, PreferenceValue> preferences();
         Metadata metadatas() const;
 

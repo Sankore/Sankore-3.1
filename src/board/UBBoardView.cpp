@@ -1117,6 +1117,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
                 event->accept ();
             }
         }
+        else if (currentTool == UBStylusTool::RichText)
+        {
+
+        }
         else if (currentTool == UBStylusTool::Capture)
         {
             scene ()->deselectAllItems ();
@@ -1406,6 +1410,18 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 
       mIsCreatingTextZone = false;
     }
+  else if (currentTool == UBStylusTool::RichText)
+  {
+      if (mRubberBand)
+        mRubberBand->hide ();
+
+       UBFeaturesController* c = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController();
+       UBFeature f = c->getFeatureByPath("/root/Applications/Texte Enrichi.wgt" );
+       UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+
+       UBDrawingController::drawingController ()->setStylusTool (UBStylusTool::Selector);
+
+  }
   else if (currentTool == UBStylusTool::Capture)
     {
       if (mRubberBand)
@@ -1755,6 +1771,9 @@ UBBoardView::setToolCursor (int tool)
       break;
     case UBStylusTool::Text:
       controlViewport->setCursor (UBResources::resources ()->textCursor);
+      break;
+    case UBStylusTool::RichText:
+      controlViewport->setCursor (UBResources::resources ()->richTextCursor);
       break;
     case UBStylusTool::Capture:
       controlViewport->setCursor (UBResources::resources ()->penCursor);

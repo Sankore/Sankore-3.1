@@ -66,13 +66,20 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
         }
 
         QString fullFileName = fileInfo->absoluteFilePath();
-        UBFeatureElementType featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
+        qDebug() << fullFileName;
+        UBFeatureElementType featureType;
+        if (fullFileName.contains("Texte Enrichi.wgt"))
+            featureType = FEATURE_RTE;
+        else
+            featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
+
         QString fileName = fileInfo->fileName();
 
         QImage icon = UBFeaturesController::getIcon(fullFileName, featureType);
 
         if ( fullFileName.contains(".thumbnail."))
             continue;
+
 
         //Testing exception permissions
         QString testVirtualPath = currVirtualPath + "/" + fileName;
@@ -1769,6 +1776,17 @@ UBFeature UBFeaturesController::getFeatureByPath(const QString &path) const
 {
     for(int i = 0; i < this->featuresList->size(); i++){
         if(this->featuresList->at(i).getFullVirtualPath() == path){
+            return this->featuresList->at(i);
+        }
+    }
+
+    return UBFeature();
+}
+
+UBFeature UBFeaturesController::getFeatureByFullPath(const QString &path) const
+{
+    for(int i = 0; i < this->featuresList->size(); i++){
+        if(this->featuresList->at(i).getFullPath().toLocalFile() == path){
             return this->featuresList->at(i);
         }
     }

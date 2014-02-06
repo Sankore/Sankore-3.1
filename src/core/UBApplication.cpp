@@ -733,6 +733,12 @@ QString UBApplication::urlFromHtml(QString html)
     return url;
 }
 
+void UBApplication::loadUrl(const QString &url)
+{
+    if (webController)
+        webController->loadUrl(url);
+}
+
 bool UBApplication::isFromWeb(QString url)
 {
     bool res = true;

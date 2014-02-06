@@ -64,6 +64,7 @@ struct UBStylusTool
         Pointer,
         Line,
         Text,
+        RichText,
         Capture
     };
 };

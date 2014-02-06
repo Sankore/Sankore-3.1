@@ -102,6 +102,7 @@ class UBDrawingController : public QObject
         void pointerToolSelected(bool checked);
         void lineToolSelected(bool checked);
         void textToolSelected(bool checked);
+        void richTextToolSelected(bool checked);
         void captureToolSelected(bool checked);
 };
 
