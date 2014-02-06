@@ -22,9 +22,11 @@
 
         del: function () {
             if (this.caret > 0) {
-                this.keystrokes.splice(this.caret - 1, 1);
+                var deleted = this.keystrokes.splice(this.caret - 1, 1)[0];
                 this.caret--;
                 this.notify();
+                
+                return deleted;
             }
         },
 

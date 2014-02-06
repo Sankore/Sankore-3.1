@@ -5,7 +5,8 @@
             new_name: 'New calculator'
         },
         text: {
-            del: 'DEL'  
+            del: 'DEL',
+            comma: '.'
         },
         command: {
             zero: '0 digit',

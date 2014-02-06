@@ -110,11 +110,14 @@
             this.layoutNameInput = document.createElement('input');
             this.layoutNameInput.setAttribute('name', 'layout_name');
             this.layoutNameInput.setAttribute('type', 'text');
+            this.layoutNameInput.setAttribute('maxlength', 20);
+            this.layoutNameInput.addEventListener('keyup', function (e) {
+                self.dispatcher.notify('editor_interface.layout_name_change', this.value);
+            });
             this.layoutNameInput.addEventListener('change', function (e) {
-                if (this.value.trim().length > 0) {
-                    self.dispatcher.notify('editor_interface.layout_name_change', this.value); 
-                } else {
+                if (this.value.trim().length === 0) {
                     this.value = self.editor.getCurrentLayout().name;
+                    self.dispatcher.notify('editor_interface.layout_name_change', this.value);
                 }
             });
             this.editArea.appendChild(this.layoutNameInput);
@@ -125,7 +128,8 @@
 
             this.layoutDescriptionInput = document.createElement('textarea');
             this.layoutDescriptionInput.setAttribute('name', 'layout_description');
-            this.layoutDescriptionInput.addEventListener('change', function(e) {
+            this.layoutDescriptionInput.setAttribute('maxlength', 140);
+            this.layoutDescriptionInput.addEventListener('keyup', function(e) {
                 self.dispatcher.notify('editor_interface.layout_description_change', this.value);
             });
             this.editArea.appendChild(this.layoutDescriptionInput);
