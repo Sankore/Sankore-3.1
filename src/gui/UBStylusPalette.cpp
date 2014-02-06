@@ -66,7 +66,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
         actions << UBApplication::mainWindow->actionVirtualKeyboard;
 
     setActions(actions);
-    setButtonIconSize(QSize(42, 42));
+    setButtonIconSize(QSize(39, 39));
 
     if(!UBPlatformUtils::hasVirtualKeyboard())
     {
