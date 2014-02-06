@@ -67,6 +67,7 @@
 #include "domain/UBGraphicsSvgItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsStrokesGroup.h"
+#include "domain/UBGraphicsEllipseItem.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -81,6 +82,8 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
+
+#include "domain/UBShapeFactory.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)
 : QGraphicsView (pParent)
@@ -552,6 +555,11 @@ Here we determines cases when items should to get mouse press event at pressing 
     // some behavior depends on current tool.
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
 
+    //EV-7 - NNE - 20140103
+    if(UBShapeFactory::isShape(item)){
+        return true;
+    }
+
     switch(item->type())
     {
     case UBGraphicsProtractor::Type:
@@ -560,8 +568,6 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsCompass::Type:
     case UBGraphicsCache::Type:
     case UBGraphicsAristo::Type:
-        return true;
-
     case UBGraphicsDelegateFrame::Type:
         if (currentTool == UBStylusTool::Play)
             return false;
@@ -619,6 +625,8 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         return false;
         break;
+    case UBGraphicsItemType::GraphicsHandle:
+        return true;
 
     }
 
@@ -680,6 +688,11 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
             return false;
 
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+
+    //EV-7 - NNE - 20140103
+    if(UBShapeFactory::isShape(item)){
+        return true;
+    }
 
     switch(item->type())
     {
@@ -825,6 +838,8 @@ void UBBoardView::handleItemMousePress(QMouseEvent *event)
                 graphicsItem->Delegate()->startUndoStep();
 
             movingItem->clearFocus();
+            qDebug() << movingItem;
+            qDebug() << movingItem->type();
         }
 
         if (suspendedMousePressEvent)
@@ -1011,6 +1026,9 @@ void UBBoardView::longPressEvent()
 
 void UBBoardView::mousePressEvent (QMouseEvent *event)
 {
+    //EV-7 - NNE - 20131231
+    emit mousePress(event);
+
     if (!bIsControl && !bIsDesktop) {
         event->ignore();
         return;
@@ -1025,6 +1043,9 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
     }
 
     mMouseDownPos = event->pos ();
+
+    qDebug() << scene();
+    qDebug() << event;
 
     movingItem = scene()->itemAt(this->mapToScene(event->posF().toPoint()));
 
@@ -1124,7 +1145,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
         }
         else if (currentTool == UBStylusTool::Capture)
         {
-            scene ()->deselectAllItems ();
+            scene ()->deselectAllItems();
 
             if (!mRubberBand)
                 mRubberBand = new UBRubberBand (QRubberBand::Rectangle, this);
@@ -1134,6 +1155,11 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             mIsCreatingSceneGrabZone = true;
 
             event->accept ();
+        }
+        else if (currentTool == UBStylusTool::ChangeFill)
+        {
+            qDebug() << "on est dans le cas du pot de peinture, on va remplir l'objet si possible";
+            UBApplication::boardController->shapeFactory().changeFillColor(mapToScene(mMouseDownPos));
         }
         else
         {
@@ -1159,6 +1185,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 void
 UBBoardView::mouseMoveEvent (QMouseEvent *event)
 {
+
+    //EV-7 - NNE - 20131231
+    emit mouseMove(event);
+
   if(!mIsDragInProgress && ((mapToScene(event->pos()) - mLastPressedMousePos).manhattanLength() < QApplication::startDragDistance()))
   {
       return;
@@ -1227,13 +1257,15 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
                                 item = item->parentItem();
                       // Fin Issue 1569 - CFA - 20131113
 
+                      //EV-7 - NNE - 20140103 : Add test on drawing objects
                       if (item->type() == UBGraphicsW3CWidgetItem::Type
                               || item->type() == UBGraphicsPixmapItem::Type
                               || item->type() == UBGraphicsMediaItem::Type
                               || item->type() == UBGraphicsSvgItem::Type
                               || item->type() == UBGraphicsTextItem::Type
                               || item->type() == UBGraphicsStrokesGroup::Type
-                              || item->type() == UBGraphicsGroupContainerItem::Type) {
+                              || item->type() == UBGraphicsGroupContainerItem::Type
+                              || UBShapeFactory::isShape(item)) {
 
                           if (!mJustSelectedItems.contains(item)) {
                               item->setSelected(true);
@@ -1279,6 +1311,9 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
 void
 UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 {
+    //EV-7 - NNE - 20131231
+    emit mouseRelease(event);
+
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController ()->stylusTool ();
 
   setToolCursor (currentTool);
@@ -1780,7 +1815,7 @@ UBBoardView::setToolCursor (int tool)
       controlViewport->setCursor (UBResources::resources ()->penCursor);
       break;
     default:
-      Q_ASSERT (false);
+      //Q_ASSERT (false);
       //failsafe
       controlViewport->setCursor (UBResources::resources ()->penCursor);
     }

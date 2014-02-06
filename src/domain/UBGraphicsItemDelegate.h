@@ -244,6 +244,9 @@ class UBGraphicsItemDelegate : public QObject
                 const QVariant &value);
         virtual UBGraphicsScene *castUBGraphicsScene();
 
+        //issue 1699 - NNE - 20140124
+        void showFrame(bool show);
+
         void printMessage(const QString &mess) {qDebug() << mess;}
 
         QGraphicsItem* delegated();

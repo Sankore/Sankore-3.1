@@ -39,6 +39,11 @@
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsGroupContainerItemDelegate.h"
+#include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsRectItem.h"
+#include "domain/UBGraphicsPathItem.h"
+#include "domain/UBGraphicsFreehandItem.h"
+#include "domain/UBGraphicsRegularPathItem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -89,6 +94,8 @@ const QString UBSvgSubsetAdaptor::sPixelUnit = "px";
 const QString UBSvgSubsetAdaptor::sFontWeightPrefix = "font-weight:";
 const QString UBSvgSubsetAdaptor::sFontStylePrefix = "font-style:";
 const QString UBSvgSubsetAdaptor::sFormerUniboardDocumentNamespaceUri = "http://www.mnemis.com/uniboard";
+
+const QString UBSvgSubsetAdaptor::SVG_STROKE_DOTLINE = "20 10"; // 1 big dot, 1 little space
 
 const QString tElement = "element";
 const QString tGroup = "group";
@@ -372,6 +379,10 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
     UBGraphicsStrokesGroup* strokesGroup = 0;
     UBGraphicsStroke* currentStroke = 0;
 
+    //
+    QLinearGradient currentGradient;
+    bool isGradient = false;
+
     while (!mXmlReader.atEnd())
     {
         mXmlReader.readNext();
@@ -583,34 +594,60 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
             }
             else if (mXmlReader.name() == "polyline")
             {
-                QList<UBGraphicsPolygonItem*> polygonItems = polygonItemsFromPolylineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
-
-                QString parentId = QUuid::createUuid().toString();
-
-                foreach(UBGraphicsPolygonItem* polygonItem, polygonItems)
+                QStringRef s = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapePath"); // EV-7 - ALTI/AOU - 20140102
+                if (!s.isNull())
                 {
-                    polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
+                    UBAbstractGraphicsPathItem* pathItem = shapePathFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black, s.toString().toInt());
 
-                    UBGraphicsStrokesGroup* group;
-                    if(!mStrokesList.contains(parentId)){
-                        group = new UBGraphicsStrokesGroup();
-                        mStrokesList.insert(parentId,group);
-                        currentStroke = new UBGraphicsStroke();
-                        group->setTransform(polygonItem->transform());
-                        UBGraphicsItem::assignZValue(group, polygonItem->zValue());
+                    if (pathItem)
+                    {
+                        if (isGradient)
+                        {
+                            currentGradient.setStart(pathItem->boundingRect().topLeft());
+                            currentGradient.setFinalStop(pathItem->boundingRect().topRight());
+                            pathItem->setFillingProperty(new UBFillProperty(currentGradient));
+                            isGradient = false;
+                        }
+                        mScene->addItem(pathItem);
+
+                        if (zFromSvg != UBZLayerController::errorNum())
+                            UBGraphicsItem::assignZValue(pathItem, zFromSvg);
+
+                        if (!uuidFromSvg.isNull())
+                            pathItem->setUuid(uuidFromSvg);
                     }
-                    else
-                        group = mStrokesList.value(parentId);
+                }
+                else
+                {
+                    QList<UBGraphicsPolygonItem*> polygonItems = polygonItemsFromPolylineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
 
-                    if(polygonItem->transform().isIdentity())
-                        polygonItem->setTransform(group->transform());
+                    QString parentId = QUuid::createUuid().toString();
 
-                    group->addToGroup(polygonItem);
-                    polygonItem->setStrokesGroup(group);
-                    polygonItem->setStroke(currentStroke);
+                    foreach(UBGraphicsPolygonItem* polygonItem, polygonItems)
+                    {
+                        polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
 
-                    polygonItem->show();
-                    group->addToGroup(polygonItem);
+                        UBGraphicsStrokesGroup* group;
+                        if(!mStrokesList.contains(parentId)){
+                            group = new UBGraphicsStrokesGroup();
+                            mStrokesList.insert(parentId,group);
+                            currentStroke = new UBGraphicsStroke();
+                            group->setTransform(polygonItem->transform());
+                            UBGraphicsItem::assignZValue(group, polygonItem->zValue());
+                        }
+                        else
+                            group = mStrokesList.value(parentId);
+
+                        if(polygonItem->transform().isIdentity())
+                            polygonItem->setTransform(group->transform());
+
+                        group->addToGroup(polygonItem);
+                        polygonItem->setStrokesGroup(group);
+                        polygonItem->setStroke(currentStroke);
+
+                        polygonItem->show();
+                        group->addToGroup(polygonItem);
+                    }
                 }
             }
             else if (mXmlReader.name() == "image")
@@ -847,6 +884,53 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
 
                     if (zFromSvg != UBZLayerController::errorNum())
                         UBGraphicsItem::assignZValue(cache, zFromSvg);
+                }
+            }
+            else if (mXmlReader.name() == "linearGradient")
+            {
+                currentGradient = linearGradiantFromSvg();
+                isGradient = true;
+            }
+            else if (mXmlReader.name() == "ellipse") // EV-7 - ALTI/AOU - 20131231
+            {
+                UBGraphicsEllipseItem* ellipse = shapeEllipseFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                if (ellipse)
+                {
+                    if (isGradient)
+                    {
+                        currentGradient.setStart(ellipse->rect().topLeft());
+                        currentGradient.setFinalStop(ellipse->rect().topRight());
+                        ellipse->setFillingProperty(new UBFillProperty(currentGradient));
+                        isGradient = false;
+                    }
+                    mScene->addItem(ellipse);
+
+                    if (zFromSvg != UBZLayerController::errorNum())
+                        UBGraphicsItem::assignZValue(ellipse, zFromSvg);
+
+                    if (!uuidFromSvg.isNull())
+                        ellipse->setUuid(uuidFromSvg);
+                }
+            }
+            else if (mXmlReader.name() == "rect") // EV-7 - ALTI/CFA - 20131231
+            {
+                UBGraphicsRectItem* rect = shapeRectFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                if (rect)
+                {
+                    if (isGradient)
+                    {
+                        currentGradient.setStart(rect->rect().topLeft());
+                        currentGradient.setFinalStop(rect->rect().topRight());
+                        rect->setFillingProperty(new UBFillProperty(currentGradient));
+                        isGradient = false;
+                    }
+                    mScene->addItem(rect);
+
+                    if (zFromSvg != UBZLayerController::errorNum())
+                        UBGraphicsItem::assignZValue(rect, zFromSvg);
+
+                    if (!uuidFromSvg.isNull())
+                        rect->setUuid(uuidFromSvg);
                 }
             }
             else if (mXmlReader.name() == "foreignObject")
@@ -1181,14 +1265,16 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement()
     QDesktopWidget* desktop = UBApplication::desktop();
     mXmlWriter.writeAttribute("pageDpi", QString("%1").arg((desktop->physicalDpiX() + desktop->physicalDpiY()) / 2));
 
-    mXmlWriter.writeStartElement("rect");
-    mXmlWriter.writeAttribute("fill", mScene->isDarkBackground() ? "black" : "white");
-    mXmlWriter.writeAttribute("x", QString::number(normalized.x()));
-    mXmlWriter.writeAttribute("y", QString::number(normalized.y()));
-    mXmlWriter.writeAttribute("width", QString::number(normalized.width()));
-    mXmlWriter.writeAttribute("height", QString::number(normalized.height()));
+    /* EV-7 - CFA - 20140302 : seems to be useless
+        mXmlWriter.writeStartElement("rect");
+        mXmlWriter.writeAttribute("fill", mScene->isDarkBackground() ? "black" : "white");
+        mXmlWriter.writeAttribute("x", QString::number(normalized.x()));
+        mXmlWriter.writeAttribute("y", QString::number(normalized.y()));
+        mXmlWriter.writeAttribute("width", QString::number(normalized.width()));
+        mXmlWriter.writeAttribute("height", QString::number(normalized.height()));
 
-    mXmlWriter.writeEndElement();
+        mXmlWriter.writeEndElement();
+    */
 }
 
 bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
@@ -1444,6 +1530,27 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             {
                 persistGroupToDom(groupItem, &groupRoot, &groupDomDocument,groupItem->Delegate()->action());
                 continue;
+            }
+
+            // Is the item a shape Ellipse ?
+            UBGraphicsEllipseItem* shapeEllipseItem = dynamic_cast<UBGraphicsEllipseItem*>(item);// EV-7 - ALTI/AOU - 20131231
+            if (shapeEllipseItem && shapeEllipseItem->isVisible())
+            {
+                shapeEllipseToSvg(shapeEllipseItem);
+            }
+
+            // Is the item a shape Ellipse ?
+            UBGraphicsRectItem* shapeRectItem = dynamic_cast<UBGraphicsRectItem*>(item);// EV-7 - ALTI/AOU - 20131231
+            if (shapeRectItem && shapeRectItem->isVisible())
+            {
+                shapeRectToSvg(shapeRectItem);
+            }
+
+            // Is the item a shape Path ? (closed polygon, opened polygon, freehand drawing)
+            UBAbstractGraphicsPathItem * shapePathItem = dynamic_cast<UBAbstractGraphicsPathItem *>(item); // EV-7 - ALTI/AOU - 20140102
+            if (shapePathItem && shapePathItem->isVisible())
+            {
+                shapePathToSvg(shapePathItem);
             }
         }
 
@@ -3383,6 +3490,578 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(UBGraphicsCache* item)
     }
 
     mXmlWriter.writeEndElement();
+}
+
+UBGraphicsRectItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeRectFromSvg(const QColor& pDefaultPenColor) // EV-7 - ALTI/AOU - 20131231
+{
+    UBGraphicsRectItem* rect = new UBGraphicsRectItem();
+
+
+    qreal x=0, y=0, w=100, h=100;
+    QStringRef svgX = mXmlReader.attributes().value("x");
+    QStringRef svgY = mXmlReader.attributes().value("y");
+    QStringRef svgW = mXmlReader.attributes().value("width");
+    QStringRef svgH = mXmlReader.attributes().value("height");
+
+    if ( ! svgX.isNull()) x = svgX.toString().toFloat();
+    if ( ! svgY.isNull()) y = svgY.toString().toFloat();
+    if ( ! svgW.isNull()) w = svgW.toString().toFloat();
+    if ( ! svgH.isNull()) h = svgH.toString().toFloat();
+
+    rect->setRect(QRectF(x, y, w, h));
+
+    // Stroke color
+    QStringRef svgStroke = mXmlReader.attributes().value("stroke");
+    QColor strokeColor = pDefaultPenColor;
+    if (!svgStroke.isNull())
+    {
+        strokeColor.setNamedColor(svgStroke.toString());
+    }
+    rect->strokeProperty()->setColor(strokeColor);
+
+    // Stroke width/thickness
+    QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
+    int strokeWidth = 2;
+    if (!svgStrokeWidth.isNull())
+    {
+        strokeWidth = svgStrokeWidth.toString().toInt();
+    }
+    rect->strokeProperty()->setWidth(strokeWidth);
+
+    // Stroke style
+    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+    if (!svgStrokeStyle.isNull())
+    {
+        QString strokeStyle = svgStrokeStyle.toString();
+        if (strokeStyle == SVG_STROKE_DOTLINE)
+        {
+            rect->strokeProperty()->setStyle(Qt::DotLine);
+        }
+    }
+
+    QStringRef svgStrokeOpacity = mXmlReader.attributes().value("stroke-opacity");
+    if (!svgStrokeOpacity.isNull())
+    {
+        strokeColor.setAlphaF(svgStrokeOpacity.toString().toInt());
+        rect->strokeProperty()->setColor(strokeColor);
+    }
+
+    // Fill color
+    QStringRef svgFill1 = mXmlReader.attributes().value("fill");
+    QColor brushColor1 = Qt::transparent;
+    if (!svgFill1.isNull())
+    {
+        brushColor1.setNamedColor(svgFill1.toString());
+    }
+    QStringRef style = mXmlReader.attributes().value("style");
+    rect->fillingProperty()->setStyle(static_cast<Qt::BrushStyle>(style.toString().toInt()));
+    rect->fillingProperty()->setColor(brushColor1);
+
+    // Fill opacity (transparency)
+    QStringRef svgOpacity1 = mXmlReader.attributes().value("fill-opacity");
+    qreal opacity1 = 1.0; // opaque
+    if (!svgOpacity1.isNull())
+    {
+        opacity1 = svgOpacity1.toString().toFloat();
+    }
+    if (!rect->fillingProperty()->gradient())
+    {
+        brushColor1.setAlphaF(opacity1);
+        rect->fillingProperty()->setColor(brushColor1);
+    }
+
+    //isCircle
+    QStringRef square = mXmlReader.attributes().value("square");
+    if (!square.isNull())
+        rect->setAsSquare();
+
+    // Transform matrix
+    QStringRef svgTransform = mXmlReader.attributes().value("transform");
+    QMatrix itemMatrix;
+    if (!svgTransform.isNull())
+    {
+        itemMatrix = fromSvgTransform(svgTransform.toString());
+        rect->setMatrix(itemMatrix);
+    }
+
+    return rect;
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeRectToSvg(UBGraphicsRectItem *item) // EV-7 - ALTI/AOU - 20131231
+{
+    if (item->fillingProperty()->gradient())
+    {
+        QColor color1 = item->fillingProperty()->gradient()->stops().at(0).second;
+        QColor color2 = item->fillingProperty()->gradient()->stops().at(1).second;
+        mXmlWriter.writeStartElement("linearGradient");
+        mXmlWriter.writeAttribute("id", item->uuid().toString());
+        mXmlWriter.writeAttribute("x1", "0%");
+        mXmlWriter.writeAttribute("y1", "0%");
+        mXmlWriter.writeAttribute("x2", "100%");
+        mXmlWriter.writeAttribute("y2", "0%");
+        mXmlWriter.writeStartElement("stop");
+        mXmlWriter.writeAttribute("offset", "0%");
+        mXmlWriter.writeAttribute("style", QString("stop-color:rgb(%1,%2,%3);stop-opacity:%4").arg(QString::number(color1.red()), QString::number(color1.green()), QString::number(color1.blue()), QString::number(color1.alphaF())));
+        mXmlWriter.writeEndElement();
+        mXmlWriter.writeStartElement("stop");
+        mXmlWriter.writeAttribute("offset", "100%");
+        mXmlWriter.writeAttribute("style", QString("stop-color:rgb(%1,%2,%3);stop-opacity:%4").arg(QString::number(color2.red()), QString::number(color2.green()), QString::number(color2.blue()), QString::number(color2.alphaF())));
+        mXmlWriter.writeEndElement();
+        mXmlWriter.writeEndElement();
+    }
+
+    mXmlWriter.writeStartElement("rect");
+
+    // SVG <shapeRect> tag :
+    mXmlWriter.writeAttribute("x", QString::number(item->rect().x()));
+    mXmlWriter.writeAttribute("y", QString::number(item->rect().y()));
+    mXmlWriter.writeAttribute("width", QString::number(item->rect().width()));
+    mXmlWriter.writeAttribute("height", QString::number(item->rect().height()));
+
+    // Stroke :
+    mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+    if (item->strokeProperty()->style() == Qt::DotLine){
+        mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+    }
+    mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(item->strokeProperty()->color().alphaF()));
+
+
+    // Fill :
+    if (!item->fillingProperty()->gradient())
+    {
+        mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
+        mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
+        mXmlWriter.writeAttribute("style", QString("%1").arg(item->fillingProperty()->style()));
+    }
+    else
+    {
+        mXmlWriter.writeAttribute("fill", QString("url(#%1)").arg(item->uuid().toString()));
+    }
+
+    //isSquare
+    if (item->isSquare())
+        mXmlWriter.writeAttribute("square","1");
+
+    mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
+
+    mXmlWriter.writeEndElement();
+}
+
+QLinearGradient UBSvgSubsetAdaptor::UBSvgSubsetReader::linearGradiantFromSvg()
+{
+    QLinearGradient gradient;
+
+    mXmlReader.readNext();
+    mXmlReader.readNext();//<stop>
+    QString stop0 = mXmlReader.attributes().value("style").toString();
+
+    QStringList split = stop0.split(":");
+    QStringList rgb = split.at(1).split(";");
+    QStringList colors = rgb.at(0).split(",");
+    int color1R = colors.at(0).split("(").at(1).toInt();
+    int color1G = colors.at(1).toInt();
+    int color1B = colors.at(2).split(")").at(0).toInt();
+
+    qreal alphaF = split.at(2).toFloat();
+
+    QColor color1(color1R, color1G, color1B);
+    color1.setAlphaF(alphaF);
+    gradient.setColorAt(0, color1);
+
+    mXmlReader.readNext();
+    mXmlReader.readNext();
+    mXmlReader.readNext();//<stop>
+
+    QString stop1 =  mXmlReader.attributes().value("style").toString();
+
+    split = stop1.split(":");
+    rgb = split.at(1).split(";");
+    colors = rgb.at(0).split(",");
+    int color2R = colors.at(0).split("(").at(1).toInt();
+    int color2G = colors.at(1).toInt();
+    int color2B = colors.at(2).split(")").at(0).toInt();
+
+    alphaF = split.at(2).toFloat();
+
+    QColor color2(color2R, color2G, color2B);
+    color2.setAlphaF(alphaF);
+    gradient.setColorAt(1, color2);
+
+    return gradient;
+
+}
+
+UBGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEllipseFromSvg(const QColor& pDefaultPenColor) // EV-7 - ALTI/AOU - 20131231
+{
+    UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
+
+    qreal cx=0, cy=0, rx=100, ry=100;
+    QStringRef svgCx = mXmlReader.attributes().value("cx");
+    QStringRef svgCy = mXmlReader.attributes().value("cy");
+    QStringRef svgRx = mXmlReader.attributes().value("rx");
+    QStringRef svgRy = mXmlReader.attributes().value("ry");
+
+    if ( ! svgCx.isNull()) cx = svgCx.toString().toFloat();
+    if ( ! svgCy.isNull()) cy = svgCy.toString().toFloat();
+    if ( ! svgRx.isNull()) rx = svgRx.toString().toFloat();
+    if ( ! svgRy.isNull()) ry = svgRy.toString().toFloat();
+
+    ellipse->setRect(QRectF(cx - rx, cy - ry, 2*rx, 2*ry));
+
+    // Stroke color
+    QStringRef svgStroke = mXmlReader.attributes().value("stroke");
+    QColor strokeColor = pDefaultPenColor;
+    if (!svgStroke.isNull())
+    {
+        strokeColor.setNamedColor(svgStroke.toString());
+    }
+    ellipse->strokeProperty()->setColor(strokeColor);
+
+    // Stroke width/thickness
+    QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
+    int strokeWidth = 2;
+    if (!svgStrokeWidth.isNull())
+    {
+        strokeWidth = svgStrokeWidth.toString().toInt();
+    }
+    ellipse->strokeProperty()->setWidth(strokeWidth);
+
+    // Stroke style
+    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+    if (!svgStrokeStyle.isNull())
+    {
+        QString strokeStyle = svgStrokeStyle.toString();
+        if (strokeStyle == SVG_STROKE_DOTLINE)
+        {
+            ellipse->strokeProperty()->setStyle(Qt::DotLine);
+        }
+    }
+    QStringRef svgStrokeOpacity = mXmlReader.attributes().value("stroke-opacity");
+    if (!svgStrokeOpacity.isNull())
+    {
+        strokeColor.setAlphaF(svgStrokeOpacity.toString().toInt());
+        ellipse->strokeProperty()->setColor(strokeColor);
+    }
+
+    // Fill color
+    QStringRef svgFill1 = mXmlReader.attributes().value("fill");
+    QColor brushColor1 = Qt::transparent;
+    if (!svgFill1.isNull())
+    {
+        brushColor1.setNamedColor(svgFill1.toString());
+    }
+    QStringRef style = mXmlReader.attributes().value("style");
+    ellipse->fillingProperty()->setStyle(static_cast<Qt::BrushStyle>(style.toString().toInt()));
+    ellipse->fillingProperty()->setColor(brushColor1);
+
+    // Fill opacity (transparency)
+    QStringRef svgOpacity1 = mXmlReader.attributes().value("fill-opacity");
+    qreal opacity1 = 1.0; // opaque
+    if (!svgOpacity1.isNull())
+    {
+        opacity1 = svgOpacity1.toString().toFloat();
+    }
+    if (!ellipse->fillingProperty()->gradient())
+    {
+        brushColor1.setAlphaF(opacity1);
+        ellipse->fillingProperty()->setColor(brushColor1);
+    }
+
+    //isCircle
+    QStringRef circle = mXmlReader.attributes().value("circle");
+    if (!circle.isNull())
+        ellipse->setAsCircle();
+
+    // Transform matrix
+    QStringRef svgTransform = mXmlReader.attributes().value("transform");
+    QMatrix itemMatrix;
+    if (!svgTransform.isNull())
+    {
+        itemMatrix = fromSvgTransform(svgTransform.toString());
+        ellipse->setMatrix(itemMatrix);
+    }
+
+    return ellipse;
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseItem *item) // EV-7 - ALTI/AOU - 20131231
+{
+    if (item->fillingProperty()->gradient())
+    {
+        QColor color1 = item->fillingProperty()->gradient()->stops().at(0).second;
+        QColor color2 = item->fillingProperty()->gradient()->stops().at(1).second;
+        mXmlWriter.writeStartElement("linearGradient");
+        mXmlWriter.writeAttribute("id", item->uuid().toString());
+        mXmlWriter.writeAttribute("x1", "0%");
+        mXmlWriter.writeAttribute("y1", "0%");
+        mXmlWriter.writeAttribute("x2", "100%");
+        mXmlWriter.writeAttribute("y2", "0%");
+        mXmlWriter.writeStartElement("stop");
+        mXmlWriter.writeAttribute("offset", "0%");
+        mXmlWriter.writeAttribute("style", QString("stop-color:rgb(%1,%2,%3);stop-opacity:%4").arg(QString::number(color1.red()), QString::number(color1.green()), QString::number(color1.blue()), QString::number(color1.alphaF())));
+        mXmlWriter.writeEndElement();
+        mXmlWriter.writeStartElement("stop");
+        mXmlWriter.writeAttribute("offset", "100%");
+        mXmlWriter.writeAttribute("style", QString("stop-color:rgb(%1,%2,%3);stop-opacity:%4").arg(QString::number(color2.red()), QString::number(color2.green()), QString::number(color2.blue()), QString::number(color2.alphaF())));
+        mXmlWriter.writeEndElement();
+        mXmlWriter.writeEndElement();
+    }
+
+    mXmlWriter.writeStartElement("ellipse");
+
+    // SVG <ellipse> tag :
+    mXmlWriter.writeAttribute("cx", QString("%1").arg(item->center().x())); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
+    mXmlWriter.writeAttribute("cy", QString("%1").arg(item->center().y()));
+    mXmlWriter.writeAttribute("rx", QString("%1").arg(item->radius(Qt::Horizontal)));
+    mXmlWriter.writeAttribute("ry", QString("%1").arg(item->radius(Qt::Vertical)));
+
+    // Stroke :
+    mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+    mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+    if (item->strokeProperty()->style() == Qt::DotLine){
+        mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+    }
+    mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(item->strokeProperty()->color().alphaF()));
+
+    // Fill :
+    if (!item->fillingProperty()->gradient())
+    {
+        mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
+        mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
+        mXmlWriter.writeAttribute("style", QString("%1").arg(item->fillingProperty()->style()));
+    }
+    else
+    {
+       mXmlWriter.writeAttribute("fill", QString("url(#%1)").arg(item->uuid().toString()));
+    }
+
+
+    //isCircle
+    if (item->isCircle())
+        mXmlWriter.writeAttribute("circle","1");
+
+    mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
+
+    mXmlWriter.writeEndElement();
+}
+
+UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFromSvg(const QColor& pDefaultPenColor, int type) // EV-7 - ALTI/AOU - 20140102
+{
+    UBAbstractGraphicsPathItem *pathItem = 0;
+
+    switch(type){
+    case UBGraphicsFreehandItem::Type:
+        pathItem = new UBGraphicsFreehandItem();
+        break;
+    case UBGraphicsPathItem::Type:
+        pathItem = new UBGraphicsPathItem();
+        break;
+    case UBGraphicsRegularPathItem::Type:
+    {
+        QStringRef nVertices = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "nVertices");
+        QStringRef startPointX = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startPointX");
+        QStringRef startPointY = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startPointY");
+        pathItem = new UBGraphicsRegularPathItem(nVertices.toString().toInt(), QPointF(startPointX.toString().toFloat(), startPointY.toString().toFloat()));
+        break;
+    }
+    default:
+        break;
+    }
+
+    QStringRef svgPoints = mXmlReader.attributes().value("points");
+
+    if (!svgPoints.isNull())
+    {
+        QStringList ts = svgPoints.toString().split(QLatin1Char(' '),
+                         QString::SkipEmptyParts);
+
+        foreach(const QString sPoint, ts)
+        {
+            QStringList sCoord = sPoint.split(QLatin1Char(','), QString::SkipEmptyParts);
+
+            if (sCoord.size() == 2)
+            {
+                QPointF point;
+                point.setX(sCoord.at(0).toFloat());
+                point.setY(sCoord.at(1).toFloat());
+                pathItem->addPoint(point);
+            }
+            else if (sCoord.size() == 4){
+                //This is the case on system were the "," is used to seperate decimal
+                QPointF point;
+                QString x = sCoord.at(0) + "." + sCoord.at(1);
+                QString y = sCoord.at(2) + "." + sCoord.at(3);
+                point.setX(x.toFloat());
+                point.setY(y.toFloat());
+                pathItem->addPoint(point);
+            }
+            else
+            {
+                qWarning() << "cannot make sense of a 'point' value" << sCoord;
+            }            
+        }
+    }
+    else
+    {
+        qWarning() << "cannot make sense of 'points' value " << svgPoints.toString();
+    }
+
+    // Stroke color
+    QStringRef svgStroke = mXmlReader.attributes().value("stroke");
+    QColor strokeColor = pDefaultPenColor;
+    if (!svgStroke.isNull())
+    {
+        strokeColor.setNamedColor(svgStroke.toString());
+        pathItem->strokeProperty()->setColor(strokeColor);
+    }
+    QStringRef svgStrokeOpacity = mXmlReader.attributes().value("stroke-opacity");
+    if (!svgStrokeOpacity.isNull())
+    {
+        strokeColor.setAlphaF(svgStrokeOpacity.toString().toInt());
+        pathItem->strokeProperty()->setColor(strokeColor);
+    }
+
+    // Stroke width/thickness
+    QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
+    int strokeWidth = 2;
+    if (!svgStrokeWidth.isNull())
+    {
+        strokeWidth = svgStrokeWidth.toString().toInt();
+        pathItem->strokeProperty()->setWidth(strokeWidth);
+    }
+
+    // Stroke style
+    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+    if (!svgStrokeStyle.isNull())
+    {
+        QString strokeStyle = svgStrokeStyle.toString();
+        if (strokeStyle == SVG_STROKE_DOTLINE)
+        {
+            pathItem->strokeProperty()->setStyle(Qt::DotLine);
+        }
+    }
+
+    // Fill color
+    QStringRef svgFill1 = mXmlReader.attributes().value("fill");
+    QColor brushColor1 = Qt::transparent;
+    if (!svgFill1.isNull())
+    {
+        brushColor1.setNamedColor(svgFill1.toString());
+    }
+    if (pathItem->fillingProperty())
+    {
+        QStringRef style = mXmlReader.attributes().value("style");
+        pathItem->fillingProperty()->setStyle(static_cast<Qt::BrushStyle>(style.toString().toInt()));
+        pathItem->fillingProperty()->setColor(brushColor1);
+    }
+
+    // Fill opacity (transparency)
+    QStringRef svgOpacity1 = mXmlReader.attributes().value("fill-opacity");
+    qreal opacity1 = 1.0; // opaque
+    if (!svgOpacity1.isNull())
+    {
+        opacity1 = svgOpacity1.toString().toFloat();
+    }
+    if (pathItem->fillingProperty() && !pathItem->fillingProperty()->gradient())
+    {
+        brushColor1.setAlphaF(opacity1);
+        pathItem->fillingProperty()->setColor(brushColor1);
+    }
+
+    // Transform matrix
+    QStringRef svgTransform = mXmlReader.attributes().value("transform");
+    QMatrix itemMatrix;
+    if (!svgTransform.isNull())
+    {
+        itemMatrix = fromSvgTransform(svgTransform.toString());
+        pathItem->setMatrix(itemMatrix);
+    }
+
+    qDebug() << pathItem->path().elementCount();
+
+    return pathItem;
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPathItem *item) // EV-7 - ALTI/AOU - 20140102
+{
+    if (item->fillingProperty() && item->fillingProperty()->gradient())
+    {
+        QColor color1 = item->fillingProperty()->gradient()->stops().at(0).second;
+        QColor color2 = item->fillingProperty()->gradient()->stops().at(1).second;
+        mXmlWriter.writeStartElement("linearGradient");
+        mXmlWriter.writeAttribute("id", item->uuid().toString());
+        mXmlWriter.writeAttribute("x1", "0%");
+        mXmlWriter.writeAttribute("y1", "0%");
+        mXmlWriter.writeAttribute("x2", "100%");
+        mXmlWriter.writeAttribute("y2", "0%");
+        mXmlWriter.writeStartElement("stop");
+        mXmlWriter.writeAttribute("offset", "0%");
+        mXmlWriter.writeAttribute("style", QString("stop-color:rgb(%1,%2,%3);stop-opacity:%4").arg(QString::number(color1.red()), QString::number(color1.green()), QString::number(color1.blue()), QString::number(color1.alphaF())));
+        mXmlWriter.writeEndElement();
+        mXmlWriter.writeStartElement("stop");
+        mXmlWriter.writeAttribute("offset", "100%");
+        mXmlWriter.writeAttribute("style", QString("stop-color:rgb(%1,%2,%3);stop-opacity:%4").arg(QString::number(color2.red()), QString::number(color2.green()), QString::number(color2.blue()), QString::number(color2.alphaF())));
+        mXmlWriter.writeEndElement();
+        mXmlWriter.writeEndElement();
+    }
+
+    mXmlWriter.writeStartElement("polyline");
+
+    if (item->type() == UBGraphicsItemType::GraphicsRegularPathItemType)
+    {
+        UBGraphicsRegularPathItem* it = dynamic_cast<UBGraphicsRegularPathItem*>(item);
+        if (it)
+        {
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "nVertices", QString::number(it->nVertices()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startPointX", QString::number(it->startPoint().x()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startPointY", QString::number(it->startPoint().y()));
+        }
+    }
+
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapePath", QString::number(item->type())); // just to know it's a path drawn with the drawingPalette
+
+    QString sPoints;
+    for(int i=0; i<item->path().elementCount(); ++i)
+    {
+        QPainterPath::Element element = item->path().elementAt(i);
+        sPoints += QString("%1,%2 ").arg(element.x).arg(element.y);
+    }
+    mXmlWriter.writeAttribute("points", sPoints);
+
+    // Stroke :
+    if(item->hasStrokeProperty()){
+        mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+        mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+
+        if (item->strokeProperty()->style() == Qt::DotLine){
+            mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+        }
+        mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(item->strokeProperty()->color().alphaF()));
+    }    
+
+    // Fill :
+    if (item->fillingProperty())
+    {
+        if (!item->fillingProperty()->gradient())
+        {
+            mXmlWriter.writeAttribute("fill", QString("%1").arg(item->fillingProperty()->color().name()));
+            mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->fillingProperty()->color().alphaF()));
+            mXmlWriter.writeAttribute("style", QString("%1").arg(item->fillingProperty()->style()));
+        }
+        else
+        {
+            mXmlWriter.writeAttribute("fill", QString("url(#%1)").arg(item->uuid().toString()));
+        }
+    }
+    else
+        mXmlWriter.writeAttribute("fill", "none");
+
+
+    mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
+
+    mXmlWriter.writeEndElement();
+
 }
 
 void UBSvgSubsetAdaptor::convertPDFObjectsToImages(UBDocumentProxy* proxy)

@@ -85,6 +85,7 @@
 
 #include "adaptors/UBMetadataDcSubsetAdaptor.h"
 #include "adaptors/UBSvgSubsetAdaptor.h"
+#include "adaptors/UBThumbnailAdaptor.h"
 
 #include "UBBoardPaletteManager.h"
 
@@ -130,9 +131,8 @@ UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     int dpiCommon = (desktop->physicalDpiX() + desktop->physicalDpiY()) / 2;
     int sPixelsPerMillimeter = qRound(dpiCommon / UBGeometryUtils::inchSize);
     UBSettings::settings()->crossSize = 10*sPixelsPerMillimeter;
-
-    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 }
+
 
 
 void UBBoardController::init()
@@ -159,12 +159,16 @@ void UBBoardController::init()
     connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
     UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createNewDocument();
+    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 
     setActiveDocumentScene(doc);
 
     connect(UBApplication::mainWindow->actionGroupItems, SIGNAL(triggered()), this, SLOT(groupButtonClicked()));
 
     undoRedoStateChange(true);
+
+    //EV-7 - NNE - 20131231
+    mShapeFactory.init();
 }
 
 
@@ -173,11 +177,7 @@ UBBoardController::~UBBoardController()
     delete mDisplayView;
 
     // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
-    foreach(const QPixmap* pm, *mDocumentThumbs){
-        delete pm;
-        pm = NULL;
-    }
-    mDocumentThumbs->clear();
+    UBThumbnailAdaptor::clearThumbs(*mDocumentThumbs);
     delete mDocumentThumbs;
     mDocumentThumbs = NULL;
     // Issue 1026 - AOU - 20131028 : End
@@ -413,6 +413,8 @@ void UBBoardController::connectToolbar()
     connect(mMainWindow->actionSleep, SIGNAL(triggered()), this, SLOT(blackout()));
     connect(mMainWindow->actionVirtualKeyboard, SIGNAL(triggered(bool)), this, SLOT(showKeyboard(bool)));
     connect(mMainWindow->actionImportPage, SIGNAL(triggered()), this, SLOT(importPage()));
+
+    //EV-7 - NNE - 20131230
 }
 
 void UBBoardController::startScript()
@@ -2511,6 +2513,29 @@ void UBBoardController::stylusToolChanged(int tool)
         {
             if(mPaletteManager->mKeyboardPalette->m_isVisible)
                 UBApplication::mainWindow->actionVirtualKeyboard->activate(QAction::Trigger);
+        }
+    }
+
+    QButtonGroup * buttonGroup = NULL;
+    if (tool == UBStylusTool::Drawing || tool == UBStylusTool::ChangeFill)
+    {
+        buttonGroup = paletteManager()->stylusPalette()->buttonGroup();
+    }
+    else
+    {
+        buttonGroup = paletteManager()->drawingPalette()->buttonGroup();
+    }
+
+    if (buttonGroup->checkedButton())
+    {
+        QToolButton * toolButton = dynamic_cast<QToolButton*>(buttonGroup->checkedButton());
+        if (toolButton && toolButton->defaultAction())
+        {
+            buttonGroup->setExclusive(false);
+            //buttonGroup->checkedButton()->setChecked(false);
+            toolButton->defaultAction()->toggle();
+            //buttonGroup->checkedButton()->toggle();
+            buttonGroup->setExclusive(true);
         }
     }
 

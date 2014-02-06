@@ -39,6 +39,8 @@ class UBStylusPalette : public UBActionPalette
 
         void initPosition();
 
+        QButtonGroup * buttonGroup(){return mButtonGroup;}
+
     private slots:
 
         void stylusToolDoubleClicked();

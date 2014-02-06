@@ -21,8 +21,6 @@
 
 
 
-#include "UBGraphicsPolygonItem.h"
-
 #include "frameworks/UBGeometryUtils.h"
 #include "UBGraphicsScene.h"
 #include "domain/UBGraphicsPolygonItem.h"

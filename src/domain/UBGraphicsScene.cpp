@@ -73,6 +73,11 @@
 
 #include "domain/UBGraphicsGroupContainerItem.h"
 
+#include "domain/UBAbstractGraphicsPathItem.h"
+#include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsRectItem.h"
+#include "domain/UBGraphicsLineItem.h"
+
 #include "UBGraphicsStroke.h"
 
 #include "core/memcheck.h"
@@ -1678,6 +1683,29 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
       ++mItemCount;
 
     mFastAccessItems << item;
+
+    //CFA
+    addShapeToUndoStack(item);
+}
+
+void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
+{
+    //CFA - TEST UNDO
+    UBShape * shape = dynamic_cast<UBShape*>(item);
+    if (shape)
+    {
+        mAddedItems.insert(item);
+    }
+}
+
+void UBGraphicsScene::removeShapeToUndoStack(QGraphicsItem* item)
+{
+    //CFA - TEST UNDO
+    UBShape * shape = dynamic_cast<UBShape*>(item);
+    if (shape)
+    {
+        mRemovedItems.insert(item);
+    }
 }
 
 void UBGraphicsScene::addItems(const QSet<QGraphicsItem*>& items)
@@ -1705,6 +1733,9 @@ void UBGraphicsScene::removeItem(QGraphicsItem* item)
     /* delete the item if it is cache to allow its reinstanciation, because Cache implements design pattern Singleton. */
     if (dynamic_cast<UBGraphicsCache*>(item))
         UBCoreGraphicsScene::deleteItem(item);
+
+    //CFA
+    removeShapeToUndoStack(item);
 }
 
 void UBGraphicsScene::removeItems(const QSet<QGraphicsItem*>& items)

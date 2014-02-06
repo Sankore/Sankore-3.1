@@ -27,34 +27,38 @@
 
 UBActionPalette::UBActionPalette(QList<QAction*> actions, Qt::Orientation orientation, QWidget * parent)
     : UBFloatingPalette(Qt::TopRightCorner, parent)
+    , mOrientation(orientation)
 {
-    init(orientation);
+    init();
     setActions(actions);
 }
 
 
 UBActionPalette::UBActionPalette(Qt::Orientation orientation, QWidget * parent)
      : UBFloatingPalette(Qt::TopRightCorner, parent)
+     , mOrientation(orientation)
 {
-    init(orientation);
+    init();
 }
 
 
 UBActionPalette::UBActionPalette(QWidget * parent)
      : UBFloatingPalette(Qt::TopRightCorner, parent)
+     , mOrientation(Qt::Vertical)
 {
-    init(Qt::Vertical);
+    init();
 }
 
 
 UBActionPalette::UBActionPalette(Qt::Corner corner, QWidget * parent, Qt::Orientation orient)
      : UBFloatingPalette(corner, parent)
+     , mOrientation(orient)
 {
-    init(orient);
+    init();
 }
 
 
-void UBActionPalette::init(Qt::Orientation orientation)
+void UBActionPalette::init()
 {
     m_customCloseProcessing = false;
 
@@ -65,7 +69,7 @@ void UBActionPalette::init(Qt::Orientation orientation)
     mToolButtonStyle = Qt::ToolButtonIconOnly;
     mButtons.clear();
 
-    if (orientation == Qt::Horizontal)
+    if (mOrientation == Qt::Horizontal)
         new QHBoxLayout(this);
     else
         new QVBoxLayout(this);
@@ -224,7 +228,6 @@ void UBActionPalette::close()
     emit closed();
 }
 
-
 void UBActionPalette::mouseReleaseEvent(QMouseEvent * event)
 {
     if (mIsClosable && event->pos().x() >= 0 && event->pos().x() < QPixmap(":/images/close.svg").width()
@@ -277,7 +280,6 @@ UBActionPaletteButton::UBActionPaletteButton(QAction* action, QWidget * parent)
 
     setObjectName("ubActionPaletteButton");
 }
-
 
 UBActionPaletteButton::~UBActionPaletteButton()
 {

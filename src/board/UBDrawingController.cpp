@@ -97,7 +97,10 @@ void UBDrawingController::setStylusTool(int tool)
 {
     if (tool != mStylusTool)
     {
-    	UBApplication::boardController->activeScene()->deselectAllItems();
+        //Ev-7 - NNE - 20140106
+        if(tool != UBStylusTool::Drawing)
+            UBApplication::boardController->activeScene()->deselectAllItems();
+
         if (mStylusTool == UBStylusTool::Pen || mStylusTool == UBStylusTool::Marker
                 || mStylusTool == UBStylusTool::Line)
         {
@@ -144,6 +147,10 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionRichTextEditor->setChecked(true);
         else if (mStylusTool == UBStylusTool::Capture)
             UBApplication::mainWindow->actionCapture->setChecked(true);
+
+        if(mStylusTool != UBStylusTool::Drawing){
+            UBApplication::boardController->shapeFactory().desactivate();
+        }
 
         emit stylusToolChanged(tool);
         emit colorPaletteChanged();
