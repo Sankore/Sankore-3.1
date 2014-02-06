@@ -45,7 +45,7 @@
                         (
                             lastToken === '-' && 
                             (
-                                '+-./:*('.indexOf(penultimateToken) !== -1 || 
+                                penultimateToken === '(' || 
                                 penultimateToken === undefined
                             )
                         )
@@ -56,6 +56,12 @@
                     }
                 } else {
                     tokens.push(item);
+                }
+            }
+            
+            for (var j in tokens) {
+                if (tokens[j].length > 1 && tokens[j].charAt(tokens[j].length - 1) === '.') {
+                    throw Sankore.Util.Error.create('InvalidExpression', 'Trailing comma'); 
                 }
             }
             

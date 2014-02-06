@@ -17,7 +17,7 @@
             this.expressionRow = null;
             this.resultRow = null;
             this.flagRow = null;
-            
+
             this.flags = [];
 
             this.rearScreen = null;
@@ -44,10 +44,10 @@
                 } else {
                     self.removeFlag('M');
                 }
-                
+
                 self.updateFlagRow();
             });
-            
+
             // the op memory has changed
             this.dispatcher.addEventListener('calculator.op_changed', function (op) {
                 if (null !== op) {
@@ -55,7 +55,7 @@
                 } else {
                     self.removeFlag('OP');
                 }
-                
+
                 self.updateFlagRow();
             });
 
@@ -85,7 +85,16 @@
                 var buttonEl = self.buttons.get(event.slot);
 
                 if (buttonEl) {
-                    buttonEl.setAttribute('disabled', true);
+                    buttonEl.disabled = true;
+                }
+            });
+
+            // a button has been enabled
+            this.dispatcher.addEventListener('calculator.button_enabled', function (slot) {
+                var buttonEl = self.buttons.get(slot);
+
+                if (buttonEl) {
+                    buttonEl.disabled = false;
                 }
             });
 
@@ -97,7 +106,7 @@
             this.dispatcher.addEventListener('editor.button_selected', function (event) {
                 var newButtonEl = self.buttons.get(event.slot),
                     oldButtonEl = self.buttons.get(event.previousSlot);
-                
+
                 if (oldButtonEl) {
                     oldButtonEl.parentElement.classList.remove('edit');
                 }
@@ -183,7 +192,7 @@
                     .getElementsByClassName('screen')
                     .item(0)
                     .parentElement;
-            
+
             // map copy in order to prevent alteration of the original map
             for (var slot in buttonMap) {
                 map[slot] = buttonMap[slot];
@@ -328,13 +337,13 @@
 
         updateFlagRow: function () {
             var span;
-            
+
             this._clearElement(this.flagRow);
-            
+
             for (var i in this.flags) {
                 span = document.createElement('span');
                 span.appendChild(document.createTextNode(this.flags[i]));
-                
+
                 this.flagRow.appendChild(span);
             }
         },
@@ -400,7 +409,7 @@
                 text = _('error.common');
 
             if (error.name === 'ZeroDivision') {
-                text = _('error.zero_division') ;
+                text = _('error.zero_division');
             }
 
             errorDiv.classList.add('error');
@@ -435,6 +444,10 @@
             if (Number(fixed) > (1e10 - 1)) {
                 fixed = Number(fixed.substring(0, 11) / 10).toFixed();
             }
+            
+            if (fixed.indexOf('.') !== -1) {
+                fixed = fixed.replace('.', _('text.comma'));
+            }
 
             return fixed;
         },
@@ -455,7 +468,7 @@
                 resultRow.appendChild(this.createResultRow(history[i].output));
                 rows.appendChild(resultRow);
             }
-            
+
             this.clearRearScreen();
             this.rearScreen.appendChild(rows);
             this.rearScreen.lastChild.scrollIntoView();
@@ -472,20 +485,20 @@
         hideRearScreen: function () {
             this.rearScreen.style.display = 'none';
         },
-        
+
         addFlag: function (flag) {
             if (this.flags.indexOf(flag) === -1) {
                 this.flags.push(flag);
-                
+
                 this.flags.sort();
             }
         },
-        
+
         removeFlag: function (flag) {
             var idx = this.flags.indexOf(flag);
             if (idx !== -1) {
                 this.flags.splice(idx, 1);
-                
+
                 this.flags.sort();
             }
         }
