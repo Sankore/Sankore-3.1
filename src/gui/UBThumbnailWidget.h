@@ -376,7 +376,7 @@ protected:
 
 public:
 
-    UBWidgetTextThumbnailElement() : border(0), thumbnail(NULL), caption(NULL)
+    UBWidgetTextThumbnailElement() : thumbnail(NULL), caption(NULL), border(0)
     {
     }
 

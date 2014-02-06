@@ -168,14 +168,6 @@ UBTeacherGuideEditionWidget::~UBTeacherGuideEditionWidget()
     DELETEPTR(mpLayout);
 }
 
-#ifdef Q_WS_MAC
-void UBTeacherGuideEditionWidget::onSliderMoved(int size)
-{
-    Q_UNUSED(size);
-    if(mpAddAMediaItem)
-        mpAddAMediaItem->setExpanded(true);
-}
-#endif
 void UBTeacherGuideEditionWidget::showEvent(QShowEvent* event)
 {
     setFocus();

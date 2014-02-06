@@ -163,6 +163,8 @@ bool UBFileDialog::event(QEvent *event)
         case QEvent::WindowDeactivate :
             keyboard->onWindowFocusLost();
             break ;
+        default:
+            break;
     };
 
     return QFileDialog::event(event);
