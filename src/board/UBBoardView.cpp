@@ -598,13 +598,10 @@ Here we determines cases when items should to get mouse press event at pressing 
         break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
-        /* Issue 1509 - AOU - 20131113
         if(currentTool == UBStylusTool::Play)
         {
             return true;
         }
-        Issue 1509 - AOU - 20131113 : Fin
-        */
         return false;
         break;
 
@@ -719,25 +716,29 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
     {
         UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
+        //TODO claudio
+        // another chuck of very good code
+        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type() && currentTool == UBStylusTool::Play){
+            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
+            if(group && group->Delegate()->action()){
+                group->Delegate()->action()->play();
+                return item;
+            }
+        }
+
         // if item is on group and group is not selected - group should take press.
         if ((UBStylusTool::Selector == currentTool
              || currentTool == UBStylusTool::Play) // Issue 1509 - AOU - 20131113
             && item->parentItem()
             && UBGraphicsGroupContainerItem::Type == item->parentItem()->type())
                 /*&& !item->parentItem()->isSelected())*/ // Issue 1509 - AOU - 20131113
+        {
             return item->parentItem();
+        }
 
         // items like polygons placed in two groups nested, so we need to recursive call.
         if(item->parentItem() && UBGraphicsStrokesGroup::Type == item->parentItem()->type())
             return determineItemToPress(item->parentItem());
-
-        //TODO claudio
-        // another chuck of very good code
-        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type() && currentTool == UBStylusTool::Play){
-            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
-            if(group && group->Delegate()->action())
-                group->Delegate()->action()->play();
-        }
     }
 
     return item;
