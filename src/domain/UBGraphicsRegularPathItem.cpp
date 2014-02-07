@@ -201,6 +201,18 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
 
 void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
 {
+    QPointF diff = handle->pos() - path().boundingRect().topLeft();
+
+    qreal maxSize = handle->radius() * 4;
+
+    if(diff.x() < maxSize){
+        handle->setX(handle->pos().x() + (maxSize - diff.x()));
+    }
+
+    if(diff.y() < maxSize){
+        handle->setY(handle->pos().y() + (maxSize - diff.y()));
+    }
+
     updatePath(handle->pos());
 
     if(fillingProperty()->gradient()){

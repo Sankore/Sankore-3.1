@@ -236,16 +236,30 @@ void UBGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
 {
     QRectF newRect = rect();
 
+    qreal maxSize = handle->radius() * 4;
+
     if(handle->getId() == 1){
-        //it's the vertical handle
+        //it's the horizontal handle
         newRect.setBottom(handle->pos().y());
+
+        if(newRect.height() < maxSize){
+            newRect = rect();
+
+            verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
+        }
 
         horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
 
         diagonalHandle()->setPos(newRect.bottomRight().x(), newRect.bottomRight().y());
     }else if(handle->getId() == 0){
-        //it's the horizontal handle
+        //it's the vertical handle
         newRect.setRight(handle->pos().x());
+
+        if(newRect.width() < maxSize){
+            newRect = rect();
+
+            horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
+        }
 
         verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
 
@@ -254,6 +268,16 @@ void UBGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
         //it's the diagonal handle
         newRect.setRight(handle->pos().x());
         newRect.setBottom(handle->pos().y());
+
+        if(newRect.width() < maxSize){
+            newRect = rect();
+            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
+        }
+
+        if(newRect.height() < maxSize){
+            newRect = rect();
+            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
+        }
 
         verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y());
 
