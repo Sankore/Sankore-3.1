@@ -679,9 +679,13 @@ QColor UBShapeFactory::fillSecondColor()
 
 void UBShapeFactory::desactivateEditionMode(QGraphicsItem *item)
 {
-    UBEditable *edit = dynamic_cast<UBEditable*>(item);    
+    UBEditable *edit = dynamic_cast<UBEditable*>(item);
 
-    if(edit) edit->deactivateEditionMode();
+    if(edit)
+    {
+        edit->deactivateEditionMode();
+        item->setSelected(false);
+    }
     else
     {
         UBAbstractHandle* handle = dynamic_cast<UBAbstractHandle*>(item);
