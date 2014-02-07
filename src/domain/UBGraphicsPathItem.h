@@ -30,6 +30,7 @@ public:
     virtual void updateHandle(UBAbstractHandle *handle);
     virtual void deactivateEditionMode();
 
+    void focusHandle(UBAbstractHandle *handle);
 protected:
     void focusOutEvent(QFocusEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

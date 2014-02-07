@@ -524,8 +524,10 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
             if ((UBGraphicsItemType::UserTypesCount > item->type()) && (item->type() > QGraphicsItem::UserType))
             {
                 // if Item can be selected at mouse press - then we need to deselect all other items.
-                //issue 1554 - NNE - 20131009
-                scene()->deselectAllItemsExcept(item);
+                if(item->type() != UBGraphicsItemType::GraphicsHandle){
+                    //issue 1554 - NNE - 20131009
+                    scene()->deselectAllItemsExcept(item);
+                }
             }
         }
     }else{
@@ -1054,9 +1056,6 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
     }
 
     mMouseDownPos = event->pos ();
-
-    qDebug() << scene();
-    qDebug() << event;
 
     movingItem = scene()->itemAt(this->mapToScene(event->posF().toPoint()));
 

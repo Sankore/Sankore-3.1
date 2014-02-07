@@ -240,6 +240,10 @@ void UBGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
 {
+
+    setSelected(true);
+    Delegate()->showFrame(false);
+
     int id = handle->getId();
 
     QPainterPath oldPath = path();
@@ -316,3 +320,8 @@ void UBGraphicsPathItem::deactivateEditionMode()
     }
 }
 
+void UBGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
+{
+    setSelected(true);
+    Delegate()->showFrame(false);
+}

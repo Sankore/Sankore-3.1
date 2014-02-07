@@ -201,6 +201,9 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
 
 void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
 {
+    setSelected(true);
+    Delegate()->showFrame(false);
+
     QPointF diff = handle->pos() - path().boundingRect().topLeft();
 
     qreal maxSize = handle->radius() * 4;
@@ -277,4 +280,10 @@ void UBGraphicsRegularPathItem::deactivateEditionMode()
         mMultiClickState = 0;
         showEditMode(false);
     }
+}
+
+void UBGraphicsRegularPathItem::focusHandle(UBAbstractHandle *handle)
+{
+    setSelected(true);
+    Delegate()->showFrame(false);
 }

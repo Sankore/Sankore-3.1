@@ -234,6 +234,10 @@ void UBGraphicsEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         QRectF rectangle = rect();
         QPointF bottomRight = rectangle.bottomRight();
 
+        horizontalHandle()->setZValue(zValue());
+        verticalHandle()->setZValue(zValue());
+        diagonalHandle()->setZValue(zValue());
+
         horizontalHandle()->setPos(bottomRight.x(), rectangle.y() + rectangle.height()/2);
         verticalHandle()->setPos(rectangle.x() + rectangle.width()/2, bottomRight.y());
         diagonalHandle()->setPos(bottomRight.x(), bottomRight.y());
@@ -266,6 +270,9 @@ void UBGraphicsEllipseItem::focusOutEvent(QFocusEvent *event)
 void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 {
     QRectF newRect = rect();
+
+    setSelected(true);
+    Delegate()->showFrame(false);
 
     qreal maxSize = handle->radius() * 4;
 
@@ -340,4 +347,10 @@ void UBGraphicsEllipseItem::deactivateEditionMode()
         mMultiClickState = 0;
         showEditMode(false);
     }
+}
+
+void UBGraphicsEllipseItem::focusHandle(UBAbstractHandle *handle)
+{
+    setSelected(true);
+    Delegate()->showFrame(false);
 }

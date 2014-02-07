@@ -60,6 +60,8 @@ class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape, public UBEd
 
         void deactivateEditionMode();
 
+        void focusHandle(UBAbstractHandle *handle);
+
     protected:
         // QGraphicsItem interface
         QVariant itemChange(GraphicsItemChange change, const QVariant &value);
