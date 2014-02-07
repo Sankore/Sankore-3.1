@@ -12,7 +12,7 @@ UBAbstractHandle::UBAbstractHandle()
     //setUuid(QUuid::createUuid());
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
+    setFlag(QGraphicsItem::ItemIsSelectable, false);
     setFlag(QGraphicsItem::ItemIsMovable, true);
 }
 
@@ -23,7 +23,7 @@ UBAbstractHandle::UBAbstractHandle(UBAbstractHandle* const src)
     mRadius = src->mRadius;
     mEditableObject = src->mEditableObject;
 
-    setPos(pos());
+    setPos(src->pos());
 
     setFlags(src->flags());
     setData(UBGraphicsItemData::itemLayerType, src->data(UBGraphicsItemData::itemLayerType));
@@ -53,6 +53,11 @@ void UBAbstractHandle::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void UBAbstractHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    QBrush brush(Qt::white);
+
+    brush.setStyle(Qt::SolidPattern);
+    painter->setBrush(brush);
+
     painter->drawEllipse(-mRadius, -mRadius, mRadius*2, mRadius*2);
 }
 

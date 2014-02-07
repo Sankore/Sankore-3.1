@@ -28,10 +28,12 @@ public:
     QPainterPath shape() const;
 
     virtual void updateHandle(UBAbstractHandle *handle);
+    virtual void deactivateEditionMode();
 
 protected:
     void focusOutEvent(QFocusEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
 private:
     bool mClosed;

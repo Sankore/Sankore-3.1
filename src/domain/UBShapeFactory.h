@@ -19,6 +19,8 @@ public:
     void init();
 
     static bool isShape(QGraphicsItem *item);
+    static void desactivateEditionMode(QGraphicsItem *item);
+    static bool isInEditMode(QGraphicsItem *item);
 
     enum ShapeType
     {

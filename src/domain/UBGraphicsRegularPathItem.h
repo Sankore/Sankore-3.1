@@ -85,10 +85,13 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1H
             mRadius = radius;
         }
 
+        void deactivateEditionMode();
+
 protected:
     void focusOutEvent(QFocusEvent *event);
 
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
 private:
     int mMultiClickState;

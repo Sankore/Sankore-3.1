@@ -121,7 +121,7 @@ QRectF UBGraphicsRegularPathItem::boundingRect() const
 
     int enlarge = 0;
 
-    if(mMultiClickState >= 2){
+    if(mMultiClickState >= 1){
         QPointF ph = getHandle()->pos();
         qreal r = getHandle()->radius();
 
@@ -194,15 +194,6 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
         if (hasStrokeProperty())
             cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
-        /*
-        UBDiagonalHandle *handle = new UBDiagonalHandle(dynamic_cast<UBDiagonalHandle*>(getHandle()));
-        handle->hide();
-        cp->mHandles.push_back(handle);
-        UBApplication::boardController->controlView()->scene()->addItem(handle);
-        handle->setParentItem(cp);
-        handle->setEditableObject(cp);
-        */
-
         cp->mVertices = mVertices;
         cp->mNVertices = mNVertices;
     }
@@ -211,17 +202,25 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
 void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
 {
     updatePath(handle->pos());
+
+    if(fillingProperty()->gradient()){
+        QLinearGradient g(path().boundingRect().topLeft(), path().boundingRect().topRight());
+
+        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
+        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+
+        setFillingProperty(new UBFillProperty(g));
+    }
+
 }
 
 void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    QRectF oldBoundingRect = boundingRect();
-
     mMultiClickState++;
 
     UBAbstractGraphicsPathItem::mousePressEvent(event);
 
-    if(mMultiClickState == 2){
+    if(mMultiClickState >= 1){
         QPainterPath circle;
 
         circle.addEllipse(mCenter, mRadius, mRadius);
@@ -234,14 +233,20 @@ void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 }
 
+void UBGraphicsRegularPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        UBAbstractGraphicsPathItem::mouseMoveEvent(event);
+    }
+}
+
 void UBGraphicsRegularPathItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    if(mMultiClickState > 1){
+    if(mMultiClickState >= 1){
         mMultiClickState = 0;
-        setFlag(QGraphicsItem::ItemIsSelectable, true);
-        setFlag(QGraphicsItem::ItemIsMovable, true);
         showEditMode(false);
     }
 }
@@ -251,4 +256,12 @@ QPainterPath UBGraphicsRegularPathItem::shape() const
     QPainterPath path;
     path.addRect(boundingRect());
     return path;
+}
+
+void UBGraphicsRegularPathItem::deactivateEditionMode()
+{
+    if(mMultiClickState >= 1){
+        mMultiClickState = 0;
+        showEditMode(false);
+    }
 }
