@@ -32,7 +32,7 @@ class UBAbstractDrawRuler;
 
 class UBDrawingController : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     private:
         UBDrawingController(QObject * parent = 0);

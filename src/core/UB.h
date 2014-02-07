@@ -64,8 +64,10 @@ struct UBStylusTool
         Pointer,
         Line,
         Text,
+        Capture,
         RichText,
-        Capture
+        ChangeFill,//EV-7 - CFA - 20140122 : pot de peinture
+        Drawing //EV-7 - NNE - 20140103
     };
 };
 
@@ -161,6 +163,11 @@ struct UBGraphicsItemType
         groupContainerType,
         ToolWidgetItemType,
         GraphicsWidgetItemType,
+        GraphicsShapeItemType,
+        GraphicsPathItemType,
+        GraphicsRegularPathItemType,
+        GraphicsFreehandItemType,
+        GraphicsHandle,
         UserTypesCount // this line must be the last line in this enum because it is types counter.
     };
 };

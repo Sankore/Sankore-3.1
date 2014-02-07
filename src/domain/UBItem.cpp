@@ -32,7 +32,13 @@
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
+#include "domain/UBGraphicsPathItem.h"
+#include "domain/UBGraphicsRegularPathItem.h"
+#include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsRectItem.h"
+#include "domain/UBGraphicsLineItem.h"
 #include "tools/UBGraphicsCurtainItem.h"
+
 
 UBItem::UBItem()
     : mUuid(QUuid())
@@ -126,6 +132,23 @@ UBGraphicsItemDelegate *UBGraphicsItem::Delegate(QGraphicsItem *pItem)
         break;
     case UBGraphicsCurtainItem::Type :
         result = (static_cast<UBGraphicsCurtainItem*>(pItem))->Delegate();
+        break;
+    case UBGraphicsRegularPathItem::Type :
+        result = (static_cast<UBGraphicsRegularPathItem*>(pItem))->Delegate();
+        break;
+    case UBGraphicsPathItem::Type :
+        result = (static_cast<UBGraphicsPathItem*>(pItem))->Delegate();
+        break;
+    case UBGraphicsItemType::GraphicsShapeItemType :
+        UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(pItem);
+        UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(pItem);
+        UBGraphicsLineItem* line = dynamic_cast<UBGraphicsLineItem*>(pItem);
+        if (rect)
+            result = rect->Delegate();
+        else if (ellipse)
+            result = ellipse->Delegate();
+        else
+            result = line->Delegate();
         break;
     }
 

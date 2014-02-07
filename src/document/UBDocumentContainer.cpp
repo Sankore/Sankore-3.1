@@ -127,7 +127,9 @@ void UBDocumentContainer::insertThumbPage(int index)
 
 void UBDocumentContainer::reloadThumbnails()
 {
-    if (mCurrentDocument) {
+    if (mCurrentDocument) {        
+        if (mDocumentThumbs && mDocumentThumbs->size() > 0)
+            UBThumbnailAdaptor::clearThumbs(*mDocumentThumbs);
         UBThumbnailAdaptor::load(mCurrentDocument, *mDocumentThumbs);
         qDebug() << "Reloading Thumbnails. new mDocumentThumbs size: " << mDocumentThumbs->size();
     } else {
