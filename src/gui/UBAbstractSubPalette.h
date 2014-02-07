@@ -53,10 +53,10 @@ class UBColorPickerButton : public QToolButton
     private:
         QColor mColor;
 
-        static const int margin_left = 5;
-        static const int margin_top = 10;
-        static const int width = 27;
-        static const int height = 20;
+        static const int margin_left = 2;
+        static const int margin_top = 5;
+        static const int width = 20;
+        static const int height = 16;
 };
 
 

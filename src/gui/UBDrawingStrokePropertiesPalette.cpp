@@ -37,7 +37,6 @@ UBDrawingStrokePropertiesPalette::UBDrawingStrokePropertiesPalette(Qt::Orientati
 
     // Color button
     mBtnColorPicker = new UBColorPickerButton(this);
-    mBtnColorPicker->setIconSize(QSize(UBColorPickerButton::iconSize,UBColorPickerButton::iconSize));
     layout()->addWidget(mBtnColorPicker);
     connect(mBtnColorPicker, SIGNAL(clicked()), this, SLOT(onBtnSelectStrokeColor()));
 
