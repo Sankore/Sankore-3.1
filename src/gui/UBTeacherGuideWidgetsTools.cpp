@@ -56,7 +56,6 @@
 
 #include "core/memcheck.h"
 
-#include "gui/UBFileDialog.h"
 
 /***************************************************************************
  *                             class    UBAddItem                          *
@@ -804,7 +803,7 @@ void UBTGFileWidget::OnClickBtnSelectFile()
 {
 
     // Ouvrir une dialog de selection de fichier :
-    QString filename = UBFileDialog::getOpenFileName(UBApplication::mainWindow, tr("Select File"), QString(), "*.*", NULL);
+    QString filename = QFileDialog::getOpenFileName(UBApplication::mainWindow, tr("Select File"), QString(), "*.*", NULL);
 
     if (filename.length() > 0)
     {

@@ -20,13 +20,14 @@
  */
 
 
+
+#include <QFileDialog>
+
 #include "UBUpdateDlg.h"
 #include "core/UBApplication.h"
 #include "UBMainWindow.h"
 
 #include "core/memcheck.h"
-
-#include "gui/UBFileDialog.h"
 
 UBUpdateDlg::UBUpdateDlg(QWidget *parent, int nbFiles, const QString& bkpPath)
     : QDialog(parent)
@@ -170,7 +171,7 @@ UBUpdateDlg::~UBUpdateDlg()
 void UBUpdateDlg::onBrowse()
 {
     QString qsSelectedDir;
-    qsSelectedDir = UBFileDialog::getExistingDirectory(this, tr("Select a backup folder"), mBkpPath->text());
+    qsSelectedDir = QFileDialog::getExistingDirectory(this, tr("Select a backup folder"), mBkpPath->text());
     mBkpPath->setText(qsSelectedDir);
 }
 

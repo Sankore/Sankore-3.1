@@ -51,7 +51,6 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBTeacherGuideConstantes.h \
     src/gui/UBTeacherGuideResourcesPresentationWidget.h \
     src/gui/UBAbstractTeacherGuide.h \
-    src/gui/UBFileDialog.h \
     src/gui/UBDrawingPalette.h \
     src/gui/UBAbstractSubPalette.h \
     src/gui/UBShapesPalette.h \
@@ -112,7 +111,6 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBTeacherGuideResourceEditionWidget.cpp \
     src/gui/UBTeacherGuideResourcesPresentationWidget.cpp \
     src/gui/UBAbstractTeacherGuide.cpp \
-    src/gui/UBFileDialog.cpp \
     src/gui/UBDrawingPalette.cpp \
     src/gui/UBAbstractSubPalette.cpp \
     src/gui/UBShapesPalette.cpp \

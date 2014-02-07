@@ -27,8 +27,6 @@
 #include <QtWebKit>
 #include <QDir>
 
-#include "gui/UBFileDialog.h"
-
 #include "frameworks/UBFileSystemUtils.h"
 #include "frameworks/UBPlatformUtils.h"
 
@@ -2939,9 +2937,9 @@ void UBBoardController::addItem()
         extensions += ext;
     }
 
-    QString filename = UBFileDialog::getOpenFileName(mControlContainer, tr("Add Item"),
+    QString filename = QFileDialog::getOpenFileName(mControlContainer, tr("Add Item"),
                                                     defaultPath,
-                                                    tr("All Supported (%1)").arg(extensions));
+                                                    tr("All Supported (%1)").arg(extensions), NULL, QFileDialog::DontUseNativeDialog);
 
     if (filename.length() > 0)
     {

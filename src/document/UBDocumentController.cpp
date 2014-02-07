@@ -25,7 +25,6 @@
 #include <QtCore>
 #include <QtGui>
 
-#include "gui/UBFileDialog.h"
 #include "frameworks/UBFileSystemUtils.h"
 #include "frameworks/UBStringUtils.h"
 #include "frameworks/UBPlatformUtils.h"
@@ -2343,9 +2342,7 @@ void UBDocumentController::importFile()
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
     if(defaultPath.isDetached())
         defaultPath = UBSettings::settings()->userDocumentDirectory();
-
-    //issue 1666 - NNE - 20140123
-    QString filePath = UBFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"),
+    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"),
                                                     defaultPath, docManager->importFileFilter());
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -2394,9 +2391,7 @@ void UBDocumentController::addFolderOfImages()
     {
         QString defaultPath = UBSettings::settings()->lastImportFolderPath->get().toString();
 
-        //issue 1666 - NNE - 20140123
-        QString imagesDir = UBFileDialog::getExistingDirectory(mParentWidget, tr("Import all Images from Folder"), defaultPath);
-
+        QString imagesDir = QFileDialog::getExistingDirectory(mParentWidget, tr("Import all Images from Folder"), defaultPath);
         QDir parentImageDir(imagesDir);
         parentImageDir.cdUp();
 
@@ -2440,9 +2435,7 @@ void UBDocumentController::addFileToDocument()
 bool UBDocumentController::addFileToDocument(UBDocumentProxy* document)
 {
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
-
-    //issue 1666 - NNE - 20140123
-    QString filePath = UBFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"), defaultPath, UBDocumentManager::documentManager()->importFileFilter(true));
+    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"), defaultPath, UBDocumentManager::documentManager()->importFileFilter(true));
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
     QApplication::processEvents();
@@ -2924,8 +2917,7 @@ void UBDocumentController::addImages()
             extensions += ext;
         }
 
-        //issue 1666 - NNE - 20140123
-        QStringList images = UBFileDialog::getOpenFileNames(mParentWidget, tr("Add all Images to Document"),
+        QStringList images = QFileDialog::getOpenFileNames(mParentWidget, tr("Add all Images to Document"),
                 defaultPath, tr("All Images (%1)").arg(extensions));
 
         if (images.length() > 0)
