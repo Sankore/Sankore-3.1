@@ -15,9 +15,13 @@
         },
         
         isInteger: function () {
-            var value = this.getValue();
-            
-            return value === Math.floor(value);
+            try {
+                var value = this.getValue();
+                
+                return value === Math.floor(value);
+            } catch (e) {
+                return 0;
+            }
         },
 
         toString: function () {
@@ -191,11 +195,23 @@
         },
 
         getValue: function () {
-            return Math.floor(this.left.getValue() / this.right.getValue());
+            var rightValue = this.right.getValue();
+            
+            if (0 === rightValue) {
+                throw Sankore.Util.Error.create('ZeroDivision', 'Division by zero');
+            }
+            
+            return Math.floor(this.left.getValue() / rightValue);
         },
 
         getRemainder: function () {
-            return this.left.getValue() % this.right.getValue();
+            var rightValue = this.right.getValue();
+            
+            if (0 === rightValue) {
+                throw Sankore.Util.Error.create('ZeroDivision', 'Division by zero');
+            }
+            
+            return this.left.getValue() % rightValue;
         }
     }));
 })();
