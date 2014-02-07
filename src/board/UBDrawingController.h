@@ -53,6 +53,7 @@ class UBDrawingController : public QObject
         int currentToolColorIndex();
         QColor currentToolColor();
         QColor toolColor(bool onDarkBackground);
+        void deactivateCreationModeForGraphicsPathItems();
 
         void setPenColor(bool onDarkBackground, const QColor& color, int pIndex);
         void setMarkerColor(bool onDarkBackground, const QColor& color, int pIndex);

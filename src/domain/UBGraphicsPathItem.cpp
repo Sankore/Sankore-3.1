@@ -13,6 +13,7 @@ UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
     , mClosed(false)
     , mMultiClickState(0)
     , HANDLE_SIZE(20)
+    , mIsInCreationMode(true)
 {
     initializeStrokeProperty();
     initializeFillingProperty();
@@ -66,6 +67,11 @@ void UBGraphicsPathItem::addPoint(const QPointF & point)
         handle->setId(path().elementCount()-1);
         handle->hide();
     }
+}
+
+void UBGraphicsPathItem::setIsInCreationMode(bool mode)
+{
+    mIsInCreationMode = mode;
 }
 
 void UBGraphicsPathItem::setClosed(bool closed)
@@ -169,11 +175,15 @@ QRectF UBGraphicsPathItem::boundingRect() const
 
     int enlarge = 0;
 
+
     if (strokeProperty())
     {
         int thickness = strokeProperty()->width();
         enlarge = thickness/2;
     }
+
+    if (mIsInCreationMode)//gérer les poignées aux extrémités
+        enlarge += HANDLE_SIZE/2;
 
     rect.adjust(-enlarge, -enlarge, enlarge, enlarge);
 
@@ -218,10 +228,13 @@ void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
 
         int hsize = HANDLE_SIZE/2;
 
-        painter->drawEllipse(mStartEndPoint[0].x() - hsize, mStartEndPoint[0].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+        if (mIsInCreationMode)
+        {
+            painter->drawEllipse(mStartEndPoint[0].x() - hsize, mStartEndPoint[0].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
 
-        if(path().elementCount() >= 2)
-            painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+            if(path().elementCount() >= 2)
+                painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+        }
     }
 }
 
