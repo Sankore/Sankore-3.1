@@ -789,7 +789,13 @@
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
-                window.sankore.loadUrl($(a).attr('href'));
+                var href = $(a).attr('href');
+                
+                if (href.substring(0, 'http'.length) !== 'http') {
+                    href = 'http://' + href;
+                }
+                
+                window.sankore.loadUrl(href);
             };
 
             options.onInit = function () {
