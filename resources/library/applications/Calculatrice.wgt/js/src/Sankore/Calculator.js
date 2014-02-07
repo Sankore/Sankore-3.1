@@ -164,15 +164,26 @@
                 // call the incomplete expression, append it to the expression string then evaluate
                 Sankore.InterruptingCommand.create('op', _('command.op'), function (args) {
                     if (null === this.op) {
-                        if (this.expressionString.length > 0 & -1 !== '+-*/:'.indexOf(this.expressionString[0])) {
-                            this.op = this.expressionString;
-
-                            this.eventDispatcher.notify('calculator.op_changed', this.op);
+                        if (this.expressionString.length > 1 &&
+                            -1 !== '+-*/:'.indexOf(this.expressionString[0])
+                        ) {
+                            try {
+                                // we parse the OP expression with a fake left operand (1)
+                                // if it raised exceptions during parsing or evaluating, 
+                                // the expression is not good for an OP operation
+                                this.calculusEngine.evaluate('(1)' + this.expressionString).getValue();
+                                
+                                this.op = this.expressionString;
+                                this.eventDispatcher.notify('calculator.op_changed', this.op);
+                            } catch (e) {
+                            }
                         }
 
                         this.expressionString = '';
                         this.output = null;
                     } else {
+                        // case : the OP command is called immediately. The previous results is used
+                        // as the left operand
                         if (0 === this.expressionString.length && null !== this.output) {
                             this.expressionString = '(' + this.output.toString() + ')';
                         }
@@ -219,7 +230,7 @@
                 // add the current memory value to the expression string
                 Sankore.Command.create('memoryRecall', _('command.memory_recall'), function (args) {
                     if (null !== this.memory) {
-                        this.expressionString += this.memory.toString();
+                        this.expressionString += '(' + this.memory.toString() + ')';
                     }
                 }),
 

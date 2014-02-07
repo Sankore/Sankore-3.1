@@ -6,7 +6,7 @@
 
 UBEditable::UBEditable()
 {
-
+    mEditMode = false;
 }
 
 UBEditable::~UBEditable()

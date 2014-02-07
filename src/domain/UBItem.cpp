@@ -37,6 +37,7 @@
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsRectItem.h"
 #include "domain/UBGraphicsLineItem.h"
+#include "domain/UBGraphicsFreehandItem.h"
 #include "tools/UBGraphicsCurtainItem.h"
 
 
@@ -138,6 +139,9 @@ UBGraphicsItemDelegate *UBGraphicsItem::Delegate(QGraphicsItem *pItem)
         break;
     case UBGraphicsPathItem::Type :
         result = (static_cast<UBGraphicsPathItem*>(pItem))->Delegate();
+        break;
+    case UBGraphicsFreehandItem::Type :
+        result = (static_cast<UBGraphicsFreehandItem*>(pItem))->Delegate();
         break;
     case UBGraphicsItemType::GraphicsShapeItemType :
         UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(pItem);

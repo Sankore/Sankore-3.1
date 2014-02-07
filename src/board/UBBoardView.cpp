@@ -563,6 +563,10 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
             return true;
+
+        if(UBShapeFactory::isInEditMode(item)){
+            return true;
+        }
     }
 
     switch(item->type())
@@ -846,8 +850,6 @@ void UBBoardView::handleItemMousePress(QMouseEvent *event)
                 graphicsItem->Delegate()->startUndoStep();
 
             movingItem->clearFocus();
-            qDebug() << movingItem;
-            qDebug() << movingItem->type();
         }
 
         if (suspendedMousePressEvent)
