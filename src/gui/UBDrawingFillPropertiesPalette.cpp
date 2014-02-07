@@ -34,7 +34,7 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
 
     // ColorPicker button
     mBtnColorPicker = new UBColorPickerButton(this);
-    mBtnColorPicker->setToolTip(tr("Select and set fill color"));
+    mBtnColorPicker->setToolTip(tr("Select and set filling color"));
     mBtnColorPicker->setColor(UBApplication::boardController->shapeFactory().fillFirstColor());
     mBtnColorPicker->setIconSize(QSize(UBColorPickerButton::iconSize,UBColorPickerButton::iconSize));
     layout()->addWidget(mBtnColorPicker);
@@ -90,7 +90,7 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
 
     // ColorPicker button
     mBtnColor2Picker = new UBColorPickerButton(this);
-    mBtnColor2Picker->setToolTip(tr("Select and set fill color"));
+    mBtnColor2Picker->setToolTip(tr("Select and set second filling color"));
     mBtnColor2Picker->setColor(UBApplication::boardController->shapeFactory().fillSecondColor());
     mBtnColor2Picker->setIconSize(QSize(UBColorPickerButton::iconSize,UBColorPickerButton::iconSize));
     mBtnColor2Picker->setEnabled(false);

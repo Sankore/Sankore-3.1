@@ -557,7 +557,12 @@ Here we determines cases when items should to get mouse press event at pressing 
 
     //EV-7 - NNE - 20140103
     if(UBShapeFactory::isShape(item)){
-        return true;
+        if (currentTool == UBStylusTool::Play)
+            return false;
+        if ((currentTool == UBStylusTool::Selector) && item->isSelected())
+            return true;
+        if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
+            return true;
     }
 
     switch(item->type())
@@ -691,6 +696,9 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
 
     //EV-7 - NNE - 20140103
     if(UBShapeFactory::isShape(item)){
+        if(UBShapeFactory::isInEditMode(item)){
+            return false;
+        }
         return true;
     }
 
@@ -879,6 +887,7 @@ void UBBoardView::handleItemMouseMove(QMouseEvent *event)
             posBeforeMove = movingItem->pos();
 
         QGraphicsView::mouseMoveEvent (event);
+
 
         if (movingItem)
           posAfterMove = movingItem->pos();

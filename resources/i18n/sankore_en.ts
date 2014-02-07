@@ -885,6 +885,186 @@
         <source>Image position : expand</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Rich Text Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write Rich Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ellipse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw an Ellipse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Filling Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Circle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Rectangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Thickness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke thickness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Shapes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Pentagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular pentagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Hexagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular hexagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Heptagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular heptagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Octogon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular octogon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Gradient</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Full</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Dense</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Diagonal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Freehand Drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Freehand drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1591,6 +1771,17 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBDrawingFillPropertiesPalette</name>
+    <message>
+        <source>Select and set filling color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select and set second filling color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -890,6 +890,186 @@
         <source>Image position : expand</source>
         <translation>Position de l&apos;image : étendue</translation>
     </message>
+    <message>
+        <source>Rich Text Editor</source>
+        <translation>Editeur de texte enrichi</translation>
+    </message>
+    <message>
+        <source>Write Rich Text</source>
+        <translation>Ecrire un texte enrichi</translation>
+    </message>
+    <message>
+        <source>Ellipse</source>
+        <translation>Ellipse</translation>
+    </message>
+    <message>
+        <source>Draw an Ellipse</source>
+        <translation>Dessiner une ellipse</translation>
+    </message>
+    <message>
+        <source>Change Filling Color</source>
+        <translation>Changer la couleur de remplissage</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Polygone</translation>
+    </message>
+    <message>
+        <source>Draw a Polygon</source>
+        <translation>Dessiner un polygone</translation>
+    </message>
+    <message>
+        <source>Drawing</source>
+        <translation>Dessins</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Cercle</translation>
+    </message>
+    <message>
+        <source>Draw a Circle</source>
+        <translation>Dessiner un cercle</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Rectangle</translation>
+    </message>
+    <message>
+        <source>Draw a Rectangle</source>
+        <translation>Dessiner un rectangle</translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation>Carré</translation>
+    </message>
+    <message>
+        <source>Draw a Square</source>
+        <translation>Dessiner un carré</translation>
+    </message>
+    <message>
+        <source>Draw a regular shape</source>
+        <translation>Dessiner une forme régulière</translation>
+    </message>
+    <message>
+        <source>Draw a regular triangle</source>
+        <translation>Dessiner un triangle équilatéral</translation>
+    </message>
+    <message>
+        <source>Draw a regular square</source>
+        <translation>Dessiner un carré</translation>
+    </message>
+    <message>
+        <source>Stroke Properties</source>
+        <translation>Propriétés du trait</translation>
+    </message>
+    <message>
+        <source>Stroke properties</source>
+        <translation>Propriétés du trait</translation>
+    </message>
+    <message>
+        <source>Stroke Thickness</source>
+        <translation>Epaisseur du trait</translation>
+    </message>
+    <message>
+        <source>Stroke thickness</source>
+        <translation>Epaisseur du trait</translation>
+    </message>
+    <message>
+        <source>Stroke Style Solid Line</source>
+        <translation>Style du trait : plein</translation>
+    </message>
+    <message>
+        <source>Stroke style : Solid Line</source>
+        <translation>Style du trait : plein</translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Line</source>
+        <translation>Style du trait : pointillés</translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Line</source>
+        <translation>Style du trait : pointillés</translation>
+    </message>
+    <message>
+        <source>Regular Shapes</source>
+        <translation>Forme régulière</translation>
+    </message>
+    <message>
+        <source>Regular Triangle</source>
+        <translation>Triangle équilateral</translation>
+    </message>
+    <message>
+        <source>Regular Square</source>
+        <translation>Carré</translation>
+    </message>
+    <message>
+        <source>Regular Pentagon</source>
+        <translation>Pentagone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular pentagon</source>
+        <translation>Dessiner un pentagone régulier</translation>
+    </message>
+    <message>
+        <source>Regular Hexagon</source>
+        <translation>Hegagone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular hexagon</source>
+        <translation>Dessiner un hexagone régulier</translation>
+    </message>
+    <message>
+        <source>Regular Heptagon</source>
+        <translation>Heptagone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular heptagon</source>
+        <translation>Dessiner un heptagone régulier</translation>
+    </message>
+    <message>
+        <source>Regular Octogon</source>
+        <translation>Octogone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular octogon</source>
+        <translation>Dessiner un octogone régulier</translation>
+    </message>
+    <message>
+        <source>Filling Properties</source>
+        <translation>Propriétés du remplissage</translation>
+    </message>
+    <message>
+        <source>Filling properties</source>
+        <translation>Propriétés du remplissage</translation>
+    </message>
+    <message>
+        <source>Filling Style : Transparent</source>
+        <translation>Style du remplissage : Transparent</translation>
+    </message>
+    <message>
+        <source>Filling Style : Gradient</source>
+        <translation>Style du remplissage : Dégradé</translation>
+    </message>
+    <message>
+        <source>Filling Style : Full</source>
+        <translation>Style du remplissage : Plein</translation>
+    </message>
+    <message>
+        <source>Filling Style : Dense</source>
+        <translation>Style du remplissage : Points</translation>
+    </message>
+    <message>
+        <source>Filling Style : Diagonal</source>
+        <translation>Style du remplissage : Diagonales</translation>
+    </message>
+    <message>
+        <source>Freehand Drawing</source>
+        <translation>Dessin à main levée</translation>
+    </message>
+    <message>
+        <source>Freehand drawing</source>
+        <translation>Dessin à main levée</translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1607,6 +1787,17 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <message>
         <source>Cancel</source>
         <translation>Annuler</translation>
+    </message>
+</context>
+<context>
+    <name>UBDrawingFillPropertiesPalette</name>
+    <message>
+        <source>Select and set filling color</source>
+        <translation>Choisir une couleur de remplissage</translation>
+    </message>
+    <message>
+        <source>Select and set second filling color</source>
+        <translation>Choisir une couleur de remplissage secondaire</translation>
     </message>
 </context>
 <context>
@@ -2599,10 +2790,6 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Add an action</source>
         <translation>Ajouter une action</translation>
-    </message>
-    <message>
-        <source>Add a media</source>
-        <translation type="obsolete">Ajouter un média</translation>
     </message>
     <message>
         <source>Add a link</source>

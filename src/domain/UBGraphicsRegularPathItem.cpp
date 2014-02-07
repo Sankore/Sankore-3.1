@@ -121,7 +121,7 @@ QRectF UBGraphicsRegularPathItem::boundingRect() const
 
     int enlarge = 0;
 
-    if(mMultiClickState >= 2){
+    if(mMultiClickState >= 1){
         QPointF ph = getHandle()->pos();
         qreal r = getHandle()->radius();
 
@@ -194,15 +194,6 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
         if (hasStrokeProperty())
             cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
 
-        /*
-        UBDiagonalHandle *handle = new UBDiagonalHandle(dynamic_cast<UBDiagonalHandle*>(getHandle()));
-        handle->hide();
-        cp->mHandles.push_back(handle);
-        UBApplication::boardController->controlView()->scene()->addItem(handle);
-        handle->setParentItem(cp);
-        handle->setEditableObject(cp);
-        */
-
         cp->mVertices = mVertices;
         cp->mNVertices = mNVertices;
     }
@@ -210,51 +201,38 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
 
 void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
 {
-    QPointF p = handle->pos();
-/*
-    //We have to offset the given posisition to updatePath
-    QPointF diff(p - mStartPoint);
+    QPointF diff = handle->pos() - path().boundingRect().topLeft();
 
-    if (diff.x() < 0)
-        diff.setX(-diff.x());
-    if (diff.y() < 0)
-        diff.setY(-diff.y());
+    qreal maxSize = handle->radius() * 4;
 
-    qreal diffMin = qMin(diff.x(),diff.y());
-    qreal r = getHandle()->radius();
+    if(diff.x() < maxSize){
+        handle->setX(handle->pos().x() + (maxSize - diff.x()));
+    }
 
-    qreal dist = sqrt(2*diffMin*diffMin) - diffMin;
+    if(diff.y() < maxSize){
+        handle->setY(handle->pos().y() + (maxSize - diff.y()));
+    }
 
-    qreal offset = dist - r;
+    updatePath(handle->pos());
 
-    if(hasStrokeProperty())
-        dist -= strokeProperty()->width();
+    if(fillingProperty()->gradient()){
+        QLinearGradient g(path().boundingRect().topLeft(), path().boundingRect().topRight());
 
-    updatePath(QPointF(p.x() + offset, p.y() + offset));
-*/
-    QPointF diff = p - boundingRect().topLeft();
+        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
+        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
 
-    if (diff.x() < 0)
-        diff.setX(-diff.x());
-    if (diff.y() < 0)
-        diff.setY(-diff.y());
+        setFillingProperty(new UBFillProperty(g));
+    }
 
-    qreal diffMin = qMin(diff.x(),diff.y());
-
-    updatePath(QPointF(p.x() - getHandle()->radius(), p.y() -
-                       getHandle()->radius()));
-    //handle->setPos(boundingRect().bottomRight().x() - r, boundingRect().bottomRight().y() - r);
 }
 
 void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    QRectF oldBoundingRect = boundingRect();
-
     mMultiClickState++;
 
     UBAbstractGraphicsPathItem::mousePressEvent(event);
 
-    if(mMultiClickState == 2){
+    if(mMultiClickState >= 1){
         QPainterPath circle;
 
         circle.addEllipse(mCenter, mRadius, mRadius);
@@ -267,14 +245,20 @@ void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
 }
 
+void UBGraphicsRegularPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        UBAbstractGraphicsPathItem::mouseMoveEvent(event);
+    }
+}
+
 void UBGraphicsRegularPathItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    if(mMultiClickState > 1){
+    if(mMultiClickState >= 1){
         mMultiClickState = 0;
-        setFlag(QGraphicsItem::ItemIsSelectable, true);
-        setFlag(QGraphicsItem::ItemIsMovable, true);
         showEditMode(false);
     }
 }
@@ -286,65 +270,10 @@ QPainterPath UBGraphicsRegularPathItem::shape() const
     return path;
 }
 
-void UBGraphicsRegularPathItem::redim(float size)
+void UBGraphicsRegularPathItem::deactivateEditionMode()
 {
-    qreal radius = size/2;
-
-    QPointF center(radius, radius);
-
-    //center += this->boundingRect().topLeft();
-
-    QPainterPath path;
-
-    /*
-
-    QPointF diff2 = this->boundingRect().topLeft() - getHandle()->pos();
-
-    qreal r = qMin(diff2.x(), diff2.y());
-
-    */
-
-    /*
-    qreal remaining = (sqrt(diff2.x()*diff2.x() + diff2.y()*diff2.y()) - r);
-
-    radius = (r + remaining)/2;
-    */
-
-    //radius = r / 2;// - getHandle()->radius() / 2;
-
-    QPointF vertice(mVertices.at(0).first, mVertices.at(0).second);
-    QPointF currentPoint = center - vertice*radius;
-    QPointF firstPoint = currentPoint;
-
-    path.moveTo(currentPoint);
-
-    for (int i = 1; i < mNVertices; i++){
-        vertice = QPointF(mVertices.at(i).first, mVertices.at(i).second);
-        currentPoint = center - vertice*radius;
-        path.lineTo(currentPoint);
+    if(mMultiClickState >= 1){
+        mMultiClickState = 0;
+        showEditMode(false);
     }
-
-    path.lineTo(firstPoint);
-/*
-    QPointF diff = this->path().boundingRect().topLeft() - path.boundingRect().topLeft();
-
-    QPainterPath cpath;
-
-    center += diff;
-
-    d_center = center;
-
-    vertice = QPointF(mVertices.at(0).first, mVertices.at(0).second);
-    firstPoint = vertice;
-
-    cpath.moveTo(center - vertice * radius);
-
-    for(int i = 1; i < mNVertices; i++){
-        vertice = QPointF(mVertices.at(i).first, mVertices.at(i).second);
-        cpath.lineTo(center - vertice * radius);
-    }
-
-    cpath.lineTo(center - firstPoint * radius);
-*/
-    setPath(path);
 }

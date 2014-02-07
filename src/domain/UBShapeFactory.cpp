@@ -640,3 +640,19 @@ QColor UBShapeFactory::fillSecondColor()
 {
     return mCurrentFillSecondColor;
 }
+
+void UBShapeFactory::desactivateEditionMode(QGraphicsItem *item)
+{
+    UBEditable *edit = dynamic_cast<UBEditable*>(item);
+
+    if(edit) edit->deactivateEditionMode();
+}
+
+bool UBShapeFactory::isInEditMode(QGraphicsItem *item)
+{
+    UBEditable *edit = dynamic_cast<UBEditable*>(item);
+
+    if(edit == 0) return false;
+
+    return edit->isInEditMode();
+}

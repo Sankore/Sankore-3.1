@@ -74,11 +74,14 @@ public:
     virtual QRectF boundingRect() const;
     QPainterPath shape() const;
 
+    void deactivateEditionMode();
+
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void focusOutEvent(QFocusEvent *event);
 
 private:

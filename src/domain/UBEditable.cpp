@@ -30,4 +30,16 @@ void UBEditable::showEditMode(bool show)
             mHandles.at(i)->show();
         }
     }
+
+    mEditMode = show;
+}
+
+void UBEditable::deactivateEditionMode()
+{
+    //nop
+}
+
+bool UBEditable::isInEditMode()
+{
+    return mEditMode;
 }

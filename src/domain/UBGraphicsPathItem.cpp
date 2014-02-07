@@ -25,8 +25,6 @@ UBGraphicsPathItem::~UBGraphicsPathItem()
 
 void UBGraphicsPathItem::addPoint(const QPointF & point)
 {
-    prepareGeometryChange();
-
     QPainterPath painterPath = path();
 
     if (painterPath.elementCount() == 0)
@@ -58,7 +56,7 @@ void UBGraphicsPathItem::addPoint(const QPointF & point)
     }
 
     if(!mClosed){
-        UBFreeHandle *handle = new UBFreeHandle;
+        UBFreeHandle *handle = new UBFreeHandle();
 
         addHandle(handle);
 
@@ -123,7 +121,10 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
     if (cp)
     {
         cp->setPath(QPainterPath(this->path()));
+
         cp->setTransform(this->transform());
+        cp->setTransformOriginPoint(this->transformOriginPoint());
+
         cp->setFlag(QGraphicsItem::ItemIsMovable, true);
         cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
         cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
@@ -149,11 +150,15 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
         cp->mClosed = this->mClosed;
 
         for(int i = 0; i < mHandles.size(); i++){
-            UBFreeHandle *handle = new UBFreeHandle(dynamic_cast<UBFreeHandle*>(mHandles.at(i)));
-            cp->mHandles.push_back(handle);
-            UBApplication::boardController->controlView()->scene()->addItem(handle);
+            UBFreeHandle *handle = new UBFreeHandle();
+
             handle->setParentItem(cp);
             handle->setEditableObject(cp);
+            handle->setPos(mHandles.at(i)->pos());
+            handle->setId(mHandles.at(i)->getId());
+            handle->hide();
+
+            cp->mHandles.push_back(handle);
         }
     }
 }
@@ -172,7 +177,7 @@ QRectF UBGraphicsPathItem::boundingRect() const
 
     rect.adjust(-enlarge, -enlarge, enlarge, enlarge);
 
-    if(mMultiClickState >= 2){
+    if(mMultiClickState >= 1){
         qreal r = mHandles.first()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -226,7 +231,7 @@ void UBGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
     UBAbstractGraphicsPathItem::mousePressEvent(event);
 
-    if(mMultiClickState > 2){
+    if(mMultiClickState >= 1){
         Delegate()->showFrame(false);
         setFocus();
         showEditMode(true);
@@ -267,6 +272,15 @@ void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
 
 
     setPath(newPath);
+
+    if(fillingProperty()->gradient()){
+        QLinearGradient g(path().boundingRect().topLeft(), path().boundingRect().topRight());
+
+        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
+        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+
+        setFillingProperty(new UBFillProperty(g));
+    }
 }
 
 QPainterPath UBGraphicsPathItem::shape() const
@@ -276,14 +290,29 @@ QPainterPath UBGraphicsPathItem::shape() const
     return path;
 }
 
+void UBGraphicsPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        UBAbstractGraphicsPathItem::mouseMoveEvent(event);
+    }
+}
+
 void UBGraphicsPathItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    if(mMultiClickState > 1){
+    if(mMultiClickState >= 1){
         mMultiClickState = 0;
-        setFlag(QGraphicsItem::ItemIsSelectable, true);
-        setFlag(QGraphicsItem::ItemIsMovable, true);
         showEditMode(false);
     }
 }
+
+void UBGraphicsPathItem::deactivateEditionMode()
+{
+    if(mMultiClickState >= 1){
+        mMultiClickState = 0;
+        showEditMode(false);
+    }
+}
+

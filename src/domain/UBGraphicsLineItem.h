@@ -57,6 +57,9 @@ class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape, public UBEd
 
         QRectF boundingRect() const;
         QPainterPath shape() const;
+
+        void deactivateEditionMode();
+
     protected:
         // QGraphicsItem interface
         QVariant itemChange(GraphicsItemChange change, const QVariant &value);

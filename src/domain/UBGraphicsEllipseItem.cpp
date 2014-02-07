@@ -123,17 +123,8 @@ void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
                 cp->Delegate()->setAction(Delegate()->action());
         }
 
-        //be careful of pushing the handles in the correct order (horizontal, vertical then diagonal)
-        cp->mHandles.push_back(new UBHorizontalHandle(dynamic_cast<UBHorizontalHandle*>(horizontalHandle())));
-        cp->mHandles.push_back(new UBVerticalHandle(dynamic_cast<UBVerticalHandle*>(verticalHandle())));
-        cp->mHandles.push_back(new UBDiagonalHandle(dynamic_cast<UBDiagonalHandle*>(diagonalHandle())));
-
-
-        for(int i = 0; i < cp->mHandles.size(); i++){
-            UBAbstractHandle *handle = cp->mHandles.at(i);
-            UBApplication::boardController->controlView()->scene()->addItem(handle);
-            handle->setParentItem(cp);
-            handle->setEditableObject(cp);
+        if(mIsCircle){
+            cp->setAsCircle();
         }
     }
 }
@@ -224,7 +215,7 @@ QRectF UBGraphicsEllipseItem::boundingRect() const
         rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
     }
 
-    if(mMultiClickState >= 2){
+    if(mMultiClickState >= 1){
         qreal r = horizontalHandle()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -239,7 +230,7 @@ void UBGraphicsEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
     QGraphicsEllipseItem::mousePressEvent(event);
 
-    if(mMultiClickState == 2){
+    if(mMultiClickState >= 1){
         QRectF rectangle = rect();
         QPointF bottomRight = rectangle.bottomRight();
 
@@ -247,21 +238,26 @@ void UBGraphicsEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         verticalHandle()->setPos(rectangle.x() + rectangle.width()/2, bottomRight.y());
         diagonalHandle()->setPos(bottomRight.x(), bottomRight.y());
 
-        setFlag(QGraphicsItem::ItemIsSelectable, false);
-        setFlag(QGraphicsItem::ItemIsMovable, false);
-
         Delegate()->showFrame(false);
         setFocus();
         showEditMode(true);
     }
 }
 
+void UBGraphicsEllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        QGraphicsEllipseItem::mouseMoveEvent(event);
+    }
+}
+
 void UBGraphicsEllipseItem::focusOutEvent(QFocusEvent *event)
 {
-    if(mMultiClickState > 1){
+    Q_UNUSED(event)
+
+    if(mMultiClickState >= 1){
         mMultiClickState = 0;
-        setFlag(QGraphicsItem::ItemIsSelectable, true);
-        setFlag(QGraphicsItem::ItemIsMovable, true);
         showEditMode(false);
     }
 }
@@ -270,9 +266,16 @@ void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 {
     QRectF newRect = rect();
 
+    qreal maxSize = handle->radius() * 4;
+
     if(handle->getId() == 1){
         //it's the vertical handle
         newRect.setBottom(handle->pos().y());
+
+        if(newRect.height() < maxSize){
+            newRect = rect();
+            verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
+        }
 
         horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
 
@@ -280,6 +283,11 @@ void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
     }else if(handle->getId() == 0){
         //it's the horizontal handle
         newRect.setRight(handle->pos().x());
+
+        if(newRect.width() < maxSize){
+            newRect = rect();
+            horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
+        }
 
         verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
 
@@ -289,12 +297,31 @@ void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
         newRect.setRight(handle->pos().x());
         newRect.setBottom(handle->pos().y());
 
+        if(newRect.height() < maxSize){
+            newRect = rect();
+            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
+        }
+
+        if(newRect.width() < maxSize){
+            newRect = rect();
+            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
+        }
+
         verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y());
 
         horizontalHandle()->setPos(newRect.bottomRight().x() , newRect.y() + newRect.height()/2);
     }
 
     setRect(newRect);
+
+    if(fillingProperty()->gradient()){
+        QLinearGradient g(rect().topLeft(), rect().topRight());
+
+        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
+        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+
+        setFillingProperty(new UBFillProperty(g));
+    }
 }
 
 QPainterPath UBGraphicsEllipseItem::shape() const
@@ -306,3 +333,10 @@ QPainterPath UBGraphicsEllipseItem::shape() const
     return path;
 }
 
+void UBGraphicsEllipseItem::deactivateEditionMode()
+{
+    if(mMultiClickState >= 1){
+        mMultiClickState = 0;
+        showEditMode(false);
+    }
+}
