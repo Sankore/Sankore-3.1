@@ -5,7 +5,8 @@
             new_name: 'Nouvelle calculatrice'
         },
         text: {
-            del: 'SUP'  
+            del: 'EFF',
+            comma: ','
         },
         command: {
             zero: 'Chiffre 0',
@@ -39,7 +40,7 @@
         },
         controls: {
             editor: 'Editeur',
-            reset: 'RST'
+            reset: 'RAZ'
         },
         editor: {
             run_button: 'Utiliser',

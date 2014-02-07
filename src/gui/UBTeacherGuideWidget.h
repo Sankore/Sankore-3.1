@@ -89,9 +89,6 @@ private:
 
 private slots:
     void onActiveDocumentChanged();
-#ifdef Q_WS_MACX
-    void onSliderMoved(int size);
-#endif
 };
 
 

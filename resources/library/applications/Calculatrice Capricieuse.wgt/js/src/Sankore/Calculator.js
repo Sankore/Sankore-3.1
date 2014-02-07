@@ -48,9 +48,9 @@
                 Sankore.Text.create('-', '-', '-', 'alt'),
                 Sankore.Text.create('*', '\u00D7', '\u00D7', 'alt'),
                 Sankore.Text.create('/', '\u00F7', '\u00F7', 'alt'),
-                Sankore.Text.create(':', '\uA713', '\uA713', 'alt'),
+                Sankore.Text.create(':', '\u22A2', '\u22A2', 'alt'),
                 Sankore.Text.create('=', '=', '=', 'alt'),
-                Sankore.Text.create('.', '.', '.'),
+                Sankore.Text.create('.', _('text.comma'), _('text.comma')),
                 Sankore.Text.create('(', '(', '('),
                 Sankore.Text.create(')', ')', ')'),
                 Sankore.Text.create('op', 'OP', 'OP'),
@@ -89,7 +89,7 @@
                 Sankore.Command.create('4', _('command.four'), function (args) {
                     this.expressionString += '4';
                 }),
-                
+
                 // add 5 to the expression string
                 Sankore.Command.create('5', _('command.five'), function (args) {
                     this.expressionString += '5';
@@ -166,19 +166,17 @@
                     if (null === this.op) {
                         if (this.expressionString.length > 0 & -1 !== '+-*/:'.indexOf(this.expressionString[0])) {
                             this.op = this.expressionString;
-                            
+
                             this.eventDispatcher.notify('calculator.op_changed', this.op);
                         }
 
                         this.expressionString = '';
-                        //this.execCommand('=');
+                        this.output = null;
                     } else {
-                        console.log(this.expressionString, this.output);
-                        
                         if (0 === this.expressionString.length && null !== this.output) {
                             this.expressionString = '(' + this.output.toString() + ')';
                         }
-                        
+
                         this.expressionString += this.op;
                         this.execCommand('=');
                     }
@@ -256,7 +254,14 @@
 
                 // delete the keystroke before the caret
                 Sankore.InternalCommand.create('del', _('command.del'), function (args) {
-                    this.keystrokeLine.del();
+                    var keystroke = this.keystrokeLine.del();
+
+                    if (keystroke && this.getButtonUseCount(keystroke.slot)) {
+                        this.buttonUseCount[keystroke.slot]--;
+                        if (this.getButtonUseCount(keystroke.slot) < this.currentLayout.getButton(keystroke.slot).useLimit) {
+                            this.eventDispatcher.notify('calculator.button_enabled', keystroke.slot);
+                        }
+                    }
                 })
             ]);
 
@@ -287,7 +292,7 @@
                 if (!self.editor.enabled) {
                     self.useButton(event.slot);
 
-                    self.keystroke(event.button);
+                    self.keystroke(event.slot, event.button);
 
                     if (!event.button.isUsable() && self.getButtonUseCount(event.slot) >= event.button.useLimit) {
                         self.eventDispatcher.notify('calculator.button_disabled', event);
@@ -435,7 +440,7 @@
             });
         },
 
-        keystroke: function (button) {
+        keystroke: function (slot, button) {
             var command = this.commands.get(button.command),
                 text = this.texts.get(button.text);
 
@@ -445,6 +450,7 @@
                 }
 
                 this.keystrokeLine.hit({
+                    slot: slot,
                     text: text.screen,
                     command: button.command
                 });
@@ -493,17 +499,16 @@
 
         backup: function (expression, output) {
             try {
-                // precompute output value for raising potentials exceptions
+                // precompute output value for raising potentials exceptions, ugly hack though
                 output.getValue();
-                
+
                 this.history.push({
                     expression: expression,
                     output: output
                 });
-    
+
                 this.eventDispatcher.notify('calculator.history_changed', this.history);
-            } catch(e) {
-            }
+            } catch (e) {}
         }
 
     }));
