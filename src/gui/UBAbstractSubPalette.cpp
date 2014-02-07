@@ -81,7 +81,7 @@ UBColorPickerButton::UBColorPickerButton(QWidget *parent)
 void UBColorPickerButton::paintEvent(QPaintEvent * pe)
 {
     QPainter painter(this);
-    painter.setBrush(color());
+    painter.setBrush(color());    
     painter.drawRect(margin_left, margin_top, width, height);
 
     // If transparent color, draw a cross in the rect :
