@@ -22,8 +22,14 @@ public:
 
     virtual void onBackgroundSceneClick(){ }
 
+    virtual void deactivateEditionMode();
+
+    bool isInEditMode();
 protected:
     QVector<UBAbstractHandle*> mHandles;
+
+private:
+    bool mEditMode;
 };
 
 #endif // UBEDITABLE_H

@@ -189,12 +189,9 @@ void UBGraphicsLineItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
 
     QGraphicsLineItem::mousePressEvent(event);
 
-    if(mMultiClickState == 2){
+    if(mMultiClickState >= 1){
         mHandles.at(0)->setPos(mStartPoint);
         mHandles.at(1)->setPos(mEndPoint);
-
-        setFlag(QGraphicsItem::ItemIsSelectable, false);
-        setFlag(QGraphicsItem::ItemIsMovable, false);
 
         Delegate()->showFrame(false);
         setFocus();
@@ -217,10 +214,8 @@ void UBGraphicsLineItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    if(mMultiClickState > 1){
+    if(mMultiClickState >= 1){
         mMultiClickState = 0;
-        setFlag(QGraphicsItem::ItemIsSelectable, true);
-        setFlag(QGraphicsItem::ItemIsMovable, true);
         showEditMode(false);
     }
 }
@@ -232,7 +227,7 @@ QRectF UBGraphicsLineItem::boundingRect() const
     int thickness = strokeProperty()->width();
     rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
 
-    if(mMultiClickState >= 2){
+    if(mMultiClickState >= 1){
         qreal r = mHandles.first()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -248,4 +243,12 @@ QPainterPath UBGraphicsLineItem::shape() const
     path.addRect(boundingRect());
 
     return path;
+}
+
+void UBGraphicsLineItem::deactivateEditionMode()
+{
+    if(mMultiClickState >= 1){
+        mMultiClickState = 0;
+        showEditMode(false);
+    }
 }

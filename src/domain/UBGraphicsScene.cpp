@@ -1762,6 +1762,11 @@ void UBGraphicsScene::deselectAllItems()
             gti->activateTextEditor(false);
         }
         //issue 1554 - NNE - 20131010 : END
+
+        //EV-7 - NNE - 20140206
+        if(UBShapeFactory::isShape(gi)){
+            UBShapeFactory::desactivateEditionMode(gi);
+        }
     }
 }
 
@@ -1776,6 +1781,20 @@ void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
             UBGraphicsTextItem* g = dynamic_cast<UBGraphicsTextItem*>(gi);
             if(g){
                 g->activateTextEditor(false);
+            }
+
+            //EV-7 - NNE - 20140206
+            if(UBShapeFactory::isShape(gi)){
+                if(gi->type() == UBGraphicsItemType::GraphicsHandle){
+                    UBAbstractHandle *h = dynamic_cast<UBAbstractHandle*>(gi);
+                    UBShapeFactory::desactivateEditionMode(h->parentItem());
+                }else if(gti->type() == UBGraphicsItemType::GraphicsHandle){
+                    if(gti->parentItem() != gi){
+                        UBShapeFactory::desactivateEditionMode(gi);
+                    }
+                }else{
+                    UBShapeFactory::desactivateEditionMode(gi);
+                }
             }
 
         }

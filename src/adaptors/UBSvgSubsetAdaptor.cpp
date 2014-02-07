@@ -3862,7 +3862,16 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
         QStringRef nVertices = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "nVertices");
         QStringRef startPointX = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startPointX");
         QStringRef startPointY = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startPointY");
-        pathItem = new UBGraphicsRegularPathItem(nVertices.toString().toInt(), QPointF(startPointX.toString().toFloat(), startPointY.toString().toFloat()));
+
+        QStringRef cCenterX = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "cCenterX");
+        QStringRef cCenterY = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "cCenterY");
+        QStringRef cRadius = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "cRadius");
+        UBGraphicsRegularPathItem * p = new UBGraphicsRegularPathItem(nVertices.toString().toInt(), QPointF(startPointX.toString().toFloat(), startPointY.toString().toFloat()));
+
+        p->setCircumscribedCenterCircle(QPointF(cCenterX.toString().toFloat(), cCenterY.toString().toFloat()));
+        p->setCircumscribedRadiusCircle(cRadius.toString().toFloat());
+
+        pathItem = p;
         break;
     }
     default:
@@ -4016,6 +4025,10 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPat
             mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "nVertices", QString::number(it->nVertices()));
             mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startPointX", QString::number(it->startPoint().x()));
             mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startPointY", QString::number(it->startPoint().y()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "cCenterX", QString::number(it->circumscribedCenterCircle().x()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "cCenterY", QString::number(it->circumscribedCenterCircle().y()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "cRadius", QString::number(it->circumscribedRadiusCircle()));
+
         }
     }
 

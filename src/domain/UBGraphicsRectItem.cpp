@@ -110,6 +110,10 @@ void UBGraphicsRectItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
+
+        if(mIsSquare){
+            cp->setAsSquare();
+        }
     }
 }
 
@@ -172,7 +176,7 @@ QRectF UBGraphicsRectItem::boundingRect() const
         rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
     }
 
-    if(mMultiClickState >= 2){
+    if(mMultiClickState >= 1){
         qreal r = horizontalHandle()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -197,7 +201,7 @@ void UBGraphicsRectItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
     QGraphicsRectItem::mousePressEvent(event);
 
-    if(mMultiClickState == 2){
+    if(mMultiClickState >= 1){
         QPointF bottomRight = rect().bottomRight();
 
         horizontalHandle()->setPos(bottomRight.x(), rect().y() + rect().height()/2);
@@ -207,18 +211,23 @@ void UBGraphicsRectItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         Delegate()->showFrame(false);
         setFocus();
         showEditMode(true);
+    }
+}
 
-        setFlag(QGraphicsItem::ItemIsSelectable, false);
-        setFlag(QGraphicsItem::ItemIsMovable, false);
+void UBGraphicsRectItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        QGraphicsRectItem::mouseMoveEvent(event);
     }
 }
 
 void UBGraphicsRectItem::focusOutEvent(QFocusEvent *event)
 {
-    if(mMultiClickState > 1){
+    Q_UNUSED(event)
+
+    if(mMultiClickState >= 1){
         mMultiClickState = 0;
-        setFlag(QGraphicsItem::ItemIsSelectable, true);
-        setFlag(QGraphicsItem::ItemIsMovable, true);
         showEditMode(false);
     }
 }
@@ -252,4 +261,21 @@ void UBGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
     }
 
     setRect(newRect);
+
+    if(fillingProperty()->gradient()){
+        QLinearGradient g(rect().topLeft(), rect().topRight());
+
+        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
+        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+
+        setFillingProperty(new UBFillProperty(g));
+    }
+}
+
+void UBGraphicsRectItem::deactivateEditionMode()
+{
+    if(mMultiClickState >= 1){
+        mMultiClickState = 0;
+        showEditMode(false);
+    }
 }
