@@ -2499,9 +2499,13 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                 default:
                     {
                         UBGraphicsItem *ubgi = dynamic_cast<UBGraphicsItem*>(item);
+                        //EV-7 - NNE - 20140207 : don't delete the handle !
+                        UBAbstractHandle *handle = dynamic_cast<UBAbstractHandle*>(item);
                         if (0 != ubgi)
                             ubgi->remove();
-                        else
+                        else if(handle){
+                            //don't delete the handle !
+                        }else
                             UBCoreGraphicsScene::removeItem(item);
                     }
                 }

@@ -259,6 +259,7 @@ void UBGraphicsEllipseItem::focusOutEvent(QFocusEvent *event)
     if(mMultiClickState >= 1){
         mMultiClickState = 0;
         showEditMode(false);
+        qDebug() << "this->zValue(): " << this->zValue();
     }
 }
 
