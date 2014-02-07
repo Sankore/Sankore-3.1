@@ -252,3 +252,11 @@ void UBGraphicsLineItem::deactivateEditionMode()
         showEditMode(false);
     }
 }
+
+void UBGraphicsLineItem::focusHandle(UBAbstractHandle *handle)
+{
+    Q_UNUSED(handle)
+
+    setSelected(true);
+    Delegate()->showFrame(false);
+}

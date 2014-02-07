@@ -303,3 +303,9 @@ void UBGraphicsRectItem::deactivateEditionMode()
         showEditMode(false);
     }
 }
+
+void UBGraphicsRectItem::focusHandle(UBAbstractHandle *handle)
+{
+    setSelected(true);
+    Delegate()->showFrame(false);
+}
