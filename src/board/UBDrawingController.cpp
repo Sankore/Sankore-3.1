@@ -74,6 +74,9 @@ UBDrawingController::UBDrawingController(QObject * parent)
     connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(textToolSelected(bool)));
     connect(UBApplication::mainWindow->actionRichTextEditor, SIGNAL(triggered(bool)), this, SLOT(richTextToolSelected(bool)));
     connect(UBApplication::mainWindow->actionCapture, SIGNAL(triggered(bool)), this, SLOT(captureToolSelected(bool)));
+
+    //EV-7 - NNE - 20140210 : Maybe is no the right place to do this...
+    connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
 }
 
 
@@ -172,6 +175,23 @@ void UBDrawingController::setStylusTool(int tool)
 
 }
 
+
+void UBDrawingController::onActiveSceneChanged()
+{
+    foreach (QGraphicsItem* gi, UBApplication::boardController->activeScene()->items())
+    {
+        if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
+        {
+            UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
+            if (path){
+                path->setIsInCreationMode(false);
+            }
+        }
+    }
+
+    UBApplication::boardController->shapeFactory().terminateShape();
+}
+
 void UBDrawingController::deactivateCreationModeForGraphicsPathItems()
 {
     foreach (QGraphicsItem* gi, UBApplication::boardController->activeScene()->items())
@@ -179,8 +199,10 @@ void UBDrawingController::deactivateCreationModeForGraphicsPathItems()
         if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
         {
             UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
-            if (path)
+            if (path){
                 path->setIsInCreationMode(false);
+                UBApplication::boardController->shapeFactory().desactivate();
+            }
         }
     }
     UBApplication::boardController->controlView()->resetCachedContent();

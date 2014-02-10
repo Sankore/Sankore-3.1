@@ -269,9 +269,14 @@ void UBGraphicsRegularPathItem::focusOutEvent(QFocusEvent *event)
 
 QPainterPath UBGraphicsRegularPathItem::shape() const
 {
-    QPainterPath path;
-    path.addRect(boundingRect());
-    return path;
+    if(mMultiClickState >= 1){
+        QPainterPath path;
+        path.addRect(boundingRect());
+        return path;
+    }else{
+        return QGraphicsPathItem::shape();
+    }
+
 }
 
 void UBGraphicsRegularPathItem::deactivateEditionMode()

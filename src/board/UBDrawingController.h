@@ -53,7 +53,6 @@ class UBDrawingController : public QObject
         int currentToolColorIndex();
         QColor currentToolColor();
         QColor toolColor(bool onDarkBackground);
-        void deactivateCreationModeForGraphicsPathItems();
 
         void setPenColor(bool onDarkBackground, const QColor& color, int pIndex);
         void setMarkerColor(bool onDarkBackground, const QColor& color, int pIndex);
@@ -71,10 +70,13 @@ class UBDrawingController : public QObject
 
     public slots:
 
+        void deactivateCreationModeForGraphicsPathItems();
+
         void setStylusTool(int tool);
         void setLineWidthIndex(int index);
         void setColorIndex(int index);
         void setEraserWidthIndex(int index);
+        void onActiveSceneChanged();
 
     signals:
         void stylusToolChanged(int tool);

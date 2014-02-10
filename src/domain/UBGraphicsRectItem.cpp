@@ -188,11 +188,15 @@ QRectF UBGraphicsRectItem::boundingRect() const
 
 QPainterPath UBGraphicsRectItem::shape() const
 {
-    QPainterPath path;
+    if(mMultiClickState >= 1){
+        QPainterPath path;
 
-    path.addRect(boundingRect());
+        path.addRect(boundingRect());
 
-    return path;
+        return path;
+    }else{
+        return QGraphicsRectItem::shape();
+    }
 }
 
 void UBGraphicsRectItem::mousePressEvent(QGraphicsSceneMouseEvent *event)

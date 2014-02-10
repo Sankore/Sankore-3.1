@@ -199,6 +199,14 @@ void UBGraphicsLineItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
     }
 }
 
+void UBGraphicsLineItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        QGraphicsLineItem::mouseMoveEvent(event);
+    }
+}
+
 void UBGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
 {
     if(handle->getId() == 0){
@@ -240,9 +248,12 @@ QPainterPath UBGraphicsLineItem::shape() const
 {
     QPainterPath path;
 
-    path.addRect(boundingRect());
-
-    return path;
+    if(mMultiClickState >= 1 || isSelected()){
+        path.addRect(boundingRect());
+        return path;
+    }else{
+        return QGraphicsLineItem::shape();
+    }
 }
 
 void UBGraphicsLineItem::deactivateEditionMode()
