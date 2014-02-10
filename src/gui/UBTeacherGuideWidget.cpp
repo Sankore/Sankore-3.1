@@ -181,6 +181,12 @@ void UBTeacherGuideEditionWidget::onActiveDocumentChanged()
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
 }
 
+void UBTeacherGuideEditionWidget::onSliderMoved(int size)
+{
+    if(mpAddAnActionItem)
+        mpAddAnActionItem->setExpanded(true);
+}
+
 void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 {
     qDebug() << "LOAD UBApplication::boardController->currentPage() " << UBApplication::boardController->currentPage();
