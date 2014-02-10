@@ -14,6 +14,8 @@ public:
     inline bool isClosed() const {return mClosed;}
     inline void setClosed(bool closed);
 
+    inline bool isOpened() const{ return mOpened; }
+
     void setIsInCreationMode(bool mode);
 
 
@@ -40,6 +42,7 @@ protected:
 
 private:
     bool mClosed;
+    bool mOpened;
     bool mIsInCreationMode;
 
     int mMultiClickState;
