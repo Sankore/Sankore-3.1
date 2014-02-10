@@ -67,6 +67,7 @@ class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape, public UBEd
         QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
         void mousePressEvent(QGraphicsSceneMouseEvent * event);
+        void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
         void focusOutEvent(QFocusEvent *event);
 
     private:

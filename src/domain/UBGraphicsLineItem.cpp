@@ -199,6 +199,14 @@ void UBGraphicsLineItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
     }
 }
 
+void UBGraphicsLineItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(mMultiClickState == 0){
+        Delegate()->mouseMoveEvent(event);
+        QGraphicsLineItem::mouseMoveEvent(event);
+    }
+}
+
 void UBGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
 {
     if(handle->getId() == 0){
