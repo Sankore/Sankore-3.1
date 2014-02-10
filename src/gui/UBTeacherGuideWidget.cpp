@@ -181,11 +181,13 @@ void UBTeacherGuideEditionWidget::onActiveDocumentChanged()
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
 }
 
+#ifdef Q_WS_MAC
 void UBTeacherGuideEditionWidget::onSliderMoved(int size)
 {
     if(mpAddAnActionItem)
         mpAddAnActionItem->setExpanded(true);
 }
+#endif
 
 void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 {
