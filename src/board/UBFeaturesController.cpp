@@ -45,6 +45,8 @@
 #include "gui/UBFeaturesWidget.h"
 #include "core/UBPersistenceManager.h"
 
+#include "globals/UBGlobals.h"
+
 #include <sstream>
 #include <vector>
 
@@ -1673,9 +1675,11 @@ void UBFeaturesController::moveToTrash(UBFeature feature, bool deleteManualy)
 
 UBFeaturesController::~UBFeaturesController()
 {
-    if (featuresList) {
-        delete featuresList;
-    }
+    DELETEPTR(featuresPathModel);
+    DELETEPTR(featuresSearchModel);
+    DELETEPTR(featuresProxyModel);
+    DELETEPTR(featuresModel);
+    DELETEPTR(featuresList);
 }
 
 void UBFeaturesController::assignFeaturesListView(UBFeaturesListView *pList)

@@ -1476,14 +1476,9 @@ bool UBFeaturesModel::dropMimeData(const QMimeData *mimeData, Qt::DropAction act
 
 void UBFeaturesModel::addItem( const UBFeature &item )
 {
-    if (item.getType() != FEATURE_RTE)
-    {
-        beginInsertRows( QModelIndex(), featuresList->size(), featuresList->size() );
-        featuresList->append( item );
-        endInsertRows();
-    }
-    else
-        featuresList->append( item );
+    beginInsertRows( QModelIndex(), featuresList->size(), featuresList->size() );
+    featuresList->append( item );
+    endInsertRows();
 }
 
 void UBFeaturesModel::deleteFavoriteItem( const QString &path )
