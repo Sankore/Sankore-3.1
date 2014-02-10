@@ -24,6 +24,8 @@ public:
 
     virtual void deactivateEditionMode();
 
+    virtual void focusHandle(UBAbstractHandle *handle){;}
+
     bool isInEditMode();
 protected:
     QVector<UBAbstractHandle*> mHandles;

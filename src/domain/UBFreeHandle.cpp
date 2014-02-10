@@ -1,4 +1,5 @@
 #include "UBFreeHandle.h"
+#include "UBEditable.h"
 
 UBFreeHandle::UBFreeHandle()
 {
@@ -12,7 +13,13 @@ UBFreeHandle::UBFreeHandle(UBFreeHandle* const src):
 
 void UBFreeHandle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    UBAbstractHandle::mouseMoveEvent(event);
+    QPointF p = mapToParent(event->pos());
+
+    QPointF diff = p - pos();
+
+    moveBy(diff.x(), diff.y());
+
+    mEditableObject->updateHandle(this);
 }
 
 void UBFreeHandle::mousePressEvent(QGraphicsSceneMouseEvent *event)

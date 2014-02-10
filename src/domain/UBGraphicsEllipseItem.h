@@ -76,6 +76,7 @@ public:
 
     void deactivateEditionMode();
 
+    void focusHandle(UBAbstractHandle *handle);
 protected:
     // QGraphicsItem interface
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);

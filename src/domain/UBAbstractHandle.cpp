@@ -33,7 +33,7 @@ void UBAbstractHandle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     QGraphicsItem::mouseMoveEvent(event);
 
-    if(mClick){
+    if(mEditableObject){
         mEditableObject->updateHandle(this);
     }
 }
@@ -42,6 +42,10 @@ void UBAbstractHandle::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     mClick = true;
     QGraphicsItem::mousePressEvent(event);
+
+    if(mEditableObject){
+        mEditableObject->focusHandle(this);
+    }
 }
 
 void UBAbstractHandle::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)

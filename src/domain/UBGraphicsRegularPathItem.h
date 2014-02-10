@@ -87,6 +87,8 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1H
 
         void deactivateEditionMode();
 
+        void focusHandle(UBAbstractHandle *handle);
+
 protected:
     void focusOutEvent(QFocusEvent *event);
 
