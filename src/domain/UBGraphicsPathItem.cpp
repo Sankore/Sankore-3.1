@@ -11,6 +11,7 @@
 UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
     : UBAbstractGraphicsPathItem(parent)
     , mClosed(false)
+    , mOpened(false)
     , mMultiClickState(0)
     , HANDLE_SIZE(20)
     , mIsInCreationMode(true)
@@ -40,23 +41,31 @@ void UBGraphicsPathItem::addPoint(const QPointF & point)
         // If clic on first point, close the polygon
         // TODO à terme : utiliser la surface de la première poignée.
         QPointF pointDepart(painterPath.elementAt(0).x, painterPath.elementAt(0).y);
+        QPointF pointFin(painterPath.elementAt(painterPath.elementCount()-1).x, painterPath.elementAt(painterPath.elementCount()-1).y);
+
+
         QGraphicsEllipseItem poigneeDepart(pointDepart.x()-10, pointDepart.y()-10, 20, 20);
+        QGraphicsEllipseItem poigneeFin(pointFin.x()-10, pointFin.y()-10, 20, 20);
 
         if (poigneeDepart.contains(point))
         {
             setClosed(true);
-
         }
         else
         {
-            painterPath.lineTo(point);
-            setPath(painterPath);
+            if(poigneeFin.contains(point)){
+                mIsInCreationMode = false;
+                mOpened = true;
+            }else{
+                painterPath.lineTo(point);
+                setPath(painterPath);
+            }
         }
 
         mStartEndPoint[1] = point;
     }
 
-    if(!mClosed){
+    if(!mClosed && !mOpened){
         UBFreeHandle *handle = new UBFreeHandle();
 
         addHandle(handle);
@@ -109,6 +118,7 @@ void UBGraphicsPathItem::setClosed(bool closed)
     }
 
     setPath(painterPath);
+    mIsInCreationMode = false;
 }
 
 
@@ -303,8 +313,12 @@ void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
 QPainterPath UBGraphicsPathItem::shape() const
 {
     QPainterPath path;
-    path.addRect(boundingRect());
-    return path;
+    if(mMultiClickState >= 1){
+        path.addRect(boundingRect());
+        return path;
+    }else{
+        return QGraphicsPathItem::shape();
+    }
 }
 
 void UBGraphicsPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)

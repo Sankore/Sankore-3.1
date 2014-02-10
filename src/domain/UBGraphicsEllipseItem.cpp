@@ -334,11 +334,16 @@ void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 
 QPainterPath UBGraphicsEllipseItem::shape() const
 {
-    QPainterPath path;
+    if(mMultiClickState >= 1){
+        QPainterPath path;
 
-    path.addRect(boundingRect());
+        path.addRect(boundingRect());
 
-    return path;
+        return path;
+    }else{
+        return QGraphicsEllipseItem::shape();
+    }
+
 }
 
 void UBGraphicsEllipseItem::deactivateEditionMode()

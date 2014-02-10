@@ -457,7 +457,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
                     mBoundingRect = pathItem->boundingRect();
 
-                    if (pathItem->isClosed())
+                    if (pathItem->isClosed() || pathItem->isOpened())
                     {
                         if (pathItem->path().elementCount() <= 2)
                             mBoardView->scene()->removeItem(pathItem);

@@ -240,9 +240,12 @@ QPainterPath UBGraphicsLineItem::shape() const
 {
     QPainterPath path;
 
-    path.addRect(boundingRect());
-
-    return path;
+    if(mMultiClickState >= 1 || isSelected()){
+        path.addRect(boundingRect());
+        return path;
+    }else{
+        return QGraphicsLineItem::shape();
+    }
 }
 
 void UBGraphicsLineItem::deactivateEditionMode()
