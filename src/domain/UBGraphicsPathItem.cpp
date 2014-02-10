@@ -313,8 +313,12 @@ void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
 QPainterPath UBGraphicsPathItem::shape() const
 {
     QPainterPath path;
-    path.addRect(boundingRect());
-    return path;
+    if(mMultiClickState >= 1){
+        path.addRect(boundingRect());
+        return path;
+    }else{
+        return QGraphicsPathItem::shape();
+    }
 }
 
 void UBGraphicsPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
