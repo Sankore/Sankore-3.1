@@ -9,6 +9,8 @@
         var allowedDroppedContentTyped = [
             'image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/svg+xml', 'image/tiff'
         ];
+        
+        var resizeTimer = null;
 
         this.id = id;
         this.empty = true;
@@ -99,20 +101,23 @@
                     'Comic Sans MS=comic sans ms',
                     'Courier New=courier new',
                     'Cursive Standard=cursive standard',
-                    'Écolier=ecolier',
                     'Écolier (court)=ecolier_court',
                     'Écolier CP=ecolier_cp',
                     'Écolier CP (pointillés)=ecolier_cp_pointillés',
-                    'Écolier lignes=ecolier_lignes',
                     'Écolier lignes (court)=ecolier_lignes_court',
                     'Écolier lignes (pointillés)=ecolier_lignes_pointillés',
                     'Écolier (pointillés)=ecolier_pointillés',
                     'Écriture A=ecriture a',
+                    'Écriture A Ligne=ecriture a ligne',
+                    'Écriture A Orné=ecriture a orne',
+                    'Écriture A Orné Ligne=ecriture a orne ligne',
                     'Écriture B=ecriture b',
+                    'Écriture B Ligne=ecriture b ligne',
+                    'Écriture B Orné=ecriture b orne',
+                    'Écriture B Orné Ligne=ecriture b orne ligne',
                     'Georgia=georgia',
                     'Gino School Script=ginoschoolscript',
                     'Impact=impact',
-                    'Script École=script cole',
                     'Script École 2=script ecole 2',
                     'Scriptcase cole=scriptcase cole',
                     'Times New Roman=times new roman',
@@ -615,11 +620,25 @@
              *
              */
             app.RTEditor.prototype.checkForResize = function () {
-                var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height();
-
-                if (delta > 0) {
-                    this.options.onContentOverflow.call(this, delta);
+                if (null !== resizeTimer) {
+                    clearTimeout(resizeTimer);
                 }
+                
+                var self = this;
+            
+                resizeTimer = setTimeout(function () {
+                    var inner = $(self.tinymce.getDoc()).height();
+                    var outer = self.getIframe().height();
+                    var delta = inner - outer;
+    
+                    console.log('inner : ' + inner);
+                    console.log('outer : ' + outer);
+                    console.log('delta : ' + delta);
+                    
+                    if (delta > 0) {
+                        self.options.onContentOverflow.call(self, delta);
+                    }
+                }, 100);
             };
 
             /**
@@ -663,10 +682,6 @@
                 });
 
                 this.getIframe().attr('scrolling', 'no');
-
-                this.tinymce.getBody().addEventListener('drop', function (e) {
-                    console.log('test');
-                });
 
                 var handler = function (e) {
                     self.checkForResize();
@@ -789,10 +804,10 @@
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
-                var href = $(a).attr('href');
-                
-                if (href.substring(0, 'http'.length) !== 'http') {
-                    href = 'http://' + href;
+                var href = $(a).attr('href'), prefix = 'http';
+
+                if (href.substring(0, prefix.length) !== prefix) {
+                    href = prefix + '://' + href;
                 }
                 
                 window.sankore.loadUrl(href);
