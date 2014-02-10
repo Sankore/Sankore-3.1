@@ -28,6 +28,8 @@
 
 #include "domain/UBGraphicsScene.h"
 #include "board/UBBoardController.h"
+#include "domain/UBGraphicsPathItem.h"
+#include "board/UBBoardView.h"
 
 #include "gui/UBMainWindow.h"
 #include "core/memcheck.h"
@@ -99,7 +101,16 @@ void UBDrawingController::setStylusTool(int tool)
     {
         //Ev-7 - NNE - 20140106
         if(tool != UBStylusTool::Drawing)
+        {
             UBApplication::boardController->activeScene()->deselectAllItems();
+        }
+        else
+        {
+            foreach(QGraphicsItem *gi, UBApplication::boardController->activeScene()->selectedItems())
+            {
+                UBShapeFactory::desactivateEditionMode(gi);
+            }
+        }
 
         if (mStylusTool == UBStylusTool::Pen || mStylusTool == UBStylusTool::Marker
                 || mStylusTool == UBStylusTool::Line)
@@ -155,8 +166,25 @@ void UBDrawingController::setStylusTool(int tool)
         emit stylusToolChanged(tool);
         emit colorPaletteChanged();
     }
+
+    //EV-7 : ce n'est pas de la responsabilité de cette méthode de le faire ... mais plus beaucoup de temps..
+    deactivateCreationModeForGraphicsPathItems();
+
 }
 
+void UBDrawingController::deactivateCreationModeForGraphicsPathItems()
+{
+    foreach (QGraphicsItem* gi, UBApplication::boardController->activeScene()->items())
+    {
+        if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
+        {
+            UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
+            if (path)
+                path->setIsInCreationMode(false);
+        }
+    }
+    UBApplication::boardController->controlView()->resetCachedContent();
+}
 
 bool UBDrawingController::isDrawingTool()
 {

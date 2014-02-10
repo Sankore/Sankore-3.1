@@ -11,8 +11,10 @@
 UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
     : UBAbstractGraphicsPathItem(parent)
     , mClosed(false)
+    , mOpened(false)
     , mMultiClickState(0)
     , HANDLE_SIZE(20)
+    , mIsInCreationMode(true)
 {
     initializeStrokeProperty();
     initializeFillingProperty();
@@ -39,23 +41,31 @@ void UBGraphicsPathItem::addPoint(const QPointF & point)
         // If clic on first point, close the polygon
         // TODO à terme : utiliser la surface de la première poignée.
         QPointF pointDepart(painterPath.elementAt(0).x, painterPath.elementAt(0).y);
+        QPointF pointFin(painterPath.elementAt(painterPath.elementCount()-1).x, painterPath.elementAt(painterPath.elementCount()-1).y);
+
+
         QGraphicsEllipseItem poigneeDepart(pointDepart.x()-10, pointDepart.y()-10, 20, 20);
+        QGraphicsEllipseItem poigneeFin(pointFin.x()-10, pointFin.y()-10, 20, 20);
 
         if (poigneeDepart.contains(point))
         {
             setClosed(true);
-
         }
         else
         {
-            painterPath.lineTo(point);
-            setPath(painterPath);
+            if(poigneeFin.contains(point)){
+                mIsInCreationMode = false;
+                mOpened = true;
+            }else{
+                painterPath.lineTo(point);
+                setPath(painterPath);
+            }
         }
 
         mStartEndPoint[1] = point;
     }
 
-    if(!mClosed){
+    if(!mClosed && !mOpened){
         UBFreeHandle *handle = new UBFreeHandle();
 
         addHandle(handle);
@@ -66,6 +76,11 @@ void UBGraphicsPathItem::addPoint(const QPointF & point)
         handle->setId(path().elementCount()-1);
         handle->hide();
     }
+}
+
+void UBGraphicsPathItem::setIsInCreationMode(bool mode)
+{
+    mIsInCreationMode = mode;
 }
 
 void UBGraphicsPathItem::setClosed(bool closed)
@@ -103,6 +118,7 @@ void UBGraphicsPathItem::setClosed(bool closed)
     }
 
     setPath(painterPath);
+    mIsInCreationMode = false;
 }
 
 
@@ -169,11 +185,15 @@ QRectF UBGraphicsPathItem::boundingRect() const
 
     int enlarge = 0;
 
+
     if (strokeProperty())
     {
         int thickness = strokeProperty()->width();
         enlarge = thickness/2;
     }
+
+    if (mIsInCreationMode)//gérer les poignées aux extrémités
+        enlarge += HANDLE_SIZE/2;
 
     rect.adjust(-enlarge, -enlarge, enlarge, enlarge);
 
@@ -218,10 +238,13 @@ void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
 
         int hsize = HANDLE_SIZE/2;
 
-        painter->drawEllipse(mStartEndPoint[0].x() - hsize, mStartEndPoint[0].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+        if (mIsInCreationMode)
+        {
+            painter->drawEllipse(mStartEndPoint[0].x() - hsize, mStartEndPoint[0].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
 
-        if(path().elementCount() >= 2)
-            painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+            if(path().elementCount() >= 2)
+                painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+        }
     }
 }
 
@@ -240,6 +263,10 @@ void UBGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
 {
+
+    setSelected(true);
+    Delegate()->showFrame(false);
+
     int id = handle->getId();
 
     QPainterPath oldPath = path();
@@ -316,3 +343,8 @@ void UBGraphicsPathItem::deactivateEditionMode()
     }
 }
 
+void UBGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
+{
+    setSelected(true);
+    Delegate()->showFrame(false);
+}

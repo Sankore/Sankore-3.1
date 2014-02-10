@@ -103,18 +103,8 @@ public:
     QString getKeyButtonSize() const {QString res; res.sprintf("%dx%d", btnWidth, btnHeight); return res;}
     void setKeyButtonSize(const QString& strSize);
 
-    //issue 1666 - NNE - 20131230
-    void detachFromParent();
-    void attachToParent();
-    //issue 166 - NNE - 20131230 : END
-
     bool m_isVisible;
     QPoint m_pos;
-
-    //issue 1666 - NNE - 20140108
-    void onWindowFocusGain();
-    void onWindowFocusLost();
-    //issue 1666 - NNE - 20140108 : END
 
 signals:
     void moved(const QPoint&);
@@ -184,17 +174,6 @@ private:
     void* storage;
     // Linux-related parameters
     int min_keycodes, max_keycodes, byte_per_code;
-
-    //issue 1666 - NNE - 20140123
-    QWidget *mOldParent;///< This atributes is used to detach and attach the keyboard from/to its parent
-    bool mIsDetach;
-
-    QPoint globalPosition;
-
-    QPoint oldEventPos;
-
-    bool windowHasLostFocus;
-    //issue 1666 - NNE - 20140123 : END
 };
 
 class UBKeyboardButton : public QWidget

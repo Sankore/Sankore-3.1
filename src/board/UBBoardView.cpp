@@ -524,8 +524,10 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
             if ((UBGraphicsItemType::UserTypesCount > item->type()) && (item->type() > QGraphicsItem::UserType))
             {
                 // if Item can be selected at mouse press - then we need to deselect all other items.
-                //issue 1554 - NNE - 20131009
-                scene()->deselectAllItemsExcept(item);
+                if(item->type() != UBGraphicsItemType::GraphicsHandle){
+                    //issue 1554 - NNE - 20131009
+                    scene()->deselectAllItemsExcept(item);
+                }
             }
         }
     }else{
@@ -563,6 +565,10 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
             return true;
+
+        if(UBShapeFactory::isInEditMode(item)){
+            return true;
+        }
     }
 
     switch(item->type())
@@ -846,8 +852,6 @@ void UBBoardView::handleItemMousePress(QMouseEvent *event)
                 graphicsItem->Delegate()->startUndoStep();
 
             movingItem->clearFocus();
-            qDebug() << movingItem;
-            qDebug() << movingItem->type();
         }
 
         if (suspendedMousePressEvent)
@@ -1052,9 +1056,6 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
     }
 
     mMouseDownPos = event->pos ();
-
-    qDebug() << scene();
-    qDebug() << event;
 
     movingItem = scene()->itemAt(this->mapToScene(event->posF().toPoint()));
 

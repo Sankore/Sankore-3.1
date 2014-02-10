@@ -26,7 +26,8 @@ UBShapeFactory::UBShapeFactory():
     mCurrentBrushStyle(Qt::SolidPattern),
     mCurrentPenStyle(Qt::SolidLine),
     mThickness(3),
-    mFillType(Transparent)
+    mFillType(Transparent),
+    mCursorMoved(false)
 {
 
 }
@@ -316,6 +317,7 @@ void UBShapeFactory::createPolygon(bool create)
 void UBShapeFactory::onMouseMove(QMouseEvent *event)
 {
     if(mIsCreating && mIsPress){
+        mCursorMoved = true;
         QPointF cursorPosition = mBoardView->mapToScene(event->pos());
 
         if(mIsRegularShape)
@@ -385,6 +387,7 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
 void UBShapeFactory::onMousePress(QMouseEvent *event)
 {
     if(mIsCreating){
+        mCursorMoved = false;
         mIsPress = true;
 
         QPointF cursorPosition = mBoardView->mapToScene(event->pos());
@@ -454,8 +457,10 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
                     mBoundingRect = pathItem->boundingRect();
 
-                    if (pathItem->isClosed())
+                    if (pathItem->isClosed() || pathItem->isOpened())
                     {
+                        if (pathItem->path().elementCount() <= 2)
+                            mBoardView->scene()->removeItem(pathItem);
                         mCurrentShape = NULL;
                     }
                 }
@@ -474,6 +479,37 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     if (line)
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
+
+    if (!mCursorMoved)
+    {
+        //convertir UBShape en QGraphicsItem (ou dérivée) pour pouvoir le retirer de la scene
+        UBGraphicsRegularPathItem* regularPath = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
+        if (regularPath)
+        {
+           mBoardView->scene()->removeItem(regularPath);
+        }
+        else
+        {
+            UBGraphicsFreehandItem* freeHand = dynamic_cast<UBGraphicsFreehandItem*>(mCurrentShape);
+            if (freeHand)
+                mBoardView->scene()->removeItem(freeHand);
+            else
+            {
+                UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+                if (ellipse)
+                    mBoardView->scene()->removeItem(ellipse);
+                else
+                {
+                    UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
+                    if (rect)
+                        mBoardView->scene()->removeItem(rect);
+                }
+            }
+        }
+
+    }
+
+
 
     if(mShapeType == Pen){
         mCurrentShape = NULL;
@@ -645,7 +681,17 @@ void UBShapeFactory::desactivateEditionMode(QGraphicsItem *item)
 {
     UBEditable *edit = dynamic_cast<UBEditable*>(item);
 
-    if(edit) edit->deactivateEditionMode();
+    if(edit)
+    {
+        edit->deactivateEditionMode();
+        item->setSelected(false);
+    }
+    else
+    {
+        UBAbstractHandle* handle = dynamic_cast<UBAbstractHandle*>(item);
+        if (handle)
+            desactivateEditionMode(item->parentItem());
+    }
 }
 
 bool UBShapeFactory::isInEditMode(QGraphicsItem *item)

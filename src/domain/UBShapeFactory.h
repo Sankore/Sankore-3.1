@@ -111,6 +111,8 @@ private:
     FillType mFillType;
     QRectF mBoundingRect;
 
+    bool mCursorMoved;
+
 protected:
     UBShape *instanciateCurrentShape();
 

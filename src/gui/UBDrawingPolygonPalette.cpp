@@ -24,13 +24,13 @@ UBDrawingPolygonPalette::UBDrawingPolygonPalette(Qt::Orientation orient, QWidget
     setActions(actions);
     groupActions();
 
-    adjustSizeAndPosition();
-
     //css
     layout()->setSpacing(0);
     mButtons.at(0)->setStyleSheet(styleSheetLeftGroupedButton);
     mButtons.at(1)->setStyleSheet(styleSheetCenterGroupedButton);
     mButtons.at(2)->setStyleSheet(styleSheetRightGroupedButton);
+
+    adjustSizeAndPosition();
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {

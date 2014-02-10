@@ -14,6 +14,10 @@ public:
     inline bool isClosed() const {return mClosed;}
     inline void setClosed(bool closed);
 
+    inline bool isOpened() const{ return mOpened; }
+
+    void setIsInCreationMode(bool mode);
+
 
     // UBItem interface
     UBItem *deepCopy() const;
@@ -30,6 +34,7 @@ public:
     virtual void updateHandle(UBAbstractHandle *handle);
     virtual void deactivateEditionMode();
 
+    void focusHandle(UBAbstractHandle *handle);
 protected:
     void focusOutEvent(QFocusEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -37,6 +42,8 @@ protected:
 
 private:
     bool mClosed;
+    bool mOpened;
+    bool mIsInCreationMode;
 
     int mMultiClickState;
 
