@@ -24,7 +24,9 @@ public:
 
     virtual void deactivateEditionMode();
 
-    virtual void focusHandle(UBAbstractHandle *handle){;}
+    virtual void focusHandle(UBAbstractHandle *handle){
+        Q_UNUSED(handle)
+    }
 
     bool isInEditMode();
 protected:
