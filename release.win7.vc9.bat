@@ -90,7 +90,7 @@ del build\win32\release\product\i18n\qt_help*
 
 del "build\win32\release\product\Sankore.pdb"
 
-set INSTALLER_NAME=Open-Sankore
+set INSTALLER_NAME=Open-Sankore_Setup
 
 set INSTALLER_PATH=.\install\win32\%INSTALLER_NAME%.exe
 
