@@ -330,6 +330,9 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 qreal w = cursorPosition.x() - rect.x();
                 qreal h = cursorPosition.y() - rect.y();
 
+                if(w < 0) w = -w;
+                if(h < 0) h = -h;
+
                 mBoundingRect = QRectF(rect.x(), rect.y(), w, h);
                 shape->setRect(mBoundingRect);
 
@@ -341,6 +344,9 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
 
                 qreal w = cursorPosition.x() - rect.x();
                 qreal h = cursorPosition.y() - rect.y();
+
+                if(w < 0) w = -w;
+                if(h < 0) h = -h;
 
                 mBoundingRect = QRectF(rect.x(), rect.y(), w, h);
                 shape->setRect(mBoundingRect);
