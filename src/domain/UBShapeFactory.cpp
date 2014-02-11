@@ -491,6 +491,12 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
         shape->setRect(reverseRect(rect));
     }
 
+    if(mShapeType == RegularPolygon){
+        UBGraphicsRegularPathItem* shape = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
+
+        QPointF startPoint = shape->correctStartPoint();
+        shape->setStartPoint(startPoint);
+    }
     if (!mCursorMoved)
     {
         //convertir UBShape en QGraphicsItem (ou dérivée) pour pouvoir le retirer de la scene

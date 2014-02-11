@@ -89,6 +89,8 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1H
 
         void focusHandle(UBAbstractHandle *handle);
 
+        QPointF correctStartPoint() const;
+
 protected:
     void focusOutEvent(QFocusEvent *event);
 

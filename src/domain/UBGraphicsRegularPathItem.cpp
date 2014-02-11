@@ -63,19 +63,21 @@ void UBGraphicsRegularPathItem::updatePath(QPointF newPos)
 {
     QPainterPath path;
 
-    qreal diffX = newPos.x() - mStartPoint.x();
-    qreal diffY = newPos.y() - mStartPoint.y();
+    QPointF diff = newPos - mStartPoint;
 
-    if (diffX < 0)
-        diffX = -diffX;
-    if (diffY < 0)
-        diffY = -diffY;
+    qreal minFace = 0, x = diff.x(), y = diff.y();
 
-    qreal minFace = qMin(diffX,diffY);
+    int signX = diff.x() < 0 ? -1 : 1;
+    int signY = diff.y() < 0 ? -1 : 1;
 
-    qreal dist = 0;//(sqrt(2*minFace*minFace) - minFace) / 2.0;
+    if (x < 0)
+        x = -x;
+    if (y < 0)
+        y = -y;
 
-    mCenter = QPointF(mStartPoint.x() + minFace / 2.0 - dist, mStartPoint.y() + minFace / 2.0 - dist);
+    minFace = qMin(x, y);
+
+    mCenter = QPointF(mStartPoint.x() + minFace * signX / 2.0, mStartPoint.y() + minFace * signY / 2.0);
 
     mRadius = minFace / 2.0 ;
     QPointF nextPoint = mCenter - QPointF(mVertices.at(0).first * mRadius, mVertices.at(0).second * mRadius);
@@ -289,6 +291,22 @@ void UBGraphicsRegularPathItem::deactivateEditionMode()
 
 void UBGraphicsRegularPathItem::focusHandle(UBAbstractHandle *handle)
 {
+    Q_UNUSED(handle)
+
     setSelected(true);
     Delegate()->showFrame(false);
+}
+
+QPointF UBGraphicsRegularPathItem::correctStartPoint() const
+{
+    //the start point must be always in the top left corner
+    //so we have to correct its position if it is not in the
+    //top left corner (because the shape has maybe been construct
+    //in reverse order)
+
+    QPainterPath circle;
+
+    circle.addEllipse(mCenter, mRadius, mRadius);
+
+    return circle.boundingRect().topLeft();
 }
