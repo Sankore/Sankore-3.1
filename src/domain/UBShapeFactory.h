@@ -57,6 +57,8 @@ public:
     FillType fillType();
     void setFillType(FillType fillType);
 
+    QRectF reverseRect(const QRectF &rect);
+
 public slots:
     void createRegularPolygon(int nVertices);
     void createEllipse(bool create);

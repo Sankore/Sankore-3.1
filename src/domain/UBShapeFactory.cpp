@@ -327,13 +327,7 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 UBGraphicsEllipseItem* shape = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
                 QRectF rect = shape->rect();
 
-                qreal w = cursorPosition.x() - rect.x();
-                qreal h = cursorPosition.y() - rect.y();
-
-                if(w < 0) w = -w;
-                if(h < 0) h = -h;
-
-                mBoundingRect = QRectF(rect.x(), rect.y(), w, h);
+                mBoundingRect = QRectF(rect.topLeft(), cursorPosition);
                 shape->setRect(mBoundingRect);
 
             }
@@ -342,14 +336,9 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                 UBGraphicsRectItem* shape = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
                 QRectF rect = shape->rect();
 
-                qreal w = cursorPosition.x() - rect.x();
-                qreal h = cursorPosition.y() - rect.y();
-
-                if(w < 0) w = -w;
-                if(h < 0) h = -h;
-
-                mBoundingRect = QRectF(rect.x(), rect.y(), w, h);
+                mBoundingRect = QRectF(rect.topLeft(), cursorPosition);
                 shape->setRect(mBoundingRect);
+
             }
             else if (mShapeType == Line)
             {
@@ -486,6 +475,22 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
 
+    if(mShapeType == Rectangle || mShapeType == Square){
+        UBGraphicsRectItem* shape = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
+
+        QRectF rect = shape->rect();
+
+        shape->setRect(reverseRect(rect));
+    }
+
+    if(mShapeType == Circle || mShapeType == Ellipse){
+        UBGraphicsEllipseItem* shape = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+
+        QRectF rect = shape->rect();
+
+        shape->setRect(reverseRect(rect));
+    }
+
     if (!mCursorMoved)
     {
         //convertir UBShape en QGraphicsItem (ou dérivée) pour pouvoir le retirer de la scene
@@ -516,11 +521,39 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     }
 
 
-
     if(mShapeType == Pen){
         mCurrentShape = NULL;
         mFirstClickForFreeHand = true;
     }
+}
+
+QRectF UBShapeFactory::reverseRect(const QRectF& rect)
+{
+    qreal w = rect.width();
+    qreal h = rect.height();
+
+    QRectF reversedRect;
+    QPointF p1, p2;
+
+    if(w < 0 && h < 0){
+        p1 = rect.bottomRight();
+        p2 = rect.topLeft();
+    }else if(w > 0 && h < 0){
+        p1 = rect.bottomLeft();
+        p2 = rect.topRight();
+    }else if(w < 0 && h > 0){
+        p1 = rect.topRight();
+        p2 = rect.bottomLeft();
+    }else{
+        p1 = rect.topLeft();
+        p2 = rect.bottomRight();
+    }
+
+
+    reversedRect.setTopLeft(p1);
+    reversedRect.setBottomRight(p2);
+
+    return reversedRect;
 }
 
 void UBShapeFactory::desactivate()
