@@ -44,6 +44,7 @@
 #include "domain/UBGraphicsPathItem.h"
 #include "domain/UBGraphicsFreehandItem.h"
 #include "domain/UBGraphicsRegularPathItem.h"
+#include "domain/UBGraphicsLineItem.h"
 #include "domain/UBItem.h"
 
 #include "tools/UBGraphicsRuler.h"
@@ -535,62 +536,82 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                 UBGraphicsPolygonItem* polygonItem = 0;
 
                 QString parentId = mXmlReader.attributes().value(mNamespaceUri, "parent").toString();
-                if (mXmlReader.name() == "polygon")
-                {
-                    polygonItem = polygonItemFromPolygonSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
-                }
-                else if (mXmlReader.name() == "line")
-                {
-                    polygonItem = polygonItemFromLineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
-                }
-                if(parentId.isEmpty() && strokesGroup)
-                    parentId = strokesGroup->uuid().toString();
+                QStringRef s = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapeLine");
 
-                if(parentId.isEmpty())
-                    parentId = QUuid::createUuid().toString();
+                if(mXmlReader.name() == "line" && !s.isNull() && s.toString().toLower() == "true"){
+                    //the line was draw with the drawing palette
+                    UBGraphicsLineItem* line = shapeLineFromSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
 
-                if (polygonItem)
-                {
-                    polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
+                    if (line)
+                    {
+                        mScene->addItem(line);
 
-                    UBGraphicsStrokesGroup* group;
-                    if(!mStrokesList.contains(parentId)){
-                        group = new UBGraphicsStrokesGroup();
+                        if (zFromSvg != UBZLayerController::errorNum())
+                            UBGraphicsItem::assignZValue(line, zFromSvg);
 
-                        mStrokesList.insert(parentId,group);
-                        currentStroke = new UBGraphicsStroke();
-                        group->setTransform(polygonItem->transform());
-                        UBGraphicsItem::assignZValue(group, polygonItem->zValue());
-
-                        bool nullondark = mXmlReader.attributes().value(mNamespaceUri, "fill-on-dark-background").isNull();
-                        bool nullonlight = mXmlReader.attributes().value(mNamespaceUri, "fill-on-light-background").isNull();
-                        if (nullondark || nullonlight) {
-                            QColor curColor(mXmlReader.attributes().value("fill").toString());
-                            double opacity = mXmlReader.attributes().value("fill-opacity").toString().toDouble();
-                            const char tool = (opacity == 1.0) ? 'p' : 'm';
-
-                            QColor oppozColor(UBApplication::boardController->inferOpposite(curColor, tool));
-
-                            mGroupDarkBackgroundColor = mScene->isDarkBackground() ? curColor : oppozColor;
-                            mGroupLightBackgroundColor = mScene->isDarkBackground() ? oppozColor : curColor;
-
-                            polygonItem->setColorOnDarkBackground(mGroupDarkBackgroundColor);
-                            polygonItem->setColorOnLightBackground(mGroupLightBackgroundColor);
-                        }
+                        if (!uuidFromSvg.isNull())
+                            line->setUuid(uuidFromSvg);
                     }
-                    else
-                        group = mStrokesList.value(parentId);
+                }else{
+                    if (mXmlReader.name() == "polygon")
+                    {
+                        polygonItem = polygonItemFromPolygonSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                    }
+                    else if (mXmlReader.name() == "line")
+                    {
+                        polygonItem = polygonItemFromLineSvg(mScene->isDarkBackground() ? Qt::white : Qt::black);
+                    }
+                    if(parentId.isEmpty() && strokesGroup)
+                        parentId = strokesGroup->uuid().toString();
 
-                    if(polygonItem->transform().isIdentity())
-                        polygonItem->setTransform(group->transform());
+                    if(parentId.isEmpty())
+                        parentId = QUuid::createUuid().toString();
 
-                    group->addToGroup(polygonItem);
-                    polygonItem->setStrokesGroup(group);
-                    polygonItem->setStroke(currentStroke);
+                    if (polygonItem)
+                    {
+                        polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
 
-                    polygonItem->show();
-                    group->addToGroup(polygonItem);
+                        UBGraphicsStrokesGroup* group;
+                        if(!mStrokesList.contains(parentId)){
+                            group = new UBGraphicsStrokesGroup();
+
+                            mStrokesList.insert(parentId,group);
+                            currentStroke = new UBGraphicsStroke();
+                            group->setTransform(polygonItem->transform());
+                            UBGraphicsItem::assignZValue(group, polygonItem->zValue());
+
+                            bool nullondark = mXmlReader.attributes().value(mNamespaceUri, "fill-on-dark-background").isNull();
+                            bool nullonlight = mXmlReader.attributes().value(mNamespaceUri, "fill-on-light-background").isNull();
+                            if (nullondark || nullonlight) {
+                                QColor curColor(mXmlReader.attributes().value("fill").toString());
+                                double opacity = mXmlReader.attributes().value("fill-opacity").toString().toDouble();
+                                const char tool = (opacity == 1.0) ? 'p' : 'm';
+
+                                QColor oppozColor(UBApplication::boardController->inferOpposite(curColor, tool));
+
+                                mGroupDarkBackgroundColor = mScene->isDarkBackground() ? curColor : oppozColor;
+                                mGroupLightBackgroundColor = mScene->isDarkBackground() ? oppozColor : curColor;
+
+                                polygonItem->setColorOnDarkBackground(mGroupDarkBackgroundColor);
+                                polygonItem->setColorOnLightBackground(mGroupLightBackgroundColor);
+                            }
+                        }
+                        else
+                            group = mStrokesList.value(parentId);
+
+                        if(polygonItem->transform().isIdentity())
+                            polygonItem->setTransform(group->transform());
+
+                        group->addToGroup(polygonItem);
+                        polygonItem->setStrokesGroup(group);
+                        polygonItem->setStroke(currentStroke);
+
+                        polygonItem->show();
+                        group->addToGroup(polygonItem);
+                    }
                 }
+
+
             }
             else if (mXmlReader.name() == "polyline")
             {
@@ -1539,7 +1560,7 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
                 shapeEllipseToSvg(shapeEllipseItem);
             }
 
-            // Is the item a shape Ellipse ?
+            // Is the item a shape Rect ?
             UBGraphicsRectItem* shapeRectItem = dynamic_cast<UBGraphicsRectItem*>(item);// EV-7 - ALTI/AOU - 20131231
             if (shapeRectItem && shapeRectItem->isVisible())
             {
@@ -1551,6 +1572,13 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             if (shapePathItem && shapePathItem->isVisible())
             {
                 shapePathToSvg(shapePathItem);
+            }
+
+            // Is the item a shape Line ?
+            UBGraphicsLineItem * shapeLineItem = dynamic_cast<UBGraphicsLineItem *>(item); // EV-7 - ALTI/AOU - 20140102
+            if (shapeLineItem && shapeLineItem->isVisible())
+            {
+                shapeLineToSvg(shapeLineItem);
             }
         }
 
@@ -3570,7 +3598,7 @@ UBGraphicsRectItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeRectFromSvg(cons
         rect->fillingProperty()->setColor(brushColor1);
     }
 
-    //isCircle
+    //isSquare
     QStringRef square = mXmlReader.attributes().value("square");
     if (!square.isNull())
         rect->setAsSquare();
@@ -3585,6 +3613,71 @@ UBGraphicsRectItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeRectFromSvg(cons
     }
 
     return rect;
+}
+
+UBGraphicsLineItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeLineFromSvg(const QColor& pDefaultPenColor)
+{
+    UBGraphicsLineItem* line = new UBGraphicsLineItem();
+
+    QStringRef s = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapeLine");
+
+    if(!s.isNull() && s.toString().toLower() == "true"){
+        qreal x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+
+        QStringRef svgX1 = mXmlReader.attributes().value("x1");
+        QStringRef svgY1 = mXmlReader.attributes().value("y1");
+
+        QStringRef svgX2 = mXmlReader.attributes().value("x2");
+        QStringRef svgY2 = mXmlReader.attributes().value("y2");
+
+        if ( ! svgX1.isNull()) x1 = svgX1.toString().toFloat();
+        if ( ! svgY1.isNull()) y1 = svgY1.toString().toFloat();
+        if ( ! svgX2.isNull()) x2 = svgX2.toString().toFloat();
+        if ( ! svgY2.isNull()) y2 = svgY2.toString().toFloat();
+
+        line->setStartPoint(QPointF(x1, y1));
+        line->setEndPoint(QPointF(x2, y2));
+
+        // Stroke color
+        QStringRef svgStroke = mXmlReader.attributes().value("stroke");
+        QColor strokeColor = pDefaultPenColor;
+        if (!svgStroke.isNull())
+        {
+            strokeColor.setNamedColor(svgStroke.toString());
+        }
+        line->strokeProperty()->setColor(strokeColor);
+
+        // Stroke width/thickness
+        QStringRef svgStrokeWidth = mXmlReader.attributes().value("stroke-width");
+        int strokeWidth = 2;
+        if (!svgStrokeWidth.isNull())
+        {
+            strokeWidth = svgStrokeWidth.toString().toInt();
+        }
+        line->strokeProperty()->setWidth(strokeWidth);
+
+        // Stroke style
+        QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+        if (!svgStrokeStyle.isNull())
+        {
+            QString strokeStyle = svgStrokeStyle.toString();
+            if (strokeStyle == SVG_STROKE_DOTLINE)
+            {
+                line->strokeProperty()->setStyle(Qt::DotLine);
+            }
+        }
+
+        // Transform matrix
+        QStringRef svgTransform = mXmlReader.attributes().value("transform");
+        QMatrix itemMatrix;
+        if (!svgTransform.isNull())
+        {
+            itemMatrix = fromSvgTransform(svgTransform.toString());
+            line->setMatrix(itemMatrix);
+        }
+    }
+
+    return line;
 }
 
 void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeRectToSvg(UBGraphicsRectItem *item) // EV-7 - ALTI/AOU - 20131231
@@ -4011,7 +4104,6 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPat
         QColor color1 = item->fillingProperty()->gradient()->stops().at(0).second;
         QColor color2 = item->fillingProperty()->gradient()->stops().at(1).second;
         mXmlWriter.writeStartElement("linearGradient");
-        mXmlWriter.writeAttribute("id", item->uuid().toString());
         mXmlWriter.writeAttribute("x1", "0%");
         mXmlWriter.writeAttribute("y1", "0%");
         mXmlWriter.writeAttribute("x2", "100%");
@@ -4093,6 +4185,41 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPat
 
     mXmlWriter.writeEndElement();
 
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeLineToSvg(UBGraphicsLineItem *item)
+{
+    mXmlWriter.writeStartElement("line");
+
+    UBItem* ubItem = dynamic_cast<UBItem*>(item);
+    if (ubItem)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(ubItem->uuid()));
+    }
+
+    //Write the two points of the line
+    mXmlWriter.writeAttribute("x1", QString("%1").arg(item->startPoint().x()));
+    mXmlWriter.writeAttribute("y1", QString("%1").arg(item->startPoint().y()));
+    mXmlWriter.writeAttribute("x2", QString("%1").arg(item->endPoint().x()));
+    mXmlWriter.writeAttribute("y2", QString("%1").arg(item->endPoint().y()));
+
+    //indicate that the line was created with the drawing palette
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapeLine", "true");
+
+    // Stroke :
+    if(item->hasStrokeProperty()){
+        mXmlWriter.writeAttribute("stroke", QString("%1").arg(item->strokeProperty()->color().name()));
+        mXmlWriter.writeAttribute("stroke-width", QString("%1").arg(item->strokeProperty()->width()));
+
+        if (item->strokeProperty()->style() == Qt::DotLine){
+            mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
+        }
+        mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(item->strokeProperty()->color().alphaF()));
+    }
+
+    mXmlWriter.writeAttribute("transform",toSvgTransform(item->sceneMatrix()));
+
+    mXmlWriter.writeEndElement();
 }
 
 void UBSvgSubsetAdaptor::convertPDFObjectsToImages(UBDocumentProxy* proxy)

@@ -166,11 +166,15 @@ const QPointF UBGraphicsLineItem::endPoint()
 void UBGraphicsLineItem::setStartPoint(QPointF pos)
 {
     mStartPoint = pos;
+    mHandles.at(0)->setPos(pos);
+    this->setLine(mStartPoint.x(), mStartPoint.y(), mEndPoint.x(), mEndPoint.y());
 }
 
 void UBGraphicsLineItem::setEndPoint(QPointF pos)
 {
     mEndPoint = pos;
+    mHandles.at(1)->setPos(pos);
+    this->setLine(mStartPoint.x(), mStartPoint.y(), mEndPoint.x(), mEndPoint.y());
 }
 
 QVariant UBGraphicsLineItem::itemChange(GraphicsItemChange change, const QVariant &value)

@@ -56,6 +56,7 @@ class UBGraphicsEllipseItem;
 class UBGraphicsRectItem;
 class UBGraphicsPathItem;
 class UBAbstractGraphicsPathItem;
+class UBGraphicsLineItem;
 
 class UBSvgSubsetAdaptor
 {
@@ -167,6 +168,8 @@ class UBSvgSubsetAdaptor
 
                 UBAbstractGraphicsPathItem* shapePathFromSvg(const QColor& pDefaultPenColor, int type); // EV-7 - ALTI/AOU - 20140102
 
+                UBGraphicsLineItem* shapeLineFromSvg(const QColor& pDefaultPenColor);//issue 1699 - NNE - 20140212
+
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
                 UBGraphicsGroupContainerItem* readGroup(UBGraphicsItemAction *action = 0, QString uuid = "");
@@ -273,6 +276,7 @@ class UBSvgSubsetAdaptor
                 void shapeEllipseToSvg(UBGraphicsEllipseItem *item); // EV-7 - ALTI/AOU - 20131231
                 void shapeRectToSvg(UBGraphicsRectItem *item); // EV-7 - ALTI/AOU - 20131231
                 void shapePathToSvg(UBAbstractGraphicsPathItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapeLineToSvg(UBGraphicsLineItem *item); //issue 1699 - NNE - 20140212
                 void writeSvgElement();
 
         private:
