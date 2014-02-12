@@ -39,7 +39,7 @@ UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
     //By default, a rectangle isn't a square
     setAsRectangle();
 
-    setDelegate(new UBGraphicsItemDelegate(this, 0));
+    setDelegate(new UBGraphicsItemDelegate(this, 0, true, false, false));
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);

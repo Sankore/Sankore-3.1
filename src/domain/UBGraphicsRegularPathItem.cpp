@@ -243,7 +243,6 @@ void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         circle.addEllipse(mCenter, mRadius, mRadius);
 
         getHandle()->setPos(circle.boundingRect().bottomRight());
-        getHandle()->setZValue(zValue());
 
         Delegate()->showFrame(false);
         setFocus();

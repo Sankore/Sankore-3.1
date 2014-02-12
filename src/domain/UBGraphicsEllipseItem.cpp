@@ -51,7 +51,7 @@ UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
     //By default, an ellipse isn't a circle
     mIsCircle = false;
 
-    setDelegate(new UBGraphicsItemDelegate(this, 0));
+    setDelegate(new UBGraphicsItemDelegate(this, 0, true, false, false));
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
