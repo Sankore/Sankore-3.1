@@ -697,11 +697,11 @@
 
                 if (!this.options.autoShow) {
                     this.hide();
+                } else {
+                    this.checkForResize();
                 }
 
                 this.setDarkBackground(this.options.dark);
-                
-                this.checkForResize();
             };
 
             /**
