@@ -5,7 +5,8 @@
 UBAbstractGraphicsPathItem::UBAbstractGraphicsPathItem(QGraphicsItem *parent):
     QGraphicsPathItem(parent)
 {
-    setDelegate(new UBGraphicsItemDelegate(this, 0));
+
+    setDelegate(new UBGraphicsItemDelegate(this, 0, true, false, false));
     Delegate()->init();
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);

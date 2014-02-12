@@ -287,7 +287,6 @@ class UBGraphicsItemDelegate : public QObject
         UBGraphicsItemAction* action() { return mAction; }
         void setAction(UBGraphicsItemAction* action);
 
-
     signals:
         void showOnDisplayChanged(bool shown);
         void lockChanged(bool locked);
