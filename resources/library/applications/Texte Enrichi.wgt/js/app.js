@@ -9,7 +9,7 @@
         var allowedDroppedContentTyped = [
             'image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/svg+xml', 'image/tiff'
         ];
-        
+
         var resizeTimer = null;
 
         this.id = id;
@@ -155,7 +155,7 @@
                             e.element.appendChild(document.createElement('br'));
                         }
                     });
-                    
+
                     editor.on('SaveContent', function (e) {
                         var $content = $('<div>' + e.content + '</div>');
 
@@ -164,7 +164,7 @@
                                 this.appendChild(document.createElement('br'));
                             }
                         });
-                        
+
                         e.content = $content.html();
                     });
 
@@ -623,22 +623,18 @@
                 if (null !== resizeTimer) {
                     clearTimeout(resizeTimer);
                 }
-                
+
                 var self = this;
-            
+
                 resizeTimer = setTimeout(function () {
                     var inner = $(self.tinymce.getDoc()).height();
                     var outer = self.getIframe().height();
                     var delta = inner - outer;
-    
-                    console.log('inner : ' + inner);
-                    console.log('outer : ' + outer);
-                    console.log('delta : ' + delta);
-                    
+
                     if (delta > 0) {
                         self.options.onContentOverflow.call(self, delta);
                     }
-                }, 100);
+                }, 25);
             };
 
             /**
@@ -699,13 +695,13 @@
                     }
                 };
 
-                this.checkForResize();
-
                 if (!this.options.autoShow) {
                     this.hide();
                 }
 
                 this.setDarkBackground(this.options.dark);
+                
+                this.checkForResize();
             };
 
             /**
@@ -720,6 +716,9 @@
              */
             app.RTEditor.prototype.onTinyFocus = function (e) {
                 this.options.onFocus.call(this);
+                
+                var $body = $(this.tinymce.getDoc()).find('body');
+                $body.html($body.html().replace(/\uFEFF/, ''));
             };
 
             /**
@@ -804,12 +803,13 @@
 
         if (window.sankore) {
             options.onLinkClick = function (a) {
-                var href = $(a).attr('href'), prefix = 'http';
+                var href = $(a).attr('href'),
+                    prefix = 'http';
 
                 if (href.substring(0, prefix.length) !== prefix) {
                     href = prefix + '://' + href;
                 }
-                
+
                 window.sankore.loadUrl(href);
             };
 
