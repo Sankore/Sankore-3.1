@@ -627,7 +627,7 @@
                 var self = this;
 
                 resizeTimer = setTimeout(function () {
-                    var inner = $(self.tinymce.getDoc()).find('body').height();
+                    var inner = $(self.tinymce.getDoc()).height();
                     var outer = self.getIframe().height();
                     var delta = inner - outer;
 
@@ -901,10 +901,7 @@ if (!('widget' in window)) {
 
 /** mockup sankore object for browser testing */
 if (!('sankore' in window)) {
-    var preferences = {
-        loaded: 'true',
-        content: 'LOLOLOLOL'
-    };
+    var preferences = {};
 
     window.sankore = {
         loadUrl: function (url) {
