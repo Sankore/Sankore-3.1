@@ -627,7 +627,7 @@
                 var self = this;
 
                 resizeTimer = setTimeout(function () {
-                    var inner = $(self.tinymce.getDoc()).height();
+                    var inner = $(self.tinymce.getDoc()).find('body').height();
                     var outer = self.getIframe().height();
                     var delta = inner - outer;
 
@@ -697,11 +697,11 @@
 
                 if (!this.options.autoShow) {
                     this.hide();
+                } else {
+                    this.checkForResize();
                 }
 
                 this.setDarkBackground(this.options.dark);
-                
-                this.checkForResize();
             };
 
             /**
@@ -901,7 +901,10 @@ if (!('widget' in window)) {
 
 /** mockup sankore object for browser testing */
 if (!('sankore' in window)) {
-    var preferences = {};
+    var preferences = {
+        loaded: 'true',
+        content: 'LOLOLOLOL'
+    };
 
     window.sankore = {
         loadUrl: function (url) {
