@@ -3612,6 +3612,12 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeRectToSvg(UBGraphicsRectItem *i
 
     mXmlWriter.writeStartElement("rect");
 
+    UBItem* ubItem = dynamic_cast<UBItem*>(item);
+    if (ubItem)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(ubItem->uuid()));
+    }
+
     // SVG <shapeRect> tag :
     mXmlWriter.writeAttribute("x", QString::number(item->rect().x()));
     mXmlWriter.writeAttribute("y", QString::number(item->rect().y()));
@@ -3809,6 +3815,12 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UBGraphicsEllipseI
     }
 
     mXmlWriter.writeStartElement("ellipse");
+
+    UBItem* ubItem = dynamic_cast<UBItem*>(item);
+    if (ubItem)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(ubItem->uuid()));
+    }
 
     // SVG <ellipse> tag :
     mXmlWriter.writeAttribute("cx", QString("%1").arg(item->center().x())); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
@@ -4016,6 +4028,12 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPat
     }
 
     mXmlWriter.writeStartElement("polyline");
+
+    UBItem* ubItem = dynamic_cast<UBItem*>(item);
+    if (ubItem)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(ubItem->uuid()));
+    }
 
     if (item->type() == UBGraphicsItemType::GraphicsRegularPathItemType)
     {

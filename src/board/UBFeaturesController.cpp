@@ -68,7 +68,7 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
         }
 
         QString fullFileName = fileInfo->absoluteFilePath();
-        qDebug() << fullFileName;
+        //qDebug() << fullFileName;
         UBFeatureElementType featureType;
         if (fullFileName.contains("Texte Enrichi.wgt"))
             featureType = FEATURE_RTE;
