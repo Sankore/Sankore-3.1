@@ -695,14 +695,13 @@
                     }
                 };
 
-                this.checkForResize();
-
                 if (!this.options.autoShow) {
                     this.hide();
                 }
 
                 this.setDarkBackground(this.options.dark);
                 
+                this.checkForResize();
             };
 
             /**
