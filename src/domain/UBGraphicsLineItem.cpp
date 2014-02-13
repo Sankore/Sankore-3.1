@@ -109,7 +109,8 @@ void UBGraphicsLineItem::copyItemParameters(UBItem *copy) const
     UBGraphicsLineItem *cp = dynamic_cast<UBGraphicsLineItem*>(copy);
     if (cp)
     {
-        cp->setPos(this->pos());
+        cp->setStartPoint(mStartPoint);
+        cp->setEndPoint(mEndPoint);
         cp->setTransform(this->transform());
         cp->setLine(line());
         cp->setFlag(QGraphicsItem::ItemIsMovable, true);
@@ -125,15 +126,7 @@ void UBGraphicsLineItem::copyItemParameters(UBItem *copy) const
             }
             else
                 cp->Delegate()->setAction(Delegate()->action());
-        }
-
-        for(int i = 0; i < mHandles.size(); i++){
-            UBFreeHandle *handle = new UBFreeHandle(dynamic_cast<UBFreeHandle*>(mHandles.at(i)));
-            cp->mHandles.push_back(handle);
-            UBApplication::boardController->controlView()->scene()->addItem(handle);
-            handle->setParentItem(cp);
-            handle->setEditableObject(cp);
-        }
+        }        
     }
 }
 

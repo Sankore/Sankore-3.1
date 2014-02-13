@@ -198,6 +198,9 @@ void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
 
         cp->mVertices = mVertices;
         cp->mNVertices = mNVertices;
+        cp->mCenter = mCenter;
+        cp->mRadius = mRadius;
+        cp->mStartPoint = mStartPoint;
     }
 }
 
