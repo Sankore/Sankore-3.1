@@ -32,6 +32,7 @@
 #include "globals/UBGlobals.h"
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h" // Issue 1684 - CFA - 20131120
+#include "gui/UBMainWindow.h"
 #include "web/UBWebController.h"
 
 const char *UBFeaturesWidget::objNamePathList = "PathList";
@@ -793,6 +794,7 @@ void UBFeaturesCentralWidget::scanStarted()
 void UBFeaturesCentralWidget::scanFinished()
 {
     hideAdditionalData();
+    UBApplication::mainWindow->actionRichTextEditor->setEnabled(true);
 }
 
 UBFeaturesNewFolderDialog::UBFeaturesNewFolderDialog(QWidget *parent) : QWidget(parent)
@@ -1694,6 +1696,10 @@ void UBFeaturesModel::rename(UBFeature &feature, const QString newName) const
 bool UBFeaturesProxyModel::filterAcceptsRow( int sourceRow, const QModelIndex & sourceParent )const
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+    UBFeature f = index.data(Qt::UserRole + 1).value<UBFeature>();
+    if (f.getType() == FEATURE_RTE)
+        return false;
+
     QString path = index.data( Qt::UserRole ).toString();
 
     return filterRegExp().exactMatch(path);

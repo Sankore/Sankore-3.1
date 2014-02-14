@@ -874,7 +874,7 @@ void UBGraphicsDelegateFrame::positionHandles()
     QVariant vLocked = delegated()->data(UBGraphicsItemData::ItemLocked);
     bool isLocked = (vLocked.isValid() && vLocked.toBool());
     bool bShowHorizontalResizers = ResizingHorizontally == mOperationMode;
-    bool bShowVerticalResizers   = ResizingHorizontally != mOperationMode;
+    bool bShowVerticalResizers   = ResizingHorizontally != mOperationMode && mOperationMode != NoResizing; // EV-7 - ALTI/AOU - 20131231 : new NoResizing possibility
     bool bShowAllResizers        = Resizing == mOperationMode || Scaling == mOperationMode ;
 
     mBottomRightResizeGripSvgItem->setVisible(!isLocked && bShowAllResizers);
@@ -915,6 +915,10 @@ UBGraphicsDelegateFrame::FrameTool UBGraphicsDelegateFrame::toolFromPos(QPointF 
 {
     if(mDelegate->isLocked())
         return None;
+    else if (rotateButtonBounds().contains(pos) && mDelegate && mDelegate->canRotate())
+        return Rotate;
+    else if (mOperationMode == NoResizing)
+        return Move;
     else if (bottomRightResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode)
         return ResizeBottomRight;
     else if (bottomResizeGripRect().contains(pos) && ResizingHorizontally != mOperationMode){
@@ -946,8 +950,6 @@ UBGraphicsDelegateFrame::FrameTool UBGraphicsDelegateFrame::toolFromPos(QPointF 
                 return ResizeTop;
             }
         }
-    else if (rotateButtonBounds().contains(pos) && mDelegate && mDelegate->canRotate())
-        return Rotate;
     else
         return Move;
 }

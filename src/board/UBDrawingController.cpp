@@ -28,6 +28,8 @@
 
 #include "domain/UBGraphicsScene.h"
 #include "board/UBBoardController.h"
+#include "domain/UBGraphicsPathItem.h"
+#include "board/UBBoardView.h"
 
 #include "gui/UBMainWindow.h"
 #include "core/memcheck.h"
@@ -70,7 +72,11 @@ UBDrawingController::UBDrawingController(QObject * parent)
     connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered(bool)), this, SLOT(pointerToolSelected(bool)));
     connect(UBApplication::mainWindow->actionLine, SIGNAL(triggered(bool)), this, SLOT(lineToolSelected(bool)));
     connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(textToolSelected(bool)));
+    connect(UBApplication::mainWindow->actionRichTextEditor, SIGNAL(triggered(bool)), this, SLOT(richTextToolSelected(bool)));
     connect(UBApplication::mainWindow->actionCapture, SIGNAL(triggered(bool)), this, SLOT(captureToolSelected(bool)));
+
+    //EV-7 - NNE - 20140210 : Maybe is no the right place to do this...
+    connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
 }
 
 
@@ -96,7 +102,19 @@ void UBDrawingController::setStylusTool(int tool)
 {
     if (tool != mStylusTool)
     {
-    	UBApplication::boardController->activeScene()->deselectAllItems();
+        //Ev-7 - NNE - 20140106
+        if(tool != UBStylusTool::Drawing)
+        {
+            UBApplication::boardController->activeScene()->deselectAllItems();
+        }
+        else
+        {
+            foreach(QGraphicsItem *gi, UBApplication::boardController->activeScene()->selectedItems())
+            {
+                UBShapeFactory::desactivateEditionMode(gi);
+            }
+        }
+
         if (mStylusTool == UBStylusTool::Pen || mStylusTool == UBStylusTool::Marker
                 || mStylusTool == UBStylusTool::Line)
         {
@@ -139,14 +157,56 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionLine->setChecked(true);
         else if (mStylusTool == UBStylusTool::Text)
             UBApplication::mainWindow->actionText->setChecked(true);
+        else if (mStylusTool == UBStylusTool::RichText)
+            UBApplication::mainWindow->actionRichTextEditor->setChecked(true);
         else if (mStylusTool == UBStylusTool::Capture)
             UBApplication::mainWindow->actionCapture->setChecked(true);
+
+        if(mStylusTool != UBStylusTool::Drawing){
+            UBApplication::boardController->shapeFactory().desactivate();
+        }
 
         emit stylusToolChanged(tool);
         emit colorPaletteChanged();
     }
+
+    //EV-7 : ce n'est pas de la responsabilité de cette méthode de le faire ... mais plus beaucoup de temps..
+    deactivateCreationModeForGraphicsPathItems();
+
 }
 
+
+void UBDrawingController::onActiveSceneChanged()
+{
+    foreach (QGraphicsItem* gi, UBApplication::boardController->activeScene()->items())
+    {
+        if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
+        {
+            UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
+            if (path){
+                path->setIsInCreationMode(false);
+            }
+        }
+    }
+
+    UBApplication::boardController->shapeFactory().terminateShape();
+}
+
+void UBDrawingController::deactivateCreationModeForGraphicsPathItems()
+{
+    foreach (QGraphicsItem* gi, UBApplication::boardController->activeScene()->items())
+    {
+        if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
+        {
+            UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
+            if (path){
+                path->setIsInCreationMode(false);
+                UBApplication::boardController->shapeFactory().desactivate();
+            }
+        }
+    }
+    UBApplication::boardController->controlView()->resetCachedContent();
+}
 
 bool UBDrawingController::isDrawingTool()
 {
@@ -399,6 +459,12 @@ void UBDrawingController::textToolSelected(bool checked)
 {
     if (checked)
         setStylusTool(UBStylusTool::Text);
+}
+
+void UBDrawingController::richTextToolSelected(bool checked)
+{
+    if (checked)
+        setStylusTool(UBStylusTool::RichText);
 }
 
 

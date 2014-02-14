@@ -380,10 +380,12 @@ void UBDockPalette::addTab(UBDockPaletteWidget *widget)
         mpStackWidget->addWidget(widget);
         mpStackWidget->setCurrentWidget(widget);
         showTabWidget(mTabWidgets.indexOf(widget));
+
         resizeTabs();
         update();
     }
 }
+
 /**
  * \brief Remove the given tab
  * @param widgetName as the tab widget name
@@ -548,12 +550,17 @@ bool UBDockPalette::switchMode(eUBDockPaletteWidgetMode mode)
     bool hasVisibleElements = false;
     //-------------------------------//
     // get full palette widgets list, parse it, show all widgets for BOARD mode, and hide all other
+    int currentPage = UBApplication::boardController->currentPage();
+
     for(int i = 0; i < mRegisteredWidgets.size(); i++)
     {
         UBDockPaletteWidget* pNextWidget = mRegisteredWidgets.at(i);
         if( pNextWidget != NULL )
         {
-            if( pNextWidget->visibleInMode(mode) )
+            //issue 1682 - NNE - 20140113
+            removeTab(pNextWidget);
+
+            if( pNextWidget->visibleInMode(mode, currentPage))
             {
                 addTab(pNextWidget);
                 hasVisibleElements = true;
@@ -566,8 +573,9 @@ bool UBDockPalette::switchMode(eUBDockPaletteWidgetMode mode)
     }
     //-------------------------------//
 
-    if(mRegisteredWidgets.size() > 0)
+    if(mRegisteredWidgets.size() > 0){
         showTabWidget(mLastOpenedTabForMode.value(mCurrentMode));
+    }
 
     update();
 
@@ -587,7 +595,7 @@ UBTabDockPalette::UBTabDockPalette(UBDockPalette *dockPalette, QWidget *parent) 
     setAttribute(Qt::WA_TranslucentBackground);
 }
 
-void UBTabDockPalette::paintEvent(QPaintEvent *)
+void UBTabDockPalette::paintEvent(QPaintEvent *event)
 {
     int nTabs = dock->mTabWidgets.size();
     if (nTabs <= 0) {
@@ -645,7 +653,7 @@ void UBTabDockPalette::paintEvent(QPaintEvent *)
 
         painter.save();
         QPixmap transparencyPix(":/images/tab_mask.png");
-                if (dock->mCurrentTab != i) {
+        if (dock->mCurrentTab != i) {
             iconPixmap.setAlphaChannel(transparencyPix);
             QColor color(0x7F, 0x7F, 0x7F, 0x3F);
             painter.setBrush(QBrush(color));

@@ -73,6 +73,11 @@
 
 #include "domain/UBGraphicsGroupContainerItem.h"
 
+#include "domain/UBAbstractGraphicsPathItem.h"
+#include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsRectItem.h"
+#include "domain/UBGraphicsLineItem.h"
+
 #include "UBGraphicsStroke.h"
 
 #include "core/memcheck.h"
@@ -1678,6 +1683,29 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
       ++mItemCount;
 
     mFastAccessItems << item;
+
+    //CFA
+    addShapeToUndoStack(item);
+}
+
+void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
+{
+    //CFA - TEST UNDO
+    UBShape * shape = dynamic_cast<UBShape*>(item);
+    if (shape)
+    {
+        mAddedItems.insert(item);
+    }
+}
+
+void UBGraphicsScene::removeShapeToUndoStack(QGraphicsItem* item)
+{
+    //CFA - TEST UNDO
+    UBShape * shape = dynamic_cast<UBShape*>(item);
+    if (shape)
+    {
+        mRemovedItems.insert(item);
+    }
 }
 
 void UBGraphicsScene::addItems(const QSet<QGraphicsItem*>& items)
@@ -1705,6 +1733,9 @@ void UBGraphicsScene::removeItem(QGraphicsItem* item)
     /* delete the item if it is cache to allow its reinstanciation, because Cache implements design pattern Singleton. */
     if (dynamic_cast<UBGraphicsCache*>(item))
         UBCoreGraphicsScene::deleteItem(item);
+
+    //CFA
+    removeShapeToUndoStack(item);
 }
 
 void UBGraphicsScene::removeItems(const QSet<QGraphicsItem*>& items)
@@ -1731,6 +1762,11 @@ void UBGraphicsScene::deselectAllItems()
             gti->activateTextEditor(false);
         }
         //issue 1554 - NNE - 20131010 : END
+
+        //EV-7 - NNE - 20140206
+        if(UBShapeFactory::isShape(gi)){
+            UBShapeFactory::desactivateEditionMode(gi);
+        }
     }
 }
 
@@ -1745,6 +1781,20 @@ void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
             UBGraphicsTextItem* g = dynamic_cast<UBGraphicsTextItem*>(gi);
             if(g){
                 g->activateTextEditor(false);
+            }
+
+            //EV-7 - NNE - 20140206
+            if(UBShapeFactory::isShape(gi)){
+                if(gi->type() == UBGraphicsItemType::GraphicsHandle){
+                    UBAbstractHandle *h = dynamic_cast<UBAbstractHandle*>(gi);
+                    UBShapeFactory::desactivateEditionMode(h->parentItem());
+                }else if(gti->type() == UBGraphicsItemType::GraphicsHandle){
+                    if(gti->parentItem() != gi){
+                        UBShapeFactory::desactivateEditionMode(gi);
+                    }
+                }else{
+                    UBShapeFactory::desactivateEditionMode(gi);
+                }
             }
 
         }
@@ -2449,9 +2499,13 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                 default:
                     {
                         UBGraphicsItem *ubgi = dynamic_cast<UBGraphicsItem*>(item);
+                        //EV-7 - NNE - 20140207 : don't delete the handle !
+                        UBAbstractHandle *handle = dynamic_cast<UBAbstractHandle*>(item);
                         if (0 != ubgi)
                             ubgi->remove();
-                        else
+                        else if(handle){
+                            //don't delete the handle !
+                        }else
                             UBCoreGraphicsScene::removeItem(item);
                     }
                 }

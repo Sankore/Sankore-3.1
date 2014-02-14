@@ -230,7 +230,9 @@ void UBSettings::init()
     appToolBarDisplayText = new UBSetting(this, "App", "ToolBarDisplayText", true);
     appEnableAutomaticSoftwareUpdates = new UBSetting(this, "App", "EnableAutomaticSoftwareUpdates", true);
     appEnableSoftwareUpdates = new UBSetting(this, "App", "EnableSoftwareUpdates", true);
-    appToolBarOrientationVertical = new UBSetting(this, "App", "ToolBarOrientationVertical", false);
+    appToolBarOrientationVertical = new UBSetting(this, "App", "ToolBarOrientationVertical", false);    
+
+    appDrawingPaletteOrientationHorizontal = new UBSetting(this, "App", "DrawingPaletteOrientationHorizontal", false);
 
     rightLibPaletteBoardModeWidth = new UBSetting(this, "Board", "RightLibPaletteBoardModeWidth", 270);
     rightLibPaletteBoardModeIsCollapsed = new UBSetting(this,"Board", "RightLibPaletteBoardModeIsCollapsed",false);
@@ -1347,8 +1349,12 @@ void UBSettings::cleanNonPersistentSettings()
         communityUser->set(QVariant(""));
     }
 
-    if(!youTubeCredentialsPersistence->get().toBool()){
-        removePassword(youTubeUserEMail->get().toString());
+    if(!youTubeCredentialsPersistence->get().toBool())
+    {
+        if ( ! youTubeUserEMail->get().toString().isEmpty()) // ALTI/AOU - 20140204 : remove only the Youtube credentials if existing, and not the whole "Vault" section.
+        {
+            removePassword(youTubeUserEMail->get().toString());
+        }
         youTubeUserEMail->set(QVariant(""));
     }
 }

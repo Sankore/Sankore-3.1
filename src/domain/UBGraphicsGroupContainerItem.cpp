@@ -148,7 +148,19 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item,bool removeAct
     item->setTransform(newItemTransform);
     //    item->d_func()->setIsMemberOfGroup(true);
     prepareGeometryChange();
-    itemsBoundingRect |= itemTransform.mapRect(item->boundingRect() | item->childrenBoundingRect());
+
+    //issue 1699 - NNE - 20140212
+    //we want the bounding rect of the visible children
+    QRectF visibleChildrenBoundingRect;
+
+    foreach(QGraphicsItem* child, item->childItems()){
+        if(child->isVisible()){
+            visibleChildrenBoundingRect |= child->boundingRect();
+        }
+    }
+    //issue 1699 - NNE - 20140212 : END
+
+    itemsBoundingRect |= itemTransform.mapRect(item->boundingRect() | visibleChildrenBoundingRect);
     update();
 }
 void UBGraphicsGroupContainerItem::removeFromGroup(QGraphicsItem *item)

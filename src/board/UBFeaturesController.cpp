@@ -45,6 +45,8 @@
 #include "gui/UBFeaturesWidget.h"
 #include "core/UBPersistenceManager.h"
 
+#include "globals/UBGlobals.h"
+
 #include <sstream>
 #include <vector>
 
@@ -66,13 +68,20 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
         }
 
         QString fullFileName = fileInfo->absoluteFilePath();
-        UBFeatureElementType featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
+        //qDebug() << fullFileName;
+        UBFeatureElementType featureType;
+        if (fullFileName.contains("Texte Enrichi.wgt"))
+            featureType = FEATURE_RTE;
+        else
+            featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
+
         QString fileName = fileInfo->fileName();
 
         QImage icon = UBFeaturesController::getIcon(fullFileName, featureType);
 
         if ( fullFileName.contains(".thumbnail."))
             continue;
+
 
         //Testing exception permissions
         QString testVirtualPath = currVirtualPath + "/" + fileName;
@@ -1666,9 +1675,11 @@ void UBFeaturesController::moveToTrash(UBFeature feature, bool deleteManualy)
 
 UBFeaturesController::~UBFeaturesController()
 {
-    if (featuresList) {
-        delete featuresList;
-    }
+    DELETEPTR(featuresPathModel);
+    DELETEPTR(featuresSearchModel);
+    DELETEPTR(featuresProxyModel);
+    DELETEPTR(featuresModel);
+    DELETEPTR(featuresList);
 }
 
 void UBFeaturesController::assignFeaturesListView(UBFeaturesListView *pList)
@@ -1769,6 +1780,17 @@ UBFeature UBFeaturesController::getFeatureByPath(const QString &path) const
 {
     for(int i = 0; i < this->featuresList->size(); i++){
         if(this->featuresList->at(i).getFullVirtualPath() == path){
+            return this->featuresList->at(i);
+        }
+    }
+
+    return UBFeature();
+}
+
+UBFeature UBFeaturesController::getFeatureByFullPath(const QString &path) const
+{
+    for(int i = 0; i < this->featuresList->size(); i++){
+        if(this->featuresList->at(i).getFullPath().toLocalFile() == path){
             return this->featuresList->at(i);
         }
     }

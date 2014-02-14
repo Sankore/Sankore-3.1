@@ -210,6 +210,7 @@ QSize UBFloatingPalette::preferredSize()
 
 void UBFloatingPalette::adjustSizeAndPosition(bool pUp, bool resetPosition)
 {
+
     QSize newPreferredSize = preferredSize();
 
     foreach (UBFloatingPalette* palette, mAssociatedPalette)
@@ -238,6 +239,38 @@ void UBFloatingPalette::adjustSizeAndPosition(bool pUp, bool resetPosition)
 
     if (parentWidget() && resetPosition)
         move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
+
+
+/*
+    QSize newPreferredSize = preferredSize();
+
+    foreach (UBFloatingPalette* palette, mAssociatedPalette)
+    {
+        QSize palettePreferredSize = palette->preferredSize();
+        newPreferredSize.setWidth(newPreferredSize.expandedTo(palettePreferredSize).width());
+    }
+    QSize previousSize = size();
+    int biggerHeight = preferredSize().height() - previousSize.height();
+    if ((pUp && (biggerHeight > 0))
+        || (!pUp && (biggerHeight < 0)))
+    {
+        move(pos().x(), pos().y() - biggerHeight);
+    }
+
+    if (newPreferredSize != size())
+    {
+        resize(newPreferredSize);
+        moveInsideParent(pos());
+        foreach(UBFloatingPalette* palette, mAssociatedPalette)
+        {
+            palette->move(pos().x(), palette->pos().y());
+            palette->resize(newPreferredSize.width(), palette->size().height());
+        }
+    }
+
+    if (parentWidget() && resetPosition)
+        move((parentWidget()->width() - width()) / 2, (parentWidget()->height() - height()) / 5);
+   */
 }
 
 void UBFloatingPalette::removeAllAssociatedPalette()

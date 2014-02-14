@@ -296,6 +296,7 @@ void UBTGAdaptableText::insertFromMimeData(const QMimeData *source)
 
 void UBTGAdaptableText::managePlaceholder(bool focus)
 {
+    disconnect(this,SIGNAL(textChanged()),this,SLOT(onTextChanged())); // ALTI/AOU - 20140207 : avoid infinite loop, because setPlainText raises a textChanged signal, and then onTextChanged calls setFocus, and focusOutEvent calls managePlaceHolder.
     if(focus){
         if(toPlainText() == mPlaceHolderText){
             setTextColor(QColor(Qt::black));
@@ -309,6 +310,7 @@ void UBTGAdaptableText::managePlaceholder(bool focus)
             setPlainText(mPlaceHolderText);
         }
     }
+    connect(this,SIGNAL(textChanged()),this,SLOT(onTextChanged())); // ALTI/AOU - 20140207 : re-connect.
 }
 
 void UBTGAdaptableText::setCursorToTheEnd()

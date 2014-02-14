@@ -885,6 +885,186 @@
         <source>Image position : expand</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Rich Text Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write Rich Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ellipse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw an Ellipse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Filling Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Circle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Rectangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Thickness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke thickness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Shapes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Pentagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular pentagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Hexagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular hexagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Heptagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular heptagon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Octogon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular octogon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Gradient</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Full</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Dense</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filling Style : Diagonal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Freehand Drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Freehand drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1600,6 +1780,17 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Cancel</source>
         <translation>Отмени</translation>
+    </message>
+</context>
+<context>
+    <name>UBDrawingFillPropertiesPalette</name>
+    <message>
+        <source>Select and set filling color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select and set second filling color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2590,16 +2781,16 @@ Do you want to ignore these errors for this host?</source>
         <translation>Въведете действие</translation>
     </message>
     <message>
-        <source>Add a media</source>
-        <translation>Въведете медия</translation>
-    </message>
-    <message>
         <source>Add a link</source>
         <translation>Въведете връзка</translation>
     </message>
     <message>
         <source>Page: %0</source>
         <translation>Страница: %0</translation>
+    </message>
+    <message>
+        <source>Add a file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2716,6 +2907,44 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Page: %0</source>
         <translation>Страница: %0</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No application was found to handle this file type</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherGuideResourceEditionWidget</name>
+    <message>
+        <source>Add a media</source>
+        <translation type="unfinished">Въведете медия</translation>
+    </message>
+    <message>
+        <source>Add a link</source>
+        <translation type="unfinished">Въведете връзка</translation>
+    </message>
+    <message>
+        <source>Add a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherGuideResourcesPresentationWidget</name>
+    <message>
+        <source>Page: %0</source>
+        <translation type="unfinished">Страница: %0</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No application was found to handle this file type</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3539,7 +3768,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
@@ -3550,7 +3779,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;Translations&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;A special thanks to:&lt;/span&gt;&lt;/p&gt;

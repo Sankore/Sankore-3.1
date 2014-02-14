@@ -875,10 +875,17 @@ void UBPersistenceManager::persistDocumentScene(UBDocumentProxy* pDocumentProxy,
     if(UBApplication::app()->boardController->currentPage() == pSceneIndex &&  paletteManager->teacherGuideDockWidget())
         teacherGuideModified = paletteManager->teacherGuideDockWidget()->teacherGuideWidget()->isModified();
 
-    if (pDocumentProxy->isModified() || teacherGuideModified)
+    //issue 1682 - NNE - 20140110
+    bool teacherResourcesModified = false;
+    if(UBApplication::app()->boardController->currentPage() == pSceneIndex &&  paletteManager->teacherResourcesDockWidget())
+        teacherResourcesModified = paletteManager->teacherResourcesDockWidget()->isModified();
+
+    //issue 1682 - NNE - 20140110 : END
+
+    if (pDocumentProxy->isModified() || teacherGuideModified || teacherResourcesModified)
         UBMetadataDcSubsetAdaptor::persist(pDocumentProxy);
 
-    if (pScene->isModified() || teacherGuideModified)
+    if (pScene->isModified() || teacherGuideModified || teacherResourcesModified)
     {
         UBSvgSubsetAdaptor::persistScene(pDocumentProxy, pScene, pSceneIndex);
 

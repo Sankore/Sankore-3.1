@@ -45,7 +45,20 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBTeacherGuideWidgetsTools.h \
     src/gui/UBMessagesDialog.h \
     src/gui/UBStartupHintsPalette.h \
-    src/gui/UBCreateLinkPalette.h
+    src/gui/UBCreateLinkPalette.h \
+    src/gui/UBDockResourcesWidget.h \
+    src/gui/UBTeacherGuideResourceEditionWidget.h \
+    src/gui/UBTeacherGuideConstantes.h \
+    src/gui/UBTeacherGuideResourcesPresentationWidget.h \
+    src/gui/UBAbstractTeacherGuide.h \
+    src/gui/UBDrawingPalette.h \
+    src/gui/UBAbstractSubPalette.h \
+    src/gui/UBShapesPalette.h \
+    src/gui/UBDrawingPolygonPalette.h \
+    src/gui/UBDrawingStrokePropertiesPalette.h \
+    src/gui/UBDrawingFillPropertiesPalette.h \
+    src/gui/UBRegularShapesPalette.h
+
 SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBFloatingPalette.cpp \
     src/gui/UBToolbarButtonGroup.cpp \
@@ -93,7 +106,18 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBTeacherGuideWidgetsTools.cpp \
     src/gui/UBMessagesDialog.cpp \
     src/gui/UBStartupHintsPalette.cpp \
-    src/gui/UBCreateLinkPalette.cpp
+    src/gui/UBCreateLinkPalette.cpp \
+    src/gui/UBDockResourcesWidget.cpp \
+    src/gui/UBTeacherGuideResourceEditionWidget.cpp \
+    src/gui/UBTeacherGuideResourcesPresentationWidget.cpp \
+    src/gui/UBAbstractTeacherGuide.cpp \
+    src/gui/UBDrawingPalette.cpp \
+    src/gui/UBAbstractSubPalette.cpp \
+    src/gui/UBShapesPalette.cpp \
+    src/gui/UBDrawingPolygonPalette.cpp \
+    src/gui/UBDrawingStrokePropertiesPalette.cpp \
+    src/gui/UBDrawingFillPropertiesPalette.cpp \
+    src/gui/UBRegularShapesPalette.cpp
 win32:SOURCES += src/gui/UBKeyboardPalette_win.cpp
 macx:SOURCES += src/gui/UBKeyboardPalette_mac.cpp
 linux-*:SOURCES += src/gui/UBKeyboardPalette_linux.cpp

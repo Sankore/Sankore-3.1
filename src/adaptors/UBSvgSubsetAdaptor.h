@@ -52,6 +52,11 @@ class IDataStorage;
 class UBGraphicsGroupContainerItem;
 class UBGraphicsItemAction;
 class UBGraphicsStrokesGroup;
+class UBGraphicsEllipseItem;
+class UBGraphicsRectItem;
+class UBGraphicsPathItem;
+class UBAbstractGraphicsPathItem;
+class UBGraphicsLineItem;
 
 class UBSvgSubsetAdaptor
 {
@@ -104,6 +109,8 @@ class UBSvgSubsetAdaptor
 
         static QMap<QString,IDataStorage*> additionalElementToStore;
 
+        static const QString SVG_STROKE_DOTLINE;
+
 
 
 
@@ -152,6 +159,16 @@ class UBSvgSubsetAdaptor
                 UBGraphicsTriangle* triangleFromSvg();
 
                 UBGraphicsCache* cacheFromSvg();
+
+                QLinearGradient linearGradiantFromSvg();
+
+                UBGraphicsEllipseItem* shapeEllipseFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
+
+                UBGraphicsRectItem* shapeRectFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
+
+                UBAbstractGraphicsPathItem* shapePathFromSvg(const QColor& pDefaultPenColor, int type); // EV-7 - ALTI/AOU - 20140102
+
+                UBGraphicsLineItem* shapeLineFromSvg(const QColor& pDefaultPenColor);//issue 1699 - NNE - 20140212
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
@@ -256,7 +273,10 @@ class UBSvgSubsetAdaptor
                 void protractorToSvg(UBGraphicsProtractor *item);
                 void cacheToSvg(UBGraphicsCache* item);
                 void triangleToSvg(UBGraphicsTriangle *item);
-                void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
+                void shapeEllipseToSvg(UBGraphicsEllipseItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapeRectToSvg(UBGraphicsRectItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapePathToSvg(UBAbstractGraphicsPathItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapeLineToSvg(UBGraphicsLineItem *item); //issue 1699 - NNE - 20140212
                 void writeSvgElement();
 
         private:

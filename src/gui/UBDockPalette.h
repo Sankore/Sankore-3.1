@@ -120,6 +120,7 @@ public:
     void registerWidget(UBDockPaletteWidget* widget);
 
     void addTab(UBDockPaletteWidget* widget);
+
     void removeTab(UBDockPaletteWidget* widget);
 
     void connectSignals();
@@ -137,6 +138,12 @@ public:
     void setAdditionalVOffset(int newOffset) {mTabPalette->mVerticalOffset = newOffset;}
 
     eUBDockPaletteType paletteType(){return mPaletteType;}
+
+    //issue 1682 - NNE - 20140114
+    int currentTabIndex(){
+        return mpStackWidget->currentIndex();
+    }
+    //issue 1682 - NNE - 20140114 : END
 
 public slots:
     void onShowTabWidget(UBDockPaletteWidget* widget);

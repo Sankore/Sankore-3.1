@@ -217,6 +217,55 @@ class UBWidgetUniboardAPI : public QObject
          */
         void showMessage(const QString& message);
 
+        /**
+         * Laucnh Url on Nav
+         */
+        void loadUrl(const QString& url);
+
+        /**
+         *  check if current Tool is selector
+         */
+        bool currentToolIsSelector();
+
+        /**
+         *  update font family
+         */
+        void updateFontFamilyPreference(const QString& fontFamily);
+
+        /**
+         *  update font size
+         */
+        void updateFontSizePreference(const QString& fontSize);
+
+        /**
+         *  update font bold
+         */
+        void updateFontBoldPreference();
+
+        /**
+         *  update font italic
+         */
+        void updateFontItalicPreference();
+
+        /**
+         *  get font family
+         */
+        QString fontFamilyPreference();
+
+        /**
+         *  get font size
+         */
+        QString fontSizePreference();
+
+        /**
+         *  get font size
+         */
+        bool fontBoldPreference();
+
+        /**
+         *  get font size
+         */
+        bool fontItalicPreference();
 
         /**
          * Center the scene coordinates within the display port
@@ -257,6 +306,8 @@ class UBWidgetUniboardAPI : public QObject
          */
         void ProcessDropEvent(QGraphicsSceneDragDropEvent *);
         bool isDropableData(const QMimeData *pMimeData) const;
+
+        bool isDarkBackground();
 
 private slots:
         void onDownloadFinished(bool pSuccess, sDownloadFileDesc desc, QByteArray pData);

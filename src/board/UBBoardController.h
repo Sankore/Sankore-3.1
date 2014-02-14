@@ -29,6 +29,9 @@
 #include <QObject>
 #include "document/UBDocumentContainer.h"
 #include "UBFeaturesController.h"
+#include "gui/UBActionPalette.h"
+#include "domain/UBShapeFactory.h"
+
 
 class UBMainWindow;
 class UBApplication;
@@ -152,6 +155,13 @@ class UBBoardController : public UBDocumentContainer
         {
             return mSystemScaleFactor;
         }
+
+        //EV-7 - NNE - 20140106
+        UBShapeFactory& shapeFactory()
+        {
+            return mShapeFactory;
+        }
+
         qreal currentZoom();
 
         void persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
@@ -322,6 +332,9 @@ class UBBoardController : public UBDocumentContainer
         int mMovingSceneIndex;
         QString mActionGroupText;
         QString mActionUngroupText;
+
+        //EV-7 - NNE - 20131230
+        UBShapeFactory mShapeFactory;        
 
     private slots:
         void stylusToolDoubleClicked(int tool);

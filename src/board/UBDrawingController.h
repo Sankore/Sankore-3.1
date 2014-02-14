@@ -32,7 +32,7 @@ class UBAbstractDrawRuler;
 
 class UBDrawingController : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     private:
         UBDrawingController(QObject * parent = 0);
@@ -70,10 +70,13 @@ class UBDrawingController : public QObject
 
     public slots:
 
+        void deactivateCreationModeForGraphicsPathItems();
+
         void setStylusTool(int tool);
         void setLineWidthIndex(int index);
         void setColorIndex(int index);
         void setEraserWidthIndex(int index);
+        void onActiveSceneChanged();
 
     signals:
         void stylusToolChanged(int tool);
@@ -102,6 +105,7 @@ class UBDrawingController : public QObject
         void pointerToolSelected(bool checked);
         void lineToolSelected(bool checked);
         void textToolSelected(bool checked);
+        void richTextToolSelected(bool checked);
         void captureToolSelected(bool checked);
 };
 

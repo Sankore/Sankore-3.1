@@ -890,6 +890,186 @@
         <source>Image position : expand</source>
         <translation>Position de l&apos;image : étendue</translation>
     </message>
+    <message>
+        <source>Rich Text Editor</source>
+        <translation>Editeur de texte enrichi</translation>
+    </message>
+    <message>
+        <source>Write Rich Text</source>
+        <translation>Ecrire un texte enrichi</translation>
+    </message>
+    <message>
+        <source>Ellipse</source>
+        <translation>Ellipse</translation>
+    </message>
+    <message>
+        <source>Draw an Ellipse</source>
+        <translation>Dessiner une ellipse</translation>
+    </message>
+    <message>
+        <source>Change Filling Color</source>
+        <translation>Changer la couleur de remplissage</translation>
+    </message>
+    <message>
+        <source>Polygon</source>
+        <translation>Polygone</translation>
+    </message>
+    <message>
+        <source>Draw a Polygon</source>
+        <translation>Dessiner un polygone</translation>
+    </message>
+    <message>
+        <source>Drawing</source>
+        <translation>Dessins</translation>
+    </message>
+    <message>
+        <source>Circle</source>
+        <translation>Cercle</translation>
+    </message>
+    <message>
+        <source>Draw a Circle</source>
+        <translation>Dessiner un cercle</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Rectangle</translation>
+    </message>
+    <message>
+        <source>Draw a Rectangle</source>
+        <translation>Dessiner un rectangle</translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation>Carré</translation>
+    </message>
+    <message>
+        <source>Draw a Square</source>
+        <translation>Dessiner un carré</translation>
+    </message>
+    <message>
+        <source>Draw a regular shape</source>
+        <translation>Dessiner une forme régulière</translation>
+    </message>
+    <message>
+        <source>Draw a regular triangle</source>
+        <translation>Dessiner un triangle équilatéral</translation>
+    </message>
+    <message>
+        <source>Draw a regular square</source>
+        <translation>Dessiner un carré</translation>
+    </message>
+    <message>
+        <source>Stroke Properties</source>
+        <translation>Propriétés du trait</translation>
+    </message>
+    <message>
+        <source>Stroke properties</source>
+        <translation>Propriétés du trait</translation>
+    </message>
+    <message>
+        <source>Stroke Thickness</source>
+        <translation>Epaisseur du trait</translation>
+    </message>
+    <message>
+        <source>Stroke thickness</source>
+        <translation>Epaisseur du trait</translation>
+    </message>
+    <message>
+        <source>Stroke Style Solid Line</source>
+        <translation>Style du trait : plein</translation>
+    </message>
+    <message>
+        <source>Stroke style : Solid Line</source>
+        <translation>Style du trait : plein</translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Line</source>
+        <translation>Style du trait : pointillés</translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Line</source>
+        <translation>Style du trait : pointillés</translation>
+    </message>
+    <message>
+        <source>Regular Shapes</source>
+        <translation>Forme régulière</translation>
+    </message>
+    <message>
+        <source>Regular Triangle</source>
+        <translation>Triangle équilateral</translation>
+    </message>
+    <message>
+        <source>Regular Square</source>
+        <translation>Carré</translation>
+    </message>
+    <message>
+        <source>Regular Pentagon</source>
+        <translation>Pentagone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular pentagon</source>
+        <translation>Dessiner un pentagone régulier</translation>
+    </message>
+    <message>
+        <source>Regular Hexagon</source>
+        <translation>Hegagone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular hexagon</source>
+        <translation>Dessiner un hexagone régulier</translation>
+    </message>
+    <message>
+        <source>Regular Heptagon</source>
+        <translation>Heptagone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular heptagon</source>
+        <translation>Dessiner un heptagone régulier</translation>
+    </message>
+    <message>
+        <source>Regular Octogon</source>
+        <translation>Octogone régulier</translation>
+    </message>
+    <message>
+        <source>Draw a regular octogon</source>
+        <translation>Dessiner un octogone régulier</translation>
+    </message>
+    <message>
+        <source>Filling Properties</source>
+        <translation>Propriétés du remplissage</translation>
+    </message>
+    <message>
+        <source>Filling properties</source>
+        <translation>Propriétés du remplissage</translation>
+    </message>
+    <message>
+        <source>Filling Style : Transparent</source>
+        <translation>Style du remplissage : Transparent</translation>
+    </message>
+    <message>
+        <source>Filling Style : Gradient</source>
+        <translation>Style du remplissage : Dégradé</translation>
+    </message>
+    <message>
+        <source>Filling Style : Full</source>
+        <translation>Style du remplissage : Plein</translation>
+    </message>
+    <message>
+        <source>Filling Style : Dense</source>
+        <translation>Style du remplissage : Points</translation>
+    </message>
+    <message>
+        <source>Filling Style : Diagonal</source>
+        <translation>Style du remplissage : Diagonales</translation>
+    </message>
+    <message>
+        <source>Freehand Drawing</source>
+        <translation>Dessin à main levée</translation>
+    </message>
+    <message>
+        <source>Freehand drawing</source>
+        <translation>Dessin à main levée</translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -1038,7 +1218,7 @@
     </message>
     <message>
         <source>Duplication successful</source>
-        <translation>Dupplication réussite</translation>
+        <translation>Duplication réussie</translation>
     </message>
     <message>
         <source>Paste successful</source>
@@ -1316,7 +1496,7 @@
     <message numerus="yes">
         <source>duplicated %1 page</source>
         <comment>duplicated %1 pages</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 page créée</numerusform>
             <numerusform>%1 pages créées</numerusform>
         </translation>
@@ -1607,6 +1787,17 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <message>
         <source>Cancel</source>
         <translation>Annuler</translation>
+    </message>
+</context>
+<context>
+    <name>UBDrawingFillPropertiesPalette</name>
+    <message>
+        <source>Select and set filling color</source>
+        <translation>Choisir une couleur de remplissage</translation>
+    </message>
+    <message>
+        <source>Select and set second filling color</source>
+        <translation>Choisir une couleur de remplissage secondaire</translation>
     </message>
 </context>
 <context>
@@ -1938,11 +2129,11 @@ Un nouveau nom vous permettra de conserver l&apos;ancier document.
     <name>UBFeaturesListView</name>
     <message>
         <source>Restore element</source>
-        <translation type="unfinished">Restaurer cet élément</translation>
+        <translation>Restaurer cet élément</translation>
     </message>
     <message>
         <source>Restore %1 elements</source>
-        <translation type="unfinished">Restaurer ces %1 éléments</translation>
+        <translation>Restaurer ces %1 éléments</translation>
     </message>
 </context>
 <context>
@@ -2471,7 +2662,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Occitan</source>
-        <translation type="unfinished"></translation>
+        <translation>Occitan</translation>
     </message>
 </context>
 <context>
@@ -2601,16 +2792,16 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
         <translation>Ajouter une action</translation>
     </message>
     <message>
-        <source>Add a media</source>
-        <translation>Ajouter un média</translation>
-    </message>
-    <message>
         <source>Add a link</source>
         <translation>Ajouter un lien web</translation>
     </message>
     <message>
         <source>Page: %0</source>
         <translation>Page : %0</translation>
+    </message>
+    <message>
+        <source>Add a file</source>
+        <translation>Ajouter un fichier</translation>
     </message>
 </context>
 <context>
@@ -2728,6 +2919,44 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Page: %0</source>
         <translation>Page : %0</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation>Fichier introuvable</translation>
+    </message>
+    <message>
+        <source>No application was found to handle this file type</source>
+        <translation>Aucune application n&apos;a été trouvée pour gérer ce type de fichier</translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherGuideResourceEditionWidget</name>
+    <message>
+        <source>Add a media</source>
+        <translation>Ajouter un média</translation>
+    </message>
+    <message>
+        <source>Add a link</source>
+        <translation>Ajouter un lien web</translation>
+    </message>
+    <message>
+        <source>Add a file</source>
+        <translation>Ajouter un fichier</translation>
+    </message>
+</context>
+<context>
+    <name>UBTeacherGuideResourcesPresentationWidget</name>
+    <message>
+        <source>Page: %0</source>
+        <translation>Page: %0</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation>Fichier introuvable</translation>
+    </message>
+    <message>
+        <source>No application was found to handle this file type</source>
+        <translation>Aucune application n&apos;a été trouvée pour gérer ce type de fichier</translation>
     </message>
 </context>
 <context>
@@ -3557,7 +3786,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
@@ -3568,7 +3797,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;Translations&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;A special thanks to:&lt;/span&gt;&lt;/p&gt;

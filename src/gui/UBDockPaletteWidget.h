@@ -52,7 +52,8 @@ public:
     virtual QPixmap iconToLeft() const;
     QString name();
 
-    virtual bool visibleInMode(eUBDockPaletteWidgetMode mode) = 0;
+    //issue 1682 - NNE - 20140113 : Add the currentPage parameter
+    virtual bool visibleInMode(eUBDockPaletteWidgetMode mode, int currentPage) = 0;
 
     void registerMode(eUBDockPaletteWidgetMode mode);
 

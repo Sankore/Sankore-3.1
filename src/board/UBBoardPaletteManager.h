@@ -34,7 +34,9 @@
 #include "gui/UBDockDownloadWidget.h"
 #include "core/UBApplicationController.h"
 #include "gui/UBFeaturesWidget.h"
-
+#include "gui/UBDockResourcesWidget.h"
+#include "gui/UBDrawingPalette.h"
+#include "gui/UBStylusPalette.h"
 
 class UBWebToolsPalette;
 class UBStylusPalette;
@@ -64,6 +66,7 @@ class UBBoardPaletteManager : public QObject
         UBRightPalette* rightPalette(){return mRightPalette;}
         UBFeaturesWidget *featuresWidget(){return mpFeaturesWidget;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
+        UBDrawingPalette* drawingPalette() { return mDrawingPalette; }
         UBActionPalette *addItemPalette() {return mAddItemPalette;}
         void showVirtualKeyboard(bool show = true);
         void initPalettesPosAtStartup();
@@ -78,6 +81,9 @@ class UBBoardPaletteManager : public QObject
         UBWebToolsPalette* mWebToolsCurrentPalette;
 
         UBDockTeacherGuideWidget* teacherGuideDockWidget() { return mpTeacherGuideWidget;}
+
+        //issue 1682 - NNE - 20140110
+        UBDockResourcesWidget* teacherResourcesDockWidget(){ return mTeacherResources; }
 
         void processPalettersWidget(UBDockPalette *paletter, eUBDockPaletteWidgetMode mode);
         void changeMode(eUBDockPaletteWidgetMode newMode, bool isInit = false);
@@ -110,6 +116,7 @@ class UBBoardPaletteManager : public QObject
         QWidget* mContainer;
         UBBoardController *mBoardControler;
 
+        UBDrawingPalette *mDrawingPalette;
         UBStylusPalette *mStylusPalette;
 
         UBZoomPalette *mZoomPalette;
@@ -121,12 +128,18 @@ class UBBoardPaletteManager : public QObject
         /** The right dock palette */
         UBRightPalette* mRightPalette;
 
+        //issue 1682 - NNE - 20131218
+        UBDockResourcesWidget *mTeacherResources;
+
         UBActionPalette *mBackgroundsPalette;
         UBActionPalette *mToolsPalette;
         UBActionPalette* mAddItemPalette;
         UBActionPalette* mErasePalette;
         UBActionPalette* mPagePalette;
         UBActionPalette* mImageBackgroundPalette;// Issue 1684 - CFA - 20131119
+
+        // EV-7 - CFA - 20140102
+        UBActionPaletteButton* mEllipseActionPaletteButton;
 
         QUrl mItemUrl;
         QPixmap mPixmap;
@@ -167,6 +180,7 @@ class UBBoardPaletteManager : public QObject
         void backgroundPaletteClosed();
 
         void toggleStylusPalette(bool checked);
+        void toggleDrawingPalette(bool checked);
         void tooglePodcastPalette(bool checked);
 
         void erasePaletteButtonPressed();

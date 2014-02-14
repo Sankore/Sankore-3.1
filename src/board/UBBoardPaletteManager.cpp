@@ -44,7 +44,6 @@
 #include "gui/UBStartupHintsPalette.h"
 #include "gui/UBCreateLinkPalette.h"
 
-
 #include "web/UBWebPage.h"
 #include "web/UBWebController.h"
 #include "web/browser/WBBrowserWindow.h"
@@ -79,6 +78,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mContainer(container)
     , mBoardControler(pBoardController)
     , mStylusPalette(0)
+    , mDrawingPalette(NULL)
     , mZoomPalette(0)
     , mTipPalette(0)
     , mLinkPalette(0)
@@ -90,6 +90,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mErasePalette(NULL)
     , mPagePalette(NULL)
     , mImageBackgroundPalette(NULL)
+    , mEllipseActionPaletteButton(NULL)
     , mPendingPageButtonPressed(false)
     , mPendingZoomButtonPressed(false)
     , mPendingPanButtonPressed(false)
@@ -100,6 +101,7 @@ UBBoardPaletteManager::UBBoardPaletteManager(QWidget* container, UBBoardControll
     , mpTeacherGuideWidget(NULL)
     , mDownloadInProgress(false)
 {
+    mTeacherResources = NULL;
     setupPalettes();
     connectPalettes();
 }
@@ -118,6 +120,7 @@ UBBoardPaletteManager::~UBBoardPaletteManager()
 void UBBoardPaletteManager::initPalettesPosAtStartup()
 {
     mStylusPalette->initPosition();
+    mDrawingPalette->initPosition();
 }
 
 void UBBoardPaletteManager::setupLayout()
@@ -147,10 +150,17 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     mLeftPalette->addTab(mpPageNavigWidget);
 
     if(UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool() || UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()){
+
         mpTeacherGuideWidget = new UBDockTeacherGuideWidget();
         mLeftPalette->registerWidget(mpTeacherGuideWidget);
         mLeftPalette->addTab(mpTeacherGuideWidget);
     }
+
+    //issue 1682 - NNE - 20131218
+    mTeacherResources = new UBDockResourcesWidget;
+    mLeftPalette->registerWidget(mTeacherResources);
+    mLeftPalette->addTab(mTeacherResources);
+    //issue 1682 - NNE - 20131218 : END
 
     mLeftPalette->connectSignals();
 
@@ -253,8 +263,12 @@ void UBBoardPaletteManager::setupPalettes()
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
     mStylusPalette->show(); // always show stylus palette at startup
 
+    mDrawingPalette = new UBDrawingPalette(mContainer, UBSettings::settings()->appDrawingPaletteOrientationHorizontal->get().toBool() ? Qt::Horizontal : Qt::Vertical);
+    mDrawingPalette->hide();
+
     mZoomPalette = new UBZoomPalette(mContainer);
     mStylusPalette->stackUnder(mZoomPalette);
+    mDrawingPalette->stackUnder(mZoomPalette);
 
     mTipPalette = new UBStartupHintsPalette(mContainer);
 
@@ -431,6 +445,7 @@ void UBBoardPaletteManager::purchaseLinkActivated(const QString& link)
 
 void UBBoardPaletteManager::connectPalettes()
 {
+    connect(UBApplication::mainWindow->actionDrawing, SIGNAL(toggled(bool)), this, SLOT(toggleDrawingPalette(bool)));
     connect(UBApplication::mainWindow->actionStylus, SIGNAL(toggled(bool)), this, SLOT(toggleStylusPalette(bool)));
 
     foreach(QWidget *widget, UBApplication::mainWindow->actionZoomIn->associatedWidgets())
@@ -513,7 +528,6 @@ void UBBoardPaletteManager::connectPalettes()
             connect(button, SIGNAL(released()), this, SLOT(pagePaletteButtonReleased()));
         }
     }
-
 }
 
 
@@ -532,6 +546,12 @@ void UBBoardPaletteManager::containerResized()
         //mStylusPalette->move(userLeft, userTop);
         mStylusPalette->adjustSizeAndPosition(true,false);
         mStylusPalette->initPosition();
+    }
+
+    if (mDrawingPalette)
+    {
+        mDrawingPalette->adjustSizeAndPosition(true,false);
+        mDrawingPalette->initPosition();
     }
 
     if(mZoomPalette)
@@ -591,6 +611,17 @@ void UBBoardPaletteManager::activeSceneChanged()
         mpPageNavigWidget->setPageNumber(UBDocumentContainer::pageFromSceneIndex(pageIndex), activeScene->document()->pageCount());
     }
 
+    //issue 1682 - NNE - 20140113
+    if(pageIndex > 0){
+        int currentTabIndex = mLeftPalette->currentTabIndex();
+        mLeftPalette->addTab(mTeacherResources);
+        mLeftPalette->showTabWidget(currentTabIndex);
+    }else{
+        mLeftPalette->removeTab(mTeacherResources);
+        mLeftPalette->showTabWidget(mLeftPalette->currentTabIndex());
+    }
+    //issue 1682 - NNE - 20140113 : END
+
     if (mZoomPalette)
         connect(mZoomPalette, SIGNAL(mouseEntered()), activeScene, SLOT(hideEraser()));
 
@@ -618,10 +649,14 @@ void UBBoardPaletteManager::backgroundPaletteClosed()
     UBApplication::mainWindow->actionBackgrounds->setChecked(false);
 }
 
-
 void UBBoardPaletteManager::toggleStylusPalette(bool checked)
 {
     mStylusPalette->setVisible(checked);
+}
+
+void UBBoardPaletteManager::toggleDrawingPalette(bool checked)
+{
+    mDrawingPalette->setVisible(checked);
 }
 
 
@@ -743,6 +778,8 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 mRightPalette->assignParent(mContainer);
                 mRightPalette->stackUnder(mStylusPalette);
                 mLeftPalette->stackUnder(mStylusPalette);
+                mRightPalette->stackUnder(mDrawingPalette);
+                mLeftPalette->stackUnder(mDrawingPalette);
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
 
@@ -776,6 +813,7 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 mLeftPalette->assignParent((QWidget*)UBApplication::applicationController->uninotesController()->drawingView());
                 mRightPalette->assignParent((QWidget*)UBApplication::applicationController->uninotesController()->drawingView());
                 mStylusPalette->raise();
+                mDrawingPalette->raise();
 
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
@@ -1039,6 +1077,7 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
 
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
     mStylusPalette->setVisible(bVisible); // always show stylus palette at startup
+    mDrawingPalette->initPosition(); // move de drawing Palette
 }
 
 

@@ -67,6 +67,7 @@
 #include "domain/UBGraphicsSvgItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsStrokesGroup.h"
+#include "domain/UBGraphicsEllipseItem.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -81,6 +82,8 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 
 #include "core/memcheck.h"
+
+#include "domain/UBShapeFactory.h"
 
 UBBoardView::UBBoardView (UBBoardController* pController, QWidget* pParent, bool isControl, bool isDesktop)
 : QGraphicsView (pParent)
@@ -521,8 +524,10 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
             if ((UBGraphicsItemType::UserTypesCount > item->type()) && (item->type() > QGraphicsItem::UserType))
             {
                 // if Item can be selected at mouse press - then we need to deselect all other items.
-                //issue 1554 - NNE - 20131009
-                scene()->deselectAllItemsExcept(item);
+                if(item->type() != UBGraphicsItemType::GraphicsHandle){
+                    //issue 1554 - NNE - 20131009
+                    scene()->deselectAllItemsExcept(item);
+                }
             }
         }
     }else{
@@ -552,6 +557,20 @@ Here we determines cases when items should to get mouse press event at pressing 
     // some behavior depends on current tool.
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
 
+    //EV-7 - NNE - 20140103
+    if(UBShapeFactory::isShape(item)){
+        if (currentTool == UBStylusTool::Play)
+            return false;
+        if ((currentTool == UBStylusTool::Selector) && item->isSelected())
+            return true;
+        if ((currentTool == UBStylusTool::Selector) && item->parentItem() && item->parentItem()->isSelected())
+            return true;
+
+        if(UBShapeFactory::isInEditMode(item)){
+            return true;
+        }
+    }
+
     switch(item->type())
     {
     case UBGraphicsProtractor::Type:
@@ -560,8 +579,6 @@ Here we determines cases when items should to get mouse press event at pressing 
     case UBGraphicsCompass::Type:
     case UBGraphicsCache::Type:
     case UBGraphicsAristo::Type:
-        return true;
-
     case UBGraphicsDelegateFrame::Type:
         if (currentTool == UBStylusTool::Play)
             return false;
@@ -598,13 +615,10 @@ Here we determines cases when items should to get mouse press event at pressing 
         break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
-        /* Issue 1509 - AOU - 20131113
         if(currentTool == UBStylusTool::Play)
         {
             return true;
         }
-        Issue 1509 - AOU - 20131113 : Fin
-        */
         return false;
         break;
 
@@ -622,6 +636,8 @@ Here we determines cases when items should to get mouse press event at pressing 
             return true;
         return false;
         break;
+    case UBGraphicsItemType::GraphicsHandle:
+        return true;
 
     }
 
@@ -684,6 +700,14 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
 
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
+    //EV-7 - NNE - 20140103
+    if(UBShapeFactory::isShape(item)){
+        if(UBShapeFactory::isInEditMode(item)){
+            return false;
+        }
+        return true;
+    }
+
     switch(item->type())
     {
     case UBGraphicsCurtainItem::Type:
@@ -719,25 +743,29 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
     {
         UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
+        //TODO claudio
+        // another chuck of very good code
+        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type() && currentTool == UBStylusTool::Play){
+            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
+            if(group && group->Delegate()->action()){
+                group->Delegate()->action()->play();
+                return item;
+            }
+        }
+
         // if item is on group and group is not selected - group should take press.
         if ((UBStylusTool::Selector == currentTool
              || currentTool == UBStylusTool::Play) // Issue 1509 - AOU - 20131113
             && item->parentItem()
             && UBGraphicsGroupContainerItem::Type == item->parentItem()->type())
                 /*&& !item->parentItem()->isSelected())*/ // Issue 1509 - AOU - 20131113
+        {
             return item->parentItem();
+        }
 
         // items like polygons placed in two groups nested, so we need to recursive call.
         if(item->parentItem() && UBGraphicsStrokesGroup::Type == item->parentItem()->type())
             return determineItemToPress(item->parentItem());
-
-        //TODO claudio
-        // another chuck of very good code
-        if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type() && currentTool == UBStylusTool::Play){
-            UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
-            if(group && group->Delegate()->action())
-                group->Delegate()->action()->play();
-        }
     }
 
     return item;
@@ -863,6 +891,7 @@ void UBBoardView::handleItemMouseMove(QMouseEvent *event)
             posBeforeMove = movingItem->pos();
 
         QGraphicsView::mouseMoveEvent (event);
+
 
         if (movingItem)
           posAfterMove = movingItem->pos();
@@ -1010,6 +1039,9 @@ void UBBoardView::longPressEvent()
 
 void UBBoardView::mousePressEvent (QMouseEvent *event)
 {
+    //EV-7 - NNE - 20131231
+    emit mousePress(event);
+
     if (!bIsControl && !bIsDesktop) {
         event->ignore();
         return;
@@ -1117,9 +1149,13 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
                 event->accept ();
             }
         }
+        else if (currentTool == UBStylusTool::RichText)
+        {
+
+        }
         else if (currentTool == UBStylusTool::Capture)
         {
-            scene ()->deselectAllItems ();
+            scene ()->deselectAllItems();
 
             if (!mRubberBand)
                 mRubberBand = new UBRubberBand (QRubberBand::Rectangle, this);
@@ -1129,6 +1165,11 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             mIsCreatingSceneGrabZone = true;
 
             event->accept ();
+        }
+        else if (currentTool == UBStylusTool::ChangeFill)
+        {
+            qDebug() << "on est dans le cas du pot de peinture, on va remplir l'objet si possible";
+            UBApplication::boardController->shapeFactory().changeFillColor(mapToScene(mMouseDownPos));
         }
         else
         {
@@ -1154,6 +1195,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 void
 UBBoardView::mouseMoveEvent (QMouseEvent *event)
 {
+
+    //EV-7 - NNE - 20131231
+    emit mouseMove(event);
+
   if(!mIsDragInProgress && ((mapToScene(event->pos()) - mLastPressedMousePos).manhattanLength() < QApplication::startDragDistance()))
   {
       return;
@@ -1222,13 +1267,15 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
                                 item = item->parentItem();
                       // Fin Issue 1569 - CFA - 20131113
 
+                      //EV-7 - NNE - 20140103 : Add test on drawing objects
                       if (item->type() == UBGraphicsW3CWidgetItem::Type
                               || item->type() == UBGraphicsPixmapItem::Type
                               || item->type() == UBGraphicsMediaItem::Type
                               || item->type() == UBGraphicsSvgItem::Type
                               || item->type() == UBGraphicsTextItem::Type
                               || item->type() == UBGraphicsStrokesGroup::Type
-                              || item->type() == UBGraphicsGroupContainerItem::Type) {
+                              || item->type() == UBGraphicsGroupContainerItem::Type
+                              || UBShapeFactory::isShape(item)) {
 
                           if (!mJustSelectedItems.contains(item)) {
                               item->setSelected(true);
@@ -1274,6 +1321,9 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
 void
 UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 {
+    //EV-7 - NNE - 20131231
+    emit mouseRelease(event);
+
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController ()->stylusTool ();
 
   setToolCursor (currentTool);
@@ -1406,6 +1456,18 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 
       mIsCreatingTextZone = false;
     }
+  else if (currentTool == UBStylusTool::RichText)
+  {
+      if (mRubberBand)
+        mRubberBand->hide ();
+
+       UBFeaturesController* c = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController();
+       UBFeature f = c->getFeatureByPath("/root/Applications/Texte Enrichi.wgt" );
+       UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+
+       UBDrawingController::drawingController ()->setStylusTool (UBStylusTool::Selector);
+
+  }
   else if (currentTool == UBStylusTool::Capture)
     {
       if (mRubberBand)
@@ -1756,11 +1818,14 @@ UBBoardView::setToolCursor (int tool)
     case UBStylusTool::Text:
       controlViewport->setCursor (UBResources::resources ()->textCursor);
       break;
+    case UBStylusTool::RichText:
+      controlViewport->setCursor (UBResources::resources ()->richTextCursor);
+      break;
     case UBStylusTool::Capture:
       controlViewport->setCursor (UBResources::resources ()->penCursor);
       break;
     default:
-      Q_ASSERT (false);
+      //Q_ASSERT (false);
       //failsafe
       controlViewport->setCursor (UBResources::resources ()->penCursor);
     }
