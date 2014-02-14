@@ -1286,16 +1286,16 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement()
     QDesktopWidget* desktop = UBApplication::desktop();
     mXmlWriter.writeAttribute("pageDpi", QString("%1").arg((desktop->physicalDpiX() + desktop->physicalDpiY()) / 2));
 
-    /* EV-7 - CFA - 20140302 : seems to be useless
-        mXmlWriter.writeStartElement("rect");
-        mXmlWriter.writeAttribute("fill", mScene->isDarkBackground() ? "black" : "white");
-        mXmlWriter.writeAttribute("x", QString::number(normalized.x()));
-        mXmlWriter.writeAttribute("y", QString::number(normalized.y()));
-        mXmlWriter.writeAttribute("width", QString::number(normalized.width()));
-        mXmlWriter.writeAttribute("height", QString::number(normalized.height()));
 
-        mXmlWriter.writeEndElement();
-    */
+    mXmlWriter.writeStartElement("rect");
+    mXmlWriter.writeAttribute("fill", mScene->isDarkBackground() ? "black" : "white");
+    mXmlWriter.writeAttribute("x", QString::number(normalized.x()));
+    mXmlWriter.writeAttribute("y", QString::number(normalized.y()));
+    mXmlWriter.writeAttribute("width", QString::number(normalized.width()));
+    mXmlWriter.writeAttribute("height", QString::number(normalized.height()));
+
+    mXmlWriter.writeEndElement();
+
 }
 
 bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
@@ -3522,6 +3522,11 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::cacheToSvg(UBGraphicsCache* item)
 
 UBGraphicsRectItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeRectFromSvg(const QColor& pDefaultPenColor) // EV-7 - ALTI/AOU - 20131231
 {
+    // EV-7 - CFA - 20140214 : compatibilité avec les anciens documents
+    QStringRef svgShapeRect = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapeRect");
+    if (svgShapeRect.isNull())
+        return NULL;
+
     UBGraphicsRectItem* rect = new UBGraphicsRectItem();
 
 
@@ -3705,13 +3710,15 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeRectToSvg(UBGraphicsRectItem *i
 
     mXmlWriter.writeStartElement("rect");
 
+    // EV-7 - CFA - 20140214 : distinction avec le rect des anciens documents
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapeRect", "true");
+
     UBItem* ubItem = dynamic_cast<UBItem*>(item);
     if (ubItem)
     {
         mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(ubItem->uuid()));
     }
 
-    // SVG <shapeRect> tag :
     mXmlWriter.writeAttribute("x", QString::number(item->rect().x()));
     mXmlWriter.writeAttribute("y", QString::number(item->rect().y()));
     mXmlWriter.writeAttribute("width", QString::number(item->rect().width()));
