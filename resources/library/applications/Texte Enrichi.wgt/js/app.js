@@ -16,7 +16,9 @@
         this.empty = true;
         this.font = {
             name: 'arial',
-            size: '32pt'
+            size: '32pt',
+            bold: false,
+            italic: false
         };
         this.widget = widget;
         this.dark = false;
@@ -51,7 +53,7 @@
                     onLinkClick: function (a) {},
                     onInit: function () {},
                     onBlur: function () {},
-                    onFocus: function () {},
+                    onFirstType: function () {},
                     onContentOverflow: function (delta) {},
                     onFontSizeChange: function (fontSize) {},
                     onFontFamilyChange: function (fontFamily) {},
@@ -87,9 +89,8 @@
                     };
 
                 options.fontsize_formats = [
-                    '6pt', '7pt', '8pt', '9pt', '10pt', '11pt', '12pt',
-                    '14pt', '16pt', '18pt', '20pt', '22pt', '24pt', '26pt', '28pt',
-                    '36pt', '48pt', '72pt'
+                    '12pt', '14pt', '16pt', '18pt', '20pt', '22pt', '24pt',
+                    '26pt', '28pt', '36pt', '48pt', '72pt', '96pt', '128pt'
                 ].join(' ');
 
                 options.font_formats = [
@@ -148,6 +149,19 @@
 
                     editor.on('ExecCommand', function (e) {
                         self.onTinyCommand(e);
+                    });
+
+                    editor.on('keypress', function (e) {
+                        if (app.RTEditor.isContentEmpty($(e.target).text())) {
+                            self.options.onFirstType.call(self);
+                        } else {
+                            self.clearBOM();
+                            try {
+                                var range = self.tinymce.selection.getRng();
+                                range.setStart(range.startContainer, range.startOffset + 1);
+                                self.tinymce.selection.setRng(range);
+                            } catch (ex) {}
+                        }
                     });
 
                     editor.on('NodeChange', function (e) {
@@ -575,6 +589,7 @@
                 if (isBold) {
                     this.tinymce.execCommand('Bold', true);
                 }
+                this.font.bold = isBold;
             };
 
             /**
@@ -584,6 +599,7 @@
                 if (isItalic) {
                     this.tinymce.execCommand('Italic', true);
                 }
+                this.font.italic = isItalic;
             };
 
             /**
@@ -620,21 +636,11 @@
              *
              */
             app.RTEditor.prototype.checkForResize = function () {
-                if (null !== resizeTimer) {
-                    clearTimeout(resizeTimer);
+                var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height();
+
+                if (delta > 0) {
+                    this.options.onContentOverflow.call(this, delta);
                 }
-
-                var self = this;
-
-                resizeTimer = setTimeout(function () {
-                    var inner = $(self.tinymce.getDoc()).height();
-                    var outer = self.getIframe().height();
-                    var delta = inner - outer;
-
-                    if (delta > 0) {
-                        self.options.onContentOverflow.call(self, delta);
-                    }
-                }, 25);
             };
 
             /**
@@ -679,11 +685,9 @@
 
                 this.getIframe().attr('scrolling', 'no');
 
-                var handler = function (e) {
+                $(editor.getDoc()).bind('keydown', function (e) {
                     self.checkForResize();
-                };
-
-                $(editor.getDoc()).bind('keydown', handler);
+                });
 
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
                 var confirm = this.tinymce.windowManager.confirm;
@@ -705,6 +709,18 @@
             };
 
             /**
+             *
+             */
+            app.RTEditor.prototype.clearBOM = function () {
+                var $body = $(this.tinymce.getDoc()).find('body');
+                $body.find(':not(iframe)').addBack().contents().each(function (i, elem) {
+                    if (elem.nodeType === 3 && elem.nodeValue.indexOf('\uFEFF') !== -1) {
+                        elem.nodeValue = elem.nodeValue.replace(/\uFEFF/, '');
+                    }
+                });
+            };
+
+            /**
              * Event handler for TinyMCE editor 'blur' event
              */
             app.RTEditor.prototype.onTinyBlur = function (e) {
@@ -715,10 +731,7 @@
              * Event handler for TinyMCE editor 'blur' event
              */
             app.RTEditor.prototype.onTinyFocus = function (e) {
-                this.options.onFocus.call(this);
-                
-                var $body = $(this.tinymce.getDoc()).find('body');
-                $body.html($body.html().replace(/\uFEFF/, ''));
+                this.clearBOM();
             };
 
             /**
@@ -835,7 +848,7 @@
                 window.sankore.setPreference('background', this.backgroundColor);
             };
 
-            options.onFocus = function () {
+            options.onFirstType = function () {
                 if (this.empty) {
                     this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
                     this.setDefaultFontSize(window.sankore.fontSizePreference());
