@@ -317,6 +317,7 @@ int UBApplication::exec(const QString& pFileToImport)
 
     webController = new UBWebController(mainWindow);
     documentController = new UBDocumentController(mainWindow);
+    documentController->setDocumentThumbs(boardController->documentThumbs()); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 
     boardController->paletteManager()->connectToDocumentController();
 
@@ -360,6 +361,7 @@ int UBApplication::exec(const QString& pFileToImport)
     mainWindow->actionMultiScreen->setChecked(bUseMultiScreen);
     connect(mainWindow->actionMultiScreen, SIGNAL(triggered(bool)), applicationController, SLOT(useMultiScreen(bool)));
     connect(mainWindow->actionWidePageSize, SIGNAL(triggered(bool)), boardController, SLOT(setWidePageSize(bool)));
+    connect(mainWindow->actionWidePageSize_16_10, SIGNAL(triggered(bool)), boardController, SLOT(setWidePageSize16_10(bool)));
     connect(mainWindow->actionRegularPageSize, SIGNAL(triggered(bool)), boardController, SLOT(setRegularPageSize(bool)));
 
     connect(mainWindow->actionCut, SIGNAL(triggered()), applicationController, SLOT(actionCut()));
@@ -528,11 +530,13 @@ void UBApplication::decorateActionMenu(QAction* action)
 
             QActionGroup* pageSizeGroup = new QActionGroup(mainWindow);
             pageSizeGroup->addAction(mainWindow->actionWidePageSize);
+            pageSizeGroup->addAction(mainWindow->actionWidePageSize_16_10);
             pageSizeGroup->addAction(mainWindow->actionRegularPageSize);
             pageSizeGroup->addAction(mainWindow->actionCustomPageSize);
 
             QMenu* documentSizeMenu = menu->addMenu(QIcon(":/images/toolbar/pageSize.png"),tr("Page Size"));
             documentSizeMenu->addAction(mainWindow->actionWidePageSize);
+            documentSizeMenu->addAction(mainWindow->actionWidePageSize_16_10);
             documentSizeMenu->addAction(mainWindow->actionRegularPageSize);
             documentSizeMenu->addAction(mainWindow->actionCustomPageSize);
             menu->addAction(mainWindow->actionCut);
@@ -624,7 +628,8 @@ bool UBApplication::eventFilter(QObject *obj, QEvent *event)
 
     if (event->type() == QEvent::ApplicationActivate)
     {
-        boardController->controlView()->setMultiselection(false);
+        if (boardController && boardController->controlView())
+            boardController->controlView()->setMultiselection(false);
     }
 
 #ifdef Q_WS_MAC

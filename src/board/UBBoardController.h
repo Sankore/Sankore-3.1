@@ -28,6 +28,7 @@
 
 #include <QObject>
 #include "document/UBDocumentContainer.h"
+#include "UBFeaturesController.h"
 
 class UBMainWindow;
 class UBApplication;
@@ -152,6 +153,8 @@ class UBBoardController : public UBDocumentContainer
             return mSystemScaleFactor;
         }
         qreal currentZoom();
+
+        void persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         void persistCurrentScene(UBDocumentProxy *pProxy = 0);
         void showNewVersionAvailable(bool automatic, const UBVersion &installedVersion, const UBSoftwareUpdate &softwareUpdate);
         void setBoxing(QRect displayRect);
@@ -200,6 +203,15 @@ class UBBoardController : public UBDocumentContainer
         void clearScene();
         void clearSceneItems();
         void clearSceneAnnotation();
+
+        // Issue 1684 - CFA - 20131120
+        void setImageBackground(UBFeatureBackgroundDisposition disposition);
+        void centerImageBackground();
+        void adjustImageBackground();
+        void mosaicImageBackground();
+        void fillImageBackground();
+        void extendImageBackground();
+
         void clearSceneBackground();
         void zoomIn(QPointF scenePoint = QPointF(0,0));
         void zoomOut(QPointF scenePoint = QPointF(0,0));
@@ -213,10 +225,10 @@ class UBBoardController : public UBDocumentContainer
         void firstScene();
         void lastScene();
         void groupButtonClicked();
-        void downloadURL(const QUrl& url, QString contentSourceUrl = QString(), const QPointF& pPos = QPointF(0.0, 0.0), const QSize& pSize = QSize(), bool isBackground = false, bool internalData = false);
+        void downloadURL(const QUrl& url, QString contentSourceUrl = QString(), const QPointF& pPos = QPointF(0.0, 0.0), const QSize& pSize = QSize(), bool isBackground = false, bool internalData = false, UBFeatureBackgroundDisposition disposition = Center);
         UBItem *downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pHeader,
                                  QByteArray pData, QPointF pPos, QSize pSize,
-                                 bool isSyncOperation = true, bool isBackground = false, bool internalData = false, eItemActionType actionType = eItemActionType_Default);
+                                 bool isSyncOperation = true, bool isBackground = false, bool internalData = false, eItemActionType actionType = eItemActionType_Default, UBFeatureBackgroundDisposition disposition = Center);
         void changeBackground(bool isDark, bool isCrossed);
         void setToolCursor(int tool);
         void showMessage(const QString& message, bool showSpinningWheel = false);
@@ -228,6 +240,7 @@ class UBBoardController : public UBDocumentContainer
         void hide();
         void show();
         void setWidePageSize(bool checked);
+        void setWidePageSize16_10(bool checked);
         void setRegularPageSize(bool checked);
         void stylusToolChanged(int tool);
         void grabScene(const QRectF& pSceneRect);

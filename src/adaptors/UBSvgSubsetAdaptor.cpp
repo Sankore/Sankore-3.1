@@ -622,13 +622,33 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                     QString href = imageHref.toString();
 
                     QStringRef ubBackground = mXmlReader.attributes().value(mNamespaceUri, "background");
-
                     bool isBackground = (!ubBackground.isNull() && ubBackground.toString() == xmlTrue);
 
-                    if (href.contains("png"))
-                    {
+                    // Issue 1684 - CFA - 20140115
+                    // Issue 1684 - ALTI/AOU - 20131210
+                    UBFeatureBackgroundDisposition disposition = Center;
 
+                    QStringRef sDisposition = mXmlReader.attributes().value(mNamespaceUri, "disposition");
+					if (isBackground)
+                    {
+                        if (sDisposition.isNull())// centré ou ajusté selon la taille de l'image
+                        {
+                            int width = mXmlReader.attributes().value("width").toString().toInt();
+                            int height = mXmlReader.attributes().value("height").toString().toInt();
+                            if (width > mScene->nominalSize().width() || height > mScene->nominalSize().height())
+                                disposition = Adjust;
+                        }
+                        else
+                            disposition = static_cast<UBFeatureBackgroundDisposition>(sDisposition.toString().toInt());
+                    }
+                    // Fin Issue 1684 - ALTI/AOU - 20131210
+                    // Fin Issue 1684 - CFA - 20140115
+
+                    if (href.contains("png"))
+                    {                        
                         UBGraphicsPixmapItem* pixmapItem = pixmapItemFromSvg();
+
+
                         if (pixmapItem)
                         {
                             pixmapItem->setFlag(QGraphicsItem::ItemIsMovable, true);
@@ -643,7 +663,9 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
                                 pixmapItem->setUuid(uuidFromSvg);
 
                             if (isBackground)
-                                mScene->setAsBackgroundObject(pixmapItem);
+                            {
+                                mScene->setAsBackgroundObject(pixmapItem, true, false, disposition); // Issue 1684 - ALTI/AOU - 20131210
+                            }
 
                             pixmapItem->show();
                         }
@@ -1126,7 +1148,7 @@ UBSvgSubsetAdaptor::UBSvgSubsetWriter::UBSvgSubsetWriter(UBDocumentProxy* proxy,
         : mScene(pScene)
         , mDocumentPath(proxy->persistencePath())
         , mPageIndex(pageIndex)
-
+        , mpDocument(proxy) // Issue 1683 - ALTI/AOU - 20131212
 {
     // NOOP
 }
@@ -1303,7 +1325,11 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsPixmapItem *pixmapItem = qgraphicsitem_cast<UBGraphicsPixmapItem*> (item);
             if (pixmapItem && pixmapItem->isVisible())
             {
-                pixmapItemToLinkedImage(pixmapItem);
+                //Issue 1684 - CFA - 20131128
+                if (pixmapItem->scene()->isBackgroundObject(item))
+                   pixmapItemToLinkedImage(pixmapItem, true);
+                else
+                   pixmapItemToLinkedImage(pixmapItem);
                 continue;
             }
 
@@ -1311,7 +1337,11 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             UBGraphicsSvgItem *svgItem = qgraphicsitem_cast<UBGraphicsSvgItem*> (item);
             if (svgItem && svgItem->isVisible())
             {
-                svgItemToLinkedSvg(svgItem);
+                if (svgItem->scene()->isBackgroundObject(item))
+                    svgItemToLinkedSvg(svgItem, true);
+                else
+                    svgItemToLinkedSvg(svgItem);
+
                 continue;
             }
 
@@ -1427,6 +1457,39 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
 
         if(elements.value("teacherGuide"))
             dataStorageItems = elements.value("teacherGuide")->save(pageIndex);
+        // Issue 1683 - ALTI/AOU - 20131212
+        // On ne peut malheureusement pas utiliser UBTeacherGuidePageZeroWidget.save(),
+        // car celle-ci ne pourrait renvoyer que les élements du document chargé dans la Board.
+        // Or on veut pouvoir ici persister un autre Document, car par exemple quand on crée un nouveau Document :
+        // on le persite alors qu'il n'a pas encore été chargé dans la Board.
+        if(pageIndex == 0)
+        {
+            QVector<tIDataStorage*> result;
+
+            tIDataStorage* data = new tIDataStorage();
+            data->name = "teacherGuide";
+            data->type = eElementType_START;
+            data->attributes.insert("version", "2.3.0");
+            result << data;
+
+            foreach (UBDocumentExternalFile* ef, *(mpDocument->externalFiles())) {
+                data = new tIDataStorage();
+                data->name = "file";
+                data->type = eElementType_UNIQUE;
+                data->attributes.insert("path", ef->path());
+                data->attributes.insert("title", ef->title());
+                result << data;
+            }
+
+            data = new tIDataStorage();
+            data->name = "teacherGuide";
+            data->type = eElementType_END;
+            result << data;
+
+            dataStorageItems += result;
+        }
+        // Fin Issue 1683 - ALTI/AOU - 20131212
+
         foreach(tIDataStorage* eachItem, dataStorageItems){
             if(eachItem->type == eElementType_START){
                 mXmlWriter.writeStartElement(eachItem->name);
@@ -1436,10 +1499,17 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(int pageIndex)
             else if (eachItem->type == eElementType_END)
                 mXmlWriter.writeEndElement();
             else if (eachItem->type == eElementType_UNIQUE){
-                mXmlWriter.writeStartElement(eachItem->name);
-                foreach(QString key,eachItem->attributes.keys())
-                    mXmlWriter.writeAttribute(key,eachItem->attributes.value(key));
-                mXmlWriter.writeEndElement();
+                if (eachItem->name == "file") // Issue 1683 (Evolution) - AOU - 20131206
+                {
+                    fileToLinkedFile(eachItem->attributes);
+                }
+                else
+                {
+                    mXmlWriter.writeStartElement(eachItem->name);
+                    foreach(QString key,eachItem->attributes.keys())
+                        mXmlWriter.writeAttribute(key,eachItem->attributes.value(key));
+                    mXmlWriter.writeEndElement();
+                }
             }
             else
                 qWarning() << "unknown type";
@@ -2076,11 +2146,17 @@ QList<UBGraphicsPolygonItem*> UBSvgSubsetAdaptor::UBSvgSubsetReader::polygonItem
 
 
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPixmapItem* pixmapItem)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pixmapItemToLinkedImage(UBGraphicsPixmapItem* pixmapItem, bool isBackground)
 {
     mXmlWriter.writeStartElement("image");
-
-    QString fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + ".png";
+    QString fileName;
+    if (isBackground // Issue 1684 - CFA - 20131128 : specify isBackground
+        && ( ! mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty())) // Issue 1684 - ALTI/AOU - 20131210 : Si il y a une image par défaut définie, on utilise son uuid :
+    {
+        fileName = UBPersistenceManager::imageDirectory + "/" + mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    }
+    else
+        fileName = UBPersistenceManager::imageDirectory + "/" + pixmapItem->uuid().toString() + ".png";
 
     QString path = mDocumentPath + "/" + fileName;
 
@@ -2168,12 +2244,19 @@ UBGraphicsPixmapItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg()
 }
 
 
-void UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(UBGraphicsSvgItem* svgItem)
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::svgItemToLinkedSvg(UBGraphicsSvgItem* svgItem, bool isBackground)
 {
 
     mXmlWriter.writeStartElement("image");
 
-    QString fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + ".svg";
+    QString fileName;
+    if (isBackground
+            && ( ! mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty())) // Issue 1684 - ALTI/AOU - 20131210 : Si il y a une image par défaut définie, on utilise son uuid :
+    {
+        fileName = UBPersistenceManager::imageDirectory + "/" + mScene->document()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    }
+    else
+        fileName = UBPersistenceManager::imageDirectory + "/" + svgItem->uuid().toString() + ".svg";
 
     QString path = mDocumentPath + "/" + fileName;
 
@@ -2212,7 +2295,7 @@ UBGraphicsSvgItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::svgItemFromSvg()
     {
         QString href = imageHref.toString();
 
-        svgItem = new UBGraphicsSvgItem(mDocumentPath + "/" + UBFileSystemUtils::normalizeFilePath(href));
+        svgItem = new UBGraphicsSvgItem(mDocumentPath + "/" + UBFileSystemUtils::normalizeFilePath(href));        
     }
     else
     {
@@ -2331,6 +2414,16 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::videoItemToLinkedVideo(UBGraphicsMed
         videoFileHref = videoFileHref.replace(mDocumentPath + "/","");
 
     mXmlWriter.writeAttribute(nsXLink, "href", videoFileHref);
+    mXmlWriter.writeEndElement();
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::fileToLinkedFile(QMap<QString, QString> attributes) // Issue 1683 (Evolution) - AOU - 20131206
+{
+    mXmlWriter.writeStartElement("file");
+
+    mXmlWriter.writeAttribute("path", attributes.value("path"));
+    mXmlWriter.writeAttribute("title", attributes.value("title"));
+
     mXmlWriter.writeEndElement();
 }
 
@@ -2557,8 +2650,14 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsItemToSvg(QGraphicsItem* ite
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", zs);
 
     bool isBackground = mScene->isBackgroundObject(item);
-
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "background", isBackground ? xmlTrue : xmlFalse);
+
+    // Issue 1684 - ALTI/AOU - 20131210
+    if (isBackground)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "disposition",  QString::number(static_cast<int>(mScene->backgroundObjectDisposition())));
+    }
+    // Fin Issue 1684 - ALTI/AOU - 20131210
 
     UBItem* ubItem = dynamic_cast<UBItem*>(item);
 

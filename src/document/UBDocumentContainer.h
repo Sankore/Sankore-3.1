@@ -39,11 +39,14 @@ class UBDocumentContainer : public QObject
         void pureSetDocument(UBDocumentProxy *document) {mCurrentDocument = document;}
 
         UBDocumentProxy* selectedDocument() {return mCurrentDocument;}
-        int pageCount() {return mDocumentThumbs.size();}
+        int pageCount() {return mDocumentThumbs->size();}
         const QPixmap* pageAt(int index);
 
-        static int pageFromSceneIndex(int sceneIndex);
-        static int sceneIndexFromPage(int sceneIndex);
+        QList<const QPixmap*> * documentThumbs() const {return mDocumentThumbs;}
+        void setDocumentThumbs(QList<const QPixmap*> * documentThumb){mDocumentThumbs = documentThumb;}
+
+        static int pageFromSceneIndex(int sceneIndex);    
+        static int sceneIndexFromPage(int sceneIndex); 
 
         void duplicatePages(QList<int>& pageIndexes);
         bool movePageToIndex(int source, int target);
@@ -56,12 +59,11 @@ class UBDocumentContainer : public QObject
 
     private:
         UBDocumentProxy* mCurrentDocument;
-        QList<const QPixmap*>  mDocumentThumbs;
-
 
     protected:
         void deleteThumbPage(int index);
         void updateThumbPage(int index);
+        QList<const QPixmap*>  * mDocumentThumbs; // Issue 1026 - AOU - 20131028 : (commentaire du 20130925)
 
     signals:
         void documentSet(UBDocumentProxy* document);

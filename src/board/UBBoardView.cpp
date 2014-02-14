@@ -521,15 +521,14 @@ void UBBoardView::handleItemsSelection(QGraphicsItem *item)
             if ((UBGraphicsItemType::UserTypesCount > item->type()) && (item->type() > QGraphicsItem::UserType))
             {
                 // if Item can be selected at mouse press - then we need to deselect all other items.
-                foreach(QGraphicsItem *iter_item, scene()->selectedItems())
-                {
-                    if (iter_item != item)
-                    {
-                        iter_item->setSelected(false);
-                    }
-                }
+                //issue 1554 - NNE - 20131009
+                scene()->deselectAllItemsExcept(item);
             }
         }
+    }else{
+        //If item is null, it's the background, so we have to deselect all elements in the scene
+        //issue 1554 - NNE - 20131009
+        //scene()->deselectAllItems();
     }
 }
 
@@ -551,7 +550,7 @@ Here we determines cases when items should to get mouse press event at pressing 
         return false;
 
     // some behavior depends on current tool.
-    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
+    UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();    
 
     switch(item->type())
     {
@@ -599,15 +598,20 @@ Here we determines cases when items should to get mouse press event at pressing 
         break;
     // Groups shouldn't reacts on any presses and moves for Play tool.
     case UBGraphicsGroupContainerItem::Type:
+        /* Issue 1509 - AOU - 20131113
         if(currentTool == UBStylusTool::Play)
         {
             return true;
         }
+        Issue 1509 - AOU - 20131113 : Fin
+        */
         return false;
         break;
 
     case QGraphicsWebView::Type:
         return true;
+    case QGraphicsProxyWidget::Type: // Issue 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
+        return false;
 
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && item->parentItem() && item->parentItem()->isSelected())
@@ -716,10 +720,11 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
         // if item is on group and group is not selected - group should take press.
-        if (UBStylusTool::Selector == currentTool
+        if ((UBStylusTool::Selector == currentTool
+             || currentTool == UBStylusTool::Play) // Issue 1509 - AOU - 20131113
             && item->parentItem()
-            && UBGraphicsGroupContainerItem::Type == item->parentItem()->type()
-                && !item->parentItem()->isSelected())
+            && UBGraphicsGroupContainerItem::Type == item->parentItem()->type())
+                /*&& !item->parentItem()->isSelected())*/ // Issue 1509 - AOU - 20131113
             return item->parentItem();
 
         // items like polygons placed in two groups nested, so we need to recursive call.
@@ -794,6 +799,21 @@ void UBBoardView::handleItemMousePress(QMouseEvent *event)
     if (itemShouldReceiveMousePressEvent(movingItem))
     {
         QGraphicsView::mousePressEvent (event);
+
+        // Issue 1313 - CFA - 20131022 : In some cases, mousePressEvent alters graphics items position
+        QGraphicsItem* item = determineItemToPress(scene()->itemAt(this->mapToScene(event->posF().toPoint()), transform()));
+        //use QGraphicsView::transorm() to use not deprecated QGraphicsScene::itemAt() method
+
+        if (item && (item->type() == QGraphicsProxyWidget::Type) && item->parentObject() && item->parentObject()->type() != QGraphicsProxyWidget::Type)
+        {
+            //Clean up children
+            QList<QGraphicsItem*> children = item->children();
+
+            for( QList<QGraphicsItem*>::iterator it = children.begin(); it != children.end(); ++it )
+                if ((*it)->pos().x() < 0 || (*it)->pos().y() < 0)
+                    (*it)->setPos(0,item->boundingRect().size().height());
+        }
+        // FIN Issue 1313 - CFA - 20131022
     }
     else
     {
@@ -1196,6 +1216,12 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
               if (currentTool == UBStylusTool::Selector)
                   foreach (QGraphicsItem *item, items(bandRect)) {
 
+                      // Issue 1569 - CFA - 20131113 : le traitement spécifique aux polygones (fait partout ailleurs) n'était pas fait ici
+                      if (item->type() == UBGraphicsItemType::PolygonItemType)
+                            if (item->parentItem())
+                                item = item->parentItem();
+                      // Fin Issue 1569 - CFA - 20131113
+
                       if (item->type() == UBGraphicsW3CWidgetItem::Type
                               || item->type() == UBGraphicsPixmapItem::Type
                               || item->type() == UBGraphicsMediaItem::Type
@@ -1333,6 +1359,12 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
           return;
       }
 
+      //Issue 1541 - AOU - 20131002
+      UBGraphicsItem *graphicsItem = dynamic_cast<UBGraphicsItem*>(movingItem);
+      if (graphicsItem)
+          graphicsItem->Delegate()->commitUndoStep();
+      //Issue 1541 - AOU - 20131002 : Fin
+
       if (mWidgetMoved)
       {
           movingItem = NULL;
@@ -1411,6 +1443,8 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
   movingItem = NULL;
 
   mLongPressTimer.stop();
+
+  UBApplication::boardController->controlView()->viewport()->update(); // Issue 1026 - ALTI - 20131024 : depuis que le thumbnail courant est une view "live" de la boardScene, il peut y avoir des "trainées" quand on déplace rapidement les objets. Il faut rafraichir en fin de déplacement.
 }
 
 void

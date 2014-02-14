@@ -42,6 +42,7 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 #include "frameworks/UBFileSystemUtils.h"
 #include "core/UBPersistenceManager.h"
+#include "core/UBTextTools.h"
 
 #include "core/memcheck.h"
 
@@ -72,6 +73,9 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 
     setTextInteractionFlags(Qt::TextEditorInteraction);
+
+    //issue 1554 - NNE - 20131008
+    isActivatedTextEditor = true;
 
     setUuid(QUuid::createUuid());
 
@@ -105,6 +109,7 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         QGraphicsTextItem::mousePressEvent(event);
         event->accept();
         clearFocus();
+        Delegate()->startUndoStep(); //Issue 1541 - AOU - 20131002
         return;
     }
 
@@ -154,7 +159,9 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
     if (mMultiClickState == 1)
     {
-//        setTextInteractionFlags(Qt::TextEditorInteraction);
+        //issue 1554 - NNE - 20131008
+        activateTextEditor(true);
+
         QGraphicsTextItem::mousePressEvent(event);
         setFocus();
     }
@@ -374,4 +381,39 @@ void UBGraphicsTextItem::undoCommandAdded()
 void UBGraphicsTextItem::documentSizeChanged(const QSizeF & newSize)
 {
     resize(newSize.width(), newSize.height());
+}
+
+//issue 1554 - NNE - 20131009
+void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
+{
+    qDebug() << textInteractionFlags();
+
+    this->isActivatedTextEditor = activateTextEditor;
+
+    if(!activateTextEditor){
+        setTextInteractionFlags(Qt::TextSelectableByMouse);
+    }else{
+        setTextInteractionFlags(Qt::TextEditorInteraction);
+    }
+
+    qDebug() <<  textInteractionFlags();
+}
+//issue 1554 - NNE - 20131009 : END
+
+//issue 1539 - NNE - 20131018
+void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
+{
+    if(event->matches(QKeySequence::Paste)){
+        UBTextTools::cleanHtmlClipboard();
+    }
+
+    QGraphicsTextItem::keyPressEvent(event);
+}
+//issue 1539 - NNE - 20131018 : END
+
+//issue 1539 - NNE - 20131211
+void UBGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    UBTextTools::cleanHtmlClipboard();
+    QGraphicsTextItem::contextMenuEvent(event);
 }

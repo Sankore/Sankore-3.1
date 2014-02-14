@@ -331,10 +331,13 @@ bool UBGraphicsWidgetItem::isFrozen()
 
 QPixmap UBGraphicsWidgetItem::snapshot()
 {
+    //issue 1483 - NNE - 20131220 : When we want the snapshot, update it
+    //then return the up-to-date snapshot
+    takeSnapshot();
     return mSnapshot;
 }
 
-QPixmap UBGraphicsWidgetItem::takeSnapshot()
+void UBGraphicsWidgetItem::takeSnapshot()
 {
     mIsTakingSnapshot = true;
 
@@ -348,8 +351,6 @@ QPixmap UBGraphicsWidgetItem::takeSnapshot()
     mIsTakingSnapshot = false;
 
     mSnapshot = pixmap;
-
-    return pixmap;
 }
 
 void UBGraphicsWidgetItem::setSnapshot(const QPixmap& pix)
@@ -465,9 +466,9 @@ QString UBGraphicsWidgetItem::iconFilePath(const QUrl& pUrl)
 
 void UBGraphicsWidgetItem::freeze()
 {
-    QPixmap pix = takeSnapshot();
+    //issue 1483 - NNE - Simplification of the code (takesnapshot already save the snapshot)
+    takeSnapshot();
     mIsFrozen = true;
-    setSnapshot(pix);
 }
 
 void UBGraphicsWidgetItem::unFreeze()
@@ -559,15 +560,8 @@ void UBGraphicsWidgetItem::injectInlineJavaScript()
 
 void UBGraphicsWidgetItem::paint( QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-
-    if (scene() && scene()->renderingContext() != UBGraphicsScene::Screen) {
-        painter->drawPixmap(0, 0, snapshot());
-    }
-    else {
-        QGraphicsWebView::paint(painter, option, widget);
-    }
-
-    if (!mInitialLoadDone) {
+    //issue 1483 - NNE - 20131029 : Adding the test on the renderinContext
+    if (!mInitialLoadDone && this->scene()->renderingContext() == UBGraphicsScene::Screen) {
         QString message;
 
         message = tr("Loading ...");
@@ -586,6 +580,16 @@ void UBGraphicsWidgetItem::paint( QPainter *painter, const QStyleOptionGraphicsI
 
         painter->setPen(Qt::white);
         painter->drawText(rect(), Qt::AlignCenter, message);
+    }else{
+        //issue 1483 - NNE - 20131220 : If te scene wiil be export in pdf
+        //use the last snapshot taken (normally up-to-date)
+        if(this->scene()->renderingContext() == UBGraphicsScene::PdfExport){
+            painter->drawPixmap(0, 0, mSnapshot);
+        }else{
+            //issue 1586 - NNE - 20131024
+            QGraphicsWebView::paint(painter, option, widget);
+        }
+
     }
 }
 
@@ -609,9 +613,6 @@ void UBGraphicsWidgetItem::mainFrameLoadFinished (bool ok)
 {
     mLoadIsErronous = !ok;
     update(boundingRect());
-
-    if (mInitialLoadDone && scene() && scene()->renderingContext() == UBGraphicsScene::Screen)
-        takeSnapshot();
 }
 
 void UBGraphicsWidgetItem::wheelEvent(QGraphicsSceneWheelEvent *event)

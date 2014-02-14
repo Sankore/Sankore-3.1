@@ -218,6 +218,7 @@ notifyProgress "QT" "Internalization"
 if [ ! -e $PRODUCT_PATH/i18n ]; then
     mkdir $PRODUCT_PATH/i18n
 fi
+
 #copying qt gui translation    
 cp $GUI_TRANSLATIONS_DIRECTORY_PATH/qt_??.qm $PRODUCT_PATH/i18n/
 
@@ -227,7 +228,12 @@ mkdir -p install/linux
 #Removing .svn directories ...
 cd $PRODUCT_PATH
 find . -name .svn -exec rm -rf {} \; 2> /dev/null
+
+#NNE - remove the backup files (file which ends with ~)
+find . -name "*~" -exec rm -f '{}' \;
+
 cd -
+
 
 notifyProgress "Building Sankore" "Finished to build Sankore building the package"
 
@@ -320,7 +326,7 @@ echo "Open-Sankore ($VERSION) $ARCHITECTURE; urgency=low" > "$CHANGE_LOG_FILE"
 echo >> "$CHANGE_LOG_FILE"
 cat $CHANGE_LOG_TEXT >> "$CHANGE_LOG_FILE"
 echo >> "$CHANGE_LOG_FILE"
-echo "-- Claudio Valerio <claudio@open-sankore.org>  `date`" >> "$CHANGE_LOG_FILE"
+echo "-- ALTI-TCS <tma-opensankor@alti.fr>  `date`" >> "$CHANGE_LOG_FILE"
 
 echo "Package: open-sankore" > "$CONTROL_FILE"
 echo "Version: $VERSION" >> "$CONTROL_FILE"
@@ -328,10 +334,19 @@ echo "Section: education" >> "$CONTROL_FILE"
 echo "Priority: optional" >> "$CONTROL_FILE"
 echo "Architecture: $ARCHITECTURE" >> "$CONTROL_FILE"
 echo "Essential: no" >> "$CONTROL_FILE"
+echo "Maintainer: ALTI" >> "$CONTROL_FILE"
 echo "Installed-Size: `du -s $SANKORE_PACKAGE_DIRECTORY | awk '{ print $1 }'`" >> "$CONTROL_FILE"
-echo "Maintainer: Open-Sankoré Developers team <dev@open-sankore.org>" >> "$CONTROL_FILE"
 echo "Homepage: http://dev.open-sankore.org" >> "$CONTROL_FILE"
-echo -n "Depends: " >> "$CONTROL_FILE"
+# Issue 1625 - CFA - 20131118 - ajout d'une dépendence pour la 10.04 LTS d'Ubuntu (nom de code Lucid)
+codename=`lsb_release -c`;
+if [[ "$codename" =~ (.*)lucid(.*) ]]
+then
+	echo "Ubuntu 10.04 LTS detected : adding 'ttf-mscorefonts-installer' on dependencies...";
+	echo -n "Depends: ttf-mscorefonts-installer, " >> "$CONTROL_FILE"
+else
+	echo -n "Depends: " >> "$CONTROL_FILE"
+fi
+#Fin Issue 1625 - CFA - 20131118
 unset tab
 declare -a tab
 let count=0
@@ -353,7 +368,7 @@ for ((i=0;i<${#tab[@]};i++)); do
     echo -n "${tab[$i]} (>= "`dpkg -p ${tab[$i]} | grep "Version: " | awk '{      print $2 }'`") " >> "$CONTROL_FILE"
 done
 echo "" >> "$CONTROL_FILE"
-echo "Description: This a interactive white board that uses a free standard format." >> "$CONTROL_FILE"
+echo "Description: This is a interactive white board that uses a free standard format." >> "$CONTROL_FILE"
 
 find $BASE_WORKING_DIR/usr/ -exec md5sum {} > $BASE_WORKING_DIR/DEBIAN/md5sums 2>/dev/null \; 
 SANKORE_SHORTCUT="$BASE_WORKING_DIR/usr/share/applications/Open-Sankore.desktop"
@@ -377,8 +392,7 @@ chmod 755 "$BASE_WORKING_DIR/DEBIAN/postint"
 
 mkdir -p "install/linux"
 DEBIAN_PACKAGE_NAME="Open-Sankore_${VERSION}_$ARCHITECTURE.deb"
-
-chown -R root:root $BASE_WORKING_DIR 
+	
 dpkg -b "$BASE_WORKING_DIR" "install/linux/$DEBIAN_PACKAGE_NAME"
 notifyProgress "Open-Sankore" "Package built"
 

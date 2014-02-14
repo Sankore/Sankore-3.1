@@ -128,6 +128,8 @@ UBBoardController::UBBoardController(UBMainWindow* mainWindow)
     int dpiCommon = (desktop->physicalDpiX() + desktop->physicalDpiY()) / 2;
     int sPixelsPerMillimeter = qRound(dpiCommon / UBGeometryUtils::inchSize);
     UBSettings::settings()->crossSize = 10*sPixelsPerMillimeter;
+
+    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 }
 
 
@@ -167,6 +169,16 @@ void UBBoardController::init()
 UBBoardController::~UBBoardController()
 {
     delete mDisplayView;
+
+    // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
+    foreach(const QPixmap* pm, *mDocumentThumbs){
+        delete pm;
+        pm = NULL;
+    }
+    mDocumentThumbs->clear();
+    delete mDocumentThumbs;
+    mDocumentThumbs = NULL;
+    // Issue 1026 - AOU - 20131028 : End
 }
 
 
@@ -206,6 +218,7 @@ void UBBoardController::setupViews()
     mDisplayView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
     mMessageWindow = new UBMessageWindow(mControlView);
+    mMessageWindow->setCustomPosition(true);
     mMessageWindow->hide();
 
     mPaletteManager = new UBBoardPaletteManager(mControlContainer, this);
@@ -382,6 +395,13 @@ void UBBoardController::connectToolbar()
     connect(mMainWindow->actionEraseAnnotations, SIGNAL(triggered()), this, SLOT(clearSceneAnnotation()));
     connect(mMainWindow->actionEraseBackground,SIGNAL(triggered()),this,SLOT(clearSceneBackground()));
 
+    // Issue 1684 - CFA - 20131119
+    connect(mMainWindow->actionCenterImageBackground, SIGNAL(triggered()), this, SLOT( centerImageBackground()));
+    connect(mMainWindow->actionAdjustImageBackground, SIGNAL(triggered()), this, SLOT( adjustImageBackground()));
+    connect(mMainWindow->actionMosaicImageBackground, SIGNAL(triggered()), this, SLOT( mosaicImageBackground()));
+    connect(mMainWindow->actionFillImageBackground, SIGNAL(triggered()), this, SLOT( fillImageBackground()));
+    connect(mMainWindow->actionExtendImageBackground, SIGNAL(triggered()), this, SLOT( extendImageBackground()));
+
     connect(mMainWindow->actionUndo, SIGNAL(triggered()), UBApplication::undoStack, SLOT(undo()));
     connect(mMainWindow->actionRedo, SIGNAL(triggered()), UBApplication::undoStack, SLOT(redo()));
     connect(mMainWindow->actionRedo, SIGNAL(triggered()), this, SLOT(startScript()));
@@ -468,19 +488,35 @@ void UBBoardController::stylusToolDoubleClicked(int tool)
     else if (tool == UBStylusTool::Hand)
     {
         centerRestore();
+        mActiveScene->setLastCenter(QPointF(0,0));// Issue 1598/1605 - CFA - 20131028
     }
 }
 
 void UBBoardController::addScene()
 {
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+    persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
     persistCurrentScene();
 
     UBDocumentContainer::addPage(mActiveSceneIndex + 1);
 
     selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
 
+    reloadThumbnails(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
+
     setActiveDocumentScene(mActiveSceneIndex + 1);
+
+    // Issue 1684 - CFA - 20131127 : handle default background // Issue 1684 - ALTI/AOU - 20131210
+    QString backgroundImage = selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    qDebug() << backgroundImage;
+    UBFeatureBackgroundDisposition backgroundImageDisposition = static_cast<UBFeatureBackgroundDisposition>(selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImageDisposition).toInt());
+    if ( ! backgroundImage.isEmpty())
+    {
+        QString sUrl = "file:///" + selectedDocument()->persistencePath() + "/" + UBPersistenceManager::imageDirectory + "/" + backgroundImage;
+        QUrl urlImage(sUrl);
+        downloadURL( urlImage, QString(), QPointF(), QSize(), true, false, backgroundImageDisposition);
+    }
+
     QApplication::restoreOverrideCursor();
 }
 
@@ -545,6 +581,8 @@ void UBBoardController::duplicateScene(int nIndex)
     QApplication::restoreOverrideCursor();
 
     emit pageChanged();
+
+    reloadThumbnails(); // Issue 1026 - AOU - 20131031
 }
 
 void UBBoardController::duplicateScene()
@@ -723,6 +761,11 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eIte
              UBGraphicsItemUndoCommand* uc = new UBGraphicsItemUndoCommand(mActiveScene, 0, graphicsRetItem);
              UBApplication::undoStack->push(uc);
         }
+
+        //Issue NC - CFA 20131029 : dévérouiller les blocs vérouillés lors d'une duplication
+        if (retItem && retItem->Delegate()->isLocked())
+            retItem->Delegate()->lock(false);
+
         return retItem;
     }
 
@@ -740,6 +783,10 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eIte
 
         retItem = dynamic_cast<UBGraphicsItem *>(createdItem);
     }
+
+    //Issue NC - CFA 20131029 : dévérouiller les blocs vérouillés lors d'une duplication
+    if (retItem && retItem->Delegate()->isLocked())
+        retItem->Delegate()->lock(false);
 
     return retItem;
 }
@@ -761,6 +808,7 @@ void UBBoardController::deleteScene(int nIndex)
             nIndex = pageCount()-1;
         setActiveDocumentScene(nIndex-1);
         deletePages(scIndexes);
+        reloadThumbnails(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
         showMessage(tr("Page %1 deleted").arg(nIndex));
         QApplication::restoreOverrideCursor();
         mDeletingSceneIndex = -1;
@@ -778,6 +826,10 @@ void UBBoardController::clearScene()
     {
         freezeW3CWidgets(true);
         mActiveScene->clearContent(UBGraphicsScene::clearItemsAndAnnotations);
+        // Issue 1598/1605 - CFA - 20131028 : quand on clear complètement le tableau, on reset aussi la vue
+        mActiveScene->setLastCenter(QPointF(0,0));
+        mControlView->centerOn(mActiveScene->lastCenter());
+        // Fin issue 1598/1605 - CFA - 20131028
         updateActionStates();
     }
 }
@@ -801,6 +853,78 @@ void UBBoardController::clearSceneAnnotation()
         mActiveScene->clearContent(UBGraphicsScene::clearAnnotations);
         updateActionStates();
     }
+}
+
+// Issue 1684 - CFA - 20131120
+void UBBoardController::setImageBackground(UBFeatureBackgroundDisposition disposition)
+{
+    downloadURL(mActiveScene->backgroundObjectUrl(), QString(), QPointF(), QSize(), true, false, disposition);
+}
+
+void UBBoardController::centerImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Center);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+}
+
+void UBBoardController::adjustImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Adjust);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+
+}
+
+void UBBoardController::mosaicImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Mosaic);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+}
+
+void UBBoardController::fillImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Fill);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
+}
+
+void UBBoardController::extendImageBackground()
+{
+    UBFeature f = paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+
+    f.setBackgroundDisposition(Extend);
+
+    UBFeaturesController* c = this->paletteManager()->featuresWidget()->getFeaturesController();
+    if (selectedDocument()->hasDefaultImageBackground())
+        c->addItemAsDefaultBackground(f);
+    else
+        c->addItemAsBackground(f);
 }
 
 void UBBoardController::clearSceneBackground()
@@ -874,7 +998,7 @@ void UBBoardController::zoomRestore()
     QTransform tr;
 
     tr.scale(mSystemScaleFactor, mSystemScaleFactor);
-    mControlView->setTransform(tr);
+    mControlView->setTransform(tr);    
 
     centerRestore();
 
@@ -941,14 +1065,25 @@ void UBBoardController::handScroll(qreal dx, qreal dy)
     emit controlViewportChanged();
 }
 
+// Issue 1598/1605 - CFA - 20131028
+void UBBoardController::persistViewPositionOnCurrentScene()
+{
+    QRect rect = mControlView->rect();
+    QPoint center(rect.x() + rect.width() / 2, rect.y() + rect.height() / 2);
+    QPointF viewRelativeCenter = mControlView->mapToScene(center);
+    mActiveScene->setLastCenter(viewRelativeCenter);
+}
+// Fin issue 1598/1605 - CFA - 20131028
 
 void UBBoardController::previousScene()
 {
     if (mActiveSceneIndex > 0)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(mActiveSceneIndex - 1);
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
 
@@ -962,8 +1097,10 @@ void UBBoardController::nextScene()
     if (mActiveSceneIndex < selectedDocument()->pageCount() - 1)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(mActiveSceneIndex + 1);
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
 
@@ -974,13 +1111,17 @@ void UBBoardController::nextScene()
 
 void UBBoardController::firstScene()
 {
+
     if (mActiveSceneIndex > 0)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(0);
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
+
 
     updateActionStates();
     emit pageChanged();
@@ -989,11 +1130,14 @@ void UBBoardController::firstScene()
 
 void UBBoardController::lastScene()
 {
+
     if (mActiveSceneIndex < selectedDocument()->pageCount() - 1)
     {
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+        persistViewPositionOnCurrentScene();// Issue 1598/1605 - CFA - 20131028
         persistCurrentScene();
         setActiveDocumentScene(selectedDocument()->pageCount() - 1);
+        mControlView->centerOn(mActiveScene->lastCenter());// Issue 1598/1605 - CFA - 20131028
         QApplication::restoreOverrideCursor();
     }
 
@@ -1031,7 +1175,7 @@ void UBBoardController::groupButtonClicked()
     }
 }
 
-void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, const QPointF& pPos, const QSize& pSize, bool isBackground, bool internalData)
+void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, const QPointF& pPos, const QSize& pSize, bool isBackground, bool internalData, UBFeatureBackgroundDisposition disposition)
 {
     qDebug() << "something has been dropped on the board! Url is: " << url.toString();
     QString sUrl = url.toString();
@@ -1063,7 +1207,7 @@ void UBBoardController::downloadURL(const QUrl& url, QString contentSourceUrl, c
         {
             QFile file(fileName);
             file.open(QIODevice::ReadOnly);
-            downloadFinished(true, formedUrl, QUrl(), contentType, file.readAll(), pPos, pSize, true, isBackground, internalData);
+            downloadFinished(true, formedUrl, QUrl(), contentType, file.readAll(), pPos, pSize, true, isBackground, internalData, eItemActionType_Default, disposition);
             file.close();
        }
        else
@@ -1163,7 +1307,7 @@ void UBBoardController::addLinkToPage(QString sourceUrl, QSize size, QPointF pos
     }
 }
 
-UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData, eItemActionType actionType)
+UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl contentUrl, QString pContentTypeHeader, QByteArray pData, QPointF pPos, QSize pSize, bool isSyncOperation, bool isBackground, bool internalData, eItemActionType actionType, UBFeatureBackgroundDisposition disposition)
 {
     Q_ASSERT(pSuccess);
 
@@ -1173,7 +1317,6 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     // why we will check if an ; exists and take the first part (the standard allows this kind of mimetype)
     if(mimeType.isEmpty())
       mimeType = UBFileSystemUtils::mimeTypeFromFileName(sourceUrl.toString());
-
 
     int position=mimeType.indexOf(";");
     if(position != -1)
@@ -1225,17 +1368,41 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         }
     }
 
-
     if (UBMimeType::RasterImage == itemMimeType)
     {
         QPixmap pix;
         if(pData.length() == 0){
             pix.load(sourceUrl.toLocalFile());
         }
-        else{
-            QImage img;
-            img.loadFromData(pData);
-            pix = QPixmap::fromImage(img);
+        else
+        {
+            // Issue 1684 - CFA - 20131127 : pour la disposition mosaique, on doit modifier la taille de l'image elle-même
+            QImage srcImage;
+            srcImage.loadFromData(pData);
+            if (disposition == Mosaic)
+            {
+                QImage destImage = QImage(mActiveScene->nominalSize().width(), mActiveScene->nominalSize().height(), QImage::Format_ARGB32_Premultiplied);
+                destImage.fill(QColor(Qt::transparent).rgba());
+                QPoint destPos = QPoint(0, 0);
+                QPainter painter(&destImage);
+                while (destPos.y() < mActiveScene->nominalSize().height())
+                {
+                    while (destPos.x() < mActiveScene->nominalSize().width())
+                    {
+                        painter.drawImage(destPos, srcImage);
+                        destPos += QPoint(srcImage.width(), 0);
+                    }
+                    destPos.setX(0);
+                    destPos += QPoint(0, srcImage.height());
+                }
+                painter.end();
+
+                pix = QPixmap::fromImage(destImage);
+            }
+            else
+            {
+                pix = QPixmap::fromImage(srcImage);
+            }
         }
 
         UBGraphicsPixmapItem* pixItem = mActiveScene->addPixmap(pix, NULL, pPos, 1.);
@@ -1243,7 +1410,9 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
 
         if (isBackground)
         {
-            mActiveScene->setAsBackgroundObject(pixItem, true);
+                // Issue 1684 - CFA - need to save background Url
+                mActiveScene->setBackgroundObjectUrl(sourceUrl);
+                mActiveScene->setAsBackgroundObject(pixItem, true, false, disposition);
         }
         else
         {
@@ -1257,20 +1426,62 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
     else if (UBMimeType::VectorImage == itemMimeType)
     {
         qDebug() << "accepting mime type" << mimeType << "as vector image";
+        // Issue 1684 - CFA - 20131127 : pour la disposition mosaique, on doit modifier la taille de l'image elle-même
+        UBGraphicsPixmapItem* pixItem = NULL;
+        UBGraphicsSvgItem* svgItem = NULL;
+        if (disposition == Mosaic)
+        {
+            QImage srcImage;
+            srcImage.loadFromData(pData);
+            QImage destImage = QImage(mActiveScene->nominalSize().width(), mActiveScene->nominalSize().height(), QImage::Format_ARGB32_Premultiplied);
+            destImage.fill(QColor(Qt::transparent).rgba());
 
-        UBGraphicsSvgItem* svgItem = mActiveScene->addSvg(sourceUrl, pPos, pData);
-        svgItem->setSourceUrl(sourceUrl);
+            QPoint destPos = QPoint(0, 0);
+            QPainter painter(&destImage);
+            while (destPos.y() < mActiveScene->nominalSize().height())
+            {
+                while (destPos.x() < mActiveScene->nominalSize().width())
+                {
+                    painter.drawImage(destPos, srcImage);
+                    destPos += QPoint(srcImage.width(), 0);
+                }
+                destPos.setX(0);
+                destPos += QPoint(0, srcImage.height());
+            }
+            painter.end();
+
+            QPixmap pix = QPixmap::fromImage(destImage);
+            pixItem = mActiveScene->addPixmap(pix, NULL, pPos, 1.);
+            pixItem->setSourceUrl(sourceUrl);
+        }
+        else
+        {           
+            svgItem = mActiveScene->addSvg(sourceUrl, pPos, pData);
+            svgItem->setSourceUrl(sourceUrl);
+        }
 
         if (isBackground)
-            mActiveScene->setAsBackgroundObject(svgItem);
+        {
+            // Issue 1684 - CFA - need to save background Url
+            mActiveScene->setBackgroundObjectUrl(sourceUrl);
+            if (disposition == Mosaic)
+                mActiveScene->setAsBackgroundObject(pixItem, true, false, disposition);
+            else
+                mActiveScene->setAsBackgroundObject(svgItem, true, false, disposition);
+        }
         else
         {
             mActiveScene->scaleToFitDocumentSize(svgItem, true, UBSettings::objectInControlViewMargin);
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
             svgItem->setSelected(true);
+
         }
 
-        return svgItem;
+        if (disposition == Mosaic)
+            return pixItem;
+        else
+            return svgItem;
+
     }
     else if (UBMimeType::AppleWidget == itemMimeType) //mime type invented by us :-(
     {
@@ -1289,7 +1500,9 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
 
         if (isBackground)
         {
-            mActiveScene->setAsBackgroundObject(appleWidgetItem);
+            // Issue 1684 - CFA - need to save background Url
+            mActiveScene->setBackgroundObjectUrl(sourceUrl);
+            mActiveScene->setAsBackgroundObject(appleWidgetItem, true, false, disposition);
         }
         else
         {
@@ -1308,7 +1521,11 @@ UBItem *UBBoardController::downloadFinished(bool pSuccess, QUrl sourceUrl, QUrl 
         UBGraphicsWidgetItem *w3cWidgetItem = addW3cWidget(widgetUrl, pPos);
 
         if (isBackground)
-            mActiveScene->setAsBackgroundObject(w3cWidgetItem);
+        {
+            // Issue 1684 - CFA - need to save background Url
+            mActiveScene->setBackgroundObjectUrl(sourceUrl);
+            mActiveScene->setAsBackgroundObject(w3cWidgetItem, true, false, disposition);
+        }
         else
             UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
 
@@ -1720,6 +1937,7 @@ void UBBoardController::moveSceneToIndex(int source, int target)
         setActiveDocumentScene(target);
         mMovingSceneIndex = -1;
 
+        emit activeSceneChanged(); // Issue 1026 - AOU - 20131018 : generate Thumbnails
     }
 }
 
@@ -2094,7 +2312,7 @@ void UBBoardController::updateSystemScaleFactor()
         QSize pageNominalSize = mActiveScene->nominalSize();
         //we're going to keep scale factor untouched if the size is custom
         QMap<DocumentSizeRatio::Enum, QSize> sizesMap = UBSettings::settings()->documentSizes;
-      //  if(pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_9) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio4_3))
+        if(pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_9) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio4_3) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_10))
         {
             QSize controlSize = controlViewport();
 
@@ -2138,6 +2356,20 @@ void UBBoardController::setWidePageSize(bool checked)
     }
 }
 
+void UBBoardController::setWidePageSize16_10(bool checked)
+{
+    Q_UNUSED(checked);
+    QSize newSize = UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_10);
+
+    if (mActiveScene->nominalSize() != newSize)
+    {
+        UBPageSizeUndoCommand* uc = new UBPageSizeUndoCommand(mActiveScene, mActiveScene->nominalSize(), newSize);
+        UBApplication::undoStack->push(uc);
+
+        setPageSize(newSize);
+    }
+}
+
 
 void UBBoardController::setRegularPageSize(bool checked)
 {
@@ -2159,12 +2391,39 @@ void UBBoardController::setPageSize(QSize newSize)
     if (mActiveScene->nominalSize() != newSize)
     {
         mActiveScene->setNominalSize(newSize);
-
         saveViewState();
 
         updateSystemScaleFactor();
         updatePageSizeState();
         adjustDisplayViews();
+
+        // Issue 1684 - CFA - 20131128 : hack to force qgraphicsview to refresh
+        handScroll(1.f, 0.f);
+        handScroll(-1.f, 0.f);
+        reloadThumbnails();
+
+        if (selectedDocument()->hasDefaultImageBackground())
+        {
+            UBFeature& item = selectedDocument()->defaultImageBackground();
+            if (item.backgroundDisposition() == Center)
+                centerImageBackground();
+            else if (item.backgroundDisposition() == Adjust)
+                adjustImageBackground();
+            else if (item.backgroundDisposition() == Mosaic)
+                mosaicImageBackground();
+            else if (item.backgroundDisposition() == Fill)
+                fillImageBackground();
+            else // Extend
+                extendImageBackground();
+
+        }
+        else if (mActiveScene->hasBackground())
+        {
+            setImageBackground(mActiveScene->backgroundObjectDisposition());
+        }
+
+        // Fin Issue 1684 - CFA - 20131128
+
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
 
         UBSettings::settings()->pageSize->set(newSize);
@@ -2185,7 +2444,8 @@ void UBBoardController::notifyCache(bool visible)
 }
 
 void UBBoardController::updatePageSizeState()
-{
+{    
+    qDebug() << mActiveScene->nominalSize();
     if (mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_9))
     {
         mMainWindow->actionWidePageSize->setChecked(true);
@@ -2193,6 +2453,10 @@ void UBBoardController::updatePageSizeState()
     else if(mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio4_3))
     {
         mMainWindow->actionRegularPageSize->setChecked(true);
+    }
+    else if(mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_10))
+    {
+        mMainWindow->actionWidePageSize_16_10->setChecked(true);
     }
     else
     {
@@ -2207,7 +2471,8 @@ void UBBoardController::saveViewState()
     {
         mActiveScene->setViewState(UBGraphicsScene::SceneViewState(currentZoom(),
                                                                    mControlView->horizontalScrollBar()->value(),
-                                                                   mControlView->verticalScrollBar()->value()));
+                                                                   mControlView->verticalScrollBar()->value(),
+                                                                   mActiveScene->lastCenter()));// Issue 1598/1605 - CFA - 20131028
     }
 }
 
@@ -2384,10 +2649,6 @@ UBGraphicsWidgetItem *UBBoardController::addW3cWidget(const QUrl &pUrl, const QP
         QString struuid = UBStringUtils::toCanonicalUuid(uuid);
         QString snapshotPath = selectedDocument()->persistencePath() +  "/" + UBPersistenceManager::widgetDirectory + "/" + struuid + ".png";
         w3cWidgetItem->setSnapshotPath(QUrl::fromLocalFile(snapshotPath));
-/*        UBGraphicsWidgetItem *tmpItem = dynamic_cast<UBGraphicsWidgetItem*>(w3cWidgetItem);
-        if (tmpItem && tmpItem->scene())
-           tmpItem->takeSnapshot().save(snapshotPath, "PNG");
-*/
     }
 
     return w3cWidgetItem;
@@ -2395,16 +2656,11 @@ UBGraphicsWidgetItem *UBBoardController::addW3cWidget(const QUrl &pUrl, const QP
 
 void UBBoardController::cut()
 {
-    //---------------------------------------------------------//
-
-    QList<QGraphicsItem*> selectedItems;
-    foreach(QGraphicsItem* gi, mActiveScene->selectedItems())
-        selectedItems << gi;
-
-    //---------------------------------------------------------//
+    // Issue 1595 - CFA - 20131024 : correction du fonctionnement de l'action couper
+    copy();
 
     QList<UBItem*> selected;
-    foreach(QGraphicsItem* gi, selectedItems)
+    foreach(QGraphicsItem* gi, mActiveScene->selectedItems())
     {
         gi->setSelected(false);
 
@@ -2417,21 +2673,7 @@ void UBBoardController::cut()
             ubGi->remove();
         }
     }
-
-    //---------------------------------------------------------//
-
-    if (selected.size() > 0)
-    {
-        QClipboard *clipboard = QApplication::clipboard();
-
-        UBMimeDataGraphicsItem*  mimeGi = new UBMimeDataGraphicsItem(selected);
-
-        mimeGi->setData(UBApplication::mimeTypeUniboardPageItem, QByteArray());
-        clipboard->setMimeData(mimeGi);
-
-        selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
-    }
-
+    // Fin Issue 1595 - CFA - 20131024
     //---------------------------------------------------------//
 }
 

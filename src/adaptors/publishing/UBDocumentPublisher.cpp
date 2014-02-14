@@ -120,6 +120,7 @@ void UBDocumentPublisher::buildUbwFile()
         //remove all the directory separators from the document name.
         //we do not want to interperete them as directory separator
         documentName = documentName.replace("/",".").replace("\\",".");
+        documentName = documentName.replace(":","-");
         mPublishingPath = tmpDir;
         mPublishingSize = mSourceDocument->pageCount();
 

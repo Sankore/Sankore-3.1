@@ -112,6 +112,12 @@ public:
     UBDocumentTreeNode *clone();
     QString dirPathInHierarchy();
 
+    //issue 1629 - NNE - 20131105 : Add some utility methods
+    bool findNode(UBDocumentTreeNode *node);
+    UBDocumentTreeNode *nextSibling();
+    UBDocumentTreeNode *previousSibling();
+    //issue 1629 - NNE - 20131105 : END
+
 private:
     Type mType;
     QString mName;
@@ -342,11 +348,27 @@ class UBDocumentController : public UBDocumentContainer
         bool firstSceneSelected() const;
         QWidget *mainWidget() const {return mDocumentWidget;}
 
+        //issue 1629 - NNE - 20131212
+        /**
+          * Check if the current view will be deleted. If it' true,
+          * this function assures a view will be always selected, even if
+          * no view is availaible by creating a new one.
+          *
+          * \param index The index that will be deleted.
+          * \param docModel The tree model which represents the organisation of the document hierarchy
+          *
+          * \return True if the index passed in argument was the current view, false otherwise.
+          */
+        void moveToTrash(QModelIndex &index, UBDocumentTreeModel* docModel);
+
     signals:
         void exportDone();
 
     public slots:
         void createNewDocument();
+        //issue 1629 - NNE - 20131105
+        void createNewDocumentInUntitledFolder();
+
         void createNewDocumentGroup();
         void deleteSelectedItem();
         void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);

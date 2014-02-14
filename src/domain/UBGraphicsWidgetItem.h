@@ -110,7 +110,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
 
         QPixmap snapshot();
         void setSnapshot(const QPixmap& pix);
-        QPixmap takeSnapshot();
+        void takeSnapshot();
 
         virtual UBItem* deepCopy() const = 0;
         virtual UBGraphicsScene* scene();
@@ -122,7 +122,6 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
     public slots:
         void freeze();
         void unFreeze();
-
     protected:
         enum OSType
         {
@@ -130,7 +129,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
             type_WIN  = 1, // 0001
             type_MAC  = 2, // 0010
             type_UNIX = 4, // 0100
-            type_ALL  = 7, // 0111
+            type_ALL  = 7  // 0111
         };
 
         bool mFirstReleaseAfterMove;

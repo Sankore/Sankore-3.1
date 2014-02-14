@@ -22,6 +22,7 @@
 
 
 #include "UBFileSystemUtils.h"
+#include <limits>
 
 #include <QtGui>
 
@@ -156,14 +157,14 @@ QString UBFileSystemUtils::createTempDir(const QString& templateString, bool aut
 }
 
 
-QString UBFileSystemUtils::nextAvailableFileName(const QString& filename, const QString& inter)
+QString UBFileSystemUtils::nextAvailableFileName(const QString& filename, const QString& seperator)
 {
     QFile f(filename);
 
     if (!f.exists())
         return filename;
 
-    int index = 0;
+    unsigned int index = 0;
 
     QString uniqueFilename;
     QFileInfo fi(filename);
@@ -174,14 +175,56 @@ QString UBFileSystemUtils::nextAvailableFileName(const QString& filename, const 
     do
     {
         index++;
-        uniqueFilename = base + QString("%1%2").arg(inter).arg(index) + "." + suffix;
+        uniqueFilename = base + QString("%1%2").arg(seperator).arg(index) + "." + suffix;
         f.setFileName(uniqueFilename);
     }
-    while(f.exists() && index < 10000);
+    while(f.exists() && index < std::numeric_limits<unsigned int>::max());
 
     return uniqueFilename;
-
 }
+
+//issue 1474 - NNE - 20131122
+QString UBFileSystemUtils::nextAvailableDirName(const QString& filename, const QString& seperator){
+    QDir dir(filename);
+
+    if(!dir.exists()) return filename;
+
+    unsigned int index = 0;
+
+    QString uniqueFilename;
+    QFileInfo fi(filename);
+
+    QString base = fi.dir().path() + "/" + fi.baseName();
+
+    do
+    {
+        index++;
+        uniqueFilename = base + QString("%1%2").arg(seperator).arg(index);
+        dir.setPath(uniqueFilename);
+    }
+    while(dir.exists() && index < std::numeric_limits<unsigned int>::max());
+
+    return uniqueFilename;
+}
+
+bool UBFileSystemUtils::isPathMatch(QString path, QString source)
+{
+    QStringList pathToken = path.split("/");
+    QStringList pathSourceToken =  source.split("/");
+
+    bool match = true;
+    if(pathSourceToken.size() <= pathToken.size()){
+        for(int i = 0; i < pathSourceToken.size(); i++){
+            match = (pathSourceToken[i] == pathToken[i]);
+            if(!match) break;
+        }
+    }else{
+        match = false;
+    }
+
+    return match;
+}
+//issue 1474 - NNE - 20131122 : END
 
 
 void UBFileSystemUtils::deleteAllTempDirCreatedDuringSession()
@@ -193,7 +236,6 @@ void UBFileSystemUtils::deleteAllTempDirCreatedDuringSession()
         deleteDir(dirPath);
     }
 }
-
 
 
 void UBFileSystemUtils::cleanupGhostTempFolders(const QString& templateString)
@@ -241,6 +283,21 @@ QFileInfoList UBFileSystemUtils::allElementsInDirectory(const QString& pDirPath)
     return QFileInfoList(dir.entryInfoList());
 }
 
+
+bool UBFileSystemUtils::deleteFilesContaining(const QString& pDirPath, const QString& pFileName)
+{
+    if (pDirPath == "" || pDirPath == "." || pDirPath == "..")
+        return false;
+
+    QDir dir(pDirPath);
+
+    if (dir.exists())
+        foreach(QString dirContent, dir.entryList(QDir::Files | QDir::NoDotAndDotDot , QDir::Name))
+            if (dirContent.contains(pFileName))
+                QFile::remove(pDirPath + "/" + dirContent);
+
+    return true;
+}
 
 bool UBFileSystemUtils::deleteDir(const QString& pDirPath)
 {
@@ -877,3 +934,30 @@ QString UBFileSystemUtils::readTextFile(QString path)
 
     return "";
 }
+
+//issue 1474 - NNE - 20131121
+bool UBFileSystemUtils::deletePath(const QString &path)
+{
+    if (QFileInfo(path).isFile()) {
+        return QFile::remove( path );
+    } else if (QFileInfo(path).isDir()) {
+        return UBFileSystemUtils::deleteDir(path);
+    }
+}
+
+void UBFileSystemUtils::rename(const QString &path, const QString &newName)
+{
+    QFileInfo info = QFileInfo(path);
+
+    int slashPos = path.lastIndexOf("/");
+    QString newPath = path.mid(0, slashPos+1) + newName;
+
+    if(info.isDir()){
+        QDir folder(path);
+        folder.rename(path, newPath);
+    }else{
+        QString extention = UBFileSystemUtils::extension(path.mid(slashPos + 2));
+        QFile::rename(path, newPath + "." + extention);
+    }
+}
+//issue 1474 - NNE - 20131121 : END

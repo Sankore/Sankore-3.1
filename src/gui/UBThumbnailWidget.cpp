@@ -28,6 +28,7 @@
 #include "UBMainWindow.h"
 
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 
 #include "core/UBSettings.h"
 #include "core/UBApplication.h"
@@ -35,6 +36,10 @@
 #include "document/UBDocumentProxy.h"
 #include "document/UBDocumentController.h"
 
+#include "board/UBBoardPaletteManager.h"
+#include "domain/UBGraphicsScene.h"
+#include "gui/UBTeacherGuideWidget.h"
+#include "gui/UBDockTeacherGuideWidget.h"
 #include "core/memcheck.h"
 
 UBThumbnailWidget::UBThumbnailWidget(QWidget* parent)
@@ -776,7 +781,7 @@ UBThumbnail::UBThumbnail()
     , mLabel(NULL)
 {
     mSelectionItem = new QGraphicsRectItem(0, 0, 0, 0);
-    mSelectionItem->setPen(QPen(UBSettings::treeViewBackgroundColor, 8));
+    mSelectionItem->setPen(QPen(UBSettings::treeViewBackgroundColor, 8)); // couleur du cadre de selection de thumbnail.
     // TODO UB 4.x fix nasty dependencies : 8 is a bit less than half of UBThumbnailWidget.mSpacing
 }
 
@@ -953,7 +958,7 @@ void UBSceneThumbnailNavigPixmap::moveDownPage()
         UBApplication::boardController->moveSceneToIndex(sceneIndex(), sceneIndex() + 1);
 }
 
-void UBImgTextThumbnailElement::Place(int row, int col, qreal width, qreal height)
+void UBWidgetTextThumbnailElement::Place(int row, int col, qreal width, qreal height)
 {
     int labelSpacing = 0;
 	if(this->caption)
@@ -1002,4 +1007,127 @@ void UBImgTextThumbnailElement::Place(int row, int col, qreal width, qreal heigh
             this->caption->setPos(pos);
 		}
 	}
+}
+
+void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    // Fit the view :
+    if (view() && view()->scene()){
+        UBGraphicsScene * s = dynamic_cast<UBGraphicsScene *>(view()->scene());
+        int nominalSizeWidth = s->nominalSize().width();
+        int nominalSizeHeight = s->nominalSize().height();
+        QRectF nominalSceneRect(-nominalSizeWidth/2, -nominalSizeHeight/2, nominalSizeWidth, nominalSizeHeight);
+
+        QRectF itemsBoundingRect = s->itemsBoundingRect();
+
+        QRectF visibleRect = nominalSceneRect.unite(itemsBoundingRect);
+        view()->fitInView(visibleRect, Qt::KeepAspectRatio);
+        view()->setSceneRect(visibleRect);
+    }
+
+    QGraphicsProxyWidget::paint(painter, option, widget);
+
+    // Overlay buttons :
+    if (bButtonsVisible)
+    {
+        if(bCanDelete)
+            painter->drawPixmap(0, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/close.svg"));
+        else
+            painter->drawPixmap(0, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/closeDisabled.svg"));
+        if(bCanDuplicate)
+            painter->drawPixmap(BUTTONSIZE + BUTTONSPACING, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/duplicate.svg"));
+        else
+            painter->drawPixmap(BUTTONSIZE + BUTTONSPACING, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/duplicateDisabled.svg"));
+        if(bCanMoveUp)
+            painter->drawPixmap(2*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/moveUp.svg"));
+        else
+            painter->drawPixmap(2*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/moveUpDisabled.svg"));
+        if(bCanMoveDown)
+            painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menu.svg"));
+        else
+            painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
+
+    }
+
+    if(UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()){
+        QPixmap toque(":images/toque.svg");
+        painter->setOpacity(0.6);
+        painter->drawPixmap(QPoint(UBSettings::maxThumbnailWidth - toque.width(),0),toque);
+    }
+}
+
+void UBSceneThumbnailProxyWidget::updateButtonsState()
+{
+    bCanDelete = false;
+    bCanMoveUp = false;
+    bCanMoveDown = false;
+    bCanDuplicate = false;
+
+    if(documentProxy())
+    {
+        int pageIndex = UBDocumentContainer::pageFromSceneIndex(sceneIndex());
+        UBDocumentController* documentController = UBApplication::documentController;
+        if (!documentController->selectedDocument()) {
+            documentController->setDocument(UBApplication::boardController->selectedDocument());
+        }
+        bCanDelete = documentController->pageCanBeDeleted(pageIndex);
+        bCanMoveUp = documentController->pageCanBeMovedUp(pageIndex);
+        bCanMoveDown = documentController->pageCanBeMovedDown(pageIndex);
+        bCanDuplicate = documentController->pageCanBeDuplicated(pageIndex);
+    }
+
+    if(bCanDelete || bCanMoveUp || bCanMoveDown || bCanDuplicate)
+        bButtonsVisible = true;
+}
+
+void UBSceneThumbnailProxyWidget::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+{
+    event->accept();
+    updateButtonsState();
+    update();
+}
+
+void UBSceneThumbnailProxyWidget::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+{
+    event->accept();
+    bButtonsVisible = false;
+    update();
+}
+
+void UBSceneThumbnailProxyWidget::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    QPointF p = event->pos();
+
+    int sceneIndex = UBApplication::boardController->activeSceneIndex();
+
+    // Here we check the position of the click and verify if it has to trig an action or not.
+    if(bCanDelete && p.x() >= 0 && p.x() <= BUTTONSIZE && p.y() >= 0 && p.y() <= BUTTONSIZE)
+    {
+        if(UBApplication::mainWindow->yesNoQuestion(QObject::tr("Remove Page"), QObject::tr("Are you sure you want to remove 1 page from the selected document '%0'?").arg(UBApplication::documentController->selectedDocument()->metaData(UBSettings::documentName).toString()))){
+            UBApplication::boardController->deleteScene(sceneIndex);
+        }
+    }
+    if(bCanDuplicate && p.x() >= BUTTONSIZE + BUTTONSPACING && p.x() <= 2*BUTTONSIZE + BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
+    {
+        UBApplication::boardController->duplicateScene(sceneIndex);
+    }
+    if(bCanMoveUp && p.x() >= 2*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 3*BUTTONSIZE + 2*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
+    {
+        if (sceneIndex!=0)
+            UBApplication::boardController->moveSceneToIndex(sceneIndex, sceneIndex - 1);
+    }
+    if(bCanMoveDown && p.x() >= 3*(BUTTONSIZE + BUTTONSPACING) && p.x() <= 4*BUTTONSIZE + 3*BUTTONSPACING && p.y() >= 0 && p.y() <= BUTTONSIZE)
+    {
+        if (sceneIndex < UBApplication::boardController->selectedDocument()->pageCount()-1)
+            UBApplication::boardController->moveSceneToIndex(sceneIndex, sceneIndex + 1);
+    }
+
+
+    event->accept();
+}
+
+QVariant UBSceneThumbnailProxyWidget::itemChange(GraphicsItemChange change, const QVariant &value)
+{
+    UBThumbnail::itemChange(this, change, value); // The border around the selected thumbnail is drawn in UBThumbnail::itemChange()
+    return QGraphicsItem::itemChange(change, value);
 }

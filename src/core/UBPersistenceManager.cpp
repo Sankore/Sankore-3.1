@@ -63,6 +63,7 @@ const QString UBPersistenceManager::widgetDirectory = "widgets"; // added to UBP
 const QString UBPersistenceManager::videoDirectory = "videos"; // added to UBPersistenceManager::mAllDirectories
 const QString UBPersistenceManager::audioDirectory = "audios"; // added to
 const QString UBPersistenceManager::teacherGuideDirectory = "teacherGuideObjects";
+const QString UBPersistenceManager::fileDirectory = "files"; // Issue 1683 (Evolution) - AOU - 20131206
 
 const QString UBPersistenceManager::myDocumentsName = "MyDocuments";
 const QString UBPersistenceManager::modelsName = "Models";
@@ -86,6 +87,7 @@ UBPersistenceManager::UBPersistenceManager(QObject *pParent)
     mDocumentSubDirectories << videoDirectory;
     mDocumentSubDirectories << audioDirectory;
     mDocumentSubDirectories << teacherGuideDirectory;
+    mDocumentSubDirectories << fileDirectory; // Issue 1683 (Evolution) - AOU - 20131206
 
     mDocumentRepositoryPath = UBSettings::userDocumentDirectory();
     mFoldersXmlStorageName =  mDocumentRepositoryPath + "/" + fFolders;
@@ -180,6 +182,11 @@ void UBPersistenceManager::createDocumentProxiesStructure(const QFileInfoList &c
             UBDocumentProxy* docProxy = new UBDocumentProxy(fullPath); // managed in UBDocumentTreeNode
             foreach(QString key, metadatas.keys()) {
                 docProxy->setMetaData(key, metadatas.value(key));
+            }
+
+            if ( ! docProxy->metaData(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) // Issue 1684 - ALTI/AOU - 20131213
+            {
+                docProxy->setHasDefaultImageBackground(true);
             }
 
             docProxy->setPageCount(sceneCount(docProxy));
@@ -483,6 +490,11 @@ UBDocumentProxy* UBPersistenceManager::createDocumentFromDir(const QString& pDoc
 
     QMap<QString, QVariant> metadatas = UBMetadataDcSubsetAdaptor::load(pDocumentDirectory);
 
+    if ( ! metadatas.value(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) // Issue 1684 - ALTI/AOU - 20131213
+    {
+        doc->setHasDefaultImageBackground(true);
+    }
+
     if(withEmptyPage) createDocumentSceneAt(doc, 0);
     if(addTitlePage) persistDocumentScene(doc, mSceneCache.createScene(doc, 0, false), 0);
 
@@ -554,12 +566,15 @@ UBDocumentProxy* UBPersistenceManager::duplicateDocument(UBDocumentProxy* pDocum
     foreach(QString key, pDocumentProxy->metaDatas().keys())
     {
         copy->setMetaData(key, pDocumentProxy->metaDatas().value(key));
-    }
+    }    
 
     copy->setMetaData(UBSettings::documentName,
             pDocumentProxy->metaData(UBSettings::documentName).toString() + " " + tr("(copy)"));
 
     copy->setUuid(QUuid::createUuid());
+
+    if (!copy->metaDatas().value(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) //Issue 1684 - CFA - 20131217
+        copy->setHasDefaultImageBackground(true);
 
     persistDocumentMetadata(copy);
 
@@ -604,6 +619,12 @@ void UBPersistenceManager::deleteDocumentScenes(UBDocumentProxy* proxy, const QL
 
     QString sourceName = proxy->metaData(UBSettings::documentName).toString();
     UBDocumentProxy *trashDocProxy = createDocument(UBSettings::trashedDocumentGroupNamePrefix/* + sourceGroupName*/, sourceName, false);
+
+    // Issue 1684 - ALTI/AOU - 20131210
+    // Dupliquer dans le document _Trash les metaData qui doivent suivre :
+    trashDocProxy->setMetaData(UBSettings::documentDefaultBackgroundImage, proxy->metaData(UBSettings::documentDefaultBackgroundImage));
+    trashDocProxy->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, proxy->metaData(UBSettings::documentDefaultBackgroundImageDisposition));
+    // Fin Issue 1684 - ALTI/AOU - 20131210
 
     foreach(int index, compactedIndexes)
     {
@@ -1007,7 +1028,8 @@ bool UBPersistenceManager::addDirectoryContentToDocument(const QString& document
 
     pDocument->setPageCount(sceneCount(pDocument));
 
-    return false;
+    //issue NC - NNE - 20131213 : At this point, all is well done.
+    return true;
 }
 
 
@@ -1044,13 +1066,14 @@ void UBPersistenceManager::purgeEmptyDocuments()
     foreach(UBDocumentProxy* docProxy, mDocumentTreeStructureModel->newDocuments())
     {
         if (isEmpty(docProxy)
-            && !docProxy->metaData("sessionTitle").toString().size()
-            && !docProxy->metaData("sessionAuthors").toString().size()
-            && !docProxy->metaData("sessionObjectives").toString().size()
-            && !docProxy->metaData("sessionKeywords").toString().size()
-            && !docProxy->metaData("sessionGradeLevel").toString().size()
-            && !docProxy->metaData("sessionSubjects").toString().size()
-            && !docProxy->metaData("sessionType").toString().size()
+            && !docProxy->metaData(UBSettings::sessionTitle).toString().size()
+            && !docProxy->metaData(UBSettings::sessionAuthors).toString().size()
+            && !docProxy->metaData(UBSettings::sessionObjectives).toString().size()
+            && !docProxy->metaData(UBSettings::sessionKeywords).toString().size()
+            && !docProxy->metaData(UBSettings::sessionGradeLevel).toString().size()
+            && !docProxy->metaData(UBSettings::sessionSubjects).toString().size()
+            && !docProxy->metaData(UBSettings::sessionType).toString().size()
+            && !docProxy->externalFiles()->count() // Issue 1683 - ALTI/AOU - 20131212
             )
         {
             toBeDeleted << docProxy;

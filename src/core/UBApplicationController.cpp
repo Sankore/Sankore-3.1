@@ -234,9 +234,11 @@ void UBApplicationController::adjustDisplayView()
         QTransform recentTransform = mDisplayView->transform();
 
         if (recentTransform != tr)
+        {
             mDisplayView->setTransform(tr);
+        }
 
-        mDisplayView->centerOn(mControlView->mapToScene(center));
+        mDisplayView->centerOn(UBApplication::boardController->activeScene()->lastCenter());// Issue 1598/1605 - CFA - 20131028
     }
 }
 

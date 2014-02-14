@@ -240,8 +240,8 @@ class UBSvgSubsetAdaptor
                         return trickAlpha;
                 }
 
-                void pixmapItemToLinkedImage(UBGraphicsPixmapItem *pixmapItem);
-                void svgItemToLinkedSvg(UBGraphicsSvgItem *svgItem);
+                void pixmapItemToLinkedImage(UBGraphicsPixmapItem *pixmapItem, bool isBackground = false); // Issue 1684 - CFA 20131128
+                void svgItemToLinkedSvg(UBGraphicsSvgItem *svgItem, bool isBackground = false);
                 void pdfItemToLinkedPDF(UBGraphicsPDFItem *pdfItem);
                 void videoItemToLinkedVideo(UBGraphicsMediaItem *videoItem);
                 void audioItemToLinkedAudio(UBGraphicsMediaItem *audioItem);
@@ -256,6 +256,7 @@ class UBSvgSubsetAdaptor
                 void protractorToSvg(UBGraphicsProtractor *item);
                 void cacheToSvg(UBGraphicsCache* item);
                 void triangleToSvg(UBGraphicsTriangle *item);
+                void fileToLinkedFile(QMap<QString,QString> attributes); // Issue 1683 (Evolution) - AOU - 20131206
                 void writeSvgElement();
 
         private:
@@ -264,6 +265,7 @@ class UBSvgSubsetAdaptor
                 QXmlStreamWriter mXmlWriter;
                 QString mDocumentPath;
                 int mPageIndex;
+                UBDocumentProxy * mpDocument;   // Issue 1683 - ALTI/AOU - 20131212
 
         };
 };

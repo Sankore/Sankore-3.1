@@ -37,10 +37,12 @@ UBDocumentContainer::UBDocumentContainer(QObject * parent)
 
 UBDocumentContainer::~UBDocumentContainer()
 {
+    /* Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
     foreach(const QPixmap* pm, mDocumentThumbs){
         delete pm;
         pm = NULL;
     }
+    Issue 1026 - AOU - 20131028 : Fin */
 }
 
 void UBDocumentContainer::setDocument(UBDocumentProxy* document, bool forceReload)
@@ -105,38 +107,38 @@ void UBDocumentContainer::updatePage(int index)
 
 void UBDocumentContainer::deleteThumbPage(int index)
 {
-    mDocumentThumbs.removeAt(index);
+    mDocumentThumbs->removeAt(index);
 }
 
 void UBDocumentContainer::updateThumbPage(int index)
 {
 
     //bad hack for last page duplicated + action that lead to a crash
-    if(index < mDocumentThumbs.count()){
-        mDocumentThumbs[index] = UBThumbnailAdaptor::get(mCurrentDocument, index);
+    if(index < mDocumentThumbs->count()){
+        (*mDocumentThumbs)[index] = UBThumbnailAdaptor::get(mCurrentDocument, index);
         emit documentPageUpdated(index);
     }
 }
 
 void UBDocumentContainer::insertThumbPage(int index)
 {
-    mDocumentThumbs.insert(index, UBThumbnailAdaptor::get(mCurrentDocument, index));
+    mDocumentThumbs->insert(index, UBThumbnailAdaptor::get(mCurrentDocument, index));
 }
 
 void UBDocumentContainer::reloadThumbnails()
 {
     if (mCurrentDocument) {
-        UBThumbnailAdaptor::load(mCurrentDocument, mDocumentThumbs);
-        qDebug() << "Reloading Thumbnails. new mDocumentThumbs size: " << mDocumentThumbs.size();
+        UBThumbnailAdaptor::load(mCurrentDocument, *mDocumentThumbs);
+        qDebug() << "Reloading Thumbnails. new mDocumentThumbs size: " << mDocumentThumbs->size();
     } else {
-        UBThumbnailAdaptor::clearThumbs(mDocumentThumbs);
+        UBThumbnailAdaptor::clearThumbs(*mDocumentThumbs);
     }
     emit documentThumbnailsUpdated(this);
 }
 
 void UBDocumentContainer::addPixmapAt(const QPixmap *pix, int index)
 {
-    mDocumentThumbs.insert(index, pix);
+    mDocumentThumbs->insert(index, pix);
     emit documentThumbnailsUpdated(this);
 }
 
@@ -156,5 +158,5 @@ int UBDocumentContainer::sceneIndexFromPage(int page)
 
 const QPixmap* UBDocumentContainer::pageAt(int index)
 {
-    return mDocumentThumbs[index];
+    return (*mDocumentThumbs)[index];
 }

@@ -91,6 +91,9 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual void clearSource(){;}
         virtual void setUuid(const QUuid &pUuid);
 
+        //issue 1554 - NNE - 20131008
+        void activateTextEditor(bool activateTextEditor);
+
     signals:
         void textUndoCommandAdded(UBGraphicsTextItem *textItem);
 
@@ -116,6 +119,29 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         QColor mColorOnDarkBackground;
         QColor mColorOnLightBackground;
+
+        //issue 1554
+        bool isActivatedTextEditor;
+
+    protected:
+         //issue 1539 - NNE - 20131018
+         /**
+           * Override beacause we have to clean the clipboard
+           * (if contains html data) before paste.
+           *
+           * \param event The event send by Qt.
+           */
+         void keyPressEvent(QKeyEvent *event);
+
+         //issue 1539 - NNE - 20131211
+         /**
+           * Override beacause we have to clean the clipboard
+           * (if contains html data) before paste.
+           *
+           * \param event The event send by Qt.
+           */
+         void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
+
 };
 
 #endif /* UBGRAPHICSTEXTITEM_H_ */

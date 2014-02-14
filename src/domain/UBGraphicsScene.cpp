@@ -278,6 +278,8 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     , mIsDesktopMode(false)
     , mZoomFactor(1)
     , mBackgroundObject(0)
+    , mBackgroundObjectDisposition(Center)
+    , mBackgroundObjectUrl(QUrl())
     , mPreviousWidth(0)
     , mInputDeviceIsPressed(false)
     , mArcPolygonItem(0)
@@ -307,7 +309,8 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     {
         setViewState(SceneViewState(1,
             UBApplication::applicationController->initialHScroll(),
-            UBApplication::applicationController->initialVScroll()));
+            UBApplication::applicationController->initialVScroll(),
+                                    QPointF()));//Issue 1598/1605 - CFA - 20131028
     }
 
 //    Just for debug. Do not delete please
@@ -335,6 +338,18 @@ void UBGraphicsScene::selectionChangedProcessing()
     }
 }
 
+// Issue 1598/1605 - CFA - 20131028
+void UBGraphicsScene::setLastCenter(QPointF center)
+{
+    mViewState.setLastSceneCenter(center);
+}
+
+QPointF UBGraphicsScene::lastCenter()
+{
+    return mViewState.lastSceneCenter();
+}
+// Fin issue 1598/1605 - CFA - 20131028
+
 void UBGraphicsScene::updateGroupButtonState()
 {
 
@@ -347,11 +362,15 @@ void UBGraphicsScene::updateGroupButtonState()
     int selCount = selItems.count();
 
     if (selCount < 1) {
+        //issue NC - NNE - 20131128 : correction bug of group action icon
+        groupAction->setChecked(false);
         groupAction->setEnabled(false);
         groupAction->setText(UBApplication::app()->boardController->actionGroupText());
 
     } else if (selCount == 1) {
         if (selItems.first()->type() == UBGraphicsGroupContainerItem::Type) {
+            //issue NC - NNE - 20131128 : correction bug of group action icon
+            groupAction->setChecked(true);
             groupAction->setEnabled(true);
             groupAction->setText(UBApplication::app()->boardController->actionUngroupText());
         } else {
@@ -1137,6 +1156,9 @@ void UBGraphicsScene::clearContent(clearCase pCase)
     switch (pCase) {
     case clearBackground :
         if(mBackgroundObject){
+            mBackgroundObjectDisposition = Center; // Issue 1684 - CFA - 20131128
+            mDocument->setHasDefaultImageBackground(false); // Issue 1684 - ALTI/AOU - 20131210
+            mBackgroundObjectUrl = QUrl();
             removeItem(mBackgroundObject);
             removedItems << mBackgroundObject;
         }
@@ -1145,6 +1167,8 @@ void UBGraphicsScene::clearContent(clearCase pCase)
     case clearItemsAndAnnotations :
     case clearItems :
     case clearAnnotations :
+        // Issue 1569 - CFA - 20131023 : undo "erase multi-selection"
+        UBApplication::undoStack->beginMacro("remove items");
         foreach(QGraphicsItem* item, items()) {
 
             bool isGroup = item->type() == UBGraphicsGroupContainerItem::Type;
@@ -1159,6 +1183,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
             }
 
             bool shouldDelete = false;
+
             switch (static_cast<int>(pCase)) {
             case clearAnnotations :
                 shouldDelete = isStrokesGroup;
@@ -1190,6 +1215,7 @@ void UBGraphicsScene::clearContent(clearCase pCase)
                 removedItems << item;
             }
         }
+        UBApplication::undoStack->endMacro();// Fin Issue 1569 - CFA - 20131023
         break;
     }
 
@@ -1698,21 +1724,63 @@ void UBGraphicsScene::deselectAllItems()
     foreach(QGraphicsItem *gi, selectedItems ())
     {
         gi->setSelected(false);
+
+        //issue 1554 - NNE - 20131010
+        UBGraphicsTextItem* gti = dynamic_cast<UBGraphicsTextItem*>(gi);
+        if(gti){
+            gti->activateTextEditor(false);
+        }
+        //issue 1554 - NNE - 20131010 : END
     }
 }
+
+//issue 1554 - NNE - 20131010
+void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
+{
+    foreach(QGraphicsItem *gi, selectedItems ())
+    {
+        if(gi != gti){
+            gi->setSelected(false);
+
+            UBGraphicsTextItem* g = dynamic_cast<UBGraphicsTextItem*>(gi);
+            if(g){
+                g->activateTextEditor(false);
+            }
+
+        }
+
+    }
+}
+//issue 1554 - NNE - 20131010 : END
 
 bool UBGraphicsScene::isEmpty() const
 {
     return mItemCount == 0;
 }
 
-QGraphicsItem* UBGraphicsScene::setAsBackgroundObject(QGraphicsItem* item, bool pAdaptTransformation, bool pExpand)
+
+
+QUrl UBGraphicsScene::backgroundObjectUrl()
+{
+    return mBackgroundObjectUrl;
+}
+
+void UBGraphicsScene::setBackgroundObjectUrl(QUrl url)
+{
+    mBackgroundObjectUrl = url;
+}
+
+// Issue 1684 - CFA - 20131119 : ici pour calculer le résultat final
+QGraphicsItem* UBGraphicsScene::setAsBackgroundObject(QGraphicsItem* item, bool pAdaptTransformation, bool pExpand, UBFeatureBackgroundDisposition disposition)
 {
     if (mBackgroundObject)
     {
         removeItem(mBackgroundObject);
         mBackgroundObject = 0;
     }
+
+    // Issue 1684 - CFA - 20131128
+    mBackgroundObjectDisposition = disposition;
 
     if (item)
     {
@@ -1723,7 +1791,7 @@ QGraphicsItem* UBGraphicsScene::setAsBackgroundObject(QGraphicsItem* item, bool 
 
         if (pAdaptTransformation)
         {
-            item = scaleToFitDocumentSize(item, true, 0, pExpand);
+            item = scaleToFitDocumentSize(item, true, 0, pExpand, disposition);
         }
 
         if (item->scene() != this)
@@ -1807,14 +1875,21 @@ void UBGraphicsScene::setDocument(UBDocumentProxy* pDocument)
     }
 }
 
-QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool center, int margin, bool expand)
+// Issue 1684 - CFA - 20131127 : on adapte l'item à la disposition souhaitée
+QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool center, int margin, bool expand, UBFeatureBackgroundDisposition disposition)
 {
-    int maxWidth = mNominalSize.width() - (margin * 2);
-    int maxHeight = mNominalSize.height() - (margin * 2);
+    int maxWidth = 0;
+    int maxHeight = 0;
+
+    // On reinit les transform de l'item, car dans cette fonction, on va recalculer son scale et sa position
+    item->setTransform(QTransform()); // Issue 1684 - ALTI/AOU - 20131210
+
+    maxWidth = mNominalSize.width() - (margin * 2);
+    maxHeight = mNominalSize.height() - (margin * 2);
 
     QRectF size = item->sceneBoundingRect();
 
-    if (expand || size.width() > maxWidth || size.height() > maxHeight)
+    if (disposition == Adjust)
     {
         qreal ratio = qMin(maxWidth / size.width(), maxHeight / size.height());
 
@@ -1826,9 +1901,54 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
                 item->sceneBoundingRect().height() / -2.0);
         }
     }
+    else if (disposition == Mosaic)
+    {
+        if(center)
+        {
+            item->setPos(item->sceneBoundingRect().width() / -2.0,
+                item->sceneBoundingRect().height() / -2.0);
+        }
+    }
+    else if (disposition == Fill)
+    {
+        qreal ratio = qMax(maxWidth / size.width(), maxHeight / size.height());
+
+        item->scale(ratio, ratio);
+
+        if(center)
+        {
+            item->setPos(item->sceneBoundingRect().width() / -2.0,
+                item->sceneBoundingRect().height() / -2.0);
+        }
+    }
+    else if (disposition == Extend)
+    {
+        item->scale(maxWidth / size.width(),maxHeight / size.height());
+
+        if(center)
+        {
+            item->setPos(item->sceneBoundingRect().width() / -2.0,
+                item->sceneBoundingRect().height() / -2.0);
+        }
+
+    }
+    else //Center
+    {
+        //Issue 1684 - CFA - 20140116 : rescale de l'image dans le cas où elle dépasse (ici il faudrait recevoir '!center' dans le cas d'un drag'n'drop)
+        if (expand || size.width() > maxWidth || size.height() > maxHeight)
+        {
+            qreal ratio = qMin(maxWidth / size.width(), maxHeight / size.height());
+
+            item->scale(ratio, ratio);
+
+            if (center)
+                item->setPos(item->sceneBoundingRect().width() / -2.0, item->sceneBoundingRect().height() / -2.0);
+        }
+    }
 
     return item;
 }
+// Fin Issue 1684 - CFA - 20131127
 
 void UBGraphicsScene::addRuler(QPointF center)
 {
@@ -2119,6 +2239,7 @@ QSize UBGraphicsScene::nominalSize()
     if (mDocument && !mNominalSize.isValid())
     {
         mNominalSize = mDocument->defaultDocumentSize();
+        emit pageSizeChanged();// Issue 1684 - CFA -20131127
     }
 
     return mNominalSize;
@@ -2302,6 +2423,8 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
         if (keyEvent->matches(QKeySequence::Delete))
 #endif
         {
+            // Issue 1569 - CFA - 20131023 : undo erase multi-selection
+            UBApplication::undoStack->beginMacro("remove items");
             foreach(QGraphicsItem* item, si)
             {
                 switch (item->type())
@@ -2333,6 +2456,8 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                     }
                 }
             }
+            UBApplication::undoStack->endMacro();
+            // Fin Issue 1569 - CFA - 20131023
         }
 
         keyEvent->accept();

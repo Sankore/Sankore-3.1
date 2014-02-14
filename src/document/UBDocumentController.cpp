@@ -284,6 +284,57 @@ UBDocumentTreeNode::~UBDocumentTreeNode()
         delete mProxy;
 }
 
+//issue 1629 - NNE - 20131105
+bool UBDocumentTreeNode::findNode(UBDocumentTreeNode *node)
+{
+    UBDocumentTreeNode *parent = node->parentNode();
+
+    bool hasFound = false;
+
+    while(parent){
+        if(parent == this){
+            hasFound = true;
+            break;
+        }
+
+        parent = parent->parentNode();
+    }
+
+    return hasFound;
+}
+
+UBDocumentTreeNode *UBDocumentTreeNode::nextSibling()
+{
+    UBDocumentTreeNode *parent = this->parentNode();
+    UBDocumentTreeNode *nextSibling = NULL;
+
+    int myIndex = parent->children().indexOf(this);
+    int indexOfNextSibling = myIndex + 1;
+
+    if(indexOfNextSibling < parent->children().size()){
+        nextSibling = parent->children().at(indexOfNextSibling);
+    }
+
+    return nextSibling;
+}
+
+UBDocumentTreeNode *UBDocumentTreeNode::previousSibling()
+{
+    UBDocumentTreeNode *parent = this->parentNode();
+    UBDocumentTreeNode *previousSibling = NULL;
+
+    int myIndex = parent->children().indexOf(this);
+    int indexOfPreviousSibling = myIndex - 1;
+
+    if(indexOfPreviousSibling >= 0){
+        previousSibling = parent->children().at(indexOfPreviousSibling);
+    }
+
+    return previousSibling;
+}
+
+//issue 1629 - NNE - 20131105 : END
+
 UBDocumentTreeModel::UBDocumentTreeModel(QObject *parent) :
     QAbstractItemModel(parent)
   , mRootNode(0)
@@ -730,6 +781,11 @@ void UBDocumentTreeModel::moveIndex(const QModelIndex &what, const QModelIndex &
     UBDocumentTreeNode *sourceNode = nodeFromIndex(what);
     UBDocumentTreeNode *newParentNode = nodeFromIndex(destination);
 
+    //issue NC - NNE - 20131106 : to prevent a std::bad_alloc
+    //if we try to move the source in its own parent (the user can make this with th drag'n'drop)
+    //or if we try to move a parent in this children, grand-children, etc.., do nothing
+    if(newParentNode == sourceNode->parentNode() || sourceNode->findNode(newParentNode)) return;
+
     Q_ASSERT(sourceNode && newParentNode);
 
     int whatIndex = what.row();
@@ -1170,6 +1226,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     bool inModel = docModel->inModel(targetIndex) || targetIndex == docModel->modelsIndex();
     bool isSourceAModel = docModel->inModel(dropIndex);
 
+    //issue 1629 - NNE - 20131212
+    bool targetIsInTrash = docModel->inTrash(targetIndex) || docModel->trashIndex() == targetIndex;
 
     Qt::DropAction drA = Qt::CopyAction;
     if (isUBPage) {
@@ -1182,7 +1240,6 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
             return;
         }
 
-        //        int count = 0;
         int total = ubMime->items().size();
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
@@ -1206,22 +1263,37 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 #ifndef Q_WS_MAC
         drA = Qt::IgnoreAction;
 #endif
-        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-        UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
-        QModelIndex targetParentIndex;
-        if(node->nodeType() == UBDocumentTreeNode::Catalog)
-            targetParentIndex = docModel->indexForNode(node);
-        else
-            targetParentIndex = docModel->indexForNode(node->parentNode());
+        if(targetIsInTrash){
+            //issue 1629 - NNE - 20131212 : If the source is a model and we want to delete it
+            UBApplication::documentController->moveToTrash(dropIndex, docModel);
+        }else{
+            QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+            UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
+            QModelIndex targetParentIndex;
+            if(node->nodeType() == UBDocumentTreeNode::Catalog)
+                targetParentIndex = docModel->indexForNode(node);
+            else
+                targetParentIndex = docModel->indexForNode(node->parentNode());
 
-        docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
-        QApplication::restoreOverrideCursor();
-        docModel->setHighLighted(QModelIndex());
+            docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
+            QApplication::restoreOverrideCursor();
+            docModel->setHighLighted(QModelIndex());
+        }
     }
-    else if (!inModel) {
+    else if(!inModel){
         drA = Qt::IgnoreAction;
-        if(dropIndex.internalId() != targetIndex.internalId())
-            docModel->moveIndex(dropIndex, targetIndex);
+        if(dropIndex.internalId() != targetIndex.internalId()){
+            //issue 1632 - NNE - 20131212
+            if(targetIsInTrash){
+                UBApplication::documentController->moveToTrash(dropIndex, docModel);
+            }else{
+                docModel->moveIndex(dropIndex, targetIndex);
+            }
+            //issue 1632 - NNE - 20131212 : END
+        }
+    }else if(docModel->inTrash(dropIndex) && inModel){
+        drA = Qt::IgnoreAction;
+        docModel->moveIndex(dropIndex, targetIndex);
     }
 
     event->setDropAction(drA);
@@ -1416,7 +1488,7 @@ void UBDocumentController::createNewDocument()
         selectDocument(document);
 
         if (document)
-            UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->markDocumentAsNew(document);
+            pManager->mDocumentTreeStructureModel->markDocumentAsNew(document);
     }
 }
 
@@ -1455,6 +1527,9 @@ void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurr
         UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->setCurrentDocument(proxy);
         QModelIndex indexCurrentDoc = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->indexForProxy(proxy);
         mDocumentUI->documentTreeView->setSelectedAndExpanded(indexCurrentDoc, true);
+
+        //issue 1629 - NNE - 20131105 : When set a current document, change in the board controller
+        mBoardController->setActiveDocumentScene(proxy, 0);
     }
 
     mSelectionType = Document;
@@ -1739,6 +1814,7 @@ void UBDocumentController::setupViews()
             mMessageWindow = new UBMessageWindow(mDocumentUI->thumbnailWidget);
         #endif
 
+        mMessageWindow->setCustomPosition(true);
         mMessageWindow->hide();
         mDocumentUI->documentTreeWidget->hide();
     }
@@ -2025,23 +2101,24 @@ void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
 void UBDocumentController::deleteSelectedItem()
 {
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
     QModelIndex currentIndex = firstSelectedTreeIndex();
     DeletionType deletionForSelection = deletionTypeForSelection(mSelectionType, currentIndex, docModel);
 
-    switch (static_cast<int>(deletionForSelection)) {
+    switch (deletionForSelection) {
     case DeletePage :
         deletePages(mDocumentUI->thumbnailWidget->selectedItems());
         break;
 
-    case MoveToTrash :
-        docModel->moveIndex(currentIndex, docModel->trashIndex());
+    case MoveToTrash : {
+        moveToTrash(currentIndex, docModel);
         break;
-
+    }
     case CompleteDelete :
         deleteIndexAndAssociatedData(currentIndex);
         break;
 
-    case EmptyFolder :
+    case EmptyFolder :{
         if (currentIndex == docModel->myDocumentsIndex()) { //Emptying "My documents". Keeping Untitled Documents
             int startInd = 0;
             while (docModel->rowCount(currentIndex)) {
@@ -2055,27 +2132,105 @@ void UBDocumentController::deleteSelectedItem()
                     break;
                 }
                 docModel->moveIndex(testSubINdecurrentIndex, docModel->trashIndex());
-            }
-        } else {
-            emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
-        }
-        break;
 
+            }
+            //issue 1629 - NNE - 20131105
+            //Here, we are sure that the current scene has been deleted
+            createNewDocumentInUntitledFolder();
+        } else {
+            //issue 1629 - NNE - 20131105
+            //Check if we will delete the current scene
+            UBDocumentTreeNode *currentNode = docModel->nodeFromIndex(currentIndex);
+            bool deleteCurrentScene = currentNode->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
+
+            emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
+
+            if(deleteCurrentScene) createNewDocumentInUntitledFolder();
+        }
+
+        break;
+    }
     case EmptyTrash :
-         emptyFolder(currentIndex, CompleteDelete); // Empty trahs folder
+        emptyFolder(currentIndex, CompleteDelete); // Empty trash folder
         break;
     }
 }
 
+//issue 1629 - NNE - 20131212
+void UBDocumentController::moveToTrash(QModelIndex &index, UBDocumentTreeModel* docModel)
+{
+    UBDocumentTreeNode *node = docModel->nodeFromIndex(index);
+    //check if we try to delete the current scene
+    bool deleteCurrentScene = (index == docModel->currentIndex());
+
+    //check if we try to delete the current scene if the currentIndex is a folder
+    if(node->nodeType() == UBDocumentTreeNode::Catalog){
+        deleteCurrentScene = node->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
+    }
+
+    UBDocumentTreeNode *nextSibling = node->nextSibling();
+
+    if(nextSibling){
+        //a next sibling exists
+        QModelIndex nextSiblingIndex = docModel->indexForNode(nextSibling);
+
+        if(deleteCurrentScene){
+            if(docModel->isDocument(nextSiblingIndex)){
+                UBDocumentProxy *document = docModel->proxyForIndex(nextSiblingIndex);
+                selectDocument(document);
+                deleteCurrentScene = false; //indicate that the current has not been really "deleted"
+            }
+        }else{
+            mDocumentUI->documentTreeView->setSelectedAndExpanded(nextSiblingIndex);
+        }
+    }else{
+        //check if a previous sibling exists
+        UBDocumentTreeNode *previousSibling = node->previousSibling();
+
+        if(previousSibling){
+            QModelIndex previousSiblingIndex = docModel->indexForNode(previousSibling);
+
+            if(deleteCurrentScene){
+                if(docModel->isDocument(previousSiblingIndex)){
+                    UBDocumentProxy *document = docModel->proxyForIndex(previousSiblingIndex);
+                    selectDocument(document);
+                    deleteCurrentScene = false;
+                }
+            }else{
+                mDocumentUI->documentTreeView->setSelectedAndExpanded(previousSiblingIndex);
+            }
+        }else{
+            //no sibling, so select the parent
+            QModelIndex parentIndex = docModel->indexForNode(node->parentNode());
+
+            mDocumentUI->documentTreeView->setSelectedAndExpanded(parentIndex);
+        }
+    }
+
+    docModel->moveIndex(index, docModel->trashIndex());
+
+    if(deleteCurrentScene){
+        //create the new documen after, because the selection stay on the old document
+        createNewDocumentInUntitledFolder();
+    }
+}
+//issue 1629 - NNE - 20131212 : END
+
 void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pDeletionType)
 {
+    // Issue NC - CFA - 20131029 : ajout d'une popup de confirmation pour la suppression definitive
+    if(pDeletionType == CompleteDelete && !UBApplication::mainWindow->yesNoQuestion(tr("Empty the trash"),tr("You're about to empty the trash.") +"\n\n" + tr("Are you sure ?")))
+        return;
+
+    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
     if (!docModel->isCatalog(index)) {
         return;
     }
     while (docModel->rowCount(index)) {
         QModelIndex subIndex = docModel->index(0, 0, index);
-        switch (static_cast<int>(pDeletionType)) {
+        switch (pDeletionType) {
         case MoveToTrash :
             docModel->moveIndex(subIndex, docModel->trashIndex());
             break;
@@ -2083,8 +2238,14 @@ void UBDocumentController::emptyFolder(const QModelIndex &index, DeletionType pD
         case CompleteDelete :
             deleteIndexAndAssociatedData(subIndex);
             break;
+        default:
+            break;
         }
+
     }
+
+    QApplication::restoreOverrideCursor();
+    // Fin issue NC - CFA - 20131029
 }
 
 void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pIndex)
@@ -2097,6 +2258,7 @@ void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pInde
 
     if (docModel->isDocument(pIndex)) {
         UBDocumentProxy *proxyData = docModel->proxyData(pIndex);
+
         if (proxyData) {
             UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
         }
@@ -2273,7 +2435,7 @@ void UBDocumentController::addFileToDocument()
 bool UBDocumentController::addFileToDocument(UBDocumentProxy* document)
 {
     QString defaultPath = UBSettings::settings()->lastImportFilePath->get().toString();
-    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"), defaultPath, UBDocumentManager::documentManager()->importFileFilter());
+    QString filePath = QFileDialog::getOpenFileName(mParentWidget, tr("Open Supported File"), defaultPath, UBDocumentManager::documentManager()->importFileFilter(true));
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
     QApplication::processEvents();
@@ -2319,6 +2481,11 @@ void UBDocumentController::moveSceneToIndex(UBDocumentProxy* proxy, int source, 
         UBMetadataDcSubsetAdaptor::persist(proxy);
 
         mDocumentUI->thumbnailWidget->hightlightItem(target);
+
+        // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
+        mBoardController->setActiveDocumentScene(target);
+        mBoardController->regenerateThumbnails();
+        // Issue 1026 - AOU - 20131028 : Fin
     }
 }
 
@@ -2686,7 +2853,7 @@ bool UBDocumentController::isOKToOpenDocument(UBDocumentProxy* proxy)
 
     if (docVersion.isEmpty() || docVersion.startsWith("4.1") || docVersion.startsWith("4.2")
             || docVersion.startsWith("4.3") || docVersion.startsWith("4.4") || docVersion.startsWith("4.5")
-            || docVersion.startsWith("4.6")) // TODO UB 4.7 update if necessary
+            || docVersion.startsWith("4.6") || docVersion.startsWith("4.7")) // TODO UB 4.8 update if necessary
     {
         return true;
     }
@@ -3013,6 +3180,8 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
                  minIndex = qMin(i, minIndex);
 
             mDocumentUI->thumbnailWidget->selectItemAt(minIndex);
+
+            mBoardController->setActiveDocumentScene(minIndex); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
         }
     }
 }
@@ -3177,4 +3346,18 @@ void UBDocumentController::refreshDocumentThumbnailsView(UBDocumentContainer*)
     }
 
     QApplication::restoreOverrideCursor();
+}
+
+void UBDocumentController::createNewDocumentInUntitledFolder()
+{
+    UBPersistenceManager *pManager = UBPersistenceManager::persistenceManager();
+    UBDocumentTreeModel *docModel = pManager->mDocumentTreeStructureModel;
+
+    QString groupName = docModel->virtualPathForIndex(docModel->untitledDocumentsIndex());
+
+    UBDocumentProxy *document = pManager->createDocument(groupName);
+    selectDocument(document);
+
+    if (document)
+        pManager->mDocumentTreeStructureModel->markDocumentAsNew(document);
 }

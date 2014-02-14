@@ -98,6 +98,7 @@ class UBBoardPaletteManager : public QObject
         void slot_changeDesktopMode(bool);
 
         void toggleErasePalette(bool ckecked);
+        void toggleImageBackgroundPalette(bool ckecked, bool isDefault);// Issue 1684 - CFA - 20131120
 
     private:
 
@@ -125,6 +126,7 @@ class UBBoardPaletteManager : public QObject
         UBActionPalette* mAddItemPalette;
         UBActionPalette* mErasePalette;
         UBActionPalette* mPagePalette;
+        UBActionPalette* mImageBackgroundPalette;// Issue 1684 - CFA - 20131119
 
         QUrl mItemUrl;
         QPixmap mPixmap;
@@ -141,7 +143,7 @@ class UBBoardPaletteManager : public QObject
         bool mPendingPanButtonPressed;
 
         QTime mEraseButtonPressedTime;
-        bool mPendingEraseButtonPressed;
+        bool mPendingEraseButtonPressed;        
 
         /** The page navigator widget */
         UBPageNavigationWidget* mpPageNavigWidget;

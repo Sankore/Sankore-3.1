@@ -34,6 +34,7 @@
 
 UBDocumentProxy::UBDocumentProxy()
     : mPageCount(0)
+    , mHasDefaultImageBackground(false)
 {
     init();
 }
@@ -45,10 +46,12 @@ UBDocumentProxy::UBDocumentProxy(const UBDocumentProxy &rValue) :
     mMetaDatas = rValue.mMetaDatas;
     mIsModified = rValue.mIsModified;
     mPageCount = rValue.mPageCount;
+    mHasDefaultImageBackground = false;
 }
 
 UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)
     : mPageCount(0)
+    , mHasDefaultImageBackground(false)
 {
     init();
     setPersistencePath(pPersistancePath);
@@ -68,6 +71,7 @@ void UBDocumentProxy::init()
 
     setUuid(QUuid::createUuid());
 
+    //qDebug() << UBSettings::settings()->pageSize->get().toSize();
     setDefaultDocumentSize(UBSettings::settings()->pageSize->get().toSize());
 
     //teacherGuide metadata
@@ -79,12 +83,18 @@ void UBDocumentProxy::init()
     setMetaData(UBSettings::sessionSubjects,"");
     setMetaData(UBSettings::sessionType,"");
     setMetaData(UBSettings::sessionLicence,"");
+    // Issue 1684 - ALTI/AOU - 20131210
+    setMetaData(UBSettings::documentDefaultBackgroundImage,"");
+    setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, "");
+    // Fin Issue 1684 - ALTI/AOU - 20131210
 }
+
+
 
 
 UBDocumentProxy::~UBDocumentProxy()
 {
-    // NOOP
+    externalFilesClear(); // Issue 1683 - ALTI/AOU - 20131212
 }
 
 
@@ -247,6 +257,55 @@ bool UBDocumentProxy::isModified() const
 }
 
 
+void UBDocumentProxy::setHasDefaultImageBackground(const bool hasDefault)
+{
+   mHasDefaultImageBackground = hasDefault;
+   // Issue 1684 - ALTI/AOU - 20131210
+   if (hasDefault == false){
+        setMetaData(UBSettings::documentDefaultBackgroundImage, "");
+        setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, "");
+   // Fin Issue 1684 - ALTI/AOU - 20131210
+   }
+}
 
+const bool UBDocumentProxy::hasDefaultImageBackground() const
+{
+    return mHasDefaultImageBackground;
+}
 
+void UBDocumentProxy::setDefaultImageBackground(const UBFeature& item)
+{
+   mDefaultImageBackground = item;
+}
+
+UBFeature& UBDocumentProxy::defaultImageBackground()
+{
+    return mDefaultImageBackground;
+}
+
+const UBFeature& UBDocumentProxy::defaultImageBackground() const
+{
+    return mDefaultImageBackground;
+}
+
+// Issue 1683 - ALTI/AOU - 20131212
+void UBDocumentProxy::externalFilesAdd(UBDocumentExternalFile *file)
+{
+    mExternalFiles.append(file);
+}
+
+const QList<UBDocumentExternalFile *> *UBDocumentProxy::externalFiles() const
+{
+    return &mExternalFiles;
+}
+
+void UBDocumentProxy::externalFilesClear(){
+    foreach(UBDocumentExternalFile* ef, mExternalFiles)
+    {
+        delete ef;
+        ef = NULL;
+    }
+    mExternalFiles.clear();
+}
+// Fin Issue 1683 - ALTI/AOU - 20131212
 

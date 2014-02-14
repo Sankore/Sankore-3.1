@@ -188,7 +188,6 @@ private:
     int mMediaWidgetHeight;
 };
 
-
 class UBTGUrlWidget : public QWidget , public iUBTGSaveData
 {
     Q_OBJECT
@@ -216,5 +215,36 @@ public:
 private:
     QMimeData* mimeData(const QList<QTreeWidgetItem *> items) const;
 };
+
+// Issue 1683 (Evolution) - AOU - 20131206
+class UBTGFileWidget : public QWidget, public iUBTGSaveData
+{
+    Q_OBJECT
+public:
+    UBTGFileWidget(QWidget* parent = 0, const char* name = "UBTGFileWidget");
+    virtual ~UBTGFileWidget();
+    tUBGEElementNode* saveData();
+    void initializeWithDom(QDomElement element);
+    inline QString titreFichier() const {return mpTitreFichier->text();}
+    inline QString path() const {return mPath;}
+    inline void setPath(QString path){mPath = path;}
+
+private:
+    QVBoxLayout * mpLayout;
+    QHBoxLayout * mpHLayout;
+    QLineEdit * mpTitreFichier;
+    QLineEdit * mpNomFichier;
+    QPushButton * mpBtnSelectFile;
+    QString mPath;
+
+private slots:
+    void OnClickBtnSelectFile();
+
+signals:
+    void changed();
+
+
+};
+// Fin Issue 1683 (Evolution) - AOU - 20131206
 
 #endif // UBTEACHERGUIDEWIDGETSTOOLS_H

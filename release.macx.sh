@@ -160,6 +160,9 @@ rm -f "$APP/Contents/Resources/empty.lproj"
 notify "Removing .svn directories ..."
 find "$APP" -name .svn -exec rm -rf {} \; 2> /dev/null
 
+#NNE - remove the backup files (file which ends with ~)
+find "$APP" -name "*~" -exec rm -f '{}' \;
+
 # set various version infomration in Info.plist
 $PLISTBUDDY -c "Set :CFBundleVersion $VERSION" "$INFO_PLIST"
 $PLISTBUDDY -c "Set :CFBundleShortVersionString $VERSION" "$INFO_PLIST"

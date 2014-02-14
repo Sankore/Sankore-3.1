@@ -29,8 +29,28 @@
 #include "frameworks/UBStringUtils.h"
 
 #include "core/UBSettings.h"
+#include "board/UBFeaturesController.h"
 
 class UBGraphicsScene;
+
+// Issue 1683 - ALTI/AOU - 20131212
+///
+/// \brief The UBDocumentExternalFile class
+///         is used to store informations about an external file or document that is embedded in the Sankore document (via the TeacherGuide of Page Zero).
+///
+class UBDocumentExternalFile
+{
+private:
+    QString mTitle;
+    QString mPath;
+public:
+    inline QString title() const {return mTitle;}
+    inline void setTitle(QString title){mTitle = title;}
+
+    inline QString path() const {return mPath;}
+    inline void setPath(QString path){mPath = path;}
+};
+// Fin Issue 1683 - ALTI/AOU - 20131212
 
 class UBDocumentProxy : public QObject
 {
@@ -42,9 +62,9 @@ class UBDocumentProxy : public QObject
 
         UBDocumentProxy();
         UBDocumentProxy(const UBDocumentProxy &rValue);
-        UBDocumentProxy(const QString& pPersistencePath);
+        UBDocumentProxy(const QString& pPersistencePath);        
 
-        virtual ~UBDocumentProxy();
+        virtual ~UBDocumentProxy();        
 
         QString persistencePath() const;
 
@@ -61,6 +81,13 @@ class UBDocumentProxy : public QObject
         QDateTime lastUpdate();
 
 
+        // Issue 1684 - CFA - 20131120
+        void setHasDefaultImageBackground(const bool hasDefault);
+        const bool hasDefaultImageBackground() const;
+        void setDefaultImageBackground(const UBFeature& item);
+        UBFeature& defaultImageBackground();
+        const UBFeature& defaultImageBackground() const;
+
         QSize defaultDocumentSize() const;
         void setDefaultDocumentSize(QSize pSize);
         void setDefaultDocumentSize(int pWidth, int pHeight);
@@ -73,6 +100,12 @@ class UBDocumentProxy : public QObject
         int pageCount();
 
         bool theSameDocument(UBDocumentProxy *proxy);
+
+        // Issue 1683 - ALTI/AOU - 20131212
+        void externalFilesAdd(UBDocumentExternalFile* file);
+        const QList<UBDocumentExternalFile*> * externalFiles() const;
+        void externalFilesClear();
+        // Fin Issue 1683 - ALTI/AOU - 20131212
 
     protected:
         void setPageCount(int pPageCount);
@@ -94,6 +127,11 @@ class UBDocumentProxy : public QObject
 
         int mPageCount;
 
+        // Issue 1684 - CFA - 20131120
+        bool mHasDefaultImageBackground;
+        UBFeature mDefaultImageBackground;
+
+        QList<UBDocumentExternalFile*> mExternalFiles; // Issue 1683 - ALTI/AOU - 20131212
 };
 
 inline bool operator==(const UBDocumentProxy &proxy1, const UBDocumentProxy &proxy2)

@@ -192,6 +192,11 @@ class UBSettings : public QObject
         static QString sessionType;
         static QString sessionLicence;
 
+        // Issue 1684 - ALTI/AOU - 20131210
+        static QString documentDefaultBackgroundImage;
+        static QString documentDefaultBackgroundImageDisposition;
+        // Fin Issue 1684 - ALTI/AOU - 20131210
+
         static QString documentDate;
 
         static QString trashedDocumentGroupNamePrefix;

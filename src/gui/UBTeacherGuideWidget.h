@@ -154,6 +154,12 @@ public slots:
     void onActiveSceneChanged();
     void switchToMode(tUBTGZeroPageMode mode = tUBTGZeroPageMode_EDITION);
 
+    //issue 1517 - NNE - 20131206
+    /**
+      * Signals used when the user click on the licence logo
+      */
+    void onClickLicence();
+
 protected:
     void resizeEvent(QResizeEvent* ev);
 
@@ -207,7 +213,7 @@ private:
     QComboBox* mpLicenceBox;
     QLabel* mpLicenceValueLabel;
     QLabel* mpLicenceIcon;
-    QHBoxLayout* mpLicenceLayout;
+    QVBoxLayout* mpLicenceLayout; // Issue 1517 - ALTI/AOU - 20131206 : change le layout Horizontal en Vertical.
 
     UBGraphicsTextItem* mpSceneItemSessionTitle;
 
@@ -216,10 +222,66 @@ private:
 
     UBDocumentProxy* mCurrentDocument;
 
+    // Issue 1683 (Evolution) - AOU - 20131206
+    QFrame* mpSeparatorFiles;
+    QTreeWidget * mpTreeWidgetEdition;      // Tree qui permet de donner un titre et de selectionner un fichier
+    UBAddItem * mpAddAFileItem;             // Bouton pour ajouter un file au Tree Edition
+    QTreeWidget * mpTreeWidgetPresentation; // Tree qui permet d'afficher les titres des fichiers selectionnés, et d'ouvrir le fichier par un clic sur ce titre.
+    QTreeWidgetItem * mpMediaSwitchItem;    // Bouton pour déplier/replier le Tree Presentation
+
+    tUBTGZeroPageMode mMode;
+    inline tUBTGZeroPageMode mode(){return mMode;}
+    inline void setMode(tUBTGZeroPageMode mode){mMode = mode;}
+
+    bool mbFilesChanged;
+    inline bool filesChanged(){return mbFilesChanged;}
+
+    void load(QDomDocument doc);
+    void createMediaButtonItem();
+    void cleanData(tUBTGZeroPageMode mode);
+    QVector<tIDataStorage*> save(int pageIndex);
+    // Fin Issue 1683 (Evolution) - AOU - 20131206
+
 private slots:
     void onSchoolLevelChanged(QString schoolLevel);
     void persistData();
+
+    // Issue 1683 (Evolution) - AOU - 20131206
+    void onAddItemClicked(QTreeWidgetItem *widget, int column, QDomElement *element = 0);
+    void setFilesChanged();
+    // Fin Issue 1683 (Evolution) - AOU - 20131206
+    void onActiveDocumentChanged();
+    void onScrollAreaRangeChanged(int min, int max); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
 };
+
+//issue 1517 - NNE - 20131206 : Make the QLabel class clickable
+/**
+  * \class UBClickableLabel
+  *
+  * A simple class wich override the QLabel to make it clickable
+  */
+class UBClickableLabel : public QLabel
+{
+    Q_OBJECT
+
+public:
+    UBClickableLabel(QWidget * parent = 0, Qt::WindowFlags f = 0):
+        QLabel(parent, f)
+    {
+
+    }
+
+protected:
+    void mousePressEvent(QMouseEvent * ev)
+    {
+        QLabel::mousePressEvent(ev);
+        emit clicked();
+    }
+
+signals:
+    void clicked();
+};
+//issue 1517 - NNE - 20131206 : END
 
 /***************************************************************************
  *                    class    UBTeacherGuideWidget                        *

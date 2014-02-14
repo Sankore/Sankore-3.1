@@ -329,7 +329,9 @@ function importData(data){
                     $("<input type='hidden' name='mask' value='" + data[i].conts[j].mask + "'/>").appendTo(imgs_container);
                     $("<input type='hidden' name='count' value='" + data[i].conts[j].count + "'/>").appendTo(imgs_container);
                     var tmp_div = $("<div style='width: 100%; overflow: hidden;'>").appendTo(imgs_container);
-                    $("<input type='text' class='cat_desc' value='" + data[i].conts[j].text + "' disabled/>").appendTo(tmp_div);
+					// Issue 1516 - CFA - 20131029 : gestion des quotes dans le input
+					html_text = data[i].conts[j].text.replace(/"/g, '&quot;');
+                    $('<input type="text" class="cat_desc" value="' + html_text + '" disabled/>').appendTo(tmp_div);
                     for(var k in data[i].conts[j].imgs){
                         var block_img = $("<div class='img_block' style='text-align: center;'></div>");
                         $("<input type='hidden' value='" + data[i].conts[j].imgs[k].value + "'/>").appendTo(block_img);
@@ -391,7 +393,9 @@ function importData(data){
                     $("<input type='hidden' name='mask' value='" + data[i].conts[j].mask + "'/>").appendTo(imgs_container);
                     $("<input type='hidden' name='count' value='" + data[i].conts[j].count + "'/>").appendTo(imgs_container);
                     tmp_div = $("<div style='width: 100%; overflow: hidden;'>").appendTo(imgs_container);
-                    $("<input type='text' class='cat_desc' value='" + data[i].conts[j].text + "' disabled/>").appendTo(tmp_div);
+					// Issue 1516 - CFA - 20131029 : gestion des quotes dans le input
+					html_text = data[i].conts[j].text.replace(/"/g, '&quot;');
+                    $('<input type="text" class="cat_desc" value="' + html_text + '" disabled/>').appendTo(tmp_div);
                     for(k in data[i].conts[j].imgs){
                         block_img = $("<div class='img_block' style='text-align: center;'></div>");
                         $("<input type='hidden' value='" + data[i].conts[j].imgs[k].value + "'/>").appendTo(block_img);

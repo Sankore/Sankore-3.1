@@ -128,6 +128,11 @@ void UBMetadataDcSubsetAdaptor::persist(UBDocumentProxy* proxy)
     xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri,UBSettings::sessionSubjects,proxy->metaData(UBSettings::sessionSubjects).toString());
     xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri,UBSettings::sessionType,proxy->metaData(UBSettings::sessionType).toString());
     xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri,UBSettings::sessionLicence,proxy->metaData(UBSettings::sessionLicence).toString());
+    // Issue 1684 - ALTI/AOU - 20131210
+    xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri,UBSettings::documentDefaultBackgroundImage, proxy->metaData(UBSettings::documentDefaultBackgroundImage).toString());
+    xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri,UBSettings::documentDefaultBackgroundImageDisposition, proxy->metaData(UBSettings::documentDefaultBackgroundImageDisposition).toString());
+    // Fin Issue 1684 - ALTI/AOU - 20131210
+
 
     xmlWriter.writeEndElement(); //dc:Description
     xmlWriter.writeEndElement(); //RDF
@@ -163,6 +168,9 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
             return metadata;
         }
 
+        QString docVersion = "4.1"; // untagged doc version 4.1
+        metadata.insert(UBSettings::documentVersion, docVersion);
+
         QXmlStreamReader xml(&file);
 
         while (!xml.atEnd())
@@ -171,7 +179,6 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
 
             if (xml.isStartElement())
             {
-                QString docVersion = "4.1"; // untagged doc version 4.1
 
                 if (xml.name() == "title")
                 {
@@ -193,6 +200,7 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
                         && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
                 {
                         docVersion = xml.readElementText();
+                        metadata.insert(UBSettings::documentVersion, docVersion);
                 }
                 else if (xml.name() == "size" // introduced in UB 4.2
                         && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
@@ -271,8 +279,18 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
                 {
                     metadata.insert(UBSettings::sessionLicence, xml.readElementText());
                 }
-
-                metadata.insert(UBSettings::documentVersion, docVersion);
+                // Issue 1684 - ALTI/AOU - 20131210
+                else if (xml.name() == UBSettings::documentDefaultBackgroundImage
+                         && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
+                {
+                    metadata.insert(UBSettings::documentDefaultBackgroundImage, xml.readElementText());
+                }
+                else if (xml.name() == UBSettings::documentDefaultBackgroundImageDisposition
+                         && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
+                {
+                    metadata.insert(UBSettings::documentDefaultBackgroundImageDisposition, xml.readElementText());
+                }
+                // Fin Issue 1684 - ALTI/AOU - 20131210
             }
 
             if (xml.hasError())

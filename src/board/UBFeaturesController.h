@@ -39,6 +39,7 @@
 #include <QThread>
 #include <QMutex>
 #include <QWaitCondition>
+#include "frameworks/UBTrashRegistery.h"
 
 class UBFeaturesModel;
 class UBFeaturesItemDelegate;
@@ -70,6 +71,15 @@ enum UBFeatureElementType
     FEATURE_INVALID
 };
 
+enum UBFeatureBackgroundDisposition
+{
+    Center,
+    Adjust,
+    Mosaic,
+    Fill,
+    Extend
+};
+
 class UBFeature
 {
 public:
@@ -93,6 +103,8 @@ public:
 //    UBFeature();
     virtual ~UBFeature();
     QString getName() const { return mName; }
+
+
     QString getDisplayName() const {return mDisplayName;}
     QImage getThumbnail() const {return mThumbnail;}
     QString getVirtualPath() const { return virtualDir; }
@@ -103,8 +115,21 @@ public:
     QString getSortKey() const {return mSortKey;}
     void setFullPath(const QUrl &newPath) {mPath = newPath;}
     void setFullVirtualPath(const QString &newVirtualPath) {virtualDir = newVirtualPath;}
+
+    //issue 1474 - NNE - 20131121
+    /**
+      * Change the current name of the feature.
+      * @arg newName The new name of the feature.
+      */
+    void setName(const QString &newName);
+
     UBFeatureElementType getType() const { return elementType; }
     UBFeature &markedWithSortKey(const QString &str);
+
+    // Issue 1684 - CFA - 20131125
+    const UBFeatureBackgroundDisposition& backgroundDisposition() const;
+    void setBackgroundDisposition(UBFeatureBackgroundDisposition disposition);
+
 
     bool isFolder() const;
     bool allowedCopy() const;
@@ -119,7 +144,6 @@ public:
     bool operator !=( const UBFeature &f )const;
     const QMap<QString,QString> & getMetadata() const { return metadata; }
     void setMetadata( const QMap<QString,QString> &data ) { metadata = data; }
-
 
 private:
     QString getNameFromVirtualPath(const QString &pVirtPath);
@@ -136,6 +160,7 @@ private:
     QMap<QString,QString> metadata;
     Permissions mOwnPermissions;
     QString mSortKey;
+    UBFeatureBackgroundDisposition mDisposition;
 };
 Q_DECLARE_METATYPE( UBFeature )
 Q_DECLARE_OPERATORS_FOR_FLAGS(UBFeature::Permissions)
@@ -274,7 +299,8 @@ public:
     void loadHardcodedItemsToModel();
 
     void addItemToPage(const UBFeature &item);
-    void addItemAsBackground(const UBFeature &item);
+    void addItemAsBackground(UBFeature &item, bool isFromPalette = true);
+    void addItemAsDefaultBackground(UBFeature &item, bool isFromPalette = true);
     const UBFeature& getCurrentElement()const {return currentElement;}
     void setCurrentElement( const UBFeature &elem ) {currentElement = elem;}
     UBFeature getTrashElement () const { return trashData.categoryFeature(); }
@@ -319,6 +345,34 @@ public:
     void assignFeaturesListView(UBFeaturesListView *pList);
     void assignPathListView(UBFeaturesListView *pList);
 
+    //issue 1474 - NNE - 20131120
+    /**
+      * Simple wrapper that remove the associated entry of the feature in the trash registery.
+      * @arg feature The feature to remove from the trash registery.
+      */
+    void removeFromTrashRegistery(UBFeature feature);
+
+    //issue 1474 - NNE - 20131210
+    /**
+      * Return the translation for the category data.
+      * This function exists to avoid to break previous translations by
+      * move the tr() string.
+      *
+      * \param name The original name of the category data.
+      * \return The name of the category data according to the curent user's language.
+      */
+    QString getTranslationNameForCategoryData(const QString& name) const;
+
+    //issue 1474 - NNE - 20131213
+    /**
+      * Return the associated entry in the trash register
+      *
+      * \param name The name of the entry
+      *
+      * \return The associated entry if exist, otherwise null
+      */
+    RegisteryEntry getRegisteryEntry(const QString &name) const;
+
 public:
     //Hardcoded toplevel data
     CategoryData rootData;
@@ -347,9 +401,35 @@ signals:
     void scanPath(const QString &);
 
 private slots:
+    /**
+      * Add a new folder in the currentFeature.
+      * @arg name The name of the new folder.
+      */
     void addNewFolder(QString name);
+
+    //issue 1474 - NNE - 20131121
+    /**
+      * Add a new folder in the feature given in parameter.
+      * @arg name The name of the new folder.
+      * @arg from The feature where the folder will be added.
+      */
+    void addNewFolder(QString name, const UBFeature from);
+
     void scanFS();
     void createNpApiFeature(const QString &str);
+
+//issue 1474 - NNE - 20131119
+public slots:
+    /**
+      * Action performs when a feature or several features have to be restored.
+      * @arg features The features to restore.
+      */
+    void restoreFeature(const QVector<UBFeature> features);
+
+    bool restoreFolderFeature(UBFeature &feature, RegisteryEntry entry);
+
+    bool restoreFileFeature(UBFeature &feature, RegisteryEntry entry);
+//issue 1474 - NNE - 20131119 : END
 
 private:
 
@@ -363,6 +443,9 @@ private:
 
     QAbstractItemModel *curListModel;
     UBFeaturesComputingThread mCThread;
+
+    //issue 1474 - NNE - 20131025
+    UBTrashRegistery mTrashRegistery;///< This the trash registery. It is used to restore the elements in the trash.
 
 private:
 
@@ -384,6 +467,9 @@ public:
     CategoryData getDestinationCategoryForUrl( const QUrl &url );
     CategoryData getDestinationCategoryForMimeType(const QString &pMmimeType, const QUrl &sourceUrl = QUrl());
     QString getFeaturePathByName(const QString &featureName) const;
+
+    //issue 1474 - NNE - 20131119
+    UBFeature getFeatureByPath(const QString &path) const;
 
 };
 

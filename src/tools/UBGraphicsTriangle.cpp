@@ -303,82 +303,80 @@ QPainterPath UBGraphicsTriangle::shape() const
     return tShape;
 }
 
+// Issue 570 - CFA - 20131106 : simplification
 void UBGraphicsTriangle::paintGraduations(QPainter *painter)
 {
+    const int SEPARATOR = 5;
     qreal kx = (mOrientation == TopLeft || mOrientation == BottomLeft) ? 1 : -1;
     qreal ky = (mOrientation == BottomLeft || mOrientation == BottomRight) ? 1 : -1;
 
     painter->save();
     painter->setFont(font());
-    QFontMetricsF fontMetrics(painter->font());
+    QFontMetricsF fontMetrics(painter->font());    
+
     for (int millimeters = 0; millimeters < (rect().width() - sLeftEdgeMargin - sRoundingRadius) / sPixelsPerMillimeter; millimeters++)
-    {
-        int graduationX = rotationCenter().x() + kx * sPixelsPerMillimeter * millimeters;
+    {        
+        int graduationX = rotationCenter().x() + kx * sPixelsPerMillimeter * millimeters; //position de la graduation sur l'équerre
+
         int graduationHeight = (0 == millimeters % UBGeometryUtils::millimetersPerCentimeter) ?
             UBGeometryUtils::centimeterGraduationHeight :
             ((0 == millimeters % UBGeometryUtils::millimetersPerHalfCentimeter) ?
-                UBGeometryUtils::halfCentimeterGraduationHeight : UBGeometryUtils::millimeterGraduationHeight);
+                UBGeometryUtils::halfCentimeterGraduationHeight : UBGeometryUtils::millimeterGraduationHeight); //taille de la graduation
 
-        // Check that grad. line inside triangle
-        qreal dx = (kx > 0) ? rect().width() - graduationX : graduationX - rect().x();
-        qreal lineY = rotationCenter().y() - ky * rect().height()/rect().width() * dx;
-        if (mOrientation == BottomLeft || mOrientation == BottomRight)
+        qreal espaceNecessaire = graduationHeight + SEPARATOR ;
+        /*     B____C
+                |  /
+               D|_/E <-- espaceDisponible (on utilise le théorème de Thalès pour déterminer cette longueur)
+                |/
+                A
+        */
+
+        qreal AD;
+        switch(mOrientation)
         {
-            if (lineY >= rotationCenter().y() - ky * graduationHeight)
+            case BottomLeft:
+                AD = QLineF(rect().bottomRight(), QPointF(graduationX, rotationCenter().y())).length();
+                break;
+            case TopLeft:
+                AD = QLineF(rect().topRight(), QPointF(graduationX, rotationCenter().y())).length();
+                break;
+            case TopRight:
+                AD = QLineF(rect().topLeft(), QPointF(graduationX, rotationCenter().y())).length();
+                break;
+            case BottomRight:
+                AD = QLineF(rect().bottomLeft(), QPointF(graduationX , rotationCenter().y())).length();
                 break;
         }
-        else
-        {
-            if (lineY <= rotationCenter().y() - ky * graduationHeight)
-                break;
-        }
-        
-        painter->drawLine(QLine(graduationX, rotationCenter().y(), graduationX, rotationCenter().y() - ky * graduationHeight));
+
+        qreal AB = rect().width();
+        qreal BC = rect().height();
+        qreal DE =  AD * BC / AB, espaceDisponible = DE; //inutile mais améliore la verbosité et facilitera la relecture
+
+        if (espaceNecessaire <= espaceDisponible)
+            painter->drawLine(QLine(graduationX, rotationCenter().y(), graduationX, rotationCenter().y() - ky * graduationHeight));
+        else // on ne dessinera plus rien on n'est pas obligé de continuer jusqu'à la fin du réglé.
+            break;
+
         if (0 == millimeters % UBGeometryUtils::millimetersPerCentimeter)
         {
             QString text = QString("%1").arg((int)(millimeters / UBGeometryUtils::millimetersPerCentimeter));
-            int textXRight = graduationX + fontMetrics.width(text) / 2;
             qreal textWidth = fontMetrics.width(text);
-            qreal textHeight = fontMetrics.tightBoundingRect(text).height() + 5;
+            qreal textHeight = fontMetrics.tightBoundingRect(text).height();
 
-            int textY = (ky > 0) ? rotationCenter().y() - 5 - UBGeometryUtils::centimeterGraduationHeight - textHeight
-                : rotationCenter().y() + 5 + UBGeometryUtils::centimeterGraduationHeight;
+            espaceNecessaire = graduationHeight + textHeight + textWidth + SEPARATOR ;
 
-            bool bText = false;
-            switch(mOrientation)
+            if (espaceNecessaire <= espaceDisponible)
             {
-                case BottomLeft:
-                    dx = rect().width() - textXRight;
-                    lineY = rotationCenter().y() - rect().height()/rect().width() * dx;
-                    bText = lineY <= textY;
-                    break;
-                case TopLeft:
-                    dx = rect().width() - textXRight;
-                    lineY = rotationCenter().y() + rect().height()/rect().width() * dx;
-                    bText = lineY >= textY + textHeight;
-                    break;
-                case TopRight:
-                    dx = textXRight - textWidth - rect().left();
-                    lineY = rotationCenter().y() + rect().height()/rect().width() * dx;
-                    bText = lineY >= textY + textHeight;
-                    break;
-                case BottomRight:
-                    dx = textXRight - textWidth - rect().left();
-                    lineY = rotationCenter().y() - rect().height()/rect().width() * dx;
-                    bText = lineY <= textY;
-                    break;
+                int textY = (ky > 0) ? rotationCenter().y() - SEPARATOR - UBGeometryUtils::centimeterGraduationHeight - textHeight
+                    : rotationCenter().y() + SEPARATOR + UBGeometryUtils::centimeterGraduationHeight;
+
+                painter->drawText(QRectF(graduationX - textWidth / 2, textY, textWidth, textHeight),Qt::AlignVCenter, text);
             }
-
-            if (bText)
-                painter->drawText(
-                    QRectF(graduationX - textWidth / 2, 
-                    textY, textWidth, textHeight),
-                    Qt::AlignVCenter, text);
-
         }
     }
     painter->restore();
 }
+// Fin Issue 570 - CFA - 20131106
 
 
 void UBGraphicsTriangle::rotateAroundCenter(qreal angle)

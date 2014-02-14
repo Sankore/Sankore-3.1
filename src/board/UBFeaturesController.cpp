@@ -20,13 +20,14 @@
  */
 
 
-
+#include <limits>
 #include <QGraphicsItem>
 #include <QPointF>
 #include <QtGui>
 
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 #include "UBFeaturesController.h"
 #include "core/UBSettings.h"
 #include "tools/UBToolsManager.h"
@@ -40,7 +41,13 @@
 #include "domain/UBGraphicsVideoItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
 
+#include "gui/UBMainWindow.h"
 #include "gui/UBFeaturesWidget.h"
+#include "core/UBPersistenceManager.h"
+
+#include <sstream>
+#include <vector>
+
 
 void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
                                        , const QString & currVirtualPath
@@ -261,6 +268,7 @@ UBFeature::UBFeature(const QString &url
     , elementType(type)
     , mOwnPermissions(pOwnPermissions)
     , mSortKey(pSortKey)
+    , mDisposition(Center)
 {
     mName = getNameFromVirtualPath(url);
     virtualDir = getVirtualDirFromVirtualPath(url);
@@ -347,7 +355,7 @@ bool UBFeature::isDeletable() const
             || elementType == FEATURE_BOOKMARK
             || elementType == FEATURE_LINK
     //Ilia. Just a hotfix. Permission mechanism for UBFeatures should be reworked
-            || getVirtualPath().startsWith("/root/Applications/Web");
+            || getVirtualPath().startsWith("/root/Interactivities/Web");// Issue 1627 - CFA - 20131024 : Interactivities, not Applications
 }
 
 bool UBFeature::inTrash() const
@@ -355,10 +363,31 @@ bool UBFeature::inTrash() const
     return getFullPath().toLocalFile().startsWith(QUrl::fromLocalFile(UBSettings::userTrashDirPath()).toLocalFile() );
 }
 
+//issue 1474 - NNE - 20131121
+void UBFeature::setName(const QString &newName)
+{
+    QString name = newName;
+    if(!this->isFolder()){
+        name += '.' + UBFileSystemUtils::extension(this->mName);
+    }
+
+    this->mDisplayName = name;
+    this->mName = name;
+    this->mSortKey = name;
+
+    QString fullPath = this->getFullPath().toString();
+    int slashPos = fullPath.lastIndexOf("/");
+
+    QString newUrl = fullPath.mid(0, slashPos+1) + name;
+    this->mPath = QUrl(newUrl);
+}
+//issue 1474 - NNE - 20131121 : END
+
 UBFeaturesController::UBFeaturesController(QWidget *pParentWidget) :
     QObject(pParentWidget)
     ,featuresList(0)
     ,mLastItemOffsetIndex(0)
+    ,mTrashRegistery(this)
 {
     initHardcodedData();
 
@@ -393,6 +422,9 @@ UBFeaturesController::UBFeaturesController(QWidget *pParentWidget) :
     connect(UBApplication::boardController, SIGNAL(npapiWidgetCreated(QString)), this, SLOT(createNpApiFeature(QString)));
 
     QTimer::singleShot(0, this, SLOT(scanFS()));
+
+    //issue 1474 - NNE - 201310
+    mTrashRegistery.synchronizeWith(UBSettings::userTrashDirPath());
 }
 
 void UBFeaturesController::scanFS()
@@ -734,18 +766,37 @@ QString UBFeaturesController::uniqNameForFeature(const UBFeature &feature, const
         }
     }
 
-    if (!resultList.contains(pName + pExtention, Qt::CaseInsensitive)) {
-        resultName = pName + pExtention;
+    // Issue 513 - CFA - 20131030 : changement de comportement dans le nom des fichiers images (maintenant l'ext est fournie par Planete Sankoré...).
+    std::vector<std::string> elems;
+    std::stringstream ss(pName.toStdString());
+    std::string item;
+    while (std::getline(ss, item, '.'))
+       elems.push_back(item);
+
+    elems.pop_back();//on supprime l'extension du nom
+    std::string s;
+
+    while (!elems.empty())
+    {
+        s += elems.back();
+        elems.pop_back();
+    }
+
+    QString pNameWithoutExt = QString::fromStdString(s);
+
+    if (!resultList.contains(pNameWithoutExt + pExtention, Qt::CaseInsensitive)) {
+        resultName = pNameWithoutExt + pExtention;
 
     } else {
         for (int i = 0; i < 16777215; i++) {
-            QString probeName = pName + "_" + QString::number(i) + pExtention;
+            QString probeName = pNameWithoutExt + "_" + QString::number(i) + pExtention;
             if (!resultList.contains(probeName, Qt::CaseInsensitive)) {
                 resultName = probeName;
                 break;
             }
         }
     }
+    // Fin Issue 513 - CFA - 20131030
     qDebug() << "result name is " << resultName;
 
     return resultName;
@@ -1079,15 +1130,157 @@ void UBFeaturesController::addNewFolder(QString name)
     featuresProxyModel->invalidate();
 }
 
+//issue 1474 - NNE - 20131121
+void UBFeaturesController::addNewFolder(QString name, const UBFeature from)
+{
+    UBFeature currentElement = this->currentElement;
+
+    this->currentElement = from;
+    this->addNewFolder(name);
+    this->currentElement = currentElement;
+}
+//issue 1474 - NNE - 20131121 : END
+
 void UBFeaturesController::addItemToPage(const UBFeature &item)
 {
     UBApplication::boardController->downloadURL( item.getFullPath() );
 }
 
-void UBFeaturesController::addItemAsBackground(const UBFeature &item)
+void UBFeaturesController::addItemAsBackground(UBFeature &item, bool isFromPalette)
 {
-    UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true );
+    // Issue 1684 - CFA - 20131127 : handle default background
+    if (!isFromPalette) // centrer == centrer voire ajuster si dépasse du cadre gris
+    {
+        QImage img(item.getFullPath().toLocalFile());
+        qDebug() << img.rect();
+        QSize nominaleSize = UBApplication::boardController->activeScene()->nominalSize();
+        if (item.backgroundDisposition() == Center && (img.width() > nominaleSize.width() || img.height() > nominaleSize.height()))
+            item.setBackgroundDisposition(Adjust);
+    }
+
+    if ( UBApplication::boardController->selectedDocument()->hasDefaultImageBackground()
+        && (item.getFullPath() !=  UBApplication::boardController->selectedDocument()->defaultImageBackground().getFullPath()
+        || item.backgroundDisposition() != UBApplication::boardController->selectedDocument()->defaultImageBackground().backgroundDisposition())) // Issue 1684 - ALTI/AOU - 20131210 : il fallait ici un "OU logique", et des parentheses.
+        UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
+
+    UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true, false, item.backgroundDisposition());
+    UBApplication::boardController->persistCurrentScene();
 }
+
+// Issue 1684 - CFA - 20131120
+const UBFeatureBackgroundDisposition& UBFeature::backgroundDisposition() const
+{
+    return mDisposition;
+}
+
+void UBFeature::setBackgroundDisposition(UBFeatureBackgroundDisposition disposition)
+{
+    mDisposition = disposition;
+}
+
+
+void UBFeaturesController::addItemAsDefaultBackground(UBFeature &item, bool isFromPalette)
+{        
+     //Issue 1684 - CFA - 20131211 : ajout d'une yesnoquestion avant de
+     if (!UBApplication::mainWindow->yesNoQuestion(tr("Are you sure ?"), tr ("Every background will be replaced with this one. Are you sure ?")))
+     {
+         UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(false);
+         return;
+     }
+
+    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
+    // Issue 1684 - CFA - 20131127 : handle default background
+    if (!isFromPalette) // centrer == centrer voire ajuster si dépasse du cadre gris
+    {
+        QImage img(item.getFullPath().toLocalFile());
+        QSize nominaleSize = UBApplication::boardController->activeScene()->nominalSize();
+        if (item.backgroundDisposition() == Center && (img.width() > nominaleSize.width() || img.height() > nominaleSize.height()))
+            item.setBackgroundDisposition(Adjust);
+    }
+
+    // Issue 1684 - ALTI/AOU - 20131210
+    // Si metaData "background" deja existante, avant de l'écraser, supprimer le fichier dans /doc/images/
+    QString metaDataBackgroundImage = UBApplication::boardController->selectedDocument()->metaData(UBSettings::documentDefaultBackgroundImage).toString();
+    if ( ! metaDataBackgroundImage.isEmpty() )
+    {
+        QFile fichier(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::imageDirectory + "/" + metaDataBackgroundImage);
+        if (fichier.exists())
+        {
+            fichier.remove();
+        }
+    }
+
+    if (QFileInfo(item.getFullPath().toString()).suffix() == "svg")
+        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".svg");
+    else
+        UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImage, QUuid::createUuid().toString() + ".png");
+    UBApplication::boardController->selectedDocument()->setMetaData(UBSettings::documentDefaultBackgroundImageDisposition, item.backgroundDisposition());
+    // Fin Issue 1684 - ALTI/AOU - 20131210
+
+    int currentPageIndex = UBApplication::boardController->activeSceneIndex();
+
+
+    UBApplication::boardController->selectedDocument()->setHasDefaultImageBackground(true);
+
+    // Retirer l'ancien item Background, qui devient inutile maintenant qu'on en choisit un autre :
+    if (UBApplication::boardController->activeScene()->backgroundObject())
+    {
+        UBApplication::boardController->activeScene()->removeItem(UBApplication::boardController->activeScene()->backgroundObject());
+    }
+
+    UBApplication::boardController->selectedDocument()->setDefaultImageBackground(item);
+
+    for (int i = 0; i < UBApplication::boardController->selectedDocument()->pageCount(); i++)
+    {
+        //Issue 1684 - ALTI/CFA - 20131211 : persist center
+        UBApplication::boardController->persistViewPositionOnCurrentScene();
+        UBApplication::boardController->setActiveDocumentScene(i);
+        UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());
+        UBApplication::boardController->downloadURL( item.getFullPath(), QString(), QPointF(), QSize(), true,  false, item.backgroundDisposition() );
+    }    
+    UBApplication::boardController->setActiveDocumentScene(currentPageIndex);
+    UBApplication::boardController->controlView()->centerOn(UBApplication::boardController->activeScene()->lastCenter());
+
+    UBApplication::boardController->persistCurrentScene();
+    QApplication::restoreOverrideCursor();
+}
+
+//isue 1474 - NNE - 20131210
+QString UBFeaturesController::getTranslationNameForCategoryData(const QString& name) const
+{
+    CategoryData category;
+
+    if(name == "Audios"){
+        category = this->audiosData;
+    }else if(name == "Movies"){
+        category = this->moviesData;
+    }else if(name == "Pictures"){
+        category = this->picturesData;
+    }else if(name == "Animations"){
+        category = this->flashData;
+    }else if(name == "Applications"){
+        category = this->appData;
+    }else if(name == "Interactivities"){
+        category = this->interactivityData;
+    }else if(name == "Shapes"){
+        category = this->shapesData;
+    }else if(name == "Favorites"){
+        category = this->favoriteData;
+    }else if(name == "Web search"){
+        category = this->webSearchData;
+    }else if(name == "Bookmark"){
+        category = this->bookmarkData;
+    }else if(name == "Trash"){
+        category = this->trashData;
+    }else if(name == "Web"){
+        category = this->webFolderData;
+    }
+
+    QString s = category.categoryFeature().getDisplayName();
+    return s;
+}
+//isue 1474 - NNE - 20131210 : END
 
 CategoryData UBFeaturesController::getDestinationCategoryForUrl( const QUrl &url )
 {
@@ -1262,6 +1455,7 @@ void UBFeaturesController::siftElements(const QString &pSiftValue)
     featuresProxyModel->invalidate();
 
     featuresPathModel->setPath(pSiftValue);
+
     featuresPathModel->invalidate();
 
     if (currentElement != rootData.categoryFeature()) {
@@ -1386,6 +1580,10 @@ QString UBFeaturesController::moveExternalData(const QUrl &url, const UBFeature 
         destPath =  audiosData.pathData().value(CategoryData::UserDefined).toLocalFile();
     if(dest == moviesData.categoryFeature())
         destPath =  moviesData.pathData().value(CategoryData::UserDefined).toLocalFile();
+    // Issue 1614 - CFA - 20131104 : oubli pour les animations
+    if(dest == flashData.categoryFeature())
+        destPath =  flashData.pathData().value(CategoryData::UserDefined).toLocalFile();
+
 
     QString destVirtualPath = dest.getFullVirtualPath();
     QString newFullPath = destPath + "/" + name;
@@ -1419,12 +1617,9 @@ void UBFeaturesController::deleteItem(const QUrl &url)
              }
         }
     }
-    if (QFileInfo(path).isFile()) {
-        QFile::remove( path );
 
-    } else if (QFileInfo(path).isDir()) {
-        UBFileSystemUtils::deleteDir(path);
-    }
+    //issue 1474 - NNE - 20131121
+    UBFileSystemUtils::deletePath(path);
 }
 
 void UBFeaturesController::deleteItem(const UBFeature &pFeature)
@@ -1438,11 +1633,35 @@ bool UBFeaturesController::isTrash( const QUrl &url )
 {
     return url.toLocalFile().startsWith(trashData.categoryFeature().getFullPath().toLocalFile());
 }
+
 void UBFeaturesController::moveToTrash(UBFeature feature, bool deleteManualy)
 {
+    //issue 1474 - NNE - 20131126
+    /* First, check if a feature of the same name exists in the trash.
+     * If it exists, we overwrite the file in the trash, otherwise
+     * just move it.
+     */
+
+    bool alreadyInTrash = false;
+    UBFeature item;
+    for(int i = 0; i < featuresList->size(); i++){
+        item = featuresList->at(i);
+        if(item.inTrash() && item.getType() != FEATURE_TRASH && item.getName() == feature.getName()){
+            alreadyInTrash = true;
+            break;
+        }
+    }
+
+    if(alreadyInTrash) deleteItem(item);
+
+    mTrashRegistery.addEntry(feature.getName(), feature.getFullPath().toLocalFile().remove('/'+feature.getName()), feature.getVirtualPath());
+    mTrashRegistery.saveToDisk();
+
+
     featuresModel->moveData(feature, trashData.categoryFeature(), Qt::MoveAction, deleteManualy);
     removeFromFavorite(feature.getFullPath(), true);
     featuresModel->deleteFavoriteItem(UBFeaturesController::fileNameFromUrl(feature.getFullPath()));
+    //issue 1474 - NNE - 20131126 : END
 }
 
 UBFeaturesController::~UBFeaturesController()
@@ -1489,4 +1708,182 @@ void UBFeaturesController::assignPathListView(UBFeaturesListView *pList)
     pList->setItemDelegate(pathItemDelegate);
 }
 
+//issue 1474 - NNE - 20131119
+void UBFeaturesController::restoreFeature(const QVector<UBFeature> features)
+{
+    QString textHasBeenRestored = tr("has been restored to");
+    QString confirmationMessage = "";
 
+    foreach (UBFeature feature, features) {
+        RegisteryEntry entry = mTrashRegistery.getEntry(feature.getName());
+        QStringList path = entry.originalVirtualPath.split("/");
+
+        //Get a reference on the feature, to make the modification on the "true" object
+        int featurePos = this->featuresList->indexOf(feature);
+        UBFeature &referenceFeature = (*featuresList)[featurePos];
+
+        //check and recreate if necessary the folders in the path
+        QString currentPath = "/root";
+        QString parentPath = "";
+
+        for(int i = 2; i < path.size(); i++){
+            currentPath += "/" + path[i];
+
+            if(!currentPath.isEmpty()){
+                UBFeature folder = this->getFeatureByPath(currentPath);
+                if(folder.getFullVirtualPath() == "/"){
+                    this->addNewFolder(path[i], this->getFeatureByPath(parentPath));
+                }
+            }
+
+            parentPath = currentPath;
+        }
+
+        bool isRestored = false;
+        if(feature.isFolder()){
+            isRestored = this->restoreFolderFeature(referenceFeature, entry);
+        }else{
+            isRestored = this->restoreFileFeature(referenceFeature, entry);
+        }
+
+        if(isRestored){
+            QStringList path = entry.originalVirtualPath.split("/");
+            QString translatedPath = this->getTranslationNameForCategoryData(path[2]) + '/';
+
+            for(int i = 3; i < path.size(); i++){
+                translatedPath += path[i] + "/";
+            }
+
+            confirmationMessage += entry.filename + " " + textHasBeenRestored + " " + translatedPath + "\n";
+        }
+
+    }
+
+    if(!confirmationMessage.isEmpty())
+        UBApplication::showMessage(confirmationMessage);
+
+    this->refreshModels();
+}
+
+UBFeature UBFeaturesController::getFeatureByPath(const QString &path) const
+{
+    for(int i = 0; i < this->featuresList->size(); i++){
+        if(this->featuresList->at(i).getFullVirtualPath() == path){
+            return this->featuresList->at(i);
+        }
+    }
+
+    return UBFeature();
+}
+//issue 1474 - NNE - 20131119 : END
+
+//issue 1474 - NNE - 20131125
+bool UBFeaturesController::restoreFolderFeature(UBFeature &feature, RegisteryEntry entry)
+{
+    bool hasBeenRestored = true;
+
+    QString path = entry.originalRealPath + "/" + entry.filename;
+    if(QDir(path).exists()){
+        QString uniqueName = UBFileSystemUtils::nextAvailableDirName(path);
+        QString name = uniqueName.mid(uniqueName.lastIndexOf("/") + 1);
+
+        if(name != entry.filename){
+            bool move = UBApplication::mainWindow->yesNoQuestion(
+                            tr("Move folder"),
+                            tr("There is a folder with the same name in this location.")
+                            + "\n\n"
+                            + tr("The folder will be moved and rename to %1").arg(name)
+                            + "\n\n"
+                            + tr("Are you sure to move and rename the folder ?")
+                        );
+            if(move){
+                UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+
+                featuresModel->rename(feature, name);
+                featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+
+                mTrashRegistery.removeEnty(entry.filename);
+            }
+
+            hasBeenRestored = move;
+        }else{
+            UBApplication::mainWindow->warning(
+                tr("Move folder"),
+                tr("Too many folder have the same name in this location %1. Please delete some folder.").arg(entry.originalVirtualPath));
+            hasBeenRestored = false;
+        }
+    }else{
+        UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+        featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+        mTrashRegistery.removeEnty(entry.filename);
+    }
+
+    return hasBeenRestored;
+}
+
+bool UBFeaturesController::restoreFileFeature(UBFeature& feature, RegisteryEntry entry)
+{
+    /* The feature is a file.
+     * If a feature have the same name in the location, generate a new name
+     * then ask the user to confirm.
+     * Otherwise, simply move the file to the location.
+     */
+
+    bool hasBeenRestored = true;
+
+    QString path = entry.originalRealPath + "/" + entry.filename;
+    if(QFile(path).exists()){
+        QString uniqueName = UBFileSystemUtils::nextAvailableFileName(path);
+        QString name = uniqueName.mid(uniqueName.lastIndexOf("/") + 1);
+
+        if(name != entry.filename){
+            bool move = UBApplication::mainWindow->yesNoQuestion(
+                            tr("Move file"),
+                            tr("There is a file with the same name in this location.")
+                            + "\n\n"
+                            + tr("The file will be moved and rename to %1").arg(name)
+                            + "\n\n"
+                            + tr("Are you sure to move and rename the file ?")
+                        );
+
+            if(move){
+                UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+
+                featuresModel->rename(feature, name.split('.')[0]);
+                featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+
+                mTrashRegistery.removeEnty(entry.filename);
+            }
+
+            hasBeenRestored = move;
+        }else{
+            UBApplication::mainWindow->warning(
+                tr("Move file"),
+                tr("Too many file have the same name in this location %1. Please delete some files.").arg(entry.originalVirtualPath));
+            hasBeenRestored = false;
+        }
+    }else{
+        UBFeature folder = this->getFeatureByPath(entry.originalVirtualPath);
+        featuresModel->moveData(feature, folder, Qt::MoveAction, true);
+        mTrashRegistery.removeEnty(entry.filename);
+    }
+
+    return hasBeenRestored;
+}
+//issue 1474 - NNE - 20131125 : END
+
+//issue 1474 - NNE - 20131120
+void UBFeaturesController::removeFromTrashRegistery(UBFeature feature)
+{
+    mTrashRegistery.removeEnty(feature.getName());
+    mTrashRegistery.saveToDisk();
+}
+
+//issue 1474 - NNE - 20131120 :END
+
+//issue 1474 - NNE - 20131213
+RegisteryEntry UBFeaturesController::getRegisteryEntry(const QString &name) const
+{
+    return mTrashRegistery.getEntry(name);
+}
+//issue 1474 - NNE - 20131213 : END
