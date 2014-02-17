@@ -85,7 +85,7 @@
                         keep_styles: true,
                         plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor', 'code'],
                         toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | customtable | code',
-                        toolbar2: 'fontselect fontsizeselect | alignleft aligncenter alignright alignjustify | undo redo'
+                        toolbar2: 'fontselect fontsizeselect increasefontsize decreasefontsize | alignleft aligncenter alignright alignjustify | undo redo'
                     };
 
                 options.fontsize_formats = [
@@ -232,6 +232,47 @@
                                 onPostRender: onPostRender
                             }
                         ]
+                    });
+
+                    var fonts = {
+                        list: editor.settings.fontsize_formats.split(' '),
+                        indexOf: function (font) {
+                            var index = this.list.indexOf(font);
+                            return index === -1 ? undefined : index;
+                        },
+                        at: function (index) {
+                            return this.list[index] || null;
+                        },
+                        prev: function (font) {
+                            return this.at(this.indexOf(font) - 1);
+                        },
+                        next: function (font) {
+                            return this.at(this.indexOf(font) + 1);
+                        }
+                    };
+
+                    editor.addButton('increasefontsize', {
+                        type: 'button',
+                        text: false,
+                        icon: 'increasefontsize',
+                        onclick: function () {
+                            var fontSize = editor.queryCommandValue('FontSize');
+                            if (fontSize && fonts.next(fontSize)) {
+                                editor.execCommand('FontSize', true, fonts.next(fontSize));
+                            }
+                        }
+                    });
+
+                    editor.addButton('decreasefontsize', {
+                        type: 'button',
+                        text: false,
+                        icon: 'decreasefontsize ',
+                        onclick: function () {
+                            var fontSize = editor.queryCommandValue('FontSize');
+                            if (fontSize && fonts.prev(fontSize)) {
+                                editor.execCommand('FontSize', true, fonts.prev(fontSize));
+                            }
+                        }
                     });
 
                     editor.addButton('customtable', {
