@@ -28,6 +28,7 @@
 
 #include "domain/UBGraphicsScene.h"
 #include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h"
 #include "domain/UBGraphicsPathItem.h"
 #include "board/UBBoardView.h"
 
@@ -106,6 +107,9 @@ void UBDrawingController::setStylusTool(int tool)
         if(tool != UBStylusTool::Drawing)
         {
             UBApplication::boardController->activeScene()->deselectAllItems();
+
+            //Issue retours 2.4RC1 - CFA - 20140217 : hide drawing Palette children on setting stylus tool
+            UBApplication::boardController->paletteManager()->drawingPalette()->hideSubPalettes();
         }
         else
         {
@@ -113,7 +117,7 @@ void UBDrawingController::setStylusTool(int tool)
             {
                 UBShapeFactory::desactivateEditionMode(gi);
             }
-        }
+        }        
 
         if (mStylusTool == UBStylusTool::Pen || mStylusTool == UBStylusTool::Marker
                 || mStylusTool == UBStylusTool::Line)

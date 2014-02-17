@@ -34,6 +34,7 @@ class UBDrawingPalette : public UBActionPalette
 
         void setVisible(bool checked);
         void updateSubPalettesPosition(const QPoint &delta);
+        void hideSubPalettes();
 
         void stackUnder(QWidget *w);
 
