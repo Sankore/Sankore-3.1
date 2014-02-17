@@ -44,8 +44,13 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
     colorStyleLayout->setSpacing(0);
 
     // ColorType buttons
+    UBActionPaletteButton* btnFullColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleFull, this);
+    btnFullColor->setStyleSheet(styleSheetLeftGroupedButton);
+    colorStyleLayout->addWidget(btnFullColor);
+    UBApplication::mainWindow->actionColorStyleFull->setChecked(true);
+
     UBActionPaletteButton* btnAlphaColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleTransparent, this);
-    btnAlphaColor->setStyleSheet(styleSheetLeftGroupedButton);
+    btnAlphaColor->setStyleSheet(styleSheetCenterGroupedButton);
     colorStyleLayout->addWidget(btnAlphaColor);
 
     UBActionPaletteButton* btnFillStyleDense = new UBActionPaletteButton(UBApplication::mainWindow->actionFillStyleDense, this);
@@ -55,11 +60,6 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
     UBActionPaletteButton* btnFillStyleDiag = new UBActionPaletteButton(UBApplication::mainWindow->actionFillStyleDiag, this);
     btnFillStyleDiag->setStyleSheet(styleSheetCenterGroupedButton);
     colorStyleLayout->addWidget(btnFillStyleDiag);
-
-    UBActionPaletteButton* btnFullColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleFull, this);
-    btnFullColor->setStyleSheet(styleSheetCenterGroupedButton);
-    colorStyleLayout->addWidget(btnFullColor);
-    UBApplication::mainWindow->actionColorStyleFull->setChecked(true);
 
     UBActionPaletteButton* btnGradientColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleGradient, this);
     btnGradientColor->setStyleSheet(styleSheetRightGroupedButton);
