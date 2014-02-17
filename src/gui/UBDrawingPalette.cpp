@@ -191,6 +191,14 @@ void UBDrawingPalette::initSubPalettesPosition()
     }
 }
 
+void UBDrawingPalette::hideSubPalettes()
+{
+    foreach(UBAbstractSubPalette* subPalette, mSubPalettes.values())
+    {
+        subPalette->hide();
+    }
+}
+
 void UBDrawingPalette::setVisible(bool checked)
 {
     UBActionPalette::setVisible(checked);

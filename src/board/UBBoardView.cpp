@@ -744,7 +744,7 @@ QGraphicsItem* UBBoardView::determineItemToPress(QGraphicsItem *item)
         UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool();
 
         //TODO claudio
-        // another chuck of very good code
+        // another chuck of very good code        
         if(item->parentItem() && UBGraphicsGroupContainerItem::Type == item->parentItem()->type() && currentTool == UBStylusTool::Play){
             UBGraphicsGroupContainerItem* group = qgraphicsitem_cast<UBGraphicsGroupContainerItem*>(item->parentItem());
             if(group && group->Delegate()->action()){
@@ -1093,6 +1093,14 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
                 return;
             }
 
+            if (currentTool == UBStylusTool::Play)
+            {
+                // Issue retours 2.4RC1 - CFA - 20140217 : No idea why "play action" is doing in determineItemToPress...)
+                UBShape* shape = dynamic_cast<UBShape*>(movingItem);
+                if (shape && shape->Delegate() && shape->Delegate()->action())
+                    shape->Delegate()->action()->play();
+            }
+
             if (scene()->backgroundObject() == movingItem)
                 movingItem = NULL;
 
@@ -1169,7 +1177,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
         else if (currentTool == UBStylusTool::ChangeFill)
         {
             qDebug() << "on est dans le cas du pot de peinture, on va remplir l'objet si possible";
-            UBApplication::boardController->shapeFactory().changeFillColor(mapToScene(mMouseDownPos));
+            UBApplication::boardController->shapeFactory().changeFillColor(mapToScene(mMouseDownPos));             
         }
         else
         {
