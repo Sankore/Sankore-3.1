@@ -32,13 +32,13 @@ UBTeacherGuideResourceEditionWidget::UBTeacherGuideResourceEditionWidget(QWidget
     mpTreeWidget->setSelectionMode(QAbstractItemView::NoSelection);
     mpTreeWidget->setExpandsOnDoubleClick(false);
 
-    mpAddAMediaItem = new UBAddItem(tr("Add a media"), eUBTGAddSubItemWidgetType_Media, mpTreeWidget);
-    mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
+    mpAddAMediaItem = new UBAddItem(tr("Add a media"), eUBTGAddSubItemWidgetType_Media, mpTreeWidget);    
     mpAddAFileItem = new UBAddItem(tr("Add a file"), eUBTGAddSubItemWidgetType_File, mpTreeWidget); //Issue 1716 - ALTI/AOU - 20140128
+    mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
 
     mpRootWidgetItem->addChild(mpAddAMediaItem);
-    mpRootWidgetItem->addChild(mpAddALinkItem);
     mpRootWidgetItem->addChild(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
+    mpRootWidgetItem->addChild(mpAddALinkItem);
 
 #ifdef Q_WS_MAC
     // on mac and with the custom qt the widget on the tree are not automatically relocated when using the vertical scrollbar. To relocate them we link the valueChange signal of the vertical scrollbar with a local signal to trig a change and a repaint of the tree widget

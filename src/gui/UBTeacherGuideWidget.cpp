@@ -139,14 +139,13 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
     connect(mpTreeWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(onSliderMoved(int)));
 #endif
 
-    mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
     mpAddAnActionItem = new UBAddItem(tr("Add an action"), eUBTGAddSubItemWidgetType_Action, mpTreeWidget);
     mpAddAFileItem = new UBAddItem(tr("Add a file"), eUBTGAddSubItemWidgetType_File, mpTreeWidget); //Issue 1716 - ALTI/AOU - 20140128
+    mpAddALinkItem = new UBAddItem(tr("Add a link"), eUBTGAddSubItemWidgetType_Url, mpTreeWidget);
 
-
-    mpRootWidgetItem->addChild(mpAddALinkItem);
     mpRootWidgetItem->addChild(mpAddAnActionItem);
     mpRootWidgetItem->addChild(mpAddAFileItem); //Issue 1716 - ALTI/AOU - 20140128
+    mpRootWidgetItem->addChild(mpAddALinkItem);    
 
     if (UBSettings::settings()->teacherGuideLessonPagesActivated->get().toBool()) {
         UBSvgSubsetAdaptor::addElementToBeStored(QString("teacherGuide"), this);
