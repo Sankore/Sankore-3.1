@@ -1730,12 +1730,14 @@ void UBGraphicsScene::removeItem(QGraphicsItem* item)
       --mItemCount;
 
     mFastAccessItems.removeAll(item);
+
+    //CFA
+    removeShapeToUndoStack(item);
+
     /* delete the item if it is cache to allow its reinstanciation, because Cache implements design pattern Singleton. */
     if (dynamic_cast<UBGraphicsCache*>(item))
         UBCoreGraphicsScene::deleteItem(item);
 
-    //CFA
-    removeShapeToUndoStack(item);
 }
 
 void UBGraphicsScene::removeItems(const QSet<QGraphicsItem*>& items)
