@@ -614,10 +614,10 @@ void UBBoardPaletteManager::activeSceneChanged()
     //issue 1682 - NNE - 20140113
     if(pageIndex > 0){
         int currentTabIndex = mLeftPalette->currentTabIndex();
-        mLeftPalette->addTab(mTeacherResources);
-        mLeftPalette->showTabWidget(currentTabIndex);
+        mLeftPalette->onShowTabWidget(mTeacherResources); // ALTI/AOU - 20140217 : instead of addTab(), we use onShowTabWidget() because it calls moveTabs().
+        mLeftPalette->showTabWidget(currentTabIndex); // Stay on same tab. Don't go to the added tab.
     }else{
-        mLeftPalette->removeTab(mTeacherResources);
+        mLeftPalette->onHideTabWidget(mTeacherResources); // ALTI/AOU - 20140217 : instead of removeTab(), we use onHideTabWidget() because it calls moveTabs().
         mLeftPalette->showTabWidget(mLeftPalette->currentTabIndex());
     }
     //issue 1682 - NNE - 20140113 : END

@@ -446,6 +446,7 @@ void UBDockPalette::onHideTabWidget(UBDockPaletteWidget* widget)
     {
         widget->setVisibleState(false);
         removeTab(widget);
+        moveTabs(); // ALTI/AOU - 20140217 : Mainly needed when Toolbar is at the bottom.
     }
 }
 
