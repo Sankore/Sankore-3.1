@@ -776,10 +776,13 @@ void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool is
                 }
                 mLeftPalette->assignParent(mContainer);
                 mRightPalette->assignParent(mContainer);
-                mRightPalette->stackUnder(mStylusPalette);
-                mLeftPalette->stackUnder(mStylusPalette);
+
+                if (mDrawingPalette)
+                    mDrawingPalette->stackUnder(mStylusPalette);
+
                 mRightPalette->stackUnder(mDrawingPalette);
                 mLeftPalette->stackUnder(mDrawingPalette);
+
                 if (UBPlatformUtils::hasVirtualKeyboard() && mKeyboardPalette != NULL)
                 {
 
