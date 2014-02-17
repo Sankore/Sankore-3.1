@@ -557,7 +557,7 @@ void UBApplication::decorateActionMenu(QAction* action)
 
             menu->addSeparator();
             menu->addAction(mainWindow->actionTutorial);
-            menu->addAction(mainWindow->actionSankoreEditor);
+            //menu->addAction(mainWindow->actionSankoreEditor); // ALTI/AOU - 20140217 : don't show "Open-Sankoré Editor" anymore.
 
 #ifndef Q_WS_X11 // No Podcast on Linux yet
             menu->addAction(mainWindow->actionPodcast);
