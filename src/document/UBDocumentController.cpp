@@ -1528,8 +1528,12 @@ void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurr
         QModelIndex indexCurrentDoc = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->indexForProxy(proxy);
         mDocumentUI->documentTreeView->setSelectedAndExpanded(indexCurrentDoc, true);
 
-        //issue 1629 - NNE - 20131105 : When set a current document, change in the board controller
-        mBoardController->setActiveDocumentScene(proxy, 0);
+        if (proxy != mBoardController->selectedDocument()) // only if wanted Document is different from document actually on Board,  // ALTI/AOU - 20140217
+        {
+            //issue 1629 - NNE - 20131105 : When set a current document, change in the board controller
+            mBoardController->setActiveDocumentScene(proxy, 0);
+        }
+
     }
 
     mSelectionType = Document;
