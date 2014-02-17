@@ -125,7 +125,9 @@ UBStylusPalette::~UBStylusPalette()
 
 void UBStylusPalette::stylusToolDoubleClicked()
 {
-    emit stylusToolDoubleClicked(mButtonGroup->checkedId());
+    //Issue "retours 2.4RC1 - CFA - 20140217 : la drawingPalette créé un décalage d'index entre checkedId et les valeurs correspondantes dans l'enum UBStylusTool
+    //on décrémente pour rétablir la correspondance
+    emit stylusToolDoubleClicked(mButtonGroup->checkedId() -1 );
 }
 
 
