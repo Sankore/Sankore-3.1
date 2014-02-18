@@ -1540,8 +1540,16 @@ UBBoardView::forcedTabletRelease ()
 void
 UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
 {
-  // We don't want a double click, we want two clicks
-  mousePressEvent (event);
+    //Issue retours 2.4RC1 - CFA - 20140218 : handle W3CWidgetItems doubleClick
+    QGraphicsItem* item = determineItemToPress(scene()->itemAt(this->mapToScene(event->posF().toPoint()), transform()));
+
+    if (item && (item->type() == UBGraphicsW3CWidgetItem::Type))
+        QGraphicsView::mouseDoubleClickEvent(event);
+    else
+    {
+        // We don't want a double click, we want two clicks ...
+        mousePressEvent (event);
+    }
 }
 
 void
