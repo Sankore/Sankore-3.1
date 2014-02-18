@@ -10,6 +10,8 @@
             this.texts = texts;
             this.withEditor = withEditor;
 
+            this.title = null;
+
             this.caret = document.createElement('i');
             this.caret.className = 'caret';
 
@@ -19,7 +21,7 @@
             this.flagRow = null;
 
             this.flags = [];
-
+    
             this.rearScreen = null;
 
             this.buttons = Sankore.Util.Hash.create();
@@ -76,6 +78,8 @@
             // a new layout is loaded
             this.dispatcher.addEventListener('calculator.layout_loaded', function (layout) {
                 self.renderButtons(layout.buttonMap);
+                
+                self.changeTitle(layout.name);
 
                 self.clearRearScreen();
             });
@@ -235,10 +239,19 @@
 
             tr.className = 'screen';
             table.appendChild(tr);
-
+            
+            element.appendChild(this.createTitle());
             element.appendChild(this.createControls());
-
             element.appendChild(table);
+        },
+        
+        createTitle: function () {
+            this.title = document.createElement('span');
+            
+            this.title.appendChild(document.createTextNode('Chargement...'));
+            this.title.className = 'title';
+            
+            return this.title;
         },
 
         createControls: function () {
@@ -480,10 +493,12 @@
 
         showRearScreen: function () {
             this.rearScreen.style.display = 'block';
+            this.showTitle();
         },
 
         hideRearScreen: function () {
             this.rearScreen.style.display = 'none';
+            this.hideTitle();
         },
 
         addFlag: function (flag) {
@@ -501,6 +516,19 @@
 
                 this.flags.sort();
             }
+        },
+        
+        changeTitle: function (title) {
+            this._clearElement(this.title);
+            this.title.appendChild(document.createTextNode(title));
+        },
+        
+        showTitle: function () {
+            this.title.style.visibility = 'visible';
+        },
+        
+        hideTitle: function () {
+            this.title.style.visibility = 'hidden';
         }
     }));
 })();

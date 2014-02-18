@@ -32,111 +32,113 @@
             if (typeof options.ready !== 'undefined') {
                 this.eventDispatcher.addEventListener('calculator.create', options.ready.bind(this));
             }
-
+            
+            var c = Sankore.Text.create.bind(Sankore.Text);
             this.texts.add('id', [
-                Sankore.Text.create('0', '0', '0'),
-                Sankore.Text.create('1', '1', '1'),
-                Sankore.Text.create('2', '2', '2'),
-                Sankore.Text.create('3', '3', '3'),
-                Sankore.Text.create('4', '4', '4'),
-                Sankore.Text.create('5', '5', '5'),
-                Sankore.Text.create('6', '6', '6'),
-                Sankore.Text.create('7', '7', '7'),
-                Sankore.Text.create('8', '8', '8'),
-                Sankore.Text.create('9', '9', '9'),
-                Sankore.Text.create('+', '+', '+', 'alt'),
-                Sankore.Text.create('-', '-', '-', 'alt'),
-                Sankore.Text.create('*', '\u00D7', '\u00D7', 'alt'),
-                Sankore.Text.create('/', '\u00F7', '\u00F7', 'alt'),
-                Sankore.Text.create(':', '\u22A2', '\u22A2', 'alt'),
-                Sankore.Text.create('=', '=', '=', 'alt'),
-                Sankore.Text.create('.', _('text.comma'), _('text.comma')),
-                Sankore.Text.create('(', '(', '('),
-                Sankore.Text.create(')', ')', ')'),
-                Sankore.Text.create('op', 'OP', 'OP'),
-                Sankore.Text.create('mr', 'MR', 'MR'),
-                Sankore.Text.create('mc', 'MC', 'MC'),
-                Sankore.Text.create('m+', 'M+', 'M+'),
-                Sankore.Text.create('m-', 'M-', 'M-'),
-                Sankore.Text.create('s', '', _('text.del'), 'alt', false),
-                Sankore.Text.create('l', '', '\u2190', 'alt', false),
-                Sankore.Text.create('r', '', '\u2192', 'alt', false),
-                Sankore.Text.create('c', '', 'C', 'danger', false)
+               c('0', '0', '0'),
+               c('1', '1', '1'),
+               c('2', '2', '2'),
+               c('3', '3', '3'),
+               c('4', '4', '4'),
+               c('5', '5', '5'),
+               c('6', '6', '6'),
+               c('7', '7', '7'),
+               c('8', '8', '8'),
+               c('9', '9', '9'),
+               c('+', '+', '+', 'alt'),
+               c('-', '-', '-', 'alt'),
+               c('*', '\u00D7', '\u00D7', 'alt'),
+               c('/', '\u00F7', '\u00F7', 'alt'),
+               c(':', '\u22A2', '\u22A2', 'alt'),
+               c('=', '=', '=', 'alt'),
+               c('.', _('text.comma'), _('text.comma')),
+               c('(', '(', '('),
+               c(')', ')', ')'),
+               c('op', 'OP', 'OP'),
+               c('mr', 'MR', 'MR'),
+               c('mc', 'MC', 'MC'),
+               c('m+', 'M+', 'M+'),
+               c('m-', 'M-', 'M-'),
+               c('s', '', _('text.del'), 'alt', false),
+               c('l', '', '\u2190', 'alt', false),
+               c('r', '', '\u2192', 'alt', false),
+               c('c', '', 'C', 'danger', false)
             ]);
 
+            c = Sankore.Command.create.bind(Sankore.Command);
             this.commands.add('id', [
                 // add 0 to the expression string
-                Sankore.Command.create('0', _('command.zero'), function (args) {
+                c('0', _('command.zero'), function (args) {
                     this.expressionString += '0';
                 }),
 
                 // add 1 to the expression string
-                Sankore.Command.create('1', _('command.one'), function (args) {
+                c('1', _('command.one'), function (args) {
                     this.expressionString += '1';
                 }),
 
                 // add 2 to the expression string
-                Sankore.Command.create('2', _('command.two'), function (args) {
+                c('2', _('command.two'), function (args) {
                     this.expressionString += '2';
                 }),
 
                 // add 3 to the expression string
-                Sankore.Command.create('3', _('command.three'), function (args) {
+                c('3', _('command.three'), function (args) {
                     this.expressionString += '3';
                 }),
 
                 // add 4 to the expression string
-                Sankore.Command.create('4', _('command.four'), function (args) {
+                c('4', _('command.four'), function (args) {
                     this.expressionString += '4';
                 }),
 
                 // add 5 to the expression string
-                Sankore.Command.create('5', _('command.five'), function (args) {
+                c('5', _('command.five'), function (args) {
                     this.expressionString += '5';
                 }),
 
                 // add 6 to the expression string
-                Sankore.Command.create('6', _('command.six'), function (args) {
+                c('6', _('command.six'), function (args) {
                     this.expressionString += '6';
                 }),
 
                 // add 7 to the expression string
-                Sankore.Command.create('7', _('command.seven'), function (args) {
+                c('7', _('command.seven'), function (args) {
                     this.expressionString += '7';
                 }),
 
                 // add 8 to the expression string
-                Sankore.Command.create('8', _('command.eight'), function (args) {
+                c('8', _('command.eight'), function (args) {
                     this.expressionString += '8';
                 }),
 
                 // add 9 to the expression string
-                Sankore.Command.create('9', _('command.nine'), function (args) {
+                c('9', _('command.nine'), function (args) {
                     this.expressionString += '9';
                 }),
 
                 // add + to the expression string
-                Sankore.Command.create('+', _('command.plus'), function (args) {
+                c('+', _('command.plus'), function (args) {
                     this.expressionString += '+';
                 }),
 
                 // add - to the expression string
-                Sankore.Command.create('-', _('command.minus'), function (args) {
+                c('-', _('command.minus'), function (args) {
                     this.expressionString += '-';
                 }),
 
                 // add * to the expression string
-                Sankore.Command.create('*', _('command.times'), function (args) {
+                c('*', _('command.times'), function (args) {
                     this.expressionString += '*';
                 }),
 
                 // add / to the expression string
-                Sankore.Command.create('/', _('command.divide'), function (args) {
+                c('/', _('command.divide'), function (args) {
                     this.expressionString += '/';
                 }),
 
                 // add : to the expression string
-                Sankore.Command.create(':', _('command.euclidean_divide'), function (args) {
+                c(':', _('command.euclidean_divide'), function (args) {
                     this.expressionString += ':';
                 }),
 
@@ -146,17 +148,17 @@
                 }),
 
                 // add . to the expression string
-                Sankore.Command.create('.', _('command.comma'), function (args) {
+                c('.', _('command.comma'), function (args) {
                     this.expressionString += '.';
                 }),
 
                 // add ( to the expression string
-                Sankore.Command.create('(', _('command.open_parenthesis'), function (args) {
+                c('(', _('command.open_parenthesis'), function (args) {
                     this.expressionString += '(';
                 }),
 
                 // add ) to the expression string
-                Sankore.Command.create(')', _('command.close_parenthesis'), function (args) {
+                c(')', _('command.close_parenthesis'), function (args) {
                     this.expressionString += ')';
                 }),
 
@@ -228,14 +230,14 @@
                 }),
 
                 // add the current memory value to the expression string
-                Sankore.Command.create('memoryRecall', _('command.memory_recall'), function (args) {
+                c('memoryRecall', _('command.memory_recall'), function (args) {
                     if (null !== this.memory) {
                         this.expressionString += '(' + this.memory.toString() + ')';
                     }
                 }),
 
                 // clear the memory
-                Sankore.Command.create('memoryClear', _('command.memory_clear'), function (args) {
+                c('memoryClear', _('command.memory_clear'), function (args) {
                     this.memory = null;
 
                     this.eventDispatcher.notify('calculator.memory_changed', this.memory);
@@ -282,36 +284,36 @@
         },
 
         attachEventHandlers: function () {
-            var self = this;
+            var self = this, ed = this.eventDispatcher;
 
             if (this.unpredictable) {
-                this.eventDispatcher.addEventListener('editor.show', this.reload.bind(this));
-                this.eventDispatcher.addEventListener('editor.hide', this.reload.bind(this));
+                ed.addEventListener('editor.show', this.reload.bind(this));
+                ed.addEventListener('editor.hide', this.reload.bind(this));
             }
 
-            this.eventDispatcher.addEventListener('editor.layout_selected', function (layout) {
+            ed.addEventListener('editor.layout_selected', function (layout) {
                 self.loadLayout(layout.id);
             });
 
-            this.eventDispatcher.addEventListener('main_interface.button_created', function (event) {
+            ed.addEventListener('main_interface.button_created', function (event) {
                 if (!self.editor.enabled && event.button.isDisabled()) {
-                    self.eventDispatcher.notify('calculator.button_disabled', event);
+                    ed.notify('calculator.button_disabled', event);
                 }
             });
 
-            this.eventDispatcher.addEventListener('main_interface.button_click', function (event) {
+            ed.addEventListener('main_interface.button_click', function (event) {
                 if (!self.editor.enabled) {
                     self.useButton(event.slot);
 
                     self.keystroke(event.slot, event.button);
 
                     if (!event.button.isUsable() && self.getButtonUseCount(event.slot) >= event.button.useLimit) {
-                        self.eventDispatcher.notify('calculator.button_disabled', event);
+                        ed.notify('calculator.button_disabled', event);
                     }
                 }
             });
 
-            this.eventDispatcher.addEventListener('main_interface.reset_click', function () {
+            ed.addEventListener('main_interface.reset_click', function () {
                 self.reload();
             });
         },

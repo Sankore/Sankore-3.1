@@ -56,88 +56,88 @@
         },
         
         attachEventHandlers: function () {
-            var self = this;
+            var self = this, ed = this.calculator.eventDispatcher;
             
             // click on Add button
-            this.calculator.eventDispatcher.addEventListener('editor_interface.add_click', function () {
+            ed.addEventListener('editor_interface.add_click', function () {
                 var clone = self.createLayout();
 
                 self.setCurrentLayout(clone.id);
             });
 
             // click on Remove button
-            this.calculator.eventDispatcher.addEventListener('editor_interface.remove_click', function () {
+            ed.addEventListener('editor_interface.remove_click', function () {
                 self.removeLayout(self.current);
 
                 self.setCurrentLayout('default');
             });
 
             // click on Run button
-            this.calculator.eventDispatcher.addEventListener('editor_interface.run_click', this.runCurrentLayout.bind(this));
+            ed.addEventListener('editor_interface.run_click', this.runCurrentLayout.bind(this));
 
             // load the new selected layout
-            this.calculator.eventDispatcher.addEventListener('editor_interface.layout_select', function (layoutId) {
+            ed.addEventListener('editor_interface.layout_select', function (layoutId) {
                 self.setCurrentLayout(layoutId);
             });
 
             // the layout name has changed
-            this.calculator.eventDispatcher.addEventListener('editor_interface.layout_name_change', function (name) {
+            ed.addEventListener('editor_interface.layout_name_change', function (name) {
                 if (self.getCurrentLayout().name !== name && name.trim().length > 0) {
                     self.getCurrentLayout().name = name;
-                    self.calculator.eventDispatcher.notify('editor.layout_changed');
+                    ed.notify('editor.layout_changed');
                 }
             });
 
             // the layout description has changed
-            this.calculator.eventDispatcher.addEventListener('editor_interface.layout_description_change', function (description) {
+            ed.addEventListener('editor_interface.layout_description_change', function (description) {
                 if (self.getCurrentLayout().description !== description) {
                     self.getCurrentLayout().description = description;
-                    self.calculator.eventDispatcher.notify('editor.layout_changed');
+                    ed.notify('editor.layout_changed');
                 }
             });
 
             // the command of a button has changed
-            this.calculator.eventDispatcher.addEventListener('editor_interface.button_command_change', function (command) {
+            ed.addEventListener('editor_interface.button_command_change', function (command) {
                 if (self.activeButton) {
                     self.getCurrentLayout().getButton(self.activeButton).command = command;
-                    self.calculator.eventDispatcher.notify('editor.layout_changed');
+                    ed.notify('editor.layout_changed');
                 }
             });
 
             // the text of a button has changed
-            this.calculator.eventDispatcher.addEventListener('editor_interface.button_text_change', function (text) {
+            ed.addEventListener('editor_interface.button_text_change', function (text) {
                 if (self.activeButton) {
                     var button = self.getCurrentLayout().getButton(self.activeButton);
                     button.text = text;
 
-                    self.calculator.eventDispatcher.notify('editor.button_renamed', {
+                    ed.notify('editor.button_renamed', {
                         slot: self.activeButton,
                         button: button
                     });
 
-                    self.calculator.eventDispatcher.notify('editor.layout_changed');
+                    ed.notify('editor.layout_changed');
                 }
             });
 
             // the use limit of a button has changed
-            this.calculator.eventDispatcher.addEventListener('editor_interface.button_uselimit_change', function (limit) {
+            ed.addEventListener('editor_interface.button_uselimit_change', function (limit) {
                 if (self.activeButton) {
                     if (!isNaN(Number(limit))) {
                         self.getCurrentLayout().getButton(self.activeButton).useLimit = limit.length === 0 ? -1 : Number(limit);
-                        self.calculator.eventDispatcher.notify('editor.layout_changed');
+                        ed.notify('editor.layout_changed');
                     }
                 }
             });
 
             // a button is clicked
-            this.calculator.eventDispatcher.addEventListener('main_interface.button_click', function (event) {
+            ed.addEventListener('main_interface.button_click', function (event) {
                 if (self.enabled) {
                     self.setActiveButton(event.slot);
                 }
             });
 
             // the editor button is click
-            this.calculator.eventDispatcher.addEventListener('main_interface.editor_click', function () {
+            ed.addEventListener('main_interface.editor_click', function () {
                 if (self.enabled) {
                     self.runCurrentLayout();
                 } else {
@@ -146,7 +146,7 @@
             });
 
             // the editor button is click
-            this.calculator.eventDispatcher.addEventListener('main_interface.reset_click', function () {
+            ed.addEventListener('main_interface.reset_click', function () {
                 if (self.enabled) {
                     self.resetActiveButton();
                 }
