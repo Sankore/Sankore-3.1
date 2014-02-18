@@ -110,7 +110,7 @@
             this.layoutNameInput = document.createElement('input');
             this.layoutNameInput.setAttribute('name', 'layout_name');
             this.layoutNameInput.setAttribute('type', 'text');
-            this.layoutNameInput.setAttribute('maxlength', 20);
+            this.layoutNameInput.setAttribute('maxlength', 32);
             this.layoutNameInput.addEventListener('keyup', function (e) {
                 self.dispatcher.notify('editor_interface.layout_name_change', this.value);
             });
