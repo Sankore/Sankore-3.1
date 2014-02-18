@@ -1219,6 +1219,14 @@
         <source>Paste successful</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is not a final release. Please use it only for testing.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
@@ -3474,7 +3482,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>On Dark Background</source>
-        <translation>Op een Donkere Achtergrond</translation>
+        <translation type="obsolete">Op een Donkere Achtergrond</translation>
     </message>
     <message>
         <source>Opacity</source>
@@ -3499,6 +3507,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pen is Pressure Sensitive</source>
         <translation>Pen is drukgevoelig</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;On Dark Background&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

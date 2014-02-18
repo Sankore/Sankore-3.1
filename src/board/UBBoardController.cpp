@@ -70,6 +70,7 @@
 #include "customWidgets/UBGraphicsItemAction.h"
 
 #include "gui/UBFeaturesWidget.h"
+#include "gui/UBMessagesDialog.h"
 
 #include "tools/UBToolsManager.h"
 
@@ -220,6 +221,16 @@ void UBBoardController::setupViews()
     mMessageWindow = new UBMessageWindow(mControlView);
     mMessageWindow->setCustomPosition(true);
     mMessageWindow->hide();
+
+//Issue retours 2.4RC1 - CFA - 20140218 : show warning if not official release
+#ifndef QT_DEBUG
+    QString version_type(VERSION_TYPE);
+    QString version_patch(VERSION_PATCH);
+    if (version_type.contains("a") || version_type.contains("b") || !QRegExp("\\d*").exactMatch(version_patch))
+    {
+        mMainWindow->warning(tr("Warning"), tr("This is not a final release. Please use it only for testing."));
+    }
+#endif
 
     mPaletteManager = new UBBoardPaletteManager(mControlContainer, this);
     connect(this, SIGNAL(activeSceneChanged()), mPaletteManager, SLOT(activeSceneChanged()));
