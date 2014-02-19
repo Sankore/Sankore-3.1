@@ -261,7 +261,7 @@
                         } else {
                             $el = $(container);
                         }
-                        
+
                         return Math.round(Number($el.css('font-size').replace('px', '')) * 0.75) + 'pt';
                     };
 
@@ -474,7 +474,7 @@
                 }
                 
                 if (this.font.italic) {
-                    this.tinymce.execCommand('Bold', true);
+                    this.tinymce.execCommand('Italic', true);
                 }
             };
 
@@ -852,6 +852,14 @@
                     fontFamily: this.font.name,
                     fontSize: this.font.size
                 });
+                
+                if (this.font.bold) {
+                    $table.css('font-weight', 'bold');
+                }
+                
+                if (this.font.italic) {
+                    $table.css('font-style', 'italic');
+                }
             };
 
             app.RTEditor.defined = true;
@@ -1009,7 +1017,7 @@ if (!('sankore' in window)) {
         },
 
         fontBoldPreference: function () {
-            return false;
+            return true;
         },
 
         updateFontItalicPreference: function (italic) {
@@ -1017,7 +1025,7 @@ if (!('sankore' in window)) {
         },
 
         fontItalicPreference: function () {
-            return false;
+            return true;
         },
 
         resize: function (w, h) {
