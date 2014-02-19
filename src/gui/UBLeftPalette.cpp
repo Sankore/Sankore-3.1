@@ -85,7 +85,7 @@ void UBLeftPalette::resizeEvent(QResizeEvent *event)
     int newWidth = width();
     if(mCurrentMode == eUBDockPaletteWidget_BOARD){
         if(newWidth > mCollapseWidth)
-            UBSettings::settings()->leftLibPaletteBoardModeWidth->set(newWidth);
+            UBSettings::settings()->leftLibPaletteBoardModeWidth->set(newWidth+1);
         UBSettings::settings()->leftLibPaletteBoardModeIsCollapsed->set(newWidth == 0);
     }
     else if (mCurrentMode == eUBDockPaletteWidget_DESKTOP){
