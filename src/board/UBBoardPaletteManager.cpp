@@ -570,16 +570,7 @@ void UBBoardPaletteManager::containerResized()
     }
 
     if(mLeftPalette)
-    {
         mLeftPalette->resize(mLeftPalette->width()-1, mContainer->height());
-        mLeftPalette->resize(mLeftPalette->width(), mContainer->height());
-    }
-
-    if(mRightPalette)
-    {
-        mRightPalette->resize(mRightPalette->width()-1, mContainer->height());
-        mRightPalette->resize(mRightPalette->width(), mContainer->height());
-    }
 }
 
 
