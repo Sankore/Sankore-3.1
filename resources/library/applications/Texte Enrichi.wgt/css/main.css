@@ -1,17 +1,16 @@
 html {
     background-color: transparent;
     height: 100%;
+    margin: 0;
 }
 body {
     font-family: Arial, sans-serif;
-    font-size: 32pt;
+    /*font-size: 32pt;*/
+    box-sizing: border-box;
     overflow: hidden;
     margin: 0;
     height: 100%;
     background-color: transparent;
-}
-body.view {
-    margin: 59px 0 0 0;
 }
 body.view:after,
 body.view:before{
@@ -28,7 +27,7 @@ body.view:before{
     right:0;
     margin-top: 59px;
     box-sizing:border-box;
-    word-break:break-all;
+    word-wrap:break-word;
     padding: 8px;
     overflow: hidden;
 }
@@ -48,7 +47,7 @@ body.view:before{
 .rteditor table td,
 .rteditor table th,
 .rteditor table caption {
-    border: 2px solid #bbb;
+    border: 3px solid #bbb;
 }
 
 .rteditor.dark {

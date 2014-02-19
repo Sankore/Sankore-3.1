@@ -84,7 +84,7 @@
                         valid_elements: '*[*]',
                         keep_styles: true,
                         plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor', 'code'],
-                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | link | customtable | code',
+                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | bullist numlist | link | customtable | code',
                         toolbar2: 'fontselect fontsizeselect increasefontsize decreasefontsize | alignleft aligncenter alignright alignjustify | undo redo'
                     };
 
@@ -153,13 +153,14 @@
 
                     editor.on('keypress', function (e) {
                         if (app.RTEditor.isContentEmpty($(e.target).text())) {
-                            self.options.onFirstType.call(self);
+                            self.applyDefaults();
                         } else {
-                            self.clearBOM();
                             try {
-                                var range = self.tinymce.selection.getRng();
-                                range.setStart(range.startContainer, range.startOffset + 1);
-                                self.tinymce.selection.setRng(range);
+                                if (self.clearBOM()) {
+                                    var range = self.tinymce.selection.getRng();
+                                    range.setStart(range.startContainer, range.startOffset + 1);
+                                    self.tinymce.selection.setRng(range);
+                                }
                             } catch (ex) {}
                         }
                     });
@@ -251,12 +252,25 @@
                         }
                     };
 
+                    var getFontSizeAtCursor = function () {
+                        var container = editor.selection.getRng().startContainer,
+                            $el;
+
+                        if (container.nodeType === 3) {
+                            $el = $(container.parentElement);
+                        } else {
+                            $el = $(container);
+                        }
+                        
+                        return Math.round(Number($el.css('font-size').replace('px', '')) * 0.75) + 'pt';
+                    };
+
                     editor.addButton('increasefontsize', {
                         type: 'button',
                         text: false,
                         icon: 'increasefontsize',
                         onclick: function () {
-                            var fontSize = editor.queryCommandValue('FontSize');
+                            var fontSize = getFontSizeAtCursor();
                             if (fontSize && fonts.next(fontSize)) {
                                 editor.execCommand('FontSize', true, fonts.next(fontSize));
                             }
@@ -268,7 +282,7 @@
                         text: false,
                         icon: 'decreasefontsize ',
                         onclick: function () {
-                            var fontSize = editor.queryCommandValue('FontSize');
+                            var fontSize = getFontSizeAtCursor();
                             if (fontSize && fonts.prev(fontSize)) {
                                 editor.execCommand('FontSize', true, fonts.prev(fontSize));
                             }
@@ -450,6 +464,19 @@
                 this.tinymce = new tinymce.Editor(id, options, tinymce.EditorManager);
                 this.tinymce.render();
             };
+            
+            app.RTEditor.prototype.applyDefaults = function () {
+                this.tinymce.execCommand('FontName', true, this.font.name);
+                this.tinymce.execCommand('FontSize', true, this.font.size);
+                            
+                if (this.font.bold) {
+                    this.tinymce.execCommand('Bold', true);
+                }
+                
+                if (this.font.italic) {
+                    this.tinymce.execCommand('Bold', true);
+                }
+            };
 
             /**
              * Attach all the event handlers
@@ -618,7 +645,6 @@
              */
             app.RTEditor.prototype.setDefaultFontFamily = function (name) {
                 if (name.length > 0) {
-                    this.tinymce.execCommand('FontName', true, name);
                     this.font.name = name;
                 }
             };
@@ -627,9 +653,6 @@
              *
              */
             app.RTEditor.prototype.setDefaultFontBold = function (isBold) {
-                if (isBold) {
-                    this.tinymce.execCommand('Bold', true);
-                }
                 this.font.bold = isBold;
             };
 
@@ -637,9 +660,6 @@
              *
              */
             app.RTEditor.prototype.setDefaultFontItalic = function (isItalic) {
-                if (isItalic) {
-                    this.tinymce.execCommand('Italic', true);
-                }
                 this.font.italic = isItalic;
             };
 
@@ -649,7 +669,6 @@
             app.RTEditor.prototype.setDefaultFontSize = function (size) {
                 size = size.replace('pt', '');
                 if (!isNaN(Number(size)) && Number(size) > 0) {
-                    this.tinymce.execCommand('FontSize', true, size + 'pt');
                     this.font.size = size + 'pt';
                 }
             };
@@ -753,12 +772,15 @@
              *
              */
             app.RTEditor.prototype.clearBOM = function () {
-                var $body = $(this.tinymce.getDoc()).find('body');
+                var $body = $(this.tinymce.getDoc()).find('body'), removed = false;
                 $body.find(':not(iframe)').addBack().contents().each(function (i, elem) {
                     if (elem.nodeType === 3 && elem.nodeValue.indexOf('\uFEFF') !== -1) {
+                        removed = true;
                         elem.nodeValue = elem.nodeValue.replace(/\uFEFF/, '');
                     }
                 });
+                
+                return removed;
             };
 
             /**
@@ -881,21 +903,17 @@
                 }
 
                 this.setBackgroundColor(window.sankore.preference('background'));
+                
+                this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+                this.setDefaultFontSize(window.sankore.fontSizePreference());
+                this.setDefaultFontBold(window.sankore.fontBoldPreference());
+                this.setDefaultFontItalic(window.sankore.fontItalicPreference());
             };
 
             options.onBlur = function () {
                 window.sankore.setPreference('content', this.getContent());
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
-            };
-
-            options.onFirstType = function () {
-                if (this.empty) {
-                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
-                    this.setDefaultFontSize(window.sankore.fontSizePreference());
-                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
-                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
-                }
             };
 
             options.onContentOverflow = function (delta) {
