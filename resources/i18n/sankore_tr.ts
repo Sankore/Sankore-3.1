@@ -3478,10 +3478,6 @@ p, li { white-space: pre-wrap; }
         <translation>Açık Arkaplan Üzerine</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Kapalı Arkaplan Üzerine</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation>Çizgi Genişliği</translation>
     </message>

@@ -3481,10 +3481,6 @@ p, li { white-space: pre-wrap; }
         <translation>Op een Lichte Achtergrond</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Op een Donkere Achtergrond</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>lichtondoorlatendheid</translation>
     </message>

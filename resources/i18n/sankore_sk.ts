@@ -3516,10 +3516,6 @@ p, li { white-space: pre-wrap; }
         <translation>Pero je citlivé na tlak</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Na tmavej čiare</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;On Dark Background&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>

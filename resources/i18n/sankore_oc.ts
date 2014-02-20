@@ -3492,10 +3492,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Sus Hons Clar</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Sus Hons Escur</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation type="unfinished">Espessor de trèit</translation>
     </message>

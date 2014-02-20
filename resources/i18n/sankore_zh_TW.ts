@@ -3477,10 +3477,6 @@ p, li { white-space: pre-wrap; }
         <translation>淡色背景</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">深色背景</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation>線寬</translation>
     </message>

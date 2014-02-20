@@ -3482,10 +3482,6 @@ p, li { white-space: pre-wrap; }
         <translation>På ljus bakgrund</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">På mörk bakgrund</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>Genomskinlighet</translation>
     </message>

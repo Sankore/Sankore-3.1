@@ -3477,10 +3477,6 @@ p, li { white-space: pre-wrap; }
         <translation>明るい背景で</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">暗い背景で</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>不透明性 </translation>
     </message>

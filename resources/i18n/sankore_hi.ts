@@ -3478,10 +3478,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">हलकी पृष्ठभूमि पर </translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">गहरी पृष्ठभूमि पर</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation type="unfinished">लाईन की चौड़ाई </translation>
     </message>
