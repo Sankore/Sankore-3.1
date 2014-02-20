@@ -1476,6 +1476,10 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
        UBFeature f = c->getFeatureByPath("/root/Applications/Texte Enrichi.wgt" );
        UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
 
+       QGraphicsItem* widget = scene()->itemAt(this->mapToScene(event->posF().toPoint()), transform());
+       if (widget)
+           widget->setFocus();
+
        UBDrawingController::drawingController ()->setStylusTool (UBStylusTool::Selector);
 
   }

@@ -97,6 +97,28 @@ void UBEditableGraphicsRegularShapeItem::paint(QPainter *painter, const QStyleOp
 
     painter->fillPath(path(), painter->brush());
     painter->drawPath(path());
+
+    if(mMultiClickState >= 1){
+        painter->setBrush(QBrush());
+        QPen p;
+
+        p.setStyle(Qt::DashLine);
+
+        p.setColor(QColor(128,128,128));
+        p.setWidth(pen().width());
+
+        painter->setPen(p);
+
+        painter->drawEllipse(mCenter, mRadius, mRadius);
+
+        p.setColor(QColor(128, 128, 200));
+        painter->setPen(p);
+
+        QPainterPath ccircle;
+        ccircle.addEllipse(mCenter, mRadius, mRadius);
+
+        painter->drawRect(ccircle.boundingRect());
+    }
 }
 
 void UBEditableGraphicsRegularShapeItem::setStartPoint(QPointF pos)

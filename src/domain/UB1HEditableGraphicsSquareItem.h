@@ -1,7 +1,7 @@
 #ifndef UB1HEDITABLEGRAPHICSSQUAREITEM_H
 #define UB1HEDITABLEGRAPHICSSQUAREITEM_H
 
-#include "UB1HEditableGraphicsBasicShape.h"
+#include "UB1HEditableGraphicsBasicShapeItem.h"
 
 class UB1HEditableGraphicsSquareItem : public UB1HEditableGraphicsBasicShapeItem
 {

@@ -1,7 +1,7 @@
 #ifndef UB1HEDITABLEGRAPHICSCIRCLEITEM_H
 #define UB1HEDITABLEGRAPHICSCIRCLEITEM_H
 
-#include "UB1HEditableGraphicsBasicShape.h"
+#include "UB1HEditableGraphicsBasicShapeItem.h"
 
 class UB1HEditableGraphicsCircleItem : public UB1HEditableGraphicsBasicShapeItem
 {
