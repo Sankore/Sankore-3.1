@@ -31,6 +31,15 @@ public:
 
     void setStrokeSize(int size);
 
+    enum FillPattern{   // Warning : those values are persisted. Do NOT change this order. Only add new values at the end of enum.
+        FillPattern_None,
+        FillPattern_Diag1,
+        FillPattern_Dot1
+    };
+
+    FillPattern fillPattern() const {return mFillPatern;}
+    void setFillPattern(FillPattern pattern);
+
     // UBItem interface
     void setUuid(const QUuid &pUuid);
 
@@ -52,6 +61,11 @@ protected:
     QRectF adjustBoundingRect(QRectF rect) const;
 
     QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+
+private:
+    FillPattern mFillPatern;
+    QBitmap patternPoint();
+    QBitmap patternDiag();
 };
 
 #endif // UBSHAPE_H

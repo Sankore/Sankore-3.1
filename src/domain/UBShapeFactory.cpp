@@ -137,11 +137,27 @@ UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
     }
 
     mCurrentShape->setStyle(mCurrentBrushStyle, mCurrentPenStyle);
-    if (mFillType != Gradient)
+
+
+    if (mFillType == Diag)
     {
-        mCurrentShape->setFillColor(mCurrentFillFirstColor);
+        if (mCurrentShape->hasFillingProperty())
+        {
+            mCurrentShape->setStyle(Qt::TexturePattern);
+            mCurrentShape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Diag1);
+            mCurrentShape->setFillColor(mCurrentFillFirstColor);
+        }
     }
-    else
+    else if (mFillType == Dense)
+    {
+        if (mCurrentShape->hasFillingProperty())
+        {
+            mCurrentShape->setStyle(Qt::TexturePattern);
+            mCurrentShape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Dot1);
+            mCurrentShape->setFillColor(mCurrentFillFirstColor);
+        }
+    }
+    else if (mFillType == Gradient)
     {
         if (mCurrentShape->hasFillingProperty())
         {
@@ -154,6 +170,14 @@ UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
             gradient.setColorAt(1, mCurrentFillSecondColor);
 
             mCurrentShape->setBrush(gradient);
+        }
+    }
+    else
+    {
+        if (mCurrentShape->hasFillingProperty())
+        {
+            mCurrentShape->setStyle(Qt::SolidPattern);
+            mCurrentShape->setFillColor(mCurrentFillFirstColor);
         }
     }
 
@@ -644,23 +668,30 @@ void UBShapeFactory::updateFillingPropertyOnSelectedItems()
          if(shape)
          {
              if(shape->hasFillingProperty()){
-                 QBrush b = shape->brush();
-                 if (mFillType != Gradient)
+                 if (mFillType == Gradient)
                  {
-                    b.setStyle(mCurrentBrushStyle);
-                    b.setColor(mCurrentFillFirstColor);
-
-                    shape->setBrush(b);
+                     setGradientFillingProperty(shape);
+                 }
+                 else if (mFillType == Diag)
+                 {
+                     shape->setStyle(Qt::TexturePattern);
+                     shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Diag1);
+                     shape->setFillColor(mCurrentFillFirstColor);
+                 }
+                 else if (mFillType == Dense)
+                 {
+                     shape->setStyle(Qt::TexturePattern);
+                     shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Dot1);
+                     shape->setFillColor(mCurrentFillFirstColor);
                  }
                  else
-                    setGradientFillingProperty(shape);
+                 {
+                     shape->setStyle(mCurrentBrushStyle);
+                     shape->setFillColor(mCurrentFillFirstColor);
+                 }
              }
-
-
          }
-
          items.at(i)->update();
-
      }
 }
 
