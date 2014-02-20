@@ -86,6 +86,28 @@ void UBAbstractGraphicsItem::setStrokeSize(int size)
     }
 }
 
+void UBAbstractGraphicsItem::setFillPattern(UBAbstractGraphicsItem::FillPattern pattern)
+{
+    mFillPatern = pattern;
+
+    if (hasFillingProperty())
+    {
+        QBrush b = brush();
+        switch (pattern) {
+        case FillPattern_Diag1:
+            b.setTexture(patternDiag());
+            break;
+        case FillPattern_Dot1:
+            b.setTexture(patternPoint());
+            break;
+        default:
+            break;
+        }
+
+        setBrush(b);
+    }
+}
+
 void UBAbstractGraphicsItem::setUuid(const QUuid &pUuid)
 {
     UBItem::setUuid(pUuid);
@@ -101,6 +123,68 @@ QVariant UBAbstractGraphicsItem::itemChange(GraphicsItemChange change, const QVa
         newValue = Delegate()->itemChange(change, value);
 
     return QAbstractGraphicsShapeItem::itemChange(change, newValue);
+}
+
+QBitmap UBAbstractGraphicsItem::patternPoint()
+{
+    int taillePattern = 10;
+    QImage img(taillePattern, taillePattern, QImage::Format_Mono);
+
+    img.setColor(0, 0);
+    img.setColor(1, 1);
+
+    // Initialize background
+    for(int y=0; y<taillePattern; y++)
+        for(int x=0; x<taillePattern; x++){
+            img.setPixel(x, y, 0);
+        }
+
+    // The dot :
+    img.setPixel(5, 3, 1);
+    img.setPixel(4, 4, 1);
+    img.setPixel(6, 4, 1);
+    img.setPixel(5, 4, 1);
+    img.setPixel(3, 5, 1);
+    img.setPixel(4, 5, 1);
+    img.setPixel(5, 5, 1);
+    img.setPixel(6, 5, 1);
+    img.setPixel(7, 5, 1);
+    img.setPixel(4, 6, 1);
+    img.setPixel(5, 6, 1);
+    img.setPixel(6, 6, 1);
+    img.setPixel(5, 7, 1);
+
+    QBitmap bitmap = QBitmap::fromImage(img);
+
+    return bitmap;
+}
+
+QBitmap UBAbstractGraphicsItem::patternDiag()
+{
+    int taillePattern = 20;
+    QImage img(taillePattern, taillePattern, QImage::Format_Mono);
+
+    img.setColor(0, 0);
+    img.setColor(1, 1);
+
+    // Initialize background :
+    for(int y=0; y<taillePattern; y++)
+        for(int x=0; x<taillePattern; x++){
+            img.setPixel(x, y, 0);
+        }
+
+    // The diagonal :
+    for(int y=0; y<taillePattern; y++){
+        img.setPixel(taillePattern-1-y, y, 1);
+        if (y<taillePattern-1){ // except for last line
+            img.setPixel(taillePattern-2-y, y, 1);
+        }
+    }
+    img.setPixel(taillePattern-1, taillePattern-1, 1);
+
+    QBitmap bitmap = QBitmap::fromImage(img);
+
+    return bitmap;
 }
 
 void UBAbstractGraphicsItem::setStyle(QPainter *painter)

@@ -116,7 +116,6 @@ void UBDrawingFillPropertiesPalette::onBtnFillStyleDense()
 {
     mBtnColor2Picker->setEnabled(false);
     UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Dense);
-    UBApplication::boardController->shapeFactory().setFillingStyle(Qt::Dense7Pattern);
     UBApplication::boardController->shapeFactory().setFillingFirstColor(mBtnColorPicker->color());
 }
 
@@ -124,7 +123,6 @@ void UBDrawingFillPropertiesPalette::onBtnFillStyleDiag()
 {
     mBtnColor2Picker->setEnabled(false);
     UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Diag);
-    UBApplication::boardController->shapeFactory().setFillingStyle(Qt::BDiagPattern);
     UBApplication::boardController->shapeFactory().setFillingFirstColor(mBtnColorPicker->color());
 }
 
@@ -133,7 +131,6 @@ void UBDrawingFillPropertiesPalette::onBtnColorFull()
 {
     mBtnColor2Picker->setEnabled(false);
     UBApplication::boardController->shapeFactory().setFillType(UBShapeFactory::Full);
-    UBApplication::boardController->shapeFactory().setFillingStyle(Qt::SolidPattern);
     UBApplication::boardController->shapeFactory().setFillingFirstColor(mBtnColorPicker->color());
 }
 

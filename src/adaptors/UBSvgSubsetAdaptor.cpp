@@ -3675,11 +3675,20 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::getStyleFromSvg(UBAbstractGraphicsIt
         brushColor1.setAlphaF(opacity1);
     }
 
-    QStringRef style = mXmlReader.attributes().value("style");
+    QStringRef style = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "fill-style");
     b.setStyle(static_cast<Qt::BrushStyle>(style.toString().toInt()));
     b.setColor(brushColor1);
 
     item->setBrush(b);
+
+    // Fill pattern
+    QStringRef svgFillPattern = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "fill-pattern");
+    UBAbstractGraphicsItem::FillPattern fillPattern = UBAbstractGraphicsItem::FillPattern_None;
+    if (!svgFillPattern.isNull())
+    {
+        fillPattern = static_cast<UBAbstractGraphicsItem::FillPattern>(svgFillPattern.toString().toInt());
+    }
+    item->setFillPattern(fillPattern);
 
     // Transform matrix
     QStringRef svgTransform = mXmlReader.attributes().value("transform");
@@ -4027,7 +4036,11 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAbstractGraphicsItemStyle(UBAbs
         {
             mXmlWriter.writeAttribute("fill", QString("%1").arg(item->brush().color().name()));
             mXmlWriter.writeAttribute("fill-opacity", QString("%1").arg(item->brush().color().alphaF()));
-            mXmlWriter.writeAttribute("style", QString("%1").arg(item->brush().style()));
+            mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "fill-style", QString("%1").arg(item->brush().style()));
+
+            if (item->brush().style() == Qt::TexturePattern){
+                mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "fill-pattern", QString("%1").arg(item->fillPattern()));
+            }
         }
         else
         {
