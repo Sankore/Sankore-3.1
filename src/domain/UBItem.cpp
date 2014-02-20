@@ -32,7 +32,7 @@
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
-#include "domain/UBGraphicsPathItem.h"
+#include "domain/UBEditableGraphicsPolygonItem.h"
 #include "domain/UBGraphicsRegularPathItem.h"
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsRectItem.h"
@@ -134,19 +134,19 @@ UBGraphicsItemDelegate *UBGraphicsItem::Delegate(QGraphicsItem *pItem)
     case UBGraphicsCurtainItem::Type :
         result = (static_cast<UBGraphicsCurtainItem*>(pItem))->Delegate();
         break;
-    case UBGraphicsRegularPathItem::Type :
-        result = (static_cast<UBGraphicsRegularPathItem*>(pItem))->Delegate();
+    case UBEditableGraphicsRegularShapeItem::Type :
+        result = (static_cast<UBEditableGraphicsRegularShapeItem*>(pItem))->Delegate();
         break;
-    case UBGraphicsPathItem::Type :
-        result = (static_cast<UBGraphicsPathItem*>(pItem))->Delegate();
+    case UBEditableGraphicsPolygonItem::Type :
+        result = (static_cast<UBEditableGraphicsPolygonItem*>(pItem))->Delegate();
         break;
     case UBGraphicsFreehandItem::Type :
         result = (static_cast<UBGraphicsFreehandItem*>(pItem))->Delegate();
         break;
     case UBGraphicsItemType::GraphicsShapeItemType :
-        UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(pItem);
-        UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(pItem);
-        UBGraphicsLineItem* line = dynamic_cast<UBGraphicsLineItem*>(pItem);
+        UB3HEditableGraphicsRectItem* rect = dynamic_cast<UB3HEditableGraphicsRectItem*>(pItem);
+        UB3HEditableGraphicsEllipseItem* ellipse = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(pItem);
+        UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(pItem);
         if (rect)
             result = rect->Delegate();
         else if (ellipse)

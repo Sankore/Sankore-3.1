@@ -7,12 +7,12 @@
 
 
 
-class UBEditable
+class UBAbstractEditable
 {
 public:
-    explicit UBEditable();
+    explicit UBAbstractEditable();
 
-    virtual ~UBEditable();
+    virtual ~UBAbstractEditable();
 
     void addHandle(UBAbstractHandle *mhandle);
 

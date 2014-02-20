@@ -4,7 +4,7 @@
 #include "UBVerticalHandle.h"
 
 UB2HandlesEditable::UB2HandlesEditable():
-    UBEditable()
+    UBAbstractEditable()
 {
     UBHorizontalHandle *horizontalHandle = new UBHorizontalHandle;
     UBVerticalHandle *verticalHandle = new UBVerticalHandle;

@@ -1,14 +1,13 @@
 #ifndef UBGRAPHICSPATHITEM_H
 #define UBGRAPHICSPATHITEM_H
 
-#include "UBAbstractGraphicsPathItem.h"
-#include "UBEditable.h"
+#include "UBAbstractEditableGraphicsPathItem.h"
 
-class UBGraphicsPathItem : public UBAbstractGraphicsPathItem, public UBEditable
+class UBEditableGraphicsPolygonItem : public UBAbstractEditableGraphicsPathItem
 {
 public:
-    UBGraphicsPathItem(QGraphicsItem* parent = 0);
-    ~UBGraphicsPathItem();
+    UBEditableGraphicsPolygonItem(QGraphicsItem* parent = 0);
+    ~UBEditableGraphicsPolygonItem();
 
     virtual void addPoint(const QPointF &point);
     inline bool isClosed() const {return mClosed;}
@@ -17,7 +16,6 @@ public:
     inline bool isOpened() const{ return mOpened; }
 
     void setIsInCreationMode(bool mode);
-
 
     // UBItem interface
     UBItem *deepCopy() const;
@@ -32,20 +30,11 @@ public:
     QPainterPath shape() const;
 
     virtual void updateHandle(UBAbstractHandle *handle);
-    virtual void deactivateEditionMode();
-
-    void focusHandle(UBAbstractHandle *handle);
-protected:
-    void focusOutEvent(QFocusEvent *event);
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 
 private:
     bool mClosed;
     bool mOpened;
     bool mIsInCreationMode;
-
-    int mMultiClickState;
 
     QPointF mStartEndPoint[2];
 

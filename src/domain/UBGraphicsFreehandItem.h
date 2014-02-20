@@ -6,7 +6,7 @@
 class UBGraphicsFreehandItem : public UBAbstractGraphicsPathItem
 {
 public:
-    explicit UBGraphicsFreehandItem(QGraphicsItem *parent = 0);
+    UBGraphicsFreehandItem(QGraphicsItem *parent = 0);
 
     virtual void addPoint(const QPointF &point);
 

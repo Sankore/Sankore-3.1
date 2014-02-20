@@ -1,33 +1,33 @@
 #ifndef UBABSTRACTGRAPHICSPATHITEM_H
 #define UBABSTRACTGRAPHICSPATHITEM_H
 
-#include <QGraphicsItem>
-#include "UBShape.h"
+#include "UBAbstractGraphicsItem.h"
 
-class UBAbstractGraphicsPathItem : public QGraphicsPathItem, public UBShape
+class UBAbstractGraphicsPathItem : public UBAbstractGraphicsItem
 {
 public:
     UBAbstractGraphicsPathItem(QGraphicsItem *parent = 0);
 
-    virtual int type() const = 0;
-
-    // UBItem interface
-    virtual void setUuid(const QUuid &pUuid);
-
-    // QGraphicsItem interface
-    virtual QRectF boundingRect() const
-    {
-        return path().boundingRect();
-    }
-
     virtual void addPoint(const QPointF &point) = 0;
 
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) = 0;
+    QPainterPath path() const
+    {
+        return mPath;
+    }
+
+    void setPath(QPainterPath path)
+    {
+        mPath = path;
+    }
+
+    virtual QRectF boundingRect() const;
+
+    virtual QPainterPath shape() const;
+
+    virtual void copyItemParameters(UBItem *copy) const;
 
 protected:
-    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+    QPainterPath mPath;
 };
 
 #endif // UBABSTRACTGRAPHICSPATHITEM_H

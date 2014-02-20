@@ -21,7 +21,7 @@
 
 #include "UBGraphicsLineItem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
-#include "UBShape.h"
+#include "UBAbstractGraphicsItem.h"
 #include "UBGraphicsDelegateFrame.h"
 
 #include "board/UBDrawingController.h"
@@ -32,29 +32,12 @@
 #include "board/UBBoardView.h"
 #include "domain/UBGraphicsScene.h"
 
-UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
-    : QGraphicsLineItem(parent)
-    , UBShape()
+UBEditableGraphicsLineItem::UBEditableGraphicsLineItem(QGraphicsItem* parent)
+    : UBEditableGraphicsPolygonItem(parent)
 {
     // Line has Stroke and Fill capabilities :
     initializeStrokeProperty();
     initializeFillingProperty();
-
-    mMultiClickState = 0;
-
-    setDelegate(new UBGraphicsItemDelegate(this, 0));
-    Delegate()->init();
-    Delegate()->setFlippable(false);
-    Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(true);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
-
-    setUuid(QUuid::createUuid());
-    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem));
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemIsMovable, true);
-    setFlag(QGraphicsItem::ItemIsFocusable, true);
 
     UBFreeHandle *startHandle = new UBFreeHandle;
     UBFreeHandle *endHandle = new UBFreeHandle;
@@ -74,197 +57,139 @@ UBGraphicsLineItem::UBGraphicsLineItem(QGraphicsItem* parent)
     mHandles.push_back(endHandle);
 }
 
-UBGraphicsLineItem::~UBGraphicsLineItem()
+UBEditableGraphicsLineItem::~UBEditableGraphicsLineItem()
 {
-    delete mFillingProperty;
-    delete mStrokeProperty;
 
-    mFillingProperty = NULL;
-    mStrokeProperty = NULL;
 }
 
-void UBGraphicsLineItem::setUuid(const QUuid &pUuid)
+UBItem *UBEditableGraphicsLineItem::deepCopy() const
 {
-    UBItem::setUuid(pUuid);
-    setData(UBGraphicsItemData::ItemUuid, QVariant(pUuid)); //store item uuid inside the QGraphicsItem to fast operations with Items on the scene
-}
-
-UBItem *UBGraphicsLineItem::deepCopy() const
-{
-    UBGraphicsLineItem* copy = new UBGraphicsLineItem();
-
-    if (hasFillingProperty())
-        copy->mFillingProperty = new UBFillProperty(*fillingProperty());
-
-    if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+    UBEditableGraphicsLineItem* copy = new UBEditableGraphicsLineItem();
 
     copyItemParameters(copy);
 
     return copy;
 }
 
-void UBGraphicsLineItem::copyItemParameters(UBItem *copy) const
-{
-    UBGraphicsLineItem *cp = dynamic_cast<UBGraphicsLineItem*>(copy);
-    if (cp)
-    {
-        cp->setStartPoint(mStartPoint);
-        cp->setEndPoint(mEndPoint);
-        cp->setTransform(this->transform());
-        cp->setLine(line());
-        cp->setFlag(QGraphicsItem::ItemIsMovable, true);
-        cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
-        cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
-        cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
-
-        if(Delegate()->action()){
-            if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
-                cp->Delegate()->setAction(action);
-            }
-            else
-                cp->Delegate()->setAction(Delegate()->action());
-        }        
-    }
-}
-
-void UBGraphicsLineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void UBEditableGraphicsLineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
+    Q_UNUSED(option)
 
-    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
-    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
-    styleOption.state &= ~QStyle::State_Selected;
-    styleOption.state &= ~QStyle::State_HasFocus;
+    setStyle(painter);
 
-    painter->setBrush(*fillingProperty());
-    painter->setPen(*strokeProperty());
-
-    painter->drawLine(mStartPoint, mEndPoint);
+    painter->drawPath(path());
 }
 
-//pas de référence : sémantique de valeur
-const QPointF UBGraphicsLineItem::startPoint()
+QPointF UBEditableGraphicsLineItem::startPoint() const
 {
-    return mStartPoint;
+    return path().elementAt(0);
 }
 
-const QPointF UBGraphicsLineItem::endPoint()
+QPointF UBEditableGraphicsLineItem::endPoint() const
 {
-    return mEndPoint;
+    if(path().elementCount() == 2)
+        return path().elementAt(1);
+    else
+        return path().elementAt(0);
 }
 
-void UBGraphicsLineItem::setStartPoint(QPointF pos)
+void UBEditableGraphicsLineItem::copyItemParameters(UBItem *copy) const
 {
-    mStartPoint = pos;
+    UBAbstractEditableGraphicsPathItem::copyItemParameters(copy);
+}
+
+
+void UBEditableGraphicsLineItem::setStartPoint(QPointF pos)
+{
+    prepareGeometryChange();
+
+    QPainterPath p;
+
+    p.moveTo(this->pos());
+
+    if(path().elementCount() == 2)
+        p.lineTo(path().elementAt(1));
+
+    setPath(p);
+
+    this->setPos(pos);
+
     mHandles.at(0)->setPos(pos);
-    this->setLine(mStartPoint.x(), mStartPoint.y(), mEndPoint.x(), mEndPoint.y());
+
+    update();
 }
 
-void UBGraphicsLineItem::setEndPoint(QPointF pos)
+void UBEditableGraphicsLineItem::setEndPoint(QPointF pos)
 {
-    mEndPoint = pos;
+    prepareGeometryChange();
+
+    QPainterPath p;
+
+    p.moveTo(path().elementAt(0));
+
+    p.lineTo(pos);
+
+    setPath(p);
+
     mHandles.at(1)->setPos(pos);
-    this->setLine(mStartPoint.x(), mStartPoint.y(), mEndPoint.x(), mEndPoint.y());
+
+    update();
 }
 
-QVariant UBGraphicsLineItem::itemChange(GraphicsItemChange change, const QVariant &value)
+void UBEditableGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
 {
-    QVariant newValue = value;
+    prepareGeometryChange();
 
-    if(Delegate())
-        newValue = Delegate()->itemChange(change, value);
-
-    return QGraphicsLineItem::itemChange(change, newValue);
-}
-
-void UBGraphicsLineItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
-{
-    mMultiClickState++;
-
-    QGraphicsLineItem::mousePressEvent(event);
-
-    if(mMultiClickState >= 1){
-        mHandles.at(0)->setPos(mStartPoint);
-        mHandles.at(1)->setPos(mEndPoint);
-
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
-    }
-}
-
-void UBGraphicsLineItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(mMultiClickState == 0){
-        Delegate()->mouseMoveEvent(event);
-        QGraphicsLineItem::mouseMoveEvent(event);
-    }
-}
-
-void UBGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
-{
     if(handle->getId() == 0){
-        mStartPoint = handle->pos();
+        QPainterPath p;
+
+        p.moveTo(handle->pos());
+
+        p.lineTo(path().elementAt(1));
+
+        setPath(p);
     }else if(handle->getId() == 1){
-        mEndPoint = handle->pos();
+        QPainterPath p;
+
+        p.moveTo(path().elementAt(0));
+
+        p.lineTo(handle->pos());
+
+        setPath(p);
     }
 
-    setLine(QLineF(mStartPoint, mEndPoint));
+    update();
 }
 
-void UBGraphicsLineItem::focusOutEvent(QFocusEvent *event)
+void UBEditableGraphicsLineItem::setLine(QPointF start, QPointF end)
 {
-    Q_UNUSED(event)
+    prepareGeometryChange();
 
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
+    QPainterPath p;
+    p.moveTo(start);
+    p.lineTo(end);
+
+    setPath(p);
+
+    update();
 }
 
-QRectF UBGraphicsLineItem::boundingRect() const
+void UBEditableGraphicsLineItem::onActivateEditionMode()
 {
-    QRectF rect = QGraphicsLineItem::boundingRect();
-
-    int thickness = strokeProperty()->width();
-    rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
-
-    if(mMultiClickState >= 1){
-        qreal r = mHandles.first()->radius();
-
-        rect.adjust(-r, -r, r, r);
-    }
-
-    return rect;
+    mHandles.at(0)->setPos(startPoint());
+    mHandles.at(1)->setPos(endPoint());
 }
 
-QPainterPath UBGraphicsLineItem::shape() const
+QPainterPath UBEditableGraphicsLineItem::shape() const
 {
-    QPainterPath path;
+    QPainterPath p;
 
     if(mMultiClickState >= 1 || isSelected()){
-        path.addRect(boundingRect());
-        return path;
+        p.addRect(boundingRect());
     }else{
-        return QGraphicsLineItem::shape();
+        p = path();
     }
-}
 
-void UBGraphicsLineItem::deactivateEditionMode()
-{
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-void UBGraphicsLineItem::focusHandle(UBAbstractHandle *handle)
-{
-    Q_UNUSED(handle)
-
-    setSelected(true);
-    Delegate()->showFrame(false);
+    return p;
 }

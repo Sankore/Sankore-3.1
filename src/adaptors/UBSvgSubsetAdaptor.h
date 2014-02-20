@@ -52,11 +52,15 @@ class IDataStorage;
 class UBGraphicsGroupContainerItem;
 class UBGraphicsItemAction;
 class UBGraphicsStrokesGroup;
-class UBGraphicsEllipseItem;
-class UBGraphicsRectItem;
-class UBGraphicsPathItem;
+class UB3HEditableGraphicsEllipseItem;
+class UB3HEditableGraphicsRectItem;
+class UBEditableGraphicsPolygonItem;
 class UBAbstractGraphicsPathItem;
-class UBGraphicsLineItem;
+class UBEditableGraphicsLineItem;
+class UBAbstractGraphicsItem;
+class UB1HEditableGraphicsCircleItem;
+class UB1HEditableGraphicsSquareItem;
+class UBEditableGraphicsRegularShapeItem;
 
 class UBSvgSubsetAdaptor
 {
@@ -162,13 +166,19 @@ class UBSvgSubsetAdaptor
 
                 QLinearGradient linearGradiantFromSvg();
 
-                UBGraphicsEllipseItem* shapeEllipseFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
+                void getStyleFromSvg(UBAbstractGraphicsItem *item, const QColor &pDefaultPenColor);
 
-                UBGraphicsRectItem* shapeRectFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
+                UB3HEditableGraphicsEllipseItem* shapeEllipseFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
+
+                UB1HEditableGraphicsCircleItem* shapeCircleFromSvg(const QColor &pDefaultPenColor);
+
+                UB1HEditableGraphicsSquareItem* shapeSquareFromSvg(const QColor &pDefaultPenColor);
+
+                UB3HEditableGraphicsRectItem* shapeRectFromSvg(const QColor &pDefaultPenColor); // EV-7 - ALTI/AOU - 20131231
+
+                UBEditableGraphicsRegularShapeItem *shapeRegularFromSvg(const QColor& pDefaultPenColor);
 
                 UBAbstractGraphicsPathItem* shapePathFromSvg(const QColor& pDefaultPenColor, int type); // EV-7 - ALTI/AOU - 20140102
-
-                UBGraphicsLineItem* shapeLineFromSvg(const QColor& pDefaultPenColor);//issue 1699 - NNE - 20140212
 
                 void readGroupRoot();
                 QGraphicsItem *readElementFromGroup();
@@ -273,10 +283,16 @@ class UBSvgSubsetAdaptor
                 void protractorToSvg(UBGraphicsProtractor *item);
                 void cacheToSvg(UBGraphicsCache* item);
                 void triangleToSvg(UBGraphicsTriangle *item);
-                void shapeEllipseToSvg(UBGraphicsEllipseItem *item); // EV-7 - ALTI/AOU - 20131231
-                void shapeRectToSvg(UBGraphicsRectItem *item); // EV-7 - ALTI/AOU - 20131231
+
+                void writeAbstractGraphicsItemGradient(UBAbstractGraphicsItem *item);
+                void writeAbstractGraphicsItemStyle(UBAbstractGraphicsItem *item);
+
+                void shapeEllipseToSvg(UB3HEditableGraphicsEllipseItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapeRectToSvg(UB3HEditableGraphicsRectItem *item); // EV-7 - ALTI/AOU - 20131231
+                void shapeSquareToSvg(UB1HEditableGraphicsSquareItem *item);
+                void shapeCircleToSvg(UB1HEditableGraphicsCircleItem *item);
                 void shapePathToSvg(UBAbstractGraphicsPathItem *item); // EV-7 - ALTI/AOU - 20131231
-                void shapeLineToSvg(UBGraphicsLineItem *item); //issue 1699 - NNE - 20140212
+                void shapeRegularToSvg(UBEditableGraphicsRegularShapeItem *item);
                 void writeSvgElement();
 
         private:
