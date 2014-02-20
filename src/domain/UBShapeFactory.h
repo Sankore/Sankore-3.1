@@ -5,7 +5,7 @@
 #include <QColor>
 #include <QGraphicsItem>
 
-class UBShape;
+class UBAbstractGraphicsItem;
 class UBBoardView;
 class QMouseEvent;
 class UBDrawingController;
@@ -51,7 +51,7 @@ public:
     void setFillingStyle(Qt::BrushStyle brushStyle);
     void setFillingFirstColor(QColor color);
     void setFillingSecondColor(QColor color);
-    void setGradientFillingProperty(UBShape* shape);
+    void setGradientFillingProperty(UBAbstractGraphicsItem* shape);
     void updateFillingPropertyOnSelectedItems();
 
     FillType fillType();
@@ -87,7 +87,7 @@ public slots:
 
 
 private:
-    UBShape* mCurrentShape;
+    UBAbstractGraphicsItem* mCurrentShape;
     UBBoardView* mBoardView;
 
     bool mIsCreating;
@@ -116,7 +116,7 @@ private:
     bool mCursorMoved;
 
 protected:
-    UBShape *instanciateCurrentShape();
+    UBAbstractGraphicsItem *instanciateCurrentShape();
 
 };
 

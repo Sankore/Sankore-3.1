@@ -21,76 +21,39 @@
 
 #include "UBGraphicsRectItem.h"
 #include "customWidgets/UBGraphicsItemAction.h"
-#include "UBShape.h"
+#include "UBAbstractGraphicsItem.h"
 #include "UBGraphicsDelegateFrame.h"
 
 #include "board/UBDrawingController.h"
 
-UBGraphicsRectItem::UBGraphicsRectItem(QGraphicsItem* parent)
-    : QGraphicsRectItem(parent)
-    , UBShape()
+UB3HEditableGraphicsRectItem::UB3HEditableGraphicsRectItem(QGraphicsItem* parent)
+    : UB3HEditablesGraphicsBasicShapeItem(parent)
 {
     // Rect has Stroke and Fill capabilities :
     initializeStrokeProperty();
     initializeFillingProperty();
 
-    mMultiClickState = 0;
-
-    //By default, a rectangle isn't a square
-    setAsRectangle();
-
-    setDelegate(new UBGraphicsItemDelegate(this, 0, true, false, false));
-    Delegate()->init();
-    Delegate()->setFlippable(false);
-    Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(true);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
-
-    setUuid(QUuid::createUuid());
-    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem));
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemIsMovable, true);
-    setFlag(QGraphicsItem::ItemIsFocusable, true);
-
-    horizontalHandle()->setParentItem(this);
-    verticalHandle()->setParentItem(this);
-    diagonalHandle()->setParentItem(this);
+    mWidth = 0;
+    mHeight = 0;
 }
 
-UBGraphicsRectItem::~UBGraphicsRectItem()
+UB3HEditableGraphicsRectItem::~UB3HEditableGraphicsRectItem()
 {
-    delete mFillingProperty;
-    delete mStrokeProperty;
 
-    mFillingProperty = NULL;
-    mStrokeProperty = NULL;
 }
 
-void UBGraphicsRectItem::setUuid(const QUuid &pUuid)
+UBItem *UB3HEditableGraphicsRectItem::deepCopy() const
 {
-    UBItem::setUuid(pUuid);
-    setData(UBGraphicsItemData::ItemUuid, QVariant(pUuid)); //store item uuid inside the QGraphicsItem to fast operations with Items on the scene
-}
-
-UBItem *UBGraphicsRectItem::deepCopy() const
-{
-    UBGraphicsRectItem* copy = new UBGraphicsRectItem();
-
-    if (hasFillingProperty())
-        copy->mFillingProperty = new UBFillProperty(*fillingProperty());
-
-    if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+    UB3HEditableGraphicsRectItem* copy = new UB3HEditableGraphicsRectItem();
 
     copyItemParameters(copy);
 
     return copy;
 }
 
-void UBGraphicsRectItem::copyItemParameters(UBItem *copy) const
+void UB3HEditableGraphicsRectItem::copyItemParameters(UBItem *copy) const
 {
-    UBGraphicsRectItem *cp = dynamic_cast<UBGraphicsRectItem*>(copy);
+    UB3HEditableGraphicsRectItem *cp = dynamic_cast<UB3HEditableGraphicsRectItem*>(copy);
     if (cp)
     {
         cp->setPos(this->pos());
@@ -110,206 +73,109 @@ void UBGraphicsRectItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
-
-        if(mIsSquare){
-            cp->setAsSquare();
-        }
     }
 }
 
-void UBGraphicsRectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void UB3HEditableGraphicsRectItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
+    Q_UNUSED(option)
 
-    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
-    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
-    styleOption.state &= ~QStyle::State_Selected;
-    styleOption.state &= ~QStyle::State_HasFocus;
+    setStyle(painter);
 
-    painter->setBrush(*fillingProperty());
-    painter->setPen(*strokeProperty());
-
-    painter->drawRect(rect());
+    painter->drawRect(0, 0, mWidth, mHeight);
 }
 
-QVariant UBGraphicsRectItem::itemChange(GraphicsItemChange change, const QVariant &value)
+QPainterPath UB3HEditableGraphicsRectItem::shape() const
 {
-    QVariant newValue = value;
-
-    if(Delegate())
-        newValue = Delegate()->itemChange(change, value);
-
-    return QGraphicsRectItem::itemChange(change, newValue);
-}
-
-void UBGraphicsRectItem::setRect(const QRectF &rect)
-{
-    QRectF r(rect);
-
-    if(mIsSquare){
-        if (r.width() < 0)
-        {
-            if (r.height() < 0)
-                r.setWidth(r.height());
-            else
-                r.setWidth(-r.height());
-        }
-        else
-        {
-            if (r.height() < 0)
-                r.setHeight(-r.width());
-            else
-                r.setHeight(r.width());
-        }
-    }
-
-    QGraphicsRectItem::setRect(r);
-}
-
-QRectF UBGraphicsRectItem::boundingRect() const
-{
-    QRectF rect = QGraphicsRectItem::boundingRect();
-
-    if (strokeProperty())
-    {
-        int thickness = strokeProperty()->width();
-        rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
-    }
+    QPainterPath path;
 
     if(mMultiClickState >= 1){
-        qreal r = horizontalHandle()->radius();
+        path.addRect(boundingRect());
+    }else{
+        path.addRect(0, 0, mWidth, mHeight);
+    }
 
+    return path;
+}
+
+void UB3HEditableGraphicsRectItem::onActivateEditionMode()
+{
+    horizontalHandle()->setPos(mWidth, mHeight/2);
+    verticalHandle()->setPos(mWidth/2, mHeight);
+    diagonalHandle()->setPos(mWidth, mHeight);
+}
+
+void UB3HEditableGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
+{
+    prepareGeometryChange();
+
+    qreal maxSize = handle->radius() * 4;
+
+    if(handle->getId() == 1){
+        //it's the vertical handle
+        if(handle->pos().y() >= maxSize){
+            mHeight = handle->pos().y();
+        }
+    }else if(handle->getId() == 0){
+        //it's the horizontal handle
+        if(handle->pos().x() > maxSize){
+            mWidth = handle->pos().x();
+        }
+    }else{
+        //it's the diagonal handle
+        if(handle->pos().x() >= maxSize && handle->pos().y() >= maxSize){
+            mHeight = handle->pos().y();
+            mWidth = handle->pos().x();
+        }
+    }
+
+    horizontalHandle()->setPos(mWidth, mHeight/2);
+    verticalHandle()->setPos(mWidth/2, mHeight);
+    diagonalHandle()->setPos(mWidth, mHeight);
+
+    if(hasGradient()){
+        QLinearGradient g(QPointF(), QPointF(mWidth, 0));
+
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
+    }
+
+    update();
+}
+
+QRectF UB3HEditableGraphicsRectItem::boundingRect() const
+{
+    QRectF rect(0, 0, mWidth, mHeight);
+
+    rect = adjustBoundingRect(rect);
+
+    if(mMultiClickState >= 1){
+        qreal r = mHandles.at(0)->radius();
         rect.adjust(-r, -r, r, r);
     }
 
     return rect;
 }
 
-
-QPainterPath UBGraphicsRectItem::shape() const
+void UB3HEditableGraphicsRectItem::setRect(QRectF rect)
 {
-    if(mMultiClickState >= 1){
-        QPainterPath path;
+    prepareGeometryChange();
 
-        path.addRect(boundingRect());
+    setPos(rect.topLeft());
 
-        return path;
-    }else{
-        return QGraphicsRectItem::shape();
-    }
+    mWidth = rect.width();
+    mHeight = rect.height();
+
+    update();
 }
 
-void UBGraphicsRectItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+QRectF UB3HEditableGraphicsRectItem::rect() const
 {
-    mMultiClickState++;
+    QRectF r;
+    r.setTopLeft(pos());
+    r.setWidth(mWidth);
+    r.setHeight(mHeight);
 
-    QGraphicsRectItem::mousePressEvent(event);
-
-    if(mMultiClickState >= 1){
-        QPointF bottomRight = rect().bottomRight();
-
-        horizontalHandle()->setPos(bottomRight.x(), rect().y() + rect().height()/2);
-        verticalHandle()->setPos(rect().x() + rect().width()/2, bottomRight.y());
-        diagonalHandle()->setPos(bottomRight.x(), bottomRight.y());
-
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
-    }
-}
-
-void UBGraphicsRectItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(mMultiClickState == 0){
-        Delegate()->mouseMoveEvent(event);
-        QGraphicsRectItem::mouseMoveEvent(event);
-    }
-}
-
-void UBGraphicsRectItem::focusOutEvent(QFocusEvent *event)
-{
-    Q_UNUSED(event)
-
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-void UBGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
-{
-    QRectF newRect = rect();
-
-    qreal maxSize = handle->radius() * 4;
-
-    if(handle->getId() == 1){
-        //it's the horizontal handle
-        newRect.setBottom(handle->pos().y());
-
-        if(newRect.height() < maxSize){
-            newRect = rect();
-
-            verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
-        }
-
-        horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
-
-        diagonalHandle()->setPos(newRect.bottomRight().x(), newRect.bottomRight().y());
-    }else if(handle->getId() == 0){
-        //it's the vertical handle
-        newRect.setRight(handle->pos().x());
-
-        if(newRect.width() < maxSize){
-            newRect = rect();
-
-            horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
-        }
-
-        verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
-
-        diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
-    }else{
-        //it's the diagonal handle
-        newRect.setRight(handle->pos().x());
-        newRect.setBottom(handle->pos().y());
-
-        if(newRect.width() < maxSize){
-            newRect = rect();
-            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
-        }
-
-        if(newRect.height() < maxSize){
-            newRect = rect();
-            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
-        }
-
-        verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y());
-
-        horizontalHandle()->setPos(newRect.bottomRight().x() , newRect.y() + newRect.height()/2);
-    }
-
-    setRect(newRect);
-
-    if(fillingProperty()->gradient()){
-        QLinearGradient g(rect().topLeft(), rect().topRight());
-
-        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
-        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
-
-        setFillingProperty(new UBFillProperty(g));
-    }
-}
-
-void UBGraphicsRectItem::deactivateEditionMode()
-{
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-void UBGraphicsRectItem::focusHandle(UBAbstractHandle *handle)
-{
-    setSelected(true);
-    Delegate()->showFrame(false);
+    return r;
 }

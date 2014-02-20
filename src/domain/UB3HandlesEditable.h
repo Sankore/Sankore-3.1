@@ -1,12 +1,12 @@
 #ifndef UB3HANDLESEDITABLE_H
 #define UB3HANDLESEDITABLE_H
 
-#include "UBEditable.h"
+#include "UBShapeEditable.h"
 
-class UB3HandlesEditable : public UBEditable
+class UB3HEditablesGraphicsBasicShapeItem : public UBAbstractEditableGraphicsShapeItem
 {
 public:
-    UB3HandlesEditable();
+    UB3HEditablesGraphicsBasicShapeItem(QGraphicsItem *parent = 0);
 
     UBAbstractHandle *horizontalHandle() const
     {
@@ -22,6 +22,8 @@ public:
     {
         return mHandles.at(2);
     }
+
+    QRectF adjustBoundingRect(QRectF rect) const;
 };
 
 #endif // UB3HANDLESEDITABLE_H

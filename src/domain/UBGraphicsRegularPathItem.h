@@ -22,10 +22,9 @@
 #ifndef UBGRAPHICSREGULARSHAPES_H
 #define UBGRAPHICSREGULARSHAPES_H
 
-#include "UBAbstractGraphicsPathItem.h"
-#include "UB1HandleEditable.h"
+#include "UBShapeEditable.h"
 
-class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1HandleEditable
+class UBEditableGraphicsRegularShapeItem : public UBAbstractEditableGraphicsShapeItem
 {
     public:
 
@@ -39,8 +38,8 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1H
             Octogone
         };
 
-        UBGraphicsRegularPathItem(int nVertices = Triangle, QPointF startPoint = QPointF(0,0), QGraphicsItem* parent = 0);
-        ~UBGraphicsRegularPathItem();
+        UBEditableGraphicsRegularShapeItem(int nVertices = Triangle, QPointF startPoint = QPointF(0,0), QGraphicsItem* parent = 0);
+        ~UBEditableGraphicsRegularShapeItem();
 
         void createGraphicsRegularPathItem();
         virtual void addPoint(const QPointF &point);
@@ -83,22 +82,23 @@ class UBGraphicsRegularPathItem : public UBAbstractGraphicsPathItem, public UB1H
         void setCircumscribedRadiusCircle(qreal radius)
         {
             mRadius = radius;
-        }
-
-        void deactivateEditionMode();
-
-        void focusHandle(UBAbstractHandle *handle);
+        }        
 
         QPointF correctStartPoint() const;
 
-protected:
-    void focusOutEvent(QFocusEvent *event);
+        void setPath(QPainterPath path)
+        {
+            mPath = path;
+        }
 
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+        QPainterPath path() const
+        {
+            return mPath;
+        }
+
+        void onActivateEditionMode();
 
 private:
-    int mMultiClickState;
     int mNVertices;
     QList<QPair<double, double> > mVertices;
     QPointF mStartPoint;
@@ -106,6 +106,8 @@ private:
     //for the circumscribed circle
     QPointF mCenter;
     qreal mRadius;
+
+    QPainterPath mPath;
 };
 
 #endif // UBGRAPHICSREGULARSHAPES_H

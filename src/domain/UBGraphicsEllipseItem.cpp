@@ -22,340 +22,172 @@
 
 
 #include "UBGraphicsEllipseItem.h"
-#include "customWidgets/UBGraphicsItemAction.h"
-#include "UBShape.h"
-#include "UBGraphicsDelegateFrame.h"
 
-#include "board/UBDrawingController.h"
-
-#include "UBHorizontalHandle.h"
-#include "UBVerticalHandle.h"
-#include "UBDiagonalHandle.h"
-
-#include "core/UBApplication.h"
-#include "board/UBBoardController.h"
-#include "board/UBBoardView.h"
-#include "domain/UBGraphicsScene.h"
-
-UBGraphicsEllipseItem::UBGraphicsEllipseItem(QGraphicsItem* parent)
-    : QGraphicsEllipseItem(parent)
-    , UBShape()
-    , UB3HandlesEditable()
+UB3HEditableGraphicsEllipseItem::UB3HEditableGraphicsEllipseItem(QGraphicsItem* parent):
+    UB3HEditablesGraphicsBasicShapeItem(parent)
 {
     // Ellipse has Stroke and Fill capabilities :
     initializeStrokeProperty();
     initializeFillingProperty();
 
-    mMultiClickState = 0;
-
-    //By default, an ellipse isn't a circle
-    mIsCircle = false;
-
-    setDelegate(new UBGraphicsItemDelegate(this, 0, true, false, false));
-    Delegate()->init();
-    Delegate()->setFlippable(false);
-    Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(true);    
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
-
-    setUuid(QUuid::createUuid());
-    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemIsMovable, true);
-    setFlag(QGraphicsItem::ItemIsFocusable, true);
-
-    horizontalHandle()->setParentItem(this);
-    verticalHandle()->setParentItem(this);
-    diagonalHandle()->setParentItem(this);
+    mRadiusX = 0;
+    mRadiusY = 0;
 }
 
-UBGraphicsEllipseItem::~UBGraphicsEllipseItem()
+UB3HEditableGraphicsEllipseItem::~UB3HEditableGraphicsEllipseItem()
 {
-    delete mFillingProperty;
-    delete mStrokeProperty;
 
-    mFillingProperty = NULL;
-    mStrokeProperty = NULL;
 }
 
-void UBGraphicsEllipseItem::setUuid(const QUuid &pUuid)
+UBItem *UB3HEditableGraphicsEllipseItem::deepCopy() const
 {
-    UBItem::setUuid(pUuid);
-    setData(UBGraphicsItemData::ItemUuid, QVariant(pUuid)); //store item uuid inside the QGraphicsItem to fast operations with Items on the scene
-}
-
-UBItem *UBGraphicsEllipseItem::deepCopy() const
-{
-    UBGraphicsEllipseItem* copy = new UBGraphicsEllipseItem();
-
-    if (hasFillingProperty())
-        copy->mFillingProperty = new UBFillProperty(*fillingProperty());
-
-    if (hasStrokeProperty())
-        copy->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
+    UB3HEditableGraphicsEllipseItem* copy = new UB3HEditableGraphicsEllipseItem();
 
     copyItemParameters(copy);
 
     return copy;
 }
 
-void UBGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
+void UB3HEditableGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
 {
-    UBGraphicsEllipseItem *cp = dynamic_cast<UBGraphicsEllipseItem*>(copy);
-    if (cp)
-    {
-        cp->setPos(this->pos());
-        cp->setRect(this->rect());
-        cp->setTransform(this->transform());
-        cp->setFlag(QGraphicsItem::ItemIsMovable, true);
-        cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
-        cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
-        cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+    UB3HEditablesGraphicsBasicShapeItem::copyItemParameters(copy);
 
-        if(Delegate()->action()){
-            if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
-                cp->Delegate()->setAction(action);
-            }
-            else
-                cp->Delegate()->setAction(Delegate()->action());
-        }
+    UB3HEditableGraphicsEllipseItem *cp = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(copy);
 
-        if(mIsCircle){
-            cp->setAsCircle();
-        }
-    }
+    if(!cp) return;
+
+    cp->mRadiusX = mRadiusX;
+    cp->mRadiusY = mRadiusY;
 }
 
-QPointF UBGraphicsEllipseItem::center() const
+QPointF UB3HEditableGraphicsEllipseItem::center() const
 {
     QPointF centre;
 
-    centre.setX(rect().x() + rect().width()/2);
-    centre.setY(rect().y() + rect().height()/2);
+    centre.setX(pos().x() + mRadiusX);
+    centre.setY(pos().y() + mRadiusY);
 
     return centre;
 }
 
-qreal UBGraphicsEllipseItem::radius(Qt::Orientation orientation) const
+void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    qreal rayon;
-
-    if (orientation == Qt::Horizontal)
-    {
-        rayon = rect().width()/2;
-    }
-    else
-    {
-        rayon = rect().height()/2;
-    }
-
-    return rayon;
-}
-
-void UBGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
+    Q_UNUSED(option)
     Q_UNUSED(widget)
 
-    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
-    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
-    styleOption.state &= ~QStyle::State_Selected;
-    styleOption.state &= ~QStyle::State_HasFocus;
+    setStyle(painter);
 
-    painter->setBrush(*fillingProperty());
-    painter->setPen(*strokeProperty());
-
-    painter->drawEllipse(rect());
+    painter->drawEllipse(QPointF(mRadiusX, mRadiusY), mRadiusX, mRadiusY);
 }
 
-QVariant UBGraphicsEllipseItem::itemChange(GraphicsItemChange change, const QVariant &value)
+QRectF UB3HEditableGraphicsEllipseItem::boundingRect() const
 {
-    QVariant newValue = value;
+    QRectF rect(0, 0, mRadiusX*2, mRadiusY*2);
 
-    if(Delegate())
-        newValue = Delegate()->itemChange(change, value);
-
-    return QGraphicsEllipseItem::itemChange(change, newValue);
-}
-
-void UBGraphicsEllipseItem::setRect(const QRectF &rect)
-{
-    QRectF r(rect);    
-
-    if(mIsCircle)
-    {
-        if (r.width() < 0)
-        {
-            if (r.height() < 0)
-                r.setWidth(r.height());
-            else
-                r.setWidth(-r.height());
-        }
-        else
-        {
-            if (r.height() < 0)
-                r.setHeight(-r.width());
-            else
-                r.setHeight(r.width());
-        }
-    }
-
-    QGraphicsEllipseItem::setRect(r);
-}
-
-QRectF UBGraphicsEllipseItem::boundingRect() const
-{
-    QRectF rect = QGraphicsEllipseItem::boundingRect();
-
-    if (strokeProperty())
-    {
-        int thickness = strokeProperty()->width();
-        rect.adjust(-thickness/2, -thickness/2, thickness/2, thickness/2); // enlarge boundingRect, in order to contain border thickness.
-    }
-
-    if(mMultiClickState >= 1){
-        qreal r = horizontalHandle()->radius();
-
-        rect.adjust(-r, -r, r, r);
-    }
+    rect = adjustBoundingRect(rect);
 
     return rect;
 }
 
-void UBGraphicsEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void UB3HEditableGraphicsEllipseItem::onActivateEditionMode()
 {
-    mMultiClickState++;
+    verticalHandle()->setPos(mRadiusX, mRadiusY*2);
+    horizontalHandle()->setPos(mRadiusX*2, mRadiusY);
 
-    QGraphicsEllipseItem::mousePressEvent(event);
+    qreal r = diagonalHandle()->radius();
 
-    if(mMultiClickState >= 1){
-        QRectF rectangle = rect();
-        QPointF bottomRight = rectangle.bottomRight();
-
-        horizontalHandle()->setZValue(zValue());
-        verticalHandle()->setZValue(zValue());
-        diagonalHandle()->setZValue(zValue());
-
-        horizontalHandle()->setPos(bottomRight.x(), rectangle.y() + rectangle.height()/2);
-        verticalHandle()->setPos(rectangle.x() + rectangle.width()/2, bottomRight.y());
-        diagonalHandle()->setPos(bottomRight.x(), bottomRight.y());
-
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
-    }
+    diagonalHandle()->setPos(mRadiusX*2-r, mRadiusY*2-r);
 }
 
-void UBGraphicsEllipseItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 {
-    if(mMultiClickState == 0){
-        Delegate()->mouseMoveEvent(event);
-        QGraphicsEllipseItem::mouseMoveEvent(event);
-    }
-}
-
-void UBGraphicsEllipseItem::focusOutEvent(QFocusEvent *event)
-{
-    Q_UNUSED(event)
-
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-        qDebug() << "this->zValue(): " << this->zValue();
-    }
-}
-
-void UBGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
-{
-    QRectF newRect = rect();
-
-    setSelected(true);
-    Delegate()->showFrame(false);
+    prepareGeometryChange();
 
     qreal maxSize = handle->radius() * 4;
 
     if(handle->getId() == 1){
         //it's the vertical handle
-        newRect.setBottom(handle->pos().y());
-
-        if(newRect.height() < maxSize){
-            newRect = rect();
-            verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
+        if(handle->pos().y() >= maxSize){
+            mRadiusY = handle->pos().y() / 2;
         }
-
-        horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
-
-        diagonalHandle()->setPos(newRect.bottomRight().x(), newRect.bottomRight().y());
     }else if(handle->getId() == 0){
         //it's the horizontal handle
-        newRect.setRight(handle->pos().x());
-
-        if(newRect.width() < maxSize){
-            newRect = rect();
-            horizontalHandle()->setPos(newRect.bottomRight().x(), newRect.y() + newRect.height()/2);
+        if(handle->pos().x() >= maxSize){
+            mRadiusX = handle->pos().x() / 2;
         }
-
-        verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y() );
-
-        diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
     }else{
         //it's the diagonal handle
-        newRect.setRight(handle->pos().x());
-        newRect.setBottom(handle->pos().y());
-
-        if(newRect.height() < maxSize){
-            newRect = rect();
-            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
+        if(handle->pos().x() >= maxSize && handle->pos().y() >= maxSize){
+            mRadiusX = handle->pos().x() / 2;
+            mRadiusY = handle->pos().y() / 2;
         }
-
-        if(newRect.width() < maxSize){
-            newRect = rect();
-            diagonalHandle()->setPos(newRect.bottomRight().x() , newRect.bottomRight().y() );
-        }
-
-        verticalHandle()->setPos(newRect.x() + newRect.width()/2 , newRect.bottomRight().y());
-
-        horizontalHandle()->setPos(newRect.bottomRight().x() , newRect.y() + newRect.height()/2);
     }
 
-    setRect(newRect);
+    verticalHandle()->setPos(mRadiusX, mRadiusY*2);
+    horizontalHandle()->setPos(mRadiusX*2, mRadiusY);
 
-    if(fillingProperty()->gradient()){
-        QLinearGradient g(rect().topLeft(), rect().topRight());
+    qreal r = diagonalHandle()->radius();
+    diagonalHandle()->setPos(mRadiusX*2-r, mRadiusY*2-r);
 
-        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
-        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+    if(hasGradient()){
+        QLinearGradient g(QPointF(), QPointF(mRadiusX*2, 0));
 
-        setFillingProperty(new UBFillProperty(g));
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
     }
+
+    update();
 }
 
-QPainterPath UBGraphicsEllipseItem::shape() const
+QPainterPath UB3HEditableGraphicsEllipseItem::shape() const
 {
+    QPainterPath path;
     if(mMultiClickState >= 1){
-        QPainterPath path;
-
         path.addRect(boundingRect());
-
-        return path;
     }else{
-        return QGraphicsEllipseItem::shape();
+        path.addEllipse(boundingRect());
     }
-
+    return path;
 }
 
-void UBGraphicsEllipseItem::deactivateEditionMode()
+void UB3HEditableGraphicsEllipseItem::setRadiusX(qreal radius)
 {
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
+    prepareGeometryChange();
+    mRadiusX = radius;
+    update();
 }
 
-void UBGraphicsEllipseItem::focusHandle(UBAbstractHandle *handle)
+void UB3HEditableGraphicsEllipseItem::setRadiusY(qreal radius)
 {
-    setSelected(true);
-    Delegate()->showFrame(false);
+    prepareGeometryChange();
+    mRadiusY = radius;
+    update();
+}
+
+void UB3HEditableGraphicsEllipseItem::setRect(QRectF rect){
+    setTransformOriginPoint(rect.topLeft());
+    mRadiusX = rect.width()/2;
+    mRadiusY = rect.height()/2;
+}
+
+QRectF UB3HEditableGraphicsEllipseItem::rect() const
+{
+    QRectF r;
+    r.setTopLeft(pos());
+    r.setWidth(mRadiusX*2);
+    r.setHeight(mRadiusY*2);
+
+    return r;
+}
+
+qreal UB3HEditableGraphicsEllipseItem::radiusX() const
+{
+    return mRadiusX;
+}
+
+qreal UB3HEditableGraphicsEllipseItem::radiusY() const
+{
+    return mRadiusY;
 }

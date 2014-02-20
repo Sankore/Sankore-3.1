@@ -8,7 +8,7 @@
 
 #include "UBItem.h"
 
-class UBEditable;
+class UBAbstractEditable;
 
 class UBAbstractHandle : public QGraphicsItem, public UBItem
 {
@@ -32,12 +32,12 @@ public:
 
     QRectF boundingRect() const;
 
-    void setEditableObject(UBEditable *eo)
+    void setEditableObject(UBAbstractEditable *eo)
     {
         mEditableObject = eo;
     }
 
-    UBEditable *editableObject()
+    UBAbstractEditable *editableObject()
     {
         return mEditableObject;
     }
@@ -62,7 +62,7 @@ protected:
     bool mClick;
     int mRadius;
 
-    UBEditable *mEditableObject;
+    UBAbstractEditable *mEditableObject;
 };
 
 #endif // UBABSTRACTHANDLE_H

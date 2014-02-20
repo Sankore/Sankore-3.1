@@ -1096,7 +1096,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             if (currentTool == UBStylusTool::Play)
             {
                 // Issue retours 2.4RC1 - CFA - 20140217 : No idea why "play action" is doing in determineItemToPress...)
-                UBShape* shape = dynamic_cast<UBShape*>(movingItem);
+                UBAbstractGraphicsItem* shape = dynamic_cast<UBAbstractGraphicsItem*>(movingItem);
                 if (shape && shape->Delegate() && shape->Delegate()->action())
                     shape->Delegate()->action()->play();
             }

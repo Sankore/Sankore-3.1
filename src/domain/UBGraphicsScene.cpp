@@ -1691,7 +1691,7 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
 void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
 {
     //CFA - TEST UNDO
-    UBShape * shape = dynamic_cast<UBShape*>(item);
+    UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
     if (shape)
     {
         mAddedItems.insert(item);
@@ -1701,7 +1701,7 @@ void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
 void UBGraphicsScene::removeShapeToUndoStack(QGraphicsItem* item)
 {
     //CFA - TEST UNDO
-    UBShape * shape = dynamic_cast<UBShape*>(item);
+    UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
     if (shape)
     {
         mRemovedItems.insert(item);

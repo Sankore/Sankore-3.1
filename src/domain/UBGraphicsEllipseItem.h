@@ -25,14 +25,14 @@
 #define UBGRAPHICSELLIPSEITEM_H
 
 #include <QGraphicsEllipseItem>
-#include "UBShape.h"
+#include "UBAbstractGraphicsItem.h"
 #include "UB3HandlesEditable.h"
 
-class UBGraphicsEllipseItem : public QGraphicsEllipseItem, public UBShape, public UB3HandlesEditable
+class UB3HEditableGraphicsEllipseItem : public UB3HEditablesGraphicsBasicShapeItem
 {
 public:
-    UBGraphicsEllipseItem(QGraphicsItem* parent = 0);
-    virtual ~UBGraphicsEllipseItem();
+    UB3HEditableGraphicsEllipseItem(QGraphicsItem* parent = 0);
+    virtual ~UB3HEditableGraphicsEllipseItem();
 
     enum { Type = UBGraphicsItemType::GraphicsShapeItemType };
     virtual int type() const { return Type; }
@@ -42,52 +42,31 @@ public:
     virtual void copyItemParameters(UBItem *copy) const;
 
     QPointF center() const;
-    qreal radius(Qt::Orientation orientation) const;
-
-    inline bool isCircle() { return mIsCircle; }
-
-    void setAsCircle(){
-        mIsCircle = true;
-
-        horizontalHandle()->setParentItem(0);
-        verticalHandle()->setParentItem(0);
-        diagonalHandle()->setParentItem(this);
-    }
-
-    void setAsEllipse(){
-        mIsCircle = false;
-
-        horizontalHandle()->setParentItem(this);
-        verticalHandle()->setParentItem(this);
-        diagonalHandle()->setParentItem(this);
-    }
-
-    void setRect(const QRectF &rect);
-
-    // UBItem interface
-    void setUuid(const QUuid &pUuid);
 
     // QGraphicsItem interface
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
     void updateHandle(UBAbstractHandle *handle);
     virtual QRectF boundingRect() const;
     QPainterPath shape() const;
 
-    void deactivateEditionMode();
+    virtual void onActivateEditionMode();
 
-    void focusHandle(UBAbstractHandle *handle);
-protected:
-    // QGraphicsItem interface
-    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+    void setRadiusX(qreal radius);
 
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
-    void focusOutEvent(QFocusEvent *event);
+    void setRadiusY(qreal radius);
+
+    void setRect(QRectF rect);
+
+    QRectF rect() const;
+
+    qreal radiusX() const;
+
+    qreal radiusY() const;
 
 private:
-    bool mIsCircle;
-    int mMultiClickState;    
+    qreal mRadiusX;
+    qreal mRadiusY;
 };
 
 #endif // UBGRAPHICSELLIPSEITEM_H

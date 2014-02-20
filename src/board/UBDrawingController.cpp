@@ -29,7 +29,8 @@
 #include "domain/UBGraphicsScene.h"
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
-#include "domain/UBGraphicsPathItem.h"
+#include "domain/UBEditableGraphicsPolygonItem.h"
+
 #include "board/UBBoardView.h"
 
 #include "gui/UBMainWindow.h"
@@ -186,7 +187,7 @@ void UBDrawingController::onActiveSceneChanged()
     {
         if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
         {
-            UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
+            UBEditableGraphicsPolygonItem* path = dynamic_cast<UBEditableGraphicsPolygonItem*>(gi);
             if (path){
                 path->setIsInCreationMode(false);
             }
@@ -202,7 +203,7 @@ void UBDrawingController::deactivateCreationModeForGraphicsPathItems()
     {
         if (gi->type() == UBGraphicsItemType::GraphicsPathItemType)
         {
-            UBGraphicsPathItem* path = dynamic_cast<UBGraphicsPathItem*>(gi);
+            UBEditableGraphicsPolygonItem* path = dynamic_cast<UBEditableGraphicsPolygonItem*>(gi);
             if (path){
                 path->setIsInCreationMode(false);
                 UBApplication::boardController->shapeFactory().desactivate();

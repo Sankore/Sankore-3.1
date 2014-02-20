@@ -1,25 +1,11 @@
-#include "UBGraphicsRegularPathItem.h"
-#include "UBGraphicsDelegateFrame.h"
+#include "UBGraphicsRegularPathItem.h""
 
 #include <cmath>
-#include "UBDiagonalHandle.h"
 
-#include <customWidgets/UBGraphicsItemAction.h>
+#include "UBAbstractHandlesBuilder.h"
 
-#include "core/UBApplication.h"
-#include "board/UBBoardController.h"
-#include "board/UBBoardView.h"
-
-#include "UBGraphicsScene.h"
-
-QPainterPath d_oldPath;
-QPointF d_center;
-QPainterPath d_circle;
-
-UBGraphicsRegularPathItem::UBGraphicsRegularPathItem(int nVertices, QPointF startPos, QGraphicsItem * parent)
-    : UBAbstractGraphicsPathItem(parent)
-    , UB1HandleEditable()
-    , mMultiClickState(0)
+UBEditableGraphicsRegularShapeItem::UBEditableGraphicsRegularShapeItem(int nVertices, QPointF startPos, QGraphicsItem * parent)
+    : UBAbstractEditableGraphicsShapeItem(parent)
     , mNVertices(nVertices)
     , mStartPoint(startPos)
 {
@@ -27,15 +13,17 @@ UBGraphicsRegularPathItem::UBGraphicsRegularPathItem(int nVertices, QPointF star
     initializeFillingProperty();
     createGraphicsRegularPathItem();
 
-    getHandle()->setParentItem(this);
+    UB1HandleBuilder::buildHandles(mHandles);
+    mHandles.at(0)->setParentItem(this);
+    mHandles.at(0)->setEditableObject(this);
 }
 
-UBGraphicsRegularPathItem::~UBGraphicsRegularPathItem()
+UBEditableGraphicsRegularShapeItem::~UBEditableGraphicsRegularShapeItem()
 {
 
 }
 
-void UBGraphicsRegularPathItem::createGraphicsRegularPathItem()
+void UBEditableGraphicsRegularShapeItem::createGraphicsRegularPathItem()
 {
     const qreal PI = 3.14159265359;
 
@@ -59,8 +47,10 @@ void UBGraphicsRegularPathItem::createGraphicsRegularPathItem()
     }
 }
 
-void UBGraphicsRegularPathItem::updatePath(QPointF newPos)
+void UBEditableGraphicsRegularShapeItem::updatePath(QPointF newPos)
 {
+    prepareGeometryChange();
+
     QPainterPath path;
 
     QPointF diff = newPos - mStartPoint;
@@ -94,56 +84,43 @@ void UBGraphicsRegularPathItem::updatePath(QPointF newPos)
 
     path.lineTo(firstPoint);
     setPath(path);
+
+    update();
 }
 
-void UBGraphicsRegularPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void UBEditableGraphicsRegularShapeItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
+    Q_UNUSED(option)
 
-    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
-    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
-    styleOption.state &= ~QStyle::State_Selected;
-    styleOption.state &= ~QStyle::State_HasFocus;
-
-    painter->setBrush(*fillingProperty());
-    painter->setPen(*strokeProperty());
+    setStyle(painter);
 
     painter->fillPath(path(), painter->brush());
     painter->drawPath(path());
 }
 
-void UBGraphicsRegularPathItem::setStartPoint(QPointF pos)
+void UBEditableGraphicsRegularShapeItem::setStartPoint(QPointF pos)
 {
     mStartPoint = mapToItem(this, pos);
 }
 
-QRectF UBGraphicsRegularPathItem::boundingRect() const
+QRectF UBEditableGraphicsRegularShapeItem::boundingRect() const
 {
-    QRectF retour = path().boundingRect();
-
-    int enlarge = 0;
+    QRectF retour = adjustBoundingRect(path().boundingRect());
 
     if(mMultiClickState >= 1){
-        QPointF ph = getHandle()->pos();
-        qreal r = getHandle()->radius();
+        QPointF ph = mHandles.at(0)->pos();
+        qreal r = mHandles.at(0)->radius();
 
         QPointF diff = (ph - retour.topLeft()) - (retour.bottomRight() - retour.topLeft());
 
         retour.adjust(0, 0, diff.x() + r, diff.y() + r);
     }
 
-    if (strokeProperty())
-    {
-        int thickness = strokeProperty()->width();
-        enlarge = thickness/2;
-    }
-
-    retour.adjust(-enlarge, -enlarge, enlarge, enlarge);
-
     return retour;
 }
 
-void UBGraphicsRegularPathItem::addPoint(const QPointF & point)
+void UBEditableGraphicsRegularShapeItem::addPoint(const QPointF & point)
 {
     QPainterPath painterPath = path();
 
@@ -159,52 +136,30 @@ void UBGraphicsRegularPathItem::addPoint(const QPointF & point)
     setPath(painterPath);
 }
 
-UBItem *UBGraphicsRegularPathItem::deepCopy() const
+UBItem *UBEditableGraphicsRegularShapeItem::deepCopy() const
 {
-    UBGraphicsRegularPathItem * copy = new UBGraphicsRegularPathItem();
+    UBEditableGraphicsRegularShapeItem * copy = new UBEditableGraphicsRegularShapeItem();
 
     copyItemParameters(copy);
 
     return copy;
 }
 
-void UBGraphicsRegularPathItem::copyItemParameters(UBItem *copy) const
+void UBEditableGraphicsRegularShapeItem::copyItemParameters(UBItem *copy) const
 {
-    UBGraphicsRegularPathItem *cp = dynamic_cast<UBGraphicsRegularPathItem*>(copy);
-    if (cp)
-    {
-        cp->setPath(QPainterPath(this->path()));
-        cp->setTransform(this->transform());
-        cp->setFlag(QGraphicsItem::ItemIsMovable, true);
-        cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
-        cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
-        cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
+    UBAbstractEditableGraphicsShapeItem::copyItemParameters(copy);
 
-        if(Delegate()->action()){
-            if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
-                cp->Delegate()->setAction(action);
-            }
-            else
-                cp->Delegate()->setAction(Delegate()->action());
-        }
+    UBEditableGraphicsRegularShapeItem *cp = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(copy);
 
-        if (hasFillingProperty())
-            cp->mFillingProperty = new UBFillProperty(*fillingProperty());
-
-        if (hasStrokeProperty())
-            cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
-
-        cp->mVertices = mVertices;
-        cp->mNVertices = mNVertices;
-        cp->mCenter = mCenter;
-        cp->mRadius = mRadius;
-        cp->mStartPoint = mStartPoint;
-    }
+    cp->mVertices = mVertices;
+    cp->mNVertices = mNVertices;
+    cp->mCenter = mCenter;
+    cp->mRadius = mRadius;
+    cp->mStartPoint = mStartPoint;
+    cp->setPath(path());
 }
 
-void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
+void UBEditableGraphicsRegularShapeItem::updateHandle(UBAbstractHandle *handle)
 {
     setSelected(true);
     Delegate()->showFrame(false);
@@ -223,83 +178,41 @@ void UBGraphicsRegularPathItem::updateHandle(UBAbstractHandle *handle)
 
     updatePath(handle->pos());
 
-    if(fillingProperty()->gradient()){
+    if(hasGradient()){
         QLinearGradient g(path().boundingRect().topLeft(), path().boundingRect().topRight());
 
-        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
-        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
 
-        setFillingProperty(new UBFillProperty(g));
+        setBrush(g);
     }
 
 }
 
-void UBGraphicsRegularPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void UBEditableGraphicsRegularShapeItem::onActivateEditionMode()
 {
-    mMultiClickState++;
+    QPainterPath circle;
 
-    UBAbstractGraphicsPathItem::mousePressEvent(event);
+    circle.addEllipse(mCenter, mRadius, mRadius);
+
+    mHandles.at(0)->setPos(circle.boundingRect().bottomRight());
+}
+
+QPainterPath UBEditableGraphicsRegularShapeItem::shape() const
+{
+    QPainterPath path;
 
     if(mMultiClickState >= 1){
-        QPainterPath circle;
-
-        circle.addEllipse(mCenter, mRadius, mRadius);
-
-        getHandle()->setPos(circle.boundingRect().bottomRight());
-
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
-    }
-}
-
-void UBGraphicsRegularPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(mMultiClickState == 0){
-        Delegate()->mouseMoveEvent(event);
-        UBAbstractGraphicsPathItem::mouseMoveEvent(event);
-    }
-}
-
-void UBGraphicsRegularPathItem::focusOutEvent(QFocusEvent *event)
-{
-    Q_UNUSED(event)
-
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-QPainterPath UBGraphicsRegularPathItem::shape() const
-{
-    if(mMultiClickState >= 1){
-        QPainterPath path;
         path.addRect(boundingRect());
-        return path;
     }else{
-        return QGraphicsPathItem::shape();
+        path = this->path();
     }
 
+    return path;
+
 }
 
-void UBGraphicsRegularPathItem::deactivateEditionMode()
-{
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-void UBGraphicsRegularPathItem::focusHandle(UBAbstractHandle *handle)
-{
-    Q_UNUSED(handle)
-
-    setSelected(true);
-    Delegate()->showFrame(false);
-}
-
-QPointF UBGraphicsRegularPathItem::correctStartPoint() const
+QPointF UBEditableGraphicsRegularShapeItem::correctStartPoint() const
 {
     //the start point must be always in the top left corner
     //so we have to correct its position if it is not in the

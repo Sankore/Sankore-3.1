@@ -3,8 +3,10 @@
 #include "UBGraphicsRectItem.h"
 #include "UBGraphicsLineItem.h"
 #include "UBGraphicsRegularPathItem.h"
-#include "UBGraphicsPathItem.h"
+#include "UBEditableGraphicsPolygonItem.h"
 #include "UBGraphicsFreehandItem.h"
+#include "UB1HEditableGraphicsCircleItem.h"
+#include "UB1HEditableGraphicsSquareItem.h"
 
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
@@ -47,22 +49,23 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
 
     if (item)
     {
-        UBShape * shape = dynamic_cast<UBShape*>(item);
+        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
         if (shape)        
         {
             if (mFillType != Gradient)
             {
-                if (shape->fillingProperty())
+                if (shape->hasFillingProperty())
                 {
-                    delete shape->fillingProperty();
-                    shape->initializeFillingProperty();
-                    shape->fillingProperty()->setStyle(mCurrentBrushStyle);
-                    shape->fillingProperty()->setColor(mCurrentFillFirstColor);
+                    QBrush b = shape->brush();
+                    b.setStyle(mCurrentBrushStyle);
+                    b.setColor(mCurrentFillFirstColor);
+
+                    shape->setBrush(b);
                 }
             }
             else
             {
-                if (shape->fillingProperty())
+                if (shape->hasFillingProperty())
                     setGradientFillingProperty(shape);
             }
             item->update();
@@ -70,55 +73,14 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
     }
 }
 
-void UBShapeFactory::setGradientFillingProperty(UBShape* shape)
+void UBShapeFactory::setGradientFillingProperty(UBAbstractGraphicsItem* shape)
 {
-    //besoin de "downcaster" davantage pour recuperer le bounding rect de l'objet
-    QRectF recup;
+    QRectF rect = shape->boundingRect();
 
-    UBGraphicsRectItem* rect = NULL;
-    UBGraphicsLineItem* line = NULL;
-    UBGraphicsFreehandItem * freeHandItem = NULL;
-    UBGraphicsPathItem * pathItem = NULL;
-    UBGraphicsRegularPathItem * regularPathItem = NULL;
-    UBGraphicsEllipseItem * ellipse = dynamic_cast<UBGraphicsEllipseItem*>(shape);
-    if (!ellipse)
-    {
-        rect = dynamic_cast<UBGraphicsRectItem*>(shape);
-        if (!rect)
-        {
-            line = dynamic_cast<UBGraphicsLineItem*>(shape);
-            if (!line)
-            {
-                freeHandItem = dynamic_cast<UBGraphicsFreehandItem*>(shape);
-                if (!freeHandItem)
-                {
-                    pathItem = dynamic_cast<UBGraphicsPathItem*>(shape);
-                    if (!regularPathItem)
-                    {
-                        regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(shape);
-                    }
-                }
-            }
-        }
-    }    
-    if (ellipse)
-        recup = ellipse->rect();
-    else if (rect)
-        recup = rect->rect();
-    else if (line)
-        recup = line->boundingRect();
-    else if (freeHandItem)
-        recup = freeHandItem->boundingRect();
-    else if (pathItem)
-        recup = pathItem->boundingRect();
-    else if (regularPathItem)
-        recup = regularPathItem->boundingRect();
-
-
-    QLinearGradient gradient(recup.topLeft(), recup.topRight());
+    QLinearGradient gradient(rect.topLeft(), rect.topRight());
     gradient.setColorAt(0, mCurrentFillFirstColor);
     gradient.setColorAt(1, mCurrentFillSecondColor);    
-    shape->setFillingProperty(new UBFillProperty(gradient));
+    shape->setBrush(gradient);
 }
 
 UBShapeFactory::FillType UBShapeFactory::fillType()
@@ -143,88 +105,60 @@ void UBShapeFactory::init()
 }
 
 
-UBShape* UBShapeFactory::instanciateCurrentShape()
+UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
 {
     switch (mShapeType) {
     case Ellipse:
-    {
-        UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
-        mCurrentShape = ellipse;
-        mBoundingRect = ellipse->rect();
+        mCurrentShape = new UB3HEditableGraphicsEllipseItem();
         break;
-    }
     case Circle:
-    {
-        UBGraphicsEllipseItem * ellipse = new UBGraphicsEllipseItem();
-        ellipse->setAsCircle();
-        mCurrentShape = ellipse;
-        mBoundingRect = ellipse->rect();
+        mCurrentShape = new UB1HEditableGraphicsCircleItem();
         break;
-    }
     case Rectangle:
-    {
-        UBGraphicsRectItem* rect = new UBGraphicsRectItem();
-        rect->setAsRectangle();
-        mCurrentShape = rect;
-        mBoundingRect = rect->rect();
+        mCurrentShape = new UB3HEditableGraphicsRectItem();
         break;
-    }
     case Square:
-    {
-        UBGraphicsRectItem* square = new UBGraphicsRectItem();
-        square->setAsSquare();
-        mCurrentShape = square;
-        mBoundingRect = square->rect();
+        mCurrentShape = new UB1HEditableGraphicsSquareItem();
         break;
-    }
     case Line:
-    {
-        UBGraphicsLineItem* line = new UBGraphicsLineItem();
-        mCurrentShape = line;
-        mBoundingRect = line->boundingRect();
+        mCurrentShape = new UBEditableGraphicsLineItem();
         break;
-    }
     case Pen:
-    {
-        UBGraphicsFreehandItem * pathItem = new UBGraphicsFreehandItem();
-        mCurrentShape = pathItem;
-        mBoundingRect = pathItem->boundingRect();
+        mCurrentShape = new UBGraphicsFreehandItem();
         break;
-    }
     case Polygon:
-    {
-        UBGraphicsPathItem * pathItem = new UBGraphicsPathItem();
-        mCurrentShape = pathItem;
-        mBoundingRect = pathItem->boundingRect();
+        mCurrentShape = new UBEditableGraphicsPolygonItem();
         break;
-    }
     case RegularPolygon:
-    {
-        UBGraphicsRegularPathItem* regularPathItem = new UBGraphicsRegularPathItem(mNVertices);
-        mCurrentShape = regularPathItem;
-        mBoundingRect = regularPathItem->boundingRect();
+        mCurrentShape = new UBEditableGraphicsRegularShapeItem(mNVertices);
         break;
-    }
     default:
         break;
     }
 
-    mCurrentShape->applyStyle(mCurrentBrushStyle, mCurrentPenStyle);
+    mCurrentShape->setStyle(mCurrentBrushStyle, mCurrentPenStyle);
     if (mFillType != Gradient)
     {
-        mCurrentShape->applyFillColor(mCurrentFillFirstColor);
+        mCurrentShape->setFillColor(mCurrentFillFirstColor);
     }
     else
     {
-        if (mCurrentShape->fillingProperty())
+        if (mCurrentShape->hasFillingProperty())
         {
-            QLinearGradient gradient(mBoundingRect.topLeft(), mBoundingRect.topRight());
+            QRectF rect = mCurrentShape->boundingRect();
+
+            QLinearGradient gradient(rect.topLeft(), rect.topRight());
+
             gradient.setColorAt(0, mCurrentFillFirstColor);
+
             gradient.setColorAt(1, mCurrentFillSecondColor);
-            mCurrentShape->setFillingProperty(new UBFillProperty(gradient));
+
+            mCurrentShape->setBrush(gradient);
         }
     }
-    mCurrentShape->applyStrokeColor(mCurrentStrokeColor);
+
+    mCurrentShape->setStrokeColor(mCurrentStrokeColor);
+
     mCurrentShape->setStrokeSize(mThickness);
 
     return mCurrentShape;
@@ -322,32 +256,42 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
 
         if(mIsRegularShape)
         {
-            if (mShapeType == Ellipse || mShapeType == Circle)
+            if (mShapeType == Ellipse)
             {
-                UBGraphicsEllipseItem* shape = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
-                QRectF rect = shape->rect();
+                UB3HEditableGraphicsEllipseItem* shape = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
+                QRectF rect = shape->boundingRect();
 
-                mBoundingRect = QRectF(rect.topLeft(), cursorPosition);
-                shape->setRect(mBoundingRect);
-
+                mBoundingRect = QRectF(shape->mapToScene(rect.topLeft()), cursorPosition);
+                shape->setRadiusX(mBoundingRect.width()/2);
+                shape->setRadiusY(mBoundingRect.height()/2);
             }
-            else if (mShapeType == Rectangle || mShapeType == Square)
+            else if(mShapeType == Circle)
             {
-                UBGraphicsRectItem* shape = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
-                QRectF rect = shape->rect();
+                UB1HEditableGraphicsCircleItem* shape = dynamic_cast<UB1HEditableGraphicsCircleItem*>(mCurrentShape);
 
-                mBoundingRect = QRectF(rect.topLeft(), cursorPosition);
-                shape->setRect(mBoundingRect);
+                QRectF rect = shape->boundingRect();
 
+                mBoundingRect = QRectF(shape->mapToScene(rect.topLeft()), cursorPosition);
+
+                shape->setRadius(qMin(mBoundingRect.width(), mBoundingRect.height())/2);
+            }
+            else if (mShapeType == Rectangle)
+            {
+                UB3HEditableGraphicsRectItem* shape = dynamic_cast<UB3HEditableGraphicsRectItem*>(mCurrentShape);
+
+                shape->setRect(QRectF(shape->pos(), cursorPosition));
+            }
+            else if(mShapeType == Square)
+            {
+                UB1HEditableGraphicsSquareItem* shape = dynamic_cast<UB1HEditableGraphicsSquareItem*>(mCurrentShape);
+
+                shape->setRect(QRectF(shape->pos(), cursorPosition));
             }
             else if (mShapeType == Line)
             {
-                UBGraphicsLineItem* line= dynamic_cast<UBGraphicsLineItem*>(mCurrentShape);
-                QLineF newLine(line->startPoint(), cursorPosition);
-                line->setLine(newLine);
-                line->setEndPoint(cursorPosition);
+                UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(mCurrentShape);
 
-                mBoundingRect = line->boundingRect();
+                line->setEndPoint(cursorPosition);
             }
         }else{
             if(mShapeType == Pen){
@@ -363,7 +307,7 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
                     mBoundingRect = freeHand->boundingRect();
                 }
             }else if (mShapeType == RegularPolygon){
-                UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
+                UBEditableGraphicsRegularShapeItem* regularPathItem = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(mCurrentShape);
                 regularPathItem->updatePath(cursorPosition);
                 mBoundingRect = regularPathItem->boundingRect();
             }
@@ -372,7 +316,7 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
         {
             if (mFillType == Gradient)
             {
-                if (mCurrentShape->fillingProperty())
+                if (mCurrentShape->hasFillingProperty())
                     setGradientFillingProperty(mCurrentShape);
             }
         }
@@ -388,43 +332,50 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
         QPointF cursorPosition = mBoardView->mapToScene(event->pos());
 
         if(mIsRegularShape){
-            if (mShapeType == Ellipse || mShapeType == Circle)
+            if (mShapeType == Ellipse)
             {
-                UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(instanciateCurrentShape());
-
-                mBoundingRect = QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0);
-                ellipse->setRect(mBoundingRect);
+                UB3HEditableGraphicsEllipseItem* ellipse = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(instanciateCurrentShape());
+                ellipse->setPos(cursorPosition);
 
                 mBoardView->scene()->addItem(ellipse);
             }
-            else if (mShapeType == Rectangle || mShapeType == Square)
+            else if(mShapeType == Circle)
             {
-                UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(instanciateCurrentShape());
+                UB1HEditableGraphicsCircleItem* ellipse = dynamic_cast<UB1HEditableGraphicsCircleItem*>(instanciateCurrentShape());
+                ellipse->setPos(cursorPosition);
 
-                mBoundingRect = QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0);
-                rect->setRect(mBoundingRect);
+                mBoardView->scene()->addItem(ellipse);
+            }
+            else if (mShapeType == Rectangle)
+            {
+                UB3HEditableGraphicsRectItem* rect = dynamic_cast<UB3HEditableGraphicsRectItem*>(instanciateCurrentShape());
+
+                rect->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
+
+                mBoardView->scene()->addItem(rect);
+            }
+            else if(mShapeType == Square)
+            {
+                UB1HEditableGraphicsSquareItem* rect = dynamic_cast<UB1HEditableGraphicsSquareItem*>(instanciateCurrentShape());
+
+                rect->setRect(QRectF(cursorPosition.x(), cursorPosition.y(), 0, 0));
 
                 mBoardView->scene()->addItem(rect);
             }
             else if (mShapeType == Line)
-            {
-                UBGraphicsLineItem* line = dynamic_cast<UBGraphicsLineItem*>(instanciateCurrentShape());
+            {                
+                UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(instanciateCurrentShape());
 
-                line->setLine(QLineF(cursorPosition, cursorPosition));
-                line->setStartPoint(cursorPosition);
-                line->setEndPoint(cursorPosition);
-
-                mBoundingRect = line->boundingRect();
+                line->setLine(cursorPosition, cursorPosition);
 
                 mBoardView->scene()->addItem(line);
             }
         }else{
             if (mShapeType == RegularPolygon)
             {
-                UBGraphicsRegularPathItem* regularPathItem = dynamic_cast<UBGraphicsRegularPathItem*>(instanciateCurrentShape());
-                regularPathItem->setStartPoint(cursorPosition);
+                UBEditableGraphicsRegularShapeItem* regularPathItem = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(instanciateCurrentShape());
 
-                mBoundingRect = regularPathItem->boundingRect();
+                regularPathItem->setStartPoint(cursorPosition);
 
                 mBoardView->scene()->addItem(regularPathItem);
             }
@@ -437,20 +388,19 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                         pathItem->addPoint(cursorPosition);
 
                         mFirstClickForFreeHand = false;
-                        mBoundingRect = pathItem->boundingRect();
+
                         mBoardView->scene()->addItem(pathItem);                        
                     }
                 }else{
-                    UBGraphicsPathItem* pathItem = dynamic_cast<UBGraphicsPathItem*>(mCurrentShape);
+                    UBEditableGraphicsPolygonItem* pathItem = dynamic_cast<UBEditableGraphicsPolygonItem*>(mCurrentShape);
                     if (mCurrentShape == NULL || pathItem == NULL)
                     {
-                        pathItem = dynamic_cast<UBGraphicsPathItem*>(instanciateCurrentShape());
+                        pathItem = dynamic_cast<UBEditableGraphicsPolygonItem*>(instanciateCurrentShape());
                         mBoardView->scene()->addItem(pathItem);
                     }
 
                     pathItem->addPoint(cursorPosition);
 
-                    mBoundingRect = pathItem->boundingRect();
 
                     if (pathItem->isClosed() || pathItem->isOpened())
                     {
@@ -470,21 +420,37 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     Q_UNUSED(event);
     mIsPress = false;
 
-    UBGraphicsLineItem* line= dynamic_cast<UBGraphicsLineItem*>(mCurrentShape);
+    UBEditableGraphicsLineItem* line= dynamic_cast<UBEditableGraphicsLineItem*>(mCurrentShape);
     if (line)
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
 
-    if(mShapeType == Rectangle || mShapeType == Square){
-        UBGraphicsRectItem* shape = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
+    if(mShapeType == Rectangle){
+        UB3HEditableGraphicsRectItem* shape = dynamic_cast<UB3HEditableGraphicsRectItem*>(mCurrentShape);
 
         QRectF rect = shape->rect();
 
         shape->setRect(reverseRect(rect));
     }
 
-    if(mShapeType == Circle || mShapeType == Ellipse){
-        UBGraphicsEllipseItem* shape = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+    if(mShapeType == Square){
+        UB1HEditableGraphicsSquareItem* shape = dynamic_cast<UB1HEditableGraphicsSquareItem*>(mCurrentShape);
+
+        QRectF rect = shape->rect();
+
+        shape->setRect(reverseRect(rect));
+    }
+
+    if(mShapeType == Ellipse){
+        UB3HEditableGraphicsEllipseItem* shape = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
+
+        QRectF rect = shape->rect();
+
+        shape->setRect(reverseRect(rect));
+    }
+
+    if(mShapeType == Circle){
+        UB1HEditableGraphicsCircleItem* shape = dynamic_cast<UB1HEditableGraphicsCircleItem*>(mCurrentShape);
 
         QRectF rect = shape->rect();
 
@@ -492,7 +458,7 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     }
 
     if(mShapeType == RegularPolygon){
-        UBGraphicsRegularPathItem* shape = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
+        UBEditableGraphicsRegularShapeItem* shape = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(mCurrentShape);
 
         QPointF startPoint = shape->correctStartPoint();
         shape->setStartPoint(startPoint);
@@ -500,7 +466,7 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     if (!mCursorMoved)
     {
         //convertir UBShape en QGraphicsItem (ou dérivée) pour pouvoir le retirer de la scene
-        UBGraphicsRegularPathItem* regularPath = dynamic_cast<UBGraphicsRegularPathItem*>(mCurrentShape);
+        UBEditableGraphicsRegularShapeItem* regularPath = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(mCurrentShape);
         if (regularPath)
         {
            mBoardView->scene()->removeItem(regularPath);
@@ -512,12 +478,12 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
                 mBoardView->scene()->removeItem(freeHand);
             else
             {
-                UBGraphicsEllipseItem* ellipse = dynamic_cast<UBGraphicsEllipseItem*>(mCurrentShape);
+                UB3HEditableGraphicsEllipseItem* ellipse = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
                 if (ellipse)
                     mBoardView->scene()->removeItem(ellipse);
                 else
                 {
-                    UBGraphicsRectItem* rect = dynamic_cast<UBGraphicsRectItem*>(mCurrentShape);
+                    UB3HEditableGraphicsRectItem* rect = dynamic_cast<UB3HEditableGraphicsRectItem*>(mCurrentShape);
                     if (rect)
                         mBoardView->scene()->removeItem(rect);
                 }
@@ -594,10 +560,10 @@ void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
     QList<QGraphicsItem*> items = scene->selectedItems();
 
     for(int i = 0; i < items.size(); i++){
-        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
 
         if(shape)
-            shape->applyStyle(mCurrentBrushStyle);
+            shape->setStyle(mCurrentBrushStyle);
 
 
         items.at(i)->update();
@@ -614,11 +580,11 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
     QList<QGraphicsItem*> items = scene->selectedItems();
 
     for(int i = 0; i < items.size(); i++){
-        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
 
         if(shape)
         {
-            shape->applyStyle(mCurrentPenStyle);
+            shape->setStyle(mCurrentPenStyle);
         }
 
         items.at(i)->update();
@@ -634,7 +600,7 @@ void UBShapeFactory::setThickness(int thickness)
     QList<QGraphicsItem*> items = scene->selectedItems();
 
     for(int i = 0; i < items.size(); i++){
-        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
 
         if(shape){
             shape->setStrokeSize(mThickness);
@@ -653,11 +619,11 @@ void UBShapeFactory::setStrokeColor(QColor color)
     QList<QGraphicsItem*> items = scene->selectedItems();
 
     for(int i = 0; i < items.size(); i++){
-        UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
 
         if(shape)
         {
-            shape->applyStrokeColor(mCurrentStrokeColor);
+            shape->setStrokeColor(mCurrentStrokeColor);
         }
 
         items.at(i)->update();
@@ -692,18 +658,23 @@ void UBShapeFactory::updateFillingPropertyOnSelectedItems()
 
      for(int i = 0; i < items.size(); i++)
      {
-         UBShape * shape = dynamic_cast<UBShape*>(items.at(i));
+         UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
 
          if(shape)
          {
-             if (mFillType != Gradient)
-             {
-                 if (shape->fillingProperty())
-                    shape->fillingProperty()->setStyle(mCurrentBrushStyle);
-                shape->applyFillColor(mCurrentFillFirstColor);
+             if(shape->hasFillingProperty()){
+                 QBrush b = shape->brush();
+                 if (mFillType != Gradient)
+                 {
+                    b.setStyle(mCurrentBrushStyle);
+                    b.setColor(mCurrentBrushStyle);
+
+                    shape->setBrush(b);
+                 }
+                 else
+                    setGradientFillingProperty(shape);
              }
-             else
-                setGradientFillingProperty(shape);
+
 
          }
 
@@ -724,7 +695,7 @@ QColor UBShapeFactory::fillSecondColor()
 
 void UBShapeFactory::desactivateEditionMode(QGraphicsItem *item)
 {
-    UBEditable *edit = dynamic_cast<UBEditable*>(item);
+    UBAbstractEditable *edit = dynamic_cast<UBAbstractEditable*>(item);
 
     if(edit)
     {
@@ -741,7 +712,7 @@ void UBShapeFactory::desactivateEditionMode(QGraphicsItem *item)
 
 bool UBShapeFactory::isInEditMode(QGraphicsItem *item)
 {
-    UBEditable *edit = dynamic_cast<UBEditable*>(item);
+    UBAbstractEditable *edit = dynamic_cast<UBAbstractEditable*>(item);
 
     if(edit == 0) return false;
 

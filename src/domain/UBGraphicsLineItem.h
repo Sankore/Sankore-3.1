@@ -23,29 +23,24 @@
 #define UBGRAPHICSLINEITEM_H
 
 #include <QGraphicsLineItem>
-#include "UBShape.h"
+#include "UBAbstractGraphicsItem.h"
 
-#include "UBEditable.h"
+#include "UBEditableGraphicsPolygonItem.h"
 
-class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape, public UBEditable
+class UBEditableGraphicsLineItem : public UBEditableGraphicsPolygonItem
 {
     public:
-        UBGraphicsLineItem(QGraphicsItem* parent = 0);
-        virtual ~UBGraphicsLineItem();
+        UBEditableGraphicsLineItem(QGraphicsItem* parent = 0);
+        virtual ~UBEditableGraphicsLineItem();
 
         enum { Type = UBGraphicsItemType::GraphicsShapeItemType };
         virtual int type() const { return Type; }
 
         virtual UBItem* deepCopy() const;
 
-        virtual void copyItemParameters(UBItem *copy) const;
+        QPointF startPoint() const;
 
-        // UBItem interface
-        void setUuid(const QUuid &pUuid);
-
-        const QPointF startPoint();
-
-        const QPointF endPoint();
+        QPointF endPoint() const;
 
         void setStartPoint(QPointF pos);
         void setEndPoint(QPointF pos);
@@ -55,26 +50,13 @@ class UBGraphicsLineItem : public QGraphicsLineItem, public UBShape, public UBEd
 
         void updateHandle(UBAbstractHandle *handle);
 
-        QRectF boundingRect() const;
+        void setLine(QPointF start, QPointF end);
+
+        void onActivateEditionMode();
+
         QPainterPath shape() const;
 
-        void deactivateEditionMode();
-
-        void focusHandle(UBAbstractHandle *handle);
-
-    protected:
-        // QGraphicsItem interface
-        QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-
-        void mousePressEvent(QGraphicsSceneMouseEvent * event);
-        void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
-        void focusOutEvent(QFocusEvent *event);
-
-    private:
-        QPointF mStartPoint;
-        QPointF mEndPoint;
-
-        int mMultiClickState;
+        void copyItemParameters(UBItem *copy) const;
 };
 
 #endif // UBGRAPHICSLINEITEM_H

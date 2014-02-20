@@ -4,22 +4,22 @@
 #include "board/UBBoardController.h"
 #include "domain/UBGraphicsScene.h"
 
-UBEditable::UBEditable()
+UBAbstractEditable::UBAbstractEditable()
 {
     mEditMode = false;
 }
 
-UBEditable::~UBEditable()
+UBAbstractEditable::~UBAbstractEditable()
 {
 
 }
 
-void UBEditable::addHandle(UBAbstractHandle *handle)
+void UBAbstractEditable::addHandle(UBAbstractHandle *handle)
 {
     mHandles.push_back(handle);
 }
 
-void UBEditable::showEditMode(bool show)
+void UBAbstractEditable::showEditMode(bool show)
 {
     if(!show){
         for(int i = 0; i < mHandles.size(); i++){
@@ -34,12 +34,12 @@ void UBEditable::showEditMode(bool show)
     mEditMode = show;
 }
 
-void UBEditable::deactivateEditionMode()
+void UBAbstractEditable::deactivateEditionMode()
 {
     //nop
 }
 
-bool UBEditable::isInEditMode()
+bool UBAbstractEditable::isInEditMode()
 {
     return mEditMode;
 }

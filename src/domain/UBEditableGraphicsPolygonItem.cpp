@@ -1,4 +1,4 @@
-#include "UBGraphicsPathItem.h"
+#include "UBEditableGraphicsPolygonItem.h"
 
 #include <customWidgets/UBGraphicsItemAction.h>
 #include "UBFreeHandle.h"
@@ -8,11 +8,10 @@
 
 #include "UBGraphicsScene.h"
 
-UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
-    : UBAbstractGraphicsPathItem(parent)
+UBEditableGraphicsPolygonItem::UBEditableGraphicsPolygonItem(QGraphicsItem* parent)
+    : UBAbstractEditableGraphicsPathItem(parent)
     , mClosed(false)
     , mOpened(false)
-    , mMultiClickState(0)
     , HANDLE_SIZE(20)
     , mIsInCreationMode(true)
 {
@@ -20,12 +19,12 @@ UBGraphicsPathItem::UBGraphicsPathItem(QGraphicsItem* parent)
     initializeFillingProperty();
 }
 
-UBGraphicsPathItem::~UBGraphicsPathItem()
+UBEditableGraphicsPolygonItem::~UBEditableGraphicsPolygonItem()
 {
 
 }
 
-void UBGraphicsPathItem::addPoint(const QPointF & point)
+void UBEditableGraphicsPolygonItem::addPoint(const QPointF & point)
 {
     QPainterPath painterPath = path();
 
@@ -78,12 +77,12 @@ void UBGraphicsPathItem::addPoint(const QPointF & point)
     }
 }
 
-void UBGraphicsPathItem::setIsInCreationMode(bool mode)
+void UBEditableGraphicsPolygonItem::setIsInCreationMode(bool mode)
 {
     mIsInCreationMode = mode;
 }
 
-void UBGraphicsPathItem::setClosed(bool closed)
+void UBEditableGraphicsPolygonItem::setClosed(bool closed)
 {
     mClosed = closed;
 
@@ -122,49 +121,22 @@ void UBGraphicsPathItem::setClosed(bool closed)
 }
 
 
-UBItem *UBGraphicsPathItem::deepCopy() const
+UBItem *UBEditableGraphicsPolygonItem::deepCopy() const
 {
-    UBGraphicsPathItem * copy = new UBGraphicsPathItem();
+    UBEditableGraphicsPolygonItem * copy = new UBEditableGraphicsPolygonItem();
 
     copyItemParameters(copy);
 
     return copy;
 }
 
-void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
+void UBEditableGraphicsPolygonItem::copyItemParameters(UBItem *copy) const
 {
-    UBGraphicsPathItem *cp = dynamic_cast<UBGraphicsPathItem*>(copy);
-    if (cp)
-    {
-        cp->setPath(QPainterPath(this->path()));
+    UBAbstractEditableGraphicsPathItem::copyItemParameters(copy);
 
-        cp->setTransform(this->transform());
-        cp->setTransformOriginPoint(this->transformOriginPoint());
+    UBEditableGraphicsPolygonItem *cp = dynamic_cast<UBEditableGraphicsPolygonItem*>(copy);
 
-        cp->setFlag(QGraphicsItem::ItemIsMovable, true);
-        cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
-        cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
-        cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
-        cp->setFlag(QGraphicsItem::ItemIsFocusable, true);
-
-        if(Delegate()->action()){
-            if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
-                cp->Delegate()->setAction(action);
-            }
-            else
-                cp->Delegate()->setAction(Delegate()->action());
-        }
-
-        if (hasFillingProperty())
-            cp->mFillingProperty = new UBFillProperty(*fillingProperty());
-
-        if (hasStrokeProperty())
-            cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
-
-        cp->mClosed = this->mClosed;
-
+    if(cp){
         for(int i = 0; i < mHandles.size(); i++){
             UBFreeHandle *handle = new UBFreeHandle();
 
@@ -176,56 +148,42 @@ void UBGraphicsPathItem::copyItemParameters(UBItem *copy) const
 
             cp->mHandles.push_back(handle);
         }
+
+        cp->mIsInCreationMode = mIsInCreationMode;
+        cp->mClosed = mClosed;
+        cp->mStartEndPoint[0] = mStartEndPoint[0];
+        cp->mStartEndPoint[1] = mStartEndPoint[1];
     }
 }
 
-QRectF UBGraphicsPathItem::boundingRect() const
+QRectF UBEditableGraphicsPolygonItem::boundingRect() const
 {
-    QRectF rect = path().boundingRect();
+    QRectF rect = UBAbstractEditableGraphicsPathItem::boundingRect();
 
     int enlarge = 0;
-
-
-    if (strokeProperty())
-    {
-        int thickness = strokeProperty()->width();
-        enlarge = thickness/2;
-    }
 
     if (mIsInCreationMode)//gérer les poignées aux extrémités
         enlarge += HANDLE_SIZE/2;
 
     rect.adjust(-enlarge, -enlarge, enlarge, enlarge);
 
-    if(mMultiClickState >= 1){
-        qreal r = mHandles.first()->radius();
-
-        rect.adjust(-r, -r, r, r);
-    }
-
     return rect;
 }
 
-void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void UBEditableGraphicsPolygonItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
 
-    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
-    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
-    styleOption.state &= ~QStyle::State_Selected;
-    styleOption.state &= ~QStyle::State_HasFocus;
-
     if(this->isClosed())
-        painter->setBrush(*fillingProperty());
+        painter->setBrush(brush());
 
-    painter->setPen(*strokeProperty());
+    painter->setPen(pen());
 
     if (isClosed())
     {
         painter->fillPath(path(), painter->brush());
     }
 
-    //QGraphicsPathItem::paint(painter, &styleOption, widget);
     painter->drawPath(path());
 
     if (!isClosed())
@@ -248,24 +206,9 @@ void UBGraphicsPathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     }
 }
 
-void UBGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void UBEditableGraphicsPolygonItem::updateHandle(UBAbstractHandle *handle)
 {
-    mMultiClickState++;
-
-    UBAbstractGraphicsPathItem::mousePressEvent(event);
-
-    if(mMultiClickState >= 1){
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
-    }
-}
-
-void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
-{
-
-    setSelected(true);
-    Delegate()->showFrame(false);
+    prepareGeometryChange();
 
     int id = handle->getId();
 
@@ -297,58 +240,28 @@ void UBGraphicsPathItem::updateHandle(UBAbstractHandle *handle)
         }
     }
 
-
     setPath(newPath);
 
-    if(fillingProperty()->gradient()){
+    if(hasGradient()){
         QLinearGradient g(path().boundingRect().topLeft(), path().boundingRect().topRight());
 
-        g.setColorAt(0, fillingProperty()->gradient()->stops().at(0).second);
-        g.setColorAt(1, fillingProperty()->gradient()->stops().at(1).second);
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
 
-        setFillingProperty(new UBFillProperty(g));
+        setBrush(g);
     }
+
+    update();
 }
 
-QPainterPath UBGraphicsPathItem::shape() const
+QPainterPath UBEditableGraphicsPolygonItem::shape() const
 {
     QPainterPath path;
     if(mMultiClickState >= 1){
         path.addRect(boundingRect());
-        return path;
     }else{
-        return QGraphicsPathItem::shape();
+        path = this->path();
     }
-}
 
-void UBGraphicsPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-    if(mMultiClickState == 0){
-        Delegate()->mouseMoveEvent(event);
-        UBAbstractGraphicsPathItem::mouseMoveEvent(event);
-    }
-}
-
-void UBGraphicsPathItem::focusOutEvent(QFocusEvent *event)
-{
-    Q_UNUSED(event)
-
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-void UBGraphicsPathItem::deactivateEditionMode()
-{
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
-}
-
-void UBGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
-{
-    setSelected(true);
-    Delegate()->showFrame(false);
+    return path;
 }

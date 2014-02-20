@@ -1,50 +1,32 @@
 #include "UBAbstractGraphicsPathItem.h"
-#include "UBGraphicsItemDelegate.h"
-#include "UBGraphicsDelegateFrame.h"
 
 UBAbstractGraphicsPathItem::UBAbstractGraphicsPathItem(QGraphicsItem *parent):
-    QGraphicsPathItem(parent)
+    UBAbstractGraphicsItem(parent)
 {
 
-    setDelegate(new UBGraphicsItemDelegate(this, 0, true, false, false));
-    Delegate()->init();
-    Delegate()->setFlippable(false);
-    Delegate()->setRotatable(true);
-    Delegate()->setCanTrigAnAction(true);
-    Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
-
-    setUuid(QUuid::createUuid());
-    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
-    setFlag(QGraphicsItem::ItemIsMovable, true);
-    setFlag(QGraphicsItem::ItemIsFocusable, true);
 }
 
-void UBAbstractGraphicsPathItem::setUuid(const QUuid &pUuid)
+QRectF UBAbstractGraphicsPathItem::boundingRect() const
 {
-    UBItem::setUuid(pUuid);
-    setData(UBGraphicsItemData::ItemUuid, QVariant(pUuid)); //store item uuid inside the QGraphicsItem to fast operations with Items on the scene
+    QRectF rect = path().boundingRect();
+
+    rect = adjustBoundingRect(rect);
+
+    return rect;
 }
 
-QVariant UBAbstractGraphicsPathItem::itemChange(GraphicsItemChange change, const QVariant &value)
+QPainterPath UBAbstractGraphicsPathItem::shape() const
 {
-    QVariant newValue = value;
-
-    if(Delegate())
-        newValue = Delegate()->itemChange(change, value);    
-
-    return QGraphicsPathItem::itemChange(change, newValue);
+    return path();
 }
 
-
-void UBAbstractGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void UBAbstractGraphicsPathItem::copyItemParameters(UBItem *copy) const
 {
-    Delegate()->mousePressEvent(event);
-}
+    UBAbstractGraphicsItem::copyItemParameters(copy);
 
-void UBAbstractGraphicsPathItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
-{
-    Delegate()->mouseReleaseEvent(event);
-    QGraphicsPathItem::mouseReleaseEvent(event);
+    UBAbstractGraphicsPathItem* cp = dynamic_cast<UBAbstractGraphicsPathItem*>(copy);
+
+    if(!cp) return;
+
+    cp->setPath(path());
 }

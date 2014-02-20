@@ -1,11 +1,11 @@
-#include "UB3HandlesEditable.h"
+#include "UB1HEditableGraphicsBasicShape.h"
 
 #include "UBAbstractHandlesBuilder.h"
 
-UB3HEditablesGraphicsBasicShapeItem::UB3HEditablesGraphicsBasicShapeItem(QGraphicsItem *parent):
+UB1HEditableGraphicsBasicShapeItem::UB1HEditableGraphicsBasicShapeItem(QGraphicsItem *parent):
     UBAbstractEditableGraphicsShapeItem(parent)
 {
-    UB3HandlesBuilder::buildHandles(mHandles);
+    UB1HandleBuilder::buildHandles(mHandles);
 
     for(int i = 0; i < mHandles.size(); i++){
         mHandles.at(i)->setEditableObject(this);
@@ -13,16 +13,15 @@ UB3HEditablesGraphicsBasicShapeItem::UB3HEditablesGraphicsBasicShapeItem(QGraphi
     }
 }
 
-QRectF UB3HEditablesGraphicsBasicShapeItem::adjustBoundingRect(QRectF rect) const
+QRectF UB1HEditableGraphicsBasicShapeItem::adjustBoundingRect(QRectF rect) const
 {
     rect = UBAbstractEditableGraphicsShapeItem::adjustBoundingRect(rect);
 
     if(mMultiClickState >= 1){
-        qreal r = horizontalHandle()->radius();
+        qreal r = getHandle()->radius();
 
         rect.adjust(-r, -r, r, r);
     }
 
     return rect;
 }
-

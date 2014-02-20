@@ -3,7 +3,7 @@
 
 #include "UBEditable.h"
 
-class UB2HandlesEditable : public UBEditable
+class UB2HandlesEditable : public UBAbstractEditable
 {
 public:
     UB2HandlesEditable();

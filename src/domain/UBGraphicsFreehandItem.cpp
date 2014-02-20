@@ -10,6 +10,8 @@ UBGraphicsFreehandItem::UBGraphicsFreehandItem(QGraphicsItem *parent) :
 
 void UBGraphicsFreehandItem::addPoint(const QPointF & point)
 {
+    prepareGeometryChange();
+
     QPainterPath painterPath = path();
     if (painterPath.elementCount() == 0)
     {
@@ -19,7 +21,10 @@ void UBGraphicsFreehandItem::addPoint(const QPointF & point)
     {
         painterPath.lineTo(point);
     }
-        setPath(painterPath);
+
+    setPath(painterPath);
+
+    update();
 }
 
 UBItem *UBGraphicsFreehandItem::deepCopy() const
@@ -52,22 +57,15 @@ void UBGraphicsFreehandItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
-
-        if (hasStrokeProperty())
-            cp->mStrokeProperty = new UBStrokeProperty(*strokeProperty());
     }
 }
 
 void UBGraphicsFreehandItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
+    Q_UNUSED(option)
 
-    // Never draw the rubber band, we draw our custom selection with the DelegateFrame
-    QStyleOptionGraphicsItem styleOption = QStyleOptionGraphicsItem(*option);
-    styleOption.state &= ~QStyle::State_Selected;
-    styleOption.state &= ~QStyle::State_HasFocus;
-
-    painter->setPen(*strokeProperty());
+    UBAbstractGraphicsItem::setStyle(painter);
 
     painter->drawPath(path());
 }

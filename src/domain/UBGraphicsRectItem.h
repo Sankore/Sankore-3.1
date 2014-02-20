@@ -23,15 +23,16 @@
 #define UBGRAPHICSRECTITEM_H
 
 #include <QGraphicsRectItem>
-#include "UBShape.h"
+#include "UBAbstractGraphicsItem.h"
 
 #include "UB3HandlesEditable.h"
 
-class UBGraphicsRectItem : public QGraphicsRectItem, public UBShape, public UB3HandlesEditable
+class UB3HEditableGraphicsRectItem : public UB3HEditablesGraphicsBasicShapeItem
 {
 public:
-    UBGraphicsRectItem(QGraphicsItem* parent = 0);
-    virtual ~UBGraphicsRectItem();
+    UB3HEditableGraphicsRectItem(QGraphicsItem* parent = 0);
+
+    virtual ~UB3HEditableGraphicsRectItem();
 
     enum { Type = UBGraphicsItemType::GraphicsShapeItemType };
     virtual int type() const { return Type; }
@@ -40,57 +41,23 @@ public:
 
     virtual void copyItemParameters(UBItem *copy) const;
 
-    inline bool isSquare() { return mIsSquare; }
-
-    void setAsSquare()
-    {
-        mIsSquare = true;
-
-
-        horizontalHandle()->setParentItem(0);
-        verticalHandle()->setParentItem(0);
-        diagonalHandle()->setParentItem(this);
-    }
-
-    void setAsRectangle()
-    {
-        mIsSquare = false;
-
-        horizontalHandle()->setParentItem(this);
-        verticalHandle()->setParentItem(this);
-        diagonalHandle()->setParentItem(this);
-    }
-
-    void setRect(const QRectF &rect);
-
-    // UBItem interface
-    void setUuid(const QUuid &pUuid);
-
-    // QGraphicsItem interface
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
     void updateHandle(UBAbstractHandle *handle);
 
     virtual QRectF boundingRect() const;
+
     QPainterPath shape() const;
 
-    void deactivateEditionMode();
+    virtual void onActivateEditionMode();
 
-    void focusHandle(UBAbstractHandle *handle);
+    void setRect(QRectF rect);
 
-protected:
-    // QGraphicsItem interface
-    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
-
-    void focusOutEvent(QFocusEvent *event);
+    QRectF rect() const;
 
 private:
-    bool mIsSquare;
-
-    int mMultiClickState;
+    qreal mWidth;
+    qreal mHeight;
 };
 
 #endif // UBGRAPHICSRECTITEM_H
