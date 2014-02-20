@@ -78,6 +78,17 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
     setStyle(painter);
 
     painter->drawEllipse(QPointF(mRadiusX, mRadiusY), mRadiusX, mRadiusY);
+
+    if(mMultiClickState >= 1){
+        QPen p;
+        p.setColor(QColor(128, 128, 200));
+        p.setStyle(Qt::DotLine);
+        p.setWidth(pen().width());
+
+        painter->setPen(p);
+
+        painter->drawRect(0, 0, mRadiusX*2, mRadiusY*2);
+    }
 }
 
 QRectF UB3HEditableGraphicsEllipseItem::boundingRect() const
@@ -94,9 +105,7 @@ void UB3HEditableGraphicsEllipseItem::onActivateEditionMode()
     verticalHandle()->setPos(mRadiusX, mRadiusY*2);
     horizontalHandle()->setPos(mRadiusX*2, mRadiusY);
 
-    qreal r = diagonalHandle()->radius();
-
-    diagonalHandle()->setPos(mRadiusX*2-r, mRadiusY*2-r);
+    diagonalHandle()->setPos(mRadiusX*2, mRadiusY*2);
 }
 
 void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
@@ -126,8 +135,7 @@ void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
     verticalHandle()->setPos(mRadiusX, mRadiusY*2);
     horizontalHandle()->setPos(mRadiusX*2, mRadiusY);
 
-    qreal r = diagonalHandle()->radius();
-    diagonalHandle()->setPos(mRadiusX*2-r, mRadiusY*2-r);
+    diagonalHandle()->setPos(mRadiusX*2, mRadiusY*2);
 
     if(hasGradient()){
         QLinearGradient g(QPointF(), QPointF(mRadiusX*2, 0));
@@ -167,7 +175,7 @@ void UB3HEditableGraphicsEllipseItem::setRadiusY(qreal radius)
 }
 
 void UB3HEditableGraphicsEllipseItem::setRect(QRectF rect){
-    setTransformOriginPoint(rect.topLeft());
+    setPos(rect.topLeft());
     mRadiusX = rect.width()/2;
     mRadiusY = rect.height()/2;
 }

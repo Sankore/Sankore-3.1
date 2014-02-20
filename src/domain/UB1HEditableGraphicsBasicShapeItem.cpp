@@ -1,4 +1,4 @@
-#include "UB1HEditableGraphicsBasicShape.h"
+#include "UB1HEditableGraphicsBasicShapeItem.h"
 
 #include "UBAbstractHandlesBuilder.h"
 

@@ -3715,7 +3715,7 @@ UB3HEditableGraphicsEllipseItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeEll
     if ( ! svgRx.isNull()) rx = svgRx.toString().toFloat();
     if ( ! svgRy.isNull()) ry = svgRy.toString().toFloat();
 
-    ellipse->setRect(QRectF(cx - rx, cy - ry, 2*rx, 2*ry));
+    ellipse->setRect(QRectF(0, 0, 2*rx, 2*ry));
 
     getStyleFromSvg(ellipse, pDefaultPenColor);
 
@@ -3736,7 +3736,7 @@ UB1HEditableGraphicsCircleItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapeCirc
     if ( ! svgRx.isNull()) rx = svgRx.toString().toFloat();
 
 
-    circle->setRect(QRectF(cx - rx, cy - rx, 2*rx, 2*rx));
+    circle->setRect(QRectF(0, 0, 2*rx, 2*rx));
 
     getStyleFromSvg(circle, pDefaultPenColor);
 
