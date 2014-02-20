@@ -52,6 +52,17 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
     UBAbstractGraphicsItem::setStyle(painter);
 
     painter->drawEllipse(QPointF(mRadius, mRadius), mRadius, mRadius);
+
+    if(mMultiClickState >= 1){
+        QPen p;
+        p.setColor(QColor(128, 128, 200));
+        p.setStyle(Qt::DotLine);
+        p.setWidth(pen().width());
+
+        painter->setPen(p);
+
+        painter->drawRect(0, 0, mRadius*2, mRadius*2);
+    }
 }
 
 QRectF UB1HEditableGraphicsCircleItem::boundingRect() const
@@ -71,10 +82,6 @@ QRectF UB1HEditableGraphicsCircleItem::boundingRect() const
 
 void UB1HEditableGraphicsCircleItem::onActivateEditionMode()
 {
-
-    qDebug() << pos();
-    qDebug() << transform();
-
     qreal r = getHandle()->radius();
 
     getHandle()->setPos(mRadius*2 - r, mRadius*2 - r);
@@ -129,7 +136,7 @@ void UB1HEditableGraphicsCircleItem::setRadius(qreal radius)
 
 void UB1HEditableGraphicsCircleItem::setRect(QRectF rect)
 {
-    setTransformOriginPoint(rect.topLeft());
+    setPos(rect.topLeft());
 
     mRadius = rect.width()/2;
 }

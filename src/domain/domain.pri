@@ -44,10 +44,10 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBAbstractEditableGraphicsPathItem.h \
     src/domain/UBAbstractHandlesBuilder.h \
     src/domain/UB1HEditableGraphicsCircleItem.h \
-    src/domain/UB1HEditableGraphicsBasicShape.h \
     src/domain/UB1HEditableGraphicsSquareItem.h \
     src/domain/UBAbstractGraphicsItem.h \
-    src/domain/UBEditableGraphicsPolygonItem.h
+    src/domain/UBEditableGraphicsPolygonItem.h \
+    src/domain/UB1HEditableGraphicsBasicShapeItem.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
