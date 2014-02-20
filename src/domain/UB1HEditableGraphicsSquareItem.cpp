@@ -101,7 +101,7 @@ QRectF UB1HEditableGraphicsSquareItem::boundingRect() const
 {
     QRectF rect(0, 0, mSide, mSide);
 
-    adjustBoundingRect(rect);
+    rect = adjustBoundingRect(rect);
 
     if(mMultiClickState >= 1){
         qreal r = mHandles.at(0)->radius();
