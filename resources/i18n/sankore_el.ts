@@ -3485,10 +3485,6 @@ p, li { white-space: pre-wrap; }
         <translation>Σε φωτεινό παρασκήνιο</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Σε σκοτεινό παρασκήνιο</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation>Πλάτος γραμμής</translation>
     </message>

@@ -1229,10 +1229,6 @@
         <translation>Attention</translation>
     </message>
     <message>
-        <source>This is not a final release. Don&apos;t use it to produce content, only for testing.</source>
-        <translation type="obsolete">Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
-    </message>
-    <message>
         <source>This is not a final release. Please use it only for testing.</source>
         <translation>Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
     </message>
@@ -1633,7 +1629,7 @@ Providing a new name will create a new document.</source>
         <translatorcomment>j&apos;ai ajouté le terme &quot;Attention&quot; car cette opération est dangereuse (et pas trop conforme aux habitudes ou l&apos;on place en général un n° de version à la fin du fichier pour les différencier et eviter l&apos;effacement)</translatorcomment>
         <translation>Le nom %1 est déjà utilisé.
 ATTENTION : En gardant ce nom, l&apos;ancien document sera écrasé par le nouveau.
-Un nouveau nom vous permettra de conserver l&apos;ancier document.
+Un nouveau nom vous permettra de conserver l&apos;ancien document.
 </translation>
     </message>
 </context>
@@ -3505,10 +3501,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>On Light Background</source>
         <translation>Sur fond clair</translation>
-    </message>
-    <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Sur fond foncé</translation>
     </message>
     <message>
         <source>Line Width</source>

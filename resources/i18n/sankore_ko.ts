@@ -3483,10 +3483,6 @@ p, li { white-space: pre-wrap; }
         <translation>밝은 배경</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">어두운 배경</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>불투명도</translation>
     </message>

@@ -3498,10 +3498,6 @@ p, li { white-space: pre-wrap; }
         <translation>في خلفية مضيئة</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">في خلفية داكنة</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>معدل الشفافية</translation>
     </message>

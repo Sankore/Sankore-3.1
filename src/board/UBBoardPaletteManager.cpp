@@ -947,18 +947,20 @@ void UBBoardPaletteManager::addItem(const QPixmap& pPixmap, const QPointF& pos, 
 
 void UBBoardPaletteManager::addItemToCurrentPage()
 {
-    UBApplication::applicationController->showBoard();
+    if (UBApplication::applicationController->displayMode() != UBApplicationController::Board )
+        UBApplication::applicationController->showBoard();
+
     mAddItemPalette->hide();
     if(mPixmap.isNull())
         UBApplication::boardController->downloadURL(mItemUrl);
     else
     {
+        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+
         UBGraphicsPixmapItem* item = UBApplication::boardController->activeScene()->addPixmap(mPixmap, NULL, mPos, mScaleFactor);
 
         item->setSourceUrl(mItemUrl);
-        item->setSelected(true);
-
-        UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
+        item->setSelected(true);       
     }
 }
 

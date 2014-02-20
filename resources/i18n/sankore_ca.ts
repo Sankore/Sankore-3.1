@@ -3490,10 +3490,6 @@ p, li { white-space: pre-wrap; }
         <translation>Sobre fons clar</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Sobre fons fosc</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation>Amplada de la línia</translation>
     </message>

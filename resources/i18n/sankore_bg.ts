@@ -3485,10 +3485,6 @@ p, li { white-space: pre-wrap; }
         <translation>На светъл фон</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">На тъмен фон</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation>Ширина на линията</translation>
     </message>

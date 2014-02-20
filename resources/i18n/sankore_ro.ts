@@ -3485,10 +3485,6 @@ p, li { white-space: pre-wrap; }
         <translation>Pe fundal deschis</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Pe fundal închis</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>Opacitate</translation>
     </message>

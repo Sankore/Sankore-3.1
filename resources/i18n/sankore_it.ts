@@ -3488,10 +3488,6 @@ p, li { white-space: pre-wrap; }
         <translation>Su sfondo chiaro</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Su sfondo scuro</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>Opacità</translation>
     </message>
