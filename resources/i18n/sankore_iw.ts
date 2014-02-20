@@ -3472,10 +3472,6 @@ p, li { white-space: pre-wrap; }
         <translation>על רקע בהיר</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">על רקע כהה</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>אטימות</translation>
     </message>

@@ -3506,10 +3506,6 @@ p, li { white-space: pre-wrap; }
         <translation>Nant&apos;à fondu chjaru</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">Nant&apos;à fondu scuru</translation>
-    </message>
-    <message>
         <source>Line Width</source>
         <translation>Larghezza di a linea</translation>
     </message>

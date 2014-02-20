@@ -715,11 +715,14 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
     case UBGraphicsGroupContainerItem::Type:
         return !dynamic_cast<UBGraphicsGroupContainerItem*>(item)->Delegate()->isLocked();
     case UBGraphicsWidgetItem::Type:
+    {
         if(currentTool == UBStylusTool::Selector && item->isSelected())
             return false;
-        if(currentTool == UBStylusTool::Play)
+        UBGraphicsWidgetItem* widgetItem= dynamic_cast<UBGraphicsWidgetItem*>(item);
+        bool isFeatureRTE =  mController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(widgetItem->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
+        if(currentTool == UBStylusTool::Play && !isFeatureRTE)
             return false;
-
+    }
     case UBGraphicsSvgItem::Type:
     case UBGraphicsPixmapItem::Type:
         if (currentTool == UBStylusTool::Play || !item->isSelected())

@@ -53,26 +53,12 @@ UBItem *UB3HEditableGraphicsRectItem::deepCopy() const
 
 void UB3HEditableGraphicsRectItem::copyItemParameters(UBItem *copy) const
 {
+    UB3HEditablesGraphicsBasicShapeItem::copyItemParameters(copy);
+
     UB3HEditableGraphicsRectItem *cp = dynamic_cast<UB3HEditableGraphicsRectItem*>(copy);
     if (cp)
     {
-        cp->setPos(this->pos());
         cp->setRect(this->rect());
-        cp->setTransform(this->transform());
-        cp->setFlag(QGraphicsItem::ItemIsMovable, true);
-        cp->setFlag(QGraphicsItem::ItemIsSelectable, true);
-        cp->setData(UBGraphicsItemData::ItemLayerType, this->data(UBGraphicsItemData::ItemLayerType));
-        cp->setData(UBGraphicsItemData::ItemLocked, this->data(UBGraphicsItemData::ItemLocked));
-
-        if(Delegate()->action()){
-            if(Delegate()->action()->linkType() == eLinkToAudio){
-                UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
-                UBGraphicsItemPlayAudioAction* action = new UBGraphicsItemPlayAudioAction(audioAction->fullPath());
-                cp->Delegate()->setAction(action);
-            }
-            else
-                cp->Delegate()->setAction(Delegate()->action());
-        }
     }
 }
 

@@ -905,64 +905,71 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
             }
             else if (mXmlReader.name() == "ellipse") // EV-7 - ALTI/AOU - 20131231
             {
-                QStringRef isCircle = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "isCircle");
+                QStringRef isShapeRect = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapeEllipse");
 
-                UBAbstractGraphicsItem *item = 0;
+                if(!isShapeRect.isNull() && isShapeRect.toString().toLower() == "true"){
+                    QStringRef isCircle = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "isCircle");
 
-                Qt::GlobalColor color = mScene->isDarkBackground() ? Qt::white : Qt::black;
+                    UBAbstractGraphicsItem *item = 0;
 
-                if(!isCircle.isNull() && isCircle.toString().toLower() == "true"){
-                    item = shapeCircleFromSvg(color);
-                }else{
-                    item = shapeEllipseFromSvg(color);
+                    Qt::GlobalColor color = mScene->isDarkBackground() ? Qt::white : Qt::black;
+
+                    if(!isCircle.isNull() && isCircle.toString().toLower() == "true"){
+                        item = shapeCircleFromSvg(color);
+                    }else{
+                        item = shapeEllipseFromSvg(color);
+                    }
+
+                    if (isGradient)
+                    {
+                        currentGradient.setStart(item->boundingRect().topLeft());
+                        currentGradient.setFinalStop(item->boundingRect().topRight());
+                        item->setBrush(currentGradient);
+                        isGradient = false;
+                    }
+
+                    mScene->addItem(item);
+
+                    if (zFromSvg != UBZLayerController::errorNum())
+                        UBGraphicsItem::assignZValue(item, zFromSvg);
+
+                    if (!uuidFromSvg.isNull())
+                        item->setUuid(uuidFromSvg);
                 }
-
-                if (isGradient)
-                {
-                    currentGradient.setStart(item->boundingRect().topLeft());
-                    currentGradient.setFinalStop(item->boundingRect().topRight());
-                    item->setBrush(currentGradient);
-                    isGradient = false;
-                }
-
-                mScene->addItem(item);
-
-                if (zFromSvg != UBZLayerController::errorNum())
-                    UBGraphicsItem::assignZValue(item, zFromSvg);
-
-                if (!uuidFromSvg.isNull())
-                    item->setUuid(uuidFromSvg);
-
             }
             else if (mXmlReader.name() == "rect") // EV-7 - ALTI/CFA - 20131231
             {
-                QStringRef isSquare = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "isSquare");
+                QStringRef isShapeRect = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "shapeRect");
 
-                UBAbstractGraphicsItem *item = 0;
+                if(!isShapeRect.isNull() && isShapeRect.toString().toLower() == "true"){
+                    QStringRef isSquare = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "isSquare");
 
-                Qt::GlobalColor color = mScene->isDarkBackground() ? Qt::white : Qt::black;
+                    UBAbstractGraphicsItem *item = 0;
 
-                if(!isSquare.isNull() && isSquare.toString().toLower() == "true"){
-                    item = shapeSquareFromSvg(color);
-                }else{
-                    item = shapeRectFromSvg(color);
+                    Qt::GlobalColor color = mScene->isDarkBackground() ? Qt::white : Qt::black;
+
+                    if(!isSquare.isNull() && isSquare.toString().toLower() == "true"){
+                        item = shapeSquareFromSvg(color);
+                    }else{
+                        item = shapeRectFromSvg(color);
+                    }
+
+                    if (isGradient)
+                    {
+                        currentGradient.setStart(item->boundingRect().topLeft());
+                        currentGradient.setFinalStop(item->boundingRect().topRight());
+                        item->setBrush(currentGradient);
+                        isGradient = false;
+                    }
+
+                    mScene->addItem(item);
+
+                    if (zFromSvg != UBZLayerController::errorNum())
+                        UBGraphicsItem::assignZValue(item, zFromSvg);
+
+                    if (!uuidFromSvg.isNull())
+                        item->setUuid(uuidFromSvg);
                 }
-
-                if (isGradient)
-                {
-                    currentGradient.setStart(item->boundingRect().topLeft());
-                    currentGradient.setFinalStop(item->boundingRect().topRight());
-                    item->setBrush(currentGradient);
-                    isGradient = false;
-                }
-
-                mScene->addItem(item);
-
-                if (zFromSvg != UBZLayerController::errorNum())
-                    UBGraphicsItem::assignZValue(item, zFromSvg);
-
-                if (!uuidFromSvg.isNull())
-                    item->setUuid(uuidFromSvg);
             }
             else if (mXmlReader.name() == "foreignObject")
             {
@@ -3546,6 +3553,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeRectToSvg(UB3HEditableGraphicsR
     writeAbstractGraphicsItemGradient(item);
 
     mXmlWriter.writeStartElement("rect");
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapeRect", "true");
 
     // SVG <shapeRect> tag :
     mXmlWriter.writeAttribute("x", QString::number(item->rect().x()));
@@ -3751,6 +3759,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeEllipseToSvg(UB3HEditableGraphi
     writeAbstractGraphicsItemGradient(item);
 
     mXmlWriter.writeStartElement("ellipse");
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapeEllipse", "true");
 
     // SVG <ellipse> tag :
     mXmlWriter.writeAttribute("cx", QString("%1").arg(item->center().x())); // The <ellipse> SVG tag need center coordinates. Compute them from boundaries of item.
@@ -3943,6 +3952,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeSquareToSvg(UB1HEditableGraphic
     writeAbstractGraphicsItemGradient(item);
 
     mXmlWriter.writeStartElement("rect");
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapeRect", "true");
 
     // SVG <shapeRect> tag :
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "isSquare", "true");
@@ -3961,6 +3971,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapeCircleToSvg(UB1HEditableGraphic
     writeAbstractGraphicsItemGradient(item);
 
     mXmlWriter.writeStartElement("ellipse");
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "shapeEllipse", "true");
 
     // SVG <ellipse> tag :
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "isCircle", "true");

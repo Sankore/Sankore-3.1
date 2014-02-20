@@ -3482,10 +3482,6 @@ p, li { white-space: pre-wrap; }
         <translation>На светлом фоне</translation>
     </message>
     <message>
-        <source>On Dark Background</source>
-        <translation type="obsolete">На темном фоне</translation>
-    </message>
-    <message>
         <source>Opacity</source>
         <translation>Непрозрачность</translation>
     </message>

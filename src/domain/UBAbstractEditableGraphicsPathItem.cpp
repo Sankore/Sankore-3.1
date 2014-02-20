@@ -32,6 +32,8 @@ QRectF UBAbstractEditableGraphicsPathItem::boundingRect() const
 {
     QRectF rect = path().boundingRect();
 
+    rect = UBAbstractGraphicsPathItem::adjustBoundingRect(rect);
+
     if(mMultiClickState >= 1){
         qreal r = mHandles.first()->radius();
 

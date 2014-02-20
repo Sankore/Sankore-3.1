@@ -471,25 +471,6 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
         {
            mBoardView->scene()->removeItem(regularPath);
         }
-        else
-        {
-            UBGraphicsFreehandItem* freeHand = dynamic_cast<UBGraphicsFreehandItem*>(mCurrentShape);
-            if (freeHand)
-                mBoardView->scene()->removeItem(freeHand);
-            else
-            {
-                UB3HEditableGraphicsEllipseItem* ellipse = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
-                if (ellipse)
-                    mBoardView->scene()->removeItem(ellipse);
-                else
-                {
-                    UB3HEditableGraphicsRectItem* rect = dynamic_cast<UB3HEditableGraphicsRectItem*>(mCurrentShape);
-                    if (rect)
-                        mBoardView->scene()->removeItem(rect);
-                }
-            }
-        }
-
     }
 
 
@@ -667,7 +648,7 @@ void UBShapeFactory::updateFillingPropertyOnSelectedItems()
                  if (mFillType != Gradient)
                  {
                     b.setStyle(mCurrentBrushStyle);
-                    b.setColor(mCurrentBrushStyle);
+                    b.setColor(mCurrentFillFirstColor);
 
                     shape->setBrush(b);
                  }
