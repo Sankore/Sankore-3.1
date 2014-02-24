@@ -43,7 +43,7 @@
 #include "domain/UBGraphicsRectItem.h"
 #include "domain/UBEditableGraphicsPolygonItem.h"
 #include "domain/UBGraphicsFreehandItem.h"
-#include "domain/UBGraphicsRegularPathItem.h"
+#include "domain/UBEditableGraphicsRegularShapeItem.h"
 #include "domain/UBGraphicsLineItem.h"
 #include "domain/UB1HEditableGraphicsSquareItem.h"
 #include "domain/UB1HEditableGraphicsCircleItem.h"
