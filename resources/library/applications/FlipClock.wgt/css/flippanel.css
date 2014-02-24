@@ -1,0 +1,194 @@
+body {
+  background-color:#FFF;
+  text-align:center;
+  padding:100px 5px 0;
+  font-family:"Helvetica Neue", Arial, sans-serif;  
+}
+footer {
+  margin-top:50px;
+  color:#666;
+}
+
+footer a {
+  color:#390270;
+}
+
+.clock {
+  white-space:nowrap;
+}
+
+.flip-panel:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 200;
+  top: 105px;
+  left: -5px;
+  width: 3px;
+  height: 100px;
+  
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: -moz-linear-gradient(top,  #000, #424242 35%, #363636 52%, #000);
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(.35, #424242), color-stop(.52, #363636), to(#000));
+  border: 1px solid #000;
+  -moz-box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+  -webkit-box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+  box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+}
+.flip-panel:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 200;
+  top: 105px;
+  right: -5px;
+  width: 3px;
+  height: 100px;
+  
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: -moz-linear-gradient(top,  #000, #424242 35%, #363636 52%, #000);
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(.35, #424242), color-stop(.52, #363636), to(#000));
+  border: 1px solid #000;
+  -moz-box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+  -webkit-box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+  box-shadow: -1px -1px 0 rgba(0, 0, 0, .2), 1px 1px 0 rgba(255, 255, 255, .05) inset, 1px 0 10px rgba(0, 0, 0, 1), 1px 1px 0 rgba(255, 255, 255, .06);
+}
+
+.flip-panel {
+  margin:3px;
+  display:inline-block;
+  position:relative;
+  height:300px;
+  width:300px;
+  -moz-transform-style: preserve-3d;
+  -moz-perspective:1200;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-perspective:1200;
+}
+.layer {
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  line-height: 296px;
+  font-size: 220px;
+  height:300px;
+  font-weight:bold;
+  text-align:center; 
+  border-radius:11px; -moz-border-radius:11px; -webkit-border-radius:11px;
+  position:absolute;
+  left:0; right:0; bottom:0; top:0;
+  display:block;
+  background:transparent;
+  color:#fff;
+
+  /* Firefox freaks if you don't do this */  
+   -moz-transform-style: preserve-3d;
+   -moz-perspective:1200;
+
+  /* Screws up shadows if you do this */
+  /*  -webkit-transform-style: preserve-3d;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-perspective:1200;
+  */
+}
+.side {
+  z-index:5;
+  backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.side.back {
+  transform:rotateX(180deg); -moz-transform:rotateX(180deg); -webkit-transform:rotateX(180deg); 
+}
+.side.top-half {  
+  border-bottom:groove 8px RGBA(87,87,87,0.9);
+  border-bottom-right-radius:0; -moz-border-radius-bottomright:0; -webkit-border-bottom-right-radius:0;
+  border-bottom-left-radius:0; -moz-border-radius-bottomleft:0; -webkit-border-bottom-left-radius:0;
+  height:50%;
+
+  background: #141212; 
+  background: -moz-linear-gradient(top, #141212 0%, #232323 100%); 
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#141212), color-stop(100%,#232323)); 
+}
+.side.bottom-half {  
+  border-top:groove 8px RGBA(87,87,87,0.9);
+  border-top-right-radius:0; -moz-border-radius-topright:0; -webkit-border-top-right-radius:0;
+  border-top-left-radius:0; -moz-border-radius-topleft:0; -webkit-border-top-left-radius:0;
+  height:135px;
+
+  background: #141212; 
+  background: -moz-linear-gradient(top, #0a0e0a 0%, #0a0809 100%); 
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0a0e0a), color-stop(100%,#0a0809)); 
+  
+  position:relative;
+  top:7px;
+}
+/* bottom half is a little trickier, had to add another element to adjust */
+.side.bottom-half .adjust {
+  display:block;
+  line-height:0;
+  position:relative;
+  top:-10px;
+  
+  /* Firefox freaks if you don't do this */  
+  -moz-transform-style: preserve-3d;
+  
+  /* Webkit bleeds through if you do this */
+/*  -webkit-transform-style: preserve-3d;*/
+}
+
+.layer.top {
+   /* this is the half that flips */
+   z-index:3;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-perspective:600;
+}
+.layer.middle {
+  z-index:2;
+}
+.layer.bottom {
+  z-index:1;
+  display:block;
+  background: #141212; 
+  background: -moz-linear-gradient(top, #141212 0%, #232323 50%, #0a0e0a 50%, #0a0809 100%); 
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#141212), color-stop(50%,#232323), color-stop(50%,#0a0e0a), color-stop(100%,#0a0809)); 
+  -webkit-box-shadow: 0px 8px 11px #000;
+  -moz-box-shadow: 0px 8px 11px #000;
+  box-shadow: 0px 8px 11px #000;
+}
+
+
+.layer.bottom:after {
+  content:"";
+  border-radius:11px;
+  -moz-border-radius: 11px;
+  height:30px;
+  width:100%;
+  margin:0px auto;
+  display:block;
+  position:relative;
+  top:-29px;
+  -webkit-box-shadow: 0px 2px 0px #121212;
+  -moz-box-shadow: 0px 2px 0px #121212;
+  box-shadow: 0px 2px 0px #121212;
+  border-bottom:solid 1px #262626;
+}
+.layer.bottom:before {
+  content:"";
+  border-radius:11px;
+  -moz-border-radius: 11px;
+  height:30px;
+  width:100%;
+  margin:0px auto;
+  display:block;
+  position:absolute;
+  top:-2px;
+  -webkit-box-shadow: 0px -1px 0px #080808;
+  -moz-box-shadow: 0px -1px 0px #080808;
+  box-shadow: 0px -1px 0px #080808;
+  border-top:solid 1px #262626;
+}

@@ -1,0 +1,178 @@
+/* position des différentes div */
+
+#div_legendes {
+	position: fixed;
+	left: 165px;
+}
+
+#div_tab{
+	position:fixed;
+	top: 70px;
+	left: 145px;
+}
+
+#div_tab1b{
+	position:fixed;
+	top: 70px;
+	left: 262px;
+}
+
+#div_tab2{
+	position:fixed;
+	left:262px;
+	top: 430px;
+
+}
+
+#div_infos{
+	position:fixed;
+	border: 1px solid black;
+	height: 128px;
+	width: 290px;
+	left: 259px;
+	top: 70px;
+	text-align: left;
+	padding: 10px;
+	padding-right: 0px;
+	font-family:Trebuchet MS, sans-serif;
+}
+
+#div_boutons {
+	position: fixed;
+	width:130px;
+	height: 500px;
+	font-family:Trebuchet MS, sans-serif;
+}
+
+/* style des cellules du tableau */
+#div_tab td, #div_tab1b td, #div_tab2 td {
+	height: 49px;
+	width: 34px;
+	font-family:Trebuchet MS, sans-serif;
+	opacity: 0.4;
+	text-align: center;
+	cursor: pointer;
+}
+
+/*couleur des éléments selon leur catégorie (métal, non métal...)*/
+.nm{
+	background-color: #61DD23;
+}
+
+
+.m{
+	background-color: #5C83CE;
+}
+
+
+.gr{
+	background-color:#F9E831;
+}
+
+.mt{
+	background-color:96B0E0;
+}
+
+/*style des cellules lorsqu'on passe la souris dessus*/
+#div_tab td.nm:hover, #div_tab td.m:hover, #div_tab td.mt:hover, #div_tab1b td.gr:hover, #div_tab1b td.nm:hover, #div_tab1b td.m:hover, #div_tab2 td:hover, #div_tab1b td.mt:hover{
+	opacity: 1;
+	border: 1.25px solid black;
+	width: 31.5px;
+	height: 44px;
+	padding: 0px;
+}
+
+/*style du nom de l'élément dans la div infos*/
+h3 {
+	font-size: 12pt;
+	font-family: Trebuchet MS, sans-serif;
+	color: black;
+	margin-top: 0px;
+	margin-bottom: 3px;
+
+}
+
+/*style du symbole de l'élément dans le tableau*/
+table {
+	font-family: Trbuchet MS, sans-serif;
+	font-size: 11pt;
+}
+
+/*définition des tailles des colonnes dans le tableau créé par la fonction infos() dans la div_infos*/
+.colonne1 {
+	width: 135px;
+}
+
+.colonne2 {
+	width: 60px;;
+}
+
+.colonne3 {
+	width: 84px;
+}
+
+/* style du nom et de l'élément atomique dans le tableau */
+.nom{
+	font-size: 4pt;
+}
+
+.num{
+	font-size: 7pt;
+	text-align: left;
+	text-indent: 3px;
+}
+
+/* style pour le mini-tableau légendes des états */
+
+/*style des 'cellules' des légendes*/
+#div_legendes td {
+	width: 100px;
+	text-align: center;
+	height: 45px;
+}
+
+#solide {
+	background-color: #b5b5b5;
+}
+
+#gaz {
+	background-color: #ca43d1;
+}
+
+#synth {
+	background-color: #34eb29;
+}
+
+#liquide {
+	background-color: #21cbce;
+}
+
+/*style des boutons à gauche*/
+.button{
+	font-size:14px;
+	font-family:Trebuchet MS,sans-serif;
+	color:#111111;
+	width:130px;
+	height:25px;
+	margin:2px;
+	cursor: pointer;
+}
+
+/*style pour le bouton de la forme du tableau*/
+#div_positions {
+	cursor: pointer;
+	text-indent: 3px;
+}
+
+/*style pour les images de la formule de lewis*/
+#div_infos img {
+	position: absolute;
+	left: 80px;
+	top: 20px;
+}
+
+/*taille du texte dans la div_infos*/
+#table_infos {
+	font-size: 10pt;
+}
+
