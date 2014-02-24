@@ -3690,6 +3690,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::getStyleFromSvg(UBAbstractGraphicsIt
     }
     item->setFillPattern(fillPattern);
 
+    // action
+    item->Delegate()->setAction(readAction());
+
     // Transform matrix
     QStringRef svgTransform = mXmlReader.attributes().value("transform");
     QMatrix itemMatrix;
@@ -4049,6 +4052,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAbstractGraphicsItemStyle(UBAbs
     }
     else
         mXmlWriter.writeAttribute("fill", "none");
+
+    //action
+    writeAction(item->Delegate()->action());
 
     //uuid
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "uuid", UBStringUtils::toCanonicalUuid(item->uuid()));
