@@ -191,15 +191,20 @@ QStringList UBGraphicsItemMoveToPageAction::save()
 UBGraphicsItemLinkToWebPageAction::UBGraphicsItemLinkToWebPageAction(QString url, QObject *parent) :
     UBGraphicsItemAction(eLinkToWebUrl,parent)
 {
-    Q_ASSERT(url.length());
-    if(!url.startsWith("http://"))
-        url = "http://" + url;
-    mUrl = url;
+    if (url.length() > 0)
+    {
+        if(!url.startsWith("http://"))
+            url = "http://" + url;
+        mUrl = url;
+    }
+    else
+        mUrl = QString();
 }
 
 void UBGraphicsItemLinkToWebPageAction::play()
 {
-    UBApplication::webController->loadUrl(QUrl(mUrl));
+    if (mUrl.length() > 0)
+        UBApplication::webController->loadUrl(QUrl(mUrl));
 }
 
 QStringList UBGraphicsItemLinkToWebPageAction::save()
