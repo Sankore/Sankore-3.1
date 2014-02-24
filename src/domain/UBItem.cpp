@@ -135,24 +135,12 @@ UBGraphicsItemDelegate *UBGraphicsItem::Delegate(QGraphicsItem *pItem)
         result = (static_cast<UBGraphicsCurtainItem*>(pItem))->Delegate();
         break;
     case UBEditableGraphicsRegularShapeItem::Type :
-        result = (static_cast<UBEditableGraphicsRegularShapeItem*>(pItem))->Delegate();
-        break;
     case UBEditableGraphicsPolygonItem::Type :
-        result = (static_cast<UBEditableGraphicsPolygonItem*>(pItem))->Delegate();
-        break;
     case UBGraphicsFreehandItem::Type :
-        result = (static_cast<UBGraphicsFreehandItem*>(pItem))->Delegate();
-        break;
     case UBGraphicsItemType::GraphicsShapeItemType :
-        UB3HEditableGraphicsRectItem* rect = dynamic_cast<UB3HEditableGraphicsRectItem*>(pItem);
-        UB3HEditableGraphicsEllipseItem* ellipse = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(pItem);
-        UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(pItem);
-        if (rect)
-            result = rect->Delegate();
-        else if (ellipse)
-            result = ellipse->Delegate();
-        else
-            result = line->Delegate();
+        UBAbstractGraphicsItem* item = dynamic_cast<UBAbstractGraphicsItem*>(pItem);
+        if (item)
+            result = item->Delegate();
         break;
     }
 
