@@ -70,8 +70,10 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
         QString fullFileName = fileInfo->absoluteFilePath();
         //qDebug() << fullFileName;
         UBFeatureElementType featureType;
-        if (fullFileName.contains("Texte Enrichi.wgt"))
+        if (fullFileName.contains("Texte Enrichi.wgt")){
             featureType = FEATURE_RTE;
+            UBFeaturesController::setRTEIsLoaded(true);
+        }
         else
             featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
 
@@ -1909,3 +1911,16 @@ RegisteryEntry UBFeaturesController::getRegisteryEntry(const QString &name) cons
     return mTrashRegistery.getEntry(name);
 }
 //issue 1474 - NNE - 20131213 : END
+
+//issue 1699 - NNE - 20140224
+void UBFeaturesController::setRTEIsLoaded(bool isLoaded)
+{
+    UBFeaturesController::mRTEIsLoaded = isLoaded;
+}
+
+bool UBFeaturesController::RTEIsLoaded()
+{
+    return UBFeaturesController::mRTEIsLoaded;
+}
+
+bool UBFeaturesController::mRTEIsLoaded = false;
