@@ -2,7 +2,7 @@
 #include "UBGraphicsEllipseItem.h"
 #include "UBGraphicsRectItem.h"
 #include "UBGraphicsLineItem.h"
-#include "UBGraphicsRegularPathItem.h"
+#include "UBEditableGraphicsRegularShapeItem.h"
 #include "UBEditableGraphicsPolygonItem.h"
 #include "UBGraphicsFreehandItem.h"
 #include "UB1HEditableGraphicsCircleItem.h"

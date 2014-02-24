@@ -29,7 +29,6 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBShapeFactory.h \
     src/domain/UBGraphicsRectItem.h \
     src/domain/UBGraphicsLineItem.h \
-    src/domain/UBGraphicsRegularPathItem.h \
     src/domain/UBGraphicsFreehandItem.h \
     src/domain/UBAbstractGraphicsPathItem.h \
     src/domain/UBEditable.h \
@@ -47,7 +46,8 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UB1HEditableGraphicsSquareItem.h \
     src/domain/UBAbstractGraphicsItem.h \
     src/domain/UBEditableGraphicsPolygonItem.h \
-    src/domain/UB1HEditableGraphicsBasicShapeItem.h
+    src/domain/UB1HEditableGraphicsBasicShapeItem.h \
+    src/domain/UBEditableGraphicsRegularShapeItem.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
@@ -81,7 +81,6 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBShapeFactory.cpp \
     src/domain/UBGraphicsRectItem.cpp \
     src/domain/UBGraphicsLineItem.cpp \
-    src/domain/UBGraphicsRegularPathItem.cpp \
     src/domain/UBGraphicsFreehandItem.cpp \
     src/domain/UBAbstractGraphicsPathItem.cpp \
     src/domain/UBAbstractHandle.cpp \
@@ -99,4 +98,5 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UB1HEditableGraphicsBasicShapeItem.cpp \
     src/domain/UB1HEditableGraphicsSquareItem.cpp \
     src/domain/UBAbstractGraphicsItem.cpp \
-    src/domain/UBEditableGraphicsPolygonItem.cpp
+    src/domain/UBEditableGraphicsPolygonItem.cpp \
+    src/domain/UBEditableGraphicsRegularShapeItem.cpp

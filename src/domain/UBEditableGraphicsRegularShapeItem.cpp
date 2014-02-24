@@ -1,4 +1,4 @@
-#include "UBGraphicsRegularPathItem.h""
+#include "UBEditableGraphicsRegularShapeItem.h"
 
 #include <cmath>
 
@@ -136,6 +136,12 @@ QRectF UBEditableGraphicsRegularShapeItem::boundingRect() const
 
         QPointF diff = (ph - retour.topLeft()) - (retour.bottomRight() - retour.topLeft());
 
+        //add the size of the circle
+        QPainterPath circle;
+        circle.addEllipse(mCenter, mRadius, mRadius);
+
+        retour = circle.boundingRect();
+        retour = adjustBoundingRect(retour);
         retour.adjust(0, 0, diff.x() + r, diff.y() + r);
     }
 
