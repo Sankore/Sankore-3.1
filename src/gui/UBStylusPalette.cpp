@@ -59,7 +59,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     //actions << UBApplication::mainWindow->actionLine; // ALTI/AOU - 20140203 : Don't show the Line tool anymore.
     actions << UBApplication::mainWindow->actionText;
 
-    UBApplication::mainWindow->actionRichTextEditor->setEnabled(false);
+    UBApplication::mainWindow->actionRichTextEditor->setEnabled(UBFeaturesController::RTEIsLoaded());
     actions << UBApplication::mainWindow->actionRichTextEditor;
 
     actions << UBApplication::mainWindow->actionCapture;

@@ -794,6 +794,7 @@ void UBFeaturesCentralWidget::scanStarted()
 void UBFeaturesCentralWidget::scanFinished()
 {
     hideAdditionalData();
+    UBFeaturesController::setRTEIsLoaded(true);
     UBApplication::mainWindow->actionRichTextEditor->setEnabled(true);
 }
 
