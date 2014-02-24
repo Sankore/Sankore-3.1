@@ -343,6 +343,11 @@ public:
 
     static const QString virtualRootName;
 
+    //issue 1699 - NNE - 20140224
+    static void setRTEIsLoaded(bool isLoaded);
+    static bool RTEIsLoaded();
+    //issue 1699 - NNE - 20140224 : END
+
     void assignFeaturesListView(UBFeaturesListView *pList);
     void assignPathListView(UBFeaturesListView *pList);
 
@@ -447,6 +452,9 @@ private:
 
     //issue 1474 - NNE - 20131025
     UBTrashRegistery mTrashRegistery;///< This the trash registery. It is used to restore the elements in the trash.
+
+    //issue 1699 - NNE - 20140224
+    static bool mRTEIsLoaded;
 
 private:
 
