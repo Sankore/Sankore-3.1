@@ -31,6 +31,7 @@ const QString tImage = "image";
 const QString tForeignObject = "foreignObject";
 const QString tTeacherGuide = "teacherGuide";
 const QString tMedia = "media";
+const QString tGroups = "groups";
 
 const QString aHref = "xlink:href";
 const QString aType = "ub:type";
@@ -240,8 +241,13 @@ private:
 
         QDomElement nextElement = dom.documentElement().firstChildElement();
         while (!nextElement.isNull()) {
-            qDebug() << "Tag name of the next parsed element is" << nextElement.tagName();
             QString nextTag = nextElement.tagName();
+            qDebug() << "Tag name of the next parsed element is" << nextTag;
+            if (nextTag == tGroups)
+            {
+               nextElement = nextElement.firstChildElement("group");
+            }
+
             invokeFromText(nextTag, nextElement);
             nextElement = nextElement.nextSiblingElement();
         }
