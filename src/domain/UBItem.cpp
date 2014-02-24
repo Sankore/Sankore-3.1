@@ -33,7 +33,7 @@
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBEditableGraphicsPolygonItem.h"
-#include "domain/UBGraphicsRegularPathItem.h"
+#include "domain/UBEditableGraphicsRegularShapeItem.h"
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsRectItem.h"
 #include "domain/UBGraphicsLineItem.h"

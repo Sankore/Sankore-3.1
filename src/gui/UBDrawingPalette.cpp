@@ -40,7 +40,7 @@
 #include "board/UBBoardPaletteManager.h"
 
 #include <QActionGroup>
-#include "domain/UBGraphicsRegularPathItem.h"
+#include "domain/UBEditableGraphicsRegularShapeItem.h"
 #include "UBDrawingStrokePropertiesPalette.h"
 #include "UBDrawingFillPropertiesPalette.h"
 
