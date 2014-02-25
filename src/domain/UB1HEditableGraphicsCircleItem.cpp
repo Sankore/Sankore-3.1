@@ -60,6 +60,7 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
         p.setWidth(pen().width());
 
         painter->setPen(p);
+        painter->setBrush(QBrush());
 
         painter->drawRect(0, 0, mRadius*2, mRadius*2);
     }
@@ -82,9 +83,7 @@ QRectF UB1HEditableGraphicsCircleItem::boundingRect() const
 
 void UB1HEditableGraphicsCircleItem::onActivateEditionMode()
 {
-    qreal r = getHandle()->radius();
-
-    getHandle()->setPos(mRadius*2 - r, mRadius*2 - r);
+    getHandle()->setPos(mRadius*2, mRadius*2);
 }
 
 void UB1HEditableGraphicsCircleItem::updateHandle(UBAbstractHandle *handle)
@@ -99,9 +98,7 @@ void UB1HEditableGraphicsCircleItem::updateHandle(UBAbstractHandle *handle)
         mRadius = r;
     }
 
-    qreal hr = getHandle()->radius();
-
-    getHandle()->setPos(mRadius*2 - hr, mRadius*2 - hr);
+    getHandle()->setPos(mRadius*2, mRadius*2);
 
     if(hasGradient()){
         QLinearGradient g(QPointF(), QPointF(mRadius*2, 0));
