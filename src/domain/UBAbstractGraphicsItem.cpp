@@ -140,19 +140,27 @@ QBitmap UBAbstractGraphicsItem::patternPoint()
         }
 
     // The dot :
+    img.setPixel(4, 3, 1);
     img.setPixel(5, 3, 1);
+    img.setPixel(6, 3, 1);
+    img.setPixel(3, 4, 1);
     img.setPixel(4, 4, 1);
-    img.setPixel(6, 4, 1);
     img.setPixel(5, 4, 1);
+    img.setPixel(6, 4, 1);
+    img.setPixel(7, 4, 1);
     img.setPixel(3, 5, 1);
     img.setPixel(4, 5, 1);
     img.setPixel(5, 5, 1);
     img.setPixel(6, 5, 1);
     img.setPixel(7, 5, 1);
+    img.setPixel(3, 6, 1);
     img.setPixel(4, 6, 1);
     img.setPixel(5, 6, 1);
     img.setPixel(6, 6, 1);
+    img.setPixel(7, 6, 1);
+    img.setPixel(4, 7, 1);
     img.setPixel(5, 7, 1);
+    img.setPixel(6, 7, 1);
 
     QBitmap bitmap = QBitmap::fromImage(img);
 
