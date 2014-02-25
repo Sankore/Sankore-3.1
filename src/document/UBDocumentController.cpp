@@ -1510,7 +1510,7 @@ UBDocumentProxyTreeItem* UBDocumentController::findDocument(UBDocumentProxy* pro
     return 0;
 }
 
-void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurrentDocument)
+void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurrentDocument, const bool onImport)
 {
     if (proxy==NULL)
     {
@@ -1530,10 +1530,9 @@ void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurr
 
         if (proxy != mBoardController->selectedDocument()) // only if wanted Document is different from document actually on Board,  // ALTI/AOU - 20140217
         {
-            //issue 1629 - NNE - 20131105 : When set a current document, change in the board controller
-            mBoardController->setActiveDocumentScene(proxy, 0);
+            //issue 1629 - NNE - 20131105 : When set a current document, change in the board controller            
+            mBoardController->setActiveDocumentScene(proxy, 0, false, onImport);
         }
-
     }
 
     mSelectionType = Document;
@@ -2375,7 +2374,7 @@ void UBDocumentController::importFile()
 
 
             if (createdDocument) {
-                selectDocument(createdDocument, true);
+                selectDocument(createdDocument, true, true);
 
             } else {
                 showMessage(tr("Failed to import file ... "));

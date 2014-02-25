@@ -183,7 +183,7 @@ class UBBoardController : public UBDocumentContainer
 
         void ClearUndoStack();
 
-        void setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, int pSceneIndex = 0, bool forceReload = false);
+        void setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, int pSceneIndex = 0, bool forceReload = false, const bool onImport = false);
         void setActiveDocumentScene(int pSceneIndex);
 
         void moveSceneToIndex(int source, int target);

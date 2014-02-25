@@ -378,7 +378,7 @@ class UBDocumentController : public UBDocumentContainer
         void duplicateSelectedItem();
         void importFile();
         void moveSceneToIndex(UBDocumentProxy* proxy, int source, int target);
-        void selectDocument(UBDocumentProxy* proxy, bool setAsCurrentDocument = true);
+        void selectDocument(UBDocumentProxy* proxy, bool setAsCurrentDocument = true, const bool onImport = false);
         void show();
         void hide();
         void showMessage(const QString& message, bool showSpinningWheel = false);
