@@ -1,0 +1,55 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Groupements par dix</title>
+    <meta name="description" content="Application web permettant de manipuler des groupements de 10 : version 2">
+    <meta name="keywords" content="maternelle, école, primaire, numération, nombre, groupes de 10"/>
+    <meta name="author" content="Frédéric MISERY - Version du 20/12/2012"/>
+    <link id="style" rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <div role="main">
+        <table>
+        <tr id="commandes">
+            <td id="lien">
+            Créé par <a href="http://micetf.fr" title="Des Outils Pour La Classe">MiCetF</a> (2013)
+            </td>
+            <td colspan="2">
+            <input type="button" id="addition" class="addition_off" value="Ajouter" title=""/>
+            <input type="button" id="soustraction" class="soustraction_off" value="Enlever" title=""/>
+            <input type="button" id="groupement" value="Grouper" class="groupement_off" title=""/> 
+            <input type="button" id="casse" value="Casser" class="casse_off" title=""/> 
+             | 
+            <input type="button" id="afficher" class="affichage_off" value="Quantité" title=""/> 
+            </td>
+            <td>
+            <span id="total">0</span>
+            <select id="representation" name="representation">
+            <option value="cubus">M. Cubus</option>
+            <option value="picbille">Picbille</option>
+            <option value="tickets">Tickets</option>
+            <option value="mots">Mots</option>
+            <option value="nombres">Nombres</option>
+            </select>
+            </td>
+        </tr>
+        <tr id="plein" title="Fais glisser l'objet de ton choix sur le tableau ci-dessous.">
+            <td id="millier"><img src="images/bloc.png" alt="millier" title="Un millier."/></td>
+            <td id="centaine"><img src="images/plaque.png" alt="centaine" title="Une centaine."/></td>
+            <td id="dizaine"><img src="images/barre.png" alt="dizaine" title="Une dizaine."/></td>
+            <td id="unite"><img src="images/cube.png" alt="unite" title="Une unité."/></td>
+        </tr>
+        <tr>
+            <td id="tableau" colspan="4">
+            <input id="capturer" type="button" value="Capturer" title="Capturer la représentation du nombre déposée sur le bureau."/>
+            <input id="effacer" type="button" value="Effacer" title="Effacer tous les objets déposés sur le bureau."/>
+            </td>
+        </tr>
+        </table>
+    </div>
+    <script src="js/jquery-min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/script.min.js"></script>
+</body>
+</html>
+
