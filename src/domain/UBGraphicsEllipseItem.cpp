@@ -86,6 +86,7 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
         p.setWidth(pen().width());
 
         painter->setPen(p);
+        painter->setBrush(QBrush());
 
         painter->drawRect(0, 0, mRadiusX*2, mRadiusY*2);
     }
