@@ -421,11 +421,11 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
 
 bool UBTeacherGuideEditionWidget::isModified()
 {
-    return mpPageTitle->text().length() > 0
-        || mpComment->text().length() > 0
-        || mpAddAnActionItem->childCount() > 0
-        || mpAddALinkItem->childCount() > 0
-        || mpAddAFileItem->childCount() > 0; //Issue 1716 - ALTI/AOU - 20140128
+    return (mpPageTitle->text().length() > 0)
+        || (mpComment->text().length() > 0)
+        || (mpAddAnActionItem->childCount() > 0)
+        || (mpAddALinkItem->childCount() > 0)
+        || (mpAddAFileItem->childCount() > 0); //Issue 1716 - ALTI/AOU - 20140128
 }
 
 /***************************************************************************
@@ -1212,7 +1212,8 @@ void UBTeacherGuidePageZeroWidget::persistData()
         documentProxy->setMetaData(UBSettings::sessionLicence, mpLicenceBox->currentIndex());
         //Issue 1683 (Evolution) - CFA - 20140124 : a la modifications des infos de la teacher guide apres reimport de l'ubz, les external files (DocumentProxy) n'etaient pas recharges.
         //A la persistence dans subset adaptor, on perdait les fichiers dans le svg a la reecriture
-        setFilesChanged();
+        if(mpAddAFileItem->childCount() > 0)
+            setFilesChanged();
     }
 }
 
