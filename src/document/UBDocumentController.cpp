@@ -1933,9 +1933,13 @@ void UBDocumentController::duplicateSelectedItem()
             emit documentThumbnailsUpdated(this);
             selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
             UBMetadataDcSubsetAdaptor::persist(selectedDocument());
-            mDocumentUI->thumbnailWidget->selectItemAt(selectedSceneIndexes.last() + selectedSceneIndexes.size());
+            int selectedThumbnail = selectedSceneIndexes.last() + selectedSceneIndexes.size();
+            mDocumentUI->thumbnailWidget->selectItemAt(selectedThumbnail);
             int sceneCount = selectedSceneIndexes.count();
             showMessage(tr("duplicated %1 page","duplicated %1 pages",sceneCount).arg(sceneCount), false);
+
+            mBoardController->setActiveDocumentScene(selectedThumbnail);
+            mBoardController->reloadThumbnails();
         }
     }
     else
@@ -2485,10 +2489,8 @@ void UBDocumentController::moveSceneToIndex(UBDocumentProxy* proxy, int source, 
 
         mDocumentUI->thumbnailWidget->hightlightItem(target);
 
-        // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
         mBoardController->setActiveDocumentScene(target);
-        mBoardController->regenerateThumbnails();
-        // Issue 1026 - AOU - 20131028 : Fin
+        mBoardController->reloadThumbnails();
     }
 }
 
@@ -3184,7 +3186,8 @@ void UBDocumentController::deletePages(QList<QGraphicsItem *> itemsToDelete)
 
             mDocumentUI->thumbnailWidget->selectItemAt(minIndex);
 
-            mBoardController->setActiveDocumentScene(minIndex); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - synchro des thumbnails présentés en mode Board et en mode Documents.
+            mBoardController->setActiveDocumentScene(minIndex);
+            mBoardController->reloadThumbnails();
         }
     }
 }
