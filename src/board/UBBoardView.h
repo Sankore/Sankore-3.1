@@ -164,7 +164,6 @@ class UBBoardView : public QGraphicsView
         UBRubberBand *mUBRubberBand;
 
         QList<QGraphicsItem *> mRubberedItems;
-        QSet<QGraphicsItem*> mJustSelectedItems;
 
         int mLongPressInterval;
         QTimer mLongPressTimer;
