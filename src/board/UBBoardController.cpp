@@ -158,7 +158,6 @@ void UBBoardController::init()
     connect(UBDownloadManager::downloadManager(), SIGNAL(addDownloadedFileToBoard(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)), this, SLOT(downloadFinished(bool,QUrl,QUrl,QString,QByteArray,QPointF,QSize,bool,bool)));
 
     UBDocumentProxy* doc = UBPersistenceManager::persistenceManager()->createNewDocument();
-    mDocumentThumbs = new QList<const QPixmap*>(); // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
 
     setActiveDocumentScene(doc);
 
@@ -174,12 +173,6 @@ void UBBoardController::init()
 UBBoardController::~UBBoardController()
 {
     delete mDisplayView;
-
-    // Issue 1026 - AOU - 20131028 : (commentaire du 20130925) - la liste UBDocumentContainer::mDocumentThumbs, maintenant commune à UBBoardController et UBDocumentController, est gérée par UBBoardController.
-    UBThumbnailAdaptor::clearThumbs(*mDocumentThumbs);
-    delete mDocumentThumbs;
-    mDocumentThumbs = NULL;
-    // Issue 1026 - AOU - 20131028 : End
 }
 
 
