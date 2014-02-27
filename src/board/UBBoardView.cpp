@@ -1262,16 +1262,10 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
               mUBRubberBand->setGeometry(bandRect);
 
               QList<QGraphicsItem *> rubberItems = items(bandRect);
-              foreach (QGraphicsItem *item, mJustSelectedItems) {
-                  if (!rubberItems.contains(item)) {
-                      item->setSelected(false);
-                      mJustSelectedItems.remove(item);
-                  }
-              }
-
               if (currentTool == UBStylusTool::Selector)
-                  foreach (QGraphicsItem *item, items(bandRect)) {
-
+              {
+                  foreach (QGraphicsItem *item, items())
+                  {
                       // Issue 1569 - CFA - 20131113 : le traitement spécifique aux polygones (fait partout ailleurs) n'était pas fait ici
                       if (item->type() == UBGraphicsItemType::PolygonItemType)
                             if (item->parentItem())
@@ -1286,14 +1280,15 @@ UBBoardView::mouseMoveEvent (QMouseEvent *event)
                               || item->type() == UBGraphicsTextItem::Type
                               || item->type() == UBGraphicsStrokesGroup::Type
                               || item->type() == UBGraphicsGroupContainerItem::Type
-                              || UBShapeFactory::isShape(item)) {
-
-                          if (!mJustSelectedItems.contains(item)) {
+                              || UBShapeFactory::isShape(item))
+                      {
+                          if (rubberItems.contains(item))
                               item->setSelected(true);
-                              mJustSelectedItems.insert(item);
-                          }
+                          else
+                              item->setSelected(false);
                       }
                   }
+              }
           }
       }
 
