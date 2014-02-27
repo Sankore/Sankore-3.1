@@ -872,24 +872,30 @@ void UBSceneThumbnailNavigPixmap::paint(QPainter *painter, const QStyleOptionGra
     Q_UNUSED(widget);
 
     UBSceneThumbnailPixmap::paint(painter, option, widget);
+
     if(bButtonsVisible)
     {
+        iconManager.setRenderSize(QSize(BUTTONSIZE, BUTTONSIZE));
+
         if(bCanDelete)
-            painter->drawPixmap(0, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/close.svg"));
+            painter->drawImage(0, 0, iconManager.renderCloseIcon());
         else
-            painter->drawPixmap(0, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/closeDisabled.svg"));
+            painter->drawImage(0, 0, iconManager.renderCloseIconDisabled());
+
         if(bCanDuplicate)
-            painter->drawPixmap(BUTTONSIZE + BUTTONSPACING, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/duplicate.svg"));
+            painter->drawImage(BUTTONSIZE + BUTTONSPACING, 0, iconManager.renderDuplicateIcon());
         else
-            painter->drawPixmap(BUTTONSIZE + BUTTONSPACING, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/duplicateDisabled.svg"));
+            painter->drawImage(BUTTONSIZE + BUTTONSPACING, 0, iconManager.renderDuplicateIconDisabled());
+
         if(bCanMoveUp)
-            painter->drawPixmap(2*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/moveUp.svg"));
+            painter->drawImage(2*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMoveUpIcon());
         else
-            painter->drawPixmap(2*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/moveUpDisabled.svg"));
+            painter->drawImage(2*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMoveUpIconDisabled());
+
         if(bCanMoveDown)
-            painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menu.svg"));
+            painter->drawImage(3*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMenuIcon());
         else
-            painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
+            painter->drawImage(3*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMenuIconDisabled());
     }
 }
 
@@ -1023,6 +1029,8 @@ void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGra
         QRectF visibleRect = nominalSceneRect.unite(itemsBoundingRect);
         view()->fitInView(visibleRect, Qt::KeepAspectRatio);
         view()->setSceneRect(visibleRect);
+
+        view()->setRenderHints(QPainter::HighQualityAntialiasing);
     }
 
     QGraphicsProxyWidget::paint(painter, option, widget);
@@ -1030,22 +1038,27 @@ void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGra
     // Overlay buttons :
     if (bButtonsVisible)
     {
+        iconManager.setRenderSize(QSize(BUTTONSIZE, BUTTONSIZE));
+
         if(bCanDelete)
-            painter->drawPixmap(0, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/close.svg"));
+            painter->drawImage(0, 0, iconManager.renderCloseIcon());
         else
-            painter->drawPixmap(0, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/closeDisabled.svg"));
+            painter->drawImage(0, 0, iconManager.renderCloseIconDisabled());
+
         if(bCanDuplicate)
-            painter->drawPixmap(BUTTONSIZE + BUTTONSPACING, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/duplicate.svg"));
+            painter->drawImage(BUTTONSIZE + BUTTONSPACING, 0, iconManager.renderDuplicateIcon());
         else
-            painter->drawPixmap(BUTTONSIZE + BUTTONSPACING, 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/duplicateDisabled.svg"));
+            painter->drawImage(BUTTONSIZE + BUTTONSPACING, 0, iconManager.renderDuplicateIconDisabled());
+
         if(bCanMoveUp)
-            painter->drawPixmap(2*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/moveUp.svg"));
+            painter->drawImage(2*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMoveUpIcon());
         else
-            painter->drawPixmap(2*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/moveUpDisabled.svg"));
+            painter->drawImage(2*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMoveUpIconDisabled());
+
         if(bCanMoveDown)
-            painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menu.svg"));
+            painter->drawImage(3*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMenuIcon());
         else
-            painter->drawPixmap(3*(BUTTONSIZE + BUTTONSPACING), 0, BUTTONSIZE, BUTTONSIZE, QPixmap(":images/menuDisabled.svg"));
+            painter->drawImage(3*(BUTTONSIZE + BUTTONSPACING), 0, iconManager.renderMenuIconDisabled());
 
     }
 
@@ -1131,3 +1144,130 @@ QVariant UBSceneThumbnailProxyWidget::itemChange(GraphicsItemChange change, cons
     UBThumbnail::itemChange(this, change, value); // The border around the selected thumbnail is drawn in UBThumbnail::itemChange()
     return QGraphicsItem::itemChange(change, value);
 }
+
+//NC - NNE - 20140227
+bool UBThumbnailIconManager::isInit = false;
+
+QSvgRenderer UBThumbnailIconManager::closeIcon;
+QSvgRenderer UBThumbnailIconManager::closeIconDisabled;
+QSvgRenderer UBThumbnailIconManager::duplicateIcon;
+QSvgRenderer UBThumbnailIconManager::duplicateIconDisabled;
+QSvgRenderer UBThumbnailIconManager::moveUp;
+QSvgRenderer UBThumbnailIconManager:: moveUpDisabled;
+QSvgRenderer UBThumbnailIconManager::menu;
+QSvgRenderer UBThumbnailIconManager::menuDisabled;
+
+QSize UBThumbnailIconManager::mRenderSize;
+
+UBThumbnailIconManager::UBThumbnailIconManager()
+{
+    if(!UBThumbnailIconManager::isInit){
+        UBThumbnailIconManager::closeIcon.load(QString(":images/close.svg"));
+
+        UBThumbnailIconManager::closeIconDisabled.load(QString(":images/closeDisabled.svg"));
+
+        UBThumbnailIconManager::duplicateIcon.load(QString(":images/duplicate.svg"));
+
+        UBThumbnailIconManager::duplicateIconDisabled.load(QString(":images/duplicateDisabled.svg"));
+
+        UBThumbnailIconManager::moveUp.load(QString(":images/moveUp.svg"));
+
+        UBThumbnailIconManager:: moveUpDisabled.load(QString(":images/moveUpDisabled.svg"));
+
+        UBThumbnailIconManager::menu.load(QString(":images/menu.svg"));
+
+        UBThumbnailIconManager::menuDisabled.load(QString(":images/menuDisabled.svg"));
+
+        isInit = true;
+    }
+}
+
+QImage UBThumbnailIconManager::renderCloseIcon() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    closeIcon.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderCloseIconDisabled() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    closeIconDisabled.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderDuplicateIcon() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    duplicateIcon.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderDuplicateIconDisabled() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    duplicateIconDisabled.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderMoveUpIcon() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    moveUp.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderMoveUpIconDisabled() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    moveUpDisabled.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderMenuIcon() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    menu.render(&p);
+
+    return image;
+}
+
+QImage UBThumbnailIconManager::renderMenuIconDisabled() const
+{
+    QImage image(mRenderSize, QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+
+    QPainter p(&image);
+    menuDisabled.render(&p);
+
+    return image;
+}
+
+//NC - NNE - 20140227 : END

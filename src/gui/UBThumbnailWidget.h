@@ -34,7 +34,7 @@
 #include "domain/UBItem.h"
 
 #define STARTDRAGTIME   1000000
-#define BUTTONSIZE      48
+#define BUTTONSIZE      72
 #define BUTTONSPACING   5
 
 class UBDocumentProxy;
@@ -262,6 +262,47 @@ class UBSceneThumbnailPixmap : public UBThumbnailPixmap
         int mSceneIndex;
 };
 
+// NC - NNE - 20140227
+/**
+  * This class store and load the icons use by the thumbnails.
+  */
+class UBThumbnailIconManager
+{
+    static bool isInit;
+
+    static QSvgRenderer closeIcon;
+    static QSvgRenderer closeIconDisabled;
+    static QSvgRenderer duplicateIcon;
+    static QSvgRenderer duplicateIconDisabled;
+    static QSvgRenderer moveUp;
+    static QSvgRenderer moveUpDisabled;
+    static QSvgRenderer menu;
+    static QSvgRenderer menuDisabled;
+
+    static QSize mRenderSize;
+public:
+
+    UBThumbnailIconManager();
+
+    QImage renderCloseIcon() const;
+    QImage renderCloseIconDisabled() const;
+
+    QImage renderDuplicateIcon() const;
+    QImage renderDuplicateIconDisabled() const;
+
+    QImage renderMoveUpIcon() const;
+    QImage renderMoveUpIconDisabled() const;
+
+    QImage renderMenuIcon() const;
+    QImage renderMenuIconDisabled() const;
+
+    void setRenderSize(const QSize& size)
+    {
+        mRenderSize = size;
+    }
+};
+// NC - NNE - 20140227 : END
+
 class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
 {
     public:
@@ -286,6 +327,8 @@ class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
         bool bCanMoveUp;
         bool bCanMoveDown;
         bool bCanDuplicate;
+
+        UBThumbnailIconManager iconManager;
 };
 
 class UBThumbnailVideo : public UBThumbnailPixmap
@@ -423,6 +466,8 @@ private:
     bool bCanMoveDown;
     bool bCanDuplicate;
 
+    UBThumbnailIconManager iconManager;
+
     QGraphicsView* view() const
     {
         return dynamic_cast<QGraphicsView*>(widget());
@@ -454,6 +499,5 @@ protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
     virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 };
-
 
 #endif /* UBTHUMBNAILWIDGET_H_ */
