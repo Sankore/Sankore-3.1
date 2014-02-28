@@ -106,6 +106,9 @@ void UBShapeFactory::init()
     mBoardView = UBApplication::boardController->controlView();
     mDrawingController = UBDrawingController::drawingController();
 
+    //Our custom dash is a point follow by a space
+    mDotDashes << 0.1 << 3;
+
     connect(mBoardView, SIGNAL(mouseMove(QMouseEvent*)), this, SLOT(onMouseMove(QMouseEvent*)));
     connect(mBoardView, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(onMouseRelease(QMouseEvent*)));
     connect(mBoardView, SIGNAL(mousePress(QMouseEvent*)), this, SLOT(onMousePress(QMouseEvent*)));
@@ -146,6 +149,12 @@ UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
 
     mCurrentShape->setStyle(mCurrentBrushStyle, mCurrentPenStyle);
 
+    if(mCurrentPenStyle == Qt::CustomDashLine){
+        QPen p = mCurrentShape->pen();
+        p.setCapStyle(Qt::RoundCap);
+        p.setDashPattern(mDotDashes);
+        mCurrentShape->setPen(p);
+    }
 
     if (mFillType == Diag)    {
         if (mCurrentShape->hasFillingProperty()){
@@ -579,7 +588,6 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 {
     mCurrentPenStyle = penStyle;
 
-
     UBGraphicsScene* scene = mBoardView->scene();
 
     QList<QGraphicsItem*> items = scene->selectedItems();
@@ -589,7 +597,14 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 
         if(shape)
         {
-            shape->setStyle(mCurrentPenStyle);
+            if(penStyle == Qt::CustomDashLine){
+                QPen p = shape->pen();
+                p.setCapStyle(Qt::RoundCap);
+                p.setDashPattern(mDotDashes);
+                shape->setPen(p);
+            }else{
+                shape->setStyle(mCurrentPenStyle);
+            }
         }
 
         items.at(i)->update();

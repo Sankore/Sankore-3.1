@@ -115,6 +115,8 @@ private:
 
     bool mCursorMoved;
 
+    QVector<qreal> mDotDashes;
+
 protected:
     UBAbstractGraphicsItem *instanciateCurrentShape();
 
