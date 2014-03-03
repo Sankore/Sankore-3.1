@@ -32,6 +32,10 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
 {
     hide();
 
+    //Alpha button
+    UBActionPaletteButton* btnAlphaColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleTransparent, this);
+    layout()->addWidget(btnAlphaColor);
+
     // ColorPicker button
     mBtnColorPicker = new UBColorPickerButton(this);
     mBtnColorPicker->setToolTip(tr("Select and set filling color"));
@@ -48,10 +52,6 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
     btnFullColor->setStyleSheet(styleSheetLeftGroupedButton);
     colorStyleLayout->addWidget(btnFullColor);
     UBApplication::mainWindow->actionColorStyleFull->setChecked(true);
-
-    UBActionPaletteButton* btnAlphaColor = new UBActionPaletteButton(UBApplication::mainWindow->actionColorStyleTransparent, this);
-    btnAlphaColor->setStyleSheet(styleSheetCenterGroupedButton);
-    colorStyleLayout->addWidget(btnAlphaColor);
 
     UBActionPaletteButton* btnFillStyleDense = new UBActionPaletteButton(UBApplication::mainWindow->actionFillStyleDense, this);
     btnFillStyleDense->setStyleSheet(styleSheetCenterGroupedButton);
