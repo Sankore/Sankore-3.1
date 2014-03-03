@@ -73,6 +73,7 @@
 #include "core/UBPersistenceManager.h"
 #include "core/UBApplication.h"
 #include "core/UBTextTools.h"
+#include "gui/UBDrawingStrokePropertiesPalette.h"
 
 #include "gui/UBTeacherGuideWidget.h"
 #include "gui/UBDockTeacherGuideWidget.h"
@@ -3647,15 +3648,25 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::getStyleFromSvg(UBAbstractGraphicsIt
     p.setWidth(strokeWidth);
 
     // Stroke style
-    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
-    if (!svgStrokeStyle.isNull())
-    {
-        QString strokeStyle = svgStrokeStyle.toString();
-        if (strokeStyle == SVG_STROKE_DOTLINE)
+    QStringRef svgStrokeLineCap = mXmlReader.attributes().value("stroke-linecap");
+
+    if(!svgStrokeLineCap.isNull() && svgStrokeLineCap.toString().toLower() == "round"){
+        //Custom dash line style
+        p.setCapStyle(Qt::RoundCap);
+        QVector<qreal> dashPattern = UBApplication::boardController->shapeFactory().dashPattern();
+        p.setDashPattern(dashPattern);
+    }else{
+        QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+        if (!svgStrokeStyle.isNull())
         {
-            p.setStyle(Qt::DotLine);
+            QString strokeStyle = svgStrokeStyle.toString();
+            if (strokeStyle == SVG_STROKE_DOTLINE)
+            {
+                p.setStyle(Qt::DotLine);
+            }
         }
     }
+
 
     item->setPen(p);
 
@@ -4036,6 +4047,25 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAbstractGraphicsItemStyle(UBAbs
         if (item->pen().style() == Qt::DotLine){
             mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
         }
+
+        if(item->pen().style() == Qt::CustomDashLine){
+            switch(item->pen().width()){
+                case UBDrawingStrokePropertiesPalette::Fine:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 10");
+                    break;
+                case UBDrawingStrokePropertiesPalette::Medium:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 15");
+                    break;
+                case UBDrawingStrokePropertiesPalette::Large:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 20");
+                    break;
+                default:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 3");
+            }
+
+            mXmlWriter.writeAttribute("stroke-linecap", "round");
+        }
+
         mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(item->pen().color().alphaF()));
     }
 

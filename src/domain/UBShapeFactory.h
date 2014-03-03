@@ -59,6 +59,8 @@ public:
 
     QRectF reverseRect(const QRectF &rect);
 
+    QVector<qreal> dashPattern() const;
+
 public slots:
     void createRegularPolygon(int nVertices);
     void createEllipse(bool create);

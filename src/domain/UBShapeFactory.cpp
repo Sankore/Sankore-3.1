@@ -731,3 +731,8 @@ bool UBShapeFactory::isInEditMode(QGraphicsItem *item)
 
     return edit->isInEditMode();
 }
+
+QVector<qreal> UBShapeFactory::dashPattern() const
+{
+    return mDotDashes;
+}
