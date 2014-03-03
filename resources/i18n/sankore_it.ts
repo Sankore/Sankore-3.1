@@ -3083,6 +3083,14 @@ Si prega di riavviare l&apos;applicazione per accedere ai documenti aggiornati.<
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 chiamati (metodo=%1, stato=%2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

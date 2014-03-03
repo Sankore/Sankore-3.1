@@ -3093,6 +3093,14 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 appelé (méthode=%1, statut=%2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Attention</translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

@@ -3087,6 +3087,14 @@ Genstart venligst applikationen for at få adgang til de opdaterede dokumenter.<
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 kaldt (metode=%1, status=%2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

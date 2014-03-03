@@ -3087,6 +3087,14 @@ Znova spustite aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 vyvolané (metóda = %1, stav = %2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

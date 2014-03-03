@@ -222,6 +222,8 @@ class UBWidgetUniboardAPI : public QObject
          */
         void loadUrl(const QString& url);
 
+        void connectionError(const QString& message);
+
         /**
          *  check if current Tool is selector
          */

@@ -3079,6 +3079,14 @@ Por favor, reinicie o aplicativo para aceder aos documentos atualizados.</transl
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 pedido (método=%1, estado=%2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

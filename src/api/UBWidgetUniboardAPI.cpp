@@ -27,6 +27,8 @@
 #include <QDomDocument>
 #include <QtGui>
 
+#include "gui/UBMainWindow.h"
+
 #include "core/UB.h"
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
@@ -395,6 +397,12 @@ void UBWidgetUniboardAPI::showMessage(const QString& message)
 void UBWidgetUniboardAPI::loadUrl(const QString& url)
 {
     UBApplication::loadUrl(url);
+}
+
+void UBWidgetUniboardAPI::connectionError(const QString& message)
+{
+    UBApplication::mainWindow->warning(tr("Warning"),
+                                       tr("Impossible to connect to Planete Sankore: %1").arg(message));
 }
 
 bool UBWidgetUniboardAPI::currentToolIsSelector()

@@ -3070,6 +3070,14 @@ Please reboot the application to access the updated documents.</source>
         <source>%0 called (method=%1, status=%2)</source>
         <translation>已呼叫 %0 (方法= %1 , 狀態= %2 )</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

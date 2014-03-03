@@ -50,7 +50,8 @@
             }
 
             function searchFail(jqXHR, textStatus, errorThrown) {
-              alert('Impossible to connect to Planete Sankore: ' + textStatus + ' ' + errorThrown);
+              if(window.sankore)
+	              	window.sankore.connectionError("\n" + textStatus + ' ' + errorThrown);
             }
 
             function searchComplete(json) {

@@ -52,17 +52,8 @@
             }
 
             function searchFail(jqXHR, textStatus, errorThrown) {
-			  var lang = window.sankore ? window.sankore.locale() : 'fr_FR';
-			  var text = '';
-			  
-			  if(!window.sankore){
-				text += 'Impossible to connect to Planete Sankore: ';
-				alert("Anglais");
-			  }else{
-				text += 'Connection impossible à Planete Sankore: ';
-			  }
-			  
-              alert(text + "\n" + textStatus + ' ' + errorThrown);
+              	if(window.sankore)
+	              	window.sankore.connectionError("\n" + textStatus + ' ' + errorThrown);
             }
 
             function searchComplete(json) {

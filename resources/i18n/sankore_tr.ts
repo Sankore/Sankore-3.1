@@ -3073,6 +3073,14 @@ Güncellenen dökümanlara erişmek için uygulamayı yeniden başlatın.</trans
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 cağırıldı (metod=%1, durum=%2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>

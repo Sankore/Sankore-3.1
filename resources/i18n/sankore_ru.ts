@@ -3081,6 +3081,14 @@ Please reboot the application to access the updated documents.</source>
         <source>%0 called (method=%1, status=%2)</source>
         <translation>вызов %0 (метод=%1, статус=%2)</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBYouTubePublisher</name>
