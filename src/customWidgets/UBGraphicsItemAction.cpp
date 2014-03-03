@@ -172,7 +172,7 @@ void UBGraphicsItemMoveToPageAction::play()
         boardController->nextScene();
         break;
     case eMoveToPage:
-        if(mPage > 0 && mPage < boardController->pageCount())
+        if(mPage >= 0 && mPage < boardController->pageCount())
             boardController->setActiveDocumentScene(mPage);
         else
             qWarning() << "scene number " << mPage << "ins't accessible anymore";

@@ -161,6 +161,7 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item,bool removeAct
     //issue 1699 - NNE - 20140212 : END
 
     itemsBoundingRect |= itemTransform.mapRect(item->boundingRect() | visibleChildrenBoundingRect);
+
     update();
 }
 void UBGraphicsGroupContainerItem::removeFromGroup(QGraphicsItem *item)
