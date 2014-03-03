@@ -140,7 +140,7 @@ void UBRegularShapesPalette::triggerAction(QAction *action)
             UBApplication::boardController->shapeFactory().createRegularPolygon(Triangle);
         }
         else if (action == UBApplication::mainWindow->actionRegularSquare){
-            UBApplication::boardController->shapeFactory().createRegularPolygon(Carre);
+            UBApplication::boardController->shapeFactory().createSquare(true);
         }
         else if (action == UBApplication::mainWindow->actionRegularPentagone){
             UBApplication::boardController->shapeFactory().createRegularPolygon(Pentagone);
