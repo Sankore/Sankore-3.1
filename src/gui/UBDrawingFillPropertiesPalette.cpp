@@ -67,7 +67,6 @@ UBDrawingFillPropertiesPalette::UBDrawingFillPropertiesPalette(Qt::Orientation o
 
     //group color style buttons
     mButtonGroupColorStyle = new QButtonGroup(this);
-    mButtonGroupColorStyle->addButton(btnAlphaColor);
     mButtonGroupColorStyle->addButton(btnFillStyleDiag);
     mButtonGroupColorStyle->addButton(btnFillStyleDense);
     mButtonGroupColorStyle->addButton(btnFullColor);
