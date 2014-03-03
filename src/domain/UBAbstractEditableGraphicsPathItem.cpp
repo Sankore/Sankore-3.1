@@ -19,12 +19,17 @@ void UBAbstractEditableGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEven
 
     UBAbstractGraphicsPathItem::mousePressEvent(event);
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         onActivateEditionMode();
 
         Delegate()->showFrame(false);
         setFocus();
         showEditMode(true);
+    }
+    else
+    {
+        Delegate()->showFrame(true);
+        showEditMode(false);
     }
 }
 
@@ -34,7 +39,7 @@ QRectF UBAbstractEditableGraphicsPathItem::boundingRect() const
 
     rect = UBAbstractGraphicsPathItem::adjustBoundingRect(rect);
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         qreal r = mHandles.first()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -55,10 +60,8 @@ void UBAbstractEditableGraphicsPathItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
+    mMultiClickState = 0;
+    showEditMode(false);
 }
 
 void UBAbstractEditableGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
@@ -71,16 +74,14 @@ void UBAbstractEditableGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
 
 void UBAbstractEditableGraphicsPathItem::deactivateEditionMode()
 {
-    if(mMultiClickState >= 1){
-        mMultiClickState = 0;
-        showEditMode(false);
-    }
+    mMultiClickState = 0;
+    showEditMode(false);
 }
 
 QPainterPath UBAbstractEditableGraphicsPathItem::shape() const
 {
     QPainterPath path;
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         path.addRect(boundingRect());
         return path;
     }else{
