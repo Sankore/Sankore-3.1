@@ -1991,11 +1991,10 @@ QGraphicsItem* UBGraphicsScene::scaleToFitDocumentSize(QGraphicsItem* item, bool
         {
             qreal ratio = qMin(maxWidth / size.width(), maxHeight / size.height());
 
-            item->scale(ratio, ratio);
-
-            if (center)
-                item->setPos(item->sceneBoundingRect().width() / -2.0, item->sceneBoundingRect().height() / -2.0);
+            item->scale(ratio, ratio);           
         }
+        if (center)
+            item->setPos(item->sceneBoundingRect().width() / -2.0, item->sceneBoundingRect().height() / -2.0);
     }
 
     return item;
