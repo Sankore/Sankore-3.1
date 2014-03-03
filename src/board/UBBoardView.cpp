@@ -1641,7 +1641,21 @@ void UBBoardView::dragMoveEvent(QDragMoveEvent *event)
 void UBBoardView::dropEvent (QDropEvent *event)
 {
     QGraphicsItem *onItem = itemAt(event->pos().x(),event->pos().y());
-    if (onItem && onItem->type() == UBGraphicsWidgetItem::Type) {
+
+    //N/C - NNE - 20140303 : add test for the RTE widget
+    bool isUBGraphicsWidget = onItem && onItem->type() == UBGraphicsWidgetItem::Type;
+    UBGraphicsWidgetItem *item = 0;
+
+    if(onItem)
+        item = dynamic_cast<UBGraphicsWidgetItem*>(onItem);
+
+    //take care about the lazy evaluation of the test
+    bool isFeatureRTE = isUBGraphicsWidget
+            && item
+            && UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(item->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
+    //N/C - NNE - 20140303 : END
+
+    if ((isUBGraphicsWidget && !isFeatureRTE) || (isFeatureRTE && onItem->isSelected())) {
         QGraphicsView::dropEvent(event);
     } else {
         if (!event->source()
