@@ -33,7 +33,9 @@
 #include "api/UBWidgetUniboardAPI.h"
 #include "api/UBW3CWidgetAPI.h"
 
- #include "board/UBBoardController.h"
+#include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h"
+#include "domain/UBGraphicsWidgetItem.h"
 
 #include "core/memcheck.h"
 #include "core/UBApplicationController.h"
@@ -678,6 +680,24 @@ QSizeF UBGraphicsWidgetItem::size() const
     return QGraphicsWebView::size();
 }
 
+QRectF UBGraphicsWidgetItem::boundingRect() const
+{
+   //for the RTE remove 59px due to the edition bar
+   QRectF brect = QGraphicsWebView::boundingRect();
+
+   bool isFeatureRTE = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(this->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
+
+   if(isFeatureRTE && !isSelected()){
+       brect.adjust(0, 59, 0, 0);
+   }
+
+   return brect;
+}
+
+QPainterPath UBGraphicsWidgetItem::shape() const
+{
+    return QGraphicsWebView::shape();
+}
 
 
 UBGraphicsAppleWidgetItem::UBGraphicsAppleWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent)
