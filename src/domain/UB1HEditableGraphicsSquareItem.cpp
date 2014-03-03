@@ -59,7 +59,7 @@ QPainterPath UB1HEditableGraphicsSquareItem::shape() const
 {
     QPainterPath path;
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         path.addRect(boundingRect());
     }else{
         path.addRect(0, 0, mSide, mSide);
@@ -103,7 +103,7 @@ QRectF UB1HEditableGraphicsSquareItem::boundingRect() const
 
     rect = adjustBoundingRect(rect);
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         qreal r = mHandles.at(0)->radius();
         rect.adjust(-r, -r, r, r);
     }

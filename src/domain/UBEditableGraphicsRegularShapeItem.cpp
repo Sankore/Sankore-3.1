@@ -98,7 +98,7 @@ void UBEditableGraphicsRegularShapeItem::paint(QPainter *painter, const QStyleOp
     painter->fillPath(path(), painter->brush());
     painter->drawPath(path());
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         painter->setBrush(QBrush());
         QPen p;
 
@@ -130,7 +130,7 @@ QRectF UBEditableGraphicsRegularShapeItem::boundingRect() const
 {
     QRectF retour = adjustBoundingRect(path().boundingRect());
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         QPointF ph = mHandles.at(0)->pos();
         qreal r = mHandles.at(0)->radius();
 
@@ -230,7 +230,7 @@ QPainterPath UBEditableGraphicsRegularShapeItem::shape() const
 {
     QPainterPath path;
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         path.addRect(boundingRect());
     }else{
         path = this->path();

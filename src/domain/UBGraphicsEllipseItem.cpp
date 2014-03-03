@@ -79,7 +79,7 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
 
     painter->drawEllipse(QPointF(mRadiusX, mRadiusY), mRadiusX, mRadiusY);
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         QPen p;
         p.setColor(QColor(128, 128, 200));
         p.setStyle(Qt::DotLine);
@@ -153,7 +153,7 @@ void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 QPainterPath UB3HEditableGraphicsEllipseItem::shape() const
 {
     QPainterPath path;
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         path.addRect(boundingRect());
     }else{
         path.addEllipse(boundingRect());
