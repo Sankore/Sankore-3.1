@@ -115,6 +115,9 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         virtual UBItem* deepCopy() const = 0;
         virtual UBGraphicsScene* scene();
 
+        virtual QRectF boundingRect() const;
+        virtual QPainterPath shape() const;
+
         static int widgetType(const QUrl& pUrl);
         static QString widgetName(const QUrl& pUrl);
         static QString iconFilePath(const QUrl& pUrl);
