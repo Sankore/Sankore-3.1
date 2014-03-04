@@ -225,6 +225,7 @@ QRectF UBAbstractGraphicsItem::adjustBoundingRect(QRectF rect) const
 {
     if(hasStrokeProperty()){
         int r = pen().width() / 2;
+
         rect.adjust(-r, -r, r, r);
     }
 

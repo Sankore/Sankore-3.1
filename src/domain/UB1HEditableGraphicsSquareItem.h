@@ -1,6 +1,7 @@
 #ifndef UB1HEDITABLEGRAPHICSSQUAREITEM_H
 #define UB1HEDITABLEGRAPHICSSQUAREITEM_H
 
+#include <QPoint>
 #include "UB1HEditableGraphicsBasicShapeItem.h"
 
 class UB1HEditableGraphicsSquareItem : public UB1HEditableGraphicsBasicShapeItem
@@ -33,6 +34,8 @@ public:
 
 private:
     int mSide;
+    bool hIsNeg;
+    bool wIsNeg;
 };
 
 #endif // UB1HEDITABLEGRAPHICSSQUAREITEM_H

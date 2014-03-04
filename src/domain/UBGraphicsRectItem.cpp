@@ -125,6 +125,8 @@ void UB3HEditableGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
 
         g.setColorAt(0, brush().gradient()->stops().at(0).second);
         g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
     }
 
     update();
@@ -152,6 +154,15 @@ void UB3HEditableGraphicsRectItem::setRect(QRectF rect)
 
     mWidth = rect.width();
     mHeight = rect.height();
+
+    if(hasGradient()){
+        QLinearGradient g(QPointF(), QPointF(mWidth, 0));
+
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
+    }
 
     update();
 }
