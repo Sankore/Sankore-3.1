@@ -113,7 +113,7 @@ QRectF UB1HEditableGraphicsSquareItem::boundingRect() const
     int x = wIsNeg ? -mSide : 0;
     int y = hIsNeg ? -mSide : 0;
 
-    QRectF rect(x, y, mSide*2, mSide*2);
+    QRectF rect(x, y, mSide, mSide);
 
     rect = adjustBoundingRect(rect);
 
