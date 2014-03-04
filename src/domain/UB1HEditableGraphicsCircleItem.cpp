@@ -57,7 +57,14 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
 
     int rx = wIsNeg ? -mRadius : mRadius;
     int ry = hIsNeg ? -mRadius : mRadius;
-    painter->drawEllipse(QRect(0, 0, rx*2, ry*2));
+
+    int x = wIsNeg ? -mRadius : 0;
+    int y = hIsNeg ? -mRadius : 0;
+
+    x *= 2;
+    y *= 2;
+
+    painter->drawEllipse(QRect(x, y, mRadius*2, mRadius*2));
 
     if(mMultiClickState %2 == 1){
         QPen p;
@@ -74,10 +81,13 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
 
 QRectF UB1HEditableGraphicsCircleItem::boundingRect() const
 {
-    int rx = wIsNeg ? -mRadius : mRadius;
-    int ry = hIsNeg ? -mRadius : mRadius;
+    int x = wIsNeg ? -mRadius : 0;
+    int y = hIsNeg ? -mRadius : 0;
 
-    QRectF rect(0, 0, rx*2, ry*2);
+    x *= 2;
+    y *= 2;
+
+    QRectF rect(QRect(x, y, mRadius*2, mRadius*2));
 
     rect = adjustBoundingRect(rect);
 

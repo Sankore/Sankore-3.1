@@ -291,9 +291,8 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
             if (mShapeType == Ellipse)
             {
                 UB3HEditableGraphicsEllipseItem* shape = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
-                QRectF rect = shape->boundingRect();
 
-                mBoundingRect = QRectF(shape->mapToScene(rect.topLeft()), cursorPosition);
+                mBoundingRect = QRectF(shape->pos(), cursorPosition);
                 shape->setRadiusX(mBoundingRect.width()/2);
                 shape->setRadiusY(mBoundingRect.height()/2);
             }

@@ -77,7 +77,10 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
 
     setStyle(painter);
 
-    painter->drawEllipse(QPointF(mRadiusX, mRadiusY), mRadiusX, mRadiusY);
+    int rx = (mRadiusX < 0 ? -mRadiusX : mRadiusX);
+    int ry = (mRadiusY < 0 ? -mRadiusY : mRadiusY);
+
+    painter->drawEllipse(QPointF(mRadiusX, mRadiusY), rx, ry);
 
     if(mMultiClickState %2 == 1){
         QPen p;
@@ -94,7 +97,19 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
 
 QRectF UB3HEditableGraphicsEllipseItem::boundingRect() const
 {
-    QRectF rect(0, 0, mRadiusX*2, mRadiusY*2);
+    int x = (mRadiusX < 0 ? mRadiusX : 0);
+    int y = (mRadiusY < 0 ? mRadiusY : 0);
+
+    int rx = (mRadiusX < 0 ? -mRadiusX : mRadiusX);
+    int ry = (mRadiusY < 0 ? -mRadiusY : mRadiusY);
+
+    rx *= 2;
+    ry *= 2;
+
+    x *= 2;
+    y *= 2;
+
+    QRectF rect(x, y, rx, ry);
 
     rect = adjustBoundingRect(rect);
 

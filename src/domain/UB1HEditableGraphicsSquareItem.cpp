@@ -110,10 +110,10 @@ void UB1HEditableGraphicsSquareItem::updateHandle(UBAbstractHandle *handle)
 
 QRectF UB1HEditableGraphicsSquareItem::boundingRect() const
 {
-    int sw = wIsNeg ? -mSide : mSide;
-    int sh = hIsNeg ? -mSide : mSide;
+    int x = wIsNeg ? -mSide : 0;
+    int y = hIsNeg ? -mSide : 0;
 
-    QRectF rect(0, 0, sw, sh);
+    QRectF rect(x, y, mSide*2, mSide*2);
 
     rect = adjustBoundingRect(rect);
 

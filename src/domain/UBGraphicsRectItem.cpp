@@ -134,7 +134,13 @@ void UB3HEditableGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
 
 QRectF UB3HEditableGraphicsRectItem::boundingRect() const
 {
-    QRectF rect(0, 0, mWidth, mHeight);
+    int x = (mWidth < 0 ? mWidth : 0);
+    int y = (mHeight < 0 ? mHeight : 0);
+
+    int w = (mWidth < 0 ? -mWidth : mWidth);
+    int h = (mHeight < 0 ? -mHeight : mHeight);
+
+    QRectF rect(x, y, w, h);
 
     rect = adjustBoundingRect(rect);
 
