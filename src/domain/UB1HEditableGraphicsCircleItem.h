@@ -40,6 +40,8 @@ public:
 
 private:
     qreal mRadius;
+    bool wIsNeg;
+    bool hIsNeg;
 };
 
 #endif // UB1HEDITABLEGRAPHICSCIRCLEITEM_H

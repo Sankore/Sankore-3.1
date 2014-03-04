@@ -1724,6 +1724,7 @@ void UBGraphicsScene::removeItem(QGraphicsItem* item)
 {
     item->setSelected(false);
     UBCoreGraphicsScene::removeItem(item);
+
     UBApplication::boardController->freezeW3CWidget(item, true);
 
     if (!mTools.contains(item))
@@ -2476,8 +2477,12 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
         {
             // Issue 1569 - CFA - 20131023 : undo erase multi-selection
             UBApplication::undoStack->beginMacro("remove items");
+
+            //QRectF dirtyArea;
+
             foreach(QGraphicsItem* item, si)
             {
+
                 switch (item->type())
                 {
                 case UBGraphicsWidgetItem::Type:
@@ -2511,6 +2516,9 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                     }
                 }
             }
+
+            update();
+
             UBApplication::undoStack->endMacro();
             // Fin Issue 1569 - CFA - 20131023
         }

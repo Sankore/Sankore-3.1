@@ -7,6 +7,8 @@ UB1HEditableGraphicsCircleItem::UB1HEditableGraphicsCircleItem(QGraphicsItem* pa
     initializeFillingProperty();
 
     mRadius = 0;
+    wIsNeg = false;
+    hIsNeg = false;
 }
 
 UB1HEditableGraphicsCircleItem::~UB1HEditableGraphicsCircleItem()
@@ -32,6 +34,8 @@ void UB1HEditableGraphicsCircleItem::copyItemParameters(UBItem *copy) const
     if(!cp) return;
 
     cp->mRadius = mRadius;
+    cp->wIsNeg = wIsNeg;
+    cp->hIsNeg = hIsNeg;
 }
 
 QPointF UB1HEditableGraphicsCircleItem::center() const
@@ -51,7 +55,9 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
 
     UBAbstractGraphicsItem::setStyle(painter);
 
-    painter->drawEllipse(QPointF(mRadius, mRadius), mRadius, mRadius);
+    int rx = wIsNeg ? -mRadius : mRadius;
+    int ry = hIsNeg ? -mRadius : mRadius;
+    painter->drawEllipse(QRect(0, 0, rx*2, ry*2));
 
     if(mMultiClickState %2 == 1){
         QPen p;
@@ -62,13 +68,16 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
         painter->setPen(p);
         painter->setBrush(QBrush());
 
-        painter->drawRect(0, 0, mRadius*2, mRadius*2);
+        painter->drawRect(0, 0, rx*2, ry*2);
     }
 }
 
 QRectF UB1HEditableGraphicsCircleItem::boundingRect() const
 {
-    QRectF rect(0, 0, mRadius*2, mRadius*2);
+    int rx = wIsNeg ? -mRadius : mRadius;
+    int ry = hIsNeg ? -mRadius : mRadius;
+
+    QRectF rect(0, 0, rx*2, ry*2);
 
     rect = adjustBoundingRect(rect);
 
@@ -133,17 +142,44 @@ void UB1HEditableGraphicsCircleItem::setRadius(qreal radius)
 
 void UB1HEditableGraphicsCircleItem::setRect(QRectF rect)
 {
+    prepareGeometryChange();
+
+    int w = rect.width();
+    int h = rect.height();
+
+    wIsNeg = (w < 0);
+    hIsNeg = (h < 0);
+
+    if(wIsNeg) w = -w;
+    if(hIsNeg) h = -h;
+
+    mRadius = qMin(w, h);
+    mRadius /= 2;
+
     setPos(rect.topLeft());
 
-    mRadius = rect.width()/2;
+    if(hasGradient()){
+        QLinearGradient g(QPointF(), QPointF(mRadius*2, 0));
+
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
+    }
+
+    update();
 }
 
 QRectF UB1HEditableGraphicsCircleItem::rect() const
 {
     QRectF r;
     r.setTopLeft(pos());
-    r.setWidth(mRadius*2);
-    r.setHeight(mRadius*2);
+
+    int rx = wIsNeg ? -mRadius : mRadius;
+    int ry = hIsNeg ? -mRadius : mRadius;
+
+    r.setWidth(rx*2);
+    r.setHeight(ry*2);
 
     return r;
 }

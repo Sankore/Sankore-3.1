@@ -85,7 +85,15 @@ void UBShapeFactory::setGradientFillingProperty(UBAbstractGraphicsItem* shape)
 {
     QRectF rect = shape->boundingRect();
 
-    QLinearGradient gradient(rect.topLeft(), rect.topRight());
+    QLinearGradient gradient;
+
+    //reverse the order of the gradient to draw it always in the correct direction
+    if(rect.width() < 0){
+        gradient = QLinearGradient(rect.topRight(), rect.topLeft());
+    }else{
+        gradient = QLinearGradient(rect.topLeft(), rect.topRight());
+    }
+
     gradient.setColorAt(0, mCurrentFillFirstColor);
     gradient.setColorAt(1, mCurrentFillSecondColor);    
     shape->setBrush(gradient);
@@ -293,11 +301,7 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
             {
                 UB1HEditableGraphicsCircleItem* shape = dynamic_cast<UB1HEditableGraphicsCircleItem*>(mCurrentShape);
 
-                QRectF rect = shape->boundingRect();
-
-                mBoundingRect = QRectF(shape->mapToScene(rect.topLeft()), cursorPosition);
-
-                shape->setRadius(qMin(mBoundingRect.width(), mBoundingRect.height())/2);
+                shape->setRect(QRectF(shape->pos(), cursorPosition));
             }
             else if (mShapeType == Rectangle)
             {

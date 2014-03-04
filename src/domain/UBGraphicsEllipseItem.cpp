@@ -179,6 +179,15 @@ void UB3HEditableGraphicsEllipseItem::setRect(QRectF rect){
     setPos(rect.topLeft());
     mRadiusX = rect.width()/2;
     mRadiusY = rect.height()/2;
+
+    if(hasGradient()){
+        QLinearGradient g(QPointF(), QPointF(mRadiusX*2, 0));
+
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
+    }
 }
 
 QRectF UB3HEditableGraphicsEllipseItem::rect() const

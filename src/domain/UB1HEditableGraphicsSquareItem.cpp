@@ -17,7 +17,8 @@ UB1HEditableGraphicsSquareItem::UB1HEditableGraphicsSquareItem(QGraphicsItem* pa
     initializeStrokeProperty();
     initializeFillingProperty();
 
-    mSide = 0;
+    hIsNeg = false;
+    wIsNeg = false;
 }
 
 UB1HEditableGraphicsSquareItem::~UB1HEditableGraphicsSquareItem()
@@ -43,6 +44,8 @@ void UB1HEditableGraphicsSquareItem::copyItemParameters(UBItem *copy) const
     if(!cp) return;
 
     cp->mSide = mSide;
+    cp->hIsNeg = hIsNeg;
+    cp->wIsNeg = wIsNeg;
 }
 
 void UB1HEditableGraphicsSquareItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -52,7 +55,10 @@ void UB1HEditableGraphicsSquareItem::paint(QPainter *painter, const QStyleOption
 
     setStyle(painter);
 
-    painter->drawRect(0, 0, mSide, mSide);
+    int h = hIsNeg ? -mSide : mSide;
+    int w = wIsNeg ? -mSide : mSide;
+
+    painter->drawRect(0, 0, w, h);
 }
 
 QPainterPath UB1HEditableGraphicsSquareItem::shape() const
@@ -62,7 +68,10 @@ QPainterPath UB1HEditableGraphicsSquareItem::shape() const
     if(mMultiClickState %2 == 1){
         path.addRect(boundingRect());
     }else{
-        path.addRect(0, 0, mSide, mSide);
+        int h = hIsNeg ? -mSide : mSide;
+        int w = wIsNeg ? -mSide : mSide;
+
+        path.addRect(0, 0, w, h);
     }
 
     return path;
@@ -92,6 +101,8 @@ void UB1HEditableGraphicsSquareItem::updateHandle(UBAbstractHandle *handle)
 
         g.setColorAt(0, brush().gradient()->stops().at(0).second);
         g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
     }
 
     update();
@@ -99,7 +110,10 @@ void UB1HEditableGraphicsSquareItem::updateHandle(UBAbstractHandle *handle)
 
 QRectF UB1HEditableGraphicsSquareItem::boundingRect() const
 {
-    QRectF rect(0, 0, mSide, mSide);
+    int sw = wIsNeg ? -mSide : mSide;
+    int sh = hIsNeg ? -mSide : mSide;
+
+    QRectF rect(0, 0, sw, sh);
 
     rect = adjustBoundingRect(rect);
 
@@ -117,7 +131,25 @@ void UB1HEditableGraphicsSquareItem::setRect(QRectF rect)
 
     setPos(rect.topLeft());
 
-    mSide = qMin(rect.width(), rect.height());
+    qreal w = rect.width();
+    qreal h = rect.height();
+
+    wIsNeg = w < 0;
+    hIsNeg = h < 0;
+
+    if(wIsNeg) w = -w;
+    if(hIsNeg) h = -h;
+
+    mSide = qMin(w, h);
+
+    if(hasGradient()){
+        QLinearGradient g(QPointF(), QPointF(mSide, 0));
+
+        g.setColorAt(0, brush().gradient()->stops().at(0).second);
+        g.setColorAt(1, brush().gradient()->stops().at(1).second);
+
+        setBrush(g);
+    }
 
     update();
 }
@@ -126,8 +158,9 @@ QRectF UB1HEditableGraphicsSquareItem::rect() const
 {
     QRectF r;
     r.setTopLeft(pos());
-    r.setWidth(mSide);
-    r.setHeight(mSide);
+
+    r.setWidth(wIsNeg ? -mSide : mSide);
+    r.setHeight(hIsNeg ? -mSide : mSide);
 
     return r;
 }
