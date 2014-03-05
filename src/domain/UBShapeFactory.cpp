@@ -50,7 +50,7 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
     if (item)
     {
         UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
-        if (shape)
+        if (shape)        
         {
             if (mFillType == Diag){
                 if (shape->hasFillingProperty()){
@@ -85,15 +85,7 @@ void UBShapeFactory::setGradientFillingProperty(UBAbstractGraphicsItem* shape)
 {
     QRectF rect = shape->boundingRect();
 
-    QLinearGradient gradient;
-
-    //reverse the order of the gradient to draw it always in the correct direction
-    if(rect.width() < 0){
-        gradient = QLinearGradient(rect.topRight(), rect.topLeft());
-    }else{
-        gradient = QLinearGradient(rect.topLeft(), rect.topRight());
-    }
-
+    QLinearGradient gradient(rect.topLeft(), rect.topRight());
     gradient.setColorAt(0, mCurrentFillFirstColor);
     gradient.setColorAt(1, mCurrentFillSecondColor);
     shape->setBrush(gradient);
@@ -113,6 +105,9 @@ void UBShapeFactory::init()
 {
     mBoardView = UBApplication::boardController->controlView();
     mDrawingController = UBDrawingController::drawingController();
+
+    //Our custom dash is a point follow by a space
+    mDotDashes << 0.1 << 3;
 
     connect(mBoardView, SIGNAL(mouseMove(QMouseEvent*)), this, SLOT(onMouseMove(QMouseEvent*)));
     connect(mBoardView, SIGNAL(mouseRelease(QMouseEvent*)), this, SLOT(onMouseRelease(QMouseEvent*)));
@@ -153,6 +148,13 @@ UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
     }
 
     mCurrentShape->setStyle(mCurrentBrushStyle, mCurrentPenStyle);
+
+    if(mCurrentPenStyle == Qt::CustomDashLine){
+        QPen p = mCurrentShape->pen();
+        p.setCapStyle(Qt::RoundCap);
+        p.setDashPattern(mDotDashes);
+        mCurrentShape->setPen(p);
+    }
 
     if (mFillType == Diag)    {
         if (mCurrentShape->hasFillingProperty()){
@@ -389,7 +391,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                 mBoardView->scene()->addItem(rect);
             }
             else if (mShapeType == Line)
-            {
+            {                
                 UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(instanciateCurrentShape());
 
                 line->setLine(cursorPosition, cursorPosition);
@@ -415,7 +417,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
                         mFirstClickForFreeHand = false;
 
-                        mBoardView->scene()->addItem(pathItem);
+                        mBoardView->scene()->addItem(pathItem);                        
                     }
                 }else{
                     UBEditableGraphicsPolygonItem* pathItem = dynamic_cast<UBEditableGraphicsPolygonItem*>(mCurrentShape);
@@ -581,6 +583,7 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 {
     mCurrentPenStyle = penStyle;
 
+
     UBGraphicsScene* scene = mBoardView->scene();
 
     QList<QGraphicsItem*> items = scene->selectedItems();
@@ -590,7 +593,14 @@ void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 
         if(shape)
         {
-            shape->setStyle(mCurrentPenStyle);
+            if(penStyle == Qt::CustomDashLine){
+                QPen p = shape->pen();
+                p.setCapStyle(Qt::RoundCap);
+                p.setDashPattern(mDotDashes);
+                shape->setPen(p);
+            }else{
+                shape->setStyle(mCurrentPenStyle);
+            }
         }
 
         items.at(i)->update();

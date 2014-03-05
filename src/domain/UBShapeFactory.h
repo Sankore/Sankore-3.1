@@ -70,7 +70,7 @@ public slots:
     void createSquare(bool create);
     void createLine(bool create);
 
-    void createPen(bool create);    
+    void createPen(bool create);
 
     void prepareChangeFill();
     void changeFillColor(const QPointF& pos);
@@ -116,6 +116,8 @@ private:
     QRectF mBoundingRect;
 
     bool mCursorMoved;
+
+    QVector<qreal> mDotDashes;
 
 protected:
     UBAbstractGraphicsItem *instanciateCurrentShape();
