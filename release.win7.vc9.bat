@@ -72,7 +72,7 @@ REM echo %LAST_TAG_VERSION%
 nmake release-install
 IF NOT EXIST build\win32\release\product\Open-Sankore.exe GOTO EXIT_WITH_ERROR
 
-xcopy C:\OpenSankore\lib\*.dll build\win32\release\product\
+xcopy C:\OpenSankore\lib\QtMultimediaKit1.dll build\win32\release\product\
 xcopy %QT_DIR%\lib\QtOpenGL4.dll build\win32\release\product\
 
 set CUSTOMIZATIONS=build\win32\release\product\customizations
