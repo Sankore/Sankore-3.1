@@ -68,7 +68,6 @@ void UBAbstractEditableGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
 {
     Q_UNUSED(handle)
 
-    setSelected(true);
     Delegate()->showFrame(false);
 }
 
