@@ -169,7 +169,8 @@ UBTeacherGuideEditionWidget::~UBTeacherGuideEditionWidget()
 
 void UBTeacherGuideEditionWidget::showEvent(QShowEvent* event)
 {
-    setFocus();
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    //setFocus();
     QWidget::showEvent(event);
 }
 
@@ -289,6 +290,8 @@ void UBTeacherGuideEditionWidget::onActiveSceneChanged()
         if (mpDocumentTitle)
             mpDocumentTitle->setText(documentProxy->metaData(UBSettings::sessionTitle).toString());
     }
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    UBApplication::boardController->controlView()->setFocus();
 }
 
 void UBTeacherGuideEditionWidget::cleanData()
@@ -1155,6 +1158,9 @@ void UBTeacherGuidePageZeroWidget::onActiveSceneChanged()
         updateSceneTitle();
     }
     load(UBSvgSubsetAdaptor::readTeacherGuideNode(0)); // Issue 1683 (Evolution) - AOU - 20131206
+
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    UBApplication::boardController->controlView()->setFocus();
 }
 
 
@@ -1687,6 +1693,9 @@ void UBTeacherGuideWidget::onActiveSceneChanged()
         else
             setCurrentWidget(mpEditionWidget);
     }
+
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    UBApplication::boardController->controlView()->setFocus();
 
 }
 
