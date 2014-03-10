@@ -600,14 +600,14 @@ void UBGraphicsWidgetItem::paint( QPainter *painter, const QStyleOptionGraphicsI
         }else{
             //issue 1483 - NNE - 20131220 : If te scene wiil be export in pdf
             //use the last snapshot taken (normally up-to-date)
-            if(this->scene()->renderingContext() == UBGraphicsScene::PdfExport){
-                painter->drawPixmap(0, 0, mSnapshot);
-            }else{
-                //issue 1586 - NNE - 20131024
-                QGraphicsWebView::paint(painter, option, widget);
-            }
 
-        }
+		    if(this->scene() && this->scene()->renderingContext() == UBGraphicsScene::PdfExport){
+		        painter->drawPixmap(0, 0, mSnapshot);
+		    }else if(this->scene()){
+		        //issue 1586 - NNE - 20131024
+		        QGraphicsWebView::paint(painter, option, widget);
+		    }
+		}
     }
 }
 
