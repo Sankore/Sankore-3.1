@@ -85,7 +85,6 @@ void UBEditableGraphicsRegularShapeItem::updatePath(QPointF newPos)
     path.lineTo(firstPoint);
     setPath(path);
 
-    update();
 }
 
 void UBEditableGraphicsRegularShapeItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -131,18 +130,15 @@ QRectF UBEditableGraphicsRegularShapeItem::boundingRect() const
     QRectF retour = adjustBoundingRect(path().boundingRect());
 
     if(mMultiClickState >= 1){
-        QPointF ph = mHandles.at(0)->pos();
-        qreal r = mHandles.at(0)->radius();
-
-        QPointF diff = (ph - retour.topLeft()) - (retour.bottomRight() - retour.topLeft());
-
         //add the size of the circle
         QPainterPath circle;
         circle.addEllipse(mCenter, mRadius, mRadius);
 
+        qreal r = mHandles.at(0)->radius();
+
         retour = circle.boundingRect();
         retour = adjustBoundingRect(retour);
-        retour.adjust(0, 0, diff.x() + r, diff.y() + r);
+        retour.adjust(0, 0, r, r);
     }
 
     return retour;
@@ -189,7 +185,8 @@ void UBEditableGraphicsRegularShapeItem::copyItemParameters(UBItem *copy) const
 
 void UBEditableGraphicsRegularShapeItem::updateHandle(UBAbstractHandle *handle)
 {
-    setSelected(true);
+    prepareGeometryChange();
+
     Delegate()->showFrame(false);
 
     QPointF diff = handle->pos() - path().boundingRect().topLeft();

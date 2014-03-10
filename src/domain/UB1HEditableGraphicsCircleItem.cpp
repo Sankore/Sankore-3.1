@@ -131,8 +131,6 @@ void UB1HEditableGraphicsCircleItem::updateHandle(UBAbstractHandle *handle)
 
         setBrush(g);
     }
-
-    update();
 }
 
 QPainterPath UB1HEditableGraphicsCircleItem::shape() const
@@ -151,7 +149,6 @@ void UB1HEditableGraphicsCircleItem::setRadius(qreal radius)
 {
     prepareGeometryChange();
     mRadius = radius;
-    update();
 }
 
 void UB1HEditableGraphicsCircleItem::setRect(QRectF rect)
@@ -180,8 +177,6 @@ void UB1HEditableGraphicsCircleItem::setRect(QRectF rect)
 
         setBrush(g);
     }
-
-    update();
 }
 
 QRectF UB1HEditableGraphicsCircleItem::rect() const

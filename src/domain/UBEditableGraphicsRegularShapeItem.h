@@ -39,7 +39,7 @@ class UBEditableGraphicsRegularShapeItem : public UBAbstractEditableGraphicsShap
         };
 
         UBEditableGraphicsRegularShapeItem(int nVertices = Triangle, QPointF startPoint = QPointF(0,0), QGraphicsItem* parent = 0);
-        ~UBEditableGraphicsRegularShapeItem();
+        virtual ~UBEditableGraphicsRegularShapeItem();
 
         void createGraphicsRegularPathItem();
         virtual void addPoint(const QPointF &point);

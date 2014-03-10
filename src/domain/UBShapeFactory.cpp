@@ -50,7 +50,7 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
     if (item)
     {
         UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
-        if (shape)        
+        if (shape)
         {
             if (mFillType == Diag){
                 if (shape->hasFillingProperty()){
@@ -95,7 +95,7 @@ void UBShapeFactory::setGradientFillingProperty(UBAbstractGraphicsItem* shape)
     }
 
     gradient.setColorAt(0, mCurrentFillFirstColor);
-    gradient.setColorAt(1, mCurrentFillSecondColor);    
+    gradient.setColorAt(1, mCurrentFillSecondColor);
     shape->setBrush(gradient);
 }
 
@@ -153,7 +153,6 @@ UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
     }
 
     mCurrentShape->setStyle(mCurrentBrushStyle, mCurrentPenStyle);
-
 
     if (mFillType == Diag)    {
         if (mCurrentShape->hasFillingProperty()){
@@ -291,10 +290,10 @@ void UBShapeFactory::onMouseMove(QMouseEvent *event)
             if (mShapeType == Ellipse)
             {
                 UB3HEditableGraphicsEllipseItem* shape = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
+                QRectF rect = QRectF(shape->pos(), cursorPosition);
 
-                mBoundingRect = QRectF(shape->pos(), cursorPosition);
-                shape->setRadiusX(mBoundingRect.width()/2);
-                shape->setRadiusY(mBoundingRect.height()/2);
+                shape->setRadiusX(rect.width()/2);
+                shape->setRadiusY(rect.height()/2);
             }
             else if(mShapeType == Circle)
             {
@@ -390,7 +389,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                 mBoardView->scene()->addItem(rect);
             }
             else if (mShapeType == Line)
-            {                
+            {
                 UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(instanciateCurrentShape());
 
                 line->setLine(cursorPosition, cursorPosition);
@@ -416,7 +415,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
                         mFirstClickForFreeHand = false;
 
-                        mBoardView->scene()->addItem(pathItem);                        
+                        mBoardView->scene()->addItem(pathItem);
                     }
                 }else{
                     UBEditableGraphicsPolygonItem* pathItem = dynamic_cast<UBEditableGraphicsPolygonItem*>(mCurrentShape);
@@ -581,7 +580,6 @@ void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
 void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 {
     mCurrentPenStyle = penStyle;
-
 
     UBGraphicsScene* scene = mBoardView->scene();
 

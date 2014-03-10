@@ -18,6 +18,8 @@ void UBAbstractEditableGraphicsShapeItem::mousePressEvent(QGraphicsSceneMouseEve
     UBAbstractGraphicsItem::mousePressEvent(event);
 
     if(mMultiClickState >= 1){
+        prepareGeometryChange();
+
         onActivateEditionMode();
 
         Delegate()->showFrame(false);
@@ -39,6 +41,8 @@ void UBAbstractEditableGraphicsShapeItem::focusOutEvent(QFocusEvent *event)
     Q_UNUSED(event)
 
     if(mMultiClickState >= 1){
+        prepareGeometryChange();
+
         mMultiClickState = 0;
         showEditMode(false);
     }

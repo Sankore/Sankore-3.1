@@ -135,8 +135,6 @@ void UB3HEditableGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
 
         setBrush(g);
     }
-
-    update();
 }
 
 QRectF UB3HEditableGraphicsRectItem::boundingRect() const
@@ -176,8 +174,6 @@ void UB3HEditableGraphicsRectItem::setRect(QRectF rect)
 
         setBrush(g);
     }
-
-    update();
 }
 
 QRectF UB3HEditableGraphicsRectItem::rect() const

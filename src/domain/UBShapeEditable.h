@@ -9,6 +9,7 @@ class UBAbstractEditableGraphicsShapeItem : public UBAbstractGraphicsItem, publi
 public:
     UBAbstractEditableGraphicsShapeItem(QGraphicsItem *parent = 0);
 
+    virtual ~UBAbstractEditableGraphicsShapeItem(){ }
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
