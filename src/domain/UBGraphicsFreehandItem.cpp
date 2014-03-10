@@ -4,8 +4,16 @@
 
 UBGraphicsFreehandItem::UBGraphicsFreehandItem(QGraphicsItem *parent) :
     UBAbstractGraphicsPathItem(parent)
+    , HANDLE_SIZE(20)
+    , mIsInCreationMode(true)
 {
     initializeStrokeProperty();
+}
+
+void UBGraphicsFreehandItem::setClosed(bool closed)
+{
+    if (closed)
+        initializeFillingProperty();
 }
 
 void UBGraphicsFreehandItem::addPoint(const QPointF & point)
@@ -15,11 +23,13 @@ void UBGraphicsFreehandItem::addPoint(const QPointF & point)
     QPainterPath painterPath = path();
     if (painterPath.elementCount() == 0)
     {
-        painterPath.moveTo(point); // For the first point added, we must use moveTo().
+        painterPath.moveTo(point); // For the first point added, we must use moveTo().                
+        mStartEndPoint[0] = point;
     }
     else
     {
         painterPath.lineTo(point);
+        mStartEndPoint[1] = point;
     }
 
     setPath(painterPath);
@@ -60,12 +70,40 @@ void UBGraphicsFreehandItem::copyItemParameters(UBItem *copy) const
     }
 }
 
+void UBGraphicsFreehandItem::setIsInCreationMode(bool mode)
+{
+     mIsInCreationMode = mode;
+}
+
+QRectF UBGraphicsFreehandItem::boundingRect() const
+{
+    QRectF rect = UBAbstractGraphicsPathItem::boundingRect();
+
+    int enlarge = 0;
+
+    if (mIsInCreationMode)//gérer les poignées aux extrémités
+        enlarge += HANDLE_SIZE/2;
+
+    rect.adjust(-enlarge, -enlarge, enlarge, enlarge);
+
+    return rect;
+}
+
 void UBGraphicsFreehandItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(widget)
     Q_UNUSED(option)
 
-    UBAbstractGraphicsItem::setStyle(painter);
+    UBAbstractGraphicsItem::setStyle(painter);       
 
     painter->drawPath(path());
+
+    if (mIsInCreationMode)
+    {
+        int hsize = HANDLE_SIZE/2;
+        painter->drawEllipse(mStartEndPoint[0].x() - hsize, mStartEndPoint[0].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+
+        if(path().elementCount() >= 2)
+            painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
+    }
 }

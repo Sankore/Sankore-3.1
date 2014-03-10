@@ -46,18 +46,20 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
 {
     UBGraphicsScene* scene = mBoardView->scene();
     QGraphicsItem* item = scene->itemAt(pos, QTransform());
+    UBAbstractGraphicsItem* shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
 
-    if (item)
+    applyCurrentStyle(shape);
+}
+
+void UBShapeFactory::applyCurrentStyle(UBAbstractGraphicsItem* shape)
+{
+    if (shape)
     {
-        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
-        if (shape)        
-        {
-            if (mFillType == Diag){
-                if (shape->hasFillingProperty()){
-                    shape->setStyle(Qt::TexturePattern);
-                    shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Diag1);
-                    shape->setFillColor(mCurrentFillFirstColor);
-                }
+        if (mFillType == Diag){
+            if (shape->hasFillingProperty()){
+                shape->setStyle(Qt::TexturePattern);
+                shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Diag1);
+                shape->setFillColor(mCurrentFillFirstColor);
             }
             else if (mFillType == Dense){
                 if (shape->hasFillingProperty()){
@@ -76,7 +78,6 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
                     shape->setFillColor(mCurrentFillFirstColor);
                 }
             }
-            item->update();
         }
     }
 }
@@ -391,7 +392,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                 mBoardView->scene()->addItem(rect);
             }
             else if (mShapeType == Line)
-            {                
+            {
                 UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(instanciateCurrentShape());
 
                 line->setLine(cursorPosition, cursorPosition);
@@ -417,7 +418,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
                         mFirstClickForFreeHand = false;
 
-                        mBoardView->scene()->addItem(pathItem);                        
+                        mBoardView->scene()->addItem(pathItem);
                     }
                 }else{
                     UBEditableGraphicsPolygonItem* pathItem = dynamic_cast<UBEditableGraphicsPolygonItem*>(mCurrentShape);
@@ -452,60 +453,75 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     if (line)
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
-
-    if(mShapeType == Rectangle){
+    }
+    else if(mShapeType == Rectangle)
+    {
         UB3HEditableGraphicsRectItem* shape = dynamic_cast<UB3HEditableGraphicsRectItem*>(mCurrentShape);
 
         QRectF rect = shape->rect();
 
         shape->setRect(reverseRect(rect));
     }
-
-    if(mShapeType == Square){
+    else if(mShapeType == Square)
+    {
         UB1HEditableGraphicsSquareItem* shape = dynamic_cast<UB1HEditableGraphicsSquareItem*>(mCurrentShape);
 
         QRectF rect = shape->rect();
 
         shape->setRect(reverseRect(rect));
     }
-
-    if(mShapeType == Ellipse){
+    else if(mShapeType == Ellipse)
+    {
         UB3HEditableGraphicsEllipseItem* shape = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(mCurrentShape);
 
         QRectF rect = shape->rect();
 
         shape->setRect(reverseRect(rect));
     }
-
-    if(mShapeType == Circle){
+    else if(mShapeType == Circle)
+    {
         UB1HEditableGraphicsCircleItem* shape = dynamic_cast<UB1HEditableGraphicsCircleItem*>(mCurrentShape);
 
         QRectF rect = shape->rect();
 
         shape->setRect(reverseRect(rect));
     }
-
-    if(mShapeType == RegularPolygon){
+    else if(mShapeType == RegularPolygon)
+    {
         UBEditableGraphicsRegularShapeItem* shape = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(mCurrentShape);
 
         QPointF startPoint = shape->correctStartPoint();
         shape->setStartPoint(startPoint);
     }
-    if (!mCursorMoved)
+    else if(mShapeType == Pen)
     {
-        //convertir UBShape en QGraphicsItem (ou dérivée) pour pouvoir le retirer de la scene
-        UBEditableGraphicsRegularShapeItem* regularPath = dynamic_cast<UBEditableGraphicsRegularShapeItem*>(mCurrentShape);
-        if (regularPath)
+        UBGraphicsFreehandItem* freehand = dynamic_cast<UBGraphicsFreehandItem*>(mCurrentShape);
+
+        if (freehand)
         {
-           mBoardView->scene()->removeItem(regularPath);
+            if (freehand->path().elementCount() > 2)
+            {
+                QGraphicsEllipseItem poigneeDepart(freehand->mStartEndPoint[0].x()-10, freehand->mStartEndPoint[1].y()-10, 20, 20);
+                if (poigneeDepart.contains(freehand->mStartEndPoint[1]))
+                {
+                    //
+                    freehand->addPoint(freehand->mStartEndPoint[0]);
+                    freehand->setClosed(true);
+                    applyCurrentStyle(mCurrentShape);
+                }
+                freehand->setIsInCreationMode(false);
+            }
         }
-    }
 
-
-    if(mShapeType == Pen){
-        mCurrentShape = NULL;
         mFirstClickForFreeHand = true;
     }
+
+    if (!mCursorMoved && mCurrentShape && mShapeType != Polygon)
+        mBoardView->scene()->removeItem(mCurrentShape);
+
+    if (mShapeType != Polygon)
+        mCurrentShape = NULL;
+
 }
 
 QRectF UBShapeFactory::reverseRect(const QRectF& rect)
@@ -582,7 +598,6 @@ void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
 void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
 {
     mCurrentPenStyle = penStyle;
-
 
     UBGraphicsScene* scene = mBoardView->scene();
 

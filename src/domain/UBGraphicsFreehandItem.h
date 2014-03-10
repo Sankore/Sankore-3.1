@@ -5,6 +5,11 @@
 
 class UBGraphicsFreehandItem : public UBAbstractGraphicsPathItem
 {
+
+    bool mIsInCreationMode;
+
+    int HANDLE_SIZE; //in pixel
+
 public:
     UBGraphicsFreehandItem(QGraphicsItem *parent = 0);
 
@@ -12,11 +17,19 @@ public:
 
     UBItem *deepCopy() const;
 
+    QRectF boundingRect() const;
+
     void copyItemParameters(UBItem *copy) const;
+
+    void setClosed(bool closed);
 
     enum { Type = UBGraphicsItemType::GraphicsFreehandItemType};
     virtual int type() const { return Type; }
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
+    QPointF mStartEndPoint[2];
+    void setIsInCreationMode(bool mode);
+
 };
 
 #endif // UBGRAPHICSFREEHANDITEM_H

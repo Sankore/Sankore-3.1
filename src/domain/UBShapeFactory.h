@@ -48,6 +48,7 @@ public:
     QColor fillFirstColor();
     QColor fillSecondColor();
 
+    void applyCurrentStyle(UBAbstractGraphicsItem *shape);
     void setFillingStyle(Qt::BrushStyle brushStyle);
     void setFillingFirstColor(QColor color);
     void setFillingSecondColor(QColor color);

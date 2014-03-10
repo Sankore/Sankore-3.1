@@ -207,6 +207,8 @@ void UBDrawingController::deactivateCreationModeForGraphicsPathItems()
             if (path){
                 path->setIsInCreationMode(false);
                 UBApplication::boardController->shapeFactory().desactivate();
+                if (path->path().elementCount() < 2)
+                    UBApplication::boardController->controlView()->scene()->removeItem(gi);
             }
         }
     }
