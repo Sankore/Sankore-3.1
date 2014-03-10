@@ -46,7 +46,6 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
 {
     UBGraphicsScene* scene = mBoardView->scene();
     QGraphicsItem* item = scene->itemAt(pos, QTransform());
-    UBAbstractGraphicsItem* shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
 
     applyCurrentStyle(shape);
 }

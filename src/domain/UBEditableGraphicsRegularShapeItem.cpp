@@ -84,7 +84,6 @@ void UBEditableGraphicsRegularShapeItem::updatePath(QPointF newPos)
 
     path.lineTo(firstPoint);
     setPath(path);
-
 }
 
 void UBEditableGraphicsRegularShapeItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
