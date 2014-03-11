@@ -111,8 +111,15 @@ void UB3HEditableGraphicsRectItem::updateHandle(UBAbstractHandle *handle)
     }else{
         //it's the diagonal handle
         if(handle->pos().x() >= maxSize && handle->pos().y() >= maxSize){
-            mHeight = handle->pos().y();
-            mWidth = handle->pos().x();
+            float ratio = mHeight / mWidth;
+
+            if(mWidth > mHeight){
+                mWidth = handle->pos().x();
+                mHeight = ratio * mWidth;
+            }else{
+                mHeight = handle->pos().y();
+                mWidth = 1/ratio * mHeight;
+            }
         }
     }
 

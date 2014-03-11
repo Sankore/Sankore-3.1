@@ -143,8 +143,15 @@ void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
     }else{
         //it's the diagonal handle
         if(handle->pos().x() >= maxSize && handle->pos().y() >= maxSize){
-            mRadiusX = handle->pos().x() / 2;
-            mRadiusY = handle->pos().y() / 2;
+            float ratio = mRadiusY / mRadiusX;
+
+            if(mRadiusX > mRadiusY){
+                mRadiusX = handle->pos().x() / 2;
+                mRadiusY = ratio * mRadiusX;
+            }else{
+                mRadiusY = handle->pos().y() / 2;
+                mRadiusX = 1/ratio * mRadiusY;
+            }
         }
     }
 
