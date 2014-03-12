@@ -14,6 +14,9 @@ public:
     inline void setClosed(bool closed);
 
     inline bool isOpened() const{ return mOpened; }
+    void setOpened(bool opened);
+
+    void reopen();
 
     void setIsInCreationMode(bool mode);
 

@@ -12,6 +12,7 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardView.h"
 #include "board/UBDrawingController.h"
+#include "gui/UBMainWindow.h"
 #include "UBGraphicsScene.h"
 
 UBShapeFactory::UBShapeFactory():
@@ -79,6 +80,32 @@ void UBShapeFactory::applyCurrentStyle(UBAbstractGraphicsItem* shape)
             }
         }
     }
+}
+
+void UBShapeFactory::returnToCreationMode(QGraphicsItem* item)
+{
+    mDrawingController->setStylusTool(UBStylusTool::Drawing);    
+    UBApplication::mainWindow->actionPolygon->trigger();
+
+    UBEditableGraphicsPolygonItem* polygon = dynamic_cast<UBEditableGraphicsPolygonItem*>(item);
+    if (polygon)
+    {
+        mCurrentShape = polygon;
+        mShapeType = Polygon;
+        mIsRegularShape = false;
+        mIsCreating = true;
+        applyCurrentStyle(polygon);
+
+        if (polygon->isClosed())
+            polygon->reopen();            
+        else
+            polygon->setOpened(false);
+
+        polygon->setIsInCreationMode(true);
+    }
+
+    item->setSelected(false);
+    item->update();
 }
 
 void UBShapeFactory::setGradientFillingProperty(UBAbstractGraphicsItem* shape)
@@ -432,7 +459,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
 
                     if (pathItem->isClosed() || pathItem->isOpened())
                     {
-                        if (pathItem->path().elementCount() <= 2)
+                        if (pathItem->path().elementCount() < 2)
                             mBoardView->scene()->removeItem(pathItem);
                         mCurrentShape = NULL;
                     }
@@ -562,6 +589,14 @@ void UBShapeFactory::desactivate()
 
 void UBShapeFactory::terminateShape()
 {
+    //when clicking on stroke and fill subpalettes, creation mode could stay even though the current shape had changed
+    if (mShapeType == Polygon)
+    {
+        UBEditableGraphicsPolygonItem* p = dynamic_cast<UBEditableGraphicsPolygonItem*>(mCurrentShape);
+        if (p)
+            p->setIsInCreationMode(false);
+    }
+
     // Ends the current shape :
     mCurrentShape = NULL;
 }

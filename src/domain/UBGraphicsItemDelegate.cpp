@@ -177,6 +177,7 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mCanDuplicate(true)
     , mRespectRatio(respectRatio)
     , mCanTrigAnAction(false)
+    , mCanReturnInCreationMode(false)
     , mMimeData(NULL)
     , mFlippable(false)
     , mToolBarUsed(useToolBar)
@@ -654,6 +655,10 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
 
     if(mCanTrigAnAction)
         mShowPanelToAddAnAction = menu->addAction(tr("Add an action"),this,SLOT(onAddActionClicked()));
+
+    if (mCanReturnInCreationMode)
+        menu->addAction(tr("Return to creation mode"), this, SLOT(onReturnToCreationModeClicked()));
+
 }
 
 void UBGraphicsItemDelegate::onAddActionClicked()
@@ -661,6 +666,11 @@ void UBGraphicsItemDelegate::onAddActionClicked()
     UBCreateLinkPalette* linkPalette = UBApplication::boardController->paletteManager()->linkPalette();
     linkPalette->show();
     connect(linkPalette,SIGNAL(definedAction(UBGraphicsItemAction*)),this,SLOT(saveAction(UBGraphicsItemAction*)));
+}
+
+void UBGraphicsItemDelegate::onReturnToCreationModeClicked()
+{
+    UBApplication::boardController->shapeFactory().returnToCreationMode(mDelegated);
 }
 
 void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
@@ -748,6 +758,11 @@ void UBGraphicsItemDelegate::setFlippable(bool flippable)
 void UBGraphicsItemDelegate::setCanTrigAnAction(bool canTrig)
 {
     mCanTrigAnAction = canTrig;
+}
+
+void UBGraphicsItemDelegate::setCanReturnInCreationMode(bool canReturn)
+{
+    mCanReturnInCreationMode = canReturn;
 }
 
 void UBGraphicsItemDelegate::setRotatable(bool pCanRotate)

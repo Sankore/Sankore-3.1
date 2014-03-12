@@ -277,6 +277,8 @@ class UBGraphicsItemDelegate : public QObject
 
         void setCanTrigAnAction(bool canTrig);
 
+        void setCanReturnInCreationMode(bool canReturn);
+
         void setButtonsVisible(bool visible);
 
         UBGraphicsToolBarItem* getToolBarItem() const { return mToolBarItem; }
@@ -358,6 +360,7 @@ private:
         bool mCanDuplicate;
         bool mRespectRatio;
         bool mCanTrigAnAction;
+        bool mCanReturnInCreationMode;
         QMimeData* mMimeData;
         QPixmap mDragPixmap;
 
@@ -371,6 +374,7 @@ private:
 
 private slots:
         void onAddActionClicked();
+        void onReturnToCreationModeClicked();
         void onRemoveActionClicked();
         void saveAction(UBGraphicsItemAction *action);
 };
