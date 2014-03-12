@@ -64,7 +64,11 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
     x *= 2;
     y *= 2;
 
-    painter->drawEllipse(QRect(x, y, mRadius*2, mRadius*2));
+    //N/C - NNE - 20140312 : Litle work around for avoid crash under MacOs 10.9
+    QPainterPath path;
+    path.addEllipse(QRect(x, y, mRadius*2, mRadius*2));
+
+    painter->drawPath(path);
 
     if(mMultiClickState >= 1){
         QPen p;

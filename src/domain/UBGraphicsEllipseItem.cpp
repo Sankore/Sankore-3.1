@@ -80,7 +80,14 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
     int rx = (mRadiusX < 0 ? -mRadiusX : mRadiusX);
     int ry = (mRadiusY < 0 ? -mRadiusY : mRadiusY);
 
-    painter->drawEllipse(QPointF(mRadiusX, mRadiusY), rx, ry);
+    int x = (mRadiusX < 0 ? mRadiusX : 0);
+    int y = (mRadiusY < 0 ? mRadiusY : 0);
+
+    //N/C - NNE - 20140312 : Litle work around for avoid crash under MacOs 10.9
+    QPainterPath path;
+    path.addEllipse(QRectF(x*2, y*2, rx*2, ry*2));
+
+    painter->drawPath(path);
 
     if(mMultiClickState >= 1){
         QPen p;
@@ -168,8 +175,6 @@ void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 
         setBrush(g);
     }
-
-    update();
 }
 
 QPainterPath UB3HEditableGraphicsEllipseItem::shape() const
@@ -187,17 +192,17 @@ void UB3HEditableGraphicsEllipseItem::setRadiusX(qreal radius)
 {
     prepareGeometryChange();
     mRadiusX = radius;
-    update();
 }
 
 void UB3HEditableGraphicsEllipseItem::setRadiusY(qreal radius)
 {
     prepareGeometryChange();
     mRadiusY = radius;
-    update();
 }
 
 void UB3HEditableGraphicsEllipseItem::setRect(QRectF rect){
+    prepareGeometryChange();
+
     setPos(rect.topLeft());
     mRadiusX = rect.width()/2;
     mRadiusY = rect.height()/2;
