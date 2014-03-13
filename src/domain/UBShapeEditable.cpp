@@ -4,6 +4,7 @@ UBAbstractEditableGraphicsShapeItem::UBAbstractEditableGraphicsShapeItem(QGraphi
     UBAbstractGraphicsItem(parent)
 {
     mMultiClickState = 0;
+    mHasMoved = false;
 }
 
 void UBAbstractEditableGraphicsShapeItem::onActivateEditionMode()
@@ -14,25 +15,49 @@ void UBAbstractEditableGraphicsShapeItem::onActivateEditionMode()
 void UBAbstractEditableGraphicsShapeItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     mMultiClickState++;
+    mHasMoved = false;
 
     UBAbstractGraphicsItem::mousePressEvent(event);
+}
 
-    if(mMultiClickState >= 1){
-        prepareGeometryChange();
+void UBAbstractEditableGraphicsShapeItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    prepareGeometryChange();
 
-        onActivateEditionMode();
+    if(!mHasMoved){
+        if(mMultiClickState %2 == 1){
+            onActivateEditionMode();
 
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
+            Delegate()->showFrame(false);
+            setFocus();
+            showEditMode(true);
+        }
+        else
+        {
+            showEditMode(false);
+            Delegate()->positionHandles();
+            Delegate()->showFrame(true);
+        }
+    }else{
+        if(!isInEditMode()){
+            mMultiClickState = 0;
+        }else{
+            mMultiClickState--;
+        }
     }
+
+    UBAbstractGraphicsItem::mouseReleaseEvent(event);
+
+    mHasMoved = false;
 }
 
 void UBAbstractEditableGraphicsShapeItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    if(mMultiClickState == 0){
-        Delegate()->mouseMoveEvent(event);
+    mHasMoved = true;
+
+    if(!isInEditMode()){
         UBAbstractGraphicsItem::mouseMoveEvent(event);
+        Delegate()->mouseMoveEvent(event);
     }
 }
 
@@ -40,10 +65,17 @@ void UBAbstractEditableGraphicsShapeItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    if(mMultiClickState >= 1){
+    if(mMultiClickState %2 == 1){
         prepareGeometryChange();
-
         mMultiClickState = 0;
         showEditMode(false);
     }
+}
+
+void UBAbstractEditableGraphicsShapeItem::deactivateEditionMode()
+{
+    prepareGeometryChange();
+
+    mMultiClickState = 0;
+    showEditMode(false);
 }

@@ -1781,16 +1781,7 @@ void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
 
             //EV-7 - NNE - 20140206
             if(UBShapeFactory::isShape(gi)){
-                if(gi->type() == UBGraphicsItemType::GraphicsHandle){
-                    UBAbstractHandle *h = dynamic_cast<UBAbstractHandle*>(gi);
-                    UBShapeFactory::desactivateEditionMode(h->parentItem());
-                }else if(gti->type() == UBGraphicsItemType::GraphicsHandle){
-                    if(gti->parentItem() != gi){
-                        UBShapeFactory::desactivateEditionMode(gi);
-                    }
-                }else{
-                    UBShapeFactory::desactivateEditionMode(gi);
-                }
+                UBShapeFactory::desactivateEditionMode(gi);
             }
 
         }
@@ -2498,13 +2489,10 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                 default:
                     {
                         UBGraphicsItem *ubgi = dynamic_cast<UBGraphicsItem*>(item);
-                        //EV-7 - NNE - 20140207 : don't delete the handle !
-                        UBAbstractHandle *handle = dynamic_cast<UBAbstractHandle*>(item);
 
                         if (0 != ubgi)
                              ubgi->remove();
-
-                        if(!handle && ubgi == 0){
+                        else{
                             UBCoreGraphicsScene::removeItem(item);
                         }
                     }

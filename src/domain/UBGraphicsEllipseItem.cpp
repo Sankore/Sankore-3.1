@@ -54,10 +54,10 @@ void UB3HEditableGraphicsEllipseItem::copyItemParameters(UBItem *copy) const
 
     UB3HEditableGraphicsEllipseItem *cp = dynamic_cast<UB3HEditableGraphicsEllipseItem*>(copy);
 
-    if(!cp) return;
-
-    cp->mRadiusX = mRadiusX;
-    cp->mRadiusY = mRadiusY;
+    if(cp){
+        cp->mRadiusX = mRadiusX;
+        cp->mRadiusY = mRadiusY;
+    }
 }
 
 QPointF UB3HEditableGraphicsEllipseItem::center() const
@@ -89,7 +89,7 @@ void UB3HEditableGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptio
 
     painter->drawPath(path);
 
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         QPen p;
         p.setColor(QColor(128, 128, 200));
         p.setStyle(Qt::DotLine);
@@ -180,7 +180,7 @@ void UB3HEditableGraphicsEllipseItem::updateHandle(UBAbstractHandle *handle)
 QPainterPath UB3HEditableGraphicsEllipseItem::shape() const
 {
     QPainterPath path;
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         path.addRect(boundingRect());
     }else{
         path.addEllipse(boundingRect());

@@ -289,7 +289,7 @@ void UBEditableGraphicsPolygonItem::updateHandle(UBAbstractHandle *handle)
 QPainterPath UBEditableGraphicsPolygonItem::shape() const
 {
     QPainterPath path;
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         path.addRect(boundingRect());
     }else{
         path = this->path();

@@ -96,7 +96,7 @@ void UBEditableGraphicsRegularShapeItem::paint(QPainter *painter, const QStyleOp
     painter->fillPath(path(), painter->brush());
     painter->drawPath(path());
 
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         painter->setBrush(QBrush());
         QPen p;
 
@@ -128,7 +128,7 @@ QRectF UBEditableGraphicsRegularShapeItem::boundingRect() const
 {
     QRectF retour = adjustBoundingRect(path().boundingRect());
 
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         //add the size of the circle
         QPainterPath circle;
         circle.addEllipse(mCenter, mRadius, mRadius);
@@ -226,7 +226,7 @@ QPainterPath UBEditableGraphicsRegularShapeItem::shape() const
 {
     QPainterPath path;
 
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         path.addRect(boundingRect());
     }else{
         path = this->path();

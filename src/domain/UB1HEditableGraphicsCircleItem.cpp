@@ -70,7 +70,7 @@ void UB1HEditableGraphicsCircleItem::paint(QPainter *painter, const QStyleOption
 
     painter->drawPath(path);
 
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         QPen p;
         p.setColor(QColor(128, 128, 200));
         p.setStyle(Qt::DotLine);
@@ -95,7 +95,7 @@ QRectF UB1HEditableGraphicsCircleItem::boundingRect() const
 
     rect = adjustBoundingRect(rect);
 
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         qreal r = getHandle()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -136,7 +136,7 @@ void UB1HEditableGraphicsCircleItem::updateHandle(UBAbstractHandle *handle)
 QPainterPath UB1HEditableGraphicsCircleItem::shape() const
 {
     QPainterPath path;
-    if(mMultiClickState >= 1){
+    if(isInEditMode()){
         path.addRect(boundingRect());
     }else{
         path.addEllipse(boundingRect());

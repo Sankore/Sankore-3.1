@@ -6,6 +6,7 @@ UBAbstractEditableGraphicsPathItem::UBAbstractEditableGraphicsPathItem(QGraphics
     UBAbstractGraphicsPathItem(parent)
 {
     mMultiClickState = 0;
+    mHasMoved = false;
 }
 
 void UBAbstractEditableGraphicsPathItem::onActivateEditionMode()
@@ -16,21 +17,40 @@ void UBAbstractEditableGraphicsPathItem::onActivateEditionMode()
 void UBAbstractEditableGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     mMultiClickState++;
+    mHasMoved = false;
 
     UBAbstractGraphicsPathItem::mousePressEvent(event);
+}
 
-    if(mMultiClickState %2 == 1){
-        onActivateEditionMode();
+void UBAbstractEditableGraphicsPathItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    prepareGeometryChange();
 
-        Delegate()->showFrame(false);
-        setFocus();
-        showEditMode(true);
+    if(!mHasMoved){
+        if(mMultiClickState %2 == 1){
+            onActivateEditionMode();
+
+            Delegate()->showFrame(false);
+            setFocus();
+            showEditMode(true);
+        }
+        else
+        {
+            showEditMode(false);
+            Delegate()->positionHandles();
+            Delegate()->showFrame(true);
+        }
+    }else{
+        if(!isInEditMode()){
+            mMultiClickState = 0;
+        }else{
+            mMultiClickState--;
+        }
     }
-    else
-    {
-        Delegate()->showFrame(true);
-        showEditMode(false);
-    }
+
+    UBAbstractGraphicsPathItem::mouseReleaseEvent(event);
+
+    mHasMoved = false;
 }
 
 QRectF UBAbstractEditableGraphicsPathItem::boundingRect() const
@@ -39,7 +59,7 @@ QRectF UBAbstractEditableGraphicsPathItem::boundingRect() const
 
     rect = UBAbstractGraphicsPathItem::adjustBoundingRect(rect);
 
-    if(mMultiClickState %2 == 1){
+    if(isInEditMode()){
         qreal r = mHandles.first()->radius();
 
         rect.adjust(-r, -r, r, r);
@@ -50,9 +70,11 @@ QRectF UBAbstractEditableGraphicsPathItem::boundingRect() const
 
 void UBAbstractEditableGraphicsPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    if(mMultiClickState == 0){
+    mHasMoved = true;
+
+    if(!isInEditMode()){
         Delegate()->mouseMoveEvent(event);
-        UBAbstractGraphicsItem::mouseMoveEvent(event);
+        UBAbstractGraphicsPathItem::mouseMoveEvent(event);
     }
 }
 
@@ -60,8 +82,11 @@ void UBAbstractEditableGraphicsPathItem::focusOutEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
 
-    mMultiClickState = 0;
-    showEditMode(false);
+    if(mMultiClickState %2 == 1){
+        prepareGeometryChange();
+        mMultiClickState = 0;
+        showEditMode(false);
+    }
 }
 
 void UBAbstractEditableGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
@@ -73,6 +98,8 @@ void UBAbstractEditableGraphicsPathItem::focusHandle(UBAbstractHandle *handle)
 
 void UBAbstractEditableGraphicsPathItem::deactivateEditionMode()
 {
+    prepareGeometryChange();
+
     mMultiClickState = 0;
     showEditMode(false);
 }

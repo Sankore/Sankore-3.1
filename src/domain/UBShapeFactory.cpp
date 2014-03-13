@@ -774,12 +774,6 @@ void UBShapeFactory::desactivateEditionMode(QGraphicsItem *item)
         edit->deactivateEditionMode();
         item->setSelected(false);
     }
-    else
-    {
-        UBAbstractHandle* handle = dynamic_cast<UBAbstractHandle*>(item);
-        if (handle)
-            desactivateEditionMode(item->parentItem());
-    }
 }
 
 bool UBShapeFactory::isInEditMode(QGraphicsItem *item)
