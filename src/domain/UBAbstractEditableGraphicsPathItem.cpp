@@ -70,7 +70,7 @@ QRectF UBAbstractEditableGraphicsPathItem::boundingRect() const
 
 void UBAbstractEditableGraphicsPathItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    mHasMoved = true;
+        mHasMoved = true;
 
     if(!isInEditMode()){
         Delegate()->mouseMoveEvent(event);
