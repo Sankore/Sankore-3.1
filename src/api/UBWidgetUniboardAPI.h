@@ -322,6 +322,8 @@ class UBWidgetUniboardAPI : public QObject
 
         bool isDarkBackground();
 
+        bool removeFile(const QString &path);
+
 private slots:
         void onDownloadFinished(bool pSuccess, sDownloadFileDesc desc, QByteArray pData);
 

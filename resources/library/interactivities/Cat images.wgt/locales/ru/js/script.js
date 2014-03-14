@@ -213,7 +213,12 @@ function start(){
 //    });
     
     //deleting the img block
-    $(".close_img").live("click", function(){       
+    $(".close_img").live("click", function(){
+    	var img = $(this).parent().children('img');
+    	
+    	//N/C - NNE - 20140314 : deleting the image on the disk
+		sankore.removeFile(img.attr('src'));
+    	       
         $(this).parent().remove();        
     });
     
@@ -225,9 +230,24 @@ function start(){
     //deleting the category
     $(".del_category").live("click",function(){
         if($(this).parent().parent().find(".imgs_cont").size() == 1){
-            $(this).parent().find(".img_block").remove();
+        	//N/C - NNE - 20140314 : deleting the images on the disk
+            var imgBlock = $(this).parent().find(".img_block");
+            
+            var img = imgBlock.find('img');
+            
+            for(var i = 0; i < img.length; i++){
+            	sankore.removeFile(img.attr('src'));
+            }
+            
             $(this).parent().find(".cat_desc").val(sankoreLang.enter);
         } else {
+        	//N/C - NNE - 20140314 : deleting the images on the disk
+            var img = $(this).parent().find('img');
+            
+			img.each(function(){
+				sankore.removeFile($(this).attr('src'));
+			});
+            
             $(this).parent().remove();
         }
     });
@@ -307,7 +327,7 @@ function exportData(){
 
 //import
 function importData(data){
-      
+    
     for(var i in data){
         if(data[i].tmp){
             changeStyle(data[i].style);

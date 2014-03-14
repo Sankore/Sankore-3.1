@@ -768,6 +768,35 @@ bool UBWidgetUniboardAPI::isDropableData(const QMimeData *pMimeData) const
 }
 
 
+bool UBWidgetUniboardAPI::removeFile(const QString &path)
+{
+    QString url =  mGraphicsWidget->url().toLocalFile();
+
+    QString wgtUrl;
+    bool hasFoundWgtExtention = false;
+
+    //find the path of the widget
+    foreach(QString fragment, url.split('/')){
+        if(!hasFoundWgtExtention){
+            wgtUrl += fragment + '/';
+
+            hasFoundWgtExtention  = fragment.contains(".wgt");
+        }
+    }
+
+    //then find the absolute path of the ressource
+    foreach(QString fragment, path.split('/')){
+        if(fragment != ".." && fragment != "."){
+            wgtUrl += fragment + '/';
+        }
+    }
+
+    QFile file(wgtUrl.mid(0, wgtUrl.size()-1));
+
+    return file.remove();
+}
+
+
 UBDocumentDatastoreAPI::UBDocumentDatastoreAPI(UBGraphicsW3CWidgetItem *graphicsWidget)
     : UBW3CWebStorage(graphicsWidget)
     , mGraphicsW3CWidget(graphicsWidget)
@@ -847,7 +876,6 @@ QObject* UBDatastoreAPI::document()
 {
     return mDocumentDatastore;
 }
-
 
 
 
