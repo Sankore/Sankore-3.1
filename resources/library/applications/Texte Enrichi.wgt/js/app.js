@@ -280,7 +280,7 @@
                     editor.addButton('decreasefontsize', {
                         type: 'button',
                         text: false,
-                        icon: 'decreasefontsize ',
+                        icon: 'decreasefontsize',
                         onclick: function () {
                             var fontSize = getFontSizeAtCursor();
                             if (fontSize && fonts.prev(fontSize)) {
@@ -464,15 +464,15 @@
                 this.tinymce = new tinymce.Editor(id, options, tinymce.EditorManager);
                 this.tinymce.render();
             };
-            
+
             app.RTEditor.prototype.applyDefaults = function () {
                 this.tinymce.execCommand('FontName', true, this.font.name);
                 this.tinymce.execCommand('FontSize', true, this.font.size);
-                            
+
                 if (this.font.bold) {
                     this.tinymce.execCommand('Bold', true);
                 }
-                
+
                 if (this.font.italic) {
                     this.tinymce.execCommand('Italic', true);
                 }
@@ -506,8 +506,9 @@
                     };
 
                     this.widget.onblur = function () {
+                        self.tinymce.save();
                         self.tinymce.fire('blur');
-
+                        
                         var content = self.getContent();
 
                         self.empty = app.RTEditor.isContentEmpty(content);
@@ -558,16 +559,22 @@
              * Show the editor
              */
             app.RTEditor.prototype.show = function () {
-                this.tinymce.show();
-                $('body').removeClass('view');
+                $('.mce-toolbar-grp').css('visibility', 'visible');
+                this.tinymce.getDoc().body.contentEditable = true;
+                this.tinymce.getDoc().designMode = 'on';
+                this.tinymce.settings.object_resizing = true;
             };
 
             /**
              * Hide the editor
              */
             app.RTEditor.prototype.hide = function () {
-                this.tinymce.hide();
-                $('body').addClass('view');
+                this.tinymce.selection.collapse();
+                $('.mce-floatpanel').css('display', 'none');
+                $('.mce-toolbar-grp').css('visibility', 'hidden');
+                this.tinymce.getDoc().body.contentEditable = false;
+                this.tinymce.getDoc().designMode = 'off';
+                this.tinymce.settings.object_resizing = false;
             };
 
             /**
@@ -636,7 +643,15 @@
              *
              */
             app.RTEditor.prototype.setContent = function (content) {
-                this.tinymce.setContent(content);
+                var $content = $('<div>' + content + '</div>');
+
+                $content.find('td,p').each(function () {
+                    if (this.innerHTML.length === 0) {
+                        this.appendChild(document.createElement('br'));
+                    }
+                });
+                
+                this.tinymce.setContent($content.html());
                 this.tinymce.save();
             };
 
@@ -772,14 +787,15 @@
              *
              */
             app.RTEditor.prototype.clearBOM = function () {
-                var $body = $(this.tinymce.getDoc()).find('body'), removed = false;
+                var $body = $(this.tinymce.getDoc()).find('body'),
+                    removed = false;
                 $body.find(':not(iframe)').addBack().contents().each(function (i, elem) {
                     if (elem.nodeType === 3 && elem.nodeValue.indexOf('\uFEFF') !== -1) {
                         removed = true;
                         elem.nodeValue = elem.nodeValue.replace(/\uFEFF/, '');
                     }
                 });
-                
+
                 return removed;
             };
 
@@ -852,11 +868,11 @@
                     fontFamily: this.font.name,
                     fontSize: this.font.size
                 });
-                
+
                 if (this.font.bold) {
                     $table.css('font-weight', 'bold');
                 }
-                
+
                 if (this.font.italic) {
                     $table.css('font-style', 'italic');
                 }
@@ -911,7 +927,7 @@
                 }
 
                 this.setBackgroundColor(window.sankore.preference('background'));
-                
+
                 this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
                 this.setDefaultFontSize(window.sankore.fontSizePreference());
                 this.setDefaultFontBold(window.sankore.fontBoldPreference());
@@ -956,9 +972,9 @@
         if (window.widget) {
             widget = window.widget;
 
-            window.widget.onChangeBackground = function () {
-                if (window.sankore && window.widget.onbackgroundswitch) {
-                    window.widget.onbackgroundswitch(window.sankore.isDarkBackground());
+            widget.onChangeBackground = function () {
+                if (window.sankore && widget.onbackgroundswitch) {
+                    widget.onbackgroundswitch(window.sankore.isDarkBackground());
                 }
             };
         }
@@ -981,7 +997,9 @@ if (!('widget' in window)) {
 
 /** mockup sankore object for browser testing */
 if (!('sankore' in window)) {
-    var preferences = {};
+    var preferences = {
+        
+    };
 
     window.sankore = {
         loadUrl: function (url) {
