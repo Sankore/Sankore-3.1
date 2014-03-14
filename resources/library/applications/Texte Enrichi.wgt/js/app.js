@@ -559,6 +559,7 @@
              * Show the editor
              */
             app.RTEditor.prototype.show = function () {
+                $('.mcs-resizehandle', this.tinymce.getDoc()).css('display', 'block');
                 $('.mce-toolbar-grp').css('visibility', 'visible');
                 this.tinymce.getDoc().body.contentEditable = true;
                 this.tinymce.getDoc().designMode = 'on';
@@ -570,6 +571,7 @@
              */
             app.RTEditor.prototype.hide = function () {
                 this.tinymce.selection.collapse();
+                $('.mce-resizehandle', this.tinymce.getDoc()).css('display', 'none');
                 $('.mce-floatpanel').css('display', 'none');
                 $('.mce-toolbar-grp').css('visibility', 'hidden');
                 this.tinymce.getDoc().body.contentEditable = false;
@@ -990,12 +992,12 @@
     });
 }(jQuery));
 
-/** mockup widget object for browser testing */
+/** mock widget object for browser testing */
 if (!('widget' in window)) {
     window.widget = {};
 }
 
-/** mockup sankore object for browser testing */
+/** mock sankore object for browser testing */
 if (!('sankore' in window)) {
     var preferences = {
         
