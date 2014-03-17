@@ -171,17 +171,17 @@
                         }
                     });
 
-                    editor.on('SaveContent', function (e) {
-                        var $content = $('<div>' + e.content + '</div>');
-
-                        $content.find('td,p').each(function () {
-                            if (this.innerHTML.length === 0) {
-                                this.appendChild(document.createElement('br'));
-                            }
-                        });
-
-                        e.content = $content.html();
-                    });
+//                    editor.on('SaveContent', function (e) {
+//                        var $content = $('<div>' + e.content + '</div>');
+//
+//                        $content.find('td,p').each(function () {
+//                            if (this.innerHTML.length === 0) {
+//                                this.appendChild(document.createElement('br'));
+//                            }
+//                        });
+//
+//                        e.content = $content.html();
+//                    });
 
                     editor.on('PreProcess', function (e) {
                         $(e.node).find('br[data-mce-bogus]').replaceWith('<br>');
@@ -638,7 +638,7 @@
              *
              */
             app.RTEditor.prototype.getContent = function () {
-                return this.tinymce.getContent();
+                return this.tinymce.getContent({format: 'raw'});
             };
 
             /**
@@ -1000,7 +1000,7 @@ if (!('widget' in window)) {
 /** mock sankore object for browser testing */
 if (!('sankore' in window)) {
     var preferences = {
-        
+        content: '<table><tr><td>klkl</td><td style="background-color:#451223">pouii</td></tr></table>'
     };
 
     window.sankore = {
