@@ -160,6 +160,8 @@ function reloadApp(app) {
                 var pictureHolder = dropzone.eq(index).parent().find(">div:eq(0)");
                 if(f !== null) {
                     var $img = $('<img src="" class="uploadPic" title="" alt="" />').attr(f);
+                    removeAsset(pictureHolder.find('.uploadPic').attr('src'));
+                    
                     pictureHolder.empty();
                     pictureHolder.append($img);
                 }
@@ -217,6 +219,15 @@ function reloadApp(app) {
     if(window.sankore)
         window.sankore.enableDropOnWidget(app.onEdit);
 }
+
+//N/C - NNE - 20140318 : Remove an asset (resource) throught the sankore API
+function removeAsset(src)
+{
+	if(sankore){
+		sankore.removeFile(src);
+	}
+}
+//N/C - NNE - 20140318 : END
 
 function cardParameterKey(card, i) {
     return "card"+card.id+(i%2==0 ? "Front":"Back");

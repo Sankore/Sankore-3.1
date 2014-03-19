@@ -255,6 +255,20 @@ function start(){
     
     //deleting the img block
     $(".close_img").live("click", function(){
+    
+	    //N/C - NNE - 20140319
+        if(sankore){
+        
+			$(this).parent().find('img').each(function(){
+				sankore.removeFile($(this).attr('src'));
+			});
+			
+			$(this).parent().find('source').each(function(){
+				sankore.removeFile($(this).attr('src'));
+			});
+		}
+        //N/C - NNE - 20140319 : END
+        
         $(this).parent().remove();
     });
     

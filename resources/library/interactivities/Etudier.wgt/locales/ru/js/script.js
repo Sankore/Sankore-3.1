@@ -207,7 +207,24 @@ function start(){
     });
      
     //deleting the img block
-    $(".close_img").live("click", function(){    
+    $(".close_img").live("click", function(){
+    	var parent = $(this).parent();
+    	
+    	var img = parent.find('img');
+    	var sound = parent.find('audio');
+    	
+    	var src;
+    	
+    	if(img.length > 0){
+    		src = img.attr('src');
+    	}else if(sound.length > 0){
+    		src = sound.find('source').attr('src');
+    	}
+    	
+    	if(src){
+    		sankore.removeFile(src);
+    	}
+    	  
         $(this).parent().remove();        
     });
     
@@ -322,6 +339,20 @@ function start(){
     //closing a slide
     $(".close_slide").live("click", function(){
         $(this).parent().parent().remove();
+        
+        //N/C - NNE - 20140318
+        if(sankore){
+        
+			$(this).parent().find('img').each(function(){
+				sankore.removeFile($(this).attr('src'));
+			});
+			
+			$(this).parent().find('source').each(function(){
+				sankore.removeFile($(this).attr('src'));
+			});
+		}
+        //N/C - NNE - 20140318 : END
+        
         $("#slider").removeSlide();
     });
     
@@ -518,11 +549,11 @@ function showExample(){
     var div4 = $("<div>").appendTo(li4);
     $("<div class='text_block'><div class='real_text'>" + sankoreLang.text_content + "</div></div>").draggable().appendTo(div4);
     var img2 = $("<div class='img_block' style='text-align: center;'></div>").draggable().appendTo(div4);
-    $("<img src=\"../../objects/1.gif\" style=\"display: inline;\" height=\"120\"/>").appendTo(img2);
+    $("<img src=\"../../objects/1_2.gif\" style=\"display: inline;\" height=\"120\"/>").appendTo(img2);
     var audio_block2 = $("<div class='audio_block'>").draggable().appendTo(div4);
     $("<div class='play'>").appendTo(audio_block2);
     $("<div class='replay'>").appendTo(audio_block2);
-    var source2 = $("<source/>").attr("src", "../../objects/bateaux.mp3");
+    var source2 = $("<source/>").attr("src", "../../objects/bateaux_2.mp3");
     var audio2 = $("<audio>").appendTo(audio_block2);
     audio2.append(source2);
     li4.width($("#slider").width()).height($("#slider").height());

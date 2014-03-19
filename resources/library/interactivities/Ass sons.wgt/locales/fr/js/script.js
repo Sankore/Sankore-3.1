@@ -284,9 +284,12 @@ function start(){
     
     //deleting the img block
     $(".close_img").live("click", function(){
-        var i = 0;
-        var tmp_obj = $(this).parent().parent();        
-        $(this).parent().remove();        
+    	//N/C - NNE - 20140318 : Deleting the image on the hard drive
+        var src = $(this).parent().find('img').attr("src");
+        
+		removeAsset(src);
+                
+        $(this).parent().remove();
     });
     
     //correct image
@@ -348,6 +351,16 @@ function start(){
         }
     });
 }
+
+//N/C - NNE - 20140318 : Remove an asset (resource) throught the sankore API
+function removeAsset(src)
+{
+	if(src != 'img/drop_img.png' && sankore){
+		sankore.removeFile(src);
+	}
+}
+//N/C - NNE - 20140318 : END
+
 
 //export
 function exportData(){
@@ -843,7 +856,12 @@ function changeStyle(val){
 }
 
 function onDropTarget(obj, event) {
-    $(obj).find("img").remove();
+    //N/C - NNE - 20140318
+	var img = $(obj).find("img");
+	removeAsset(img.attr("src"));
+	
+    img.remove();
+    
     if (event.dataTransfer) {
         var format = "text/plain";
         var textData = event.dataTransfer.getData(format);
@@ -890,7 +908,13 @@ function onDropAudio(obj, event) {
         var tmp_type = textData.getElementsByTagName("type")[0].firstChild.textContent;
         if(tmp_type.substr(0, 5) == "audio"){       
             var audio_block = $(obj);
-            $(obj).find("audio").remove();
+            
+			//N/C - NNE - 20140318
+			var audioAsset = $(obj).find("audio");
+			removeAsset(audioAsset.find('source').attr("src"));
+	
+			audioAsset.remove();
+			
             audio_block.find(":first-child").removeClass("stop").addClass("play");
             var source = $("<source/>").attr("src", "../../" + tmp);
             var audio = $("<audio>").appendTo(audio_block);

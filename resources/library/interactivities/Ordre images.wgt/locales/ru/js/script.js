@@ -186,7 +186,13 @@ function start(){
     //deleting the img block
     $(".close_img").live("click", function(){
         var i = 0;
-        var tmp_obj = $(this).parent().parent();        
+        var tmp_obj = $(this).parent().parent();  
+        
+        //N/C - NNE - 20140318 : Deleting the image on the hard drive
+        var src = $(this).parent().find('img').attr("src");
+        
+		removeAsset(src);
+		      
         $(this).parent().remove();
         if(tmp_obj.find(".img_block").size() > 0){
             refreshImgNumbers(tmp_obj);
@@ -197,9 +203,24 @@ function start(){
     //cleaning an image
     $(".clear_img").live("click",function(){
         //$(this).parent().find(".fill_img").remove();
+        
+        //N/C - NNE - 20140318 : Deleting the image on the hard drive
+        var src = $(this).parent().find('img').attr("src");
+        
+		removeAsset(src);
+		
         $(this).parent().find("img").attr("src","img/drop_img.png");
     });
 }
+
+//N/C - NNE - 20140318 : Remove an asset (resource) throught the sankore API
+function removeAsset(src)
+{
+	if(src != 'img/drop_img.png' && sankore){
+		sankore.removeFile(src);
+	}
+}
+//N/C - NNE - 20140318 : END
 
 //export
 function exportData(){
@@ -511,7 +532,12 @@ function stringToXML(text){
 }
 
 function onDropTarget(obj, event) {
-    $(obj).find("img").remove();
+    //N/C - NNE - 20140318
+	var img = $(obj).find("img");
+	removeAsset(img.attr("src"));
+	
+    img.remove();
+    
     if (event.dataTransfer) {
         var format = "text/plain";
         var textData = event.dataTransfer.getData(format);

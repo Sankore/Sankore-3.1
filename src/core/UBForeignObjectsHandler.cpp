@@ -301,12 +301,54 @@ private:
             mediaToContainer(element);
         } else if (what == tForeignObject) {
             foreingObjectToContainer(element);
+
+            //N/C - NNE - 20140317
+            cleanObjectFolder(element);
         } else if (what == tTeacherGuide) {
             teacherGuideToContainer(element);
         }
 
         pullActionFromElement(element);
     }
+
+    // N/C - NNE - 20140317 : When export, reduce the size of the ubz file
+    void cleanObjectFolder(const QDomElement &element)
+    {
+        QDomElement preference = element.firstChildElement("ub:preference");
+
+        QString value = preference.attribute("value");
+
+        int findPos = value.indexOf("objects/");
+        int endPos;
+
+        QVector<QString> objectsIdUsed;
+
+        //find all objects used
+        while(findPos != -1){
+            endPos = value.indexOf("\"", findPos);
+            objectsIdUsed << value.mid(findPos, endPos - findPos);
+            findPos = value.indexOf("objects/", endPos);
+        }
+
+        QString path = element.attribute(aSrc);
+        QString objectsFolderPath = mCurrentDir + "/" + path + "/objects/";
+
+        QDir dir(objectsFolderPath);
+        dir.setFilter(QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+
+        //then check all files in the objects directory
+        //delete the file not used (not in te objectIdUsed variable)
+        QFileInfoList list = dir.entryInfoList();
+        for (int i = 0; i < list.size(); i++) {
+            QFileInfo fileInfo = list.at(i);
+
+            if(!objectsIdUsed.contains("objects/"+fileInfo.fileName())){
+                QFile(fileInfo.filePath()).remove();
+            }
+
+        }
+    }
+    // N/C - NNE - 20140317 : END
 
     void pullActionFromElement(const QDomElement &element)
     {
