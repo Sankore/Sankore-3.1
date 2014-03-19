@@ -943,6 +943,7 @@ bool UBFileSystemUtils::deletePath(const QString &path)
     } else if (QFileInfo(path).isDir()) {
         return UBFileSystemUtils::deleteDir(path);
     }
+    return false;
 }
 
 void UBFileSystemUtils::rename(const QString &path, const QString &newName)

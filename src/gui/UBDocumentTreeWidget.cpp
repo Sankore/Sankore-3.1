@@ -359,7 +359,7 @@ void UBDocumentTreeWidget::dropEvent(QDropEvent *event)
 }
 
 
-void UBDocumentTreeWidget::documentUpdated(UBDocumentProxy */*pDocument*/)
+void UBDocumentTreeWidget::documentUpdated(UBDocumentProxy * /*pDocument*/)
 {
 //    UBDocumentProxyTreeItem *treeItem = UBApplication::documentController->findDocument(pDocument);
 //    if (treeItem)
