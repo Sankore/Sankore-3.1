@@ -2321,17 +2321,14 @@ void UBBoardController::updateSystemScaleFactor()
     if (mActiveScene)
     {
         QSize pageNominalSize = mActiveScene->nominalSize();
-        //we're going to keep scale factor untouched if the size is custom
-        QMap<DocumentSizeRatio::Enum, QSize> sizesMap = UBSettings::settings()->documentSizes;
-        if(pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_9) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio4_3) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_10))
-        {
-            QSize controlSize = controlViewport();
 
-            qreal hFactor = ((qreal)controlSize.width()) / ((qreal)pageNominalSize.width());
-            qreal vFactor = ((qreal)controlSize.height()) / ((qreal)pageNominalSize.height());
+        //Issue NC - CFA - 20140320 : correction pdf importes -> vue mal dimensionnee
+        QSize controlSize = controlViewport();
 
-            newScaleFactor = qMin(hFactor, vFactor);
-        }
+        qreal hFactor = ((qreal)controlSize.width()) / ((qreal)pageNominalSize.width());
+        qreal vFactor = ((qreal)controlSize.height()) / ((qreal)pageNominalSize.height());
+
+        newScaleFactor = qMin(hFactor, vFactor);
     }
 
     if (mSystemScaleFactor != newScaleFactor)
