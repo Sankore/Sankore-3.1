@@ -30,7 +30,9 @@ UBShapeFactory::UBShapeFactory():
     mCurrentPenStyle(Qt::SolidLine),
     mThickness(3),
     mFillType(Transparent),
-    mCursorMoved(false)
+    mCursorMoved(false),
+    mStartArrowType(UBAbstractGraphicsPathItem::ArrowType_None),
+    mEndArrowType(UBAbstractGraphicsPathItem::ArrowType_None)
 {
 
 }
@@ -128,6 +130,46 @@ void UBShapeFactory::setFillType(FillType fillType)
     mFillType = fillType;
 }
 
+void UBShapeFactory::setStartArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType)
+{
+    mStartArrowType = arrowType;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBAbstractGraphicsPathItem * abstractGraphicsPathItem = dynamic_cast<UBAbstractGraphicsPathItem*>(items.at(i));
+
+        if(abstractGraphicsPathItem)
+        {
+            abstractGraphicsPathItem->setStartArrowType(arrowType);
+        }
+
+        items.at(i)->update();
+    }
+}
+
+void UBShapeFactory::setEndArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType)
+{
+    mEndArrowType = arrowType;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBAbstractGraphicsPathItem * abstractGraphicsPathItem = dynamic_cast<UBAbstractGraphicsPathItem*>(items.at(i));
+
+        if(abstractGraphicsPathItem)
+        {
+            abstractGraphicsPathItem->setEndArrowType(arrowType);
+        }
+
+        items.at(i)->update();
+    }
+}
+
 void UBShapeFactory::init()
 {
     mBoardView = UBApplication::boardController->controlView();
@@ -220,6 +262,13 @@ UBAbstractGraphicsItem* UBShapeFactory::instanciateCurrentShape()
     mCurrentShape->setStrokeColor(mCurrentStrokeColor);
 
     mCurrentShape->setStrokeSize(mThickness);
+
+    UBAbstractGraphicsPathItem * abstractGraphicsPathItem  = dynamic_cast<UBAbstractGraphicsPathItem*>(mCurrentShape);
+    if (abstractGraphicsPathItem)
+    {
+        abstractGraphicsPathItem->setStartArrowType(mStartArrowType);
+        abstractGraphicsPathItem->setEndArrowType(mEndArrowType);
+    }
 
     return mCurrentShape;
 }
@@ -607,26 +656,6 @@ bool UBShapeFactory::isShape(QGraphicsItem *item)
             || item->type() == UBGraphicsItemType::GraphicsPathItemType
             || item->type() == UBGraphicsItemType::GraphicsRegularPathItemType
             || item->type() == UBGraphicsItemType::GraphicsFreehandItemType;
-}
-
-void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
-{
-    //save the style and then update all selected elements
-    mCurrentBrushStyle = brushStyle;
-
-    UBGraphicsScene* scene = mBoardView->scene();
-
-    QList<QGraphicsItem*> items = scene->selectedItems();
-
-    for(int i = 0; i < items.size(); i++){
-        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
-
-        if(shape)
-            shape->setStyle(mCurrentBrushStyle);
-
-
-        items.at(i)->update();
-    }
 }
 
 void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)

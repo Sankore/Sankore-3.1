@@ -5,6 +5,8 @@
 #include <QColor>
 #include <QGraphicsItem>
 
+#include "UBAbstractGraphicsPathItem.h"
+
 class UBAbstractGraphicsItem;
 class UBBoardView;
 class QMouseEvent;
@@ -50,7 +52,6 @@ public:
 
     void returnToCreationMode(QGraphicsItem* item);
     void applyCurrentStyle(UBAbstractGraphicsItem *shape);
-    void setFillingStyle(Qt::BrushStyle brushStyle);
     void setFillingFirstColor(QColor color);
     void setFillingSecondColor(QColor color);
     void setGradientFillingProperty(UBAbstractGraphicsItem* shape);
@@ -58,6 +59,9 @@ public:
 
     FillType fillType();
     void setFillType(FillType fillType);
+
+    void setStartArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType);
+    void setEndArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType);
 
     QRectF reverseRect(const QRectF &rect);
 
@@ -116,6 +120,9 @@ private:
 
     FillType mFillType;
     QRectF mBoundingRect;
+
+    UBAbstractGraphicsPathItem::ArrowType mStartArrowType;
+    UBAbstractGraphicsPathItem::ArrowType mEndArrowType;
 
     bool mCursorMoved;
 

@@ -234,6 +234,8 @@ void UBEditableGraphicsPolygonItem::paint(QPainter *painter, const QStyleOptionG
                 painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
         }
     }
+
+    drawArrows();
 }
 
 void UBEditableGraphicsPolygonItem::updateHandle(UBAbstractHandle *handle)

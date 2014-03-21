@@ -14,6 +14,20 @@ void UBAbstractEditableGraphicsPathItem::onActivateEditionMode()
     //NOOP
 }
 
+void UBAbstractEditableGraphicsPathItem::drawArrows()
+{
+    UBAbstractGraphicsPathItem::drawArrows();
+
+    // Draw Arrows UNDER (z-order) Handles, if handles are shown.
+    if (isInEditMode())
+    {
+        startArrowGraphicsItem()->stackBefore(mHandles.first());
+
+        endArrowGraphicsItem()->stackBefore(mHandles.last());
+        endArrowGraphicsItem()->stackBefore(mHandles.first());
+    }
+}
+
 void UBAbstractEditableGraphicsPathItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     mMultiClickState++;

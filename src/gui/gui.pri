@@ -58,7 +58,8 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBDrawingStrokePropertiesPalette.h \
     src/gui/UBDrawingFillPropertiesPalette.h \
     src/gui/UBRegularShapesPalette.h \
-    src/gui/UBAlignObjectPalette.h
+    src/gui/UBAlignObjectPalette.h \
+	src/gui/UBDrawingArrowsPropertiesPalette.h
 
 SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBFloatingPalette.cpp \
@@ -119,7 +120,8 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBDrawingStrokePropertiesPalette.cpp \
     src/gui/UBDrawingFillPropertiesPalette.cpp \
     src/gui/UBRegularShapesPalette.cpp \
-    src/gui/UBAlignObjectPalette.cpp
+    src/gui/UBAlignObjectPalette.cpp \
+	src/gui/UBDrawingArrowsPropertiesPalette.cpp
 win32:SOURCES += src/gui/UBKeyboardPalette_win.cpp
 macx:SOURCES += src/gui/UBKeyboardPalette_mac.cpp
 linux-*:SOURCES += src/gui/UBKeyboardPalette_linux.cpp

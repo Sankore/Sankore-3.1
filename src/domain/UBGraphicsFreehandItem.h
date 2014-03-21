@@ -30,6 +30,7 @@ public:
     QPointF mStartEndPoint[2];
     void setIsInCreationMode(bool mode);
 
+    virtual qreal arrowAngle(ArrowPosition arrowPosition);
 };
 
 #endif // UBGRAPHICSFREEHANDITEM_H

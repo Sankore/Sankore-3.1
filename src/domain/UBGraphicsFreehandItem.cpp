@@ -72,7 +72,79 @@ void UBGraphicsFreehandItem::copyItemParameters(UBItem *copy) const
 
 void UBGraphicsFreehandItem::setIsInCreationMode(bool mode)
 {
-     mIsInCreationMode = mode;
+    mIsInCreationMode = mode;
+}
+
+/**
+ * @brief UBGraphicsFreehandItem::arrowAngle
+ * @return Angle of arrow to draw at extremity of the line.
+ */
+qreal UBGraphicsFreehandItem::arrowAngle(ArrowPosition arrowPosition)
+{
+    qreal angle = 0;
+
+    // Moyenne de l'angle sur les derniers points
+    int nbElements = path().elementCount();
+
+    // When the global direction is, for exemple, to 300 degres,
+    // and one of the last angles point to 0 degres,
+    // we must not use 0 : we have to use 360 instead.
+    // Each 0 value will be replaced by 360 if necessary.
+
+    QPainterPath smallPath;
+    int nbEchantillons = 0;
+    int nbZero = 0;
+
+    if (arrowPosition == EndArrow)
+    {
+        int nbPoints = qMin(10, nbElements); // last Elements
+        QPainterPath::Element firstElement = path().elementAt(nbElements - nbPoints);
+        smallPath.moveTo(firstElement.x, firstElement.y);
+        for(int i=nbPoints-1; i>0; i--)
+        {
+            QPainterPath::Element element = path().elementAt(nbElements - i);
+            smallPath.lineTo(element.x, element.y);
+            qreal a = smallPath.angleAtPercent(1);
+
+            if (qRound(a) == 0){ // count zeros appart.
+                nbZero++;
+            }
+            else{
+                angle += a;
+                nbEchantillons++;
+            }
+        }
+    }
+    else if (arrowPosition == StartArrow)
+    {
+        int nbPoints = qMin(10, nbElements); // first Elements
+        QPainterPath::Element firstElement = path().elementAt(0);
+        smallPath.moveTo(firstElement.x, firstElement.y);
+        for(int i=1; i<nbPoints; i++)
+        {
+            QPainterPath::Element element = path().elementAt(i);
+            smallPath.lineTo(element.x, element.y);
+            qreal a = smallPath.angleAtPercent(1);
+
+            if (qRound(a) == 0){ // count zeros appart.
+                nbZero++;
+            }
+            else{
+                angle += a;
+                nbEchantillons++;
+            }
+        }
+    }
+
+    qreal moyenne = 0;
+    if (nbEchantillons>0){
+        moyenne = angle/nbEchantillons; // global direction (without taking account of zeros).
+    }
+    angle += nbZero*(moyenne>180?360:0); // Change 0 to 360, if necessary.
+
+    angle /= (nbEchantillons+nbZero);
+
+    return -angle;
 }
 
 QRectF UBGraphicsFreehandItem::boundingRect() const
@@ -81,7 +153,7 @@ QRectF UBGraphicsFreehandItem::boundingRect() const
 
     int enlarge = 0;
 
-    if (mIsInCreationMode)//gérer les poignées aux extrémités
+    if (mIsInCreationMode)//gerer les poignees aux extremites
         enlarge += HANDLE_SIZE/2;
 
     rect.adjust(-enlarge, -enlarge, enlarge, enlarge);
@@ -106,4 +178,6 @@ void UBGraphicsFreehandItem::paint(QPainter *painter, const QStyleOptionGraphics
         if(path().elementCount() >= 2)
             painter->drawEllipse(mStartEndPoint[1].x() - hsize, mStartEndPoint[1].y() - hsize, HANDLE_SIZE, HANDLE_SIZE);
     }
+
+    drawArrows();
 }

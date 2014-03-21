@@ -44,6 +44,7 @@
 #include "domain/UBEditableGraphicsRegularShapeItem.h"
 #include "UBDrawingStrokePropertiesPalette.h"
 #include "UBDrawingFillPropertiesPalette.h"
+#include "UBDrawingArrowsPropertiesPalette.h"
 
 UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
@@ -55,6 +56,7 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     UBActionPaletteButton * btnSubPalettePolygon = addButtonSubPalette(new UBDrawingPolygonPalette(Qt::Horizontal, parentWidget()));
     addButtonSubPalette(new UBDrawingStrokePropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionStrokeProperties);
     addButtonSubPalette(new UBDrawingFillPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionFillProperties);
+    addButtonSubPalette(new UBDrawingArrowsPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionArrowProperties);
     UBActionPaletteButton * btnPaintBucket = addActionButton(UBApplication::mainWindow->actionChangeFillingColor);
 
     //Sankore-1701 - NNE - 20140324

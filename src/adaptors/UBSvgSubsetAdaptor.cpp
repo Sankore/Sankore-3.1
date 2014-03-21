@@ -3858,6 +3858,16 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
         qWarning() << "cannot make sense of 'points' value " << svgPoints.toString();
     }
 
+    // Arrows on extremities :
+    QStringRef startArrowType = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startArrowType");
+    if (!startArrowType.isNull()) {
+        pathItem->setStartArrowType((UBAbstractGraphicsPathItem::ArrowType)startArrowType.toString().toInt());
+    }
+    QStringRef endArrowType = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "endArrowType");
+    if (!endArrowType.isNull()) {
+        pathItem->setEndArrowType((UBAbstractGraphicsPathItem::ArrowType)endArrowType.toString().toInt());
+    }
+
     getStyleFromSvg(pathItem, pDefaultPenColor);
 
     return pathItem;
@@ -3970,6 +3980,17 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPat
     }
 
     mXmlWriter.writeAttribute("points", sPoints);
+
+    // Arrows :
+    UBAbstractGraphicsPathItem::ArrowType startArrowType = item->startArrowType();
+    if (startArrowType != UBAbstractGraphicsPathItem::ArrowType_None){
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startArrowType", QString::number(startArrowType));
+    }
+
+    UBAbstractGraphicsPathItem::ArrowType endArrowType = item->endArrowType();
+    if (endArrowType != UBAbstractGraphicsPathItem::ArrowType_None)    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "endArrowType", QString::number(endArrowType));
+    }
 
     writeAbstractGraphicsItemStyle(item);
 

@@ -22,6 +22,8 @@ protected:
     virtual void deactivateEditionMode();
     virtual void onActivateEditionMode();
 
+    virtual void drawArrows();
+
 
     int mMultiClickState;
 
