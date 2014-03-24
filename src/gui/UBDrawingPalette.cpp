@@ -26,6 +26,7 @@
 #include <QtGui>
 
 #include "UBDrawingPolygonPalette.h"
+#include "UBAlignObjectPalette.h"
 #include "UBMainWindow.h"
 
 #include "core/UBApplication.h"
@@ -55,6 +56,9 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     addButtonSubPalette(new UBDrawingStrokePropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionStrokeProperties);
     addButtonSubPalette(new UBDrawingFillPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionFillProperties);
     UBActionPaletteButton * btnPaintBucket = addActionButton(UBApplication::mainWindow->actionChangeFillingColor);
+
+    //Sankore-1701 - NNE - 20140324
+    addButtonSubPalette(new UBAlignObjectPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionAlignObject);
 
     // Some of those buttons are grouped :
     mButtonGroup = new QButtonGroup(this);
