@@ -57,6 +57,8 @@ class UBEditableGraphicsLineItem : public UBEditableGraphicsPolygonItem
         QPainterPath shape() const;
 
         void copyItemParameters(UBItem *copy) const;
+
+        virtual void addPoint(const QPointF &point);
 };
 
 #endif // UBGRAPHICSLINEITEM_H
