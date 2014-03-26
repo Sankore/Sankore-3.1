@@ -211,7 +211,6 @@ class UBTGDraggableTreeItem : public QTreeWidget
     Q_OBJECT
 public:
     UBTGDraggableTreeItem(QWidget* parent = 0, const char* name = "UBTGDraggableTreeItem");
-
 private:
     QMimeData* mimeData(const QList<QTreeWidgetItem *> items) const;
 };

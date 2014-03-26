@@ -136,13 +136,12 @@ UBTGAdaptableText::UBTGAdaptableText(QTreeWidgetItem* widget, QWidget* parent, c
   , mMaximumLength(0)
 {
     setObjectName(name);
-    connect(this,SIGNAL(textChanged()),this,SLOT(onTextChanged()));
+
+    //N/C - NNE - 20140326 : Text are truncated
+    connect(this->document()->documentLayout(), SIGNAL(documentSizeChanged(QSizeF)), this, SLOT(onTextChanged()));
+
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    mMinimumHeight = document()->size().height() + mBottomMargin;
-    setMinimumHeight(mMinimumHeight);
-
 }
 
 void UBTGAdaptableText::setMaximumLength(int length)
@@ -175,6 +174,7 @@ void UBTGAdaptableText::keyReleaseEvent(QKeyEvent* e)
 void UBTGAdaptableText::showEvent(QShowEvent* e)
 {
     Q_UNUSED(e);
+
     if(!mIsUpdatingSize && !hasFocus() && mHasPlaceHolder && toPlainText().isEmpty() && !isReadOnly()){
         setTextColor(QColor(Qt::lightGray));
         setPlainText(mPlaceHolderText);
@@ -195,21 +195,15 @@ QString UBTGAdaptableText::text()
 
 void UBTGAdaptableText::onTextChanged()
 {
+    //N/C - NNE - 20140326 : Text are truncated
     qreal documentSize = document()->size().height();
-    if(height() == documentSize + mBottomMargin){
-        return;
-    }
+
     mIsUpdatingSize = true;
 
-
-    if(documentSize < mMinimumHeight){
-        setFixedHeight(mMinimumHeight);
-    }
-    else{
-        setFixedHeight(documentSize+mBottomMargin);
-    }
+    setFixedHeight(documentSize + contentsMargins().bottom() + contentsMargins().top());
 
     updateGeometry();
+
     //to trig a resize on the tree widget item
     if(mpTreeWidgetItem){
         mpTreeWidgetItem->setDisabled(true);
@@ -217,7 +211,9 @@ void UBTGAdaptableText::onTextChanged()
         mpTreeWidgetItem->setDisabled(false);
         setFocus();
     }
+
     mIsUpdatingSize = false;
+    //N/C - NNE - 20140326 : END
 }
 
 void UBTGAdaptableText::setInitialText(const QString& text)

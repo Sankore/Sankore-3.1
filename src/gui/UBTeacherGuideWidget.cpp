@@ -508,6 +508,7 @@ UBTeacherGuidePresentationWidget::UBTeacherGuidePresentationWidget(QWidget *pare
     mpTreeWidget->setIconSize(QSize(24,24));
     connect(mpTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
+
 #ifdef Q_WS_MAC
     // on mac and with the custom qt the widget on the tree are not automatically relocated when using the vertical scrollbar. To relocate them we link the valueChange signal of the vertical scrollbar witht a local signal to trig a change and a repaint of the tree widget
     connect(mpTreeWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(onSliderMoved(int)));
@@ -599,17 +600,18 @@ void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data
             mpComment->showText(element->attributes.value("value"));
         else if (element->name == "action") {
             QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpRootWidgetItem);
-            newWidgetItem->setText(0, element->attributes.value("task"));
             newWidgetItem->setFlags(Qt::ItemIsEnabled);
+
             QString colorString = element->attributes.value("owner").toInt() == 0 ? "blue" : "green";
             UBTGAdaptableText* textWidget = new UBTGAdaptableText(newWidgetItem, 0);
-            textWidget->bottomMargin(14);
+
+            //N/C - NNE - 20140326 : Text are truncated
             textWidget->setStyleSheet( "QWidget {background: #EEEEEE; border:none; color:" + colorString + ";}");
+
             textWidget->showText(element->attributes.value("task"));
             textWidget->document()->setDefaultFont( QFont(QApplication::font().family(), 11));
-            mpTreeWidget->setItemWidget(newWidgetItem, 0, textWidget);
 
-            mpRootWidgetItem->addChild(newWidgetItem);
+            mpTreeWidget->setItemWidget(newWidgetItem, 0, textWidget);
         }else if (element->name == "link") {
             createMediaButtonItem();
             QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem( mpMediaSwitchItem);
