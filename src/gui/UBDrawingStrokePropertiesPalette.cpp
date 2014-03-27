@@ -83,7 +83,11 @@ UBDrawingStrokePropertiesPalette::UBDrawingStrokePropertiesPalette(Qt::Orientati
 
     UBActionPaletteButton* btnDotLine = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleDotLine, this);
     mMapBtnStrokeStyle[btnDotLine] = Qt::DotLine;
-    btnDotLine->setStyleSheet(styleSheetRightGroupedButton);
+    btnDotLine->setStyleSheet(styleSheetCenterGroupedButton);
+
+    UBActionPaletteButton* btnCustomDash = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleCustomDash, this);
+    mMapBtnStrokeStyle[btnCustomDash] = Qt::CustomDashLine;
+    btnCustomDash->setStyleSheet(styleSheetRightGroupedButton);
 
     //group style buttons
     mButtonGroupStrokeStyle = new QButtonGroup(this);

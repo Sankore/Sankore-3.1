@@ -986,10 +986,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Stroke style : Dot Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Regular Shapes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1067,6 +1063,14 @@
     </message>
     <message>
         <source>Freehand drawing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Dash</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

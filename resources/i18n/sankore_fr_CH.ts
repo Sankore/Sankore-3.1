@@ -988,7 +988,7 @@
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation>Style du trait : pointillés</translation>
+        <translation type="obsolete">Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1069,6 +1069,14 @@
     <message>
         <source>Freehand drawing</source>
         <translation>Dessin à main levée</translation>
+    </message>
+    <message>
+        <source>Stroke style : Dash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Dash</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
