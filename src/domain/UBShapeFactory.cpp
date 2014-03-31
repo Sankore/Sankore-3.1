@@ -49,8 +49,12 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
 {
     UBGraphicsScene* scene = mBoardView->scene();
     QGraphicsItem* item = scene->itemAt(pos, QTransform());
+    UBAbstractGraphicsItem* shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
 
     applyCurrentStyle(shape);
+
+    //persists scene immediatly
+    UBApplication::boardController->persistCurrentScene();
 }
 
 void UBShapeFactory::applyCurrentStyle(UBAbstractGraphicsItem* shape)
@@ -489,6 +493,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                     if(mFirstClickForFreeHand){
                         UBGraphicsFreehandItem* pathItem = dynamic_cast<UBGraphicsFreehandItem*>(instanciateCurrentShape());
 
+
                         pathItem->addPoint(cursorPosition);
 
                         mFirstClickForFreeHand = false;
@@ -526,6 +531,7 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
 
     UBEditableGraphicsLineItem* line= dynamic_cast<UBEditableGraphicsLineItem*>(mCurrentShape);
     if (line)
+    {
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
     }
@@ -656,6 +662,26 @@ bool UBShapeFactory::isShape(QGraphicsItem *item)
             || item->type() == UBGraphicsItemType::GraphicsPathItemType
             || item->type() == UBGraphicsItemType::GraphicsRegularPathItemType
             || item->type() == UBGraphicsItemType::GraphicsFreehandItemType;
+}
+
+void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
+{
+    //save the style and then update all selected elements
+    mCurrentBrushStyle = brushStyle;
+
+    UBGraphicsScene* scene = mBoardView->scene();
+
+    QList<QGraphicsItem*> items = scene->selectedItems();
+
+    for(int i = 0; i < items.size(); i++){
+        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
+
+        if(shape)
+            shape->setStyle(mCurrentBrushStyle);
+
+
+        items.at(i)->update();
+    }
 }
 
 void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)
