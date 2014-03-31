@@ -21,10 +21,14 @@ void UBAbstractEditableGraphicsPathItem::drawArrows()
     // Draw Arrows UNDER (z-order) Handles, if handles are shown.
     if (isInEditMode())
     {
-        startArrowGraphicsItem()->stackBefore(mHandles.first());
+        if (startArrowGraphicsItem()){
+            startArrowGraphicsItem()->stackBefore(mHandles.first());
+        }
 
-        endArrowGraphicsItem()->stackBefore(mHandles.last());
-        endArrowGraphicsItem()->stackBefore(mHandles.first());
+        if (endArrowGraphicsItem()){
+            endArrowGraphicsItem()->stackBefore(mHandles.last());
+            endArrowGraphicsItem()->stackBefore(mHandles.first());
+        }
     }
 }
 
