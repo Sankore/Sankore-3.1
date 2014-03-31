@@ -24,21 +24,27 @@ void UBAbstractEditableGraphicsShapeItem::mouseReleaseEvent(QGraphicsSceneMouseE
 {
     prepareGeometryChange();
 
-    if(!mHasMoved){
-        if(mMultiClickState %2 == 1){
-            onActivateEditionMode();
-
-            Delegate()->showFrame(false);
-            setFocus();
-            showEditMode(true);
-        }
-        else
+    if(!mHasMoved)
+    {
+        if (!Delegate()->isLocked())
         {
-            showEditMode(false);
-            Delegate()->positionHandles();
-            Delegate()->showFrame(true);
+            if(mMultiClickState %2 == 1){
+                onActivateEditionMode();
+
+                Delegate()->showFrame(false);
+                setFocus();
+                showEditMode(true);
+            }
+            else
+            {
+                showEditMode(false);
+                Delegate()->positionHandles();
+                Delegate()->showFrame(true);
+            }
         }
-    }else{
+    }
+    else
+    {
         if(!isInEditMode()){
             mMultiClickState = 0;
         }else{
@@ -53,11 +59,14 @@ void UBAbstractEditableGraphicsShapeItem::mouseReleaseEvent(QGraphicsSceneMouseE
 
 void UBAbstractEditableGraphicsShapeItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    mHasMoved = true;
+    if (!Delegate()->isLocked())
+    {
+        mHasMoved = true;
 
-    if(!isInEditMode()){
-        UBAbstractGraphicsItem::mouseMoveEvent(event);
-        Delegate()->mouseMoveEvent(event);
+        if(!isInEditMode()){
+            UBAbstractGraphicsItem::mouseMoveEvent(event);
+            Delegate()->mouseMoveEvent(event);
+        }
     }
 }
 

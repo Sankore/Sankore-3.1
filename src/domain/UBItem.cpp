@@ -101,7 +101,7 @@ qreal UBGraphicsItem::getOwnZValue(QGraphicsItem *item)
 
 void UBGraphicsItem::remove(bool canUndo)
 {
-    if (Delegate())
+    if (Delegate() && !Delegate()->isLocked())
         Delegate()->remove(canUndo);
 }
 

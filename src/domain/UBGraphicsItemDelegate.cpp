@@ -823,8 +823,11 @@ void UBGraphicsItemDelegate::updateButtons(bool showUpdated)
             mDelegated->scene()->addItem(mDeleteButton);
     }
 
-    if (showUpdated)
+    //Issue NC - CFA - 20140331 : suppression du bouton delete en mode verouille
+    if (showUpdated && !isLocked())
         mDeleteButton->show();
+    else
+        mDeleteButton->hide();
 
     int i = 1, j = 0, k = 0;
     while ((i + j + k) < mButtons.size())  {
