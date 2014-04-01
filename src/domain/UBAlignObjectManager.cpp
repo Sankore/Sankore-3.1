@@ -313,7 +313,7 @@ void UBAlignObjectManager::horizontalAlign() const
 
             int y_vertical = y_min + (y_max - y_min) / 2;
 
-            if(y_vertical > mostVertical){
+            if(y_vertical < mostVertical){
                 mostVertical = y_vertical;
                 reference = item;
             }
