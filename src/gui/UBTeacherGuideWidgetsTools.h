@@ -82,10 +82,20 @@ class UBTGActionWidget : public QWidget, public iUBTGSaveData
 
 public:
     explicit UBTGActionWidget(QTreeWidgetItem* widget, QWidget* parent = 0,const char* name = "UBTGActionWidget");
+
+    UBTGActionWidget(const UBTGActionWidget& src);
+
     ~UBTGActionWidget();
     void update();
     tUBGEElementNode* saveData();
     void initializeWithDom(QDomElement element);
+
+//N/C - NNE - 20140328 : Sort the actions
+public slots:
+    void onUpButton();
+    void onDownButton();
+    void onClose();
+//N/C - NNE - 20140328 : END
 
 private:
     QVBoxLayout* mpLayout;
@@ -96,6 +106,38 @@ protected:
     QTreeWidgetItem* mpTreeWidgetItem;
 };
 
+
+//N/C - NNE - 20140331
+class UBTGActionColumn : public QWidget
+{
+    Q_OBJECT
+
+public:
+    UBTGActionColumn(QTreeWidgetItem *widgetItem, QWidget *parent = 0);
+
+signals:
+    void clickOnClose(QTreeWidgetItem*);
+    void clickOnUp(QTreeWidgetItem*);
+    void clickOnDown(QTreeWidgetItem*);
+
+    void clickOnClose();
+    void clickOnUp();
+    void clickOnDown();
+
+private slots:
+    void onClickClose();
+    void onClickUp();
+    void onClickDown();
+
+private:
+    QPushButton *mCloseButton;
+    QPushButton *mUpButton;
+    QPushButton *mDownButton;
+
+    QTreeWidgetItem *mWidgetItem;
+};
+
+//N/C - NNE - 20140331 : END
 
 class UBTGAdaptableText : public QTextEdit
 {
@@ -160,6 +202,13 @@ public:
     void initializeWithDom(QDomElement element);
     void removeSource();
 
+    //N/C - NNE - 20140401
+    UBTGMediaWidget *clone() const;
+public slots:
+    void onUpButton();
+    void onDownButton();
+    void onClose();
+
 protected:
     void dragEnterEvent(QDragEnterEvent* event);
     void dropEvent(QDropEvent* event);
@@ -192,18 +241,26 @@ class UBTGUrlWidget : public QWidget , public iUBTGSaveData
 {
     Q_OBJECT
 public:
-    UBTGUrlWidget(QWidget* parent = 0, const char* name = "UBTGUrlWidget");
+    UBTGUrlWidget(QTreeWidgetItem *treeWidgetItem, QWidget* parent = 0, const char* name = "UBTGUrlWidget");
     ~UBTGUrlWidget();
     tUBGEElementNode* saveData();
     void initializeWithDom(QDomElement element);
 
+    UBTGUrlWidget *clone() const;
+
 public slots:
     void onUrlEditionFinished();
+    void onDownButton();
+    void onClose();
+    void onUpButton();
 
 private:
     QVBoxLayout* mpLayout;
     QLineEdit* mpTitle;
     QLineEdit* mpUrl;
+
+    //N/C - NNE - 20140401
+    QTreeWidgetItem *mTreeWidgetItem;
 };
 
 class UBTGDraggableTreeItem : public QTreeWidget
@@ -220,13 +277,14 @@ class UBTGFileWidget : public QWidget, public iUBTGSaveData
 {
     Q_OBJECT
 public:
-    UBTGFileWidget(QWidget* parent = 0, const char* name = "UBTGFileWidget");
+    UBTGFileWidget(QTreeWidgetItem *treeWidgetItem , QWidget *parent = 0, const char *name = "UBTGFileWidget");
     virtual ~UBTGFileWidget();
     tUBGEElementNode* saveData();
     void initializeWithDom(QDomElement element);
     inline QString titreFichier() const {return mpTitreFichier->text();}
     inline QString path() const {return mPath;}
     inline void setPath(QString path){mPath = path;}
+    UBTGFileWidget * clone() const;
 
 private:
     QVBoxLayout * mpLayout;
@@ -236,8 +294,16 @@ private:
     QPushButton * mpBtnSelectFile;
     QString mPath;
 
+    QTreeWidgetItem *mTreeWidgetItem;
+
 private slots:
     void OnClickBtnSelectFile();
+
+public slots:
+    void onUpButton();
+    void onDownButton();
+    void onClose();
+
 
 signals:
     void changed();

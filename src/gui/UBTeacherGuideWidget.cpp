@@ -126,7 +126,10 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
     mpTreeWidget->header()->setStretchLastSection(false);
     mpTreeWidget->header()->setResizeMode(0, QHeaderView::Stretch);
     mpTreeWidget->header()->setResizeMode(1, QHeaderView::Fixed);
-    mpTreeWidget->header()->setDefaultSectionSize(18);
+
+    //N/C - NNE - 20140401
+    mpTreeWidget->header()->setDefaultSectionSize(40);
+
     mpTreeWidget->setSelectionMode(QAbstractItemView::NoSelection);
     mpTreeWidget->setExpandsOnDoubleClick(false);
 
@@ -367,35 +370,41 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
         QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(widget);
         newWidgetItem->setData(column, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
         newWidgetItem->setData(1, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
-        newWidgetItem->setIcon(1, QIcon(":images/close.svg"));
+
+        UBTGActionColumn *actionColumn = new UBTGActionColumn(newWidgetItem);
+        mpTreeWidget->setItemWidget(newWidgetItem, 1, actionColumn);
 
         switch (addSubItemWidgetType) {
         case eUBTGAddSubItemWidgetType_Action: {
-            UBTGActionWidget* actionWidget = new UBTGActionWidget(widget);
+            UBTGActionWidget* actionWidget = new UBTGActionWidget(newWidgetItem);
             if (element)
                 actionWidget->initializeWithDom(*element);
+
             mpTreeWidget->setItemWidget(newWidgetItem, 0, actionWidget);
-            break;
-        }
-        case eUBTGAddSubItemWidgetType_Media: {
-            UBTGMediaWidget* mediaWidget = new UBTGMediaWidget(widget);
-            if (element)
-                mediaWidget->initializeWithDom(*element);
-            mpTreeWidget->setItemWidget(newWidgetItem,0, mediaWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), actionWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), actionWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), actionWidget, SLOT(onClose()));
             break;
         }
         case eUBTGAddSubItemWidgetType_Url: {
-            UBTGUrlWidget* urlWidget = new UBTGUrlWidget();
+            UBTGUrlWidget* urlWidget = new UBTGUrlWidget(newWidgetItem);
             if (element)
                 urlWidget->initializeWithDom(*element);
+
             mpTreeWidget->setItemWidget(newWidgetItem, 0, urlWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), urlWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), urlWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), urlWidget, SLOT(onClose()));
             break;
         }
         case eUBTGAddSubItemWidgetType_File: { //Issue 1716 - ALTI/AOU - 20140128
-            UBTGFileWidget* fileWidget = new UBTGFileWidget();
+            UBTGFileWidget* fileWidget = new UBTGFileWidget(newWidgetItem);
             if (element)
                 fileWidget->initializeWithDom(*element);
             mpTreeWidget->setItemWidget(newWidgetItem, 0, fileWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), fileWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), fileWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), fileWidget, SLOT(onClose()));
             break;
         }
         default:
@@ -411,14 +420,6 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
             widget->setExpanded(false);
             widget->setExpanded(true);
         }
-    }
-    else if (column == 1 && addSubItemWidgetType == eUBTGAddSubItemWidgetType_None) {
-        UBTGMediaWidget* media = dynamic_cast<UBTGMediaWidget*>(mpTreeWidget->itemWidget(widget, 0));
-        if (media)
-            media->removeSource();
-        int index = mpTreeWidget->currentIndex().row();
-        QTreeWidgetItem* toBeDeletedWidgetItem = widget->parent()->takeChild(index);
-        delete toBeDeletedWidgetItem;
     }
 }
 
@@ -1473,7 +1474,7 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
 
             switch (addSubItemWidgetType) {
             case eUBTGAddSubItemWidgetType_File: {
-                UBTGFileWidget* fileWidget = new UBTGFileWidget();
+                UBTGFileWidget* fileWidget = new UBTGFileWidget(newWidgetItem);
                 if (element)
                     fileWidget->initializeWithDom(*element);
                 mpTreeWidgetEdition->setItemWidget(newWidgetItem, 0, fileWidget);

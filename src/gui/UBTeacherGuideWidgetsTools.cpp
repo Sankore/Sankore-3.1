@@ -98,9 +98,92 @@ UBTGActionWidget::UBTGActionWidget(QTreeWidgetItem* widget, QWidget* parent, con
     mpTask->setPlaceHolderText(tr("Type task here ..."));
     mpTask->setAcceptRichText(true);
     mpTask->setObjectName("ActionWidgetTaskTextEdit");
+
+    //N/C - NNE - 20140328 : Sort the actions
+    mpTreeWidgetItem = widget;
+
     mpLayout->addWidget(mpOwner);
     mpLayout->addWidget(mpTask);
 }
+
+//N/C - NNE - 20140328 : Sort the actions
+void UBTGActionWidget::onUpButton()
+{
+    QTreeWidgetItem *parent = mpTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mpTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGActionWidget *copy = new UBTGActionWidget(mpTreeWidgetItem);
+
+    copy->mpOwner->setCurrentIndex(mpOwner->currentIndex());
+    copy->mpTask->setText(mpTask->text());
+
+    parent->takeChild(index);
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mpTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+    connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
+
+    //from now 'this' is invalid...
+    index = qMax(0, index - 1);
+
+    parent->insertChild(index, mpTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 1, actionColumn);
+
+    //update the layout correctly
+    mpTreeWidgetItem->setExpanded(true);
+}
+
+void UBTGActionWidget::onDownButton()
+{
+    QTreeWidgetItem *parent = mpTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mpTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGActionWidget *copy = new UBTGActionWidget(mpTreeWidgetItem);
+
+    copy->mpOwner->setCurrentIndex(mpOwner->currentIndex());
+    copy->mpTask->setText(mpTask->text());
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mpTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+    connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
+
+    parent->takeChild(index);
+
+    //from now 'this' is invalid...
+    index = qMin(parent->childCount(), index + 1);
+
+    parent->insertChild(index, mpTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 1, actionColumn);
+
+    //layout correctly
+    mpTreeWidgetItem->setExpanded(true);
+}
+
+void UBTGActionWidget::onClose()
+{
+    QTreeWidgetItem *parent = mpTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mpTreeWidgetItem);
+
+    delete parent->takeChild(index);
+}
+//N/C - NNE - 20140328 : END
 
 UBTGActionWidget::~UBTGActionWidget()
 {
@@ -122,6 +205,53 @@ tUBGEElementNode* UBTGActionWidget::saveData()
     result->attributes.insert("owner",QString("%0").arg(mpOwner->currentIndex()));
     result->attributes.insert("task",mpTask->text());
     return result;
+}
+
+UBTGActionColumn::UBTGActionColumn(QTreeWidgetItem *widgetItem, QWidget *parent):
+    QWidget(parent)
+{
+    QVBoxLayout *vl = new QVBoxLayout();
+
+    mCloseButton = new QPushButton(QIcon(":images/close.svg"), "");
+    mUpButton = new QPushButton(QIcon(":images/up_arrow.png"), "");
+    mDownButton = new QPushButton(QIcon(":images/down_arrow.png"), "");
+    mWidgetItem = widgetItem;
+
+    vl->addStretch();
+    vl->addWidget(mCloseButton);
+    vl->addWidget(mUpButton);
+    vl->addWidget(mDownButton);
+    vl->addStretch();
+
+    connect(mCloseButton, SIGNAL(clicked()), this, SLOT(onClickClose()));
+    connect(mUpButton, SIGNAL(clicked()), this, SLOT(onClickUp()));
+    connect(mDownButton, SIGNAL(clicked()), this, SLOT(onClickDown()));
+
+    connect(mCloseButton, SIGNAL(clicked()), this, SIGNAL(clickOnClose()));
+    connect(mUpButton, SIGNAL(clicked()), this, SIGNAL(clickOnUp()));
+    connect(mDownButton, SIGNAL(clicked()), this, SIGNAL(clickOnDown()));
+
+    mCloseButton->setFixedHeight(16);
+    mDownButton->setFixedHeight(16);
+    mUpButton->setFixedHeight(16);
+
+    setLayout(vl);
+}
+
+
+void UBTGActionColumn::onClickClose()
+{
+    emit clickOnClose(mWidgetItem);
+}
+
+void UBTGActionColumn::onClickUp()
+{
+    emit clickOnUp(mWidgetItem);
+}
+
+void UBTGActionColumn::onClickDown()
+{
+    emit clickOnDown(mWidgetItem);
 }
 
 /***************************************************************************
@@ -418,6 +548,93 @@ UBTGMediaWidget::UBTGMediaWidget(QString mediaPath, QTreeWidgetItem* widget, QWi
     setFixedHeight(200);
 }
 
+//N/C - NNE - 20140328 : Sort the actions
+void UBTGMediaWidget::onUpButton()
+{
+    QTreeWidgetItem *parent = mpTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mpTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGMediaWidget *copy = clone();
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mpTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+
+    //from now 'this' is invalid...
+    parent->takeChild(index);
+
+    index = qMax(0, index - 1);
+
+    parent->insertChild(index, mpTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 1, actionColumn);
+
+    //update the layout correctly
+    mpTreeWidgetItem->setExpanded(true);
+}
+
+//N/C - NNE - 20140401
+UBTGMediaWidget *UBTGMediaWidget::clone() const
+{
+    bool forceFlash = mMediaType.toLower() == "flash";
+
+    UBTGMediaWidget *copy = new UBTGMediaWidget(mpTreeWidgetItem);
+
+    copy->mMediaPath = mMediaPath;
+    copy->createWorkWidget(forceFlash);
+    copy->mpTitle->setText(mpTitle->text());
+
+    return copy;
+}
+//N/C - NNE - 20140401 : END
+
+void UBTGMediaWidget::onDownButton()
+{
+    QTreeWidgetItem *parent = mpTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mpTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGMediaWidget *copy = clone();
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mpTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+
+    //from now 'this' is invalid...
+    parent->takeChild(index);
+
+    index = qMin(parent->childCount(), index + 1);
+
+    parent->insertChild(index, mpTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mpTreeWidgetItem, 1, actionColumn);
+
+    //update the layout correctly
+    mpTreeWidgetItem->setExpanded(true);
+}
+
+void UBTGMediaWidget::onClose()
+{
+    removeSource();
+    QTreeWidgetItem *parent = mpTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mpTreeWidgetItem);
+
+    delete parent->takeChild(index);
+}
+//N/C - NNE - 20140328 : END
+
 UBTGMediaWidget::~UBTGMediaWidget()
 {
     DELETEPTR(mpTitle);
@@ -597,6 +814,7 @@ void UBTGMediaWidget::createWorkWidget(bool forceFlashMediaType)
             mpWebView->show();
         }
         mpMediaLayout->addStretch(1);
+
         addWidget(mpWorkWidget);
         setCurrentWidget(mpWorkWidget);
         mpWorkWidget->show();
@@ -659,7 +877,8 @@ void UBTGMediaWidget::mousePressEvent(QMouseEvent *event)
 /***************************************************************************
  *                      class    UBTGUrlWidget                             *
  ***************************************************************************/
-UBTGUrlWidget::UBTGUrlWidget(QWidget* parent, const char* name ):QWidget(parent)
+UBTGUrlWidget::UBTGUrlWidget(QTreeWidgetItem *treeWidgetItem, QWidget *parent, const char *name ):
+    QWidget(parent)
   , mpLayout(NULL)
   , mpTitle(NULL)
   , mpUrl(NULL)
@@ -677,6 +896,8 @@ UBTGUrlWidget::UBTGUrlWidget(QWidget* parent, const char* name ):QWidget(parent)
     mpUrl->setPlaceholderText("http://");
     mpLayout->addWidget(mpTitle);
     mpLayout->addWidget(mpUrl);
+
+    mTreeWidgetItem = treeWidgetItem;
 }
 
 UBTGUrlWidget::~UBTGUrlWidget()
@@ -699,6 +920,88 @@ void UBTGUrlWidget::initializeWithDom(QDomElement element)
 {
     mpTitle->setText(element.attribute("title"));
     mpUrl->setText(element.attribute("url"));
+}
+
+//N/C - NNE - 20140328 : Sort the url
+void UBTGUrlWidget::onUpButton()
+{
+    QTreeWidgetItem *parent = mTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGUrlWidget *copy = clone();
+
+    parent->takeChild(index);
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+    connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
+
+    //from now 'this' is invalid...
+    index = qMax(0, index - 1);
+
+    parent->insertChild(index, mTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 1, actionColumn);
+
+    //update the layout correctly
+    mTreeWidgetItem->setExpanded(true);
+}
+
+void UBTGUrlWidget::onDownButton()
+{
+    QTreeWidgetItem *parent = mTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGUrlWidget *copy = clone();
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+    connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
+
+    parent->takeChild(index);
+
+    //from now 'this' is invalid...
+    index = qMin(parent->childCount(), index + 1);
+
+    parent->insertChild(index, mTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 1, actionColumn);
+
+    //update the layout correctly
+    mTreeWidgetItem->setExpanded(true);
+}
+
+UBTGUrlWidget * UBTGUrlWidget::clone() const
+{
+    UBTGUrlWidget *copy = new UBTGUrlWidget(mTreeWidgetItem);
+
+    copy->mpTitle->setText(mpTitle->text());
+    copy->mpUrl->setText(mpUrl->text());
+
+    return copy;
+}
+
+void UBTGUrlWidget::onClose()
+{
+    QTreeWidgetItem *parent = mTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mTreeWidgetItem);
+
+    delete parent->takeChild(index);
 }
 
 tUBGEElementNode* UBTGUrlWidget::saveData()
@@ -732,7 +1035,7 @@ QMimeData* UBTGDraggableTreeItem::mimeData(const QList<QTreeWidgetItem *> items)
 /***************************************************************************
  *              class    UBTGFileWidget                                    *
  ***************************************************************************/
-UBTGFileWidget::UBTGFileWidget(QWidget *parent, const char *name)
+UBTGFileWidget::UBTGFileWidget(QTreeWidgetItem *treeWidgetItem, QWidget *parent, const char *name)
     : QWidget(parent)
     , mpLayout(NULL)
     , mpHLayout(NULL)
@@ -766,6 +1069,8 @@ UBTGFileWidget::UBTGFileWidget(QWidget *parent, const char *name)
     mpLayout->addLayout(mpHLayout);
 
     setLayout(mpLayout);
+
+    mTreeWidgetItem = treeWidgetItem;
 
     connect(mpTitreFichier, SIGNAL(textEdited(QString)), this, SIGNAL(changed()));
 }
@@ -840,4 +1145,99 @@ void UBTGFileWidget::OnClickBtnSelectFile()
         emit changed();
     }
 }
+
+//N/C - NNE - 20140328 : Sort the url
+void UBTGFileWidget::onUpButton()
+{
+    QTreeWidgetItem *parent = mTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGFileWidget *copy = clone();
+
+    parent->takeChild(index);
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+    connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
+
+    //from now 'this' is invalid...
+    index = qMax(0, index - 1);
+
+    parent->insertChild(index, mTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 1, actionColumn);
+
+    //update the layout correctly
+    mTreeWidgetItem->setExpanded(true);
+}
+
+void UBTGFileWidget::onDownButton()
+{
+    QTreeWidgetItem *parent = mTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mTreeWidgetItem);
+
+    //make a copy, because Qt delete the widget (according to
+    //the documentation, the widget is hold by the treeWidget)
+    UBTGFileWidget *copy = clone();
+
+    //recreate the actionColumn, because Qt delete it when we remove the node...
+    UBTGActionColumn *actionColumn = new UBTGActionColumn(mTreeWidgetItem);
+
+    connect(actionColumn, SIGNAL(clickOnUp()), copy, SLOT(onUpButton()));
+    connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
+    connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
+
+    parent->takeChild(index);
+
+    //from now 'this' is invalid...
+    index = qMin(parent->childCount(), index + 1);
+
+    parent->insertChild(index, mTreeWidgetItem);
+
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 0, copy);
+    parent->treeWidget()->setItemWidget(mTreeWidgetItem, 1, actionColumn);
+
+    //layout correctly
+    mTreeWidgetItem->setExpanded(true);
+}
+
+UBTGFileWidget * UBTGFileWidget::clone() const
+{
+    UBTGFileWidget *copy = new UBTGFileWidget(mTreeWidgetItem);
+
+    copy->mpTitreFichier->setText(mpTitreFichier->text());
+    copy->mpNomFichier->setText(mpNomFichier->text());
+
+    return copy;
+}
+
+void UBTGFileWidget::onClose()
+{
+    QString documentPath = UBApplication::boardController->selectedDocument()->persistencePath();
+
+    if ( mPath.left(mPath.indexOf('/') ) == UBPersistenceManager::teacherGuideDirectory)
+    {
+        QFile file(documentPath + "/" + mPath);
+        QFileInfo fi(file);
+        file.remove();  // supprimer le fichier
+        QDir parentDir = fi.dir();
+        parentDir.rmpath(parentDir.absolutePath()); // supprimer le repertoire
+    }
+
+    QTreeWidgetItem *parent = mTreeWidgetItem->parent();
+
+    int index = parent->indexOfChild(mTreeWidgetItem);
+
+    delete parent->takeChild(index);
+}
+
 // Fin Issue 1683 (Evolution) - AOU - 20131206
+
