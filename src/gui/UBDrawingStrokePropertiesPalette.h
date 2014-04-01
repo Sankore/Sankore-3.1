@@ -47,10 +47,13 @@ private slots:
 
 private:
     UBColorPickerButton * mBtnColorPicker;
-    QList<UBActionPaletteButton*> mBtnStrokeThickness;
-    QMap<UBActionPaletteButton*, int> mMapBtnStrokeThickness;
+
+    QList<UBActionPaletteButton*> mListBtnStrokeThickness;  // ordered list of buttons
+    QMap<UBActionPaletteButton*, int> mMapBtnStrokeThickness;   // associate buttons to thickness.
     QButtonGroup * mButtonGroupStrokeThickness;
-    QMap<UBActionPaletteButton*, Qt::PenStyle> mMapBtnStrokeStyle;
+
+    QList<UBActionPaletteButton*> mListBtnStrokeStyle; // ordered list of buttons
+    QMap<UBActionPaletteButton*, Qt::PenStyle> mMapBtnStrokeStyle; // associate buttons to PenStyles.
     QButtonGroup * mButtonGroupStrokeStyle;
 
 };
