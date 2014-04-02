@@ -83,9 +83,9 @@
                         remove_linebreaks: false,
                         valid_elements: '*[*]',
                         keep_styles: true,
-                        plugins: ['link', 'searchreplace', 'table', 'paste', 'textcolor', 'rteditor', 'code'],
-                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | bullist numlist | link | customtable | code',
-                        toolbar2: 'fontselect fontsizeselect increasefontsize decreasefontsize | alignleft aligncenter alignright alignjustify | undo redo'
+                        plugins: ['link', 'table', 'paste', 'textcolor', 'rteditor', 'code'],
+                        toolbar1: 'bold italic underline strikethrough | forecolor backcolor pagecolor | bullist numlist | outdent indent | link | customtable',
+                        toolbar2: 'fontselect fontsizeselect increasefontsize decreasefontsize | alignleft aligncenter alignright alignjustify | undo redo | code'
                     };
 
                 options.fontsize_formats = [
@@ -152,7 +152,7 @@
                     });
 
                     editor.on('keypress', function (e) {
-                        if (app.RTEditor.isContentEmpty($(e.target).text())) {
+                        if (app.RTEditor.isContentEmpty($(e.target).html())) {
                             self.tinymce.setContent('', {format: 'raw'});
                             self.applyDefaults();
                         } else {
@@ -455,11 +455,11 @@
             };
 
             app.RTEditor.prototype.applyDefaults = function () {
-                if (0 === this.tinymce.queryCommandValue('FontName')) {
+                if (!this.tinymce.queryCommandValue('FontName')) {
                     this.tinymce.execCommand('FontName', true, this.font.name);
                 }
                 
-                if (0 === this.tinymce.queryCommandValue('FontSize')) {
+                if (!this.tinymce.queryCommandValue('FontSize')) {
                     this.tinymce.execCommand('FontSize', true, this.font.size);
                 }
 
@@ -655,8 +655,20 @@
              *
              */
             app.RTEditor.prototype.setDefaultFontFamily = function (name) {
+                this.tinymce.getDoc().body.style.fontFamily = name;
                 if (name.length > 0) {
                     this.font.name = name;
+                }
+            };
+
+            /**
+             *
+             */
+            app.RTEditor.prototype.setDefaultFontSize = function (size) {
+                size = size.replace('pt', '');
+                if (!isNaN(Number(size)) && Number(size) > 0) {
+                    this.tinymce.getDoc().body.style.fontSize = size + 'pt';
+                    this.font.size = size + 'pt';
                 }
             };
 
@@ -672,16 +684,6 @@
              */
             app.RTEditor.prototype.setDefaultFontItalic = function (isItalic) {
                 this.font.italic = isItalic;
-            };
-
-            /**
-             *
-             */
-            app.RTEditor.prototype.setDefaultFontSize = function (size) {
-                size = size.replace('pt', '');
-                if (!isNaN(Number(size)) && Number(size) > 0) {
-                    this.font.size = size + 'pt';
-                }
             };
 
             /**
@@ -708,7 +710,6 @@
              */
             app.RTEditor.prototype.checkForResize = function () {
                 var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height();
-
                 if (delta > 0) {
                     this.options.onContentOverflow.call(this, delta);
                 }
@@ -944,16 +945,26 @@
 
                 this.setBackgroundColor(window.sankore.preference('background'));
 
-                this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
-                this.setDefaultFontSize(window.sankore.fontSizePreference());
-                this.setDefaultFontBold(window.sankore.fontBoldPreference());
-                this.setDefaultFontItalic(window.sankore.fontItalicPreference());
+                if (window.sankore.preference('font')) {
+                    var font = JSON.parse(window.sankore.preference('font'));
+                    this.setDefaultFontFamily(font.name);
+                    this.setDefaultFontSize(font.size);
+                    this.setDefaultFontBold(font.bold);
+                    this.setDefaultFontItalic(font.italic);
+                }
+                else {
+                    this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
+                    this.setDefaultFontSize(window.sankore.fontSizePreference());
+                    this.setDefaultFontBold(window.sankore.fontBoldPreference());
+                    this.setDefaultFontItalic(window.sankore.fontItalicPreference());
+                }
             };
 
             options.onBlur = function () {
                 window.sankore.setPreference('content', this.getContent());
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
+                window.sankore.setPreference('font', JSON.stringify(this.font));
             };
 
             options.onContentOverflow = function (delta) {
@@ -1014,7 +1025,8 @@ if (!('widget' in window)) {
 /** mock sankore object for browser testing */
 if (!('sankore' in window)) {
     var preferences = {
-        content: ''
+        content: '<p>adfdf</p><p>dsdsqfdgd</p><p>fdsfsdfsdfsd</p><p>fdfsdfdsfd</p>',
+        font: '{"name":"arial","size":"36pt","bold":true,"italic":false}'
     };
 
     window.sankore = {
@@ -1035,11 +1047,11 @@ if (!('sankore' in window)) {
         },
 
         fontFamilyPreference: function () {
-            return 'georgia';
+            return 'arial';
         },
 
         fontSizePreference: function () {
-            return '16pt';
+            return '36pt';
         },
 
         updateFontSizePreference: function (name) {
@@ -1051,7 +1063,7 @@ if (!('sankore' in window)) {
         },
 
         fontBoldPreference: function () {
-            return true;
+            return false;
         },
 
         updateFontItalicPreference: function (italic) {
@@ -1059,7 +1071,7 @@ if (!('sankore' in window)) {
         },
 
         fontItalicPreference: function () {
-            return true;
+            return false;
         },
 
         resize: function (w, h) {
