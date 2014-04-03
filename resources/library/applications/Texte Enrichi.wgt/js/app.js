@@ -867,6 +867,21 @@
 
                 if (e.command === 'FontSize') {
                     this.options.onFontSizeChange.call(this, e.value);
+                    
+                    var cac = this.tinymce.selection.explicitRange.commonAncestorContainer;
+
+                    if (
+                        cac.parentElement.parentElement.nodeName === 'LI' && 
+                        cac.nodeType === 3
+                    ) {
+                        cac.parentElement.parentElement.style.fontSize = e.value;
+                    } else if (
+                        'UL,OL'.indexOf(cac.parentElement.parentElement.nodeName) !== -1 &&
+                        this.tinymce.selection.explicitRange.endContainer.nodeType === 3
+                    ) {
+                        cac.parentElement.style.fontSize = e.value;
+                    }
+                    
                     this.font.size = e.value;
                 }
 
@@ -947,6 +962,7 @@
 
                 if (window.sankore.preference('font')) {
                     var font = JSON.parse(window.sankore.preference('font'));
+                    console.log(font);
                     this.setDefaultFontFamily(font.name);
                     this.setDefaultFontSize(font.size);
                     this.setDefaultFontBold(font.bold);
@@ -1025,8 +1041,7 @@ if (!('widget' in window)) {
 /** mock sankore object for browser testing */
 if (!('sankore' in window)) {
     var preferences = {
-        content: '<p>adfdf</p><p>dsdsqfdgd</p><p>fdsfsdfsdfsd</p><p>fdfsdfdsfd</p>',
-        font: '{"name":"arial","size":"36pt","bold":true,"italic":false}'
+        content: '<p>adfdf</p><p>dsdsqfdgd</p><p>fdsfsdfsdfsd</p><p>fdfsdfdsfd</p>'
     };
 
     window.sankore = {
