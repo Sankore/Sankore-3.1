@@ -41,6 +41,7 @@
 #include "UBDockPaletteWidget.h"
 #include "core/UBSettings.h"
 #include "board/UBFeaturesController.h"
+#include "domain/UBDragableThumbnail.h"
 #include "api/UBWidgetUniboardAPI.h"
 #include "UBFeaturesActionBar.h"
 #include "UBRubberBand.h"
@@ -425,7 +426,7 @@ private:
 
     QLabel* mpObjInfoLabel;
     QTreeWidget* mpObjInfos;
-    QLabel* mpThumbnail;
+    UBDraggableThumbnail* mpThumbnail;
     QPixmap* mpOrigPixmap;
     int maxThumbHeight;
     UBFeature *mpElement;

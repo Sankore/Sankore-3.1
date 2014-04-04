@@ -1049,14 +1049,8 @@ UBFeatureProperties::UBFeatureProperties( QWidget *parent, const char *name ) : 
 
     maxThumbHeight = height() / 4;
 
-    mpThumbnail = new QLabel();
-    QPixmap icon(":images/libpalette/notFound.png");
-    icon.scaledToWidth(THUMBNAIL_WIDTH);
+    mpThumbnail = new UBDraggableThumbnail(this);
 
-    mpThumbnail->setPixmap(icon);
-    mpThumbnail->setObjectName("DockPaletteWidgetBox");
-    mpThumbnail->setStyleSheet("background:white;");
-    mpThumbnail->setAlignment(Qt::AlignHCenter);
     mpLayout->addWidget(mpThumbnail, 0);
 
     mpLayout->addWidget(new QLabel(tr("Add"),this));

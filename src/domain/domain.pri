@@ -48,7 +48,8 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBEditableGraphicsPolygonItem.h \
     src/domain/UB1HEditableGraphicsBasicShapeItem.h \
     src/domain/UBEditableGraphicsRegularShapeItem.h \
-    src/domain/UBAlignObjectManager.h
+    src/domain/UBAlignObjectManager.h \
+    src/domain/UBDragableThumbnail.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
@@ -101,4 +102,5 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBAbstractGraphicsItem.cpp \
     src/domain/UBEditableGraphicsPolygonItem.cpp \
     src/domain/UBEditableGraphicsRegularShapeItem.cpp \
-    src/domain/UBAlignObjectManager.cpp
+    src/domain/UBAlignObjectManager.cpp \
+    src/domain/UBDragableThumbnail.cpp
