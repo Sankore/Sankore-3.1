@@ -122,6 +122,8 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         static QString widgetName(const QUrl& pUrl);
         static QString iconFilePath(const QUrl& pUrl);
 
+        static const int sRTEEditionBarHeight;
+
     public slots:
         void freeze();
         void unFreeze();

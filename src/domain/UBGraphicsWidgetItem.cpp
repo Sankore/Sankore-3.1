@@ -53,6 +53,7 @@
 
 bool UBGraphicsWidgetItem::sInlineJavaScriptLoaded = false;
 QStringList UBGraphicsWidgetItem::sInlineJavaScripts;
+const int UBGraphicsWidgetItem::sRTEEditionBarHeight = 59;
 
 UBGraphicsWidgetItem::UBGraphicsWidgetItem(const QUrl &pWidgetUrl, QGraphicsItem *parent)
     : QGraphicsWebView(parent)
@@ -690,7 +691,7 @@ QRectF UBGraphicsWidgetItem::boundingRect() const
    bool isFeatureRTE = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(this->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
 
    if(isFeatureRTE && !isSelected()){
-       brect.adjust(0, 59, 0, 0);
+       brect.adjust(0, sRTEEditionBarHeight, 0, 0);
    }
 
    return brect;
