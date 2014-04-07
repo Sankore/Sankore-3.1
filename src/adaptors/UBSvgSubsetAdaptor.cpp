@@ -2873,8 +2873,8 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsWidgetToSvg(UBGraphicsWidget
     mXmlWriter.writeStartElement("foreignObject");
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "src", widgetRootUrl.toString());
 
-    bool isFeatureRTE =  UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(item->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
-    if (isFeatureRTE)
+
+    if (item->isFeatureRTE())
         item->resize(item->size().width(), item->size().height()+UBGraphicsWidgetItem::sRTEEditionBarHeight);
 
     graphicsItemToSvg(item);
@@ -2893,7 +2893,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::graphicsWidgetToSvg(UBGraphicsWidget
     mXmlWriter.writeAttribute("width", QString("%1").arg(item->boundingRect().width()));
     mXmlWriter.writeAttribute("height", QString("%1").arg(item->boundingRect().height()));
 
-    if (isFeatureRTE)
+    if (item->isFeatureRTE())
         item->resize(item->size().width(), item->size().height()-UBGraphicsWidgetItem::sRTEEditionBarHeight);
 
     QString startFileUrl;

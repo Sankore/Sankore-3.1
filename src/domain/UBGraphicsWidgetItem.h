@@ -122,13 +122,18 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         static QString widgetName(const QUrl& pUrl);
         static QString iconFilePath(const QUrl& pUrl);
 
+        bool isFeatureRTE() const;
         static const int sRTEEditionBarHeight;
+
 
     public slots:
         void freeze();
         void unFreeze();
         virtual void sendJSChangeBackgroundEvent();
     protected:
+
+        QTextEdit* mLoadingMessage;
+
         enum OSType
         {
             type_NONE = 0, // 0000

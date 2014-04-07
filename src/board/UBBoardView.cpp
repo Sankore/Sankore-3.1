@@ -719,8 +719,8 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
         if(currentTool == UBStylusTool::Selector && item->isSelected())
             return false;
         UBGraphicsWidgetItem* widgetItem= dynamic_cast<UBGraphicsWidgetItem*>(item);
-        bool isFeatureRTE =  mController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(widgetItem->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
-        if(currentTool == UBStylusTool::Play && !isFeatureRTE)
+
+        if(currentTool == UBStylusTool::Play && widgetItem && !widgetItem->isFeatureRTE())
             return false;
     }
     case UBGraphicsSvgItem::Type:
@@ -1652,7 +1652,7 @@ void UBBoardView::dropEvent (QDropEvent *event)
     //take care about the lazy evaluation of the test
     bool isFeatureRTE = isUBGraphicsWidget
             && item
-            && UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(item->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
+            && item->isFeatureRTE();
     //N/C - NNE - 20140303 : END
 
     if ((isUBGraphicsWidget && !isFeatureRTE) || (isFeatureRTE && onItem->isSelected())) {

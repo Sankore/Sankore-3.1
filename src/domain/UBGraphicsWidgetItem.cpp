@@ -35,12 +35,14 @@
 
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
+#include "board/UBBoardView.h"
 #include "domain/UBGraphicsWidgetItem.h"
 
 #include "core/memcheck.h"
 #include "core/UBApplicationController.h"
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
+#include "gui/UBMainWindow.h"
 
 #include "frameworks/UBFileSystemUtils.h"
 #include "frameworks/UBPlatformUtils.h"
@@ -576,39 +578,18 @@ void UBGraphicsWidgetItem::injectInlineJavaScript()
 }
 
 void UBGraphicsWidgetItem::paint( QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
-    //issue 1483 - NNE - 20131029 : Adding the test on the renderinContext
-    if(this->scene()){
-        if (!mInitialLoadDone && this->scene()->renderingContext() == UBGraphicsScene::Screen) {
-            QString message;
-
-            message = tr("Loading ...");
-
-            painter->setFont(QFont("Arial", 12));
-
-            QFontMetrics fm = painter->fontMetrics();
-            QRect txtBoundingRect = fm.boundingRect(message);
-
-            txtBoundingRect.moveCenter(rect().center().toPoint());
-            txtBoundingRect.adjust(-10, -5, 10, 5);
-
-            painter->setPen(Qt::NoPen);
-            painter->setBrush(UBSettings::paletteColor);
-            painter->drawRoundedRect(txtBoundingRect, 3, 3);
-
-            painter->setPen(Qt::white);
-            painter->drawText(rect(), Qt::AlignCenter, message);
-        }else{
-            //issue 1483 - NNE - 20131220 : If te scene wiil be export in pdf
-            //use the last snapshot taken (normally up-to-date)
-
-		    if(this->scene() && this->scene()->renderingContext() == UBGraphicsScene::PdfExport){
-		        painter->drawPixmap(0, 0, mSnapshot);
-		    }else if(this->scene()){
-		        //issue 1586 - NNE - 20131024
-		        QGraphicsWebView::paint(painter, option, widget);
-		    }
-		}
+{    
+    //issue 1483 - NNE - 20131220 : If the scene will be export in pdf
+    //use the last snapshot taken (normally up-to-date)
+    if(scene())
+    {
+        if (mInitialLoadDone || scene()->renderingContext() != UBGraphicsScene::Screen)
+        {
+            if (scene()->renderingContext() == UBGraphicsScene::PdfExport)
+                painter->drawPixmap(0, 0, mSnapshot);
+            else//issue 1586 - NNE - 20131024
+                QGraphicsWebView::paint(painter, option, widget);
+        }
     }
 }
 
