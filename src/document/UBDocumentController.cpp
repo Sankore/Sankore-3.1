@@ -1024,6 +1024,13 @@ bool UBDocumentTreeModel::inUntitledDocuments(const QModelIndex &index) const
     return isDescendantOf(index, untitledDocumentsIndex());
 }
 
+//N/C - NNE - 20140408
+bool UBDocumentTreeModel::inMyDocuments(const QModelIndex &index) const
+{
+    return isDescendantOf(index, myDocumentsIndex());
+}
+//N/C - NNE - 20140408 : END
+
 void UBDocumentTreeModel::addDocument(UBDocumentProxy *pProxyData, const QModelIndex &pParent)
 {
     if (!pProxyData) {
@@ -1728,7 +1735,7 @@ QList<UBDocumentProxy*> UBDocumentController::selectedProxies()
 
 QModelIndexList UBDocumentController::selectedTreeIndexes()
 {
-    return mapIndexesToSource(mDocumentUI->documentTreeView->selectionModel()->selectedIndexes());
+    return mapIndexesToSource(mDocumentUI->documentTreeView->selectionModel()->selectedRows(0));
 }
 
 UBDocumentProxy* UBDocumentController::firstSelectedTreeProxy()
@@ -1844,7 +1851,32 @@ void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &select
 {
     Q_UNUSED(deselected)
 
-    if (selected.indexes().count()) {
+    int nbIndexes = selected.indexes().count();
+
+    if (nbIndexes) {
+        //N/C - NNE - 20140408
+
+        QModelIndexList list = mDocumentUI->documentTreeView->selectionModel()->selectedRows();
+
+        if(list.count() > 1){
+            QModelIndex sourceIndex1 = mapIndexToSource(list.at(list.count()-1));
+            QModelIndex sourceIndex2 = mapIndexToSource(list.at(list.count()-2));
+
+            UBDocumentTreeModel *model = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
+            bool sameFolder = (model->inModel(sourceIndex1) && model->inModel(sourceIndex2));
+
+            sameFolder |= (model->inTrash(sourceIndex1) && model->inTrash(sourceIndex2));
+
+            sameFolder |= (model->inMyDocuments(sourceIndex1) && model->inMyDocuments(sourceIndex2));
+
+            if(!sameFolder){
+                mDocumentUI->documentTreeView->clearSelection();
+                mDocumentUI->documentTreeView->selectionModel()->select(list.at(list.count()-1), QItemSelectionModel::Select);
+            }
+        }
+        //N/C - NNE - 20140408 : END
+
         QModelIndex NewSelectedRow = selected.indexes().first();
         TreeViewSelectionChanged(NewSelectedRow, QModelIndex());
     }
@@ -2394,58 +2426,76 @@ void UBDocumentController::deleteSelectedItem()
 {
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
 
-    QModelIndex currentIndex = firstSelectedTreeIndex();
-    DeletionType deletionForSelection = deletionTypeForSelection(mSelectionType, currentIndex, docModel);
+    QModelIndexList indexes = selectedTreeIndexes();
 
-    switch (deletionForSelection) {
-    case DeletePage :
-        deletePages(mDocumentUI->thumbnailWidget->selectedItems());
-        break;
+    //we iterate in backward because if we iterate in normal order,
+    //indexes are invalid after the first deletion
+    for(int i = indexes.size()-1; i >= 0; i--){
+        QModelIndex currentIndex = indexes.at(i);
+        DeletionType deletionForSelection = deletionTypeForSelection(mSelectionType, currentIndex, docModel);
 
-    case MoveToTrash : {
-        moveToTrash(currentIndex, docModel);
-        break;
-    }
-    case CompleteDelete :
-        deleteIndexAndAssociatedData(currentIndex);
-        break;
-
-    case EmptyFolder :{
-        if (currentIndex == docModel->myDocumentsIndex()) { //Emptying "My documents". Keeping Untitled Documents
-            int startInd = 0;
-            while (docModel->rowCount(currentIndex)) {
-                QModelIndex testSubINdecurrentIndex = docModel->index(startInd, 0, currentIndex);
-                if (testSubINdecurrentIndex == docModel->untitledDocumentsIndex()) {
-                    emptyFolder(testSubINdecurrentIndex, MoveToTrash);
-                    startInd++;
-                    continue;
-                }
-                if (!testSubINdecurrentIndex.isValid()) {
-                    break;
-                }
-                docModel->moveIndex(testSubINdecurrentIndex, docModel->trashIndex());
-
-            }
-            //issue 1629 - NNE - 20131105
-            //Here, we are sure that the current scene has been deleted
-            createNewDocumentInUntitledFolder();
-        } else {
-            //issue 1629 - NNE - 20131105
-            //Check if we will delete the current scene
-            UBDocumentTreeNode *currentNode = docModel->nodeFromIndex(currentIndex);
-            bool deleteCurrentScene = currentNode->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
-
-            emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
-
-            if(deleteCurrentScene) createNewDocumentInUntitledFolder();
+        //N/C - NNE - 20140408 : if parent is selected, continue, because it will be deleted when the parent will b deleted
+        if(mDocumentUI->documentTreeView->selectionModel()->isSelected(currentIndex.parent())){
+            continue;
         }
+        //N/C - NNE - 20140408 : END
 
-        break;
+        switch (deletionForSelection) {
+        case DeletePage:
+        {
+            deletePages(mDocumentUI->thumbnailWidget->selectedItems());
+            break;
+        }
+        case MoveToTrash:
+        {
+            moveToTrash(currentIndex, docModel);
+            break;
+        }
+        case CompleteDelete:
+        {
+            deleteIndexAndAssociatedData(currentIndex);
+            break;
+        }
+        case EmptyFolder:
+        {
+            if (currentIndex == docModel->myDocumentsIndex()) { //Emptying "My documents". Keeping Untitled Documents
+                int startInd = 0;
+                while (docModel->rowCount(currentIndex)) {
+                    QModelIndex testSubINdecurrentIndex = docModel->index(startInd, 0, currentIndex);
+                    if (testSubINdecurrentIndex == docModel->untitledDocumentsIndex()) {
+                        emptyFolder(testSubINdecurrentIndex, MoveToTrash);
+                        startInd++;
+                        continue;
+                    }
+                    if (!testSubINdecurrentIndex.isValid()) {
+                        break;
+                    }
+                    docModel->moveIndex(testSubINdecurrentIndex, docModel->trashIndex());
+                }
+                //issue 1629 - NNE - 20131105
+                //Here, we are sure that the current scene has been deleted
+                createNewDocumentInUntitledFolder();
+            } else {
+                //issue 1629 - NNE - 20131105
+                //Check if we will delete the current scene
+                UBDocumentTreeNode *currentNode = docModel->nodeFromIndex(currentIndex);
+                bool deleteCurrentScene = currentNode->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
+
+                emptyFolder(currentIndex, MoveToTrash); //Empty constant folder
+
+                if(deleteCurrentScene) createNewDocumentInUntitledFolder();
+            }
+
+            break;
+        }
+        case EmptyTrash:
+        {
+            emptyFolder(currentIndex, CompleteDelete); // Empty trash folder
+            break;
+        }
+        }
     }
-    case EmptyTrash :
-        emptyFolder(currentIndex, CompleteDelete); // Empty trash folder
-        break;
-    }
+
 }
 
 //issue 1629 - NNE - 20131212
@@ -2548,13 +2598,17 @@ void UBDocumentController::deleteIndexAndAssociatedData(const QModelIndex &pInde
         deleteIndexAndAssociatedData(subIndex);
     }
 
-    if (docModel->isDocument(pIndex)) {
-        UBDocumentProxy *proxyData = docModel->proxyData(pIndex);
+    //N/C - NNE - 20140408
+    if(pIndex.column() == 0){
+        if (docModel->isDocument(pIndex)) {
+            UBDocumentProxy *proxyData = docModel->proxyData(pIndex);
 
-        if (proxyData) {
-            UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
+            if (proxyData) {
+                UBPersistenceManager::persistenceManager()->deleteDocument(proxyData);
+            }
         }
     }
+
     docModel->removeRow(pIndex.row(), pIndex.parent());
 }
 
@@ -3138,7 +3192,7 @@ QStringList UBDocumentController::allGroupNames()
 
     return result;
 }
-
+*/
 
 void UBDocumentController::renameSelectedItem()
 {
@@ -3147,8 +3201,6 @@ void UBDocumentController::renameSelectedItem()
         mDocumentUI->documentTreeView->edit(selectedIndex);
     }
 }
-
-*/
 
 bool UBDocumentController::isOKToOpenDocument(UBDocumentProxy* proxy)
 {
@@ -3330,6 +3382,27 @@ void UBDocumentController::updateActions()
         return;
 
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
+    //N/C - NNE - 20140408
+    QModelIndexList list = mDocumentUI->documentTreeView->selectionModel()->selectedRows(0);
+
+    //if in multi selection, juste activate the actionDelete
+    if(list.count() > 1){
+        mMainWindow->actionNewDocument->setEnabled(false);
+        mMainWindow->actionNewFolder->setEnabled(false);
+        mMainWindow->actionExport->setEnabled(false);
+        mMainWindow->actionDuplicate->setEnabled(false);
+        mMainWindow->actionOpen->setEnabled(false);
+        mMainWindow->actionRename->setEnabled(false);
+
+        mMainWindow->actionAddToWorkingDocument->setEnabled(false);
+        mMainWindow->actionDocumentAdd->setEnabled(false);
+        mMainWindow->actionImport->setEnabled(false);
+        mMainWindow->actionDelete->setEnabled(true);
+
+        return;
+    }
+    //N/C - NNE - 20140408 : END
 
     QModelIndex selectedIndex = firstSelectedTreeIndex();
     UBDocumentProxy *selectedProxy = docModel->proxyData(selectedIndex);

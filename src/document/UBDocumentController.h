@@ -224,6 +224,7 @@ public:
     bool ascendingOrder() const{ return mAscendingOrder; }
 
     QDateTime findNodeDate(UBDocumentTreeNode *node, QString type) const;
+    bool inMyDocuments(const QModelIndex &index) const;
     //N/C - NNE - 20140407 : END
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);
@@ -416,7 +417,7 @@ class UBDocumentController : public UBDocumentContainer
         void deleteSelectedItem();
         void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);
         void deleteIndexAndAssociatedData(const QModelIndex &pIndex);
-        //void renameSelectedItem();
+        void renameSelectedItem();
         void openSelectedItem();
         void duplicateSelectedItem();
         void importFile();
