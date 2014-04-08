@@ -1266,21 +1266,30 @@ void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
 
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 {
+    /*
+
     QTreeView::dragEnterEvent(event);
     event->accept();
     event->acceptProposedAction();
+
+    */
 }
 
 void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
 {
+    /*
+
     Q_UNUSED(event);
     UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
     docModel->setHighLighted(QModelIndex());
     update();
+
+    */
 }
 
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 {
+    /*
 
     bool acceptIt = isAcceptable(selectedIndexes().first(), indexAt(event->pos()));
 
@@ -1302,10 +1311,14 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
     event->setAccepted(acceptIt);
 
     QTreeView::dragMoveEvent(event);
+
+    */
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
 {
+    /*
+
     event->ignore();
     event->setDropAction(Qt::IgnoreAction);
     UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
@@ -1390,6 +1403,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     adjustSize();
 
     QTreeView::dropEvent(event);
+
+    */
 }
 
 void UBDocumentTreeView::paintEvent(QPaintEvent *event)
