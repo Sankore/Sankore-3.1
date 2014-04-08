@@ -698,8 +698,12 @@ void UBApplicationController::closing()
         mUninoteController->close();
     }
 
+    /*
+
     if (UBApplication::documentController)
         UBApplication::documentController->closing();
+
+    */
 }
 
 

@@ -21,74 +21,74 @@
 
 
 
-#ifndef UBDOCUMENTTREEWIDGET_H_
-#define UBDOCUMENTTREEWIDGET_H_
+//#ifndef UBDOCUMENTTREEWIDGET_H_
+//#define UBDOCUMENTTREEWIDGET_H_
 
-#include <QtGui>
+//#include <QtGui>
 
-class UBDocumentProxy;
-class UBDocumentProxyTreeItem;
+//class UBDocumentProxy;
+//class UBDocumentProxyTreeItem;
 
-class UBDocumentTreeWidget : public QTreeWidget
-{
-    Q_OBJECT
+//class UBDocumentTreeWidget : public QTreeWidget
+//{
+//    Q_OBJECT
 
-    public:
-        UBDocumentTreeWidget(QWidget *parent = 0);
-        virtual ~UBDocumentTreeWidget();
+//    public:
+//        UBDocumentTreeWidget(QWidget *parent = 0);
+//        virtual ~UBDocumentTreeWidget();
 
-    protected:
-        virtual void dragEnterEvent(QDragEnterEvent *event);
-        virtual void dragLeaveEvent(QDragLeaveEvent *event);
-        virtual void dropEvent(QDropEvent *event);
-        virtual void mousePressEvent(QMouseEvent *event);
-        virtual void dragMoveEvent(QDragMoveEvent *event);
-        virtual void focusInEvent(QFocusEvent *event);
-        virtual Qt::DropActions supportedDropActions() const;
+//    protected:
+//        virtual void dragEnterEvent(QDragEnterEvent *event);
+//        virtual void dragLeaveEvent(QDragLeaveEvent *event);
+//        virtual void dropEvent(QDropEvent *event);
+//        virtual void mousePressEvent(QMouseEvent *event);
+//        virtual void dragMoveEvent(QDragMoveEvent *event);
+//        virtual void focusInEvent(QFocusEvent *event);
+//        virtual Qt::DropActions supportedDropActions() const;
 
-    private slots:
-        void documentUpdated(UBDocumentProxy *pDocument);
+//    private slots:
+//        void documentUpdated(UBDocumentProxy *pDocument);
 
-        void itemChangedValidation(QTreeWidgetItem * item, int column);
+//        void itemChangedValidation(QTreeWidgetItem * item, int column);
 
-		void autoScroll();
+//		void autoScroll();
 
-    private:
-        UBDocumentProxyTreeItem *mSelectedProxyTi;
-        QTreeWidgetItem *mDropTargetProxyTi;
-        QBrush mBackground;
-		QTimer* mScrollTimer;
-		int mScrollMagnitude;
-};
+//    private:
+//        UBDocumentProxyTreeItem *mSelectedProxyTi;
+//        QTreeWidgetItem *mDropTargetProxyTi;
+//        QBrush mBackground;
+//		QTimer* mScrollTimer;
+//		int mScrollMagnitude;
+//};
 
 
-class UBDocumentProxyTreeItem : public QTreeWidgetItem
-{
-    public:
+//class UBDocumentProxyTreeItem : public QTreeWidgetItem
+//{
+//    public:
 
-        UBDocumentProxyTreeItem(QTreeWidgetItem * parent, UBDocumentProxy* proxy, bool isEditable = true);
+//        UBDocumentProxyTreeItem(QTreeWidgetItem * parent, UBDocumentProxy* proxy, bool isEditable = true);
 
-        QPointer<UBDocumentProxy> proxy() const
-        {
-            return mProxy;
-        }
+//        QPointer<UBDocumentProxy> proxy() const
+//        {
+//            return mProxy;
+//        }
 
-        QPointer<UBDocumentProxy> mProxy;
-};
+//        QPointer<UBDocumentProxy> mProxy;
+//};
 
-class UBDocumentGroupTreeItem : public QTreeWidgetItem
-{
-    public:
+//class UBDocumentGroupTreeItem : public QTreeWidgetItem
+//{
+//    public:
 
-        UBDocumentGroupTreeItem(QTreeWidgetItem *parent, bool isEditable = true);
-        virtual ~UBDocumentGroupTreeItem();
+//        UBDocumentGroupTreeItem(QTreeWidgetItem *parent, bool isEditable = true);
+//        virtual ~UBDocumentGroupTreeItem();
 
-        void setGroupName(const QString &groupName);
+//        void setGroupName(const QString &groupName);
 
-        QString groupName() const;
+//        QString groupName() const;
 
-        bool isTrashFolder() const;
-        bool isDefaultFolder() const;
-};
+//        bool isTrashFolder() const;
+//        bool isDefaultFolder() const;
+//};
 
-#endif /* UBDOCUMENTTREEWIDGET_H_ */
+//#endif /* UBDOCUMENTTREEWIDGET_H_ */

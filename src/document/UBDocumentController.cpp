@@ -81,6 +81,9 @@ static bool lessThan(UBDocumentTreeNode *lValue, UBDocumentTreeNode *rValue)
             Q_ASSERT(lValue->proxyData());
             Q_ASSERT(rValue->proxyData());
 
+            //N/C - NNE - 20140402 : Default order set to alphabetical order
+            //return lValue->nodeName() < rValue->nodeName();
+
             QDateTime lTime = lValue->proxyData()->documentDate();
             QDateTime rTime = rValue->proxyData()->documentDate();
 
@@ -359,6 +362,7 @@ UBDocumentTreeModel::UBDocumentTreeModel(QObject *parent) :
     mModels =  index(1, 0, QModelIndex());
     mTrash =  index(2, 0, QModelIndex());
     mUntitledDocuments = index(0, 0, mMyDocuments);
+    mAscendingOrder = true;
 }
 
 QModelIndex UBDocumentTreeModel::index(int row, int column, const QModelIndex &parent) const
@@ -423,7 +427,9 @@ int UBDocumentTreeModel::rowCount(const QModelIndex &parent) const
 int UBDocumentTreeModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return 1;
+
+    //N/C - NNE - 20140403
+    return 3;
 }
 
 QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
@@ -433,11 +439,59 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
     }
 
     UBDocumentTreeNode *dataNode = nodeFromIndex(index);
+
     if (!dataNode)
         return QVariant();
 
-    if (index.column() == 0) {
 
+    if(role == Qt::DisplayRole){
+        if(index.column() == 0){
+            return dataNode->displayName();
+        }else{
+            UBDocumentProxy *proxy = proxyForIndex(index);
+
+            QString displayText = "";
+
+            if(proxy){
+                QDateTime d;
+
+                if(index.column() == 1){
+                    d = proxy->metaData(UBSettings::documentDate).toDateTime();
+                }else if(index.column() == 2){
+                    d = proxy->metaData(UBSettings::documentUpdatedAt).toDateTime();
+                }
+
+                displayText = d.toString("dd/MM/yyyy hh:mm");
+            }
+
+            return displayText;
+
+        }
+    }
+
+    if(role == UBDocumentTreeModel::CreationDate){
+        return findNodeDate(dataNode, UBSettings::documentDate);
+    }
+
+    if(role == UBDocumentTreeModel::UpdateDate){
+        return findNodeDate(dataNode, UBSettings::documentUpdatedAt);
+    }
+
+    if(role == Qt::BackgroundRole){
+        if (isConstant(index) || dataNode->nodeType() == UBDocumentTreeNode::Catalog) {
+            return QBrush(0xD9DFEB);
+        }
+
+        if (mHighLighted.isValid() && index == mHighLighted) {
+            return QBrush(0x6682B5);
+        }
+    }
+
+    if(role == Qt::UserRole +1){
+        return QVariant::fromValue(dataNode);
+    }
+
+    if (index.column() == 0) {
         switch (role) {
         case (Qt::DecorationRole) :
             if (mCurrentNode && mCurrentNode == dataNode) {
@@ -456,15 +510,6 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
                 }
             }
             break;
-
-        case (Qt::DisplayRole) :
-            return dataNode->displayName();
-            break;
-
-        case (Qt::UserRole +1):
-            return QVariant::fromValue(dataNode);
-            break;
-
         case (Qt::FontRole) :
             if (isConstant(index)) {
                 QFont font;
@@ -472,19 +517,9 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
                 return font;
             }
             break;
-
         case (Qt::ForegroundRole) :
             if (isConstant(index)) {
                 return Qt::darkGray;
-            }
-            break;
-
-        case (Qt::BackgroundRole) :
-            if (isConstant(index)) {
-                return QBrush(0xD9DFEB);
-            }
-            if (mHighLighted.isValid() && index == mHighLighted) {
-                return QBrush(0x6682B5);
             }
             break;
         }
@@ -525,6 +560,52 @@ Qt::ItemFlags UBDocumentTreeModel::flags (const QModelIndex &index) const
 
     return resultFlags;
 }
+
+//N/C - NNE -20140407
+QDateTime UBDocumentTreeModel::findNodeDate(UBDocumentTreeNode *node, QString type) const
+{
+    if(type == UBSettings::documentDate){
+        return findCatalogCreationDate(node);
+    }else if(type == UBSettings::documentUpdatedAt){
+        return findCatalogUpdatedDate(node);
+    }
+
+    return QDateTime();
+}
+
+QDateTime UBDocumentTreeModel::findCatalogUpdatedDate(UBDocumentTreeNode *node) const
+{
+    return QDateTime();
+}
+
+QDateTime UBDocumentTreeModel::findCatalogCreationDate(UBDocumentTreeNode *node) const
+{
+    UBDocumentProxy *proxy = node->proxyData();
+
+    if(proxy){
+        return proxy->metaData(UBSettings::documentDate).toDateTime();
+    }else if(node->children().size() > 0){
+        QDateTime d = findCatalogCreationDate(node->children().at(0));
+
+        for(int i = 1; i < node->children().size(); i++){
+            QDateTime dChild = findCatalogCreationDate(node->children().at(i));
+
+            if(dChild != QDateTime()){
+                if(mAscendingOrder){
+                    d = qMin(d, dChild);
+                }else{
+                    d = qMax(d, dChild);
+                }
+            }
+
+        }
+
+        return d;
+    }
+
+    return QDateTime();
+}
+//N/C - NNE -20140407 : END
 
 QStringList UBDocumentTreeModel::mimeTypes() const
 {
@@ -1164,7 +1245,11 @@ void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool 
 void UBDocumentTreeView::onModelIndexChanged(const QModelIndex &pNewIndex, const QModelIndex &pOldIndex)
 {
     Q_UNUSED(pOldIndex)
-    setSelectedAndExpanded(pNewIndex, true);
+
+    //N/C - NNE - 20140407
+    QModelIndex indexSource = mapIndexToSource(pNewIndex);
+
+    setSelectedAndExpanded(indexSource, true);
 }
 
 void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
@@ -1196,10 +1281,12 @@ void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
 
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 {
+
     bool acceptIt = isAcceptable(selectedIndexes().first(), indexAt(event->pos()));
+
     if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
         UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
-        QModelIndex targetIndex = indexAt(event->pos());
+        QModelIndex targetIndex = mapIndexToSource(indexAt(event->pos()));
         if (!docModel || !docModel->isDocument(targetIndex) || docModel->inTrash(targetIndex)) {
             event->ignore();
             event->setDropAction(Qt::IgnoreAction);
@@ -1213,6 +1300,8 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
     }
     QTreeView::dragMoveEvent(event);
     event->setAccepted(acceptIt);
+
+    QTreeView::dragMoveEvent(event);
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
@@ -1220,8 +1309,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     event->ignore();
     event->setDropAction(Qt::IgnoreAction);
     UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
-    QModelIndex targetIndex = indexAt(event->pos());
-    QModelIndex dropIndex = selectedIndexes().first();
+    QModelIndex targetIndex = mapIndexToSource(indexAt(event->pos()));
+    QModelIndex dropIndex = mapIndexToSource(selectedIndexes().first());
     bool isUBPage = event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage);
     bool inModel = docModel->inModel(targetIndex) || targetIndex == docModel->modelsIndex();
     bool isSourceAModel = docModel->inModel(dropIndex);
@@ -1299,6 +1388,8 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
     event->setDropAction(drA);
     QTreeView::dropEvent(event);
     adjustSize();
+
+    QTreeView::dropEvent(event);
 }
 
 void UBDocumentTreeView::paintEvent(QPaintEvent *event)
@@ -1313,12 +1404,15 @@ void UBDocumentTreeView::rowsAboutToBeRemoved(const QModelIndex &parent, int sta
 
 bool UBDocumentTreeView::isAcceptable(const QModelIndex &dragIndex, const QModelIndex &atIndex)
 {
-    if (!dragIndex.isValid()) {
+    QModelIndex dragIndexSource = mapIndexToSource(dragIndex);
+    QModelIndex atIndexSource = mapIndexToSource(atIndex);
+
+    if (!dragIndexSource.isValid()) {
         return false;
     }
 
-    if (fullModel()->inModel(dragIndex)) {
-        if (atIndex == fullModel()->modelsIndex() || fullModel()->inModel(atIndex)) {
+    if (fullModel() && fullModel()->inModel(dragIndexSource)) {
+        if (atIndexSource == fullModel()->modelsIndex() || fullModel()->inModel(atIndexSource)) {
             return false; //do not accept drop from model to itself
         }
     }
@@ -1350,6 +1444,8 @@ void UBDocumentTreeView::updateIndexEnvirons(const QModelIndex &index)
 
 void UBDocumentTreeView::adjustSize()
 {
+    /*
+
     resizeColumnToContents(0);
 
     int headerSizeHint = width();
@@ -1359,7 +1455,39 @@ void UBDocumentTreeView::adjustSize()
 
     if (columnWidth(0) < headerSizeHint)
         setColumnWidth(0, headerSizeHint);
+
+    */
 }
+
+//N/C - NNE - 20140404
+QModelIndex UBDocumentTreeView::mapIndexToSource(const QModelIndex &index)
+{
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
+
+    if(proxy){
+        return proxy->mapToSource(index);
+    }
+
+    return index;
+}
+
+QModelIndexList UBDocumentTreeView::mapIndexesToSource(const QModelIndexList &indexes)
+{
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
+
+    if(proxy){
+        QModelIndexList list;
+
+        for(int i = 0; i < indexes.size(); i++){
+            list.push_back(proxy->mapToSource(indexes.at(i)));
+        }
+
+        return list;
+    }
+
+    return indexes;
+}
+//N/C - NNE - 20140404 : END
 
 UBDocumentTreeItemDelegate::UBDocumentTreeItemDelegate(QObject *parent)
     : QStyledItemDelegate(parent)
@@ -1400,19 +1528,24 @@ bool UBDocumentTreeItemDelegate::validateString(const QString &str) const
 QWidget *UBDocumentTreeItemDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     Q_UNUSED(option);
-    Q_UNUSED(index);
 
-    mExistingFileNames.clear();
-    const UBDocumentTreeModel *indexModel = qobject_cast<const UBDocumentTreeModel*>(index.model());
-    if (indexModel) {
-        mExistingFileNames = indexModel->nodeNameList(index.parent());
-        mExistingFileNames.removeOne(index.data().toString());
+    //N/C - NNE - 20140407 : Add the test for the index column.
+    if(index.column() == 0){
+        mExistingFileNames.clear();
+        const UBDocumentTreeModel *indexModel = qobject_cast<const UBDocumentTreeModel*>(index.model());
+        if (indexModel) {
+            mExistingFileNames = indexModel->nodeNameList(index.parent());
+            mExistingFileNames.removeOne(index.data().toString());
+        }
+
+        QLineEdit *nameEditor = new QLineEdit(parent);
+        connect(nameEditor, SIGNAL(editingFinished()), this, SLOT(commitAndCloseEditor()));
+        connect(nameEditor, SIGNAL(textChanged(QString)), this, SLOT(processChangedText(QString)));
+        return nameEditor;
     }
 
-    QLineEdit *nameEditor = new QLineEdit(parent);
-    connect(nameEditor, SIGNAL(editingFinished()), this, SLOT(commitAndCloseEditor()));
-    connect(nameEditor, SIGNAL(textChanged(QString)), this, SLOT(processChangedText(QString)));
-    return nameEditor;
+    //N/C - NNe - 20140407 : the other column are not editable.
+    return 0;
 }
 
 void UBDocumentTreeItemDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
@@ -1459,6 +1592,8 @@ UBDocumentController::UBDocumentController(UBMainWindow* mainWindow)
     setupToolbar();
     connect(this, SIGNAL(exportDone()), mMainWindow, SLOT(onExportDone()));
     connect(this, SIGNAL(documentThumbnailsUpdated(UBDocumentContainer*)), this, SLOT(refreshDocumentThumbnailsView(UBDocumentContainer*)));
+
+    mUserHasChangedSortOrder = false;
 }
 
 UBDocumentController::~UBDocumentController()
@@ -1492,6 +1627,7 @@ void UBDocumentController::createNewDocument()
     }
 }
 
+/*
 
 UBDocumentProxyTreeItem* UBDocumentController::findDocument(UBDocumentProxy* proxy)
 {
@@ -1510,6 +1646,7 @@ UBDocumentProxyTreeItem* UBDocumentController::findDocument(UBDocumentProxy* pro
     return 0;
 }
 
+*/
 void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurrentDocument, const bool onImport)
 {
     if (proxy==NULL)
@@ -1567,7 +1704,7 @@ QList<UBDocumentProxy*> UBDocumentController::selectedProxies()
 {
     QList<UBDocumentProxy*> result;
 
-    foreach (QModelIndex curIndex, mDocumentUI->documentTreeView->selectionModel()->selectedIndexes()) {
+    foreach (QModelIndex curIndex, mapIndexesToSource(mDocumentUI->documentTreeView->selectionModel()->selectedIndexes())) {
         result << UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->proxyForIndex(curIndex);
     }
 
@@ -1576,13 +1713,15 @@ QList<UBDocumentProxy*> UBDocumentController::selectedProxies()
 
 QModelIndexList UBDocumentController::selectedTreeIndexes()
 {
-    return mDocumentUI->documentTreeView->selectionModel()->selectedIndexes();
+    return mapIndexesToSource(mDocumentUI->documentTreeView->selectionModel()->selectedIndexes());
 }
 
 UBDocumentProxy* UBDocumentController::firstSelectedTreeProxy()
 {
     return selectedProxies().count() ? selectedProxies().first() : 0;
 }
+
+/*
 
 UBDocumentProxyTreeItem* UBDocumentController::selectedDocumentProxyTreeItem()
 {
@@ -1630,25 +1769,61 @@ UBDocumentGroupTreeItem* UBDocumentController::selectedDocumentGroupTreeItem()
     return 0;
 }
 
+*/
+
 void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous)
 {
     Q_UNUSED(previous)
 
     UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
-    UBDocumentProxy *currentDocumentProxy = docModel->proxyData(current);
+
+    QModelIndex current_index = mapIndexToSource(current);
+
+    UBDocumentProxy *currentDocumentProxy = docModel->proxyData(current_index);
     setDocument(currentDocumentProxy, false);
 
     if (mCurrentIndexMoved) {
-        if (docModel->isDocument(current)) {
+        if (docModel->isDocument(current_index)) {
             docModel->setCurrentDocument(currentDocumentProxy);
-        } else if (docModel->isCatalog(current)) {
+        } else if (docModel->isCatalog(current_index)) {
             docModel->setCurrentDocument(0);
         }
         mCurrentIndexMoved = false;
     }
 
-    itemSelectionChanged(docModel->isCatalog(current) ? Folder : Document);
+    itemSelectionChanged(docModel->isCatalog(current_index) ? Folder : Document);
 }
+
+//N/C - NNE - 20140402 : workaround for using a proxy model
+QModelIndex UBDocumentController::mapIndexToSource(const QModelIndex &index)
+{
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(mDocumentUI->documentTreeView->model());
+
+    if(proxy){
+        return proxy->mapToSource(index);
+    }
+
+    return index;
+}
+
+QModelIndexList UBDocumentController::mapIndexesToSource(const QModelIndexList &indexes)
+{
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(mDocumentUI->documentTreeView->model());
+
+    if(proxy){
+        QModelIndexList list;
+
+        for(int i = 0; i < indexes.size(); i++){
+            list.push_back(proxy->mapToSource(indexes.at(i)));
+        }
+
+        return list;
+    }
+
+    return indexes;
+}
+
+//N/C - NNE - 20140402 : END
 
 void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
 {
@@ -1757,6 +1932,8 @@ void UBDocumentController::setupViews()
         connect(mMainWindow->actionRename, SIGNAL(triggered()), this, SLOT(renameSelectedItem()));
         connect(mMainWindow->actionAddToWorkingDocument, SIGNAL(triggered()), this, SLOT(addToDocument()));
 
+        /*
+
         mDocumentUI->documentTreeWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         mDocumentUI->documentTreeWidget->setDragEnabled(true);
         mDocumentUI->documentTreeWidget->viewport()->setAcceptDrops(true);
@@ -1764,17 +1941,41 @@ void UBDocumentController::setupViews()
         mDocumentUI->documentTreeWidget->setIndentation(18); // 1.5 * /resources/style/treeview-branch-closed.png width
         mDocumentUI->documentTreeWidget->setDragDropMode(QAbstractItemView::InternalMove);
 
-        mDocumentUI->documentTreeView->setModel(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel);
+        */
+
+        UBDocumentTreeModel *model = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
+        mSortFilterProxyModel = new UBSortFilterProxyModel();
+
+        mSortFilterProxyModel->setSourceModel(model);
+
+        sortDocuments(UBDocumentController::Alphabetical, UBDocumentController::ASC);
+
+        mDocumentUI->documentTreeView->setModel(mSortFilterProxyModel);
+
+        //mDocumentUI->documentTreeView->setModel(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel);
+
+
         mDocumentUI->documentTreeView->setItemDelegate(new UBDocumentTreeItemDelegate(this));
         mDocumentUI->documentTreeView->setDragEnabled(true);
         mDocumentUI->documentTreeView->setAcceptDrops(true);
         mDocumentUI->documentTreeView->viewport()->setAcceptDrops(true);
         mDocumentUI->documentTreeView->setDropIndicatorShown(true);
         mDocumentUI->documentTreeView->header()->setStretchLastSection(false);
-        mDocumentUI->documentTreeView->header()->setResizeMode(0, QHeaderView::Interactive);
+        mDocumentUI->documentTreeView->header()->setResizeMode(0, QHeaderView::Stretch);
+        mDocumentUI->documentTreeView->header()->setResizeMode(1, QHeaderView::ResizeToContents);
+        mDocumentUI->documentTreeView->header()->setResizeMode(2, QHeaderView::ResizeToContents);
 
-        mDocumentUI->documentTreeView->resizeColumnToContents(0);
+        mDocumentUI->documentTreeView->expandAll();
+        mDocumentUI->documentTreeView->hideColumn(1);
+        mDocumentUI->documentTreeView->hideColumn(2);
 
+        mDocumentUI->sortOrder->hide();
+
+        connect(mDocumentUI->sortKind, SIGNAL(activated(int)), this, SLOT(onSortKindChanged(int)));
+        connect(mDocumentUI->sortOrder, SIGNAL(activated(int)), this, SLOT(onSortOrderChanged(int)));
+
+        /*
         int headerSizeHint = mDocumentUI->documentTreeView->width();
 
         if (mDocumentUI->documentTreeView->verticalScrollBar()->isVisible())
@@ -1782,6 +1983,8 @@ void UBDocumentController::setupViews()
 
         if (mDocumentUI->documentTreeView->columnWidth(0) < headerSizeHint)
             mDocumentUI->documentTreeView->setColumnWidth(0, headerSizeHint);
+
+        */
 
         connect(mDocumentUI->documentTreeView->itemDelegate(), SIGNAL(closeEditor(QWidget*,QAbstractItemDelegate::EndEditHint) ), mDocumentUI->documentTreeView, SLOT(adjustSize()));
         connect(mDocumentUI->documentTreeView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(TreeViewSelectionChanged(QItemSelection,QItemSelection)));
@@ -1814,10 +2017,77 @@ void UBDocumentController::setupViews()
 
         mMessageWindow->setCustomPosition(true);
         mMessageWindow->hide();
-        mDocumentUI->documentTreeWidget->hide();
+        //mDocumentUI->documentTreeWidget->hide();
     }
 }
 
+//N/C - NNE - 20140403
+void UBDocumentController::sortDocuments(int kind, int order)
+{
+    qDebug() << kind << " ## " << order;
+
+    Qt::SortOrder sortOrder = Qt::AscendingOrder;
+
+    //if the user hasn't change the sort
+    //set order to its default value according to
+    //the kind of sort
+    if(!mUserHasChangedSortOrder){
+        if(kind == UBDocumentController::CreationDate || kind == UBDocumentController::UpdateDate){
+            sortOrder = Qt::DescendingOrder;
+            mDocumentUI->sortOrder->setCurrentIndex(1);
+        }else{
+            mDocumentUI->sortOrder->setCurrentIndex(0);
+        }
+    }else if(order == UBDocumentController::DESC){
+        sortOrder = Qt::DescendingOrder;
+    }
+
+    if(kind == UBDocumentController::CreationDate){
+        mSortFilterProxyModel->setSortRole(UBDocumentTreeModel::CreationDate);
+        mSortFilterProxyModel->sort(1, sortOrder);
+
+        mDocumentUI->documentTreeView->showColumn(1);
+        mDocumentUI->documentTreeView->hideColumn(2);
+
+        mDocumentUI->documentTreeView->update(QModelIndex());
+
+    }else if(kind == UBDocumentController::UpdateDate){
+        mSortFilterProxyModel->setSortRole(UBDocumentTreeModel::UpdateDate);
+        mSortFilterProxyModel->sort(2, sortOrder);
+
+        mDocumentUI->documentTreeView->hideColumn(1);
+        mDocumentUI->documentTreeView->showColumn(2);
+    }else{
+        mSortFilterProxyModel->setSortRole(Qt::DisplayRole);
+        mSortFilterProxyModel->sort(0, sortOrder);
+
+        //alphabetical order or nothing
+        mDocumentUI->documentTreeView->hideColumn(1);
+        mDocumentUI->documentTreeView->hideColumn(2);
+    }
+}
+
+void UBDocumentController::onSortOrderChanged(int index)
+{
+    int kindIndex = mDocumentUI->sortKind->currentIndex();
+
+    mUserHasChangedSortOrder = true;
+
+    sortDocuments(kindIndex, index);
+}
+
+void UBDocumentController::onSortKindChanged(int index)
+{
+    int orderIndex = mDocumentUI->sortOrder->currentIndex();
+
+    if(index == -1 || index == 0)
+        mDocumentUI->sortOrder->hide();
+    else
+        mDocumentUI->sortOrder->show();
+
+    sortDocuments(index, orderIndex);
+}
+//N/C - NNE - 20140403 : END
 
 QWidget* UBDocumentController::controlView()
 {
@@ -1952,6 +2222,8 @@ void UBDocumentController::duplicateSelectedItem()
     }
 }
 
+/*
+
 void UBDocumentController::moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi, UBDocumentProxyTreeItem *proxyTi)
 {
     int index = proxyTi->parent()->indexOfChild(proxyTi);
@@ -2017,6 +2289,7 @@ void UBDocumentController::moveDocumentToTrash(UBDocumentGroupTreeItem* groupTi,
     mTrashTi->addChild(proxyTi);
     proxyTi->setFlags(proxyTi->flags() ^ Qt::ItemIsEditable);
 }
+
 
 void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
 {
@@ -2099,6 +2372,8 @@ void UBDocumentController::moveFolderToTrash(UBDocumentGroupTreeItem* groupTi)
 
     reloadThumbnails();
 }
+
+*/
 
 void UBDocumentController::deleteSelectedItem()
 {
@@ -2294,6 +2569,8 @@ void UBDocumentController::documentZoomSliderValueChanged (int value)
     UBSettings::settings()->documentThumbnailWidth->set(value);
 }
 
+/*
+
 void UBDocumentController::itemChanged(QTreeWidgetItem * item, int column)
 {
     UBDocumentProxyTreeItem* proxyItem = dynamic_cast<UBDocumentProxyTreeItem*>(item);
@@ -2336,6 +2613,7 @@ void UBDocumentController::itemChanged(QTreeWidgetItem * item, int column)
             this, SLOT(updateDocumentInTree(UBDocumentProxy*)));
 }
 
+*/
 
 void UBDocumentController::importFile()
 {
@@ -2513,6 +2791,7 @@ void UBDocumentController::pageSelectionChanged()
     updateActions();
 }
 
+/*
 
 void UBDocumentController::selectionChanged()
 {
@@ -2622,6 +2901,7 @@ void UBDocumentController::selectionChanged()
 
 }
 
+*/
 
 void UBDocumentController::documentSceneChanged(UBDocumentProxy* proxy, int pSceneIndex)
 {
@@ -2634,6 +2914,7 @@ void UBDocumentController::documentSceneChanged(UBDocumentProxy* proxy, int pSce
     TreeViewSelectionChanged(firstSelectedTreeIndex(), QModelIndex());
 }
 
+/*
 
 void UBDocumentController::pageDoubleClicked(QGraphicsItem* item, int index)
 {
@@ -2654,6 +2935,8 @@ void UBDocumentController::pageDoubleClicked(QGraphicsItem* item, int index)
 
     openSelectedItem();
 }
+
+*/
 
 void UBDocumentController::thumbnailPageDoubleClicked(QGraphicsItem* item, int index)
 {
@@ -2693,6 +2976,8 @@ void UBDocumentController::pageClicked(QGraphicsItem* item, int index)
 }
 
 
+/*
+
 void UBDocumentController::closing()
 {
     mIsClosing = true;
@@ -2719,6 +3004,8 @@ void UBDocumentController::closing()
 
     UBPersistenceManager::persistenceManager()->closing();
 }
+
+*/
 
 void UBDocumentController::addToDocument()
 {
@@ -2803,6 +3090,7 @@ void UBDocumentController::addToDocument()
 //    ti->setText(0, documentName);
 //}
 
+/*
 
 void UBDocumentController::updateDocumentInTree(UBDocumentProxy* pDocument)
 {
@@ -2845,6 +3133,7 @@ void UBDocumentController::renameSelectedItem()
     }
 }
 
+*/
 
 bool UBDocumentController::isOKToOpenDocument(UBDocumentProxy* proxy)
 {

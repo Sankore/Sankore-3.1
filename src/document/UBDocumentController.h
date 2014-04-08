@@ -29,6 +29,9 @@
 #include "core/UBApplicationController.h"
 #include "core/UBApplication.h"
 
+
+#include "document/UBSortFilterProxyModel.h"
+
 namespace Ui
 {
     class documents;
@@ -149,6 +152,12 @@ public:
         , aDetectPosition //Detect the appropriate position (sorting)
     };
 
+    enum eDocumentData{
+        DataNode = Qt::UserRole +1,
+        CreationDate,
+        UpdateDate
+    };
+
     UBDocumentTreeModel(QObject *parent = 0);
     ~UBDocumentTreeModel();
 
@@ -211,6 +220,11 @@ public:
     void setHighLighted(const QModelIndex &newHighLighted) {mHighLighted = newHighLighted;}
     QModelIndex highLighted() {return mHighLighted;}
 
+    //N/C - NNE - 20140407
+    bool ascendingOrder() const{ return mAscendingOrder; }
+
+    QDateTime findNodeDate(UBDocumentTreeNode *node, QString type) const;
+    //N/C - NNE - 20140407 : END
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);
     void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &previous); /* Be aware that when you got the signal
@@ -236,6 +250,12 @@ private:
     QList<UBDocumentProxy*> mNewDocuments;
     QModelIndex mHighLighted;
 
+    //N/C - NNE - 20140407
+    bool mAscendingOrder;
+
+    QDateTime findCatalogUpdatedDate(UBDocumentTreeNode *node) const;
+    QDateTime findCatalogCreationDate(UBDocumentTreeNode *node) const;
+    //N/C - NNE - 20140407 : END
 };
 
 class UBDocumentTreeMimeData : public QMimeData
@@ -256,6 +276,10 @@ class UBDocumentTreeView : public QTreeView
 
 public:
     UBDocumentTreeView (QWidget *parent = 0);
+
+    //N/C - NNE - 20140404
+    QModelIndex mapIndexToSource(const QModelIndex &index);
+    QModelIndexList mapIndexesToSource(const QModelIndexList &indexes);
 
 public slots:
     void setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand = true);
@@ -322,6 +346,20 @@ class UBDocumentController : public UBDocumentContainer
         None = 0, Folder, Document, Page
     };
 
+    enum SortOrder
+    {
+        ASC = 0,
+        DESC
+    };
+
+    enum SortKind
+    {
+        Reset = 0,
+        CreationDate,
+        UpdateDate,
+        Alphabetical
+    };
+
         UBDocumentController(UBMainWindow* mainWindow);
         virtual ~UBDocumentController();
 
@@ -361,6 +399,11 @@ class UBDocumentController : public UBDocumentContainer
           */
         void moveToTrash(QModelIndex &index, UBDocumentTreeModel* docModel);
 
+        QModelIndex mapIndexToSource(const QModelIndex &index);
+        QModelIndexList mapIndexesToSource(const QModelIndexList &indexes);
+
+        void sortDocuments(int kind, int order);
+
     signals:
         void exportDone();
 
@@ -373,7 +416,7 @@ class UBDocumentController : public UBDocumentContainer
         void deleteSelectedItem();
         void emptyFolder(const QModelIndex &index, DeletionType pDeletionType = MoveToTrash);
         void deleteIndexAndAssociatedData(const QModelIndex &pIndex);
-        void renameSelectedItem();
+        //void renameSelectedItem();
         void openSelectedItem();
         void duplicateSelectedItem();
         void importFile();
@@ -392,6 +435,9 @@ class UBDocumentController : public UBDocumentContainer
         void updateExportSubActions(const QModelIndex &selectedIndex);
         void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &PreviousIndex);
 
+        //N/C - NNE - 20140403
+        void onSortKindChanged(int index);
+        void onSortOrderChanged(int index);
 protected:
         virtual void setupViews();
         virtual void setupToolbar();
@@ -429,6 +475,11 @@ protected:
         UBDocumentProxy *mCurrentTreeDocument;
         bool mCurrentIndexMoved;
 
+        UBSortFilterProxyModel *mSortFilterProxyModel;
+
+        //N/C - NNE - 20140407
+        bool mUserHasChangedSortOrder;
+
     public slots:
         void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
         void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
@@ -438,17 +489,17 @@ protected:
         void itemSelectionChanged(LastSelectedElementType newSelection);
         void exportDocument();
         void exportDocumentSet();
-        void itemChanged(QTreeWidgetItem * item, int column);
+        //void itemChanged(QTreeWidgetItem * item, int column);
         void thumbnailViewResized();
         void pageSelectionChanged();
-        void selectionChanged();
+        //void selectionChanged();
         void documentSceneChanged(UBDocumentProxy* proxy, int pSceneIndex);
-        void pageDoubleClicked(QGraphicsItem* item, int index);
+        //void pageDoubleClicked(QGraphicsItem* item, int index);
         void thumbnailPageDoubleClicked(QGraphicsItem* item, int index);
         void pageClicked(QGraphicsItem* item, int index);
         void addToDocument();
 //        void addDocumentInTree(UBDocumentProxy* pDocument);
-        void updateDocumentInTree(UBDocumentProxy* pDocument);
+        //void updateDocumentInTree(UBDocumentProxy* pDocument);
         void addFolderOfImages();
         void addFileToDocument();
         void addImages();
