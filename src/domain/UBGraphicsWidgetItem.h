@@ -122,7 +122,9 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         static QString widgetName(const QUrl& pUrl);
         static QString iconFilePath(const QUrl& pUrl);
 
+        void setLoadingMessagePosition();
         void hideLoadingMessage();
+        void showLoadingMessage();
 
         bool isFeatureRTE() const;
         static const int sRTEEditionBarHeight;

@@ -70,6 +70,7 @@ UBGraphicsWidgetItem::UBGraphicsWidgetItem(const QUrl &pWidgetUrl, QGraphicsItem
     , mIsTakingSnapshot(false)
     , mShouldMoveWidget(false)
     , mUniboardAPI(0)
+    , mLoadingMessage(new QTextEdit(tr("Loading ..."),UBApplication::mainWindow->centralWidget()))
 {
     setData(UBGraphicsItemData::ItemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
 
@@ -102,6 +103,11 @@ UBGraphicsWidgetItem::UBGraphicsWidgetItem(const QUrl &pWidgetUrl, QGraphicsItem
 
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     QGraphicsWebView::setAcceptHoverEvents(true);
+
+    mLoadingMessage->setFrameStyle(QFrame::NoFrame);
+    mLoadingMessage->setStyleSheet(QString("background-color:%1; border-style:none;border-radius:10px;color:white;font: 12px;").arg(UBSettings::paletteColor.name()));
+    mLoadingMessage->setAlignment(Qt::AlignCenter);
+    mLoadingMessage->show();
 }
 
 
@@ -139,12 +145,33 @@ void UBGraphicsWidgetItem::onLinkClicked(const QUrl& url)
 void UBGraphicsWidgetItem::initialLayoutCompleted()
 {
     mInitialLoadDone = true;
+    mLoadingMessage->hide();
 }
 
 QUrl UBGraphicsWidgetItem::mainHtml()
 {
     return mMainHtmlUrl;
 }
+
+void UBGraphicsWidgetItem::showLoadingMessage()
+{
+    mLoadingMessage->show();
+}
+
+void UBGraphicsWidgetItem::setLoadingMessagePosition()
+{
+    QPoint center;
+    QPoint itemGlobalPosition;
+
+    if (isFeatureRTE())
+        center = QPoint(boundingRect().width()/2 - mLoadingMessage->width()/2,boundingRect().height()/2 - mLoadingMessage->height()/2);
+    else
+        center = QPoint(boundingRect().width()/2 - mLoadingMessage->width()/2,boundingRect().height()/2 - mLoadingMessage->height()/2 - UBGraphicsWidgetItem::sRTEEditionBarHeight);
+    itemGlobalPosition = UBApplication::boardController->controlView()->viewport()->mapToGlobal(UBApplication::boardController->controlView()->mapFromScene(mapToScene(center)));
+
+    mLoadingMessage->move(itemGlobalPosition);
+}
+
 
 void UBGraphicsWidgetItem::hideLoadingMessage()
 {
@@ -155,6 +182,8 @@ void UBGraphicsWidgetItem::loadMainHtml()
 {
     mInitialLoadDone = false;
     load(mMainHtmlUrl);
+
+    setLoadingMessagePosition();
 }
 
 QUrl UBGraphicsWidgetItem::widgetUrl()
@@ -475,6 +504,12 @@ QString UBGraphicsWidgetItem::iconFilePath(const QUrl& pUrl)
     return file;
 }
 
+bool UBGraphicsWidgetItem::isFeatureRTE() const
+{
+    return UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
+}
+
+
 void UBGraphicsWidgetItem::freeze()
 {
     //issue 1483 - NNE - Simplification of the code (takesnapshot already save the snapshot)
@@ -672,11 +707,9 @@ QSizeF UBGraphicsWidgetItem::size() const
 QRectF UBGraphicsWidgetItem::boundingRect() const
 {
    //for the RTE remove 59px due to the edition bar
-   QRectF brect = QGraphicsWebView::boundingRect();
+   QRectF brect = QGraphicsWebView::boundingRect();  
 
-   bool isFeatureRTE = UBApplication::boardController->paletteManager()->featuresWidget()->getFeaturesController()->getFeatureByFullPath(this->sourceUrl().toLocalFile()).getType() == FEATURE_RTE;
-
-   if(isFeatureRTE && !isSelected()){
+   if(isFeatureRTE() && !isSelected()){
        brect.adjust(0, sRTEEditionBarHeight, 0, 0);
    }
 

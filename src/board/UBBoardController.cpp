@@ -2995,6 +2995,12 @@ void UBBoardController::freezeW3CWidgets(bool freeze)
                     if(delegate && delegate->action() && delegate->action()->linkType() == eLinkToAudio)
                         dynamic_cast<UBGraphicsItemPlayAudioAction*>(delegate->action())->onSourceHide();
                 }
+                if (!freeze)
+                {
+                    UBGraphicsW3CWidgetItem* wItem = dynamic_cast<UBGraphicsW3CWidgetItem*>(item);
+                    if (wItem)
+                        wItem->showLoadingMessage();
+                }
             }
             else{
                 qDebug() << "wrong place";
@@ -3015,6 +3021,5 @@ void UBBoardController::freezeW3CWidget(QGraphicsItem *item, bool freeze)
             item_casted->load(QUrl(UBGraphicsW3CWidgetItem::freezedWidgetFilePath()));
         } else
             item_casted->loadMainHtml();
-            item_casted->hideLoadingMessage();
     }
 }
