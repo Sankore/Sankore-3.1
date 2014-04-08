@@ -3015,5 +3015,6 @@ void UBBoardController::freezeW3CWidget(QGraphicsItem *item, bool freeze)
             item_casted->load(QUrl(UBGraphicsW3CWidgetItem::freezedWidgetFilePath()));
         } else
             item_casted->loadMainHtml();
+            item_casted->hideLoadingMessage();
     }
 }

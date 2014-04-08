@@ -146,6 +146,11 @@ QUrl UBGraphicsWidgetItem::mainHtml()
     return mMainHtmlUrl;
 }
 
+void UBGraphicsWidgetItem::hideLoadingMessage()
+{
+    mLoadingMessage->hide();
+}
+
 void UBGraphicsWidgetItem::loadMainHtml()
 {
     mInitialLoadDone = false;
