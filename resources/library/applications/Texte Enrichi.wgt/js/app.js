@@ -2,7 +2,9 @@
 /*global tinymce: true, jQuery: true*/
 (function ($) {
     "use strict";
-    var app = {};
+    var app = {
+        allowedLangs: ['fr_FR', 'en_GB']
+    };
 
     app.RTEditor = function (id, widget, options) {
 
@@ -153,7 +155,9 @@
 
                     editor.on('keypress', function (e) {
                         if (app.RTEditor.isContentEmpty($(e.target).html())) {
-                            self.tinymce.setContent('', {format: 'raw'});
+                            self.tinymce.setContent('', {
+                                format: 'raw'
+                            });
                             self.applyDefaults();
                         } else {
 //                            try {
@@ -458,7 +462,7 @@
                 if (!this.tinymce.queryCommandValue('FontName')) {
                     this.tinymce.execCommand('FontName', true, this.font.name);
                 }
-                
+
                 if (!this.tinymce.queryCommandValue('FontSize')) {
                     this.tinymce.execCommand('FontSize', true, this.font.size);
                 }
@@ -502,7 +506,7 @@
                     this.widget.onblur = function () {
                         self.tinymce.save();
                         self.tinymce.fire('blur');
-                        
+
                         var content = self.getContent();
 
                         self.empty = app.RTEditor.isContentEmpty(content);
@@ -632,7 +636,9 @@
              *
              */
             app.RTEditor.prototype.getContent = function () {
-                return this.tinymce.getContent({format: 'raw'});
+                return this.tinymce.getContent({
+                    format: 'raw'
+                });
             };
 
             /**
@@ -646,8 +652,10 @@
                         this.appendChild(document.createElement('br'));
                     }
                 });
-                
-                this.tinymce.setContent($content.html(), {format: 'raw'});
+
+                this.tinymce.setContent($content.html(), {
+                    format: 'raw'
+                });
                 this.tinymce.save();
             };
 
@@ -709,9 +717,18 @@
              *
              */
             app.RTEditor.prototype.checkForResize = function () {
-                var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height();
+                var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height(),
+                    self = this;
+
                 if (delta > 0) {
-                    this.options.onContentOverflow.call(this, delta);
+                    if (this.resizeTimeout !== null) {
+                        clearTimeout(this.resizeTimeout);
+                    }
+
+                    this.resizeTimeout = setTimeout(function () {
+                        self.options.onContentOverflow.call(self, delta);
+                        self.resizeTimeout = null;
+                    }, 2);
                 }
             };
 
@@ -719,7 +736,7 @@
              * Event handler for TinyMCE editor 'init' event
              */
             app.RTEditor.prototype.onTinyInit = function (e) {
-                var self = this,
+                var self   = this,
                     editor = this.tinymce;
 
                 this.options.onInit.call(this);
@@ -775,6 +792,10 @@
                     this.hide();
                 } else {
                     this.checkForResize();
+                    
+                    if (app.RTEditor.isContentEmpty(this.getContent())) {
+                        this.applyDefaults();
+                    }
                 }
 
                 this.setDarkBackground(this.options.dark);
@@ -867,21 +888,17 @@
 
                 if (e.command === 'FontSize') {
                     this.options.onFontSizeChange.call(this, e.value);
-                    
-                    var cac = this.tinymce.selection.explicitRange.commonAncestorContainer;
 
-                    if (
-                        cac.parentElement.parentElement.nodeName === 'LI' && 
-                        cac.nodeType === 3
-                    ) {
-                        cac.parentElement.parentElement.style.fontSize = e.value;
-                    } else if (
-                        'UL,OL'.indexOf(cac.parentElement.parentElement.nodeName) !== -1 &&
-                        this.tinymce.selection.explicitRange.endContainer.nodeType === 3
-                    ) {
-                        cac.parentElement.style.fontSize = e.value;
+                    var cac = this.tinymce.selection.explicitRange.commonAncestorContainer,
+                        cacp = cac.parentElement,
+                        cacpp = cacp.parentElement;
+
+                    if (cacpp && cacpp.nodeName === 'LI' && cac.nodeType === 3) {
+                        cacpp.style.fontSize = e.value;
+                    } else if (cacpp && 'UL,OL'.indexOf(cacpp.nodeName) !== -1 && this.tinymce.selection.explicitRange.endContainer.nodeType === 3) {
+                        cacp.style.fontSize = e.value;
                     }
-                    
+
                     this.font.size = e.value;
                 }
 
@@ -967,8 +984,7 @@
                     this.setDefaultFontSize(font.size);
                     this.setDefaultFontBold(font.bold);
                     this.setDefaultFontItalic(font.italic);
-                }
-                else {
+                } else {
                     this.setDefaultFontFamily(window.sankore.fontFamilyPreference());
                     this.setDefaultFontSize(window.sankore.fontSizePreference());
                     this.setDefaultFontBold(window.sankore.fontBoldPreference());
@@ -985,7 +1001,7 @@
 
             options.onContentOverflow = function (delta) {
                 var $win = $(window);
-
+                
                 window.sankore.resize(
                     $win.width(),
                     $win.height() + delta
@@ -1008,7 +1024,9 @@
                 }
             };
 
-            options.locale = window.sankore.locale();
+            if (app.allowedLangs.indexOf(window.sankore.locale()) !== -1) {
+                options.locale = window.sankore.locale();
+            }
             options.dark = window.sankore.isDarkBackground();
         }
 
@@ -1041,7 +1059,7 @@ if (!('widget' in window)) {
 /** mock sankore object for browser testing */
 if (!('sankore' in window)) {
     var preferences = {
-        content: '<p>adfdf</p><p>dsdsqfdgd</p><p>fdsfsdfsdfsd</p><p>fdfsdfdsfd</p>'
+        content: ''
     };
 
     window.sankore = {
@@ -1066,7 +1084,7 @@ if (!('sankore' in window)) {
         },
 
         fontSizePreference: function () {
-            return '36pt';
+            return '24pt';
         },
 
         updateFontSizePreference: function (name) {
@@ -1078,7 +1096,7 @@ if (!('sankore' in window)) {
         },
 
         fontBoldPreference: function () {
-            return false;
+            return true;
         },
 
         updateFontItalicPreference: function (italic) {
