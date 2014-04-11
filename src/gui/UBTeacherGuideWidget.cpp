@@ -78,6 +78,7 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
   , mpTreeWidget(NULL)
   , mpRootWidgetItem(NULL)
   , mpAddAnActionItem(NULL)
+  , mIsModified(false)
 {
     setObjectName(name);
 
@@ -137,6 +138,9 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
 
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
 
+    connect(mpPageTitle, SIGNAL(textChanged()), this, SLOT(setIsModified()));
+    connect(mpComment, SIGNAL(textChanged()), this, SLOT(setIsModified()));
+
 #ifdef Q_WS_MAC
     // on mac and with the custom qt the widget on the tree are not automatically relocated when using the vertical scrollbar. To relocate them we link the valueChange signal of the vertical scrollbar with a local signal to trig a change and a repaint of the tree widget
     connect(mpTreeWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(onSliderMoved(int)));
@@ -182,6 +186,11 @@ void UBTeacherGuideEditionWidget::onActiveDocumentChanged()
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
     if (UBApplication::boardController->pageFromSceneIndex(activeSceneIndex) != 0)
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
+}
+
+void UBTeacherGuideEditionWidget::setIsModified(bool isModified /* = true */)
+{
+    mIsModified = isModified;
 }
 
 #ifdef Q_WS_MAC
@@ -239,6 +248,8 @@ void UBTeacherGuideEditionWidget::load(QDomDocument doc)
             }
         }
     }
+
+    setIsModified(false);
 }
 
 QVector<tIDataStorage*> UBTeacherGuideEditionWidget::save(int pageIndex)
@@ -365,6 +376,8 @@ QVector<tUBGEElementNode*> UBTeacherGuideEditionWidget::getData()
 
 void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
 {
+    setIsModified();
+
     int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
     if (addSubItemWidgetType != eUBTGAddSubItemWidgetType_None) {
         QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(widget);
@@ -424,6 +437,11 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
 }
 
 bool UBTeacherGuideEditionWidget::isModified()
+{
+    return mIsModified;
+}
+
+bool UBTeacherGuideEditionWidget::hasUserDataInTeacherGuide()
 {
     return (mpPageTitle->text().length() > 0)
         || (mpComment->text().length() > 0)
@@ -765,6 +783,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
   , mMode(tUBTGZeroPageMode_EDITION)
   , mbFilesChanged(false)
   // Fin Issue 1683 (Evolution) - AOU - 20131206
+  , mIsModified(false)
 {
     setObjectName(name);
     QString chapterStyle("QLabel {font-size:16px; font-weight:bold;}");
@@ -1011,6 +1030,16 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     if (UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool()) {
         connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onActiveDocumentChanged()));
     }
+
+    connect(mpSessionTitle, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpAuthors, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpObjectives, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpKeywords, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpSchoolLevelBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+    connect(mpSchoolSubjectsBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+    connect(mpSchoolTypeBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+    connect(mpLicenceBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+
 }
 
 //issue 1517 - NNE - 20131206
@@ -1195,6 +1224,8 @@ void UBTeacherGuidePageZeroWidget::loadData()
 
     currentIndex = documentProxy->metaData(UBSettings::sessionLicence).toInt();
     mpLicenceBox->setCurrentIndex((currentIndex != -1) ? currentIndex : 0);
+
+    setIsModified(false);
 }
 
 
@@ -1420,6 +1451,11 @@ QVector<tUBGEElementNode*> UBTeacherGuidePageZeroWidget::getData()
 
 bool UBTeacherGuidePageZeroWidget::isModified()
 {
+    return mIsModified;
+}
+
+bool UBTeacherGuidePageZeroWidget::hasUserDataInTeacherGuide()
+{
     bool result = false;
     UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
     if(mCurrentDocument == documentProxy){
@@ -1457,11 +1493,14 @@ void UBTeacherGuidePageZeroWidget::load(QDomDocument doc)
             onAddItemClicked(mpAddAFileItem, 0, &element);
     }
     mbFilesChanged = false;
+    setIsModified(false);
 }
 
 
 void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
 {
+    setIsModified();
+
     int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
 
     if (mode() == tUBTGZeroPageMode_EDITION)
@@ -1732,6 +1771,14 @@ bool UBTeacherGuideWidget::isModified()
         return mpEditionWidget->isModified();
 }
 
+bool UBTeacherGuideWidget::hasUserDataInTeacherGuide()
+{
+    if (currentWidget() == mpPageZeroWidget)
+        return mpPageZeroWidget->hasUserDataInTeacherGuide();
+    else
+        return mpEditionWidget->hasUserDataInTeacherGuide();
+}
+
 void UBTeacherGuidePageZeroWidget::onActiveDocumentChanged()
 {
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
@@ -1750,6 +1797,11 @@ void UBTeacherGuidePageZeroWidget::onScrollAreaRangeChanged(int min, int max) //
         mpScrollArea->verticalScrollBar()->setValue(max);
         nbExternalFiles = mpAddAFileItem->childCount();
     }
+}
+
+void UBTeacherGuidePageZeroWidget::setIsModified(bool isModified /* = true */)
+{
+    mIsModified = isModified;
 }
 
 //issue 1682 - NNE - 20140110
@@ -1808,3 +1860,8 @@ bool UBTeacherResources::isModified()
     return mEditionWidget->isModified();
 }
 //issue 1682 - NNE - 20140110 : END
+
+bool UBTeacherResources::hasUserDataInTeacherGuide()
+{
+    return mEditionWidget->hasUserDataInTeacherGuide();
+}

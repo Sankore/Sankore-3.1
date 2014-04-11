@@ -247,11 +247,25 @@ void UBTeacherGuideResourceEditionWidget::load(QDomDocument doc)
         else if (tagName == "file" && element.attribute("student", "false") == "true") //Issue 1716 - ALTI/AOU - 20140128
             onAddItemClicked(mpAddAFileItem, 0, &element);
     }
+
+    setIsModified(false);
 }
 
 bool UBTeacherGuideResourceEditionWidget::isModified()
 {
     return mIsModified;
+}
+
+void UBTeacherGuideResourceEditionWidget::setIsModified(bool isModified /* = true */)
+{
+    mIsModified = isModified;
+}
+
+bool UBTeacherGuideResourceEditionWidget::hasUserDataInTeacherGuide()
+{
+    return (mpAddAMediaItem->childCount() > 0)
+        || (mpAddALinkItem->childCount() > 0)
+        || (mpAddAFileItem->childCount() > 0);
 }
 
 #ifdef Q_WS_MAC

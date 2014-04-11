@@ -2307,8 +2307,10 @@ void UBBoardController::persistCurrentScene(UBDocumentProxy *pProxy)
     if(UBPersistenceManager::persistenceManager()
             && selectedDocument() && mActiveScene && mActiveSceneIndex != mDeletingSceneIndex
             && (mActiveSceneIndex >= 0) && mActiveSceneIndex != mMovingSceneIndex
-            && (mActiveScene->isModified() || (teacherGuide && teacherGuide->isModified()))
-            || (teacherResources && teacherResources->isModified()))
+            && (mActiveScene->isModified()
+                || (teacherGuide && teacherGuide->isModified())
+                || (teacherResources && teacherResources->isModified()))
+            )
     {
         UBPersistenceManager::persistenceManager()->persistDocumentScene(pProxy ? pProxy : selectedDocument(), mActiveScene, mActiveSceneIndex);
         updatePage(mActiveSceneIndex);
