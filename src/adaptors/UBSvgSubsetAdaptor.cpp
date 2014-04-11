@@ -1129,7 +1129,6 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
         qWarning() << "error parsing Sankore file " << mXmlReader.errorString();
     }
 
-    qDebug() << "Number of detected strokes: " << mStrokesList.count();
     QHashIterator<QString, UBGraphicsStrokesGroup*> iterator(mStrokesList);
     while (iterator.hasNext()) {
         iterator.next();

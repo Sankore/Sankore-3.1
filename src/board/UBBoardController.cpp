@@ -2456,7 +2456,6 @@ void UBBoardController::notifyCache(bool visible)
 
 void UBBoardController::updatePageSizeState()
 {    
-    qDebug() << mActiveScene->nominalSize();
     if (mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_9))
     {
         mMainWindow->actionWidePageSize->setChecked(true);

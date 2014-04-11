@@ -220,7 +220,6 @@ void UBTeacherGuideResourceEditionWidget::cleanData()
 void UBTeacherGuideResourceEditionWidget::onActiveSceneChanged()
 {
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
-    qDebug() << activeSceneIndex;
 
     if (UBApplication::boardController->pageFromSceneIndex(activeSceneIndex) != 0)
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));

@@ -203,7 +203,6 @@ void UBTeacherGuideEditionWidget::onSliderMoved(int size)
 
 void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 {
-    qDebug() << "LOAD UBApplication::boardController->currentPage() " << UBApplication::boardController->currentPage();
     cleanData();
     for (QDomElement element = doc.documentElement().firstChildElement();
          !element.isNull(); element = element.nextSiblingElement()) {

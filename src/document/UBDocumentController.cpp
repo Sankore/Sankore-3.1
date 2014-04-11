@@ -1519,11 +1519,6 @@ void UBDocumentController::selectDocument(UBDocumentProxy* proxy, bool setAsCurr
     }
 
     if (setAsCurrentDocument) {
-        QModelIndex treeIndex = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->indexForProxy(proxy);
-        if (treeIndex.isValid()) {
-            qDebug() << "valid index";
-        }
-
         UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->setCurrentDocument(proxy);
         QModelIndex indexCurrentDoc = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->indexForProxy(proxy);
         mDocumentUI->documentTreeView->setSelectedAndExpanded(indexCurrentDoc, true);
@@ -3298,7 +3293,6 @@ void UBDocumentController::refreshDocumentThumbnailsView(UBDocumentContainer*)
     if (currentDocumentProxy)
     {
         UBThumbnailAdaptor::load(currentDocumentProxy, thumbs);
-        qDebug() << "document proxy taken" << currentDocumentProxy->name();
     }
 
     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
