@@ -1886,7 +1886,7 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
     if (targetScene)
     {
         if (mActiveScene && !onImport) {
-                persistCurrentScene();
+            persistCurrentScene();
             freezeW3CWidgets(true);
             ClearUndoStack();
         }
@@ -1942,6 +1942,7 @@ void UBBoardController::moveSceneToIndex(int source, int target)
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
         UBMetadataDcSubsetAdaptor::persist(selectedDocument());
         mMovingSceneIndex = source;
+        mActiveSceneIndex = target;
         setActiveDocumentScene(target);
         mMovingSceneIndex = -1;
 
