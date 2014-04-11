@@ -1017,22 +1017,6 @@ void UBWidgetTextThumbnailElement::Place(int row, int col, qreal width, qreal he
 
 void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    // Fit the view :
-    if (view() && view()->scene()){
-        UBGraphicsScene * s = dynamic_cast<UBGraphicsScene *>(view()->scene());
-        int nominalSizeWidth = s->nominalSize().width();
-        int nominalSizeHeight = s->nominalSize().height();
-        QRectF nominalSceneRect(-nominalSizeWidth/2, -nominalSizeHeight/2, nominalSizeWidth, nominalSizeHeight);
-
-        QRectF itemsBoundingRect = s->itemsBoundingRect();
-
-        QRectF visibleRect = nominalSceneRect.unite(itemsBoundingRect);
-        view()->fitInView(visibleRect, Qt::KeepAspectRatio);
-        view()->setSceneRect(visibleRect);
-
-        view()->setRenderHints(QPainter::HighQualityAntialiasing);
-    }
-
     QGraphicsProxyWidget::paint(painter, option, widget);
 
     // Overlay buttons :
