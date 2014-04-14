@@ -180,6 +180,10 @@ public:
 //    bool insertRow(int row, const QModelIndex &parent);
 
     QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode = aReference);
+
+    //N/C - NNE - 20140411
+    void copyIndexToNewParent(const QModelIndexList &list, const QModelIndex &newParent, eCopyMode pMode);
+
     void moveIndex(const QModelIndex &what, const QModelIndex &destination);
     UBDocumentTreeNode *currentNode() const {return mCurrentNode;} //work around for sorting model.
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
@@ -225,7 +229,10 @@ public:
 
     QDateTime findNodeDate(UBDocumentTreeNode *node, QString type) const;
     bool inMyDocuments(const QModelIndex &index) const;
+    void moveIndexes(const QModelIndexList &source, const QModelIndex &destination);
     //N/C - NNE - 20140407 : END
+    bool isDescendantOf(const QModelIndex &pPossibleDescendant, const QModelIndex &pPossibleAncestor) const;
+
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);
     void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &previous); /* Be aware that when you got the signal
@@ -238,7 +245,6 @@ private:
 
     UBDocumentTreeNode *findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const;
     QModelIndex pIndexForNode(const QModelIndex &parent, UBDocumentTreeNode *pNode) const;
-    bool isDescendantOf(const QModelIndex &pPossibleDescendant, const QModelIndex &pPossibleAncestor) const;
     QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent, eAddItemMode pMode = aDetectPosition);
     int positionForParent(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParentNode);
     void fixNodeName(const QModelIndex &source, const QModelIndex &dest);
@@ -404,6 +410,10 @@ class UBDocumentController : public UBDocumentContainer
         QModelIndexList mapIndexesToSource(const QModelIndexList &indexes);
 
         void sortDocuments(int kind, int order);
+
+        void moveIndexesToTrash(const QModelIndexList &list, UBDocumentTreeModel *docModel);
+        QModelIndex findPreviousSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel);
+        QModelIndex findNextSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel);
 
     signals:
         void exportDone();

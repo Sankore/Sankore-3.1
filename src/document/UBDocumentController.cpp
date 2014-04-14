@@ -787,6 +787,15 @@ QModelIndex UBDocumentTreeModel::pIndexForNode(const QModelIndex &parent, UBDocu
     return QModelIndex();
 }
 
+//N/C - NNE - 20140411
+void UBDocumentTreeModel::copyIndexToNewParent(const QModelIndexList &list, const QModelIndex &newParent, eCopyMode pMode)
+{
+    for(int i = 0; i < list.size(); i++){
+        copyIndexToNewParent(list.at(i), newParent, pMode);
+    }
+}
+//N/C - NNE - 20140411 : END
+
 QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode)
 {
     UBDocumentTreeNode *nodeParent = nodeFromIndex(newParent);
@@ -823,7 +832,7 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
         break;
     }
 
-    // Determine whether to provide a name with postfix if the name in current level allready exists
+    // Determine whether to provide a name with postfix if the name in current level already exists
     QString newName = clonedNodeSource->nodeName();
     if ((source.parent() != newParent
             || pMode != aReference)
@@ -853,8 +862,49 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
     return newParentIndex;
 }
 
+//N/C - NNE - 20140409
+void UBDocumentTreeModel::moveIndexes(const QModelIndexList &source, const QModelIndex &destination)
+{
+    if(!isCatalog(destination))
+        return;
+
+    UBDocumentTreeNode *newParentNode = nodeFromIndex(destination);
+
+    bool hasOneInsertion = false;
+
+    for(int i = 0; i < source.size(); i++){
+        UBDocumentTreeNode *sourceNode = nodeFromIndex(source.at(i));
+        QModelIndex s = source.at(i);
+
+        if(newParentNode == sourceNode->parentNode() || sourceNode->findNode(newParentNode))
+            continue;
+
+        if(s.internalId() != destination.internalId()){
+            int sourceIndex = source.at(i).row();
+            int destIndex = positionForParent(sourceNode, newParentNode);
+
+            beginMoveRows(s.parent(), sourceIndex, sourceIndex, destination, destIndex);
+            fixNodeName(s, destination);
+            sourceNode->parentNode()->moveChild(sourceNode, destIndex, newParentNode);
+            updateIndexNameBindings(sourceNode);
+
+            hasOneInsertion = true;
+        }
+    }
+
+    if(hasOneInsertion)
+        endMoveRows();
+}
+
+//N/C - NNE - 20140409
+
 void UBDocumentTreeModel::moveIndex(const QModelIndex &what, const QModelIndex &destination)
 {
+    QModelIndexList list;
+    list.push_back(what);
+    moveIndexes(list, destination);
+    /*
+
     if (!isCatalog(destination)) {
         return;
     }
@@ -877,6 +927,8 @@ void UBDocumentTreeModel::moveIndex(const QModelIndex &what, const QModelIndex &
     sourceNode->parentNode()->moveChild(sourceNode, destIndex, newParentNode);
     updateIndexNameBindings(sourceNode);
     endMoveRows();
+
+    */
 }
 
 void UBDocumentTreeModel::setCurrentDocument(UBDocumentProxy *pDocument)
@@ -1273,31 +1325,21 @@ void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
 
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 {
-    /*
-
     QTreeView::dragEnterEvent(event);
     event->accept();
     event->acceptProposedAction();
-
-    */
 }
 
 void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
 {
-    /*
-
     Q_UNUSED(event);
     UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
     docModel->setHighLighted(QModelIndex());
     update();
-
-    */
 }
 
 void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
 {
-    /*
-
     bool acceptIt = isAcceptable(selectedIndexes().first(), indexAt(event->pos()));
 
     if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
@@ -1318,33 +1360,39 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
     event->setAccepted(acceptIt);
 
     QTreeView::dragMoveEvent(event);
-
-    */
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
 {
-    /*
-
     event->ignore();
     event->setDropAction(Qt::IgnoreAction);
-    UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
+    UBDocumentTreeModel *docModel = 0;
+
+    //N/C - NNE - 20140408
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
+    if(proxy){
+        docModel = dynamic_cast<UBDocumentTreeModel*>(proxy->sourceModel());
+    }
+
     QModelIndex targetIndex = mapIndexToSource(indexAt(event->pos()));
-    QModelIndex dropIndex = mapIndexToSource(selectedIndexes().first());
+    QModelIndexList dropIndex = mapIndexesToSource(selectedIndexes());
+
     bool isUBPage = event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage);
+
     bool inModel = docModel->inModel(targetIndex) || targetIndex == docModel->modelsIndex();
-    bool isSourceAModel = docModel->inModel(dropIndex);
+
+    //just check the first index, because the selection is exclusive between
+    //myDocuments, Model and Tash
+    bool isSourceAModel = docModel->inModel(dropIndex.first());
 
     //issue 1629 - NNE - 20131212
     bool targetIsInTrash = docModel->inTrash(targetIndex) || docModel->trashIndex() == targetIndex;
 
-    Qt::DropAction drA = Qt::CopyAction;
     if (isUBPage) {
         UBDocumentProxy *targetDocProxy = docModel->proxyData(targetIndex);
         const UBMimeData *ubMime = qobject_cast <const UBMimeData*>(event->mimeData());
         if (!targetDocProxy || !ubMime || !ubMime->items().count()) {
             qDebug() << "an error ocured while parsing " << UBApplication::mimeTypeUniboardPage;
-            event->setDropAction(Qt::IgnoreAction);
             QTreeView::dropEvent(event);
             return;
         }
@@ -1365,18 +1413,15 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
         QApplication::restoreOverrideCursor();
         UBApplication::applicationController->showMessage(tr("%1 pages copied", "", total).arg(total), false);
 
-        drA = Qt::IgnoreAction;
         docModel->setHighLighted(QModelIndex());
     }
     else if(isSourceAModel){
-#ifndef Q_WS_MAC
-        drA = Qt::IgnoreAction;
-#endif
+        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+
         if(targetIsInTrash){
             //issue 1629 - NNE - 20131212 : If the source is a model and we want to delete it
-            UBApplication::documentController->moveToTrash(dropIndex, docModel);
+            UBApplication::documentController->moveIndexesToTrash(dropIndex, docModel);
         }else{
-            QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
             UBDocumentTreeNode* node = docModel->nodeFromIndex(targetIndex);
             QModelIndex targetParentIndex;
             if(node->nodeType() == UBDocumentTreeNode::Catalog)
@@ -1385,33 +1430,31 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
                 targetParentIndex = docModel->indexForNode(node->parentNode());
 
             docModel->copyIndexToNewParent(dropIndex, targetParentIndex,UBDocumentTreeModel::aContentCopy);
-            QApplication::restoreOverrideCursor();
             docModel->setHighLighted(QModelIndex());
         }
+
+        QApplication::restoreOverrideCursor();
     }
     else if(!inModel){
-        drA = Qt::IgnoreAction;
-        if(dropIndex.internalId() != targetIndex.internalId()){
-            //issue 1632 - NNE - 20131212
-            if(targetIsInTrash){
-                UBApplication::documentController->moveToTrash(dropIndex, docModel);
-            }else{
-                docModel->moveIndex(dropIndex, targetIndex);
-            }
-            //issue 1632 - NNE - 20131212 : END
+        //issue 1632 - NNE - 20131212
+        if(targetIsInTrash){
+            UBApplication::documentController->moveIndexesToTrash(dropIndex, docModel);
+        }else{
+            docModel->moveIndexes(dropIndex, targetIndex);
         }
-    }else if(docModel->inTrash(dropIndex) && inModel){
-        drA = Qt::IgnoreAction;
-        docModel->moveIndex(dropIndex, targetIndex);
+        //issue 1632 - NNE - 20131212 : END
+    }else if(inModel){
+        event->setDropAction(Qt::CopyAction);
+        QTreeView::dropEvent(event);
+
+        /*
+        setEnabled(false);
+        setEnabled(true);
+        setExpanded(proxy->mapFromSource(docModel->modelsIndex()), true);
+        */
+    }else{
+        QTreeView::dropEvent(event);
     }
-
-    event->setDropAction(drA);
-    QTreeView::dropEvent(event);
-    adjustSize();
-
-    QTreeView::dropEvent(event);
-
-    */
 }
 
 void UBDocumentTreeView::paintEvent(QPaintEvent *event)
@@ -1858,7 +1901,9 @@ void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &select
 
         QModelIndexList list = mDocumentUI->documentTreeView->selectionModel()->selectedRows();
 
+        //if multi-selection
         if(list.count() > 1){
+            //check if the selection is in the same top-level folder
             QModelIndex sourceIndex1 = mapIndexToSource(list.at(list.count()-1));
             QModelIndex sourceIndex2 = mapIndexToSource(list.at(list.count()-2));
 
@@ -1877,8 +1922,48 @@ void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &select
         }
         //N/C - NNE - 20140408 : END
 
-        QModelIndex NewSelectedRow = selected.indexes().first();
-        TreeViewSelectionChanged(NewSelectedRow, QModelIndex());
+        //if the parent has been already select, don't select its children
+        QModelIndex newSelectedRow = selected.indexes().first();
+        QModelIndex parent = newSelectedRow.parent();
+        bool isParentIsSelected = false;
+        while(parent.isValid()){
+            isParentIsSelected |= (list.indexOf(parent) != -1);
+
+            if(isParentIsSelected)
+                break;
+
+            parent = parent.parent();
+        }
+
+        if(!isParentIsSelected)
+            TreeViewSelectionChanged(newSelectedRow, QModelIndex());
+        else
+            mDocumentUI->documentTreeView->selectionModel()->select(newSelectedRow, QItemSelectionModel::Deselect);
+
+        //if he newSelectedRow have children deselect them
+        /*
+        UBDocumentTreeModel *model = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
+        if(model->rowCount(newSelectedRow) > 0){
+            QModelIndexList children;
+            QModelIndex parent = newSelectedRow;
+
+            //init children list
+            for(int i = 0; i < model->rowCount(parent); i++){
+                children.push_back(parent.child(i, 0));
+            }
+
+            for(int i = 0; i < children.size(); i++){
+                //deselect the element
+                mDocumentUI->documentTreeView->selectionModel()->select(children.at(0), QItemSelectionModel::Deselect);
+
+                //add its children if any
+                for(int k = 0; k < model->rowCount(children.at(i)); k++){
+                    children.push_back(children.at(i).child(k, 0));
+                }
+            }
+        }
+        */
     }
 
 }
@@ -2496,6 +2581,104 @@ void UBDocumentController::deleteSelectedItem()
         }
     }
 
+}
+
+//N/C - NNE - 20140410
+void UBDocumentController::moveIndexesToTrash(const QModelIndexList &list, UBDocumentTreeModel *docModel)
+{
+    QModelIndex currentScene = docModel->indexForNode(docModel->currentNode());
+
+    //check if the current scene is selected
+    QItemSelectionModel *selectionModel = mDocumentUI->documentTreeView->selectionModel();
+    bool deleteCurrentScene = selectionModel->isSelected(mSortFilterProxyModel->mapFromSource(currentScene));
+
+    QModelIndex proxyMapCurentScene = mSortFilterProxyModel->mapFromSource(currentScene);
+
+    if(deleteCurrentScene){
+        QModelIndex sibling = findPreviousSiblingNotSelected(proxyMapCurentScene, selectionModel);
+
+        if(sibling.isValid()){
+            QModelIndex sourceSibling = mSortFilterProxyModel->mapToSource(sibling);
+
+            UBDocumentProxy *proxy = docModel->proxyForIndex(sourceSibling);
+
+            docModel->setCurrentDocument(proxy);
+
+            selectionModel->select(sibling, QItemSelectionModel::ClearAndSelect);
+
+            deleteCurrentScene = false;
+        }else{
+            sibling = findNextSiblingNotSelected(proxyMapCurentScene, selectionModel);
+
+            if(sibling.isValid()){
+                QModelIndex sourceSibling = mSortFilterProxyModel->mapToSource(sibling);
+
+                UBDocumentProxy *proxy = docModel->proxyForIndex(sourceSibling);
+
+                docModel->setCurrentDocument(proxy);
+
+                selectionModel->select(sibling, QItemSelectionModel::ClearAndSelect);
+
+                deleteCurrentScene = false;
+            }
+        }
+
+    }
+
+    docModel->moveIndexes(list, docModel->trashIndex());
+
+    if(deleteCurrentScene){
+        createNewDocumentInUntitledFolder();
+    }
+}
+//N/C - NNE - 20140410 : END
+
+QModelIndex UBDocumentController::findPreviousSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel)
+{
+    QModelIndex sibling = index.sibling(index.row() - 1, 0);
+
+    if(sibling.isValid()){
+        //if sibling is not selected and it is a document
+        //else keep searching
+        if(!selectionModel->isSelected(sibling) && !sibling.model()->hasChildren(sibling)){
+            return sibling;
+        }else{
+            return findPreviousSiblingNotSelected(sibling, selectionModel);
+        }
+    }else{
+        //if the parent exist keep searching, else stop the search
+        QModelIndex parent = index.model()->parent(index);
+
+        if(parent.isValid()){
+            return findPreviousSiblingNotSelected(parent, selectionModel);
+        }else{
+            return QModelIndex();
+        }
+    }
+}
+
+QModelIndex UBDocumentController::findNextSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel)
+{
+    QModelIndex sibling = index.sibling(index.row() + 1, 0);
+
+    if(sibling.isValid()){
+        //if sibling is not selected and it is a document
+        //else keep searching
+        if(!selectionModel->isSelected(sibling) && !sibling.model()->hasChildren(sibling)){
+            return sibling;
+        }else{
+            return findNextSiblingNotSelected(sibling, selectionModel);
+        }
+    }else{
+        //if the parent exist keep searching, else stop the search
+        QModelIndex parent = index.parent();
+
+        if(parent.isValid()){
+            return findNextSiblingNotSelected(parent, selectionModel);
+        }else{
+            return QModelIndex();
+        }
+    }
 }
 
 //issue 1629 - NNE - 20131212
