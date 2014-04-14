@@ -140,6 +140,8 @@ QRectF UBEditableGraphicsRegularShapeItem::boundingRect() const
         retour.adjust(0, 0, r, r);
     }
 
+    retour.adjust(-1, -1, 1, 1);
+
     return retour;
 }
 

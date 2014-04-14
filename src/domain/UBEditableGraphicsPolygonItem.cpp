@@ -27,6 +27,8 @@ UBEditableGraphicsPolygonItem::~UBEditableGraphicsPolygonItem()
 
 void UBEditableGraphicsPolygonItem::addPoint(const QPointF & point)
 {
+    prepareGeometryChange();
+
     QPointF p(mapFromScene(point));
 
     QPainterPath painterPath = path();
