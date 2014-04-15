@@ -30,8 +30,6 @@
 
 #include "core/UB.h"
 #include "UBGraphicsItemDelegate.h"
-#include "gui/UBMainWindow.h"
-#include "gui/UBCreateTablePalette.h"
 
 class UBGraphicsTextItem;
 
@@ -52,9 +50,6 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void scaleTextSize(qreal multiplyer);
         virtual QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value);
 
-        UBCreateTablePalette* tablePalette();
-
-        void changeDelegateButtonsMode(bool htmlMode);
 
     public slots:
         void contentsChanged();
@@ -73,9 +68,6 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         UBGraphicsTextItem* delegated();
 
         DelegateButton* mFontButton;
-        DelegateButton* mFontBoldButton;        
-        DelegateButton* mFontItalicButton;
-        DelegateButton* mFontUnderlineButton;
         DelegateButton* mColorButton;
         DelegateButton* mDecreaseSizeButton;
         DelegateButton* mIncreaseSizeButton;
@@ -104,11 +96,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
     private slots:
 
         void pickFont();
-        void setFontBold();
-        void setFontItalic();
-        void setFontUnderline();
         void pickColor();
-        void alternHtmlMode();
 
         void decreaseSize();
         void increaseSize();

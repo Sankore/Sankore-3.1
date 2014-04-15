@@ -56,8 +56,6 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual QRectF boundingRect() const;
         virtual QPainterPath shape() const;
 
-        //void setSelected(bool selected);
-
         void setTextWidth(qreal width);
         void setTextHeight(qreal height);
         qreal textHeight() const;
@@ -129,11 +127,8 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         QTime mLastMousePressTime;
         QString mTypeTextHereLabel;
 
-        bool mHtmlIsInterpreted;
-
         QColor mColorOnDarkBackground;
         QColor mColorOnLightBackground;
-        QColor mBackgroundColor;
 
         //issue 1554
         bool isActivatedTextEditor;
