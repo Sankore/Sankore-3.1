@@ -159,14 +159,6 @@
                                 format: 'raw'
                             });
                             self.applyDefaults();
-                        } else {
-//                            try {
-//                                if (self.clearBOM()) {
-//                                    var range = self.tinymce.selection.getRng();
-//                                    range.setStart(range.startContainer, range.startOffset + 1);
-//                                    self.tinymce.selection.setRng(range);
-//                                }
-//                            } catch (ex) {}
                         }
                     });
 
@@ -474,6 +466,9 @@
                 if (this.font.italic) {
                     this.tinymce.execCommand('Italic', true);
                 }
+                
+                var p = this.tinymce.getDoc().querySelectorAll('p > br:only-child').item(0);
+                p.parentElement.removeChild(p);
             };
 
             /**
@@ -717,18 +712,18 @@
              *
              */
             app.RTEditor.prototype.checkForResize = function () {
-                var delta = $(this.tinymce.getDoc()).height() - this.getIframe().height(),
-                    self = this;
+                var self = this,
+                    delta = $(self.tinymce.getDoc()).height() - self.getIframe().height();
 
                 if (delta > 0) {
-                    if (this.resizeTimeout !== null) {
+                    if (self.resizeTimeout !== null) {
                         clearTimeout(this.resizeTimeout);
                     }
 
-                    this.resizeTimeout = setTimeout(function () {
-                        self.options.onContentOverflow.call(self, delta);
+                    self.resizeTimeout = setTimeout(function () {
+                        self.options.onContentOverflow.call(self, $(self.tinymce.getDoc()).height() - self.getIframe().height());
                         self.resizeTimeout = null;
-                    }, 2);
+                    }, 0);
                 }
             };
 
@@ -736,7 +731,7 @@
              * Event handler for TinyMCE editor 'init' event
              */
             app.RTEditor.prototype.onTinyInit = function (e) {
-                var self   = this,
+                var self = this,
                     editor = this.tinymce;
 
                 this.options.onInit.call(this);
@@ -791,50 +786,13 @@
                 if (!this.options.autoShow) {
                     this.hide();
                 } else {
-                    this.checkForResize();
-                    
                     if (app.RTEditor.isContentEmpty(this.getContent())) {
                         this.applyDefaults();
+                        this.tinymce.getDoc().body.click();
                     }
                 }
 
                 this.setDarkBackground(this.options.dark);
-            };
-
-            /**
-             *
-             */
-            app.RTEditor.prototype.clearBOM = function () {
-                var $body = $(this.tinymce.getDoc()).find('body'),
-                    removed = false;
-
-                $body.find(':not(iframe)').addBack().contents().each(function (i, elem) {
-                    if (elem.nodeType === 3 && elem.nodeValue.indexOf('\uFEFF') !== -1) {
-                        removed = true;
-                        var parts = elem.nodeValue.split(/\uFEFF/),
-                            fragment = document.createDocumentFragment(),
-                            span;
-
-                        if (!elem.parentNode.classList.contains('feff')) {
-                            for (var j in parts) {
-                                fragment.appendChild(document.createTextNode(parts[j]));
-
-                                if (j !== parts.length - 1) {
-                                    span = document.createElement('span');
-                                    span.style.display = 'none';
-                                    span.className = 'feff';
-                                    span.appendChild(document.createTextNode('\uFEFF'));
-                                    fragment.appendChild(span);
-                                }
-                            }
-
-                            elem.parentNode.insertBefore(fragment, elem);
-                            elem.parentNode.removeChild(elem);
-                        }
-                    }
-                });
-
-                return removed;
             };
 
             /**
@@ -848,7 +806,6 @@
              * Event handler for TinyMCE editor 'blur' event
              */
             app.RTEditor.prototype.onTinyFocus = function (e) {
-                //this.clearBOM();
             };
 
             /**
@@ -1001,7 +958,7 @@
 
             options.onContentOverflow = function (delta) {
                 var $win = $(window);
-                
+
                 window.sankore.resize(
                     $win.width(),
                     $win.height() + delta
