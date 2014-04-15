@@ -343,6 +343,66 @@ void UBGraphicsTextItem::contentsChanged()
     }
 }
 
+void UBGraphicsTextItem::insertTable()
+{
+    QTextCursor cursor = textCursor();
+
+    QTextTableFormat format;
+    format.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+    format.merge(cursor.blockFormat());
+    cursor.insertTable(3,3,format);
+}
+
+void UBGraphicsTextItem::setBackgroundColor(const QColor& color)
+{
+    QTextBlockFormat format;
+    format.setBackground(QBrush(color));
+
+    QTextCursor cursor = textCursor();
+
+    QTextTable* t = cursor.currentTable();
+    if (t)
+    {
+        QTextTableCell c = t->cellAt(cursor);
+        QTextCharFormat format;
+        format.setBackground(QBrush(color));
+        c.setFormat(format);
+    }
+    else
+    {
+        cursor.select(QTextCursor::Document);
+        cursor.mergeBlockFormat(format);
+        cursor.clearSelection();
+        setTextCursor(cursor);
+    }
+}
+
+void UBGraphicsTextItem::setForegroundColor(const QColor& color)
+{
+    QTextBlockFormat format;
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);
+}
+
+void UBGraphicsTextItem::setAlignmentToLeft()
+{
+    QTextBlockFormat format;
+    format.setAlignment(Qt::AlignLeft);
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);
+}
+
+void UBGraphicsTextItem::setAlignmentToCenter()
+{
+    QTextBlockFormat format;
+    format.setAlignment(Qt::AlignCenter);
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);
+}
+
 
 UBGraphicsScene* UBGraphicsTextItem::scene()
 {

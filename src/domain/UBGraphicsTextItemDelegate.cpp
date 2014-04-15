@@ -103,14 +103,23 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mDecreaseSizeButton = new DelegateButton(":/images/minus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mIncreaseSizeButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mBackgroundColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mTableButton = new DelegateButton(":/images/roundeRrectangle.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mLeftAlignmentButton = new DelegateButton(":/images/resizeLeft.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCenterAlignmentButton = new DelegateButton(":/images/resizeTop.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
     connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));
     connect(mDecreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(decreaseSize()));
     connect(mIncreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(increaseSize()));
+    //Code pour demo
+    connect(mBackgroundColorButton, SIGNAL(clicked(bool)), this, SLOT(pickBackgroundColor()));    
+    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(insertTable()));
+    connect(mLeftAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToLeft()));
+    connect(mCenterAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToCenter()));
 
     QList<QGraphicsItem*> itemsOnToolBar;
-    itemsOnToolBar << mFontButton << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton;
+    itemsOnToolBar << mFontButton << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton << mBackgroundColorButton << mTableButton << mLeftAlignmentButton << mCenterAlignmentButton;
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
     mToolBarItem->setVisibleOnBoard(true);
@@ -231,9 +240,55 @@ void UBGraphicsTextItemDelegate::pickColor()
 
             UBGraphicsTextItem::lastUsedTextColor = selectedColor;
 
+            delegated()->setSelected(true);            
+            delegated()->contentsChanged();
+            delegated()->setFocus();
+        }
+    }
+}
+
+void UBGraphicsTextItemDelegate::pickBackgroundColor()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        QColorDialog colorDialog(delegated()->defaultTextColor(), mDelegated->scene()->views().at(0));
+        colorDialog.setWindowTitle(tr("Background Color"));
+        if (UBSettings::settings()->isDarkBackground())
+        {
+            colorDialog.setStyleSheet("background-color: white;");
+        }
+
+        if (colorDialog.exec())
+        {
+            QColor selectedColor = colorDialog.selectedColor();
+            delegated()->setBackgroundColor(selectedColor);
             delegated()->setSelected(true);
             delegated()->contentsChanged();
         }
+    }
+}
+
+void UBGraphicsTextItemDelegate::insertTable()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertTable();
+    }
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToLeft()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToLeft();
+    }
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToCenter()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToCenter();
     }
 }
 

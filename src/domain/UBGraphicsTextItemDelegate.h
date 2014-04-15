@@ -71,6 +71,10 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mColorButton;
         DelegateButton* mDecreaseSizeButton;
         DelegateButton* mIncreaseSizeButton;
+        DelegateButton* mBackgroundColorButton;
+        DelegateButton* mTableButton;
+        DelegateButton* mLeftAlignmentButton;
+        DelegateButton* mCenterAlignmentButton;
 
         int mLastFontPixelSize;
 
@@ -91,6 +95,11 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 
         void decreaseSize();
         void increaseSize();
+
+        void pickBackgroundColor();
+        void insertTable();
+        void setAlignmentToLeft();
+        void setAlignmentToCenter();
 
 private:
       const int delta;

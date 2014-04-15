@@ -60,6 +60,12 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void setTextHeight(qreal height);
         qreal textHeight() const;
 
+        void insertTable();
+        void setBackgroundColor(const QColor& color);
+        void setForegroundColor(const QColor& color);
+        void setAlignmentToLeft();
+        void setAlignmentToCenter();
+
         void contentsChanged();
 
         virtual void resize(qreal w, qreal h);
