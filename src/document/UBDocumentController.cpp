@@ -1326,8 +1326,11 @@ void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 {
     QTreeView::dragEnterEvent(event);
+    /*
     event->accept();
     event->acceptProposedAction();
+
+    */
 }
 
 void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
@@ -1357,9 +1360,9 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
         updateIndexEnvirons(targetIndex);
     }
     QTreeView::dragMoveEvent(event);
-    event->setAccepted(acceptIt);
+    //event->setAccepted(acceptIt);
 
-    QTreeView::dragMoveEvent(event);
+    //QTreeView::dragMoveEvent(event);
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
@@ -1442,19 +1445,14 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
         }else{
             docModel->moveIndexes(dropIndex, targetIndex);
         }
+
+        expand(proxy->mapFromSource(targetIndex));
         //issue 1632 - NNE - 20131212 : END
     }else if(inModel){
         event->setDropAction(Qt::CopyAction);
-        QTreeView::dropEvent(event);
-
-        /*
-        setEnabled(false);
-        setEnabled(true);
-        setExpanded(proxy->mapFromSource(docModel->modelsIndex()), true);
-        */
-    }else{
-        QTreeView::dropEvent(event);
     }
+
+    QTreeView::dropEvent(event);
 }
 
 void UBDocumentTreeView::paintEvent(QPaintEvent *event)
@@ -1844,7 +1842,16 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
 
     QModelIndex current_index = mapIndexToSource(current);
 
-    UBDocumentProxy *currentDocumentProxy = docModel->proxyData(current_index);
+    //N/C - NNE  - 20140414
+    //if the selection contains more than one object, don't show the thumbnail.
+    //We have just to pass a null proxy to disable the display of thumbnail
+    UBDocumentProxy *currentDocumentProxy = 0;
+
+    if(mDocumentUI->documentTreeView->selectionModel()->selectedRows(0).size() == 1){
+        currentDocumentProxy = docModel->proxyData(current_index);
+    }
+    //N/C - NNE  - 20140414 : END
+
     setDocument(currentDocumentProxy, false);
 
     if (mCurrentIndexMoved) {
@@ -2519,7 +2526,7 @@ void UBDocumentController::deleteSelectedItem()
         QModelIndex currentIndex = indexes.at(i);
         DeletionType deletionForSelection = deletionTypeForSelection(mSelectionType, currentIndex, docModel);
 
-        //N/C - NNE - 20140408 : if parent is selected, continue, because it will be deleted when the parent will b deleted
+        //N/C - NNE - 20140408 : if parent is selected, continue, because it will be deleted when the parent will be deleted
         if(mDocumentUI->documentTreeView->selectionModel()->isSelected(currentIndex.parent())){
             continue;
         }
@@ -2592,6 +2599,18 @@ void UBDocumentController::moveIndexesToTrash(const QModelIndexList &list, UBDoc
     QItemSelectionModel *selectionModel = mDocumentUI->documentTreeView->selectionModel();
     bool deleteCurrentScene = selectionModel->isSelected(mSortFilterProxyModel->mapFromSource(currentScene));
 
+    //check if the current scene is in the hierarchy
+    if(!deleteCurrentScene){
+        for(int i = 0; i < list.size(); i++){
+            deleteCurrentScene = docModel->isDescendantOf(currentScene, list.at(i));
+
+            if(deleteCurrentScene){
+                break;
+            }
+        }
+
+    }
+
     QModelIndex proxyMapCurentScene = mSortFilterProxyModel->mapFromSource(currentScene);
 
     if(deleteCurrentScene){
@@ -2640,7 +2659,9 @@ QModelIndex UBDocumentController::findPreviousSiblingNotSelected(const QModelInd
     if(sibling.isValid()){
         //if sibling is not selected and it is a document
         //else keep searching
-        if(!selectionModel->isSelected(sibling) && !sibling.model()->hasChildren(sibling)){
+        if(!parentIsSelected(sibling, selectionModel)
+                && !selectionModel->isSelected(sibling)
+                && !sibling.model()->hasChildren(sibling)){
             return sibling;
         }else{
             return findPreviousSiblingNotSelected(sibling, selectionModel);
@@ -2662,9 +2683,11 @@ QModelIndex UBDocumentController::findNextSiblingNotSelected(const QModelIndex &
     QModelIndex sibling = index.sibling(index.row() + 1, 0);
 
     if(sibling.isValid()){
-        //if sibling is not selected and it is a document
+        //if sibling is not selected and it is a document and its parent are not selected
         //else keep searching
-        if(!selectionModel->isSelected(sibling) && !sibling.model()->hasChildren(sibling)){
+        if(!parentIsSelected(sibling, selectionModel)
+                && !selectionModel->isSelected(sibling)
+                && !sibling.model()->hasChildren(sibling)){
             return sibling;
         }else{
             return findNextSiblingNotSelected(sibling, selectionModel);
@@ -2681,63 +2704,27 @@ QModelIndex UBDocumentController::findNextSiblingNotSelected(const QModelIndex &
     }
 }
 
+bool UBDocumentController::parentIsSelected(const QModelIndex& child, QItemSelectionModel *selectionModel)
+{
+    QModelIndex parent = child.parent();
+
+    while(parent.isValid()){
+        if(selectionModel->isSelected(parent)){
+            return true;
+        }
+
+        parent = parent.parent();
+    }
+
+    return false;
+}
+
 //issue 1629 - NNE - 20131212
 void UBDocumentController::moveToTrash(QModelIndex &index, UBDocumentTreeModel* docModel)
 {
-    UBDocumentTreeNode *node = docModel->nodeFromIndex(index);
-    //check if we try to delete the current scene
-    bool deleteCurrentScene = (index == docModel->currentIndex());
-
-    //check if we try to delete the current scene if the currentIndex is a folder
-    if(node->nodeType() == UBDocumentTreeNode::Catalog){
-        deleteCurrentScene = node->findNode(docModel->nodeFromIndex(docModel->currentIndex()));
-    }
-
-    UBDocumentTreeNode *nextSibling = node->nextSibling();
-
-    if(nextSibling){
-        //a next sibling exists
-        QModelIndex nextSiblingIndex = docModel->indexForNode(nextSibling);
-
-        if(deleteCurrentScene){
-            if(docModel->isDocument(nextSiblingIndex)){
-                UBDocumentProxy *document = docModel->proxyForIndex(nextSiblingIndex);
-                selectDocument(document);
-                deleteCurrentScene = false; //indicate that the current has not been really "deleted"
-            }
-        }else{
-            mDocumentUI->documentTreeView->setSelectedAndExpanded(nextSiblingIndex);
-        }
-    }else{
-        //check if a previous sibling exists
-        UBDocumentTreeNode *previousSibling = node->previousSibling();
-
-        if(previousSibling){
-            QModelIndex previousSiblingIndex = docModel->indexForNode(previousSibling);
-
-            if(deleteCurrentScene){
-                if(docModel->isDocument(previousSiblingIndex)){
-                    UBDocumentProxy *document = docModel->proxyForIndex(previousSiblingIndex);
-                    selectDocument(document);
-                    deleteCurrentScene = false;
-                }
-            }else{
-                mDocumentUI->documentTreeView->setSelectedAndExpanded(previousSiblingIndex);
-            }
-        }else{
-            //no sibling, so select the parent
-            QModelIndex parentIndex = docModel->indexForNode(node->parentNode());
-
-            mDocumentUI->documentTreeView->setSelectedAndExpanded(parentIndex);
-        }
-    }
-
-    docModel->moveIndex(index, docModel->trashIndex());
-
-    if(deleteCurrentScene){
-        //create the new documen after, because the selection stay on the old document
-        createNewDocumentInUntitledFolder();
-    }
+    QModelIndexList list;
+    list.push_back(index);
+    moveIndexesToTrash(list, docModel);
 }
 //issue 1629 - NNE - 20131212 : END
 

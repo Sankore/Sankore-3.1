@@ -414,6 +414,7 @@ class UBDocumentController : public UBDocumentContainer
         void moveIndexesToTrash(const QModelIndexList &list, UBDocumentTreeModel *docModel);
         QModelIndex findPreviousSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel);
         QModelIndex findNextSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel);
+        bool parentIsSelected(const QModelIndex& child, QItemSelectionModel *selectionModel);
 
     signals:
         void exportDone();
