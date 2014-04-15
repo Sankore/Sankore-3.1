@@ -1288,7 +1288,10 @@ void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool 
 
     QModelIndex indexCurrentDoc = pIndex;
     clearSelection();
-     selectionModel()->select(indexCurrentDoc, pExpand
+
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
+
+     selectionModel()->select(proxy->mapFromSource(indexCurrentDoc), pExpand
                              ? QItemSelectionModel::Select
                              : QItemSelectionModel::Deselect);
     setCurrentIndex(pExpand
