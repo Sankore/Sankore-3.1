@@ -2676,12 +2676,11 @@ UBGraphicsWidgetItem *UBBoardController::addW3cWidget(const QUrl &pUrl, const QP
         return NULL;
     QUrl newUrl = QUrl::fromLocalFile(destPath);
 
-    w3cWidgetItem = mActiveScene->addW3CWidget(newUrl, pos);
+    w3cWidgetItem = mActiveScene->addW3CWidget(newUrl, pos, pUrl);
 
     if (w3cWidgetItem) {
         w3cWidgetItem->setUuid(uuid);
         w3cWidgetItem->setOwnFolder(newUrl);
-        w3cWidgetItem->setSourceUrl(pUrl);
 
         QString struuid = UBStringUtils::toCanonicalUuid(uuid);
         QString snapshotPath = selectedDocument()->persistencePath() +  "/" + UBPersistenceManager::widgetDirectory + "/" + struuid + ".png";

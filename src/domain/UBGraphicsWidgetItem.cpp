@@ -70,7 +70,7 @@ UBGraphicsWidgetItem::UBGraphicsWidgetItem(const QUrl &pWidgetUrl, QGraphicsItem
     , mIsTakingSnapshot(false)
     , mShouldMoveWidget(false)
     , mUniboardAPI(0)
-    , mLoadingMessage(new QTextEdit(tr("Loading ..."),UBApplication::mainWindow->centralWidget()))
+    , mProxyLoadingMessage(0)
 {
     setData(UBGraphicsItemData::ItemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
 
@@ -104,10 +104,14 @@ UBGraphicsWidgetItem::UBGraphicsWidgetItem(const QUrl &pWidgetUrl, QGraphicsItem
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     QGraphicsWebView::setAcceptHoverEvents(true);
 
+    mLoadingMessage = new QTextEdit(tr("Loading ..."));
+
     mLoadingMessage->setFrameStyle(QFrame::NoFrame);
-    mLoadingMessage->setStyleSheet(QString("background-color:%1; border-style:none;border-radius:10px;color:white;font: 12px;").arg(UBSettings::paletteColor.name()));
+    mLoadingMessage->setStyleSheet(QString("background-color: rgb(191, 191, 191); border-style:none;color:white;font: 15px;"));
     mLoadingMessage->setAlignment(Qt::AlignCenter);
-    mLoadingMessage->show();
+
+    mLoadingMessage->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    mLoadingMessage->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 
@@ -160,16 +164,31 @@ void UBGraphicsWidgetItem::showLoadingMessage()
 
 void UBGraphicsWidgetItem::setLoadingMessagePosition()
 {
-    QPoint center;
-    QPoint itemGlobalPosition;
+    if(mProxyLoadingMessage == 0){
+        //the proxy is used here
+        //because the calculation of the position
+        //for the widget in the scene is easier.
+        mProxyLoadingMessage = QGraphicsWidget::scene()->addWidget(mLoadingMessage);
+        mProxyLoadingMessage->setParentItem(this);
+        QRect fontRect = mLoadingMessage->fontMetrics().boundingRect(tr("Loading ..."));
 
-    if (isFeatureRTE())
-        center = QPoint(boundingRect().width()/2 - mLoadingMessage->width()/2,boundingRect().height()/2 - mLoadingMessage->height()/2);
-    else
-        center = QPoint(boundingRect().width()/2 - mLoadingMessage->width()/2,boundingRect().height()/2 - mLoadingMessage->height()/2 - UBGraphicsWidgetItem::sRTEEditionBarHeight);
-    itemGlobalPosition = UBApplication::boardController->controlView()->viewport()->mapToGlobal(UBApplication::boardController->controlView()->mapFromScene(mapToScene(center)));
+        //Restricted the size of the widget and add some padding
+        mLoadingMessage->setMinimumWidth(fontRect.width() + 10);
+        mLoadingMessage->setMaximumWidth(fontRect.width() + 10);
+        mLoadingMessage->setMinimumHeight(fontRect.height() + 10);
+        mLoadingMessage->setMaximumHeight(fontRect.height() + 10);
 
-    mLoadingMessage->move(itemGlobalPosition);
+        UBRoundedBackgroundEffect *effect = new UBRoundedBackgroundEffect();
+
+        mProxyLoadingMessage->setGraphicsEffect(effect);
+    }
+
+    //boundingRect().y() is added in the y coordinate because of the RTE
+    //where it boundingRect is reduced when it's not selected.
+    QPoint center((boundingRect().width() - mLoadingMessage->width())/2,
+                    (boundingRect().height() - mLoadingMessage->height())/2 + boundingRect().y());
+
+    mProxyLoadingMessage->setPos(center);
 }
 
 
@@ -186,7 +205,7 @@ void UBGraphicsWidgetItem::loadMainHtml()
     setLoadingMessagePosition();
 }
 
-QUrl UBGraphicsWidgetItem::widgetUrl()
+QUrl UBGraphicsWidgetItem::widgetUrl() const
 {
     return mWidgetUrl;
 }
@@ -809,10 +828,12 @@ bool UBGraphicsW3CWidgetItem::sTemplateLoaded = false;
 QString UBGraphicsW3CWidgetItem::sNPAPIWrappperConfigTemplate;
 QMap<QString, QString> UBGraphicsW3CWidgetItem::sNPAPIWrapperTemplates;
 
-UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent)
+UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent, const QUrl& sourceUrl)
     : UBGraphicsWidgetItem(pWidgetUrl, parent)
     , mW3CWidgetAPI(0)
 {
+    mSourceUrl = sourceUrl;
+
     QString path = pWidgetUrl.toLocalFile();
     QDir potentialDir(path);
 

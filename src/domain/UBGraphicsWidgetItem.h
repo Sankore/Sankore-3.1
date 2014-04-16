@@ -68,7 +68,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
 
         QUrl mainHtml();
         void loadMainHtml();
-        QUrl widgetUrl();
+        QUrl widgetUrl() const;
         QString mainHtmlFileName();
 
         bool canBeContent();
@@ -137,6 +137,7 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
     protected:
 
         QTextEdit* mLoadingMessage;
+        QGraphicsProxyWidget *mProxyLoadingMessage;
 
         enum OSType
         {
@@ -201,6 +202,60 @@ class UBGraphicsWidgetItem : public QGraphicsWebView, public UBItem, public UBRe
         static QStringList sInlineJavaScripts;
 };
 
+//N/C - NNE - 20140416
+/**
+  * This class is a custom effet.
+  * The effect consist to draw a rounded rectangle brackground with a
+  * particular opacity.
+  */
+class UBRoundedBackgroundEffect : public QGraphicsOpacityEffect
+{
+public:
+    UBRoundedBackgroundEffect():
+        QGraphicsOpacityEffect()
+    {
+        mOpacity = 1;
+        mRadius = 5;
+        mBackgroundColor = QColor::fromRgb(191, 191, 191);
+    }
+
+    void draw(QPainter *painter)
+    {
+        QBrush brush;
+        brush.setColor(mBackgroundColor);
+        brush.setStyle(Qt::SolidPattern);
+
+        painter->setOpacity(mOpacity);
+        painter->setBrush(brush);
+        painter->setPen(Qt::NoPen);
+        painter->drawRoundedRect(boundingRect(), mRadius, mRadius);
+
+        painter->setOpacity(1);
+        painter->drawPixmap(sourcePixmap().rect(), sourcePixmap());
+    }
+
+    void setOpacity(qreal opacity)
+    {
+        mOpacity = opacity;
+    }
+
+    void setRadius(int radius)
+    {
+        mRadius = radius;
+    }
+
+    void setBackgroundColor(const QColor& color)
+    {
+        mBackgroundColor = color;
+    }
+
+private:
+    qreal mOpacity;
+    int mRadius;
+    QColor mBackgroundColor;
+};
+//N/C - NNE - 20140416 : END
+
 class UBGraphicsAppleWidgetItem : public UBGraphicsWidgetItem
 {
     Q_OBJECT
@@ -251,7 +306,7 @@ class UBGraphicsW3CWidgetItem : public UBGraphicsWidgetItem
                 QString version;
         };
 
-        UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent = 0);
+        UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent = 0, const QUrl& sourceUrl = QUrl());
         ~UBGraphicsW3CWidgetItem();
 
         virtual void setUuid(const QUuid &pUuid);
