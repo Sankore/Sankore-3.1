@@ -209,10 +209,11 @@ public:
                 continue;
             } else if (delPath.endsWith(wgtSuff)) { //remove corresponding thumb
                 QString thumbPath = thumbFileNameFrom(delPath);
-                if (!QFile::exists(thumbPath)) {
-                    continue;
+
+                //N/C - NNE - 20140417
+                if (QFile::exists(thumbPath)) {
+                    rm_r(thumbPath);
                 }
-                rm_r(thumbPath);
             }
             rm_r(delPath);
             // Clear parent dir if empty
