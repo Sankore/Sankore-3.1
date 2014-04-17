@@ -36,6 +36,7 @@ UBEditableGraphicsLineItem::UBEditableGraphicsLineItem(QGraphicsItem* parent)
     : UBEditableGraphicsPolygonItem(parent)
 {
     // Line has Stroke and Fill capabilities :
+    Delegate()->setCanReturnInCreationMode(false);
     initializeStrokeProperty();
     initializeFillingProperty();
 
