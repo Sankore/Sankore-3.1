@@ -988,7 +988,7 @@
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation type="obsolete">Style du trait : pointillés</translation>
+        <translation type="unfinished">Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1071,11 +1071,95 @@
         <translation>Dessin à main levée</translation>
     </message>
     <message>
-        <source>Stroke style : Dash</source>
+        <source>Stroke style : Dot Dash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Stroke style : Dot Dash</source>
+        <source>Align objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ALign objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects vertically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the middle.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the bottom.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End arrow style : Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start arrow style : Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End arrow style : Round</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start arrow style : Round</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End arrow style : None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start arrow style : None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrows Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrows properties</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1238,7 +1322,7 @@
     </message>
     <message>
         <source>This is not a final release. Please use it only for testing.</source>
-        <translation>Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
+        <translation>Ceci n&apos;est pas une version finale. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
     </message>
 </context>
 <context>
