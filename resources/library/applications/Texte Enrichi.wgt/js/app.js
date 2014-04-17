@@ -52,6 +52,7 @@
                     locale: 'en_GB',
                     autoShow: false,
                     dark: false,
+                    widgetScale: 1,
                     onLinkClick: function (a) {},
                     onInit: function () {},
                     onBlur: function () {},
@@ -770,6 +771,8 @@
                 $(editor.getDoc()).bind('keydown', function (e) {
                     self.checkForResize();
                 });
+                
+                editor.getDoc().body.style.zoom = this.options.widgetScale;
 
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
                 var confirm = this.tinymce.windowManager.confirm;
@@ -952,6 +955,7 @@
                 window.sankore.setPreference('empty', this.empty ? 'true' : 'false');
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
+                window.sankore.setPreference('background', this.backgroundColor);
                 window.sankore.setPreference('font', JSON.stringify(this.font));
             };
 
@@ -983,7 +987,12 @@
             if (app.allowedLangs.indexOf(window.sankore.locale()) !== -1) {
                 options.locale = window.sankore.locale();
             }
+            
             options.dark = window.sankore.isDarkBackground();
+            
+            if (window.sankore.widgetScale) {
+                options.widgetScale = window.sankore.widgetScale();
+            }
         }
 
         if (window.widget) {
