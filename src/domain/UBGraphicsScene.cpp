@@ -331,6 +331,7 @@ UBGraphicsScene::~UBGraphicsScene()
 
     if (mZLayerController)
         delete mZLayerController;
+        mZLayerController = NULL;
 }
 
 void UBGraphicsScene::selectionChangedProcessing()

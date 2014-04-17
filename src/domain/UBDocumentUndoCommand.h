@@ -37,7 +37,7 @@ class UBDocumentUndoCommand: public UBAbstractUndoCommand
                 const QList<UBGraphicsScene*>& pNewScenes, const int& pActiveSceneIndex);
         virtual ~UBDocumentUndoCommand();
 
-        virtual UndoType getType() { return undotype_DOCUMENT; };
+        virtual UndoType getType() const { return undotype_DOCUMENT; };
 
     protected:
 

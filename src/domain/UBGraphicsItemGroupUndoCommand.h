@@ -36,7 +36,7 @@ public:
     UBGraphicsItemGroupUndoCommand(UBGraphicsScene *pScene, UBGraphicsGroupContainerItem *pGroupCreated);
     virtual ~UBGraphicsItemGroupUndoCommand();
 
-    virtual UndoType getType() { return undotype_GRAPHICSGROUPITEM; }
+    virtual UndoType getType() const { return undotype_GRAPHICSGROUPITEM; }
 
 protected:
     virtual void undo();

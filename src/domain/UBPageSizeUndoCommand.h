@@ -36,7 +36,7 @@ class UBPageSizeUndoCommand : public UBAbstractUndoCommand
         UBPageSizeUndoCommand(UBGraphicsScene* pScene, const QSize& previousSize, const QSize& newSize);
         virtual ~UBPageSizeUndoCommand();
 
-        virtual UndoType getType() { return undotype_PAGESIZE; };
+        virtual UndoType getType() const { return undotype_PAGESIZE; };
 
     protected:
         virtual void undo();

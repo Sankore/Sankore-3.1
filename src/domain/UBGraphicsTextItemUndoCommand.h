@@ -36,7 +36,7 @@ class UBGraphicsTextItemUndoCommand : public UBAbstractUndoCommand
         UBGraphicsTextItemUndoCommand(UBGraphicsTextItem *textItem);
         virtual ~UBGraphicsTextItemUndoCommand();
 
-        virtual UndoType getType() { return undotype_GRAPHICTEXTITEM; };
+        virtual UndoType getType() const { return undotype_GRAPHICTEXTITEM; };
 
     protected:
         virtual void undo();

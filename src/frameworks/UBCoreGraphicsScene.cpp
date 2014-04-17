@@ -79,13 +79,21 @@ bool UBCoreGraphicsScene::deleteItem(QGraphicsItem* item)
 {
     if(mItemsToDelete.contains(item))
     {
+
         UBGraphicsItem *item_casted = dynamic_cast<UBGraphicsItem *>(item);
         if (item_casted != NULL)
             item_casted->clearSource();
 
         mItemsToDelete.remove(item);
-        delete item;
-        item = NULL;
+
+        //Issue NC - CFA - 20140417 : [QT-BUG18021] -> https://bugreports.qt-project.org/browse/QTBUG-18021
+        //it seems that in some cases, remove item from scene then delete item (which also tries to remove item from scene...)
+        //makes application crash. The entire code to clear undoStack was commented for that reason.
+        //Now, we have to clear sources to make documents lighter, even if we're not able for the moment
+        //to prevent these memory leaks (only for UBGraphicsW3CWidgetItems ?)
+
+        //delete item
+        //item = NULL;
         return true;
     }
     else
