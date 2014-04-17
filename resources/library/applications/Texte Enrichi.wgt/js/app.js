@@ -490,27 +490,15 @@
                         if (window && window.sankore && window.sankore.currentToolIsSelector()) {
                             self.show();
 
-                            if (self.empty) {
-                                self.setContent('');
-                            }
-
                             self.options.onWidgetFocus.call(self);
                         }
                     };
 
                     this.widget.onblur = function () {
                         self.tinymce.save();
-                        self.tinymce.fire('blur');
-
-                        var content = self.getContent();
-
-                        self.empty = app.RTEditor.isContentEmpty(content);
-
-                        if (self.empty) {
-                            self.setContent(tinymce.translate(self.options.defaultText));
-                        }
-
                         self.hide();
+                        
+                        self.tinymce.fire('blur');
 
                         self.options.onWidgetBlur.call(self);
                     };
@@ -557,6 +545,10 @@
                 this.tinymce.getDoc().body.contentEditable = true;
                 this.tinymce.getDoc().designMode = 'on';
                 this.tinymce.settings.object_resizing = true;
+
+                if (this.empty) {
+                    this.setContent('');
+                }
             };
 
             /**
@@ -570,6 +562,12 @@
                 this.tinymce.getDoc().body.contentEditable = false;
                 this.tinymce.getDoc().designMode = 'off';
                 this.tinymce.settings.object_resizing = false;
+                    
+                this.empty = app.RTEditor.isContentEmpty(this.getContent());
+
+                if (this.empty) {
+                    this.setContent(tinymce.translate(this.options.defaultText));
+                }
             };
 
             /**
@@ -784,10 +782,11 @@
                 };
 
                 if (!this.options.autoShow) {
-                    if (window && window.sankore && window.sankore.isSelected())
+                    if (window && window.sankore && window.sankore.isSelected()) {
 						this.show();
-					else
+                    } else {
 						this.hide();						
+                    }
                 } else {
                     if (app.RTEditor.isContentEmpty(this.getContent())) {
                         this.applyDefaults();
@@ -925,11 +924,8 @@
             options.onInit = function () {
                 var text = window.sankore.preference('content', '');
 
+                this.empty = app.RTEditor.isContentEmpty(text);
                 this.setContent(text);
-
-                if (!app.RTEditor.isContentEmpty(text)) {
-                    this.empty = false;
-                }
 
                 if ('true' === window.sankore.preference('dark', 'false')) {
                     this.setDarkBackground(true);
@@ -939,7 +935,6 @@
 
                 if (window.sankore.preference('font')) {
                     var font = JSON.parse(window.sankore.preference('font'));
-                    console.log(font);
                     this.setDefaultFontFamily(font.name);
                     this.setDefaultFontSize(font.size);
                     this.setDefaultFontBold(font.bold);
@@ -953,7 +948,8 @@
             };
 
             options.onBlur = function () {
-                window.sankore.setPreference('content', this.getContent());
+                window.sankore.setPreference('content', this.empty ? '' : this.getContent());
+                window.sankore.setPreference('empty', this.empty ? 'true' : 'false');
                 window.sankore.setPreference('dark', this.dark ? 'true' : 'false');
                 window.sankore.setPreference('background', this.backgroundColor);
                 window.sankore.setPreference('font', JSON.stringify(this.font));
