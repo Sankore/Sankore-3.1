@@ -223,6 +223,11 @@
 
                     var fonts = {
                         list: editor.settings.fontsize_formats.split(' '),
+                        integerList: function () {
+                            return this.list.map(function(v) {
+                                return Number(v.replace('pt', ''));
+                            });
+                        },
                         indexOf: function (font) {
                             var index = this.list.indexOf(font);
                             return index === -1 ? undefined : index;
@@ -239,16 +244,21 @@
                     };
 
                     var getFontSizeAtCursor = function () {
-                        var container = editor.selection.getRng().startContainer,
-                            $el;
-
-                        if (container.nodeType === 3) {
-                            $el = $(container.parentElement);
-                        } else {
-                            $el = $(container);
-                        }
-
-                        return Math.round(Number($el.css('font-size').replace('px', '')) * 0.75) + 'pt';
+                        var size = Number(
+                            window
+                                .getComputedStyle(editor.selection.getNode(), null)
+                                .getPropertyValue('font-size')
+                                .replace('px', '')
+                        ) * 0.75,
+                        closest = null;
+                        
+                        fonts.integerList().map(function(v) {
+                            if (closest === null || Math.abs(v - size) < Math.abs(closest - size)) {
+                                closest = v;
+                            }
+                        });
+                        
+                        return closest + 'pt';
                     };
 
                     editor.addButton('increasefontsize', {
@@ -467,7 +477,7 @@
                 if (this.font.italic) {
                     this.tinymce.execCommand('Italic', true);
                 }
-                
+
                 var p = this.tinymce.getDoc().querySelectorAll('p > br:only-child').item(0);
                 p.parentElement.removeChild(p);
             };
@@ -498,7 +508,7 @@
                     this.widget.onblur = function () {
                         self.tinymce.save();
                         self.hide();
-                        
+
                         self.tinymce.fire('blur');
 
                         self.options.onWidgetBlur.call(self);
@@ -563,7 +573,7 @@
                 this.tinymce.getDoc().body.contentEditable = false;
                 this.tinymce.getDoc().designMode = 'off';
                 this.tinymce.settings.object_resizing = false;
-                    
+
                 this.empty = app.RTEditor.isContentEmpty(this.getContent());
 
                 if (this.empty) {
@@ -766,12 +776,31 @@
                     }
                 });
 
+                this.tinymce.editorCommands.addCommands({
+                    'FontName,FontSize': function(command) {
+                        var value = 0, parent;
+
+                        if ((parent = editor.dom.getParent(editor.selection.getNode(), 'span'))) {
+                            if (command == 'fontsize') {
+                                value = parent.style.fontSize;
+                            } else {
+                                value = window
+                                    .getComputedStyle(parent, null)
+                                    .getPropertyValue('font-family')
+                                    .replace(/, /g, ',').replace(/[\'\"]/g, '').toLowerCase();
+                            }
+                        }
+
+                        return value;
+                    }
+                }, 'value');
+
                 this.getIframe().attr('scrolling', 'no');
 
                 $(editor.getDoc()).bind('keydown', function (e) {
                     self.checkForResize();
                 });
-                
+
                 editor.getDoc().body.style.zoom = this.options.widgetScale;
 
                 // hack dégueulasse pour se passer de confirmation dans le cas d'ajout de lien externe
@@ -786,9 +815,9 @@
 
                 if (!this.options.autoShow) {
                     if (window && window.sankore && window.sankore.isSelected()) {
-						this.show();
+                        this.show();
                     } else {
-						this.hide();						
+                        this.hide();
                     }
                 } else {
                     if (app.RTEditor.isContentEmpty(this.getContent())) {
@@ -810,8 +839,7 @@
             /**
              * Event handler for TinyMCE editor 'blur' event
              */
-            app.RTEditor.prototype.onTinyFocus = function (e) {
-            };
+            app.RTEditor.prototype.onTinyFocus = function (e) {};
 
             /**
              * Event handler for TinyMCE editor 'show' event
@@ -987,9 +1015,9 @@
             if (app.allowedLangs.indexOf(window.sankore.locale()) !== -1) {
                 options.locale = window.sankore.locale();
             }
-            
+
             options.dark = window.sankore.isDarkBackground();
-            
+
             if (window.sankore.widgetScale) {
                 options.widgetScale = window.sankore.widgetScale();
             }
@@ -1061,7 +1089,7 @@ if (!('sankore' in window)) {
         },
 
         fontBoldPreference: function () {
-            return true;
+            return false;
         },
 
         updateFontItalicPreference: function (italic) {
@@ -1094,6 +1122,10 @@ if (!('sankore' in window)) {
 
         currentToolIsSelector: function () {
             return true;
+        },
+        
+        widgetScale: function () {
+            return 0.776042;
         }
     };
 }
