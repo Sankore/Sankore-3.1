@@ -67,22 +67,22 @@ void UBShapeFactory::applyCurrentStyle(UBAbstractGraphicsItem* shape)
                 shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Diag1);
                 shape->setFillColor(mCurrentFillFirstColor);
             }
-            else if (mFillType == Dense){
-                if (shape->hasFillingProperty()){
-                    shape->setStyle(Qt::TexturePattern);
-                    shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Dot1);
-                    shape->setFillColor(mCurrentFillFirstColor);
-                }
+        }
+        else if (mFillType == Dense){
+            if (shape->hasFillingProperty()){
+                shape->setStyle(Qt::TexturePattern);
+                shape->setFillPattern(UBAbstractGraphicsItem::FillPattern_Dot1);
+                shape->setFillColor(mCurrentFillFirstColor);
             }
-            else if (mFillType == Gradient){
-                if (shape->hasFillingProperty())
-                    setGradientFillingProperty(shape);
-            }
-            else{
-                if (shape->hasFillingProperty()){
-                    shape->setStyle(mCurrentBrushStyle);
-                    shape->setFillColor(mCurrentFillFirstColor);
-                }
+        }
+        else if (mFillType == Gradient){
+            if (shape->hasFillingProperty())
+                setGradientFillingProperty(shape);
+        }
+        else{
+            if (shape->hasFillingProperty()){
+                shape->setStyle(mCurrentBrushStyle);
+                shape->setFillColor(mCurrentFillFirstColor);
             }
         }
     }
@@ -662,26 +662,6 @@ bool UBShapeFactory::isShape(QGraphicsItem *item)
             || item->type() == UBGraphicsItemType::GraphicsPathItemType
             || item->type() == UBGraphicsItemType::GraphicsRegularPathItemType
             || item->type() == UBGraphicsItemType::GraphicsFreehandItemType;
-}
-
-void UBShapeFactory::setFillingStyle(Qt::BrushStyle brushStyle)
-{
-    //save the style and then update all selected elements
-    mCurrentBrushStyle = brushStyle;
-
-    UBGraphicsScene* scene = mBoardView->scene();
-
-    QList<QGraphicsItem*> items = scene->selectedItems();
-
-    for(int i = 0; i < items.size(); i++){
-        UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(items.at(i));
-
-        if(shape)
-            shape->setStyle(mCurrentBrushStyle);
-
-
-        items.at(i)->update();
-    }
 }
 
 void UBShapeFactory::setStrokeStyle(Qt::PenStyle penStyle)

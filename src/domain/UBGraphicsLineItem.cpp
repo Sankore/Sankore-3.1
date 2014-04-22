@@ -80,6 +80,8 @@ void UBEditableGraphicsLineItem::paint(QPainter *painter, const QStyleOptionGrap
     setStyle(painter);
 
     painter->drawPath(path());
+
+    drawArrows();
 }
 
 QPointF UBEditableGraphicsLineItem::startPoint() const
@@ -117,8 +119,6 @@ void UBEditableGraphicsLineItem::setStartPoint(QPointF pos)
     this->setPos(pos);
 
     mHandles.at(0)->setPos(pos);
-
-    update();
 }
 
 void UBEditableGraphicsLineItem::setEndPoint(QPointF pos)
@@ -134,8 +134,6 @@ void UBEditableGraphicsLineItem::setEndPoint(QPointF pos)
     setPath(p);
 
     mHandles.at(1)->setPos(pos);
-
-    update();
 }
 
 void UBEditableGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
@@ -159,8 +157,6 @@ void UBEditableGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
 
         setPath(p);
     }
-
-    update();
 }
 
 void UBEditableGraphicsLineItem::setLine(QPointF start, QPointF end)
@@ -172,8 +168,6 @@ void UBEditableGraphicsLineItem::setLine(QPointF start, QPointF end)
     p.lineTo(end);
 
     setPath(p);
-
-    update();
 }
 
 void UBEditableGraphicsLineItem::onActivateEditionMode()
@@ -193,4 +187,24 @@ QPainterPath UBEditableGraphicsLineItem::shape() const
     }
 
     return p;
+}
+
+void UBEditableGraphicsLineItem::addPoint(const QPointF &point)
+{
+    prepareGeometryChange();
+
+    QPainterPath p(mapFromScene(point));
+
+    if(path().elementCount() == 0){
+        mHandles.at(0)->setPos(point);
+        p.moveTo(point);
+    }else{
+        //In the other cases we have just to change the last point
+        p.moveTo(path().elementAt(0));
+        p.lineTo(point);
+
+        mHandles.at(1)->setPos(point);
+    }
+
+    setPath(p);
 }
