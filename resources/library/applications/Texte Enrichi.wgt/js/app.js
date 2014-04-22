@@ -822,7 +822,7 @@
                 } else {
                     if (app.RTEditor.isContentEmpty(this.getContent())) {
                         this.applyDefaults();
-                        this.tinymce.getDoc().body.click();
+                        //this.tinymce.getDoc().body.click();
                     }
                 }
 
