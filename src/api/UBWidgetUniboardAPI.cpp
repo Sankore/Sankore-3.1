@@ -407,6 +407,14 @@ bool UBWidgetUniboardAPI::isSelected()
     return mGraphicsWidget->isSelected();
 }
 
+QString UBWidgetUniboardAPI::widgetScale()
+{
+    // Issue - ALTI/AOU - 20140414 : RichTextEditor and NormalTextEditor were not displaying text at the same size (for a same Font Size).
+    // The reason is when a W3CWidgetItem is put on the Board, it has a scale inverse to Board scale.
+    // But NormalTextEditor has a scale factor of 1. In order to have a similar display, we set the same 1 scale factor for RichTextEditor :
+    return QString::number(1.0 / mGraphicsWidget->transform().m22());
+}
+
 QString UBWidgetUniboardAPI::pageThumbnail(const int pageNumber)
 {
     if (UBApplication::boardController->activeScene() != mScene)

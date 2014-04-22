@@ -447,8 +447,6 @@ public slots:
 
         bool mShouldUseOMP;
 
-        int mItemCount;
-
         QList<QGraphicsItem*> mFastAccessItems; // a local copy as QGraphicsScene::items() is very slow in Qt 4.6
 
         //int mMesure1Ms, mMesure2Ms;

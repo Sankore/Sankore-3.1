@@ -233,6 +233,12 @@ class UBWidgetUniboardAPI : public QObject
         bool isSelected();
 
         /**
+         *  get scale transform
+         */
+        QString widgetScale();
+
+
+        /**
          *  update font family
          */
         void updateFontFamilyPreference(const QString& fontFamily);

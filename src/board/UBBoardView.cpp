@@ -245,6 +245,8 @@ UBBoardView::keyPressEvent (QKeyEvent *event)
         }
 
 
+      qDebug() << event->modifiers ();
+
       if (event->modifiers () & Qt::ControlModifier) // keep only ctrl/cmd keys
         {
           switch (event->key ())
@@ -702,7 +704,9 @@ bool UBBoardView::itemShouldBeMoved(QGraphicsItem *item)
 
     //EV-7 - NNE - 20140103
     if(UBShapeFactory::isShape(item)){
-        if(UBShapeFactory::isInEditMode(item)){
+        //if the item is selected or in edit mode
+        //we have to received the mouse event throught the QGraphicsView
+        if(item->isSelected() || UBShapeFactory::isInEditMode(item)){
             return false;
         }
         return true;
@@ -883,6 +887,7 @@ void UBBoardView::handleItemMouseMove(QMouseEvent *event)
         movingItem->setPos(newPos);
         mLastPressedMousePos = scenePos;
         mWidgetMoved = true;
+
         event->accept();
     }
     else
@@ -1472,6 +1477,12 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
        UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
 
        QGraphicsItem* widget = scene()->itemAt(this->mapToScene(event->posF().toPoint()), transform());
+
+       // Issue - ALTI/AOU - 20140414 : RichTextEditor and NormalTextEditor were not displaying text at the same size (for a same Font Size).
+       // The reason is when a W3CWidgetItem is put on the Board, it has a scale inverse to Board scale.
+       // But NormalTextEditor has a scale factor of 1. In order to have a similar display, we set the same 1 scale factor for RichTextEditor :
+       widget->scale(1.0 / widget->transform().m11(), 1.0 / widget->transform().m22());
+
        if (widget)
            widget->setFocus();
 

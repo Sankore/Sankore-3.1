@@ -291,7 +291,6 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     , mRenderingContext(Screen)
     , mCurrentStroke(0)
     , mShouldUseOMP(true)
-    , mItemCount(0)
     , mUndoRedoStackEnabled(enableUndoRedoStack)
     , magniferControlViewWidget(0)
     , magniferDisplayViewWidget(0)
@@ -1681,9 +1680,6 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
 
     UBGraphicsItem::assignZValue(item, mZLayerController->generateZLevel(item));
 
-    if (!mTools.contains(item))
-      ++mItemCount;
-
     mFastAccessItems << item;
 
     //CFA
@@ -1717,8 +1713,6 @@ void UBGraphicsScene::addItems(const QSet<QGraphicsItem*>& items)
         UBGraphicsItem::assignZValue(item, mZLayerController->generateZLevel(item));
     }
 
-    mItemCount += items.size();
-
     mFastAccessItems += items.toList();
 }
 
@@ -1729,9 +1723,6 @@ void UBGraphicsScene::removeItem(QGraphicsItem* item)
     UBCoreGraphicsScene::removeItem(item);
 
     UBApplication::boardController->freezeW3CWidget(item, true);
-
-    if (!mTools.contains(item))
-      --mItemCount;
 
     mFastAccessItems.removeAll(item);
 
@@ -1748,8 +1739,6 @@ void UBGraphicsScene::removeItems(const QSet<QGraphicsItem*>& items)
     foreach(QGraphicsItem* item, items) {
         UBCoreGraphicsScene::removeItem(item);
     }
-
-    mItemCount -= items.size();
 
     foreach(QGraphicsItem* item, items)
         mFastAccessItems.removeAll(item);
@@ -1810,7 +1799,9 @@ void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
 
 bool UBGraphicsScene::isEmpty() const
 {
-    return mItemCount == 0;
+    //Issue NC - CFA - 20140417 : there is always at least 2 objects when the scene is Empty : eraser + pointer.
+    //To make sure that no unexpected behavior will be thrown if this test is done earlier, we use the "lte operator"
+    return items().count() <= 2;
 }
 
 
