@@ -402,8 +402,10 @@ bool UBWidgetUniboardAPI::currentToolIsSelector()
     return ((UBStylusTool::Enum)UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector);
 }
 
-
-
+bool UBWidgetUniboardAPI::isSelected()
+{
+    return mGraphicsWidget->isSelected();
+}
 
 QString UBWidgetUniboardAPI::pageThumbnail(const int pageNumber)
 {

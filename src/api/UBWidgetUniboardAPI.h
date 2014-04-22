@@ -228,6 +228,11 @@ class UBWidgetUniboardAPI : public QObject
         bool currentToolIsSelector();
 
         /**
+         *  check if current widget is selected
+         */
+        bool isSelected();
+
+        /**
          *  update font family
          */
         void updateFontFamilyPreference(const QString& fontFamily);

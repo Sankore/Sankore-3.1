@@ -784,7 +784,10 @@
                 };
 
                 if (!this.options.autoShow) {
-                    this.hide();
+                    if (window && window.sankore && window.sankore.isSelected())
+						this.show();
+					else
+						this.hide();						
                 } else {
                     if (app.RTEditor.isContentEmpty(this.getContent())) {
                         this.applyDefaults();

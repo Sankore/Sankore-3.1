@@ -3811,7 +3811,7 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
 
     QStringRef svgPoints = mXmlReader.attributes().value("points");
 
-    if (!svgPoints.isNull())
+    if (!pathItem && !svgPoints.isNull())
     {
         QStringList ts = svgPoints.toString().split(QLatin1Char(' '),
                          QString::SkipEmptyParts);
