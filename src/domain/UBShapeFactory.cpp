@@ -582,10 +582,9 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
         {
             if (freehand->path().elementCount() > 2)
             {
-                QGraphicsEllipseItem poigneeDepart(freehand->mStartEndPoint[0].x()-10, freehand->mStartEndPoint[1].y()-10, 20, 20);
+                QGraphicsEllipseItem poigneeDepart(freehand->mStartEndPoint[0].x()-10, freehand->mStartEndPoint[0].y()-10, 20, 20);
                 if (poigneeDepart.contains(freehand->mStartEndPoint[1]))
                 {
-                    //
                     freehand->addPoint(freehand->mStartEndPoint[0]);
                     freehand->setClosed(true);
                     applyCurrentStyle(mCurrentShape);

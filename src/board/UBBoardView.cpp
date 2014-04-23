@@ -1478,11 +1478,6 @@ UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 
        QGraphicsItem* widget = scene()->itemAt(this->mapToScene(event->posF().toPoint()), transform());
 
-       // Issue - ALTI/AOU - 20140414 : RichTextEditor and NormalTextEditor were not displaying text at the same size (for a same Font Size).
-       // The reason is when a W3CWidgetItem is put on the Board, it has a scale inverse to Board scale.
-       // But NormalTextEditor has a scale factor of 1. In order to have a similar display, we set the same 1 scale factor for RichTextEditor :
-       widget->scale(1.0 / widget->transform().m11(), 1.0 / widget->transform().m22());
-
        if (widget)
            widget->setFocus();
 
@@ -1659,6 +1654,14 @@ void UBBoardView::dropEvent (QDropEvent *event)
 
     if(onItem)
         item = dynamic_cast<UBGraphicsWidgetItem*>(onItem);
+
+    //Ev-NC - CFA - 20140403 : now we can use thumbnails to drop images
+    UBDraggableThumbnail* droppedThumbnail = dynamic_cast<UBDraggableThumbnail*>(event->source());
+    if (droppedThumbnail) //an image has been dropped
+    {
+        UBFeature f = UBApplication::boardController->paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
+        UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+    }
 
     //take care about the lazy evaluation of the test
     bool isFeatureRTE = isUBGraphicsWidget
