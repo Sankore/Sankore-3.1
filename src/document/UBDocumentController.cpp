@@ -696,9 +696,12 @@ bool UBDocumentTreeModel::dropMimeData(const QMimeData *data, Qt::DropAction act
         }
 #endif
 
-        QModelIndex clonedTopLevel = copyIndexToNewParent(curIndex, parent, action == Qt::MoveAction ? aReference : aContentCopy);
-        if (nodeFromIndex(curIndex) == mCurrentNode && action == Qt::MoveAction) {
-            emit currentIndexMoved(clonedTopLevel, curIndex);
+        //Issue N/C - NNE - 20140528 : use just the index on the first column
+        if(curIndex.column() == 0){
+            QModelIndex clonedTopLevel = copyIndexToNewParent(curIndex, parent, action == Qt::MoveAction ? aReference : aContentCopy);
+            if (nodeFromIndex(curIndex) == mCurrentNode && action == Qt::MoveAction) {
+                emit currentIndexMoved(clonedTopLevel, curIndex);
+            }
         }
     }
 
@@ -805,7 +808,7 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
         return QModelIndex();
     }
 
-    beginInsertRows(newParent, rowCount(newParent), rowCount(newParent));
+    //beginInsertRows(newParent, rowCount(newParent), rowCount(newParent));
 
     UBDocumentTreeNode *clonedNodeSource = 0;
     switch (static_cast<int>(pMode)) {
@@ -848,7 +851,7 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
     }
 
     addNode(clonedNodeSource, newParent);
-    endInsertRows();
+    //endInsertRows();
 
     QPersistentModelIndex newParentIndex = createIndex(rowCount(newParent), 0, clonedNodeSource);
 
@@ -865,10 +868,13 @@ QPersistentModelIndex UBDocumentTreeModel::copyIndexToNewParent(const QModelInde
 //N/C - NNE - 20140409
 void UBDocumentTreeModel::moveIndexes(const QModelIndexList &source, const QModelIndex &destination)
 {
-    if(!isCatalog(destination))
-        return;
+    //Issue N/C - NNE - 20140528
+    QModelIndex destinationParent = destination;
+    while(!isCatalog(destinationParent)){
+        destinationParent = destinationParent.parent();
+    }
 
-    UBDocumentTreeNode *newParentNode = nodeFromIndex(destination);
+    UBDocumentTreeNode *newParentNode = nodeFromIndex(destinationParent);
 
     bool hasOneInsertion = false;
 
@@ -879,12 +885,12 @@ void UBDocumentTreeModel::moveIndexes(const QModelIndexList &source, const QMode
         if(newParentNode == sourceNode->parentNode() || sourceNode->findNode(newParentNode))
             continue;
 
-        if(s.internalId() != destination.internalId()){
+        if(s.internalId() != destinationParent.internalId()){
             int sourceIndex = source.at(i).row();
             int destIndex = positionForParent(sourceNode, newParentNode);
 
-            beginMoveRows(s.parent(), sourceIndex, sourceIndex, destination, destIndex);
-            fixNodeName(s, destination);
+            beginMoveRows(s.parent(), sourceIndex, sourceIndex, destinationParent, destIndex);
+            fixNodeName(s, destinationParent);
             sourceNode->parentNode()->moveChild(sourceNode, destIndex, newParentNode);
             updateIndexNameBindings(sourceNode);
 
@@ -1291,9 +1297,12 @@ void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool 
 
     UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
 
-     selectionModel()->select(proxy->mapFromSource(indexCurrentDoc), pExpand
-                             ? QItemSelectionModel::Select
-                             : QItemSelectionModel::Deselect);
+    QItemSelectionModel::SelectionFlags sel = pExpand
+                                                ? QItemSelectionModel::Select
+                                                : QItemSelectionModel::Deselect;
+
+     selectionModel()->select(proxy->mapFromSource(indexCurrentDoc), QItemSelectionModel::Rows | sel);
+
     setCurrentIndex(pExpand
                     ? indexCurrentDoc
                     : QModelIndex());
@@ -1302,6 +1311,8 @@ void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool 
         setExpanded(indexCurrentDoc.parent(), pExpand);
         indexCurrentDoc = indexCurrentDoc.parent();
     }
+
+    scrollTo(proxy->mapFromSource(pIndex), QAbstractItemView::PositionAtCenter);
 }
 
 void UBDocumentTreeView::onModelIndexChanged(const QModelIndex &pNewIndex, const QModelIndex &pOldIndex)
@@ -1329,11 +1340,8 @@ void UBDocumentTreeView::hSliderRangeChanged(int min, int max)
 void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 {
     QTreeView::dragEnterEvent(event);
-    /*
     event->accept();
     event->acceptProposedAction();
-
-    */
 }
 
 void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
@@ -1363,7 +1371,7 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
         updateIndexEnvirons(targetIndex);
     }
     QTreeView::dragMoveEvent(event);
-    //event->setAccepted(acceptIt);
+    event->setAccepted(acceptIt);
 
     //QTreeView::dragMoveEvent(event);
 }
@@ -1382,6 +1390,9 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
 
     QModelIndex targetIndex = mapIndexToSource(indexAt(event->pos()));
     QModelIndexList dropIndex = mapIndexesToSource(selectedIndexes());
+
+    //clear the selection right after
+    selectionModel()->clearSelection();
 
     bool isUBPage = event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage);
 
@@ -1450,6 +1461,7 @@ void UBDocumentTreeView::dropEvent(QDropEvent *event)
         }
 
         expand(proxy->mapFromSource(targetIndex));
+
         //issue 1632 - NNE - 20131212 : END
     }else if(inModel){
         event->setDropAction(Qt::CopyAction);
@@ -1510,8 +1522,6 @@ void UBDocumentTreeView::updateIndexEnvirons(const QModelIndex &index)
 
 void UBDocumentTreeView::adjustSize()
 {
-    /*
-
     resizeColumnToContents(0);
 
     int headerSizeHint = width();
@@ -1521,8 +1531,6 @@ void UBDocumentTreeView::adjustSize()
 
     if (columnWidth(0) < headerSizeHint)
         setColumnWidth(0, headerSizeHint);
-
-    */
 }
 
 //N/C - NNE - 20140404
@@ -1927,7 +1935,7 @@ void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &select
 
             if(!sameFolder){
                 mDocumentUI->documentTreeView->clearSelection();
-                mDocumentUI->documentTreeView->selectionModel()->select(list.at(list.count()-1), QItemSelectionModel::Select);
+                mDocumentUI->documentTreeView->selectionModel()->select(list.at(list.count()-1), QItemSelectionModel::Select | QItemSelectionModel::Rows);
             }
         }
         //N/C - NNE - 20140408 : END
@@ -1948,7 +1956,7 @@ void UBDocumentController::TreeViewSelectionChanged(const QItemSelection &select
         if(!isParentIsSelected)
             TreeViewSelectionChanged(newSelectedRow, QModelIndex());
         else
-            mDocumentUI->documentTreeView->selectionModel()->select(newSelectedRow, QItemSelectionModel::Deselect);
+            mDocumentUI->documentTreeView->selectionModel()->select(newSelectedRow, QItemSelectionModel::Deselect | QItemSelectionModel::Rows);
 
         //if he newSelectedRow have children deselect them
         /*
@@ -2166,8 +2174,6 @@ void UBDocumentController::setupViews()
 //N/C - NNE - 20140403
 void UBDocumentController::sortDocuments(int kind, int order)
 {
-    qDebug() << kind << " ## " << order;
-
     Qt::SortOrder sortOrder = Qt::AscendingOrder;
 
     //if the user hasn't change the sort
@@ -2190,9 +2196,6 @@ void UBDocumentController::sortDocuments(int kind, int order)
 
         mDocumentUI->documentTreeView->showColumn(1);
         mDocumentUI->documentTreeView->hideColumn(2);
-
-        mDocumentUI->documentTreeView->update(QModelIndex());
-
     }else if(kind == UBDocumentController::UpdateDate){
         mSortFilterProxyModel->setSortRole(UBDocumentTreeModel::UpdateDate);
         mSortFilterProxyModel->sort(2, sortOrder);
@@ -2544,6 +2547,7 @@ void UBDocumentController::deleteSelectedItem()
         case MoveToTrash:
         {
             moveToTrash(currentIndex, docModel);
+
             break;
         }
         case CompleteDelete:
@@ -2596,7 +2600,7 @@ void UBDocumentController::deleteSelectedItem()
 //N/C - NNE - 20140410
 void UBDocumentController::moveIndexesToTrash(const QModelIndexList &list, UBDocumentTreeModel *docModel)
 {
-    QModelIndex currentScene = docModel->indexForNode(docModel->currentNode());
+        QModelIndex currentScene = docModel->indexForNode(docModel->currentNode());
 
     //check if the current scene is selected
     QItemSelectionModel *selectionModel = mDocumentUI->documentTreeView->selectionModel();
@@ -2648,6 +2652,8 @@ void UBDocumentController::moveIndexesToTrash(const QModelIndexList &list, UBDoc
     }
 
     docModel->moveIndexes(list, docModel->trashIndex());
+
+    selectionModel->clearSelection();
 
     if(deleteCurrentScene){
         createNewDocumentInUntitledFolder();
