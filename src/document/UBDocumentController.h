@@ -501,17 +501,16 @@ protected:
         void itemSelectionChanged(LastSelectedElementType newSelection);
         void exportDocument();
         void exportDocumentSet();
-        //void itemChanged(QTreeWidgetItem * item, int column);
+
         void thumbnailViewResized();
         void pageSelectionChanged();
-        //void selectionChanged();
+
         void documentSceneChanged(UBDocumentProxy* proxy, int pSceneIndex);
-        //void pageDoubleClicked(QGraphicsItem* item, int index);
+
         void thumbnailPageDoubleClicked(QGraphicsItem* item, int index);
         void pageClicked(QGraphicsItem* item, int index);
         void addToDocument();
-//        void addDocumentInTree(UBDocumentProxy* pDocument);
-        //void updateDocumentInTree(UBDocumentProxy* pDocument);
+
         void addFolderOfImages();
         void addFileToDocument();
         void addImages();
