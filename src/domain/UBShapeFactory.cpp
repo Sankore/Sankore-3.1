@@ -475,6 +475,7 @@ void UBShapeFactory::onMousePress(QMouseEvent *event)
                 UBEditableGraphicsLineItem* line = dynamic_cast<UBEditableGraphicsLineItem*>(instanciateCurrentShape());
 
                 line->setLine(cursorPosition, cursorPosition);
+                line->setMagnetic(true);
 
                 mBoardView->scene()->addItem(line);
             }
@@ -532,6 +533,7 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     UBEditableGraphicsLineItem* line= dynamic_cast<UBEditableGraphicsLineItem*>(mCurrentShape);
     if (line)
     {
+        line->setMagnetic(false);
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
     }

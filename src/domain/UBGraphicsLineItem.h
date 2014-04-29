@@ -59,6 +59,20 @@ class UBEditableGraphicsLineItem : public UBEditableGraphicsPolygonItem
         void copyItemParameters(UBItem *copy) const;
 
         virtual void addPoint(const QPointF &point);
+
+        void setMagnetic(bool isMagnetic);
+
+        bool isMagnetic() const;
+private:
+
+        bool mIsMagnetic;
+
+        enum PointPosition{
+            End,
+            Start
+        };
+
+        void forcePointPosition(const QPointF& pos, PointPosition pointPosition, int amplitude = 2);
 };
 
 #endif // UBGRAPHICSLINEITEM_H
