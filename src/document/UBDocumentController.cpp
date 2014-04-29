@@ -575,6 +575,29 @@ QDateTime UBDocumentTreeModel::findNodeDate(UBDocumentTreeNode *node, QString ty
 
 QDateTime UBDocumentTreeModel::findCatalogUpdatedDate(UBDocumentTreeNode *node) const
 {
+    UBDocumentProxy *proxy = node->proxyData();
+
+    if(proxy){
+        return proxy->metaData(UBSettings::documentUpdatedAt).toDateTime();
+    }else if(node->children().size() > 0){
+        QDateTime d = findCatalogUpdatedDate(node->children().at(0));
+
+        for(int i = 1; i < node->children().size(); i++){
+            QDateTime dChild = findCatalogUpdatedDate(node->children().at(i));
+
+            if(dChild != QDateTime()){
+                if(mAscendingOrder){
+                    d = qMin(d, dChild);
+                }else{
+                    d = qMax(d, dChild);
+                }
+            }
+
+        }
+
+        return d;
+    }
+
     return QDateTime();
 }
 
