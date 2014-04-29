@@ -984,11 +984,11 @@
     </message>
     <message>
         <source>Stroke Style Dot Line</source>
-        <translation>Style du trait : traitillés</translation>
+        <translation>Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation>Style du trait : traitillés</translation>
+        <translation type="unfinished">Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1071,96 +1071,96 @@
         <translation>Dessin à main levée</translation>
     </message>
     <message>
-        <source>Stroke style : Dot Dash</source>
-        <translation>Style de bordure : pointillé</translation>
+        <source>Stroke style : Dash</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align objects</source>
-        <translation>Aligner les objets</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ALign objects</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation>Aligner à gauche</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align objects to the left</source>
-        <translation>Aligner les objets à gauche</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects vertically.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation>Aligner à droite</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align objects to the right</source>
-        <translation>Aligner les objets à droite</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align Top</source>
-        <translation>Aligner en haut</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align objects to the top</source>
-        <translation>Aligner les objets en haut</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the middle.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align Bottom</source>
-        <translation>Aligner en bas</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the bottom.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>End arrow style : Arrow</source>
-        <translation>Style de flèche de fin : Flèche</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Start arrow style : Arrow</source>
-        <translation>Style de flèche de début : Flèche</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>End arrow style : Round</source>
-        <translation>Style de flèche de fin : Rond</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Start arrow style : Round</source>
-        <translation>Style de flèche de début : Rond</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>End arrow style : None</source>
-        <translation>Style de flèche de fin : Aucun</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Start arrow style : None</source>
-        <translation>Style de flèche de début : Aucun</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arrows Properties</source>
-        <translation>Propriétés des flèches</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arrows properties</source>
-        <translation>Propriétés des flèches</translation>
-    </message>
-    <message>
-        <source>Stroke Style Dot Dash</source>
-        <translation>Style de bordure : pointillés</translation>
-    </message>
-    <message>
-        <source>Align the center of the objects vertically</source>
-        <translation>Aligner verticalement le centre des objets</translation>
-    </message>
-    <message>
-        <source>Align objects to the bottom</source>
-        <translation>Aligner les objets en bas</translation>
-    </message>
-    <message>
-        <source>Align Center Vertically</source>
-        <translation>Aligner verticalement le centre</translation>
-    </message>
-    <message>
-        <source>Align Center Horizontally</source>
-        <translation>Aligner horizontalement le centre</translation>
-    </message>
-    <message>
-        <source>Align the center of the objects horizontally</source>
-        <translation>Aligner horizontalement le centre des objets</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1322,7 +1322,7 @@
     </message>
     <message>
         <source>This is not a final release. Please use it only for testing.</source>
-        <translation>Ceci n&apos;est pas une version finale. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
+        <translation>Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
     </message>
 </context>
 <context>

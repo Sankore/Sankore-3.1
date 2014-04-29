@@ -984,11 +984,11 @@
     </message>
     <message>
         <source>Stroke Style Dot Line</source>
-        <translation>Style du trait : traitillés</translation>
+        <translation>Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation>Style du trait : traitillés</translation>
+        <translation type="unfinished">Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1322,7 +1322,7 @@
     </message>
     <message>
         <source>This is not a final release. Please use it only for testing.</source>
-        <translation>Ceci n&apos;est pas une version finale. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
+        <translation>Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
     </message>
 </context>
 <context>

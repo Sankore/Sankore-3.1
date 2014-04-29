@@ -11,7 +11,6 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBResources.h \
     src/gui/UBMessageWindow.h \
     src/gui/UBDocumentThumbnailWidget.h \
-    src/gui/UBDocumentTreeWidget.h \
     src/gui/UBMousePressFilter.h \
     src/gui/UBBlackoutWidget.h \
     src/gui/UBMainWindow.h \
@@ -77,7 +76,6 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBResources.cpp \
     src/gui/UBMessageWindow.cpp \
     src/gui/UBDocumentThumbnailWidget.cpp \
-    src/gui/UBDocumentTreeWidget.cpp \
     src/gui/UBMousePressFilter.cpp \
     src/gui/UBBlackoutWidget.cpp \
     src/gui/UBMainWindow.cpp \
