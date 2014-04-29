@@ -1071,6 +1071,10 @@
         <translation>Dessin à main levée</translation>
     </message>
     <message>
+        <source>Stroke style : Dash</source>
+        <translation type="obsolete">Style de bordure : traitillé</translation>
+    </message>
+    <message>
         <source>Stroke style : Dot Dash</source>
         <translation>Style de bordure : pointillé</translation>
     </message>
@@ -3694,6 +3698,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Uniboard Documents</source>
         <translation>Documents Uniboard</translation>
+    </message>
+    <message>
+        <source>Select a sort</source>
+        <translation>Sélectionner un tri</translation>
+    </message>
+    <message>
+        <source>Creation date</source>
+        <translation>Date de création</translation>
+    </message>
+    <message>
+        <source>Update date</source>
+        <translation>Date de modification</translation>
+    </message>
+    <message>
+        <source>Alphabetical order</source>
+        <translation>Ordre alphabétique</translation>
+    </message>
+    <message>
+        <source>Ascending order</source>
+        <translation>Ordre croissant</translation>
+    </message>
+    <message>
+        <source>Descending order</source>
+        <translation>Ordre décroissant</translation>
     </message>
 </context>
 <context>
