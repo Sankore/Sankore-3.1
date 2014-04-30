@@ -249,7 +249,7 @@ void UBEditableGraphicsLineItem::forcePointPosition(const QPointF& pos, PointPos
 
     int angle = line.angle();
 
-    const float PI = 4*atan(1);
+    const float PI = 4*atan(1.f);
 
     //for each angle we compute the left and right angle
     //then compute the distance between both
@@ -261,7 +261,7 @@ void UBEditableGraphicsLineItem::forcePointPosition(const QPointF& pos, PointPos
         int leftDist = (leftAmplitude - angle + 360) % 360;
         int rightDist = (angle - rightAmplitude + 360) % 360;
 
-        if(leftDist < amplitude || rightDist < amplitude){
+        if(leftDist <= amplitude || rightDist <= amplitude){
             if(pointPosition == End){
                 line.setAngle(angles[i]);
             }else{

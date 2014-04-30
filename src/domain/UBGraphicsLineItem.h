@@ -72,7 +72,7 @@ private:
             Start
         };
 
-        void forcePointPosition(const QPointF& pos, PointPosition pointPosition, int amplitude = 2);
+        void forcePointPosition(const QPointF& pos, PointPosition pointPosition, int amplitude = 1);
 };
 
 #endif // UBGRAPHICSLINEITEM_H
