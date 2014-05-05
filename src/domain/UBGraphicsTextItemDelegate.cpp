@@ -107,27 +107,19 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mTableButton = new DelegateButton(":/images/roundeRrectangle.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mLeftAlignmentButton = new DelegateButton(":/images/resizeLeft.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mCenterAlignmentButton = new DelegateButton(":/images/resizeTop.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mRightAlignmentButton = new DelegateButton(":/images/resizeRight.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mCodeButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mListButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
-    connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
-    connect(mFontItalicButton, SIGNAL(clicked()), this, SLOT(setFontItalic()));
-    connect(mFontUnderlineButton, SIGNAL(clicked()), this, SLOT(setFontUnderline()));
-    connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));    
+    connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));
     connect(mDecreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(decreaseSize()));
     connect(mIncreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(increaseSize()));
+    //Code pour demo
     connect(mBackgroundColorButton, SIGNAL(clicked(bool)), this, SLOT(pickBackgroundColor()));    
-    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(setTableSize()));
+    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(insertTable()));
     connect(mLeftAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToLeft()));
     connect(mCenterAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToCenter()));
-    connect(mRightAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToRight()));
-    connect(mCodeButton, SIGNAL(clicked(bool)), this, SLOT(alternHtmlMode()));
-    connect(mListButton, SIGNAL(clicked(bool)), this, SLOT(insertList()));
 
     QList<QGraphicsItem*> itemsOnToolBar;
-    itemsOnToolBar << mFontButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton << mBackgroundColorButton << mTableButton << mLeftAlignmentButton << mCenterAlignmentButton << mRightAlignmentButton << mCodeButton << mListButton;
+    itemsOnToolBar << mFontButton << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton << mBackgroundColorButton << mTableButton << mLeftAlignmentButton << mCenterAlignmentButton;
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
     mToolBarItem->setVisibleOnBoard(true);
@@ -248,9 +240,131 @@ void UBGraphicsTextItemDelegate::pickColor()
 
             UBGraphicsTextItem::lastUsedTextColor = selectedColor;
 
+            delegated()->setSelected(true);            
+            delegated()->contentsChanged();
+            delegated()->setFocus();
+        }
+    }
+}
+
+void UBGraphicsTextItemDelegate::pickBackgroundColor()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        QColorDialog colorDialog(delegated()->defaultTextColor(), mDelegated->scene()->views().at(0));
+        colorDialog.setWindowTitle(tr("Background Color"));
+        if (UBSettings::settings()->isDarkBackground())
+        {
+            colorDialog.setStyleSheet("background-color: white;");
+        }
+
+        if (colorDialog.exec())
+        {
+            QColor selectedColor = colorDialog.selectedColor();
+            delegated()->setBackgroundColor(selectedColor);
             delegated()->setSelected(true);
             delegated()->contentsChanged();
+            delegated()->setFocus();
         }
+    }
+}
+
+void UBGraphicsTextItemDelegate::insertTable()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {                
+        delegated()->insertTable(mTablePalette->lines(), mTablePalette->columns());
+        mTablePalette->hide();
+    }
+}
+/*
+void UBGraphicsTextItemDelegate::addIndent()
+{
+    QTextCursor cursor = delegated()->textCursor();
+
+    //cursor.beginEditBlock();
+
+    QTextBlockFormat blockFmt = cursor.blockFormat();
+    QTextListFormat listFmt;
+
+    QTextList *list = cursor.currentList();
+    if (list)
+    {
+        listFmt.setIndent(list->format().indent()+1);
+    }
+}
+
+void UBGraphicsTextItemDelegate::removeIndent()
+{
+    QTextCursor cursor = delegated()->textCursor();
+
+    //cursor.beginEditBlock();
+
+    QTextBlockFormat blockFmt = cursor.blockFormat();
+
+    QTextList *list = cursor.currentList();
+    if (list)
+    {
+
+    }
+
+}
+*/
+
+void UBGraphicsTextItemDelegate::insertList()
+{
+    QTextCursor cursor = delegated()->textCursor();
+
+    QTextListFormat::Style style = QTextListFormat::ListDisc;
+
+    cursor.beginEditBlock();
+
+    QTextBlockFormat blockFmt = cursor.blockFormat();
+    QTextListFormat listFmt;
+
+    QTextList *list = cursor.currentList();
+
+    if (list)
+    {
+        QTextListFormat listFormat;
+        listFormat.setIndent(0);
+        listFormat.setStyle(style);
+        list->setFormat(listFormat);
+
+        for( int i = list->count() - 1; i>=0 ; --i)
+            list->removeItem(i);
+    }
+    else
+    {
+        listFmt.setIndent(blockFmt.indent()+1);
+        blockFmt.setIndent(0);
+        cursor.setBlockFormat(blockFmt);
+        listFmt.setStyle(style);
+        cursor.createList(listFmt);
+    }
+
+    cursor.endEditBlock();
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::setTableSize()
+{
+    mTablePalette->show();
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToLeft()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToLeft();        
+    }
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToCenter()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToCenter();
     }
 }
 
