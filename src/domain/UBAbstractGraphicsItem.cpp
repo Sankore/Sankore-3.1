@@ -11,6 +11,8 @@ UBAbstractGraphicsItem::UBAbstractGraphicsItem(QGraphicsItem *parent):
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
     Delegate()->setCanTrigAnAction(true);
+    Delegate()->setHorizontalMirror(true);
+    Delegate()->setVerticalMirror(true);
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());

@@ -289,6 +289,10 @@ class UBGraphicsItemDelegate : public QObject
         UBGraphicsItemAction* action() { return mAction; }
         void setAction(UBGraphicsItemAction* action);
 
+        //N/C - NNE - 20140505 : add vertical and horizontal flip
+        void setVerticalMirror(bool isMirror){ mVerticalMirror = isMirror; }
+        void setHorizontalMirror(bool isMirror){ mHorizontalMirror = isMirror; }
+
     signals:
         void showOnDisplayChanged(bool shown);
         void lockChanged(bool locked);
@@ -307,6 +311,10 @@ class UBGraphicsItemDelegate : public QObject
         void increaseZlevelBottom();
 
         void onZoomChanged();
+
+        //N/C - NNE - 20140505 : add vertical and horizontal flip
+        void flipHorizontally();
+        void flipVertically();
 
     protected:
         virtual void buildButtons();
@@ -371,6 +379,9 @@ private:
         bool mShowGoContentButton;
 
         bool mMoved;
+
+        bool mVerticalMirror;
+        bool mHorizontalMirror;
 
 private slots:
         void onAddActionClicked();

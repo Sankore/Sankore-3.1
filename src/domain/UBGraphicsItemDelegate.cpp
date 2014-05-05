@@ -233,6 +233,10 @@ void UBGraphicsItemDelegate::init()
     //Wrapper function. Use it to set correct data() to QGraphicsItem as well
     setFlippable(false);
     setRotatable(false);
+
+    //N/C - NNE - 20140505 : add vertical and horizontal flip
+    mVerticalMirror = false;
+    mHorizontalMirror = false;
 }
 
 
@@ -659,7 +663,35 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
     if (mCanReturnInCreationMode)
         menu->addAction(tr("Return to creation mode"), this, SLOT(onReturnToCreationModeClicked()));
 
+    //N/C - NNE - 20140505 : add vertical and horizontal flip
+    if(mHorizontalMirror)
+        menu->addAction(tr("Flip horizontally"), this, SLOT(flipHorizontally()));
+
+    if(mVerticalMirror)
+        menu->addAction(tr("Flip vertically"), this, SLOT(flipVertically()));
+    //N/C - NNE - 20140505 : END
+
 }
+
+//N/C - NNE - 20140505 : add vertical and horizontal flip
+void UBGraphicsItemDelegate::flipHorizontally()
+{
+    mDelegated->setTransform(QTransform::fromScale(1, -1), true);
+
+    int dy = -(mDelegated->boundingRect().y() + mDelegated->pos().y() + mDelegated->boundingRect().bottomLeft().y());
+
+    mDelegated->translate(0, dy);
+}
+
+void UBGraphicsItemDelegate::flipVertically()
+{
+    mDelegated->setTransform(QTransform::fromScale(-1, 1), true);
+
+    int dx = -(mDelegated->boundingRect().x() + mDelegated->pos().x() + mDelegated->boundingRect().bottomRight().x());
+
+    mDelegated->translate(dx, 0);
+}
+//N/C - NNE - 20140505 : END
 
 void UBGraphicsItemDelegate::onAddActionClicked()
 {
