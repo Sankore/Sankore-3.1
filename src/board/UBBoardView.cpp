@@ -68,6 +68,7 @@
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsProxyWidget.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -627,7 +628,10 @@ Here we determines cases when items should to get mouse press event at pressing 
     case QGraphicsWebView::Type:
         return true;
     case QGraphicsProxyWidget::Type: // Issue 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
-        return false;
+        if (dynamic_cast<UBGraphicsProxyWidget*>(item))
+            return true;
+        else
+            return false;
 
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && item->parentItem() && item->parentItem()->isSelected())
@@ -1651,9 +1655,16 @@ void UBBoardView::dropEvent (QDropEvent *event)
     //N/C - NNE - 20140303 : add test for the RTE widget
     bool isUBGraphicsWidget = onItem && onItem->type() == UBGraphicsWidgetItem::Type;
     UBGraphicsWidgetItem *item = 0;
+    UBGraphicsTextItem* textItem = NULL;
 
     if(onItem)
+    {
         item = dynamic_cast<UBGraphicsWidgetItem*>(onItem);
+        textItem = dynamic_cast<UBGraphicsTextItem*>(onItem);
+    }
+
+    //if (textItem)
+      //  textItem->
 
     //Ev-NC - CFA - 20140403 : now we can use thumbnails to drop images
     UBDraggableThumbnail* droppedThumbnail = dynamic_cast<UBDraggableThumbnail*>(event->source());

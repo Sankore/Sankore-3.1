@@ -3050,7 +3050,6 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
     qreal height = mXmlReader.attributes().value("height").toString().toFloat();
 
     UBGraphicsTextItem* textItem = new UBGraphicsTextItem();
-
     graphicsItemFromSvg(textItem);
     textItem->Delegate()->setAction(readAction());
 

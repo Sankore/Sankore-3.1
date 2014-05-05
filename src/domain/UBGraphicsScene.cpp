@@ -59,7 +59,7 @@
 #include "UBGraphicsItemUndoCommand.h"
 #include "UBGraphicsItemGroupUndoCommand.h"
 #include "UBGraphicsTextItemUndoCommand.h"
-#include "UBGraphicsProxyWidget.h"
+#include "UBAbstractGraphicsProxyWidget.h"
 #include "UBGraphicsPixmapItem.h"
 #include "UBGraphicsSvgItem.h"
 #include "UBGraphicsPolygonItem.h"
@@ -77,6 +77,7 @@
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsRectItem.h"
 #include "domain/UBGraphicsLineItem.h"
+#include "domain/UBGraphicsProxyWidget.h"
 
 #include "UBGraphicsStroke.h"
 
@@ -1355,6 +1356,14 @@ UBGraphicsWidgetItem* UBGraphicsScene::addWidget(const QUrl& pWidgetUrl, const Q
     }
 }
 
+UBGraphicsProxyWidget* UBGraphicsScene::addWidget(QWidget *widget, Qt::WindowFlags wFlags)
+{
+    UBGraphicsProxyWidget *proxy = new UBGraphicsProxyWidget(0, wFlags);
+    proxy->setWidget(widget);
+    QGraphicsScene::addItem(proxy);
+    return proxy;
+}
+
 UBGraphicsAppleWidgetItem* UBGraphicsScene::addAppleWidget(const QUrl& pWidgetUrl, const QPointF& pPos)
 {
     UBGraphicsAppleWidgetItem *appleWidget = new UBGraphicsAppleWidgetItem(pWidgetUrl);
@@ -1652,7 +1661,7 @@ UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const Q
         qDebug() << "Cleaning the string leads to an empty string";
         cleanString = pString;
     }
-    UBGraphicsTextItem *textItem = new UBGraphicsTextItem();
+    UBGraphicsTextItem *textItem = new UBGraphicsTextItem(0);
 
     textItem->setPlainText("");
     textItem->setHtml(cleanString);
@@ -1669,9 +1678,9 @@ UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const Q
             this,     SLOT(textUndoCommandAdded(UBGraphicsTextItem *)));
 
     textItem->setFocus();
+    textItem->setPos(pTopLeft);
 
     setDocumentUpdated();
-    textItem->setPos(pTopLeft);
 
     return textItem;
 }
@@ -1690,7 +1699,6 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
 
 void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
 {
-    //CFA - TEST UNDO
     UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
     if (shape)
     {

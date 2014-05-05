@@ -56,15 +56,21 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual QRectF boundingRect() const;
         virtual QPainterPath shape() const;
 
+        //void setSelected(bool selected);
+
         void setTextWidth(qreal width);
         void setTextHeight(qreal height);
         qreal textHeight() const;
 
-        void insertTable();
+        void insertTable(const int lines, const int columns);
         void setBackgroundColor(const QColor& color);
         void setForegroundColor(const QColor& color);
         void setAlignmentToLeft();
         void setAlignmentToCenter();
+        void setAlignmentToRight();
+
+        bool htmlMode() const;
+        void setHtmlMode(const bool mode);
 
         void contentsChanged();
 
@@ -123,8 +129,11 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         QTime mLastMousePressTime;
         QString mTypeTextHereLabel;
 
+        bool mHtmlIsInterpreted;
+
         QColor mColorOnDarkBackground;
         QColor mColorOnLightBackground;
+        QColor mBackgroundColor;
 
         //issue 1554
         bool isActivatedTextEditor;

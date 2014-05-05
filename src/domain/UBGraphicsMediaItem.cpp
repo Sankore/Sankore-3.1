@@ -67,7 +67,7 @@ void UBAudioPresentationWidget::paintEvent(QPaintEvent *event)
 bool UBGraphicsMediaItem::sIsMutedByDefault = false;
 
 UBGraphicsMediaItem::UBGraphicsMediaItem(const QUrl& pMediaFileUrl, QGraphicsItem *parent)
-        : UBGraphicsProxyWidget(parent)
+        : UBAbstractGraphicsProxyWidget(parent)
         , mVideoWidget(NULL)
         , mAudioWidget(NULL)
         , mMuted(sIsMutedByDefault)
@@ -193,7 +193,7 @@ QVariant UBGraphicsMediaItem::itemChange(GraphicsItemChange change, const QVaria
         }
     }
 
-    return UBGraphicsProxyWidget::itemChange(change, value);
+    return UBAbstractGraphicsProxyWidget::itemChange(change, value);
 }
 
 

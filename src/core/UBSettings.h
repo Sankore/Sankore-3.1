@@ -99,6 +99,8 @@ class UBSettings : public QObject
         void setBoldFont(bool bold);
         bool isItalicFont();
         void setItalicFont(bool italic);
+        bool isUnderlineFont();
+        void setUnderlineFont(bool underline);
 
         void setPassword(const QString& id, const QString& password);
         QString password(const QString& id);

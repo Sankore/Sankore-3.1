@@ -899,7 +899,8 @@ void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
 {
     if(!action)
         onRemoveActionClicked();
-    else{
+    else
+    {
         setCanTrigAnAction(true);
         if(!mMenu){
             //TODO claudio

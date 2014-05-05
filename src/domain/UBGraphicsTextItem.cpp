@@ -44,6 +44,7 @@
 #include "core/UBPersistenceManager.h"
 #include "core/UBTextTools.h"
 
+#include "gui/UBCreateTablePalette.h"
 #include "core/memcheck.h"
 
 QColor UBGraphicsTextItem::lastUsedTextColor;
@@ -53,8 +54,10 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     , UBGraphicsItem()
     , mMultiClickState(0)
     , mLastMousePressTime(QTime::currentTime())
-{
-    setDelegate(new UBGraphicsTextItemDelegate(this, 0));
+    , mBackgroundColor(QColor(Qt::transparent))
+    , mHtmlIsInterpreted(false)
+{    
+    setDelegate(new UBGraphicsTextItemDelegate(this));
     Delegate()->init();
 
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
@@ -223,6 +226,13 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    if (mBackgroundColor != Qt::transparent && !mHtmlIsInterpreted)
+    {
+        painter->setPen(Qt::transparent);
+        painter->setBrush(mBackgroundColor);
+        painter->drawRect(boundingRect());
+    }
+
     QColor color = UBSettings::settings()->isDarkBackground() ? mColorOnDarkBackground : mColorOnLightBackground;
     setDefaultTextColor(color);
 
@@ -240,6 +250,16 @@ void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
         painter->setPen(UBSettings::paletteColor);
         painter->drawText(boundingRect(), Qt::AlignCenter, mTypeTextHereLabel);
     }
+}
+
+bool UBGraphicsTextItem::htmlMode() const
+{
+    return mHtmlIsInterpreted;
+}
+
+void UBGraphicsTextItem::setHtmlMode(const bool mode)
+{
+    mHtmlIsInterpreted = mode;
 }
 
 
@@ -343,14 +363,14 @@ void UBGraphicsTextItem::contentsChanged()
     }
 }
 
-void UBGraphicsTextItem::insertTable()
+void UBGraphicsTextItem::insertTable(const int lines, const int columns)
 {
     QTextCursor cursor = textCursor();
 
     QTextTableFormat format;
     format.setWidth(QTextLength(QTextLength::PercentageLength, 100));
-    format.merge(cursor.blockFormat());
-    cursor.insertTable(3,3,format);
+    format.merge(cursor.charFormat());
+    cursor.insertTable(lines,columns,format);    
 }
 
 void UBGraphicsTextItem::setBackgroundColor(const QColor& color)
@@ -358,23 +378,43 @@ void UBGraphicsTextItem::setBackgroundColor(const QColor& color)
     QTextBlockFormat format;
     format.setBackground(QBrush(color));
 
-    QTextCursor cursor = textCursor();
+    QTextCursor cursor = textCursor();   
 
     QTextTable* t = cursor.currentTable();
-    if (t)
+    int firstRow,numRows,firstCol,numCols;
+    cursor.selectedTableCells(&firstRow,&numRows,&firstCol,&numCols);
+    if (firstRow < 0)
     {
-        QTextTableCell c = t->cellAt(cursor);
-        QTextCharFormat format;
-        format.setBackground(QBrush(color));
-        c.setFormat(format);
+        if (t)
+        {
+            QTextTableCell c = t->cellAt(cursor);
+            QTextCharFormat format;
+            format.setBackground(QBrush(color));
+            c.setFormat(format);
+        }
+        else
+            mBackgroundColor = color;
     }
     else
     {
-        cursor.select(QTextCursor::Document);
-        cursor.mergeBlockFormat(format);
-        cursor.clearSelection();
-        setTextCursor(cursor);
+        if (firstRow == 0)
+            numRows--;
+
+        if (firstCol == 0)
+            numCols--;
+
+        for (int i = firstRow; i <= numRows; i++)
+        {
+            for (int j = firstCol; j <= numCols; j++)
+            {
+                QTextTableCell c = t->cellAt(i,j);
+                QTextCharFormat format;
+                format.setBackground(QBrush(color));
+                c.setFormat(format);
+            }
+        }
     }
+
 }
 
 void UBGraphicsTextItem::setForegroundColor(const QColor& color)
@@ -392,6 +432,7 @@ void UBGraphicsTextItem::setAlignmentToLeft()
     QTextCursor cursor = textCursor();
     cursor.mergeBlockFormat(format);
     setTextCursor(cursor);
+    setFocus();
 }
 
 void UBGraphicsTextItem::setAlignmentToCenter()
@@ -401,8 +442,18 @@ void UBGraphicsTextItem::setAlignmentToCenter()
     QTextCursor cursor = textCursor();
     cursor.mergeBlockFormat(format);
     setTextCursor(cursor);
+    setFocus();
 }
 
+void UBGraphicsTextItem::setAlignmentToRight()
+{
+    QTextBlockFormat format;
+    format.setAlignment(Qt::AlignRight);
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);    
+    setFocus();
+}
 
 UBGraphicsScene* UBGraphicsTextItem::scene()
 {
@@ -416,9 +467,32 @@ void UBGraphicsTextItem::resize(qreal w, qreal h)
     setTextHeight(h);
 
     if (Delegate())
+    {
         Delegate()->positionHandles();
+        UBGraphicsTextItemDelegate* textDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+        if (textDelegate)
+        {
+            QSize tablePaletteSize = textDelegate->tablePalette()->size();
+            textDelegate->tablePalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
+        }
+    }
 }
 
+/*
+void UBGraphicsTextItem::setSelected(bool selected)
+{
+    UBGraphicsTextItemDelegate* textDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+    if (textDelegate)
+    {
+        if (selected)
+            textDelegate->tablePalette()->show();
+        else
+            textDelegate->tablePalette()->hide();
+    }
+
+    QGraphicsTextItem::setSelected(selected);
+}
+*/
 
 QSizeF UBGraphicsTextItem::size() const
 {
