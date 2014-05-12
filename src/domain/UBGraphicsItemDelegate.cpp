@@ -678,18 +678,18 @@ void UBGraphicsItemDelegate::flipHorizontally()
 {
     mDelegated->setTransform(QTransform::fromScale(1, -1), true);
 
-    int dy = -(mDelegated->boundingRect().y() + mDelegated->pos().y() + mDelegated->boundingRect().bottomLeft().y());
+    qreal dy = 2.f*mDelegated->boundingRect().bottomLeft().y();
 
-    mDelegated->translate(0, dy);
+    mDelegated->translate(0, -dy);
 }
 
 void UBGraphicsItemDelegate::flipVertically()
 {
     mDelegated->setTransform(QTransform::fromScale(-1, 1), true);
 
-    int dx = -(mDelegated->boundingRect().x() + mDelegated->pos().x() + mDelegated->boundingRect().bottomRight().x());
+    qreal dx = 2.f*mDelegated->boundingRect().bottomRight().x();
 
-    mDelegated->translate(dx, 0);
+    mDelegated->translate(-dx, 0);
 }
 //N/C - NNE - 20140505 : END
 

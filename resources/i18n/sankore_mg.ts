@@ -2308,6 +2308,14 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
         <source>Return to creation mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Flip horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flip vertically</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsTextItem</name>

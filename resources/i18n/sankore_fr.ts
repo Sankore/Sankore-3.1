@@ -2319,6 +2319,14 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
         <source>Return to creation mode</source>
         <translation>Retour au mode création</translation>
     </message>
+    <message>
+        <source>Flip horizontally</source>
+        <translation>Symétrie d&apos;axe horizontal</translation>
+    </message>
+    <message>
+        <source>Flip vertically</source>
+        <translation>Symétrie d&apos;axe vertical</translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsTextItem</name>

@@ -2312,6 +2312,14 @@ Um novo nome vai criar um novo documento.</translation>
         <source>Return to creation mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Flip horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flip vertically</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsTextItem</name>
