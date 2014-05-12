@@ -533,7 +533,6 @@ void UBShapeFactory::onMouseRelease(QMouseEvent *event)
     UBEditableGraphicsLineItem* line= dynamic_cast<UBEditableGraphicsLineItem*>(mCurrentShape);
     if (line)
     {
-        line->setMagnetic(false);
         if (line->startPoint() == line->endPoint())
              mBoardView->scene()->removeItem(line);
     }

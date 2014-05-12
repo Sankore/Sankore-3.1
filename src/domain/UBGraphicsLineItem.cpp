@@ -153,21 +153,29 @@ void UBEditableGraphicsLineItem::updateHandle(UBAbstractHandle *handle)
     prepareGeometryChange();
 
     if(handle->getId() == 0){
-        QPainterPath p;
+        if(mIsMagnetic){
+            forcePointPosition(handle->pos(), Start);
+        }else{
+            QPainterPath p;
 
-        p.moveTo(handle->pos());
+            p.moveTo(handle->pos());
 
-        p.lineTo(path().elementAt(1));
+            p.lineTo(path().elementAt(1));
 
-        setPath(p);
+            setPath(p);
+        }
     }else if(handle->getId() == 1){
-        QPainterPath p;
+        if(mIsMagnetic){
+            forcePointPosition(handle->pos(), End);
+        }else{
+            QPainterPath p;
 
-        p.moveTo(path().elementAt(0));
+            p.moveTo(path().elementAt(0));
 
-        p.lineTo(handle->pos());
+            p.lineTo(handle->pos());
 
-        setPath(p);
+            setPath(p);
+        }
     }
 }
 
@@ -249,7 +257,7 @@ void UBEditableGraphicsLineItem::forcePointPosition(const QPointF& pos, PointPos
 
     int angle = line.angle();
 
-    const float PI = 4*atan(1.f);
+    const float PI_2 = 4*atan(1.f)*2;
 
     //for each angle we compute the left and right angle
     //then compute the distance between both
@@ -266,13 +274,14 @@ void UBEditableGraphicsLineItem::forcePointPosition(const QPointF& pos, PointPos
                 line.setAngle(angles[i]);
             }else{
                 //compute the position of p1 by hand
-                float angleInRadians = angles[i]*2*PI/360;
-                float sinY = sin(angleInRadians);
-                float cosX = cos(angleInRadians);
+                float angleInRadians = angles[i]*PI_2/360;
 
-                qreal length = line.length();
+                qreal l = line.length();
 
-                line.setP1(QPointF(cosX*length, sinY*length));
+                const qreal dx = -cos(angleInRadians)*l;
+                const qreal dy = sin(angleInRadians)*l;
+
+                line.setP1(QPointF(dx + line.p2().x(), dy + line.p2().y()));
             }
             break;
         }
