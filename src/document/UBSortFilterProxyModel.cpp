@@ -5,6 +5,7 @@ UBSortFilterProxyModel::UBSortFilterProxyModel():
     QSortFilterProxyModel()
 {
     setDynamicSortFilter(true);
+    setSortCaseSensitivity(Qt::CaseInsensitive);
 }
 
 bool UBSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const

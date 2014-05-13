@@ -450,6 +450,9 @@ class UBDocumentController : public UBDocumentContainer
         //N/C - NNE - 20140403
         void onSortKindChanged(int index);
         void onSortOrderChanged(int index);
+        void collapseAll();
+        void expandAll();
+
 protected:
         virtual void setupViews();
         virtual void setupToolbar();
