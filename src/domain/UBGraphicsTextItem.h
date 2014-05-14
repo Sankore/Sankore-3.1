@@ -62,12 +62,13 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void setTextHeight(qreal height);
         qreal textHeight() const;
 
+        void insertImage(QString src);
         void insertTable(const int lines, const int columns);
         void setBackgroundColor(const QColor& color);
         void setForegroundColor(const QColor& color);
         void setAlignmentToLeft();
         void setAlignmentToCenter();
-        void setAlignmentToRight();
+        void setAlignmentToRight();        
 
         bool htmlMode() const;
         void setHtmlMode(const bool mode);
@@ -110,6 +111,7 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void textUndoCommandAdded(UBGraphicsTextItem *textItem);
 
     private slots:
+        void loadUrl(QString url);
         void undoCommandAdded();
         void documentSizeChanged(const QSizeF & newSize);
 

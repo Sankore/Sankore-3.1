@@ -29,9 +29,12 @@
 #include "UBGraphicsTextItemDelegate.h"
 #include "UBGraphicsScene.h"
 #include "gui/UBResources.h"
+#include "gui/UBMainWindow.h"
 
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBGraphicsDelegateFrame.h"
+#include "domain/UBGraphicsProxyWidget.h"
+
 #include "core/UBSettings.h"
 
 #include "board/UBBoardController.h"
@@ -45,7 +48,12 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     : UBGraphicsItemDelegate(pDelegated,0, parent, true)
     , mLastFontPixelSize(-1)
     , delta(5)
+    , mTablePalette(new UBCreateTablePalette())
 {
+    UBGraphicsProxyWidget* w = UBApplication::boardController->activeScene()->addWidget(mTablePalette);
+    w->setParentItem(delegated());
+    w->hide();
+
     delegated()->setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     delegated()->setPlainText("");
 
@@ -62,12 +70,15 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     delegated()->adjustSize();
     delegated()->contentsChanged();
 
-    // NOOP
+    mTablePalette->move(delegated()->boundingRect().width()/2.0, 0 );
+    mLinkPalette->move(delegated()->boundingRect().width()/2.0, 0 );
+
+    connect(mTablePalette, SIGNAL(validationRequired()), this, SLOT(insertTable()));
 }
 
 UBGraphicsTextItemDelegate::~UBGraphicsTextItemDelegate()
 {
-    // NOOP
+
 }
 
 QFont UBGraphicsTextItemDelegate::createDefaultFont()
@@ -100,6 +111,9 @@ void UBGraphicsTextItemDelegate::buildButtons()
     UBGraphicsItemDelegate::buildButtons();
 
     mFontButton = new DelegateButton(":/images/font.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontBoldButton = new DelegateButton(":/images/bold.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontItalicButton = new DelegateButton(":/images/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontUnderlineButton = new DelegateButton(":/images/underline.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mDecreaseSizeButton = new DelegateButton(":/images/minus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mIncreaseSizeButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
@@ -107,19 +121,31 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mTableButton = new DelegateButton(":/images/roundeRrectangle.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mLeftAlignmentButton = new DelegateButton(":/images/resizeLeft.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mCenterAlignmentButton = new DelegateButton(":/images/resizeTop.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mRightAlignmentButton = new DelegateButton(":/images/resizeRight.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCodeButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mListButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
-    connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));
+    connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
+    connect(mFontItalicButton, SIGNAL(clicked()), this, SLOT(setFontItalic()));
+    connect(mFontUnderlineButton, SIGNAL(clicked()), this, SLOT(setFontUnderline()));
+    connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));    
     connect(mDecreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(decreaseSize()));
     connect(mIncreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(increaseSize()));
-    //Code pour demo
     connect(mBackgroundColorButton, SIGNAL(clicked(bool)), this, SLOT(pickBackgroundColor()));    
-    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(insertTable()));
+    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(setTableSize()));
     connect(mLeftAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToLeft()));
     connect(mCenterAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToCenter()));
+    connect(mRightAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToRight()));
+    connect(mCodeButton, SIGNAL(clicked(bool)), this, SLOT(alternHtmlMode()));
+    connect(mListButton, SIGNAL(clicked(bool)), this, SLOT(insertList()));
 
     QList<QGraphicsItem*> itemsOnToolBar;
-    itemsOnToolBar << mFontButton << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton << mBackgroundColorButton << mTableButton << mLeftAlignmentButton << mCenterAlignmentButton;
+    itemsOnToolBar << mFontButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
+                   << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton
+                   << mBackgroundColorButton << mTableButton << mLeftAlignmentButton
+                   << mCenterAlignmentButton << mRightAlignmentButton << mCodeButton
+                   << mListButton << mAddIndentButton << mRemoveIndentButton << mHyperLinkButton;
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
     mToolBarItem->setVisibleOnBoard(true);
@@ -210,11 +236,99 @@ void UBGraphicsTextItemDelegate::pickFont()
             delegated()->setFont(selectedFont);
             delegated()->setSelected(true);
 //          disabled and replaced by the next line because of not optimum result (text splits to two lines when that is not necessary)
-//          delegated()->adjustSize();
-            delegated()->resize(delegated()->document()->idealWidth(), delegated()->size().height());
-            delegated()->contentsChanged();
+    //          delegated()->adjustSize();
+                delegated()->resize(delegated()->document()->idealWidth(), delegated()->size().height());
+                delegated()->contentsChanged();
+            }
         }
     }
+
+void UBGraphicsTextItemDelegate::setFontBold()
+{
+    QTextCharFormat format;
+    QTextCursor cursor = delegated()->textCursor();
+    int anchorPos = cursor.anchor();
+    int cursorPos = cursor.position();
+
+    if (anchorPos >= cursorPos)
+        std::swap(cursorPos, anchorPos);
+
+    format.setFontWeight(cursor.charFormat().fontWeight() == QFont::Normal ? QFont::Bold : QFont::Normal);
+
+    if (cursor.selectedText().length() == 0)
+    {
+        cursor.select(QTextCursor::WordUnderCursor);
+        cursor.mergeCharFormat(format);
+        cursor.clearSelection();
+    }
+    else
+        cursor.mergeCharFormat(format);
+
+    if (anchorPos >= cursorPos)
+    {
+        cursor.setPosition(cursorPos, QTextCursor::MoveAnchor);
+        cursor.setPosition(anchorPos, QTextCursor::KeepAnchor);
+    }
+    else
+    {
+        cursor.setPosition(anchorPos, QTextCursor::MoveAnchor);
+        cursor.setPosition(cursorPos, QTextCursor::KeepAnchor);
+    }
+
+    delegated()->setFocus();
+    delegated()->setTextCursor(cursor);
+}
+
+void UBGraphicsTextItemDelegate::setFontItalic()
+{
+    QTextCharFormat format;
+    QTextCursor cursor = delegated()->textCursor();
+
+    int anchorPos = cursor.anchor();
+    int cursorPos = cursor.position();
+    if (anchorPos >= cursorPos)
+        std::swap(cursorPos, anchorPos);
+
+    format.setFontItalic(!cursor.charFormat().fontItalic());
+    if (cursor.selectedText().length() == 0)
+    {
+        cursor.select(QTextCursor::WordUnderCursor);
+        cursor.mergeCharFormat(format);
+        cursor.clearSelection();
+    }
+    else
+        cursor.mergeCharFormat(format);
+
+    cursor.setPosition(anchorPos, QTextCursor::MoveAnchor);
+    cursor.setPosition(cursorPos, QTextCursor::KeepAnchor);
+    delegated()->setFocus();
+    delegated()->setTextCursor(cursor);
+}
+
+void UBGraphicsTextItemDelegate::setFontUnderline()
+{
+    QTextCharFormat format;
+    QTextCursor cursor = delegated()->textCursor();
+
+    int anchorPos = cursor.anchor();
+    int cursorPos = cursor.position();
+    if (anchorPos >= cursorPos)
+        std::swap(cursorPos, anchorPos);
+
+    format.setFontUnderline(!cursor.charFormat().fontUnderline());
+    if (cursor.selectedText().length() == 0)
+    {
+        cursor.select(QTextCursor::WordUnderCursor);
+        cursor.mergeCharFormat(format);
+        cursor.clearSelection();
+    }
+    else
+        cursor.mergeCharFormat(format);
+
+    cursor.setPosition(anchorPos, QTextCursor::MoveAnchor);
+    cursor.setPosition(cursorPos, QTextCursor::KeepAnchor);
+    delegated()->setFocus();
+    delegated()->setTextCursor(cursor);
 }
 
 void UBGraphicsTextItemDelegate::pickColor()
@@ -290,7 +404,27 @@ void UBGraphicsTextItemDelegate::addIndent()
     QTextList *list = cursor.currentList();
     if (list)
     {
-        listFmt.setIndent(list->format().indent()+1);
+        QList<QTextBlock> newList;
+        int firstSelectedBlock = list->itemNumber(cursor.block());
+        int count = list->count();
+
+        //get list's items which have to be indented
+        for (int i=firstSelectedBlock; i < count; i++)
+            newList.push_back(list->item(i));
+
+
+        //create new format
+        listFmt = list->format();
+        QTextListFormat::Style style = static_cast<QTextListFormat::Style>((listFmt.style() - 1) % 4);
+        if (style == QTextListFormat::ListStyleUndefined)
+            style = QTextListFormat::ListDisc;
+        listFmt.setStyle(style);
+        listFmt.setIndent(listFmt.indent()+1);
+
+        //create new sub-list with new format
+        QTextList* theList = cursor.createList(listFmt);
+        for (int i = 0; i < count-firstSelectedBlock; i++)
+            theList->add(newList.at(i));
     }
 }
 
@@ -368,6 +502,62 @@ void UBGraphicsTextItemDelegate::setAlignmentToCenter()
     }
 }
 
+void UBGraphicsTextItemDelegate::setAlignmentToRight()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToRight();
+    }
+}
+
+void UBGraphicsTextItemDelegate::addLink()
+{
+    mLinkPalette->show();
+}
+
+void UBGraphicsTextItemDelegate::insertLink()
+{
+    QString link = mLinkPalette->link();
+    if (!link.startsWith("http://"))
+        link = "http://" + link;
+
+    if (!(mLinkPalette->text().isEmpty() || mLinkPalette->link().isEmpty()))
+        delegated()->textCursor().insertHtml(QString("<a href=\"%1\">%2</a>").arg(link, mLinkPalette->text()));
+
+    mLinkPalette->hide();
+}
+
+void UBGraphicsTextItemDelegate::alternHtmlMode()
+{    
+    if (!delegated()->htmlMode())
+    {
+        delegated()->setPlainText(delegated()->toHtml());
+
+        QTextCursor cursor = delegated()->textCursor();
+        QTextCharFormat format;
+        QFont font;
+
+        font.setFamily("Arial");
+        font.setPointSize(12);
+
+        format.setFont(font);
+
+        cursor.select(QTextCursor::Document);
+        cursor.setCharFormat(format);
+        cursor.clearSelection();
+
+        delegated()->setTextCursor(cursor);
+        delegated()->setFont(font);
+    }
+    else
+    {
+        delegated()->setHtml(delegated()->toPlainText());
+    }
+
+    delegated()->setHtmlMode(!delegated()->htmlMode());
+    changeDelegateButtonsMode(delegated()->htmlMode());
+}
+
 void UBGraphicsTextItemDelegate::decreaseSize()
 {
     ChangeTextSize(-delta, changeSize);
@@ -382,6 +572,7 @@ UBGraphicsTextItem* UBGraphicsTextItemDelegate::delegated()
 {
     return static_cast<UBGraphicsTextItem*>(mDelegated);
 }
+
 void UBGraphicsTextItemDelegate::setEditable(bool editable)
 {
     if (editable) {
@@ -396,8 +587,10 @@ void UBGraphicsTextItemDelegate::setEditable(bool editable)
         mDelegated->setData(UBGraphicsItemData::ItemEditable, QVariant(false));
     }
 }
+
 void UBGraphicsTextItemDelegate::remove(bool canUndo)
 {
+    mTablePalette->hide();
     UBGraphicsItemDelegate::remove(canUndo);
 }
 
@@ -459,8 +652,44 @@ void UBGraphicsTextItemDelegate::positionHandles()
     }
 }
 
-void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode changeMode)
+void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
 {
+    if (htmlMode)
+    {
+        mFontButton->setEnabled(false);
+        mFontBoldButton->setEnabled(false);
+        mFontItalicButton->setEnabled(false);
+        mFontUnderlineButton->setEnabled(false);
+        mColorButton->setEnabled(false);
+        //mDecreaseSizeButton->setEnabled(false);
+        //mIncreaseSizeButton->setEnabled(false);
+        mBackgroundColorButton->setEnabled(false);
+        mTableButton->setEnabled(false);
+        mLeftAlignmentButton->setEnabled(false);
+        mCenterAlignmentButton->setEnabled(false);
+        mRightAlignmentButton->setEnabled(false);
+        mListButton->setEnabled(false);
+    }
+    else
+    {
+        mFontButton->setEnabled(true);
+        mFontBoldButton->setEnabled(true);
+        mFontItalicButton->setEnabled(true);
+        mFontUnderlineButton->setEnabled(true);
+        mColorButton->setEnabled(true);
+        //mDecreaseSizeButton->setEnabled(true);
+        //mIncreaseSizeButton->setEnabled(true);
+        mBackgroundColorButton->setEnabled(true);
+        mTableButton->setEnabled(true);
+        mLeftAlignmentButton->setEnabled(true);
+        mCenterAlignmentButton->setEnabled(true);
+        mRightAlignmentButton->setEnabled(true);
+        mListButton->setEnabled(true);
+    }
+}
+
+void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode changeMode)
+{    
     if (scaleSize == changeMode)
     {
         if (1 == factor)
@@ -476,6 +705,7 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
         return;
 
     QTextCursor cursor = delegated()->textCursor();
+
     QTextCharFormat textFormat;
 
     int anchorPos = cursor.anchor();
@@ -496,8 +726,15 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
     int iPointSize;
     int iNextPointSize;
     int iCursorPos = startPos;
+    bool isUnderline = false;
+    bool isBold = false;
+    bool isItalic = false;
+    QFont nextFont;
+    bool nextIsUnderline = false;
+    bool nextIsItalic = false;
+    bool nextIsBold = false;
 
-   // we search continuous blocks of the text with the same PointSize and allpy new settings for them.
+    // we search continuous blocks of the text with the same PointSize and allpy new settings for them.
     cursor.setPosition (startPos, QTextCursor::MoveAnchor);
     while(iCursorPos < endPos)
     {
@@ -506,9 +743,11 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
 
         cursor.setPosition (iCursorPos+1, QTextCursor::KeepAnchor);
         iPointSize = cursor.charFormat().font().pointSize();
-        curFont = cursor.charFormat().font();
+        curFont = cursor.charFormat().font();        
+        isUnderline = cursor.charFormat().fontUnderline();
+        isItalic = cursor.charFormat().fontItalic();
+        isBold = cursor.charFormat().fontWeight() == QFont::Normal;
         cursor.setPosition (iCursorPos, QTextCursor::KeepAnchor);
-
 
         do
         {
@@ -516,16 +755,25 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
 
             cursor.setPosition (iCursorPos+iBlockLen+1, QTextCursor::KeepAnchor);
             iNextPointSize = cursor.charFormat().font().pointSize();
+            nextFont = cursor.charFormat().font();
+            nextIsUnderline = cursor.charFormat().fontUnderline();
+            nextIsItalic = cursor.charFormat().fontItalic();
+            nextIsBold = cursor.charFormat().fontWeight() == QFont::Normal;
 
             cursor.setPosition (iCursorPos+iBlockLen, QTextCursor::KeepAnchor);
-            if ((iPointSize != iNextPointSize)||(iCursorPos+iBlockLen >= endPos))
+
+            if ((isBold != nextIsBold)
+                || (isItalic != nextIsItalic)
+                || (isUnderline != nextIsUnderline)
+                || (curFont != nextFont)
+                || (iCursorPos+iBlockLen >= endPos))
                 bEndofTheSameBlock = true;
 
         }while(!bEndofTheSameBlock);
 
-
-        //setting new parameners
+        //setting new parameters
         int iNewPointSize = (changeSize == changeMode) ? (iPointSize + factor) : (iPointSize * factor);
+
         curFont.setPointSize( (iNewPointSize > 0)?iNewPointSize:1);
         textFormat.setFont(curFont);
         cursor.mergeCharFormat(textFormat);
@@ -562,4 +810,9 @@ QVariant UBGraphicsTextItemDelegate::itemChange(QGraphicsItem::GraphicsItemChang
         }
     }
     return UBGraphicsItemDelegate::itemChange(change, value);
+}
+
+UBCreateTablePalette* UBGraphicsTextItemDelegate::tablePalette()
+{
+    return mTablePalette;
 }

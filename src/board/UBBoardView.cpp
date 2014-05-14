@@ -1663,15 +1663,39 @@ void UBBoardView::dropEvent (QDropEvent *event)
         textItem = dynamic_cast<UBGraphicsTextItem*>(onItem);
     }
 
-    //if (textItem)
-      //  textItem->
-
+    UBFeature f = UBApplication::boardController->paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
     //Ev-NC - CFA - 20140403 : now we can use thumbnails to drop images
     UBDraggableThumbnail* droppedThumbnail = dynamic_cast<UBDraggableThumbnail*>(event->source());
-    if (droppedThumbnail) //an image has been dropped
+    if (textItem && textItem->isSelected())
     {
-        UBFeature f = UBApplication::boardController->paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
-        UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+        if (droppedThumbnail)
+        {
+            textItem->insertImage(f.getFullPath().toLocalFile());
+            return;
+        }
+        else
+        {
+            if (event->mimeData()->hasUrls())
+            {
+                QList<QUrl> urls = event->mimeData()->urls();
+
+                const UBFeaturesMimeData *internalMimeData = qobject_cast<const UBFeaturesMimeData*>(event->mimeData());
+                if (internalMimeData)
+                {
+                    foreach (QUrl url, urls)
+                        textItem->insertImage(url.toLocalFile());
+                }
+                return;
+            }
+        }
+    }
+    else
+    {
+        if (droppedThumbnail)
+        {
+             UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+             return;
+        }
     }
 
     //take care about the lazy evaluation of the test

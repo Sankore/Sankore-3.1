@@ -84,6 +84,7 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
 
     connect(document(), SIGNAL(contentsChanged()), Delegate(), SLOT(contentsChanged()));
     connect(document(), SIGNAL(undoCommandAdded()), this, SLOT(undoCommandAdded()));
+    connect(this, SIGNAL(linkActivated(QString)), this, SLOT(loadUrl(QString)));
 
     connect(document()->documentLayout(), SIGNAL(documentSizeChanged(const QSizeF &)),
             this, SLOT(documentSizeChanged(const QSizeF &)));
@@ -137,6 +138,7 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
         else
         {
+
             Delegate()->getToolBarItem()->show();
         }
 
@@ -262,6 +264,10 @@ void UBGraphicsTextItem::setHtmlMode(const bool mode)
     mHtmlIsInterpreted = mode;
 }
 
+void UBGraphicsTextItem::loadUrl(QString url)
+{
+    UBApplication::loadUrl(url);
+}
 
 UBItem* UBGraphicsTextItem::deepCopy() const
 {
@@ -361,6 +367,23 @@ void UBGraphicsTextItem::contentsChanged()
     {
         setTextWidth(textWidth());
     }
+}
+
+void UBGraphicsTextItem::insertImage(QString src)
+{
+    //retour chariot avant de placer l'image
+    textCursor().insertText("\n");
+
+    QImage img = QImage(src);
+    QString fileExtension = UBFileSystemUtils::extension(src);
+    QString filename = UBPersistenceManager::imageDirectory + "/" + QUuid::createUuid() + "." + fileExtension;
+    QString dest = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + filename;
+
+    if (!UBFileSystemUtils::copy(src, dest, true))
+        qDebug() << "UBFileSystemUtils::copy error";
+
+    document()->addResource(QTextDocument::ImageResource, QUrl(filename), img);
+    textCursor().insertImage(filename);
 }
 
 void UBGraphicsTextItem::insertTable(const int lines, const int columns)
@@ -472,8 +495,9 @@ void UBGraphicsTextItem::resize(qreal w, qreal h)
         UBGraphicsTextItemDelegate* textDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
         if (textDelegate)
         {
-            QSize tablePaletteSize = textDelegate->tablePalette()->size();
+            QSize tablePaletteSize = textDelegate->linkPalette()->size();
             textDelegate->tablePalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
+            textDelegate->linkPalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
         }
     }
 }
@@ -525,9 +549,9 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
     this->isActivatedTextEditor = activateTextEditor;
 
     if(!activateTextEditor){
-        setTextInteractionFlags(Qt::TextSelectableByMouse);
+        setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextBrowserInteraction);
     }else{
-        setTextInteractionFlags(Qt::TextEditorInteraction);
+        setTextInteractionFlags(Qt::TextEditorInteraction | Qt::TextBrowserInteraction);
     }
 
     qDebug() <<  textInteractionFlags();

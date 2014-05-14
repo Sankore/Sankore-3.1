@@ -32,6 +32,7 @@
 #include "UBGraphicsItemDelegate.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBCreateTablePalette.h"
+#include "gui/UBCreateHyperLinkPalette.h"
 
 class UBGraphicsTextItem;
 
@@ -53,6 +54,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         virtual QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value);
 
         UBCreateTablePalette* tablePalette();
+        UBCreateHyperLinkPalette* linkPalette();
 
         void changeDelegateButtonsMode(bool htmlMode);
 
@@ -86,8 +88,12 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mRightAlignmentButton;
         DelegateButton* mCodeButton;
         DelegateButton* mListButton;
+        DelegateButton* mAddIndentButton;
+        DelegateButton* mRemoveIndentButton;
+        DelegateButton* mHyperLinkButton;
 
         UBCreateTablePalette* mTablePalette;
+        UBCreateHyperLinkPalette* mLinkPalette;
 
         int mLastFontPixelSize;
 
@@ -116,10 +122,14 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void pickBackgroundColor();
         void setTableSize();
         void insertTable();
+        void addIndent();
+        void removeIndent();
         void insertList();
         void setAlignmentToLeft();
         void setAlignmentToCenter();
         void setAlignmentToRight();
+        void addLink();
+        void insertLink();
 
 private:
       const int delta;

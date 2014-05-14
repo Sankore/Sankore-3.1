@@ -3095,6 +3095,25 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
                         delete textItem;
                         textItem = 0;
                     }
+                    else
+                    {
+                        //CFA - add resources like images
+                        QDomDocument html;
+                        html.setContent(text);
+
+                        QDomNodeList imgNodes = html.elementsByTagName("img");
+
+                        if (imgNodes.count()>0)
+                        {
+                            for (int i =0; i < imgNodes.count(); i++)
+                            {
+                                QString filename = imgNodes.item(i).toElement().attribute("src");
+                                QString dest = mDocumentPath + "/" + filename;
+                                textItem->document()->addResource(QTextDocument::ImageResource, QUrl(filename), QImage(dest));
+                                textItem->adjustSize();
+                            }
+                        }
+                    }
                     return textItem;
                 }
 
@@ -3163,6 +3182,7 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             }
         }
     }
+
 
     if (text.isEmpty()) {
         delete textItem;
