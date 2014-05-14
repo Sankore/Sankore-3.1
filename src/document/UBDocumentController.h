@@ -292,7 +292,6 @@ public slots:
     void setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand = true);
     void onModelIndexChanged(const QModelIndex &pNewIndex, const QModelIndex &pOldIndex);
     void hSliderRangeChanged(int min, int max);
-    void adjustSize();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event);

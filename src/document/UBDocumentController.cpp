@@ -1276,10 +1276,6 @@ UBDocumentTreeView::UBDocumentTreeView(QWidget *parent) : QTreeView(parent)
 {
     setObjectName("UBDocumentTreeView");
     setRootIsDecorated(true);
-
-    connect(verticalScrollBar(), SIGNAL(rangeChanged(int,int)), this, SLOT(adjustSize()));
-    connect(this, SIGNAL(collapsed(const QModelIndex&)), this, SLOT(adjustSize()));
-    connect(this, SIGNAL(expanded(const QModelIndex&)), this, SLOT(adjustSize()));
 }
 
 void UBDocumentTreeView::setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand)
@@ -1514,19 +1510,6 @@ void UBDocumentTreeView::updateIndexEnvirons(const QModelIndex &index)
     const int multipler = 3;
     updateRect.adjust(0, -updateRect.height() * multipler, 0, updateRect.height() * multipler);
     update(updateRect);
-}
-
-void UBDocumentTreeView::adjustSize()
-{
-    resizeColumnToContents(0);
-
-    int headerSizeHint = width();
-
-    if (verticalScrollBar()->isVisible() && verticalScrollBar()->maximum() > 0)
-        headerSizeHint -= verticalScrollBar()->width();
-
-    if (columnWidth(0) < headerSizeHint)
-        setColumnWidth(0, headerSizeHint);
 }
 
 //N/C - NNE - 20140404
@@ -3365,75 +3348,34 @@ void UBDocumentController::createNewDocumentInUntitledFolder()
 
 void UBDocumentController::collapseAll()
 {
-    qDebug() << mDocumentUI->documentTreeView->viewport()->size();
+    //disable the animations because the view port will be in a invalid state
+    mDocumentUI->documentTreeView->setAnimated(false);
 
     mDocumentUI->documentTreeView->collapseAll();
 
-    qDebug() << mDocumentUI->documentTreeView->viewport()->size();
-
     QPersistentModelIndex untiltedDocumentIndex = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->untitledDocumentsIndex();
-    QPersistentModelIndex trashIndex = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->trashIndex();
-    QPersistentModelIndex modelsIndex = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->modelsIndex();
     QPersistentModelIndex myDocumentIndex = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->myDocumentsIndex();
 
     UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(mDocumentUI->documentTreeView->model());
 
-    //expand myDocument, trash, models and untilted folder
-    //be careful to do the expanding in the right order !
     if(proxy){
-        mDocumentUI->documentTreeView->hide();
-
         mDocumentUI->documentTreeView->setExpanded(proxy->mapFromSource(myDocumentIndex), true);
         mDocumentUI->documentTreeView->setExpanded(proxy->mapFromSource(untiltedDocumentIndex), true);
-        mDocumentUI->documentTreeView->setExpanded(proxy->mapFromSource(modelsIndex), true);
-        mDocumentUI->documentTreeView->setExpanded(proxy->mapFromSource(trashIndex), true);
-
-        mDocumentUI->documentTreeView->show();
-        /*
-
-        mDocumentUI->documentTreeView->expand(proxy->mapFromSource(myDocumentIndex));
-        mDocumentUI->documentTreeView->expand(proxy->mapFromSource(untiltedDocumentIndex));
-        mDocumentUI->documentTreeView->expand(proxy->mapFromSource(modelsIndex));
-        mDocumentUI->documentTreeView->expand(proxy->mapFromSource(trashIndex));
-
-        */
     }else{
         mDocumentUI->documentTreeView->setExpanded(myDocumentIndex, true);
         mDocumentUI->documentTreeView->setExpanded(untiltedDocumentIndex, true);
-        mDocumentUI->documentTreeView->setExpanded(modelsIndex, true);
-        mDocumentUI->documentTreeView->setExpanded(trashIndex, true);
     }
+
+    mDocumentUI->documentTreeView->setAnimated(true);
 }
 
 //N/C - NNE - 20140513
 void UBDocumentController::expandAll()
 {
-    //The expandAll method of the view set the viewport in a invalid state
-    //so we have to made an expanding by hand...
-    QModelIndexList listIndex;
+    //disable the animations because the view port will be in a invalid state
+    mDocumentUI->documentTreeView->setAnimated(false);
 
-    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(mDocumentUI->documentTreeView->model());
+    mDocumentUI->documentTreeView->expandAll();
 
-    listIndex.append(proxy->mapFromSource(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->untitledDocumentsIndex()));
-    listIndex.append(proxy->mapFromSource(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->trashIndex()));
-    listIndex.append(proxy->mapFromSource(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->modelsIndex()));
-    listIndex.append(proxy->mapFromSource(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->myDocumentsIndex()));
-
-    QModelIndex currentModelIndex;
-
-    for(int i=0; i < listIndex.size(); i++){
-        currentModelIndex = listIndex.at(i);
-
-        int nbChildren = proxy->rowCount(currentModelIndex);
-
-        if(nbChildren > 0)
-            mDocumentUI->documentTreeView->expand(currentModelIndex);
-
-        for(int j = 0; j < nbChildren; j++){
-            if(proxy){
-                if(currentModelIndex.child(j, 0).isValid())
-                    listIndex.append(currentModelIndex.child(j, 0));
-            }
-        }
-    }
+    mDocumentUI->documentTreeView->setAnimated(true);
 }
