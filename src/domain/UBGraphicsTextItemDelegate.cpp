@@ -776,7 +776,7 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
         curFont = cursor.charFormat().font();        
         isUnderline = cursor.charFormat().fontUnderline();
         isItalic = cursor.charFormat().fontItalic();
-        isBold = cursor.charFormat().fontWeight() == QFont::Normal;
+        isBold = cursor.charFormat().fontWeight() == QFont::Bold;
         cursor.setPosition (iCursorPos, QTextCursor::KeepAnchor);
 
         do
@@ -788,9 +788,15 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
             nextFont = cursor.charFormat().font();
             nextIsUnderline = cursor.charFormat().fontUnderline();
             nextIsItalic = cursor.charFormat().fontItalic();
-            nextIsBold = cursor.charFormat().fontWeight() == QFont::Normal;
+            nextIsBold = cursor.charFormat().fontWeight() == QFont::Bold;
 
             cursor.setPosition (iCursorPos+iBlockLen, QTextCursor::KeepAnchor);
+
+            if(cursor.charFormat().isTableCellFormat()){
+                //if the current char is in a cell end the block
+                cursor.setPosition (iCursorPos+iBlockLen-1, QTextCursor::KeepAnchor);
+                bEndofTheSameBlock = true;
+            }
 
             if ((isBold != nextIsBold)
                 || (isItalic != nextIsItalic)
