@@ -129,7 +129,8 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mCenterAlignmentButton = new DelegateButton(":/images/resizeTop.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mRightAlignmentButton = new DelegateButton(":/images/resizeRight.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mCodeButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mListButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mUnorderedListButton= new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mOrderedListButton= new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mAddIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mRemoveIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mHyperLinkButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
@@ -147,7 +148,8 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mCenterAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToCenter()));
     connect(mRightAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToRight()));
     connect(mCodeButton, SIGNAL(clicked(bool)), this, SLOT(alternHtmlMode()));
-    connect(mListButton, SIGNAL(clicked(bool)), this, SLOT(insertList()));
+    connect(mUnorderedListButton, SIGNAL(clicked(bool)), this, SLOT(insertUnorderedList()));
+    connect(mOrderedListButton, SIGNAL(clicked(bool)), this, SLOT(insertOrderedList()));
     connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
     connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
@@ -157,7 +159,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
                    << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton
                    << mBackgroundColorButton << mTableButton << mLeftAlignmentButton
                    << mCenterAlignmentButton << mRightAlignmentButton << mCodeButton
-                   << mListButton << mAddIndentButton << mRemoveIndentButton << mHyperLinkButton;
+                   << mUnorderedListButton << mOrderedListButton << mAddIndentButton << mRemoveIndentButton << mHyperLinkButton;
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
     mToolBarItem->setVisibleOnBoard(true);
@@ -413,27 +415,14 @@ void UBGraphicsTextItemDelegate::addIndent()
 
     if (list)
     {
-        QList<QTextBlock> newList;
-        int firstSelectedBlock = list->itemNumber(cursor.block());
-        int count = list->count();
-
-        //get list's items which have to be indented
-        for (int i=firstSelectedBlock; i < count; i++)
-            newList.push_back(list->item(i));
-
-
         //create new format
         listFmt = list->format();
-        QTextListFormat::Style style = static_cast<QTextListFormat::Style>((listFmt.style() - 1) % 4);
-        if (style == QTextListFormat::ListStyleUndefined)
-            style = QTextListFormat::ListDisc;
-        listFmt.setStyle(style);
+        listFmt.setStyle(nextStyle(listFmt.style()));
         listFmt.setIndent(listFmt.indent()+1);
 
         //create new sub-list with new format
         QTextList* theList = cursor.createList(listFmt);
-        for (int i = 0; i < count-firstSelectedBlock; i++)
-            theList->add(newList.at(i));
+        theList->add(cursor.block());
     }
     else
     {
@@ -472,12 +461,53 @@ void UBGraphicsTextItemDelegate::removeIndent()
     delegated()->setFocus();
 }
 
+QTextListFormat::Style UBGraphicsTextItemDelegate::nextStyle(QTextListFormat::Style format)
+{
+    QTextListFormat::Style style = QTextListFormat::ListStyleUndefined;
 
-void UBGraphicsTextItemDelegate::insertList()
+    if(format >= QTextListFormat::ListSquare){
+        style = static_cast<QTextListFormat::Style>((format - 1) % 4);
+        if (style == 0)
+            style = QTextListFormat::ListDisc;
+    }else if(format >= QTextListFormat::ListUpperRoman){
+        style = static_cast<QTextListFormat::Style>((format - 1) % 9);
+        if(style == 0)
+            style = QTextListFormat::ListDecimal;
+    }
+
+    return style;
+}
+
+QTextListFormat::Style UBGraphicsTextItemDelegate::previousStyle(QTextListFormat::Style format)
+{
+    QTextListFormat::Style style = QTextListFormat::ListStyleUndefined;
+
+    if(format >= QTextListFormat::ListSquare){
+        style = static_cast<QTextListFormat::Style>((format + 1) % 4);
+        if (style == 0)
+            style = QTextListFormat::ListSquare;
+    }else if(format >= QTextListFormat::ListUpperRoman){
+        style = static_cast<QTextListFormat::Style>((format + 1) % 9);
+        if(style == QTextListFormat::ListSquare)
+            style = QTextListFormat::ListUpperRoman;
+    }
+
+    return style;
+}
+
+void UBGraphicsTextItemDelegate::insertOrderedList()
+{
+    insertList(QTextListFormat::ListDecimal);
+}
+
+void UBGraphicsTextItemDelegate::insertUnorderedList()
+{
+    insertList(QTextListFormat::ListDisc);
+}
+
+void UBGraphicsTextItemDelegate::insertList(QTextListFormat::Style format)
 {
     QTextCursor cursor = delegated()->textCursor();
-
-    QTextListFormat::Style style = QTextListFormat::ListDisc;
 
     cursor.beginEditBlock();
 
@@ -488,20 +518,36 @@ void UBGraphicsTextItemDelegate::insertList()
 
     if (list)
     {
-        QTextListFormat listFormat;
-        listFormat.setIndent(0);
-        listFormat.setStyle(style);
-        list->setFormat(listFormat);
+        int oldFormat = static_cast<int>(list->format().style());
 
-        for( int i = list->count() - 1; i>=0 ; --i)
-            list->removeItem(i);
+        /*
+         * If the current format and old format are same, remove the list
+         * else switch the style
+         */
+        if(format >= QTextListFormat::ListSquare && oldFormat >= QTextListFormat::ListSquare
+                || (format <= QTextListFormat::ListDecimal && format >= QTextListFormat::ListUpperRoman
+                    && oldFormat <= QTextListFormat::ListDecimal && oldFormat >= QTextListFormat::ListUpperRoman)){
+            QTextListFormat listFormat;
+            listFormat.setIndent(0);
+            listFormat.setStyle(QTextListFormat::ListStyleUndefined);
+            list->setFormat(listFormat);
+
+            for( int i = list->count() - 1; i>=0 ; --i)
+                list->removeItem(i);
+        }else{
+            QTextListFormat listFormat(list->format());
+            listFormat.setStyle(format);
+
+            QTextList* theList = cursor.createList(listFormat);
+            theList->add(cursor.block());
+        }
     }
     else
     {
         listFmt.setIndent(blockFmt.indent()+1);
         blockFmt.setIndent(0);
         cursor.setBlockFormat(blockFmt);
-        listFmt.setStyle(style);
+        listFmt.setStyle(format);
         cursor.createList(listFmt);
     }
 
@@ -698,7 +744,8 @@ void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
         mLeftAlignmentButton->setEnabled(false);
         mCenterAlignmentButton->setEnabled(false);
         mRightAlignmentButton->setEnabled(false);
-        mListButton->setEnabled(false);
+        mUnorderedListButton->setEnabled(false);
+        mOrderedListButton->setEnabled(false);
     }
     else
     {
@@ -714,7 +761,8 @@ void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
         mLeftAlignmentButton->setEnabled(true);
         mCenterAlignmentButton->setEnabled(true);
         mRightAlignmentButton->setEnabled(true);
-        mListButton->setEnabled(true);
+        mUnorderedListButton->setEnabled(false);
+        mOrderedListButton->setEnabled(false);
     }
 }
 
