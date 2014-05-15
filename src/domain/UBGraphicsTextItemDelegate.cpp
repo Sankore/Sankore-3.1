@@ -49,10 +49,15 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     , mLastFontPixelSize(-1)
     , delta(5)
     , mTablePalette(new UBCreateTablePalette())
+    , mLinkPalette(new UBCreateHyperLinkPalette())
 {
     UBGraphicsProxyWidget* w = UBApplication::boardController->activeScene()->addWidget(mTablePalette);
     w->setParentItem(delegated());
     w->hide();
+
+    UBGraphicsProxyWidget* w2 = UBApplication::boardController->activeScene()->addWidget(mLinkPalette);
+    w2->setParentItem(delegated());
+    w2->hide();
 
     delegated()->setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     delegated()->setPlainText("");
@@ -74,6 +79,7 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     mLinkPalette->move(delegated()->boundingRect().width()/2.0, 0 );
 
     connect(mTablePalette, SIGNAL(validationRequired()), this, SLOT(insertTable()));
+    connect(mLinkPalette, SIGNAL(validationRequired()), this, SLOT(insertLink()));
 }
 
 UBGraphicsTextItemDelegate::~UBGraphicsTextItemDelegate()
@@ -124,6 +130,9 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mRightAlignmentButton = new DelegateButton(":/images/resizeRight.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mCodeButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mListButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mAddIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mRemoveIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mHyperLinkButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
     connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
@@ -139,6 +148,9 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mRightAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToRight()));
     connect(mCodeButton, SIGNAL(clicked(bool)), this, SLOT(alternHtmlMode()));
     connect(mListButton, SIGNAL(clicked(bool)), this, SLOT(insertList()));
+    connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
+    connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
+    connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
 
     QList<QGraphicsItem*> itemsOnToolBar;
     itemsOnToolBar << mFontButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
@@ -391,17 +403,14 @@ void UBGraphicsTextItemDelegate::insertTable()
         mTablePalette->hide();
     }
 }
-/*
+
 void UBGraphicsTextItemDelegate::addIndent()
 {
     QTextCursor cursor = delegated()->textCursor();
-
-    //cursor.beginEditBlock();
-
     QTextBlockFormat blockFmt = cursor.blockFormat();
     QTextListFormat listFmt;
-
     QTextList *list = cursor.currentList();
+
     if (list)
     {
         QList<QTextBlock> newList;
@@ -426,24 +435,43 @@ void UBGraphicsTextItemDelegate::addIndent()
         for (int i = 0; i < count-firstSelectedBlock; i++)
             theList->add(newList.at(i));
     }
+    else
+    {
+        blockFmt.setIndent(blockFmt.indent()+1);
+        cursor.setBlockFormat(blockFmt);
+    }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::removeIndent()
 {
     QTextCursor cursor = delegated()->textCursor();
-
-    //cursor.beginEditBlock();
-
     QTextBlockFormat blockFmt = cursor.blockFormat();
+    QTextListFormat listFmt;
 
     QTextList *list = cursor.currentList();
+
     if (list)
     {
+        //create new format
+        listFmt = list->format();
+        listFmt.setStyle(previousStyle(listFmt.style()));
+        listFmt.setIndent(listFmt.indent()-1);
 
+        //create new sub-list with new format
+        QTextList* theList = cursor.createList(listFmt);
+        theList->add(cursor.block());
+    }
+    else
+    {
+        blockFmt.setIndent(blockFmt.indent()-1);
+        cursor.setBlockFormat(blockFmt);
     }
 
+    delegated()->setFocus();
 }
-*/
+
 
 void UBGraphicsTextItemDelegate::insertList()
 {
@@ -484,6 +512,7 @@ void UBGraphicsTextItemDelegate::insertList()
 void UBGraphicsTextItemDelegate::setTableSize()
 {
     mTablePalette->show();
+    mLinkPalette->hide();
 }
 
 void UBGraphicsTextItemDelegate::setAlignmentToLeft()
@@ -591,6 +620,7 @@ void UBGraphicsTextItemDelegate::setEditable(bool editable)
 void UBGraphicsTextItemDelegate::remove(bool canUndo)
 {
     mTablePalette->hide();
+    mLinkPalette->hide();
     UBGraphicsItemDelegate::remove(canUndo);
 }
 
@@ -810,6 +840,11 @@ QVariant UBGraphicsTextItemDelegate::itemChange(QGraphicsItem::GraphicsItemChang
         }
     }
     return UBGraphicsItemDelegate::itemChange(change, value);
+}
+
+UBCreateHyperLinkPalette *UBGraphicsTextItemDelegate::linkPalette()
+{
+    return mLinkPalette;
 }
 
 UBCreateTablePalette* UBGraphicsTextItemDelegate::tablePalette()

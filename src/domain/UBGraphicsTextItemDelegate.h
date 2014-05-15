@@ -87,7 +87,8 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mCenterAlignmentButton;
         DelegateButton* mRightAlignmentButton;
         DelegateButton* mCodeButton;
-        DelegateButton* mListButton;
+        DelegateButton* mUnorderedListButton;
+        DelegateButton* mOrderedListButton;
         DelegateButton* mAddIndentButton;
         DelegateButton* mRemoveIndentButton;
         DelegateButton* mHyperLinkButton;
@@ -124,7 +125,9 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void insertTable();
         void addIndent();
         void removeIndent();
-        void insertList();
+        void insertOrderedList();
+        void insertUnorderedList();
+
         void setAlignmentToLeft();
         void setAlignmentToCenter();
         void setAlignmentToRight();
@@ -133,6 +136,10 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 
 private:
       const int delta;
+      void insertList(QTextListFormat::Style format);
+      QTextListFormat::Style nextStyle(QTextListFormat::Style format);
+      QTextListFormat::Style previousStyle(QTextListFormat::Style format);
+
 
 };
 
