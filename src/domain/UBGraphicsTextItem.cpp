@@ -485,17 +485,11 @@ void UBGraphicsTextItem::setBackgroundColor(const QColor& color)
     }
     else
     {
-        if (firstRow == 0)
-            numRows--;
-
-        if (firstCol == 0)
-            numCols--;
-
-        for (int i = firstRow; i <= numRows; i++)
+        for (int i = 0; i < numRows; i++)
         {
-            for (int j = firstCol; j <= numCols; j++)
+            for (int j = 0; j < numCols; j++)
             {
-                QTextTableCell c = t->cellAt(i,j);
+                QTextTableCell c = t->cellAt(firstRow+i,firstCol+j);
                 QTextCharFormat format;
                 format.setBackground(QBrush(color));
                 c.setFormat(format);

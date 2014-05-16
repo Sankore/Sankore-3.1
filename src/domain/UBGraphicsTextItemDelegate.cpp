@@ -888,7 +888,10 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
     UBGraphicsTextItem *item = dynamic_cast<UBGraphicsTextItem*>(delegated());
 
     if (item && (QString() == item->toPlainText()))
+    {
+        delegated()->setFocus();
         return;
+    }
 
     QTextCursor cursor = delegated()->textCursor();
 
