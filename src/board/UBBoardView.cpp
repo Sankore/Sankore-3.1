@@ -628,11 +628,14 @@ Here we determines cases when items should to get mouse press event at pressing 
     case QGraphicsWebView::Type:
         return true;
     case QGraphicsProxyWidget::Type: // Issue 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
-        if (dynamic_cast<UBGraphicsProxyWidget*>(item))
-            return true;
-        else
-            return false;
+    {
+        QGraphicsItem *c = item;
 
+        while(c && dynamic_cast<UBGraphicsProxyWidget*>(c) == 0)
+            c = c->parentItem();
+
+        return c && dynamic_cast<UBGraphicsProxyWidget*>(c) != 0;
+    }
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && item->parentItem() && item->parentItem()->isSelected())
             return true;

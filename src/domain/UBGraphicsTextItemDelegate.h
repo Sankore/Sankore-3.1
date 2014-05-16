@@ -36,6 +36,7 @@
 #include "gui/UBCellPropertiesPalette.h"
 
 class UBGraphicsTextItem;
+class UBGraphicsProxyWidget;
 
 class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 {
@@ -84,7 +85,6 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mDecreaseSizeButton;
         DelegateButton* mIncreaseSizeButton;
         DelegateButton* mBackgroundColorButton;
-        DelegateButton* mTableButton;
         DelegateButton* mLeftAlignmentButton;
         DelegateButton* mCenterAlignmentButton;
         DelegateButton* mRightAlignmentButton;
@@ -94,18 +94,12 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mAddIndentButton;
         DelegateButton* mRemoveIndentButton;
         DelegateButton* mHyperLinkButton;
-        DelegateButton* mInsertColumnOnRightButton;
-        DelegateButton* mInsertColumnOnLeftButton;
-        DelegateButton* mInsertRowOnRightButton;
-        DelegateButton* mInsertRowOnLeftButton;
-        DelegateButton* mCellPropertiesButton;
-        DelegateButton* mDeleteColumnButton;
-        DelegateButton* mDeleteRowButton;
 
         UBCreateTablePalette* mTablePalette;
         UBCreateHyperLinkPalette* mLinkPalette;
         UBCellPropertiesPalette* mCellPropertiesPalette;
 
+        UBGraphicsProxyWidget *mTableMenu;
         int mLastFontPixelSize;
 
         static const int sMinPixelSize;
@@ -146,8 +140,8 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void insertLink();
         void insertColumnOnRight();
         void insertColumnOnLeft();
-        void insertRowOnRight();
-        void insertRowOnLeft();
+        void insertRowOnBottom();
+        void insertRowOnTop();
         void deleteColumn();
         void deleteRow();
         void applyCellProperties();

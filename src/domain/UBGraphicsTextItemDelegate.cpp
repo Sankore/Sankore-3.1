@@ -131,7 +131,6 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mDecreaseSizeButton = new DelegateButton(":/images/minus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mIncreaseSizeButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mBackgroundColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mTableButton = new DelegateButton(":/images/roundeRrectangle.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mLeftAlignmentButton = new DelegateButton(":/images/resizeLeft.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mCenterAlignmentButton = new DelegateButton(":/images/resizeTop.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mRightAlignmentButton = new DelegateButton(":/images/resizeRight.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
@@ -141,13 +140,6 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mAddIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mRemoveIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mHyperLinkButton = new DelegateButton(":/images/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mInsertColumnOnRightButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mInsertColumnOnLeftButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mInsertRowOnRightButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mInsertRowOnLeftButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mCellPropertiesButton = new DelegateButton(":/images/roundeRrectangle.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mDeleteColumnButton = new DelegateButton(":/images/close.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mDeleteRowButton = new DelegateButton(":/images/close.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
     connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
@@ -157,7 +149,6 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mDecreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(decreaseSize()));
     connect(mIncreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(increaseSize()));
     connect(mBackgroundColorButton, SIGNAL(clicked(bool)), this, SLOT(pickBackgroundColor()));    
-    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(setTableSize()));
     connect(mLeftAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToLeft()));
     connect(mCenterAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToCenter()));
     connect(mRightAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToRight()));
@@ -166,25 +157,50 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mOrderedListButton, SIGNAL(clicked(bool)), this, SLOT(insertOrderedList()));
     connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
-    connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));    
-    connect(mInsertColumnOnRightButton, SIGNAL(clicked(bool)), this, SLOT(insertColumnOnRight()));
-    connect(mInsertColumnOnLeftButton, SIGNAL(clicked(bool)), this, SLOT(insertColumnOnLeft()));
-    connect(mInsertRowOnRightButton, SIGNAL(clicked(bool)), this, SLOT(insertRowOnRight()));
-    connect(mInsertRowOnLeftButton, SIGNAL(clicked(bool)), this, SLOT(insertRowOnLeft()));
-    connect(mCellPropertiesButton, SIGNAL(clicked()), this, SLOT(setCellProperties()));
-    connect(mDeleteColumnButton, SIGNAL(clicked()), this, SLOT(deleteColumn()));
-    connect(mDeleteRowButton, SIGNAL(clicked()), this, SLOT(deleteRow()));
+    connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
 
+
+    QPushButton *button = new QPushButton("Array");
+
+
+    QMenu *menu = new QMenu(button);
+
+    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert table"), this, SLOT(setTableSize()));
+
+    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert column at right"), this, SLOT(insertColumnOnRight()));
+
+    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert column at left"), this, SLOT(insertColumnOnLeft()));
+
+    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert row at top"), this, SLOT(insertRowOnTop()));
+
+    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert row at bottom"), this, SLOT(insertRowOnBottom()));
+
+    menu->addAction(QIcon(":/images/roundeRrectangle.svg"), tr("Cell properties"), this, SLOT(setCellProperties()));
+
+    menu->addAction(QIcon(":/images/close.svg"), tr("Delete row"), this, SLOT(deleteRow()));
+
+    menu->addAction(QIcon(":/images/close.svg"), tr("Delete column"), this, SLOT(deleteColumn()));
+
+    button->setMenu(menu);
+    button->setFlat(true);
+
+    button->setStyleSheet("background-color: transparent; border-color: transparent");
+
+    mTableMenu = new UBGraphicsProxyWidget(mToolBarItem);
+
+    mTableMenu->setWidget(button);
+
+
+    //update the position of the menu
+    menu->show();
+    menu->hide();
 
     QList<QGraphicsItem*> itemsOnToolBar;
-    itemsOnToolBar << mFontButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
-                   << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton
-                   << mBackgroundColorButton << mTableButton << mLeftAlignmentButton
-                   << mCenterAlignmentButton << mRightAlignmentButton << mCodeButton
+    itemsOnToolBar << mFontButton << mColorButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
+                   << mDecreaseSizeButton << mIncreaseSizeButton
+                   << mLeftAlignmentButton << mCenterAlignmentButton << mRightAlignmentButton
                    << mUnorderedListButton << mOrderedListButton << mAddIndentButton << mRemoveIndentButton
-                   << mHyperLinkButton << mInsertColumnOnRightButton << mInsertColumnOnLeftButton
-                   << mInsertRowOnRightButton << mInsertRowOnLeftButton << mDeleteColumnButton
-                   << mDeleteRowButton << mCellPropertiesButton;
+                   << mHyperLinkButton << mTableMenu << mBackgroundColorButton << mCodeButton;
 
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
@@ -285,24 +301,26 @@ void UBGraphicsTextItemDelegate::pickFont()
 
 void UBGraphicsTextItemDelegate::setFontBold()
 {
-    QTextCharFormat format;
     QTextCursor cursor = delegated()->textCursor();
+    QTextCharFormat format = cursor.charFormat();
     int anchorPos = cursor.anchor();
     int cursorPos = cursor.position();
 
-    if (anchorPos >= cursorPos)
+    if (anchorPos > cursorPos)
         std::swap(cursorPos, anchorPos);
 
-    format.setFontWeight(cursor.charFormat().fontWeight() == QFont::Normal ? QFont::Bold : QFont::Normal);
+    format.setFontWeight(cursor.charFormat().fontWeight() != QFont::Bold ? QFont::Bold : QFont::Normal);
+
+    //UBSettings::settings()->setBoldFont(format.fontWeight() > QFont::Normal);
 
     if (cursor.selectedText().length() == 0)
     {
         cursor.select(QTextCursor::WordUnderCursor);
-        cursor.mergeCharFormat(format);
+        cursor.setCharFormat(format);
         cursor.clearSelection();
     }
     else
-        cursor.mergeCharFormat(format);
+        cursor.setCharFormat(format);
 
     if (anchorPos >= cursorPos)
     {
@@ -596,7 +614,7 @@ void UBGraphicsTextItemDelegate::insertColumnOnRight()
     }
 }
 
-void UBGraphicsTextItemDelegate::insertRowOnRight()
+void UBGraphicsTextItemDelegate::insertRowOnBottom()
 {
     if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
     {
@@ -612,7 +630,7 @@ void UBGraphicsTextItemDelegate::insertColumnOnLeft()
     }
 }
 
-void UBGraphicsTextItemDelegate::insertRowOnLeft()
+void UBGraphicsTextItemDelegate::insertRowOnTop()
 {
     if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
     {
@@ -832,7 +850,6 @@ void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
         //mDecreaseSizeButton->setEnabled(false);
         //mIncreaseSizeButton->setEnabled(false);
         mBackgroundColorButton->setEnabled(false);
-        mTableButton->setEnabled(false);
         mLeftAlignmentButton->setEnabled(false);
         mCenterAlignmentButton->setEnabled(false);
         mRightAlignmentButton->setEnabled(false);
@@ -849,12 +866,11 @@ void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
         //mDecreaseSizeButton->setEnabled(true);
         //mIncreaseSizeButton->setEnabled(true);
         mBackgroundColorButton->setEnabled(true);
-        mTableButton->setEnabled(true);
         mLeftAlignmentButton->setEnabled(true);
         mCenterAlignmentButton->setEnabled(true);
         mRightAlignmentButton->setEnabled(true);
-        mUnorderedListButton->setEnabled(false);
-        mOrderedListButton->setEnabled(false);
+        mUnorderedListButton->setEnabled(true);
+        mOrderedListButton->setEnabled(true);
     }
 }
 
