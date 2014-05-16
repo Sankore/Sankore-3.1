@@ -162,7 +162,6 @@ void UBGraphicsTextItemDelegate::buildButtons()
 
     QPushButton *button = new QPushButton("Array");
 
-
     QMenu *menu = new QMenu(button);
 
     menu->addAction(QIcon(":/images/plus.svg"), tr("Insert table"), this, SLOT(setTableSize()));
@@ -612,6 +611,8 @@ void UBGraphicsTextItemDelegate::insertColumnOnRight()
     {
         delegated()->insertColumn(true);
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::insertRowOnBottom()
@@ -620,6 +621,8 @@ void UBGraphicsTextItemDelegate::insertRowOnBottom()
     {
         delegated()->insertRow(true);
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::insertColumnOnLeft()
@@ -628,6 +631,8 @@ void UBGraphicsTextItemDelegate::insertColumnOnLeft()
     {
         delegated()->insertColumn();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::insertRowOnTop()
@@ -636,6 +641,8 @@ void UBGraphicsTextItemDelegate::insertRowOnTop()
     {
         delegated()->insertRow();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::deleteColumn()
@@ -644,6 +651,8 @@ void UBGraphicsTextItemDelegate::deleteColumn()
     {
         delegated()->deleteColumn();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::deleteRow()
@@ -652,6 +661,8 @@ void UBGraphicsTextItemDelegate::deleteRow()
     {
         delegated()->deleteRow();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::setCellProperties()
@@ -668,6 +679,8 @@ void UBGraphicsTextItemDelegate::applyCellProperties()
         delegated()->setCellWidth(mCellPropertiesPalette->width());
         mCellPropertiesPalette->hide();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::setAlignmentToLeft()
@@ -676,6 +689,8 @@ void UBGraphicsTextItemDelegate::setAlignmentToLeft()
     {
         delegated()->setAlignmentToLeft();        
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::setAlignmentToCenter()
@@ -684,6 +699,8 @@ void UBGraphicsTextItemDelegate::setAlignmentToCenter()
     {
         delegated()->setAlignmentToCenter();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::setAlignmentToRight()
@@ -692,6 +709,8 @@ void UBGraphicsTextItemDelegate::setAlignmentToRight()
     {
         delegated()->setAlignmentToRight();
     }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::addLink()
@@ -709,6 +728,8 @@ void UBGraphicsTextItemDelegate::insertLink()
         delegated()->textCursor().insertHtml(QString("<a href=\"%1\">%2</a>").arg(link, mLinkPalette->text()));
 
     mLinkPalette->hide();
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::alternHtmlMode()
