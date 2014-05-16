@@ -166,19 +166,23 @@ void UBGraphicsTextItemDelegate::buildButtons()
 
     menu->addAction(QIcon(":/images/plus.svg"), tr("Insert table"), this, SLOT(setTableSize()));
 
-    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert column at right"), this, SLOT(insertColumnOnRight()));
+    QMenu *columnMenu = menu->addMenu("Column");
 
-    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert column at left"), this, SLOT(insertColumnOnLeft()));
+    columnMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert column after"), this, SLOT(insertColumnOnRight()));
 
-    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert row at top"), this, SLOT(insertRowOnTop()));
+    columnMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert column before"), this, SLOT(insertColumnOnLeft()));
 
-    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert row at bottom"), this, SLOT(insertRowOnBottom()));
+    columnMenu->addAction(QIcon(":/images/close.svg"), tr("Delete column"), this, SLOT(deleteColumn()));
+
+    QMenu *rowMenu = menu->addMenu("Row");
+
+    rowMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert row after"), this, SLOT(insertRowOnBottom()));
+
+    rowMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert row before"), this, SLOT(insertRowOnTop()));
+
+    rowMenu->addAction(QIcon(":/images/close.svg"), tr("Delete row"), this, SLOT(deleteRow()));
 
     menu->addAction(QIcon(":/images/roundeRrectangle.svg"), tr("Cell properties"), this, SLOT(setCellProperties()));
-
-    menu->addAction(QIcon(":/images/close.svg"), tr("Delete row"), this, SLOT(deleteRow()));
-
-    menu->addAction(QIcon(":/images/close.svg"), tr("Delete column"), this, SLOT(deleteColumn()));
 
     button->setMenu(menu);
     button->setFlat(true);
@@ -190,9 +194,15 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mTableMenu->setWidget(button);
 
 
-    //update the position of the menu
+    //update the position of the menu and the sub menu
     menu->show();
     menu->hide();
+
+    columnMenu->show();
+    columnMenu->hide();
+
+    rowMenu->show();
+    rowMenu->hide();
 
     QList<QGraphicsItem*> itemsOnToolBar;
     itemsOnToolBar << mFontButton << mColorButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
