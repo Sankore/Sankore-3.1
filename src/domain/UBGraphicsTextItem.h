@@ -64,6 +64,11 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         void insertImage(QString src);
         void insertTable(const int lines, const int columns);
+        void insertColumn(bool onRight = false);
+        void insertRow(bool onRight = false);
+        void deleteColumn();
+        void deleteRow();
+        void setCellWidth(int percent);
         void setBackgroundColor(const QColor& color);
         void setForegroundColor(const QColor& color);
         void setAlignmentToLeft();

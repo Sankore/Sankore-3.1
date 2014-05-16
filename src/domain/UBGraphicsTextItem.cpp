@@ -86,6 +86,7 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     connect(document(), SIGNAL(undoCommandAdded()), this, SLOT(undoCommandAdded()));
     connect(this, SIGNAL(linkActivated(QString)), this, SLOT(loadUrl(QString)));
 
+
     connect(document()->documentLayout(), SIGNAL(documentSizeChanged(const QSizeF &)),
             this, SLOT(documentSizeChanged(const QSizeF &)));
 
@@ -93,6 +94,64 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
 
 UBGraphicsTextItem::~UBGraphicsTextItem()
 {
+}
+
+void UBGraphicsTextItem::insertColumn(bool onRight)
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        if (onRight)
+            t->insertColumns(t->cellAt(textCursor()).column()+1, 1);
+        else
+            t->insertColumns(t->cellAt(textCursor()).column(), 1);
+    }
+}
+
+void UBGraphicsTextItem::insertRow(bool onRight)
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        if (onRight)
+            t->insertRows(t->cellAt(textCursor()).row()+1, 1);
+        else
+            t->insertRows(t->cellAt(textCursor()).row(), 1);
+    }
+}
+
+void UBGraphicsTextItem::deleteColumn()
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        t->removeColumns(t->cellAt(textCursor()).column(), 1);
+    }
+}
+
+void UBGraphicsTextItem::deleteRow()
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        t->removeRows(t->cellAt(textCursor()).row(), 1);
+    }
+}
+
+
+void UBGraphicsTextItem::setCellWidth(int percent)
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        QVector<QTextLength> constraints = t->format().columnWidthConstraints();
+        constraints.replace(t->cellAt(textCursor()).column(), QTextLength(QTextLength::PercentageLength, percent));
+        f.setColumnWidthConstraints(constraints);
+        t->setFormat(f);
+    }
 }
 
 QVariant UBGraphicsTextItem::itemChange(GraphicsItemChange change, const QVariant &value)
@@ -391,7 +450,13 @@ void UBGraphicsTextItem::insertTable(const int lines, const int columns)
     QTextCursor cursor = textCursor();
 
     QTextTableFormat format;
+    format.clearColumnWidthConstraints();
     format.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+    QTextLength t = QTextLength(QTextLength::PercentageLength, 100/columns);
+    QVector<QTextLength> v;
+    for (int i=0; i< columns; i++)
+        v.push_back(t);
+    format.setColumnWidthConstraints(v);
     format.merge(cursor.charFormat());
     cursor.insertTable(lines,columns,format);    
 }
@@ -498,6 +563,7 @@ void UBGraphicsTextItem::resize(qreal w, qreal h)
             QSize tablePaletteSize = textDelegate->linkPalette()->size();
             textDelegate->tablePalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
             textDelegate->linkPalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
+            textDelegate->cellPropertiesPalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
         }
     }
 }

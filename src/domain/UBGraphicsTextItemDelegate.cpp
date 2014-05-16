@@ -50,6 +50,7 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     , delta(5)
     , mTablePalette(new UBCreateTablePalette())
     , mLinkPalette(new UBCreateHyperLinkPalette())
+    , mCellPropertiesPalette(new UBCellPropertiesPalette())
 {
     UBGraphicsProxyWidget* w = UBApplication::boardController->activeScene()->addWidget(mTablePalette);
     w->setParentItem(delegated());
@@ -58,6 +59,10 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     UBGraphicsProxyWidget* w2 = UBApplication::boardController->activeScene()->addWidget(mLinkPalette);
     w2->setParentItem(delegated());
     w2->hide();
+
+    UBGraphicsProxyWidget* w3 = UBApplication::boardController->activeScene()->addWidget(mCellPropertiesPalette);
+    w3->setParentItem(delegated());
+    w3->hide();
 
     delegated()->setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     delegated()->setPlainText("");
@@ -77,9 +82,11 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
 
     mTablePalette->move(delegated()->boundingRect().width()/2.0, 0 );
     mLinkPalette->move(delegated()->boundingRect().width()/2.0, 0 );
+    mCellPropertiesPalette->move(delegated()->boundingRect().width()/2.0, 0 );
 
     connect(mTablePalette, SIGNAL(validationRequired()), this, SLOT(insertTable()));
     connect(mLinkPalette, SIGNAL(validationRequired()), this, SLOT(insertLink()));
+    connect(mCellPropertiesPalette, SIGNAL(validationRequired()), this, SLOT(applyCellProperties()));
 }
 
 UBGraphicsTextItemDelegate::~UBGraphicsTextItemDelegate()
@@ -133,7 +140,14 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mOrderedListButton= new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mAddIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mRemoveIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mHyperLinkButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mHyperLinkButton = new DelegateButton(":/images/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mInsertColumnOnRightButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mInsertColumnOnLeftButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mInsertRowOnRightButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mInsertRowOnLeftButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCellPropertiesButton = new DelegateButton(":/images/roundeRrectangle.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mDeleteColumnButton = new DelegateButton(":/images/close.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mDeleteRowButton = new DelegateButton(":/images/close.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
     connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
@@ -152,14 +166,26 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mOrderedListButton, SIGNAL(clicked(bool)), this, SLOT(insertOrderedList()));
     connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
-    connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
+    connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));    
+    connect(mInsertColumnOnRightButton, SIGNAL(clicked(bool)), this, SLOT(insertColumnOnRight()));
+    connect(mInsertColumnOnLeftButton, SIGNAL(clicked(bool)), this, SLOT(insertColumnOnLeft()));
+    connect(mInsertRowOnRightButton, SIGNAL(clicked(bool)), this, SLOT(insertRowOnRight()));
+    connect(mInsertRowOnLeftButton, SIGNAL(clicked(bool)), this, SLOT(insertRowOnLeft()));
+    connect(mCellPropertiesButton, SIGNAL(clicked()), this, SLOT(setCellProperties()));
+    connect(mDeleteColumnButton, SIGNAL(clicked()), this, SLOT(deleteColumn()));
+    connect(mDeleteRowButton, SIGNAL(clicked()), this, SLOT(deleteRow()));
+
 
     QList<QGraphicsItem*> itemsOnToolBar;
     itemsOnToolBar << mFontButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
                    << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton
                    << mBackgroundColorButton << mTableButton << mLeftAlignmentButton
                    << mCenterAlignmentButton << mRightAlignmentButton << mCodeButton
-                   << mUnorderedListButton << mOrderedListButton << mAddIndentButton << mRemoveIndentButton << mHyperLinkButton;
+                   << mUnorderedListButton << mOrderedListButton << mAddIndentButton << mRemoveIndentButton
+                   << mHyperLinkButton << mInsertColumnOnRightButton << mInsertColumnOnLeftButton
+                   << mInsertRowOnRightButton << mInsertRowOnLeftButton << mDeleteColumnButton
+                   << mDeleteRowButton << mCellPropertiesButton;
+
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
     mToolBarItem->setVisibleOnBoard(true);
@@ -559,6 +585,71 @@ void UBGraphicsTextItemDelegate::setTableSize()
 {
     mTablePalette->show();
     mLinkPalette->hide();
+    mCellPropertiesPalette->hide();
+}
+
+void UBGraphicsTextItemDelegate::insertColumnOnRight()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertColumn(true);
+    }
+}
+
+void UBGraphicsTextItemDelegate::insertRowOnRight()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertRow(true);
+    }
+}
+
+void UBGraphicsTextItemDelegate::insertColumnOnLeft()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertColumn();
+    }
+}
+
+void UBGraphicsTextItemDelegate::insertRowOnLeft()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertRow();
+    }
+}
+
+void UBGraphicsTextItemDelegate::deleteColumn()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->deleteColumn();
+    }
+}
+
+void UBGraphicsTextItemDelegate::deleteRow()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->deleteRow();
+    }
+}
+
+void UBGraphicsTextItemDelegate::setCellProperties()
+{
+    mCellPropertiesPalette->show();
+    mTablePalette->hide();
+    mLinkPalette->hide();
+}
+
+void UBGraphicsTextItemDelegate::applyCellProperties()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setCellWidth(mCellPropertiesPalette->width());
+        mCellPropertiesPalette->hide();
+    }
 }
 
 void UBGraphicsTextItemDelegate::setAlignmentToLeft()
@@ -667,6 +758,7 @@ void UBGraphicsTextItemDelegate::remove(bool canUndo)
 {
     mTablePalette->hide();
     mLinkPalette->hide();
+    mCellPropertiesPalette->hide();
     UBGraphicsItemDelegate::remove(canUndo);
 }
 
@@ -904,4 +996,10 @@ UBCreateHyperLinkPalette *UBGraphicsTextItemDelegate::linkPalette()
 UBCreateTablePalette* UBGraphicsTextItemDelegate::tablePalette()
 {
     return mTablePalette;
+}
+
+
+UBCellPropertiesPalette* UBGraphicsTextItemDelegate::cellPropertiesPalette()
+{
+    return mCellPropertiesPalette;
 }

@@ -33,6 +33,7 @@
 #include "gui/UBMainWindow.h"
 #include "gui/UBCreateTablePalette.h"
 #include "gui/UBCreateHyperLinkPalette.h"
+#include "gui/UBCellPropertiesPalette.h"
 
 class UBGraphicsTextItem;
 
@@ -55,6 +56,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 
         UBCreateTablePalette* tablePalette();
         UBCreateHyperLinkPalette* linkPalette();
+        UBCellPropertiesPalette* cellPropertiesPalette();
 
         void changeDelegateButtonsMode(bool htmlMode);
 
@@ -92,9 +94,17 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mAddIndentButton;
         DelegateButton* mRemoveIndentButton;
         DelegateButton* mHyperLinkButton;
+        DelegateButton* mInsertColumnOnRightButton;
+        DelegateButton* mInsertColumnOnLeftButton;
+        DelegateButton* mInsertRowOnRightButton;
+        DelegateButton* mInsertRowOnLeftButton;
+        DelegateButton* mCellPropertiesButton;
+        DelegateButton* mDeleteColumnButton;
+        DelegateButton* mDeleteRowButton;
 
         UBCreateTablePalette* mTablePalette;
         UBCreateHyperLinkPalette* mLinkPalette;
+        UBCellPropertiesPalette* mCellPropertiesPalette;
 
         int mLastFontPixelSize;
 
@@ -122,6 +132,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 
         void pickBackgroundColor();
         void setTableSize();
+        void setCellProperties();
         void insertTable();
         void addIndent();
         void removeIndent();
@@ -133,6 +144,14 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void setAlignmentToRight();
         void addLink();
         void insertLink();
+        void insertColumnOnRight();
+        void insertColumnOnLeft();
+        void insertRowOnRight();
+        void insertRowOnLeft();
+        void deleteColumn();
+        void deleteRow();
+        void applyCellProperties();
+
 
 private:
       const int delta;
