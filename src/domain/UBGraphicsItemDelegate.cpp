@@ -939,8 +939,15 @@ void UBGraphicsToolBarItem::positionHandles()
     foreach (QGraphicsItem* item, mItemsOnToolBar)
     {
         item->setPos(itemXOffset, 0);
-        itemXOffset += (item->boundingRect().width()+mElementsPadding);
-        item->show();
+
+        itemXOffset += item->boundingRect().width();
+
+        if(itemXOffset < rect().width())
+            item->show();
+        else
+            item->hide();
+
+        itemXOffset += mElementsPadding;
     }
 }
 
