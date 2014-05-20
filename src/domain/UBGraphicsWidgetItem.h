@@ -306,7 +306,7 @@ class UBGraphicsW3CWidgetItem : public UBGraphicsWidgetItem
                 QString version;
         };
 
-        UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent = 0, const QUrl& sourceUrl = QUrl());
+        UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent = 0);
         ~UBGraphicsW3CWidgetItem();
 
         virtual void setUuid(const QUuid &pUuid);
