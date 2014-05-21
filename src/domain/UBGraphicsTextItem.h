@@ -132,7 +132,7 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         //N/C - NNE - 20140520
         QString formatTable(QString &source);
         QString removeTextBackgroundColor(QString& source);
-        QString loadImages(QString& source);
+        QString loadImages(QString& source, bool onlyLoad = false);
         QString formatParagraph(QString& source);
         QString formatList(QString& source);
         //N/C - NNE - 20140520 : END

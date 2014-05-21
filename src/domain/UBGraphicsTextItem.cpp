@@ -346,7 +346,12 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
     UBGraphicsTextItem *cp = dynamic_cast<UBGraphicsTextItem*>(copy);
     if (cp)
     {
-        cp->setHtml(toHtml());
+        QString html = toHtml();
+
+        cp->loadImages(html, true);
+
+        cp->setHtml(html);
+
         cp->setPos(this->pos());
         cp->setTransform(this->transform());
         cp->setFlag(QGraphicsItem::ItemIsMovable, true);
@@ -742,7 +747,7 @@ QString UBGraphicsTextItem::removeTextBackgroundColor(QString& source)
     return source;
 }
 
-QString UBGraphicsTextItem::loadImages(QString& source)
+QString UBGraphicsTextItem::loadImages(QString& source, bool onlyLoad)
 {
     int currentPos = 0;
     while((currentPos = source.indexOf("src", currentPos)) != -1){
@@ -755,17 +760,22 @@ QString UBGraphicsTextItem::loadImages(QString& source)
         }
 
         if(!path.isEmpty()){
-            QImage img = QImage(path);
-            QString fileExtension = UBFileSystemUtils::extension(path);
-            QString filename = UBPersistenceManager::imageDirectory + "/" + QUuid::createUuid() + "." + fileExtension;
-            QString dest = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + filename;
+            if(onlyLoad){
+                QImage img = QImage(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + path);
+                document()->addResource(QTextDocument::ImageResource, QUrl(path), img);
+            }else{
+                QImage img = QImage(path);
+                QString fileExtension = UBFileSystemUtils::extension(path);
+                QString filename = UBPersistenceManager::imageDirectory + "/" + QUuid::createUuid() + "." + fileExtension;
+                QString dest = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + filename;
 
-            if (!UBFileSystemUtils::copy(path, dest, true))
-                qDebug() << "UBFileSystemUtils::copy error";
+                if (!UBFileSystemUtils::copy(path, dest, true))
+                    qDebug() << "UBFileSystemUtils::copy error";
 
-            document()->addResource(QTextDocument::ImageResource, QUrl(filename), img);
+                document()->addResource(QTextDocument::ImageResource, QUrl(filename), img);
+                source.replace(path, filename);
+            }
 
-            source.replace(path, filename);
         }
 
         currentPos += 3;
