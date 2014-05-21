@@ -47,6 +47,8 @@
 #include "gui/UBCreateTablePalette.h"
 #include "core/memcheck.h"
 
+#include "QDomDocument"
+
 QColor UBGraphicsTextItem::lastUsedTextColor;
 
 UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
@@ -604,8 +606,6 @@ void UBGraphicsTextItem::documentSizeChanged(const QSizeF & newSize)
 //issue 1554 - NNE - 20131009
 void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 {
-    qDebug() << textInteractionFlags();
-
     this->isActivatedTextEditor = activateTextEditor;
 
     if(!activateTextEditor){
@@ -613,8 +613,6 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
     }else{
         setTextInteractionFlags(Qt::TextEditorInteraction | Qt::TextBrowserInteraction);
     }
-
-    qDebug() <<  textInteractionFlags();
 }
 //issue 1554 - NNE - 20131009 : END
 
@@ -622,7 +620,32 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
 {
     if(event->matches(QKeySequence::Paste)){
-        UBTextTools::cleanHtmlClipboard();
+        //if the data comes from the RTE, we accept the data
+        //else we clean the html
+        QClipboard *clipboard = QApplication::clipboard();
+        const QMimeData *mimeData = clipboard->mimeData();
+
+        if(mimeData->data("text/copySource").contains("Texte Enrichi.wgt")){
+            QString html = mimeData->html();
+
+            QMimeData *cpMime = new QMimeData();
+
+            formatTable(html);
+
+            removeTextBackgroundColor(html);
+
+            loadImages(html);
+
+            formatParagraph(html);
+
+            formatList(html);
+
+            cpMime->setHtml(html);
+
+            clipboard->setMimeData(cpMime);
+        }else{
+            UBTextTools::cleanHtmlClipboard();
+        }
     }
 
     QGraphicsTextItem::keyPressEvent(event);
@@ -635,3 +658,163 @@ void UBGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     UBTextTools::cleanHtmlClipboard();
     QGraphicsTextItem::contextMenuEvent(event);
 }
+
+//N/C - NNE - 20140520
+QString UBGraphicsTextItem::formatTable(QString& source)
+{
+    int index = 0;
+    while((index = source.indexOf("<table", index)) != -1){
+        source.insert(index + 6, " width=\"100%\" border=\"1\"");
+        index += 6;
+    }
+
+    int currentPos = 0;
+    while((currentPos = source.indexOf("<td", currentPos)) != -1){
+        currentPos += 3;
+
+        //Check for the width attribute
+        //conversion from "width: xxx%" to "width='xxx%'"
+        int widthIndex = source.indexOf("width: ", currentPos);
+        int endTdTag = source.indexOf(">", currentPos);
+
+        if(widthIndex != -1 && widthIndex < endTdTag){
+            int j = widthIndex + 7;
+            QString v;
+
+            while(source.at(j).isDigit()){
+                v += source.at(j);
+                j++;
+            }
+
+            if(source.at(j) == '%'){
+                QString insert = " width=\"" + v + "%\"";
+                source.insert(currentPos, insert);
+            }
+        }
+
+        //Check for the text-align attribute
+        int textAlignIndex  = source.indexOf("text-align: ", currentPos);
+
+        //update the position
+        endTdTag = source.indexOf(">", currentPos);
+
+        if(textAlignIndex != -1 && textAlignIndex < endTdTag){
+            int endAttribute = source.indexOf(';', textAlignIndex);
+
+            //prevent error if the ';' isn't find
+            if(endAttribute < endTdTag){
+                QString value = source.mid(textAlignIndex, endAttribute - textAlignIndex);
+
+                value.replace("text-align: ", " align=\"");
+                value += "\" ";
+
+                source.insert(currentPos, value);
+            }
+        }
+    }
+
+    return source;
+}
+
+QString UBGraphicsTextItem::removeTextBackgroundColor(QString& source)
+{
+    int currentPos = 0;
+
+    while((currentPos = source.indexOf("<span", currentPos)) != -1){
+        int spanTagEnd = source.indexOf(">", currentPos + 1);
+
+        QString spanContent = source.mid(currentPos, spanTagEnd);
+        qDebug() << spanContent;
+
+        int backgroundIdx;
+        if((backgroundIdx = spanContent.indexOf("background-color")) != -1 && backgroundIdx < spanTagEnd){
+            //remove the span tag
+            int endBackground = spanContent.indexOf(";", backgroundIdx);
+
+            for(int i = 0; i < endBackground - backgroundIdx + 1; i++){
+                source[backgroundIdx + currentPos + i] =  ' ';
+            }
+        }
+
+        currentPos += 5;
+    }
+
+    return source;
+}
+
+QString UBGraphicsTextItem::loadImages(QString& source)
+{
+    int currentPos = 0;
+    while((currentPos = source.indexOf("src", currentPos)) != -1){
+        int startPath = source.indexOf("\"", currentPos) + 1;
+
+        QString path;
+        while(source.at(startPath) != '\"'){
+            path += source.at(startPath);
+            startPath++;
+        }
+
+        if(!path.isEmpty()){
+            QImage img = QImage(path);
+            QString fileExtension = UBFileSystemUtils::extension(path);
+            QString filename = UBPersistenceManager::imageDirectory + "/" + QUuid::createUuid() + "." + fileExtension;
+            QString dest = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + filename;
+
+            if (!UBFileSystemUtils::copy(path, dest, true))
+                qDebug() << "UBFileSystemUtils::copy error";
+
+            document()->addResource(QTextDocument::ImageResource, QUrl(filename), img);
+
+            source.replace(path, filename);
+        }
+
+        currentPos += 3;
+    }
+
+    return source;
+}
+
+QString UBGraphicsTextItem::formatParagraph(QString& source)
+{
+    return findAndReplaceAttribute("p", "text-align", "align", source);
+}
+
+QString UBGraphicsTextItem::formatList(QString& source)
+{
+    findAndReplaceAttribute("li", "text-align", "align", source);
+
+    return findAndReplaceAttribute("ol", "text-align", "align", source);
+}
+
+
+QString UBGraphicsTextItem::findAndReplaceAttribute(QString tag, QString oldAttribute, QString newAttribute, QString& source)
+{
+    int currentPos = 0;
+
+    tag = "<" + tag;
+
+    while((currentPos = source.indexOf(tag, currentPos)) != -1){
+        currentPos += tag.size();
+
+        int endTag = source.indexOf(">", currentPos);
+
+        int attributeIndex = source.indexOf(oldAttribute + ": ", currentPos);
+
+        if(attributeIndex < endTag){
+            int endAttribute = source.indexOf(';', attributeIndex);
+
+            if(endAttribute < endTag){
+                QString value = source.mid(attributeIndex, endAttribute - attributeIndex);
+
+                value.replace(oldAttribute+": ", " " + newAttribute + "=\"");
+                value += "\"";
+
+                source.insert(currentPos, value);
+            }
+        }
+    }
+
+    return source;
+}
+
+//N/C - NNE - 20140520

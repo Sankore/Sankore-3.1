@@ -129,6 +129,14 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
+        //N/C - NNE - 20140520
+        QString formatTable(QString &source);
+        QString removeTextBackgroundColor(QString& source);
+        QString loadImages(QString& source);
+        QString formatParagraph(QString& source);
+        QString formatList(QString& source);
+        //N/C - NNE - 20140520 : END
+
     private:
         qreal mTextHeight;
 
@@ -144,6 +152,8 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         //issue 1554
         bool isActivatedTextEditor;
+
+        QString findAndReplaceAttribute(QString tag, QString oldAttribute, QString newAttribute, QString& source);
 
     protected:
          //issue 1539 - NNE - 20131018
