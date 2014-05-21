@@ -241,6 +241,8 @@ void UBPreferencesController::init()
     mPreferencesUI->PSCredentialsPersistenceCheckBox->setChecked(settings->getCommunityDataPersistence());
     persistanceCheckboxUpdate();
 
+    //Issue NC - CFA - 20140520 : clear list, to prevent duplication of the list
+    mIsoCodeAndLanguage.clear();
     mIsoCodeAndLanguage.insert(tr("Default"),"NO_VALUE");
     mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
     mIsoCodeAndLanguage.insert(tr("Basque"),"eu");
@@ -282,6 +284,8 @@ void UBPreferencesController::init()
     QStringList list;
     list << mIsoCodeAndLanguage.keys();
     list.sort();
+    //Issue NC - CFA - 20140520 : clear list, to prevent duplication of the list
+    mPreferencesUI->languageComboBox->clear();
     mPreferencesUI->languageComboBox->addItems(list);
     QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
     if(currentIsoLanguage.length()){
