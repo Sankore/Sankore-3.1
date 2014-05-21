@@ -3089,8 +3089,20 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             if (mFileVersion >= 40500) {
                 if (mXmlReader.name() == "itemTextContent") {
                     text = mXmlReader.readElementText();
-                    textItem->setHtml(text);
+
+                    //reinterpets the html
+                    QTextDocument doc;
+                    doc.setHtml(text);
+
+                    QString docPlainText = doc.toPlainText();
+
+                    if(docPlainText.trimmed().isEmpty())
+                        textItem->setHtml(text);
+                    else
+                        textItem->setHtml(docPlainText);
+
                     textItem->resize(width, height);
+
                     if (textItem->toPlainText().isEmpty()) {
                         delete textItem;
                         textItem = 0;
