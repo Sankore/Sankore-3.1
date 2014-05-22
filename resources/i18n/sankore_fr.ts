@@ -984,11 +984,11 @@
     </message>
     <message>
         <source>Stroke Style Dot Line</source>
-        <translation>Style du trait : traitillés</translation>
+        <translation>Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation>Style du trait : traitillés</translation>
+        <translation type="unfinished">Style du trait : pointillés</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1069,6 +1069,10 @@
     <message>
         <source>Freehand drawing</source>
         <translation>Dessin à main levée</translation>
+    </message>
+    <message>
+        <source>Stroke style : Dash</source>
+        <translation type="obsolete">Style de bordure : traitillé</translation>
     </message>
     <message>
         <source>Stroke style : Dot Dash</source>
@@ -1322,7 +1326,7 @@
     </message>
     <message>
         <source>This is not a final release. Please use it only for testing.</source>
-        <translation>Ceci n&apos;est pas une version finale. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
+        <translation>Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
     </message>
 </context>
 <context>
@@ -3702,6 +3706,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Uniboard Documents</source>
         <translation>Documents Uniboard</translation>
+    </message>
+    <message>
+        <source>Select a sort</source>
+        <translation>Sélectionner un tri</translation>
+    </message>
+    <message>
+        <source>Creation date</source>
+        <translation>Date de création</translation>
+    </message>
+    <message>
+        <source>Update date</source>
+        <translation>Date de modification</translation>
+    </message>
+    <message>
+        <source>Alphabetical order</source>
+        <translation>Ordre alphabétique</translation>
+    </message>
+    <message>
+        <source>Ascending order</source>
+        <translation>Ordre croissant</translation>
+    </message>
+    <message>
+        <source>Descending order</source>
+        <translation>Ordre décroissant</translation>
     </message>
 </context>
 <context>

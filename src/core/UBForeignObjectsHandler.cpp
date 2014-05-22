@@ -287,6 +287,7 @@ private:
         QStringList presentIds = mPresentIdsMap.keys();
         v.resize(qMax(domIds.count(), presentIds.count()));
         QVector<QString>::iterator it_diff;
+
         it_diff=std::set_symmetric_difference(domIds.begin(), domIds.end()
                                               , presentIds.begin(), presentIds.end()
                                               , v.begin());
@@ -304,6 +305,10 @@ private:
 
             //N/C - NNE - 20140317
             cleanObjectFolder(element);
+
+            //N/C - NNE - 20140520
+            //foreign object may referer resource which are not present in the svg
+            addResourceIdToSvg(element);
         } else if (what == tTeacherGuide) {
             teacherGuideToContainer(element);
         }
@@ -349,6 +354,31 @@ private:
         }
     }
     // N/C - NNE - 20140317 : END
+
+    //N/C - NNE - 20140520
+    void addResourceIdToSvg(const QDomElement& element)
+    {
+        QDomElement textContent = element.firstChildElement("itemTextContent");
+
+        QString value = textContent.text();
+
+        int findPos = value.indexOf("images/");
+        int endPos;
+
+        //find all objects used
+        while(findPos != -1){
+            endPos = value.indexOf("\"", findPos);
+
+            QString path = value.mid(findPos, endPos - findPos);
+
+            QString uuid = path.split("/").at(1).split(".").at(0);
+
+            mDomIdsMap.insert(uuid, path);
+
+            findPos = value.indexOf("images/", endPos);
+        }
+    }
+    //N/C - NNE - 20140520 : END
 
     void pullActionFromElement(const QDomElement &element)
     {

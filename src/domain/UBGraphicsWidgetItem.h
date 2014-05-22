@@ -325,6 +325,11 @@ class UBGraphicsW3CWidgetItem : public UBGraphicsWidgetItem
 
         Metadata mMetadatas;
 
+        //N/C - NNE - 20140519
+protected:
+        void keyPressEvent(QKeyEvent *event);
+        //N/C - NNE - 20140519 : END
+
     private slots:
         virtual void javaScriptWindowObjectCleared();
 

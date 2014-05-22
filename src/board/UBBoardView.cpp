@@ -68,6 +68,7 @@
 #include "domain/UBGraphicsGroupContainerItem.h"
 #include "domain/UBGraphicsStrokesGroup.h"
 #include "domain/UBGraphicsEllipseItem.h"
+#include "domain/UBGraphicsProxyWidget.h"
 
 #include "document/UBDocumentProxy.h"
 
@@ -627,8 +628,14 @@ Here we determines cases when items should to get mouse press event at pressing 
     case QGraphicsWebView::Type:
         return true;
     case QGraphicsProxyWidget::Type: // Issue 1313 - CFA - 20131016 : If Qt sends this unexpected type, the event should not be triggered
-        return false;
+    {
+        QGraphicsItem *c = item;
 
+        while(c && dynamic_cast<UBGraphicsProxyWidget*>(c) == 0)
+            c = c->parentItem();
+
+        return c && dynamic_cast<UBGraphicsProxyWidget*>(c) != 0;
+    }
     case UBGraphicsWidgetItem::Type:
         if (currentTool == UBStylusTool::Selector && item->parentItem() && item->parentItem()->isSelected())
             return true;
@@ -1651,16 +1658,47 @@ void UBBoardView::dropEvent (QDropEvent *event)
     //N/C - NNE - 20140303 : add test for the RTE widget
     bool isUBGraphicsWidget = onItem && onItem->type() == UBGraphicsWidgetItem::Type;
     UBGraphicsWidgetItem *item = 0;
+    UBGraphicsTextItem* textItem = NULL;
 
     if(onItem)
+    {
         item = dynamic_cast<UBGraphicsWidgetItem*>(onItem);
+        textItem = dynamic_cast<UBGraphicsTextItem*>(onItem);
+    }
 
+    UBFeature f = UBApplication::boardController->paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
     //Ev-NC - CFA - 20140403 : now we can use thumbnails to drop images
     UBDraggableThumbnail* droppedThumbnail = dynamic_cast<UBDraggableThumbnail*>(event->source());
-    if (droppedThumbnail) //an image has been dropped
+    if (textItem && textItem->isSelected())
     {
-        UBFeature f = UBApplication::boardController->paletteManager()->featuresWidget()->getCentralWidget()->getCurElementFromProperties();
-        UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+        if (droppedThumbnail)
+        {
+            textItem->insertImage(f.getFullPath().toLocalFile());
+            return;
+        }
+        else
+        {
+            if (event->mimeData()->hasUrls())
+            {
+                QList<QUrl> urls = event->mimeData()->urls();
+
+                const UBFeaturesMimeData *internalMimeData = qobject_cast<const UBFeaturesMimeData*>(event->mimeData());
+                if (internalMimeData)
+                {
+                    foreach (QUrl url, urls)
+                        textItem->insertImage(url.toLocalFile());
+                }
+                return;
+            }
+        }
+    }
+    else
+    {
+        if (droppedThumbnail)
+        {
+             UBApplication::boardController->downloadURL(f.getFullPath(), QString(), mapToScene (event->pos ()) );
+             return;
+        }
     }
 
     //take care about the lazy evaluation of the test

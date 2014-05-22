@@ -1075,11 +1075,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>ALign objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Align Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align objects to the left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects vertically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1099,7 +1111,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Align Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the middle.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Align Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the bottom.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1132,30 +1156,6 @@
     </message>
     <message>
         <source>Arrows properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke Style Dot Dash</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align the center of the objects vertically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align objects to the bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align Center Vertically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align Center Horizontally</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align the center of the objects horizontally</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

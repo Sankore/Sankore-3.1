@@ -54,6 +54,7 @@
 #include "web/UBWebController.h"
 
 #include <QTextStream>
+#include "QByteArray"
 
 bool UBGraphicsWidgetItem::sInlineJavaScriptLoaded = false;
 QStringList UBGraphicsWidgetItem::sInlineJavaScripts;
@@ -830,10 +831,12 @@ bool UBGraphicsW3CWidgetItem::sTemplateLoaded = false;
 QString UBGraphicsW3CWidgetItem::sNPAPIWrappperConfigTemplate;
 QMap<QString, QString> UBGraphicsW3CWidgetItem::sNPAPIWrapperTemplates;
 
-UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent)
+UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent, const QUrl& sourceUrl)
     : UBGraphicsWidgetItem(pWidgetUrl, parent)
     , mW3CWidgetAPI(0)
 {
+    mSourceUrl = sourceUrl;
+
     QString path = pWidgetUrl.toLocalFile();
     QDir potentialDir(path);
 
@@ -1366,4 +1369,42 @@ void UBGraphicsW3CWidgetItem::copyItemParameters(UBItem *copy) const
         }
     }
 }
+
+//N/C - NNE - 20140519
+void UBGraphicsW3CWidgetItem::keyPressEvent(QKeyEvent *event)
+{
+    UBGraphicsWidgetItem::keyPressEvent(event);
+
+    //when a copy or a cut is requested, we have to add the
+    //source of the copy/cut. The source data is used to check if it's the RTE.
+    if((event->matches(QKeySequence::Copy) || event->matches(QKeySequence::Cut))
+            && sourceUrl().toString().contains("Texte Enrichi.wgt")){
+        QClipboard *clipboard = QApplication::clipboard();
+
+        const QMimeData *mimeData = clipboard->mimeData();
+
+
+        //We cannot modify directely the mimeData of the clipboard
+        //so we need to make a copy and set it.
+        QMimeData *mimeCopy = new QMimeData();
+
+        foreach(QString format, mimeData->formats()){
+            QByteArray data = mimeData->data(format);
+            mimeCopy->setData(format, data);
+        }
+
+        QByteArray data = sourceUrl().toString().toLatin1();
+
+        mimeCopy->setData("text/copySource", data);
+
+        //don't put the raw html of the widget
+        //call the javascript function to get the "real" content
+        QVariant htmlFromTinyMCE = page()->mainFrame()->evaluateJavaScript("tinyMCE.activeEditor.getContent();");
+
+        mimeCopy->setHtml(htmlFromTinyMCE.toString());
+
+        clipboard->setMimeData(mimeCopy);
+    }
+}
+//N/C - NNE - 20140519 : END
 

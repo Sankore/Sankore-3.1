@@ -11,7 +11,6 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBResources.h \
     src/gui/UBMessageWindow.h \
     src/gui/UBDocumentThumbnailWidget.h \
-    src/gui/UBDocumentTreeWidget.h \
     src/gui/UBMousePressFilter.h \
     src/gui/UBBlackoutWidget.h \
     src/gui/UBMainWindow.h \
@@ -45,7 +44,6 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBTeacherGuideWidgetsTools.h \
     src/gui/UBMessagesDialog.h \
     src/gui/UBStartupHintsPalette.h \
-    src/gui/UBCreateLinkPalette.h \
     src/gui/UBDockResourcesWidget.h \
     src/gui/UBTeacherGuideResourceEditionWidget.h \
     src/gui/UBTeacherGuideConstantes.h \
@@ -59,7 +57,11 @@ HEADERS += src/gui/UBThumbnailView.h \
     src/gui/UBDrawingFillPropertiesPalette.h \
     src/gui/UBRegularShapesPalette.h \
     src/gui/UBAlignObjectPalette.h \
-	src/gui/UBDrawingArrowsPropertiesPalette.h
+    src/gui/UBDrawingArrowsPropertiesPalette.h \
+    src/gui/UBCreateLinkPalette.h \
+    src/gui/UBCreateTablePalette.h \
+    src/gui/UBCreateHyperLinkPalette.h \
+    src/gui/UBCellPropertiesPalette.h
 
 SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBFloatingPalette.cpp \
@@ -74,7 +76,6 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBResources.cpp \
     src/gui/UBMessageWindow.cpp \
     src/gui/UBDocumentThumbnailWidget.cpp \
-    src/gui/UBDocumentTreeWidget.cpp \
     src/gui/UBMousePressFilter.cpp \
     src/gui/UBBlackoutWidget.cpp \
     src/gui/UBMainWindow.cpp \
@@ -108,7 +109,6 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBTeacherGuideWidgetsTools.cpp \
     src/gui/UBMessagesDialog.cpp \
     src/gui/UBStartupHintsPalette.cpp \
-    src/gui/UBCreateLinkPalette.cpp \
     src/gui/UBDockResourcesWidget.cpp \
     src/gui/UBTeacherGuideResourceEditionWidget.cpp \
     src/gui/UBTeacherGuideResourcesPresentationWidget.cpp \
@@ -121,7 +121,11 @@ SOURCES += src/gui/UBThumbnailView.cpp \
     src/gui/UBDrawingFillPropertiesPalette.cpp \
     src/gui/UBRegularShapesPalette.cpp \
     src/gui/UBAlignObjectPalette.cpp \
-	src/gui/UBDrawingArrowsPropertiesPalette.cpp
+    src/gui/UBDrawingArrowsPropertiesPalette.cpp \
+    src/gui/UBCreateLinkPalette.cpp \
+    src/gui/UBCreateTablePalette.cpp \
+    src/gui/UBCreateHyperLinkPalette.cpp \
+    src/gui/UBCellPropertiesPalette.cpp
 win32:SOURCES += src/gui/UBKeyboardPalette_win.cpp
 macx:SOURCES += src/gui/UBKeyboardPalette_mac.cpp
 linux-*:SOURCES += src/gui/UBKeyboardPalette_linux.cpp

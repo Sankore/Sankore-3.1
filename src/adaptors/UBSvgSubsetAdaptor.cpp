@@ -3031,6 +3031,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     // Texts copied from other programs like Open-Office can truncate the svg file.
     //mXmlWriter.writeCharacters(item->toHtml());
 
+    if(item->htmlMode())
+        item->changeHTMLMode();
+
     QString content = UBTextTools::cleanHtmlCData(item->toHtml());
 
     if(mIsOldVersionFileWithText){
@@ -3050,7 +3053,6 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
     qreal height = mXmlReader.attributes().value("height").toString().toFloat();
 
     UBGraphicsTextItem* textItem = new UBGraphicsTextItem();
-
     graphicsItemFromSvg(textItem);
     textItem->Delegate()->setAction(readAction());
 
@@ -3090,11 +3092,33 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             if (mFileVersion >= 40500) {
                 if (mXmlReader.name() == "itemTextContent") {
                     text = mXmlReader.readElementText();
+
                     textItem->setHtml(text);
+
                     textItem->resize(width, height);
+
                     if (textItem->toPlainText().isEmpty()) {
                         delete textItem;
                         textItem = 0;
+                    }
+                    else
+                    {
+                        //CFA - add resources like images
+                        QDomDocument html;
+                        html.setContent(text);
+
+                        QDomNodeList imgNodes = html.elementsByTagName("img");
+
+                        if (imgNodes.count()>0)
+                        {
+                            for (int i =0; i < imgNodes.count(); i++)
+                            {
+                                QString filename = imgNodes.item(i).toElement().attribute("src");
+                                QString dest = mDocumentPath + "/" + filename;
+                                textItem->document()->addResource(QTextDocument::ImageResource, QUrl(filename), QImage(dest));
+                                textItem->adjustSize();
+                            }
+                        }
                     }
                     return textItem;
                 }
@@ -3164,6 +3188,7 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             }
         }
     }
+
 
     if (text.isEmpty()) {
         delete textItem;

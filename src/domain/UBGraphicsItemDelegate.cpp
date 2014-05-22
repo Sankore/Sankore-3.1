@@ -899,7 +899,8 @@ void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
 {
     if(!action)
         onRemoveActionClicked();
-    else{
+    else
+    {
         setCanTrigAnAction(true);
         if(!mMenu){
             //TODO claudio
@@ -938,8 +939,15 @@ void UBGraphicsToolBarItem::positionHandles()
     foreach (QGraphicsItem* item, mItemsOnToolBar)
     {
         item->setPos(itemXOffset, 0);
-        itemXOffset += (item->boundingRect().width()+mElementsPadding);
-        item->show();
+
+        itemXOffset += item->boundingRect().width();
+
+        if(itemXOffset < rect().width())
+            item->show();
+        else
+            item->hide();
+
+        itemXOffset += mElementsPadding;
     }
 }
 

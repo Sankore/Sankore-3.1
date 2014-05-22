@@ -24,7 +24,7 @@
 #ifndef UBGRAPHICSMEDIAITEM_H
 #define UBGRAPHICSMEDIAITEM_H
 
-#include "UBGraphicsProxyWidget.h"
+#include "UBAbstractGraphicsProxyWidget.h"
 #include <phonon/AudioOutput>
 #include <phonon/MediaObject>
 #include <phonon/VideoWidget>
@@ -48,7 +48,7 @@ private:
     QString mTitle;
 };
 
-class UBGraphicsMediaItem : public UBGraphicsProxyWidget
+class UBGraphicsMediaItem : public UBAbstractGraphicsProxyWidget
 {
     Q_OBJECT
 

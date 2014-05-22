@@ -5,7 +5,6 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBGraphicsPixmapItem.h \
     src/domain/UBDocumentUndoCommand.h \
     src/domain/UBPageSizeUndoCommand.h \
-    src/domain/UBGraphicsProxyWidget.h \
     src/domain/UBGraphicsSvgItem.h \
     src/domain/UBGraphicsPolygonItem.h \
     src/domain/UBItem.h \
@@ -49,7 +48,9 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UB1HEditableGraphicsBasicShapeItem.h \
     src/domain/UBEditableGraphicsRegularShapeItem.h \
     src/domain/UBAlignObjectManager.h \
-    src/domain/UBDragableThumbnail.h
+    src/domain/UBDragableThumbnail.h \
+    src/domain/UBAbstractGraphicsProxyWidget.h \
+    src/domain/UBGraphicsProxyWidget.h
     
 SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsItemUndoCommand.cpp \
@@ -58,7 +59,6 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBGraphicsPixmapItem.cpp \
     src/domain/UBDocumentUndoCommand.cpp \
     src/domain/UBPageSizeUndoCommand.cpp \
-    src/domain/UBGraphicsProxyWidget.cpp \
     src/domain/UBGraphicsSvgItem.cpp \
     src/domain/UBGraphicsPolygonItem.cpp \
     src/domain/UBItem.cpp \
@@ -103,4 +103,6 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBEditableGraphicsPolygonItem.cpp \
     src/domain/UBEditableGraphicsRegularShapeItem.cpp \
     src/domain/UBAlignObjectManager.cpp \
-    src/domain/UBDragableThumbnail.cpp
+    src/domain/UBDragableThumbnail.cpp \
+    src/domain/UBAbstractGraphicsProxyWidget.cpp \
+    src/domain/UBGraphicsProxyWidget.cpp

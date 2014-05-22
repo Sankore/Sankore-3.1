@@ -34,7 +34,7 @@
 class QGraphicsSceneMouseEvent;
 class QGraphicsItem;
 class UBGraphicsScene;
-class UBGraphicsProxyWidget;
+class UBAbstractGraphicsProxyWidget;
 class UBGraphicsDelegateFrame;
 class UBGraphicsWidgetItem;
 class UBGraphicsMediaItem;

@@ -811,6 +811,16 @@ void UBSettings::setItalicFont(bool italic)
     setValue("Board/FontIsItalic", italic);
 }
 
+void UBSettings::setUnderlineFont(bool underline)
+{
+    setValue("Board/FontIsUnderline", underline);
+}
+
+bool UBSettings::isUnderlineFont()
+{
+    return value("Board/FontIsUnderline", false).toBool();
+}
+
 
 QString UBSettings::userDataDirectory()
 {
