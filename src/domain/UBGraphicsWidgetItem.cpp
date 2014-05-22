@@ -53,6 +53,8 @@
 #include "web/UBWebKitUtils.h"
 #include "web/UBWebController.h"
 
+#include <QTextStream>
+
 bool UBGraphicsWidgetItem::sInlineJavaScriptLoaded = false;
 QStringList UBGraphicsWidgetItem::sInlineJavaScripts;
 const int UBGraphicsWidgetItem::sRTEEditionBarHeight = 59;
@@ -828,12 +830,10 @@ bool UBGraphicsW3CWidgetItem::sTemplateLoaded = false;
 QString UBGraphicsW3CWidgetItem::sNPAPIWrappperConfigTemplate;
 QMap<QString, QString> UBGraphicsW3CWidgetItem::sNPAPIWrapperTemplates;
 
-UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent, const QUrl& sourceUrl)
+UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent)
     : UBGraphicsWidgetItem(pWidgetUrl, parent)
     , mW3CWidgetAPI(0)
 {
-    mSourceUrl = sourceUrl;
-
     QString path = pWidgetUrl.toLocalFile();
     QDir potentialDir(path);
 
@@ -973,6 +973,34 @@ UBGraphicsW3CWidgetItem::UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphi
 
     if(!f.exists())
         mMainHtmlUrl = QUrl(mMainHtmlFileName);
+
+
+    // Issue - ALTI/AOU - 20140415 : because of "transparent" value for "wMode" param of the NPAPI wrapper, .SWF don't display correctly.
+    // Replace param "wmode" value from "transparent" to "window" :
+    f.open(QFile::ReadWrite);
+    QByteArray content = f.readAll();
+    QString strContent(content);
+    // Looking for param "wmode"
+    int indexParamWmode = strContent.indexOf("wmode", 0, Qt::CaseInsensitive);
+    if (indexParamWmode != -1){
+        // Looking for actual value of param "wmode"
+        int indexValueWmode = strContent.indexOf("value", indexParamWmode, Qt::CaseInsensitive);
+        if (indexValueWmode != -1){
+            int indexFirstQuote = strContent.indexOf('"', indexValueWmode);
+            int indexSecondQuote = strContent.indexOf('"', indexFirstQuote+1);
+            int len = indexSecondQuote-indexFirstQuote-1;
+            // Replace value "transparent" by "window" :
+            QString actualValue = strContent.mid(indexFirstQuote+1, len);
+            if (actualValue.compare("transparent", Qt::CaseInsensitive) == 0)
+            {
+                strContent.replace(indexFirstQuote+1, len, "window");
+                f.resize(0);
+                f.write(strContent.toStdString().c_str());
+                f.flush();
+            }
+        }
+    }
+    f.close();
 
     connect(page()->mainFrame(), SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(javaScriptWindowObjectCleared()));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(javaScriptWindowObjectCleared()));

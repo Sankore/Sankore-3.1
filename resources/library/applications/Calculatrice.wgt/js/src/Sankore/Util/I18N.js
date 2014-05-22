@@ -12,7 +12,13 @@
         },
         
         load: function (locale) {
-            this.catalog = Sankore.Util.I18N.catalogs.get(locale.split(/-|_/)[0].toLowerCase(), {});
+            var localeId = locale.split(/-|_/)[0].toLowerCase();
+            
+            if (!Sankore.Util.I18N.catalogs.has(localeId)) {
+                localeId = 'en';
+            }
+            
+            this.catalog = Sankore.Util.I18N.catalogs.get(localeId, {});
         },
 
         translate: function (id) {
