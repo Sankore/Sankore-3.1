@@ -65,6 +65,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void contentsChanged();
         virtual void setEditable(bool);
         virtual void remove(bool canUndo);
+        void alternHtmlMode();
 
     protected:
         virtual void buildButtons();
@@ -119,7 +120,6 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void setFontItalic();
         void setFontUnderline();
         void pickColor();
-        void alternHtmlMode();
 
         void decreaseSize();
         void increaseSize();
@@ -145,8 +145,6 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void deleteColumn();
         void deleteRow();
         void applyCellProperties();
-
-
 private:
       const int delta;
       void insertList(QTextListFormat::Style format);

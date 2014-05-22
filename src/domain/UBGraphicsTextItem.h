@@ -56,8 +56,6 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual QRectF boundingRect() const;
         virtual QPainterPath shape() const;
 
-        //void setSelected(bool selected);
-
         void setTextWidth(qreal width);
         void setTextHeight(qreal height);
         qreal textHeight() const;
@@ -111,7 +109,6 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         //issue 1554 - NNE - 20131008
         void activateTextEditor(bool activateTextEditor);
-
     signals:
         void textUndoCommandAdded(UBGraphicsTextItem *textItem);
 
@@ -119,6 +116,7 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void loadUrl(QString url);
         void undoCommandAdded();
         void documentSizeChanged(const QSizeF & newSize);
+        void onClickOnBoard();
 
     private:
         virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -173,7 +171,6 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
            * \param event The event send by Qt.
            */
          void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
-
 };
 
 #endif /* UBGRAPHICSTEXTITEM_H_ */

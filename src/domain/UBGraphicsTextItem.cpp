@@ -92,6 +92,7 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     connect(document()->documentLayout(), SIGNAL(documentSizeChanged(const QSizeF &)),
             this, SLOT(documentSizeChanged(const QSizeF &)));
 
+    connect(UBApplication::boardController->controlView(), SIGNAL(clickOnBoard()), this, SLOT(onClickOnBoard()));
 }
 
 UBGraphicsTextItem::~UBGraphicsTextItem()
@@ -569,22 +570,6 @@ void UBGraphicsTextItem::resize(qreal w, qreal h)
     }
 }
 
-/*
-void UBGraphicsTextItem::setSelected(bool selected)
-{
-    UBGraphicsTextItemDelegate* textDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
-    if (textDelegate)
-    {
-        if (selected)
-            textDelegate->tablePalette()->show();
-        else
-            textDelegate->tablePalette()->hide();
-    }
-
-    QGraphicsTextItem::setSelected(selected);
-}
-*/
-
 QSizeF UBGraphicsTextItem::size() const
 {
     return QSizeF(textWidth(), textHeight());
@@ -615,6 +600,10 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 
     if(!activateTextEditor){
         setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextBrowserInteraction);
+        if(htmlMode()){
+            UBGraphicsTextItemDelegate *d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+            if(d) d->alternHtmlMode();
+        }
     }else{
         setTextInteractionFlags(Qt::TextEditorInteraction | Qt::TextBrowserInteraction);
     }
@@ -828,3 +817,14 @@ QString UBGraphicsTextItem::findAndReplaceAttribute(QString tag, QString oldAttr
 }
 
 //N/C - NNE - 20140520
+
+void UBGraphicsTextItem::onClickOnBoard()
+{
+    if(isActivatedTextEditor)
+        activateTextEditor(false);
+
+    if(htmlMode()){
+        UBGraphicsTextItemDelegate *d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+        if(d) d->alternHtmlMode();
+    }
+}

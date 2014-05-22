@@ -767,6 +767,7 @@ void UBGraphicsTextItemDelegate::alternHtmlMode()
     else
     {
         delegated()->setHtml(delegated()->toPlainText());
+        delegated()->setFont(createDefaultFont());
     }
 
     delegated()->setHtmlMode(!delegated()->htmlMode());
