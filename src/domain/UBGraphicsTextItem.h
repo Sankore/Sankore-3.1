@@ -116,7 +116,9 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void loadUrl(QString url);
         void undoCommandAdded();
         void documentSizeChanged(const QSizeF & newSize);
-        void onClickOnBoard();
+
+    public slots:
+            void changeHTMLMode();
 
     private:
         virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);

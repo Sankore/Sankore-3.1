@@ -3031,6 +3031,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     // Texts copied from other programs like Open-Office can truncate the svg file.
     //mXmlWriter.writeCharacters(item->toHtml());
 
+    if(item->htmlMode())
+        item->changeHTMLMode();
+
     QString content = UBTextTools::cleanHtmlCData(item->toHtml());
 
     if(mIsOldVersionFileWithText){

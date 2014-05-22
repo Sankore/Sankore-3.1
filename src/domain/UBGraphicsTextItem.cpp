@@ -92,7 +92,7 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     connect(document()->documentLayout(), SIGNAL(documentSizeChanged(const QSizeF &)),
             this, SLOT(documentSizeChanged(const QSizeF &)));
 
-    connect(UBApplication::boardController->controlView(), SIGNAL(clickOnBoard()), this, SLOT(onClickOnBoard()));
+    connect(UBApplication::boardController->controlView(), SIGNAL(clickOnBoard()), this, SLOT(changeHTMLMode()));
 }
 
 UBGraphicsTextItem::~UBGraphicsTextItem()
@@ -200,7 +200,6 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
         else
         {
-
             Delegate()->getToolBarItem()->show();
         }
 
@@ -363,6 +362,9 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
         cp->setTextWidth(this->textWidth());
         cp->setTextHeight(this->textHeight());
 
+        if(mBackgroundColor != Qt::transparent)
+            cp->setBackgroundColor(mBackgroundColor);
+
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
                 UBGraphicsItemPlayAudioAction* audioAction = dynamic_cast<UBGraphicsItemPlayAudioAction*>(Delegate()->action());
@@ -409,10 +411,11 @@ void UBGraphicsTextItem::setTextWidth(qreal width)
 
 void UBGraphicsTextItem::setTextHeight(qreal height)
 {
+    prepareGeometryChange();
+
     QFontMetrics fm(font());
     qreal minHeight = fm.height() + document()->documentMargin() * 2;
     mTextHeight = qMax(minHeight, height);
-    update();
     setFocus();
 }
 
@@ -460,7 +463,7 @@ void UBGraphicsTextItem::insertTable(const int lines, const int columns)
     QTextTableFormat format;
     format.clearColumnWidthConstraints();
     format.setWidth(QTextLength(QTextLength::PercentageLength, 100));
-    QTextLength t = QTextLength(QTextLength::PercentageLength, 100/columns);
+    QTextLength t = QTextLength(QTextLength::PercentageLength, 100/(float)columns);
     QVector<QTextLength> v;
     for (int i=0; i< columns; i++)
         v.push_back(t);
@@ -818,7 +821,7 @@ QString UBGraphicsTextItem::findAndReplaceAttribute(QString tag, QString oldAttr
 
 //N/C - NNE - 20140520
 
-void UBGraphicsTextItem::onClickOnBoard()
+void UBGraphicsTextItem::changeHTMLMode()
 {
     if(isActivatedTextEditor)
         activateTextEditor(false);
