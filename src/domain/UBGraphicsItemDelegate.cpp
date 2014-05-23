@@ -157,6 +157,58 @@ void DelegateButton::startShowProgress()
     }
 }
 
+DelegateMenuButton::DelegateMenuButton(const QString & fileName, QGraphicsItem* pDelegated, QGraphicsItem * parent, Qt::WindowFrameSection section):
+    DelegateButton(fileName, pDelegated, parent, section),
+    mMenuProxy(0)
+{
+    setAcceptHoverEvents(true);
+    connect(this, SIGNAL(clicked(bool)), this, SLOT(showMenu()));
+}
+
+void DelegateMenuButton::setMenu(QMenu *menu)
+{
+    mMenuProxy = new UBGraphicsProxyWidget(this->parentItem());
+
+    mMenuProxy->setWidget(menu);
+}
+
+
+void DelegateMenuButton::focusOutEvent(QFocusEvent *event)
+{
+    if(mMenuProxy && mMenuProxy->isVisible()){
+        mMenuProxy->hide();
+    }
+}
+
+void DelegateMenuButton::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+{
+    if(mMenuProxy && mMenuProxy->isVisible()){
+
+        if(scene()){
+            int diff = qAbs(event->pos().y() - boundingRect().height());
+
+            if(diff > 2)
+                mMenuProxy->hide();
+        }
+    }
+}
+
+void DelegateMenuButton::showMenu()
+{
+    if(mMenuProxy){
+        if(mMenuProxy->isVisible()){
+            mMenuProxy->hide();
+        }else{
+            QPointF p = this->pos();
+
+            p.setY(p.y() + this->boundingRect().height());
+
+            mMenuProxy->setPos(p);
+            mMenuProxy->show();
+        }
+    }
+}
+
 UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar, bool showGoContentButton)
     : QObject(parent)
     , mDelegated(pDelegated)

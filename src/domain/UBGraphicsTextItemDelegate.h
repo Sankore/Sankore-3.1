@@ -95,6 +95,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mAddIndentButton;
         DelegateButton* mRemoveIndentButton;
         DelegateButton* mHyperLinkButton;
+        DelegateMenuButton* mTableButton;
 
         UBCreateTablePalette* mTablePalette;
         UBCreateHyperLinkPalette* mLinkPalette;

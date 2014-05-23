@@ -123,23 +123,25 @@ void UBGraphicsTextItemDelegate::buildButtons()
 {
     UBGraphicsItemDelegate::buildButtons();
 
-    mFontButton = new DelegateButton(":/images/font.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mFontBoldButton = new DelegateButton(":/images/bold.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mFontItalicButton = new DelegateButton(":/images/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mFontUnderlineButton = new DelegateButton(":/images/underline.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontButton = new DelegateButton(":/images/textEditor/font.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontBoldButton = new DelegateButton(":/images/textEditor/bold.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontItalicButton = new DelegateButton(":/images/textEditor/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontUnderlineButton = new DelegateButton(":/images/textEditor/underline.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mDecreaseSizeButton = new DelegateButton(":/images/minus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mIncreaseSizeButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mBackgroundColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mLeftAlignmentButton = new DelegateButton(":/images/resizeLeft.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mCenterAlignmentButton = new DelegateButton(":/images/resizeTop.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mRightAlignmentButton = new DelegateButton(":/images/resizeRight.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mCodeButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mUnorderedListButton= new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mOrderedListButton= new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mAddIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mRemoveIndentButton = new DelegateButton(":/images/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mHyperLinkButton = new DelegateButton(":/images/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mDecreaseSizeButton = new DelegateButton(":/images/textEditor/decrease-font-size.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mIncreaseSizeButton = new DelegateButton(":/images/textEditor/increase-font-size.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mBackgroundColorButton = new DelegateButton(":/images/textEditor/bucket.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mLeftAlignmentButton = new DelegateButton(":/images/textEditor/align-left.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCenterAlignmentButton = new DelegateButton(":/images/textEditor/align-center.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mRightAlignmentButton = new DelegateButton(":/images/textEditor/align-right.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCodeButton = new DelegateButton(":/images/textEditor/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mUnorderedListButton= new DelegateButton(":/images/textEditor/unordered-list.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mOrderedListButton= new DelegateButton(":/images/textEditor/ordered-list.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mAddIndentButton = new DelegateButton(":/images/textEditor/indent.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mRemoveIndentButton = new DelegateButton(":/images/textEditor/unindent.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mHyperLinkButton = new DelegateButton(":/images/textEditor/link.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+
+    mTableButton = new DelegateMenuButton(":/images/textEditor/table.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
     connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
@@ -158,41 +160,31 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
     connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
+    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(showMenuTable()));
 
+    QMenu *menu = new QMenu();
 
-    QPushButton *button = new QPushButton("Array");
-
-    QMenu *menu = new QMenu(button);
-
-    menu->addAction(QIcon(":/images/plus.svg"), tr("Insert table"), this, SLOT(setTableSize()));
+    menu->addAction(QIcon(":/images/textEditor/add-table.png"), tr("Insert table"), this, SLOT(setTableSize()))->setIconVisibleInMenu(true);
 
     QMenu *columnMenu = menu->addMenu("Column");
 
-    columnMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert column after"), this, SLOT(insertColumnOnRight()));
+    columnMenu->addAction(QIcon(":/images/textEditor/insert-column-left.png"), tr("Insert column after"), this, SLOT(insertColumnOnRight()))->setIconVisibleInMenu(true);
 
-    columnMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert column before"), this, SLOT(insertColumnOnLeft()));
+    columnMenu->addAction(QIcon(":/images/textEditor/insert-column-right.png"), tr("Insert column before"), this, SLOT(insertColumnOnLeft()))->setIconVisibleInMenu(true);
 
-    columnMenu->addAction(QIcon(":/images/close.svg"), tr("Delete column"), this, SLOT(deleteColumn()));
+    columnMenu->addAction(QIcon(":/images/textEditor/delete-column.png"), tr("Delete column"), this, SLOT(deleteColumn()))->setIconVisibleInMenu(true);
 
     QMenu *rowMenu = menu->addMenu("Row");
 
-    rowMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert row after"), this, SLOT(insertRowOnBottom()));
+    rowMenu->addAction(QIcon(":/images/textEditor/insert-row-top.png"), tr("Insert row after"), this, SLOT(insertRowOnBottom()))->setIconVisibleInMenu(true);
 
-    rowMenu->addAction(QIcon(":/images/plus.svg"), tr("Insert row before"), this, SLOT(insertRowOnTop()));
+    rowMenu->addAction(QIcon(":/images/textEditor/insert-row-bottom.png"), tr("Insert row before"), this, SLOT(insertRowOnTop()))->setIconVisibleInMenu(true);
 
-    rowMenu->addAction(QIcon(":/images/close.svg"), tr("Delete row"), this, SLOT(deleteRow()));
+    rowMenu->addAction(QIcon(":/images/textEditor/delete-row.png"), tr("Delete row"), this, SLOT(deleteRow()))->setIconVisibleInMenu(true);
 
-    menu->addAction(QIcon(":/images/roundeRrectangle.svg"), tr("Cell properties"), this, SLOT(setCellProperties()));
+    menu->addAction(QIcon(":/images/textEditor/cell-properties.png"), tr("Cell properties"), this, SLOT(setCellProperties()))->setIconVisibleInMenu(true);
 
-    button->setMenu(menu);
-    button->setFlat(true);
-
-    button->setStyleSheet("background-color: transparent; border-color: transparent");
-
-    mTableMenu = new UBGraphicsProxyWidget(mToolBarItem);
-
-    mTableMenu->setWidget(button);
-
+    mTableButton->setMenu(menu);
 
     //update the position of the menu and the sub menu
     menu->show();
@@ -209,7 +201,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
                    << mDecreaseSizeButton << mIncreaseSizeButton
                    << mLeftAlignmentButton << mCenterAlignmentButton << mRightAlignmentButton
                    << mUnorderedListButton << mOrderedListButton << mAddIndentButton << mRemoveIndentButton
-                   << mHyperLinkButton << mTableMenu << mBackgroundColorButton << mCodeButton;
+                   << mHyperLinkButton << mTableButton << mBackgroundColorButton << mCodeButton;
 
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
