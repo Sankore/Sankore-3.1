@@ -1387,6 +1387,32 @@
     </message>
 </context>
 <context>
+    <name>UBCellPropertiesPalette</name>
+    <message>
+        <source>Width :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateHyperLinkPalette</name>
+    <message>
+        <source>Link : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
@@ -1450,6 +1476,21 @@
     <message>
         <source>Insert url text here</source>
         <translation>Ampidiro eto ny rohin&apos;ny lahabolana</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateTablePalette</name>
+    <message>
+        <source>number of lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>number of columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1757,15 +1798,15 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation>%1 (fandikana)</translation>
+        <translation type="obsolete">%1 (fandikana)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation>Mandika pejy %1/%2</translation>
+        <translation type="obsolete">Mandika pejy %1/%2</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation>
+        <translation type="obsolete">
             <numerusform>%1 pejy voadika</numerusform>
             <numerusform></numerusform>
         </translation>
@@ -2333,6 +2374,50 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     <message>
         <source>Editable</source>
         <translation>Azo ovaina</translation>
+    </message>
+    <message>
+        <source>Insert table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert column after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert column before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert row after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert row before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Row</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3684,6 +3769,38 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Uniboard Documents</source>
         <translation>Rakitra Uniboard</translation>
+    </message>
+    <message>
+        <source>Collapse All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creation date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphabetical order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ascending order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Descending order</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -984,11 +984,11 @@
     </message>
     <message>
         <source>Stroke Style Dot Line</source>
-        <translation>Style du trait : pointillés</translation>
+        <translation>Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation type="unfinished">Style du trait : pointillés</translation>
+        <translation type="unfinished">Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1396,6 +1396,32 @@
     </message>
 </context>
 <context>
+    <name>UBCellPropertiesPalette</name>
+    <message>
+        <source>Width :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateHyperLinkPalette</name>
+    <message>
+        <source>Link : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
@@ -1459,6 +1485,21 @@
     <message>
         <source>Insert url text here</source>
         <translation>Insérer une adresse URL</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateTablePalette</name>
+    <message>
+        <source>number of lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>number of columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1769,15 +1810,15 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation>%1 (copie)</translation>
+        <translation type="obsolete">%1 (copie)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation>Copie de la page %1/%2 en cours</translation>
+        <translation type="obsolete">Copie de la page %1/%2 en cours</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation>
+        <translation type="obsolete">
             <numerusform>%1 page copiée</numerusform>
             <numerusform>%1 pages copiées</numerusform>
         </translation>
@@ -2348,6 +2389,50 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
     <message>
         <source>Editable</source>
         <translation>Éditable</translation>
+    </message>
+    <message>
+        <source>Insert table</source>
+        <translation>Insérer tableau</translation>
+    </message>
+    <message>
+        <source>Insert column after</source>
+        <translation>Ajouter une colonne après</translation>
+    </message>
+    <message>
+        <source>Insert column before</source>
+        <translation>Ajouter une colonne avant</translation>
+    </message>
+    <message>
+        <source>Delete column</source>
+        <translation>Effacer la colonne</translation>
+    </message>
+    <message>
+        <source>Insert row after</source>
+        <translation>Ajouter une ligne après</translation>
+    </message>
+    <message>
+        <source>Insert row before</source>
+        <translation>Ajouter une ligne avant</translation>
+    </message>
+    <message>
+        <source>Delete row</source>
+        <translation>Effacer la ligne</translation>
+    </message>
+    <message>
+        <source>Cell properties</source>
+        <translation>Propriété cellule</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Couleur de fond</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Colonne</translation>
+    </message>
+    <message>
+        <source>Row</source>
+        <translation>Ligne</translation>
     </message>
 </context>
 <context>
@@ -3730,6 +3815,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Descending order</source>
         <translation>Ordre décroissant</translation>
+    </message>
+    <message>
+        <source>Collapse All</source>
+        <translation>Tout replier</translation>
+    </message>
+    <message>
+        <source>Expand All</source>
+        <translation>Tout déplier</translation>
     </message>
 </context>
 <context>

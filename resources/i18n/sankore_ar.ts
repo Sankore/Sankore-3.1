@@ -1062,10 +1062,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Stroke style : Dash</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Stroke style : Dot Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1074,23 +1070,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ALign objects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Align Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Align objects to the left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align Center</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align the center of the objects vertically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1110,19 +1094,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Align Middle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align objects to the middle.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Align Bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align objects to the bottom.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1155,6 +1127,34 @@
     </message>
     <message>
         <source>Arrows properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Dash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Dash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Center Vertically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects vertically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Center Horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the bottom</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1387,6 +1387,32 @@
     </message>
 </context>
 <context>
+    <name>UBCellPropertiesPalette</name>
+    <message>
+        <source>Width :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateHyperLinkPalette</name>
+    <message>
+        <source>Link : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
@@ -1450,6 +1476,21 @@
     <message>
         <source>Insert url text here</source>
         <translation>ادخال نص محدد موقع المعلومات هنا</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateTablePalette</name>
+    <message>
+        <source>number of lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>number of columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1774,15 +1815,15 @@ Providing a new name will create a new document.</source>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation>1 % (نسخ)</translation>
+        <translation type="obsolete">1 % (نسخ)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation>نسخ الصفحة 1% / 2%</translation>
+        <translation type="obsolete">نسخ الصفحة 1% / 2%</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation>
+        <translation type="obsolete">
             <numerusform>%1 صفحة منسوخة</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -2354,6 +2395,50 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation>قابل للنشر</translation>
+    </message>
+    <message>
+        <source>Insert table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert column after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert column before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert row after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert row before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Row</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3701,6 +3786,38 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Uniboard Documents</source>
         <translation>وثائق Uniboard</translation>
+    </message>
+    <message>
+        <source>Collapse All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creation date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphabetical order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ascending order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Descending order</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

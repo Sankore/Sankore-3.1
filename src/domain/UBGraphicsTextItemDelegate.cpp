@@ -166,7 +166,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
 
     menu->addAction(QIcon(":/images/textEditor/add-table.png"), tr("Insert table"), this, SLOT(setTableSize()))->setIconVisibleInMenu(true);
 
-    QMenu *columnMenu = menu->addMenu("Column");
+    QMenu *columnMenu = menu->addMenu(tr("Column"));
 
     columnMenu->addAction(QIcon(":/images/textEditor/insert-column-left.png"), tr("Insert column after"), this, SLOT(insertColumnOnRight()))->setIconVisibleInMenu(true);
 
@@ -174,7 +174,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
 
     columnMenu->addAction(QIcon(":/images/textEditor/delete-column.png"), tr("Delete column"), this, SLOT(deleteColumn()))->setIconVisibleInMenu(true);
 
-    QMenu *rowMenu = menu->addMenu("Row");
+    QMenu *rowMenu = menu->addMenu(tr("Row"));
 
     rowMenu->addAction(QIcon(":/images/textEditor/insert-row-top.png"), tr("Insert row after"), this, SLOT(insertRowOnBottom()))->setIconVisibleInMenu(true);
 

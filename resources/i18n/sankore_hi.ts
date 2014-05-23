@@ -1389,6 +1389,32 @@
     </message>
 </context>
 <context>
+    <name>UBCellPropertiesPalette</name>
+    <message>
+        <source>Width :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateHyperLinkPalette</name>
+    <message>
+        <source>Link : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text : </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
@@ -1452,6 +1478,21 @@
     <message>
         <source>Insert url text here</source>
         <translation type="unfinished">Url पाठ यहाँ सम्मिलित करें</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateTablePalette</name>
+    <message>
+        <source>number of lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>number of columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>validate</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1759,15 +1800,15 @@ Providing a new name will create a new document.</source>
     <name>UBDocumentTreeWidget</name>
     <message>
         <source>%1 (copy)</source>
-        <translation type="unfinished">%1 (कापी)</translation>
+        <translation type="obsolete">%1 (कापी)</translation>
     </message>
     <message>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">पेज  %1/%2 कापी कर रहा है </translation>
+        <translation type="obsolete">पेज  %1/%2 कापी कर रहा है </translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             <numerusform>%1 पेज कापी हुए </numerusform>
             <numerusform></numerusform>
         </translation>
@@ -2336,6 +2377,50 @@ Providing a new name will create a new document.</source>
     <message>
         <source>Editable</source>
         <translation type="unfinished">सुधार के योग्य </translation>
+    </message>
+    <message>
+        <source>Insert table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert column after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert column before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert row after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert row before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cell properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Row</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3677,6 +3762,38 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Uniboard Documents</source>
         <translation type="unfinished">यूनिबोर्ड दस्तावेज </translation>
+    </message>
+    <message>
+        <source>Collapse All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creation date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alphabetical order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ascending order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Descending order</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
