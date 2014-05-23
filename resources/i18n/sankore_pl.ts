@@ -1803,26 +1803,6 @@ Podanie nowej nazwy spowoduje utworzenie nowego dokumentu.</translation>
     </message>
 </context>
 <context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (kopia)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">Kopiowanie strony %1/%2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translatorcomment>The first translation is the singular form</translatorcomment>
-        <translation type="obsolete">
-            <numerusform>Skopiowano %1 stronę</numerusform>
-            <numerusform>Skopiowano %1 strony</numerusform>
-            <numerusform>Skopiowano %1 stron</numerusform>
-        </translation>
-    </message>
-</context>
-<context>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
@@ -2858,6 +2838,14 @@ Czy chcesz ignorować te błędy dla tego hosta?</translation>
     </message>
     <message>
         <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
