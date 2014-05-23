@@ -62,10 +62,17 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>Collapse All</string>
               </property>
               <property name="text">
-               <string>collapse all</string>
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../sankore.qrc">
+                <normaloff>:/images/collapse-all.png</normaloff>:/images/collapse-all.png</iconset>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -77,8 +84,18 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="toolTip">
+               <string>Expand All</string>
+              </property>
               <property name="text">
-               <string>expand all</string>
+               <string notr="true"/>
+              </property>
+              <property name="icon">
+               <iconset resource="../sankore.qrc">
+                <normaloff>:/images/expand-all.png</normaloff>:/images/expand-all.png</iconset>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -318,6 +335,8 @@
    <header>document/UBDocumentController.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../sankore.qrc"/>
+ </resources>
  <connections/>
 </ui>
