@@ -1796,24 +1796,6 @@ Izen berri bat ezarriz, dokumentu berri bat sortuko duzu.
     </message>
 </context>
 <context>
-    <name>UBDocumentTreeWidget</name>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
-            <numerusform>%1 orri kopiatua</numerusform>
-            <numerusform>%1 orri kopiatuak</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (kopia)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">%2tik %1orria kopiatzen ari...</translation>
-    </message>
-</context>
-<context>
     <name>UBDownloadManager</name>
     <message>
         <source>an unknown network-related error was detected</source>
@@ -2849,6 +2831,14 @@ Ostalari honetako errorei paso egin nahi diezu ?</translation>
     </message>
     <message>
         <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

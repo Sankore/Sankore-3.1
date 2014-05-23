@@ -1795,24 +1795,6 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
     </message>
 </context>
 <context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (fandikana)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">Mandika pejy %1/%2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
-            <numerusform>%1 pejy voadika</numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-</context>
-<context>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
@@ -2848,6 +2830,14 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     </message>
     <message>
         <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

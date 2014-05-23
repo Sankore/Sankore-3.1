@@ -2820,6 +2820,14 @@ Do you want to ignore these errors for this host?</source>
         <source>Occitan</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>

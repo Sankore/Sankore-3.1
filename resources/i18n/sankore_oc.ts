@@ -1795,24 +1795,6 @@ Providing a new name will create a new document.</source>
     </message>
 </context>
 <context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (copia)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">Copia de la pagina %1/%2 en cors</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
-            <numerusform>%1 pagina copiada</numerusform>
-            <numerusform>%1 paginas copiadas</numerusform>
-        </translation>
-    </message>
-</context>
-<context>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
@@ -2850,6 +2832,14 @@ E voletz non pas tiéner compte de las errors aquestas sus aqueth servider ?</tr
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

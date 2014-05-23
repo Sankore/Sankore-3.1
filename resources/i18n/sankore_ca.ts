@@ -1800,25 +1800,6 @@ Si indiqueu un nom diferent es crearà un document nou.</translation>
     </message>
 </context>
 <context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (còpia)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">S&apos;està copiant la pàgina %1/%2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
-            <numerusform>%1 pàgina copiada</numerusform>
-            <numerusform>%1 pàgines copiades</numerusform>
-            <numerusform>%1 pàgines copiades</numerusform>
-        </translation>
-    </message>
-</context>
-<context>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
@@ -2854,6 +2835,14 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     </message>
     <message>
         <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
