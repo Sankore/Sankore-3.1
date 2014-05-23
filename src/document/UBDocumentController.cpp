@@ -2717,7 +2717,15 @@ void UBDocumentController::documentSceneChanged(UBDocumentProxy* proxy, int pSce
     {
         reloadThumbnails();
     }
-    TreeViewSelectionChanged(firstSelectedTreeIndex(), QModelIndex());
+
+    QModelIndexList sel = mDocumentUI->documentTreeView->selectionModel()->selectedRows(0);
+
+    QModelIndex selection;
+    if(sel.count() > 0){
+        selection = sel.first();
+    }
+
+    TreeViewSelectionChanged(selection, QModelIndex());
 }
 
 void UBDocumentController::thumbnailPageDoubleClicked(QGraphicsItem* item, int index)
