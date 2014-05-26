@@ -63,6 +63,8 @@
 
 class UBGraphicsParaschoolEditorWidgetItem;
 
+DelegateButton *DelegateButton::Spacer = 0;
+
 DelegateButton::DelegateButton(const QString & fileName, QGraphicsItem* pDelegated, QGraphicsItem * parent, Qt::WindowFrameSection section)
     : QGraphicsSvgItem(fileName, parent)
     , mDelegated(pDelegated)
@@ -977,7 +979,7 @@ UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     mVisible(false),
     mMinWidth(200),
     mInitialHeight(26),
-    mElementsPadding(2)
+    mElementsPadding(0)
 {
     QRectF rect = this->rect();
     rect.setHeight(mInitialHeight);
@@ -996,16 +998,20 @@ void UBGraphicsToolBarItem::positionHandles()
     int itemXOffset = 0;
     foreach (QGraphicsItem* item, mItemsOnToolBar)
     {
-        item->setPos(itemXOffset, 0);
+        if(item == DelegateButton::Spacer){
+            itemXOffset += 10;
+        }else{
+            item->setPos(itemXOffset, 0);
 
-        itemXOffset += item->boundingRect().width();
+            itemXOffset += item->boundingRect().width();
 
-        if(itemXOffset < rect().width())
-            item->show();
-        else
-            item->hide();
+            if(itemXOffset < rect().width())
+                item->show();
+            else
+                item->hide();
 
-        itemXOffset += mElementsPadding;
+            itemXOffset += mElementsPadding;
+        }
     }
 }
 

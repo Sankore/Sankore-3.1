@@ -197,10 +197,16 @@ void UBGraphicsTextItemDelegate::buildButtons()
     rowMenu->hide();
 
     QList<QGraphicsItem*> itemsOnToolBar;
-    itemsOnToolBar << mFontButton << mColorButton << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
+    itemsOnToolBar << mFontButton << mColorButton
+                   << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
+                   << DelegateButton::Spacer
                    << mDecreaseSizeButton << mIncreaseSizeButton
+                   << DelegateButton::Spacer
                    << mLeftAlignmentButton << mCenterAlignmentButton << mRightAlignmentButton
-                   << mUnorderedListButton << mOrderedListButton << mAddIndentButton << mRemoveIndentButton
+                   << DelegateButton::Spacer
+                   << mUnorderedListButton << mOrderedListButton
+                   << DelegateButton::Spacer << mAddIndentButton << mRemoveIndentButton
+                   << DelegateButton::Spacer
                    << mHyperLinkButton << mTableButton << mBackgroundColorButton << mCodeButton;
 
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);

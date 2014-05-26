@@ -47,6 +47,8 @@ class DelegateButton: public QGraphicsSvgItem
     Q_OBJECT
 
     public:
+        static DelegateButton *Spacer;
+
         DelegateButton(const QString & fileName, QGraphicsItem* pDelegated, QGraphicsItem * parent = 0, Qt::WindowFrameSection section = Qt::TopLeftSection);
 
         virtual ~DelegateButton();
