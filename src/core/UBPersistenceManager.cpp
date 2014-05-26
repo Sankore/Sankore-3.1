@@ -433,6 +433,12 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName
     doc->setMetaData(UBSettings::documentUpdatedAt,currentDate);
     doc->setMetaData(UBSettings::documentDate,currentDate);
 
+    //Issue N/C - NNE - 20140526
+    QString version = UBApplication::applicationVersion();
+    version.chop(1);
+    doc->setMetaData(UBSettings::documentTagVersion, version);
+    //Issue N/C - NNE - 20140526 : END
+
     if (withEmptyPage) createDocumentSceneAt(doc, 0);
 
     bool addDoc = false;
@@ -572,6 +578,12 @@ UBDocumentProxy* UBPersistenceManager::duplicateDocument(UBDocumentProxy* pDocum
             pDocumentProxy->metaData(UBSettings::documentName).toString() + " " + tr("(copy)"));
 
     copy->setUuid(QUuid::createUuid());
+
+    //Issue N/C - NNE - 20140526
+    QString version = UBApplication::applicationVersion();
+    version.chop(1);
+    copy->setMetaData(UBSettings::documentTagVersion, version);
+    //Issue N/C - NNE - 20140526 : END
 
     if (!copy->metaDatas().value(UBSettings::documentDefaultBackgroundImage).toString().isEmpty()) //Issue 1684 - CFA - 20131217
         copy->setHasDefaultImageBackground(true);

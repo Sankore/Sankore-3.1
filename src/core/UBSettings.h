@@ -199,6 +199,10 @@ class UBSettings : public QObject
         static QString documentDefaultBackgroundImageDisposition;
         // Fin Issue 1684 - ALTI/AOU - 20131210
 
+        //Issue N/C - NNE - 20140526
+        static QString documentTagVersion;
+        //Issue N/C - NNE - 20140526
+
         static QString documentDate;
 
         static QString trashedDocumentGroupNamePrefix;

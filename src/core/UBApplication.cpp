@@ -114,7 +114,6 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing
   , mApplicationTranslator(NULL)
   , mQtGuiTranslator(NULL)
 {
-
     staticMemoryCleaner = new QObject(0); // deleted in UBApplication destructor
 
     setOrganizationName("Sankore");
