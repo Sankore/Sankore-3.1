@@ -1106,6 +1106,10 @@ void UBTGFileWidget::OnClickBtnSelectFile()
     // Ouvrir une dialog de selection de fichier :
     QString filename = QFileDialog::getOpenFileName(UBApplication::mainWindow, tr("Select File"), QString(), "*.*", NULL);
 
+#ifdef Q_OS_MACX
+    filename = filename.normalized(QString::NormalizationForm_C); // Issue - ALTI/AOU - 20140526 : on MacOSX, file names are in a special UTF-8 "NFD" encoding. We must convert the file name to a standard UTF-8.
+#endif
+
     if (filename.length() > 0)
     {
         QString documentPath = UBApplication::boardController->selectedDocument()->persistencePath();
