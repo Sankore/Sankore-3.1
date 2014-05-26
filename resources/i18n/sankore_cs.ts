@@ -1800,25 +1800,6 @@ Poskytnutí nového názvu vytvoří nový dokument.</translation>
     </message>
 </context>
 <context>
-    <name>UBDocumentTreeWidget</name>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
-            <numerusform>%1 zkopírovaná stránka</numerusform>
-            <numerusform>%1 zkopírované stránky</numerusform>
-            <numerusform>%1 zkopírovaných stránek</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (kopie)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">Kopíruje se stránka %1/%2</translation>
-    </message>
-</context>
-<context>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
@@ -2854,6 +2835,14 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
     </message>
     <message>
         <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

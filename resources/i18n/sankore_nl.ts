@@ -1792,25 +1792,7 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-</context>
-<context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (Kopieren)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">Kopie van pagina %1/%2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
-            <numerusform>%1 paginas gekopieerd</numerusform>
+            <numerusform>%1 alle beelden</numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -2845,6 +2827,14 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1071,10 +1071,6 @@
         <translation>Dessin à main levée</translation>
     </message>
     <message>
-        <source>Stroke style : Dash</source>
-        <translation type="obsolete">Style de bordure : traitillé</translation>
-    </message>
-    <message>
         <source>Stroke style : Dot Dash</source>
         <translation>Style de bordure : pointillé</translation>
     </message>
@@ -1801,24 +1797,6 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
-            <numerusform>%1 page copiée</numerusform>
-            <numerusform>%1 pages copiées</numerusform>
-        </translation>
-    </message>
-</context>
-<context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation type="obsolete">%1 (copie)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation type="obsolete">Copie de la page %1/%2 en cours</translation>
-    </message>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation type="obsolete">
             <numerusform>%1 page copiée</numerusform>
             <numerusform>%1 pages copiées</numerusform>
         </translation>
@@ -2864,6 +2842,14 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     <message>
         <source>Occitan</source>
         <translation>Occitan</translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

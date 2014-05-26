@@ -1,91 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US">
+<TS version="2.0" language="hu_HU">
 <context>
     <name>BlackoutWidget</name>
     <message>
         <source>Click to Return to Application</source>
-        <translation>Нажать, чтобы вернуться в приложение</translation>
+        <translation>Kattintásra visszatér az alkalmazáshoz</translation>
     </message>
 </context>
 <context>
     <name>DownloadDialog</name>
     <message>
         <source>Downloads</source>
-        <translation>Загрузки</translation>
+        <translation>Letöltések</translation>
     </message>
     <message>
         <source>Clean Up</source>
-        <translation>Очистить</translation>
+        <translation>Takarítás</translation>
     </message>
     <message>
         <source>0 Items</source>
-        <translation>0 элементов</translation>
+        <translation>0 tétel</translation>
     </message>
 </context>
 <context>
     <name>DownloadItem</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation>Имя файла</translation>
+        <translation>Fájlnév</translation>
     </message>
     <message>
         <source>Try Again</source>
-        <translation>Попробовать еще</translation>
+        <translation>Újra</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Открыть</translation>
+        <translation>Megnyitás</translation>
     </message>
 </context>
 <context>
     <name>IntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation>Разместить подкаст на Youtube</translation>
+        <translation>A podcast feltöltése a YouTube-ra</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Название</translation>
+        <translation>Cím</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Описание</translation>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Автор</translation>
+        <translation>Szerző</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Board</source>
-        <translation>Доска</translation>
+        <translation>Tábla</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation>Интернет</translation>
+        <translation>Web</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation>Документы</translation>
-    </message>
-    <message>
-        <source>Tutorial</source>
-        <translation>Учебник</translation>
+        <translation>Dokumentumok</translation>
     </message>
     <message>
         <source>Stylus</source>
-        <translation>Инструменты</translation>
+        <translation>Toll</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -93,15 +89,43 @@
     </message>
     <message>
         <source>Backgrounds</source>
-        <translation>Фон</translation>
+        <translation>Hátterek</translation>
     </message>
     <message>
-        <source>Change Background</source>
-        <translation>Изменить фон</translation>
+        <source>Text</source>
+        <translation>Szöveg</translation>
+    </message>
+    <message>
+        <source>Capture</source>
+        <translation>Kimásolás</translation>
+    </message>
+    <message>
+        <source>Add To Current Page</source>
+        <translation>Hozzáadás az aktuális oldalhoz</translation>
+    </message>
+    <message>
+        <source>Add To New Page</source>
+        <translation>Hozzáadás új oldalhoz</translation>
+    </message>
+    <message>
+        <source>Add To Library</source>
+        <translation>Hozzáadás könyvtárhoz</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Oldalak</translation>
+    </message>
+    <message>
+        <source>New Page</source>
+        <translation>Új oldal</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation>Отменить</translation>
+        <translation>Visszavonás</translation>
+    </message>
+    <message>
+        <source>Change Background</source>
+        <translation>Háttér megváltoztatása</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
@@ -109,7 +133,7 @@
     </message>
     <message>
         <source>Redo</source>
-        <translation>Вернуть</translation>
+        <translation>Újra</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -117,11 +141,11 @@
     </message>
     <message>
         <source>Previous</source>
-        <translation>Назад</translation>
+        <translation>Előző</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation>Предыдущая страница</translation>
+        <translation>Előző oldal</translation>
     </message>
     <message>
         <source>PgUp</source>
@@ -129,11 +153,11 @@
     </message>
     <message>
         <source>Next</source>
-        <translation>Вперед</translation>
+        <translation>Következő</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation>Следующая страница</translation>
+        <translation>Következő oldal</translation>
     </message>
     <message>
         <source>PgDown</source>
@@ -141,7 +165,7 @@
     </message>
     <message>
         <source>Manage Documents</source>
-        <translation>Управление документами</translation>
+        <translation>Dokumentumok kezelése</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
@@ -149,404 +173,171 @@
     </message>
     <message>
         <source>Web Browsing</source>
-        <translation>Веб-браузер</translation>
+        <translation>Webböngészés</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <source>Line</source>
-        <translation>Линия</translation>
-    </message>
-    <message>
         <source>Small Line</source>
-        <translation>Тонкая линия</translation>
+        <translation>Kis vonal</translation>
     </message>
     <message>
         <source>Medium Line</source>
-        <translation>Средняя линия</translation>
+        <translation>Közepes vonal</translation>
     </message>
     <message>
         <source>Large Line</source>
-        <translation>Толстая линия</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation>Выход</translation>
-    </message>
-    <message>
-        <source>Eraser</source>
-        <translation>Ластик</translation>
+        <translation>Nagy vonal</translation>
     </message>
     <message>
         <source>Smalle Eraser</source>
-        <translation>Малый ластик</translation>
+        <translation>Kis radír</translation>
     </message>
     <message>
         <source>Medium Eraser</source>
-        <translation>Средний ластик</translation>
+        <translation>Közepes radír</translation>
     </message>
     <message>
         <source>Large Eraser</source>
-        <translation>Большой ластик</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Цвет</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Назад</translation>
-    </message>
-    <message>
-        <source>Left</source>
-        <translation>Влево</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Вперед</translation>
-    </message>
-    <message>
-        <source>Right</source>
-        <translation>Вправо</translation>
-    </message>
-    <message>
-        <source>Reload</source>
-        <translation>Перезагрузить</translation>
+        <translation>Nagy radír</translation>
     </message>
     <message>
         <source>Reload Current Page</source>
-        <translation>Перезагрузить текущую страницу</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Главная</translation>
+        <translation>Az aktuális oldal újratöltése</translation>
     </message>
     <message>
         <source>Load Home Page</source>
-        <translation>Загрузить главную страницу</translation>
-    </message>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Закладки</translation>
+        <translation>A kezdőoldal betöltése</translation>
     </message>
     <message>
         <source>Show Bookmarks</source>
-        <translation>Показать закладки</translation>
-    </message>
-    <message>
-        <source>Bookmark</source>
-        <extracomment>tooltip</extracomment>
-        <translation>Закладка</translation>
+        <translation>Könyvjelzők mutatása</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Добавить закладку</translation>
+        <translation>Könyvjelző hozzáadása</translation>
     </message>
     <message>
         <source>Display Board</source>
-        <translation>Показать доску</translation>
-    </message>
-    <message>
-        <source>Ctrl+B</source>
-        <translation>Ctrl+B</translation>
-    </message>
-    <message>
-        <source>Erase</source>
-        <translation>Стереть</translation>
+        <translation>A tábla megjelenítése</translation>
     </message>
     <message>
         <source>Erase Content</source>
-        <translation>Стереть содержимое</translation>
-    </message>
-    <message>
-        <source>Preferences</source>
-        <translation>Настройки</translation>
+        <translation>Tartalom törtése</translation>
     </message>
     <message>
         <source>Display Preferences</source>
-        <translation>Показать настройки</translation>
-    </message>
-    <message>
-        <source>Library</source>
-        <translation>Библиотека</translation>
+        <translation>Beállítások megjelenítése</translation>
     </message>
     <message>
         <source>Show Library</source>
-        <translation>Отобразить библиотеку</translation>
-    </message>
-    <message>
-        <source>Ctrl+L</source>
-        <translation>Ctrl+L</translation>
-    </message>
-    <message>
-        <source>Show Desktop</source>
-        <translation>Рабочий стол</translation>
+        <translation>Könyvtár megjelenítése</translation>
     </message>
     <message>
         <source>Show Computer Desktop</source>
-        <translation>Показать рабочий стол компьютера</translation>
+        <translation>A számítógép Asztalának megjelenítése</translation>
     </message>
     <message>
         <source>Ctrl+Shift+H</source>
         <translation>Ctrl+Shift+H</translation>
     </message>
     <message>
-        <source>Bigger</source>
-        <translation>Больше</translation>
-    </message>
-    <message>
-        <source>Zoom In</source>
-        <translation>Увеличить</translation>
-    </message>
-    <message>
-        <source>Ctrl++</source>
-        <translation>Ctrl++</translation>
-    </message>
-    <message>
-        <source>Smaller</source>
-        <translation>Меньше</translation>
-    </message>
-    <message>
-        <source>Zoom Out</source>
-        <translation>Уменьшить</translation>
-    </message>
-    <message>
-        <source>Ctrl+-</source>
-        <translation>Ctrl+-</translation>
-    </message>
-    <message>
-        <source>New Folder</source>
-        <translation>Новая папка</translation>
-    </message>
-    <message>
         <source>Create a New Folder</source>
-        <translation>Создать новую папку</translation>
-    </message>
-    <message>
-        <source>New Document</source>
-        <translation>Новый документ</translation>
+        <translation>Új mappa létrehozása</translation>
     </message>
     <message>
         <source>Create a New Document</source>
-        <translation>Создать новый документ</translation>
-    </message>
-    <message>
-        <source>Import</source>
-        <translation>Импорт</translation>
+        <translation>Új dokumentum létrehozása</translation>
     </message>
     <message>
         <source>Import a Document</source>
-        <translation>Импортировать документ</translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation>Экспорт</translation>
+        <translation>Dokumentum importálása</translation>
     </message>
     <message>
         <source>Export a Document</source>
-        <translation>Экспортировать документ</translation>
-    </message>
-    <message>
-        <source>Open in Board</source>
-        <translation>Открыть на доске</translation>
+        <translation>Dokumentum exportálása</translation>
     </message>
     <message>
         <source>Open Page in Board</source>
-        <translation>Открыть страницу на доске</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Duplicate</source>
-        <translation>Дублировать</translation>
+        <translation>Oldal megnyitása a táblán</translation>
     </message>
     <message>
         <source>Duplicate Selected Content</source>
-        <translation>Дублировать выбранное содержимое</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation>A kiválasztott tartalom duplikálása</translation>
     </message>
     <message>
         <source>Delete Selected Content</source>
-        <translation>Удалить выбранное содержимое</translation>
-    </message>
-    <message>
-        <source>Del</source>
-        <translation>Del</translation>
-    </message>
-    <message>
-        <source>Add to Working Document</source>
-        <translation>Добавить в рабочий документ</translation>
-    </message>
-    <message>
-        <source>Add Selected Content to Open Document</source>
-        <translation>Добавить выбранное содержимое в открытый документ</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>Добавить</translation>
+        <translation>A kiválasztott tartalom törlése</translation>
     </message>
     <message>
         <source>Add Content to Document</source>
-        <translation>Добавить содержимое в документ</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Переименовать</translation>
+        <translation>Tartalom hozzáadása a dokumentumhoz</translation>
     </message>
     <message>
         <source>Rename Content</source>
-        <translation>Переименовать содержимое</translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation>Инструменты</translation>
+        <translation>Tartalom átnevezése</translation>
     </message>
     <message>
         <source>Display Tools</source>
-        <translation>Показать инструменты</translation>
-    </message>
-    <message>
-        <source>Multi Screen</source>
-        <translation>Многоэкранный</translation>
-    </message>
-    <message>
-        <source>Wide Size (16/9)</source>
-        <translation>Широкий формат (16:9)</translation>
+        <translation>Eszközök megjelenítése</translation>
     </message>
     <message>
         <source>Use Document Wide Size (16/9)</source>
-        <translation>Использовать широкий формат для документа (16:9)</translation>
-    </message>
-    <message>
-        <source>Regular Size (4/3)</source>
-        <translation>Обычный формат (4:3)</translation>
+        <translation>A dokumentum használata széles méretben (16/9)</translation>
     </message>
     <message>
         <source>Use Document Regular Size (4/3)</source>
-        <translation>Использовать обычный формат для документа (4:3)</translation>
-    </message>
-    <message>
-        <source>Custom Size</source>
-        <translation>Пользовательский формат</translation>
+        <translation>A dokumentum használata szokásos méretben (4/3)</translation>
     </message>
     <message>
         <source>Use Custom Document Size</source>
-        <translation>Использовать пользовательский формат для документа</translation>
-    </message>
-    <message>
-        <source>Stop Loading</source>
-        <translation>Остановить загрузку</translation>
+        <translation>Egyedi dokumentumméret alkalmazása</translation>
     </message>
     <message>
         <source>Stop Loading Web Page</source>
-        <translation>Остановить загрузку веб-страницы</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Вырезать</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Копировать</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation>Вставить</translation>
-    </message>
-    <message>
-        <source>Sleep</source>
-        <translation>Режим ожидания</translation>
+        <translation>Weboldal betöltésének leállítása</translation>
     </message>
     <message>
         <source>Put Presentation to Sleep</source>
-        <translation>Перевести презентацию в режим ожидания</translation>
-    </message>
-    <message>
-        <source>Virtual Keyboard</source>
-        <translation>Виртуальная клавиатура</translation>
+        <translation>Az előadás alvó módba helyezése</translation>
     </message>
     <message>
         <source>Display Virtual Keyboard</source>
-        <translation>Показать виртуальную клавиатуру</translation>
-    </message>
-    <message>
-        <source>Plain Light Background</source>
-        <translation>Однотонный светлый фон</translation>
-    </message>
-    <message>
-        <source>Light</source>
-        <translation>Светлый</translation>
-    </message>
-    <message>
-        <source>Grid Light Background</source>
-        <translation>Светлый фон с сеткой</translation>
-    </message>
-    <message>
-        <source>Plain Dark Background</source>
-        <translation>Однотонный темный фон</translation>
-    </message>
-    <message>
-        <source>Dark</source>
-        <translation>Темный</translation>
-    </message>
-    <message>
-        <source>Grid Dark Background</source>
-        <translation>Темный фон с сеткой</translation>
-    </message>
-    <message>
-        <source>Podcast</source>
-        <translation>Подкаст</translation>
+        <translation>Virtuális billentyűzet megjelenítése</translation>
     </message>
     <message>
         <source>Record Presentation to Video</source>
-        <translation>Сохранить презентацию как видео</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Запись</translation>
-    </message>
-    <message>
-        <source>Start Screen Recording</source>
-        <translation>Начать запись экрана</translation>
+        <translation>Az előadás videófelvétele </translation>
     </message>
     <message>
         <source>Erase Items</source>
-        <translation>Стереть элементы</translation>
+        <translation>Elemek törlése</translation>
     </message>
     <message>
         <source>Erase All Items</source>
-        <translation>Стереть все элементы</translation>
+        <translation>Az összes elem törlése</translation>
     </message>
     <message>
         <source>Erase Annotations</source>
-        <translation>Стереть примечания</translation>
+        <translation>Annotációk törlése</translation>
     </message>
     <message>
         <source>Erase All Annotations</source>
-        <translation>Стереть все примечания</translation>
-    </message>
-    <message>
-        <source>Clear Page</source>
-        <translation>Очистить страницу</translation>
+        <translation>Az összes annotáció törlése</translation>
     </message>
     <message>
         <source>Clear All Elements</source>
-        <translation>Очистить все элементы</translation>
+        <translation>Az összes elem törlése</translation>
     </message>
     <message>
         <source>Pen</source>
-        <translation>Перо</translation>
+        <translation>Toll</translation>
     </message>
     <message>
         <source>Annotate Document</source>
-        <translation>Снабдить документ примечаниями</translation>
+        <translation>Dokumentum annotálása</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -554,7 +345,7 @@
     </message>
     <message>
         <source>Erase Annotation</source>
-        <translation>Удалить примечание</translation>
+        <translation>Annotáció törlése</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -562,11 +353,11 @@
     </message>
     <message>
         <source>Marker</source>
-        <translation>Маркер</translation>
+        <translation>Filctoll</translation>
     </message>
     <message>
         <source>Highlight </source>
-        <translation>Выделить</translation>
+        <translation>Kiemelés</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -574,11 +365,11 @@
     </message>
     <message>
         <source>Selector</source>
-        <translation>Инструмент выделения</translation>
+        <translation>Kiválasztó</translation>
     </message>
     <message>
         <source>Select And Modify Objects</source>
-        <translation>Выбрать и изменить объекты</translation>
+        <translation>Objektum kiválasztása és módosítása</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -586,151 +377,27 @@
     </message>
     <message>
         <source>Hand</source>
-        <translation>Рука</translation>
-    </message>
-    <message>
-        <source>Scroll Page</source>
-        <translation>Прокрутка страницы</translation>
-    </message>
-    <message>
-        <source>Laser Pointer</source>
-        <translation>Лазерная указка</translation>
-    </message>
-    <message>
-        <source>Virtual Laser Pointer</source>
-        <translation>Виртуальная лазерная указка</translation>
-    </message>
-    <message>
-        <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
-    </message>
-    <message>
-        <source>Draw Lines</source>
-        <translation>Нарисовать линии</translation>
-    </message>
-    <message>
-        <source>Ctrl+J</source>
-        <translation>Ctrl+J</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Текст</translation>
-    </message>
-    <message>
-        <source>Write Text</source>
-        <translation>Сделать надпись</translation>
-    </message>
-    <message>
-        <source>Ctrl+K</source>
-        <translation>Ctrl+K</translation>
-    </message>
-    <message>
-        <source>Capture</source>
-        <translation>Снимок</translation>
+        <translation>Kéz</translation>
     </message>
     <message>
         <source>Capture Part of the Screen</source>
-        <translation>Сделать снимок части экрана</translation>
-    </message>
-    <message>
-        <source>Add To Current Page</source>
-        <translation>Добавить к текущей странице</translation>
-    </message>
-    <message>
-        <source>Add Item To Current Page</source>
-        <translation>Добавить элемент на текущую страницу</translation>
-    </message>
-    <message>
-        <source>Add To New Page</source>
-        <translation>Добавить на новую страницу</translation>
-    </message>
-    <message>
-        <source>Add Item To New Page</source>
-        <translation>Добавить элемент на новую страницу</translation>
-    </message>
-    <message>
-        <source>Add To Library</source>
-        <translation>Добавить в библиотеку</translation>
-    </message>
-    <message>
-        <source>Add Item To Library</source>
-        <translation>Добавить элемент в библиотеку</translation>
-    </message>
-    <message>
-        <source>Pages</source>
-        <translation>Страницы</translation>
-    </message>
-    <message>
-        <source>Create a New Page</source>
-        <translation>Создать новую страницу</translation>
-    </message>
-    <message>
-        <source>New Page</source>
-        <translation>Новая страница</translation>
-    </message>
-    <message>
-        <source>Duplicate Page</source>
-        <translation>Дублировать страницу</translation>
-    </message>
-    <message>
-        <source>Duplicate the Current Page</source>
-        <translation>Дублировать текущую страницу</translation>
-    </message>
-    <message>
-        <source>Import Page</source>
-        <translation>Импортировать страницу</translation>
-    </message>
-    <message>
-        <source>Import an External Page</source>
-        <translation>Импортировать внешнюю страницу</translation>
-    </message>
-    <message>
-        <source>Pause</source>
-        <translation>Пауза</translation>
-    </message>
-    <message>
-        <source>Pause Podcast Recording</source>
-        <translation>Пауза при записи подкаста</translation>
-    </message>
-    <message>
-        <source>Podcast Config</source>
-        <translation>Конфигурация подкаста</translation>
-    </message>
-    <message>
-        <source>Configure Podcast Recording</source>
-        <translation>Конфигурировать запись подкаста</translation>
-    </message>
-    <message>
-        <source>Web Trap</source>
-        <translation>Захват веб</translation>
-    </message>
-    <message>
-        <source>Trap Web Content</source>
-        <translation>Захват веб-содержимого</translation>
+        <translation>A képernyő egy részének kimásolása</translation>
     </message>
     <message>
         <source>Custom Capture</source>
-        <translation>Снимок с пользовательскими параметрами</translation>
-    </message>
-    <message>
-        <source>Window Capture</source>
-        <translation>Снимок окна</translation>
+        <translation>Egyedi kimásolás</translation>
     </message>
     <message>
         <source>Capture a Window</source>
-        <translation>Сделать снимок окна</translation>
-    </message>
-    <message>
-        <source>Show on Display</source>
-        <translation>Показать на мониторе</translation>
+        <translation>Ablak kimásolása</translation>
     </message>
     <message>
         <source>Show Main Screen on Display Screen</source>
-        <translation>Показать на мониторе главный экран</translation>
+        <translation>A főképernyő mutatása a monitoron</translation>
     </message>
     <message>
         <source>Erase all Annotations</source>
-        <translation>Удалить все примечания</translation>
+        <translation>Az összes annotáció törlése</translation>
     </message>
     <message>
         <source>eduMedia</source>
@@ -738,19 +405,352 @@
     </message>
     <message>
         <source>Import eduMedia simulation</source>
-        <translation>Импортировать симуляцию eduMedia</translation>
+        <translation>eduMedia szimuláció importálása</translation>
     </message>
     <message>
         <source>Open the tutorial</source>
-        <translation>Открыть учебник</translation>
+        <translation>A bemutató megnyitása</translation>
     </message>
     <message>
         <source>Check Update</source>
-        <translation>Проверить обновления</translation>
+        <translation>Frissítések keresése</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
+    </message>
+    <message>
+        <source>Zoom In</source>
+        <translation>Nagyítás</translation>
+    </message>
+    <message>
+        <source>Zoom Out</source>
+        <translation>Kicsinyítés</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Vonal</translation>
+    </message>
+    <message>
+        <source>Quit</source>
+        <translation>Kilépés</translation>
+    </message>
+    <message>
+        <source>Eraser</source>
+        <translation>Radír</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Vissza</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Balra</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Előre</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Jobbra</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Újratöltés</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Kezdőlap</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Könyvjelzők</translation>
+    </message>
+    <message>
+        <source>Bookmark</source>
+        <extracomment>tooltip</extracomment>
+        <translation>Könyvjelző</translation>
+    </message>
+    <message>
+        <source>Ctrl+B</source>
+        <translation>Ctrl+B</translation>
+    </message>
+    <message>
+        <source>Clear Page</source>
+        <translation>Tiszta lap</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>Tutorial</source>
+        <translation>Bemutató</translation>
+    </message>
+    <message>
+        <source>Erase</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Library</source>
+        <translation>Könyvtár</translation>
+    </message>
+    <message>
+        <source>Ctrl+L</source>
+        <translation>Ctrl+L</translation>
+    </message>
+    <message>
+        <source>Show Desktop</source>
+        <translation>Az Asztal megjelenítése</translation>
+    </message>
+    <message>
+        <source>Bigger</source>
+        <translation>Nagyobb</translation>
+    </message>
+    <message>
+        <source>Ctrl++</source>
+        <translation>Ctrl++</translation>
+    </message>
+    <message>
+        <source>Smaller</source>
+        <translation>Kisebb</translation>
+    </message>
+    <message>
+        <source>Ctrl+-</source>
+        <translation>Ctrl+-</translation>
+    </message>
+    <message>
+        <source>New Folder</source>
+        <translation>Új mappa</translation>
+    </message>
+    <message>
+        <source>New Document</source>
+        <translation>Új dokumentum</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importálás</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportálás</translation>
+    </message>
+    <message>
+        <source>Open in Board</source>
+        <translation>Megnyitás a táblán</translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikálás</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Add to Working Document</source>
+        <translation>Hozzáadás az aktuális dokumentumhoz</translation>
+    </message>
+    <message>
+        <source>Add Selected Content to Open Document</source>
+        <translation>A kiválasztott tartalom hozzáadása a megnyitott dokumentumhoz</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hozzáadás</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Átnevezés</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation>Kivágás</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Másolás</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation>Beillesztés</translation>
+    </message>
+    <message>
+        <source>Grid Light Background</source>
+        <translation>Rácsos világos háttér</translation>
+    </message>
+    <message>
+        <source>Grid Dark Background</source>
+        <translation>Rácsos sötét háttér</translation>
+    </message>
+    <message>
+        <source>Start Screen Recording</source>
+        <translation>A képernyő felvételének indítása</translation>
+    </message>
+    <message>
+        <source>Scroll Page</source>
+        <translation>Oldal görgetése</translation>
+    </message>
+    <message>
+        <source>Laser Pointer</source>
+        <translation>Lézermutató</translation>
+    </message>
+    <message>
+        <source>Virtual Laser Pointer</source>
+        <translation>Virtuális lézermutató</translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation>Ctrl+G</translation>
+    </message>
+    <message>
+        <source>Draw Lines</source>
+        <translation>Vonalak rajzolása</translation>
+    </message>
+    <message>
+        <source>Ctrl+J</source>
+        <translation>Ctrl+J</translation>
+    </message>
+    <message>
+        <source>Write Text</source>
+        <translation>Szöveg írása</translation>
+    </message>
+    <message>
+        <source>Ctrl+K</source>
+        <translation>Ctrl+K</translation>
+    </message>
+    <message>
+        <source>Add Item To Current Page</source>
+        <translation>Elem hozzáadása az aktuális oldalhoz</translation>
+    </message>
+    <message>
+        <source>Add Item To New Page</source>
+        <translation>Elem hozzáadása új oldalhoz</translation>
+    </message>
+    <message>
+        <source>Add Item To Library</source>
+        <translation>Elem hozzáadása könyvtárhoz</translation>
+    </message>
+    <message>
+        <source>Create a New Page</source>
+        <translation>Új oldal létrehozása</translation>
+    </message>
+    <message>
+        <source>Duplicate Page</source>
+        <translation>Oldal duplikálása</translation>
+    </message>
+    <message>
+        <source>Duplicate the Current Page</source>
+        <translation>Az aktuális oldal duplikálása</translation>
+    </message>
+    <message>
+        <source>Import Page</source>
+        <translation>Oldal importálása</translation>
+    </message>
+    <message>
+        <source>Import an External Page</source>
+        <translation>Külső oldal importálása</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Szünet</translation>
+    </message>
+    <message>
+        <source>Pause Podcast Recording</source>
+        <translation>A podcast felvétel szüneteltetése</translation>
+    </message>
+    <message>
+        <source>Podcast Config</source>
+        <translation>Podcast konfigurálás</translation>
+    </message>
+    <message>
+        <source>Configure Podcast Recording</source>
+        <translation>A podcast felvétel konfigurálása</translation>
+    </message>
+    <message>
+        <source>Web Trap</source>
+        <translation>Web csapda</translation>
+    </message>
+    <message>
+        <source>Trap Web Content</source>
+        <translation>Webes tartalom befogása</translation>
+    </message>
+    <message>
+        <source>Window Capture</source>
+        <translation>Ablak kimásolása</translation>
+    </message>
+    <message>
+        <source>Show on Display</source>
+        <translation>Megjelenítés a képernyőn</translation>
+    </message>
+    <message>
+        <source>Sleep</source>
+        <translation>Alvás</translation>
+    </message>
+    <message>
+        <source>Virtual Keyboard</source>
+        <translation>Virtuális billantyűzet</translation>
+    </message>
+    <message>
+        <source>Plain Light Background</source>
+        <translation>Sima világos háttér</translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation>Világos</translation>
+    </message>
+    <message>
+        <source>Plain Dark Background</source>
+        <translation>Sima sötét háttér</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>Sötét</translation>
+    </message>
+    <message>
+        <source>Podcast</source>
+        <translation>Podcast</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Felvétel</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Eszközök</translation>
+    </message>
+    <message>
+        <source>Multi Screen</source>
+        <translation>Több képernyő</translation>
+    </message>
+    <message>
+        <source>Wide Size (16/9)</source>
+        <translation>Széles méret (16/9)</translation>
+    </message>
+    <message>
+        <source>Regular Size (4/3)</source>
+        <translation>Szabványos méret (4/3)</translation>
+    </message>
+    <message>
+        <source>Custom Size</source>
+        <translation>Egyedi méret</translation>
+    </message>
+    <message>
+        <source>Stop Loading</source>
+        <translation>Betöltés leállítása</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
@@ -758,85 +758,84 @@
     </message>
     <message utf8="true">
         <source>Quit Open-Sankoré</source>
-        <translation>Выйти из Open-Sankoré</translation>
+        <translation>Kilépés az Open Sankoréból</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré Editor</source>
-        <translation>Редактор Open-Sankoré</translation>
+        <translation>Open-Sankoré szerkesztő</translation>
     </message>
     <message utf8="true">
         <source>Show Open-Sankoré Widgets Editor</source>
-        <translation>Показать редактор виджетов Open-Sankoré</translation>
+        <translation>Az Open-Sankoré widget szerkesztő megjelenítése</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré</source>
-        <translation>Свернуть Open-Sankoré</translation>
+        <translation>Az Open-Sankoré elrejtése</translation>
     </message>
     <message utf8="true">
         <source>Hide Open-Sankoré Application</source>
-        <translation>Свернуть приложение Open-Sankoré</translation>
+        <translation>Az Open-Sankoré alkalmazás elrejtése</translation>
     </message>
     <message>
         <source>Group items</source>
-        <translation>Сгруппировать</translation>
+        <translation>Csoport elemek</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Играть</translation>
+        <translation>Lejátszás</translation>
     </message>
     <message>
         <source>Interact with items</source>
-        <translation>Взаимодействовать с элементами</translation>
+        <translation>Interakció az elemekkel</translation>
     </message>
     <message>
         <source>Erase Background</source>
-        <translation>Очистить доску</translation>
+        <translation>Háttér törlése</translation>
     </message>
     <message>
         <source>Remove the backgound</source>
-        <translation>Удалить фон</translation>
+        <translation>Háttér eltávolítása</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Сгруппировать</translation>
+        <translation>Csoport</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to library</source>
-        <translation>Загрузить в библиотеку</translation>
+        <translation>Letöltés könyvtárba</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Download to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Download to current page</source>
-        <translation>Загрузить на текущую страницу</translation>
+        <translation>Letöltés az aktuális oldalra</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;library&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to library</source>
-        <translation>Добавить ссылку в библиотеку</translation>
+        <translation>Link hozzáadása a könyvtárhoz</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom:2px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add link to&lt;/p&gt;&lt;p align=&quot;center&quot; style=&quot; margin-top:2px; margin-bottom12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;current page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add link to current page</source>
-        <translation>Добавить ссылку на текущую страницу</translation>
+        <translation>Link hozzáadása az aktuális oldalhoz</translation>
     </message>
     <message>
         <source>Bookmark</source>
         <comment>tooltip</comment>
-        <translatorcomment>Подсказка</translatorcomment>
-        <translation>Закладка</translation>
+        <translation>Könyvjelző</translation>
     </message>
     <message>
         <source>Center</source>
@@ -852,6 +851,14 @@
     </message>
     <message>
         <source>Image position : adjust</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image position : expand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -872,19 +879,11 @@
     </message>
     <message>
         <source>Wide Size (16/10)</source>
-        <translation type="unfinished">Широкий формат (16:9) {16/10)?}</translation>
+        <translation type="unfinished">Széles méret (16/9) {16/10)?}</translation>
     </message>
     <message>
         <source>Use Document Wide Size (16/10)</source>
-        <translation type="unfinished">Использовать широкий формат для документа (16:9) {16/10)?}</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Image position : expand</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A dokumentum használata széles méretben (16/9) {16/10)?}</translation>
     </message>
     <message>
         <source>Rich Text Editor</source>
@@ -943,43 +942,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Draw a regular shape</source>
+        <source>Freehand Drawing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Draw a regular triangle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Draw a regular square</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke Properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke Thickness</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke thickness</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke Style Solid Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke style : Solid Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke Style Dot Line</source>
+        <source>Freehand drawing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -987,11 +954,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Draw a regular shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Regular Triangle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Draw a regular triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Regular Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draw a regular square</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1027,11 +1006,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Stroke Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Filling Properties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Filling properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Thickness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke thickness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Solid Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1055,19 +1066,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Freehand Drawing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Freehand drawing</source>
+        <source>Stroke Style Dot Dash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Stroke style : Dot Dash</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stroke style : Dot Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1080,6 +1083,14 @@
     </message>
     <message>
         <source>Align objects to the left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Center Vertically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects vertically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1099,7 +1110,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Align Center Horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align the center of the objects horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Align Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align objects to the bottom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1134,167 +1157,151 @@
         <source>Arrows properties</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Stroke Style Dot Dash</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align the center of the objects vertically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align objects to the bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align Center Vertically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align Center Horizontally</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Align the center of the objects horizontally</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
     <message>
         <source>Authentication Required</source>
-        <translation>Требуется авторизация</translation>
+        <translation>Hitelesítés szükséges</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Имя пользователя:</translation>
+        <translation>Felhasználónév:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Пароль:</translation>
+        <translation>Jelszó:</translation>
     </message>
 </context>
 <context>
     <name>ProxyDialog</name>
     <message>
         <source>Proxy Authentication</source>
-        <translation>Авторизация на прокси-сервере</translation>
+        <translation>Proxy hitelesítés</translation>
     </message>
     <message>
         <source>Connect to Proxy</source>
-        <translation>Подключиться к прокси-серверу</translation>
+        <translation>Csatlakozás proxyhoz</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Имя пользователя:</translation>
+        <translation>Felhasználónév:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Пароль:</translation>
+        <translation>Jelszó:</translation>
     </message>
     <message>
         <source>Save username and password for future use</source>
-        <translation>Сохранить имя пользователя и пароль для будущего использования</translation>
+        <translation>Felhasználónév és jelszó mentése jövőbeni használatra</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Element ID = </source>
-        <translation>ID элемента =</translation>
+        <translation>Elem azonosító =</translation>
     </message>
     <message>
         <source>Content is not supported in destination format.</source>
-        <translation>Не поддерживается в текущем формате.</translation>
+        <translation>Ez a tartlom nem támogatott a célformátumban. </translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation>Удалить Страницу</translation>
+        <translation>Oldal eltávolítása</translation>
     </message>
     <message>
         <source>Are you sure you want to remove 1 page from the selected document &apos;%0&apos;?</source>
-        <translation>Вы уверены, что хотите удалить 1 страницу из документа &apos;%0&apos;?</translation>
+        <translation>Biztos abban, hogy szeretne egy oldalt eltávolítani a kiválasztott &quot;%0&quot; dokumentumból?</translation>
     </message>
 </context>
 <context>
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
-        <translation>Размеры страницы</translation>
+        <translation>Oldalméret</translation>
     </message>
     <message>
         <source>Podcast</source>
-        <translation>Подкаст</translation>
+        <translation>Podcast</translation>
     </message>
 </context>
 <context>
     <name>UBApplicationController</name>
     <message>
         <source>Web</source>
-        <translation>Интернет</translation>
+        <translation>Web</translation>
     </message>
     <message>
         <source>New update available, would you go to the web page ?</source>
-        <translation>Доступны обновления, перейти на страницу?</translation>
+        <translation>Új frissítés érhető el, szeretné meglátogatni a weboldalt?</translation>
     </message>
     <message>
         <source>No update available</source>
-        <translation>Нет доступных обновлений</translation>
+        <translation>Nem áll rendelkezésre frissítés</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation>Доступны обновления</translation>
+        <translation>Rendelkezésre áll frissítés</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Обновить</translation>
+        <translation>Frissítés</translation>
     </message>
 </context>
 <context>
     <name>UBBoardController</name>
     <message>
         <source>Downloading content %1 failed</source>
-        <translation>Ошибка загрузки содержимого из %1</translation>
+        <translation>A %1 tartalom letöltése nem sikerült</translation>
     </message>
     <message>
         <source>Download finished</source>
-        <translation>Загрузка завершена</translation>
+        <translation>A letöltés befejeződött</translation>
     </message>
     <message>
         <source>Unknown tool type %1</source>
-        <translation>Неизвестный тип инструмента %1</translation>
-    </message>
-    <message>
-        <source>Unknown content type %1</source>
-        <translation>Неизвестный тип содержимого %1</translation>
+        <translation>Ismeretlen eszköztípus %1</translation>
     </message>
     <message>
         <source>Add Item</source>
-        <translation>Добавить элемент</translation>
+        <translation>Elem hozzáadása</translation>
     </message>
     <message>
         <source>All Supported (%1)</source>
-        <translation>Все поддерживаемые типы (%1)</translation>
+        <translation>Az összes támogatott (%1)</translation>
+    </message>
+    <message>
+        <source>Unknown content type %1</source>
+        <translation>Ismeretlen típusú tartalom %1</translation>
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation>Удалить страницу %1 из документа</translation>
+        <translation>%1 oldal törtése a dokumentumból</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
-        <translation>Страница %1 удалена</translation>
+        <translation>%1 oldal törölve</translation>
     </message>
     <message>
         <source>Add file operation failed: file copying error</source>
-        <translation>Операции добавления файла завершена неудачей: ошибка копирования</translation>
+        <translation>A fájlhozzáadási művelet sikertelen: fájlmásolási hiba</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Сгруппировать</translation>
+        <translation>Csoportosítás</translation>
     </message>
     <message>
         <source>Ungroup</source>
-        <translation>Разгруппировать</translation>
+        <translation>Szétválasztás</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is not a final release. Please use it only for testing.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Failed to duplicate %1</source>
@@ -1312,79 +1319,71 @@
         <source>Paste successful</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This is not a final release. Please use it only for testing.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
         <source>Error Adding Image to Library</source>
-        <translation>Ошибка добавления изображения в библиотеку</translation>
+        <translation>Hiba történt a kép könyvtárhoz történő hozzáadáasakor</translation>
     </message>
     <message>
         <source>CapturedImage</source>
-        <translation>Захватить изображение</translation>
+        <translation>Kimásolt kép</translation>
     </message>
 </context>
 <context>
     <name>UBCachePropertiesWidget</name>
     <message>
         <source>Cache Properties</source>
-        <translation>Свойства кэша</translation>
+        <translation>Cache tulajdonságok</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Shape:</source>
-        <translation>Форма:</translation>
+        <translation>Forma:</translation>
     </message>
     <message>
         <source>Alpha:</source>
-        <translation>Альфа:</translation>
+        <translation>Alfa:</translation>
     </message>
     <message>
         <source>Geometry:</source>
-        <translation>Геометрия:</translation>
+        <translation>Geometria:</translation>
     </message>
     <message>
         <source>Width: </source>
-        <translation>Ширина:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Высота:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Keep proportions</source>
-        <translation>Сохранить пропрорции</translation>
+        <translation>Arányok megtartása</translation>
     </message>
     <message>
         <source>Mode:</source>
-        <translation>Режим:</translation>
+        <translation>Mód:</translation>
     </message>
     <message>
         <source>Preview:</source>
-        <translation>Предпросмотр:</translation>
+        <translation>Előnézet:</translation>
     </message>
     <message>
         <source>Close cache</source>
-        <translation>Закрыть cache</translation>
+        <translation>Cache bezárása</translation>
     </message>
     <message>
         <source>On Click</source>
-        <translation>По клику</translation>
+        <translation>Kattintásra</translation>
     </message>
     <message>
         <source>Persistent</source>
-        <translation>Постоянный</translation>
+        <translation>Állandó</translation>
     </message>
 </context>
 <context>
@@ -1417,66 +1416,66 @@
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
-        <translation>&lt;бросить содержимое&gt;</translation>
+        <translation>&lt;drop tartalom&gt;</translation>
     </message>
     <message>
         <source>Images are not accepted</source>
-        <translation>Недопустимый формат картинок</translation>
+        <translation>Képek nem elfogadottak</translation>
     </message>
     <message>
         <source>Cannot display data</source>
-        <translation>Невозможно отобразить данные</translation>
+        <translation>Az adat nem jeleníthető meg</translation>
     </message>
     <message>
         <source>Dropped file isn&apos;t reconized to be an audio file</source>
-        <translation>Файл не распознан как аудио файл</translation>
+        <translation>A bedobott fájl nem ismerhető fel, mint hangfájl</translation>
     </message>
 </context>
 <context>
     <name>UBCreateLinkPalette</name>
     <message>
         <source>Play an audio file</source>
-        <translation>Проиграть аудио файл</translation>
+        <translation>Hangfájl lejátszása</translation>
     </message>
     <message>
         <source>Add Link to Page</source>
-        <translation>Добавить ссылку на страницу</translation>
+        <translation>Oldalra mutató link hozzáadása</translation>
     </message>
     <message>
         <source>Add Link to a Web page</source>
-        <translation>Добавить ссылку на веб страницу</translation>
+        <translation>Weboldalra mutató link hozzáadása</translation>
     </message>
     <message>
         <source>Drag and drop the audio file from the library in this box</source>
-        <translation>Переместите аудио файл из библиотеки в окно</translation>
+        <translation>Húzza át a hangfájlt a könyvtárból ebbe a dobozba</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ок</translation>
+        <translation>Rendben</translation>
     </message>
     <message>
         <source>Next Page</source>
-        <translation>Следующая страница</translation>
+        <translation>Következő oldal</translation>
     </message>
     <message>
         <source>Previous Page</source>
-        <translation>Предыдущая страница</translation>
+        <translation>Előző oldal</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation>Титульная страница</translation>
+        <translation>Címoldal</translation>
     </message>
     <message>
         <source>Last Page</source>
-        <translation>Последняя страница</translation>
+        <translation>Utolsó oldal</translation>
     </message>
     <message>
         <source>Page Number</source>
-        <translation>Номер страницы</translation>
+        <translation>Oldalszám</translation>
     </message>
     <message>
         <source>Insert url text here</source>
-        <translation>Вставьте текст ссылки сюда</translation>
+        <translation>Írja be ide az URL szöveget</translation>
     </message>
 </context>
 <context>
@@ -1498,143 +1497,141 @@
     <name>UBDesktopPalette</name>
     <message>
         <source>Capture Part of the Screen</source>
-        <translation>Сделать снимок части экрана</translation>
+        <translation>A képernyő egy részének kimásolása</translation>
     </message>
     <message>
         <source>Capture the Screen</source>
-        <translation>Сделать снимок экрана</translation>
+        <translation>A képernyő kimásolása</translation>
     </message>
     <message>
         <source>Show the stylus palette</source>
-        <translation>Показать инструменты</translation>
+        <translation>Tollpaletta megjelenítése</translation>
     </message>
     <message>
         <source>Show Board on Secondary Screen</source>
-        <translation>Показать доску на втором экране</translation>
+        <translation>A tábla megjelenítése a másodlagos képernyőn</translation>
     </message>
     <message>
         <source>Show Desktop on Secondary Screen</source>
-        <translation>Показать раб. стол на втором экране</translation>
+        <translation>Az asztal megjelenítése a másodlagos képernyőn</translation>
     </message>
     <message>
         <source>Show Open-Sankore</source>
-        <translation>Показать Open-Sankore</translation>
+        <translation>Az Open-Sankoré megjelenítése</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentController</name>
     <message>
         <source>New Folder</source>
-        <translation>Новая папка</translation>
+        <translation>Új mappa</translation>
     </message>
     <message>
         <source>Page %1</source>
-        <translation>Страница %1</translation>
+        <translation>%1. oldal</translation>
     </message>
     <message>
         <source>Add Folder of Images</source>
-        <translation>Добавить папку с изображениями</translation>
+        <translation>Képeket tartalmazó mappa hozzáadása</translation>
     </message>
     <message>
         <source>Add Images</source>
-        <translation>Добавить изображения</translation>
+        <translation>Képek hozzáadása</translation>
     </message>
     <message>
         <source>Add Pages from File</source>
-        <translation>Добавить страницы из файла</translation>
+        <translation>Oldalak hozzáadása fájlból</translation>
     </message>
     <message>
         <source>Duplicating Document %1</source>
-        <translation>Дублирование документа %1</translation>
+        <translation>%1 dokumentum duplikálása</translation>
     </message>
     <message>
         <source>Document %1 copied</source>
-        <translation>Документ %1 скопирован</translation>
+        <translation>%1 dokumentum átmásolva</translation>
     </message>
     <message>
         <source>Remove Page</source>
-        <translation>Удалить страницу</translation>
+        <translation>Oldal eltávolítása</translation>
     </message>
     <message>
         <source>Open Supported File</source>
-        <translation>Открыть файл поддерживаемого формата</translation>
+        <translation>Támogatott fájltípus megnyitása</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation>Импортирование файла %1...</translation>
+        <translation>%1 fájl importálása...</translation>
     </message>
     <message>
         <source>Failed to import file ... </source>
-        <translation>Ошибка импорта файла ...</translation>
+        <translation>Nem sikerült a fájl importja...</translation>
     </message>
     <message>
         <source>Import all Images from Folder</source>
-        <translation>Импортировать все изображения из папки</translation>
+        <translation>Az összes kép importálása a mappából</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Пусто</translation>
+        <translation>Üres</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Корзина</translation>
+        <translation>Hulladék</translation>
     </message>
     <message>
         <source>Open Document</source>
-        <translation>Открыть документ</translation>
+        <translation>Dokumentum megnyitása</translation>
     </message>
     <message>
         <source>Add all Images to Document</source>
-        <translation>Добавить все изображения в документ</translation>
+        <translation>Az összes kép hozzáadása a dokumentumhoz</translation>
     </message>
     <message>
         <source>All Images (%1)</source>
-        <translation>Все изображения (%1)</translation>
+        <translation>Az összes kép (%1)</translation>
     </message>
     <message>
         <source>Selection does not contain any image files!</source>
-        <translation>Не выбрано ни одного изображения!</translation>
+        <translation>A kijelölés nem tartalmaz egyetlen képfájlt sem!</translation>
     </message>
     <message>
         <source>The document &apos;%1&apos; has been generated with a newer version of Sankore (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation>Документ &apos;%1&apos; создан в более новой версии Sankore (%2). При его открытии может быть потеряна некоторая информация. Продолжить?</translation>
+        <translation>A %1 dokumentumot a Sankoré újabb verziójával (%2) hozták létre. A megnyitása adatvesztéshez vezethet. Szeretné folytatni?</translation>
     </message>
     <message numerus="yes">
         <source>Are you sure you want to remove %n page(s) from the selected document &apos;%1&apos;?</source>
         <translation>
-            <numerusform>Вы уверены, что хотите удалить %n страницу из выбранного документа &apos;%1&apos;?</numerusform>
-            <numerusform>Вы уверены, что хотите удалить %n страниц из выбранного документа &apos;%1&apos;?</numerusform>
+            <numerusform>Biztos abban, hogy a kiválasztott %1 dokumentumból eltávolítja a %n oldal(aka)t? </numerusform>
         </translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Титульная страница</translation>
+        <translation>Címoldal</translation>
     </message>
     <message>
         <source>Folder does not contain any image files</source>
-        <translation>Каталог не содержит файлов изображений</translation>
+        <translation>A mappa nem tartalmaz egyetlen képfájlt sem</translation>
     </message>
     <message>
         <source>Untitled Documents</source>
-        <translation>Документы без Названия</translation>
+        <translation>Cím nélküli dokumentumok</translation>
     </message>
     <message>
         <source>This is an irreversible action!</source>
-        <translation>Действие необратимо!</translation>
+        <translation>Ez egy visszavonhatatlan lépés!</translation>
     </message>
     <message>
         <source>The model documents are not editable. Copy it to &quot;My documents&quot; to be able to work with</source>
-        <translation>Документы &quot;модели&quot; не редактируются. Скопируйте документ в &quot;Мои документы&quot; для того чтобы можно было с ними работать</translation>
+        <translation>A model dokumentumok nem szerkeszthetők. Másolja be a &quot;Dokumentumaim&quot; közé, hogy dolgozni tudjon vele</translation>
     </message>
     <message numerus="yes">
         <source>duplicated %1 page</source>
         <comment>duplicated %1 pages</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -1655,133 +1652,132 @@
     <name>UBDocumentManager</name>
     <message>
         <source>images</source>
-        <translation>изображения</translation>
+        <translation>képek</translation>
     </message>
     <message>
         <source>videos</source>
-        <translation>видео</translation>
+        <translation>videók</translation>
     </message>
     <message>
         <source>objects</source>
-        <translation>объекты</translation>
+        <translation>objektumok</translation>
     </message>
     <message>
         <source>widgets</source>
-        <translation>виджеты</translation>
+        <translation>widgetek</translation>
     </message>
     <message>
         <source>All supported files (*.%1)</source>
-        <translation>Все файлы поддерживаемых типов (*.%1)</translation>
+        <translation>Az összes támogatott fájl (*.%1)</translation>
     </message>
     <message>
         <source>File %1 saved</source>
-        <translation>Файл %1 сохранен</translation>
+        <translation>%1 fájl elmentve</translation>
     </message>
     <message>
         <source>Inserting page %1 of %2</source>
-        <translation>Добавление страницы %1 из %2</translation>
+        <translation>%1 oldal a %2-ból(ből) beillesztése</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Импорт успешно завершен.</translation>
+        <translation>Sikeres importálás.</translation>
     </message>
     <message>
         <source>Import of file %1 successful.</source>
-        <translation>Импорт файла %1 успешно завершен.</translation>
+        <translation>%1 fájl importálása sikeres.</translation>
     </message>
     <message>
         <source>Importing file %1</source>
-        <translation>Импорт файла %1</translation>
+        <translation>%1 fájl importálása</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
         <source>Page %0</source>
-        <translation>Страница %0</translation>
+        <translation>%0. oldal</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Титульная страница</translation>
+        <translation>Címoldal</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentPublisher</name>
     <message>
         <source>Export failed.</source>
-        <translation>Ошибка экспорта.</translation>
+        <translation>Az exportálás nem sikerült.</translation>
     </message>
     <message>
         <source>Export canceled ...</source>
-        <translation>Отмена экспорта...</translation>
+        <translation>Az exportálás megszakítva ...</translation>
     </message>
     <message>
         <source>Converting page %1/%2 ...</source>
-        <translation>Конвертирование страницы %1/%2 ...</translation>
+        <translation>%1/%2 oldal konvertálása ...</translation>
     </message>
     <message>
         <source>Credentials has to not been filled out yet.</source>
-        <translation>Учетные данные еще не отправлены.</translation>
+        <translation>A hitelesítési adatok még nincsenek kitöltve.</translation>
     </message>
     <message>
         <source>Uploading Sankore File on Web.</source>
-        <translation>Размещение файла Sankore в вебе.</translation>
+        <translation>Sankore fájl feltöltése a webre.</translation>
     </message>
     <message>
         <source>Document uploaded correctly on the web.</source>
-        <translation>Документ успешно размещен в вебе.</translation>
+        <translation>A dokumentum megfelelően feltöltődött a webre.</translation>
     </message>
     <message>
         <source>Failed to upload document on the web.</source>
-        <translation>Ошибка размещения документа в вебе.</translation>
+        <translation>A dokumentum feltöltése a webre nem sikerült.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentReplaceDialog</name>
     <message>
         <source>Accept</source>
-        <translation>Принять</translation>
+        <translation>Elfogadás</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation>Заменить</translation>
+        <translation>Helyettesítés</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation>Mégsem</translation>
     </message>
     <message>
         <source>The name %1 is allready used.
 Keeping this name will replace the document.
 Providing a new name will create a new document.</source>
-        <translation>Имя файла %1 уже используется.
-Сохранение этого имени заменит существующий документ.
-Создание нового имени создаст новый документ.</translation>
+        <translation>A %1 név már használatban van.
+Ha ezt a nevet használja, felül fogja írni a dokumentumot.
+Új név megadásával új dokumentum jön létre.</translation>
     </message>
 </context>
 <context>
     <name>UBDocumentTreeModel</name>
     <message>
         <source>My documents</source>
-        <translation>Мои документы</translation>
+        <translation>A dokumentumaim</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation>Модели</translation>
+        <translation>Modellek</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Корзина</translation>
+        <translation>Hulladék</translation>
     </message>
     <message>
         <source>Untitled documents</source>
-        <translation>Документы без группы</translation>
+        <translation>Cím nélküli dokumentumok</translation>
     </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
-            <numerusform>%1 страницы скопировано</numerusform>
-            <numerusform>%1 страниц скопировано</numerusform>
+            <numerusform>%1 oldal lemásolva</numerusform>
         </translation>
     </message>
 </context>
@@ -1790,8 +1786,7 @@ Providing a new name will create a new document.</source>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation type="unfinished">
-            <numerusform>%1 страницы скопировано</numerusform>
-            <numerusform>%1 страниц скопировано</numerusform>
+            <numerusform>%1 oldal lemásolva</numerusform>
         </translation>
     </message>
 </context>
@@ -1799,110 +1794,110 @@ Providing a new name will create a new document.</source>
     <name>UBDownloadManager</name>
     <message>
         <source>Download failed.</source>
-        <translation>Загрузка не завершена.</translation>
+        <translation>A letöltés nem sikerült.</translation>
     </message>
     <message>
         <source>the remote server refused the connection (the server is not accepting requests)</source>
-        <translation>Удаленный сервер сбросил соединение (сервер не принимает запросы)</translation>
+        <translation>a távoli szerver visszautasította a kapcsolódást (a szerver nem fogad kéréseket)</translation>
     </message>
     <message>
         <source>the remote server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>Удаленный сервер преждевременно закрыл соединение, до того как ответ сервера был получен полностью</translation>
+        <translation>a távoli szerver túl korán megszakította a kapcsolatot, mielőtt a teljes válasz fogadása és feldolgozása megtörtént volna</translation>
     </message>
     <message>
         <source>the remote host name was not found (invalid hostname)</source>
-        <translation>Удаленное имя хоста не найдено (invalid hostname)</translation>
+        <translation>a távoli gép neve nem található (érvénytelen gépnév)</translation>
     </message>
     <message>
         <source>the connection to the remote server timed out</source>
-        <translation>Время соединения с удаленным сервером истекло</translation>
+        <translation>a kapcsolat a távoli szerverrel időtúllépés miatt megszakadt</translation>
     </message>
     <message>
         <source>the operation was canceled via calls to abort() or close() before it was finished.</source>
-        <translation>Операция была отменена вызовами abort() или close() до завершения.</translation>
+        <translation>a művelet leállításra került  megszakításra () vagy bezárásra () történő felszólítás miatt, mielőtt befejeződött volna.</translation>
     </message>
     <message>
         <source>the SSL/TLS handshake failed and the encrypted channel could not be established. The sslErrors() signal should have been emitted.</source>
-        <translation>SSL/TSL соединение не установлено и шифрованный канал не может быть установлен. Сигнал sslErrors() должен быть сгенерирован.</translation>
+        <translation>az SSL/TSL kapcsolatfelvétel nem sikerült, a titkosított csatorna nem hozható létre. Az sslErrors() jelet kellett volna elküldeni.</translation>
     </message>
     <message>
         <source>the connection was broken due to disconnection from the network, however the system has initiated roaming to another access point. The request should be resubmitted and will be processed as soon as the connection is re-established.</source>
-        <translation>Соединение разорвано по причине недоступности сети, однако система проинициализировала связь с точкой доступа. Запрос должен быть передан снова и будет обработан когда сеть восстановится.</translation>
+        <translation>a kapcsolat megszakadt a hálózatról történő leválasztás miatt, azonban a rendszer kezdeményezte egy másik hozzáférési pont elérését. A kérést újra el kell küldeni és feldolgozásra fog kerülni, amint a kapcsolat helyreállt.</translation>
     </message>
     <message>
         <source>the connection to the proxy server was refused (the proxy server is not accepting requests)</source>
-        <translation>Соединение с прокси сервером было сброшено (прокси сервер не принимает запросы)</translation>
+        <translation>a proxy szerver visszautasította a kapcsolódást (a proxy szerver nem fogad kéréseket)</translation>
     </message>
     <message>
         <source>the proxy server closed the connection prematurely, before the entire reply was received and processed</source>
-        <translation>Возможно прокси сервер преждевременно закрыл соединение, до того как ответ был получен и обработан полностью</translation>
+        <translation>a proxy szerver túl korán megszakította a kapcsolatot, mielőtt a teljes válasz fogadása és feldolgozása megtörtént volna</translation>
     </message>
     <message>
         <source>the proxy host name was not found (invalid proxy hostname)</source>
-        <translation>Имя хоста прокси не найдено (invalid proxy hostname)</translation>
+        <translation>a proxy gép neve nem található (érvénytelen proxy gépnév)</translation>
     </message>
     <message>
         <source>the connection to the proxy timed out or the proxy did not reply in time to the request sent</source>
-        <translation>Таймаут соединения с прокси или прокси не отвечает вовремя на запросы</translation>
+        <translation>a proxy géphez való kapcsolat időtúllépés miatt megszakadt, vagy a proxy gép nem válaszolt időben az elküldött kérésre</translation>
     </message>
     <message>
         <source>the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</source>
-        <translation>Прокси требует аутентификации для обработки запроса, но не принимает предложенные пакеты (если имеются)</translation>
+        <translation>a proxy hitelesítést kér a kérés teljesítéséhez, de nem fogadta el a küldött hitelesítő adatokat (ha voltak ilyenek)</translation>
     </message>
     <message>
         <source>the access to the remote content was denied (similar to HTTP error 401)</source>
-        <translation>Доступ к удаленному содержимому запрещен (аналогично HTTP error 401)</translation>
+        <translation>a hozzáférés a távoli tartalomhoz megtagadva (azonos a 401-es HTTP hibával)</translation>
     </message>
     <message>
         <source>the operation requested on the remote content is not permitted</source>
-        <translation>Запрошенная операция с удаленным содержимым не разрешена</translation>
+        <translation>a távoli tartalmon végrehajtani kívánt művelet nem engedélyezett</translation>
     </message>
     <message>
         <source>the remote content was not found at the server (similar to HTTP error 404)</source>
-        <translation>Удаленное содержимое не найдено на сервере (аналогично HTTP error 404)</translation>
+        <translation>a távoli tartalom nem található a szerveren (azonos a 404-es HTTP hibával)</translation>
     </message>
     <message>
         <source>the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</source>
-        <translation>Удаленный сервер требует аутентификации для обработки содержимого, но предоставленные данные не были приняты (если имелись)</translation>
+        <translation>a távoli szerver hitelesítést kér a kért tartalom kiszolgálásához, de nem fogadta el a küldött hitelesítő adatokat (ha voltak ilyenek)</translation>
     </message>
     <message>
         <source>the request needed to be sent again, but this failed for example because the upload data could not be read a second time.</source>
-        <translation>Запрос должен быть отправлен, но попытка провалилась, например по причине того, что данные не могут быть прочитаны дважды.</translation>
+        <translation>a kérést újra el kellett küldeni, azonban ez nem sikerült például azért, mert a feltöltött adatokat nem lehetett másodszorra olvasni.</translation>
     </message>
     <message>
         <source>the Network Access API cannot honor the request because the protocol is not known</source>
-        <translation>Network Access API не принимает запрос: неизвестный протокол</translation>
+        <translation>a hálózati hozzáférési API nem tudta teljesíteni a kérést, mert a protokoll ismeretlen</translation>
     </message>
     <message>
         <source>the requested operation is invalid for this protocol</source>
-        <translation>Запрошенная операция недопустима для протокола</translation>
+        <translation>a kért művelet ezen protokoll számára érvénytelen</translation>
     </message>
     <message>
         <source>an unknown network-related error was detected</source>
-        <translation>Обнаружена неизвестная ошибка сети</translation>
+        <translation>ismeretlen, hálózattal kapcsolatos hibát észleltünk</translation>
     </message>
     <message>
         <source>an unknown proxy-related error was detected</source>
-        <translation>Обнаружена неизвестная ошибка прокси</translation>
+        <translation>ismeretlen, proxy-val kapcsolatos hibát észleltünk</translation>
     </message>
     <message>
         <source>an unknown error related to the remote content was detected</source>
-        <translation>Обнаружена неизвестная ошибка удаленных данных</translation>
+        <translation>ismeretlen, távoli tartalommal kapcsolatos hibát észleltünk</translation>
     </message>
     <message>
         <source>a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</source>
-        <translation>Обнаружена поломка в протоколе (передача ошибки, недопустимые или неожидаемые ответы и т.д.)</translation>
+        <translation>a protokollban üzemzavart észleltünk (feldolgozási hiba, érvénytelen vagy nem várt válaszok, stb.)</translation>
     </message>
 </context>
 <context>
     <name>UBDownloadWidget</name>
     <message>
         <source>Downloading files</source>
-        <translation>Загрузить файлы</translation>
+        <translation>Fájlok letöltése</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation>Mégsem</translation>
     </message>
 </context>
 <context>
@@ -1920,176 +1915,176 @@ Providing a new name will create a new document.</source>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
-        <translation>Обнаружены предупреждения во время экспорта</translation>
+        <translation>Az exportálás során figyelmeztetések jelentek meg</translation>
     </message>
 </context>
 <context>
     <name>UBExportCFF</name>
     <message>
         <source>Export to IWB</source>
-        <translation>Экспорт в IWB</translation>
+        <translation>Exportálás IWB-be</translation>
     </message>
     <message>
         <source>Export as IWB File</source>
-        <translation>Экспортировать как IWB файл</translation>
+        <translation>Exporálás IWB fájlként</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Экспорт документа...</translation>
+        <translation>Dokumentum exportálása...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Экспорт успешно завершен.</translation>
+        <translation>Sikeres exportálás.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Ошибка экспорта.</translation>
+        <translation>Az exportálás nem sikerült.</translation>
     </message>
 </context>
 <context>
     <name>UBExportDocument</name>
     <message>
         <source>Page</source>
-        <translation>Страница</translation>
+        <translation>Oldal</translation>
     </message>
     <message>
         <source>Export as UBZ File</source>
-        <translation>Экспортировать как файл UBZ</translation>
+        <translation>Exportálás UBZ fájlként</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Экспорт документа...</translation>
+        <translation>Dokumentum exportálása...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Экспорт успешно завершен.</translation>
+        <translation>Sikeres exportálás.</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
-        <translation>Экспорт %1 %2 из %3</translation>
+        <translation>%2 a %3-ból(ből) %1 exportálása</translation>
     </message>
     <message>
         <source>Export to Sankore Format</source>
-        <translation>Экспорт в формате Sankore</translation>
+        <translation>Exportálás Sankore formátumban</translation>
     </message>
 </context>
 <context>
     <name>UBExportDocumentSetAdaptor</name>
     <message>
         <source>Failed to export...</source>
-        <translation>Ошибка экспорта...</translation>
+        <translation>Az exportálás nem sikerült...</translation>
     </message>
     <message>
         <source>Export as UBX File</source>
-        <translation>Экспорт в UBX файл</translation>
+        <translation>Exportálás UBX fájlként</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Экспорт документа...</translation>
+        <translation>Dokumentum exportálása...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Экспорт успешно завершен.</translation>
+        <translation>Sikeres exportálás.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Ошибка экспорта.</translation>
+        <translation>Az exportálás nem sikerült.</translation>
     </message>
     <message>
         <source>Export to Sankore UBX Format</source>
-        <translation>Экспорт в Sankore UBX формат</translation>
+        <translation>Exportálás Sankore UBX formátumban</translation>
     </message>
 </context>
 <context>
     <name>UBExportFullPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation>Экспортировать как файл PDF</translation>
+        <translation>Exporálás PDF fájlként</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Экспорт документа...</translation>
-    </message>
-    <message>
-        <source>Export successful.</source>
-        <translation>Экспорт успешно завершен.</translation>
+        <translation>Dokumentum exportálása...</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation>Экспорт в PDF</translation>
+        <translation>Exportálás PDF-be</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>Sikeres exportálás.</translation>
     </message>
 </context>
 <context>
     <name>UBExportPDF</name>
     <message>
         <source>Export as PDF File</source>
-        <translation>Экспортировать как файл PDF</translation>
-    </message>
-    <message>
-        <source>Exporting document...</source>
-        <translation>Экспорт документа...</translation>
-    </message>
-    <message>
-        <source>Export successful.</source>
-        <translation>Экспорт успешно завершен.</translation>
+        <translation>Exporálás PDF fájlként</translation>
     </message>
     <message>
         <source>Exporting page %1 of %2</source>
-        <translation>Экспорт страницы %1 из %2</translation>
+        <translation>%1 oldal a %2-ból(ből) exportálása</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>Sikeres exportálás.</translation>
+    </message>
+    <message>
+        <source>Exporting document...</source>
+        <translation>Dokumentum exportálása...</translation>
     </message>
     <message>
         <source>Export to PDF</source>
-        <translation>Экспорт в PDF</translation>
+        <translation>Exportálás PDF-be</translation>
     </message>
 </context>
 <context>
     <name>UBExportWeb</name>
     <message>
         <source>Page</source>
-        <translation>Страница</translation>
+        <translation>Oldal</translation>
     </message>
     <message>
         <source>Export as Web data</source>
-        <translation>Экспортировать как веб-данные</translation>
+        <translation>Exportálás web adatként</translation>
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Экспорт документа...</translation>
+        <translation>Dokumentum exportálása...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Экспорт успешно завершен.</translation>
+        <translation>Sikeres exportálás.</translation>
     </message>
     <message>
         <source>Export failed.</source>
-        <translation>Ошибка экспорта.</translation>
+        <translation>Az exportálás nem sikerült.</translation>
     </message>
     <message>
         <source>Export to Web Browser</source>
-        <translation>Экспорт в веб-браузер</translation>
+        <translation>Exportálás a webböngészőbe</translation>
     </message>
 </context>
 <context>
     <name>UBFeatureProperties</name>
     <message>
         <source>Add to page</source>
-        <translation>Добавить на страницу</translation>
+        <translation>Hozzáadás az oldalhoz</translation>
     </message>
     <message>
         <source>Set as background</source>
-        <translation>Сделать фоновым изображением</translation>
+        <translation>Beállítás háttérként</translation>
     </message>
     <message>
         <source>Add to library</source>
-        <translation>Добавить в библиотеку</translation>
+        <translation>Hozzáadás könyvtárhoz</translation>
     </message>
     <message>
         <source>Object informations</source>
-        <translation>Информация об объекте</translation>
+        <translation>Objektum információk</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Добавить</translation>
+        <translation>Hozzáadás</translation>
     </message>
     <message>
         <source>Set as default background</source>
@@ -2100,90 +2095,98 @@ Providing a new name will create a new document.</source>
     <name>UBFeaturesActionBar</name>
     <message>
         <source>Add to favorites</source>
-        <translation>Добавить в избранное</translation>
+        <translation>Hozzáadás a kedvencekhez</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation>Совместный доступ</translation>
+        <translation>Megosztás</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Поиск</translation>
+        <translation>Keresés</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Back to folder</source>
-        <translation>Назад в папку</translation>
+        <translation>Vissza a mappához</translation>
     </message>
     <message>
         <source>Remove from favorites</source>
-        <translation>Удалить из избранного</translation>
+        <translation>Eltávolítás a kedvencekből</translation>
     </message>
     <message>
         <source>Create new folder</source>
-        <translation>Создать новую папку</translation>
+        <translation>Új mappa létrehozása</translation>
     </message>
     <message>
         <source>Rescan file system</source>
-        <translation>Пересканировать библиотеку</translation>
+        <translation>A fájlrendszer újraellenőrzése</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesController</name>
     <message>
         <source>ImportedImage</source>
-        <translation>Импортированные изображения</translation>
+        <translation>Importált kép</translation>
     </message>
     <message>
         <source>Audios</source>
-        <translation>Аудио</translation>
+        <translation>Hangok</translation>
     </message>
     <message>
         <source>Movies</source>
-        <translation>Видео</translation>
+        <translation>Filmek</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Картинки</translation>
+        <translation>Képek</translation>
     </message>
     <message>
         <source>Animations</source>
-        <translation>Мультфильмы</translation>
+        <translation>Animációk</translation>
     </message>
     <message>
         <source>Interactivities</source>
-        <translation>Интерактивные элементы</translation>
+        <translation>Interaktív anyagok</translation>
     </message>
     <message>
         <source>Applications</source>
-        <translation>Приложения</translation>
+        <translation>Alkalmazások</translation>
     </message>
     <message>
         <source>Shapes</source>
-        <translation>Формы</translation>
+        <translation>Formák</translation>
     </message>
     <message>
         <source>Favorites</source>
-        <translation>Избранное</translation>
+        <translation>Kedvencek</translation>
     </message>
     <message>
         <source>Web search</source>
-        <translation>Веб поиск</translation>
+        <translation>Web keresés</translation>
     </message>
     <message>
         <source>Trash</source>
-        <translation>Корзина</translation>
+        <translation>Hulladék</translation>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation>Закладки</translation>
+        <translation>Könyvjelzők</translation>
     </message>
     <message>
         <source>Web</source>
-        <translation>Интернет</translation>
+        <translation>Web</translation>
+    </message>
+    <message>
+        <source>Are you sure ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every background will be replaced with this one. Are you sure ?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>has been restored to</source>
@@ -2229,14 +2232,6 @@ Providing a new name will create a new document.</source>
         <source>Too many file have the same name in this location %1. Please delete some files.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Are you sure ?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Every background will be replaced with this one. Are you sure ?</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>UBFeaturesListView</name>
@@ -2253,80 +2248,80 @@ Providing a new name will create a new document.</source>
     <name>UBFeaturesNewFolderDialog</name>
     <message>
         <source>Accept</source>
-        <translation>Принять</translation>
+        <translation>Elfogadás</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation>Mégsem</translation>
     </message>
     <message>
         <source>Enter a new folder name</source>
-        <translation>Введите название новой папки</translation>
+        <translation>Írjon be egy új mappanevet</translation>
     </message>
 </context>
 <context>
     <name>UBFeaturesProgressInfo</name>
     <message>
         <source>Loading </source>
-        <translation>Загрузка</translation>
+        <translation>Betöltés</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation>Заблокированный</translation>
+        <translation>Rögzített</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation>Видимый на втором экране</translation>
+        <translation>Látható a kibővített képernyőn</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Добавить действие</translation>
+        <translation>Művelet hozzáadása</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation>Удаленная ссылка на страницу</translation>
+        <translation>Hangra mutató link eltávolítása</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation>Удаленная ссылка на страницу</translation>
+        <translation>Oldalra mutató link eltávolítása</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation>Удаленная ссылка на веб ссылку</translation>
+        <translation>Webes URL-re mutató link eltávolítása</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsItemDelegate</name>
     <message>
         <source>Locked</source>
-        <translation>Заблокированный</translation>
+        <translation>Rögzített</translation>
     </message>
     <message>
         <source>Visible on Extended Screen</source>
-        <translation>Видимый на втором экране</translation>
+        <translation>Látható a kibővített képernyőn</translation>
     </message>
     <message>
         <source>Go to Content Source</source>
-        <translation>Перейти к источнику содержимого</translation>
+        <translation>Ugrás a tartalom forrásához</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Добавить действие</translation>
+        <translation>Művelet hozzáadása</translation>
     </message>
     <message>
         <source>Remove link to audio</source>
-        <translation>Удаленная ссылка на аудио</translation>
+        <translation>Hangra mutató link eltávolítása</translation>
     </message>
     <message>
         <source>Remove link to page</source>
-        <translation>Удаленная ссылка на страницу</translation>
+        <translation>Oldalra mutató link eltávolítása</translation>
     </message>
     <message>
         <source>Remove link to web url</source>
-        <translation>Удаленная ссылка на веб страницу</translation>
+        <translation>Webes URL-re mutató link eltávolítása</translation>
     </message>
     <message>
         <source>Return to creation mode</source>
@@ -2345,21 +2340,25 @@ Providing a new name will create a new document.</source>
     <name>UBGraphicsTextItem</name>
     <message>
         <source>&lt;Type Text Here&gt;</source>
-        <translation>&lt;Введите здесь текст&gt;</translation>
+        <translation>&lt;Type Szöveg ide&gt;</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
         <source>Text Color</source>
-        <translation>Цвет текста</translation>
+        <translation>A szöveg színe</translation>
     </message>
     <message>
         <source>Editable</source>
-        <translation>Редактируемый</translation>
+        <translation>Szerkeszthető</translation>
     </message>
     <message>
         <source>Insert table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2372,6 +2371,10 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>Delete column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Row</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2394,69 +2397,61 @@ Providing a new name will create a new document.</source>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Row</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>
     <message>
         <source>Loading ...</source>
-        <translation>Загрузка...</translation>
+        <translation>Betöltés ...</translation>
     </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItemDelegate</name>
     <message>
         <source>Frozen</source>
-        <translation>Замороженный</translation>
+        <translation>Befagyasztott</translation>
     </message>
     <message>
         <source>Transform as Tool </source>
-        <translation>Преобразовать в инструмент</translation>
+        <translation>Átalakítás eszközzé</translation>
     </message>
 </context>
 <context>
     <name>UBImportCFF</name>
     <message>
         <source>Common File Format (</source>
-        <translation>Стандартный формат файла (</translation>
+        <translation>Közös fájlformátum (</translation>
     </message>
     <message>
         <source>Importing file %1...</source>
-        <translation>Импорт файла %1...</translation>
+        <translation>%1 fájl importálása...</translation>
     </message>
     <message>
         <source>Import of file %1 failed.</source>
-        <translation>Ошибка импорта файла %1.</translation>
+        <translation>%1 fájl importálása sikertelen.</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Импорт успешно завершен.</translation>
+        <translation>Sikeres importálás.</translation>
     </message>
     <message>
         <source>Import failed.</source>
-        <translation>Ошибка импорта.</translation>
+        <translation>Az importálás nem sikerült.</translation>
     </message>
 </context>
 <context>
     <name>UBImportDocument</name>
     <message>
         <source>Importing file %1...</source>
-        <translation>Импорт файла %1...</translation>
+        <translation>%1 fájl importálása...</translation>
     </message>
     <message>
         <source>Import successful.</source>
-        <translation>Импорт успешно завершен.</translation>
+        <translation>Sikeres importálás.</translation>
     </message>
     <message>
         <source>Import of file %1 failed.</source>
-        <translation>Ошибка импорта файла %1.</translation>
+        <translation>%1 fájl importálása sikertelen.</translation>
     </message>
     <message>
         <source>Open-Sankore (*.ubz)</source>
@@ -2467,14 +2462,14 @@ Providing a new name will create a new document.</source>
     <name>UBImportDocumentSetAdaptor</name>
     <message>
         <source>Open-Sankore (set of documents) (*.ubx)</source>
-        <translation>Open-Sankore (блок документов) (*.ubx)</translation>
+        <translation>Open-Sankore (dokumentumkészlet) (*.ubx)</translation>
     </message>
 </context>
 <context>
     <name>UBImportImage</name>
     <message>
         <source>Image Format (</source>
-        <translation>Формат изображения (</translation>
+        <translation>Képformátum (</translation>
     </message>
 </context>
 <context>
@@ -2485,69 +2480,69 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <source>PDF import failed.</source>
-        <translation>Ошибка импорта PDF.</translation>
+        <translation>A PDF fájl importálása nem sikerült.</translation>
     </message>
     <message>
         <source>Importing page %1 of %2</source>
-        <translation>Импорт страницы %1 из %2</translation>
+        <translation>%1 oldal a %2-ból(ből) importálása</translation>
     </message>
 </context>
 <context>
     <name>UBIntranetPodcastPublisher</name>
     <message>
         <source>Error while publishing video to intranet (%1)</source>
-        <translation>Ошибка при размещении видео в интранете (%1)</translation>
+        <translation>Hiba történt a videó belső hálózatra történő publikálása közben (%1)</translation>
     </message>
     <message>
         <source>Publishing to Intranet in progress %1 %</source>
-        <translation>Ход размещения в интранете %1 %</translation>
+        <translation>A belső hálózatra történő publikálás folyamatban van %1 %</translation>
     </message>
 </context>
 <context>
     <name>UBIntranetPodcastPublishingDialog</name>
     <message>
         <source>Publish</source>
-        <translation>Опубликовать</translation>
+        <translation>Közzététel</translation>
     </message>
 </context>
 <context>
     <name>UBKeyboardPalette</name>
     <message>
         <source>Enter</source>
-        <translation>Ввод</translation>
+        <translation>Bevitel</translation>
     </message>
 </context>
 <context>
     <name>UBMainWindow</name>
     <message>
         <source>Yes</source>
-        <translation>Да</translation>
+        <translation>Igen</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Нет</translation>
+        <translation>Nem</translation>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ok</translation>
+        <translation>Rendben</translation>
     </message>
 </context>
 <context>
     <name>UBMessagesDialog</name>
     <message>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation>Bezárás</translation>
     </message>
 </context>
 <context>
     <name>UBNetworkAccessManager</name>
     <message>
         <source>&lt;qt&gt;Enter username and password for &quot;%1&quot; at %2&lt;/qt&gt;</source>
-        <translation>&lt;qt&gt;Введите имя пользователя и пароль для &quot;%1&quot; в %2&lt;/qt&gt;</translation>
+        <translation>&lt;qt&gt;Írja be a felhasználónevet és jelszót &quot;%1&quot; itt: %2&lt;/qt&gt;</translation>
     </message>
     <message>
         <source>Failed to log to Proxy</source>
-        <translation>Ошибка входа на прокси-сервер</translation>
+        <translation>Sikertelen bejelentkezés a proxyba</translation>
     </message>
     <message>
         <source>SSL Errors:
@@ -2557,257 +2552,257 @@ Providing a new name will create a new document.</source>
 %2
 
 Do you want to ignore these errors for this host?</source>
-        <translation>Ошибки SSL:
+        <translation>SSL Hibák:
 
 %1
 
 %2
 
-Хотите игнорировать эти ошибки для данного хоста?</translation>
+Figyelmen kívül hagyja ezekez a hibákat ennél a kiszolgálónál?</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Да</translation>
+        <translation>Igen</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Нет</translation>
+        <translation>Nem</translation>
     </message>
 </context>
 <context>
     <name>UBPersistenceManager</name>
     <message>
         <source>(copy)</source>
-        <translation>(копия)</translation>
+        <translation>(másolás)</translation>
     </message>
     <message>
         <source>Document Repository Loss</source>
-        <translation>Потеря соединения с репозиторием документов</translation>
+        <translation>A dokumentumtár hiányos</translation>
     </message>
     <message>
         <source>Sankore has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
-        <translation>Sankore потерял соединение с репозиторием документов &apos;%1&apos;. Приложение должно завершить работу, чтобы избежать повреждения данных. Также могут быть потеряны последние изменения.</translation>
+        <translation>A Sankore nem tud hozzáférni a &quot;%1&quot; dokumentumtárhoz. Sajnos a programnak le kell állnia az adatsérülés elkerülése érdekében. A legutóbbi módosítások elveszhetnek.</translation>
     </message>
 </context>
 <context>
     <name>UBPlatformUtils</name>
     <message>
         <source>English</source>
-        <translation>Английский</translation>
+        <translation>Angol</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Русский</translation>
+        <translation>Orosz</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Немецкий</translation>
+        <translation>Német</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Французский</translation>
+        <translation>Francia</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Шв. французский</translation>
+        <translation>Svájci francia</translation>
     </message>
 </context>
 <context>
     <name>UBPodcastController</name>
     <message>
         <source>Failed to start encoder ...</source>
-        <translation>Ошибка запуска кодировщика...</translation>
+        <translation>A kódoló elindítása nem sikerült ...</translation>
     </message>
     <message>
         <source>No Podcast encoder available ...</source>
-        <translation>Нет доступного кодировщика для подкаста...</translation>
+        <translation>Nem áll rendelkezésre podcast kódoló ...</translation>
     </message>
     <message>
         <source>Part %1</source>
-        <translation>Часть %1</translation>
+        <translation>%1 rész</translation>
     </message>
     <message>
         <source>on your desktop ...</source>
-        <translation>на вашем раб. столе...</translation>
+        <translation>Az Ön asztalán ...</translation>
     </message>
     <message>
         <source>in folder %1</source>
-        <translation>в папке %1</translation>
+        <translation>a %1 mappában</translation>
     </message>
     <message>
         <source>Podcast created %1</source>
-        <translation>Подкаст создан %1</translation>
+        <translation>A %1 podcast létrehozva</translation>
     </message>
     <message>
         <source>Podcast recording error (%1)</source>
-        <translation>Ошибка записи подкаста (%1)</translation>
+        <translation>Podcast felvételi hiba (%1)</translation>
     </message>
     <message>
         <source>Default Audio Input</source>
-        <translation>Аудиовход по умолчанию</translation>
+        <translation>Alapértelemezett audióbemenet</translation>
     </message>
     <message>
         <source>No Audio Recording</source>
-        <translation>Нет записи аудио</translation>
+        <translation>Nincs hangfelvétel</translation>
     </message>
     <message>
         <source>Small</source>
-        <translation>Малый</translation>
+        <translation>Kicsi</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Средний</translation>
+        <translation>Közepes</translation>
     </message>
     <message>
         <source>Full</source>
-        <translation>Полный</translation>
+        <translation>Teljes</translation>
     </message>
     <message>
         <source>Publish to Intranet</source>
-        <translation>Опубликовать в интранете</translation>
+        <translation>Publikálás a belső hálózaton</translation>
     </message>
     <message>
         <source>Publish to Youtube</source>
-        <translation>Опубликовать на Youtube</translation>
+        <translation>Publikálás a YouTube-on</translation>
     </message>
     <message>
         <source>Sankore Cast</source>
-        <translation>Каст Sankore</translation>
+        <translation>Sankore Cast</translation>
     </message>
 </context>
 <context>
     <name>UBPreferencesController</name>
     <message>
         <source>version: </source>
-        <translation>версия:</translation>
+        <translation>verzió:</translation>
     </message>
     <message>
         <source>Marker is pressure sensitive</source>
-        <translation>Маркер чувствителен к нажиму</translation>
+        <translation>A filctoll nyomásérzékeny</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>По умолчанию</translation>
+        <translation>Alapértelmezés</translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation>Arabic</translation>
+        <translation>Arab</translation>
     </message>
     <message>
         <source>Bulgarian</source>
-        <translation>Bulgarian</translation>
+        <translation>Bolgár</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation>Catalan</translation>
+        <translation>Katalán</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Czech</translation>
+        <translation>Cseh</translation>
     </message>
     <message>
         <source>Danish</source>
-        <translation>Danish</translation>
+        <translation>Dán</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>German</translation>
+        <translation>Német</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Greek</translation>
+        <translation>Görög</translation>
     </message>
     <message>
         <source>English</source>
-        <translation>English</translation>
+        <translation>Angol</translation>
     </message>
     <message>
         <source>English UK</source>
-        <translation>English UK</translation>
+        <translation>Angol (Egyesült Királyság)</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Spanish</translation>
+        <translation>Spanyol</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>French</translation>
+        <translation>Francia</translation>
     </message>
     <message>
         <source>Swiss French</source>
-        <translation>Swiss French</translation>
+        <translation>Svájci francia</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italian</translation>
+        <translation>Olasz</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation>Hebrew</translation>
+        <translation>Héber</translation>
     </message>
     <message>
         <source>Japanese</source>
-        <translation>Japanese</translation>
+        <translation>Japán</translation>
     </message>
     <message>
         <source>Korean</source>
-        <translation>Korean</translation>
+        <translation>Koreai</translation>
     </message>
     <message>
         <source>Malagasy</source>
-        <translation>Malagasy</translation>
+        <translation>Madagaszkári</translation>
     </message>
     <message>
         <source>Norwegian</source>
-        <translation>Norwegian</translation>
+        <translation>Norvég</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Dutch</translation>
+        <translation>Holland</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation>Polish</translation>
+        <translation>Lengyel</translation>
     </message>
     <message>
         <source>Romansh</source>
-        <translation>Romansh</translation>
+        <translation>Rétoromán</translation>
     </message>
     <message>
         <source>Romanian</source>
-        <translation>Romanian</translation>
+        <translation>Román</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Русский</translation>
+        <translation>Orosz</translation>
     </message>
     <message>
         <source>Slovak</source>
-        <translation>Slovak</translation>
+        <translation>Szlovák</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation>Swedish</translation>
+        <translation>Svéd</translation>
     </message>
     <message>
         <source>Turkish</source>
-        <translation>Turkish</translation>
+        <translation>Török</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation>Chinese</translation>
+        <translation>Kínai</translation>
     </message>
     <message>
         <source>Chinese Simplified</source>
-        <translation>Chinese Simplified</translation>
+        <translation>Kínai (egyszerűsített)</translation>
     </message>
     <message>
         <source>Chinese Traditional</source>
-        <translation>Chinese Traditional</translation>
+        <translation>Kínai (hagyományos)</translation>
     </message>
     <message>
         <source>Corsican</source>
-        <translation>Corsican</translation>
+        <translation>Korzikai</translation>
     </message>
     <message>
         <source>Hindi</source>
@@ -2815,23 +2810,15 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation>Portuguese</translation>
+        <translation>Portugál</translation>
     </message>
     <message>
         <source>Basque</source>
-        <translation type="unfinished"></translation>
+        <translation>Baszk</translation>
     </message>
     <message>
         <source>Bambara</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Galician</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Occitan</source>
-        <translation type="unfinished"></translation>
+        <translation>Bambara</translation>
     </message>
     <message>
         <source>Finnish</source>
@@ -2841,72 +2828,80 @@ Do you want to ignore these errors for this host?</source>
         <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Occitan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
     <message>
         <source>Proxy Login</source>
-        <translation>Вход на прокси-сервер</translation>
+        <translation>Proxy bejelentkezés</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Имя пользователя:</translation>
+        <translation>Felhasználónév:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Пароль:</translation>
+        <translation>Jelszó:</translation>
     </message>
 </context>
 <context>
     <name>UBPublicationDlg</name>
     <message>
         <source>Publish document on the web</source>
-        <translation>Опубликовать документ в вебе</translation>
+        <translation>Dokumentum közzététele a weben</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation>Название:</translation>
+        <translation>Cím:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Описание:</translation>
+        <translation>Leírás:</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation>Опубликовать</translation>
+        <translation>Közzététel</translation>
     </message>
 </context>
 <context>
     <name>UBSettings</name>
     <message>
         <source>My Movies</source>
-        <translation>Мои видеофайлы</translation>
+        <translation>Filmjeim</translation>
     </message>
     <message>
         <source>/Web</source>
-        <translation>/Веб</translation>
+        <translation>/Web</translation>
     </message>
 </context>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation>Видимый при следущей загрузке</translation>
+        <translation>A következő alkalommal látható</translation>
     </message>
 </context>
 <context>
     <name>UBTGActionWidget</name>
     <message>
         <source>Teacher</source>
-        <translation>Учитель</translation>
+        <translation>Tanár</translation>
     </message>
     <message>
         <source>Student</source>
-        <translation>Студент</translation>
+        <translation>Diák</translation>
     </message>
     <message>
         <source>Type task here ...</source>
-        <translation>Введите наименование задания сюда...</translation>
+        <translation>Írja be ide a feladatot ...</translation>
     </message>
 </context>
 <context>
@@ -2924,11 +2919,11 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTGMediaWidget</name>
     <message>
         <source>drop media here ...</source>
-        <translation>Перетащите медиа сюда...</translation>
+        <translation>húzzon ide médiatartalmat ...</translation>
     </message>
     <message>
         <source>Type title here...</source>
-        <translation>Введите название сюда...</translation>
+        <translation>Írja be ide a címet ...</translation>
     </message>
     <message>
         <source>Drag and drop</source>
@@ -2943,7 +2938,7 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTGUrlWidget</name>
     <message>
         <source>Insert link title here...</source>
-        <translation>Введите имя ссылки сюда...</translation>
+        <translation>Írja be ide a link címét...</translation>
     </message>
 </context>
 <context>
@@ -2957,23 +2952,23 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuideEditionWidget</name>
     <message>
         <source>Type title here ...</source>
-        <translation>Введите название сюда...</translation>
+        <translation>Írja be ide a címet ...</translation>
     </message>
     <message>
         <source>Type comment here ...</source>
-        <translation>Введите комментарий сюда...</translation>
+        <translation>Írja be ide a megjegyzést ...</translation>
     </message>
     <message>
         <source>Add an action</source>
-        <translation>Добавить действие</translation>
+        <translation>Művelet hozzáadása</translation>
     </message>
     <message>
         <source>Add a link</source>
-        <translation>Добавить ссылку</translation>
+        <translation>Link hozzáadása</translation>
     </message>
     <message>
         <source>Page: %0</source>
-        <translation>Страница: %0</translation>
+        <translation>Oldal: %0</translation>
     </message>
     <message>
         <source>Add a file</source>
@@ -2984,97 +2979,97 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuidePageZeroWidget</name>
     <message>
         <source>Type session title here ...</source>
-        <translation>Введите название сессии сюда...</translation>
+        <translation>Írja be ide a munkamenet címét ...</translation>
     </message>
     <message>
         <source>Author(s)</source>
-        <translation>Автор(ы)</translation>
+        <translation>Szerző(k)</translation>
     </message>
     <message>
         <source>Type authors here ...</source>
-        <translation>Введите авторов сюда...</translation>
+        <translation>Írja be a szerzőket ide ...</translation>
     </message>
     <message>
         <source>Objective(s)</source>
-        <translation>Цель(и)</translation>
+        <translation>Cél(ok)</translation>
     </message>
     <message>
         <source>Type objectives here...</source>
-        <translation>Введите цели сюда...</translation>
+        <translation>Írja be ide a célokat ...</translation>
     </message>
     <message>
         <source>Resource indexing</source>
-        <translation>Индексирование ресурсов</translation>
+        <translation>Forrás-indexelés</translation>
     </message>
     <message>
         <source>Keywords:</source>
-        <translation>Ключи:</translation>
+        <translation>Kulcsszavak:</translation>
     </message>
     <message>
         <source>Type keywords here ...</source>
-        <translation>Введите ключи сюда...</translation>
+        <translation>Írja be ide a kulcsszavakat ...</translation>
     </message>
     <message>
         <source>Level:</source>
-        <translation>Уровень:</translation>
+        <translation>Szint:</translation>
     </message>
     <message>
         <source>Subjects:</source>
-        <translation>Предметы:</translation>
+        <translation>Tárgyak:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation>Típus:</translation>
     </message>
     <message>
         <source>Licence</source>
-        <translation>Лицензия</translation>
+        <translation>Licenc</translation>
     </message>
     <message>
         <source>Attribution CC BY</source>
-        <translation>Attribution CC BY</translation>
+        <translation>Attribúció CC BY</translation>
     </message>
     <message>
         <source>Attribution-NoDerivs CC BY-ND</source>
-        <translation>Attribution-NoDerivs CC BY-ND</translation>
+        <translation>Attribúció-NoDerivs CC BY-ND</translation>
     </message>
     <message>
         <source>Attribution-ShareAlike CC BY-SA</source>
-        <translation>Attribution-ShareAlike CC BY-SA</translation>
+        <translation>Attribúció-ShareAlike CC BY-SA</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial CC BY-NC</source>
-        <translation>Attribution-NonCommercial CC BY-NC</translation>
+        <translation>Attribúció-NonCommercial CC BY-NC</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</source>
-        <translation>Attribution-NonCommercial-NoDerivs CC BY-NC-ND</translation>
+        <translation>Attribúció-NonCommercial-NoDerivs CC BY-NC-ND</translation>
     </message>
     <message>
         <source>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</source>
-        <translation>Attribution-NonCommercial-ShareAlike CC BY-NC-SA</translation>
+        <translation>Attribúció-NonCommercial-ShareAlike CC BY-NC-SA</translation>
     </message>
     <message>
         <source>Public domain</source>
-        <translation>Публичный домен</translation>
+        <translation>Public domain</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>Копирайт</translation>
+        <translation>Copyright</translation>
     </message>
     <message>
         <source>Created the:
 </source>
-        <translation>Создано:</translation>
+        <translation>Létrehozta a:</translation>
     </message>
     <message>
         <source>Updated the:
 </source>
-        <translation>Обновлено:</translation>
+        <translation>Frissítette a:</translation>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Титульная страница</translation>
+        <translation>Címoldal</translation>
     </message>
     <message>
         <source>Add a file</source>
@@ -3093,7 +3088,7 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuidePresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation>Страница: %0</translation>
+        <translation>Oldal: %0</translation>
     </message>
     <message>
         <source>File not found</source>
@@ -3108,22 +3103,22 @@ Do you want to ignore these errors for this host?</source>
     <name>UBTeacherGuideResourceEditionWidget</name>
     <message>
         <source>Add a media</source>
-        <translation type="unfinished">Добавить медиа</translation>
-    </message>
-    <message>
-        <source>Add a link</source>
-        <translation type="unfinished">Добавить ссылку</translation>
+        <translation type="unfinished">Média hozzáadása</translation>
     </message>
     <message>
         <source>Add a file</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a link</source>
+        <translation type="unfinished">Link hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>UBTeacherGuideResourcesPresentationWidget</name>
     <message>
         <source>Page: %0</source>
-        <translation type="unfinished">Страница: %0</translation>
+        <translation type="unfinished">Oldal: %0</translation>
     </message>
     <message>
         <source>File not found</source>
@@ -3138,127 +3133,127 @@ Do you want to ignore these errors for this host?</source>
     <name>UBThumbnailAdaptor</name>
     <message>
         <source>Generating preview thumbnails ...</source>
-        <translation>Создание просмотра эскизов...</translation>
+        <translation>Miniatűrök létrehozatala előnézethez ...</translation>
     </message>
     <message>
         <source>%1 thumbnails generated ...</source>
-        <translation>сгенерированы эскизы %1...</translation>
+        <translation>%1 miniatűr elkészült ...</translation>
     </message>
 </context>
 <context>
     <name>UBToolsManager</name>
     <message>
-        <source>Mask</source>
-        <translation>Маска</translation>
+        <source>Compass</source>
+        <translation>Körző</translation>
     </message>
     <message>
         <source>Ruler</source>
-        <translation>Линейка</translation>
-    </message>
-    <message>
-        <source>Compass</source>
-        <translation>Циркуль</translation>
+        <translation>Vonalzó</translation>
     </message>
     <message>
         <source>Protractor</source>
-        <translation>Транспортир</translation>
+        <translation>Szögmérő</translation>
+    </message>
+    <message>
+        <source>Mask</source>
+        <translation>Maszk</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation>Треугольник</translation>
+        <translation>Háromszög</translation>
     </message>
     <message>
         <source>Magnifier</source>
-        <translation>Лупа</translation>
+        <translation>Nagyító</translation>
     </message>
     <message>
         <source>Cache</source>
-        <translation>Кэш</translation>
+        <translation>Tár</translation>
     </message>
 </context>
 <context>
     <name>UBTrapWebPageContentController</name>
     <message>
         <source>Whole page</source>
-        <translation>Вся страница</translation>
+        <translation>Egész oldal</translation>
     </message>
     <message>
         <source>Embed </source>
-        <translation>Встроенный</translation>
+        <translation>Beágyazás</translation>
     </message>
 </context>
 <context>
     <name>UBUpdateDlg</name>
     <message>
         <source>Document updater</source>
-        <translation>Обновление документа</translation>
+        <translation>Dokumentum frissítő</translation>
     </message>
     <message>
         <source> files require an update.</source>
-        <translation>файлы требуют обновления.</translation>
+        <translation>A fájlok frissítése szükséges.</translation>
     </message>
     <message>
         <source>Backup path: </source>
-        <translation>Путь к резервной копии:</translation>
+        <translation>Biztonsági mentési útvonal:</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Обзор</translation>
+        <translation>Böngészés</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Обновить</translation>
+        <translation>Frissítés</translation>
     </message>
     <message>
         <source>Select a backup folder</source>
-        <translation>Выбрать папку для резервной копии</translation>
+        <translation>Válasszon mappát a biztonsági mentéshez</translation>
     </message>
     <message>
         <source>Files update successful!
 Please reboot the application to access the updated documents.</source>
-        <translation>Обновление файлов завершено успешно!
-Перезагрузите приложение, чтобы получить доступ к обновленным документам.</translation>
+        <translation>A fájlok frissítése sikeres!
+Kérjük, indítsa újra az alkalmazást, hogy hozzáférjen a frissített dokumentumokhoz.</translation>
     </message>
     <message>
         <source>An error occured during the update. The files have not been affected.</source>
-        <translation>Во время обновления произошла ошибка. Файлы не изменены.</translation>
+        <translation>A frissítés közben hiba történt. A fájlok nem módosultak.</translation>
     </message>
     <message>
         <source>Files update results</source>
-        <translation>Результаты обновления файлов</translation>
+        <translation>A fájlok frissítésének eredménye</translation>
     </message>
     <message>
         <source>Updating file </source>
-        <translation>Обновление файла</translation>
+        <translation>Fájl frissítése</translation>
     </message>
     <message>
         <source>Please wait the import process will start soon...</source>
-        <translation>Пожалуйста, подождите, процесс импорта скоро начнется...</translation>
+        <translation>Kérjük, várjon; az importálási folyamat rövidesen elkezdődik...</translation>
     </message>
     <message>
         <source>Remind me later</source>
-        <translation>Напомнить позже</translation>
+        <translation>Emlékeztessen később</translation>
     </message>
 </context>
 <context>
     <name>UBWebPluginWidget</name>
     <message>
         <source>Loading...</source>
-        <translation>Загрузка...</translation>
+        <translation>Betöltés...</translation>
     </message>
 </context>
 <context>
     <name>UBWebPublisher</name>
     <message>
         <source>Publish Document on Sankore Web</source>
-        <translation>Опубликовать документ на сетевых ресурсах Sankore</translation>
+        <translation>A dokumentum közzététele a Sankore Web-en</translation>
     </message>
 </context>
 <context>
     <name>UBWidgetUniboardAPI</name>
     <message>
         <source>%0 called (method=%1, status=%2)</source>
-        <translation>вызов %0 (метод=%1, статус=%2)</translation>
+        <translation>%0 hívott (módszer=%1, státusz=%2)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -3273,15 +3268,15 @@ Please reboot the application to access the updated documents.</source>
     <name>UBYouTubePublisher</name>
     <message>
         <source>YouTube authentication failed.</source>
-        <translation>Ошибка авторизации на YouTube.</translation>
+        <translation>A YouTube hitelesítés sikertelen.</translation>
     </message>
     <message>
         <source>Error while uploading video to YouTube (%1)</source>
-        <translation>Ошибка во время публикации видео на YouTube (%1)</translation>
+        <translation>A videó feltöltése a YouTube-ra sikertelen (%1)</translation>
     </message>
     <message>
         <source>Upload to YouTube in progress %1 %</source>
-        <translation>Выполняется загрузка на YouTube %1 %</translation>
+        <translation>A YouTube-ra feltöltés folyamatban %1 %</translation>
     </message>
     <message>
         <source>Open-Sankore</source>
@@ -3289,70 +3284,70 @@ Please reboot the application to access the updated documents.</source>
     </message>
     <message>
         <source>OpenSankore</source>
-        <translation>Open-Sankore</translation>
+        <translation>OpenSankore</translation>
     </message>
 </context>
 <context>
     <name>UBYouTubePublishingDialog</name>
     <message>
         <source>Upload</source>
-        <translation>Размещение</translation>
+        <translation>Feltöltés</translation>
     </message>
     <message>
         <source>Autos &amp; Vehicles</source>
-        <translation>Авто и транспорт</translation>
+        <translation>Kocsik és járművek</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Музыка</translation>
+        <translation>Zene</translation>
     </message>
     <message>
         <source>Pets &amp; Animals</source>
-        <translation>Животные</translation>
+        <translation>Házi- és vadállatok</translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation>Спорт</translation>
+        <translation>Sport</translation>
     </message>
     <message>
         <source>Travel &amp; Events</source>
-        <translation>Путешествия и события</translation>
+        <translation>Utazás, események</translation>
     </message>
     <message>
         <source>Gaming</source>
-        <translation>Компьютерные игры</translation>
+        <translation>Játék</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation>Юмор</translation>
+        <translation>Vígjáték</translation>
     </message>
     <message>
         <source>People &amp; Blogs</source>
-        <translation>Люди и блоги</translation>
+        <translation>Emberek és blogok</translation>
     </message>
     <message>
         <source>News &amp; Politics</source>
-        <translation>Новости и политика</translation>
+        <translation>Hírek és politika</translation>
     </message>
     <message>
         <source>Entertainment</source>
-        <translation>Развлечения</translation>
+        <translation>Szórakozás</translation>
     </message>
     <message>
         <source>Education</source>
-        <translation>Образование</translation>
+        <translation>Oktatás</translation>
     </message>
     <message>
         <source>Howto &amp; Style</source>
-        <translation>Обучение и стиль</translation>
+        <translation>Divat és stílus</translation>
     </message>
     <message>
         <source>Nonprofits &amp; Activism</source>
-        <translation>Общественные акции</translation>
+        <translation>Nonprofit tevékenységek és aktivisták</translation>
     </message>
     <message>
         <source>Science &amp; Technology</source>
-        <translation>Наука и техника</translation>
+        <translation>Tudomány és technológia</translation>
     </message>
 </context>
 <context>
@@ -3366,230 +3361,236 @@ Please reboot the application to access the updated documents.</source>
     <name>UniboardSankoreTransition</name>
     <message>
         <source>Import old Uniboard/Sankore documents</source>
-        <translation>Импорт старых Uniboard/Sankore документов</translation>
+        <translation>Régi Uniboard/Sankore dokumentumok importálása</translation>
     </message>
     <message>
         <source>There are no documents that should be imported</source>
-        <translation>Нет документов для импортирования</translation>
+        <translation>Nincsenek importálandó dokumentumok</translation>
     </message>
 </context>
 <context>
     <name>WBClearButton</name>
     <message>
         <source>Clear</source>
-        <translation>Очистить</translation>
+        <translation>Tiszta</translation>
     </message>
 </context>
 <context>
     <name>WBDownloadItem</name>
     <message>
         <source>Save File</source>
-        <translation>Сохранить файл</translation>
+        <translation>Fájl mentése</translation>
     </message>
     <message>
         <source>Download canceled: %1</source>
-        <translation>Загрузка отменена: %1</translation>
+        <translation>Letöltés megszakítva: %1</translation>
     </message>
     <message>
         <source>Error opening saved file: %1</source>
-        <translation>Ошибка открытия сохраненного файла: %1</translation>
+        <translation>Mentett fájl megnyitása nem sikerült: %1</translation>
     </message>
     <message>
         <source>Error saving: %1</source>
-        <translation>Ошибка сохранения: %1</translation>
+        <translation>Mentési hiba: %1</translation>
     </message>
     <message>
         <source>Network Error: %1</source>
-        <translation>Ошибка сети: %1</translation>
+        <translation>Hálózati hiba: %1</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>секунды</translation>
+        <translation>másodperc</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>минуты</translation>
+        <translation>perc</translation>
     </message>
     <message>
         <source>- %4 %5 remaining</source>
-        <translation>- %4 %5 остается</translation>
+        <translation>- %4 %5 hátralévő idő</translation>
     </message>
     <message>
         <source>%1 of %2 (%3/sec) %4</source>
-        <translation>%1 из %2 (%3/с) %4</translation>
+        <translation>%1 a %2-ból(-ből) (%3/mp) %4</translation>
     </message>
     <message>
         <source>?</source>
         <comment>unknown file size</comment>
+        <translatorcomment>ismeretlen fájlméret</translatorcomment>
         <translation>?</translation>
     </message>
     <message>
         <source>%1 of %2 - Stopped</source>
-        <translation>%1 из %2 - Остановлено</translation>
+        <translation>%1 a %2-ból(-ből) - Leállítva</translation>
     </message>
     <message>
         <source>bytes</source>
-        <translation>байт</translation>
+        <translation>bájt</translation>
     </message>
     <message>
         <source>KB</source>
-        <translation>КБ</translation>
+        <translation>KB</translation>
     </message>
     <message>
         <source>MB</source>
-        <translation>МБ</translation>
+        <translation>MB</translation>
     </message>
 </context>
 <context>
     <name>WBDownloadManager</name>
     <message>
-        <source>1 Download</source>
-        <translation>1 загрузка</translation>
-    </message>
-    <message>
         <source>%1 Downloads</source>
         <comment>always &gt;= 2</comment>
-        <translation>%1 загрузок</translation>
+        <translatorcomment>mindig &gt;=2</translatorcomment>
+        <translation>%1 letöltés</translation>
+    </message>
+    <message>
+        <source>1 Download</source>
+        <translation>1 letöltés</translation>
     </message>
 </context>
 <context>
     <name>WBHistoryModel</name>
     <message>
         <source>Title</source>
-        <translation>Название</translation>
+        <translation>Cím</translation>
     </message>
     <message>
         <source>Address</source>
-        <translation>Адрес</translation>
+        <translation>Cím</translation>
     </message>
 </context>
 <context>
     <name>WBHistoryTreeModel</name>
     <message>
         <source>Earlier Today</source>
-        <translation>Ранее сегодня</translation>
+        <translation>Korábban a mai napon</translation>
     </message>
     <message>
         <source>%1 items</source>
-        <translation>%1 элементов</translation>
+        <translation>%1 elem</translation>
     </message>
 </context>
 <context>
     <name>WBSearchLineEdit</name>
     <message>
         <source>Search</source>
-        <translation>Поиск</translation>
+        <translation>Keresés</translation>
     </message>
 </context>
 <context>
     <name>WBTabBar</name>
     <message>
         <source>New &amp;Tab</source>
-        <translation>Новая &amp;вкладка</translation>
+        <translation>Új &amp;fül</translation>
     </message>
     <message>
         <source>Clone Tab</source>
-        <translation>Дублировать вкладку</translation>
+        <translation>Fül klónozása</translation>
     </message>
     <message>
         <source>&amp;Close Tab</source>
-        <translation>&amp;Закрыть вкладку</translation>
+        <translation>&amp;Fül bezárása</translation>
     </message>
     <message>
         <source>Close &amp;Other Tabs</source>
-        <translation>Закрыть все &amp;другие вкладки</translation>
+        <translation>A &amp;többi fül bezárása</translation>
     </message>
     <message>
         <source>Reload Tab</source>
-        <translation>Перезагрузить вкладку</translation>
+        <translation>Fül újratöltése</translation>
     </message>
     <message>
         <source>Reload All Tabs</source>
-        <translation>Перезагрузить все вкладки</translation>
+        <translation>Az összes fül újratöltése</translation>
     </message>
 </context>
 <context>
     <name>WBTabWidget</name>
     <message>
         <source>Recently Closed Tabs</source>
-        <translation>Недавно закрытые вкладки</translation>
+        <translation>Mostanában becsukott fülek</translation>
     </message>
     <message>
         <source>(Untitled)</source>
-        <translation>(Без названия)</translation>
+        <translation>(cím nélkül)</translation>
     </message>
 </context>
 <context>
     <name>WBToolbarSearch</name>
     <message>
         <source>Search</source>
-        <translation>Поиск</translation>
+        <translation>Keresés</translation>
     </message>
     <message>
         <source>No Recent Searches</source>
-        <translation>Нет последних поисков</translation>
+        <translation>Nincsenek legutóbbi keresések</translation>
     </message>
     <message>
         <source>Recent Searches</source>
-        <translation>Последние поиски</translation>
+        <translation>Legutóbbi keresések</translation>
     </message>
     <message>
         <source>Clear Recent Searches</source>
-        <translation>Очистить последние поиски</translation>
+        <translation>Legutóbbi keresések törlése</translation>
     </message>
 </context>
 <context>
     <name>WBTrapWebPageContentWindow</name>
     <message>
         <source>Select content to trap:</source>
-        <translation>Выберите содержимое для захвата:</translation>
+        <translation>Válassza ki a befogni kívánt tartalmat:</translation>
     </message>
     <message>
         <source>Application name</source>
-        <translation>Название приложения</translation>
+        <translation>Alkalmazás neve</translation>
     </message>
     <message>
         <source>Restriction and disclaimer. </source>
-        <translation>Ограничения и дисклеймер.</translation>
+        <translation>Korlátozás és jogi nyilatkozat.</translation>
     </message>
     <message>
         <source>This feature is developed to work on the most common web pages.</source>
-        <translation>Эта возможность реализована для работы с большинством веб страниц.</translation>
+        <translation>Ez a szolgáltalás úgy van kifejlesztve, hogy a leggyakoribb weboldalakon működjön. </translation>
     </message>
     <message>
         <source>Please respect copyrights for creating links or trapping content from the web.</source>
-        <translation>Соблюдайте авторские права при создании ссылок, коприованием содержимого из интернета.</translation>
+        <translation>Kérjük, tartsa tiszteletben a szerzői jogokat linkek elhelyezésekor vagy webről származó tartalmak befogásakor. </translation>
     </message>
     <message>
         <source>Download to
 library</source>
-        <translation>Загрузить в библиотеку</translation>
+        <translation>Letöltés
+könyvtárba</translation>
     </message>
     <message>
         <source>Download to
 current page</source>
-        <translation>Загрузить на текущую страницу</translation>
+        <translation>Letöltés
+az aktuális oldalra</translation>
     </message>
     <message>
         <source>Add link to
 library</source>
-        <translation>Добавить ссылку в библиотеку</translation>
+        <translation>Link hozzáadása a 
+könyvtárhoz</translation>
     </message>
     <message>
         <source>Add link to
 current page</source>
-        <translation>Добавить ссылку на текущую страницу</translation>
+        <translation>Link hozzáadása
+az aktuális oldalhoz</translation>
     </message>
 </context>
 <context>
     <name>WBWebPage</name>
     <message>
         <source>Download</source>
-        <translation>Загрузить</translation>
+        <translation>Letöltés</translation>
     </message>
     <message>
         <source>Add to Current Document</source>
-        <translation>Добавить в текущий документ</translation>
+        <translation>Hozzáadás az aktuális dokumentumhoz</translation>
     </message>
     <message>
         <source>PDF</source>
@@ -3597,37 +3598,37 @@ current page</source>
     </message>
     <message>
         <source>Error loading page: %1</source>
-        <translation>Ошибка загрузки страницы: %1</translation>
+        <translation>%1 oldal betöltése nem sikerült</translation>
     </message>
     <message>
         <source>Download PDF Document: would you prefer to download the PDF file or add it to the current Sankore document?</source>
-        <translation>Загрузка документа PDF: загрузить файл PDF или добавить его в текущий документ Sankore?</translation>
+        <translation>PDF dokumentum letöltése: a PDF fájl letöltését választja, vagy adjuk hozzá az aktuális Sankore dokumentumhoz?</translation>
     </message>
 </context>
 <context>
     <name>WBWebView</name>
     <message>
         <source>Open in New Tab</source>
-        <translation>Открыть в новой вкладке</translation>
+        <translation>Megnyitás új fülön</translation>
     </message>
 </context>
 <context>
     <name>YouTubePublishingDialog</name>
     <message>
         <source>Publish Podcast to YouTube</source>
-        <translation>Опубликовать подкаст на YouTube</translation>
+        <translation>A podcast feltöltése a YouTube-ra</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Название</translation>
+        <translation>Cím</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Описание</translation>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Keywords</source>
-        <translation>Ключевые слова</translation>
+        <translation>Kulcsszavak</translation>
     </message>
     <message>
         <source>Uniboard</source>
@@ -3635,15 +3636,15 @@ current page</source>
     </message>
     <message>
         <source>Category</source>
-        <translation>Категория</translation>
+        <translation>Kategória</translation>
     </message>
     <message>
         <source>YouTube Username</source>
-        <translation>Имя пользователя YouTube</translation>
+        <translation>YouTube felhasználónév</translation>
     </message>
     <message>
         <source>YouTube Password</source>
-        <translation>Пароль YouTube</translation>
+        <translation>YouTube jelszó</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3655,42 +3656,42 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;Нажав &quot;Загрузить&quot;, вы подтверждаете, что обладаете всеми правами на данное содержимое, или что вы были уполномочены владельцем на публикацию данного содержимого на YouTube, или что иным образом удовлетворяете требованиям Условий предоставления услуг YouTube, размещенных по адресу &lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt;&quot;&gt;A &apos;Feltöltés&apos;-re kattintva igazolja, hogy Ön rendelkezik a tartalom szerzői jogával, vagy Ön felhatalmazást kapott a tulajdonostól a tartalom nyilvánosságra hozatalára a YouTube-on, tovvábbá igazolja, hogy a tartalom megfelel a YouTube felhasználói feltételeinek, amelyek itt találhatóak:&lt;/span&gt;&lt;a href=&quot;http://www.youtube.com/t/terms&quot;&gt;&lt;span style=&quot; font-family:&apos;Lucida Grande&apos;; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.youtube.com/t/terms&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation>Восстановить привелегии после перезагрузки</translation>
+        <translation>A belépési adatok visszaállítása újraindítás esetén</translation>
     </message>
 </context>
 <context>
     <name>brushProperties</name>
     <message>
-        <source>On Light Background</source>
-        <translation>На светлом фоне</translation>
+        <source>Opacity</source>
+        <translation>Homályosság</translation>
     </message>
     <message>
-        <source>Opacity</source>
-        <translation>Непрозрачность</translation>
+        <source>On Light Background</source>
+        <translation>Világos háttéren</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Толщина линии</translation>
+        <translation>Vonalvastagság</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Средняя</translation>
+        <translation>Közepes</translation>
     </message>
     <message>
         <source>Strong</source>
-        <translation>Толстая</translation>
+        <translation>Erős</translation>
     </message>
     <message>
         <source>Fine</source>
-        <translation>Тонкая</translation>
+        <translation>Finom</translation>
     </message>
     <message>
         <source>Pen is Pressure Sensitive</source>
-        <translation>Перо чувствительно к нажиму</translation>
+        <translation>A toll nyomásérzékeny</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;On Dark Background&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -3701,65 +3702,65 @@ p, li { white-space: pre-wrap; }
     <name>capturePublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation>Párbeszéd</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Название</translation>
+        <translation>Cím</translation>
     </message>
     <message>
         <source>E-mail</source>
-        <translation>Электронная почта</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Автор</translation>
+        <translation>Szerző</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Описание</translation>
+        <translation>Leírás</translation>
     </message>
 </context>
 <context>
     <name>documentPublishingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation>Párbeszéd</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Название</translation>
+        <translation>Cím</translation>
     </message>
     <message>
         <source>E-mail</source>
-        <translation>Электронная почта</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Автор</translation>
+        <translation>Szerző</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Описание</translation>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Attach Downloadable PDF Version</source>
-        <translation>Прикрепить файл в формате PDF с возможностью скачивания</translation>
+        <translation>Letölthető PDF változat csatolása</translation>
     </message>
     <message>
         <source>Attach Downloadable Uniboard File (UBZ)</source>
-        <translation>Прикрепить файл Uniboard (UBZ) с возможностью скачивания</translation>
+        <translation>Letölthető Uniboard fájl (UBZ) csatolása</translation>
     </message>
     <message>
         <source>Warning: This documents contains video, which will not be displayed properly on the Web</source>
-        <translation>Осторожно: данные документы содержат видео, которое невозможно надлежащим образом воспроизвести в вебе</translation>
+        <translation>Figyelmeztetés: ez a dokumentum olyan videót tartalmaz, amelyik a weben nem fog megfelelően megjelenni</translation>
     </message>
 </context>
 <context>
     <name>documents</name>
     <message>
         <source>Uniboard Documents</source>
-        <translation>Документы Uniboard</translation>
+        <translation>Uniboard dokumentumok</translation>
     </message>
     <message>
         <source>Collapse All</source>
@@ -3798,95 +3799,95 @@ p, li { white-space: pre-wrap; }
     <name>preferencesDialog</name>
     <message>
         <source>Preferences</source>
-        <translation>Настройки</translation>
-    </message>
-    <message utf8="true">
-        <source>version : …</source>
-        <translation>версия: …</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Default Settings</source>
-        <translation>Настройки по умолчанию</translation>
+        <translation>Alapértelmezett beállítások</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation>Bezárás</translation>
     </message>
     <message>
         <source>Display</source>
-        <translation>Показать</translation>
-    </message>
-    <message>
-        <source>Internet</source>
-        <translation>Интернет</translation>
+        <translation>Megjelenítő</translation>
     </message>
     <message>
         <source>Show Page with External Browser</source>
-        <translation>Показать страницу во внешнем браузере</translation>
-    </message>
-    <message>
-        <source>Home Page:</source>
-        <translation>Главная страница:</translation>
+        <translation>Oldal megjelenítése külső böngészőben</translation>
     </message>
     <message>
         <source>Virtual Keyboard</source>
-        <translation>Виртуальная клавиатура</translation>
+        <translation>Virtuális billantyűzet</translation>
     </message>
     <message>
         <source>Keyboard button size:</source>
-        <translation>Размер клавиш клавиатуры:</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation>Панель инструментов</translation>
+        <translation>Gombmérete a billentyűzeten:</translation>
     </message>
     <message>
         <source>Positioned at the Top (recommended for tablets)</source>
-        <translation>Расположение вверху (рекомендуется для планшетов)</translation>
+        <translation>Felülre helyezett (tabletekhez javasolt)</translation>
     </message>
     <message>
         <source>Positioned at the Bottom (recommended for white boards)</source>
-        <translation>Расположение внизу (рекомендуется для белых досок)</translation>
+        <translation>Alulra helyezett (kivetített táblákhoz javasolt)</translation>
     </message>
     <message>
         <source>Display Text Under Button</source>
-        <translation>Показывать текст под кнопками</translation>
+        <translation>Szöveg megjelenítése a gomb alatt</translation>
     </message>
     <message>
         <source>Stylus Palette</source>
-        <translation>Инструменты</translation>
+        <translation>Tollpaletta</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонтально</translation>
+        <translation>Vízszintes</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикально</translation>
-    </message>
-    <message>
-        <source>Pen</source>
-        <translation>Перо</translation>
-    </message>
-    <message>
-        <source>Marker</source>
-        <translation>Маркер</translation>
+        <translation>Függőleges</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>О программе</translation>
+        <translation>Információk a szoftverről</translation>
     </message>
     <message>
         <source>Software Update</source>
-        <translation>Обновление программы</translation>
+        <translation>Szoftverfrissítés</translation>
     </message>
     <message>
         <source>Check software update at launch</source>
-        <translation>Проверять наличие обновлений при запуске</translation>
+        <translation>Szoftverfrissítés keresése ebédidőben</translation>
+    </message>
+    <message>
+        <source>Internet</source>
+        <translation>Internet</translation>
+    </message>
+    <message>
+        <source>Home Page:</source>
+        <translation>Honlap:</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation>Eszköztár</translation>
+    </message>
+    <message>
+        <source>Pen</source>
+        <translation>Toll</translation>
+    </message>
+    <message>
+        <source>Marker</source>
+        <translation>Filctoll</translation>
+    </message>
+    <message utf8="true">
+        <source>version : …</source>
+        <translation>Verzió: ...</translation>
     </message>
     <message>
         <source>Licences</source>
-        <translation>Лицензии</translation>
+        <translation>Licencek</translation>
     </message>
     <message>
         <source>zlib</source>
@@ -3894,7 +3895,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Network</source>
-        <translation>Сеть</translation>
+        <translation>Hálózat</translation>
     </message>
     <message utf8="true">
         <source>Open-Sankoré</source>
@@ -3902,83 +3903,83 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show internal web page content on secondary screen or projector</source>
-        <translation>Показать содежимое веб страницы на втором мониторе</translation>
+        <translation>A belső weboldal tartalmának megjelenítése a másodlagos kijelzőn vagy kivetítőn</translation>
     </message>
     <message>
         <source>Multi display</source>
-        <translation>Несколько монитров</translation>
+        <translation>Több kijelző</translation>
     </message>
     <message>
         <source>Swap control display and view display</source>
-        <translation>Инвертировать первый и второй монитор</translation>
+        <translation>A vezérlőképernyő és a megjelenítő képernyő megcserélése</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Режим</translation>
+        <translation>Üzemmód</translation>
     </message>
     <message>
         <source>Mode to start in:</source>
-        <translation>Режим при загрузке:</translation>
+        <translation>Induló üzemmód:</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation>Доска</translation>
+        <translation>Tábla</translation>
     </message>
     <message>
         <source>Desktop</source>
-        <translation>Десктоп</translation>
+        <translation>Asztal</translation>
     </message>
     <message>
         <source>Proxy User:</source>
-        <translation>Прокси пользователь:</translation>
+        <translation>Proxy felhasználó:</translation>
     </message>
     <message>
         <source>Pass:</source>
-        <translation>Пароль:</translation>
+        <translation>Jelszó:</translation>
     </message>
     <message>
         <source>User:</source>
-        <translation>Пользователь:</translation>
+        <translation>Felhasználó:</translation>
     </message>
     <message>
         <source>Pass: </source>
-        <translation>Пароль:</translation>
+        <translation>Jelszó:</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Содержание</translation>
+        <translation>Szerzők</translation>
     </message>
     <message utf8="true">
         <source>Planète Sankoré ID for exporting file</source>
-        <translation>Planète Sankoré ID для экспорта файла</translation>
+        <translation>Planete Sankoré ID fájlexporthoz</translation>
     </message>
     <message>
         <source>Restore credentials on reboot  </source>
-        <translation>Восстановить привелегии после перезагрузки</translation>
+        <translation>A belépési adatok visszaállítása újraindítás esetén</translation>
     </message>
     <message>
         <source>Start up tips</source>
-        <translation>Загружать подстказки при старте</translation>
+        <translation>Tippek az indításkor</translation>
     </message>
     <message>
         <source>Show start up tips</source>
-        <translation>Показать подсказки</translation>
+        <translation>Tippek megjelenítése indításkor</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Язык</translation>
+        <translation>Nyelv</translation>
     </message>
     <message>
         <source>Select a language</source>
-        <translation>Выберите язык</translation>
+        <translation>Nyelvválasztás</translation>
     </message>
     <message>
         <source>The new language will be loaded on next restart</source>
-        <translation>Новый язык будет загружен после перезагрузки</translation>
+        <translation>Az új nyelv a következő újraindításkor fog betöltődni</translation>
     </message>
     <message utf8="true">
         <source>Close Open-Sankoré</source>
-        <translation>Закрыть Open-Sankoré</translation>
+        <translation>Az Open-Sankoré bezárása</translation>
     </message>
     <message>
         <source>OpenSSL</source>
@@ -4044,11 +4045,11 @@ p, li { white-space: pre-wrap; }
     <name>trapFlashDialog</name>
     <message>
         <source>Trap flash</source>
-        <translation>Захват флеш</translation>
+        <translation>Flash befogása</translation>
     </message>
     <message>
         <source>Select a flash to trap</source>
-        <translation>Выбрать флеш-содержимое для захвата</translation>
+        <translation>Válassza ki a befogni kívánt flash-t</translation>
     </message>
     <message>
         <source>about:blank</source>
@@ -4056,11 +4057,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Application name</source>
-        <translation>Название приложения</translation>
+        <translation>Alkalmazás neve</translation>
     </message>
     <message>
         <source>Create Application</source>
-        <translation>Создать приложение</translation>
+        <translation>Alkalmazás létrehozása</translation>
     </message>
 </context>
 </TS>

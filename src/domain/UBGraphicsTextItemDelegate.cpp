@@ -885,7 +885,7 @@ void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
         mRightAlignmentButton->setEnabled(false);
         mUnorderedListButton->setEnabled(false);
         mOrderedListButton->setEnabled(false);
-        mTableMenu->setEnabled(false);
+        mTableButton->setEnabled(false);
         mHyperLinkButton->setEnabled(false);
         mAddIndentButton->setEnabled(false);
         mRemoveIndentButton->setEnabled(false);
@@ -905,7 +905,7 @@ void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
         mRightAlignmentButton->setEnabled(true);
         mUnorderedListButton->setEnabled(true);
         mOrderedListButton->setEnabled(true);
-        mTableMenu->setEnabled(true);
+        mTableButton->setEnabled(true);
         mHyperLinkButton->setEnabled(true);
         mAddIndentButton->setEnabled(true);
         mRemoveIndentButton->setEnabled(true);

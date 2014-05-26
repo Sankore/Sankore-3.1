@@ -101,7 +101,6 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         UBCreateHyperLinkPalette* mLinkPalette;
         UBCellPropertiesPalette* mCellPropertiesPalette;
 
-        UBGraphicsProxyWidget *mTableMenu;
         int mLastFontPixelSize;
 
         static const int sMinPixelSize;
