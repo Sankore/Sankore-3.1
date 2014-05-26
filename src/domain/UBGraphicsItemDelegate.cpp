@@ -209,6 +209,12 @@ void DelegateMenuButton::showMenu()
     }
 }
 
+DelegateSpacer::DelegateSpacer(QGraphicsItem * parent, Qt::WindowFrameSection section):
+    DelegateButton("", 0, parent, section)
+{
+
+}
+
 UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar, bool showGoContentButton)
     : QObject(parent)
     , mDelegated(pDelegated)

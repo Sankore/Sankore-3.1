@@ -2316,7 +2316,7 @@ void UBDocumentController::deleteSelectedItem()
 //N/C - NNE - 20140410
 void UBDocumentController::moveIndexesToTrash(const QModelIndexList &list, UBDocumentTreeModel *docModel)
 {
-        QModelIndex currentScene = docModel->indexForNode(docModel->currentNode());
+    QModelIndex currentScene = docModel->indexForNode(docModel->currentNode());
 
     //check if the current scene is selected
     QItemSelectionModel *selectionModel = mDocumentUI->documentTreeView->selectionModel();
@@ -2369,11 +2369,12 @@ void UBDocumentController::moveIndexesToTrash(const QModelIndexList &list, UBDoc
 
     docModel->moveIndexes(list, docModel->trashIndex());
 
-    selectionModel->clearSelection();
-
     if(deleteCurrentScene){
         createNewDocumentInUntitledFolder();
     }
+
+    selectionModel->clearSelection();
+
 }
 //N/C - NNE - 20140410 : END
 
@@ -2413,7 +2414,13 @@ QModelIndex UBDocumentController::findNextSiblingNotSelected(const QModelIndex &
         if(!parentIsSelected(sibling, selectionModel)
                 && !selectionModel->isSelected(sibling)
                 && !sibling.model()->hasChildren(sibling)){
-            return sibling;
+            QModelIndex model = mSortFilterProxyModel->mapToSource(index);
+
+            if(UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel->isCatalog(model)){
+                return QModelIndex();
+            }else{
+                return sibling;
+            }
         }else{
             return findNextSiblingNotSelected(sibling, selectionModel);
         }

@@ -117,6 +117,16 @@ private:
     UBGraphicsProxyWidget *mMenuProxy;
 };
 
+//N/C - NNE - 20140529
+class DelegateSpacer : public DelegateButton
+{
+    Q_OBJECT
+
+public:
+    DelegateSpacer(QGraphicsItem * parent = 0, Qt::WindowFrameSection section = Qt::TopLeftSection);
+};
+//N/C - NNE - 20140529 : END
+
 /*
     Code of this class is copied from QT QLCDNumber class sources
     See src\gui\widgets\qlcdnumber.cpp for original code
