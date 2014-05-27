@@ -984,11 +984,11 @@
     </message>
     <message>
         <source>Stroke Style Dot Line</source>
-        <translation>Style du trait : pointillés</translation>
+        <translation>Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation type="unfinished">Style du trait : pointillés</translation>
+        <translation>Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1072,95 +1072,95 @@
     </message>
     <message>
         <source>Align objects</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner les objets</translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner à gauche</translation>
     </message>
     <message>
         <source>Align objects to the left</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner les objets à gauche</translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner à droite</translation>
     </message>
     <message>
         <source>Align objects to the right</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner les objets à droite</translation>
     </message>
     <message>
         <source>Align Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner en haut</translation>
     </message>
     <message>
         <source>Align objects to the top</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner les objets en haut</translation>
     </message>
     <message>
         <source>Align Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner en bas</translation>
     </message>
     <message>
         <source>End arrow style : Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de flèche de fin : Flèche</translation>
     </message>
     <message>
         <source>Start arrow style : Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de flèche de début : Flèche</translation>
     </message>
     <message>
         <source>End arrow style : Round</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de flèche de fin : Rond</translation>
     </message>
     <message>
         <source>Start arrow style : Round</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de flèche de début : Rond</translation>
     </message>
     <message>
         <source>End arrow style : None</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de flèche de fin : Aucun</translation>
     </message>
     <message>
         <source>Start arrow style : None</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de flèche de début : Aucun</translation>
     </message>
     <message>
         <source>Arrows Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriétés des flèches</translation>
     </message>
     <message>
         <source>Arrows properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriétés des flèches</translation>
     </message>
     <message>
         <source>Stroke Style Dot Dash</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de bordure : pointillés</translation>
     </message>
     <message>
         <source>Stroke style : Dot Dash</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de bordure : pointillé</translation>
     </message>
     <message>
         <source>Align Center Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner verticalement le centre</translation>
     </message>
     <message>
         <source>Align the center of the objects vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner verticalement le centre des objets</translation>
     </message>
     <message>
         <source>Align Center Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner horizontalement le centre</translation>
     </message>
     <message>
         <source>Align the center of the objects horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner horizontalement le centre des objets</translation>
     </message>
     <message>
         <source>Align objects to the bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Aligner les objets en bas</translation>
     </message>
 </context>
 <context>
@@ -2344,11 +2344,11 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
     </message>
     <message>
         <source>Flip horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Symétrie d&apos;axe horizontal</translation>
     </message>
     <message>
         <source>Flip vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Symétrie d&apos;axe vertical</translation>
     </message>
 </context>
 <context>
@@ -2370,47 +2370,47 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
     </message>
     <message>
         <source>Insert table</source>
-        <translation type="unfinished"></translation>
+        <translation>Insérer tableau</translation>
     </message>
     <message>
         <source>Insert column after</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une colonne après</translation>
     </message>
     <message>
         <source>Insert column before</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une colonne avant</translation>
     </message>
     <message>
         <source>Delete column</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer la colonne</translation>
     </message>
     <message>
         <source>Insert row after</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une ligne après</translation>
     </message>
     <message>
         <source>Insert row before</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une ligne avant</translation>
     </message>
     <message>
         <source>Delete row</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer la ligne</translation>
     </message>
     <message>
         <source>Cell properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propriété cellule</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur de fond</translation>
     </message>
     <message>
         <source>Column</source>
-        <translation type="unfinished"></translation>
+        <translation>Colonne</translation>
     </message>
     <message>
         <source>Row</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne</translation>
     </message>
 </context>
 <context>
@@ -2845,11 +2845,11 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>Finnois</translation>
     </message>
     <message>
         <source>Hungarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Hongrois</translation>
     </message>
 </context>
 <context>
@@ -3780,35 +3780,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Collapse All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tout replier</translation>
     </message>
     <message>
         <source>Expand All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tout déplier</translation>
     </message>
     <message>
         <source>Select a sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionner un tri</translation>
     </message>
     <message>
         <source>Creation date</source>
-        <translation type="unfinished"></translation>
+        <translation>Date de création</translation>
     </message>
     <message>
         <source>Update date</source>
-        <translation type="unfinished"></translation>
+        <translation>Date de modification</translation>
     </message>
     <message>
         <source>Alphabetical order</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordre alphabétique</translation>
     </message>
     <message>
         <source>Ascending order</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordre croissant</translation>
     </message>
     <message>
         <source>Descending order</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordre décroissant</translation>
     </message>
 </context>
 <context>

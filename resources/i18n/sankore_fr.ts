@@ -988,7 +988,7 @@
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation type="unfinished">Style du trait : traitillé</translation>
+        <translation>Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -2845,11 +2845,11 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>Finnois</translation>
     </message>
     <message>
         <source>Hungarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Hongrois</translation>
     </message>
 </context>
 <context>
