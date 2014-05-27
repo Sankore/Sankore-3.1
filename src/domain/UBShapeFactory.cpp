@@ -53,8 +53,10 @@ void UBShapeFactory::changeFillColor(const QPointF& pos)
 
     applyCurrentStyle(shape);
 
-    //persists scene immediatly
-    UBApplication::boardController->persistCurrentScene();
+    // Because filling with Bucket doesn't need selection of any item on the board,
+    // we have to explicitly set Scene as Modified.
+    // (because that's Selection of Item that usually set Scene changed)
+    scene->setModified(true);
 }
 
 void UBShapeFactory::applyCurrentStyle(UBAbstractGraphicsItem* shape)
