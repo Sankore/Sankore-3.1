@@ -439,7 +439,17 @@ UBDocumentProxy* UBPersistenceManager::createDocument(const QString& pGroupName
     doc->setMetaData(UBSettings::documentTagVersion, version);
     //Issue N/C - NNE - 20140526 : END
 
-    if (withEmptyPage) createDocumentSceneAt(doc, 0);
+    if (withEmptyPage) {
+        createDocumentSceneAt(doc, 0);
+    }
+    else{
+        this->generatePathIfNeeded(doc);
+        QDir dir(doc->persistencePath());
+        if (!dir.mkpath(doc->persistencePath()))
+        {
+            return 0; // if we can't create the path, abort function.
+        }
+    }
 
     bool addDoc = false;
     if (!promptDialogIfExists) {
