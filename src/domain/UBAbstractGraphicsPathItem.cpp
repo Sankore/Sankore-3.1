@@ -36,6 +36,11 @@ void UBAbstractGraphicsPathItem::copyItemParameters(UBItem *copy) const
     if(!cp) return;
 
     cp->setPath(path());
+
+    // Apply arrow type to the copy :
+    cp->setStartArrowType(mStartArrowType);
+    cp->setEndArrowType(mEndArrowType);
+
 }
 
 void UBAbstractGraphicsPathItem::setStartArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType)

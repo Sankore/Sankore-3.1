@@ -67,6 +67,10 @@ void UBGraphicsFreehandItem::copyItemParameters(UBItem *copy) const
             else
                 cp->Delegate()->setAction(Delegate()->action());
         }
+
+		// Apply arrow type to the copy :
+        cp->setStartArrowType(startArrowType());
+        cp->setEndArrowType(endArrowType());
     }
 }
 
