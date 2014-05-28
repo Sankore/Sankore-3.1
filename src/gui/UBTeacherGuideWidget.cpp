@@ -1718,7 +1718,7 @@ UBTeacherGuideWidget::~UBTeacherGuideWidget()
 void UBTeacherGuideWidget::onActiveSceneChanged()
 {
     if (UBApplication::boardController->currentPage() == 0) {
-        if(mpPageZeroWidget->isModified())
+        if(mpPageZeroWidget->hasUserDataInTeacherGuide())
             mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_PRESENTATION);
         else
             mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_EDITION);
@@ -1726,7 +1726,7 @@ void UBTeacherGuideWidget::onActiveSceneChanged()
         setCurrentWidget(mpPageZeroWidget);
     }
     else{
-        if(mpEditionWidget->isModified()){
+        if(mpEditionWidget->hasUserDataInTeacherGuide()){
             mCurrentData = mpEditionWidget->getData();
             mpPresentationWidget->showData(mCurrentData);
             setCurrentWidget(mpPresentationWidget);
