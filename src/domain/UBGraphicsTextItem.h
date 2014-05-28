@@ -104,6 +104,11 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
             mColorOnLightBackground = pColorOnLightBackground;
         }
 
+        QColor backgroundColor() const
+        {
+            return mBackgroundColor;
+        }
+
         virtual void clearSource(){;}
         virtual void setUuid(const QUuid &pUuid);
 

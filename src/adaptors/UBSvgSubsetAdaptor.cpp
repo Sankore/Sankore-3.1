@@ -3016,6 +3016,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "width", QString("%1").arg(item->textWidth()));
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "height", QString("%1").arg(item->textHeight()));
 
+    if(item->backgroundColor() != Qt::transparent)
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "backgroundColor", item->backgroundColor().name());
+
     QColor colorDarkBg = item->colorOnDarkBackground();
     QColor colorLightBg = item->colorOnLightBackground();
 
@@ -3073,6 +3076,16 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
         if (!color.isValid())
             color = Qt::black;
             textItem->setColorOnLightBackground(color);
+    }
+
+    QStringRef ubBackgroundColor = mXmlReader.attributes().value(mNamespaceUri, "backgroundColor");
+
+    if(!ubBackgroundColor.isNull()){
+        QColor color;
+        color.setNamedColor(ubBackgroundColor.toString());
+
+        if (color.isValid())
+            textItem->setBackgroundColor(color);
     }
 
     QString text;

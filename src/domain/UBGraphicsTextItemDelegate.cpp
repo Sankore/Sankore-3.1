@@ -220,6 +220,14 @@ void UBGraphicsTextItemDelegate::contentsChanged()
     delegated()->contentsChanged();
 }
 
+//Issue N/C - NNE - 20140528
+void UBGraphicsTextItemDelegate::duplicate()
+{
+    UBGraphicsItemDelegate::duplicate();
+
+    delegated()->activateTextEditor(false);
+}
+
 // This method is used to filter the available fonts. Only the web-compliant fonts
 // will remain in the font list.
 void UBGraphicsTextItemDelegate::customize(QFontDialog &fontDialog)
