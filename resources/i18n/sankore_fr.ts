@@ -2343,11 +2343,11 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
         <translation>Retour au mode création</translation>
     </message>
     <message>
-        <source>Flip horizontally</source>
+        <source>Flip on horizontal axis</source>
         <translation>Symétrie d&apos;axe horizontal</translation>
     </message>
     <message>
-        <source>Flip vertically</source>
+        <source>Flip on vertical axis</source>
         <translation>Symétrie d&apos;axe vertical</translation>
     </message>
 </context>

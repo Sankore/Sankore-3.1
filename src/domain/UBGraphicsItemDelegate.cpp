@@ -725,10 +725,10 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
 
     //N/C - NNE - 20140505 : add vertical and horizontal flip
     if(mHorizontalMirror)
-        menu->addAction(tr("Flip horizontally"), this, SLOT(flipHorizontally()));
+        menu->addAction(tr("Flip on horizontal axis"), this, SLOT(flipHorizontally()));
 
     if(mVerticalMirror)
-        menu->addAction(tr("Flip vertically"), this, SLOT(flipVertically()));
+        menu->addAction(tr("Flip on vertical axis"), this, SLOT(flipVertically()));
     //N/C - NNE - 20140505 : END
 
 }

@@ -2337,11 +2337,11 @@ Poskytnutí nového názvu vytvoří nový dokument.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Flip horizontally</source>
+        <source>Flip on horizontal axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Flip vertically</source>
+        <source>Flip on vertical axis</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
