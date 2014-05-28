@@ -79,6 +79,8 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
     adjustScreens(1);
     connect(mDesktop, SIGNAL(screenCountChanged(int)), this, SLOT(adjustScreens(int)));
 
+    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
+
     wire();
 }
 
@@ -287,20 +289,21 @@ void UBPreferencesController::init()
     list << mIsoCodeAndLanguage.keys();
     list.sort();
     //Issue NC - CFA - 20140520 : clear list, to prevent duplication of the list
+    QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
     mPreferencesUI->languageComboBox->clear();
     mPreferencesUI->languageComboBox->addItems(list);
-    QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
     if(currentIsoLanguage.length()){
         QString language;
         foreach(QString eachKey, mIsoCodeAndLanguage.keys())
-            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage)
+            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage){
                 language = eachKey;
+                break;
+            }
         mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(language));
     }
     else
         mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf("Default"));
 
-    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
     connect(mPreferencesUI->quitOpenSankorePushButton,SIGNAL(clicked()),UBApplication::app(),SLOT(closing()));
     mPreferencesUI->quitOpenSankorePushButton->setDisabled(true);
 
