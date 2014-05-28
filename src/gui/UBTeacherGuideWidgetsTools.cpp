@@ -38,6 +38,9 @@
 
 #include "UBTeacherGuideWidgetsTools.h"
 
+#include "board/UBBoardPaletteManager.h"
+#include "gui/UBDockTeacherGuideWidget.h"
+
 #include "gui/UBMainWindow.h"
 
 #include "core/UBPersistenceManager.h"
@@ -129,6 +132,7 @@ void UBTGActionWidget::onUpButton()
     connect(actionColumn, SIGNAL(clickOnDown()), copy, SLOT(onDownButton()));
     connect(actionColumn, SIGNAL(clickOnClose()), copy, SLOT(onClose()));
 
+
     //from now 'this' is invalid...
     index = qMax(0, index - 1);
 
@@ -139,6 +143,9 @@ void UBTGActionWidget::onUpButton()
 
     //update the layout correctly
     mpTreeWidgetItem->setExpanded(true);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 void UBTGActionWidget::onDownButton()
@@ -173,6 +180,9 @@ void UBTGActionWidget::onDownButton()
 
     //layout correctly
     mpTreeWidgetItem->setExpanded(true);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 void UBTGActionWidget::onClose()
@@ -577,6 +587,9 @@ void UBTGMediaWidget::onUpButton()
 
     //update the layout correctly
     mpTreeWidgetItem->setExpanded(true);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 //N/C - NNE - 20140401
@@ -622,6 +635,9 @@ void UBTGMediaWidget::onDownButton()
 
     //update the layout correctly
     mpTreeWidgetItem->setExpanded(true);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 void UBTGMediaWidget::onClose()
@@ -952,6 +968,9 @@ void UBTGUrlWidget::onUpButton()
 
     //update the layout correctly
     mTreeWidgetItem->setExpanded(true);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 void UBTGUrlWidget::onDownButton()
@@ -983,6 +1002,9 @@ void UBTGUrlWidget::onDownButton()
 
     //update the layout correctly
     mTreeWidgetItem->setExpanded(true);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 UBTGUrlWidget * UBTGUrlWidget::clone() const
@@ -1180,6 +1202,8 @@ void UBTGFileWidget::onUpButton()
 
     //update the layout correctly
     mTreeWidgetItem->setExpanded(true);
+
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 void UBTGFileWidget::onDownButton()
@@ -1211,6 +1235,8 @@ void UBTGFileWidget::onDownButton()
 
     //layout correctly
     mTreeWidgetItem->setExpanded(true);
+
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 UBTGFileWidget * UBTGFileWidget::clone() const

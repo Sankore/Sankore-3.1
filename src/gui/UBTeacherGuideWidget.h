@@ -71,6 +71,7 @@ public slots:
     void onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement* element = 0);
     void onActiveSceneChanged();
     void showEvent(QShowEvent* event);
+    void teacherGuideChanged();
 
 private:
     QList<QTreeWidgetItem*> getChildrenList(QTreeWidgetItem* widgetItem);
@@ -91,8 +92,8 @@ private:
     bool mIsModified;
 
 private slots:
-    void onActiveDocumentChanged();
     void setIsModified(bool isModified = true);
+    void onActiveDocumentChanged();
 
 #ifdef Q_WS_MACX
     void onSliderMoved(int size);
@@ -312,6 +313,11 @@ public:
     void changeMode();
     void showPresentationMode();
     void onActiveSceneChanged();
+
+    UBTeacherGuideEditionWidget* teacherGuideEditionWidget()
+    {
+        return mpEditionWidget;
+    }
 
 private:
     UBTeacherGuidePageZeroWidget* mpPageZeroWidget;

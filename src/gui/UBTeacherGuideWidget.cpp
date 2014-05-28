@@ -440,6 +440,11 @@ bool UBTeacherGuideEditionWidget::isModified()
     return mIsModified;
 }
 
+void UBTeacherGuideEditionWidget::teacherGuideChanged()
+{
+    setIsModified(true);
+}
+
 bool UBTeacherGuideEditionWidget::hasUserDataInTeacherGuide()
 {
     return (mpPageTitle->text().length() > 0)
