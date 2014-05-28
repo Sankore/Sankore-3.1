@@ -481,6 +481,11 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
             return QBrush(0xD9DFEB);
         }
 
+        qDebug() << "Background: " << mHighLighted;
+        //qDebug() << (index == mHighLighted);
+
+        //qDebug() << (index.model() == this);
+
         if (mHighLighted.isValid() && index == mHighLighted) {
             return QBrush(0x6682B5);
         }
@@ -1339,7 +1344,17 @@ void UBDocumentTreeView::dragEnterEvent(QDragEnterEvent *event)
 void UBDocumentTreeView::dragLeaveEvent(QDragLeaveEvent *event)
 {
     Q_UNUSED(event);
-    UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
+
+    UBDocumentTreeModel *docModel = 0;
+
+    UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
+
+    if(proxy){
+        docModel = dynamic_cast<UBDocumentTreeModel*>(proxy->sourceModel());
+    }else{
+        docModel =  dynamic_cast<UBDocumentTreeModel*>(model());
+    }
+
     docModel->setHighLighted(QModelIndex());
     update();
 }
@@ -1349,8 +1364,18 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
     bool acceptIt = isAcceptable(selectedIndexes().first(), indexAt(event->pos()));
 
     if (event->mimeData()->hasFormat(UBApplication::mimeTypeUniboardPage)) {
-        UBDocumentTreeModel *docModel = qobject_cast<UBDocumentTreeModel*>(model());
+        UBSortFilterProxyModel *proxy = dynamic_cast<UBSortFilterProxyModel*>(model());
+
+        UBDocumentTreeModel *docModel = 0;
+
+        if(proxy){
+            docModel = dynamic_cast<UBDocumentTreeModel*>(proxy->sourceModel());
+        }else{
+            docModel =  dynamic_cast<UBDocumentTreeModel*>(model());
+        }
+
         QModelIndex targetIndex = mapIndexToSource(indexAt(event->pos()));
+
         if (!docModel || !docModel->isDocument(targetIndex) || docModel->inTrash(targetIndex)) {
             event->ignore();
             event->setDropAction(Qt::IgnoreAction);
@@ -1360,12 +1385,11 @@ void UBDocumentTreeView::dragMoveEvent(QDragMoveEvent *event)
             docModel->setHighLighted(targetIndex);
             acceptIt = true;
         }
-        updateIndexEnvirons(targetIndex);
+        updateIndexEnvirons(indexAt(event->pos()));
     }
     QTreeView::dragMoveEvent(event);
-    event->setAccepted(acceptIt);
 
-    //QTreeView::dragMoveEvent(event);
+    event->setAccepted(acceptIt);
 }
 
 void UBDocumentTreeView::dropEvent(QDropEvent *event)
@@ -1754,12 +1778,14 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
     //We have just to pass a null proxy to disable the display of thumbnail
     UBDocumentProxy *currentDocumentProxy = 0;
 
-    if(mDocumentUI->documentTreeView->selectionModel()->selectedRows(0).size() == 1){
+    qDebug() << mDocumentUI->documentTreeView->selectionModel()->selectedRows(0).size();
+
+    if(current_index.isValid() && mDocumentUI->documentTreeView->selectionModel()->selectedRows(0).size() == 1){
         currentDocumentProxy = docModel->proxyData(current_index);
+        setDocument(currentDocumentProxy, false);
     }
     //N/C - NNE  - 20140414 : END
 
-    setDocument(currentDocumentProxy, false);
 
     if (mCurrentIndexMoved) {
         if (docModel->isDocument(current_index)) {
