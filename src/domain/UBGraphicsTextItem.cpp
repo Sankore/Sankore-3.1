@@ -346,6 +346,13 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
     UBGraphicsTextItem *cp = dynamic_cast<UBGraphicsTextItem*>(copy);
     if (cp)
     {
+        if(htmlMode()){
+            UBGraphicsTextItemDelegate* d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+            if(d){
+                d->alternHtmlMode();
+            }
+        }
+
         QString html = toHtml();
 
         cp->loadImages(html, true);

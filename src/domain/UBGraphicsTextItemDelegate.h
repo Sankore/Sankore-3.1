@@ -66,6 +66,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         virtual void setEditable(bool);
         virtual void remove(bool canUndo);
         void alternHtmlMode();
+        void duplicate();
 
     protected:
         virtual void buildButtons();
