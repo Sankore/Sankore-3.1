@@ -1402,22 +1402,22 @@ togo koro
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>validate</source>
+        <source>Validate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UBCreateHyperLinkPalette</name>
     <message>
-        <source>Link : </source>
+        <source>Link :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text : </source>
+        <source>Text :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>validate</source>
+        <source>Validate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1494,15 +1494,15 @@ fen fara ntalonmana  gaféfura kan</translation>
 <context>
     <name>UBCreateTablePalette</name>
     <message>
-        <source>number of lines</source>
+        <source>Number of lines :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>number of columns</source>
+        <source>Number of columns :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>validate</source>
+        <source>Validate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

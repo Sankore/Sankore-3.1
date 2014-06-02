@@ -8,11 +8,11 @@ UBCreateHyperLinkPalette::UBCreateHyperLinkPalette(QWidget *parent) :
     , mVLayout(new QVBoxLayout(this))
     , mLinkLayout(new QHBoxLayout(this))
     , mTextLayout(new QHBoxLayout(this))
-    , mLinkLabel(new QLabel(tr("Link : "), this))
+    , mLinkLabel(new QLabel(tr("Link :"), this))
     , mLinkInput(new QLineEdit(this))
-    , mTextLabel(new QLabel(tr("Text : "), this))
+    , mTextLabel(new QLabel(tr("Text :"), this))
     , mTextInput(new QLineEdit(this))
-    , mValidateButton(new QPushButton(tr("validate"),this))
+    , mValidateButton(new QPushButton(tr("Validate"),this))
     , mClosePixmap(QPixmap(":/images/close.svg"))
 {
     mLinkLayout->addWidget(mLinkLabel);

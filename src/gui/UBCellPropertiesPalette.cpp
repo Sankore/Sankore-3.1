@@ -8,7 +8,7 @@ UBCellPropertiesPalette::UBCellPropertiesPalette(QWidget *parent) :
     , mWidthLayout(new QHBoxLayout(this))
     , mWidthLabel(new QLabel(tr("Width :"), this))
     , mWidthInput(new QSpinBox(this))
-    , mValidateButton(new QPushButton(tr("validate"),this))
+    , mValidateButton(new QPushButton(tr("Validate"),this))
     , mClosePixmap(QPixmap(":/images/close.svg"))
     , mMinimumTableSize(1)
 {

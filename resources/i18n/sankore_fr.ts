@@ -1395,26 +1395,26 @@
     <name>UBCellPropertiesPalette</name>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Largeur :</translation>
     </message>
     <message>
-        <source>validate</source>
-        <translation type="unfinished"></translation>
+        <source>Validate</source>
+        <translation>Valider</translation>
     </message>
 </context>
 <context>
     <name>UBCreateHyperLinkPalette</name>
     <message>
-        <source>Link : </source>
-        <translation type="unfinished"></translation>
+        <source>Link :</source>
+        <translation>Lien :</translation>
     </message>
     <message>
-        <source>Text : </source>
-        <translation type="unfinished"></translation>
+        <source>Text :</source>
+        <translation>Texte :</translation>
     </message>
     <message>
-        <source>validate</source>
-        <translation type="unfinished"></translation>
+        <source>Validate</source>
+        <translation>Valider</translation>
     </message>
 </context>
 <context>
@@ -1486,16 +1486,16 @@
 <context>
     <name>UBCreateTablePalette</name>
     <message>
-        <source>number of lines</source>
-        <translation type="unfinished"></translation>
+        <source>Number of lines :</source>
+        <translation>Nombre de lignes :</translation>
     </message>
     <message>
-        <source>number of columns</source>
-        <translation type="unfinished"></translation>
+        <source>Number of columns :</source>
+        <translation>Nombre de colonnes :</translation>
     </message>
     <message>
-        <source>validate</source>
-        <translation type="unfinished"></translation>
+        <source>Validate</source>
+        <translation>Valider</translation>
     </message>
 </context>
 <context>
