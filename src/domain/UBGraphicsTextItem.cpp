@@ -93,6 +93,8 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
             this, SLOT(documentSizeChanged(const QSizeF &)));
 
     connect(UBApplication::boardController->controlView(), SIGNAL(clickOnBoard()), this, SLOT(changeHTMLMode()));
+
+    connect(this, SIGNAL(linkHovered(QString)), this, SLOT(onLinkHovered(QString))); // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
 }
 
 UBGraphicsTextItem::~UBGraphicsTextItem()
@@ -264,7 +266,8 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
         QPointF distance = event->pos() - event->lastPos();
-        if( fabs(distance.x()) < 1 && fabs(distance.y()) < 1 )
+        if( fabs(distance.x()) < 1 && fabs(distance.y()) < 1
+                && mCurrentLinkUrl.isEmpty()) // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
             Delegate()->mouseReleaseEvent(event);
         else
             QGraphicsTextItem::mouseReleaseEvent(event);
@@ -837,4 +840,9 @@ void UBGraphicsTextItem::changeHTMLMode()
         UBGraphicsTextItemDelegate *d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
         if(d) d->alternHtmlMode();
     }
+}
+
+void UBGraphicsTextItem::onLinkHovered(const QString & currentLinkUrl)  // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
+{
+   mCurrentLinkUrl = currentLinkUrl; // used in mouseReleaseEvent()
 }

@@ -121,6 +121,7 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void loadUrl(QString url);
         void undoCommandAdded();
         void documentSizeChanged(const QSizeF & newSize);
+        void onLinkHovered(const QString &currentLinkUrl); // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
 
     public slots:
             void changeHTMLMode();
@@ -159,6 +160,8 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         bool isActivatedTextEditor;
 
         QString findAndReplaceAttribute(QString tag, QString oldAttribute, QString newAttribute, QString& source);
+
+        QString mCurrentLinkUrl;
 
     protected:
          //issue 1539 - NNE - 20131018
