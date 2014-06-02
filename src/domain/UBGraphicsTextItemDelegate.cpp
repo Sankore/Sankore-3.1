@@ -731,6 +731,9 @@ void UBGraphicsTextItemDelegate::setAlignmentToRight()
 
 void UBGraphicsTextItemDelegate::addLink()
 {
+    QString selectedText = delegated()->textCursor().selectedText();
+    mLinkPalette->setText(selectedText);
+    mLinkPalette->setLink("");
     mLinkPalette->show();
 }
 

@@ -22,8 +22,10 @@ public:
     QString text() const;
 
     void setPos(QPoint pos);
+    void setText(QString text);
+    void setLink(QString link);
 
-    signals:
+signals:
         void validationRequired();
 
 protected:

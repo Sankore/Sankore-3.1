@@ -37,6 +37,16 @@ void UBCreateHyperLinkPalette::setPos(QPoint pos)
     move(pos);
 }
 
+void UBCreateHyperLinkPalette::setText(QString text)
+{
+    mTextInput->setText(text);
+}
+
+void UBCreateHyperLinkPalette::setLink(QString link)
+{
+    mLinkInput->setText(link);
+}
+
 UBCreateHyperLinkPalette::~UBCreateHyperLinkPalette()
 {
 
