@@ -481,11 +481,6 @@ QVariant UBDocumentTreeModel::data(const QModelIndex &index, int role) const
             return QBrush(0xD9DFEB);
         }
 
-        qDebug() << "Background: " << mHighLighted;
-        //qDebug() << (index == mHighLighted);
-
-        //qDebug() << (index.model() == this);
-
         if (mHighLighted.isValid() && index == mHighLighted) {
             return QBrush(0x6682B5);
         }
@@ -1777,8 +1772,6 @@ void UBDocumentController::TreeViewSelectionChanged(const QModelIndex &current, 
     //if the selection contains more than one object, don't show the thumbnail.
     //We have just to pass a null proxy to disable the display of thumbnail
     UBDocumentProxy *currentDocumentProxy = 0;
-
-    qDebug() << mDocumentUI->documentTreeView->selectionModel()->selectedRows(0).size();
 
     if(current_index.isValid() && mDocumentUI->documentTreeView->selectionModel()->selectedRows(0).size() == 1){
         currentDocumentProxy = docModel->proxyData(current_index);
