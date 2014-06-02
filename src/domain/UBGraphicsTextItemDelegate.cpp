@@ -808,6 +808,8 @@ void UBGraphicsTextItemDelegate::setEditable(bool editable)
         delegated()->setTextInteractionFlags(Qt::NoTextInteraction);
         mDelegated->setData(UBGraphicsItemData::ItemEditable, QVariant(false));
     }
+
+    mToolBarItem->setEnabled(editable); // ALTI/AOU - 20140602 : make toolbar inactive when TextEditor is not Editable.
 }
 
 void UBGraphicsTextItemDelegate::remove(bool canUndo)
