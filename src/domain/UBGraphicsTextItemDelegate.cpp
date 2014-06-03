@@ -739,12 +739,43 @@ void UBGraphicsTextItemDelegate::addLink()
 
 void UBGraphicsTextItemDelegate::insertLink()
 {
-    QString link = mLinkPalette->link();
-    if (!link.startsWith("http://"))
-        link = "http://" + link;
-
     if (!(mLinkPalette->text().isEmpty() || mLinkPalette->link().isEmpty()))
-        delegated()->textCursor().insertHtml(QString("<a href=\"%1\">%2</a>").arg(link, mLinkPalette->text()));
+    {
+        QString link = mLinkPalette->link();
+        if (!link.startsWith("http://"))
+            link = "http://" + link;
+
+        int oldPosCursor = delegated()->textCursor().position();
+
+        // Create a Format for the link :
+        QTextCharFormat linkFormat;
+        linkFormat.setAnchor(true);
+        linkFormat.setAnchorHref(link);
+        delegated()->textCursor().mergeCharFormat(linkFormat);
+
+        // Insert the Link text :
+        delegated()->textCursor().insertText(mLinkPalette->text());
+        int newPosCursor = delegated()->textCursor().position();
+
+        // Apply the "Link Format" to the "Link Text" :
+        QTextCursor cursor = delegated()->textCursor();
+        cursor.setPosition(oldPosCursor);
+        cursor.setPosition(newPosCursor, QTextCursor::KeepAnchor);
+        cursor.mergeCharFormat(linkFormat);
+
+        // Trick to refresh text. Without this, the link is not displayed.
+        alternHtmlMode();
+        alternHtmlMode();
+
+        // Restore cursor position to the end of the link :
+        cursor.setPosition(newPosCursor);
+
+        // Apply the new QTextCursor to the text :
+        delegated()->setTextCursor(cursor);
+
+        // Add a non-breakable space, so user will be able to enter text without "link format"
+        delegated()->textCursor().insertHtml("&nbsp");
+    }
 
     mLinkPalette->hide();
 
