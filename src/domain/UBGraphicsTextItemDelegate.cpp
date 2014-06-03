@@ -160,7 +160,6 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
     connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
-    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(showMenuTable()));
 
     QMenu *menu = new QMenu();
 
