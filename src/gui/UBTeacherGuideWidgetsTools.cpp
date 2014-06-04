@@ -1245,6 +1245,7 @@ UBTGFileWidget * UBTGFileWidget::clone() const
 
     copy->mpTitreFichier->setText(mpTitreFichier->text());
     copy->mpNomFichier->setText(mpNomFichier->text());
+    copy->setPath(path());
 
     return copy;
 }
