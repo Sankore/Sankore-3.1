@@ -6,7 +6,7 @@ UBCellPropertiesPalette::UBCellPropertiesPalette(QWidget *parent) :
     UBFloatingPalette(Qt::TopLeftCorner, parent)
     , mVLayout(new QVBoxLayout(this))
     , mWidthLayout(new QHBoxLayout(this))
-    , mWidthLabel(new QLabel(tr("Width :"), this))
+    , mWidthLabel(new QLabel(tr("Width (%) :"), this))
     , mWidthInput(new QSpinBox(this))
     , mValidateButton(new QPushButton(tr("Validate"),this))
     , mClosePixmap(QPixmap(":/images/close.svg"))

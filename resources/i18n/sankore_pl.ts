@@ -1393,11 +1393,11 @@
 <context>
     <name>UBCellPropertiesPalette</name>
     <message>
-        <source>Width :</source>
+        <source>Validate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Validate</source>
+        <source>Width (%) :</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
