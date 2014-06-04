@@ -68,13 +68,8 @@ void UBGraphicsFreehandItem::copyItemParameters(UBItem *copy) const
                 cp->Delegate()->setAction(Delegate()->action());
         }
 
-        if(cp->hasFillingProperty()){
-            cp->setBrush(brush());
-        }
-
-        if(cp->hasStrokeProperty()){
-            cp->setPen(pen());
-        }
+        cp->setBrush(brush());
+        cp->setPen(pen());
 
         cp->setIsInCreationMode(false); // don't show handles for the copy.
 
