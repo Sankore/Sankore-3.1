@@ -353,7 +353,7 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(mainWindow->actionCheckUpdate, SIGNAL(triggered()), applicationController, SLOT(checkUpdateRequest()));
 
 
-
+    toolBarDisplayTextChanged(UBSettings::settings()->appToolBarDisplayText->get());
     toolBarPositionChanged(UBSettings::settings()->appToolBarPositionedAtTop->get());
 
     bool bUseMultiScreen = UBSettings::settings()->appUseMultiscreen->get().toBool();
