@@ -816,7 +816,9 @@ QModelIndex UBDocumentTreeModel::pIndexForNode(const QModelIndex &parent, UBDocu
 void UBDocumentTreeModel::copyIndexToNewParent(const QModelIndexList &list, const QModelIndex &newParent, eCopyMode pMode)
 {
     for(int i = 0; i < list.size(); i++){
-        copyIndexToNewParent(list.at(i), newParent, pMode);
+        if(list.at(i).column() == 0){
+            copyIndexToNewParent(list.at(i), newParent, pMode);
+        }
     }
 }
 //N/C - NNE - 20140411 : END
