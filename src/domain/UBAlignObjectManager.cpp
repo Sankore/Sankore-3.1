@@ -38,12 +38,19 @@ void UBAlignObjectManager::alignToLeft() const
         QVector<int> leftPoints(selectedItems.size());
         QGraphicsItem* reference = 0;
 
-        int mostLeft = 0;
+        QGraphicsItem *item = selectedItems.at(0);
+
+        QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+
+        p.translate(item->pos().toPoint());
+
+        //find the left point (for compute the delta at the end of the function)
+        int mostLeft = p.boundingRect().left();
 
         for(int i = 0; i < selectedItems.size(); i++){
-            QGraphicsItem *item = selectedItems.at(i);
+            item = selectedItems.at(i);
 
-            QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+            p = item->transform().mapToPolygon(item->boundingRect().toRect());
 
             p.translate(item->pos().toPoint());
 
@@ -89,13 +96,21 @@ void UBAlignObjectManager::alignToRight() const
     if(selectedItems.size() > 0){
         QVector<int> rightPoints(selectedItems.size());
 
-        int mostRight = 0;
+        QGraphicsItem * item = selectedItems.at(0);
+
+        QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+
+        p.translate(item->pos().toPoint());
+
+        //find the left point (for compute the delta at the end of the function)
+        int mostRight = p.boundingRect().right();
+
         QGraphicsItem * reference = 0;
 
         for(int i = 0; i < selectedItems.size(); i++){
-            QGraphicsItem * item = selectedItems.at(i);
+            item = selectedItems.at(i);
 
-            QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+            p = item->transform().mapToPolygon(item->boundingRect().toRect());
 
             p.translate(item->pos().toPoint());
 
@@ -141,13 +156,20 @@ void UBAlignObjectManager::alignToTop() const
     if(selectedItems.size() > 0){
         QVector<int> topPoints(selectedItems.size());
 
-        int mostTop = 0;
+        QGraphicsItem *item = selectedItems.at(0);
+
+        QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+
+        p.translate(item->pos().toPoint());
+
+        int mostTop = p.boundingRect().top();
+
         QGraphicsItem *reference = 0;
 
         for(int i = 0; i < selectedItems.size(); i++){
-            QGraphicsItem *item = selectedItems.at(i);
+            item = selectedItems.at(i);
 
-            QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+            p = item->transform().mapToPolygon(item->boundingRect().toRect());
 
             p.translate(item->pos().toPoint());
 
@@ -193,13 +215,21 @@ void UBAlignObjectManager::alignToBottom() const
     if(selectedItems.size() > 0){
         QVector<int> bottomPoints(selectedItems.size());
 
-        int mostBottom = 0;
+        //The first element is used to initialize the ref bottom
+        QGraphicsItem *item = selectedItems.at(0);
+
+        QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+
+        p.translate(item->pos().toPoint());
+
+        int mostBottom = p.boundingRect().bottom();
+
         QGraphicsItem *reference = 0;
 
         for(int i = 0; i < selectedItems.size(); i++){
-            QGraphicsItem *item = selectedItems.at(i);
+            item = selectedItems.at(i);
 
-            QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+            p = item->transform().mapToPolygon(item->boundingRect().toRect());
 
             p.translate(item->pos().toPoint());
 
@@ -244,18 +274,28 @@ void UBAlignObjectManager::verticalAlign() const
     if(selectedItems.size() > 0){
         QVector<int> verticalPoints(selectedItems.size());
 
-        int mostVertical = 0;
+        QGraphicsItem *item = selectedItems.at(0);
+
+        QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+
+        p.translate(item->pos().toPoint());
+
+        int x_max = p.boundingRect().right();
+        int x_min = p.boundingRect().left();
+
+        int mostVertical = x_min + (x_max - x_min) / 2;
+
         QGraphicsItem *reference = 0;
 
         for(int i = 0; i < selectedItems.size(); i++){
-            QGraphicsItem *item = selectedItems.at(i);
+            item = selectedItems.at(i);
 
-            QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+            p = item->transform().mapToPolygon(item->boundingRect().toRect());
 
             p.translate(item->pos().toPoint());
 
-            int x_max = p.boundingRect().right();
-            int x_min = p.boundingRect().left();
+            x_max = p.boundingRect().right();
+            x_min = p.boundingRect().left();
 
             int x_vertical = x_min + (x_max - x_min) / 2;
 
@@ -298,18 +338,28 @@ void UBAlignObjectManager::horizontalAlign() const
     if(selectedItems.size() > 0){
         QVector<int> verticalPoints(selectedItems.size());
 
-        int mostVertical = 0;
+        QGraphicsItem *item = selectedItems.at(0);
+
+        QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+
+        p.translate(item->pos().toPoint());
+
+        int y_max = p.boundingRect().bottom();
+        int y_min = p.boundingRect().top();
+
+        int mostVertical = y_min + (y_max - y_min) / 2;
+
         QGraphicsItem *reference = 0;
 
         for(int i = 0; i < selectedItems.size(); i++){
-            QGraphicsItem *item = selectedItems.at(i);
+            item = selectedItems.at(i);
 
-            QPolygon p = item->transform().mapToPolygon(item->boundingRect().toRect());
+            p = item->transform().mapToPolygon(item->boundingRect().toRect());
 
             p.translate(item->pos().toPoint());
 
-            int y_max = p.boundingRect().bottom();
-            int y_min = p.boundingRect().top();
+            y_max = p.boundingRect().bottom();
+            y_min = p.boundingRect().top();
 
             int y_vertical = y_min + (y_max - y_min) / 2;
 
