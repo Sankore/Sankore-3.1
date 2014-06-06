@@ -68,14 +68,14 @@ void UBFeaturesComputingThread::scanFS(const QUrl & currentPath
         }
 
         QString fullFileName = fileInfo->absoluteFilePath();
-        //qDebug() << fullFileName;
         UBFeatureElementType featureType;
+        /* ALTI/AOU - 20140606 : RichTextEditor isn't available anymore in the library.
         if (fullFileName.contains("Texte Enrichi.wgt")){
             featureType = FEATURE_RTE;
             UBFeaturesController::setRTEIsLoaded(true);
         }
-        else
-            featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
+        else*/
+        featureType = UBFeaturesController::fileTypeFromUrl(fullFileName);
 
         QString fileName = fileInfo->fileName();
 

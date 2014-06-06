@@ -74,7 +74,7 @@ UBDrawingController::UBDrawingController(QObject * parent)
     connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered(bool)), this, SLOT(pointerToolSelected(bool)));
     connect(UBApplication::mainWindow->actionLine, SIGNAL(triggered(bool)), this, SLOT(lineToolSelected(bool)));
     connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(textToolSelected(bool)));
-    connect(UBApplication::mainWindow->actionRichTextEditor, SIGNAL(triggered(bool)), this, SLOT(richTextToolSelected(bool)));
+    //connect(UBApplication::mainWindow->actionRichTextEditor, SIGNAL(triggered(bool)), this, SLOT(richTextToolSelected(bool))); ALTI/AOU - 20140606 : RichTextEditor tool isn't available anymore.
     connect(UBApplication::mainWindow->actionCapture, SIGNAL(triggered(bool)), this, SLOT(captureToolSelected(bool)));
 
     //EV-7 - NNE - 20140210 : Maybe is no the right place to do this...
@@ -162,8 +162,10 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionLine->setChecked(true);
         else if (mStylusTool == UBStylusTool::Text)
             UBApplication::mainWindow->actionText->setChecked(true);
+        /* ALTI/AOU - 20140606 : RichTextEditor tool isn't available anymore.
         else if (mStylusTool == UBStylusTool::RichText)
             UBApplication::mainWindow->actionRichTextEditor->setChecked(true);
+        */
         else if (mStylusTool == UBStylusTool::Capture)
             UBApplication::mainWindow->actionCapture->setChecked(true);
 

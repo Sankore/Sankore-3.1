@@ -795,7 +795,7 @@ void UBFeaturesCentralWidget::scanFinished()
 {
     hideAdditionalData();
     UBFeaturesController::setRTEIsLoaded(true);
-    UBApplication::mainWindow->actionRichTextEditor->setEnabled(true);
+    // UBApplication::mainWindow->actionRichTextEditor->setEnabled(true); ALTI/AOU - 20140606 : RichTextEditor tool isn't available  anymore.
 }
 
 UBFeaturesNewFolderDialog::UBFeaturesNewFolderDialog(QWidget *parent) : QWidget(parent)
