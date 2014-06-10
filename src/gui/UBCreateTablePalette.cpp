@@ -24,8 +24,8 @@ UBCreateTablePalette::UBCreateTablePalette(QWidget *parent) :
     mColumnsLayout->addWidget(mColumnsLabel);
     mColumnsLayout->addWidget(mColumnsInput);
 
-    mVLayout->addItem(mLinesLayout);
     mVLayout->addItem(mColumnsLayout);
+    mVLayout->addItem(mLinesLayout);
     mVLayout->addWidget(mValidateButton);
 
     mVLayout->setMargin(mClosePixmap.width());
