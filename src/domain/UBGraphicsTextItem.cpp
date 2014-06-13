@@ -292,6 +292,8 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    Delegate()->frame()->setZValue(0); // ALTI/AOU - 20140610 : some widgets have to appear on top of the DelegateFrame.
+
     if (mBackgroundColor != Qt::transparent && !mHtmlIsInterpreted)
     {
         painter->setPen(Qt::transparent);

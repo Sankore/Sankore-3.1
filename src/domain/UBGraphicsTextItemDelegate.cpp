@@ -55,14 +55,17 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     UBGraphicsProxyWidget* w = UBApplication::boardController->activeScene()->addWidget(mTablePalette);
     w->setParentItem(delegated());
     w->hide();
-
+    w->setZValue(1); // ALTI/AOU - 20140610 : this widget appears on top of DelegateFrame and TextEditor Menu.
+	
     UBGraphicsProxyWidget* w2 = UBApplication::boardController->activeScene()->addWidget(mLinkPalette);
     w2->setParentItem(delegated());
     w2->hide();
+    w2->setZValue(1);   // ALTI/AOU - 20140610 : this widget appears on top of DelegateFrame and TextEditor Menu.
 
     UBGraphicsProxyWidget* w3 = UBApplication::boardController->activeScene()->addWidget(mCellPropertiesPalette);
     w3->setParentItem(delegated());
     w3->hide();
+    w3->setZValue(1);   // ALTI/AOU - 20140610 : this widget appears on top of DelegateFrame and TextEditor Menu.
 
     delegated()->setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     delegated()->setPlainText("");
