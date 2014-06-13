@@ -169,7 +169,7 @@ DelegateMenuButton::DelegateMenuButton(const QString & fileName, QGraphicsItem* 
 
 void DelegateMenuButton::setMenu(QMenu *menu)
 {
-    mMenuProxy = new QGraphicsProxyWidget(parentItem());
+    mMenuProxy = new UBGraphicsProxyWidget(this->parentItem());
 
     mMenuProxy->setWidget(menu);
 }

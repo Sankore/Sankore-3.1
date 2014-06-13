@@ -164,7 +164,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
     connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
 
-    QMenu *menu = new QMenu(0);
+    QMenu *menu = new QMenu();
 
     menu->addAction(QIcon(":/images/textEditor/add-table.png"), tr("Insert table"), this, SLOT(setTableSize()))->setIconVisibleInMenu(true);
 
@@ -191,13 +191,13 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mTableButton->setMenu(menu);
 
     //update the position of the menu and the sub menu
-    //menu->show();
+    menu->show();
     menu->hide();
 
-    //columnMenu->show();
+    columnMenu->show();
     columnMenu->hide();
 
-    //rowMenu->show();
+    rowMenu->show();
     rowMenu->hide();
 
     QList<QGraphicsItem*> itemsOnToolBar;
