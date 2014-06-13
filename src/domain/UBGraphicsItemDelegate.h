@@ -116,7 +116,7 @@ protected:
     void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
 
 private:
-    UBGraphicsProxyWidget *mMenuProxy;
+    QGraphicsProxyWidget *mMenuProxy;
 };
 
 //N/C - NNE - 20140529

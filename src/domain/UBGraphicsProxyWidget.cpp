@@ -7,7 +7,4 @@ UBGraphicsProxyWidget::UBGraphicsProxyWidget(QGraphicsItem *parent, Qt::WindowFl
 
 UBGraphicsProxyWidget::~UBGraphicsProxyWidget()
 {
-    int i = 0;
-    if (i == 0)
-        i++;
 }
