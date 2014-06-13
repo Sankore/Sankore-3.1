@@ -2402,6 +2402,10 @@ Syöttämällä uuden nimen luodaan uusi dokumentti.</translation>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

@@ -2402,6 +2402,10 @@ Izen berri bat ezarriz, dokumentu berri bat sortuko duzu.
         <source>Row</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

@@ -2415,6 +2415,10 @@ Un nuvellu nome ferà un ducumentu novu.</translation>
         <source>Row</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

@@ -2401,6 +2401,10 @@ Raha omena anarana vaovao dia hisy rakitra iray vaovao.</translation>
         <source>Row</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

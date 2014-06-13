@@ -146,6 +146,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void deleteColumn();
         void deleteRow();
         void applyCellProperties();
+        void distributeColumn();
 private:
       const int delta;
       void insertList(QTextListFormat::Style format);

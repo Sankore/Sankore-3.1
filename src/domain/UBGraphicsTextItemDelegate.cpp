@@ -183,6 +183,8 @@ void UBGraphicsTextItemDelegate::buildButtons()
 
     menu->addAction(QIcon(":/images/textEditor/cell-properties.png"), tr("Cell properties"), this, SLOT(setCellProperties()))->setIconVisibleInMenu(true);
 
+    menu->addAction(QIcon(), tr("Evenly distributes the column"), this, SLOT(distributeColumn()))->setIconVisibleInMenu(true);
+
     mTableButton->setMenu(menu);
 
     //update the position of the menu and the sub menu
@@ -685,6 +687,16 @@ void UBGraphicsTextItemDelegate::setCellProperties()
     mCellPropertiesPalette->show();
     mTablePalette->hide();
     mLinkPalette->hide();
+}
+
+void UBGraphicsTextItemDelegate::distributeColumn()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->distributeColumn();
+    }
+
+    delegated()->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::applyCellProperties()
