@@ -2412,6 +2412,10 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
         <source>Row</source>
         <translation>Ligne</translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

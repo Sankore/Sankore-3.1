@@ -106,10 +106,64 @@ void UBGraphicsTextItem::insertColumn(bool onRight)
     QTextTable* t = textCursor().currentTable();
     if (t)
     {
-        if (onRight)
-            t->insertColumns(t->cellAt(textCursor()).column()+1, 1);
-        else
-            t->insertColumns(t->cellAt(textCursor()).column(), 1);
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        //the reference size is the current column where the cursor is
+        qreal widthColumn = width.at(t->cellAt(textCursor()).column()).rawValue();
+
+        qreal w = 100 + widthColumn;
+
+        QVector<QTextLength> newWidth;
+
+        for(int i = 0; i < width.size(); i++){
+            qreal currentWidth = width.at(i).rawValue();
+
+            newWidth.push_back(QTextLength(QTextLength::PercentageLength, currentWidth / w * 100));
+        }
+
+
+        if (onRight){
+            int pos = t->cellAt(textCursor()).column()+1;
+            newWidth.insert(pos, QTextLength(QTextLength::PercentageLength, widthColumn / w *100));
+            t->insertColumns(pos, 1);
+        }else{
+            int pos = t->cellAt(textCursor()).column();
+            newWidth.insert(pos, QTextLength(QTextLength::PercentageLength, widthColumn / w *100));
+            t->insertColumns(pos, 1);
+        }
+
+        //Apply the new constaints
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
+    }
+}
+
+void UBGraphicsTextItem::distributeColumn()
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        QVector<QTextLength> newWidth;
+
+        const qreal w = 100.f / width.size();
+
+        for(int i = 0; i < width.size(); i++){
+            newWidth.push_back(QTextLength(QTextLength::PercentageLength, w));
+        }
+
+        //Apply the new constaints
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
     }
 }
 
@@ -130,7 +184,32 @@ void UBGraphicsTextItem::deleteColumn()
     QTextTable* t = textCursor().currentTable();
     if (t)
     {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        //the reference size is the current column where the cursor is
+        qreal widthColumn = width.at(t->cellAt(textCursor()).column()).rawValue();
+
+        qreal w = 100 - widthColumn;
+
+        QVector<QTextLength> newWidth;
+
+        for(int i = 0; i < width.size(); i++){
+            qreal currentWidth = width.at(i).rawValue();
+
+            newWidth.push_back(QTextLength(QTextLength::PercentageLength, currentWidth / w * 100));
+        }
+
+        newWidth.remove(t->cellAt(textCursor()).column());
+
         t->removeColumns(t->cellAt(textCursor()).column(), 1);
+
+        //Apply the new constaints
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
     }
 }
 
@@ -149,12 +228,29 @@ void UBGraphicsTextItem::setCellWidth(int percent)
     QTextTable* t = textCursor().currentTable();
     if (t)
     {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        int column = t->cellAt(textCursor()).column();
+        qreal remainingSpace = 100 - percent;
+        qreal oldRemaingSpace = 100 - width.at(column).rawValue();
+
+        QVector<QTextLength> newWidth;
+
+        for(int i = 0; i < width.size(); i++){
+            if(i != column){
+                qreal currentWidth = width.at(i).rawValue();
+
+                newWidth.push_back(QTextLength(QTextLength::PercentageLength, currentWidth / oldRemaingSpace * remainingSpace));
+            }
+        }
+
+        newWidth.insert(column, QTextLength(QTextLength::PercentageLength, percent));
+
         QTextTableFormat f = t->format();
         f.clearColumnWidthConstraints();
         f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
-        QVector<QTextLength> constraints = t->format().columnWidthConstraints();
-        constraints.replace(t->cellAt(textCursor()).column(), QTextLength(QTextLength::PercentageLength, percent));
-        f.setColumnWidthConstraints(constraints);
+        f.setColumnWidthConstraints(newWidth);
         t->setFormat(f);
     }
 }

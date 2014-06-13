@@ -2404,6 +2404,10 @@ Als u een nieuwe naam geeft, wordt een nieuw document gemaakt.</translation>
         <source>Row</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

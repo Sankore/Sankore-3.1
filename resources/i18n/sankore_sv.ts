@@ -2402,6 +2402,10 @@ Om ett nytt namn ges kommer ett nytt dokument att skapas.</translation>
         <source>Row</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Evenly distributes the column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsWidgetItem</name>

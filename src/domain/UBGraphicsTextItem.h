@@ -73,6 +73,8 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void setAlignmentToCenter();
         void setAlignmentToRight();        
 
+        void distributeColumn();
+
         bool htmlMode() const;
         void setHtmlMode(const bool mode);
 
