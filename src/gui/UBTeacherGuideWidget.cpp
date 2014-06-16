@@ -1842,14 +1842,17 @@ void UBTeacherResources::onActiveSceneChanged()
     //Refer to the contructor of UBTeacherResources to know why
     //the functions are called in this order.
 
-    if(mEditionWidget->hasUserDataInTeacherGuide()){
-        QVector<tUBGEElementNode*> data = mEditionWidget->getData();
-        mPresentationWidget->showData(data);
-        setCurrentWidget(mPresentationWidget);
-    }
-    else
+    if (UBApplication::boardController->currentPage() > 0)
     {
-        setCurrentWidget(mEditionWidget);
+        if(mEditionWidget->hasUserDataInTeacherGuide()){
+            QVector<tUBGEElementNode*> data = mEditionWidget->getData();
+            mPresentationWidget->showData(data);
+            setCurrentWidget(mPresentationWidget);
+        }
+        else
+        {
+            setCurrentWidget(mEditionWidget);
+        }
     }
 
 }
