@@ -1845,9 +1845,13 @@ void UBTeacherResources::onActiveSceneChanged()
     if(mEditionWidget->hasUserDataInTeacherGuide()){
         QVector<tUBGEElementNode*> data = mEditionWidget->getData();
         mPresentationWidget->showData(data);
+        setCurrentWidget(mPresentationWidget);
+    }
+    else
+    {
+        setCurrentWidget(mEditionWidget);
     }
 
-    setCurrentWidget(mPresentationWidget);
 }
 
 void UBTeacherResources::showPresentationMode()
