@@ -208,6 +208,7 @@ public slots:
     void onUpButton();
     void onDownButton();
     void onClose();
+    void onTitleChanged();
 
 protected:
     void dragEnterEvent(QDragEnterEvent* event);

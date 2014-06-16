@@ -648,8 +648,17 @@ void UBTGMediaWidget::onClose()
     int index = parent->indexOfChild(mpTreeWidgetItem);
 
     delete parent->takeChild(index);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 //N/C - NNE - 20140328 : END
+
+void UBTGMediaWidget::onTitleChanged()
+{
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
+}
 
 UBTGMediaWidget::~UBTGMediaWidget()
 {
@@ -805,6 +814,7 @@ void UBTGMediaWidget::createWorkWidget(bool forceFlashMediaType)
             mpMediaLayout = new QHBoxLayout;
             mpLayout->addLayout(mpMediaLayout);
             mpWorkWidget->setLayout(mpLayout);
+            connect(mpTitle, SIGNAL(textChanged()), this, SLOT(onTitleChanged()));
         }
         else{
             mpMediaLayout = new QHBoxLayout(mpWorkWidget);
