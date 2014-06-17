@@ -192,6 +192,9 @@ void UBTGActionWidget::onClose()
     int index = parent->indexOfChild(mpTreeWidgetItem);
 
     delete parent->takeChild(index);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 //N/C - NNE - 20140328 : END
 
@@ -1034,6 +1037,9 @@ void UBTGUrlWidget::onClose()
     int index = parent->indexOfChild(mTreeWidgetItem);
 
     delete parent->takeChild(index);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 tUBGEElementNode* UBTGUrlWidget::saveData()
@@ -1278,6 +1284,9 @@ void UBTGFileWidget::onClose()
     int index = parent->indexOfChild(mTreeWidgetItem);
 
     delete parent->takeChild(index);
+
+    //notify that the teacher guide edition has been changed
+    UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->teacherGuideEditionWidget()->teacherGuideChanged();
 }
 
 // Fin Issue 1683 (Evolution) - AOU - 20131206
