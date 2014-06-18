@@ -680,6 +680,16 @@ void UBGraphicsTextItemDelegate::deleteRow()
 
 void UBGraphicsTextItemDelegate::setCellProperties()
 {
+    // Initialize CellPropoertiesPalette "Width" field with current cell width :
+    QTextTable* t = delegated()->textCursor().currentTable();
+    if (t)
+    {
+        QVector<QTextLength> widths = t->format().toTableFormat().columnWidthConstraints();
+        int columnIndex = t->cellAt(delegated()->textCursor()).column();
+        qreal val = widths.at(columnIndex).rawValue();
+        mCellPropertiesPalette->setWidth(qRound(val));
+    }
+
     mCellPropertiesPalette->show();
     mTablePalette->hide();
     mLinkPalette->hide();

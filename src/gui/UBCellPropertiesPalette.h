@@ -18,6 +18,7 @@ public:
     ~UBCellPropertiesPalette();
 
     int width() const;
+    void setWidth(int value);
 
     void setPos(QPoint pos);
 

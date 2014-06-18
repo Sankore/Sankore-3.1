@@ -44,6 +44,11 @@ int UBCellPropertiesPalette::width() const
     return mWidthInput->value();
 }
 
+void UBCellPropertiesPalette::setWidth(int value)
+{
+    mWidthInput->setValue(value);
+}
+
 void UBCellPropertiesPalette::paintEvent(QPaintEvent *event)
 {
     UBFloatingPalette::paintEvent(event);
