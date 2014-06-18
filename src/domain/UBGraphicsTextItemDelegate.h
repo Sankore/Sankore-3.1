@@ -96,7 +96,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         DelegateButton* mAddIndentButton;
         DelegateButton* mRemoveIndentButton;
         DelegateButton* mHyperLinkButton;
-        DelegateMenuButton* mTableButton;
+        DelegateButton* mTableButton;
 
         UBCreateTablePalette* mTablePalette;
         UBCreateHyperLinkPalette* mLinkPalette;
@@ -113,6 +113,8 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 
         QFont createDefaultFont();
         QAction *mEditableAction;
+
+        QMenu * mTableMenu;
 
     private slots:
 
@@ -147,6 +149,8 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void deleteRow();
         void applyCellProperties();
         void distributeColumn();
+        void showMenuTable();
+
 private:
       const int delta;
       void insertList(QTextListFormat::Style format);

@@ -38,6 +38,7 @@
 #include "core/UBSettings.h"
 
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 
 #include "core/memcheck.h"
 
@@ -143,8 +144,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
     mAddIndentButton = new DelegateButton(":/images/textEditor/indent.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mRemoveIndentButton = new DelegateButton(":/images/textEditor/unindent.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mHyperLinkButton = new DelegateButton(":/images/textEditor/link.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-
-    mTableButton = new DelegateMenuButton(":/images/textEditor/table.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mTableButton = new DelegateButton(":/images/textEditor/table.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
     connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
@@ -163,36 +163,29 @@ void UBGraphicsTextItemDelegate::buildButtons()
     connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
     connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
     connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
+    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(showMenuTable()));
 
-    QMenu *menu = new QMenu();
+    // Create actions and subMenus of the "Table" menu :
+    mTableMenu = new QMenu();
 
-    menu->addAction(QIcon(":/images/textEditor/add-table.png"), tr("Insert table"), this, SLOT(setTableSize()))->setIconVisibleInMenu(true);
+    mTableMenu->addAction(QIcon(":/images/textEditor/add-table.png"), tr("Insert table"), this, SLOT(setTableSize()))->setIconVisibleInMenu(true);
 
-    QMenu *columnMenu = menu->addMenu(tr("Column"));
-
+    QMenu *columnMenu = mTableMenu->addMenu(tr("Column"));
     columnMenu->addAction(QIcon(":/images/textEditor/insert-column-left.png"), tr("Insert column after"), this, SLOT(insertColumnOnRight()))->setIconVisibleInMenu(true);
-
     columnMenu->addAction(QIcon(":/images/textEditor/insert-column-right.png"), tr("Insert column before"), this, SLOT(insertColumnOnLeft()))->setIconVisibleInMenu(true);
-
     columnMenu->addAction(QIcon(":/images/textEditor/delete-column.png"), tr("Delete column"), this, SLOT(deleteColumn()))->setIconVisibleInMenu(true);
 
-    QMenu *rowMenu = menu->addMenu(tr("Row"));
-
+    QMenu *rowMenu = mTableMenu->addMenu(tr("Row"));
     rowMenu->addAction(QIcon(":/images/textEditor/insert-row-top.png"), tr("Insert row after"), this, SLOT(insertRowOnBottom()))->setIconVisibleInMenu(true);
-
     rowMenu->addAction(QIcon(":/images/textEditor/insert-row-bottom.png"), tr("Insert row before"), this, SLOT(insertRowOnTop()))->setIconVisibleInMenu(true);
-
     rowMenu->addAction(QIcon(":/images/textEditor/delete-row.png"), tr("Delete row"), this, SLOT(deleteRow()))->setIconVisibleInMenu(true);
 
-    menu->addAction(QIcon(":/images/textEditor/cell-properties.png"), tr("Cell properties"), this, SLOT(setCellProperties()))->setIconVisibleInMenu(true);
-
-    menu->addAction(QIcon(), tr("Evenly distributes the column"), this, SLOT(distributeColumn()))->setIconVisibleInMenu(true);
-
-    mTableButton->setMenu(menu);
+    mTableMenu->addAction(QIcon(":/images/textEditor/cell-properties.png"), tr("Cell properties"), this, SLOT(setCellProperties()))->setIconVisibleInMenu(true);
+    mTableMenu->addAction(QIcon(), tr("Evenly distributes the column"), this, SLOT(distributeColumn()))->setIconVisibleInMenu(true);
 
     //update the position of the menu and the sub menu
-    menu->show();
-    menu->hide();
+    mTableMenu->show();
+    mTableMenu->hide();
 
     columnMenu->show();
     columnMenu->hide();
@@ -700,6 +693,30 @@ void UBGraphicsTextItemDelegate::distributeColumn()
     }
 
     delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::showMenuTable()
+{
+    // Position of the delegated Text Editor :
+    QPointF p = delegated()->pos();
+
+    // Take in account translations applied to the Text Editor :
+    p = delegated()->transform().map(p);
+
+    // Map Scene position to View position :
+    p = UBApplication::boardController->controlView()->mapFromScene(p);
+
+    // Adjust position : show the menu near the button :
+    p.setX(p.x() + mTableButton->pos().x() + mTableButton->boundingRect().size().width());
+
+    // Take in account the toolbar :
+    if(UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())
+    {
+        p.setY(p.y() + UBApplication::app()->toolBarHeight());
+    }
+
+    // Show the menu :
+    mTableMenu->exec(p.toPoint(), mTableMenu->actions().first());
 }
 
 void UBGraphicsTextItemDelegate::applyCellProperties()

@@ -78,6 +78,8 @@ class DelegateButton: public QGraphicsSvgItem
 
         void modified();
 
+        QGraphicsItem* delegated() {return mDelegated;}
+
 private slots:
         void startShowProgress();
 
@@ -97,26 +99,6 @@ private slots:
         void clicked (bool checked = false);
         void longClicked();
 
-};
-
-class DelegateMenuButton : public DelegateButton
-{
-    Q_OBJECT
-
-public:
-    DelegateMenuButton(const QString & fileName, QGraphicsItem* pDelegated, QGraphicsItem * parent = 0, Qt::WindowFrameSection section = Qt::TopLeftSection);
-
-    void setMenu(QMenu *menu);
-
-public slots:
-    void showMenu();
-
-protected:
-    void focusOutEvent(QFocusEvent *event);
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
-
-private:
-    UBGraphicsProxyWidget *mMenuProxy;
 };
 
 //N/C - NNE - 20140529
