@@ -2403,7 +2403,7 @@ Hvis du angiver et nyt navn, vil der blive oprettet et nyt dokument.</translatio
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Evenly distributes the column</source>
+        <source>Evenly distribute the columns</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

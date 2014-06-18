@@ -2403,7 +2403,7 @@ Izen berri bat ezarriz, dokumentu berri bat sortuko duzu.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Evenly distributes the column</source>
+        <source>Evenly distribute the columns</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

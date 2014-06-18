@@ -2402,7 +2402,7 @@ Dând un nou nume se va creea un nou document.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Evenly distributes the column</source>
+        <source>Evenly distribute the columns</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

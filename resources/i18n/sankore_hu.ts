@@ -2398,7 +2398,7 @@ Ha ezt a nevet használja, felül fogja írni a dokumentumot.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Evenly distributes the column</source>
+        <source>Evenly distribute the columns</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

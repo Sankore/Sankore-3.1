@@ -181,7 +181,7 @@ void UBGraphicsTextItemDelegate::buildButtons()
     rowMenu->addAction(QIcon(":/images/textEditor/delete-row.png"), tr("Delete row"), this, SLOT(deleteRow()))->setIconVisibleInMenu(true);
 
     mTableMenu->addAction(QIcon(":/images/textEditor/cell-properties.png"), tr("Cell properties"), this, SLOT(setCellProperties()))->setIconVisibleInMenu(true);
-    mTableMenu->addAction(QIcon(), tr("Evenly distributes the column"), this, SLOT(distributeColumn()))->setIconVisibleInMenu(true);
+    mTableMenu->addAction(QIcon(), tr("Evenly distribute the columns"), this, SLOT(distributeColumn()))->setIconVisibleInMenu(true);
 
     //update the position of the menu and the sub menu
     mTableMenu->show();

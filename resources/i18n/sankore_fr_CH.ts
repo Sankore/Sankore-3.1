@@ -2413,8 +2413,8 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
         <translation>Ligne</translation>
     </message>
     <message>
-        <source>Evenly distributes the column</source>
-        <translation type="unfinished"></translation>
+        <source>Evenly distribute the columns</source>
+        <translation>Uniformiser les colonnes</translation>
     </message>
 </context>
 <context>
