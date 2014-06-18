@@ -29,6 +29,8 @@ UBCreateHyperLinkPalette::UBCreateHyperLinkPalette(QWidget *parent) :
 
     setGeometry(QRect(QPoint(), mVLayout->sizeHint()));
 
+    setBackgroundBrush(QColor(183, 183, 183));
+
     connect(mValidateButton, SIGNAL(clicked()), this, SIGNAL(validationRequired()));
 }
 
