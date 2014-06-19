@@ -67,6 +67,7 @@
 #include "UBGraphicsWidgetItem.h"
 #include "UBGraphicsPDFItem.h"
 #include "UBGraphicsTextItem.h"
+#include "UBGraphicsTextItemDelegate.h"
 #include "UBGraphicsStrokesGroup.h"
 
 #include "customWidgets/UBGraphicsItemAction.h"
@@ -2485,13 +2486,26 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                         break;
                     }
                 case UBGraphicsTextItem::Type:
+                {
+                    UBGraphicsTextItem *text_item = dynamic_cast<UBGraphicsTextItem*>(item);
+                    if (0 != text_item)
                     {
-                        UBGraphicsTextItem *text_item = dynamic_cast<UBGraphicsTextItem*>(item);
-                        if (0 != text_item)
                         if (!text_item->hasFocus())
-                            text_item->remove();
-                        break;
+                        {
+                            UBGraphicsTextItemDelegate * textItemDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(text_item->Delegate());
+                            if (textItemDelegate == 0){
+                                text_item->remove();
+                            }
+                            else if (textItemDelegate->tablePalette()->isHidden() // Do not delete TextEditor when pressing Delete/BackSpace in one of those little windows
+                                && textItemDelegate->linkPalette()->isHidden()
+                                && textItemDelegate->cellPropertiesPalette()->isHidden())
+                            {
+                                text_item->remove();
+                            }
+                        }
                     }
+                    break;
+                }
 
                 default:
                     {
