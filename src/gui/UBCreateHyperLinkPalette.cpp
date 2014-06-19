@@ -84,4 +84,12 @@ void UBCreateHyperLinkPalette::mouseReleaseEvent(QMouseEvent * event)
     UBFloatingPalette::mouseReleaseEvent(event);
 }
 
-
+void UBCreateHyperLinkPalette::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter){
+        validationRequired();
+    }
+    if (event->key() == Qt::Key_Escape){
+        close();
+    }
+}

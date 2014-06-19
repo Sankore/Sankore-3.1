@@ -613,9 +613,10 @@ void UBGraphicsTextItemDelegate::insertList(QTextListFormat::Style format)
 
 void UBGraphicsTextItemDelegate::setTableSize()
 {
-    mTablePalette->show();
     mLinkPalette->hide();
     mCellPropertiesPalette->hide();
+    mTablePalette->show();
+    mTablePalette->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::insertColumnOnRight()
@@ -690,9 +691,10 @@ void UBGraphicsTextItemDelegate::setCellProperties()
         mCellPropertiesPalette->setWidth(qRound(val));
     }
 
-    mCellPropertiesPalette->show();
     mTablePalette->hide();
     mLinkPalette->hide();
+    mCellPropertiesPalette->show();
+    mCellPropertiesPalette->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::distributeColumn()
@@ -776,6 +778,7 @@ void UBGraphicsTextItemDelegate::addLink()
     mLinkPalette->setText(selectedText);
     mLinkPalette->setLink("");
     mLinkPalette->show();
+    mLinkPalette->setFocus();
 }
 
 void UBGraphicsTextItemDelegate::insertLink()

@@ -77,4 +77,12 @@ void UBCreateTablePalette::mouseReleaseEvent(QMouseEvent * event)
     UBFloatingPalette::mouseReleaseEvent(event);
 }
 
-
+void UBCreateTablePalette::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter){
+        validationRequired();
+    }
+    else if (event->key() == Qt::Key_Escape){
+        close();
+    }
+}

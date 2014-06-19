@@ -69,4 +69,13 @@ void UBCellPropertiesPalette::mouseReleaseEvent(QMouseEvent * event)
     UBFloatingPalette::mouseReleaseEvent(event);
 }
 
+void UBCellPropertiesPalette::keyPressEvent(QKeyEvent * event)
+{
+    if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return){
+        validationRequired();
+    }
+    else if (event->key() == Qt::Key_Escape){
+        close();
+    }
+}
 

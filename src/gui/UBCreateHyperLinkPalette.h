@@ -31,6 +31,7 @@ signals:
 protected:
     virtual void paintEvent(QPaintEvent *event);
     virtual void mouseReleaseEvent(QMouseEvent * event);
+    virtual void keyPressEvent(QKeyEvent *);
 
 private:
 
