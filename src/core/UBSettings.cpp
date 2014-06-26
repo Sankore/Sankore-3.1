@@ -65,6 +65,9 @@ QString UBSettings::documentDefaultBackgroundImage = QString("defaultBackgroundI
 QString UBSettings::documentDefaultBackgroundImageDisposition = QString("defaultBackgroundImageDisposition");
 // Fin Issue 1684 - ALTI/AOU - 20131210
 
+//Issue N/C - NNE - 20140526
+QString UBSettings::documentTagVersion = QString("versionCreation");
+
 QString UBSettings::trashedDocumentGroupNamePrefix = QString("_Trash:");
 
 QString UBSettings::uniboardDocumentNamespaceUri = "http://uniboard.mnemis.com/document";
@@ -809,6 +812,16 @@ bool UBSettings::isItalicFont()
 void UBSettings::setItalicFont(bool italic)
 {
     setValue("Board/FontIsItalic", italic);
+}
+
+void UBSettings::setUnderlineFont(bool underline)
+{
+    setValue("Board/FontIsUnderline", underline);
+}
+
+bool UBSettings::isUnderlineFont()
+{
+    return value("Board/FontIsUnderline", false).toBool();
 }
 
 

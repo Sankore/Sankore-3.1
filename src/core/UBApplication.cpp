@@ -114,7 +114,6 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing
   , mApplicationTranslator(NULL)
   , mQtGuiTranslator(NULL)
 {
-
     staticMemoryCleaner = new QObject(0); // deleted in UBApplication destructor
 
     setOrganizationName("Sankore");
@@ -352,8 +351,7 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(mainWindow->actionSankoreEditor, SIGNAL(triggered()), applicationController, SLOT(showSankoreEditor()));
     connect(mainWindow->actionCheckUpdate, SIGNAL(triggered()), applicationController, SLOT(checkUpdateRequest()));
 
-
-
+    toolBarDisplayTextChanged(UBSettings::settings()->appToolBarDisplayText->get()); // Issue corrected by 'x49' on GitHub - 20140618 : toolbar text state was not read from configuration.
     toolBarPositionChanged(UBSettings::settings()->appToolBarPositionedAtTop->get());
 
     bool bUseMultiScreen = UBSettings::settings()->appUseMultiscreen->get().toBool();

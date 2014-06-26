@@ -1,4 +1,4 @@
-var listeOptions = ["theme","precision","decalageX","decalageY","epaisseur","grille","axes","echelle","zoom","methode","methode3D","precision3D","maj"];
+var listeOptions = ["theme","precision","decalageX","decalageY","epaisseur","grille","axes","echelle","zoom","methode","methode3D","precision3D"];
 
 function setCookie(nom,valeur){
 	var jours = 545; // Durée de validité des cookies
@@ -43,7 +43,6 @@ function saveOptions(){
 	setCookie("methode",document.getElementById("selectMethodeAffichage").value);
 	setCookie("methode3D",document.getElementById("selectAffichage3D").value);
 	setCookie("precision3D",document.getElementById("inputPrecision3D").value);
-	setCookie("maj",document.getElementById("checkMaJ").checked);
 	document.getElementById("infoSauvegarde").style.display = "block"
 }
 

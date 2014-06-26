@@ -27,6 +27,7 @@ public:
     QPixmap iconToRight() const {return QPixmap(":images/teacherGuideResources_open.png");}
 
     bool isModified();
+    bool hasUserDataInTeacherGuide();
 
 private:
     UBTeacherResources *mTeacherResourceWidget;

@@ -155,7 +155,9 @@ void UBGraphicsGroupContainerItem::addToGroup(QGraphicsItem *item,bool removeAct
 
     foreach(QGraphicsItem* child, item->childItems()){
         if(child->isVisible()){
-            visibleChildrenBoundingRect |= child->boundingRect();
+            QPointF childB = child->boundingRect().topLeft();
+            QRectF rect = QRectF(childB + child->pos(), child->boundingRect().size());
+            visibleChildrenBoundingRect |= rect;
         }
     }
     //issue 1699 - NNE - 20140212 : END

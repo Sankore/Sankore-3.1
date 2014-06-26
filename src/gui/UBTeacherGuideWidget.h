@@ -65,11 +65,13 @@ public:
     QVector<tIDataStorage*> save(int pageIndex);
 
     bool isModified();
+    bool hasUserDataInTeacherGuide();
 
 public slots:
     void onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement* element = 0);
     void onActiveSceneChanged();
     void showEvent(QShowEvent* event);
+    void teacherGuideChanged();
 
 private:
     QList<QTreeWidgetItem*> getChildrenList(QTreeWidgetItem* widgetItem);
@@ -87,7 +89,10 @@ private:
     UBAddItem* mpAddAnActionItem;
     UBAddItem* mpAddAFileItem; //Issue 1716 - ALTI/AOU - 20140128
 
+    bool mIsModified;
+
 private slots:
+    void setIsModified(bool isModified = true);
     void onActiveDocumentChanged();
 
 #ifdef Q_WS_MACX
@@ -150,6 +155,7 @@ public:
 
     QVector<tUBGEElementNode*> getData();
     bool isModified();
+    bool hasUserDataInTeacherGuide();
 
 signals:
     void resized();
@@ -168,6 +174,7 @@ protected:
     void resizeEvent(QResizeEvent* ev);
 
 private:
+    bool mIsModified;
     void fillComboBoxes();
     void loadData();
     void hideEvent(QHideEvent* event);
@@ -256,6 +263,8 @@ private slots:
     // Fin Issue 1683 (Evolution) - AOU - 20131206
     void onActiveDocumentChanged();
     void onScrollAreaRangeChanged(int min, int max); // Issue 1683 - AOU - 20131219 : amélioration présentation du Tree dans ScrollArea, pour gérer les petits écrans.
+
+    void setIsModified(bool isModified = true);
 };
 
 //issue 1517 - NNE - 20131206 : Make the QLabel class clickable
@@ -299,10 +308,16 @@ public:
     ~UBTeacherGuideWidget();
 
     bool isModified();
+    bool hasUserDataInTeacherGuide();
 
     void changeMode();
     void showPresentationMode();
     void onActiveSceneChanged();
+
+    UBTeacherGuideEditionWidget* teacherGuideEditionWidget()
+    {
+        return mpEditionWidget;
+    }
 
 private:
     UBTeacherGuidePageZeroWidget* mpPageZeroWidget;
@@ -318,6 +333,7 @@ public:
     UBTeacherResources(QWidget *parent = 0);
 
     bool isModified();
+    bool hasUserDataInTeacherGuide();
 
     void showPresentationMode();
     void changeMode();

@@ -133,6 +133,7 @@ void UBKeyboardButton::sendUnicodeSymbol(KEYCODE keycode)
         //if (keycode.modifier==6) modifier = 0x6000;
         //if (keycode.modifier==7) modifier = 0x6001;
 
+        //x11SendKey(display, 24 + keyboard->min_keycodes , 0x4000);
         x11SendKey(display, keycode.code + keyboard->min_keycodes , modifier);
     }
 
@@ -268,11 +269,11 @@ void UBKeyboardPalette::onLocaleChanged(UBKeyboardLocale* locale)
                         for(int j1=0; j1<=maxMapOffset; j1++)
                             if (keySyms[i1 * byte_per_code + j1]==NoSymbol)
                             {
+
                                 kc.code =i1;
                                 kc.modifier =j1;
                                 break;
                             }
-
                 }
                 keySyms[kc.code * byte_per_code + kc.modifier] = kc.symbol;
             }

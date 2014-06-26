@@ -78,6 +78,7 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
   , mpTreeWidget(NULL)
   , mpRootWidgetItem(NULL)
   , mpAddAnActionItem(NULL)
+  , mIsModified(false)
 {
     setObjectName(name);
 
@@ -126,13 +127,19 @@ UBTeacherGuideEditionWidget::UBTeacherGuideEditionWidget(QWidget *parent, const 
     mpTreeWidget->header()->setStretchLastSection(false);
     mpTreeWidget->header()->setResizeMode(0, QHeaderView::Stretch);
     mpTreeWidget->header()->setResizeMode(1, QHeaderView::Fixed);
-    mpTreeWidget->header()->setDefaultSectionSize(18);
+
+    //N/C - NNE - 20140401
+    mpTreeWidget->header()->setDefaultSectionSize(40);
+
     mpTreeWidget->setSelectionMode(QAbstractItemView::NoSelection);
     mpTreeWidget->setExpandsOnDoubleClick(false);
 
     connect(mpTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
 
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
+
+    connect(mpPageTitle, SIGNAL(textChanged()), this, SLOT(setIsModified()));
+    connect(mpComment, SIGNAL(textChanged()), this, SLOT(setIsModified()));
 
 #ifdef Q_WS_MAC
     // on mac and with the custom qt the widget on the tree are not automatically relocated when using the vertical scrollbar. To relocate them we link the valueChange signal of the vertical scrollbar with a local signal to trig a change and a repaint of the tree widget
@@ -169,7 +176,8 @@ UBTeacherGuideEditionWidget::~UBTeacherGuideEditionWidget()
 
 void UBTeacherGuideEditionWidget::showEvent(QShowEvent* event)
 {
-    setFocus();
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    //setFocus();
     QWidget::showEvent(event);
 }
 
@@ -178,6 +186,11 @@ void UBTeacherGuideEditionWidget::onActiveDocumentChanged()
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
     if (UBApplication::boardController->pageFromSceneIndex(activeSceneIndex) != 0)
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
+}
+
+void UBTeacherGuideEditionWidget::setIsModified(bool isModified /* = true */)
+{
+    mIsModified = isModified;
 }
 
 #ifdef Q_WS_MAC
@@ -190,7 +203,6 @@ void UBTeacherGuideEditionWidget::onSliderMoved(int size)
 
 void UBTeacherGuideEditionWidget::load(QDomDocument doc)
 {
-    qDebug() << "LOAD UBApplication::boardController->currentPage() " << UBApplication::boardController->currentPage();
     cleanData();
     for (QDomElement element = doc.documentElement().firstChildElement();
          !element.isNull(); element = element.nextSiblingElement()) {
@@ -235,6 +247,8 @@ void UBTeacherGuideEditionWidget::load(QDomDocument doc)
             }
         }
     }
+
+    setIsModified(false);
 }
 
 QVector<tIDataStorage*> UBTeacherGuideEditionWidget::save(int pageIndex)
@@ -289,6 +303,8 @@ void UBTeacherGuideEditionWidget::onActiveSceneChanged()
         if (mpDocumentTitle)
             mpDocumentTitle->setText(documentProxy->metaData(UBSettings::sessionTitle).toString());
     }
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    UBApplication::boardController->controlView()->setFocus();
 }
 
 void UBTeacherGuideEditionWidget::cleanData()
@@ -359,40 +375,48 @@ QVector<tUBGEElementNode*> UBTeacherGuideEditionWidget::getData()
 
 void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
 {
+    setIsModified();
+
     int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
     if (addSubItemWidgetType != eUBTGAddSubItemWidgetType_None) {
         QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(widget);
         newWidgetItem->setData(column, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
         newWidgetItem->setData(1, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
-        newWidgetItem->setIcon(1, QIcon(":images/close.svg"));
+
+        UBTGActionColumn *actionColumn = new UBTGActionColumn(newWidgetItem);
+        mpTreeWidget->setItemWidget(newWidgetItem, 1, actionColumn);
 
         switch (addSubItemWidgetType) {
         case eUBTGAddSubItemWidgetType_Action: {
-            UBTGActionWidget* actionWidget = new UBTGActionWidget(widget);
+            UBTGActionWidget* actionWidget = new UBTGActionWidget(newWidgetItem);
             if (element)
                 actionWidget->initializeWithDom(*element);
+
             mpTreeWidget->setItemWidget(newWidgetItem, 0, actionWidget);
-            break;
-        }
-        case eUBTGAddSubItemWidgetType_Media: {
-            UBTGMediaWidget* mediaWidget = new UBTGMediaWidget(widget);
-            if (element)
-                mediaWidget->initializeWithDom(*element);
-            mpTreeWidget->setItemWidget(newWidgetItem,0, mediaWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), actionWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), actionWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), actionWidget, SLOT(onClose()));
             break;
         }
         case eUBTGAddSubItemWidgetType_Url: {
-            UBTGUrlWidget* urlWidget = new UBTGUrlWidget();
+            UBTGUrlWidget* urlWidget = new UBTGUrlWidget(newWidgetItem);
             if (element)
                 urlWidget->initializeWithDom(*element);
+
             mpTreeWidget->setItemWidget(newWidgetItem, 0, urlWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), urlWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), urlWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), urlWidget, SLOT(onClose()));
             break;
         }
         case eUBTGAddSubItemWidgetType_File: { //Issue 1716 - ALTI/AOU - 20140128
-            UBTGFileWidget* fileWidget = new UBTGFileWidget();
+            UBTGFileWidget* fileWidget = new UBTGFileWidget(newWidgetItem);
             if (element)
                 fileWidget->initializeWithDom(*element);
             mpTreeWidget->setItemWidget(newWidgetItem, 0, fileWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), fileWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), fileWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), fileWidget, SLOT(onClose()));
             break;
         }
         default:
@@ -409,17 +433,19 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
             widget->setExpanded(true);
         }
     }
-    else if (column == 1 && addSubItemWidgetType == eUBTGAddSubItemWidgetType_None) {
-        UBTGMediaWidget* media = dynamic_cast<UBTGMediaWidget*>(mpTreeWidget->itemWidget(widget, 0));
-        if (media)
-            media->removeSource();
-        int index = mpTreeWidget->currentIndex().row();
-        QTreeWidgetItem* toBeDeletedWidgetItem = widget->parent()->takeChild(index);
-        delete toBeDeletedWidgetItem;
-    }
 }
 
 bool UBTeacherGuideEditionWidget::isModified()
+{
+    return mIsModified;
+}
+
+void UBTeacherGuideEditionWidget::teacherGuideChanged()
+{
+    setIsModified(true);
+}
+
+bool UBTeacherGuideEditionWidget::hasUserDataInTeacherGuide()
 {
     return (mpPageTitle->text().length() > 0)
         || (mpComment->text().length() > 0)
@@ -505,6 +531,7 @@ UBTeacherGuidePresentationWidget::UBTeacherGuidePresentationWidget(QWidget *pare
     mpTreeWidget->setIconSize(QSize(24,24));
     connect(mpTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)), this, SLOT(onAddItemClicked(QTreeWidgetItem*,int)));
     connect(UBApplication::boardController, SIGNAL(activeSceneChanged()), this, SLOT(onActiveSceneChanged()));
+
 #ifdef Q_WS_MAC
     // on mac and with the custom qt the widget on the tree are not automatically relocated when using the vertical scrollbar. To relocate them we link the valueChange signal of the vertical scrollbar witht a local signal to trig a change and a repaint of the tree widget
     connect(mpTreeWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(onSliderMoved(int)));
@@ -596,17 +623,18 @@ void UBTeacherGuidePresentationWidget::showData( QVector<tUBGEElementNode*> data
             mpComment->showText(element->attributes.value("value"));
         else if (element->name == "action") {
             QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(mpRootWidgetItem);
-            newWidgetItem->setText(0, element->attributes.value("task"));
             newWidgetItem->setFlags(Qt::ItemIsEnabled);
+
             QString colorString = element->attributes.value("owner").toInt() == 0 ? "blue" : "green";
             UBTGAdaptableText* textWidget = new UBTGAdaptableText(newWidgetItem, 0);
-            textWidget->bottomMargin(14);
+
+            //N/C - NNE - 20140326 : Text are truncated
             textWidget->setStyleSheet( "QWidget {background: #EEEEEE; border:none; color:" + colorString + ";}");
+
             textWidget->showText(element->attributes.value("task"));
             textWidget->document()->setDefaultFont( QFont(QApplication::font().family(), 11));
-            mpTreeWidget->setItemWidget(newWidgetItem, 0, textWidget);
 
-            mpRootWidgetItem->addChild(newWidgetItem);
+            mpTreeWidget->setItemWidget(newWidgetItem, 0, textWidget);
         }else if (element->name == "link") {
             createMediaButtonItem();
             QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem( mpMediaSwitchItem);
@@ -759,6 +787,7 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
   , mMode(tUBTGZeroPageMode_EDITION)
   , mbFilesChanged(false)
   // Fin Issue 1683 (Evolution) - AOU - 20131206
+  , mIsModified(false)
 {
     setObjectName(name);
     QString chapterStyle("QLabel {font-size:16px; font-weight:bold;}");
@@ -1005,6 +1034,16 @@ UBTeacherGuidePageZeroWidget::UBTeacherGuidePageZeroWidget(QWidget* parent, cons
     if (UBSettings::settings()->teacherGuidePageZeroActivated->get().toBool()) {
         connect(UBApplication::boardController, SIGNAL(documentSet(UBDocumentProxy*)), this, SLOT(onActiveDocumentChanged()));
     }
+
+    connect(mpSessionTitle, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpAuthors, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpObjectives, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpKeywords, SIGNAL(cursorPositionChanged()), this, SLOT(setIsModified()));
+    connect(mpSchoolLevelBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+    connect(mpSchoolSubjectsBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+    connect(mpSchoolTypeBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+    connect(mpLicenceBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setIsModified()));
+
 }
 
 //issue 1517 - NNE - 20131206
@@ -1155,6 +1194,9 @@ void UBTeacherGuidePageZeroWidget::onActiveSceneChanged()
         updateSceneTitle();
     }
     load(UBSvgSubsetAdaptor::readTeacherGuideNode(0)); // Issue 1683 (Evolution) - AOU - 20131206
+
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    UBApplication::boardController->controlView()->setFocus();
 }
 
 
@@ -1186,6 +1228,8 @@ void UBTeacherGuidePageZeroWidget::loadData()
 
     currentIndex = documentProxy->metaData(UBSettings::sessionLicence).toInt();
     mpLicenceBox->setCurrentIndex((currentIndex != -1) ? currentIndex : 0);
+
+    setIsModified(false);
 }
 
 
@@ -1411,6 +1455,11 @@ QVector<tUBGEElementNode*> UBTeacherGuidePageZeroWidget::getData()
 
 bool UBTeacherGuidePageZeroWidget::isModified()
 {
+    return mIsModified;
+}
+
+bool UBTeacherGuidePageZeroWidget::hasUserDataInTeacherGuide()
+{
     bool result = false;
     UBDocumentProxy* documentProxy = UBApplication::boardController->selectedDocument();
     if(mCurrentDocument == documentProxy){
@@ -1448,11 +1497,14 @@ void UBTeacherGuidePageZeroWidget::load(QDomDocument doc)
             onAddItemClicked(mpAddAFileItem, 0, &element);
     }
     mbFilesChanged = false;
+    setIsModified(false);
 }
 
 
 void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element)
 {
+    setIsModified();
+
     int addSubItemWidgetType = widget->data(column, Qt::UserRole).toInt();
 
     if (mode() == tUBTGZeroPageMode_EDITION)
@@ -1465,7 +1517,7 @@ void UBTeacherGuidePageZeroWidget::onAddItemClicked(QTreeWidgetItem* widget, int
 
             switch (addSubItemWidgetType) {
             case eUBTGAddSubItemWidgetType_File: {
-                UBTGFileWidget* fileWidget = new UBTGFileWidget();
+                UBTGFileWidget* fileWidget = new UBTGFileWidget(newWidgetItem);
                 if (element)
                     fileWidget->initializeWithDom(*element);
                 mpTreeWidgetEdition->setItemWidget(newWidgetItem, 0, fileWidget);
@@ -1671,7 +1723,7 @@ UBTeacherGuideWidget::~UBTeacherGuideWidget()
 void UBTeacherGuideWidget::onActiveSceneChanged()
 {
     if (UBApplication::boardController->currentPage() == 0) {
-        if(mpPageZeroWidget->isModified())
+        if(mpPageZeroWidget->hasUserDataInTeacherGuide())
             mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_PRESENTATION);
         else
             mpPageZeroWidget->switchToMode(tUBTGZeroPageMode_EDITION);
@@ -1679,7 +1731,7 @@ void UBTeacherGuideWidget::onActiveSceneChanged()
         setCurrentWidget(mpPageZeroWidget);
     }
     else{
-        if(mpEditionWidget->isModified()){
+        if(mpEditionWidget->hasUserDataInTeacherGuide()){
             mCurrentData = mpEditionWidget->getData();
             mpPresentationWidget->showData(mCurrentData);
             setCurrentWidget(mpPresentationWidget);
@@ -1687,6 +1739,9 @@ void UBTeacherGuideWidget::onActiveSceneChanged()
         else
             setCurrentWidget(mpEditionWidget);
     }
+
+    //Issue 1454 - CFA - 20140306 : correction des raccourcis clavier fleches gauche et droite
+    UBApplication::boardController->controlView()->setFocus();
 
 }
 
@@ -1720,6 +1775,14 @@ bool UBTeacherGuideWidget::isModified()
         return mpEditionWidget->isModified();
 }
 
+bool UBTeacherGuideWidget::hasUserDataInTeacherGuide()
+{
+    if (currentWidget() == mpPageZeroWidget)
+        return mpPageZeroWidget->hasUserDataInTeacherGuide();
+    else
+        return mpEditionWidget->hasUserDataInTeacherGuide();
+}
+
 void UBTeacherGuidePageZeroWidget::onActiveDocumentChanged()
 {
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
@@ -1738,6 +1801,11 @@ void UBTeacherGuidePageZeroWidget::onScrollAreaRangeChanged(int min, int max) //
         mpScrollArea->verticalScrollBar()->setValue(max);
         nbExternalFiles = mpAddAFileItem->childCount();
     }
+}
+
+void UBTeacherGuidePageZeroWidget::setIsModified(bool isModified /* = true */)
+{
+    mIsModified = isModified;
 }
 
 //issue 1682 - NNE - 20140110
@@ -1774,12 +1842,19 @@ void UBTeacherResources::onActiveSceneChanged()
     //Refer to the contructor of UBTeacherResources to know why
     //the functions are called in this order.
 
-    if(mEditionWidget->isModified()){
-        QVector<tUBGEElementNode*> data = mEditionWidget->getData();
-        mPresentationWidget->showData(data);
+    if (UBApplication::boardController->currentPage() > 0)
+    {
+        if(mEditionWidget->hasUserDataInTeacherGuide()){
+            QVector<tUBGEElementNode*> data = mEditionWidget->getData();
+            mPresentationWidget->showData(data);
+            setCurrentWidget(mPresentationWidget);
+        }
+        else
+        {
+            setCurrentWidget(mEditionWidget);
+        }
     }
 
-    setCurrentWidget(mPresentationWidget);
 }
 
 void UBTeacherResources::showPresentationMode()
@@ -1796,3 +1871,8 @@ bool UBTeacherResources::isModified()
     return mEditionWidget->isModified();
 }
 //issue 1682 - NNE - 20140110 : END
+
+bool UBTeacherResources::hasUserDataInTeacherGuide()
+{
+    return mEditionWidget->hasUserDataInTeacherGuide();
+}

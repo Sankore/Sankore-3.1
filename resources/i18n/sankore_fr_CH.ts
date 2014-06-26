@@ -984,11 +984,11 @@
     </message>
     <message>
         <source>Stroke Style Dot Line</source>
-        <translation>Style du trait : pointillés</translation>
+        <translation>Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Stroke style : Dot Line</source>
-        <translation>Style du trait : pointillés</translation>
+        <translation>Style du trait : traitillé</translation>
     </message>
     <message>
         <source>Regular Shapes</source>
@@ -1069,6 +1069,98 @@
     <message>
         <source>Freehand drawing</source>
         <translation>Dessin à main levée</translation>
+    </message>
+    <message>
+        <source>Align objects</source>
+        <translation>Aligner les objets</translation>
+    </message>
+    <message>
+        <source>Align Left</source>
+        <translation>Aligner à gauche</translation>
+    </message>
+    <message>
+        <source>Align objects to the left</source>
+        <translation>Aligner les objets à gauche</translation>
+    </message>
+    <message>
+        <source>Align Right</source>
+        <translation>Aligner à droite</translation>
+    </message>
+    <message>
+        <source>Align objects to the right</source>
+        <translation>Aligner les objets à droite</translation>
+    </message>
+    <message>
+        <source>Align Top</source>
+        <translation>Aligner en haut</translation>
+    </message>
+    <message>
+        <source>Align objects to the top</source>
+        <translation>Aligner les objets en haut</translation>
+    </message>
+    <message>
+        <source>Align Bottom</source>
+        <translation>Aligner en bas</translation>
+    </message>
+    <message>
+        <source>End arrow style : Arrow</source>
+        <translation>Style de flèche de fin : Flèche</translation>
+    </message>
+    <message>
+        <source>Start arrow style : Arrow</source>
+        <translation>Style de flèche de début : Flèche</translation>
+    </message>
+    <message>
+        <source>End arrow style : Round</source>
+        <translation>Style de flèche de fin : Rond</translation>
+    </message>
+    <message>
+        <source>Start arrow style : Round</source>
+        <translation>Style de flèche de début : Rond</translation>
+    </message>
+    <message>
+        <source>End arrow style : None</source>
+        <translation>Style de flèche de fin : Aucun</translation>
+    </message>
+    <message>
+        <source>Start arrow style : None</source>
+        <translation>Style de flèche de début : Aucun</translation>
+    </message>
+    <message>
+        <source>Arrows Properties</source>
+        <translation>Propriétés des flèches</translation>
+    </message>
+    <message>
+        <source>Arrows properties</source>
+        <translation>Propriétés des flèches</translation>
+    </message>
+    <message>
+        <source>Stroke Style Dot Dash</source>
+        <translation>Style de bordure : pointillés</translation>
+    </message>
+    <message>
+        <source>Stroke style : Dot Dash</source>
+        <translation>Style de bordure : pointillé</translation>
+    </message>
+    <message>
+        <source>Align Center Vertically</source>
+        <translation>Aligner verticalement le centre</translation>
+    </message>
+    <message>
+        <source>Align the center of the objects vertically</source>
+        <translation>Aligner verticalement le centre des objets</translation>
+    </message>
+    <message>
+        <source>Align Center Horizontally</source>
+        <translation>Aligner horizontalement le centre</translation>
+    </message>
+    <message>
+        <source>Align the center of the objects horizontally</source>
+        <translation>Aligner horizontalement le centre des objets</translation>
+    </message>
+    <message>
+        <source>Align objects to the bottom</source>
+        <translation>Aligner les objets en bas</translation>
     </message>
 </context>
 <context>
@@ -1230,7 +1322,7 @@
     </message>
     <message>
         <source>This is not a final release. Please use it only for testing.</source>
-        <translation>Ceci n&apos;est pas une version officielle. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
+        <translation>Ceci n&apos;est pas une version finale stable. Merci de ne l&apos;utiliser que pour effectuer des tests.</translation>
     </message>
 </context>
 <context>
@@ -1300,6 +1392,32 @@
     </message>
 </context>
 <context>
+    <name>UBCellPropertiesPalette</name>
+    <message>
+        <source>Validate</source>
+        <translation>Valider</translation>
+    </message>
+    <message>
+        <source>Width (%) :</source>
+        <translation>Largeur (%) :</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateHyperLinkPalette</name>
+    <message>
+        <source>Link :</source>
+        <translation>Lien :</translation>
+    </message>
+    <message>
+        <source>Text :</source>
+        <translation>Texte :</translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation>Valider</translation>
+    </message>
+</context>
+<context>
     <name>UBCreateLinkLabel</name>
     <message>
         <source>&lt;drop content&gt;</source>
@@ -1363,6 +1481,21 @@
     <message>
         <source>Insert url text here</source>
         <translation>Insérer une adresse URL</translation>
+    </message>
+</context>
+<context>
+    <name>UBCreateTablePalette</name>
+    <message>
+        <source>Number of lines :</source>
+        <translation>Nombre de lignes :</translation>
+    </message>
+    <message>
+        <source>Number of columns :</source>
+        <translation>Nombre de colonnes :</translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation>Valider</translation>
     </message>
 </context>
 <context>
@@ -1661,24 +1794,6 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
 </context>
 <context>
     <name>UBDocumentTreeView</name>
-    <message numerus="yes">
-        <source>%1 pages copied</source>
-        <translation>
-            <numerusform>%1 page copiée</numerusform>
-            <numerusform>%1 pages copiées</numerusform>
-        </translation>
-    </message>
-</context>
-<context>
-    <name>UBDocumentTreeWidget</name>
-    <message>
-        <source>%1 (copy)</source>
-        <translation>%1 (copie)</translation>
-    </message>
-    <message>
-        <source>Copying page %1/%2</source>
-        <translation>Copie de la page %1/%2 en cours</translation>
-    </message>
     <message numerus="yes">
         <source>%1 pages copied</source>
         <translation>
@@ -2223,6 +2338,18 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
         <source>Remove link to web url</source>
         <translation>Retirer le lien Web</translation>
     </message>
+    <message>
+        <source>Return to creation mode</source>
+        <translation>retour au mode création</translation>
+    </message>
+    <message>
+        <source>Flip on horizontal axis</source>
+        <translation>Symétrie d&apos;axe horizontal</translation>
+    </message>
+    <message>
+        <source>Flip on vertical axis</source>
+        <translation>Symétrie d&apos;axe vertical</translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsTextItem</name>
@@ -2240,6 +2367,54 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.
     <message>
         <source>Editable</source>
         <translation>Éditable</translation>
+    </message>
+    <message>
+        <source>Insert table</source>
+        <translation>Insérer tableau</translation>
+    </message>
+    <message>
+        <source>Insert column after</source>
+        <translation>Ajouter une colonne après</translation>
+    </message>
+    <message>
+        <source>Insert column before</source>
+        <translation>Ajouter une colonne avant</translation>
+    </message>
+    <message>
+        <source>Delete column</source>
+        <translation>Effacer la colonne</translation>
+    </message>
+    <message>
+        <source>Insert row after</source>
+        <translation>Ajouter une ligne après</translation>
+    </message>
+    <message>
+        <source>Insert row before</source>
+        <translation>Ajouter une ligne avant</translation>
+    </message>
+    <message>
+        <source>Delete row</source>
+        <translation>Effacer la ligne</translation>
+    </message>
+    <message>
+        <source>Cell properties</source>
+        <translation>Propriété cellule</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Couleur de fond</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Colonne</translation>
+    </message>
+    <message>
+        <source>Row</source>
+        <translation>Ligne</translation>
+    </message>
+    <message>
+        <source>Evenly distribute the columns</source>
+        <translation>Uniformiser les colonnes</translation>
     </message>
 </context>
 <context>
@@ -2672,6 +2847,14 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
         <source>Occitan</source>
         <translation>Occitan</translation>
     </message>
+    <message>
+        <source>Finnish</source>
+        <translation>Finnois</translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
+        <translation>Hongrois</translation>
+    </message>
 </context>
 <context>
     <name>UBProxyLoginDlg</name>
@@ -3092,6 +3275,14 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
     <message>
         <source>%0 called (method=%1, status=%2)</source>
         <translation>%0 appelé (méthode=%1, statut=%2)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Attention</translation>
+    </message>
+    <message>
+        <source>Impossible to connect to Planete Sankore: %1</source>
+        <translation>Connexion impossible à Planete Sankore: %1</translation>
     </message>
 </context>
 <context>
@@ -3591,6 +3782,38 @@ p, li { white-space: pre-wrap; }
         <source>Uniboard Documents</source>
         <translation>Documents Uniboard</translation>
     </message>
+    <message>
+        <source>Collapse All</source>
+        <translation>Tout replier</translation>
+    </message>
+    <message>
+        <source>Expand All</source>
+        <translation>Tout déplier</translation>
+    </message>
+    <message>
+        <source>Select a sort</source>
+        <translation>Sélectionner un tri</translation>
+    </message>
+    <message>
+        <source>Creation date</source>
+        <translation>Date de création</translation>
+    </message>
+    <message>
+        <source>Update date</source>
+        <translation>Date de modification</translation>
+    </message>
+    <message>
+        <source>Alphabetical order</source>
+        <translation>Ordre alphabétique</translation>
+    </message>
+    <message>
+        <source>Ascending order</source>
+        <translation>Ordre croissant</translation>
+    </message>
+    <message>
+        <source>Descending order</source>
+        <translation>Ordre décroissant</translation>
+    </message>
 </context>
 <context>
     <name>preferencesDialog</name>
@@ -3828,7 +4051,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;        • Jaroslav Ryník for Slovak&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;        • Dorian Fuentes and Juan José Gutiérrez Aparicio for Spanish&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;        • Ferhat Ozkasgarli for Turkish&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;        • Ana Feito and Enrique Fernandez for Galician&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;        • Ana Feito and Enrique Fernandez for Galician&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;Icons&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;A special thanks to:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;        • Yusuke Kamiyamane for teacherGuide icons&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

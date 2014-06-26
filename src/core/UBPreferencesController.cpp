@@ -79,6 +79,8 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
     adjustScreens(1);
     connect(mDesktop, SIGNAL(screenCountChanged(int)), this, SLOT(adjustScreens(int)));
 
+    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
+
     wire();
 }
 
@@ -241,6 +243,8 @@ void UBPreferencesController::init()
     mPreferencesUI->PSCredentialsPersistenceCheckBox->setChecked(settings->getCommunityDataPersistence());
     persistanceCheckboxUpdate();
 
+    //Issue NC - CFA - 20140520 : clear list, to prevent duplication of the list
+    mIsoCodeAndLanguage.clear();
     mIsoCodeAndLanguage.insert(tr("Default"),"NO_VALUE");
     mIsoCodeAndLanguage.insert(tr("Arabic"),"ar");
     mIsoCodeAndLanguage.insert(tr("Basque"),"eu");
@@ -255,9 +259,11 @@ void UBPreferencesController::init()
     mIsoCodeAndLanguage.insert(tr("English"),"en");
     mIsoCodeAndLanguage.insert(tr("English UK"),"en_UK");
     mIsoCodeAndLanguage.insert(tr("Spanish"),"es");
+    mIsoCodeAndLanguage.insert(tr("Finnish"),"fi");
     mIsoCodeAndLanguage.insert(tr("French"),"fr");
     mIsoCodeAndLanguage.insert(tr("Swiss French"),"fr_CH");
     mIsoCodeAndLanguage.insert(tr("Hindi"),"hi");
+    mIsoCodeAndLanguage.insert(tr("Hungarian"),"hu");
     mIsoCodeAndLanguage.insert(tr("Italian"),"it");
     mIsoCodeAndLanguage.insert(tr("Hebrew"),"iw");
     mIsoCodeAndLanguage.insert(tr("Japanese"),"ja");
@@ -282,19 +288,22 @@ void UBPreferencesController::init()
     QStringList list;
     list << mIsoCodeAndLanguage.keys();
     list.sort();
-    mPreferencesUI->languageComboBox->addItems(list);
+    //Issue NC - CFA - 20140520 : clear list, to prevent duplication of the list
     QString currentIsoLanguage = UBSettings::settings()->appPreferredLanguage->get().toString();
+    mPreferencesUI->languageComboBox->clear();
+    mPreferencesUI->languageComboBox->addItems(list);
     if(currentIsoLanguage.length()){
         QString language;
         foreach(QString eachKey, mIsoCodeAndLanguage.keys())
-            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage)
+            if(mIsoCodeAndLanguage[eachKey] == currentIsoLanguage){
                 language = eachKey;
+                break;
+            }
         mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf(language));
     }
     else
         mPreferencesUI->languageComboBox->setCurrentIndex(list.indexOf("Default"));
 
-    connect(mPreferencesUI->languageComboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(onLanguageChanged(QString)));
     connect(mPreferencesUI->quitOpenSankorePushButton,SIGNAL(clicked()),UBApplication::app(),SLOT(closing()));
     mPreferencesUI->quitOpenSankorePushButton->setDisabled(true);
 

@@ -149,8 +149,9 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem
         void removeShapeToUndoStack(QGraphicsItem* item);
 
         UBGraphicsWidgetItem* addWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
+        UBGraphicsProxyWidget *addWidget(QWidget *widget, Qt::WindowFlags wFlags = 0);
         UBGraphicsAppleWidgetItem* addAppleWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
-        UBGraphicsW3CWidgetItem* addW3CWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0), const QUrl &sourceUrl = QUrl());
+        UBGraphicsW3CWidgetItem* addW3CWidget(const QUrl& pWidgetUrl, const QPointF& pPos = QPointF(0, 0));
         void addGraphicsWidget(UBGraphicsWidgetItem* graphicsWidget, const QPointF& pPos = QPointF(0, 0));
 
         // Issue 1598/1605 - CFA - 20131028

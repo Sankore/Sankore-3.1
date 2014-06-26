@@ -57,6 +57,7 @@ void UBAbstractSubPalette::togglePalette()
 
 void UBAbstractSubPalette::triggerAction(QAction *action)
 {
+    Q_UNUSED(action)
     // NOOP
 }
 
@@ -77,6 +78,7 @@ UBColorPickerButton::UBColorPickerButton(QWidget *parent)
 
 void UBColorPickerButton::paintEvent(QPaintEvent * pe)
 {
+    Q_UNUSED(pe);
     QPainter painter(this);
     painter.setBrush(color());    
     painter.drawRect(margin_left, margin_top, width, height);

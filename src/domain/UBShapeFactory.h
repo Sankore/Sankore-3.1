@@ -5,6 +5,8 @@
 #include <QColor>
 #include <QGraphicsItem>
 
+#include "UBAbstractGraphicsPathItem.h"
+
 class UBAbstractGraphicsItem;
 class UBBoardView;
 class QMouseEvent;
@@ -48,7 +50,8 @@ public:
     QColor fillFirstColor();
     QColor fillSecondColor();
 
-    void setFillingStyle(Qt::BrushStyle brushStyle);
+    void returnToCreationMode(QGraphicsItem* item);
+    void applyCurrentStyle(UBAbstractGraphicsItem *shape);
     void setFillingFirstColor(QColor color);
     void setFillingSecondColor(QColor color);
     void setGradientFillingProperty(UBAbstractGraphicsItem* shape);
@@ -57,7 +60,12 @@ public:
     FillType fillType();
     void setFillType(FillType fillType);
 
+    void setStartArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType);
+    void setEndArrowType(UBAbstractGraphicsPathItem::ArrowType arrowType);
+
     QRectF reverseRect(const QRectF &rect);
+
+    QVector<qreal> dashPattern() const;
 
 public slots:
     void createRegularPolygon(int nVertices);
@@ -68,7 +76,7 @@ public slots:
     void createSquare(bool create);
     void createLine(bool create);
 
-    void createPen(bool create);    
+    void createPen(bool create);
 
     void prepareChangeFill();
     void changeFillColor(const QPointF& pos);
@@ -113,7 +121,12 @@ private:
     FillType mFillType;
     QRectF mBoundingRect;
 
+    UBAbstractGraphicsPathItem::ArrowType mStartArrowType;
+    UBAbstractGraphicsPathItem::ArrowType mEndArrowType;
+
     bool mCursorMoved;
+
+    QVector<qreal> mDotDashes;
 
 protected:
     UBAbstractGraphicsItem *instanciateCurrentShape();

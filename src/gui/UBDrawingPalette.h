@@ -15,14 +15,6 @@ class UBDrawingPalette : public UBActionPalette
 
     public:
 
-        enum Actions // The order here defines the order on the palette
-        {
-            ShapesAction,
-            PolygonAction,
-            RegularShapesAction,
-            FillAction
-        };
-
         UBDrawingPalette(QWidget *parent = 0, Qt::Orientation orient = Qt::Vertical);
 
         virtual ~UBDrawingPalette();

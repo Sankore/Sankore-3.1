@@ -431,6 +431,11 @@ void UBCachePropertiesWidget::onWidthChanged(int newSize)
             if(!mOtherSliderUsed)
             {
                 mOtherSliderUsed = true;
+
+                //don't divide by zero
+                if (mOldHoleSize.width() <= 0)
+                    mOldHoleSize.setWidth(-1);
+
                 mpHeightSlider->setValue(mpHeightSlider->value()*newSize/mOldHoleSize.width());
             }
             mOldHoleSize.setHeight(mpHeightSlider->value());
@@ -454,6 +459,11 @@ void UBCachePropertiesWidget::onHeightChanged(int newSize)
             if(!mOtherSliderUsed)
             {
                 mOtherSliderUsed = true;
+
+                //don't divide by zero
+                if (mOldHoleSize.height() <= 0)
+                    mOldHoleSize.setHeight(-1);
+
                 mpWidthSlider->setValue(mpWidthSlider->value()*newSize/mOldHoleSize.height());
             }
              mOldHoleSize.setWidth(mpWidthSlider->value());

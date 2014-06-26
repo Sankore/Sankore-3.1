@@ -31,10 +31,12 @@
 #include "core/UB.h"
 #include "core/UBSettings.h"
 
+#include "domain/UBGraphicsProxyWidget.h"
+
 class QGraphicsSceneMouseEvent;
 class QGraphicsItem;
 class UBGraphicsScene;
-class UBGraphicsProxyWidget;
+class UBAbstractGraphicsProxyWidget;
 class UBGraphicsDelegateFrame;
 class UBGraphicsWidgetItem;
 class UBGraphicsMediaItem;
@@ -45,6 +47,8 @@ class DelegateButton: public QGraphicsSvgItem
     Q_OBJECT
 
     public:
+        static DelegateButton *Spacer;
+
         DelegateButton(const QString & fileName, QGraphicsItem* pDelegated, QGraphicsItem * parent = 0, Qt::WindowFrameSection section = Qt::TopLeftSection);
 
         virtual ~DelegateButton();
@@ -74,6 +78,8 @@ class DelegateButton: public QGraphicsSvgItem
 
         void modified();
 
+        QGraphicsItem* delegated() {return mDelegated;}
+
 private slots:
         void startShowProgress();
 
@@ -94,6 +100,16 @@ private slots:
         void longClicked();
 
 };
+
+//N/C - NNE - 20140529
+class DelegateSpacer : public DelegateButton
+{
+    Q_OBJECT
+
+public:
+    DelegateSpacer(QGraphicsItem * parent = 0, Qt::WindowFrameSection section = Qt::TopLeftSection);
+};
+//N/C - NNE - 20140529 : END
 
 /*
     Code of this class is copied from QT QLCDNumber class sources
@@ -277,6 +293,8 @@ class UBGraphicsItemDelegate : public QObject
 
         void setCanTrigAnAction(bool canTrig);
 
+        void setCanReturnInCreationMode(bool canReturn);
+
         void setButtonsVisible(bool visible);
 
         UBGraphicsToolBarItem* getToolBarItem() const { return mToolBarItem; }
@@ -286,6 +304,10 @@ class UBGraphicsItemDelegate : public QObject
 
         UBGraphicsItemAction* action() { return mAction; }
         void setAction(UBGraphicsItemAction* action);
+
+        //N/C - NNE - 20140505 : add vertical and horizontal flip
+        void setVerticalMirror(bool isMirror){ mVerticalMirror = isMirror; }
+        void setHorizontalMirror(bool isMirror){ mHorizontalMirror = isMirror; }
 
     signals:
         void showOnDisplayChanged(bool shown);
@@ -305,6 +327,10 @@ class UBGraphicsItemDelegate : public QObject
         void increaseZlevelBottom();
 
         void onZoomChanged();
+
+        //N/C - NNE - 20140505 : add vertical and horizontal flip
+        void flipHorizontally();
+        void flipVertically();
 
     protected:
         virtual void buildButtons();
@@ -358,6 +384,7 @@ private:
         bool mCanDuplicate;
         bool mRespectRatio;
         bool mCanTrigAnAction;
+        bool mCanReturnInCreationMode;
         QMimeData* mMimeData;
         QPixmap mDragPixmap;
 
@@ -369,8 +396,12 @@ private:
 
         bool mMoved;
 
+        bool mVerticalMirror;
+        bool mHorizontalMirror;
+
 private slots:
         void onAddActionClicked();
+        void onReturnToCreationModeClicked();
         void onRemoveActionClicked();
         void saveAction(UBGraphicsItemAction *action);
 };

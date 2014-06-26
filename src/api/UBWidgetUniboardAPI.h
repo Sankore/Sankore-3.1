@@ -222,6 +222,8 @@ class UBWidgetUniboardAPI : public QObject
          */
         void loadUrl(const QString& url);
 
+        void connectionError(const QString& message);
+
         /**
          *  check if current Tool is selector
          */
@@ -319,6 +321,8 @@ class UBWidgetUniboardAPI : public QObject
         bool isDropableData(const QMimeData *pMimeData) const;
 
         bool isDarkBackground();
+
+        bool removeFile(const QString &path);
 
 private slots:
         void onDownloadFinished(bool pSuccess, sDownloadFileDesc desc, QByteArray pData);

@@ -133,6 +133,10 @@ void UBMetadataDcSubsetAdaptor::persist(UBDocumentProxy* proxy)
     xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri,UBSettings::documentDefaultBackgroundImageDisposition, proxy->metaData(UBSettings::documentDefaultBackgroundImageDisposition).toString());
     // Fin Issue 1684 - ALTI/AOU - 20131210
 
+    //Issue N/C - NNE - 20140526
+    if(proxy->metaData(UBSettings::documentTagVersion).toString().isEmpty() == false)
+        xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri, UBSettings::documentTagVersion, proxy->metaData(UBSettings::documentTagVersion).toString());
+    //Issue N/C - NNE - 20140526 : END
 
     xmlWriter.writeEndElement(); //dc:Description
     xmlWriter.writeEndElement(); //RDF

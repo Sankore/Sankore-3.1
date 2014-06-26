@@ -73,6 +73,7 @@
 #include "core/UBPersistenceManager.h"
 #include "core/UBApplication.h"
 #include "core/UBTextTools.h"
+#include "gui/UBDrawingStrokePropertiesPalette.h"
 
 #include "gui/UBTeacherGuideWidget.h"
 #include "gui/UBDockTeacherGuideWidget.h"
@@ -1128,7 +1129,6 @@ UBGraphicsScene* UBSvgSubsetAdaptor::UBSvgSubsetReader::loadScene()
         qWarning() << "error parsing Sankore file " << mXmlReader.errorString();
     }
 
-    qDebug() << "Number of detected strokes: " << mStrokesList.count();
     QHashIterator<QString, UBGraphicsStrokesGroup*> iterator(mStrokesList);
     while (iterator.hasNext()) {
         iterator.next();
@@ -3016,6 +3016,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "width", QString("%1").arg(item->textWidth()));
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "height", QString("%1").arg(item->textHeight()));
 
+    if(item->backgroundColor() != Qt::transparent)
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "backgroundColor", item->backgroundColor().name());
+
     QColor colorDarkBg = item->colorOnDarkBackground();
     QColor colorLightBg = item->colorOnLightBackground();
 
@@ -3030,6 +3033,9 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::textItemToSvg(UBGraphicsTextItem* it
     // Note: don't use mXmlWriter.writeCDATA(htmlString); because it doesn't escape characters sequences correctly.
     // Texts copied from other programs like Open-Office can truncate the svg file.
     //mXmlWriter.writeCharacters(item->toHtml());
+
+    if(item->htmlMode())
+        item->changeHTMLMode();
 
     QString content = UBTextTools::cleanHtmlCData(item->toHtml());
 
@@ -3050,7 +3056,6 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
     qreal height = mXmlReader.attributes().value("height").toString().toFloat();
 
     UBGraphicsTextItem* textItem = new UBGraphicsTextItem();
-
     graphicsItemFromSvg(textItem);
     textItem->Delegate()->setAction(readAction());
 
@@ -3073,6 +3078,16 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             textItem->setColorOnLightBackground(color);
     }
 
+    QStringRef ubBackgroundColor = mXmlReader.attributes().value(mNamespaceUri, "backgroundColor");
+
+    if(!ubBackgroundColor.isNull()){
+        QColor color;
+        color.setNamedColor(ubBackgroundColor.toString());
+
+        if (color.isValid())
+            textItem->setBackgroundColor(color);
+    }
+
     QString text;
 
     while (!(mXmlReader.isEndElement() && (mXmlReader.name() == "font" || mXmlReader.name() == "foreignObject")))
@@ -3090,11 +3105,33 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             if (mFileVersion >= 40500) {
                 if (mXmlReader.name() == "itemTextContent") {
                     text = mXmlReader.readElementText();
+
                     textItem->setHtml(text);
+
                     textItem->resize(width, height);
+
                     if (textItem->toPlainText().isEmpty()) {
                         delete textItem;
                         textItem = 0;
+                    }
+                    else
+                    {
+                        //CFA - add resources like images
+                        QDomDocument html;
+                        html.setContent(text);
+
+                        QDomNodeList imgNodes = html.elementsByTagName("img");
+
+                        if (imgNodes.count()>0)
+                        {
+                            for (int i =0; i < imgNodes.count(); i++)
+                            {
+                                QString filename = imgNodes.item(i).toElement().attribute("src");
+                                QString dest = mDocumentPath + "/" + filename;
+                                textItem->document()->addResource(QTextDocument::ImageResource, QUrl(filename), QImage(dest));
+                                textItem->adjustSize();
+                            }
+                        }
                     }
                     return textItem;
                 }
@@ -3164,6 +3201,7 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
             }
         }
     }
+
 
     if (text.isEmpty()) {
         delete textItem;
@@ -3647,15 +3685,25 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::getStyleFromSvg(UBAbstractGraphicsIt
     p.setWidth(strokeWidth);
 
     // Stroke style
-    QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
-    if (!svgStrokeStyle.isNull())
-    {
-        QString strokeStyle = svgStrokeStyle.toString();
-        if (strokeStyle == SVG_STROKE_DOTLINE)
+    QStringRef svgStrokeLineCap = mXmlReader.attributes().value("stroke-linecap");
+
+    if(!svgStrokeLineCap.isNull() && svgStrokeLineCap.toString().toLower() == "round"){
+        //Custom dash line style
+        p.setCapStyle(Qt::RoundCap);
+        QVector<qreal> dashPattern = UBApplication::boardController->shapeFactory().dashPattern();
+        p.setDashPattern(dashPattern);
+    }else{
+        QStringRef svgStrokeStyle = mXmlReader.attributes().value("stroke-dasharray");
+        if (!svgStrokeStyle.isNull())
         {
-            p.setStyle(Qt::DotLine);
+            QString strokeStyle = svgStrokeStyle.toString();
+            if (strokeStyle == SVG_STROKE_DOTLINE)
+            {
+                p.setStyle(Qt::DotLine);
+            }
         }
     }
+
 
     item->setPen(p);
 
@@ -3847,6 +3895,16 @@ UBAbstractGraphicsPathItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::shapePathFrom
         qWarning() << "cannot make sense of 'points' value " << svgPoints.toString();
     }
 
+    // Arrows on extremities :
+    QStringRef startArrowType = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "startArrowType");
+    if (!startArrowType.isNull()) {
+        pathItem->setStartArrowType((UBAbstractGraphicsPathItem::ArrowType)startArrowType.toString().toInt());
+    }
+    QStringRef endArrowType = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "endArrowType");
+    if (!endArrowType.isNull()) {
+        pathItem->setEndArrowType((UBAbstractGraphicsPathItem::ArrowType)endArrowType.toString().toInt());
+    }
+
     getStyleFromSvg(pathItem, pDefaultPenColor);
 
     return pathItem;
@@ -3960,6 +4018,17 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::shapePathToSvg(UBAbstractGraphicsPat
 
     mXmlWriter.writeAttribute("points", sPoints);
 
+    // Arrows :
+    UBAbstractGraphicsPathItem::ArrowType startArrowType = item->startArrowType();
+    if (startArrowType != UBAbstractGraphicsPathItem::ArrowType_None){
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "startArrowType", QString::number(startArrowType));
+    }
+
+    UBAbstractGraphicsPathItem::ArrowType endArrowType = item->endArrowType();
+    if (endArrowType != UBAbstractGraphicsPathItem::ArrowType_None)    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "endArrowType", QString::number(endArrowType));
+    }
+
     writeAbstractGraphicsItemStyle(item);
 
     mXmlWriter.writeEndElement();
@@ -4036,6 +4105,25 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeAbstractGraphicsItemStyle(UBAbs
         if (item->pen().style() == Qt::DotLine){
             mXmlWriter.writeAttribute("stroke-dasharray", SVG_STROKE_DOTLINE);
         }
+
+        if(item->pen().style() == Qt::CustomDashLine){
+            switch(item->pen().width()){
+                case UBDrawingStrokePropertiesPalette::Fine:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 10");
+                    break;
+                case UBDrawingStrokePropertiesPalette::Medium:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 15");
+                    break;
+                case UBDrawingStrokePropertiesPalette::Large:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 20");
+                    break;
+                default:
+                    mXmlWriter.writeAttribute("stroke-dasharray", "1, 3");
+            }
+
+            mXmlWriter.writeAttribute("stroke-linecap", "round");
+        }
+
         mXmlWriter.writeAttribute("stroke-opacity", QString("%1").arg(item->pen().color().alphaF()));
     }
 

@@ -24,6 +24,7 @@
 #include "UBCoreGraphicsScene.h"
 
 #include "domain/UBGraphicsMediaItem.h"
+#include "domain/UBGraphicsProxyWidget.h"
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBGraphicsGroupContainerItem.h"
 
@@ -39,7 +40,8 @@ UBCoreGraphicsScene::UBCoreGraphicsScene(QObject * parent)
 UBCoreGraphicsScene::~UBCoreGraphicsScene()
 {
     //we must delete removed items that are no more in any scene
-    //at groups deleting some items can be added to mItemsToDelete, so we need to use iterators.
+    //at groups deleting some items can be added to mItemsToDelete, so we need to use iterators.    
+
     foreach(QGraphicsItem* item, mItemsToDelete){
         if (item && item->type() != UBGraphicsItemType::PolygonItemType && item->type() != QGraphicsItem::UserType && item->type() != UBGraphicsItemType::groupContainerType && (item->scene() == NULL || item->scene() == this))
             delete item;

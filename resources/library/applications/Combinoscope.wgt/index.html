@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Combinoscope</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/dist.css" />
+    <script type="text/javascript" src="js/sankore.js"></script>
+    <script type="text/javascript" src="js/dist.js"></script>
+</head>
+
+<body>
+    <div id="ubwidget"></div>
+    <script type="text/javascript">
+        window.addEventListener('load', function (e) {
+            window.c = Sankore.Combinoscope.create('ubwidget', {
+                ready: function () {
+                    var timer = null, state = {}, self = this, data = {
+                        layouts: {
+                            'simple': 'Lettres seules'
+                        },
+                        letters: [
+                            ['V', 'a', ['simple']],
+                            ['V', 'e', ['simple']],
+                            ['V', 'eu', []],
+                            ['V', 'oeu', []],
+                            ['V', 'i', ['simple']],
+                            ['V', 'o', ['simple']],
+                            ['V', 'eau', []],
+                            ['V', 'au', []],
+                            ['V', 'u', ['simple']],
+                            ['V', 'é', ['simple']],
+                            ['V', 'er', []],
+                            ['V', 'ez', []],
+                            ['V', 'è', ['simple']],
+                            ['V', 'ê', ['simple']],
+                            ['V', 'ai', []],
+                            ['V', 'et', []],
+                            ['V', 'ou', []],
+                            ['V', 'an', []],
+                            ['V', 'am', []],
+                            ['V', 'en', []],
+                            ['V', 'em', []],
+                            ['V', 'on', []],
+                            ['V', 'om', []],
+                            ['V', 'in', []],
+                            ['V', 'im', []],
+                            ['V', 'ain', []],
+                            ['V', 'aim', []],
+                            ['V', 'ein', []],
+                            ['V', 'eim', []],
+                            ['V', 'oi', []],
+                            ['V', 'oin', []],
+                            ['V', 'ien', []],
+                            ['V', 'un', []],
+                            ['V', 'y', ['simple']],
+
+                            ['C', 'b', ['simple']],
+                            ['C', 'br', []],
+                            ['C', 'bl', []],
+                            ['C', 'c', ['simple']],
+                            ['C', 'k', ['simple']],
+                            ['C', 'ç', ['simple']],
+                            ['C', 'cr', []],
+                            ['C', 'cl', []],
+                            ['C', 'd', ['simple']],
+                            ['C', 'dr', []],
+                            ['C', 'f', ['simple']],
+                            ['C', 'ph', []],
+                            ['C', 'fr', []],
+                            ['C', 'fl', []],
+                            ['C', 'g', ['simple']],
+                            ['C', 'ge', []],
+                            ['C', 'gu', []],
+                            ['C', 'j', ['simple']],
+                            ['C', 'gr', []],
+                            ['C', 'gl', []],
+                            ['C', 'l', ['simple']],
+                            ['C', 'm', ['simple']],
+                            ['C', 'n', ['simple']],
+                            ['C', 'p', ['simple']],
+                            ['C', 'pr', []],
+                            ['C', 'pl', []],
+                            ['C', 'qu', []],
+                            ['C', 'r', ['simple']],
+                            ['C', 's', ['simple']],
+                            ['C', 't', ['simple']],
+                            ['C', 'tr', []],
+                            ['C', 'v', ['simple']],
+                            ['C', 'vr', []],
+                            ['C', 'z', ['simple']],
+                            ['C', 'ch', []],
+                            ['C', 'gn', []],
+                        ]
+                    };
+                            
+                    if (window.sankore) {
+                        try {
+                            state = JSON.parse(window.sankore.preference('state'));
+                        } catch (e) {}
+
+                        this.eventDispatcher.addEventSubscriber({
+                            events: [
+                                'combinoscope.editor_*',
+                                'combinoscope.layout_*',
+                                'combinoscope.mode_*',
+                                'combinoscope.word_*',
+                                'combinoscope.letter_*'
+                            ],
+                            listener: function () {
+                                if (null !== timer) {
+                                    clearTimeout(timer);
+                                }
+
+                                timer = setTimeout(function() {
+                                    window.sankore.setPreference('state', JSON.stringify(self.getState()));
+                                    timer = null;
+                                }, 350);
+                            }
+                        });
+                    
+                        this.eventDispatcher.addEventSubscriber({
+                            events: [
+                                'combinoscope.init',
+                                'combinoscope.layout_selected', 
+                                'combinoscope.editor_*'
+                            ],
+                            listener: function () {
+                                window.sankore.resize(
+                                    window.innerWidth,
+                                    self.ui.getTotalHeight() + 2
+                                );
+                            }
+                        });
+                    }
+                
+                    if (!('current' in state)) {
+                        state.current = 'simple';
+                    }
+
+                    this.init(data, state);
+                }
+            });
+            
+        });
+    </script>
+</body>
+
+</html>

@@ -306,7 +306,7 @@ class UBGraphicsW3CWidgetItem : public UBGraphicsWidgetItem
                 QString version;
         };
 
-        UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent = 0, const QUrl& sourceUrl = QUrl());
+        UBGraphicsW3CWidgetItem(const QUrl& pWidgetUrl, QGraphicsItem *parent = 0);
         ~UBGraphicsW3CWidgetItem();
 
         virtual void setUuid(const QUuid &pUuid);
@@ -324,6 +324,11 @@ class UBGraphicsW3CWidgetItem : public UBGraphicsWidgetItem
         static bool hasNPAPIWrapper(const QString& pMimeType);
 
         Metadata mMetadatas;
+
+        //N/C - NNE - 20140519
+protected:
+        void keyPressEvent(QKeyEvent *event);
+        //N/C - NNE - 20140519 : END
 
     private slots:
         virtual void javaScriptWindowObjectCleared();

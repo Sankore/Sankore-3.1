@@ -1886,7 +1886,7 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
     if (targetScene)
     {
         if (mActiveScene && !onImport) {
-                persistCurrentScene();
+            persistCurrentScene();
             freezeW3CWidgets(true);
             ClearUndoStack();
         }
@@ -1942,6 +1942,7 @@ void UBBoardController::moveSceneToIndex(int source, int target)
         selectedDocument()->setMetaData(UBSettings::documentUpdatedAt, UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTime()));
         UBMetadataDcSubsetAdaptor::persist(selectedDocument());
         mMovingSceneIndex = source;
+        mActiveSceneIndex = target;
         setActiveDocumentScene(target);
         mMovingSceneIndex = -1;
 
@@ -2306,8 +2307,10 @@ void UBBoardController::persistCurrentScene(UBDocumentProxy *pProxy)
     if(UBPersistenceManager::persistenceManager()
             && selectedDocument() && mActiveScene && mActiveSceneIndex != mDeletingSceneIndex
             && (mActiveSceneIndex >= 0) && mActiveSceneIndex != mMovingSceneIndex
-            && (mActiveScene->isModified() || (teacherGuide && teacherGuide->isModified()))
-            || (teacherResources && teacherResources->isModified()))
+            && (mActiveScene->isModified()
+                || (teacherGuide && teacherGuide->isModified())
+                || (teacherResources && teacherResources->isModified()))
+            )
     {
         UBPersistenceManager::persistenceManager()->persistDocumentScene(pProxy ? pProxy : selectedDocument(), mActiveScene, mActiveSceneIndex);
         updatePage(mActiveSceneIndex);
@@ -2321,17 +2324,14 @@ void UBBoardController::updateSystemScaleFactor()
     if (mActiveScene)
     {
         QSize pageNominalSize = mActiveScene->nominalSize();
-        //we're going to keep scale factor untouched if the size is custom
-        QMap<DocumentSizeRatio::Enum, QSize> sizesMap = UBSettings::settings()->documentSizes;
-        if(pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_9) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio4_3) || pageNominalSize == sizesMap.value(DocumentSizeRatio::Ratio16_10))
-        {
-            QSize controlSize = controlViewport();
 
-            qreal hFactor = ((qreal)controlSize.width()) / ((qreal)pageNominalSize.width());
-            qreal vFactor = ((qreal)controlSize.height()) / ((qreal)pageNominalSize.height());
+        //Issue NC - CFA - 20140320 : correction pdf importes -> vue mal dimensionnee
+        QSize controlSize = controlViewport();
 
-            newScaleFactor = qMin(hFactor, vFactor);
-        }
+        qreal hFactor = ((qreal)controlSize.width()) / ((qreal)pageNominalSize.width());
+        qreal vFactor = ((qreal)controlSize.height()) / ((qreal)pageNominalSize.height());
+
+        newScaleFactor = qMin(hFactor, vFactor);
     }
 
     if (mSystemScaleFactor != newScaleFactor)
@@ -2456,7 +2456,6 @@ void UBBoardController::notifyCache(bool visible)
 
 void UBBoardController::updatePageSizeState()
 {    
-    qDebug() << mActiveScene->nominalSize();
     if (mActiveScene->nominalSize() == UBSettings::settings()->documentSizes.value(DocumentSizeRatio::Ratio16_9))
     {
         mMainWindow->actionWidePageSize->setChecked(true);
@@ -2673,11 +2672,12 @@ UBGraphicsWidgetItem *UBBoardController::addW3cWidget(const QUrl &pUrl, const QP
         return NULL;
     QUrl newUrl = QUrl::fromLocalFile(destPath);
 
-    w3cWidgetItem = mActiveScene->addW3CWidget(newUrl, pos, pUrl);
+    w3cWidgetItem = mActiveScene->addW3CWidget(newUrl, pos);
 
     if (w3cWidgetItem) {
         w3cWidgetItem->setUuid(uuid);
         w3cWidgetItem->setOwnFolder(newUrl);
+        w3cWidgetItem->setSourceUrl(pUrl);
 
         QString struuid = UBStringUtils::toCanonicalUuid(uuid);
         QString snapshotPath = selectedDocument()->persistencePath() +  "/" + UBPersistenceManager::widgetDirectory + "/" + struuid + ".png";

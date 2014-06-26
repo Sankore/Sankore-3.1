@@ -131,7 +131,6 @@ void UBDocumentContainer::reloadThumbnails()
         if (mDocumentThumbs.size() > 0)
             UBThumbnailAdaptor::clearThumbs(mDocumentThumbs);
         UBThumbnailAdaptor::load(mCurrentDocument, mDocumentThumbs);
-        qDebug() << "Reloading Thumbnails. new mDocumentThumbs size: " << mDocumentThumbs.size();
     } else {
         if (mDocumentThumbs.size() > 0)
             UBThumbnailAdaptor::clearThumbs(mDocumentThumbs);

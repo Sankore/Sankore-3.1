@@ -59,7 +59,7 @@
 #include "UBGraphicsItemUndoCommand.h"
 #include "UBGraphicsItemGroupUndoCommand.h"
 #include "UBGraphicsTextItemUndoCommand.h"
-#include "UBGraphicsProxyWidget.h"
+#include "UBAbstractGraphicsProxyWidget.h"
 #include "UBGraphicsPixmapItem.h"
 #include "UBGraphicsSvgItem.h"
 #include "UBGraphicsPolygonItem.h"
@@ -67,6 +67,7 @@
 #include "UBGraphicsWidgetItem.h"
 #include "UBGraphicsPDFItem.h"
 #include "UBGraphicsTextItem.h"
+#include "UBGraphicsTextItemDelegate.h"
 #include "UBGraphicsStrokesGroup.h"
 
 #include "customWidgets/UBGraphicsItemAction.h"
@@ -77,6 +78,7 @@
 #include "domain/UBGraphicsEllipseItem.h"
 #include "domain/UBGraphicsRectItem.h"
 #include "domain/UBGraphicsLineItem.h"
+#include "domain/UBGraphicsProxyWidget.h"
 
 #include "UBGraphicsStroke.h"
 
@@ -1355,6 +1357,14 @@ UBGraphicsWidgetItem* UBGraphicsScene::addWidget(const QUrl& pWidgetUrl, const Q
     }
 }
 
+UBGraphicsProxyWidget* UBGraphicsScene::addWidget(QWidget *widget, Qt::WindowFlags wFlags)
+{
+    UBGraphicsProxyWidget *proxy = new UBGraphicsProxyWidget(0, wFlags);
+    proxy->setWidget(widget);
+    QGraphicsScene::addItem(proxy);
+    return proxy;
+}
+
 UBGraphicsAppleWidgetItem* UBGraphicsScene::addAppleWidget(const QUrl& pWidgetUrl, const QPointF& pPos)
 {
     UBGraphicsAppleWidgetItem *appleWidget = new UBGraphicsAppleWidgetItem(pWidgetUrl);
@@ -1364,10 +1374,9 @@ UBGraphicsAppleWidgetItem* UBGraphicsScene::addAppleWidget(const QUrl& pWidgetUr
     return appleWidget;
 }
 
-//N/C - NNE - 20140415 : add the source url parameter
-UBGraphicsW3CWidgetItem* UBGraphicsScene::addW3CWidget(const QUrl& pWidgetUrl, const QPointF& pPos, const QUrl& sourceUrl)
+UBGraphicsW3CWidgetItem* UBGraphicsScene::addW3CWidget(const QUrl& pWidgetUrl, const QPointF& pPos)
 {
-    UBGraphicsW3CWidgetItem *w3CWidget = new UBGraphicsW3CWidgetItem(pWidgetUrl, 0, sourceUrl);
+    UBGraphicsW3CWidgetItem *w3CWidget = new UBGraphicsW3CWidgetItem(pWidgetUrl, 0);
 
     addGraphicsWidget(w3CWidget, pPos);
 
@@ -1652,7 +1661,7 @@ UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const Q
         qDebug() << "Cleaning the string leads to an empty string";
         cleanString = pString;
     }
-    UBGraphicsTextItem *textItem = new UBGraphicsTextItem();
+    UBGraphicsTextItem *textItem = new UBGraphicsTextItem(0);
 
     textItem->setPlainText("");
     textItem->setHtml(cleanString);
@@ -1669,9 +1678,9 @@ UBGraphicsTextItem *UBGraphicsScene::addTextHtml(const QString &pString, const Q
             this,     SLOT(textUndoCommandAdded(UBGraphicsTextItem *)));
 
     textItem->setFocus();
+    textItem->setPos(pTopLeft);
 
     setDocumentUpdated();
-    textItem->setPos(pTopLeft);
 
     return textItem;
 }
@@ -1690,7 +1699,6 @@ void UBGraphicsScene::addItem(QGraphicsItem* item)
 
 void UBGraphicsScene::addShapeToUndoStack(QGraphicsItem* item)
 {
-    //CFA - TEST UNDO
     UBAbstractGraphicsItem * shape = dynamic_cast<UBAbstractGraphicsItem*>(item);
     if (shape)
     {
@@ -1781,16 +1789,7 @@ void UBGraphicsScene::deselectAllItemsExcept(QGraphicsItem* gti)
 
             //EV-7 - NNE - 20140206
             if(UBShapeFactory::isShape(gi)){
-                if(gi->type() == UBGraphicsItemType::GraphicsHandle){
-                    UBAbstractHandle *h = dynamic_cast<UBAbstractHandle*>(gi);
-                    UBShapeFactory::desactivateEditionMode(h->parentItem());
-                }else if(gti->type() == UBGraphicsItemType::GraphicsHandle){
-                    if(gti->parentItem() != gi){
-                        UBShapeFactory::desactivateEditionMode(gi);
-                    }
-                }else{
-                    UBShapeFactory::desactivateEditionMode(gi);
-                }
+                UBShapeFactory::desactivateEditionMode(gi);
             }
 
         }
@@ -2487,24 +2486,34 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
                         break;
                     }
                 case UBGraphicsTextItem::Type:
+                {
+                    UBGraphicsTextItem *text_item = dynamic_cast<UBGraphicsTextItem*>(item);
+                    if (0 != text_item)
                     {
-                        UBGraphicsTextItem *text_item = dynamic_cast<UBGraphicsTextItem*>(item);
-                        if (0 != text_item)
                         if (!text_item->hasFocus())
-                            text_item->remove();
-                        break;
+                        {
+                            UBGraphicsTextItemDelegate * textItemDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(text_item->Delegate());
+                            if (textItemDelegate == 0){
+                                text_item->remove();
+                            }
+                            else if (textItemDelegate->tablePalette()->isHidden() // Do not delete TextEditor when pressing Delete/BackSpace in one of those little windows
+                                && textItemDelegate->linkPalette()->isHidden()
+                                && textItemDelegate->cellPropertiesPalette()->isHidden())
+                            {
+                                text_item->remove();
+                            }
+                        }
                     }
+                    break;
+                }
 
                 default:
                     {
                         UBGraphicsItem *ubgi = dynamic_cast<UBGraphicsItem*>(item);
-                        //EV-7 - NNE - 20140207 : don't delete the handle !
-                        UBAbstractHandle *handle = dynamic_cast<UBAbstractHandle*>(item);
 
                         if (0 != ubgi)
                              ubgi->remove();
-
-                        if(!handle && ubgi == 0){
+                        else{
                             UBCoreGraphicsScene::removeItem(item);
                         }
                     }

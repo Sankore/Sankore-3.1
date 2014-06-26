@@ -30,8 +30,13 @@
 
 #include "core/UB.h"
 #include "UBGraphicsItemDelegate.h"
+#include "gui/UBMainWindow.h"
+#include "gui/UBCreateTablePalette.h"
+#include "gui/UBCreateHyperLinkPalette.h"
+#include "gui/UBCellPropertiesPalette.h"
 
 class UBGraphicsTextItem;
+class UBGraphicsProxyWidget;
 
 class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 {
@@ -50,11 +55,18 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         void scaleTextSize(qreal multiplyer);
         virtual QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value);
 
+        UBCreateTablePalette* tablePalette();
+        UBCreateHyperLinkPalette* linkPalette();
+        UBCellPropertiesPalette* cellPropertiesPalette();
+
+        void changeDelegateButtonsMode(bool htmlMode);
 
     public slots:
         void contentsChanged();
         virtual void setEditable(bool);
         virtual void remove(bool canUndo);
+        void alternHtmlMode();
+        void duplicate();
 
     protected:
         virtual void buildButtons();
@@ -68,9 +80,27 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         UBGraphicsTextItem* delegated();
 
         DelegateButton* mFontButton;
+        DelegateButton* mFontBoldButton;        
+        DelegateButton* mFontItalicButton;
+        DelegateButton* mFontUnderlineButton;
         DelegateButton* mColorButton;
         DelegateButton* mDecreaseSizeButton;
         DelegateButton* mIncreaseSizeButton;
+        DelegateButton* mBackgroundColorButton;
+        DelegateButton* mLeftAlignmentButton;
+        DelegateButton* mCenterAlignmentButton;
+        DelegateButton* mRightAlignmentButton;
+        DelegateButton* mCodeButton;
+        DelegateButton* mUnorderedListButton;
+        DelegateButton* mOrderedListButton;
+        DelegateButton* mAddIndentButton;
+        DelegateButton* mRemoveIndentButton;
+        DelegateButton* mHyperLinkButton;
+        DelegateButton* mTableButton;
+
+        UBCreateTablePalette* mTablePalette;
+        UBCreateHyperLinkPalette* mLinkPalette;
+        UBCellPropertiesPalette* mCellPropertiesPalette;
 
         int mLastFontPixelSize;
 
@@ -84,16 +114,49 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         QFont createDefaultFont();
         QAction *mEditableAction;
 
+        QMenu * mTableMenu;
+
     private slots:
 
         void pickFont();
+        void setFontBold();
+        void setFontItalic();
+        void setFontUnderline();
         void pickColor();
 
         void decreaseSize();
         void increaseSize();
 
+        void pickBackgroundColor();
+        void setTableSize();
+        void setCellProperties();
+        void insertTable();
+        void addIndent();
+        void removeIndent();
+        void insertOrderedList();
+        void insertUnorderedList();
+
+        void setAlignmentToLeft();
+        void setAlignmentToCenter();
+        void setAlignmentToRight();
+        void addLink();
+        void insertLink();
+        void insertColumnOnRight();
+        void insertColumnOnLeft();
+        void insertRowOnBottom();
+        void insertRowOnTop();
+        void deleteColumn();
+        void deleteRow();
+        void applyCellProperties();
+        void distributeColumn();
+        void showMenuTable();
+
 private:
       const int delta;
+      void insertList(QTextListFormat::Style format);
+      QTextListFormat::Style nextStyle(QTextListFormat::Style format);
+      QTextListFormat::Style previousStyle(QTextListFormat::Style format);
+
 
 };
 

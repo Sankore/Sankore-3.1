@@ -26,6 +26,7 @@
 #include <QtGui>
 
 #include "UBDrawingPolygonPalette.h"
+#include "UBAlignObjectPalette.h"
 #include "UBMainWindow.h"
 
 #include "core/UBApplication.h"
@@ -43,6 +44,7 @@
 #include "domain/UBEditableGraphicsRegularShapeItem.h"
 #include "UBDrawingStrokePropertiesPalette.h"
 #include "UBDrawingFillPropertiesPalette.h"
+#include "UBDrawingArrowsPropertiesPalette.h"
 
 UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     : UBActionPalette(Qt::TopLeftCorner, parent, orient)
@@ -54,7 +56,11 @@ UBDrawingPalette::UBDrawingPalette(QWidget *parent, Qt::Orientation orient)
     UBActionPaletteButton * btnSubPalettePolygon = addButtonSubPalette(new UBDrawingPolygonPalette(Qt::Horizontal, parentWidget()));
     addButtonSubPalette(new UBDrawingStrokePropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionStrokeProperties);
     addButtonSubPalette(new UBDrawingFillPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionFillProperties);
+    addButtonSubPalette(new UBDrawingArrowsPropertiesPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionArrowProperties);
     UBActionPaletteButton * btnPaintBucket = addActionButton(UBApplication::mainWindow->actionChangeFillingColor);
+
+    //Sankore-1701 - NNE - 20140324
+    addButtonSubPalette(new UBAlignObjectPalette(Qt::Horizontal, parentWidget()), UBApplication::mainWindow->actionAlignObject);
 
     // Some of those buttons are grouped :
     mButtonGroup = new QButtonGroup(this);

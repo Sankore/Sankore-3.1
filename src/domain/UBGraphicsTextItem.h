@@ -60,6 +60,24 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         void setTextHeight(qreal height);
         qreal textHeight() const;
 
+        void insertImage(QString src);
+        void insertTable(const int lines, const int columns);
+        void insertColumn(bool onRight = false);
+        void insertRow(bool onRight = false);
+        void deleteColumn();
+        void deleteRow();
+        void setCellWidth(int percent);
+        void setBackgroundColor(const QColor& color);
+        void setForegroundColor(const QColor& color);
+        void setAlignmentToLeft();
+        void setAlignmentToCenter();
+        void setAlignmentToRight();        
+
+        void distributeColumn();
+
+        bool htmlMode() const;
+        void setHtmlMode(const bool mode);
+
         void contentsChanged();
 
         virtual void resize(qreal w, qreal h);
@@ -88,18 +106,27 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
             mColorOnLightBackground = pColorOnLightBackground;
         }
 
+        QColor backgroundColor() const
+        {
+            return mBackgroundColor;
+        }
+
         virtual void clearSource(){;}
         virtual void setUuid(const QUuid &pUuid);
 
         //issue 1554 - NNE - 20131008
         void activateTextEditor(bool activateTextEditor);
-
     signals:
         void textUndoCommandAdded(UBGraphicsTextItem *textItem);
 
     private slots:
+        void loadUrl(QString url);
         void undoCommandAdded();
         void documentSizeChanged(const QSizeF & newSize);
+        void onLinkHovered(const QString &currentLinkUrl); // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
+
+    public slots:
+            void changeHTMLMode();
 
     private:
         virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -110,6 +137,14 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
+        //N/C - NNE - 20140520
+        QString formatTable(QString &source);
+        QString removeTextBackgroundColor(QString& source);
+        QString loadImages(QString& source, bool onlyLoad = false);
+        QString formatParagraph(QString& source);
+        QString formatList(QString& source);
+        //N/C - NNE - 20140520 : END
+
     private:
         qreal mTextHeight;
 
@@ -117,11 +152,18 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         QTime mLastMousePressTime;
         QString mTypeTextHereLabel;
 
+        bool mHtmlIsInterpreted;
+
         QColor mColorOnDarkBackground;
         QColor mColorOnLightBackground;
+        QColor mBackgroundColor;
 
         //issue 1554
         bool isActivatedTextEditor;
+
+        QString findAndReplaceAttribute(QString tag, QString oldAttribute, QString newAttribute, QString& source);
+
+        QString mCurrentLinkUrl;
 
     protected:
          //issue 1539 - NNE - 20131018
@@ -141,7 +183,6 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
            * \param event The event send by Qt.
            */
          void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
-
 };
 
 #endif /* UBGRAPHICSTEXTITEM_H_ */

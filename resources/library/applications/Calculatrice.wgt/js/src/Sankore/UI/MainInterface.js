@@ -324,7 +324,7 @@
                     td.classList.add(text.type);
                 }
 
-                buttonEl.addEventListener('click', function (e) {
+                buttonEl.addEventListener('mousedown', function (e) {
                     self.handleButtonClick(this, e, button, slot);
                 });
 

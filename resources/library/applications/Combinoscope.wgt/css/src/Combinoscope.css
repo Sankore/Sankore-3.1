@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    font-size: 14px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+/* Prevent the text contents of draggable elements from being selectable. */
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-drag: element;
+    cursor: move;
+}
+@font-face {
+    font-family: 'icons';
+    src: url('../fonts/FontAwesome.otf');
+}
+/* --- WIDGET -------------------------------------------------------------- */
+
+.combinoscope {
+    -webkit-user-select: none;
+    cursor: default;
+    font-family: Verdana, sans-serif;
+    color: #2a2219;
+    border: 1px solid #b4a99c;
+    border-radius: 0.5em;
+    background-color: #f2ebe2;
+    box-sizing: border-box;
+    height: 100%;
+}
+/* --- HEADER -------------------------------------------------------------- */
+
+.combinoscope .header {
+    border-bottom: 1px solid #b4a99c;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    overflow: hidden;
+    background-color: #d3c2ae;
+    box-shadow: inset 0 -0.3rem 0.4rem -0.3rem rgba(0, 0, 0, 0.3);
+}
+.combinoscope .header h1 {
+    display: block;
+    margin-right: 2em;
+    padding: 0.5rem;
+    float: left;
+    font-weight: normal;
+    font-size: 1.2em;
+    text-shadow: 0 1px 1px white;
+}
+.combinoscope .header .mode-control input {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 18px;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0 0.25em;
+    border: none;
+}
+.combinoscope .header .mode-control span {
+    vertical-align: top;
+    display: inline-block;
+}
+.combinoscope .header .mode-control input:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999;
+    border-radius: 9px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    background-color: #eee;
+}
+.combinoscope .header .mode-control input:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 14px;
+    width: 14px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    background-color: #7e7367;
+    top: 2px;
+    left: 2px;
+    -webkit-transition-property: left;
+    -webkit-transition-duration: 0.2s;
+    transition-property: left;
+    transition-duration: 0.2s;
+}
+.combinoscope .header .mode-control input:hover:after {
+    background-color: #2a2219;
+}
+.combinoscope .header .mode-control input:checked:after {
+    left: 26px;
+    left: calc(2em - 3px);
+}
+.combinoscope .header .layout-control select {
+    background-color: #eee;
+    border: 1px solid #999;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: #2a2219;
+    display: inline-block;
+    height: 1.42em;
+    margin-top: -2px;
+    outline: none;
+    position: relative;
+    width: 10em;
+}
+.combinoscope .header .editor-control {
+    float: right;
+    margin-right: 0.5rem;
+}
+.combinoscope .header .editor-control button {
+    font-size: 0;
+    color: transparent;
+    width: 1.42rem;
+    height: 1.42rem;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent none;
+    outline: none;
+}
+.combinoscope .header .editor-control button:before {
+    content: '\F013';
+    color: #7e7367;
+    font-size: 1.1rem;
+    font-family: icons, sans-serif;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.combinoscope .header .editor-control button:active:before {
+    color: #2a2219;
+}
+/* --- CONTROL ------------------------------------------------------------- */
+
+.combinoscope .control {
+    float: left;
+    padding-top: 0.6rem;
+    vertical-align: middle;
+}
+.combinoscope .control label {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 0.7em;
+    margin-left: 2em;
+}
+/* --- LETTER -------------------------------------------------------------- */
+
+.combinoscope .letter {
+    background: #fff;
+    border: 1px solid #b4a99c;
+    border-radius: 0.7em;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: "Verdana", serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0.3em 0.3em 0;
+    min-height: 1rem;
+    min-width: 3.2rem;
+    padding: 0.4em 0.6em;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.combinoscope .letter.vowel {
+    color: #0E7733;
+}
+.combinoscope .letter.consonant {
+    color: #77330E;
+}
+.combinoscope .letter:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.combinoscope .letter.disabled {
+    background-color: #d3c2ae;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 1px 1px white;
+}
+.combinoscope .letter.placeholder {
+    border-style: dashed;
+}
+.combinoscope .letter.placeholder.hover,
+.combinoscope .letter.placeholder.hover:hover {
+    background-color: #eee;
+}
+.combinoscope .letter.placeholder:hover {
+    background-color: #fff;
+    box-shadow: none;
+}
+/* --- LETTERS ------------------------------------------------------------- */
+
+.combinoscope .letters {
+    display: table;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: inset 0 -0.4rem 0.4rem -0.4rem rgba(0, 0, 0, 0.2);
+}
+.combinoscope .letters .consonants,
+.combinoscope .letters .vowels {
+    display: table-cell;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0.5em;
+    border-bottom: 1px solid #b4a99c;
+    border-top: 1px solid #fff;
+}
+.combinoscope .letters h2 {
+    font-weight: normal;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+/* --- WORD ---------------------------------------------------------------- */
+
+.combinoscope .word {
+    padding: 0.5em 0;
+    text-align: center;
+    font-size: 34pt;
+    border-top: 1px solid #fff;
+}
+.combinoscope .word .clear {
+    margin-top: -17pt;
+    margin-right: 0.5rem;
+    float: right;
+    display: block;
+    color: transparent;
+    font-size: 0;
+    width: 1.42rem;
+    height: 1.42rem;
+    line-height: 1.42rem;
+    vertical-align: middle;
+    text-align: center;
+}
+.combinoscope .word .clear:before {
+    content: '\F021';
+    font-family: icons, sans-serif;
+    font-size: 1rem;
+    color: #7e7367;
+}
+.combinoscope .word .clear:active:before {
+    color: #2a2219;
+}
+.combinoscope .word .container {
+    display: inline-block;
+}
+.combinoscope .word .letter {
+    vertical-align: middle;
+    margin-right: 0.2rem;
+    margin-bottom: 0;
+    padding: 0.7rem 0.5rem;
+    border-radius: 0;
+}
+.combinoscope .word .letter:not(.placeholder).first {
+    -webkit-border-top-left-radius: 1.5rem;
+    -webkit-border-bottom-left-radius: 1.5rem;
+    padding-left: 1.5rem;
+}
+.combinoscope .word .letter:not(.placeholder).last {
+    -webkit-border-top-right-radius: 1.5rem;
+    -webkit-border-bottom-right-radius: 1.5rem;
+    padding-right: 1.5rem;
+}
+.combinoscope .word .placeholder:last-child {
+    margin-right: 0;
+}
+.combinoscope .word .letter.placeholder {
+    min-height: 1.64em;
+    min-width: 1.64em;
+    border-radius: 1.5rem ! important;
+}
+/* --- EDITOR -------------------------------------------------------------- */
+
+.combinoscope .editor {
+    border-top: 1px solid #fff;
+}
+.combinoscope .add-layout-control,
+.combinoscope .unselect-all-layout-control {
+    padding: 0.6rem;
+    border-right: 1px solid #b4a99c;
+}
+.combinoscope .layout-name-control,
+.combinoscope .delete-layout-control {
+    padding: 0.6rem;
+    border-left: 1px solid white;
+    height: 1.42rem;
+    line-height: 1.42rem;
+}
+.combinoscope .layout-name-control input {
+    background-color: #eee;
+    border: 1px solid #999;
+    border-radius: 7px;
+}
+.combinoscope .layout-name-control input[disabled] {
+    color: #7e7367;
+}
+.combinoscope .add-layout-control button,
+.combinoscope .delete-layout-control button, 
+.combinoscope .select-all-layout-control button, 
+.combinoscope .unselect-all-layout-control button {
+    font-size: 0;
+    width: 1.42rem;
+    height: 1.42rem;
+    display: block;
+    position: relative; 
+    border: none;
+    background: transparent none;
+    outline: none;
+}
+.combinoscope .add-layout-control button:before,
+.combinoscope .delete-layout-control button:before,
+.combinoscope .select-all-layout-control button:before,
+.combinoscope .unselect-all-layout-control button:before {
+    color: #7e7367;
+    font-size: 1.1rem;
+    font-family: icons, sans-serif;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.combinoscope .add-layout-control button:before {
+    content: '\F067';
+}
+.combinoscope .delete-layout-control button:before {
+    content: '\F014';
+}
+.combinoscope .select-all-layout-control button:before {
+    content: '\F046';
+}
+.combinoscope .unselect-all-layout-control button:before {
+    content: '\F096';
+}
+.combinoscope .editor .control button[disabled]:before {
+    color: #bfb096;
+}
+.combinoscope .add-layout-control button:active:before,
+.combinoscope .delete-layout-control button:active:before,
+.combinoscope .select-all-layout-control button:active:before,
+.combinoscope .unselect-all-layout-control button:active:before {
+    color: #2a2219;
+}
+.combinoscope .editor .control button[disabled]:active:before {
+    color: #bfb096;
+}
+.combinoscope .editor .help {
+    clear: both;
+    padding: 0.6rem 0.6rem 0.6rem 3rem;
+    border-top: 1px solid #b4a99c;
+    color: #7e7367;
+    font-size: 1em;
+    font-style: italic;
+    box-shadow: inset 0 0.4rem 0.4rem -0.4rem rgba(0, 0, 0, 0.2);
+}

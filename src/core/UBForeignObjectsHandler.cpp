@@ -287,6 +287,7 @@ private:
         QStringList presentIds = mPresentIdsMap.keys();
         v.resize(qMax(domIds.count(), presentIds.count()));
         QVector<QString>::iterator it_diff;
+
         it_diff=std::set_symmetric_difference(domIds.begin(), domIds.end()
                                               , presentIds.begin(), presentIds.end()
                                               , v.begin());
@@ -301,12 +302,83 @@ private:
             mediaToContainer(element);
         } else if (what == tForeignObject) {
             foreingObjectToContainer(element);
+
+            //N/C - NNE - 20140317
+            cleanObjectFolder(element);
+
+            //N/C - NNE - 20140520
+            //foreign object may referer resource which are not present in the svg
+            addResourceIdToSvg(element);
         } else if (what == tTeacherGuide) {
             teacherGuideToContainer(element);
         }
 
         pullActionFromElement(element);
     }
+
+    // N/C - NNE - 20140317 : When export, reduce the size of the ubz file
+    void cleanObjectFolder(const QDomElement &element)
+    {
+        QDomElement preference = element.firstChildElement("ub:preference");
+
+        QString value = preference.attribute("value");
+
+        int findPos = value.indexOf("objects/");
+        int endPos;
+
+        QVector<QString> objectsIdUsed;
+
+        //find all objects used
+        while(findPos != -1){
+            endPos = value.indexOf("\"", findPos);
+            objectsIdUsed << value.mid(findPos, endPos - findPos);
+            findPos = value.indexOf("objects/", endPos);
+        }
+
+        QString path = element.attribute(aSrc);
+        QString objectsFolderPath = mCurrentDir + "/" + path + "/objects/";
+
+        QDir dir(objectsFolderPath);
+        dir.setFilter(QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+
+        //then check all files in the objects directory
+        //delete the file not used (not in te objectIdUsed variable)
+        QFileInfoList list = dir.entryInfoList();
+        for (int i = 0; i < list.size(); i++) {
+            QFileInfo fileInfo = list.at(i);
+
+            if(!objectsIdUsed.contains("objects/"+fileInfo.fileName())){
+                QFile(fileInfo.filePath()).remove();
+            }
+
+        }
+    }
+    // N/C - NNE - 20140317 : END
+
+    //N/C - NNE - 20140520
+    void addResourceIdToSvg(const QDomElement& element)
+    {
+        QDomElement textContent = element.firstChildElement("itemTextContent");
+
+        QString value = textContent.text();
+
+        int findPos = value.indexOf("images/");
+        int endPos;
+
+        //find all objects used
+        while(findPos != -1){
+            endPos = value.indexOf("\"", findPos);
+
+            QString path = value.mid(findPos, endPos - findPos);
+
+            QString uuid = path.split("/").at(1).split(".").at(0);
+
+            mDomIdsMap.insert(uuid, path);
+
+            findPos = value.indexOf("images/", endPos);
+        }
+    }
+    //N/C - NNE - 20140520 : END
 
     void pullActionFromElement(const QDomElement &element)
     {

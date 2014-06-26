@@ -947,7 +947,8 @@ void UBBoardPaletteManager::addItem(const QPixmap& pPixmap, const QPointF& pos, 
 
 void UBBoardPaletteManager::addItemToCurrentPage()
 {
-    if (UBApplication::applicationController->displayMode() != UBApplicationController::Board )
+    //Issue NC - CFA - 20140331 : retour au mode board si mode desktop (en mode desktop, displayMode() renvoie Board...)
+    if (UBApplication::applicationController->displayMode() != UBApplicationController::Board || UBApplication::applicationController->isShowingDesktop())
         UBApplication::applicationController->showBoard();
 
     mAddItemPalette->hide();

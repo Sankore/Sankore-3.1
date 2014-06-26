@@ -218,6 +218,28 @@ void UBDocumentNavigator::refreshScene()
         int rowIndex = i / mNbColumns;
         item.Place(rowIndex, columnIndex, mThumbnailWidth, thumbnailHeight);
         item.getCaption()->highlight(false);
+
+        QGraphicsProxyWidget * proxyWidget = dynamic_cast<QGraphicsProxyWidget*>(item.getThumbnail());
+        if (proxyWidget)
+        {
+            QGraphicsView * viewBoardScene = dynamic_cast<QGraphicsView *>(proxyWidget->widget());
+            if (viewBoardScene && viewBoardScene->scene())
+            {
+                // Fit the view :
+                UBGraphicsScene * s = dynamic_cast<UBGraphicsScene *>(viewBoardScene->scene());
+                int nominalSizeWidth = s->nominalSize().width();
+                int nominalSizeHeight = s->nominalSize().height();
+                QRectF nominalSceneRect(-nominalSizeWidth/2, -nominalSizeHeight/2, nominalSizeWidth, nominalSizeHeight);
+
+                QRectF itemsBoundingRect = s->itemsBoundingRect();
+
+                QRectF visibleRect = nominalSceneRect.unite(itemsBoundingRect);
+                viewBoardScene->fitInView(visibleRect, Qt::KeepAspectRatio);
+                viewBoardScene->setSceneRect(visibleRect);
+
+                viewBoardScene->setRenderHints(QPainter::HighQualityAntialiasing);
+            }
+        }
     }
     scene()->setSceneRect(scene()->itemsBoundingRect());
 

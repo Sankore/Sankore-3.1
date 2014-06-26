@@ -188,7 +188,7 @@ UBDocumentProxy* UBDocumentManager::importFile(const QFile& pFile, const QString
                 QString documentName = QFileInfo(pFile.fileName()).completeBaseName();
                 document = UBPersistenceManager::persistenceManager()->createDocument(pGroup
                                                                                       ,documentName
-                                                                                      , true
+                                                                                      , false // Issue 1630 - CFA - 201410503 - suppression de la page vide ajoutee à l'import des pdfs
                                                                                       , QString()
                                                                                       , 0
                                                                                       , true);

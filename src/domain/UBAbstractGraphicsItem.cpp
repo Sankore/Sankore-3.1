@@ -11,9 +11,14 @@ UBAbstractGraphicsItem::UBAbstractGraphicsItem(QGraphicsItem *parent):
     Delegate()->setFlippable(false);
     Delegate()->setRotatable(true);
     Delegate()->setCanTrigAnAction(true);
+    Delegate()->setHorizontalMirror(true);
+    Delegate()->setVerticalMirror(true);
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::NoResizing);
 
     setUuid(QUuid::createUuid());
+    //used for the podcast
+    setData(UBGraphicsItemData::ItemLayerType, UBItemLayerType::Object);
+
     setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::ObjectItem)); //Necessary to set if we want z value to be assigned correctly
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
@@ -270,11 +275,6 @@ void UBAbstractGraphicsItem::copyItemParameters(UBItem *copy) const
             cp->Delegate()->setAction(Delegate()->action());
     }
 
-    if(cp->hasFillingProperty()){
-        cp->setBrush(brush());
-    }
-
-    if(cp->hasStrokeProperty()){
-        cp->setPen(pen());
-    }
+    cp->setBrush(brush());
+    cp->setPen(pen());
 }

@@ -99,6 +99,8 @@ class UBSettings : public QObject
         void setBoldFont(bool bold);
         bool isItalicFont();
         void setItalicFont(bool italic);
+        bool isUnderlineFont();
+        void setUnderlineFont(bool underline);
 
         void setPassword(const QString& id, const QString& password);
         QString password(const QString& id);
@@ -196,6 +198,10 @@ class UBSettings : public QObject
         static QString documentDefaultBackgroundImage;
         static QString documentDefaultBackgroundImageDisposition;
         // Fin Issue 1684 - ALTI/AOU - 20131210
+
+        //Issue N/C - NNE - 20140526
+        static QString documentTagVersion;
+        //Issue N/C - NNE - 20140526
 
         static QString documentDate;
 

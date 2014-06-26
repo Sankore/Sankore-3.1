@@ -39,7 +39,7 @@ void UBAbstractEditable::deactivateEditionMode()
     //nop
 }
 
-bool UBAbstractEditable::isInEditMode()
+bool UBAbstractEditable::isInEditMode() const
 {
     return mEditMode;
 }

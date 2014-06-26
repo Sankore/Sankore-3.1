@@ -63,6 +63,8 @@
 
 class UBGraphicsParaschoolEditorWidgetItem;
 
+DelegateButton *DelegateButton::Spacer = 0;
+
 DelegateButton::DelegateButton(const QString & fileName, QGraphicsItem* pDelegated, QGraphicsItem * parent, Qt::WindowFrameSection section)
     : QGraphicsSvgItem(fileName, parent)
     , mDelegated(pDelegated)
@@ -157,6 +159,12 @@ void DelegateButton::startShowProgress()
     }
 }
 
+DelegateSpacer::DelegateSpacer(QGraphicsItem * parent, Qt::WindowFrameSection section):
+    DelegateButton("", 0, parent, section)
+{
+
+}
+
 UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObject * parent, bool respectRatio, bool canRotate, bool useToolBar, bool showGoContentButton)
     : QObject(parent)
     , mDelegated(pDelegated)
@@ -177,6 +185,7 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mCanDuplicate(true)
     , mRespectRatio(respectRatio)
     , mCanTrigAnAction(false)
+    , mCanReturnInCreationMode(false)
     , mMimeData(NULL)
     , mFlippable(false)
     , mToolBarUsed(useToolBar)
@@ -232,6 +241,10 @@ void UBGraphicsItemDelegate::init()
     //Wrapper function. Use it to set correct data() to QGraphicsItem as well
     setFlippable(false);
     setRotatable(false);
+
+    //N/C - NNE - 20140505 : add vertical and horizontal flip
+    mVerticalMirror = false;
+    mHorizontalMirror = false;
 }
 
 
@@ -654,13 +667,50 @@ void UBGraphicsItemDelegate::decorateMenu(QMenu* menu)
 
     if(mCanTrigAnAction)
         mShowPanelToAddAnAction = menu->addAction(tr("Add an action"),this,SLOT(onAddActionClicked()));
+
+    if (mCanReturnInCreationMode)
+        menu->addAction(tr("Return to creation mode"), this, SLOT(onReturnToCreationModeClicked()));
+
+    //N/C - NNE - 20140505 : add vertical and horizontal flip
+    if(mHorizontalMirror)
+        menu->addAction(tr("Flip on horizontal axis"), this, SLOT(flipHorizontally()));
+
+    if(mVerticalMirror)
+        menu->addAction(tr("Flip on vertical axis"), this, SLOT(flipVertically()));
+    //N/C - NNE - 20140505 : END
+
 }
+
+//N/C - NNE - 20140505 : add vertical and horizontal flip
+void UBGraphicsItemDelegate::flipHorizontally()
+{
+    mDelegated->setTransform(QTransform::fromScale(1, -1), true);
+
+    qreal dy = 2.f*mDelegated->boundingRect().bottomLeft().y();
+
+    mDelegated->translate(0, -dy);
+}
+
+void UBGraphicsItemDelegate::flipVertically()
+{
+    mDelegated->setTransform(QTransform::fromScale(-1, 1), true);
+
+    qreal dx = 2.f*mDelegated->boundingRect().bottomRight().x();
+
+    mDelegated->translate(-dx, 0);
+}
+//N/C - NNE - 20140505 : END
 
 void UBGraphicsItemDelegate::onAddActionClicked()
 {
     UBCreateLinkPalette* linkPalette = UBApplication::boardController->paletteManager()->linkPalette();
     linkPalette->show();
     connect(linkPalette,SIGNAL(definedAction(UBGraphicsItemAction*)),this,SLOT(saveAction(UBGraphicsItemAction*)));
+}
+
+void UBGraphicsItemDelegate::onReturnToCreationModeClicked()
+{
+    UBApplication::boardController->shapeFactory().returnToCreationMode(mDelegated);
 }
 
 void UBGraphicsItemDelegate::saveAction(UBGraphicsItemAction* action)
@@ -750,6 +800,11 @@ void UBGraphicsItemDelegate::setCanTrigAnAction(bool canTrig)
     mCanTrigAnAction = canTrig;
 }
 
+void UBGraphicsItemDelegate::setCanReturnInCreationMode(bool canReturn)
+{
+    mCanReturnInCreationMode = canReturn;
+}
+
 void UBGraphicsItemDelegate::setRotatable(bool pCanRotate)
 {
     mCanRotate = pCanRotate;
@@ -808,8 +863,11 @@ void UBGraphicsItemDelegate::updateButtons(bool showUpdated)
             mDelegated->scene()->addItem(mDeleteButton);
     }
 
-    if (showUpdated)
+    //Issue NC - CFA - 20140331 : suppression du bouton delete en mode verouille
+    if (showUpdated && !isLocked())
         mDeleteButton->show();
+    else
+        mDeleteButton->hide();
 
     int i = 1, j = 0, k = 0;
     while ((i + j + k) < mButtons.size())  {
@@ -849,7 +907,8 @@ void UBGraphicsItemDelegate::setAction(UBGraphicsItemAction* action)
 {
     if(!action)
         onRemoveActionClicked();
-    else{
+    else
+    {
         setCanTrigAnAction(true);
         if(!mMenu){
             //TODO claudio
@@ -868,7 +927,7 @@ UBGraphicsToolBarItem::UBGraphicsToolBarItem(QGraphicsItem * parent) :
     mVisible(false),
     mMinWidth(200),
     mInitialHeight(26),
-    mElementsPadding(2)
+    mElementsPadding(0)
 {
     QRectF rect = this->rect();
     rect.setHeight(mInitialHeight);
@@ -887,9 +946,20 @@ void UBGraphicsToolBarItem::positionHandles()
     int itemXOffset = 0;
     foreach (QGraphicsItem* item, mItemsOnToolBar)
     {
-        item->setPos(itemXOffset, 0);
-        itemXOffset += (item->boundingRect().width()+mElementsPadding);
-        item->show();
+        if(item == DelegateButton::Spacer){
+            itemXOffset += 10;
+        }else{
+            item->setPos(itemXOffset, 0);
+
+            itemXOffset += item->boundingRect().width();
+
+            if(itemXOffset < rect().width())
+                item->show();
+            else
+                item->hide();
+
+            itemXOffset += mElementsPadding;
+        }
     }
 }
 

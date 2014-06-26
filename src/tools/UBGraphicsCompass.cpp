@@ -415,7 +415,7 @@ void UBGraphicsCompass::paintAngleDisplay(QPainter *painter)
 void UBGraphicsCompass::paintRadiusDisplay(QPainter *painter)
 {
     qreal radiusInCentimeters = rect().width() / (mPixelsPerMillimeter * 10);
-    QString format = rect().width() >= sDisplayRadiusUnitMinLength ? "%1 cm" : "%1";
+    QString format = rect().width() >= sDisplayRadiusUnitMinLength ? " %1 " : "%1";
     QString radiusText = QString(format).arg(radiusInCentimeters, 0, 'f', 1);
 
     bool onPencilArm = rect().width() > sDisplayRadiusOnPencilArmMinLength;

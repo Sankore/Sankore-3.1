@@ -28,7 +28,7 @@ public:
         Q_UNUSED(handle)
     }
 
-    bool isInEditMode();
+    bool isInEditMode() const;
 protected:
     QVector<UBAbstractHandle*> mHandles;
 

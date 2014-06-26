@@ -24,6 +24,10 @@
                 this.set(values[i][id], values[i]);
             }
         },
+        
+        has: function (id) {
+            return this.keys().indexOf(id) !== -1;
+        },
 
         get: function (id, def) {
             if (typeof this.elements[id] !== 'undefined') {

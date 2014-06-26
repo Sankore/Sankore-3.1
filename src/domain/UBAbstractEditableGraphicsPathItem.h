@@ -16,13 +16,18 @@ public:
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     virtual void focusOutEvent(QFocusEvent *event);
     virtual void focusHandle(UBAbstractHandle *handle);
     virtual void deactivateEditionMode();
     virtual void onActivateEditionMode();
 
+    virtual void drawArrows();
+
 
     int mMultiClickState;
+
+    bool mHasMoved;
 };
 
 #endif // UBABSTRACTEDITABLEGRAPHICSPATHITEM_H

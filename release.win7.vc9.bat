@@ -24,22 +24,24 @@ set GIT_BIN=%PROGRAMS_FILE_PATH%\Git\bin
 set VS_BIN=%PROGRAMS_FILE_PATH%\Microsoft Visual Studio 9.0\VC\bin
 set WIN_SDK_BIN=%PROGRAMS_FILE_PATH%\Microsoft SDKs\Windows\v6.0A\Bin
 set INNO_EXE=%PROGRAMS_FILE_PATH%\Inno Setup 5\iscc.exe 
-set BUILD_DIR=build\win32\release
-set LRELEASE=%QT_DIR%\bin\lrelease
+set BUILD_DIR=build\win32\release.exe
+set LRELEASE=%QT_DIR%\bin\lrelease.exe
 set BASE_QT_TRANSLATIONS_DIRECTORY=%QT_DIR%\translations
 
 set PATH=%QT_BIN%;%PATH%;%WIN_SDK_BIN%;%GIT_BIN%
 
 call "%VS_BIN%\vcvars32.bat"
 
-echo %PATH%
+REM echo %PATH%
 
 REM check if the mimimal setup
 IF NOT EXIST %QT_DIR% GOTO EXIT_WITH_ERROR
 IF NOT EXIST %QT_BIN% GOTO EXIT_WITH_ERROR
 IF NOT EXIST %SEVEN_ZIP_EXE% GOTO EXIT_WITH_ERROR
 IF NOT EXIST %INNO_EXE% GOTO EXIT_WITH_ERROR
+echo %LRELEASE%
 IF NOT EXIST %LRELEASE% GOTO EXIT_WITH_ERROR
+echo "ici"
 IF NOT EXIST %BASE_QT_TRANSLATIONS_DIRECTORY% GOTO EXIT_WITH_ERROR
 
 
@@ -72,7 +74,7 @@ REM echo %LAST_TAG_VERSION%
 nmake release-install
 IF NOT EXIST build\win32\release\product\Open-Sankore.exe GOTO EXIT_WITH_ERROR
 
-xcopy C:\OpenSankore\lib\*.dll build\win32\release\product\
+xcopy C:\OpenSankore\lib\QtMultimediaKit1.dll build\win32\release\product\
 xcopy %QT_DIR%\lib\QtOpenGL4.dll build\win32\release\product\
 
 set CUSTOMIZATIONS=build\win32\release\product\customizations

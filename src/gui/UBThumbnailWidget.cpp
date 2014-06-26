@@ -62,6 +62,10 @@ UBThumbnailWidget::UBThumbnailWidget(QWidget* parent)
     setAlignment(Qt::AlignLeft | Qt::AlignTop);
 
     connect(&mThumbnailsScene, SIGNAL(selectionChanged()), this, SLOT(sceneSelectionChanged()));
+
+    //
+    qDebug() << "mThumbnailWidth: " << mThumbnailWidth;
+    //
 }
 
 
@@ -1017,22 +1021,6 @@ void UBWidgetTextThumbnailElement::Place(int row, int col, qreal width, qreal he
 
 void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    // Fit the view :
-    if (view() && view()->scene()){
-        UBGraphicsScene * s = dynamic_cast<UBGraphicsScene *>(view()->scene());
-        int nominalSizeWidth = s->nominalSize().width();
-        int nominalSizeHeight = s->nominalSize().height();
-        QRectF nominalSceneRect(-nominalSizeWidth/2, -nominalSizeHeight/2, nominalSizeWidth, nominalSizeHeight);
-
-        QRectF itemsBoundingRect = s->itemsBoundingRect();
-
-        QRectF visibleRect = nominalSceneRect.unite(itemsBoundingRect);
-        view()->fitInView(visibleRect, Qt::KeepAspectRatio);
-        view()->setSceneRect(visibleRect);
-
-        view()->setRenderHints(QPainter::HighQualityAntialiasing);
-    }
-
     QGraphicsProxyWidget::paint(painter, option, widget);
 
     // Overlay buttons :
@@ -1062,7 +1050,8 @@ void UBSceneThumbnailProxyWidget::paint(QPainter *painter, const QStyleOptionGra
 
     }
 
-    if(UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->isModified()){
+    if(UBApplication::boardController->paletteManager()->teacherGuideDockWidget()->teacherGuideWidget()->hasUserDataInTeacherGuide()
+            || UBApplication::boardController->paletteManager()->teacherResourcesDockWidget()->hasUserDataInTeacherGuide()){
         QPixmap toque(":images/toque.svg");
         painter->setOpacity(0.6);
         painter->drawPixmap(QPoint(UBSettings::maxThumbnailWidth - toque.width(),0),toque);

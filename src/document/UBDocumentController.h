@@ -29,6 +29,9 @@
 #include "core/UBApplicationController.h"
 #include "core/UBApplication.h"
 
+
+#include "document/UBSortFilterProxyModel.h"
+
 namespace Ui
 {
     class documents;
@@ -149,6 +152,12 @@ public:
         , aDetectPosition //Detect the appropriate position (sorting)
     };
 
+    enum eDocumentData{
+        DataNode = Qt::UserRole +1,
+        CreationDate,
+        UpdateDate
+    };
+
     UBDocumentTreeModel(QObject *parent = 0);
     ~UBDocumentTreeModel();
 
@@ -171,6 +180,10 @@ public:
 //    bool insertRow(int row, const QModelIndex &parent);
 
     QPersistentModelIndex copyIndexToNewParent(const QModelIndex &source, const QModelIndex &newParent, eCopyMode pMode = aReference);
+
+    //N/C - NNE - 20140411
+    void copyIndexToNewParent(const QModelIndexList &list, const QModelIndex &newParent, eCopyMode pMode);
+
     void moveIndex(const QModelIndex &what, const QModelIndex &destination);
     UBDocumentTreeNode *currentNode() const {return mCurrentNode;} //work around for sorting model.
     void setCurrentNode(UBDocumentTreeNode *pNode) {mCurrentNode = pNode;}
@@ -211,6 +224,15 @@ public:
     void setHighLighted(const QModelIndex &newHighLighted) {mHighLighted = newHighLighted;}
     QModelIndex highLighted() {return mHighLighted;}
 
+    //N/C - NNE - 20140407
+    bool ascendingOrder() const{ return mAscendingOrder; }
+
+    QDateTime findNodeDate(UBDocumentTreeNode *node, QString type) const;
+    bool inMyDocuments(const QModelIndex &index) const;
+    void moveIndexes(const QModelIndexList &source, const QModelIndex &destination);
+    //N/C - NNE - 20140407 : END
+    bool isDescendantOf(const QModelIndex &pPossibleDescendant, const QModelIndex &pPossibleAncestor) const;
+
 signals:
     void indexChanged(const QModelIndex &newIndex, const QModelIndex &oldIndex);
     void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &previous); /* Be aware that when you got the signal
@@ -223,7 +245,6 @@ private:
 
     UBDocumentTreeNode *findProxy(UBDocumentProxy *pSearch, UBDocumentTreeNode *pParent) const;
     QModelIndex pIndexForNode(const QModelIndex &parent, UBDocumentTreeNode *pNode) const;
-    bool isDescendantOf(const QModelIndex &pPossibleDescendant, const QModelIndex &pPossibleAncestor) const;
     QModelIndex addNode(UBDocumentTreeNode *pFreeNode, const QModelIndex &pParent, eAddItemMode pMode = aDetectPosition);
     int positionForParent(UBDocumentTreeNode *pFreeNode, UBDocumentTreeNode *pParentNode);
     void fixNodeName(const QModelIndex &source, const QModelIndex &dest);
@@ -236,6 +257,12 @@ private:
     QList<UBDocumentProxy*> mNewDocuments;
     QModelIndex mHighLighted;
 
+    //N/C - NNE - 20140407
+    bool mAscendingOrder;
+
+    QDateTime findCatalogUpdatedDate(UBDocumentTreeNode *node) const;
+    QDateTime findCatalogCreationDate(UBDocumentTreeNode *node) const;
+    //N/C - NNE - 20140407 : END
 };
 
 class UBDocumentTreeMimeData : public QMimeData
@@ -257,11 +284,14 @@ class UBDocumentTreeView : public QTreeView
 public:
     UBDocumentTreeView (QWidget *parent = 0);
 
+    //N/C - NNE - 20140404
+    QModelIndex mapIndexToSource(const QModelIndex &index);
+    QModelIndexList mapIndexesToSource(const QModelIndexList &indexes);
+
 public slots:
     void setSelectedAndExpanded(const QModelIndex &pIndex, bool pExpand = true);
     void onModelIndexChanged(const QModelIndex &pNewIndex, const QModelIndex &pOldIndex);
     void hSliderRangeChanged(int min, int max);
-    void adjustSize();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
@@ -322,6 +352,20 @@ class UBDocumentController : public UBDocumentContainer
         None = 0, Folder, Document, Page
     };
 
+    enum SortOrder
+    {
+        ASC = 0,
+        DESC
+    };
+
+    enum SortKind
+    {
+        Reset = 0,
+        CreationDate,
+        UpdateDate,
+        Alphabetical
+    };
+
         UBDocumentController(UBMainWindow* mainWindow);
         virtual ~UBDocumentController();
 
@@ -361,6 +405,16 @@ class UBDocumentController : public UBDocumentContainer
           */
         void moveToTrash(QModelIndex &index, UBDocumentTreeModel* docModel);
 
+        QModelIndex mapIndexToSource(const QModelIndex &index);
+        QModelIndexList mapIndexesToSource(const QModelIndexList &indexes);
+
+        void sortDocuments(int kind, int order);
+
+        void moveIndexesToTrash(const QModelIndexList &list, UBDocumentTreeModel *docModel);
+        QModelIndex findPreviousSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel);
+        QModelIndex findNextSiblingNotSelected(const QModelIndex &index, QItemSelectionModel *selectionModel);
+        bool parentIsSelected(const QModelIndex& child, QItemSelectionModel *selectionModel);
+
     signals:
         void exportDone();
 
@@ -391,6 +445,12 @@ class UBDocumentController : public UBDocumentContainer
         void updateActions();
         void updateExportSubActions(const QModelIndex &selectedIndex);
         void currentIndexMoved(const QModelIndex &newIndex, const QModelIndex &PreviousIndex);
+
+        //N/C - NNE - 20140403
+        void onSortKindChanged(int index);
+        void onSortOrderChanged(int index);
+        void collapseAll();
+        void expandAll();
 
 protected:
         virtual void setupViews();
@@ -429,6 +489,11 @@ protected:
         UBDocumentProxy *mCurrentTreeDocument;
         bool mCurrentIndexMoved;
 
+        UBSortFilterProxyModel *mSortFilterProxyModel;
+
+        //N/C - NNE - 20140407
+        bool mUserHasChangedSortOrder;
+
     public slots:
         void TreeViewSelectionChanged(const QModelIndex &current, const QModelIndex &previous);
         void TreeViewSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
@@ -438,17 +503,16 @@ protected:
         void itemSelectionChanged(LastSelectedElementType newSelection);
         void exportDocument();
         void exportDocumentSet();
-        void itemChanged(QTreeWidgetItem * item, int column);
+
         void thumbnailViewResized();
         void pageSelectionChanged();
-        void selectionChanged();
+
         void documentSceneChanged(UBDocumentProxy* proxy, int pSceneIndex);
-        void pageDoubleClicked(QGraphicsItem* item, int index);
+
         void thumbnailPageDoubleClicked(QGraphicsItem* item, int index);
         void pageClicked(QGraphicsItem* item, int index);
         void addToDocument();
-//        void addDocumentInTree(UBDocumentProxy* pDocument);
-        void updateDocumentInTree(UBDocumentProxy* pDocument);
+
         void addFolderOfImages();
         void addFileToDocument();
         void addImages();

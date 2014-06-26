@@ -47,23 +47,23 @@ UBDrawingStrokePropertiesPalette::UBDrawingStrokePropertiesPalette(Qt::Orientati
     // Thickness buttons
     UBActionPaletteButton* btnThickness1 = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness0, this);
     btnThickness1->setStyleSheet(styleSheetLeftGroupedButton);
-    mBtnStrokeThickness.append(btnThickness1);
+    mListBtnStrokeThickness.append(btnThickness1);
     mMapBtnStrokeThickness[btnThickness1] = Fine;
     UBApplication::mainWindow->actionStrokePropertyThickness0->setChecked(true);
 
     UBActionPaletteButton* btnThickness2 = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness1, this);
     btnThickness2->setStyleSheet(styleSheetCenterGroupedButton);
-    mBtnStrokeThickness.append(btnThickness2);
+    mListBtnStrokeThickness.append(btnThickness2);
     mMapBtnStrokeThickness[btnThickness2] = Medium;
 
     UBActionPaletteButton* btnThickness3 = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyThickness2, this);
-    mBtnStrokeThickness.append(btnThickness3);
+    mListBtnStrokeThickness.append(btnThickness3);
     btnThickness3->setStyleSheet(styleSheetRightGroupedButton);
     mMapBtnStrokeThickness[btnThickness3] = Large;
 
     //group thickness buttons
     mButtonGroupStrokeThickness = new QButtonGroup(this);
-    foreach(UBActionPaletteButton* button, mBtnStrokeThickness)
+    foreach(UBActionPaletteButton* button, mListBtnStrokeThickness)
     {
         mButtonGroupStrokeThickness->addButton(button);
         thicknessLayout->addWidget(button);
@@ -77,17 +77,23 @@ UBDrawingStrokePropertiesPalette::UBDrawingStrokePropertiesPalette(Qt::Orientati
     // Style buttons
     UBActionPaletteButton* btnSolidLine = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleSolidLine, this);
     mMapBtnStrokeStyle[btnSolidLine] = Qt::SolidLine;
+    mListBtnStrokeStyle.append(btnSolidLine);
     btnSolidLine->setStyleSheet(styleSheetLeftGroupedButton);
     UBApplication::mainWindow->actionStrokePropertyStyleSolidLine->setChecked(true);
 
-
     UBActionPaletteButton* btnDotLine = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleDotLine, this);
     mMapBtnStrokeStyle[btnDotLine] = Qt::DotLine;
-    btnDotLine->setStyleSheet(styleSheetRightGroupedButton);
+    mListBtnStrokeStyle.append(btnDotLine);
+    btnDotLine->setStyleSheet(styleSheetCenterGroupedButton);
+
+    UBActionPaletteButton* btnCustomDash = new UBActionPaletteButton(UBApplication::mainWindow->actionStrokePropertyStyleCustomDash, this);
+    mMapBtnStrokeStyle[btnCustomDash] = Qt::CustomDashLine;
+    mListBtnStrokeStyle.append(btnCustomDash);
+    btnCustomDash->setStyleSheet(styleSheetRightGroupedButton);
 
     //group style buttons
     mButtonGroupStrokeStyle = new QButtonGroup(this);
-    foreach(UBActionPaletteButton* button, mMapBtnStrokeStyle.keys())
+    foreach(UBActionPaletteButton* button, mListBtnStrokeStyle)
     {
         mButtonGroupStrokeStyle->addButton(button);
         styleLayout->addWidget(button);
@@ -111,12 +117,12 @@ UBDrawingStrokePropertiesPalette::~UBDrawingStrokePropertiesPalette()
 {
     DELETEPTR(mBtnColorPicker);
 
-    foreach(UBActionPaletteButton * button, mMapBtnStrokeThickness.keys()){
+    foreach(UBActionPaletteButton * button, mListBtnStrokeThickness){
         DELETEPTR(button);
     }
     DELETEPTR(mButtonGroupStrokeThickness);
 
-    foreach(UBActionPaletteButton * button, mMapBtnStrokeStyle.keys()){
+    foreach(UBActionPaletteButton * button, mListBtnStrokeStyle){
         DELETEPTR(button);
     }
     DELETEPTR(mButtonGroupStrokeStyle);

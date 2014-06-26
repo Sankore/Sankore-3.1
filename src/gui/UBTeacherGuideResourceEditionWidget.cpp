@@ -28,7 +28,10 @@ UBTeacherGuideResourceEditionWidget::UBTeacherGuideResourceEditionWidget(QWidget
     mpTreeWidget->header()->setStretchLastSection(false);
     mpTreeWidget->header()->setResizeMode(0, QHeaderView::Stretch);
     mpTreeWidget->header()->setResizeMode(1, QHeaderView::Fixed);
-    mpTreeWidget->header()->setDefaultSectionSize(18);
+
+    //N/C - NNE - 20140401
+    mpTreeWidget->header()->setDefaultSectionSize(40);
+
     mpTreeWidget->setSelectionMode(QAbstractItemView::NoSelection);
     mpTreeWidget->setExpandsOnDoubleClick(false);
 
@@ -59,28 +62,41 @@ void UBTeacherGuideResourceEditionWidget::onAddItemClicked(QTreeWidgetItem* widg
         QTreeWidgetItem* newWidgetItem = new QTreeWidgetItem(widget);
         newWidgetItem->setData(column, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
         newWidgetItem->setData(1, Qt::UserRole, eUBTGAddSubItemWidgetType_None);
-        newWidgetItem->setIcon(1, QIcon(":images/close.svg"));
+        //newWidgetItem->setIcon(1, QIcon(":images/close.svg"));
+
+        UBTGActionColumn *actionColumn = new UBTGActionColumn(newWidgetItem);
+
+        mpTreeWidget->setItemWidget(newWidgetItem, 1, actionColumn);
 
         switch (addSubItemWidgetType) {
         case eUBTGAddSubItemWidgetType_Media: {
-            UBTGMediaWidget* mediaWidget = new UBTGMediaWidget(widget);
+            UBTGMediaWidget* mediaWidget = new UBTGMediaWidget(newWidgetItem);
             if (element)
                 mediaWidget->initializeWithDom(*element);
             mpTreeWidget->setItemWidget(newWidgetItem,0, mediaWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), mediaWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), mediaWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), mediaWidget, SLOT(onClose()));
             break;
         }
         case eUBTGAddSubItemWidgetType_Url: {
-            UBTGUrlWidget* urlWidget = new UBTGUrlWidget();
+            UBTGUrlWidget* urlWidget = new UBTGUrlWidget(newWidgetItem);
             if (element)
                 urlWidget->initializeWithDom(*element);
             mpTreeWidget->setItemWidget(newWidgetItem, 0, urlWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), urlWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), urlWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), urlWidget, SLOT(onClose()));
             break;
         }
         case eUBTGAddSubItemWidgetType_File: { //Issue 1716 - ALTI/AOU - 20140128
-            UBTGFileWidget* fileWidget = new UBTGFileWidget();
+            UBTGFileWidget* fileWidget = new UBTGFileWidget(newWidgetItem);
             if (element)
                 fileWidget->initializeWithDom(*element);
             mpTreeWidget->setItemWidget(newWidgetItem, 0, fileWidget);
+            connect(actionColumn, SIGNAL(clickOnUp()), fileWidget, SLOT(onUpButton()));
+            connect(actionColumn, SIGNAL(clickOnDown()), fileWidget, SLOT(onDownButton()));
+            connect(actionColumn, SIGNAL(clickOnClose()), fileWidget, SLOT(onClose()));
             break;
         }
         default:
@@ -96,14 +112,6 @@ void UBTeacherGuideResourceEditionWidget::onAddItemClicked(QTreeWidgetItem* widg
             widget->setExpanded(false);
             widget->setExpanded(true);
         }
-    }
-    else if (column == 1 && addSubItemWidgetType == eUBTGAddSubItemWidgetType_None) {
-        UBTGMediaWidget* media = dynamic_cast<UBTGMediaWidget*>(mpTreeWidget->itemWidget(widget, 0));
-        if (media)
-            media->removeSource();
-        int index = mpTreeWidget->currentIndex().row();
-        QTreeWidgetItem* toBeDeletedWidgetItem = widget->parent()->takeChild(index);
-        delete toBeDeletedWidgetItem;
     }
 }
 
@@ -212,7 +220,6 @@ void UBTeacherGuideResourceEditionWidget::cleanData()
 void UBTeacherGuideResourceEditionWidget::onActiveSceneChanged()
 {
     int activeSceneIndex = UBApplication::boardController->activeSceneIndex();
-    qDebug() << activeSceneIndex;
 
     if (UBApplication::boardController->pageFromSceneIndex(activeSceneIndex) != 0)
         load(UBSvgSubsetAdaptor::readTeacherGuideNode(activeSceneIndex));
@@ -239,11 +246,25 @@ void UBTeacherGuideResourceEditionWidget::load(QDomDocument doc)
         else if (tagName == "file" && element.attribute("student", "false") == "true") //Issue 1716 - ALTI/AOU - 20140128
             onAddItemClicked(mpAddAFileItem, 0, &element);
     }
+
+    setIsModified(false);
 }
 
 bool UBTeacherGuideResourceEditionWidget::isModified()
 {
     return mIsModified;
+}
+
+void UBTeacherGuideResourceEditionWidget::setIsModified(bool isModified /* = true */)
+{
+    mIsModified = isModified;
+}
+
+bool UBTeacherGuideResourceEditionWidget::hasUserDataInTeacherGuide()
+{
+    return (mpAddAMediaItem->childCount() > 0)
+        || (mpAddALinkItem->childCount() > 0)
+        || (mpAddAFileItem->childCount() > 0);
 }
 
 #ifdef Q_WS_MAC

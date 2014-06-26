@@ -29,6 +29,8 @@ public:
     void cleanData();
 
     bool isModified();
+    void setIsModified(bool isModified = true);
+    bool hasUserDataInTeacherGuide();
 
 public slots:
     void onAddItemClicked(QTreeWidgetItem* widget, int column, QDomElement *element = 0);

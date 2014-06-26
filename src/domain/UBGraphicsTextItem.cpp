@@ -44,7 +44,10 @@
 #include "core/UBPersistenceManager.h"
 #include "core/UBTextTools.h"
 
+#include "gui/UBCreateTablePalette.h"
 #include "core/memcheck.h"
+
+#include "QDomDocument"
 
 QColor UBGraphicsTextItem::lastUsedTextColor;
 
@@ -53,8 +56,10 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
     , UBGraphicsItem()
     , mMultiClickState(0)
     , mLastMousePressTime(QTime::currentTime())
-{
-    setDelegate(new UBGraphicsTextItemDelegate(this, 0));
+    , mBackgroundColor(QColor(Qt::transparent))
+    , mHtmlIsInterpreted(false)
+{    
+    setDelegate(new UBGraphicsTextItemDelegate(this));
     Delegate()->init();
 
     Delegate()->frame()->setOperationMode(UBGraphicsDelegateFrame::Resizing);
@@ -81,14 +86,173 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent) :
 
     connect(document(), SIGNAL(contentsChanged()), Delegate(), SLOT(contentsChanged()));
     connect(document(), SIGNAL(undoCommandAdded()), this, SLOT(undoCommandAdded()));
+    connect(this, SIGNAL(linkActivated(QString)), this, SLOT(loadUrl(QString)));
+
 
     connect(document()->documentLayout(), SIGNAL(documentSizeChanged(const QSizeF &)),
             this, SLOT(documentSizeChanged(const QSizeF &)));
 
+    connect(UBApplication::boardController->controlView(), SIGNAL(clickOnBoard()), this, SLOT(changeHTMLMode()));
+
+    connect(this, SIGNAL(linkHovered(QString)), this, SLOT(onLinkHovered(QString))); // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
 }
 
 UBGraphicsTextItem::~UBGraphicsTextItem()
 {
+}
+
+void UBGraphicsTextItem::insertColumn(bool onRight)
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        //the reference size is the current column where the cursor is
+        qreal widthColumn = width.at(t->cellAt(textCursor()).column()).rawValue();
+
+        qreal w = 100 + widthColumn;
+
+        QVector<QTextLength> newWidth;
+
+        for(int i = 0; i < width.size(); i++){
+            qreal currentWidth = width.at(i).rawValue();
+
+            newWidth.push_back(QTextLength(QTextLength::PercentageLength, currentWidth / w * 100));
+        }
+
+
+        if (onRight){
+            int pos = t->cellAt(textCursor()).column()+1;
+            newWidth.insert(pos, QTextLength(QTextLength::PercentageLength, widthColumn / w *100));
+            t->insertColumns(pos, 1);
+        }else{
+            int pos = t->cellAt(textCursor()).column();
+            newWidth.insert(pos, QTextLength(QTextLength::PercentageLength, widthColumn / w *100));
+            t->insertColumns(pos, 1);
+        }
+
+        //Apply the new constaints
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
+    }
+}
+
+void UBGraphicsTextItem::distributeColumn()
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        QVector<QTextLength> newWidth;
+
+        const qreal w = 100.f / width.size();
+
+        for(int i = 0; i < width.size(); i++){
+            newWidth.push_back(QTextLength(QTextLength::PercentageLength, w));
+        }
+
+        //Apply the new constaints
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
+    }
+}
+
+void UBGraphicsTextItem::insertRow(bool onRight)
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        if (onRight)
+            t->insertRows(t->cellAt(textCursor()).row()+1, 1);
+        else
+            t->insertRows(t->cellAt(textCursor()).row(), 1);
+    }
+}
+
+void UBGraphicsTextItem::deleteColumn()
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        //the reference size is the current column where the cursor is
+        qreal widthColumn = width.at(t->cellAt(textCursor()).column()).rawValue();
+
+        qreal w = 100 - widthColumn;
+
+        QVector<QTextLength> newWidth;
+
+        for(int i = 0; i < width.size(); i++){
+            qreal currentWidth = width.at(i).rawValue();
+
+            newWidth.push_back(QTextLength(QTextLength::PercentageLength, currentWidth / w * 100));
+        }
+
+        newWidth.remove(t->cellAt(textCursor()).column());
+
+        t->removeColumns(t->cellAt(textCursor()).column(), 1);
+
+        //Apply the new constaints
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
+    }
+}
+
+void UBGraphicsTextItem::deleteRow()
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        t->removeRows(t->cellAt(textCursor()).row(), 1);
+    }
+}
+
+
+void UBGraphicsTextItem::setCellWidth(int percent)
+{
+    QTextTable* t = textCursor().currentTable();
+    if (t)
+    {
+        //compute the new size of each column
+        QVector<QTextLength> width = t->format().toTableFormat().columnWidthConstraints();
+
+        int column = t->cellAt(textCursor()).column();
+        qreal remainingSpace = 100 - percent;
+        qreal oldRemaingSpace = 100 - width.at(column).rawValue();
+
+        QVector<QTextLength> newWidth;
+
+        for(int i = 0; i < width.size(); i++){
+            if(i != column){
+                qreal currentWidth = width.at(i).rawValue();
+
+                newWidth.push_back(QTextLength(QTextLength::PercentageLength, currentWidth / oldRemaingSpace * remainingSpace));
+            }
+        }
+
+        newWidth.insert(column, QTextLength(QTextLength::PercentageLength, percent));
+
+        QTextTableFormat f = t->format();
+        f.clearColumnWidthConstraints();
+        f.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+        f.setColumnWidthConstraints(newWidth);
+        t->setFormat(f);
+    }
 }
 
 QVariant UBGraphicsTextItem::itemChange(GraphicsItemChange change, const QVariant &value)
@@ -198,7 +362,8 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
     {
         QPointF distance = event->pos() - event->lastPos();
-        if( fabs(distance.x()) < 1 && fabs(distance.y()) < 1 )
+        if( fabs(distance.x()) < 1 && fabs(distance.y()) < 1
+                && mCurrentLinkUrl.isEmpty()) // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
             Delegate()->mouseReleaseEvent(event);
         else
             QGraphicsTextItem::mouseReleaseEvent(event);
@@ -223,6 +388,15 @@ void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    Delegate()->frame()->setZValue(0); // ALTI/AOU - 20140610 : some widgets have to appear on top of the DelegateFrame.
+
+    if (mBackgroundColor != Qt::transparent && !mHtmlIsInterpreted)
+    {
+        painter->setPen(Qt::transparent);
+        painter->setBrush(mBackgroundColor);
+        painter->drawRect(boundingRect());
+    }
+
     QColor color = UBSettings::settings()->isDarkBackground() ? mColorOnDarkBackground : mColorOnLightBackground;
     setDefaultTextColor(color);
 
@@ -242,6 +416,20 @@ void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     }
 }
 
+bool UBGraphicsTextItem::htmlMode() const
+{
+    return mHtmlIsInterpreted;
+}
+
+void UBGraphicsTextItem::setHtmlMode(const bool mode)
+{
+    mHtmlIsInterpreted = mode;
+}
+
+void UBGraphicsTextItem::loadUrl(QString url)
+{
+    UBApplication::loadUrl(url);
+}
 
 UBItem* UBGraphicsTextItem::deepCopy() const
 {
@@ -259,7 +447,19 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
     UBGraphicsTextItem *cp = dynamic_cast<UBGraphicsTextItem*>(copy);
     if (cp)
     {
-        cp->setHtml(toHtml());
+        if(htmlMode()){
+            UBGraphicsTextItemDelegate* d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+            if(d){
+                d->alternHtmlMode();
+            }
+        }
+
+        QString html = toHtml();
+
+        cp->loadImages(html, true);
+
+        cp->setHtml(html);
+
         cp->setPos(this->pos());
         cp->setTransform(this->transform());
         cp->setFlag(QGraphicsItem::ItemIsMovable, true);
@@ -269,6 +469,9 @@ void UBGraphicsTextItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemEditable, data(UBGraphicsItemData::ItemEditable).toBool());
         cp->setTextWidth(this->textWidth());
         cp->setTextHeight(this->textHeight());
+
+        if(mBackgroundColor != Qt::transparent)
+            cp->setBackgroundColor(mBackgroundColor);
 
         if(Delegate()->action()){
             if(Delegate()->action()->linkType() == eLinkToAudio){
@@ -316,10 +519,11 @@ void UBGraphicsTextItem::setTextWidth(qreal width)
 
 void UBGraphicsTextItem::setTextHeight(qreal height)
 {
+    prepareGeometryChange();
+
     QFontMetrics fm(font());
     qreal minHeight = fm.height() + document()->documentMargin() * 2;
     mTextHeight = qMax(minHeight, height);
-    update();
     setFocus();
 }
 
@@ -343,6 +547,114 @@ void UBGraphicsTextItem::contentsChanged()
     }
 }
 
+void UBGraphicsTextItem::insertImage(QString src)
+{
+    //retour chariot avant de placer l'image
+    textCursor().insertText("\n");
+
+    QImage img = QImage(src);
+    QString fileExtension = UBFileSystemUtils::extension(src);
+    QString filename = UBPersistenceManager::imageDirectory + "/" + QUuid::createUuid() + "." + fileExtension;
+    QString dest = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + filename;
+
+    if (!UBFileSystemUtils::copy(src, dest, true))
+        qDebug() << "UBFileSystemUtils::copy error";
+
+    document()->addResource(QTextDocument::ImageResource, QUrl(filename), img);
+    textCursor().insertImage(filename);
+}
+
+void UBGraphicsTextItem::insertTable(const int lines, const int columns)
+{
+    QTextCursor cursor = textCursor();
+
+    QTextTableFormat format;
+    format.clearColumnWidthConstraints();
+    format.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+    QTextLength t = QTextLength(QTextLength::PercentageLength, 100/(float)columns);
+    QVector<QTextLength> v;
+    for (int i=0; i< columns; i++)
+        v.push_back(t);
+    format.setColumnWidthConstraints(v);
+    format.merge(cursor.charFormat());
+    cursor.insertTable(lines,columns,format);    
+}
+
+void UBGraphicsTextItem::setBackgroundColor(const QColor& color)
+{
+    QTextBlockFormat format;
+    format.setBackground(QBrush(color));
+
+    QTextCursor cursor = textCursor();   
+
+    QTextTable* t = cursor.currentTable();
+    int firstRow,numRows,firstCol,numCols;
+    cursor.selectedTableCells(&firstRow,&numRows,&firstCol,&numCols);
+    if (firstRow < 0)
+    {
+        if (t)
+        {
+            QTextTableCell c = t->cellAt(cursor);
+            QTextCharFormat format;
+            format.setBackground(QBrush(color));
+            c.setFormat(format);
+        }
+        else
+            mBackgroundColor = color;
+    }
+    else
+    {
+        for (int i = 0; i < numRows; i++)
+        {
+            for (int j = 0; j < numCols; j++)
+            {
+                QTextTableCell c = t->cellAt(firstRow+i,firstCol+j);
+                QTextCharFormat format;
+                format.setBackground(QBrush(color));
+                c.setFormat(format);
+            }
+        }
+    }
+
+}
+
+void UBGraphicsTextItem::setForegroundColor(const QColor& color)
+{
+    QTextBlockFormat format;
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);
+}
+
+void UBGraphicsTextItem::setAlignmentToLeft()
+{
+    QTextBlockFormat format;
+    format.setAlignment(Qt::AlignLeft);
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);
+    setFocus();
+}
+
+void UBGraphicsTextItem::setAlignmentToCenter()
+{
+    QTextBlockFormat format;
+    format.setAlignment(Qt::AlignCenter);
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);
+    setFocus();
+}
+
+void UBGraphicsTextItem::setAlignmentToRight()
+{
+    QTextBlockFormat format;
+    format.setAlignment(Qt::AlignRight);
+    QTextCursor cursor = textCursor();
+    cursor.mergeBlockFormat(format);
+    setTextCursor(cursor);    
+    setFocus();
+}
 
 UBGraphicsScene* UBGraphicsTextItem::scene()
 {
@@ -356,9 +668,18 @@ void UBGraphicsTextItem::resize(qreal w, qreal h)
     setTextHeight(h);
 
     if (Delegate())
+    {
         Delegate()->positionHandles();
+        UBGraphicsTextItemDelegate* textDelegate = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+        if (textDelegate)
+        {
+            QSize tablePaletteSize = textDelegate->linkPalette()->size();
+            textDelegate->tablePalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
+            textDelegate->linkPalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
+            textDelegate->cellPropertiesPalette()->setPos(QPoint((w-tablePaletteSize.width())/2, (h-tablePaletteSize.height())/2));
+        }
+    }
 }
-
 
 QSizeF UBGraphicsTextItem::size() const
 {
@@ -386,17 +707,17 @@ void UBGraphicsTextItem::documentSizeChanged(const QSizeF & newSize)
 //issue 1554 - NNE - 20131009
 void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 {
-    qDebug() << textInteractionFlags();
-
     this->isActivatedTextEditor = activateTextEditor;
 
     if(!activateTextEditor){
-        setTextInteractionFlags(Qt::TextSelectableByMouse);
+        setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextBrowserInteraction);
+        if(htmlMode()){
+            UBGraphicsTextItemDelegate *d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+            if(d) d->alternHtmlMode();
+        }
     }else{
-        setTextInteractionFlags(Qt::TextEditorInteraction);
+        setTextInteractionFlags(Qt::TextEditorInteraction | Qt::TextBrowserInteraction);
     }
-
-    qDebug() <<  textInteractionFlags();
 }
 //issue 1554 - NNE - 20131009 : END
 
@@ -404,7 +725,32 @@ void UBGraphicsTextItem::activateTextEditor(bool activateTextEditor)
 void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
 {
     if(event->matches(QKeySequence::Paste)){
-        UBTextTools::cleanHtmlClipboard();
+        //if the data comes from the RTE, we accept the data
+        //else we clean the html
+        QClipboard *clipboard = QApplication::clipboard();
+        const QMimeData *mimeData = clipboard->mimeData();
+
+        if(mimeData->data("text/copySource").contains("Texte Enrichi.wgt")){
+            QString html = mimeData->html();
+
+            QMimeData *cpMime = new QMimeData();
+
+            formatTable(html);
+
+            removeTextBackgroundColor(html);
+
+            loadImages(html);
+
+            formatParagraph(html);
+
+            formatList(html);
+
+            cpMime->setHtml(html);
+
+            clipboard->setMimeData(cpMime);
+        }else{
+            UBTextTools::cleanHtmlClipboard();
+        }
     }
 
     QGraphicsTextItem::keyPressEvent(event);
@@ -416,4 +762,185 @@ void UBGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
     UBTextTools::cleanHtmlClipboard();
     QGraphicsTextItem::contextMenuEvent(event);
+}
+
+//N/C - NNE - 20140520
+QString UBGraphicsTextItem::formatTable(QString& source)
+{
+    int index = 0;
+    while((index = source.indexOf("<table", index)) != -1){
+        source.insert(index + 6, " width=\"100%\" border=\"1\"");
+        index += 6;
+    }
+
+    int currentPos = 0;
+    while((currentPos = source.indexOf("<td", currentPos)) != -1){
+        currentPos += 3;
+
+        //Check for the width attribute
+        //conversion from "width: xxx%" to "width='xxx%'"
+        int widthIndex = source.indexOf("width: ", currentPos);
+        int endTdTag = source.indexOf(">", currentPos);
+
+        if(widthIndex != -1 && widthIndex < endTdTag){
+            int j = widthIndex + 7;
+            QString v;
+
+            while(source.at(j).isDigit()){
+                v += source.at(j);
+                j++;
+            }
+
+            if(source.at(j) == '%'){
+                QString insert = " width=\"" + v + "%\"";
+                source.insert(currentPos, insert);
+            }
+        }
+
+        //Check for the text-align attribute
+        int textAlignIndex  = source.indexOf("text-align: ", currentPos);
+
+        //update the position
+        endTdTag = source.indexOf(">", currentPos);
+
+        if(textAlignIndex != -1 && textAlignIndex < endTdTag){
+            int endAttribute = source.indexOf(';', textAlignIndex);
+
+            //prevent error if the ';' isn't find
+            if(endAttribute < endTdTag){
+                QString value = source.mid(textAlignIndex, endAttribute - textAlignIndex);
+
+                value.replace("text-align: ", " align=\"");
+                value += "\" ";
+
+                source.insert(currentPos, value);
+            }
+        }
+    }
+
+    return source;
+}
+
+QString UBGraphicsTextItem::removeTextBackgroundColor(QString& source)
+{
+    int currentPos = 0;
+
+    while((currentPos = source.indexOf("<span", currentPos)) != -1){
+        int spanTagEnd = source.indexOf(">", currentPos + 1);
+
+        QString spanContent = source.mid(currentPos, spanTagEnd);
+        qDebug() << spanContent;
+
+        int backgroundIdx;
+        if((backgroundIdx = spanContent.indexOf("background-color")) != -1 && backgroundIdx < spanTagEnd){
+            //remove the span tag
+            int endBackground = spanContent.indexOf(";", backgroundIdx);
+
+            for(int i = 0; i < endBackground - backgroundIdx + 1; i++){
+                source[backgroundIdx + currentPos + i] =  ' ';
+            }
+        }
+
+        currentPos += 5;
+    }
+
+    return source;
+}
+
+QString UBGraphicsTextItem::loadImages(QString& source, bool onlyLoad)
+{
+    int currentPos = 0;
+    while((currentPos = source.indexOf("src", currentPos)) != -1){
+        int startPath = source.indexOf("\"", currentPos) + 1;
+
+        QString path;
+        while(source.at(startPath) != '\"'){
+            path += source.at(startPath);
+            startPath++;
+        }
+
+        if(!path.isEmpty()){
+            if(onlyLoad){
+                QImage img = QImage(UBApplication::boardController->selectedDocument()->persistencePath() + "/" + path);
+                document()->addResource(QTextDocument::ImageResource, QUrl(path), img);
+            }else{
+                QImage img = QImage(path);
+                QString fileExtension = UBFileSystemUtils::extension(path);
+                QString filename = UBPersistenceManager::imageDirectory + "/" + QUuid::createUuid() + "." + fileExtension;
+                QString dest = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + filename;
+
+                if (!UBFileSystemUtils::copy(path, dest, true))
+                    qDebug() << "UBFileSystemUtils::copy error";
+
+                document()->addResource(QTextDocument::ImageResource, QUrl(filename), img);
+                source.replace(path, filename);
+            }
+
+        }
+
+        currentPos += 3;
+    }
+
+    return source;
+}
+
+QString UBGraphicsTextItem::formatParagraph(QString& source)
+{
+    return findAndReplaceAttribute("p", "text-align", "align", source);
+}
+
+QString UBGraphicsTextItem::formatList(QString& source)
+{
+    findAndReplaceAttribute("li", "text-align", "align", source);
+
+    return findAndReplaceAttribute("ol", "text-align", "align", source);
+}
+
+
+QString UBGraphicsTextItem::findAndReplaceAttribute(QString tag, QString oldAttribute, QString newAttribute, QString& source)
+{
+    int currentPos = 0;
+
+    tag = "<" + tag;
+
+    while((currentPos = source.indexOf(tag, currentPos)) != -1){
+        currentPos += tag.size();
+
+        int endTag = source.indexOf(">", currentPos);
+
+        int attributeIndex = source.indexOf(oldAttribute + ": ", currentPos);
+
+        if(attributeIndex < endTag){
+            int endAttribute = source.indexOf(';', attributeIndex);
+
+            if(endAttribute < endTag){
+                QString value = source.mid(attributeIndex, endAttribute - attributeIndex);
+
+                value.replace(oldAttribute+": ", " " + newAttribute + "=\"");
+                value += "\"";
+
+                source.insert(currentPos, value);
+            }
+        }
+    }
+
+    return source;
+}
+
+//N/C - NNE - 20140520
+
+void UBGraphicsTextItem::changeHTMLMode()
+{
+    if(isActivatedTextEditor)
+        activateTextEditor(false);
+
+    if(htmlMode()){
+        UBGraphicsTextItemDelegate *d = dynamic_cast<UBGraphicsTextItemDelegate*>(Delegate());
+        if(d) d->alternHtmlMode();
+    }
+}
+
+void UBGraphicsTextItem::onLinkHovered(const QString & currentLinkUrl)  // ALTI/AOU - 20140602 : make possible to click on Links with Play tool
+{
+   mCurrentLinkUrl = currentLinkUrl; // used in mouseReleaseEvent()
 }

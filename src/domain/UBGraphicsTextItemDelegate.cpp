@@ -29,12 +29,16 @@
 #include "UBGraphicsTextItemDelegate.h"
 #include "UBGraphicsScene.h"
 #include "gui/UBResources.h"
+#include "gui/UBMainWindow.h"
 
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBGraphicsDelegateFrame.h"
+#include "domain/UBGraphicsProxyWidget.h"
+
 #include "core/UBSettings.h"
 
 #include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 
 #include "core/memcheck.h"
 
@@ -45,7 +49,25 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     : UBGraphicsItemDelegate(pDelegated,0, parent, true)
     , mLastFontPixelSize(-1)
     , delta(5)
+    , mTablePalette(new UBCreateTablePalette())
+    , mLinkPalette(new UBCreateHyperLinkPalette())
+    , mCellPropertiesPalette(new UBCellPropertiesPalette())
 {
+    UBGraphicsProxyWidget* w = UBApplication::boardController->activeScene()->addWidget(mTablePalette);
+    w->setParentItem(delegated());
+    w->hide();
+    w->setZValue(1); // ALTI/AOU - 20140610 : this widget appears on top of DelegateFrame and TextEditor Menu.
+	
+    UBGraphicsProxyWidget* w2 = UBApplication::boardController->activeScene()->addWidget(mLinkPalette);
+    w2->setParentItem(delegated());
+    w2->hide();
+    w2->setZValue(1);   // ALTI/AOU - 20140610 : this widget appears on top of DelegateFrame and TextEditor Menu.
+
+    UBGraphicsProxyWidget* w3 = UBApplication::boardController->activeScene()->addWidget(mCellPropertiesPalette);
+    w3->setParentItem(delegated());
+    w3->hide();
+    w3->setZValue(1);   // ALTI/AOU - 20140610 : this widget appears on top of DelegateFrame and TextEditor Menu.
+
     delegated()->setData(UBGraphicsItemData::ItemEditable, QVariant(true));
     delegated()->setPlainText("");
 
@@ -62,12 +84,18 @@ UBGraphicsTextItemDelegate::UBGraphicsTextItemDelegate(UBGraphicsTextItem* pDele
     delegated()->adjustSize();
     delegated()->contentsChanged();
 
-    // NOOP
+    mTablePalette->move(delegated()->boundingRect().width()/2.0, 0 );
+    mLinkPalette->move(delegated()->boundingRect().width()/2.0, 0 );
+    mCellPropertiesPalette->move(delegated()->boundingRect().width()/2.0, 0 );
+
+    connect(mTablePalette, SIGNAL(validationRequired()), this, SLOT(insertTable()));
+    connect(mLinkPalette, SIGNAL(validationRequired()), this, SLOT(insertLink()));
+    connect(mCellPropertiesPalette, SIGNAL(validationRequired()), this, SLOT(applyCellProperties()));
 }
 
 UBGraphicsTextItemDelegate::~UBGraphicsTextItemDelegate()
 {
-    // NOOP
+
 }
 
 QFont UBGraphicsTextItemDelegate::createDefaultFont()
@@ -99,18 +127,85 @@ void UBGraphicsTextItemDelegate::buildButtons()
 {
     UBGraphicsItemDelegate::buildButtons();
 
-    mFontButton = new DelegateButton(":/images/font.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontButton = new DelegateButton(":/images/textEditor/font.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontBoldButton = new DelegateButton(":/images/textEditor/bold.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontItalicButton = new DelegateButton(":/images/textEditor/italic.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mFontUnderlineButton = new DelegateButton(":/images/textEditor/underline.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
     mColorButton = new DelegateButton(":/images/color.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mDecreaseSizeButton = new DelegateButton(":/images/minus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
-    mIncreaseSizeButton = new DelegateButton(":/images/plus.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mDecreaseSizeButton = new DelegateButton(":/images/textEditor/decrease-font-size.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mIncreaseSizeButton = new DelegateButton(":/images/textEditor/increase-font-size.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mBackgroundColorButton = new DelegateButton(":/images/textEditor/bucket.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mLeftAlignmentButton = new DelegateButton(":/images/textEditor/align-left.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCenterAlignmentButton = new DelegateButton(":/images/textEditor/align-center.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mRightAlignmentButton = new DelegateButton(":/images/textEditor/align-right.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mCodeButton = new DelegateButton(":/images/textEditor/code.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mUnorderedListButton= new DelegateButton(":/images/textEditor/unordered-list.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mOrderedListButton= new DelegateButton(":/images/textEditor/ordered-list.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mAddIndentButton = new DelegateButton(":/images/textEditor/indent.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mRemoveIndentButton = new DelegateButton(":/images/textEditor/unindent.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mHyperLinkButton = new DelegateButton(":/images/textEditor/link.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
+    mTableButton = new DelegateButton(":/images/textEditor/table.svg", mDelegated, mToolBarItem, Qt::TitleBarArea);
 
     connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
-    connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));
+    connect(mFontBoldButton, SIGNAL(clicked()), this, SLOT(setFontBold()));
+    connect(mFontItalicButton, SIGNAL(clicked()), this, SLOT(setFontItalic()));
+    connect(mFontUnderlineButton, SIGNAL(clicked()), this, SLOT(setFontUnderline()));
+    connect(mColorButton, SIGNAL(clicked(bool)), this, SLOT(pickColor()));    
     connect(mDecreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(decreaseSize()));
     connect(mIncreaseSizeButton, SIGNAL(clicked(bool)), this, SLOT(increaseSize()));
+    connect(mBackgroundColorButton, SIGNAL(clicked(bool)), this, SLOT(pickBackgroundColor()));    
+    connect(mLeftAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToLeft()));
+    connect(mCenterAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToCenter()));
+    connect(mRightAlignmentButton, SIGNAL(clicked(bool)), this, SLOT(setAlignmentToRight()));
+    connect(mCodeButton, SIGNAL(clicked(bool)), this, SLOT(alternHtmlMode()));
+    connect(mUnorderedListButton, SIGNAL(clicked(bool)), this, SLOT(insertUnorderedList()));
+    connect(mOrderedListButton, SIGNAL(clicked(bool)), this, SLOT(insertOrderedList()));
+    connect(mAddIndentButton, SIGNAL(clicked(bool)), this, SLOT(addIndent()));
+    connect(mRemoveIndentButton, SIGNAL(clicked(bool)), this, SLOT(removeIndent()));
+    connect(mHyperLinkButton, SIGNAL(clicked(bool)), this, SLOT(addLink()));
+    connect(mTableButton, SIGNAL(clicked(bool)), this, SLOT(showMenuTable()));
+
+    // Create actions and subMenus of the "Table" menu :
+    mTableMenu = new QMenu();
+
+    mTableMenu->addAction(QIcon(":/images/textEditor/add-table.png"), tr("Insert table"), this, SLOT(setTableSize()))->setIconVisibleInMenu(true);
+
+    QMenu *columnMenu = mTableMenu->addMenu(tr("Column"));
+    columnMenu->addAction(QIcon(":/images/textEditor/insert-column-left.png"), tr("Insert column after"), this, SLOT(insertColumnOnRight()))->setIconVisibleInMenu(true);
+    columnMenu->addAction(QIcon(":/images/textEditor/insert-column-right.png"), tr("Insert column before"), this, SLOT(insertColumnOnLeft()))->setIconVisibleInMenu(true);
+    columnMenu->addAction(QIcon(":/images/textEditor/delete-column.png"), tr("Delete column"), this, SLOT(deleteColumn()))->setIconVisibleInMenu(true);
+
+    QMenu *rowMenu = mTableMenu->addMenu(tr("Row"));
+    rowMenu->addAction(QIcon(":/images/textEditor/insert-row-top.png"), tr("Insert row after"), this, SLOT(insertRowOnBottom()))->setIconVisibleInMenu(true);
+    rowMenu->addAction(QIcon(":/images/textEditor/insert-row-bottom.png"), tr("Insert row before"), this, SLOT(insertRowOnTop()))->setIconVisibleInMenu(true);
+    rowMenu->addAction(QIcon(":/images/textEditor/delete-row.png"), tr("Delete row"), this, SLOT(deleteRow()))->setIconVisibleInMenu(true);
+
+    mTableMenu->addAction(QIcon(":/images/textEditor/cell-properties.png"), tr("Cell properties"), this, SLOT(setCellProperties()))->setIconVisibleInMenu(true);
+    mTableMenu->addAction(QIcon(), tr("Evenly distribute the columns"), this, SLOT(distributeColumn()))->setIconVisibleInMenu(true);
+
+    //update the position of the menu and the sub menu
+    mTableMenu->show();
+    mTableMenu->hide();
+
+    columnMenu->show();
+    columnMenu->hide();
+
+    rowMenu->show();
+    rowMenu->hide();
 
     QList<QGraphicsItem*> itemsOnToolBar;
-    itemsOnToolBar << mFontButton << mColorButton << mDecreaseSizeButton << mIncreaseSizeButton;
+    itemsOnToolBar << mFontButton << mColorButton
+                   << mFontBoldButton << mFontItalicButton << mFontUnderlineButton
+                   << DelegateButton::Spacer
+                   << mDecreaseSizeButton << mIncreaseSizeButton
+                   << DelegateButton::Spacer
+                   << mLeftAlignmentButton << mCenterAlignmentButton << mRightAlignmentButton
+                   << DelegateButton::Spacer
+                   << mUnorderedListButton << mOrderedListButton
+                   << DelegateButton::Spacer << mAddIndentButton << mRemoveIndentButton
+                   << DelegateButton::Spacer
+                   << mHyperLinkButton << mTableButton << mBackgroundColorButton << mCodeButton;
+
     mToolBarItem->setItemsOnToolBar(itemsOnToolBar);
     mToolBarItem->setShifting(true);
     mToolBarItem->setVisibleOnBoard(true);
@@ -120,6 +215,14 @@ void UBGraphicsTextItemDelegate::contentsChanged()
 {
     positionHandles();
     delegated()->contentsChanged();
+}
+
+//Issue N/C - NNE - 20140528
+void UBGraphicsTextItemDelegate::duplicate()
+{
+    UBGraphicsItemDelegate::duplicate();
+
+    delegated()->activateTextEditor(false);
 }
 
 // This method is used to filter the available fonts. Only the web-compliant fonts
@@ -201,11 +304,101 @@ void UBGraphicsTextItemDelegate::pickFont()
             delegated()->setFont(selectedFont);
             delegated()->setSelected(true);
 //          disabled and replaced by the next line because of not optimum result (text splits to two lines when that is not necessary)
-//          delegated()->adjustSize();
-            delegated()->resize(delegated()->document()->idealWidth(), delegated()->size().height());
-            delegated()->contentsChanged();
+    //          delegated()->adjustSize();
+                delegated()->resize(delegated()->document()->idealWidth(), delegated()->size().height());
+                delegated()->contentsChanged();
+            }
         }
     }
+
+void UBGraphicsTextItemDelegate::setFontBold()
+{
+    QTextCursor cursor = delegated()->textCursor();
+    QTextCharFormat format = cursor.charFormat();
+    int anchorPos = cursor.anchor();
+    int cursorPos = cursor.position();
+
+    if (anchorPos > cursorPos)
+        std::swap(cursorPos, anchorPos);
+
+    format.setFontWeight(cursor.charFormat().fontWeight() != QFont::Bold ? QFont::Bold : QFont::Normal);
+
+    //UBSettings::settings()->setBoldFont(format.fontWeight() > QFont::Normal);
+
+    if (cursor.selectedText().length() == 0)
+    {
+        cursor.select(QTextCursor::WordUnderCursor);
+        cursor.setCharFormat(format);
+        cursor.clearSelection();
+    }
+    else
+        cursor.setCharFormat(format);
+
+    if (anchorPos >= cursorPos)
+    {
+        cursor.setPosition(cursorPos, QTextCursor::MoveAnchor);
+        cursor.setPosition(anchorPos, QTextCursor::KeepAnchor);
+    }
+    else
+    {
+        cursor.setPosition(anchorPos, QTextCursor::MoveAnchor);
+        cursor.setPosition(cursorPos, QTextCursor::KeepAnchor);
+    }
+
+    delegated()->setFocus();
+    delegated()->setTextCursor(cursor);
+}
+
+void UBGraphicsTextItemDelegate::setFontItalic()
+{
+    QTextCharFormat format;
+    QTextCursor cursor = delegated()->textCursor();
+
+    int anchorPos = cursor.anchor();
+    int cursorPos = cursor.position();
+    if (anchorPos >= cursorPos)
+        std::swap(cursorPos, anchorPos);
+
+    format.setFontItalic(!cursor.charFormat().fontItalic());
+    if (cursor.selectedText().length() == 0)
+    {
+        cursor.select(QTextCursor::WordUnderCursor);
+        cursor.mergeCharFormat(format);
+        cursor.clearSelection();
+    }
+    else
+        cursor.mergeCharFormat(format);
+
+    cursor.setPosition(anchorPos, QTextCursor::MoveAnchor);
+    cursor.setPosition(cursorPos, QTextCursor::KeepAnchor);
+    delegated()->setFocus();
+    delegated()->setTextCursor(cursor);
+}
+
+void UBGraphicsTextItemDelegate::setFontUnderline()
+{
+    QTextCharFormat format;
+    QTextCursor cursor = delegated()->textCursor();
+
+    int anchorPos = cursor.anchor();
+    int cursorPos = cursor.position();
+    if (anchorPos >= cursorPos)
+        std::swap(cursorPos, anchorPos);
+
+    format.setFontUnderline(!cursor.charFormat().fontUnderline());
+    if (cursor.selectedText().length() == 0)
+    {
+        cursor.select(QTextCursor::WordUnderCursor);
+        cursor.mergeCharFormat(format);
+        cursor.clearSelection();
+    }
+    else
+        cursor.mergeCharFormat(format);
+
+    cursor.setPosition(anchorPos, QTextCursor::MoveAnchor);
+    cursor.setPosition(cursorPos, QTextCursor::KeepAnchor);
+    delegated()->setFocus();
+    delegated()->setTextCursor(cursor);
 }
 
 void UBGraphicsTextItemDelegate::pickColor()
@@ -231,10 +424,438 @@ void UBGraphicsTextItemDelegate::pickColor()
 
             UBGraphicsTextItem::lastUsedTextColor = selectedColor;
 
-            delegated()->setSelected(true);
+            delegated()->setSelected(true);            
             delegated()->contentsChanged();
+            delegated()->setFocus();
         }
     }
+}
+
+void UBGraphicsTextItemDelegate::pickBackgroundColor()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        QColorDialog colorDialog(delegated()->defaultTextColor(), mDelegated->scene()->views().at(0));
+        colorDialog.setWindowTitle(tr("Background Color"));
+        if (UBSettings::settings()->isDarkBackground())
+        {
+            colorDialog.setStyleSheet("background-color: white;");
+        }
+
+        if (colorDialog.exec())
+        {
+            QColor selectedColor = colorDialog.selectedColor();
+            delegated()->setBackgroundColor(selectedColor);
+            delegated()->setSelected(true);
+            delegated()->contentsChanged();
+            delegated()->setFocus();
+        }
+    }
+}
+
+void UBGraphicsTextItemDelegate::insertTable()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {                
+        delegated()->insertTable(mTablePalette->lines(), mTablePalette->columns());
+        mTablePalette->hide();
+    }
+}
+
+void UBGraphicsTextItemDelegate::addIndent()
+{
+    QTextCursor cursor = delegated()->textCursor();
+    QTextBlockFormat blockFmt = cursor.blockFormat();
+    QTextListFormat listFmt;
+    QTextList *list = cursor.currentList();
+
+    if (list)
+    {
+        //create new format
+        listFmt = list->format();
+        listFmt.setStyle(nextStyle(listFmt.style()));
+        listFmt.setIndent(listFmt.indent()+1);
+
+        //create new sub-list with new format
+        QTextList* theList = cursor.createList(listFmt);
+        theList->add(cursor.block());
+    }
+    else
+    {
+        blockFmt.setIndent(blockFmt.indent()+1);
+        cursor.setBlockFormat(blockFmt);
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::removeIndent()
+{
+    QTextCursor cursor = delegated()->textCursor();
+    QTextBlockFormat blockFmt = cursor.blockFormat();
+    QTextListFormat listFmt;
+
+    QTextList *list = cursor.currentList();
+
+    if (list)
+    {
+        //create new format
+        listFmt = list->format();
+        listFmt.setStyle(previousStyle(listFmt.style()));
+        listFmt.setIndent(listFmt.indent()-1);
+
+        //create new sub-list with new format
+        QTextList* theList = cursor.createList(listFmt);
+        theList->add(cursor.block());
+    }
+    else
+    {
+        blockFmt.setIndent(blockFmt.indent()-1);
+        cursor.setBlockFormat(blockFmt);
+    }
+
+    delegated()->setFocus();
+}
+
+QTextListFormat::Style UBGraphicsTextItemDelegate::nextStyle(QTextListFormat::Style format)
+{
+    QTextListFormat::Style style = QTextListFormat::ListStyleUndefined;
+
+    if(format >= QTextListFormat::ListSquare){
+        style = static_cast<QTextListFormat::Style>((format - 1) % 4);
+        if (style == 0)
+            style = QTextListFormat::ListDisc;
+    }else if(format >= QTextListFormat::ListUpperRoman){
+        style = static_cast<QTextListFormat::Style>((format - 1) % 9);
+        if(style == 0)
+            style = QTextListFormat::ListDecimal;
+    }
+
+    return style;
+}
+
+QTextListFormat::Style UBGraphicsTextItemDelegate::previousStyle(QTextListFormat::Style format)
+{
+    QTextListFormat::Style style = QTextListFormat::ListStyleUndefined;
+
+    if(format >= QTextListFormat::ListSquare){
+        style = static_cast<QTextListFormat::Style>((format + 1) % 4);
+        if (style == 0)
+            style = QTextListFormat::ListSquare;
+    }else if(format >= QTextListFormat::ListUpperRoman){
+        style = static_cast<QTextListFormat::Style>((format + 1) % 9);
+        if(style == QTextListFormat::ListSquare)
+            style = QTextListFormat::ListUpperRoman;
+    }
+
+    return style;
+}
+
+void UBGraphicsTextItemDelegate::insertOrderedList()
+{
+    insertList(QTextListFormat::ListDecimal);
+}
+
+void UBGraphicsTextItemDelegate::insertUnorderedList()
+{
+    insertList(QTextListFormat::ListDisc);
+}
+
+void UBGraphicsTextItemDelegate::insertList(QTextListFormat::Style format)
+{
+    QTextCursor cursor = delegated()->textCursor();
+
+    cursor.beginEditBlock();
+
+    QTextBlockFormat blockFmt = cursor.blockFormat();
+    QTextListFormat listFmt;
+
+    QTextList *list = cursor.currentList();
+
+    if (list)
+    {
+        int oldFormat = static_cast<int>(list->format().style());
+
+        /*
+         * If the current format and old format are same, remove the list
+         * else switch the style
+         */
+        if(format >= QTextListFormat::ListSquare && oldFormat >= QTextListFormat::ListSquare
+                || (format <= QTextListFormat::ListDecimal && format >= QTextListFormat::ListUpperRoman
+                    && oldFormat <= QTextListFormat::ListDecimal && oldFormat >= QTextListFormat::ListUpperRoman)){
+            QTextListFormat listFormat;
+            listFormat.setIndent(0);
+            listFormat.setStyle(QTextListFormat::ListStyleUndefined);
+            list->setFormat(listFormat);
+
+            for( int i = list->count() - 1; i>=0 ; --i)
+                list->removeItem(i);
+        }else{
+            QTextListFormat listFormat(list->format());
+            listFormat.setStyle(format);
+
+            QTextList* theList = cursor.createList(listFormat);
+            theList->add(cursor.block());
+        }
+    }
+    else
+    {
+        listFmt.setIndent(blockFmt.indent()+1);
+        blockFmt.setIndent(0);
+        cursor.setBlockFormat(blockFmt);
+        listFmt.setStyle(format);
+        cursor.createList(listFmt);
+    }
+
+    cursor.endEditBlock();
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::setTableSize()
+{
+    mLinkPalette->hide();
+    mCellPropertiesPalette->hide();
+    mTablePalette->show();
+    mTablePalette->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::insertColumnOnRight()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertColumn(true);
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::insertRowOnBottom()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertRow(true);
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::insertColumnOnLeft()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertColumn();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::insertRowOnTop()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->insertRow();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::deleteColumn()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->deleteColumn();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::deleteRow()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->deleteRow();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::setCellProperties()
+{
+    // Initialize CellPropoertiesPalette "Width" field with current cell width :
+    QTextTable* t = delegated()->textCursor().currentTable();
+    if (t)
+    {
+        QVector<QTextLength> widths = t->format().toTableFormat().columnWidthConstraints();
+        int columnIndex = t->cellAt(delegated()->textCursor()).column();
+        qreal val = widths.at(columnIndex).rawValue();
+        mCellPropertiesPalette->setWidth(qRound(val));
+    }
+
+    mTablePalette->hide();
+    mLinkPalette->hide();
+    mCellPropertiesPalette->show();
+    mCellPropertiesPalette->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::distributeColumn()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->distributeColumn();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::showMenuTable()
+{
+    // Position of the delegated Text Editor :
+    QPointF p = delegated()->pos();
+
+    // Take in account translations applied to the Text Editor :
+    p = delegated()->transform().map(p);
+
+    // Map Scene position to View position :
+    p = UBApplication::boardController->controlView()->mapFromScene(p);
+
+    // Adjust position : show the menu near the button :
+    p.setX(p.x() + mTableButton->pos().x() + mTableButton->boundingRect().size().width());
+
+    // Take in account the toolbar :
+    if(UBSettings::settings()->appToolBarPositionedAtTop->get().toBool())
+    {
+        p.setY(p.y() + UBApplication::app()->toolBarHeight());
+    }
+
+    // Show the menu :
+    mTableMenu->exec(p.toPoint(), mTableMenu->actions().first());
+}
+
+void UBGraphicsTextItemDelegate::applyCellProperties()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setCellWidth(mCellPropertiesPalette->width());
+        mCellPropertiesPalette->hide();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToLeft()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToLeft();        
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToCenter()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToCenter();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::setAlignmentToRight()
+{
+    if (mDelegated && mDelegated->scene() && mDelegated->scene()->views().size() > 0)
+    {
+        delegated()->setAlignmentToRight();
+    }
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::addLink()
+{
+    QString selectedText = delegated()->textCursor().selectedText();
+    mLinkPalette->setText(selectedText);
+    mLinkPalette->setLink("");
+    mLinkPalette->show();
+    mLinkPalette->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::insertLink()
+{
+    if (!(mLinkPalette->text().isEmpty() || mLinkPalette->link().isEmpty()))
+    {
+        QString link = mLinkPalette->link();
+        if (!link.startsWith("http://"))
+            link = "http://" + link;
+
+        int oldPosCursor = delegated()->textCursor().position();
+
+        // Create a Format for the link :
+        QTextCharFormat linkFormat;
+        linkFormat.setAnchor(true);
+        linkFormat.setAnchorHref(link);
+        delegated()->textCursor().mergeCharFormat(linkFormat);
+
+        // Insert the Link text :
+        delegated()->textCursor().insertText(mLinkPalette->text());
+        int newPosCursor = delegated()->textCursor().position();
+
+        // Apply the "Link Format" to the "Link Text" :
+        QTextCursor cursor = delegated()->textCursor();
+        cursor.setPosition(oldPosCursor);
+        cursor.setPosition(newPosCursor, QTextCursor::KeepAnchor);
+        cursor.mergeCharFormat(linkFormat);
+
+        // Trick to refresh text. Without this, the link is not displayed.
+        alternHtmlMode();
+        alternHtmlMode();
+
+        // Restore cursor position to the end of the link :
+        cursor.setPosition(newPosCursor);
+
+        // Apply the new QTextCursor to the text :
+        delegated()->setTextCursor(cursor);
+
+        // Add a non-breakable space, so user will be able to enter text without "link format"
+        delegated()->textCursor().insertHtml("&nbsp");
+    }
+
+    mLinkPalette->hide();
+
+    delegated()->setFocus();
+}
+
+void UBGraphicsTextItemDelegate::alternHtmlMode()
+{    
+    if (!delegated()->htmlMode())
+    {
+        delegated()->setPlainText(delegated()->toHtml());
+
+        QTextCursor cursor = delegated()->textCursor();
+        QTextCharFormat format;
+        QFont font;
+
+        font.setFamily("Arial");
+        font.setPointSize(12);
+
+        format.setFont(font);
+
+        cursor.select(QTextCursor::Document);
+        cursor.setCharFormat(format);
+        cursor.clearSelection();
+
+        delegated()->setTextCursor(cursor);
+        delegated()->setFont(font);
+    }
+    else
+    {
+        delegated()->setHtml(delegated()->toPlainText());
+        delegated()->setFont(createDefaultFont());
+    }
+
+    delegated()->setHtmlMode(!delegated()->htmlMode());
+    changeDelegateButtonsMode(delegated()->htmlMode());
 }
 
 void UBGraphicsTextItemDelegate::decreaseSize()
@@ -251,6 +872,7 @@ UBGraphicsTextItem* UBGraphicsTextItemDelegate::delegated()
 {
     return static_cast<UBGraphicsTextItem*>(mDelegated);
 }
+
 void UBGraphicsTextItemDelegate::setEditable(bool editable)
 {
     if (editable) {
@@ -264,9 +886,15 @@ void UBGraphicsTextItemDelegate::setEditable(bool editable)
         delegated()->setTextInteractionFlags(Qt::NoTextInteraction);
         mDelegated->setData(UBGraphicsItemData::ItemEditable, QVariant(false));
     }
+
+    mToolBarItem->setEnabled(editable); // ALTI/AOU - 20140602 : make toolbar inactive when TextEditor is not Editable.
 }
+
 void UBGraphicsTextItemDelegate::remove(bool canUndo)
 {
+    mTablePalette->hide();
+    mLinkPalette->hide();
+    mCellPropertiesPalette->hide();
     UBGraphicsItemDelegate::remove(canUndo);
 }
 
@@ -328,8 +956,52 @@ void UBGraphicsTextItemDelegate::positionHandles()
     }
 }
 
-void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode changeMode)
+void UBGraphicsTextItemDelegate::changeDelegateButtonsMode(bool htmlMode)
 {
+    if (htmlMode)
+    {
+        mFontButton->setEnabled(false);
+        mFontBoldButton->setEnabled(false);
+        mFontItalicButton->setEnabled(false);
+        mFontUnderlineButton->setEnabled(false);
+        mColorButton->setEnabled(false);
+        //mDecreaseSizeButton->setEnabled(false);
+        //mIncreaseSizeButton->setEnabled(false);
+        mBackgroundColorButton->setEnabled(false);
+        mLeftAlignmentButton->setEnabled(false);
+        mCenterAlignmentButton->setEnabled(false);
+        mRightAlignmentButton->setEnabled(false);
+        mUnorderedListButton->setEnabled(false);
+        mOrderedListButton->setEnabled(false);
+        mTableButton->setEnabled(false);
+        mHyperLinkButton->setEnabled(false);
+        mAddIndentButton->setEnabled(false);
+        mRemoveIndentButton->setEnabled(false);
+    }
+    else
+    {
+        mFontButton->setEnabled(true);
+        mFontBoldButton->setEnabled(true);
+        mFontItalicButton->setEnabled(true);
+        mFontUnderlineButton->setEnabled(true);
+        mColorButton->setEnabled(true);
+        //mDecreaseSizeButton->setEnabled(true);
+        //mIncreaseSizeButton->setEnabled(true);
+        mBackgroundColorButton->setEnabled(true);
+        mLeftAlignmentButton->setEnabled(true);
+        mCenterAlignmentButton->setEnabled(true);
+        mRightAlignmentButton->setEnabled(true);
+        mUnorderedListButton->setEnabled(true);
+        mOrderedListButton->setEnabled(true);
+        mTableButton->setEnabled(true);
+        mHyperLinkButton->setEnabled(true);
+        mAddIndentButton->setEnabled(true);
+        mRemoveIndentButton->setEnabled(true);
+    }
+}
+
+void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode changeMode)
+{    
     if (scaleSize == changeMode)
     {
         if (1 == factor)
@@ -342,9 +1014,13 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
     UBGraphicsTextItem *item = dynamic_cast<UBGraphicsTextItem*>(delegated());
 
     if (item && (QString() == item->toPlainText()))
+    {
+        delegated()->setFocus();
         return;
+    }
 
     QTextCursor cursor = delegated()->textCursor();
+
     QTextCharFormat textFormat;
 
     int anchorPos = cursor.anchor();
@@ -365,8 +1041,15 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
     int iPointSize;
     int iNextPointSize;
     int iCursorPos = startPos;
+    bool isUnderline = false;
+    bool isBold = false;
+    bool isItalic = false;
+    QFont nextFont;
+    bool nextIsUnderline = false;
+    bool nextIsItalic = false;
+    bool nextIsBold = false;
 
-   // we search continuous blocks of the text with the same PointSize and allpy new settings for them.
+    // we search continuous blocks of the text with the same PointSize and allpy new settings for them.
     cursor.setPosition (startPos, QTextCursor::MoveAnchor);
     while(iCursorPos < endPos)
     {
@@ -375,9 +1058,11 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
 
         cursor.setPosition (iCursorPos+1, QTextCursor::KeepAnchor);
         iPointSize = cursor.charFormat().font().pointSize();
-        curFont = cursor.charFormat().font();
+        curFont = cursor.charFormat().font();        
+        isUnderline = cursor.charFormat().fontUnderline();
+        isItalic = cursor.charFormat().fontItalic();
+        isBold = cursor.charFormat().fontWeight() == QFont::Bold;
         cursor.setPosition (iCursorPos, QTextCursor::KeepAnchor);
-
 
         do
         {
@@ -385,16 +1070,31 @@ void UBGraphicsTextItemDelegate::ChangeTextSize(qreal factor, textChangeMode cha
 
             cursor.setPosition (iCursorPos+iBlockLen+1, QTextCursor::KeepAnchor);
             iNextPointSize = cursor.charFormat().font().pointSize();
+            nextFont = cursor.charFormat().font();
+            nextIsUnderline = cursor.charFormat().fontUnderline();
+            nextIsItalic = cursor.charFormat().fontItalic();
+            nextIsBold = cursor.charFormat().fontWeight() == QFont::Bold;
 
             cursor.setPosition (iCursorPos+iBlockLen, QTextCursor::KeepAnchor);
-            if ((iPointSize != iNextPointSize)||(iCursorPos+iBlockLen >= endPos))
+
+            if(cursor.charFormat().isTableCellFormat()){
+                //if the current char is in a cell end the block
+                cursor.setPosition (iCursorPos+iBlockLen-1, QTextCursor::KeepAnchor);
+                bEndofTheSameBlock = true;
+            }
+
+            if ((isBold != nextIsBold)
+                || (isItalic != nextIsItalic)
+                || (isUnderline != nextIsUnderline)
+                || (curFont != nextFont)
+                || (iCursorPos+iBlockLen >= endPos))
                 bEndofTheSameBlock = true;
 
         }while(!bEndofTheSameBlock);
 
-
-        //setting new parameners
+        //setting new parameters
         int iNewPointSize = (changeSize == changeMode) ? (iPointSize + factor) : (iPointSize * factor);
+
         curFont.setPointSize( (iNewPointSize > 0)?iNewPointSize:1);
         textFormat.setFont(curFont);
         cursor.mergeCharFormat(textFormat);
@@ -431,4 +1131,20 @@ QVariant UBGraphicsTextItemDelegate::itemChange(QGraphicsItem::GraphicsItemChang
         }
     }
     return UBGraphicsItemDelegate::itemChange(change, value);
+}
+
+UBCreateHyperLinkPalette *UBGraphicsTextItemDelegate::linkPalette()
+{
+    return mLinkPalette;
+}
+
+UBCreateTablePalette* UBGraphicsTextItemDelegate::tablePalette()
+{
+    return mTablePalette;
+}
+
+
+UBCellPropertiesPalette* UBGraphicsTextItemDelegate::cellPropertiesPalette()
+{
+    return mCellPropertiesPalette;
 }
