@@ -97,6 +97,13 @@ public slots:
     void onClose();
 //N/C - NNE - 20140328 : END
 
+//N/C - NNE - 20141020
+    void onChange();
+//N/C - NNE - 20141020 : END
+
+signals:
+    void hasChanged();
+
 private:
     QVBoxLayout* mpLayout;
     QComboBox* mpOwner;

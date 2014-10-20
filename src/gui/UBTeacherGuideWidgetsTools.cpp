@@ -107,7 +107,20 @@ UBTGActionWidget::UBTGActionWidget(QTreeWidgetItem* widget, QWidget* parent, con
 
     mpLayout->addWidget(mpOwner);
     mpLayout->addWidget(mpTask);
+
+    //N/C - NNE - 20141020
+    connect(mpOwner, SIGNAL(currentIndexChanged(int)), this, SLOT(onChange()));
+    connect(mpTask, SIGNAL(textChanged()), this, SLOT(onChange()));
+    //N/C - NNE - 20141020 : END
 }
+
+//N/C - NNE - 20141020
+void UBTGActionWidget::onChange()
+{
+    emit hasChanged();
+}
+
+//N/C - NNE - 20141020 : END
 
 //N/C - NNE - 20140328 : Sort the actions
 void UBTGActionWidget::onUpButton()

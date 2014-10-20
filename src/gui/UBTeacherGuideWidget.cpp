@@ -396,6 +396,7 @@ void UBTeacherGuideEditionWidget::onAddItemClicked(QTreeWidgetItem* widget, int 
             connect(actionColumn, SIGNAL(clickOnUp()), actionWidget, SLOT(onUpButton()));
             connect(actionColumn, SIGNAL(clickOnDown()), actionWidget, SLOT(onDownButton()));
             connect(actionColumn, SIGNAL(clickOnClose()), actionWidget, SLOT(onClose()));
+            connect(actionWidget, SIGNAL(hasChanged()), this, SLOT(setIsModified()));
             break;
         }
         case eUBTGAddSubItemWidgetType_Url: {
