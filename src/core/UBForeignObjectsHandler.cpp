@@ -319,21 +319,32 @@ private:
     // N/C - NNE - 20140317 : When export, reduce the size of the ubz file
     void cleanObjectFolder(const QDomElement &element)
     {
-        QDomElement preference = element.firstChildElement("ub:preference");
+        //QDomElement preference = element.firstChildElement("ub:preference");
 
-        QString value = preference.attribute("value");
-
-        int findPos = value.indexOf("objects/");
-        int endPos;
+        //N/C - NNE - 20141021
+        QDomNodeList childrenNode = element.elementsByTagName("ub:preference");
 
         QVector<QString> objectsIdUsed;
 
-        //find all objects used
-        while(findPos != -1){
-            endPos = value.indexOf("\"", findPos);
-            objectsIdUsed << value.mid(findPos, endPos - findPos);
-            findPos = value.indexOf("objects/", endPos);
+        for(int i = 0; i < childrenNode.size(); i++){
+            QDomElement preference = childrenNode.at(i).toElement();
+
+            if(!preference.isNull()){
+                QString value = preference.attribute("value");
+
+                int findPos = value.indexOf("objects/");
+                int endPos;
+
+                //find all objects used
+                while(findPos != -1){
+                    endPos = value.indexOf("\"", findPos);
+                    objectsIdUsed << value.mid(findPos, endPos - findPos);
+                    findPos = value.indexOf("objects/", endPos);
+                }
+            }
         }
+        //N/C - NNE - 20141021 : END
+
 
         QString path = element.attribute(aSrc);
         QString objectsFolderPath = mCurrentDir + "/" + path + "/objects/";
