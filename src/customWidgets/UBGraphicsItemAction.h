@@ -68,7 +68,7 @@ class UBGraphicsItemPlayAudioAction : public UBGraphicsItemAction
     Q_OBJECT
 
 public:
-    UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction = true, QObject* parent = 0);
+    UBGraphicsItemPlayAudioAction(QString audioFile, bool onImport = false, QObject* parent = 0);
     UBGraphicsItemPlayAudioAction();
     ~UBGraphicsItemPlayAudioAction();
     void play();

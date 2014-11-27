@@ -45,13 +45,14 @@ UBGraphicsItemAction::UBGraphicsItemAction(eUBGraphicsItemLinkType linkType, QOb
  }
 
 
-UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, bool isNewAction, QObject *parent) :
+UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, bool onImport, QObject *parent) :
     UBGraphicsItemAction(eLinkToAudio,parent)
   , mMediaObject(0)
   , mIsLoading(true)
 {
     Q_ASSERT(audioFile.length() > 0);
-    if(isNewAction){
+
+    if(onImport){
         QString extension = QFileInfo(audioFile).completeSuffix();
         QString destDir = UBApplication::boardController->selectedDocument()->persistencePath() + "/" + UBPersistenceManager::audioDirectory;
         QString destFile = destDir + "/" + QUuid::createUuid().toString() + "." + extension;
@@ -64,15 +65,13 @@ UBGraphicsItemPlayAudioAction::UBGraphicsItemPlayAudioAction(QString audioFile, 
         mAudioPath = destFile;
         mFullPath = destFile;
     }
-    else{
-        //another hack
-        if(UBApplication::documentController && UBApplication::documentController->selectedDocument()){
-            mAudioPath = UBApplication::documentController->selectedDocument()->persistencePath() + "/" + audioFile;
-            mFullPath = mAudioPath;
-        }
-        else
-            return;
+    else
+    {
+        //On import don't recreate the file
+        mAudioPath = audioFile;
+        mFullPath = mAudioPath;
     }
+
     mAudioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
     mMediaObject = new Phonon::MediaObject(this);
     Phonon::createPath(mMediaObject, mAudioOutput);

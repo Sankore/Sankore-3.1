@@ -2357,10 +2357,18 @@ UBGraphicsItemAction* UBSvgSubsetAdaptor::UBSvgSubsetReader::readAction()
     if(actionParameters.isEmpty())
         return result;
     switch (actionParameters.toString().toInt()) {
-    case eLinkToAudio:
-        result = new UBGraphicsItemPlayAudioAction(attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString(),false);
+    case eLinkToAudio:{
+        //NNE - 20141106 : Correction du bug lorsque l'on charge un ubz en cliquant dessus
+        qDebug() << mProxy->persistencePath();
+
+        QString audioPath = mProxy->persistencePath() + "/" + attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString();
+
+        UBGraphicsItemPlayAudioAction *item = new UBGraphicsItemPlayAudioAction(audioPath, true);
+
+        result = item;
         break;
-    case eLinkToPage:{
+        //NNE - 20141106 : END
+    }case eLinkToPage:{
         QString pageParameter = attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionSecondParameter").toString();
         if(pageParameter.isEmpty())
             result = new UBGraphicsItemMoveToPageAction((eUBGraphicsItemMovePageAction)attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString().toInt());

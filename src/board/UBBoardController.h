@@ -181,8 +181,6 @@ class UBBoardController : public UBDocumentContainer
         void notifyPageChanged();
         void displayMetaData(QMap<QString, QString> metadatas);
 
-        void ClearUndoStack();
-
         void setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, int pSceneIndex = 0, bool forceReload = false, const bool onImport = false);
         void setActiveDocumentScene(int pSceneIndex);
 
@@ -201,6 +199,8 @@ class UBBoardController : public UBDocumentContainer
 
 
     public slots:
+        void ClearUndoStack();
+
         void showDocumentsDialog();
         void showKeyboard(bool show);
         void togglePodcast(bool checked);

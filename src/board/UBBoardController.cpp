@@ -167,6 +167,9 @@ void UBBoardController::init()
 
     //EV-7 - NNE - 20131231
     mShapeFactory.init();
+
+    //N/C - NNE - 20141126
+    connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentWillBeDeleted(UBDocumentProxy*)), this, SLOT(ClearUndoStack()));
 }
 
 
@@ -711,7 +714,7 @@ UBGraphicsItem *UBBoardController::duplicateItem(UBItem *item, bool bAsync, eIte
             switch(pAction->linkType()){
                 case eLinkToAudio:
                 {
-                    pNewAction = new UBGraphicsItemPlayAudioAction(pAction->path(), true);
+                    pNewAction = new UBGraphicsItemPlayAudioAction(pAction->path());
                 }
                     break;
                 case eLinkToPage:
