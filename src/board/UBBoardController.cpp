@@ -169,7 +169,7 @@ void UBBoardController::init()
     mShapeFactory.init();
 
     //N/C - NNE - 20141126
-    connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentWillBeDeleted(UBDocumentProxy*)), this, SLOT(ClearUndoStack()));
+    //connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentWillBeDeleted(UBDocumentProxy*)), this, SLOT(ClearUndoStack()));
 }
 
 
