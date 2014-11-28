@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D'n'd</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            if (parent && parent.loaded)
+                parent.loaded();
+
+            $(document).ready(function(){
+                var lang = (window.sankore)?sankore.locale().substr(0,2):"en"; //local language
+
+                $.ajax({
+                    type: 'POST',
+                    url:'locales/' + lang + '/index.html',
+                    statusCode: {
+                        404: function() {
+                            window.location.href = 'locales/en/index.html';
+                        },
+                        200: function(){
+                            window.location.href = 'locales/' + lang + '/index.html';
+                        }
+                    }
+                });      
+            });
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

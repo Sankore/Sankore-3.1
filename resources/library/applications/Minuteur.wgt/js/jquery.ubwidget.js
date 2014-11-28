@@ -96,12 +96,14 @@
 					});	
 				buttonCanvas
 					.bind("mouseenter", buttonOverHandler)
-					.bind("mouseleave", buttonOutHandler)
+					//.bind("mouseleave", buttonOutHandler)
 					.bind("mousedown", buttonDownHandler)
 					.bind("mouseup", buttonUpHandler);
 				
 				button.width(size.w+5).height(size.h+5);
-			});	
+				
+				buttonOverHandler(button);
+			});
 			
 	
 			function buttonOverHandler(e) {
