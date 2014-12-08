@@ -167,9 +167,6 @@ void UBBoardController::init()
 
     //EV-7 - NNE - 20131231
     mShapeFactory.init();
-
-    //N/C - NNE - 20141126
-    //connect(UBPersistenceManager::persistenceManager(), SIGNAL(documentWillBeDeleted(UBDocumentProxy*)), this, SLOT(ClearUndoStack()));
 }
 
 
@@ -1892,6 +1889,8 @@ void UBBoardController::setActiveDocumentScene(UBDocumentProxy* pDocumentProxy, 
             persistCurrentScene();
             freezeW3CWidgets(true);
             ClearUndoStack();
+        }else{
+            UBApplication::undoStack->clear();
         }
 
         mActiveScene = targetScene;
@@ -2112,12 +2111,13 @@ void UBBoardController::selectionChanged()
 
 void UBBoardController::undoRedoStateChange(bool canUndo)
 {
-    Q_UNUSED(canUndo);
-
     mMainWindow->actionUndo->setEnabled(UBApplication::undoStack->canUndo());
-    mMainWindow->actionRedo->setEnabled(UBApplication::undoStack->canRedo());
+    //mMainWindow->actionRedo->setEnabled(UBApplication::undoStack->canRedo());
 
-    updateActionStates();
+    //
+    if(canUndo)
+        updateActionStates();
+    //
 }
 
 

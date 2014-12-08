@@ -2363,7 +2363,7 @@ UBGraphicsItemAction* UBSvgSubsetAdaptor::UBSvgSubsetReader::readAction()
 
         QString audioPath = mProxy->persistencePath() + "/" + attributes.value(UBSettings::uniboardDocumentNamespaceUri, "actionFirstParameter").toString();
 
-        UBGraphicsItemPlayAudioAction *item = new UBGraphicsItemPlayAudioAction(audioPath, true);
+        UBGraphicsItemPlayAudioAction *item = new UBGraphicsItemPlayAudioAction(audioPath, false);
 
         result = item;
         break;
