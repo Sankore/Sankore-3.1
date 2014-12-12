@@ -3065,6 +3065,10 @@ UBGraphicsTextItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::textItemFromSvg()
 
     UBGraphicsTextItem* textItem = new UBGraphicsTextItem();
     graphicsItemFromSvg(textItem);
+
+    //N/C - NNE - 20141211 : when importing a textItem, disable the text editor
+    textItem->activateTextEditor(false);
+
     textItem->Delegate()->setAction(readAction());
 
     QStringRef ubFillOnDarkBackground = mXmlReader.attributes().value(mNamespaceUri, "fill-on-dark-background");

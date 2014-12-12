@@ -190,6 +190,7 @@ UBGraphicsItemDelegate::UBGraphicsItemDelegate(QGraphicsItem* pDelegated, QObjec
     , mFlippable(false)
     , mToolBarUsed(useToolBar)
     , mShowGoContentButton(showGoContentButton)
+    , mMoved(false)
 {
     connect(UBApplication::boardController, SIGNAL(zoomChanged(qreal)), this, SLOT(onZoomChanged()));
 }
